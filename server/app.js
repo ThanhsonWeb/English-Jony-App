@@ -1,4 +1,5 @@
 const express = require("express");
+const authRouter = require("./routes/authRoutes.js");
 // express
 const app = express();
 
@@ -6,6 +7,7 @@ const app = express();
 app.use(express.json());
 
 // routes
+app.use("/api/v1/auth", authRouter);
 app.get("/", (req, res) => {
 	res.send("Backend is running!");
 });
