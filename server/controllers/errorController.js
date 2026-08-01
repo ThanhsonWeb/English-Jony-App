@@ -1,3 +1,11 @@
+const AppError = require("../utils/appError");
+
+const handleDuplicatedFieldDB = (err) => {
+	const value = err.keyValue.email;
+	const message = `Duplicate Field Error "${value}" please try another one !  `;
+	return new AppError(message, 400);
+};
+
 const sendErrorDev = (err, res) => {
 	res.status(err.statusCode).json({
 		status: err.status,
@@ -21,7 +29,9 @@ const globalErrorHandler = (err, req, res, next) => {
 	if (process.env.NODE_ENV === "development") {
 		sendErrorDev(err, res);
 	} else if (process.env.NODE_ENV === "production") {
-		sendErrorProd(err, res);
+		let error = err;
+		if (error.code === 11000) error = handleDuplicatedFieldDB(err);
+		sendErrorProd(error, res);
 	}
 };
 
