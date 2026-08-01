@@ -3,7 +3,7 @@
 // next(new AppError("User not found", 404));
 class AppError extends Error {
 	constructor(message, statusCode) {
-		super(message);
+		super(message); // built in
 		this.statusCode = statusCode;
 		this.status = `${statusCode}`.startsWith("4") ? "fail" : "error";
 
