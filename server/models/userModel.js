@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		required: [true, "user must have a password"],
 		minLength: [8, "Password must be at least 8 characters"],
+		select: false,
 	},
 	passwordConfirm: {
 		type: String,
@@ -35,7 +36,12 @@ const userSchema = new mongoose.Schema({
 		},
 	},
 });
+// methods
+userSchema.methods.correctPassword = async function (candidatePass, userPass) {
+	return await bcrypt.compare(candidatePass, userPass);
+};
 
+//  document middleware
 userSchema.pre("save", async function () {
 	if (!this.isModified("password")) return;
 	// Hash passwords with bcryptjs.
