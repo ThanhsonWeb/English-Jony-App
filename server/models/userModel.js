@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
-const userModel = new mongoose.Schema({
+const bcrypt = require("bcrypt");
+const userSchema = new mongoose.Schema({
 	name: {
 		type: String,
 		required: [true, "user must have a name"],
@@ -24,7 +25,7 @@ const userModel = new mongoose.Schema({
 		type: String,
 		required: [true, "please confirm your password"],
 		// This validator only works on save() and create()
-		// because "this" refers to current document ! 
+		// because "this" refers to current document !
 		// so findByIdAndUpdate() ≠ current document -> validator doesn't work .
 		validate: {
 			validator: function (curValue) {
@@ -35,6 +36,14 @@ const userModel = new mongoose.Schema({
 	},
 });
 
-const User = mongoose.model("User", userModel);
+userSchema.pre("save", async function () {
+	if (!this.isModified("password")) return;
+	// Hash passwords with bcryptjs.
+	this.password = await bcrypt.hash(this.password, 12);
+	// Remove passwordConfirm before saving.
+	this.passwordConfirm = undefined;
+});
+
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
