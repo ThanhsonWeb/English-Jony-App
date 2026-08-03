@@ -35,6 +35,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 
 exports.login = catchAsync(async (req, res, next) => {
 	const { email, password } = req.body;
+	// check email && password
 	if (!email || !password)
 		return next(
 			new AppError("please provide your email and password to login", 400),
@@ -48,4 +49,10 @@ exports.login = catchAsync(async (req, res, next) => {
 	}
 
 	createSendToken(user, 200, res);
+});
+
+exports.protect = catchAsync(async (req, res, next) => {
+	// Read token
+	let token;
+	
 });
