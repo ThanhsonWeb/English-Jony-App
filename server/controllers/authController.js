@@ -77,6 +77,12 @@ exports.protect = catchAsync(async (req, res, next) => {
 			new AppError(" User belong to this token is no longer exist ", 401),
 		);
 
+	// 4️⃣ Check if password changed after JWT was issued
+	if (currentUser.changedPasswordAfter(decoded.iat)) {
+		return next(
+			new AppError("User recently changed password. Please log in again.", 401),
+		);
+	}
 	// Attach req.user
 	req.user = currentUser;
 	next();
