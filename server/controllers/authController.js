@@ -162,3 +162,49 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 
 	createSendToken(user, 200, res);
 });
+
+exports.updatePassword = catchAsync(async (req, res, next) => {
+	// 1. Get current user (+password)
+	const user = await User.findOne({ email: req.user.email }).select(
+		"+password",
+	);
+
+	// check passwordCurrent
+	const correct = await user.correctPassword(
+		req.body.passwordCurrent,
+		user.password,
+	);
+
+	if (!correct)
+		return next(new AppError("Your current password is wrong", 401));
+
+	// modify new pass and save
+	user.password = req.body.password;
+	user.passwordConfirm = req.body.passwordConfirm;
+
+	await user.save();
+
+	// 5. Send new JWT
+	createSendToken(user, 200, res);
+});
+const filterOjb = (obj, ...allowedFields) => {
+	const newObj = {};
+	Object.keys(obj).forEach((el) => {
+		if (allowedFields.includes(el)) newObj[el] = obj[el];
+	});
+	return newObj;
+};
+exports.updateMe = catchAsync(async (req, res, next) => {
+	const filteredBody = filterOjb(req.body, "name", "email");
+
+	const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
+		new: true,
+		runValidators: true,
+	});
+	res.status(200).json({
+		status: "success",
+		data: {
+			user: updatedUser,
+		},
+	});
+});

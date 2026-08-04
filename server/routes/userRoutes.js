@@ -5,6 +5,8 @@ const {
 	restrictTo,
 	forgotPassword,
 	resetPassword,
+	updatePassword,
+	updateMe,
 } = require("../controllers/authController");
 
 // /api/v1/users
@@ -17,8 +19,7 @@ router.use((req, res, next) => {
 router.route("/").get(protect, restrictTo("admin"), getAllUsers);
 router.post("/forgotPassword", forgotPassword);
 router.patch("/resetPassword/:token", resetPassword);
-router.patch("/test", (req, res) => {
-	res.send("working");
-});
+router.patch("/updatePassword", protect, updatePassword);
+router.patch("/updateMe", protect, updateMe);
 
 module.exports = router;
