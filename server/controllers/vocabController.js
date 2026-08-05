@@ -7,7 +7,7 @@ exports.getAllVocab = catchAsync(async (req, res, next) => {
 	const vocabularies = await Vocab.find({ user: req.user.id });
 
 	res.status(200).json({
-		status: " success",
+		status: "success",
 		data: { vocabularies },
 	});
 });
