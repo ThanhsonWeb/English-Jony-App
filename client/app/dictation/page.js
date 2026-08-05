@@ -1,3 +1,7 @@
+export const metadata = {
+	title: "Dictation",
+};
+
 function page() {
 	return (
 		<div>

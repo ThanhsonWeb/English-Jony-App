@@ -1,3 +1,6 @@
+export const metadata = {
+	title: "Sign Up",
+};
 function page() {
 	return (
 		<div>
