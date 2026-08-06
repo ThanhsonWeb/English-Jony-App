@@ -2,29 +2,44 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 function LoginPage() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [loading, setIsLoading] = useState(false);
+
+	const router = useRouter();
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		// 3 send request to API with info
-		const res = await fetch("http://localhost:5000/api/v1/auth/login", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ email, password }),
-		});
-		const data = await res.json();
-		console.log(data);
+		try {
+			setIsLoading(true);
+			const res = await fetch("http://localhost:5000/api/v1/auth/login", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ email, password }),
+			});
+
+			const data = await res.json();
+			if (!res.ok) throw new Error(data.message || "something went wrong");
+
+			localStorage.setItem("token", data.token);
+			router.push("/vocabulary");
+			console.log(data);
+		} catch (error) {
+			alert(error.message);
+		} finally {
+			setIsLoading(false);
+		}
 	}
 
 	return (
 		<div className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-slate-950 px-4 overflow-hidden">
-			{/* 1  submit -> run this fn  */}
+		
 			<form
 				onSubmit={handleSubmit}
 				className="relative z-10 flex flex-col bg-slate-900/60 backdrop-blur-md text-slate-100 w-full max-w-md p-8 rounded-2xl border border-slate-800/80 shadow-2xl gap-4"
