@@ -8,7 +8,7 @@ function Logo() {
             src="/lugo.png"
             height={48}
             width={48}
-            quality={100}
+            quality={75}
             priority
             alt="English-Jony logo"
             className="rounded-xl border border-slate-800 w-10 h-10 sm:w-12 sm:h-12"

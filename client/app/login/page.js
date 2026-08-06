@@ -11,18 +11,21 @@ function LoginPage() {
 	const [loading, setIsLoading] = useState(false);
 
 	const router = useRouter();
-
+	// Added login form submission, basic error handling, loading state, token storage, and user redirection.
 	async function handleSubmit(e) {
 		e.preventDefault();
 		try {
 			setIsLoading(true);
-			const res = await fetch("http://localhost:5000/api/v1/auth/login", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
+			const res = await fetch(
+				`${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/login`,
+				{
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({ email, password }),
 				},
-				body: JSON.stringify({ email, password }),
-			});
+			);
 
 			const data = await res.json();
 			if (!res.ok) throw new Error(data.message || "something went wrong");
@@ -39,17 +42,23 @@ function LoginPage() {
 
 	return (
 		<div className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-slate-950 px-4 overflow-hidden">
-		
 			<form
 				onSubmit={handleSubmit}
 				className="relative z-10 flex flex-col bg-slate-900/60 backdrop-blur-md text-slate-100 w-full max-w-md p-8 rounded-2xl border border-slate-800/80 shadow-2xl gap-4"
 			>
+				{/* Close Button */}
+				<Link
+					href="/"
+					className="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl"
+				>
+					&times;
+				</Link>
 				<div className="flex items-center  gap-4 mx-auto mb-3">
 					<Image
 						src="/lugo.png"
 						height={48}
 						width={48}
-						quality={100}
+						quality={75}
 						priority
 						alt="English-Jony logo"
 						className="rounded-xl border border-slate-800 w-12 h-12 "
