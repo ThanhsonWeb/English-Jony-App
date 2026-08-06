@@ -1,24 +1,52 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
-export const metadata = {
-	title: "Login",
-};
+import { useState } from "react";
 
 function LoginPage() {
-	return (
-		// Page Wrapper with background image or dark backdrop
-		<div className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-slate-950 px-4 overflow-hidden">
-			{/* Optional background glow shapes to make blur noticeable 🌟 */}
-			<div className="absolute top-1/4 left-1/3 w-72 h-72 bg-blue-600/30 rounded-full blur-3xl pointer-events-none" />
-			<div className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl pointer-events-none" />
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 
-			{/* Form Card with Glassmorphism (Backdrop Blur) 🔮 */}
-			<form className="relative z-10 flex flex-col bg-slate-900/60 backdrop-blur-md text-slate-100 w-full max-w-md p-8 rounded-2xl border border-slate-800/80 shadow-2xl gap-4">
-				<h2 className="text-2xl font-bold text-center mb-2">Welcome Back 👋</h2>
+	async function handleSubmit(e) {
+		e.preventDefault();
+		// 3 send request to API with info
+		const res = await fetch("http://localhost:5000/api/v1/auth/login", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ email, password }),
+		});
+		const data = await res.json();
+		console.log(data);
+	}
+
+	return (
+		<div className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-slate-950 px-4 overflow-hidden">
+			{/* 1  submit -> run this fn  */}
+			<form
+				onSubmit={handleSubmit}
+				className="relative z-10 flex flex-col bg-slate-900/60 backdrop-blur-md text-slate-100 w-full max-w-md p-8 rounded-2xl border border-slate-800/80 shadow-2xl gap-4"
+			>
+				<div className="flex items-center  gap-4 mx-auto mb-3">
+					<Image
+						src="/lugo.png"
+						height={48}
+						width={48}
+						quality={100}
+						priority
+						alt="English-Jony logo"
+						className="rounded-xl border border-slate-800 w-12 h-12 "
+					/>
+				</div>
 				{/* email */}
 				<div className="flex flex-col gap-1">
 					<label className="text-sm font-medium text-slate-300">Email</label>
 					<input
 						type="email"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
 						placeholder="name@example.com"
 						className="border border-slate-700/80 bg-slate-950/50 p-3.5 rounded-xl text-slate-100 focus:outline-none focus:border-blue-500 transition-colors"
 						required
@@ -29,6 +57,8 @@ function LoginPage() {
 					<label className="text-sm font-medium text-slate-300">Password</label>
 					<input
 						type="password"
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
 						placeholder="••••••••"
 						className="border border-slate-700/80 bg-slate-950/50 p-3.5 rounded-xl text-slate-100 focus:outline-none focus:border-blue-500 transition-colors"
 						required
