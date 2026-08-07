@@ -9,6 +9,7 @@ function LoginPage() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [loading, setIsLoading] = useState(false);
+	const [error, setError] = useState("");
 
 	const router = useRouter();
 	// Added login form submission, basic error handling, loading state, token storage, and user redirection.
@@ -28,13 +29,16 @@ function LoginPage() {
 			);
 
 			const data = await res.json();
-			if (!res.ok) throw new Error(data.message || "something went wrong");
+			if (data.status === "fail") {
+				setError(data.message);
+				return;
+			}
 
 			localStorage.setItem("token", data.token);
 			router.push("/vocabulary");
 			console.log(data);
 		} catch (error) {
-			alert(error.message);
+			console.log(error);
 		} finally {
 			setIsLoading(false);
 		}
@@ -76,6 +80,9 @@ function LoginPage() {
 						required
 					/>
 				</div>
+				{error && (
+					<div className=" text-sm text-red-400 rounded-xl">*{error}</div>
+				)}
 				{/* password */}
 				<div className="flex flex-col gap-1">
 					<label className="text-sm font-medium text-slate-300">Password</label>

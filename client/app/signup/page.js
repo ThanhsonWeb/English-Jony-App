@@ -11,7 +11,6 @@ function SignUpForm() {
 	const [password, setPassword] = useState("");
 	const [passwordConfirm, setPasswordConfirm] = useState("");
 	const [error, setError] = useState("");
-
 	const router = useRouter();
 
 	const handleSubmit = async (e) => {

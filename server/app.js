@@ -2,6 +2,7 @@ const express = require("express");
 const authRouter = require("./routes/authRoutes.js");
 const userRouter = require("./routes/userRoutes.js");
 const vocabRouter = require("./routes/vocabRoutes.js");
+const topicRouter = require("./routes/topicRoutes.js");
 const AppError = require("./utils/appError.js");
 const globalErrorHandler = require("./controllers/errorController.js");
 const helmet = require("helmet");
@@ -25,18 +26,18 @@ app.use("/api", limiter);
 app.use(express.json());
 app.use(compression());
 app.use((req, res, next) => {
-  if (req.body) mongoSanitize.sanitize(req.body);
-  if (req.params) mongoSanitize.sanitize(req.params);
-  next();
+	if (req.body) mongoSanitize.sanitize(req.body);
+	if (req.params) mongoSanitize.sanitize(req.params);
+	next();
 });
-
 
 app.use(hpp());
 
-// routes
+//   Register these route
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/vocab", vocabRouter);
+app.use("/api/v1/topics", topicRouter);
 
 // Route doesn't exist
 app.all("/*splat", (req, res, next) => {
