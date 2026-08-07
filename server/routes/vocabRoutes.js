@@ -9,7 +9,7 @@ const {
 const { protect } = require("../controllers/authController");
 
 const router = express.Router();
-
+// /api/v1/vocab
 // routes
 router.route("/").get(protect, getAllVocab).post(protect, createNewVocab);
 
