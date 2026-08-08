@@ -6,8 +6,6 @@ async function page({ params }) {
 	);
 	const data = res.json();
 
-
-
 	return <div>hello</div>;
 }
 

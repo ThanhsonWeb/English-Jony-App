@@ -3,6 +3,7 @@ const catchAsync = require("../utils/catchAsync");
 
 exports.getAllTopics = catchAsync(async (req, res, next) => {
 	const topics = await Topic.find({ user: req.user.id });
+	//req.user from protect (currentUser._id)
 
 	res.status(200).json({
 		status: " success",

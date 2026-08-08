@@ -29,6 +29,7 @@ function LoginPage() {
 			);
 
 			const data = await res.json();
+			// prod mode
 			if (data.status === "fail") {
 				setError(data.message);
 				return;

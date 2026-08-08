@@ -13,7 +13,7 @@ function Logo() {
 				alt="English-Jony logo"
 				className="rounded-xl border border-slate-800 w-10 h-10 sm:w-12 sm:h-12"
 			/>
-			<span className="text-lg sm:text-2xl  uppercase text-slate-100 tracking-wide">
+			<span className="text-lg sm:text-xl md:text-2xl  uppercase text-slate-100 tracking-wide">
 				<span className="text-blue-50">StudyJony</span>
 			</span>
 		</Link>
