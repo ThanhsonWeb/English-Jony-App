@@ -123,7 +123,7 @@ function SignUpForm() {
 					/>
 					<button
 						type="submit"
-						className="mt-2 p-3.5 text-base font-semibold bg-blue-600 hover:bg-blue-500 rounded-xl text-white transition-all duration-200 shadow-lg shadow-blue-600/30 cursor-pointer "
+						className="mt-2 p-3.5 text-base font-semibold bg-blue-700 hover:bg-blue-600 rounded-xl text-white transition-all duration-200 shadow-lg shadow-blue-600/30 cursor-pointer "
 					>
 						Sign Up
 					</button>

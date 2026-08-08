@@ -35,7 +35,7 @@ function Topic({ topic }) {
         <span className="text-sm text-slate-400 font-medium">
           {topic.words?.length || 0} words
         </span>
-        <span className="bg-blue-600 hover:bg-blue-500 text-white text-sm py-1.5 px-4 rounded-lg font-medium transition-colors">
+        <span className="bg-gray-600 hover:bg-blue-500 text-white text-sm py-1.5 px-4 rounded-lg font-medium transition-colors">
           Learn
         </span>
       </div>

@@ -3,14 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home, Headphones, BookOpen } from "lucide-react";
 import AuthButtons from "./AuthButtons";
 
 const navLinks = [
-   { name: "Home", href: "/" },
-   { name: "Dictation", href: "/dictation" },
+   { name: "Home", href: "/", icon: Home },
+   { name: "Dictation", href: "/dictation", icon: Headphones },
    // { name: "Speaking", href: "/speaking" },
-   { name: "Vocabulary", href: "/vocabulary" },
+   { name: "Vocabulary", href: "/vocabulary", icon: BookOpen },
 ];
 
 function Navigation() {
@@ -18,10 +18,11 @@ function Navigation() {
    const [isOpen, setIsOpen] = useState(false);
 
    return (
-      <nav>
+      <nav className="relative">
          {/* Desktop Navigation */}
          <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => {
+               const Icon = link.icon;
                const isActive =
                   link.href === "/"
                      ? pathname === "/"
@@ -31,13 +32,14 @@ function Navigation() {
                   <li key={link.name}>
                      <Link
                         href={link.href}
-                        className={`text-lg font-medium hover:text-blue-400 transition-colors ${
-                           isActive
-                              ? "text-blue-400 font-semibold"
-                              : "text-slate-300"
+                        className={`relative inline-flex items-center gap-2 text-lg font-medium transition-colors duration-200 pb-1 ${
+                           isActive ? "text-white" : "text-slate-300 hover:text-white"
+                        } after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:bg-blue-300 after:origin-left after:transition-transform after:duration-300 after:ease-out ${
+                           isActive ? "after:scale-x-100" : "after:scale-x-0"
                         }`}
                      >
-                        {link.name}
+                        <Icon className="w-5 h-5" />
+                        <span>{link.name}</span>
                      </Link>
                   </li>
                );
@@ -57,6 +59,7 @@ function Navigation() {
          {isOpen && (
             <div className="absolute top-full left-0 w-full bg-slate-900 border-b border-slate-800 p-6 flex flex-col gap-4 md:hidden z-50">
                {navLinks.map((link) => {
+                  const Icon = link.icon;
                   const isActive =
                      link.href === "/"
                         ? pathname === "/"
@@ -67,19 +70,18 @@ function Navigation() {
                         key={link.name}
                         href={link.href}
                         onClick={() => setIsOpen(false)}
-                        className={`text-lg font-medium hover:text-blue-400 transition-colors ${
-                           isActive
-                              ? "text-blue-400 font-semibold"
-                              : "text-slate-300"
+                        className={`inline-flex items-center gap-3 text-lg font-medium hover:text-blue-400 transition-colors ${
+                           isActive ? "text-blue-400 font-semibold" : "text-slate-300"
                         }`}
                      >
-                        {link.name}
+                        <Icon className="w-5 h-5" />
+                        <span>{link.name}</span>
                      </Link>
                   );
                })}
 
-               {/* Add Auth Buttons inside mobile dropdown 🔑 */}
-               <div className="pt-4 border-t border-slate-800 flex flex-col gap-3 sm:hidden ">
+               {/* Auth Buttons inside mobile dropdown 🔑 */}
+               <div className="pt-4 border-t border-slate-800 flex flex-col gap-3 sm:hidden">
                   <AuthButtons />
                </div>
             </div>

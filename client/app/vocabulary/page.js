@@ -37,7 +37,7 @@ function Page() {
 				<h2 className="font-semibold text-3xl text-slate-100 mb-10">
 					List of Topics
 				</h2>
-				<button className="bg-blue-700 hover:bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold transition-colors mb-10">
+				<button className="bg-gray-200 hover:bg-gray-100 text-gray-800 px-5 py-2.5 rounded-lg font-semibold transition-colors mb-10">
 					+ Add New Topic
 				</button>
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
