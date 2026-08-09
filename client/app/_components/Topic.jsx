@@ -1,11 +1,13 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-function Topic({ topic, onDelete }) {
+function Topic({ topic, onDelete, onFix }) {
 	const router = useRouter();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isEditing, setIsEditing] = useState(false);
+	const [editName, setEditName] = useState(topic.name);
+	const [editDesc, setEditDesc] = useState(topic.description || "");
 
 	const formatDate = (dateString) => {
 		if (!dateString) return "";
@@ -16,29 +18,34 @@ function Topic({ topic, onDelete }) {
 		}).format(new Date(dateString));
 	};
 
+	const handleEditSubmit = (e) => {
+		e.preventDefault();
+		onFix(topic._id, editName, editDesc);
+		setIsEditing(false);
+	};
+
 	return (
 		<div className="relative">
 			<div
 				onClick={() => router.push(`/vocabulary/${topic._id}`)}
-				className="block p-6 border border-slate-800 bg-slate-900/80 hover:bg-slate-900 rounded-2xl border-slate-800/80 hover:border-blue-500/40 transition-all group shadow-sm hover:shadow-md"
+				className="block p-6 border border-slate-800 bg-slate-900/80 hover:bg-slate-900 rounded-2xl hover:border-blue-500/40 transition-all group shadow-sm hover:shadow-md cursor-pointer"
 			>
 				<div className="flex items-start justify-between gap-2">
 					<h3 className="font-semibold text-slate-100 text-2xl group-hover:text-blue-400 transition-colors">
 						{topic.name}
 					</h3>
 
-					{/* 3-dot menu */}
 					<button
 						onClick={(e) => {
-							e.stopPropagation(); // Prevents clicking link
+							e.stopPropagation();
 							setIsMenuOpen(!isMenuOpen);
 						}}
-						className="text-slate-400 hover:text-white text-2xl leading-none cursor-pointer mt-1  "
+						className="text-slate-400 hover:text-white text-2xl leading-none cursor-pointer mt-1"
 					>
 						...
 					</button>
 				</div>
-				{/*  date */}
+				{/* date */}
 				{topic.createdAt && (
 					<span className="text-sm text-slate-500 shrink-0 mt-1 block">
 						{formatDate(topic.createdAt)}
@@ -51,7 +58,7 @@ function Topic({ topic, onDelete }) {
 					<span className="text-lg text-slate-400 font-medium">
 						<strong className="text-slate-100">
 							{topic.words?.length || 0}
-						</strong>{" "}
+						</strong>
 						Từ
 					</span>
 					<span className="bg-gray-600 hover:bg-blue-500 text-white text-sm py-1.5 px-4 rounded-lg font-medium transition-colors">
@@ -63,11 +70,19 @@ function Topic({ topic, onDelete }) {
 			{/* Dropdown Menu */}
 			{isMenuOpen && (
 				<div className="absolute right-4 top-16 bg-slate-800 border border-slate-700 rounded-xl overflow-hidden w-36 z-20 shadow-xl">
-					<button className="w-full text-left px-4 py-2.5 text-sm text-slate-200 hover:bg-slate-700 transition-colors">
-						Chỉnh sửa
+					<button
+						onClick={(e) => {
+							e.stopPropagation();
+							setIsMenuOpen(false);
+							setIsEditing(true); // Open edit modal
+						}}
+						className="w-full text-left px-4 py-2.5 text-sm text-slate-200 hover:bg-slate-700 transition-colors"
+					>
+						Edit
 					</button>
 					<button
-						onClick={() => {
+						onClick={(e) => {
+							e.stopPropagation();
 							setIsMenuOpen(false);
 							onDelete(topic._id);
 						}}
@@ -75,6 +90,60 @@ function Topic({ topic, onDelete }) {
 					>
 						Xóa
 					</button>
+				</div>
+			)}
+
+			{/* Edit Modal */}
+			{isEditing && (
+				<div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+					<form
+						onSubmit={handleEditSubmit}
+						onClick={(e) => e.stopPropagation()}
+						className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-8 flex flex-col gap-4"
+					>
+						<h4 className="text-xl font-bold text-slate-100">Chỉnh sửa</h4>
+
+						<div className="flex flex-col gap-1">
+							<label className="text-sm font-medium text-slate-300">
+								Tiêu đề
+							</label>
+							<input
+								type="text"
+								value={editName}
+								onChange={(e) => setEditName(e.target.value)}
+								className="border border-slate-700/80 bg-slate-950/50 p-3 rounded-xl text-slate-100 focus:outline-none focus:border-blue-500"
+								required
+							/>
+						</div>
+
+						<div className="flex flex-col gap-1">
+							<label className="text-sm font-medium text-slate-300">
+								Ghi chú
+							</label>
+							<textarea
+								value={editDesc}
+								onChange={(e) => setEditDesc(e.target.value)}
+								rows={3}
+								className="border border-slate-700/80 bg-slate-950/50 p-3 rounded-xl text-slate-100 focus:outline-none focus:border-blue-500"
+							/>
+						</div>
+
+						<div className="flex gap-3 mt-2">
+							<button
+								type="button"
+								onClick={() => setIsEditing(false)}
+								className="flex-1 p-3 rounded-xl border border-slate-700 text-slate-300 hover:bg-slate-800 transition-colors"
+							>
+								Hủy
+							</button>
+							<button
+								type="submit"
+								className="flex-1 p-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium transition-colors"
+							>
+								Lưu
+							</button>
+						</div>
+					</form>
 				</div>
 			)}
 		</div>

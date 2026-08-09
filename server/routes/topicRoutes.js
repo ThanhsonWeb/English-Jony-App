@@ -4,12 +4,13 @@ const {
 	getAllTopics,
 	createTopic,
 	deleteTopic,
+	updateTopic,
 } = require("../controllers/topicController");
 
 const router = express.Router();
 
 // Routes
 router.route("/").get(protect, getAllTopics).post(protect, createTopic);
-router.route("/:id").delete(protect, deleteTopic);
+router.route("/:id").delete(protect, deleteTopic).patch(protect, updateTopic);
 
 module.exports = router;

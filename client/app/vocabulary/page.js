@@ -2,14 +2,13 @@
 import { useState, useEffect } from "react";
 import Topic from "../_components/Topic";
 import Button from "../_components/Button";
-import { CloudDownload } from "lucide-react";
 
 function Page() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [topics, setTopics] = useState([]);
 	const [newTopic, setNewTopic] = useState("");
 	const [description, setDescription] = useState("");
-	// fetch all Topics
+
 	useEffect(() => {
 		const fetchTopics = async () => {
 			try {
@@ -17,13 +16,11 @@ function Page() {
 					`${process.env.NEXT_PUBLIC_API_URL}/api/v1/topics`,
 					{
 						headers: {
-							Authorization: `Bearer ${localStorage.getItem("token")}`, //id user
+							Authorization: `Bearer ${localStorage.getItem("token")}`,
 						},
 					},
 				);
 				const data = await res.json();
-				// exact topics of that user
-				console.log(data);
 				setTopics(data.data.topics);
 			} catch (error) {
 				console.log(error);
@@ -50,19 +47,21 @@ function Page() {
 
 			if (data.status === "success") {
 				setTopics([...topics, data.data.topic]);
-				setNewTopic(""); // Clear input
-				setIsOpen(false); // Close form
+				setNewTopic("");
+				setDescription("");
+				setIsOpen(false);
 			}
 		} catch (error) {
 			console.log(error);
 		}
 	}
+
 	async function handleDelete(id) {
-		if (!confirm("Are you sure you want to delete this topic?")) return; // Optional: Ask for confirmation
+		if (!confirm("Are you sure you want to delete this topic?")) return;
 
 		try {
 			const res = await fetch(
-				`${process.env.NEXT_PUBLIC_API_URL}/api/v1/topics/${id}`, // Add ID
+				`${process.env.NEXT_PUBLIC_API_URL}/api/v1/topics/${id}`,
 				{
 					method: "DELETE",
 					headers: {
@@ -70,10 +69,38 @@ function Page() {
 					},
 				},
 			);
-			// ❌ No res.json() because status 204 has no body.
 			if (res.ok) {
-				setTopics((prevTopics) =>
-					prevTopics.filter((topic) => topic._id !== id),
+				setTopics((prev) => prev.filter((topic) => topic._id !== id));
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	}
+
+	async function handleFix(id, updatedName, updatedDescription) {
+		try {
+			const res = await fetch(
+				`${process.env.NEXT_PUBLIC_API_URL}/api/v1/topics/${id}`,
+				{
+					method: "PATCH",
+					headers: {
+						Authorization: `Bearer ${localStorage.getItem("token")}`,
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						name: updatedName,
+						description: updatedDescription,
+					}),
+				},
+			);
+			//update the UI instantly
+			if (res.ok) {
+				setTopics((prev) =>
+					prev.map((topic) =>
+						topic._id === id
+							? { ...topic, name: updatedName, description: updatedDescription }
+							: topic,
+					),
 				);
 			}
 		} catch (error) {
@@ -87,12 +114,15 @@ function Page() {
 				<h2 className="font-semibold text-3xl text-center text-slate-100 mb-10">
 					List of Topics
 				</h2>
-				<Button onClick={() => setIsOpen(!isOpen)}>+ Add New Topic</Button>
+				<Button onClick={() => setIsOpen(!isOpen)} size="md">
+					+ Add New Topic
+				</Button>
+
 				{isOpen && (
 					<div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
 						<form
-							onSubmit={(e) => handleSubmit(e)}
-							className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-8 flex flex-col gap-4  "
+							onSubmit={handleSubmit}
+							className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-8 flex flex-col gap-4"
 						>
 							<div className="flex items-center justify-between">
 								<h4 className="text-xl font-bold text-slate-100">
@@ -147,9 +177,16 @@ function Page() {
 						</form>
 					</div>
 				)}
+
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
 					{topics.map((topic) => (
-						<Topic key={topic._id} topic={topic} onDelete={handleDelete} />
+						<Topic
+							key={topic._id}
+							topic={topic}
+							onDelete={handleDelete}
+							onFix={handleFix}
+							setIsOpen={setIsOpen}
+						/>
 					))}
 				</div>
 			</div>

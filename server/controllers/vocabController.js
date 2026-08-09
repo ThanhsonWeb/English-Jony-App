@@ -13,7 +13,10 @@ exports.getAllVocab = catchAsync(async (req, res, next) => {
 });
 
 exports.getVocab = catchAsync(async (req, res, next) => {
-	const vocab = await Vocab.findById(req.params.id);
+	const vocab = await Vocab.findOne({
+		_id: req.params.id,
+		user: req.user.id,
+	});
 	if (!vocab) return next(new AppError("No vocabulary found", 404));
 	res.status(200).json({
 		status: " success",

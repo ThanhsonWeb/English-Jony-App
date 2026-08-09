@@ -24,6 +24,23 @@ exports.createTopic = catchAsync(async (req, res, next) => {
 	});
 });
 
+exports.updateTopic = catchAsync(async (req, res, next) => {
+	const updatedTopic = await Topic.findOneAndUpdate(
+		{ _id: req.params.id, user: req.user.id },
+		req.body,
+		{
+			// new: true,
+			returnDocument: "after",
+			runValidators: true,
+		},
+	);
+
+	res.status(200).json({
+		status: "success",
+		data: { updatedTopic },
+	});
+});
+
 exports.deleteTopic = catchAsync(async (req, res, next) => {
 	await Topic.findOneAndDelete({
 		user: req.user.id,

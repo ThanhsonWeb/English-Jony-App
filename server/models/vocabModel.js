@@ -6,6 +6,11 @@ const vocabSchema = new mongoose.Schema({
 		ref: "User",
 		required: true,
 	},
+	topic: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "Topic",
+		required: true,
+	},
 
 	english: {
 		type: String,
