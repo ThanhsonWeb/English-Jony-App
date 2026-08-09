@@ -13,15 +13,19 @@ const compression = require("compression");
 const cors = require("cors");
 
 const app = express();
-const limiter = rateLimit({
-	max: 100,
+const authLimiter = rateLimit({
+	max: 10,
+	windowMs: 60 * 60 * 1000,
+});
+const apiLimiter = rateLimit({
+	max: process.env.NODE_ENV === "development" ? 1000 : 100, // Increase limit for local dev
+
 	windowMs: 60 * 60 * 1000, // 1 hour
 	message: "Too many requests, try again later.",
 });
 // Global Middleware
 app.use(helmet());
 app.use(cors());
-app.use("/api", limiter);
 
 app.use(express.json());
 app.use(compression());
@@ -34,10 +38,10 @@ app.use((req, res, next) => {
 app.use(hpp());
 
 //   Register these route
-app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/users", userRouter);
-app.use("/api/v1/vocab", vocabRouter);
-app.use("/api/v1/topics", topicRouter);
+app.use("/api/v1/auth", authLimiter, authRouter); // 10 request/hour
+app.use("/api/v1/users", apiLimiter, userRouter);
+app.use("/api/v1/vocab", apiLimiter, vocabRouter);
+app.use("/api/v1/topics", apiLimiter, topicRouter);
 
 // Route doesn't exist
 app.all("/*splat", (req, res, next) => {
