@@ -23,3 +23,14 @@ exports.createTopic = catchAsync(async (req, res, next) => {
 		data: { topic },
 	});
 });
+
+exports.deleteTopic = catchAsync(async (req, res, next) => {
+	await Topic.findOneAndDelete({
+		user: req.user.id,
+		_id: req.params.id,
+	});
+
+	res.status(204).json({
+		status: "success",
+	});
+});

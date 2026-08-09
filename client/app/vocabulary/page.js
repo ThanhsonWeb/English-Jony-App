@@ -2,12 +2,14 @@
 import { useState, useEffect } from "react";
 import Topic from "../_components/Topic";
 import Button from "../_components/Button";
+import { CloudDownload } from "lucide-react";
 
 function Page() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [topics, setTopics] = useState([]);
 	const [newTopic, setNewTopic] = useState("");
-
+	const [description, setDescription] = useState("");
+	// fetch all Topics
 	useEffect(() => {
 		const fetchTopics = async () => {
 			try {
@@ -41,11 +43,11 @@ function Page() {
 						Authorization: `Bearer ${localStorage.getItem("token")}`,
 						"Content-Type": "application/json",
 					},
-					body: JSON.stringify({ name: newTopic }),
+					body: JSON.stringify({ name: newTopic, description }),
 				},
 			);
 			const data = await res.json();
-			// ADD THESE 3 LINES:
+
 			if (data.status === "success") {
 				setTopics([...topics, data.data.topic]);
 				setNewTopic(""); // Clear input
@@ -55,11 +57,34 @@ function Page() {
 			console.log(error);
 		}
 	}
+	async function handleDelete(id) {
+		if (!confirm("Are you sure you want to delete this topic?")) return; // Optional: Ask for confirmation
+
+		try {
+			const res = await fetch(
+				`${process.env.NEXT_PUBLIC_API_URL}/api/v1/topics/${id}`, // Add ID
+				{
+					method: "DELETE",
+					headers: {
+						Authorization: `Bearer ${localStorage.getItem("token")}`,
+					},
+				},
+			);
+			// ❌ No res.json() because status 204 has no body.
+			if (res.ok) {
+				setTopics((prevTopics) =>
+					prevTopics.filter((topic) => topic._id !== id),
+				);
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	}
 
 	return (
 		<div className="min-h-[calc(100vh-80px)] bg-slate-950 px-4 sm:px-8 py-10">
 			<div className="max-w-5xl mx-auto">
-				<h2 className="font-semibold text-3xl text-slate-100 mb-10">
+				<h2 className="font-semibold text-3xl text-center text-slate-100 mb-10">
 					List of Topics
 				</h2>
 				<Button onClick={() => setIsOpen(!isOpen)}>+ Add New Topic</Button>
@@ -102,6 +127,8 @@ function Page() {
 								</label>
 								<textarea
 									placeholder="Nhập ghi chú hoặc mô tả..."
+									value={description}
+									onChange={(e) => setDescription(e.target.value)}
 									rows={3}
 									className="border border-slate-700/80 bg-slate-950/50 p-3 rounded-xl text-slate-100 focus:outline-none focus:border-blue-500"
 								/>
@@ -122,7 +149,7 @@ function Page() {
 				)}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
 					{topics.map((topic) => (
-						<Topic key={topic._id} topic={topic} />
+						<Topic key={topic._id} topic={topic} onDelete={handleDelete} />
 					))}
 				</div>
 			</div>
