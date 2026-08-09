@@ -40,7 +40,7 @@ function Topic({ topic, onDelete, onFix }) {
 							e.stopPropagation();
 							setIsMenuOpen(!isMenuOpen);
 						}}
-						className="text-slate-400 hover:text-white text-2xl leading-none cursor-pointer mt-1"
+						className="p-1.5 hover:bg-slate-700/50 rounded-md hover:text-slate-200 transition-colors text-slate-400 hover:text-white text-2xl leading-none cursor-pointer "
 					>
 						...
 					</button>

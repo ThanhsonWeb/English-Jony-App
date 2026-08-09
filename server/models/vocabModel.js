@@ -28,7 +28,7 @@ const vocabSchema = new mongoose.Schema({
 	example: {
 		type: String,
 	},
-	learned: {
+	status: {
 		type: Boolean,
 		default: false,
 	},
