@@ -35,12 +35,12 @@ function Word({ item, index }) {
 			<div className="col-span-1">
 				<span
 					className={`inline-flex text-xs px-2.5 py-1 rounded-full border font-medium ${
-						item.status === "Đã học"
+						item.status === true
 							? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
 							: "bg-amber-500/10 text-amber-300 border-amber-500/20"
 					}`}
 				>
-					{item.status}
+					{item.status === true ? "Đã học" : "Chưa học"}
 				</span>
 			</div>
 			{/* Actions */}
