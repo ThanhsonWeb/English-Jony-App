@@ -27,7 +27,7 @@ function Topic({ topic, onDelete, onFix }) {
 	return (
 		<div className="relative">
 			<div
-				onClick={() => router.push(`/vocabulary/${topic._id}`)}
+				onClick={() => router.push(`/wordlist/${topic._id}`)}
 				className="block p-6 border border-slate-800 bg-slate-900/80 hover:bg-slate-900 rounded-2xl hover:border-blue-500/40 transition-all group shadow-sm hover:shadow-md cursor-pointer"
 			>
 				<div className="flex items-start justify-between gap-2">

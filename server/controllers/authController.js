@@ -14,17 +14,19 @@ const signToken = (id) => {
 
 const createSendToken = (user, statusCode, res) => {
 	const token = signToken(user._id);
+
 	const cookieOptions = {
-		expires: new Date(
-			Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000,
-		),
+		expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
 		httpOnly: true,
+		secure: process.env.NODE_ENV === "production", // ✅ Automatically true in production, false locally
+		sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // ✅ Adjusts automatically
 	};
-	if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
 	res.cookie("jwt", token, cookieOptions);
+	// Remove password from output
+	user.password = undefined;
+
 	res.status(statusCode).json({
 		status: "success",
-		token,
 		data: { user },
 	});
 };
@@ -55,13 +57,19 @@ exports.login = catchAsync(async (req, res, next) => {
 });
 
 exports.protect = catchAsync(async (req, res, next) => {
-	// Read token
 	let token;
+
+	// 1. Check for Bearer token (Old way)
 	if (
 		req.headers.authorization &&
 		req.headers.authorization.startsWith("Bearer")
 	) {
 		token = req.headers.authorization.split(" ")[1];
+	}
+
+	// 2. Check for Cookie (New way) 
+	if (!token && req.cookies && req.cookies.jwt) {
+		token = req.cookies.jwt;
 	}
 
 	if (!token) {
@@ -70,7 +78,6 @@ exports.protect = catchAsync(async (req, res, next) => {
 
 	// Verify token
 	const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-	console.log(decoded);
 
 	// check if user still exist
 	const currentUser = await User.findById(decoded.id);

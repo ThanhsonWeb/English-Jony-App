@@ -15,28 +15,29 @@ function SignUpForm() {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		// Add your fetch to localhost:5000/register here later
 		try {
-			const res = await fetch(
-				`${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/signup`,
-				{
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({ name, email, password, passwordConfirm }),
+			const res = await fetch("/api/v1/auth/signup", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
 				},
-			);
+				// 🍪 "Send my authentication cookie along with this request."
+				credentials: "include",
+				body: JSON.stringify({ name, email, password, passwordConfirm }),
+			});
 			const data = await res.json();
 
 			if (data.status === "fail") {
 				setError(data.message);
 				return;
 			}
+			if (!res.ok) {
+				setError(data.message);
+				return;
+			}
 
 			console.log(data);
-			localStorage.setItem("token", data.token);
-			router.push("/vocabulary"); // Add redirect
+			router.push("/wordlist");
 		} catch (error) {
 			console.log(error);
 		}
@@ -53,7 +54,7 @@ function SignUpForm() {
 					>
 						&times;
 					</Link>
-	
+
 					<div className="flex flex-col items-center gap-2 mb-6">
 						<Image
 							src="/lugo.png"
@@ -74,16 +75,16 @@ function SignUpForm() {
 							</Link>
 						</p>
 					</div>
-	
+
 					{/* sign up with google .... */}
-	
+
 					{/* Divider (Optional) */}
 					<div className="flex items-center gap-4 mb-6 text-slate-500 text-xs">
 						<div className="flex-1 h-px bg-slate-800"></div>
 						OR
 						<div className="flex-1 h-px bg-slate-800"></div>
 					</div>
-			
+
 					{/* Form */}
 					<form onSubmit={handleSubmit} className="flex flex-col gap-4">
 						{error && (
@@ -105,7 +106,7 @@ function SignUpForm() {
 							className="border border-slate-700/80 bg-slate-950/50 p-3.5 rounded-xl text-slate-100 focus:outline-none focus:border-blue-500 transition-colors"
 							required
 						/>
-	
+
 						<input
 							type="password"
 							value={password}

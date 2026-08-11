@@ -17,16 +17,15 @@ function LoginPage() {
 		e.preventDefault();
 		try {
 			setIsLoading(true);
-			const res = await fetch(
-				`${process.env.NEXT_PUBLIC_API_URL}/api/v1/auth/login`,
-				{
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({ email, password }),
+			const res = await fetch("/api/v1/auth/login", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
 				},
-			);
+				// 🍪 "Send my authentication cookie along with this request."
+				credentials: "include",
+				body: JSON.stringify({ email, password }),
+			});
 
 			const data = await res.json();
 			// prod mode
@@ -34,10 +33,15 @@ function LoginPage() {
 				setError(data.message);
 				return;
 			}
-
-			localStorage.setItem("token", data.token);
-			router.push("/vocabulary");
-			console.log(data);
+			// In LoginPage.js
+			if (data.status === "success") {
+				// Wait a tiny bit to ensure the bro
+				setTimeout(() => {
+					router.push("/wordlist");
+				}, 100);
+				return;
+			}
+			// console.log(data);
 		} catch (error) {
 			console.log(error);
 		} finally {

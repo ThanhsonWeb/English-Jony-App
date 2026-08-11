@@ -11,6 +11,7 @@ const mongoSanitize = require("express-mongo-sanitize");
 const hpp = require("hpp");
 const compression = require("compression");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 const authLimiter = rateLimit({
@@ -25,7 +26,14 @@ const apiLimiter = rateLimit({
 });
 // Global Middleware
 app.use(helmet());
-app.use(cors());
+app.use(
+	cors({
+		origin: process.env.FRONTEND_URL,
+		// origin: "http://localhost:3000",
+		credentials: true,
+	}),
+);
+app.use(cookieParser());
 
 app.use(express.json());
 app.use(compression());
