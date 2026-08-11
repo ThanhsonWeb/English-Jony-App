@@ -19,15 +19,10 @@ export default function WordPage() {
 	useEffect(() => {
 		async function fetchData() {
 			try {
-				const res = await fetch(
-					`${process.env.NEXT_PUBLIC_API_URL}/api/v1/vocab`,
-					{
-						method: "GET",
-						headers: {
-							Authorization: `Bearer ${localStorage.getItem("token")}`,
-						},
-					},
-				);
+				const res = await fetch(`/api/v1/vocab?topic=${topicId}`, {
+					method: "GET",
+					credentials: "include",
+				});
 				const data = await res.json();
 				setWords(data.data.vocabularies);
 			} catch (err) {
@@ -41,29 +36,26 @@ export default function WordPage() {
 	async function handleSubmit(e) {
 		e.preventDefault();
 		try {
-			const res = await fetch(
-				`${process.env.NEXT_PUBLIC_API_URL}/api/v1/vocab`,
-				{
-					method: "POST",
-					headers: {
-						"Content-Type": "application/json",
-						Authorization: `Bearer ${localStorage.getItem("token")}`,
-					},
-					body: JSON.stringify({
-						english,
-						vietnamese,
-						example,
-						topic: topicId, // Crucial: link the word to the topic!
-					}),
+			const res = await fetch(`/api/v1/vocab`, {
+				method: "POST",
+				credentials: "include",
+				headers: {
+					"Content-Type": "application/json",
 				},
-			);
+				body: JSON.stringify({
+					english,
+					vietnamese,
+					example,
+					topic: topicId, // Crucial: link the word to the topic!
+				}),
+			});
 			if (res.ok) {
 				const data = await res.json();
 				setWords((prev) => [...prev, data.data.vocab]); // ✅ 2. Update UI instantly
-				setEnglish(""); // Clear inputs
+				setEnglish("");
 				setVietnamese("");
 				setExample("");
-				setIsOpen(false); // Close modal
+				setIsOpen(false);
 			}
 		} catch (err) {
 			console.error(err);

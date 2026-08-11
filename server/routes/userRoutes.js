@@ -1,5 +1,5 @@
 const express = require("express");
-const { getAllUsers } = require("../controllers/userController");
+const { getAllUsers, getMe } = require("../controllers/userController");
 const {
 	protect,
 	restrictTo,
@@ -16,6 +16,7 @@ router.use((req, res, next) => {
 	next();
 });
 // routes
+router.get("/me", protect, getMe);
 router.route("/").get(protect, restrictTo("admin"), getAllUsers);
 router.post("/forgotPassword", forgotPassword);
 router.patch("/resetPassword/:token", resetPassword);

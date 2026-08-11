@@ -9,3 +9,13 @@ exports.getAllUsers = catchAsync(async (req, res, next) => {
 		data: { users },
 	});
 });
+
+exports.getMe = catchAsync(async (req, res, next) => {
+	//  so req.user is available from protect
+	res.status(200).json({
+		status: "success",
+		data: {
+			user: req.user,
+		},
+	});
+});
