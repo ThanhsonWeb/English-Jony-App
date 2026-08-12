@@ -15,7 +15,7 @@ export default function WordPage() {
 	const [vietnamese, setVietnamese] = useState("");
 	const [example, setExample] = useState("");
 
-	//   Get all words
+	//   Get all words of that topicId
 	useEffect(() => {
 		async function fetchData() {
 			try {
@@ -51,7 +51,8 @@ export default function WordPage() {
 			});
 			if (res.ok) {
 				const data = await res.json();
-				setWords((prev) => [...prev, data.data.vocab]); // ✅ 2. Update UI instantly
+				console.log(data);
+				setWords((prev) => [...prev, data.data.newVocab]); // ✅ 2. Update UI instantly
 				setEnglish("");
 				setVietnamese("");
 				setExample("");
@@ -59,6 +60,59 @@ export default function WordPage() {
 			}
 		} catch (err) {
 			console.error(err);
+		}
+	}
+
+	async function handleDelete(id) {
+		if (!confirm("Are you sure you want to delete this word?")) return;
+
+		try {
+			const res = await fetch(`/api/v1/vocab/${id}`, {
+				method: "DELETE",
+				credentials: "include",
+			});
+			if (res.ok) {
+				setWords((prev) => prev.filter((word) => word._id !== id));
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	}
+	async function handleFix(
+		id,
+		updatedEnglish,
+		updatedVietnamese,
+		updatedExample,
+	) {
+		try {
+			const res = await fetch(`/api/v1/vocab/${id}`, {
+				method: "PATCH",
+				credentials: "include",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					english: updatedEnglish,
+					vietnamese: updatedVietnamese,
+					example: updatedExample,
+				}),
+			});
+			if (res.ok) {
+				setWords((prev) =>
+					prev.map((word) =>
+						word._id === id
+							? {
+									...word,
+									english: updatedEnglish,
+									vietnamese: updatedVietnamese,
+									example: updatedExample,
+								}
+							: word,
+					),
+				);
+			}
+		} catch (error) {
+			console.log(error);
 		}
 	}
 
@@ -106,7 +160,7 @@ export default function WordPage() {
 									className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 flex flex-col gap-4 shadow-xl"
 								>
 									<h2 className="text-xl font-semibold text-white mb-2">
-										Thêm từ mới
+										Thêm từ mới 🍀
 									</h2>
 									{/* nhập từ */}
 									<div className="flex flex-col gap-1.5">
@@ -173,6 +227,7 @@ export default function WordPage() {
 
 				{/* Main Table Container */}
 				<div className="bg-[#111625]/60 border border-slate-800/80 rounded-xl p-4 backdrop-blur-sm shadow-2xl">
+					{/* table Header */}
 					<div className="grid grid-cols-12 items-center px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
 						<div className="col-span-2">Từ</div>
 						<div className="col-span-2">IPA</div>
@@ -181,13 +236,19 @@ export default function WordPage() {
 						<div className="col-span-1">Status</div>
 						<div className="col-span-2 text-right">Thao Tác</div>
 					</div>
-
+					{/* Word */}
 					<div className="mt-3 space-y-2">
-						{words.map((item, index) => (
-							<Word key={item._id || index} item={item} index={index} />
+						{words.map((word, index) => (
+							<Word
+								key={word._id || index}
+								word={word}
+								index={index}
+								onDelete={handleDelete}
+								onFix={handleFix}
+							/>
 						))}
 					</div>
-
+					{/* Pagination  */}
 					<div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-800/60 text-xs text-slate-400 px-2">
 						<span>Page 1 of 5</span>
 						<div className="flex gap-2">

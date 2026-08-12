@@ -14,7 +14,7 @@ function Page() {
 			try {
 				const res = await fetch("/api/v1/topics", {
 					method: "GET",
-					credentials: "include",
+					credentials: "include", // send cookie automatically
 				});
 				if (res.status === 401) {
 					console.error("User is not authenticated");
@@ -28,7 +28,7 @@ function Page() {
 		};
 		fetchTopics();
 	}, []);
-
+	
 	async function handleSubmit(e) {
 		e.preventDefault();
 		try {
@@ -43,7 +43,7 @@ function Page() {
 			const data = await res.json();
 
 			if (data.status === "success") {
-				setTopics([...topics, data.data.topic]);
+				setTopics((prev) => [...prev, data.data.topic]);
 				setNewTopic("");
 				setDescription("");
 				setIsOpen(false);
@@ -174,7 +174,6 @@ function Page() {
 							topic={topic}
 							onDelete={handleDelete}
 							onFix={handleFix}
-							setIsOpen={setIsOpen}
 						/>
 					))}
 				</div>

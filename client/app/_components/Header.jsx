@@ -58,15 +58,20 @@ function Header() {
 									<p className="text-sm font-semibold text-white leading-tight">
 										{user.name}
 									</p>
+									<p className="text-sm font-semibold text-amber-200 leading-tight">
+										🌟
+										Vip
+									</p>
 								</div>
 
 								<div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-slate-700 to-slate-900 text-sm font-bold text-white ring-1 ring-slate-700 group-hover:ring-slate-500 transition">
 									{user.name?.charAt(0).toUpperCase()}
 								</div>
 							</button>
-
+							{/* DropdownList */}
 							{isDropdownOpen && (
 								<div className="absolute right-0 top-full mt-3 w-64 overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl z-50">
+									{/* User Info */}
 									<div className="border-b border-slate-800 px-4 py-4">
 										<p className="text-sm font-semibold text-white">
 											{user.name}
@@ -76,7 +81,7 @@ function Header() {
 											{user.email}
 										</p>
 									</div>
-									{/*  */}
+									{/* Profile & Settings */}
 									<div className="p-2">
 										<button className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-slate-300 hover:bg-slate-900 hover:text-white">
 											<User size={18} />

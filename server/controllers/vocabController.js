@@ -5,8 +5,8 @@ const AppError = require("../utils/appError");
 exports.getAllVocab = catchAsync(async (req, res, next) => {
 	// Get current user's vocab
 	const vocabularies = await Vocab.find({
-		user: req.user.id,
-		topic: req.query.topic,
+		user: req.user.id, //from protect
+		topic: req.query.topic, // from URL
 	});
 
 	res.status(200).json({

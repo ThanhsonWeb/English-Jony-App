@@ -9,7 +9,7 @@ import AuthButtons from "./AuthButtons";
 const navLinks = [
    { name: "Home", href: "/", icon: Home },
    { name: "Dictation", href: "/dictation", icon: Headphones },
-   { name: "Sổ Tay", href: "/wordlist", icon: BookOpen },
+   { name: "Sổ tay", href: "/wordlist", icon: BookOpen },
 ];
 
 function Navigation() {
