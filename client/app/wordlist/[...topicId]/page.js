@@ -65,7 +65,7 @@ export default function WordPage() {
 	return (
 		<div className="min-h-screen bg-[#0b0f19] text-slate-100 p-8 flex flex-col items-center font-sans">
 			<div className="w-full max-w-5xl space-y-6">
-				<Link href={"/vocabulary"}>
+				<Link href={"/wordlist"}>
 					<p className="italic my-4 text-blue-200"> Back to Topics</p>
 				</Link>
 

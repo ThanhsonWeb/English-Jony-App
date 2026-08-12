@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 function Topic({ topic, onDelete, onFix }) {
 	const router = useRouter();
+	const dropdownRef = useRef(null);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isEditing, setIsEditing] = useState(false);
 	const [editName, setEditName] = useState(topic.name);
@@ -23,9 +24,23 @@ function Topic({ topic, onDelete, onFix }) {
 		onFix(topic._id, editName, editDesc);
 		setIsEditing(false);
 	};
+	// handleClickOutSide
+	useEffect(() => {
+		function handleClickOutside(event) {
+			if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+				setIsMenuOpen(false);
+			}
+		}
+
+		document.addEventListener("mousedown", handleClickOutside);
+
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, []);
 
 	return (
-		<div className="relative">
+		<div ref={dropdownRef} className="relative">
 			<div
 				onClick={() => router.push(`/wordlist/${topic._id}`)}
 				className="block p-6 border border-slate-800 bg-slate-900/80 hover:bg-slate-900 rounded-2xl hover:border-blue-500/40 transition-all group shadow-sm hover:shadow-md cursor-pointer"

@@ -4,15 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useAuth } from "../_contexts/AuthContext";
 
 function LoginPage() {
+	const { getMe } = useAuth();
+
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [loading, setIsLoading] = useState(false);
 	const [error, setError] = useState("");
 
 	const router = useRouter();
-	// Added login form submission, basic error handling, loading state, token storage, and user redirection.
+
 	async function handleSubmit(e) {
 		e.preventDefault();
 		try {
@@ -33,12 +36,14 @@ function LoginPage() {
 				setError(data.message);
 				return;
 			}
-			// In LoginPage.js
+
 			if (data.status === "success") {
+				await getMe();
 				// Wait a tiny bit to ensure the bro
 				setTimeout(() => {
 					router.push("/wordlist");
 				}, 100);
+
 				return;
 			}
 			// console.log(data);

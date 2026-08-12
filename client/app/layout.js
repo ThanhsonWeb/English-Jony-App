@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./_styles/globals.css";
 import Header from "./_components/Header";
 import { Inter } from "next/font/google";
+import { AuthProvider } from "./_contexts/AuthContext";
 //  Configure font 🔤
 const inter = Inter({
 	subsets: ["latin"],
@@ -17,8 +18,10 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className={inter.className}>
 			<body className="min-h-full flex flex-col ">
-				<Header />
-				{children}
+				<AuthProvider>
+					<Header />
+					{children}
+				</AuthProvider>
 			</body>
 		</html>
 	);
