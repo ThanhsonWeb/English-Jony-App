@@ -14,8 +14,9 @@ export default function WordPage() {
 	const [english, setEnglish] = useState("");
 	const [vietnamese, setVietnamese] = useState("");
 	const [example, setExample] = useState("");
+	const [pronunciation, setPronunciation] = useState("");
 
-	//   Get all words of that topicId
+	//   Get all words
 	useEffect(() => {
 		async function fetchData() {
 			try {

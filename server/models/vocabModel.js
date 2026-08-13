@@ -24,6 +24,7 @@ const vocabSchema = new mongoose.Schema({
 	},
 	pronunciation: {
 		type: String,
+		default: "",
 	},
 	example: {
 		type: String,

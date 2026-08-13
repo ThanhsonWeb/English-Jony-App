@@ -1,16 +1,10 @@
 "use client";
 
-import {
-	Search,
-	Plus,
-	Edit2,
-	Trash2,
-	Check,
-	ChevronRight,
-	Filter,
-} from "lucide-react";
+import { Plus, Edit2, Trash2 } from "lucide-react";
 import { useState } from "react";
 import Button from "./Button";
+import { createPortal } from "react-dom";
+
 function Word({ word, index, onDelete, onFix }) {
 	const [isEditing, setIsEditing] = useState(false);
 	const [editEnglish, setEditEnglish] = useState(word.english);
@@ -24,52 +18,63 @@ function Word({ word, index, onDelete, onFix }) {
 	};
 
 	return (
-		<div className="grid grid-cols-12 items-center text-sm p-4 bg-[#161c2e] hover:bg-[#1c243b] border border-slate-800/50 rounded-xl transition-all duration-150">
-			{/* Word */}
-			<div className="col-span-2 font-serif text-lg text-amber-100/90 font-medium">
-				{index + 1}. {word.english}
-			</div>
-			{/* IPA */}
-			<div className="col-span-2 text-slate-400 font-mono text-sm">
-				{word.pronunciation}
-			</div>
-			{/* Definition */}
-			<div className="col-span-2 text-slate-300">{word.vietnamese}</div>
-			{/* Example */}
-			<div className="col-span-3 text-slate-400 italic truncate">
-				{word.example}
-			</div>
-			{/* Status */}
-			<div className="col-span-1">
-				<span
-					className={`inline-flex text-xs px-2.5 py-1 rounded-full border font-medium ${
-						word.status === true
-							? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-							: "bg-amber-500/10 text-amber-300 border-amber-500/20"
-					}`}
-				>
-					{word.status === true ? "Đã học" : "Chưa học"}
-				</span>
-			</div>
+		<>
+			<div className="grid grid-cols-12 items-center text-sm p-4 bg-[#161c2e] hover:bg-[#1c243b] border border-slate-800/50 rounded-xl transition-all duration-150">
+				{/* Word */}
+				<div className="col-span-2 font-serif text-lg text-amber-100/90 font-medium">
+					{index + 1}. {word.english}
+				</div>
+				{/* IPA */}
+				<div className="col-span-2 text-slate-400 font-mono text-sm">
+					{word.pronunciation}
+				</div>
+				{/* Definition */}
+				<div className="col-span-2 text-slate-300">{word.vietnamese}</div>
+				{/* Example */}
+				<div className="col-span-3 text-slate-400 italic truncate">
+					{word.example}
+				</div>
+				{/* Status */}
+				<div className="col-span-1">
+					<span
+						className={`inline-flex text-xs px-2.5 py-1 rounded-full border font-medium ${
+							word.status === true
+								? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+								: "bg-amber-500/10 text-amber-300 border-amber-500/20"
+						}`}
+					>
+						{word.status === true ? "Đã học" : "Chưa học"}
+					</span>
+				</div>
 
-			{/* Actions */}
-			<div className="col-span-2 flex justify-end gap-1">
-				{/* Edit */}
-				<button
-					onClick={() => setIsEditing(!isEditing)}
-					className="p-1.5 hover:bg-slate-700/50 rounded-md hover:text-slate-200 transition-colors"
-				>
-					<Edit2 className="w-3.5 h-3.5" />
-				</button>
-				{/* Form model */}
-				{isEditing && (
-					<div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+				{/* Actions */}
+				<div className="col-span-2 flex justify-end gap-1">
+					{/* Edit */}
+					<button
+						onClick={() => setIsEditing(!isEditing)}
+						className="p-1.5 hover:bg-slate-700/50 rounded-md hover:text-slate-200 transition-colors"
+					>
+						<Edit2 className="w-3.5 h-3.5" />
+					</button>
+					{/* delete */}
+					<button
+						onClick={() => onDelete(word._id)}
+						className="p-1.5 hover:bg-slate-700/50 rounded-md hover:text-red-400 transition-colors"
+					>
+						<Trash2 className="w-3.5 h-3.5" />
+					</button>
+				</div>
+			</div>
+			{/* Form model */}
+			{isEditing &&
+				createPortal(
+					<div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
 						<form
 							onSubmit={handleEditSubmit}
 							className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 flex flex-col gap-4 shadow-xl"
 						>
 							<h2 className="text-xl font-semibold text-white mb-2">
-							  Chỉnh sửa từ 🍀
+								Chỉnh sửa từ 🍀
 							</h2>
 							{/* nhập từ */}
 							<div className="flex flex-col gap-1.5">
@@ -127,17 +132,10 @@ function Word({ word, index, onDelete, onFix }) {
 								</Button>
 							</div>
 						</form>
-					</div>
+					</div>,
+					document.body,
 				)}
-				{/* delete */}
-				<button
-					onClick={() => onDelete(word._id)}
-					className="p-1.5 hover:bg-slate-700/50 rounded-md hover:text-red-400 transition-colors"
-				>
-					<Trash2 className="w-3.5 h-3.5" />
-				</button>
-			</div>
-		</div>
+		</>
 	);
 }
 

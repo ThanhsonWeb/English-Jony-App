@@ -55,7 +55,7 @@ function Header() {
 								className="group flex items-center gap-3 rounded-xl px-3 py-2 transition-all duration-200 hover:bg-slate-900 cursor-pointer"
 							>
 								<div className="text-right hidden sm:block">
-									<p className="text-sm font-semibold text-white leading-tight">
+									<p className="text-md font-semibold text-white leading-tight">
 										{user.name}
 									</p>
 									<p className="text-sm font-semibold text-amber-200 leading-tight">
