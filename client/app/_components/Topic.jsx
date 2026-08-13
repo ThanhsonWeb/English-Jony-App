@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { CalendarDays } from "lucide-react";
 
-function Topic({ topic, onDelete, onFix }) {
+function Topic({ topic, onDelete, onFix, words }) {
 	const router = useRouter();
 	const dropdownRef = useRef(null);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,7 +63,8 @@ function Topic({ topic, onDelete, onFix }) {
 				</div>
 				{/* date */}
 				{topic.createdAt && (
-					<span className="text-sm text-slate-500 shrink-0 mt-1 block">
+					<span className="mt-1 flex items-center gap-2 text-sm text-slate-500">
+						<CalendarDays className="h-4 w-4" />
 						{formatDate(topic.createdAt)}
 					</span>
 				)}
@@ -71,9 +73,7 @@ function Topic({ topic, onDelete, onFix }) {
 				</p>
 				<div className="text-slate-300 flex items-center justify-between mt-6 pt-4 border-t border-slate-800/80">
 					<span className="text-lg text-slate-400 font-medium">
-						<strong className="text-slate-100">
-							{topic.words?.length || 0}
-						</strong>
+						<strong className="text-slate-100">{words?.length || 0} </strong>
 						Từ
 					</span>
 					<span className="bg-gray-600 hover:bg-blue-500 text-white text-sm py-1.5 px-4 rounded-lg font-medium transition-colors">

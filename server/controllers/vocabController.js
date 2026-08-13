@@ -3,11 +3,15 @@ const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 
 exports.getAllVocab = catchAsync(async (req, res, next) => {
-	// Get current user's vocab
-	const vocabularies = await Vocab.find({
-		user: req.user.id, //from protect
-		topic: req.query.topic, // from URL
-	});
+	const filter = {
+		user: req.user.id,
+	};
+
+	if (req.query.topic) {
+		filter.topic = req.query.topic;
+	}
+
+	const vocabularies = await Vocab.find(filter);
 
 	res.status(200).json({
 		status: "success",
@@ -65,7 +69,7 @@ exports.createNewVocab = catchAsync(async (req, res, next) => {
 	});
 
 	res.status(201).json({
-		status: "success",
+		status: "success ok  ok",
 		data: { newVocab },
 	});
 });

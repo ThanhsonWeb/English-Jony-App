@@ -6,8 +6,10 @@ import { Search, Filter } from "lucide-react";
 import Word from "@/app/_components/Word.jsx";
 import Link from "next/link";
 import Button from "@/app/_components/Button";
+import { useSearchParams, useRouter } from "next/navigation";
 
 export default function WordPage() {
+	// state
 	const [isOpen, setIsOpen] = useState(false);
 	const { topicId } = useParams();
 	const [words, setWords] = useState([]);
@@ -15,7 +17,31 @@ export default function WordPage() {
 	const [vietnamese, setVietnamese] = useState("");
 	const [example, setExample] = useState("");
 	const [pronunciation, setPronunciation] = useState("");
+	// Searching
+	const searchParams = useSearchParams();
+	const router = useRouter();
+	const search = searchParams.get("search") || "";
+	const status = searchParams.get("status") || "all";
+	const filteredWords = words.filter((word) => {
+		const matchesSearch = word.english
+			.toLowerCase()
+			.includes(search.toLowerCase());
 
+		const matchesStatus =
+			status === "all" ||
+			(status === "learned" && word.status === true) ||
+			(status === "to-learn" && word.status !== true);
+
+		return matchesSearch && matchesStatus;
+	});
+
+	// pagination
+	const [currentPage, setCurrentPage] = useState(1);
+	const wordsPerPage = 5;
+	const indexOfLastWord = currentPage * wordsPerPage;
+	const indexOfFirstWord = indexOfLastWord - wordsPerPage;
+	const currentWords = filteredWords.slice(indexOfFirstWord, indexOfLastWord);
+	const totalPages = Math.ceil(filteredWords.length / wordsPerPage);
 	//   Get all words
 	useEffect(() => {
 		async function fetchData() {
@@ -134,6 +160,16 @@ export default function WordPage() {
 						<Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
 						<input
 							type="text"
+							value={search}
+							onChange={(e) => {
+								// create new URL
+								const params = new URLSearchParams(searchParams.toString());
+
+								params.set("search", e.target.value);
+								setCurrentPage(1);
+
+								router.push(`?${params.toString()}`);
+							}}
 							placeholder="Search vocabulary..."
 							className="w-full pl-10 pr-4 py-2.5 bg-[#131927] border border-slate-800 rounded-lg text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
 						/>
@@ -142,16 +178,27 @@ export default function WordPage() {
 					<div className="flex items-center gap-3 w-full sm:w-auto justify-end">
 						{/* Filter */}
 						<div className="relative">
-							<select className="appearance-none bg-[#131927] border border-slate-800 text-slate-300 text-sm py-2.5 pl-9 pr-8 rounded-lg focus:outline-none focus:border-blue-500 cursor-pointer">
-								<option value="all">Filter</option>
-								<option value="all">All</option>
-								<option value="to-learn">To Learn</option>
-								<option value="learned">Learned</option>
+							<select
+								value={status}
+								onChange={(e) => {
+									// change URL
+									const params = new URLSearchParams(searchParams.toString());
+
+									params.set("status", e.target.value);
+									setCurrentPage(1);
+
+									router.push(`?${params.toString()}`);
+								}}
+								className="appearance-none bg-[#131927] border border-slate-800 text-slate-300 text-sm py-2.5 pl-9 pr-8 rounded-lg"
+							>
+								<option value="all">Tất cả</option>
+								<option value="to-learn">Chưa học</option>
+								<option value="learned">Đã học</option>
 							</select>
 							<Filter className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
 						</div>
 
-						<Button onClick={() => setIsOpen(!isOpen)}> + Thêm từ mới</Button>
+						<Button onClick={() => setIsOpen(!isOpen)}>+ Thêm từ mới</Button>
 
 						{/* Form Modal */}
 						{isOpen && (
@@ -239,7 +286,7 @@ export default function WordPage() {
 					</div>
 					{/* Word */}
 					<div className="mt-3 space-y-2">
-						{words.map((word, index) => (
+						{currentWords.map((word, index) => (
 							<Word
 								key={word._id || index}
 								word={word}
@@ -251,13 +298,25 @@ export default function WordPage() {
 					</div>
 					{/* Pagination  */}
 					<div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-800/60 text-xs text-slate-400 px-2">
-						<span>Page 1 of 5</span>
+						<span>
+							Trang {currentPage} / {totalPages}
+						</span>
+
 						<div className="flex gap-2">
-							<button className="px-3 py-1.5 bg-[#161c2e] border border-slate-800 rounded-lg hover:bg-slate-800 text-slate-300 disabled:opacity-50">
-								Previous
+							<button
+								onClick={() => setCurrentPage((page) => page - 1)}
+								disabled={currentPage === 1}
+								className="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900 text-slate-300 transition-all hover:bg-slate-800 hover:text-white hover:border-slate-600 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-slate-900 disabled:hover:text-slate-300"
+							>
+								Trước
 							</button>
-							<button className="px-3 py-1.5 bg-[#161c2e] border border-slate-800 rounded-lg hover:bg-slate-800 text-slate-300">
-								Next
+
+							<button
+								onClick={() => setCurrentPage((page) => page + 1)}
+								disabled={currentPage === totalPages}
+								className="px-3 py-1.5 rounded-lg border border-blue-500/30 bg-blue-500/10 text-blue-400 transition-all hover:bg-blue-500 hover:text-white hover:border-blue-500 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-blue-500/10 disabled:hover:text-blue-400"
+							>
+								Sau
 							</button>
 						</div>
 					</div>

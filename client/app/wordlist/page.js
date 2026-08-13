@@ -2,13 +2,35 @@
 import { useState, useEffect } from "react";
 import Topic from "../_components/Topic";
 import Button from "../_components/Button";
+import { BookOpen, Layers, CheckCircle2 } from "lucide-react";
 
 function Page() {
 	const [isOpen, setIsOpen] = useState(false);
 	const [topics, setTopics] = useState([]);
 	const [newTopic, setNewTopic] = useState("");
 	const [description, setDescription] = useState("");
+	const [words, setWords] = useState([]);
+	const wordsToLearn = words.filter((word) => word.status !== true);
 
+	useEffect(() => {
+		async function fetchWords() {
+			try {
+				const res = await fetch("/api/v1/vocab", {
+					credentials: "include",
+				});
+
+				if (!res.ok) return;
+
+				const data = await res.json();
+				setWords(data.data.vocabularies);
+			} catch (error) {
+				console.log(error);
+			}
+		}
+
+		fetchWords();
+	}, []);
+	// getAllTopics
 	useEffect(() => {
 		const fetchTopics = async () => {
 			try {
@@ -100,7 +122,7 @@ function Page() {
 	return (
 		<div className="min-h-[calc(100vh-80px)] bg-[#030616] px-4 sm:px-8 py-10 relative overflow-hidden">
 			<div className="max-w-5xl mx-auto relative z-10">
-				{/* Header / Hero Banner */}
+				{/* Header */}
 				<div className="relative z-10 mb-10 rounded-3xl border border-[#1a2d59] bg-[#0d1b3e] p-6 sm:p-8 shadow-[0_0_60px_-10px_rgba(30,58,138,0.4)] overflow-hidden">
 					{/* Radial Glow Layer */}
 					<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15)_0%,rgba(13,27,62,0)_70%)] pointer-events-none" />
@@ -116,14 +138,14 @@ function Page() {
 							</h1>
 
 							<p className="mt-2 text-slate-400">
-								Tạo chủ đề, sắp xếp từ vựng và học mỗi ngày. 🍀
+								Tạo danh sách từ, sắp xếp từ vựng và học mỗi ngày. 🍀
 							</p>
 						</div>
 
 						<Button
 							onClick={() => setIsOpen(true)}
 							size="md"
-							className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold shadow-[0_0_20px_rgba(37,99,235,0.4)] border border-blue-400/30 transition-all duration-300"
+							className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold shadow-[0_0_20px_rgba(37,99,235,0.4)] border border-blue-400/30 transition-all duration-300  "
 						>
 							+ Tạo danh sách từ
 						</Button>
@@ -132,81 +154,48 @@ function Page() {
 
 				{/* Stats Cards Grid */}
 				<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-					{/* Card 1 */}
-					<div className="flex items-center justify-between rounded-2xl border border-[#1a2d59] bg-[#0d1b3e]/80 p-5 shadow-lg backdrop-blur-sm">
+					{/* Card 1*/}
+					<div className="flex items-center justify-between rounded-md border border-[#1a2d59] bg-[#0d1b3e]/80 p-5 shadow-lg backdrop-blur-sm">
 						<div>
 							<p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
-								Chủ đề
+								Danh sách từ
 							</p>
 							<p className="text-3xl font-bold text-white">{topics.length}</p>
 						</div>
 						<div className="p-3 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
-							<svg
-								className="w-6 h-6"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-								/>
-							</svg>
+							<BookOpen className="w-6 h-6" />
 						</div>
 					</div>
 
 					{/* Card 2 */}
-					<div className="flex items-center justify-between rounded-2xl border border-[#1a2d59] bg-[#0d1b3e]/80 p-5 shadow-lg backdrop-blur-sm">
+					<div className="flex items-center justify-between rounded-md border border-[#1a2d59] bg-[#0d1b3e]/80 p-5 shadow-lg backdrop-blur-sm">
 						<div>
 							<p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
 								Tổng số từ
 							</p>
-							<p className="text-3xl font-bold text-white">0</p>
+							<p className="text-3xl font-bold text-white">{words.length}</p>
 						</div>
 						<div className="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
-							<svg
-								className="w-6 h-6"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-								/>
-							</svg>
+							<Layers className="w-6 h-6" />
 						</div>
 					</div>
 
-					{/* Card 3 */}
-					<div className="flex items-center justify-between rounded-2xl border border-[#1a2d59] bg-[#0d1b3e]/80 p-5 shadow-lg backdrop-blur-sm">
+					{/* Card 3*/}
+					<div className="flex items-center justify-between rounded-md border border-[#1a2d59] bg-[#0d1b3e]/80 p-5 shadow-lg backdrop-blur-sm">
 						<div>
 							<p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
-								Đã học
+								Từ cần học
 							</p>
-							<p className="text-3xl font-bold text-emerald-400">0</p>
+							<p className="text-3xl font-bold text-emerald-400">
+								{wordsToLearn.length}
+							</p>
 						</div>
 						<div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
-							<svg
-								className="w-6 h-6"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									strokeLinecap="round"
-									strokeLinejoin="round"
-									strokeWidth="2"
-									d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-								/>
-							</svg>
+							<CheckCircle2 className="w-6 h-6" />
 						</div>
 					</div>
 				</div>
+
 				{/* form */}
 				{isOpen && (
 					<div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
@@ -216,7 +205,7 @@ function Page() {
 						>
 							<div className="flex items-center justify-between">
 								<h4 className="text-xl font-bold text-slate-100">
-									Tạo danh sách từ mới
+									Tạo danh sách từ mới 🌴
 								</h4>
 								<button
 									type="button"
@@ -262,22 +251,36 @@ function Page() {
 								>
 									Hủy
 								</button>
-								<Button type="submit">Create</Button>
+								<Button type="submit">Tạo</Button>
 							</div>
 						</form>
 					</div>
 				)}
+				{/* Topics */}
+				{topics.length > 0 ? (
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+						{topics.map((topic) => {
+							const topicWords = words.filter(
+								(word) => word.topic === topic._id,
+							);
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-					{topics.map((topic) => (
-						<Topic
-							key={topic._id}
-							topic={topic}
-							onDelete={handleDelete}
-							onFix={handleFix}
-						/>
-					))}
-				</div>
+							return (
+								<Topic
+									key={topic._id}
+									topic={topic}
+									words={topicWords}
+									onDelete={handleDelete}
+									onFix={handleFix}
+								/>
+							);
+						})}
+					</div>
+				) : (
+					<p className="mt-10 text-center text-slate-400">
+						Bạn chưa có danh sách từ nào. Hãy tạo danh sách từ đầu tiên để bắt
+						đầu học 📚
+					</p>
+				)}
 			</div>
 		</div>
 	);
