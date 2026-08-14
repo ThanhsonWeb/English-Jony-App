@@ -29,6 +29,19 @@ const vocabSchema = new mongoose.Schema({
 	example: {
 		type: String,
 	},
+	learningLevel: {
+		type: Number,
+		default: 0,
+	},
+
+	nextReview: {
+		type: Date,
+		default: Date.now,
+	},
+	reviewCount: {
+		type: Number,
+		default: 0,
+	},
 	status: {
 		type: Boolean,
 		default: false,

@@ -76,9 +76,16 @@ function Topic({ topic, onDelete, onFix, words }) {
 						<strong className="text-slate-100">{words?.length || 0} </strong>
 						Từ
 					</span>
-					<span className="bg-gray-600 hover:bg-blue-500 text-white text-sm py-1.5 px-4 rounded-lg font-medium transition-colors">
-						Learn
-					</span>
+
+					<button
+						onClick={(e) => {
+							e.stopPropagation();
+							router.push(`/wordlist/${topic._id}/learn`);
+						}}
+						className="bg-gray-600 hover:bg-blue-500 text-white text-sm py-1.5 px-4 rounded-lg font-medium transition-colors"
+					>
+						Học từ vựng
+					</button>
 				</div>
 			</div>
 

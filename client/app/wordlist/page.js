@@ -123,7 +123,7 @@ function Page() {
 		<div className="min-h-[calc(100vh-80px)] bg-[#030616] px-4 sm:px-8 py-10 relative overflow-hidden">
 			<div className="max-w-5xl mx-auto relative z-10">
 				{/* Header */}
-				<div className="relative z-10 mb-10 rounded-3xl border border-[#1a2d59] bg-[#0d1b3e] p-6 sm:p-8 shadow-[0_0_60px_-10px_rgba(30,58,138,0.4)] overflow-hidden">
+				<div className="relative z-10 mb-10 rounded-xl p-6 sm:p-8 shadow-[0_0_60px_-10px_rgba(30,58,138,0.4)] overflow-hidden">
 					{/* Radial Glow Layer */}
 					<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15)_0%,rgba(13,27,62,0)_70%)] pointer-events-none" />
 
@@ -145,7 +145,7 @@ function Page() {
 						<Button
 							onClick={() => setIsOpen(true)}
 							size="md"
-							className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold shadow-[0_0_20px_rgba(37,99,235,0.4)] border border-blue-400/30 transition-all duration-300  "
+							className="bg-gradient-to-r hfont-semibold shadow-[0_0_20px_rgba(37,99,235,0.4)] border border-blue-400/30 transition-all duration-300  "
 						>
 							+ Tạo danh sách từ
 						</Button>
