@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
-import { Search, Filter } from "lucide-react";
+import { Search, Filter, ArrowLeft, RotateCcw } from "lucide-react";
 import Word from "@/app/_components/Word.jsx";
 import Link from "next/link";
 import Button from "@/app/_components/Button";
@@ -152,26 +152,33 @@ export default function WordPage() {
 		}
 	}
 	if (loading) return <Loading />;
+
 	return (
 		<div className="min-h-screen bg-[#0b0f19] text-slate-100 p-8 flex flex-col items-center font-sans">
 			<div className="w-full max-w-5xl space-y-6">
-				<div className=" flex justify-around items-center">
-					<Link href={"/wordlist"}>
-						<p className="italic my-4 text-blue-200"> Back to Topics</p>
-					</Link>
-					<button
-						onClick={(e) => {
-							router.push(`/wordlist/${topicId}/learn`);
-						}}
-						className="bg-gray-600 hover:bg-blue-500 text-white text-sm py-1.5 px-4 rounded-lg font-medium transition-colors"
+				{/* Header */}
+				<div className="flex items-center justify-between">
+					<Link
+						href="/wordlist"
+						className="inline-flex items-center gap-2 text-lg font-medium text-slate-400 transition-colors hover:text-white"
 					>
-						Học từ vựng
+						<ArrowLeft size={18} />
+						Quay lại
+					</Link>
+
+					<button
+						onClick={() => router.push(`/wordlist/${topicId}/learn`)}
+						disabled={words.length === 0}
+						className="inline-flex items-center gap-2 rounded-xl border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-lg font-semibold text-blue-300 transition-all hover:border-blue-400 hover:bg-blue-500/20 hover:text-white"
+					>
+						<RotateCcw size={18} />
+						Bắt đầu học
 					</button>
 				</div>
 
-				<h1 className="text-3xl font-bold tracking-tight text-white">
-					Vocabulary List
-				</h1>
+				<h2 className="text-3xl font-semibold tracking-tight text-white">
+					Danh sách từ vựng
+				</h2>
 				{/* Search & Actions */}
 				<div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
 					{/* Search */}
@@ -296,7 +303,7 @@ export default function WordPage() {
 				{/* Main Table Container */}
 				<div className="bg-[#111625]/60 border border-slate-800/80 rounded-xl p-4 backdrop-blur-sm shadow-2xl">
 					{/* table Header */}
-					<div className="grid grid-cols-12 items-center px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
+					<div className="hidden md:grid grid-cols-12 items-center px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
 						<div className="col-span-2">Từ</div>
 						<div className="col-span-2">IPA</div>
 						<div className="col-span-2">Nghĩa</div>
@@ -305,17 +312,30 @@ export default function WordPage() {
 						<div className="col-span-2 text-right">Thao Tác</div>
 					</div>
 					{/* Word */}
-					<div className="mt-3 space-y-2">
-						{currentWords.map((word, index) => (
-							<Word
-								key={word._id || index}
-								word={word}
-								index={index}
-								onDelete={handleDelete}
-								onFix={handleFix}
-							/>
-						))}
-					</div>
+					{currentWords.length === 0 ? (
+						<div className="py-16 text-center">
+							<div className="text-4xl mb-4">📚</div>
+
+							<h3 className="text-xl font-semibold text-white">
+								Chưa có từ nào
+							</h3>
+
+							<p className="mt-2 text-md text-slate-400">
+								Thêm từ đầu tiên để bắt đầu học.
+							</p>
+						</div>
+					) : (
+						<div className="mt-3 space-y-2">
+							{currentWords.map((word) => (
+								<Word
+									key={word._id}
+									word={word}
+									onDelete={handleDelete}
+									onFix={handleFix}
+								/>
+							))}
+						</div>
+					)}
 					{/* Pagination  */}
 					<div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-800/60 text-xs text-slate-400 px-2">
 						<span>

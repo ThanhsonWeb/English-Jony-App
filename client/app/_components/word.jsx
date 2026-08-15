@@ -34,23 +34,41 @@ function Word({ word, onDelete, onFix }) {
 	const wordStatus = getWordStatus(word);
 	return (
 		<>
-			<div className="grid grid-cols-12 items-center text-sm p-4 bg-[#161c2e] hover:bg-[#1c243b] border border-slate-800/50 rounded-xl transition-all duration-150">
+			<div className="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-0 items-center text-sm p-4 bg-[#161c2e] hover:bg-[#1c243b] border border-slate-800/50 rounded-xl transition-all duration-150">
 				{/* Word */}
-				<div className="col-span-2 font-serif text-lg text-amber-100/90 font-medium">
-					{word.english}
+				<div className="md:col-span-2">
+					<p className="md:hidden text-xs text-slate-500 mb-1">Từ</p>
+					<p className="font-serif text-lg text-amber-100/90 font-medium">
+						{word.english}
+					</p>
 				</div>
+
 				{/* IPA */}
-				<div className="col-span-2 text-slate-400 font-mono text-sm">
-					{word.pronunciation}
+				<div className="md:col-span-2">
+					<p className="md:hidden text-xs text-slate-500 mb-1">IPA</p>
+					<p className="text-slate-400 font-mono">
+						{word.pronunciation || "—"}
+					</p>
 				</div>
+
 				{/* Definition */}
-				<div className="col-span-2 text-slate-300">{word.vietnamese}</div>
-				{/* Example */}
-				<div className="col-span-3 text-slate-400 italic truncate">
-					{word.example}
+				<div className="md:col-span-2">
+					<p className="md:hidden text-xs text-slate-500 mb-1">Nghĩa</p>
+					<p className="text-slate-300">{word.vietnamese}</p>
 				</div>
+
+				{/* Example */}
+				<div className="md:col-span-3">
+					<p className="md:hidden text-xs text-slate-500 mb-1">Ví dụ</p>
+					<p className="text-slate-400 italic md:truncate">
+						{word.example || "—"}
+					</p>
+				</div>
+
 				{/* Status */}
-				<div className="col-span-1">
+				<div className="md:col-span-1">
+					<p className="md:hidden text-xs text-slate-500 mb-1">Trạng thái</p>
+
 					{wordStatus === "new" && (
 						<span className="inline-flex items-center rounded-full border border-slate-600 bg-slate-700/40 px-2.5 py-1 text-xs font-medium text-slate-300">
 							🌱 Mới
@@ -71,20 +89,19 @@ function Word({ word, onDelete, onFix }) {
 				</div>
 
 				{/* Actions */}
-				<div className="col-span-2 flex justify-end gap-1">
-					{/* Edit */}
+				<div className="md:col-span-2 flex justify-end gap-1">
 					<button
-						onClick={() => setIsEditing(!isEditing)}
-						className="p-1.5 hover:bg-slate-700/50 rounded-md hover:text-slate-200 transition-colors"
+						onClick={() => setIsEditing(true)}
+						className="p-2 rounded-lg text-slate-400 hover:bg-slate-700/50 hover:text-white transition-colors"
 					>
-						<Edit2 className="w-3.5 h-3.5" />
+						<Edit2 className="w-4 h-4" />
 					</button>
-					{/* delete */}
+
 					<button
 						onClick={() => onDelete(word._id)}
-						className="p-1.5 hover:bg-slate-700/50 rounded-md hover:text-red-400 transition-colors"
+						className="p-2 rounded-lg text-slate-400 hover:bg-red-500/10 hover:text-red-400 transition-colors"
 					>
-						<Trash2 className="w-3.5 h-3.5" />
+						<Trash2 className="w-4 h-4" />
 					</button>
 				</div>
 			</div>

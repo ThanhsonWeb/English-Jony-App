@@ -44,10 +44,10 @@ function Topic({ topic, onDelete, onFix, words }) {
 		<div ref={dropdownRef} className="relative">
 			<div
 				onClick={() => router.push(`/wordlist/${topic._id}`)}
-				className="block p-6 border border-slate-800 bg-slate-900/80 hover:bg-slate-900 rounded-2xl hover:border-blue-500/40 transition-all group shadow-sm hover:shadow-md cursor-pointer"
+				className="block p-6 border border-slate-800 bg-slate-900/80 hover:bg-slate-900 rounded-2xl hover:border-blue-200/40 transition-all group shadow-sm hover:shadow-md cursor-pointer"
 			>
 				<div className="flex items-start justify-between gap-2">
-					<h3 className="font-semibold text-slate-100 text-2xl group-hover:text-blue-400 transition-colors">
+					<h3 className="font-semibold text-slate-100 text-2xl group-hover:text-blue-300 transition-colors">
 						{topic.name}
 					</h3>
 
@@ -77,13 +77,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 						Từ
 					</span>
 
-					<button
-						onClick={(e) => {
-							e.stopPropagation();
-							router.push(`/wordlist/${topic._id}/learn`);
-						}}
-						className="bg-gray-600 hover:bg-blue-500 text-white text-sm py-1.5 px-4 rounded-lg font-medium transition-colors"
-					>
+					<button className="bg-gray-600 hover:bg-blue-500 text-white text-sm py-1.5 px-4 rounded-lg font-medium transition-colors">
 						Học
 					</button>
 				</div>
