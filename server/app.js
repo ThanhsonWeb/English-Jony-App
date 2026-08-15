@@ -3,6 +3,7 @@ const authRouter = require("./routes/authRoutes.js");
 const userRouter = require("./routes/userRoutes.js");
 const vocabRouter = require("./routes/vocabRoutes.js");
 const topicRouter = require("./routes/topicRoutes.js");
+const dictionaryRouter = require("./routes/dictionaryRoutes.js");
 const AppError = require("./utils/appError.js");
 const globalErrorHandler = require("./controllers/errorController.js");
 const helmet = require("helmet");
@@ -50,7 +51,7 @@ app.use("/api/v1/auth", authLimiter, authRouter); // 10 request/hour
 app.use("/api/v1/users", apiLimiter, userRouter);
 app.use("/api/v1/vocab", apiLimiter, vocabRouter);
 app.use("/api/v1/topics", apiLimiter, topicRouter);
-
+app.use("/api/v1/dictionary", apiLimiter, dictionaryRouter);
 // Route doesn't exist
 app.all("/*splat", (req, res, next) => {
 	next(new AppError(`Can't find ${req.originalUrl} route ! `, 404));

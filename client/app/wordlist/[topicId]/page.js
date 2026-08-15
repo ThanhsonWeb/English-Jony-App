@@ -11,6 +11,8 @@ import Loading from "@/app/_components/loading";
 
 export default function WordPage() {
 	// state
+	const [wordList, setWordList] = useState([]);
+	const [suggestions, setSuggestions] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [isOpen, setIsOpen] = useState(false);
 	const { topicId } = useParams();
@@ -70,6 +72,69 @@ export default function WordPage() {
 
 		fetchData();
 	}, [topicId]);
+	// load english_words.json once
+	useEffect(() => {
+		async function loadWordList() {
+			try {
+				const res = await fetch("/data/english_words.json");
+				const data = await res.json();
+
+				setWordList(data);
+			} catch (err) {
+				console.error(err);
+			}
+		}
+
+		loadWordList();
+	}, []);
+	// create suggestions locally
+	function handleEnglishChange(e) {
+		const value = e.target.value;
+
+		setEnglish(value);
+
+		const search = value.trim().toLowerCase();
+
+		if (search.length < 2) {
+			setSuggestions([]);
+			return;
+		}
+
+		const matches = wordList
+			.filter((word) => word.startsWith(search))
+			.slice(0, 6);
+
+		setSuggestions(matches);
+	}
+
+	//  Get translation
+	async function handleTranslateWord(word) {
+		try {
+			const res = await fetch(
+				`/api/v1/dictionary/${encodeURIComponent(word)}`,
+				{
+					credentials: "include",
+				},
+			);
+
+			if (!res.ok) return;
+
+			const data = await res.json();
+
+			setVietnamese(data.data.vietnamese || "");
+			setExample(data.data.example || "");
+			setPronunciation(data.data.pronunciation || "");
+		} catch (err) {
+			console.error(err);
+		}
+	}
+
+	async function handleSelectWord(word) {
+		setEnglish(word);
+		setSuggestions([]);
+
+		await handleTranslateWord(word);
+	}
 
 	async function handleSubmit(e) {
 		e.preventDefault();
@@ -238,19 +303,36 @@ export default function WordPage() {
 										Thêm từ mới 🍀
 									</h2>
 									{/* nhập từ */}
-									<div className="flex flex-col gap-1.5">
+									<div className="relative flex flex-col gap-1.5">
 										<label className="text-sm font-medium text-slate-300">
 											Từ
 										</label>
+
 										<input
 											type="text"
 											name="word"
 											value={english}
-											onChange={(e) => setEnglish(e.target.value)}
+											onChange={handleEnglishChange}
 											placeholder="Nhập từ bằng tiếng Anh"
 											required
-											className="w-full px-3.5 py-2.5 bg-[#131927] border border-slate-700/80 rounded-xl text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+											autoComplete="off"
+											className="w-full px-3.5 py-2.5 bg-[#131927] border border-slate-700/80 rounded-xl text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500"
 										/>
+
+										{suggestions.length > 0 && (
+											<div className="absolute top-full left-0 right-0 z-50 mt-1 overflow-hidden rounded-xl border border-slate-700 bg-slate-900 shadow-xl">
+												{suggestions.map((word) => (
+													<button
+														key={word}
+														type="button"
+														onClick={() => handleSelectWord(word)}
+														className="block w-full px-4 py-2.5 text-left text-sm text-slate-300 hover:bg-slate-800 hover:text-white"
+													>
+														{word}
+													</button>
+												))}
+											</div>
+										)}
 									</div>
 									{/* nhập nghĩa */}
 									<div className="flex flex-col gap-1.5">
