@@ -1,11 +1,11 @@
 "use client";
 
-import { Plus, Edit2, Trash2 } from "lucide-react";
+import { Edit2, Trash2 } from "lucide-react";
 import { useState } from "react";
 import Button from "./Button";
 import { createPortal } from "react-dom";
 
-function Word({ word, index, onDelete, onFix }) {
+function Word({ word, onDelete, onFix }) {
 	const [isEditing, setIsEditing] = useState(false);
 	const [editEnglish, setEditEnglish] = useState(word.english);
 	const [editVietnamese, setEditVietnamese] = useState(word.vietnamese);
@@ -16,13 +16,28 @@ function Word({ word, index, onDelete, onFix }) {
 		onFix(word._id, editEnglish, editVietnamese, editExample);
 		setIsEditing(false);
 	};
+	// helper function
+	function getWordStatus(word) {
+		const reviewCount = word.reviewCount || 0;
+		const now = new Date();
 
+		if (reviewCount === 0) {
+			return "new";
+		}
+
+		if (new Date(word.nextReview) <= now) {
+			return "review";
+		}
+
+		return "learning";
+	}
+	const wordStatus = getWordStatus(word);
 	return (
 		<>
 			<div className="grid grid-cols-12 items-center text-sm p-4 bg-[#161c2e] hover:bg-[#1c243b] border border-slate-800/50 rounded-xl transition-all duration-150">
 				{/* Word */}
 				<div className="col-span-2 font-serif text-lg text-amber-100/90 font-medium">
-					{index + 1}. {word.english}
+					{word.english}
 				</div>
 				{/* IPA */}
 				<div className="col-span-2 text-slate-400 font-mono text-sm">
@@ -36,15 +51,23 @@ function Word({ word, index, onDelete, onFix }) {
 				</div>
 				{/* Status */}
 				<div className="col-span-1">
-					<span
-						className={`inline-flex text-xs px-2.5 py-1 rounded-full border font-medium ${
-							word.status === true
-								? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-								: "bg-amber-500/10 text-amber-300 border-amber-500/20"
-						}`}
-					>
-						{word.status === true ? "Đã học" : "Chưa học"}
-					</span>
+					{wordStatus === "new" && (
+						<span className="inline-flex items-center rounded-full border border-slate-600 bg-slate-700/40 px-2.5 py-1 text-xs font-medium text-slate-300">
+							🌱 Mới
+						</span>
+					)}
+
+					{wordStatus === "learning" && (
+						<span className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-2.5 py-1 text-xs font-medium text-blue-400">
+							Đang học
+						</span>
+					)}
+
+					{wordStatus === "review" && (
+						<span className="inline-flex items-center rounded-full border border-orange-500/30 bg-orange-500/10 px-2.5 py-1 text-xs font-medium text-orange-400">
+							Cần ôn
+						</span>
+					)}
 				</div>
 
 				{/* Actions */}

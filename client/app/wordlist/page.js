@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import Topic from "../_components/Topic";
 import Button from "../_components/Button";
 import { BookOpen, Layers, CheckCircle2 } from "lucide-react";
+import Loading from "../_components/loading";
 
 function Page() {
+	const [loading, setLoading] = useState(true);
 	const [isOpen, setIsOpen] = useState(false);
 	const [topics, setTopics] = useState([]);
 	const [newTopic, setNewTopic] = useState("");
@@ -23,6 +25,7 @@ function Page() {
 
 				const data = await res.json();
 				setWords(data.data.vocabularies);
+				setLoading(false);
 			} catch (error) {
 				console.log(error);
 			}
@@ -44,6 +47,7 @@ function Page() {
 				}
 				const data = await res.json();
 				setTopics(data.data.topics);
+				setLoading(false);
 			} catch (error) {
 				console.log(error);
 			}
@@ -119,6 +123,8 @@ function Page() {
 		}
 	}
 
+	if (loading) return <Loading />;
+
 	return (
 		<div className="min-h-[calc(100vh-80px)] bg-[#030616] px-4 sm:px-8 py-10 relative overflow-hidden">
 			<div className="max-w-5xl mx-auto relative z-10">
@@ -154,8 +160,7 @@ function Page() {
 
 				{/* Stats Cards Grid */}
 				<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-					{/* Card 1*/}
-					<div className="flex items-center justify-between rounded-md border border-[#1a2d59] bg-[#0d1b3e]/80 p-5 shadow-lg backdrop-blur-sm">
+					<div className="flex items-center justify-between rounded-md border border-[#1a2d59] bg-[#0d1b3e]/50 p-5 shadow-lg backdrop-blur-sm">
 						<div>
 							<p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
 								Danh sách từ
@@ -167,8 +172,7 @@ function Page() {
 						</div>
 					</div>
 
-					{/* Card 2 */}
-					<div className="flex items-center justify-between rounded-md border border-[#1a2d59] bg-[#0d1b3e]/80 p-5 shadow-lg backdrop-blur-sm">
+					<div className="flex items-center justify-between rounded-md border border-[#1a2d59] bg-[#0d1b3e]/50 p-5 shadow-lg backdrop-blur-sm">
 						<div>
 							<p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
 								Tổng số từ
@@ -180,8 +184,7 @@ function Page() {
 						</div>
 					</div>
 
-					{/* Card 3*/}
-					<div className="flex items-center justify-between rounded-md border border-[#1a2d59] bg-[#0d1b3e]/80 p-5 shadow-lg backdrop-blur-sm">
+					<div className="flex items-center justify-between rounded-md border border-[#1a2d59] bg-[#0d1b3e]/50 p-5 shadow-lg backdrop-blur-sm">
 						<div>
 							<p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
 								Từ cần học
@@ -198,7 +201,7 @@ function Page() {
 
 				{/* form */}
 				{isOpen && (
-					<div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+					<div className="fixed inset-0 backdrop-blur-sm bg-black/60 flex items-center justify-center z-50">
 						<form
 							onSubmit={handleSubmit}
 							className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-8 flex flex-col gap-4"

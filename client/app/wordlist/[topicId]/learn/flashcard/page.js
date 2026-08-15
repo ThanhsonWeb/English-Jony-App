@@ -3,14 +3,23 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, RotateCcw } from "lucide-react";
+import Loading from "@/app/_components/loading";
 
 function Page() {
 	const { topicId } = useParams();
 	const router = useRouter();
-
+	const [loading, setLoading] = useState(true);
 	const [words, setWords] = useState([]);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [showAnswer, setShowAnswer] = useState(false);
+	const [sessionFinished, setSessionFinished] = useState(false);
+	const [results, setResults] = useState({
+		forgot: 0,
+		hard: 0,
+		medium: 0,
+		easy: 0,
+	});
+
 	const currentWord = words[currentIndex];
 	// get all word of that topic
 	useEffect(() => {
@@ -28,10 +37,39 @@ function Page() {
 			);
 
 			setWords(reviewWords);
+			setLoading(false);
 		}
 
 		fetchWords();
 	}, [topicId]);
+
+	function getReviewLabel(level) {
+		const reviewCount = currentWord.reviewCount || 0;
+
+		const hardIntervals = [1, 3, 7, 14];
+		const mediumIntervals = [3, 7, 14, 30];
+		const easyIntervals = [7, 14, 30, 60];
+
+		if (level === 0) return "1 giờ";
+
+		if (level === 1) {
+			const days =
+				hardIntervals[Math.min(reviewCount, hardIntervals.length - 1)];
+			return `${days} ngày`;
+		}
+
+		if (level === 2) {
+			const days =
+				mediumIntervals[Math.min(reviewCount, mediumIntervals.length - 1)];
+			return `${days} ngày`;
+		}
+
+		if (level === 3) {
+			const days =
+				easyIntervals[Math.min(reviewCount, easyIntervals.length - 1)];
+			return `${days} ngày`;
+		}
+	}
 
 	async function handleAnswer(level) {
 		const word = words[currentIndex];
@@ -43,6 +81,14 @@ function Page() {
 		const reviewCount = word.reviewCount || 0;
 		const getInterval = (intervals) =>
 			intervals[Math.min(reviewCount, intervals.length - 1)];
+		setResults((prev) => {
+			if (level === 0) return { ...prev, forgot: prev.forgot + 1 };
+			if (level === 1) return { ...prev, hard: prev.hard + 1 };
+			if (level === 2) return { ...prev, medium: prev.medium + 1 };
+			if (level === 3) return { ...prev, easy: prev.easy + 1 };
+
+			return prev;
+		});
 
 		if (level === 0) {
 			nextReview.setHours(nextReview.getHours() + 1);
@@ -73,9 +119,80 @@ function Page() {
 				reviewCount: newReviewCount,
 			}),
 		});
+		// just for safe
+		setWords((prev) =>
+			prev.map((item) =>
+				item._id === word._id
+					? {
+							...item,
+							learningLevel: level,
+							nextReview,
+							reviewCount: newReviewCount,
+						}
+					: item,
+			),
+		);
+
+		if (currentIndex === words.length - 1) {
+			setSessionFinished(true);
+			return;
+		}
 
 		setCurrentIndex((cur) => cur + 1);
 		setShowAnswer(false);
+	}
+	if (loading) return <Loading />;
+	if (sessionFinished) {
+		return (
+			<div className="min-h-screen bg-[#030616] flex items-center justify-center px-4 text-white">
+				<div className="w-full max-w-xl rounded-3xl border border-slate-800 bg-[#0d1427] p-8 shadow-2xl text-center">
+					<div className="text-5xl mb-4">🎉</div>
+
+					<h2 className="text-4xl font-bold">Hoàn thành buổi ôn</h2>
+
+					<p className="mt-3 text-slate-400">
+						Tốt lắm! Các từ sẽ xuất hiện lại đúng thời điểm cần ôn.
+					</p>
+
+					<div className="grid grid-cols-2 gap-4 mt-8">
+						<div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-4">
+							<p className="text-sm text-red-300">😵 Quên</p>
+							<p className="text-3xl font-bold text-red-400 mt-1">
+								{results.forgot}
+							</p>
+						</div>
+
+						<div className="rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4">
+							<p className="text-sm text-orange-300">😓 Khó</p>
+							<p className="text-3xl font-bold text-orange-400 mt-1">
+								{results.hard}
+							</p>
+						</div>
+
+						<div className="rounded-2xl border border-blue-500/20 bg-blue-500/10 p-4">
+							<p className="text-sm text-blue-300">🙂 Khá nhớ</p>
+							<p className="text-3xl font-bold text-blue-400 mt-1">
+								{results.medium}
+							</p>
+						</div>
+
+						<div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-4">
+							<p className="text-sm text-emerald-300">✅ Dễ</p>
+							<p className="text-3xl font-bold text-emerald-400 mt-1">
+								{results.easy}
+							</p>
+						</div>
+					</div>
+
+					<button
+						onClick={() => router.back()}
+						className="mt-8 w-full rounded-xl bg-blue-600 py-3 font-semibold hover:bg-blue-500 transition"
+					>
+						Quay lại
+					</button>
+				</div>
+			</div>
+		);
 	}
 
 	if (!currentWord) {
@@ -178,30 +295,34 @@ function Page() {
 					<div className="flex gap-3">
 						<button
 							onClick={() => handleAnswer(0)}
-							className="px-5 py-2.5 rounded-xl border border-red-500/30 bg-red-500/10 text-red-400 hover:bg-red-500/20"
+							className="flex min-w-[110px] flex-col items-center gap-1 rounded-xl border border-red-500/30 bg-red-500/10 px-5 py-2.5 text-red-400 transition hover:bg-red-500/20"
 						>
-							😵 Quên rồi
+							<span>😵 Quên rồi</span>
+							<span className="text-xs opacity-60">{getReviewLabel(0)}</span>
 						</button>
 
 						<button
 							onClick={() => handleAnswer(1)}
-							className="px-5 py-2.5 rounded-xl border border-orange-500/30 bg-orange-500/10 text-orange-400 hover:bg-orange-500/20"
+							className="flex min-w-[110px] flex-col items-center gap-1 rounded-xl border border-orange-500/30 bg-orange-500/10 px-5 py-2.5 text-orange-400 transition hover:bg-orange-500/20"
 						>
-							😓 Khó
+							<span>😓 Khó</span>
+							<span className="text-xs opacity-60">{getReviewLabel(1)}</span>
 						</button>
 
 						<button
 							onClick={() => handleAnswer(2)}
-							className="px-5 py-2.5 rounded-xl border border-blue-500/30 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20"
+							className="flex min-w-[110px] flex-col items-center gap-1 rounded-xl border border-blue-500/30 bg-blue-500/10 px-5 py-2.5 text-blue-400 transition hover:bg-blue-500/20"
 						>
-							🙂 Khá nhớ
+							<span>🙂 Khá nhớ</span>
+							<span className="text-xs opacity-60">{getReviewLabel(2)}</span>
 						</button>
 
 						<button
 							onClick={() => handleAnswer(3)}
-							className="px-5 py-2.5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20"
+							className="flex min-w-[110px] flex-col items-center gap-1 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-5 py-2.5 text-emerald-400 transition hover:bg-emerald-500/20"
 						>
-							✅ Dễ
+							<span>✅ Dễ</span>
+							<span className="text-xs opacity-60">{getReviewLabel(3)}</span>
 						</button>
 					</div>
 				</div>

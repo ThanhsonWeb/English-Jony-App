@@ -84,7 +84,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 						}}
 						className="bg-gray-600 hover:bg-blue-500 text-white text-sm py-1.5 px-4 rounded-lg font-medium transition-colors"
 					>
-						Học từ vựng
+						Học
 					</button>
 				</div>
 			</div>

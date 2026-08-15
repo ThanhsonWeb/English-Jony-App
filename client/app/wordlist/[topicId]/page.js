@@ -7,9 +7,11 @@ import Word from "@/app/_components/Word.jsx";
 import Link from "next/link";
 import Button from "@/app/_components/Button";
 import { useSearchParams, useRouter } from "next/navigation";
+import Loading from "@/app/_components/loading";
 
 export default function WordPage() {
 	// state
+	const [loading, setLoading] = useState(true);
 	const [isOpen, setIsOpen] = useState(false);
 	const { topicId } = useParams();
 	const [words, setWords] = useState([]);
@@ -27,10 +29,17 @@ export default function WordPage() {
 			.toLowerCase()
 			.includes(search.toLowerCase());
 
+		const now = new Date();
+
 		const matchesStatus =
 			status === "all" ||
-			(status === "learned" && word.status === true) ||
-			(status === "to-learn" && word.status !== true);
+			(status === "new" && (word.reviewCount || 0) === 0) ||
+			(status === "learning" &&
+				(word.reviewCount || 0) > 0 &&
+				new Date(word.nextReview) > now) ||
+			(status === "review" &&
+				(word.reviewCount || 0) > 0 &&
+				new Date(word.nextReview) <= now);
 
 		return matchesSearch && matchesStatus;
 	});
@@ -54,6 +63,8 @@ export default function WordPage() {
 				setWords(data.data.vocabularies);
 			} catch (err) {
 				console.error(err);
+			} finally {
+				setLoading(false);
 			}
 		}
 
@@ -91,8 +102,6 @@ export default function WordPage() {
 	}
 
 	async function handleDelete(id) {
-		if (!confirm("Are you sure you want to delete this word?")) return;
-
 		try {
 			const res = await fetch(`/api/v1/vocab/${id}`, {
 				method: "DELETE",
@@ -142,13 +151,23 @@ export default function WordPage() {
 			console.log(error);
 		}
 	}
-
+	if (loading) return <Loading />;
 	return (
 		<div className="min-h-screen bg-[#0b0f19] text-slate-100 p-8 flex flex-col items-center font-sans">
 			<div className="w-full max-w-5xl space-y-6">
-				<Link href={"/wordlist"}>
-					<p className="italic my-4 text-blue-200"> Back to Topics</p>
-				</Link>
+				<div className=" flex justify-around items-center">
+					<Link href={"/wordlist"}>
+						<p className="italic my-4 text-blue-200"> Back to Topics</p>
+					</Link>
+					<button
+						onClick={(e) => {
+							router.push(`/wordlist/${topicId}/learn`);
+						}}
+						className="bg-gray-600 hover:bg-blue-500 text-white text-sm py-1.5 px-4 rounded-lg font-medium transition-colors"
+					>
+						Học từ vựng
+					</button>
+				</div>
 
 				<h1 className="text-3xl font-bold tracking-tight text-white">
 					Vocabulary List
@@ -192,8 +211,9 @@ export default function WordPage() {
 								className="appearance-none bg-[#131927] border border-slate-800 text-slate-300 text-sm py-2.5 pl-9 pr-8 rounded-lg"
 							>
 								<option value="all">Tất cả</option>
-								<option value="to-learn">Chưa học</option>
-								<option value="learned">Đã học</option>
+								<option value="new">Mới</option>
+								<option value="learning">Đang học</option>
+								<option value="review">Cần ôn</option>
 							</select>
 							<Filter className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
 						</div>
