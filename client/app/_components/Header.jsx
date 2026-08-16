@@ -29,20 +29,22 @@ function Header() {
 	}, []);
 
 	async function handleLogout() {
-		await fetch("/api/v1/auth/logout", {
+		const res = await fetch("/api/v1/auth/logout", {
 			method: "POST",
 			credentials: "include",
 		});
-
+		if (!res.ok) return;
 		setUser(null);
 		router.push("/");
 	}
 
 	return (
-		<header className="relative bg-slate-950 border-b border-slate-800/80 px-4 sm:px-8 py-4 backdrop-blur-md sticky top-0 z-50">
+		<header className="relative bg-slate-950/50 border-b border-slate-800/80 px-4 sm:px-8 py-4 backdrop-blur-md sticky top-0 z-50">
 			<div className="flex items-center justify-between max-w-7xl mx-auto">
 				<Logo />
-				<Navigation />
+				<div className="hidden md:block">
+					<Navigation />
+				</div>
 
 				<div className="flex items-center gap-4">
 					{loading ? (
@@ -59,8 +61,7 @@ function Header() {
 										{user.name}
 									</p>
 									<p className="text-sm font-semibold text-amber-200 leading-tight">
-										🌟
-										Vip
+										🌟 Vip
 									</p>
 								</div>
 
@@ -68,6 +69,7 @@ function Header() {
 									{user.name?.charAt(0).toUpperCase()}
 								</div>
 							</button>
+
 							{/* DropdownList */}
 							{isDropdownOpen && (
 								<div className="absolute right-0 top-full mt-3 w-64 overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl z-50">
@@ -107,8 +109,14 @@ function Header() {
 							)}
 						</div>
 					) : (
-						<AuthButtons />
+						<div className="hidden sm:block">
+							<AuthButtons />
+						</div>
 					)}
+					{/* Mobile menu */}
+					<div className="md:hidden">
+						<Navigation />
+					</div>
 				</div>
 			</div>
 		</header>

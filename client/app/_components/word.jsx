@@ -58,9 +58,9 @@ function Word({ word, onDelete, onFix }) {
 				</div>
 
 				{/* Example */}
-				<div className="md:col-span-3">
-					<p className="md:hidden text-xs text-slate-500 mb-1">Ví dụ</p>
-					<p className="text-slate-400 italic md:truncate">
+				<div className="md:col-span-4">
+					<p className="md:hidden text-sm text-slate-500 mb-1">Ví dụ</p>
+					<p className="text-slate-400 text-md italic whitespace-normal break-words leading-relaxed">
 						{word.example || "—"}
 					</p>
 				</div>
@@ -89,7 +89,7 @@ function Word({ word, onDelete, onFix }) {
 				</div>
 
 				{/* Actions */}
-				<div className="md:col-span-2 flex justify-end gap-1">
+				<div className="md:col-span-1 flex justify-end gap-1">
 					<button
 						onClick={() => setIsEditing(true)}
 						className="p-2 rounded-lg text-slate-400 hover:bg-slate-700/50 hover:text-white transition-colors"

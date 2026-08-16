@@ -149,6 +149,7 @@ export default function WordPage() {
 					english,
 					vietnamese,
 					example,
+					pronunciation,
 					topic: topicId, // Crucial: link the word to the topic!
 				}),
 			});
@@ -219,7 +220,7 @@ export default function WordPage() {
 	if (loading) return <Loading />;
 
 	return (
-		<div className="min-h-screen bg-[#0b0f19] text-slate-100 p-8 flex flex-col items-center font-sans">
+		<div className="min-h-screen  text-slate-100 p-8 flex flex-col items-center font-sans">
 			<div className="w-full max-w-5xl space-y-6">
 				{/* Header */}
 				<div className="flex items-center justify-between">
@@ -240,7 +241,6 @@ export default function WordPage() {
 						Bắt đầu học
 					</button>
 				</div>
-
 				<h2 className="text-3xl font-semibold tracking-tight text-white">
 					Danh sách từ vựng
 				</h2>
@@ -389,9 +389,9 @@ export default function WordPage() {
 						<div className="col-span-2">Từ</div>
 						<div className="col-span-2">IPA</div>
 						<div className="col-span-2">Nghĩa</div>
-						<div className="col-span-3">Ví dụ</div>
+						<div className="col-span-4">Ví dụ</div>
 						<div className="col-span-1">Status</div>
-						<div className="col-span-2 text-right">Thao Tác</div>
+						<div className="col-span-1 text-right">Thao Tác</div>
 					</div>
 					{/* Word */}
 					{currentWords.length === 0 ? (

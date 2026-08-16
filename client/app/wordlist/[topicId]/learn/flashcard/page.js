@@ -81,6 +81,7 @@ function Page() {
 		const reviewCount = word.reviewCount || 0;
 		const getInterval = (intervals) =>
 			intervals[Math.min(reviewCount, intervals.length - 1)];
+		
 		setResults((prev) => {
 			if (level === 0) return { ...prev, forgot: prev.forgot + 1 };
 			if (level === 1) return { ...prev, hard: prev.hard + 1 };

@@ -47,29 +47,13 @@ exports.updateVocab = catchAsync(async (req, res, next) => {
 });
 
 exports.createNewVocab = catchAsync(async (req, res, next) => {
-	const response = await fetch(
-		`https://api.dictionaryapi.dev/api/v2/entries/en/${req.body.english}`,
-	);
-
-	let pronunciation = "";
-
-	if (response.ok) {
-		const dictionary = await response.json();
-
-		pronunciation =
-			dictionary[0]?.phonetic ||
-			dictionary[0]?.phonetics?.find((p) => p.text)?.text ||
-			"";
-	}
-
 	const newVocab = await Vocab.create({
 		...req.body,
-		pronunciation,
 		user: req.user.id,
 	});
 
 	res.status(201).json({
-		status: "success ok  ok",
+		status: "success",
 		data: { newVocab },
 	});
 });
