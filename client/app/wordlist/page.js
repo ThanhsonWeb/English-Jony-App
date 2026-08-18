@@ -12,7 +12,12 @@ function Page() {
 	const [newTopic, setNewTopic] = useState("");
 	const [description, setDescription] = useState("");
 	const [words, setWords] = useState([]);
-	const wordsToLearn = words.filter((word) => word.status !== true);
+	const wordsToReview = words.filter(
+		(word) =>
+			word.status === true &&
+			word.nextReview &&
+			new Date(word.nextReview) <= new Date(),
+	);
 
 	useEffect(() => {
 		async function fetchWords() {
@@ -187,10 +192,10 @@ function Page() {
 					<div className="flex items-center justify-between rounded-md border border-[#1a2d59] bg-[#0d1b3e]/50 p-5 shadow-lg backdrop-blur-sm">
 						<div>
 							<p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
-								Từ cần học
+								Từ cần ôn
 							</p>
 							<p className="text-3xl font-bold text-emerald-400">
-								{wordsToLearn.length}
+								{wordsToReview.length}
 							</p>
 						</div>
 						<div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
