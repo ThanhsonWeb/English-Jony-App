@@ -16,6 +16,7 @@ const cookieParser = require("cookie-parser");
 // test CI/CD deployment
 
 const app = express();
+app.set("trust proxy", 1);
 const authLimiter = rateLimit({
 	max: 10,
 	windowMs: 60 * 60 * 1000,
