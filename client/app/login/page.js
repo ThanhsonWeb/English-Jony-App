@@ -68,7 +68,8 @@ function LoginPage() {
 					>
 						&times;
 					</Link>
-					<div className="flex items-center  gap-4 mx-auto mb-3">
+
+					<div className="flex items-center gap-4 mx-auto mb-3">
 						<Image
 							src="/lugo.png"
 							height={48}
@@ -79,6 +80,7 @@ function LoginPage() {
 							className="rounded-xl border border-slate-800 w-12 h-12 "
 						/>
 					</div>
+
 					{/* email */}
 					<div className="flex flex-col gap-1">
 						<label className="text-sm font-medium text-slate-300">Email</label>
@@ -91,13 +93,15 @@ function LoginPage() {
 							required
 						/>
 					</div>
+
 					{error && (
 						<div className=" text-sm text-red-400 rounded-xl">*{error}</div>
 					)}
+
 					{/* password */}
 					<div className="flex flex-col gap-1">
 						<label className="text-sm font-medium text-slate-300">
-							Password
+							Mật khẩu
 						</label>
 						<input
 							type="password"
@@ -108,21 +112,22 @@ function LoginPage() {
 							required
 						/>
 					</div>
+
 					{/* submit button */}
 					<button
 						type="submit"
 						className="mt-2 p-3.5 text-base font-semibold bg-blue-600 hover:bg-blue-500 rounded-xl text-white transition-all duration-200 shadow-lg shadow-blue-600/30 active:scale-[0.98]"
 					>
-						Sign In
+						Đăng nhập
 					</button>
 
 					<p className="text-sm text-center text-slate-400 mt-2">
-						Don't have an account?{" "}
+						Chưa có tài khoản?{" "}
 						<Link
 							href="/signup"
 							className="text-blue-400 hover:underline font-semibold"
 						>
-							Sign up
+							Đăng ký
 						</Link>
 					</p>
 				</form>

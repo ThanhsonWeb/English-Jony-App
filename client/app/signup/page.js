@@ -68,14 +68,14 @@ function SignUpForm() {
 							alt="Logo"
 							className="rounded-xl border border-slate-800 w-12 h-12 mb-2"
 						/>
-						<h1 className="text-3xl font-bold">Sign Up</h1>
+						<h1 className="text-3xl font-bold">Đăng ký</h1>
 						<p className="text-slate-400 text-sm">
-							Already have an account?
-							<Link
+							Đã có tài khoản? 
+							 <Link
 								href="/login"
 								className="text-blue-400 hover:underline font-semibold"
 							>
-								Sign In
+								 Đăng nhập
 							</Link>
 						</p>
 					</div>
@@ -85,7 +85,7 @@ function SignUpForm() {
 					{/* Divider (Optional) */}
 					<div className="flex items-center gap-4 mb-6 text-slate-500 text-xs">
 						<div className="flex-1 h-px bg-slate-800"></div>
-						OR
+						HOẶC
 						<div className="flex-1 h-px bg-slate-800"></div>
 					</div>
 
@@ -94,19 +94,21 @@ function SignUpForm() {
 						{error && (
 							<div className=" text-sm text-red-400 rounded-xl">*{error}</div>
 						)}
+
 						<input
 							type="text"
 							value={name}
 							onChange={(e) => setName(e.target.value)}
-							placeholder="Full name"
+							placeholder="Họ và tên"
 							className="border border-slate-700/80 bg-slate-950/50 p-3.5 rounded-xl text-slate-100 focus:outline-none focus:border-blue-500 transition-colors"
 							required
 						/>
+
 						<input
 							type="email"
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
-							placeholder="Email Address"
+							placeholder="Địa chỉ email"
 							className="border border-slate-700/80 bg-slate-950/50 p-3.5 rounded-xl text-slate-100 focus:outline-none focus:border-blue-500 transition-colors"
 							required
 						/>
@@ -115,23 +117,25 @@ function SignUpForm() {
 							type="password"
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
-							placeholder="Password"
+							placeholder="Mật khẩu"
 							className="border border-slate-700/80 bg-slate-950/50 p-3.5 rounded-xl text-slate-100 focus:outline-none focus:border-blue-500 transition-colors"
 							required
 						/>
+
 						<input
 							type="password"
 							value={passwordConfirm}
 							onChange={(e) => setPasswordConfirm(e.target.value)}
-							placeholder="PasswordConfirm"
+							placeholder="Xác nhận mật khẩu"
 							className="border border-slate-700/80 bg-slate-950/50 p-3.5 rounded-xl text-slate-100 focus:outline-none focus:border-blue-500 transition-colors"
 							required
 						/>
+
 						<button
 							type="submit"
 							className="mt-2 p-3.5 text-base font-semibold bg-blue-700 hover:bg-blue-600 rounded-xl text-white transition-all duration-200 shadow-lg shadow-blue-600/30 cursor-pointer "
 						>
-							Sign Up
+							Đăng ký
 						</button>
 					</form>
 				</div>
