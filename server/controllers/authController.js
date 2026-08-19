@@ -40,17 +40,16 @@ exports.signup = catchAsync(async (req, res, next) => {
 
 exports.login = catchAsync(async (req, res, next) => {
 	const { email, password } = req.body;
+
 	// check email && password
 	if (!email || !password)
-		return next(
-			new AppError("please provide your email and password to login", 400),
-		);
+		return next(new AppError("Vui lòng nhập đầy đủ email và mật khẩu!", 400));
 
-	// 2️⃣ Find user and include password field
+	// Find user and include password field
 	const user = await User.findOne({ email }).select("+password");
 
 	if (!user || !(await user.correctPassword(password, user.password))) {
-		return next(new AppError("Incorrect email or password!", 401));
+		return next(new AppError("Email hoặc mật khẩu không chính xác!", 401));
 	}
 
 	createSendToken(user, 200, res);
@@ -109,9 +108,10 @@ exports.restrictTo = (...roles) => {
 	return (req, res, next) => {
 		if (!roles.includes(req.user.role)) {
 			return next(
-				new AppError("You don't have a permission to do this action", 403),
+				new AppError("Bạn không có quyền thực hiện hành động này!", 403),
 			);
 		}
+
 		next();
 	};
 };

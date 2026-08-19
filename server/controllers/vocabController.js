@@ -24,7 +24,7 @@ exports.getVocab = catchAsync(async (req, res, next) => {
 		_id: req.params.id,
 		user: req.user.id,
 	});
-	if (!vocab) return next(new AppError("No vocabulary found", 404));
+	if (!vocab) return next(new AppError("Không tìm thấy từ nào", 404));
 	res.status(200).json({
 		status: " success",
 		data: { vocab },

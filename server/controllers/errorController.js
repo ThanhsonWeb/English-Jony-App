@@ -2,13 +2,13 @@ const AppError = require("../utils/appError");
 
 const handleDuplicatedFieldDB = (err) => {
 	const value = err.keyValue.email;
-	const message = `Duplicate Field Error "${value}" please try another one !  `;
+	const message = `Email "${value}" đã được sử dụng, vui lòng chọn email khác!`;
 	return new AppError(message, 400);
 };
 
 const handleValidationErrorDB = (err) => {
 	const errors = Object.values(err.errors).map((el) => el.message);
-	const message = `Invalid input data: ${errors.join(". ")}`;
+	const message = `Dữ liệu không hợp lệ: ${errors.join(". ")}`;
 	return new AppError(message, 400);
 };
 

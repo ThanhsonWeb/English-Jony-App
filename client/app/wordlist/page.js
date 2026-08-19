@@ -165,74 +165,83 @@ function Page() {
 	}
 
 	return (
-		<div className="min-h-[calc(100vh-80px)] bg-[#030616] px-4 sm:px-8 py-10 relative overflow-hidden">
+		<div className="min-h-[calc(100vh-80px)] bg-[#030616] px-4 sm:px-8 py-6 sm:py-10 relative overflow-hidden">
 			<div className="max-w-5xl mx-auto relative z-10">
 				{/* Header */}
-				<div className="relative z-10 mb-10 rounded-xl p-6 sm:p-8 shadow-[0_0_60px_-10px_rgba(30,58,138,0.4)] overflow-hidden">
+				<div className="relative z-10 mb-7 sm:mb-10 rounded-2xl border border-slate-900/80 bg-[#071022]/70 p-5 sm:p-8 shadow-[0_0_50px_-20px_rgba(37,99,235,0.45)] overflow-hidden">
 					{/* Radial Glow Layer */}
-					<div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.15)_0%,rgba(13,27,62,0)_70%)] pointer-events-none" />
+					<div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16)_0%,rgba(13,27,62,0)_65%)] pointer-events-none" />
 
-					<div className="relative z-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-						<div>
-							<p className="text-sm text-blue-400 font-medium mb-1">
+					<div className="relative z-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+						<div className="max-w-2xl">
+							<p className="text-xs sm:text-sm text-blue-400 font-medium mb-2">
 								Không gian học từ vựng của bạn 😊
 							</p>
 
-							<h1 className="flex items-center gap-2 text-3xl sm:text-4xl font-bold text-white tracking-tight">
+							<h1 className="text-2xl sm:text-4xl font-bold text-white tracking-tight leading-tight">
 								Tiếp tục xây dựng vốn từ vựng 🚀
 							</h1>
 
-							<p className="mt-2 text-slate-400">
+							<p className="mt-2 text-sm sm:text-base text-slate-400 leading-relaxed">
 								Tạo danh sách từ, sắp xếp từ vựng và học mỗi ngày. 🍀
 							</p>
 						</div>
 
-						<Button
+						<button
 							onClick={() => setIsOpen(true)}
-							size="md"
-							className="bg-gradient-to-r hfont-semibold shadow-[0_0_20px_rgba(37,99,235,0.4)] border border-blue-400/30 transition-all duration-300  "
+							className="w-full sm:w-auto rounded-xl bg-slate-100 px-5 py-3 text-sm sm:text-base font-semibold text-slate-900 shadow-[0_0_20px_rgba(59,130,246,0.18)] transition-all hover:bg-white active:scale-[0.98] cursor-pointer"
 						>
 							+ Tạo danh sách từ
-						</Button>
+						</button>
 					</div>
 				</div>
 
 				{/* Stats Cards Grid */}
-				<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-					<div className="flex items-center justify-between rounded-md border border-[#1a2d59] bg-[#0d1b3e]/50 p-5 shadow-lg backdrop-blur-sm">
+				<div className="grid grid-cols-3 gap-2 sm:gap-4 mb-8 sm:mb-10">
+					<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-[#1a2d59] bg-[#0d1b3e]/50 p-3 sm:p-5 shadow-lg backdrop-blur-sm">
 						<div>
-							<p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
-								Danh sách từ
+							<p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 sm:text-slate-400 mb-1">
+								Danh sách
 							</p>
-							<p className="text-3xl font-bold text-white">{topics.length}</p>
+
+							<p className="text-2xl sm:text-3xl font-bold text-white">
+								{topics.length}
+							</p>
 						</div>
-						<div className="p-3 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
+
+						<div className="hidden sm:flex p-3 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
 							<BookOpen className="w-6 h-6" />
 						</div>
 					</div>
 
-					<div className="flex items-center justify-between rounded-md border border-[#1a2d59] bg-[#0d1b3e]/50 p-5 shadow-lg backdrop-blur-sm">
+					<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-[#1a2d59] bg-[#0d1b3e]/50 p-3 sm:p-5 shadow-lg backdrop-blur-sm">
 						<div>
-							<p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
+							<p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 sm:text-slate-400 mb-1">
 								Tổng số từ
 							</p>
-							<p className="text-3xl font-bold text-white">{words.length}</p>
+
+							<p className="text-2xl sm:text-3xl font-bold text-white">
+								{words.length}
+							</p>
 						</div>
-						<div className="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
+
+						<div className="hidden sm:flex p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
 							<Layers className="w-6 h-6" />
 						</div>
 					</div>
 
-					<div className="flex items-center justify-between rounded-md border border-[#1a2d59] bg-[#0d1b3e]/50 p-5 shadow-lg backdrop-blur-sm">
+					<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-[#1a2d59] bg-[#0d1b3e]/50 p-3 sm:p-5 shadow-lg backdrop-blur-sm">
 						<div>
-							<p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
-								Từ cần ôn
+							<p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 sm:text-slate-400 mb-1">
+								Cần ôn
 							</p>
-							<p className="text-3xl font-bold text-emerald-400">
+
+							<p className="text-2xl sm:text-3xl font-bold text-emerald-400">
 								{wordsToReview.length}
 							</p>
 						</div>
-						<div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+
+						<div className="hidden sm:flex p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
 							<CheckCircle2 className="w-6 h-6" />
 						</div>
 					</div>
@@ -240,15 +249,16 @@ function Page() {
 
 				{/* form */}
 				{isOpen && (
-					<div className="fixed inset-0 backdrop-blur-sm bg-black/60 flex items-center justify-center z-50">
+					<div className="fixed inset-0 backdrop-blur-sm bg-black/60 flex items-center justify-center z-50 p-4">
 						<form
 							onSubmit={handleSubmit}
-							className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-8 flex flex-col gap-4"
+							className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 sm:p-8 flex flex-col gap-4 shadow-2xl"
 						>
 							<div className="flex items-center justify-between">
 								<h4 className="text-xl font-bold text-slate-100">
 									Tạo danh sách từ mới 🌴
 								</h4>
+
 								<button
 									type="button"
 									onClick={() => setIsOpen(false)}
@@ -262,6 +272,7 @@ function Page() {
 								<label className="text-sm font-medium text-slate-300">
 									Tiêu đề
 								</label>
+
 								<input
 									type="text"
 									placeholder="Nhập tiêu đề danh sách từ..."
@@ -276,6 +287,7 @@ function Page() {
 								<label className="text-sm font-medium text-slate-300">
 									Ghi chú
 								</label>
+
 								<textarea
 									placeholder="Nhập ghi chú hoặc mô tả..."
 									value={description}
@@ -293,14 +305,16 @@ function Page() {
 								>
 									Hủy
 								</button>
+
 								<Button type="submit">Tạo</Button>
 							</div>
 						</form>
 					</div>
 				)}
+
 				{/* Topics */}
 				{topics.length > 0 ? (
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-7 sm:mt-10">
 						{topics.map((topic) => {
 							const topicWords = words.filter(
 								(word) => word.topic === topic._id,
@@ -318,10 +332,17 @@ function Page() {
 						})}
 					</div>
 				) : (
-					<p className="mt-10 text-center text-slate-400">
-						Bạn chưa có danh sách từ nào. Hãy tạo danh sách từ đầu tiên để bắt
-						đầu học 📚
-					</p>
+					<div className="mt-10 rounded-2xl border border-dashed border-slate-800 px-6 py-12 text-center">
+						<div className="text-4xl mb-4">📚</div>
+
+						<h3 className="text-lg font-semibold text-white">
+							Chưa có danh sách từ nào
+						</h3>
+
+						<p className="mt-2 text-sm text-slate-400">
+							Tạo danh sách đầu tiên để bắt đầu xây dựng vốn từ vựng của bạn.
+						</p>
+					</div>
 				)}
 			</div>
 		</div>

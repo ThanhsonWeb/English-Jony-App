@@ -220,13 +220,13 @@ export default function WordPage() {
 	if (loading) return <Loading />;
 
 	return (
-		<div className="min-h-screen  text-slate-100 p-8 flex flex-col items-center font-sans">
-			<div className="w-full max-w-5xl space-y-6">
+		<div className="min-h-screen text-slate-100 px-4 py-6 sm:p-8 flex flex-col items-center font-sans">
+			<div className="w-full max-w-5xl space-y-5 sm:space-y-6">
 				{/* Header */}
-				<div className="flex items-center justify-between">
+				<div className="flex items-center justify-between gap-3">
 					<Link
 						href="/wordlist"
-						className="inline-flex items-center gap-2 text-lg font-medium text-slate-400 transition-colors hover:text-white"
+						className="inline-flex items-center gap-2 text-sm sm:text-lg font-medium text-slate-400 transition-colors hover:text-white"
 					>
 						<ArrowLeft size={18} />
 						Quay lại
@@ -235,25 +235,27 @@ export default function WordPage() {
 					<button
 						onClick={() => router.push(`/wordlist/${topicId}/learn`)}
 						disabled={words.length === 0}
-						className="inline-flex items-center gap-2 rounded-xl border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-lg font-semibold text-blue-300 transition-all hover:border-blue-400 hover:bg-blue-500/20 hover:text-white"
+						className="inline-flex items-center gap-2 rounded-xl border border-blue-500/30 bg-blue-500/10 px-3 py-2 sm:px-4 text-sm sm:text-lg font-semibold text-blue-300 transition-all hover:border-blue-400 hover:bg-blue-500/20 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed"
 					>
 						<RotateCcw size={18} />
 						Bắt đầu học
 					</button>
 				</div>
-				<h2 className="text-3xl font-semibold tracking-tight text-white">
+
+				<h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
 					Danh sách từ vựng
 				</h2>
+
 				{/* Search & Actions */}
-				<div className="flex flex-col sm:flex-row gap-4 justify-between items-center">
+				<div className="flex flex-col gap-3 sm:flex-row sm:gap-4 justify-between sm:items-center">
 					{/* Search */}
 					<div className="relative w-full sm:w-80">
 						<Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+
 						<input
 							type="text"
 							value={search}
 							onChange={(e) => {
-								// create new URL
 								const params = new URLSearchParams(searchParams.toString());
 
 								params.set("search", e.target.value);
@@ -261,18 +263,17 @@ export default function WordPage() {
 
 								router.push(`?${params.toString()}`);
 							}}
-							placeholder="Search vocabulary..."
-							className="w-full pl-10 pr-4 py-2.5 bg-[#131927] border border-slate-800 rounded-lg text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+							placeholder="Tìm kiếm từ vựng..."
+							className="w-full pl-10 pr-4 py-3 sm:py-2.5 bg-[#131927] border border-slate-800 rounded-xl text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
 						/>
 					</div>
 
-					<div className="flex items-center gap-3 w-full sm:w-auto justify-end">
+					<div className="flex items-center gap-3 w-full sm:w-auto">
 						{/* Filter */}
-						<div className="relative">
+						<div className="relative flex-1 sm:flex-none">
 							<select
 								value={status}
 								onChange={(e) => {
-									// change URL
 									const params = new URLSearchParams(searchParams.toString());
 
 									params.set("status", e.target.value);
@@ -280,17 +281,25 @@ export default function WordPage() {
 
 									router.push(`?${params.toString()}`);
 								}}
-								className="appearance-none bg-[#131927] border border-slate-800 text-slate-300 text-sm py-2.5 pl-9 pr-8 rounded-lg"
+								className="appearance-none w-full sm:w-auto bg-[#131927] border border-slate-800 text-slate-300 text-sm py-2.5 pl-9 pr-8 rounded-xl"
 							>
 								<option value="all">Tất cả</option>
 								<option value="new">Mới</option>
 								<option value="learning">Đang học</option>
 								<option value="review">Cần ôn</option>
 							</select>
+
 							<Filter className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
 						</div>
 
-						<Button onClick={() => setIsOpen(!isOpen)}>+ Thêm từ mới</Button>
+						<div className="flex-1 sm:flex-none">
+							<button
+								onClick={() => setIsOpen(!isOpen)}
+								className="flex-1 sm:flex-none whitespace-nowrap rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:bg-blue-500 active:scale-[0.98] cursor-pointer"
+							>
+								+ Thêm từ mới
+							</button>
+						</div>
 
 						{/* Form Modal */}
 						{isOpen && (
@@ -302,6 +311,7 @@ export default function WordPage() {
 									<h2 className="text-xl font-semibold text-white mb-2">
 										Thêm từ mới 🍀
 									</h2>
+
 									{/* nhập từ */}
 									<div className="relative flex flex-col gap-1.5">
 										<label className="text-sm font-medium text-slate-300">
@@ -334,11 +344,13 @@ export default function WordPage() {
 											</div>
 										)}
 									</div>
+
 									{/* nhập nghĩa */}
 									<div className="flex flex-col gap-1.5">
 										<label className="text-sm font-medium text-slate-300">
 											Bản dịch
 										</label>
+
 										<input
 											type="text"
 											name="translation"
@@ -349,11 +361,13 @@ export default function WordPage() {
 											className="w-full px-3.5 py-2.5 bg-[#131927] border border-slate-700/80 rounded-xl text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
 										/>
 									</div>
+
 									{/* nhập câu ví dụ */}
 									<div className="flex flex-col gap-1.5">
 										<label className="text-sm font-medium text-slate-300">
 											Câu ví dụ
 										</label>
+
 										<textarea
 											name="example"
 											value={example}
@@ -372,6 +386,7 @@ export default function WordPage() {
 										>
 											Hủy
 										</button>
+
 										<Button type="submit" className="flex-1">
 											Thêm từ
 										</Button>
@@ -383,7 +398,7 @@ export default function WordPage() {
 				</div>
 
 				{/* Main Table Container */}
-				<div className="bg-[#111625]/60 border border-slate-800/80 rounded-xl p-4 backdrop-blur-sm shadow-2xl">
+				<div className="md:bg-[#111625]/60 md:border md:border-slate-800/80 md:rounded-xl md:p-4 md:backdrop-blur-sm md:shadow-2xl">
 					{/* table Header */}
 					<div className="hidden md:grid grid-cols-12 items-center px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
 						<div className="col-span-2">Từ</div>
@@ -393,6 +408,7 @@ export default function WordPage() {
 						<div className="col-span-1">Status</div>
 						<div className="col-span-1 text-right">Thao Tác</div>
 					</div>
+
 					{/* Word */}
 					{currentWords.length === 0 ? (
 						<div className="py-16 text-center">
@@ -407,7 +423,7 @@ export default function WordPage() {
 							</p>
 						</div>
 					) : (
-						<div className="mt-3 space-y-2">
+						<div className="md:mt-3 space-y-3 md:space-y-2">
 							{currentWords.map((word) => (
 								<Word
 									key={word._id}
@@ -418,8 +434,9 @@ export default function WordPage() {
 							))}
 						</div>
 					)}
-					{/* Pagination  */}
-					<div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-800/60 text-xs text-slate-400 px-2">
+
+					{/* Pagination */}
+					<div className="flex items-center justify-between mt-5 pt-4 border-t border-slate-800/60 text-xs text-slate-400 px-1 md:px-2">
 						<span>
 							Trang {currentPage} / {totalPages}
 						</span>
@@ -428,7 +445,7 @@ export default function WordPage() {
 							<button
 								onClick={() => setCurrentPage((page) => page - 1)}
 								disabled={currentPage === 1}
-								className="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900 text-slate-300 transition-all hover:bg-slate-800 hover:text-white hover:border-slate-600 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-slate-900 disabled:hover:text-slate-300"
+								className="px-3 py-2 rounded-lg border border-slate-700 bg-slate-900 text-slate-300 transition-all hover:bg-slate-800 hover:text-white hover:border-slate-600 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-slate-900 disabled:hover:text-slate-300"
 							>
 								Trước
 							</button>
@@ -436,7 +453,7 @@ export default function WordPage() {
 							<button
 								onClick={() => setCurrentPage((page) => page + 1)}
 								disabled={currentPage === totalPages}
-								className="px-3 py-1.5 rounded-lg border border-blue-500/30 bg-blue-500/10 text-blue-400 transition-all hover:bg-blue-500 hover:text-white hover:border-blue-500 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-blue-500/10 disabled:hover:text-blue-400"
+								className="px-3 py-2 rounded-lg border border-blue-500/30 bg-blue-500/10 text-blue-400 transition-all hover:bg-blue-500 hover:text-white hover:border-blue-500 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-blue-500/10 disabled:hover:text-blue-400"
 							>
 								Sau
 							</button>
