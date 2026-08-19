@@ -4,8 +4,11 @@ import Topic from "../_components/Topic";
 import Button from "../_components/Button";
 import { BookOpen, Layers, CheckCircle2 } from "lucide-react";
 import Loading from "../_components/loading";
+import Link from "next/link";
+import { useAuth } from "../_contexts/AuthContext";
 
 function Page() {
+	const { user } = useAuth();
 	const [loading, setLoading] = useState(true);
 	const [isOpen, setIsOpen] = useState(false);
 	const [topics, setTopics] = useState([]);
@@ -13,9 +16,7 @@ function Page() {
 	const [description, setDescription] = useState("");
 	const [words, setWords] = useState([]);
 	const wordsToReview = words.filter(
-		(word) =>
-			word.nextReview &&
-			new Date(word.nextReview) <= new Date(),
+		(word) => word.nextReview && new Date(word.nextReview) <= new Date(),
 	);
 
 	useEffect(() => {
@@ -46,7 +47,7 @@ function Page() {
 					credentials: "include", // send cookie automatically
 				});
 				if (res.status === 401) {
-					console.error("User is not authenticated");
+					setLoading(false);
 					return;
 				}
 				const data = await res.json();
@@ -128,6 +129,40 @@ function Page() {
 	}
 
 	if (loading) return <Loading />;
+
+	if (!loading && !user) {
+		return (
+			<div className="min-h-[calc(100vh-80px)] bg-slate-950 flex items-center justify-center px-4">
+				<div className="text-center max-w-md">
+					<div className="text-5xl mb-5">🔐</div>
+
+					<h1 className="text-2xl font-bold text-slate-100 mb-3">
+						Bạn chưa đăng nhập
+					</h1>
+
+					<p className="text-slate-400 mb-6">
+						Đăng nhập hoặc tạo tài khoản để xem sổ tay và lưu từ vựng của bạn.
+					</p>
+
+					<div className="flex justify-center gap-3">
+						<Link
+							href="/login"
+							className="px-5 py-3 rounded-xl border border-slate-700 text-slate-200 hover:bg-slate-900"
+						>
+							Đăng nhập
+						</Link>
+
+						<Link
+							href="/signup"
+							className="px-5 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-500"
+						>
+							Đăng ký
+						</Link>
+					</div>
+				</div>
+			</div>
+		);
+	}
 
 	return (
 		<div className="min-h-[calc(100vh-80px)] bg-[#030616] px-4 sm:px-8 py-10 relative overflow-hidden">
