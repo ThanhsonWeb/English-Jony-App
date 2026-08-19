@@ -3,10 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useAuth } from "../_contexts/AuthContext";
 
 function LoginPage() {
+	const googleButtonRef = useRef(null);
 	const { getMe } = useAuth();
 
 	const [email, setEmail] = useState("");
@@ -15,6 +16,43 @@ function LoginPage() {
 	const [error, setError] = useState("");
 
 	const router = useRouter();
+	// load Google Sign-In system
+	useEffect(() => {
+		if (window.google) {
+			window.google.accounts.id.initialize({
+				client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+				callback: handleGoogleLogin,
+			});
+
+			window.google.accounts.id.renderButton(googleButtonRef.current, {
+				theme: "outline",
+				size: "large",
+				width: 400,
+			});
+
+			return;
+		}
+
+		const script = document.createElement("script");
+		script.src = "https://accounts.google.com/gsi/client";
+		script.async = true;
+		script.defer = true;
+
+		script.onload = () => {
+			window.google.accounts.id.initialize({
+				client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+				callback: handleGoogleLogin,
+			});
+
+			window.google.accounts.id.renderButton(googleButtonRef.current, {
+				theme: "outline",
+				size: "large",
+				width: 400,
+			});
+		};
+
+		document.body.appendChild(script);
+	}, []);
 
 	async function handleSubmit(e) {
 		e.preventDefault();
@@ -53,6 +91,33 @@ function LoginPage() {
 			setIsLoading(false);
 		}
 	}
+	// handle user after they click/sign in
+	async function handleGoogleLogin(response) {
+		console.log("Google response:", response);
+
+		const res = await fetch("/api/v1/auth/google", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			credentials: "include",
+			body: JSON.stringify({
+				credential: response.credential,
+			}),
+		});
+
+		const data = await res.json();
+
+		console.log("Backend response:", data);
+
+		if (!res.ok) {
+			setError(data.message);
+			return;
+		}
+
+		await getMe();
+		router.push("/wordlist");
+	}
 
 	return (
 		<div className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-slate-950 px-4 overflow-hidden">
@@ -61,6 +126,8 @@ function LoginPage() {
 					onSubmit={handleSubmit}
 					className="relative z-10 flex flex-col bg-slate-900/60 backdrop-blur-md text-slate-100 w-full max-w-md p-8 rounded-2xl border border-slate-800/80 shadow-2xl gap-4"
 				>
+					<div ref={googleButtonRef}></div>
+
 					{/* Close Button */}
 					<Link
 						href="/"

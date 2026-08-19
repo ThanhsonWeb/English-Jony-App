@@ -19,13 +19,17 @@ const userSchema = new mongoose.Schema({
 	},
 	password: {
 		type: String,
-		required: [true, "user must have a password"],
+		required: function () {
+			return !this.googleId;
+		},
 		minLength: [8, "Password must be at least 8 characters"],
 		select: false,
 	},
 	passwordConfirm: {
 		type: String,
-		required: [true, "please confirm your password"],
+		required: function () {
+			return !this.googleId;
+		},
 		// This validator only works on save() and create()
 		// because "this" refers to current document !
 		// so findByIdAndUpdate() ≠ current document -> validator doesn't work .
@@ -44,6 +48,7 @@ const userSchema = new mongoose.Schema({
 	passwordChangedAt: Date,
 	passwordResetToken: String,
 	passwordResetExpires: Date,
+	googleId: String,
 });
 // methods
 userSchema.methods.correctPassword = async function (candidatePass, userPass) {
@@ -70,7 +75,7 @@ userSchema.methods.createPasswordResetToken = function () {
 		.createHash("sha256")
 		.update(resetToken)
 		.digest("hex");
-	this.passwordResetExpires = Date.now() + 20 * 60 * 1000;  // 10p
+	this.passwordResetExpires = Date.now() + 20 * 60 * 1000; // 10p
 	return resetToken;
 };
 

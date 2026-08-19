@@ -5,6 +5,9 @@ const { promisify } = require("util");
 const jwt = require("jsonwebtoken");
 const sendEmail = require("../utils/email");
 const crypto = require("crypto");
+const { OAuth2Client } = require("google-auth-library");
+
+const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 const signToken = (id) => {
 	return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -222,4 +225,28 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 			user: updatedUser,
 		},
 	});
+});
+exports.googleLogin = catchAsync(async (req, res, next) => {
+	const { credential } = req.body;
+
+	const ticket = await googleClient.verifyIdToken({
+		idToken: credential,
+		audience: process.env.GOOGLE_CLIENT_ID,
+	});
+
+	const payload = ticket.getPayload();
+
+	const { email, name, sub } = payload;
+
+	let user = await User.findOne({ email });
+
+	if (!user) {
+		user = await User.create({
+			name,
+			email,
+			googleId: sub,
+		});
+	}
+
+	createSendToken(user, 200, res);
 });

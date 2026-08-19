@@ -9,7 +9,7 @@ import { useAuth } from "../_contexts/AuthContext";
 
 const navLinks = [
 	{ name: "Home", href: "/", icon: Home },
-	{ name: "Dictation", href: "/dictation", icon: Headphones },
+	{ name: "Hội Thoại", href: "/dictation", icon: Headphones },
 	{ name: "Sổ tay", href: "/wordlist", icon: BookOpen },
 ];
 

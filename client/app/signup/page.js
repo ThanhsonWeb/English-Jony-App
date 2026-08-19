@@ -3,11 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useAuth } from "../_contexts/AuthContext";
 
 function SignUpForm() {
-	const { setUser } = useAuth();
+	const googleButtonRef = useRef(null);
+	const { setUser, getMe } = useAuth();
 
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
@@ -47,10 +48,70 @@ function SignUpForm() {
 		}
 	};
 
+	useEffect(() => {
+		if (window.google) {
+			window.google.accounts.id.initialize({
+				client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+				callback: handleGoogleLogin,
+			});
+
+			window.google.accounts.id.renderButton(googleButtonRef.current, {
+				theme: "outline",
+				size: "large",
+				width: 400,
+			});
+
+			return;
+		}
+
+		const script = document.createElement("script");
+		script.src = "https://accounts.google.com/gsi/client";
+		script.async = true;
+		script.defer = true;
+
+		script.onload = () => {
+			window.google.accounts.id.initialize({
+				client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+				callback: handleGoogleLogin,
+			});
+
+			window.google.accounts.id.renderButton(googleButtonRef.current, {
+				theme: "outline",
+				size: "large",
+				width: 400,
+			});
+		};
+
+		document.body.appendChild(script);
+	}, []);
+
+	async function handleGoogleLogin(response) {
+		const res = await fetch("/api/v1/auth/google", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			credentials: "include",
+			body: JSON.stringify({
+				credential: response.credential,
+			}),
+		});
+		const data = await res.json();
+		console.log(data);
+
+		if (!res.ok) {
+			setError(data.message);
+			return;
+		}
+		await getMe();
+		router.push("/wordlist");
+	}
+
 	return (
 		<div className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-slate-950 px-4 overflow-hidden">
 			<div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
 				<div className="relative z-10 flex flex-col bg-slate-900/60 backdrop-blur-md text-slate-100 w-full max-w-md p-8 rounded-2xl border border-slate-800/80 shadow-2xl">
+					<div ref={googleButtonRef}></div>
 					{/* Close Button */}
 					<Link
 						href="/"
@@ -70,12 +131,12 @@ function SignUpForm() {
 						/>
 						<h1 className="text-3xl font-bold">Đăng ký</h1>
 						<p className="text-slate-400 text-sm">
-							Đã có tài khoản? 
-							 <Link
+							Đã có tài khoản?
+							<Link
 								href="/login"
 								className="text-blue-400 hover:underline font-semibold"
 							>
-								 Đăng nhập
+								Đăng nhập
 							</Link>
 						</p>
 					</div>
