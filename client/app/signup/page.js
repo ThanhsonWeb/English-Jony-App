@@ -4,8 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useAuth } from "../_contexts/AuthContext";
 
 function SignUpForm() {
+	const { setUser } = useAuth();
+
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -37,6 +40,7 @@ function SignUpForm() {
 			}
 
 			console.log(data);
+			setUser(data.data.user);
 			router.push("/wordlist");
 		} catch (error) {
 			console.log(error);
