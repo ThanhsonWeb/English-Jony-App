@@ -48,6 +48,12 @@ app.use((req, res, next) => {
 
 app.use(hpp());
 
+app.get("/health", (req, res) => {
+	res.status(200).json({
+		status: "ok",
+	});
+});
+
 //   Register these route
 app.use("/api/v1/auth", authLimiter, authRouter); // 10 request/hour
 app.use("/api/v1/users", apiLimiter, userRouter);

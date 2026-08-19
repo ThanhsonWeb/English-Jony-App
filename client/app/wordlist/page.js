@@ -14,7 +14,6 @@ function Page() {
 	const [words, setWords] = useState([]);
 	const wordsToReview = words.filter(
 		(word) =>
-			word.status === true &&
 			word.nextReview &&
 			new Date(word.nextReview) <= new Date(),
 	);
