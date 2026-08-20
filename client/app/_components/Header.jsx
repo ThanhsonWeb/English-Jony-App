@@ -65,9 +65,17 @@ function Header() {
 									</p>
 								</div>
 
-								<div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-slate-700 to-slate-900 text-sm font-bold text-white ring-1 ring-slate-700 group-hover:ring-slate-500 transition">
-									{user.name?.charAt(0).toUpperCase()}
-								</div>
+								{user?.photo ? (
+									<img
+										src={user.photo}
+										alt={user.name}
+										className="md:h-12 md:w-12 h-10 w-10 rounded-full border border-slate-700 object-cover"
+									/>
+								) : (
+									<div className="flex md:h-12 md:w-12 h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-slate-700 to-slate-900 text-sm font-bold text-white ring-1 ring-slate-700 group-hover:ring-slate-500 transition">
+										{user.name?.charAt(0).toUpperCase()}
+									</div>
+								)}
 							</button>
 
 							{/* DropdownList */}

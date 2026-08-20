@@ -236,7 +236,7 @@ exports.googleLogin = catchAsync(async (req, res, next) => {
 
 	const payload = ticket.getPayload();
 
-	const { email, name, sub } = payload;
+	const { email, name, sub, picture } = payload; // from google
 
 	let user = await User.findOne({ email });
 
@@ -245,6 +245,7 @@ exports.googleLogin = catchAsync(async (req, res, next) => {
 			name,
 			email,
 			googleId: sub,
+			photo: picture,
 		});
 	}
 

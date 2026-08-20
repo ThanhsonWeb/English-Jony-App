@@ -3,13 +3,21 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Home, Headphones, BookOpen } from "lucide-react";
 import AuthButtons from "./AuthButtons";
 import { useAuth } from "../_contexts/AuthContext";
+import {
+	Menu,
+	X,
+	Headphones,
+	BookOpen,
+	PenLine,
+	Languages,
+} from "lucide-react";
 
 const navLinks = [
-	{ name: "Home", href: "/", icon: Home },
-	{ name: "Hội Thoại", href: "/dictation", icon: Headphones },
+	{ name: "Luyện viết", href: "/writing", icon: PenLine },
+	{ name: "Hội thoại", href: "/dictation", icon: Headphones },
+	{ name: "Từ vựng", href: "/vocabulary", icon: Languages },
 	{ name: "Sổ tay", href: "/wordlist", icon: BookOpen },
 ];
 
