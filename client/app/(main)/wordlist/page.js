@@ -1,11 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
-import Topic from "../_components/Topic";
-import Button from "../_components/Button";
+import Topic from "@/app/_components/Topic";
+import Loading from "@/app/_components/loading";
 import { BookOpen, Layers, CheckCircle2 } from "lucide-react";
-import Loading from "../_components/loading";
 import Link from "next/link";
-import { useAuth } from "../_contexts/AuthContext";
+import { useAuth } from "@/app/_contexts/AuthContext";
+import Button from "@/app/_components/Button";
 
 function Page() {
 	const { user } = useAuth();

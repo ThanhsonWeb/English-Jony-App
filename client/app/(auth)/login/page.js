@@ -1,10 +1,10 @@
 "use client";
 
+import { useAuth } from "@/app/_contexts/AuthContext";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
-import { useAuth } from "../_contexts/AuthContext";
 
 function LoginPage() {
 	const googleButtonRef = useRef(null);

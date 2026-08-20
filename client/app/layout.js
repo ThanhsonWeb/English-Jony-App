@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./_styles/globals.css";
-import Header from "./_components/Header";
 import { Inter } from "next/font/google";
 import { AuthProvider } from "./_contexts/AuthContext";
 //  Configure font 🔤
@@ -19,7 +18,6 @@ export default function RootLayout({ children }) {
 		<html lang="en" className={inter.className}>
 			<body className="min-h-full flex flex-col ">
 				<AuthProvider>
-					<Header />
 					{children}
 				</AuthProvider>
 			</body>
