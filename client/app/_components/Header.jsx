@@ -5,7 +5,7 @@ import AuthButtons from "./AuthButtons";
 import { useAuth } from "../_contexts/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { User, Settings, LogOut, ChevronDown } from "lucide-react";
+import { User, Settings, LogOut } from "lucide-react";
 
 function Header() {
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -93,14 +93,12 @@ function Header() {
 									</div>
 									{/* Profile & Settings */}
 									<div className="p-2">
-										<button className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-slate-300 hover:bg-slate-900 hover:text-white">
+										<button
+											onClick={() => router.push("/profile")}
+											className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-slate-300 hover:bg-slate-900 hover:text-white"
+										>
 											<User size={18} />
-											Profile
-										</button>
-
-										<button className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-slate-300 hover:bg-slate-900 hover:text-white">
-											<Settings size={18} />
-											Settings
+											Hồ sơ
 										</button>
 									</div>
 									{/* log out */}
@@ -110,7 +108,7 @@ function Header() {
 											className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-red-400 hover:bg-red-500/10 hover:text-red-300"
 										>
 											<LogOut size={18} />
-											Logout
+											Đăng xuất
 										</button>
 									</div>
 								</div>

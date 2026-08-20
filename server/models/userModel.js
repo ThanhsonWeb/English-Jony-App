@@ -2,58 +2,65 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
-const userSchema = new mongoose.Schema({
-	name: {
-		type: String,
-		// required: [true, "user must have a name"],
-		trim: true,
-		minLength: [3, "name must have at least 3 characters"],
-		maxLength: [20, " maximum 20 characters"],
-	},
-	email: {
-		type: String,
-		required: [true, "user must have an email"],
-		unique: true,
-		lowercase: true,
-		validate: [validator.isEmail, "please provide a valid email"],
-	},
-	password: {
-		type: String,
-		required: function () {
-			return !this.googleId;
+const userSchema = new mongoose.Schema(
+	{
+		name: {
+			type: String,
+			trim: true,
+			minLength: [3, "name must have at least 3 characters"],
+			maxLength: [20, "maximum 20 characters"],
 		},
-		minLength: [8, "Password must be at least 8 characters"],
-		select: false,
-	},
-	passwordConfirm: {
-		type: String,
-		required: function () {
-			return !this.googleId;
+
+		email: {
+			type: String,
+			required: [true, "user must have an email"],
+			unique: true,
+			lowercase: true,
+			validate: [validator.isEmail, "please provide a valid email"],
 		},
-		// This validator only works on save() and create()
-		// because "this" refers to current document !
-		// so findByIdAndUpdate() ≠ current document -> validator doesn't work .
-		validate: {
-			validator: function (curValue) {
-				return curValue === this.password;
+
+		password: {
+			type: String,
+			required: function () {
+				return !this.googleId;
 			},
-			message: "Passwords are not the same",
+			minLength: [8, "Password must be at least 8 characters"],
+			select: false,
 		},
+
+		passwordConfirm: {
+			type: String,
+			required: function () {
+				return !this.googleId;
+			},
+			validate: {
+				validator: function (curValue) {
+					return curValue === this.password;
+				},
+				message: "Passwords are not the same",
+			},
+		},
+
+		role: {
+			type: String,
+			enum: ["user", "admin"],
+			default: "user",
+		},
+
+		photo: {
+			type: String,
+			default: "",
+		},
+
+		passwordChangedAt: Date,
+		passwordResetToken: String,
+		passwordResetExpires: Date,
+		googleId: String,
 	},
-	role: {
-		type: String,
-		enum: ["user", "admin"],
-		default: "user",
+	{
+		timestamps: true,
 	},
-	photo: {
-		type: String,
-		default: "",
-	},
-	passwordChangedAt: Date,
-	passwordResetToken: String,
-	passwordResetExpires: Date,
-	googleId: String,
-});
+);
 // methods
 userSchema.methods.correctPassword = async function (candidatePass, userPass) {
 	return await bcrypt.compare(candidatePass, userPass);

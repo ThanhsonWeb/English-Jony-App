@@ -16,6 +16,7 @@ router.use((req, res, next) => {
 	next();
 });
 // routes
+
 router.get("/me", protect, getMe);
 router.route("/").get(protect, restrictTo("admin"), getAllUsers);
 router.post("/forgotPassword", forgotPassword);

@@ -289,15 +289,9 @@ function Page() {
 
 				{/* action */}
 				<div className="mt-5 sm:mt-6">
-					<button
-						onClick={() => setShowAnswer((prev) => !prev)}
-						className="hidden md:flex items-center gap-2 px-4 py-2 rounded-xl border border-slate-700 text-slate-300 hover:bg-slate-800 cursor-pointer mb-5"
-					>
-						<RotateCcw size={17} />
-						Lật thẻ
-					</button>
 
 					<div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+				
 						<button
 							onClick={() => handleAnswer(0)}
 							className="flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl border border-red-500/30 bg-red-500/10 px-2 sm:px-5 py-3 text-red-400 transition hover:bg-red-500/20"

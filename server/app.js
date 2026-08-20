@@ -18,11 +18,11 @@ const cookieParser = require("cookie-parser");
 const app = express();
 app.set("trust proxy", 1);
 const authLimiter = rateLimit({
-	max: 10,
+	max: process.env.NODE_ENV === "development" ? 100 : 30,
 	windowMs: 60 * 60 * 1000,
 });
 const apiLimiter = rateLimit({
-	max: process.env.NODE_ENV === "development" ? 1000 : 100, // Increase limit for local dev
+	max: process.env.NODE_ENV === "development" ? 1000 : 500, // Increase limit for local dev
 
 	windowMs: 60 * 60 * 1000, // 1 hour
 	message: "Too many requests, try again later.",

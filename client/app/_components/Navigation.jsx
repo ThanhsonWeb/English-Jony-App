@@ -43,7 +43,7 @@ function Navigation() {
 						<li key={link.name}>
 							<Link
 								href={link.href}
-								className={`relative inline-flex items-center gap-2 text-lg font-medium transition-colors duration-200 pb-1 ${
+								className={`relative md:inline-flex items-center gap-2 text-lg font-medium transition-colors duration-200 pb-1 ${
 									isActive ? "text-white" : "text-slate-300 hover:text-white"
 								} after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:bg-blue-300 after:origin-left after:transition-transform after:duration-300 after:ease-out ${
 									isActive ? "after:scale-x-100" : "after:scale-x-0"
