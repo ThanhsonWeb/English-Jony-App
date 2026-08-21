@@ -404,9 +404,9 @@ export default function WordPage() {
 						<div className="col-span-2">Từ</div>
 						<div className="col-span-2">IPA</div>
 						<div className="col-span-2">Nghĩa</div>
-						<div className="col-span-4">Ví dụ</div>
-						<div className="col-span-1">Status</div>
-						<div className="col-span-1 text-right">Thao Tác</div>
+						<div className="col-span-3">Ví dụ</div>
+						<div className="col-span-1">Trạng thái</div>
+						{/* <div className="col-span-1 text-right">Thao Tác</div> */}
 					</div>
 
 					{/* Word */}

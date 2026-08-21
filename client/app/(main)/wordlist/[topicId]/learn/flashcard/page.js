@@ -144,53 +144,80 @@ function Page() {
 	}
 	if (loading) return <Loading />;
 	if (sessionFinished) {
+		const total = results.forgot + results.hard + results.medium + results.easy;
+
 		return (
-			<div className="min-h-screen bg-[#030616] flex items-center justify-center px-4 text-white">
-				<div className="w-full max-w-xl rounded-3xl border border-slate-800 bg-[#0d1427] p-8 shadow-2xl text-center">
-					<div className="text-5xl mb-4">🎉</div>
+			<div className="min-h-screen bg-[#030616] flex items-center justify-center px-4 py-10 text-white">
+				<div className="w-full max-w-2xl">
+					{/* Main card */}
+					<div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-[#0b1224] p-6 sm:p-10 shadow-2xl">
+						{/* glow */}
+						<div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.15),transparent_55%)] pointer-events-none" />
 
-					<h2 className="text-4xl font-bold">Hoàn thành buổi ôn</h2>
+						<div className="relative z-10 text-center">
+							<div className="text-5xl sm:text-6xl mb-5">🎉</div>
 
-					<p className="mt-3 text-slate-400">
-						Tốt lắm! Các từ sẽ xuất hiện lại đúng thời điểm cần ôn.
-					</p>
+							<h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+								Hoàn thành buổi ôn!
+							</h2>
 
-					<div className="grid grid-cols-2 gap-4 mt-8">
-						<div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-4">
-							<p className="text-sm text-red-300">😵 Quên</p>
-							<p className="text-3xl font-bold text-red-400 mt-1">
-								{results.forgot}
+							<p className="mt-3 text-sm sm:text-base text-slate-400">
+								Bạn vừa ôn xong{" "}
+								<span className="text-white font-semibold">{total} từ</span>.
+								Tiếp tục duy trì nhé 🔥
 							</p>
-						</div>
 
-						<div className="rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4">
-							<p className="text-sm text-orange-300">😓 Khó</p>
-							<p className="text-3xl font-bold text-orange-400 mt-1">
-								{results.hard}
-							</p>
-						</div>
+							{/* Stats */}
+							<div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
+								<div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-4">
+									<div className="text-2xl">😵</div>
+									<p className="mt-2 text-xs text-red-300">Quên</p>
+									<p className="text-2xl font-bold text-red-400">
+										{results.forgot}
+									</p>
+								</div>
 
-						<div className="rounded-2xl border border-blue-500/20 bg-blue-500/10 p-4">
-							<p className="text-sm text-blue-300">🙂 Khá nhớ</p>
-							<p className="text-3xl font-bold text-blue-400 mt-1">
-								{results.medium}
-							</p>
-						</div>
+								<div className="rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4">
+									<div className="text-2xl">😓</div>
+									<p className="mt-2 text-xs text-orange-300">Khó</p>
+									<p className="text-2xl font-bold text-orange-400">
+										{results.hard}
+									</p>
+								</div>
 
-						<div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-4">
-							<p className="text-sm text-emerald-300">✅ Dễ</p>
-							<p className="text-3xl font-bold text-emerald-400 mt-1">
-								{results.easy}
-							</p>
+								<div className="rounded-2xl border border-blue-500/20 bg-blue-500/10 p-4">
+									<div className="text-2xl">🙂</div>
+									<p className="mt-2 text-xs text-blue-300">Khá nhớ</p>
+									<p className="text-2xl font-bold text-blue-400">
+										{results.medium}
+									</p>
+								</div>
+
+								<div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-4">
+									<div className="text-2xl">✅</div>
+									<p className="mt-2 text-xs text-emerald-300">Dễ</p>
+									<p className="text-2xl font-bold text-emerald-400">
+										{results.easy}
+									</p>
+								</div>
+							</div>
+
+							{/* Progress message */}
+							<div className="mt-8 rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
+								<p className="text-sm text-slate-300">
+									🌱 Những từ khó sẽ quay lại sớm hơn. Những từ dễ sẽ được giãn
+									thời gian ôn.
+								</p>
+							</div>
+
+							<button
+								onClick={() => router.back()}
+								className="mt-7 w-full rounded-xl bg-blue-600 py-3.5 font-semibold text-white transition hover:bg-blue-500 active:scale-[0.98]"
+							>
+								Tiếp tục học →
+							</button>
 						</div>
 					</div>
-
-					<button
-						onClick={() => router.back()}
-						className="mt-8 w-full rounded-xl bg-blue-600 py-3 font-semibold hover:bg-blue-500 transition"
-					>
-						Quay lại
-					</button>
 				</div>
 			</div>
 		);
@@ -289,9 +316,7 @@ function Page() {
 
 				{/* action */}
 				<div className="mt-5 sm:mt-6">
-
 					<div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
-				
 						<button
 							onClick={() => handleAnswer(0)}
 							className="flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl border border-red-500/30 bg-red-500/10 px-2 sm:px-5 py-3 text-red-400 transition hover:bg-red-500/20"

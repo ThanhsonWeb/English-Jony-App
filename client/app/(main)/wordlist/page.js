@@ -6,6 +6,7 @@ import { BookOpen, Layers, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import Button from "@/app/_components/Button";
+import StatCard from "@/app/_components/StatCard";
 
 function Page() {
 	const { user } = useAuth();
@@ -15,9 +16,54 @@ function Page() {
 	const [newTopic, setNewTopic] = useState("");
 	const [description, setDescription] = useState("");
 	const [words, setWords] = useState([]);
+	const [quote, setQuote] = useState("");
 	const wordsToReview = words.filter(
 		(word) => word.nextReview && new Date(word.nextReview) <= new Date(),
 	);
+	const learnedWords = words.filter((word) => (word.reviewCount || 0) > 0);
+	console.table(
+		wordsToReview.map((word) => ({
+			english: word.english,
+			nextReview: word.nextReview,
+			status: word.status,
+			reviewCount: word.reviewCount,
+		})),
+	);
+	const quotes = [
+		{
+			text: "🚀 Khi điều gì đó đủ quan trọng, bạn sẽ làm nó ngay cả khi cơ hội không đứng về phía bạn.",
+			author: "Elon Musk",
+		},
+		{
+			text: "🍎 Hãy cứ khát khao. Hãy cứ dại khờ.",
+			author: "Steve Jobs",
+		},
+		{
+			text: "🏀 Tôi đã thất bại hết lần này đến lần khác trong cuộc đời. Và đó là lý do tôi thành công.",
+			author: "Michael Jordan",
+		},
+		{
+			text: "💡 Trí tưởng tượng quan trọng hơn kiến thức.",
+			author: "Albert Einstein",
+		},
+		{
+			text: "👣 Hành trình vạn dặm bắt đầu từ một bước chân.",
+			author: "Lão Tử",
+		},
+		{
+			text: "⏳ Tương lai phụ thuộc vào những gì bạn làm hôm nay.",
+			author: "Mahatma Gandhi",
+		},
+		{
+			text: "🥊 Đừng đếm ngày, hãy khiến từng ngày trở nên đáng giá.",
+			author: "Muhammad Ali",
+		},
+	];
+	// Random quote
+	useEffect(() => {
+		const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+		setQuote(randomQuote);
+	}, []);
 
 	useEffect(() => {
 		async function fetchWords() {
@@ -165,156 +211,175 @@ function Page() {
 	}
 
 	return (
-		<div className="min-h-[calc(100vh-80px)] bg-[#030616] px-4 sm:px-8 py-6 sm:py-10 relative overflow-hidden">
-			<div className="max-w-5xl mx-auto relative z-10">
-				{/* Header */}
-				<div className="relative z-10 mb-7 sm:mb-10 rounded-2xl border border-slate-900/80 bg-[#071022]/70 p-5 sm:p-8 shadow-[0_0_50px_-20px_rgba(37,99,235,0.45)] overflow-hidden">
-					{/* Radial Glow Layer */}
-					<div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16)_0%,rgba(13,27,62,0)_65%)] pointer-events-none" />
+		<div className="min-h-[calc(100vh-80px)] bg-[#030616] px-4 sm:px-7 py-6 sm:py-8">
+			<div className="max-w-6xl mx-auto">
+				{/* ================= HERO ================= */}
+				<div className="grid grid-cols-1 lg:grid-cols-[2.2fr_1fr] gap-4 mb-5">
+					{/* Review Card */}
+					<div className="relative overflow-hidden rounded-2xl border border-blue-500/20 bg-gradient-to-br from-[#102451] via-[#0c1c40] to-[#07142f] p-6 sm:p-8 ">
+						<div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+							<div className="max-w-xl">
+								<div className="flex items-center gap-3 text-blue-300 mb-5">
+									<div className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10">
+										<BookOpen className="w-5 h-5" />
+									</div>
 
-					<div className="relative z-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-						<div className="max-w-2xl">
-							<p className="text-xs sm:text-sm text-blue-400 font-medium mb-2">
-								Không gian học từ vựng của bạn 😊
-							</p>
+									<p className="text-xs sm:text-sm font-semibold tracking-wide uppercase">
+										Học tiếp hôm nay
+									</p>
+								</div>
 
-							<h1 className="text-2xl sm:text-4xl font-bold text-white tracking-tight leading-tight">
-								Tiếp tục xây dựng vốn từ vựng 🚀
-							</h1>
+								<h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+									{wordsToReview.length > 0 ? (
+										<>
+											Bạn có{" "}
+											<span className="text-blue-400">
+												{wordsToReview.length} từ
+											</span>{" "}
+											cần ôn tập
+										</>
+									) : (
+										"Bạn đã hoàn thành hôm nay 🎉"
+									)}
+								</h1>
 
-							<p className="mt-2 text-sm sm:text-base text-slate-400 leading-relaxed">
-								Tạo danh sách từ, sắp xếp từ vựng và học mỗi ngày. 🍀
+								<p className="mt-3 text-sm sm:text-base text-slate-400 leading-relaxed">
+									{wordsToReview.length > 0
+										? "Ôn tập đều đặn mỗi ngày giúp bạn ghi nhớ lâu hơn và tiến bộ nhanh hơn."
+										: "Hiện tại không có từ nào đến hạn. Bạn có thể học thêm từ mới nhé."}
+								</p>
+
+								{wordsToReview.length > 0 && (
+									<Link
+										href="/wordlist/review"
+										className="inline-flex mt-6 items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-500 active:scale-[0.98]"
+									>
+										Bắt đầu ôn tập
+										<span>→</span>
+									</Link>
+								)}
+							</div>
+
+							{/* Right mini information */}
+							<div className="lg:min-w-[190px] lg:border-l lg:border-white/10 lg:pl-8">
+								<p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+									Hôm nay
+								</p>
+
+								<p className="mt-2 text-4xl font-bold text-blue-400">
+									{wordsToReview.length}
+								</p>
+
+								<p className="mt-1 text-sm text-slate-400">từ cần ôn</p>
+
+								<div className="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-slate-900">
+									<div
+										className="h-full rounded-full bg-blue-500 transition-all"
+										style={{
+											width:
+												words.length > 0
+													? `${Math.min(
+															100,
+															((words.length - wordsToReview.length) /
+																words.length) *
+																100,
+														)}%`
+													: "0%",
+										}}
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{/* Quote */}
+					<div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-[#0b1730] p-6 sm:p-7 min-h-[230px]">
+						{/* glow */}
+						<div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.18),transparent_55%)]" />
+
+						{/* back mountain */}
+						<div
+							className="absolute bottom-0 right-0 h-[45%] w-[85%] bg-[#0a1329]/80"
+							style={{
+								clipPath:
+									"polygon(0 100%, 20% 65%, 35% 78%, 55% 38%, 68% 62%, 82% 25%, 100% 55%, 100% 100%)",
+							}}
+						/>
+
+						{/* front mountain */}
+						<div
+							className="absolute bottom-0 right-0 h-[32%] w-full bg-[#060d1d]"
+							style={{
+								clipPath:
+									"polygon(0 100%, 18% 70%, 32% 82%, 48% 55%, 62% 75%, 78% 45%, 100% 72%, 100% 100%)",
+							}}
+						/>
+
+						{/* Quote */}
+						<div className="relative z-10 max-w-[85%]">
+							<span className="text-4xl text-slate-500">“</span>
+
+							<h3 className="mt-2 text-lg sm:text-xl font-semibold italic leading-relaxed text-white">
+								{quote.text}
+							</h3>
+
+							<p className="mt-5 text-sm font-medium text-blue-300">
+								— {quote.author}
 							</p>
 						</div>
-
-						<button
-							onClick={() => setIsOpen(true)}
-							className="w-full sm:w-auto rounded-xl bg-slate-100 px-5 py-3 text-sm sm:text-base font-semibold text-slate-900 shadow-[0_0_20px_rgba(59,130,246,0.18)] transition-all hover:bg-white active:scale-[0.98] cursor-pointer"
-						>
-							+ Tạo danh sách từ
-						</button>
 					</div>
 				</div>
 
-				{/* Stats Cards Grid */}
-				<div className="grid grid-cols-3 gap-2 sm:gap-4 mb-8 sm:mb-10">
-					<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-[#1a2d59] bg-[#0d1b3e]/50 p-3 sm:p-5 shadow-lg backdrop-blur-sm">
-						<div>
-							<p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 sm:text-slate-400 mb-1">
-								Danh sách
-							</p>
+				{/* ================= STATS ================= */}
+				<div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-8">
+					<StatCard
+						title="Tổng số từ"
+						value={words.length}
+				
+						icon={<Layers className="h-6 w-6" />}
+						accent="violet"
+					/>
 
-							<p className="text-2xl sm:text-3xl font-bold text-white">
-								{topics.length}
-							</p>
-						</div>
+					<StatCard
+						title="Đã học"
+						value={learnedWords.length}
+				
+						icon={<BookOpen className="h-6 w-6" />}
+						accent="emerald"
+					/>
 
-						<div className="hidden sm:flex p-3 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
-							<BookOpen className="w-6 h-6" />
-						</div>
-					</div>
-
-					<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-[#1a2d59] bg-[#0d1b3e]/50 p-3 sm:p-5 shadow-lg backdrop-blur-sm">
-						<div>
-							<p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 sm:text-slate-400 mb-1">
-								Tổng số từ
-							</p>
-
-							<p className="text-2xl sm:text-3xl font-bold text-white">
-								{words.length}
-							</p>
-						</div>
-
-						<div className="hidden sm:flex p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400">
-							<Layers className="w-6 h-6" />
-						</div>
-					</div>
-
-					<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-xl border border-[#1a2d59] bg-[#0d1b3e]/50 p-3 sm:p-5 shadow-lg backdrop-blur-sm">
-						<div>
-							<p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500 sm:text-slate-400 mb-1">
-								Cần ôn
-							</p>
-
-							<p className="text-2xl sm:text-3xl font-bold text-emerald-400">
-								{wordsToReview.length}
-							</p>
-						</div>
-
-						<div className="hidden sm:flex p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
-							<CheckCircle2 className="w-6 h-6" />
-						</div>
-					</div>
+					<StatCard
+						title="Cần ôn hôm nay"
+						value={wordsToReview.length}
+		
+						icon={<CheckCircle2 className="h-6 w-6" />}
+						accent="amber"
+					/>
 				</div>
 
-				{/* form */}
-				{isOpen && (
-					<div className="fixed inset-0 backdrop-blur-sm bg-black/60 flex items-center justify-center z-50 p-4">
-						<form
-							onSubmit={handleSubmit}
-							className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 sm:p-8 flex flex-col gap-4 shadow-2xl"
-						>
-							<div className="flex items-center justify-between">
-								<h4 className="text-xl font-bold text-slate-100">
-									Tạo danh sách từ mới 🌴
-								</h4>
+				{/* ================= LIST HEADER ================= */}
+				<div className="mb-4 flex items-center justify-between gap-4">
+					<div>
+						<h2 className="text-lg sm:text-xl font-semibold text-white">
+							Danh sách từ vựng
+						</h2>
 
-								<button
-									type="button"
-									onClick={() => setIsOpen(false)}
-									className="text-slate-400 hover:text-white text-2xl cursor-pointer"
-								>
-									&times;
-								</button>
-							</div>
-
-							<div className="flex flex-col gap-1">
-								<label className="text-sm font-medium text-slate-300">
-									Tiêu đề
-								</label>
-
-								<input
-									type="text"
-									placeholder="Nhập tiêu đề danh sách từ..."
-									value={newTopic}
-									onChange={(e) => setNewTopic(e.target.value)}
-									className="border border-slate-700/80 bg-slate-950/50 p-3 rounded-xl text-slate-100 focus:outline-none focus:border-blue-500"
-									required
-								/>
-							</div>
-
-							<div className="flex flex-col gap-1">
-								<label className="text-sm font-medium text-slate-300">
-									Ghi chú
-								</label>
-
-								<textarea
-									placeholder="Nhập ghi chú hoặc mô tả..."
-									value={description}
-									onChange={(e) => setDescription(e.target.value)}
-									rows={3}
-									className="border border-slate-700/80 bg-slate-950/50 p-3 rounded-xl text-slate-100 focus:outline-none focus:border-blue-500"
-								/>
-							</div>
-
-							<div className="flex gap-3 mt-2">
-								<button
-									type="button"
-									onClick={() => setIsOpen(false)}
-									className="flex-1 p-3 rounded-xl border border-slate-700 text-slate-300 hover:bg-slate-800 transition-colors"
-								>
-									Hủy
-								</button>
-
-								<Button type="submit">Tạo</Button>
-							</div>
-						</form>
+						<p className="mt-1 text-xs sm:text-sm text-slate-500">
+							{topics.length} danh sách · {words.length} từ
+						</p>
 					</div>
-				)}
 
-				{/* Topics */}
+					<button
+						onClick={() => setIsOpen(true)}
+						className="shrink-0 rounded-xl border border-blue-500/40 bg-blue-500/5 px-4 py-2.5 text-xs sm:text-sm font-semibold text-blue-300 transition hover:bg-blue-500/10 hover:border-blue-400"
+					>
+						+ Tạo danh sách mới
+					</button>
+				</div>
+
+				{/* ================= TOPICS ================= */}
 				{topics.length > 0 ? (
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-7 sm:mt-10">
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
 						{topics.map((topic) => {
 							const topicWords = words.filter(
 								(word) => word.topic === topic._id,
@@ -332,7 +397,7 @@ function Page() {
 						})}
 					</div>
 				) : (
-					<div className="mt-10 rounded-2xl border border-dashed border-slate-800 px-6 py-12 text-center">
+					<div className="rounded-2xl border border-dashed border-slate-800 bg-[#081123]/50 px-6 py-14 text-center">
 						<div className="text-4xl mb-4">📚</div>
 
 						<h3 className="text-lg font-semibold text-white">
@@ -340,8 +405,86 @@ function Page() {
 						</h3>
 
 						<p className="mt-2 text-sm text-slate-400">
-							Tạo danh sách đầu tiên để bắt đầu xây dựng vốn từ vựng của bạn.
+							Tạo danh sách đầu tiên để bắt đầu xây dựng vốn từ vựng.
 						</p>
+
+						<button
+							onClick={() => setIsOpen(true)}
+							className="mt-5 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-500"
+						>
+							+ Tạo danh sách
+						</button>
+					</div>
+				)}
+
+				{/* ================= MODAL ================= */}
+				{isOpen && (
+					<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm">
+						<form
+							onSubmit={handleSubmit}
+							className="w-full max-w-md rounded-2xl border border-slate-800 bg-[#0c1426] p-6 sm:p-8 shadow-2xl"
+						>
+							<div className="flex items-center justify-between">
+								<div>
+									<h4 className="text-xl font-bold text-white">
+										Tạo danh sách mới
+									</h4>
+
+									<p className="mt-1 text-sm text-slate-500">
+										Thêm một chủ đề bạn muốn học.
+									</p>
+								</div>
+
+								<button
+									type="button"
+									onClick={() => setIsOpen(false)}
+									className="text-2xl text-slate-500 hover:text-white"
+								>
+									&times;
+								</button>
+							</div>
+
+							<div className="mt-6 flex flex-col gap-2">
+								<label className="text-sm font-medium text-slate-300">
+									Tiêu đề
+								</label>
+
+								<input
+									type="text"
+									placeholder="Ví dụ: Travel, Food..."
+									value={newTopic}
+									onChange={(e) => setNewTopic(e.target.value)}
+									className="rounded-xl border border-slate-700 bg-slate-950/60 px-4 py-3 text-slate-100 outline-none transition focus:border-blue-500"
+									required
+								/>
+							</div>
+
+							<div className="mt-4 flex flex-col gap-2">
+								<label className="text-sm font-medium text-slate-300">
+									Ghi chú
+								</label>
+
+								<textarea
+									placeholder="Mô tả ngắn về danh sách..."
+									value={description}
+									onChange={(e) => setDescription(e.target.value)}
+									rows={3}
+									className="resize-none rounded-xl border border-slate-700 bg-slate-950/60 px-4 py-3 text-slate-100 outline-none transition focus:border-blue-500"
+								/>
+							</div>
+
+							<div className="mt-6 flex gap-3">
+								<button
+									type="button"
+									onClick={() => setIsOpen(false)}
+									className="flex-1 rounded-xl border border-slate-700 py-3 text-sm font-medium text-slate-300 transition hover:bg-slate-800"
+								>
+									Hủy
+								</button>
+
+								<Button type="submit">Tạo danh sách</Button>
+							</div>
+						</form>
 					</div>
 				)}
 			</div>

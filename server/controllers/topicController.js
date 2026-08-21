@@ -1,4 +1,5 @@
 const Topic = require("../models/topicModel");
+const Vocab = require("../models/vocabModel");
 const catchAsync = require("../utils/catchAsync");
 
 exports.getAllTopics = catchAsync(async (req, res, next) => {
@@ -42,12 +43,18 @@ exports.updateTopic = catchAsync(async (req, res, next) => {
 });
 
 exports.deleteTopic = catchAsync(async (req, res, next) => {
-	await Topic.findOneAndDelete({
+	await Vocab.deleteMany({
+		topic: req.params.id,
 		user: req.user.id,
+	});
+
+	await Topic.findOneAndDelete({
 		_id: req.params.id,
+		user: req.user.id,
 	});
 
 	res.status(204).json({
 		status: "success",
+		data: null,
 	});
 });

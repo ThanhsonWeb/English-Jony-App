@@ -32,7 +32,6 @@ exports.getVocab = catchAsync(async (req, res, next) => {
 });
 exports.updateVocab = catchAsync(async (req, res, next) => {
 	const updatedVocab = await Vocab.findOneAndUpdate(
-		// This ensures users can only update their own vocabulary.
 		{ _id: req.params.id, user: req.user.id },
 		req.body,
 		{
@@ -40,8 +39,19 @@ exports.updateVocab = catchAsync(async (req, res, next) => {
 			runValidators: true,
 		},
 	);
+
+	console.log("BODY:", req.body);
+	console.log("UPDATED VOCAB:", updatedVocab);
+
+	if (!updatedVocab) {
+		return res.status(404).json({
+			status: "fail",
+			message: "Vocabulary not found",
+		});
+	}
+
 	res.status(200).json({
-		status: " success",
+		status: "success",
 		data: { updatedVocab },
 	});
 });

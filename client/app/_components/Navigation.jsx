@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 const navLinks = [
-	{ name: "Luyện viết", href: "/writing", icon: PenLine },
+	// { name: "Luyện viết", href: "/writing", icon: PenLine },
 	{ name: "Hội thoại", href: "/dictation", icon: Headphones },
 	{ name: "Từ vựng", href: "/vocabulary", icon: Languages },
 	{ name: "Sổ tay", href: "/wordlist", icon: BookOpen },

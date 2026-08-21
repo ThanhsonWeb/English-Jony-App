@@ -61,7 +61,7 @@ function Word({ word, onDelete, onFix }) {
 				</div>
 
 				{/* Example */}
-				<div className="md:col-span-4">
+				<div className="md:col-span-3">
 					<p className="md:hidden text-xs text-slate-500 mb-1">Ví dụ</p>
 					<p className="text-slate-400 text-sm md:text-md italic whitespace-normal break-words leading-relaxed">
 						{word.example || "—"}
@@ -69,7 +69,7 @@ function Word({ word, onDelete, onFix }) {
 				</div>
 
 				{/* Status */}
-				<div className="md:col-span-1">
+				<div className="md:col-span-2">
 					<p className="md:hidden text-xs text-slate-500 mb-2">Trạng thái</p>
 
 					{wordStatus === "new" && (
