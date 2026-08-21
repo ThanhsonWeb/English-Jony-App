@@ -176,40 +176,6 @@ function Page() {
 
 	if (loading) return <Loading />;
 
-	if (!loading && !user) {
-		return (
-			<div className="min-h-[calc(100vh-80px)] bg-slate-950 flex items-center justify-center px-4">
-				<div className="text-center max-w-md">
-					<div className="text-5xl mb-5">🔐</div>
-
-					<h1 className="text-2xl font-bold text-slate-100 mb-3">
-						Bạn chưa đăng nhập
-					</h1>
-
-					<p className="text-slate-400 mb-6">
-						Đăng nhập hoặc tạo tài khoản để xem sổ tay và lưu từ vựng của bạn.
-					</p>
-
-					<div className="flex justify-center gap-3">
-						<Link
-							href="/login"
-							className="px-5 py-3 rounded-xl border border-slate-700 text-slate-200 hover:bg-slate-900"
-						>
-							Đăng nhập
-						</Link>
-
-						<Link
-							href="/signup"
-							className="px-5 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-500"
-						>
-							Đăng ký
-						</Link>
-					</div>
-				</div>
-			</div>
-		);
-	}
-
 	return (
 		<div className="min-h-[calc(100vh-80px)] bg-[#030616] px-4 sm:px-7 py-6 sm:py-8">
 			<div className="max-w-6xl mx-auto">
@@ -335,7 +301,6 @@ function Page() {
 					<StatCard
 						title="Tổng số từ"
 						value={words.length}
-				
 						icon={<Layers className="h-6 w-6" />}
 						accent="violet"
 					/>
@@ -343,7 +308,6 @@ function Page() {
 					<StatCard
 						title="Đã học"
 						value={learnedWords.length}
-				
 						icon={<BookOpen className="h-6 w-6" />}
 						accent="emerald"
 					/>
@@ -351,7 +315,6 @@ function Page() {
 					<StatCard
 						title="Cần ôn hôm nay"
 						value={wordsToReview.length}
-		
 						icon={<CheckCircle2 className="h-6 w-6" />}
 						accent="amber"
 					/>
@@ -368,18 +331,19 @@ function Page() {
 							{topics.length} danh sách · {words.length} từ
 						</p>
 					</div>
-
-					<button
-						onClick={() => setIsOpen(true)}
-						className="shrink-0 rounded-xl border border-blue-500/40 bg-blue-500/5 px-4 py-2.5 text-xs sm:text-sm font-semibold text-blue-300 transition hover:bg-blue-500/10 hover:border-blue-400"
-					>
-						+ Tạo danh sách mới
-					</button>
+					{user && (
+						<button
+							onClick={() => setIsOpen(true)}
+							className="shrink-0 rounded-xl border border-blue-500/40 bg-blue-500/5 px-4 py-2.5 text-xs sm:text-sm font-semibold text-blue-300 transition hover:bg-blue-500/10 hover:border-blue-400"
+						>
+							+ Tạo danh sách mới
+						</button>
+					)}
 				</div>
 
 				{/* ================= TOPICS ================= */}
 				{topics.length > 0 ? (
-					<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
+					<div className="grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-2">
 						{topics.map((topic) => {
 							const topicWords = words.filter(
 								(word) => word.topic === topic._id,
@@ -396,9 +360,9 @@ function Page() {
 							);
 						})}
 					</div>
-				) : (
+				) : user ? (
 					<div className="rounded-2xl border border-dashed border-slate-800 bg-[#081123]/50 px-6 py-14 text-center">
-						<div className="text-4xl mb-4">📚</div>
+						<div className="mb-4 text-4xl">📚</div>
 
 						<h3 className="text-lg font-semibold text-white">
 							Chưa có danh sách từ nào
@@ -414,6 +378,47 @@ function Page() {
 						>
 							+ Tạo danh sách
 						</button>
+					</div>
+				) : (
+					<div className="relative overflow-hidden rounded-2xl border border-blue-500/20 bg-gradient-to-br from-[#0b1730] via-[#081225] to-[#06101f] px-6 py-12 text-center shadow-[0_20px_60px_-30px_rgba(37,99,235,0.45)]">
+						{/* background glow */}
+						<div className="pointer-events-none absolute -top-20 left-1/2 h-52 w-52 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
+
+						<div className="relative z-10 mx-auto flex max-w-md flex-col items-center">
+							{/* icon */}
+							<div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-blue-500/20 bg-blue-500/10 text-3xl shadow-[0_0_30px_rgba(59,130,246,0.12)]">
+								👋
+							</div>
+
+							<h3 className="text-xl sm:text-2xl font-bold text-white">
+								Sẵn sàng bắt đầu học chưa?
+							</h3>
+
+							<p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-400">
+								Đăng nhập để tạo danh sách từ, lưu tiến độ và tiếp tục học mỗi
+								ngày.
+							</p>
+
+							<div className="mt-6 flex w-full flex-col gap-3 sm:flex-row sm:justify-center">
+								<Link
+									href="/login"
+									className="rounded-xl bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-500 active:scale-[0.98]"
+								>
+									Đăng nhập
+								</Link>
+
+								<Link
+									href="/signup"
+									className="rounded-xl border border-slate-700 bg-slate-900/50 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-blue-500/40 hover:bg-slate-800"
+								>
+									Tạo tài khoản miễn phí
+								</Link>
+							</div>
+
+							<p className="mt-5 text-xs text-slate-500">
+								✨ Lưu từ vựng • Theo dõi tiến độ • Ôn tập thông minh
+							</p>
+						</div>
 					</div>
 				)}
 
