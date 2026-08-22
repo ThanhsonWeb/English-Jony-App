@@ -173,14 +173,14 @@ function SignUpForm() {
 
 						<div className="flex flex-col gap-1.5">
 							<label className="text-sm font-medium text-slate-300">
-								Họ và tên
+								Tên người dùng
 							</label>
 
 							<input
 								type="text"
 								value={name}
 								onChange={(e) => setName(e.target.value)}
-								placeholder="Nguyễn Văn A"
+								placeholder="nhập tên của bạn ..."
 								className="w-full rounded-xl border border-slate-700/80 bg-slate-950/60 px-3 py-2.5 text-slate-100 placeholder:text-slate-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/10"
 								required
 							/>

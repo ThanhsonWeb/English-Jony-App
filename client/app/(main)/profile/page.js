@@ -64,7 +64,7 @@ function Page() {
 						<Camera size={20} />
 					</button>
 				</div>
-
+						
 				<div className="mt-5 sm:mt-0">
 					<div className="flex items-center gap-3">
 						<h1 className="text-3xl font-bold">{user?.name}</h1>
