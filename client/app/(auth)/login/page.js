@@ -163,6 +163,7 @@ function LoginPage() {
 					<GoogleSignInButton
 						onClick={openGoogleSignIn}
 						disabled={!googleClientId}
+						text="Đăng nhập với Google"
 					/>
 
 					{/* Divider */}

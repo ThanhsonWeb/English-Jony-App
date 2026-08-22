@@ -152,6 +152,7 @@ function SignUpForm() {
 					<GoogleSignInButton
 						onClick={openGoogleSignIn}
 						disabled={!googleClientId}
+						text="Đăng ký với Google"
 					/>
 
 					{/* Divider (Optional) */}
