@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, RotateCcw } from "lucide-react";
 import Loading from "@/app/_components/loading";
+import { X } from "lucide-react";
 
 function Page() {
 	const { topicId } = useParams();
 	const router = useRouter();
+	const [practiceMode, setPracticeMode] = useState(false);
 	const [loading, setLoading] = useState(true);
 	const [words, setWords] = useState([]);
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -108,31 +110,35 @@ function Page() {
 
 		const newReviewCount = level === 0 ? 0 : (word.reviewCount || 0) + 1;
 
-		await fetch(`/api/v1/vocab/${word._id}`, {
-			method: "PATCH",
-			credentials: "include",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				learningLevel: level,
-				nextReview,
-				reviewCount: newReviewCount,
-			}),
-		});
+		if (!practiceMode) {
+			await fetch(`/api/v1/vocab/${word._id}`, {
+				method: "PATCH",
+				credentials: "include",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					learningLevel: level,
+					nextReview,
+					reviewCount: newReviewCount,
+				}),
+			});
+		}
 		// just for safe
-		setWords((prev) =>
-			prev.map((item) =>
-				item._id === word._id
-					? {
-							...item,
-							learningLevel: level,
-							nextReview,
-							reviewCount: newReviewCount,
-						}
-					: item,
-			),
-		);
+		if (!practiceMode) {
+			setWords((prev) =>
+				prev.map((item) =>
+					item._id === word._id
+						? {
+								...item,
+								learningLevel: level,
+								nextReview,
+								reviewCount: newReviewCount,
+							}
+						: item,
+				),
+			);
+		}
 
 		if (currentIndex === words.length - 1) {
 			setSessionFinished(true);
@@ -210,12 +216,39 @@ function Page() {
 								</p>
 							</div>
 
-							<button
-								onClick={() => router.back()}
-								className="mt-7 w-full rounded-xl bg-blue-600 py-3.5 font-semibold text-white transition hover:bg-blue-500 active:scale-[0.98]"
-							>
-								Tiếp tục học →
-							</button>
+							<div className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
+								<button
+									onClick={() => {
+										setPracticeMode(true);
+										setCurrentIndex(0);
+										setSessionFinished(false);
+										setShowAnswer(false);
+
+										setResults({
+											forgot: 0,
+											hard: 0,
+											medium: 0,
+											easy: 0,
+										});
+									}}
+									className="flex items-center justify-center gap-2 rounded-xl border border-blue-500/30 bg-blue-500/10 py-3.5 font-semibold text-blue-300 transition hover:bg-blue-500/20"
+								>
+									<RotateCcw size={18} />
+									Ôn lại
+								</button>
+
+								<button
+									onClick={() => router.push(`/wordlist/${topicId}`)}
+									className="
+			rounded-xl bg-blue-600 py-3.5
+			font-semibold text-white
+			transition hover:bg-blue-500
+			active:scale-[0.98]
+		"
+								>
+									Về danh sách từ →
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -225,134 +258,268 @@ function Page() {
 
 	if (!currentWord) {
 		return (
-			<div className="min-h-screen bg-[#030616] flex flex-col items-center justify-center text-center text-white px-4">
-				<h2 className="text-3xl font-bold">Chưa có từ nào cần ôn lúc này 🎉</h2>
+			<div className="min-h-screen bg-[#030616] px-4 py-10 text-white flex items-center justify-center">
+				<div className="relative w-full max-w-xl overflow-hidden rounded-3xl border border-slate-800 bg-[#0b1224] p-8 sm:p-10 text-center shadow-2xl">
+					{/* Glow */}
+					<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.16),transparent_55%)]" />
 
-				<p className="mt-3 text-slate-400">
-					Hãy quay lại sau khi đến thời gian ôn tập tiếp theo.
-				</p>
+					<div className="relative z-10">
+						{/* Icon */}
+						<div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl border border-emerald-500/20 bg-emerald-500/10 text-4xl">
+							🎉
+						</div>
 
-				<button
-					onClick={() => router.back()}
-					className="mt-6 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 transition-colors"
-				>
-					Quay lại
-				</button>
+						<h2 className="mt-6 text-2xl sm:text-3xl font-bold tracking-tight">
+							Bạn đã ôn hết rồi!
+						</h2>
+
+						<p className="mx-auto mt-3 max-w-md text-sm sm:text-base leading-relaxed text-slate-400">
+							Hiện tại không còn từ nào cần ôn. Hãy quay lại khi đến lượt ôn
+							tiếp theo nhé.
+						</p>
+
+						{/* Status */}
+						<div className="mt-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 px-4 py-4">
+							<p className="text-sm text-emerald-300">
+								✅ Không có từ nào đang chờ ôn
+							</p>
+						</div>
+
+						{/* Button */}
+						<button
+							onClick={() => router.push(`/wordlist/${topicId}`)}
+							className="mt-7 w-full rounded-xl bg-blue-600 py-3.5 font-semibold text-white transition hover:bg-blue-500 active:scale-[0.98]"
+						>
+							Về danh sách từ →
+						</button>
+					</div>
+				</div>
 			</div>
 		);
 	}
-
 	return (
-		<div className="min-h-screen bg-[#030616] text-white px-4 py-6 sm:py-10">
-			<div className="max-w-3xl mx-auto">
-				<button
-					onClick={() => router.back()}
-					className="flex items-center gap-2 text-slate-400 hover:text-white mb-6 sm:mb-8"
-				>
-					<ArrowLeft size={18} />
-					Quay lại
-				</button>
+		<div className="min-h-screen bg-[#030616] px-4 py-5 text-white sm:py-7">
+			<div className="mx-auto max-w-3xl">
+				{/* ================= TOP BAR ================= */}
+				<div className="mb-5 flex items-center gap-3 sm:gap-4">
+					<button
+						onClick={() => router.back()}
+						className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-800 hover:text-white"
+					>
+						<X size={24} />
+					</button>
 
-				{/* Header */}
-				<div className="flex items-center justify-between gap-4 mb-5 sm:mb-6">
-					<div>
-						<h1 className="text-2xl sm:text-4xl font-bold mt-1">Ôn từ vựng</h1>
+					{/* Progress */}
+					<div className="h-3 flex-1 overflow-hidden rounded-full bg-slate-800">
+						<div
+							className="h-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 transition-all duration-500 ease-out"
+							style={{
+								width: `${((currentIndex + 1) / words.length) * 100}%`,
+							}}
+						/>
 					</div>
 
-					<p className="shrink-0 text-sm sm:text-lg text-slate-400">
-						{currentIndex + 1} / {words.length}
+					<p className="shrink-0 text-sm font-medium text-slate-400">
+						{currentIndex + 1}/{words.length}
 					</p>
 				</div>
 
-				{/* Progress */}
-				<div className="h-2 sm:h-4 bg-slate-800 rounded-full overflow-hidden mb-6 sm:mb-8">
-					<div
-						className="h-full bg-blue-400 transition-all"
-						style={{
-							width: `${((currentIndex + 1) / words.length) * 100}%`,
-						}}
-					/>
-				</div>
+				{/* ================= SMALL HEADER ================= */}
+				<div className="mb-3 flex items-center justify-between">
+					<div>
+						<h1 className="text-lg font-semibold sm:text-xl">Ôn từ vựng</h1>
 
-				{/* card */}
-				<div
-					onClick={() => setShowAnswer((cur) => !cur)}
-					className="min-h-[280px] sm:min-h-[340px] rounded-2xl sm:rounded-3xl border border-slate-800 bg-[#0d1427] px-5 py-8 sm:p-10 flex flex-col items-center justify-center text-center cursor-pointer shadow-2xl hover:border-blue-500/40 transition select-none"
-				>
-					{!showAnswer ? (
-						<>
-							<p className="text-xs sm:text-sm text-slate-500 mb-3 sm:mb-4">
-								Nhấn vào thẻ để xem nghĩa
-							</p>
+						<p className="mt-0.5 text-xs text-slate-500">
+							Nhớ lại nghĩa trước khi lật thẻ
+						</p>
+					</div>
 
-							<h2 className="text-4xl sm:text-5xl font-bold text-white break-words max-w-full">
-								{currentWord.english}
-							</h2>
-
-							{currentWord.pronunciation && (
-								<p className="mt-3 sm:mt-4 text-base sm:text-lg text-blue-300 font-mono break-words">
-									{currentWord.pronunciation}
-								</p>
-							)}
-						</>
-					) : (
-						<>
-							<p className="text-xs sm:text-sm text-slate-500 mb-3 sm:mb-4">
-								Nghĩa
-							</p>
-
-							<h2 className="text-3xl sm:text-4xl font-bold text-emerald-400 break-words max-w-full">
-								{currentWord.vietnamese}
-							</h2>
-
-							{currentWord.example && (
-								<p className="mt-5 sm:mt-6 text-sm sm:text-base text-slate-300 italic break-words max-w-full">
-									“{currentWord.example}”
-								</p>
-							)}
-						</>
+					{practiceMode && (
+						<span className="rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-300">
+							Ôn lại
+						</span>
 					)}
 				</div>
 
-				{/* action */}
-				<div className="mt-5 sm:mt-6">
-					<div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+				{/* ================= FLASHCARD ================= */}
+				<div className="group relative">
+					{/* Glow */}
+					<div className="absolute -inset-1 rounded-[28px] bg-blue-500/10 opacity-0 blur-xl transition duration-500 group-hover:opacity-100" />
+
+					<div
+						onClick={() => setShowAnswer((cur) => !cur)}
+						className="
+						relative
+						flex min-h-[240px] sm:min-h-[285px]
+						cursor-pointer select-none
+						overflow-hidden
+						rounded-3xl
+						border border-slate-800
+						bg-gradient-to-br from-[#101a31] via-[#0d1427] to-[#080f20]
+						px-5 py-6 sm:px-8 sm:py-8
+						text-center
+						shadow-[0_20px_60px_-30px_rgba(0,0,0,0.9)]
+						transition-all duration-300
+						hover:-translate-y-0.5
+						hover:border-blue-500/40
+					"
+					>
+						{/* Glow inside card */}
+						<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.13),transparent_50%)]" />
+
+						{/* Decoration */}
+						<div className="absolute left-6 top-6 h-2 w-2 rounded-full bg-blue-400/40" />
+						<div className="absolute right-8 top-8 h-1.5 w-1.5 rounded-full bg-cyan-400/30" />
+
+						{/* Content */}
+						<div
+							key={`${currentIndex}-${showAnswer}`}
+							className="relative z-10 flex w-full flex-col items-center justify-center animate-[fadeIn_.3s_ease-out]"
+						>
+							{!showAnswer ? (
+								<>
+									<span className="mb-4 rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-[11px] font-medium text-blue-300 sm:text-xs">
+										Nhấn để xem nghĩa
+									</span>
+
+									<h2 className="max-w-full break-words text-4xl font-bold tracking-tight text-white sm:text-5xl">
+										{currentWord.english}
+									</h2>
+
+									{currentWord.pronunciation && (
+										<p className="mt-3 break-words font-mono text-sm text-blue-300 sm:text-base">
+											{currentWord.pronunciation}
+										</p>
+									)}
+								</>
+							) : (
+								<>
+									<span className="mb-4 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-[11px] font-medium text-emerald-300 sm:text-xs">
+										Nghĩa tiếng Việt
+									</span>
+
+									<h2 className="max-w-full break-words text-3xl font-bold tracking-tight text-emerald-400 sm:text-4xl">
+										{currentWord.vietnamese}
+									</h2>
+
+									{currentWord.example && (
+										<div className="mt-5 max-w-xl rounded-xl border border-slate-800 bg-slate-950/30 px-4 py-3">
+											<p className="break-words text-sm italic leading-relaxed text-slate-300">
+												“{currentWord.example}”
+											</p>
+										</div>
+									)}
+								</>
+							)}
+						</div>
+					</div>
+				</div>
+
+				{/* ================= ANSWER SECTION ================= */}
+				<div className="mt-4">
+					<div className="mb-2 flex items-center justify-between">
+						<p className="text-sm font-medium text-slate-400">
+							Bạn nhớ từ này thế nào?
+						</p>
+
+						<p className="hidden text-xs text-slate-600 sm:block">
+							Chọn mức độ
+						</p>
+					</div>
+
+					<div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
+						{/* Forgot */}
 						<button
 							onClick={() => handleAnswer(0)}
-							className="flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl border border-red-500/30 bg-red-500/10 px-2 sm:px-5 py-3 text-red-400 transition hover:bg-red-500/20"
+							className="
+							flex min-w-0 flex-col items-center justify-center
+							rounded-xl border border-red-500/20
+							bg-red-500/5
+							px-2 py-3
+							text-red-400
+							transition-all duration-200
+							hover:-translate-y-0.5
+							hover:border-red-500/40
+							hover:bg-red-500/10
+							active:scale-[0.97]
+						"
 						>
-							<span className="text-sm sm:text-base">😵 Quên rồi</span>
-							<span className="text-[10px] sm:text-xs opacity-60">
+							<span className="text-sm font-medium sm:text-base">
+								😵 Quên rồi
+							</span>
+
+							<span className="mt-0.5 text-[10px] opacity-60 sm:text-xs">
 								{getReviewLabel(0)}
 							</span>
 						</button>
 
+						{/* Hard */}
 						<button
 							onClick={() => handleAnswer(1)}
-							className="flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl border border-orange-500/30 bg-orange-500/10 px-2 sm:px-5 py-3 text-orange-400 transition hover:bg-orange-500/20"
+							className="
+							flex min-w-0 flex-col items-center justify-center
+							rounded-xl border border-orange-500/20
+							bg-orange-500/5
+							px-2 py-3
+							text-orange-400
+							transition-all duration-200
+							hover:-translate-y-0.5
+							hover:border-orange-500/40
+							hover:bg-orange-500/10
+							active:scale-[0.97]
+						"
 						>
-							<span className="text-sm sm:text-base">😓 Khó</span>
-							<span className="text-[10px] sm:text-xs opacity-60">
+							<span className="text-sm font-medium sm:text-base">😓 Khó</span>
+
+							<span className="mt-0.5 text-[10px] opacity-60 sm:text-xs">
 								{getReviewLabel(1)}
 							</span>
 						</button>
 
+						{/* Medium */}
 						<button
 							onClick={() => handleAnswer(2)}
-							className="flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl border border-blue-500/30 bg-blue-500/10 px-2 sm:px-5 py-3 text-blue-400 transition hover:bg-blue-500/20"
+							className="
+							flex min-w-0 flex-col items-center justify-center
+							rounded-xl border border-blue-500/20
+							bg-blue-500/5
+							px-2 py-3
+							text-blue-400
+							transition-all duration-200
+							hover:-translate-y-0.5
+							hover:border-blue-500/40
+							hover:bg-blue-500/10
+							active:scale-[0.97]
+						"
 						>
-							<span className="text-sm sm:text-base">🙂 Khá nhớ</span>
-							<span className="text-[10px] sm:text-xs opacity-60">
+							<span className="text-sm font-medium sm:text-base">
+								🙂 Khá nhớ
+							</span>
+
+							<span className="mt-0.5 text-[10px] opacity-60 sm:text-xs">
 								{getReviewLabel(2)}
 							</span>
 						</button>
 
+						{/* Easy */}
 						<button
 							onClick={() => handleAnswer(3)}
-							className="flex min-w-0 flex-col items-center justify-center gap-1 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-2 sm:px-5 py-3 text-emerald-400 transition hover:bg-emerald-500/20"
+							className="
+							flex min-w-0 flex-col items-center justify-center
+							rounded-xl border border-emerald-500/20
+							bg-emerald-500/5
+							px-2 py-3
+							text-emerald-400
+							transition-all duration-200
+							hover:-translate-y-0.5
+							hover:border-emerald-500/40
+							hover:bg-emerald-500/10
+							active:scale-[0.97]
+						"
 						>
-							<span className="text-sm sm:text-base">✅ Dễ</span>
-							<span className="text-[10px] sm:text-xs opacity-60">
+							<span className="text-sm font-medium sm:text-base">✅ Dễ</span>
+
+							<span className="mt-0.5 text-[10px] opacity-60 sm:text-xs">
 								{getReviewLabel(3)}
 							</span>
 						</button>

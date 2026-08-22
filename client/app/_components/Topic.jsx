@@ -32,9 +32,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 	// words due for review inside this topic
 	const wordsToReview =
 		words?.filter(
-			(word) =>
-				word.nextReview &&
-				new Date(word.nextReview) <= new Date(),
+			(word) => word.nextReview && new Date(word.nextReview) <= new Date(),
 		) || [];
 
 	const handleEditSubmit = (e) => {
@@ -48,10 +46,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 	// Close dropdown when clicking outside
 	useEffect(() => {
 		function handleClickOutside(event) {
-			if (
-				dropdownRef.current &&
-				!dropdownRef.current.contains(event.target)
-			) {
+			if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
 				setIsMenuOpen(false);
 			}
 		}
@@ -65,7 +60,6 @@ function Topic({ topic, onDelete, onFix, words }) {
 
 	return (
 		<div ref={dropdownRef} className="relative">
-
 			{/* ================= TOPIC CARD ================= */}
 			<div
 				onClick={() => router.push(`/wordlist/${topic._id}`)}
@@ -83,16 +77,17 @@ function Topic({ topic, onDelete, onFix, words }) {
 				<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.08),transparent_45%)]" />
 
 				<div className="relative z-10 flex gap-4">
-
 					{/* ================= ICON ================= */}
-					<div className="
+					<div
+						className="
 						hidden sm:flex
 						h-28 w-28 shrink-0
 						items-center justify-center
 						rounded-xl
 						border border-blue-500/20
 						bg-gradient-to-br from-blue-500/20 to-indigo-500/5
-					">
+					"
+					>
 						<div className="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
 							<BookOpen className="h-7 w-7" />
 						</div>
@@ -100,17 +95,17 @@ function Topic({ topic, onDelete, onFix, words }) {
 
 					{/* ================= CONTENT ================= */}
 					<div className="flex min-w-0 flex-1 flex-col">
-
 						{/* title */}
 						<div className="flex items-start justify-between gap-3">
-
 							<div className="min-w-0">
-								<h3 className="
+								<h3
+									className="
 									truncate text-xl sm:text-2xl
 									font-bold tracking-tight text-white
 									transition-colors
 									group-hover:text-blue-300
-								">
+								"
+								>
 									{topic.name}
 								</h3>
 
@@ -119,9 +114,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 									<div className="mt-2 flex items-center gap-2 text-xs sm:text-sm text-slate-500">
 										<CalendarDays className="h-4 w-4" />
 
-										<span>
-											{formatDate(topic.createdAt)}
-										</span>
+										<span>{formatDate(topic.createdAt)}</span>
 									</div>
 								)}
 							</div>
@@ -144,23 +137,25 @@ function Topic({ topic, onDelete, onFix, words }) {
 						</div>
 
 						{/* Description */}
-						<p className="
+						<p
+							className="
 							mt-4 line-clamp-2
-							min-h-[2.5rem]
+							min-h-[3.25rem]
 							text-sm sm:text-base
 							leading-relaxed text-slate-400
-						">
+						"
+						>
 							{topic.description || "Chưa có mô tả cho danh sách này."}
 						</p>
 
 						{/* Bottom */}
-						<div className="
+						<div
+							className="
 							mt-auto pt-5
 							flex items-end justify-between gap-4
-						">
-
+						"
+						>
 							<div className="flex items-center gap-5">
-
 								{/* total words */}
 								<div>
 									<div className="flex items-end gap-1">
@@ -168,9 +163,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 											{words?.length || 0}
 										</span>
 
-										<span className="mb-[2px] text-sm text-blue-300">
-											từ
-										</span>
+										<span className="mb-[2px] text-sm text-blue-300">từ</span>
 									</div>
 								</div>
 
@@ -195,7 +188,6 @@ function Topic({ topic, onDelete, onFix, words }) {
 										</span>
 									</div>
 								</div>
-
 							</div>
 
 							{/* Learn button */}
@@ -217,10 +209,8 @@ function Topic({ topic, onDelete, onFix, words }) {
 								"
 							>
 								Học
-
 								<ArrowRight className="h-4 w-4" />
 							</button>
-
 						</div>
 					</div>
 				</div>
@@ -228,13 +218,15 @@ function Topic({ topic, onDelete, onFix, words }) {
 
 			{/* ================= DROPDOWN ================= */}
 			{isMenuOpen && (
-				<div className="
+				<div
+					className="
 					absolute right-4 top-14 z-30
 					w-36 overflow-hidden
 					rounded-xl border border-slate-700
 					bg-[#111b2e]
 					shadow-2xl
-				">
+				"
+				>
 					<button
 						onClick={(e) => {
 							e.stopPropagation();
@@ -271,12 +263,14 @@ function Topic({ topic, onDelete, onFix, words }) {
 
 			{/* ================= EDIT MODAL ================= */}
 			{isEditing && (
-				<div className="
+				<div
+					className="
 					fixed inset-0 z-50
 					flex items-center justify-center
 					bg-black/70 p-4
 					backdrop-blur-sm
-				">
+				"
+				>
 					<form
 						onSubmit={handleEditSubmit}
 						onClick={(e) => e.stopPropagation()}
