@@ -4,10 +4,10 @@ import { useAuth } from "@/app/_contexts/AuthContext";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
 
 function SignUpForm() {
-	const googleButtonRef = useRef(null);
 	const { setUser, getMe } = useAuth();
 	const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 
@@ -17,6 +17,30 @@ function SignUpForm() {
 	const [passwordConfirm, setPasswordConfirm] = useState("");
 	const [error, setError] = useState("");
 	const router = useRouter();
+
+	const handleGoogleLogin = useCallback(
+		async (response) => {
+			const res = await fetch("/api/v1/auth/google", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				credentials: "include",
+				body: JSON.stringify({
+					credential: response.credential,
+				}),
+			});
+			const data = await res.json();
+
+			if (!res.ok) {
+				setError(data.message);
+				return;
+			}
+			await getMe();
+			router.push("/wordlist");
+		},
+		[getMe, router],
+	);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -58,14 +82,8 @@ function SignUpForm() {
 			window.google.accounts.id.initialize({
 				client_id: googleClientId,
 				callback: handleGoogleLogin,
+				auto_select: false,
 			});
-
-			window.google.accounts.id.renderButton(googleButtonRef.current, {
-				theme: "outline",
-				size: "large",
-				width: 400,
-			});
-
 			return;
 		}
 
@@ -78,12 +96,7 @@ function SignUpForm() {
 			window.google.accounts.id.initialize({
 				client_id: googleClientId,
 				callback: handleGoogleLogin,
-			});
-
-			window.google.accounts.id.renderButton(googleButtonRef.current, {
-				theme: "outline",
-				size: "large",
-				width: 400,
+				auto_select: false,
 			});
 		};
 		script.onerror = () => {
@@ -91,28 +104,16 @@ function SignUpForm() {
 		};
 
 		document.body.appendChild(script);
-	}, []);
+	}, [googleClientId, handleGoogleLogin]);
 
-	async function handleGoogleLogin(response) {
-		const res = await fetch("/api/v1/auth/google", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			credentials: "include",
-			body: JSON.stringify({
-				credential: response.credential,
-			}),
-		});
-		const data = await res.json();
-		console.log(data);
-
-		if (!res.ok) {
-			setError(data.message);
+	function openGoogleSignIn() {
+		if (!window.google) {
+			setError("Google Sign-In is still loading. Please try again.");
 			return;
 		}
-		await getMe();
-		router.push("/wordlist");
+
+		setError("");
+		window.google.accounts.id.prompt();
 	}
 
 	return (
@@ -148,7 +149,10 @@ function SignUpForm() {
 						</p>
 					</div>
 
-					<div ref={googleButtonRef}></div>
+					<GoogleSignInButton
+						onClick={openGoogleSignIn}
+						disabled={!googleClientId}
+					/>
 
 					{/* Divider (Optional) */}
 					<div className="flex items-center gap-4 my-6 text-slate-500 text-xs">

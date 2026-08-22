@@ -4,10 +4,10 @@ import { useAuth } from "@/app/_contexts/AuthContext";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
 
 function LoginPage() {
-	const googleButtonRef = useRef(null);
 	const { getMe } = useAuth();
 	const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 
@@ -17,6 +17,33 @@ function LoginPage() {
 	const [error, setError] = useState("");
 
 	const router = useRouter();
+
+	const handleGoogleLogin = useCallback(
+		async (response) => {
+			const res = await fetch("/api/v1/auth/google", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				credentials: "include",
+				body: JSON.stringify({
+					credential: response.credential,
+				}),
+			});
+
+			const data = await res.json();
+
+			if (!res.ok) {
+				setError(data.message);
+				return;
+			}
+
+			await getMe();
+			router.push("/wordlist");
+		},
+		[getMe, router],
+	);
+
 	// load Google Sign-In system
 	useEffect(() => {
 		if (!googleClientId) {
@@ -27,17 +54,8 @@ function LoginPage() {
 			window.google.accounts.id.initialize({
 				client_id: googleClientId,
 				callback: handleGoogleLogin,
+				auto_select: false,
 			});
-
-			window.google.accounts.id.renderButton(googleButtonRef.current, {
-				theme: "outline", // or "filled_blue"
-				size: "large",
-				text: "signin_with", // better than long text
-				shape: "pill",
-				logo_alignment: "left",
-				width: 360,
-			});
-
 			return;
 		}
 
@@ -50,12 +68,7 @@ function LoginPage() {
 			window.google.accounts.id.initialize({
 				client_id: googleClientId,
 				callback: handleGoogleLogin,
-			});
-
-			window.google.accounts.id.renderButton(googleButtonRef.current, {
-				theme: "outline",
-				size: "large",
-				width: 400,
+				auto_select: false,
 			});
 		};
 		script.onerror = () => {
@@ -63,7 +76,17 @@ function LoginPage() {
 		};
 
 		document.body.appendChild(script);
-	}, []);
+	}, [googleClientId, handleGoogleLogin]);
+
+	function openGoogleSignIn() {
+		if (!window.google) {
+			setError("Google Sign-In is still loading. Please try again.");
+			return;
+		}
+
+		setError("");
+		window.google.accounts.id.prompt();
+	}
 
 	async function handleSubmit(e) {
 		e.preventDefault();
@@ -102,34 +125,6 @@ function LoginPage() {
 			setIsLoading(false);
 		}
 	}
-	// handle user after they click/sign in
-	async function handleGoogleLogin(response) {
-		console.log("Google response:", response);
-
-		const res = await fetch("/api/v1/auth/google", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			credentials: "include",
-			body: JSON.stringify({
-				credential: response.credential,
-			}),
-		});
-
-		const data = await res.json();
-
-		console.log("Backend response:", data);
-
-		if (!res.ok) {
-			setError(data.message);
-			return;
-		}
-
-		await getMe();
-		router.push("/wordlist");
-	}
-
 	return (
 		<div className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-slate-950 px-4 overflow-hidden">
 			<div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
@@ -165,9 +160,10 @@ function LoginPage() {
 					</div>
 
 					{/* Google */}
-					<div className="flex justify-center overflow-hidden rounded-xl">
-						<div ref={googleButtonRef}></div>
-					</div>
+					<GoogleSignInButton
+						onClick={openGoogleSignIn}
+						disabled={!googleClientId}
+					/>
 
 					{/* Divider */}
 					<div className="my-6 flex items-center gap-4">
