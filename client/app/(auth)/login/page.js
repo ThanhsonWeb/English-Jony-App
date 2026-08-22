@@ -9,6 +9,7 @@ import { useState, useRef, useEffect } from "react";
 function LoginPage() {
 	const googleButtonRef = useRef(null);
 	const { getMe } = useAuth();
+	const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -18,9 +19,13 @@ function LoginPage() {
 	const router = useRouter();
 	// load Google Sign-In system
 	useEffect(() => {
+		if (!googleClientId) {
+			return;
+		}
+
 		if (window.google) {
 			window.google.accounts.id.initialize({
-				client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+				client_id: googleClientId,
 				callback: handleGoogleLogin,
 			});
 
@@ -40,7 +45,7 @@ function LoginPage() {
 
 		script.onload = () => {
 			window.google.accounts.id.initialize({
-				client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+				client_id: googleClientId,
 				callback: handleGoogleLogin,
 			});
 
@@ -49,6 +54,9 @@ function LoginPage() {
 				size: "large",
 				width: 400,
 			});
+		};
+		script.onerror = () => {
+			setError("Unable to load Google Sign-In. Please try again later.");
 		};
 
 		document.body.appendChild(script);
@@ -166,9 +174,10 @@ function LoginPage() {
 					</div>
 
 					{/* Error */}
-					{error && (
+					{(error || !googleClientId) && (
 						<div className="mb-4 rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-400">
-							{error}
+							{error ||
+								"Google Sign-In is not configured. Add NEXT_PUBLIC_GOOGLE_CLIENT_ID and redeploy the app."}
 						</div>
 					)}
 

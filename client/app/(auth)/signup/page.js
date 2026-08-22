@@ -9,6 +9,7 @@ import { useState, useRef, useEffect } from "react";
 function SignUpForm() {
 	const googleButtonRef = useRef(null);
 	const { setUser, getMe } = useAuth();
+	const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
@@ -49,9 +50,13 @@ function SignUpForm() {
 	};
 
 	useEffect(() => {
+		if (!googleClientId) {
+			return;
+		}
+
 		if (window.google) {
 			window.google.accounts.id.initialize({
-				client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+				client_id: googleClientId,
 				callback: handleGoogleLogin,
 			});
 
@@ -71,7 +76,7 @@ function SignUpForm() {
 
 		script.onload = () => {
 			window.google.accounts.id.initialize({
-				client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+				client_id: googleClientId,
 				callback: handleGoogleLogin,
 			});
 
@@ -80,6 +85,9 @@ function SignUpForm() {
 				size: "large",
 				width: 400,
 			});
+		};
+		script.onerror = () => {
+			setError("Unable to load Google Sign-In. Please try again later.");
 		};
 
 		document.body.appendChild(script);
@@ -151,9 +159,10 @@ function SignUpForm() {
 
 					{/* Form */}
 					<form onSubmit={handleSubmit} className="flex flex-col gap-4">
-						{error && (
+						{(error || !googleClientId) && (
 							<div className="rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-400">
-								{error}
+								{error ||
+									"Google Sign-In is not configured. Add NEXT_PUBLIC_GOOGLE_CLIENT_ID and redeploy the app."}
 							</div>
 						)}
 
