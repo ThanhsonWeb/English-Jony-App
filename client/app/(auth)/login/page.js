@@ -30,9 +30,12 @@ function LoginPage() {
 			});
 
 			window.google.accounts.id.renderButton(googleButtonRef.current, {
-				theme: "outline",
+				theme: "outline", // or "filled_blue"
 				size: "large",
-				width: 400,
+				text: "signin_with", // better than long text
+				shape: "pill",
+				logo_alignment: "left",
+				width: 360,
 			});
 
 			return;
