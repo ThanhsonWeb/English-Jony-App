@@ -111,7 +111,7 @@ function Page() {
 		const newReviewCount = level === 0 ? 0 : (word.reviewCount || 0) + 1;
 
 		if (!practiceMode) {
-			await fetch(`/api/v1/vocab/${word._id}`, {
+			const res = await fetch(`/api/v1/vocab/${word._id}`, {
 				method: "PATCH",
 				credentials: "include",
 				headers: {
@@ -123,6 +123,13 @@ function Page() {
 					reviewCount: newReviewCount,
 				}),
 			});
+
+			if (res.ok) {
+				await fetch("/api/v1/study-activities", {
+					method: "POST",
+					credentials: "include",
+				});
+			}
 		}
 		// just for safe
 		if (!practiceMode) {

@@ -1,0 +1,12 @@
+{
+	"Profile": {
+		"title": "Profile",
+		"joined": "Joined",
+		"activity": "Study activity",
+		"language": "Display language",
+		"sound": "Sound effects",
+		"darkMode": "Dark mode",
+		"less": "Less",
+		"more": "More"
+	}
+}

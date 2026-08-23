@@ -1,0 +1,12 @@
+{
+	"Profile": {
+		"title": "Hồ sơ",
+		"joined": "Ngày tham gia",
+		"activity": "Hoạt động học tập",
+		"language": "Ngôn ngữ hiển thị",
+		"sound": "Hiệu ứng âm thanh",
+		"darkMode": "Chế độ tối",
+		"less": "Ít",
+		"more": "Nhiều"
+	}
+}
