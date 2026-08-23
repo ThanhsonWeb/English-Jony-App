@@ -94,7 +94,10 @@ function Header() {
 									{/* Profile & Settings */}
 									<div className="p-2">
 										<button
-											onClick={() => router.push("/profile")}
+											onClick={() => {
+												setIsDropdownOpen(false);
+												router.push("/profile");
+											}}
 											className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-slate-300 hover:bg-slate-900 hover:text-white"
 										>
 											<User size={18} />

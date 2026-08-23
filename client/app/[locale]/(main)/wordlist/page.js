@@ -1,12 +1,39 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Topic from "@/app/_components/Topic";
 import Loading from "@/app/_components/loading";
-import { BookOpen, Layers, CheckCircle2 } from "lucide-react";
+import { BookOpen, Layers, CheckCircle2, Flame } from "lucide-react";
 import Link from "next/link";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import Button from "@/app/_components/Button";
 import StatCard from "@/app/_components/StatCard";
+
+const quotes = [
+	{
+		text: "🚀 Khi điều gì đó đủ quan trọng, bạn sẽ làm nó ngay cả khi cơ hội không đứng về phía bạn.",
+		author: "Elon Musk",
+	},
+	{
+		text: "🍎 Hãy cứ khát khao. Hãy cứ dại khờ.",
+		author: "Steve Jobs",
+	},
+	{
+		text: "💡 Trí tưởng tượng quan trọng hơn kiến thức.",
+		author: "Albert Einstein",
+	},
+	{
+		text: "👣 Hành trình vạn dặm bắt đầu từ một bước chân.",
+		author: "Lão Tử",
+	},
+	{
+		text: "⏳ Tương lai phụ thuộc vào những gì bạn làm hôm nay.",
+		author: "Mahatma Gandhi",
+	},
+	{
+		text: "🥊 Đừng đếm ngày, hãy khiến từng ngày trở nên đáng giá.",
+		author: "Muhammad Ali",
+	},
+];
 
 function Page() {
 	const { user } = useAuth();
@@ -17,10 +44,44 @@ function Page() {
 	const [description, setDescription] = useState("");
 	const [words, setWords] = useState([]);
 	const [quote, setQuote] = useState("");
+	const [activities, setActivities] = useState([]);
+	const wordListRef = useRef(null);
 	const wordsToReview = words.filter(
 		(word) => word.nextReview && new Date(word.nextReview) <= new Date(),
 	);
 	const learnedWords = words.filter((word) => (word.reviewCount || 0) > 0);
+	const activeDates = new Set(
+		activities
+			.filter((activity) => activity.count > 0)
+			.map((activity) => activity.date),
+	);
+	const formatLocalDate = (date) => {
+		const year = date.getFullYear();
+		const month = String(date.getMonth() + 1).padStart(2, "0");
+		const day = String(date.getDate()).padStart(2, "0");
+		return `${year}-${month}-${day}`;
+	};
+	const today = new Date();
+	today.setHours(0, 0, 0, 0);
+	let currentStreak = 0;
+	const streakDate = new Date(today);
+	while (activeDates.has(formatLocalDate(streakDate))) {
+		currentStreak += 1;
+		streakDate.setDate(streakDate.getDate() - 1);
+	}
+	const monday = new Date(today);
+	const dayFromMonday = (today.getDay() + 6) % 7;
+	monday.setDate(today.getDate() - dayFromMonday);
+	const weekDays = Array.from({ length: 7 }, (_, index) => {
+		const date = new Date(monday);
+		date.setDate(monday.getDate() + index);
+		return {
+			label: ["T2", "T3", "T4", "T5", "T6", "T7", "CN"][index],
+			date: formatLocalDate(date),
+			active: activeDates.has(formatLocalDate(date)),
+			isToday: formatLocalDate(date) === formatLocalDate(today),
+		};
+	});
 	console.table(
 		wordsToReview.map((word) => ({
 			english: word.english,
@@ -29,40 +90,11 @@ function Page() {
 			reviewCount: word.reviewCount,
 		})),
 	);
-	const quotes = [
-		{
-			text: "🚀 Khi điều gì đó đủ quan trọng, bạn sẽ làm nó ngay cả khi cơ hội không đứng về phía bạn.",
-			author: "Elon Musk",
-		},
-		{
-			text: "🍎 Hãy cứ khát khao. Hãy cứ dại khờ.",
-			author: "Steve Jobs",
-		},
-		{
-			text: "🏀 Tôi đã thất bại hết lần này đến lần khác trong cuộc đời. Và đó là lý do tôi thành công.",
-			author: "Michael Jordan",
-		},
-		{
-			text: "💡 Trí tưởng tượng quan trọng hơn kiến thức.",
-			author: "Albert Einstein",
-		},
-		{
-			text: "👣 Hành trình vạn dặm bắt đầu từ một bước chân.",
-			author: "Lão Tử",
-		},
-		{
-			text: "⏳ Tương lai phụ thuộc vào những gì bạn làm hôm nay.",
-			author: "Mahatma Gandhi",
-		},
-		{
-			text: "🥊 Đừng đếm ngày, hãy khiến từng ngày trở nên đáng giá.",
-			author: "Muhammad Ali",
-		},
-	];
 	// Random quote
 	useEffect(() => {
 		const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-		setQuote(randomQuote);
+		const timer = setTimeout(() => setQuote(randomQuote), 0);
+		return () => clearTimeout(timer);
 	}, []);
 
 	useEffect(() => {
@@ -83,6 +115,25 @@ function Page() {
 		}
 
 		fetchWords();
+	}, []);
+
+	useEffect(() => {
+		async function fetchActivities() {
+			try {
+				const res = await fetch("/api/v1/study-activities", {
+					credentials: "include",
+				});
+
+				if (!res.ok) return;
+
+				const data = await res.json();
+				setActivities(data.data.activities || []);
+			} catch (error) {
+				console.log(error);
+			}
+		}
+
+		fetchActivities();
 	}, []);
 	// getAllTopics
 	useEffect(() => {
@@ -181,78 +232,37 @@ function Page() {
 			<div className="max-w-6xl mx-auto">
 				{/* ================= HERO ================= */}
 				<div className="grid grid-cols-1 lg:grid-cols-[2.2fr_1fr] gap-4 mb-5">
-					{/* Review Card */}
-					<div className="relative overflow-hidden rounded-2xl border border-blue-500/20 bg-gradient-to-br from-[#102451] via-[#0c1c40] to-[#07142f] p-6 sm:p-8 ">
-						<div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-							<div className="max-w-xl">
-								<div className="flex items-center gap-3 text-blue-300 mb-5">
-									<div className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10">
-										<BookOpen className="w-5 h-5" />
+					{/* Weekly streak banner */}
+					<div className="relative overflow-hidden rounded-2xl border border-orange-500/20 bg-gradient-to-br from-[#251407] via-[#1b1020] to-[#0d1730] p-5 sm:p-7">
+						<div className="pointer-events-none absolute -right-12 -top-14 h-44 w-44 rounded-full bg-orange-500/15 blur-3xl" />
+						<div className="relative z-10 flex h-full flex-col justify-between gap-6">
+							<div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+								<div className="flex items-center gap-4">
+									<div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-orange-500/15 text-orange-400 ring-1 ring-orange-400/20">
+										<Flame className="h-8 w-8 fill-orange-500/30" />
 									</div>
-
-									<p className="text-xs sm:text-sm font-semibold tracking-wide uppercase">
-										Học tiếp hôm nay
-									</p>
+									<div>
+										<p className="text-sm font-medium text-orange-300">Chuỗi học tập hiện tại</p>
+										<h1 className="mt-1 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+											{currentStreak} ngày
+										</h1>
+									</div>
 								</div>
 
-								<h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-									{wordsToReview.length > 0 ? (
-										<>
-											Bạn có{" "}
-											<span className="text-blue-400">
-												{wordsToReview.length} từ
-											</span>{" "}
-											cần ôn tập
-										</>
-									) : (
-										"Bạn đã hoàn thành hôm nay 🎉"
-									)}
-								</h1>
-
-								<p className="mt-3 text-sm sm:text-base text-slate-400 leading-relaxed">
-									{wordsToReview.length > 0
-										? "Ôn tập đều đặn mỗi ngày giúp bạn ghi nhớ lâu hơn và tiến bộ nhanh hơn."
-										: "Hiện tại không có từ nào đến hạn. Bạn có thể học thêm từ mới nhé."}
-								</p>
-
-								{wordsToReview.length > 0 && (
-									<Link
-										href="/wordlist/review"
-										className="inline-flex mt-6 items-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-500 active:scale-[0.98]"
-									>
-										Bắt đầu ôn tập
-										<span>→</span>
-									</Link>
-								)}
+								
 							</div>
 
-							{/* Right mini information */}
-							<div className="lg:min-w-[190px] lg:border-l lg:border-white/10 lg:pl-8">
-								<p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-									Hôm nay
-								</p>
-
-								<p className="mt-2 text-4xl font-bold text-blue-400">
-									{wordsToReview.length}
-								</p>
-
-								<p className="mt-1 text-sm text-slate-400">từ cần ôn</p>
-
-								<div className="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-slate-900">
-									<div
-										className="h-full rounded-full bg-blue-500 transition-all"
-										style={{
-											width:
-												words.length > 0
-													? `${Math.min(
-															100,
-															((words.length - wordsToReview.length) /
-																words.length) *
-																100,
-														)}%`
-													: "0%",
-										}}
-									/>
+							<div>
+								<p className="mb-3 text-sm text-slate-400">Hoạt động tuần này</p>
+								<div className="grid grid-cols-7 gap-1.5 sm:gap-3">
+									{weekDays.map((day) => (
+										<div key={day.date} className="flex min-w-0 flex-col items-center gap-2">
+											<div className={`flex h-9 w-9 items-center justify-center rounded-full border text-sm font-bold transition sm:h-11 sm:w-11 ${day.active ? "border-orange-400 bg-orange-500 text-slate-950 shadow-[0_0_18px_rgba(249,115,22,0.25)]" : day.isToday ? "border-orange-400/60 bg-orange-500/10 text-orange-300" : "border-slate-700 bg-slate-900/70 text-slate-600"}`}>
+												{day.active ? "✓" : day.date.slice(-2)}
+											</div>
+											<span className={`text-[11px] font-medium sm:text-xs ${day.isToday ? "text-orange-300" : "text-slate-500"}`}>{day.label}</span>
+										</div>
+									))}
 								</div>
 							</div>
 						</div>
@@ -321,7 +331,7 @@ function Page() {
 				</div>
 
 				{/* ================= LIST HEADER ================= */}
-				<div className="mb-4 flex items-center justify-between gap-4">
+				<div ref={wordListRef} className="mb-4 flex scroll-mt-24 items-center justify-between gap-4">
 					<div>
 						<h2 className="text-lg sm:text-xl font-semibold text-white">
 							Danh sách từ vựng
