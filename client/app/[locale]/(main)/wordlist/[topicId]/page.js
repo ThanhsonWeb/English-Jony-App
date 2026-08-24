@@ -2,7 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
-import { Search, Filter, ArrowLeft, RotateCcw } from "lucide-react";
+import {
+	Search,
+	Filter,
+	ArrowLeft,
+	RotateCcw,
+	LayoutList,
+	LayoutGrid,
+} from "lucide-react";
 import Word from "@/app/_components/Word.jsx";
 import Link from "next/link";
 import Button from "@/app/_components/Button";
@@ -11,6 +18,7 @@ import Loading from "@/app/_components/loading";
 
 export default function WordPage() {
 	// state
+	const [viewMode, setViewMode] = useState("list");
 	const [wordList, setWordList] = useState([]);
 	const [suggestions, setSuggestions] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -26,25 +34,36 @@ export default function WordPage() {
 	const router = useRouter();
 	const search = searchParams.get("search") || "";
 	const status = searchParams.get("status") || "all";
-	const filteredWords = words.filter((word) => {
-		const matchesSearch = word.english
-			.toLowerCase()
-			.includes(search.toLowerCase());
+	const now = new Date();
 
-		const now = new Date();
+	const isReviewDue = (word) =>
+		(word.reviewCount || 0) > 0 &&
+		word.nextReview &&
+		new Date(word.nextReview) <= now;
 
-		const matchesStatus =
-			status === "all" ||
-			(status === "new" && (word.reviewCount || 0) === 0) ||
-			(status === "learning" &&
-				(word.reviewCount || 0) > 0 &&
-				new Date(word.nextReview) > now) ||
-			(status === "review" &&
-				(word.reviewCount || 0) > 0 &&
-				new Date(word.nextReview) <= now);
+	const filteredWords = words
+		.filter((word) => {
+			const matchesSearch = word.english
+				.toLowerCase()
+				.includes(search.toLowerCase());
 
-		return matchesSearch && matchesStatus;
-	});
+			const matchesStatus =
+				status === "all" ||
+				(status === "new" && (word.reviewCount || 0) === 0) ||
+				(status === "learning" &&
+					(word.reviewCount || 0) > 0 &&
+					!isReviewDue(word)) ||
+				(status === "review" && isReviewDue(word));
+
+			return matchesSearch && matchesStatus;
+		})
+		.sort((a, b) => {
+			const dueDifference = Number(isReviewDue(b)) - Number(isReviewDue(a));
+
+			if (dueDifference !== 0) return dueDifference;
+
+			return 0;
+		});
 
 	// pagination
 	const [currentPage, setCurrentPage] = useState(1);
@@ -53,6 +72,21 @@ export default function WordPage() {
 	const indexOfFirstWord = indexOfLastWord - wordsPerPage;
 	const currentWords = filteredWords.slice(indexOfFirstWord, indexOfLastWord);
 	const totalPages = Math.ceil(filteredWords.length / wordsPerPage);
+
+	function handleViewModeChange(mode) {
+		setViewMode(mode);
+		localStorage.setItem("studyjony-word-view", mode);
+	}
+
+	useEffect(() => {
+		const savedViewMode = localStorage.getItem("studyjony-word-view");
+
+		if (savedViewMode !== "list" && savedViewMode !== "card") return;
+
+		const timer = setTimeout(() => setViewMode(savedViewMode), 0);
+		return () => clearTimeout(timer);
+	}, []);
+
 	//   Get all words
 	useEffect(() => {
 		async function fetchData() {
@@ -268,7 +302,7 @@ export default function WordPage() {
 						/>
 					</div>
 
-					<div className="flex items-center gap-3 w-full sm:w-auto">
+					<div className="flex w-full flex-wrap items-center gap-3 sm:w-auto sm:flex-nowrap">
 						{/* Filter */}
 						<div className="relative flex-1 sm:flex-none">
 							<select
@@ -292,10 +326,40 @@ export default function WordPage() {
 							<Filter className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
 						</div>
 
+						<div className="flex shrink-0 items-center rounded-xl border border-slate-800 bg-[#131927] p-1">
+							<button
+								type="button"
+								onClick={() => handleViewModeChange("list")}
+								aria-label="Hiển thị dạng danh sách"
+								title="Danh sách"
+								className={`rounded-lg p-2 transition-colors ${
+									viewMode === "list"
+										? "bg-yellow-800 text-white"
+										: "text-slate-500 hover:bg-slate-800 hover:text-slate-200"
+								}`}
+							>
+								<LayoutList className="h-4 w-4" />
+							</button>
+
+							<button
+								type="button"
+								onClick={() => handleViewModeChange("card")}
+								aria-label="Hiển thị dạng thẻ"
+								title="Thẻ"
+								className={`rounded-lg p-2 transition-colors ${
+									viewMode === "card"
+										? "bg-yellow-800 text-white"
+										: "text-slate-500 hover:bg-slate-800 hover:text-slate-200"
+								}`}
+							>
+								<LayoutGrid className="h-4 w-4" />
+							</button>
+						</div>
+
 						<div className="flex-1 sm:flex-none">
 							<button
 								onClick={() => setIsOpen(!isOpen)}
-								className="flex-1 sm:flex-none whitespace-nowrap rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:bg-blue-500 active:scale-[0.98] cursor-pointer"
+								className="flex-1 sm:flex-none whitespace-nowrap rounded-lg bg-green-800 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:bg-green-700 active:scale-[0.98] cursor-pointer"
 							>
 								+ Thêm từ mới
 							</button>
@@ -398,16 +462,24 @@ export default function WordPage() {
 				</div>
 
 				{/* Main Table Container */}
-				<div className="md:bg-[#111625]/60 md:border md:border-slate-800/80 md:rounded-xl md:p-4 md:backdrop-blur-sm md:shadow-2xl">
+				<div
+					className={
+						viewMode === "list"
+							? "md:bg-[#111625]/60 md:border md:border-slate-800/80 md:rounded-xl md:p-4 md:backdrop-blur-sm md:shadow-2xl"
+							: ""
+					}
+				>
 					{/* table Header */}
-					<div className="hidden md:grid grid-cols-12 items-center px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
-						<div className="col-span-2">Từ</div>
-						<div className="col-span-2">IPA</div>
-						<div className="col-span-2">Nghĩa</div>
-						<div className="col-span-3">Ví dụ</div>
-						<div className="col-span-1">Trạng thái</div>
-						{/* <div className="col-span-1 text-right">Thao Tác</div> */}
-					</div>
+					{viewMode === "list" && (
+						<div className="hidden md:grid grid-cols-12 items-center px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
+							<div className="col-span-2">Từ</div>
+							<div className="col-span-2">IPA</div>
+							<div className="col-span-2">Nghĩa</div>
+							<div className="col-span-3">Ví dụ</div>
+							<div className="col-span-1">Trạng thái</div>
+							{/* <div className="col-span-1 text-right">Thao Tác</div> */}
+						</div>
+					)}
 
 					{/* Word */}
 					{currentWords.length === 0 ? (
@@ -423,13 +495,20 @@ export default function WordPage() {
 							</p>
 						</div>
 					) : (
-						<div className="md:mt-3 space-y-3 md:space-y-2">
+						<div
+							className={
+								viewMode === "list"
+									? "md:mt-3 space-y-3 md:space-y-2"
+									: "grid grid-cols-1 gap-4 md:grid-cols-2"
+							}
+						>
 							{currentWords.map((word) => (
 								<Word
 									key={word._id}
 									word={word}
 									onDelete={handleDelete}
 									onFix={handleFix}
+									variant={viewMode}
 								/>
 							))}
 						</div>

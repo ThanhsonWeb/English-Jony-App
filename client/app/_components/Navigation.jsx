@@ -23,6 +23,7 @@ const navLinks = [
 
 function Navigation() {
 	const pathname = usePathname();
+	const activePathname = pathname.replace(/^\/(en|vi)(?=\/|$)/, "") || "/";
 	const [isOpen, setIsOpen] = useState(false);
 	const { user } = useAuth();
 	useEffect(() => {
@@ -35,9 +36,8 @@ function Navigation() {
 				{navLinks.map((link) => {
 					const Icon = link.icon;
 					const isActive =
-						link.href === "/"
-							? pathname === "/"
-							: pathname.startsWith(link.href);
+						activePathname === link.href ||
+						activePathname.startsWith(`${link.href}/`);
 
 					return (
 						<li key={link.name}>
