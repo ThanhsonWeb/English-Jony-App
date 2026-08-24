@@ -28,13 +28,15 @@ const signToken = (id) => {
 const setAuthCookie = (user, res) => {
 	const token = signToken(user._id);
 
-	const cookieOptions = {
+	res.cookie("jwt", token, {
 		expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
 		httpOnly: true,
-		secure: process.env.NODE_ENV === "production", // ✅ Automatically true in production, false locally
-		sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // ✅ Adjusts automatically
-	};
-	res.cookie("jwt", token, cookieOptions);
+		secure: process.env.NODE_ENV === "production",
+		sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+		domain:
+			process.env.NODE_ENV === "production" ? ".studyjony.com" : undefined,
+	});
+
 	return token;
 };
 
@@ -291,7 +293,8 @@ exports.createGoogleOAuthState = (req, res, next) => {
 exports.googleOAuthCallback = async (req, res) => {
 	const locale = req.cookies[GOOGLE_OAUTH_LOCALE_COOKIE] === "en" ? "en" : "vi";
 	const storedState = req.cookies[GOOGLE_OAUTH_STATE_COOKIE];
-	const returnedState = typeof req.query.state === "string" ? req.query.state : "";
+	const returnedState =
+		typeof req.query.state === "string" ? req.query.state : "";
 
 	try {
 		const stateMatches =
@@ -341,6 +344,9 @@ exports.googleOAuthCallback = async (req, res) => {
 		return res.redirect(303, getGoogleCallbackUrl(locale));
 	} catch (error) {
 		clearGoogleOAuthCookies(res);
-		return res.redirect(303, getGoogleCallbackUrl(locale, "google_oauth_failed"));
+		return res.redirect(
+			303,
+			getGoogleCallbackUrl(locale, "google_oauth_failed"),
+		);
 	}
 };
