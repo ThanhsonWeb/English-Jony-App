@@ -9,10 +9,15 @@ import {
 	RotateCcw,
 	LayoutList,
 	LayoutGrid,
+	BookPlus,
+	Tag,
+	Languages,
+	NotebookText,
+	Sparkles,
+	X,
 } from "lucide-react";
 import Word from "@/app/_components/Word.jsx";
 import Link from "next/link";
-import Button from "@/app/_components/Button";
 import { useSearchParams, useRouter } from "next/navigation";
 import Loading from "@/app/_components/loading";
 
@@ -367,93 +372,128 @@ export default function WordPage() {
 
 						{/* Form Modal */}
 						{isOpen && (
-							<div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+							<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-4 backdrop-blur-md">
 								<form
 									onSubmit={handleSubmit}
-									className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-md p-6 flex flex-col gap-4 shadow-xl"
+									className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border border-violet-500/35 bg-[#0b1022] "
 								>
-									<h2 className="text-xl font-semibold text-white mb-2">
-										Thêm từ mới 🍀
-									</h2>
+									<div className="pointer-events-none absolute inset-x-0 top-0 h-32 overflow-hidden">
+										<div className="absolute -left-16 -top-20 h-36 w-[130%] rotate-[-7deg] rounded-[50%] bg-gradient-to-r from-violet-500/20 via-purple-500/10 to-transparent blur-xl" />
+										<div className="absolute left-1/2 top-4 h-20 w-40 -translate-x-1/2 rounded-full bg-violet-500/15 blur-3xl" />
+									</div>
+
+									<button
+										type="button"
+										onClick={() => setIsOpen(false)}
+										aria-label="Đóng"
+										className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/70 text-slate-500 transition hover:border-violet-400/50 hover:bg-violet-500/10 hover:text-white active:scale-95"
+									>
+										<X className="h-4 w-4" />
+									</button>
+
+									<div className="relative px-6 pb-6 pt-5 sm:px-8">
+										<div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-violet-400/30 bg-violet-500/15 text-violet-300 ">
+											<BookPlus className="h-6 w-6" />
+										</div>
+										<div className="mt-4 text-center">
+											<h2 className="text-xl font-bold text-white sm:text-2xl">
+												Thêm từ mới
+											</h2>
+											<p className="mt-1 text-sm text-slate-400">
+												Bổ sung một từ mới vào danh sách của bạn.
+											</p>
+										</div>
 
 									{/* nhập từ */}
-									<div className="relative flex flex-col gap-1.5">
+										<div className="relative mt-6 flex flex-col gap-2">
 										<label className="text-sm font-medium text-slate-300">
 											Từ
 										</label>
-
-										<input
-											type="text"
-											name="word"
-											value={english}
-											onChange={handleEnglishChange}
-											placeholder="Nhập từ bằng tiếng Anh"
-											required
-											autoComplete="off"
-											className="w-full px-3.5 py-2.5 bg-[#131927] border border-slate-700/80 rounded-xl text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500"
-										/>
+											<div className="relative">
+												<Tag className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-violet-400" />
+												<input
+													type="text"
+													name="word"
+													value={english}
+													onChange={handleEnglishChange}
+													placeholder="Nhập từ bằng tiếng Anh"
+													required
+													autoComplete="off"
+													className="w-full rounded-xl border border-slate-700/80 bg-[#080d1c] py-3 pl-10 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-600 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10"
+												/>
+											</div>
 
 										{suggestions.length > 0 && (
-											<div className="absolute top-full left-0 right-0 z-50 mt-1 overflow-hidden rounded-xl border border-slate-700 bg-slate-900 shadow-xl">
+											<div className="absolute left-0 right-0 top-full z-50 mt-1 overflow-hidden rounded-xl border border-violet-500/30 bg-[#11162a] shadow-xl shadow-violet-950/40">
 												{suggestions.map((word) => (
 													<button
 														key={word}
 														type="button"
 														onClick={() => handleSelectWord(word)}
-														className="block w-full px-4 py-2.5 text-left text-sm text-slate-300 hover:bg-slate-800 hover:text-white"
+														className="block w-full px-4 py-2.5 text-left text-sm text-slate-300 transition hover:bg-violet-500/10 hover:text-white"
 													>
 														{word}
 													</button>
 												))}
 											</div>
 										)}
-									</div>
+										</div>
 
 									{/* nhập nghĩa */}
-									<div className="flex flex-col gap-1.5">
+										<div className="mt-4 flex flex-col gap-2">
 										<label className="text-sm font-medium text-slate-300">
 											Bản dịch
 										</label>
-
-										<input
-											type="text"
-											name="translation"
-											value={vietnamese}
-											onChange={(e) => setVietnamese(e.target.value)}
-											placeholder="Nhập bản dịch"
-											required
-											className="w-full px-3.5 py-2.5 bg-[#131927] border border-slate-700/80 rounded-xl text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
-										/>
-									</div>
+											<div className="relative">
+												<Languages className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-violet-400" />
+												<input
+													type="text"
+													name="translation"
+													value={vietnamese}
+													onChange={(e) => setVietnamese(e.target.value)}
+													placeholder="Nhập bản dịch"
+													required
+													className="w-full rounded-xl border border-slate-700/80 bg-[#080d1c] py-3 pl-10 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-600 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10"
+												/>
+											</div>
+										</div>
 
 									{/* nhập câu ví dụ */}
-									<div className="flex flex-col gap-1.5">
+										<div className="mt-4 flex flex-col gap-2">
 										<label className="text-sm font-medium text-slate-300">
 											Câu ví dụ
 										</label>
-
-										<textarea
-											name="example"
-											value={example}
-											onChange={(e) => setExample(e.target.value)}
-											rows={3}
-											placeholder="Nhập câu ví dụ (tùy chọn)"
-											className="w-full px-3.5 py-2.5 bg-[#131927] border border-slate-700/80 rounded-xl text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors resize-none"
-										/>
+											<div className="relative">
+												<NotebookText className="pointer-events-none absolute left-3.5 top-3.5 h-4 w-4 text-violet-400" />
+												<textarea
+													name="example"
+													value={example}
+													onChange={(e) => setExample(e.target.value)}
+													rows={3}
+													placeholder="Nhập câu ví dụ (tùy chọn)"
+													className="w-full resize-none rounded-xl border border-slate-700/80 bg-[#080d1c] py-3 pl-10 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-600 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10"
+												/>
+											</div>
+										</div>
 									</div>
 
-									<div className="flex gap-3 mt-4">
+									<div className="flex gap-3 border-t border-violet-500/15 bg-[#090e1d]/80 px-6 py-4 sm:px-8">
 										<button
 											type="button"
 											onClick={() => setIsOpen(false)}
-											className="flex-1 py-2.5 rounded-xl border border-slate-700 text-slate-300 hover:bg-slate-800 transition-colors text-sm font-medium"
+											className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-600 hover:bg-slate-800 hover:text-white active:scale-[0.98]"
 										>
+											<X className="h-4 w-4 text-violet-400" />
 											Hủy
 										</button>
 
-										<Button type="submit" className="flex-1">
+										<button
+											type="submit"
+											className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-500 px-3 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_-12px_rgba(139,92,246,0.9)] transition hover:from-blue-500 hover:to-violet-400 active:scale-[0.98]"
+										>
+											<Sparkles className="h-4 w-4" />
 											Thêm từ
-										</Button>
+										</button>
 									</div>
 								</form>
 							</div>

@@ -2,10 +2,18 @@
 import { useState, useEffect, useRef } from "react";
 import Topic from "@/app/_components/Topic";
 import Loading from "@/app/_components/loading";
-import { BookOpen, Layers, CheckCircle2, Flame } from "lucide-react";
+import {
+	BookOpen,
+	Layers,
+	CheckCircle2,
+	Flame,
+	Tag,
+	NotebookText,
+	Sparkles,
+	X,
+} from "lucide-react";
 import Link from "next/link";
 import { useAuth } from "@/app/_contexts/AuthContext";
-import Button from "@/app/_components/Button";
 import StatCard from "@/app/_components/StatCard";
 
 const quotes = [
@@ -242,25 +250,36 @@ function Page() {
 										<Flame className="h-8 w-8 fill-orange-500/30" />
 									</div>
 									<div>
-										<p className="text-sm font-medium text-orange-300">Chuỗi học tập hiện tại</p>
+										<p className="text-sm font-medium text-orange-300">
+											Chuỗi học tập hiện tại
+										</p>
 										<h1 className="mt-1 text-3xl font-bold tracking-tight text-white sm:text-4xl">
 											{currentStreak} ngày
 										</h1>
 									</div>
 								</div>
-
-								
 							</div>
 
 							<div>
-								<p className="mb-3 text-sm text-slate-400">Hoạt động tuần này</p>
+								<p className="mb-3 text-sm text-slate-400">
+									Hoạt động tuần này
+								</p>
 								<div className="grid grid-cols-7 gap-1.5 sm:gap-3">
 									{weekDays.map((day) => (
-										<div key={day.date} className="flex min-w-0 flex-col items-center gap-2">
-											<div className={`flex h-9 w-9 items-center justify-center rounded-full border text-sm font-bold transition sm:h-11 sm:w-11 ${day.active ? "border-orange-400 bg-orange-500 text-slate-950 shadow-[0_0_18px_rgba(249,115,22,0.25)]" : day.isToday ? "border-orange-400/60 bg-orange-500/10 text-orange-300" : "border-slate-700 bg-slate-900/70 text-slate-600"}`}>
+										<div
+											key={day.date}
+											className="flex min-w-0 flex-col items-center gap-2"
+										>
+											<div
+												className={`flex h-9 w-9 items-center justify-center rounded-full border text-sm font-bold transition sm:h-11 sm:w-11 ${day.active ? "border-orange-400 bg-orange-500 text-slate-950 shadow-[0_0_18px_rgba(249,115,22,0.25)]" : day.isToday ? "border-orange-400/60 bg-orange-500/10 text-orange-300" : "border-slate-700 bg-slate-900/70 text-slate-600"}`}
+											>
 												{day.active ? "✓" : day.date.slice(-2)}
 											</div>
-											<span className={`text-[11px] font-medium sm:text-xs ${day.isToday ? "text-orange-300" : "text-slate-500"}`}>{day.label}</span>
+											<span
+												className={`text-[11px] font-medium sm:text-xs ${day.isToday ? "text-orange-300" : "text-slate-500"}`}
+											>
+												{day.label}
+											</span>
 										</div>
 									))}
 								</div>
@@ -331,7 +350,10 @@ function Page() {
 				</div>
 
 				{/* ================= LIST HEADER ================= */}
-				<div ref={wordListRef} className="mb-4 flex scroll-mt-24 items-center justify-between gap-4">
+				<div
+					ref={wordListRef}
+					className="mb-4 flex scroll-mt-24 items-center justify-between gap-4"
+				>
 					<div>
 						<h2 className="text-lg sm:text-xl font-semibold text-white">
 							Danh sách từ vựng
@@ -434,70 +456,90 @@ function Page() {
 
 				{/* ================= MODAL ================= */}
 				{isOpen && (
-					<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm">
+					<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-4 backdrop-blur-md">
 						<form
 							onSubmit={handleSubmit}
-							className="w-full max-w-md rounded-2xl border border-slate-800 bg-[#0c1426] p-6 sm:p-8 shadow-2xl"
+							className="relative w-full max-w-md overflow-hidden rounded-3xl border border-violet-500/35 bg-[#0b1022] "
 						>
-							<div className="flex items-center justify-between">
-								<div>
-									<h4 className="text-xl font-bold text-white">
+							<div className="pointer-events-none absolute inset-x-0 top-0 h-32 overflow-hidden">
+								<div className="absolute -left-16 -top-20 h-36 w-[130%] rotate-[-7deg] rounded-[50%] bg-gradient-to-r from-violet-500/20 via-purple-500/10 to-transparent blur-xl" />
+								<div className="absolute left-1/2 top-4 h-20 w-40 -translate-x-1/2 rounded-full bg-violet-500/15 blur-3xl" />
+							</div>
+
+							<button
+								type="button"
+								onClick={() => setIsOpen(false)}
+								aria-label="Đóng"
+								className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/70 text-slate-500 transition hover:border-violet-400/50 hover:bg-violet-500/10 hover:text-white active:scale-95"
+							>
+								<X className="h-4 w-4" />
+							</button>
+
+							<div className="relative px-6 pb-6 pt-5 sm:px-8">
+								<div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-violet-400/30 bg-violet-500/15 text-violet-300 shadow-[0_0_28px_rgba(139,92,246,0.35)]">
+									<BookOpen className="h-6 w-6" />
+								</div>
+
+								<div className="mt-4 text-center">
+									<h4 className="text-xl font-bold text-white sm:text-2xl">
 										Tạo danh sách mới
 									</h4>
-
-									<p className="mt-1 text-sm text-slate-500">
+									<p className="mt-1 text-sm text-slate-400">
 										Thêm một chủ đề bạn muốn học.
 									</p>
 								</div>
 
+								<div className="mt-6 flex flex-col gap-2">
+									<label className="text-sm font-medium text-slate-300">
+										Tiêu đề
+									</label>
+									<div className="relative">
+										<Tag className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-violet-400" />
+										<input
+											type="text"
+											placeholder="Ví dụ: Travel, Food..."
+											value={newTopic}
+											onChange={(e) => setNewTopic(e.target.value)}
+											className="w-full rounded-xl border border-slate-700/80 bg-[#080d1c] py-3 pl-10 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-600 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10"
+											required
+										/>
+									</div>
+								</div>
+
+								<div className="mt-4 flex flex-col gap-2">
+									<label className="text-sm font-medium text-slate-300">
+										Ghi chú
+									</label>
+									<div className="relative">
+										<NotebookText className="pointer-events-none absolute left-3.5 top-3.5 h-4 w-4 text-violet-400" />
+										<textarea
+											placeholder="Mô tả ngắn về danh sách..."
+											value={description}
+											onChange={(e) => setDescription(e.target.value)}
+											rows={3}
+											className="w-full resize-none rounded-xl border border-slate-700/80 bg-[#080d1c] py-3 pl-10 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-600 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10"
+										/>
+									</div>
+								</div>
+							</div>
+
+							<div className="flex gap-3 border-t border-violet-500/15 bg-[#090e1d]/80 px-6 py-4 sm:px-8">
 								<button
 									type="button"
 									onClick={() => setIsOpen(false)}
-									className="text-2xl text-slate-500 hover:text-white"
+									className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-600 hover:bg-slate-800 hover:text-white active:scale-[0.98]"
 								>
-									&times;
-								</button>
-							</div>
-
-							<div className="mt-6 flex flex-col gap-2">
-								<label className="text-sm font-medium text-slate-300">
-									Tiêu đề
-								</label>
-
-								<input
-									type="text"
-									placeholder="Ví dụ: Travel, Food..."
-									value={newTopic}
-									onChange={(e) => setNewTopic(e.target.value)}
-									className="rounded-xl border border-slate-700 bg-slate-950/60 px-4 py-3 text-slate-100 outline-none transition focus:border-blue-500"
-									required
-								/>
-							</div>
-
-							<div className="mt-4 flex flex-col gap-2">
-								<label className="text-sm font-medium text-slate-300">
-									Ghi chú
-								</label>
-
-								<textarea
-									placeholder="Mô tả ngắn về danh sách..."
-									value={description}
-									onChange={(e) => setDescription(e.target.value)}
-									rows={3}
-									className="resize-none rounded-xl border border-slate-700 bg-slate-950/60 px-4 py-3 text-slate-100 outline-none transition focus:border-blue-500"
-								/>
-							</div>
-
-							<div className="mt-6 flex gap-3">
-								<button
-									type="button"
-									onClick={() => setIsOpen(false)}
-									className="flex-1 rounded-xl border border-slate-700 py-3 text-sm font-medium text-slate-300 transition hover:bg-slate-800"
-								>
+									<X className="h-4 w-4 text-violet-400" />
 									Hủy
 								</button>
 
-								<Button type="submit">Tạo danh sách</Button>
+								<button
+									type="submit"
+									className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-500 px-3 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_-12px_rgba(139,92,246,0.9)] transition hover:from-blue-500 hover:to-violet-400 active:scale-[0.98]"
+								>
+									<Sparkles className="h-4 w-4" />
+									Tạo danh sách
+								</button>
 							</div>
 						</form>
 					</div>
