@@ -284,6 +284,7 @@ exports.createGoogleOAuthState = (req, res, next) => {
 	res.status(200).json({
 		status: "success",
 		data: {
+			clientId: process.env.GOOGLE_CLIENT_ID,
 			state,
 			redirectUri: process.env.GOOGLE_REDIRECT_URI,
 		},
@@ -295,6 +296,7 @@ exports.googleOAuthCallback = async (req, res) => {
 	const storedState = req.cookies[GOOGLE_OAUTH_STATE_COOKIE];
 	const returnedState =
 		typeof req.query.state === "string" ? req.query.state : "";
+	let stage = "state_validation";
 
 	try {
 		const stateMatches =
@@ -313,6 +315,7 @@ exports.googleOAuthCallback = async (req, res) => {
 			throw new Error("Google authorization was not completed");
 		}
 
+		stage = "token_exchange";
 		const googleClient = getGoogleClient();
 		const { tokens } = await googleClient.getToken({
 			code: req.query.code,
@@ -323,14 +326,17 @@ exports.googleOAuthCallback = async (req, res) => {
 			throw new Error("Google did not return an ID token");
 		}
 
+		stage = "id_token_verification";
 		const ticket = await googleClient.verifyIdToken({
 			idToken: tokens.id_token,
 			audience: process.env.GOOGLE_CLIENT_ID,
 		});
 		const { email, name, sub, picture } = ticket.getPayload();
 
+		stage = "user_lookup";
 		let user = await User.findOne({ email });
 		if (!user) {
+			stage = "user_creation";
 			user = await User.create({
 				name,
 				email,
@@ -339,10 +345,19 @@ exports.googleOAuthCallback = async (req, res) => {
 			});
 		}
 
+		stage = "auth_cookie";
 		clearGoogleOAuthCookies(res);
 		setAuthCookie(user, res);
 		return res.redirect(303, getGoogleCallbackUrl(locale));
 	} catch (error) {
+		console.error("[Google OAuth] Callback failed", {
+			stage,
+			errorName: error?.name || "Error",
+			oauthError: error?.response?.data?.error || undefined,
+			host: req.hostname,
+			forwardedHost: req.get("x-forwarded-host") || undefined,
+			hasStateCookie: typeof storedState === "string",
+		});
 		clearGoogleOAuthCookies(res);
 		return res.redirect(
 			303,

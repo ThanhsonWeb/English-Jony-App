@@ -60,7 +60,7 @@ function LoginPage() {
 			}
 
 			const codeClient = window.google.accounts.oauth2.initCodeClient({
-				client_id: googleClientId,
+				client_id: data.data.clientId,
 				scope: "openid email profile",
 				ux_mode: "redirect",
 				redirect_uri: data.data.redirectUri,
