@@ -126,8 +126,15 @@ function Page() {
 	}, []);
 
 	useEffect(() => {
-		async function fetchActivities() {
+		async function initializeActivity() {
 			try {
+				// Record today
+				await fetch("/api/v1/study-activities", {
+					method: "POST",
+					credentials: "include",
+				});
+
+				// Get all activities
 				const res = await fetch("/api/v1/study-activities", {
 					credentials: "include",
 				});
@@ -141,7 +148,7 @@ function Page() {
 			}
 		}
 
-		fetchActivities();
+		initializeActivity();
 	}, []);
 	// getAllTopics
 	useEffect(() => {
