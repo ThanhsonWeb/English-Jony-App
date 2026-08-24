@@ -295,7 +295,7 @@ function Page() {
 					</div>
 
 					{/* Quote */}
-					<div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-[#0b1730] p-6 sm:p-7 min-h-[230px]">
+					<div className="relative hidden min-h-[230px] overflow-hidden rounded-2xl border border-slate-800 bg-[#0b1730] p-6 sm:block sm:p-7">
 						{/* glow */}
 						<div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.18),transparent_55%)]" />
 
@@ -333,7 +333,7 @@ function Page() {
 				</div>
 
 				{/* ================= STATS ================= */}
-				<div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-8">
+				<div className="mb-6 grid grid-cols-3 gap-2 sm:mb-8 sm:gap-4">
 					<StatCard
 						title="Tổng số từ"
 						value={words.length}

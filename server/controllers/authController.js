@@ -7,7 +7,17 @@ const sendEmail = require("../utils/email");
 const crypto = require("crypto");
 const { OAuth2Client } = require("google-auth-library");
 
-const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+const GOOGLE_OAUTH_STATE_COOKIE = "google_oauth_state";
+const GOOGLE_OAUTH_LOCALE_COOKIE = "google_oauth_locale";
+const GOOGLE_OAUTH_COOKIE_PATH = "/api/v1/auth/google";
+const GOOGLE_OAUTH_MAX_AGE = 10 * 60 * 1000;
+
+const getGoogleClient = () =>
+	new OAuth2Client(
+		process.env.GOOGLE_CLIENT_ID,
+		process.env.GOOGLE_CLIENT_SECRET,
+		process.env.GOOGLE_REDIRECT_URI,
+	);
 
 const signToken = (id) => {
 	return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -15,7 +25,7 @@ const signToken = (id) => {
 	});
 };
 
-const createSendToken = (user, statusCode, res) => {
+const setAuthCookie = (user, res) => {
 	const token = signToken(user._id);
 
 	const cookieOptions = {
@@ -25,6 +35,11 @@ const createSendToken = (user, statusCode, res) => {
 		sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // ✅ Adjusts automatically
 	};
 	res.cookie("jwt", token, cookieOptions);
+	return token;
+};
+
+const createSendToken = (user, statusCode, res) => {
+	setAuthCookie(user, res);
 	// Remove password from output
 	user.password = undefined;
 
@@ -226,28 +241,106 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 		},
 	});
 });
-exports.googleLogin = catchAsync(async (req, res, next) => {
-	const { credential } = req.body;
+const googleOAuthCookieOptions = {
+	httpOnly: true,
+	secure: process.env.NODE_ENV === "production",
+	sameSite: "lax",
+	path: GOOGLE_OAUTH_COOKIE_PATH,
+};
 
-	const ticket = await googleClient.verifyIdToken({
-		idToken: credential,
-		audience: process.env.GOOGLE_CLIENT_ID,
-	});
+const clearGoogleOAuthCookies = (res) => {
+	res.clearCookie(GOOGLE_OAUTH_STATE_COOKIE, googleOAuthCookieOptions);
+	res.clearCookie(GOOGLE_OAUTH_LOCALE_COOKIE, googleOAuthCookieOptions);
+};
 
-	const payload = ticket.getPayload();
+const getGoogleCallbackUrl = (locale, error) => {
+	const frontendUrl = process.env.FRONTEND_URL.replace(/\/$/, "");
+	const localePrefix = locale === "en" ? "/en" : "";
+	const errorQuery = error ? `?error=${encodeURIComponent(error)}` : "";
+	return `${frontendUrl}${localePrefix}/oauth/google/callback${errorQuery}`;
+};
 
-	const { email, name, sub, picture } = payload; // from google
-
-	let user = await User.findOne({ email });
-
-	if (!user) {
-		user = await User.create({
-			name,
-			email,
-			googleId: sub,
-			photo: picture,
-		});
+exports.createGoogleOAuthState = (req, res, next) => {
+	if (
+		!process.env.GOOGLE_CLIENT_ID ||
+		!process.env.GOOGLE_CLIENT_SECRET ||
+		!process.env.GOOGLE_REDIRECT_URI ||
+		!process.env.FRONTEND_URL
+	) {
+		return next(new AppError("Google Sign-In is not configured.", 500));
 	}
 
-	createSendToken(user, 200, res);
-});
+	const state = crypto.randomBytes(32).toString("hex");
+	const locale = req.query.locale === "en" ? "en" : "vi";
+	const cookieOptions = {
+		...googleOAuthCookieOptions,
+		maxAge: GOOGLE_OAUTH_MAX_AGE,
+	};
+
+	res.cookie(GOOGLE_OAUTH_STATE_COOKIE, state, cookieOptions);
+	res.cookie(GOOGLE_OAUTH_LOCALE_COOKIE, locale, cookieOptions);
+	res.status(200).json({
+		status: "success",
+		data: {
+			state,
+			redirectUri: process.env.GOOGLE_REDIRECT_URI,
+		},
+	});
+};
+
+exports.googleOAuthCallback = async (req, res) => {
+	const locale = req.cookies[GOOGLE_OAUTH_LOCALE_COOKIE] === "en" ? "en" : "vi";
+	const storedState = req.cookies[GOOGLE_OAUTH_STATE_COOKIE];
+	const returnedState = typeof req.query.state === "string" ? req.query.state : "";
+
+	try {
+		const stateMatches =
+			typeof storedState === "string" &&
+			storedState.length === returnedState.length &&
+			crypto.timingSafeEqual(
+				Buffer.from(storedState),
+				Buffer.from(returnedState),
+			);
+
+		if (!stateMatches) {
+			throw new Error("Invalid OAuth state");
+		}
+
+		if (req.query.error || typeof req.query.code !== "string") {
+			throw new Error("Google authorization was not completed");
+		}
+
+		const googleClient = getGoogleClient();
+		const { tokens } = await googleClient.getToken({
+			code: req.query.code,
+			redirect_uri: process.env.GOOGLE_REDIRECT_URI,
+		});
+
+		if (!tokens.id_token) {
+			throw new Error("Google did not return an ID token");
+		}
+
+		const ticket = await googleClient.verifyIdToken({
+			idToken: tokens.id_token,
+			audience: process.env.GOOGLE_CLIENT_ID,
+		});
+		const { email, name, sub, picture } = ticket.getPayload();
+
+		let user = await User.findOne({ email });
+		if (!user) {
+			user = await User.create({
+				name,
+				email,
+				googleId: sub,
+				photo: picture,
+			});
+		}
+
+		clearGoogleOAuthCookies(res);
+		setAuthCookie(user, res);
+		return res.redirect(303, getGoogleCallbackUrl(locale));
+	} catch (error) {
+		clearGoogleOAuthCookies(res);
+		return res.redirect(303, getGoogleCallbackUrl(locale, "google_oauth_failed"));
+	}
+};

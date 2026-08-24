@@ -27,7 +27,7 @@ function StatCard({ title, value, subtitle, icon, accent = "blue" }) {
 
 	return (
 		<div
-			className={`relative overflow-hidden rounded-2xl border p-5 shadow-lg ${s.card}`}
+			className={`relative min-w-0 overflow-hidden rounded-xl border p-3 shadow-lg sm:rounded-2xl sm:p-5 ${s.card}`}
 		>
 			{/* glow */}
 			<div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.03),transparent_40%)]" />
@@ -35,7 +35,7 @@ function StatCard({ title, value, subtitle, icon, accent = "blue" }) {
 			{/* wave line */}
 			<svg
 				viewBox="0 0 220 60"
-				className="absolute bottom-0 right-0 h-16 w-40 opacity-70"
+				className="absolute bottom-0 right-0 hidden h-16 w-40 opacity-70 sm:block"
 				fill="none"
 				preserveAspectRatio="none"
 			>
@@ -47,25 +47,25 @@ function StatCard({ title, value, subtitle, icon, accent = "blue" }) {
 				/>
 			</svg>
 
-			<div className="relative z-10 flex items-start justify-between gap-4">
-				<div>
-					<p className="text-[14px] font-medium uppercase tracking-wide text-slate-400">
+			<div className="relative z-10 flex min-w-0 items-start justify-between gap-1 sm:gap-4">
+				<div className="min-w-0">
+					<p className="min-h-6 text-[9px] font-medium uppercase leading-3 tracking-normal text-slate-400 sm:min-h-0 sm:text-[14px] sm:leading-normal sm:tracking-wide">
 						{title}
 					</p>
 
-					<div className="mt-1 flex items-end gap-1.5">
-						<p className={`text-2xl font-semibold leading-none ${s.value}`}>
+					<div className="mt-1 flex min-w-0 items-end gap-1 sm:gap-1.5">
+						<p className={`text-xl font-semibold leading-none sm:text-2xl ${s.value}`}>
 							{value}
 						</p>
 
-						<p className="pb-[2px] text-[12px] font-medium text-slate-400">
+						<p className="truncate pb-px text-[9px] font-medium text-slate-400 sm:pb-[2px] sm:text-[12px]">
 							từ
 						</p>
 					</div>
 				</div>
 
 				<div
-					className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full ${s.iconWrap}`}
+					className={`hidden h-12 w-12 shrink-0 items-center justify-center rounded-full sm:flex ${s.iconWrap}`}
 				>
 					{icon}
 				</div>

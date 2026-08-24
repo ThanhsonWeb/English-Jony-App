@@ -3,12 +3,14 @@ const {
 	signup,
 	login,
 	logout,
-	googleLogin,
+	createGoogleOAuthState,
+	googleOAuthCallback,
 } = require("../controllers/authController.js");
 
 const router = express.Router();
 // routes
-router.post("/google", googleLogin);
+router.get("/google/state", createGoogleOAuthState);
+router.get("/google/callback", googleOAuthCallback);
 router.route("/signup").post(signup);
 router.route("/login").post(login);
 router.post("/logout", logout);

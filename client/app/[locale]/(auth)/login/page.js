@@ -4,12 +4,14 @@ import { useAuth } from "@/app/_contexts/AuthContext";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
+import { useLocale } from "next-intl";
 import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
 
 function LoginPage() {
 	const { getMe } = useAuth();
 	const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
+	const locale = useLocale();
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -18,74 +20,56 @@ function LoginPage() {
 
 	const router = useRouter();
 
-	const handleGoogleLogin = useCallback(
-		async (response) => {
-			const res = await fetch("/api/v1/auth/google", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				credentials: "include",
-				body: JSON.stringify({
-					credential: response.credential,
-				}),
-			});
-
-			const data = await res.json();
-
-			if (!res.ok) {
-				setError(data.message);
-				return;
-			}
-
-			await getMe();
-			router.push("/wordlist");
-		},
-		[getMe, router],
-	);
-
 	// load Google Sign-In system
 	useEffect(() => {
 		if (!googleClientId) {
 			return;
 		}
 
-		if (window.google) {
-			window.google.accounts.id.initialize({
-				client_id: googleClientId,
-				callback: handleGoogleLogin,
-				auto_select: false,
-			});
-			return;
-		}
+		if (window.google) return;
 
 		const script = document.createElement("script");
 		script.src = "https://accounts.google.com/gsi/client";
 		script.async = true;
 		script.defer = true;
 
-		script.onload = () => {
-			window.google.accounts.id.initialize({
-				client_id: googleClientId,
-				callback: handleGoogleLogin,
-				auto_select: false,
-			});
-		};
 		script.onerror = () => {
 			setError("Unable to load Google Sign-In. Please try again later.");
 		};
 
 		document.body.appendChild(script);
-	}, [googleClientId, handleGoogleLogin]);
+	}, [googleClientId]);
 
-	function openGoogleSignIn() {
+	async function openGoogleSignIn() {
 		if (!window.google) {
 			setError("Google Sign-In is still loading. Please try again.");
 			return;
 		}
 
 		setError("");
-		window.google.accounts.id.prompt();
+		try {
+			const response = await fetch(
+				`/api/v1/auth/google/state?locale=${encodeURIComponent(locale)}`,
+				{ credentials: "include" },
+			);
+			const data = await response.json();
+
+			if (!response.ok) {
+				setError(data.message || "Unable to start Google Sign-In.");
+				return;
+			}
+
+			const codeClient = window.google.accounts.oauth2.initCodeClient({
+				client_id: googleClientId,
+				scope: "openid email profile",
+				ux_mode: "redirect",
+				redirect_uri: data.data.redirectUri,
+				state: data.data.state,
+			});
+			codeClient.requestCode();
+		} catch (error) {
+			setError("Unable to start Google Sign-In. Please try again.");
+		}
 	}
 
 	async function handleSubmit(e) {
