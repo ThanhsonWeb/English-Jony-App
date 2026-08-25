@@ -284,8 +284,8 @@ exports.createGoogleOAuthState = (req, res, next) => {
 	res.status(200).json({
 		status: "success",
 		data: {
-			clientId: process.env.GOOGLE_CLIENT_ID,
 			state,
+			clientId: process.env.GOOGLE_CLIENT_ID,
 			redirectUri: process.env.GOOGLE_REDIRECT_URI,
 		},
 	});

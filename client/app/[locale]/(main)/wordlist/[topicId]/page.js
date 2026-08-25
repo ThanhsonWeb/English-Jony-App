@@ -76,7 +76,10 @@ export default function WordPage() {
 	const indexOfLastWord = currentPage * wordsPerPage;
 	const indexOfFirstWord = indexOfLastWord - wordsPerPage;
 	const currentWords = filteredWords.slice(indexOfFirstWord, indexOfLastWord);
-	const totalPages = Math.ceil(filteredWords.length / wordsPerPage);
+	const totalPages = Math.max(
+		1,
+		Math.ceil(filteredWords.length / wordsPerPage),
+	);
 
 	function handleViewModeChange(mode) {
 		setViewMode(mode);
@@ -404,11 +407,11 @@ export default function WordPage() {
 											</p>
 										</div>
 
-									{/* nhập từ */}
+										{/* nhập từ */}
 										<div className="relative mt-6 flex flex-col gap-2">
-										<label className="text-sm font-medium text-slate-300">
-											Từ
-										</label>
+											<label className="text-sm font-medium text-slate-300">
+												Từ
+											</label>
 											<div className="relative">
 												<Tag className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-violet-400" />
 												<input
@@ -423,27 +426,27 @@ export default function WordPage() {
 												/>
 											</div>
 
-										{suggestions.length > 0 && (
-											<div className="absolute left-0 right-0 top-full z-50 mt-1 overflow-hidden rounded-xl border border-violet-500/30 bg-[#11162a] shadow-xl shadow-violet-950/40">
-												{suggestions.map((word) => (
-													<button
-														key={word}
-														type="button"
-														onClick={() => handleSelectWord(word)}
-														className="block w-full px-4 py-2.5 text-left text-sm text-slate-300 transition hover:bg-violet-500/10 hover:text-white"
-													>
-														{word}
-													</button>
-												))}
-											</div>
-										)}
+											{suggestions.length > 0 && (
+												<div className="absolute left-0 right-0 top-full z-50 mt-1 overflow-hidden rounded-xl border border-violet-500/30 bg-[#11162a] shadow-xl shadow-violet-950/40">
+													{suggestions.map((word) => (
+														<button
+															key={word}
+															type="button"
+															onClick={() => handleSelectWord(word)}
+															className="block w-full px-4 py-2.5 text-left text-sm text-slate-300 transition hover:bg-violet-500/10 hover:text-white"
+														>
+															{word}
+														</button>
+													))}
+												</div>
+											)}
 										</div>
 
-									{/* nhập nghĩa */}
+										{/* nhập nghĩa */}
 										<div className="mt-4 flex flex-col gap-2">
-										<label className="text-sm font-medium text-slate-300">
-											Bản dịch
-										</label>
+											<label className="text-sm font-medium text-slate-300">
+												Bản dịch
+											</label>
 											<div className="relative">
 												<Languages className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-violet-400" />
 												<input
@@ -458,11 +461,11 @@ export default function WordPage() {
 											</div>
 										</div>
 
-									{/* nhập câu ví dụ */}
+										{/* nhập câu ví dụ */}
 										<div className="mt-4 flex flex-col gap-2">
-										<label className="text-sm font-medium text-slate-300">
-											Câu ví dụ
-										</label>
+											<label className="text-sm font-medium text-slate-300">
+												Câu ví dụ
+											</label>
 											<div className="relative">
 												<NotebookText className="pointer-events-none absolute left-3.5 top-3.5 h-4 w-4 text-violet-400" />
 												<textarea
@@ -522,9 +525,9 @@ export default function WordPage() {
 					)}
 
 					{/* Word */}
-					{currentWords.length === 0 ? (
+					{words.length === 0 ? (
 						<div className="py-16 text-center">
-							<div className="text-4xl mb-4">📚</div>
+							<div className="mb-4 text-4xl">📚</div>
 
 							<h3 className="text-xl font-semibold text-white">
 								Chưa có từ nào
@@ -532,6 +535,18 @@ export default function WordPage() {
 
 							<p className="mt-2 text-md text-slate-400">
 								Thêm từ đầu tiên để bắt đầu học.
+							</p>
+						</div>
+					) : filteredWords.length === 0 ? (
+						<div className="py-16 text-center">
+							<div className="mb-4 text-4xl">🔎</div>
+
+							<h3 className="text-xl font-semibold text-white">
+								Không tìm thấy từ phù hợp
+							</h3>
+
+							<p className="mt-2 text-md text-slate-400">
+								Thử chọn bộ lọc khác hoặc thay đổi từ khóa tìm kiếm.
 							</p>
 						</div>
 					) : (
@@ -553,7 +568,6 @@ export default function WordPage() {
 							))}
 						</div>
 					)}
-
 					{/* Pagination */}
 					<div className="flex items-center justify-between mt-5 pt-4 border-t border-slate-800/60 text-xs text-slate-400 px-1 md:px-2">
 						<span>

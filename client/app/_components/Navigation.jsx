@@ -16,7 +16,7 @@ import {
 
 const navLinks = [
 	// { name: "Luyện viết", href: "/writing", icon: PenLine },
-	{ name: "Hội thoại", href: "/dictation", icon: Headphones },
+	{ name: "Hội thoại", href: "/dialogue", icon: Headphones },
 	{ name: "Từ vựng", href: "/vocabulary", icon: Languages },
 	{ name: "Sổ tay", href: "/wordlist", icon: BookOpen },
 ];
