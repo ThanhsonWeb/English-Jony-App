@@ -361,7 +361,7 @@ function Page() {
 					ref={wordListRef}
 					className="mb-4 flex scroll-mt-24 items-center justify-between gap-4"
 				>
-					<div>
+					<div className="hidden md:block ">
 						<h2 className="text-lg sm:text-xl font-semibold text-white">
 							Danh sách từ vựng
 						</h2>
