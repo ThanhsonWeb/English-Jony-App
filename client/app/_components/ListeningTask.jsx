@@ -2,25 +2,87 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+import {
+	Play,
+	Pause,
+	RotateCcw,
+	ChevronDown,
+	MessageSquareText,
+} from "lucide-react";
 
 export default function ListeningTask({ task, lessonId, nextTask }) {
 	const [currentLine, setCurrentLine] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(false);
+	const [isTranscriptOpen, setIsTranscriptOpen] = useState(false);
+	const [hasWatched, setHasWatched] = useState(false);
 
 	const audioRef = useRef(null);
 
+	const activeLine = task.dialogue[currentLine];
+
+	// Play one dialogue line
 	function playCurrentLine(index = currentLine) {
 		const line = task.dialogue[index];
 
-		if (!line?.audioUrl) return;
+		if (!line?.audioUrl || !audioRef.current) return;
+
+		const audio = audioRef.current;
 
 		setCurrentLine(index);
-		setIsPlaying(true);
 
-		audioRef.current.src = line.audioUrl;
-		audioRef.current.play();
+		audio.pause();
+		audio.src = line.audioUrl;
+		audio.currentTime = 0;
+
+		audio.play().catch((error) => {
+			console.error("Audio play failed:", error);
+			setIsPlaying(false);
+		});
 	}
 
+	// Play / pause
+	function handlePlayPause() {
+		const audio = audioRef.current;
+
+		if (!audio) return;
+
+		if (isPlaying) {
+			audio.pause();
+			return;
+		}
+
+		// First time playing
+		if (!audio.src) {
+			playCurrentLine(currentLine);
+			return;
+		}
+
+		// Audio finished → restart current line
+		if (audio.ended) {
+			playCurrentLine(currentLine);
+			return;
+		}
+
+		// Resume paused audio
+		audio.play().catch((error) => {
+			console.error("Audio resume failed:", error);
+		});
+	}
+
+	// Restart whole conversation
+	function handleRestart() {
+		if (!audioRef.current) return;
+
+		audioRef.current.pause();
+
+		setCurrentLine(0);
+
+		playCurrentLine(0);
+	}
+
+	// Automatically go Maria → Tom → Maria...
 	function handleEnded() {
 		const nextIndex = currentLine + 1;
 
@@ -28,89 +90,222 @@ export default function ListeningTask({ task, lessonId, nextTask }) {
 			playCurrentLine(nextIndex);
 		} else {
 			setIsPlaying(false);
+			setCurrentLine(0);
+
+			if (audioRef.current) {
+				audioRef.current.removeAttribute("src");
+				audioRef.current.load();
+			}
 		}
 	}
 
 	return (
 		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
-			<div className="mx-auto max-w-3xl">
-				<h1 className="mt-8 text-2xl font-bold">{task.title} 🎧</h1>
+			<div className="mx-auto max-w-4xl">
+				{/* Header */}
+				<div>
+					<p className="text-sm font-medium text-violet-400">Hội thoại</p>
 
-				<p className="mt-2 text-slate-400">{task.description}</p>
-				{/* image */}
-				<div className="mt-8 overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
+					<h1 className="mt-2 text-2xl font-bold sm:text-3xl">
+						{task.title} 🎧
+					</h1>
+
+					<p className="mt-2 text-slate-400">{task.description}</p>
+				</div>
+
+				{/* Player */}
+				<div className="mt-8 overflow-hidden rounded-2xl border border-slate-800 bg-[#0b1020] shadow-xl">
+					{/* Scene */}
 					<div
-						className="relative h-[420px] bg-cover bg-center"
-						style={{ backgroundImage: `url(${task.scene})` }}
+						className="relative h-[390px] bg-cover bg-center sm:h-[460px]"
+						style={{
+							backgroundImage: `url(${task.scene})`,
+						}}
 					>
-						<img
+						{/* Small overlay */}
+						<div className="absolute inset-0 bg-black/5" />
+
+						{/* Maria */}
+						<Image
 							src={task.characters.Maria}
 							alt="Maria"
-							className="absolute bottom-0 left-10 h-[320px] object-contain"
+							width={400}
+							height={520}
+							className={`absolute bottom-0 left-[10%] w-auto object-contain transition-all duration-500 sm:left-[16%] ${
+								activeLine?.speaker === "Maria"
+									? "h-[350px] scale-105 opacity-100 sm:h-[420px]"
+									: "h-[330px] scale-100 opacity-45 brightness-75 sm:h-[395px]"
+							}`}
 						/>
 
-						<img
+						{/* Tom */}
+						<Image
 							src={task.characters.Tom}
 							alt="Tom"
-							className="absolute bottom-0 right-10 h-[320px] object-contain"
+							width={400}
+							height={520}
+							className={`absolute bottom-0 right-[10%] w-auto object-contain transition-all duration-500 sm:right-[16%] ${
+								activeLine?.speaker === "Tom"
+									? "h-[350px] scale-105 opacity-100 sm:h-[420px]"
+									: "h-[330px] scale-100 opacity-45 brightness-75 sm:h-[395px]"
+							}`}
 						/>
 
-						<div className="absolute inset-x-0 bottom-0 bg-black/55 p-4">
-							<p className="text-sm font-semibold text-blue-400">
-								{task.dialogue[currentLine]?.speaker}
-							</p>
+						{/* Subtitle + controls */}
+						<div className="absolute inset-x-0 bottom-0 z-20 bg-black/70 backdrop-blur-[2px]">
+							{/* Subtitle */}
+							<div
+								className={`px-5 pb-3 pt-4 sm:px-6 ${
+									activeLine?.speaker === "Tom" ? "text-right" : "text-left"
+								}`}
+							>
+								<p
+									className={`text-sm font-bold ${
+										activeLine?.speaker === "Maria"
+											? "text-violet-400"
+											: "text-emerald-400"
+									}`}
+								>
+									{activeLine?.speaker}
+								</p>
 
-							<p className="mt-1 text-lg text-white">
-								{task.dialogue[currentLine]?.text}
-							</p>
+								<p
+									className={`mt-1 text-base font-medium leading-relaxed text-white sm:text-lg ${
+										activeLine?.speaker === "Tom" ? "ml-auto" : "mr-auto"
+									} max-w-2xl`}
+								>
+									{activeLine?.text}
+								</p>
+							</div>
+
+							{/* Controls */}
+							<div className="flex items-center justify-between border-t border-white/10 bg-[#050812]/90 px-4 py-2 sm:px-5">
+								<div className="flex items-center gap-2">
+									{/* Play */}
+									<button
+										type="button"
+										onClick={handlePlayPause}
+										aria-label={isPlaying ? "Tạm dừng" : "Phát"}
+										className="relative z-30 flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-[#111827] text-slate-100 shadow-md transition hover:border-violet-500/50 hover:bg-[#1a2235] hover:text-violet-300 active:scale-95"
+									>
+										{isPlaying ? (
+											<Pause size={18} fill="currentColor" />
+										) : (
+											<Play size={18} fill="currentColor" className="ml-0.5" />
+										)}
+									</button>
+
+									{/* Restart */}
+									<button
+										type="button"
+										onClick={handleRestart}
+										title="Phát lại từ đầu"
+										className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition hover:bg-white/10 hover:text-white"
+									>
+										<RotateCcw size={16} />
+									</button>
+								</div>
+
+								<p className="text-xs text-slate-400">
+									{currentLine + 1} / {task.dialogue.length}
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
 
-				{/* Audio */}
-				<audio ref={audioRef} onEnded={handleEnded} />
+				{/* IMPORTANT: actual audio player */}
+				<audio
+					ref={audioRef}
+					preload="auto"
+					onEnded={handleEnded}
+					onPlay={() => setIsPlaying(true)}
+					onPause={() => setIsPlaying(false)}
+				/>
 
-				<div className="mt-8">
+				{/* Transcript */}
+				<div className="mt-5 overflow-hidden rounded-xl border border-slate-800 bg-slate-900/40">
 					<button
-						onClick={() => playCurrentLine(0)}
-						className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500"
+						type="button"
+						onClick={() => setIsTranscriptOpen((current) => !current)}
+						className="flex w-full items-center justify-between px-5 py-4 text-left transition hover:bg-slate-800/40"
 					>
-						{isPlaying ? "Đang phát..." : "▶ Phát hội thoại"}
-					</button>
-				</div>
+						<div className="flex items-center gap-2">
+							<MessageSquareText size={18} className="text-violet-400" />
 
-				{/* Dialogue */}
-				<div className="mt-8 space-y-4">
-					{task.dialogue.map((line, index) => (
-						<div
-							key={index}
-							className={`rounded-xl border p-4 transition ${
-								currentLine === index && isPlaying
-									? "border-blue-500 bg-blue-500/10"
-									: "border-slate-800 bg-slate-900/50"
-							}`}
-						>
-							<p
-								className={
-									line.speaker === "Maria"
-										? "font-semibold text-blue-400"
-										: "font-semibold text-green-400"
-								}
-							>
-								{line.speaker}
-							</p>
-
-							<p className="mt-1 text-slate-200">{line.text}</p>
+							<span className="font-semibold">Transcript</span>
 						</div>
-					))}
+
+						<ChevronDown
+							size={18}
+							className={`text-slate-500 transition-transform duration-200 ${
+								isTranscriptOpen ? "rotate-180" : ""
+							}`}
+						/>
+					</button>
+
+					{isTranscriptOpen && (
+						<div className="space-y-1 border-t border-slate-800 p-3">
+							{task.dialogue.map((line, index) => (
+								<button
+									key={index}
+									type="button"
+									onClick={() => playCurrentLine(index)}
+									className={`w-full rounded-lg p-3 transition ${
+										line.speaker === "Tom" ? "text-right" : "text-left"
+									} ${
+										index === currentLine
+											? "bg-violet-500/10"
+											: "hover:bg-slate-800/50"
+									}`}
+								>
+									<p
+										className={`text-sm font-semibold ${
+											line.speaker === "Maria"
+												? "text-violet-400"
+												: "text-emerald-400"
+										}`}
+									>
+										{line.speaker}
+									</p>
+
+									<p className="mt-1 text-sm leading-6 text-slate-300">
+										{line.text}
+									</p>
+								</button>
+							))}
+						</div>
+					)}
 				</div>
+
+				<button
+					type="button"
+					onClick={() => setHasWatched((current) => !current)}
+					className={`mt-6 flex w-full items-center gap-3 rounded-xl border px-4 py-3 text-left transition ${
+						hasWatched
+							? "border-emerald-500/30 bg-emerald-500/10 text-emerald-300"
+							: "border-slate-800 bg-slate-900/40 text-slate-300 hover:border-slate-700"
+					}`}
+				>
+					<div
+						className={`flex h-5 w-5 items-center justify-center rounded border ${
+							hasWatched
+								? "border-emerald-500 bg-emerald-500 text-white"
+								: "border-slate-600"
+						}`}
+					>
+						{hasWatched && "✓"}
+					</div>
+
+					<span>Tôi đã xem xong đoạn hội thoại</span>
+				</button>
 
 				{/* Next */}
-				{nextTask && (
+				{nextTask && hasWatched && (
 					<div className="mt-8 flex justify-end">
 						<Link
 							href={`/dialogue/${lessonId}/${nextTask.id}`}
-							className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500"
+							className="rounded-xl border border-violet-500/30 bg-violet-500/10 px-6 py-3 font-semibold text-violet-300 transition hover:border-violet-400/50 hover:bg-violet-500/20 hover:text-white active:scale-[0.98]"
 						>
 							Tiếp tục →
 						</Link>
