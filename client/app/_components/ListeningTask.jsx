@@ -10,9 +10,16 @@ import {
 	RotateCcw,
 	ChevronDown,
 	MessageSquareText,
+	ArrowLeft,
 } from "lucide-react";
 
-export default function ListeningTask({ task, lessonId, nextTask }) {
+export default function ListeningTask({
+	task,
+	lessonId,
+	dialogueId,
+	nextTask,
+	onComplete,
+}) {
 	const [currentLine, setCurrentLine] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [isTranscriptOpen, setIsTranscriptOpen] = useState(false);
@@ -102,6 +109,14 @@ export default function ListeningTask({ task, lessonId, nextTask }) {
 	return (
 		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
 			<div className="mx-auto max-w-4xl">
+				<Link
+					href={`/dialogue/${lessonId}`}
+					className="mb-8 inline-flex items-center gap-2 text-slate-400 hover:text-white"
+				>
+					<ArrowLeft size={18} />
+					Quay lại
+				</Link>
+
 				{/* Header */}
 				<div>
 					<p className="text-sm font-medium text-violet-400">Hội thoại</p>
@@ -280,7 +295,12 @@ export default function ListeningTask({ task, lessonId, nextTask }) {
 
 				<button
 					type="button"
-					onClick={() => setHasWatched((current) => !current)}
+					onClick={() =>
+						setHasWatched((current) => {
+							if (!current) onComplete?.();
+							return !current;
+						})
+					}
 					className={`mt-6 flex w-full items-center gap-3 rounded-xl border px-4 py-3 text-left transition ${
 						hasWatched
 							? "border-emerald-500/30 bg-emerald-500/10 text-emerald-300"
@@ -301,13 +321,17 @@ export default function ListeningTask({ task, lessonId, nextTask }) {
 				</button>
 
 				{/* Next */}
-				{nextTask && hasWatched && (
+				{hasWatched && (
 					<div className="mt-8 flex justify-end">
 						<Link
-							href={`/dialogue/${lessonId}/${nextTask.id}`}
+							href={
+								nextTask
+									? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
+									: `/dialogue/${lessonId}`
+							}
 							className="rounded-xl border border-violet-500/30 bg-violet-500/10 px-6 py-3 font-semibold text-violet-300 transition hover:border-violet-400/50 hover:bg-violet-500/20 hover:text-white active:scale-[0.98]"
 						>
-							Tiếp tục →
+							{nextTask ? "Tiếp tục →" : "Hoàn thành hội thoại ✓"}
 						</Link>
 					</div>
 				)}

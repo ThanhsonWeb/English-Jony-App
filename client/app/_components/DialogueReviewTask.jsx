@@ -1,19 +1,25 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
-function DialogueReviewTask({ task }) {
+function DialogueReviewTask({
+	task,
+	lessonId,
+	dialogueId,
+	nextTask,
+	onComplete,
+}) {
 	return (
 		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
 			<div className="mx-auto max-w-3xl">
 				<Link
-					href="/dialogue/office-introduction"
+					href={`/dialogue/${lessonId}`}
 					className="inline-flex items-center gap-2 text-slate-400 hover:text-white"
 				>
 					<ArrowLeft size={18} />
 					Quay lại
 				</Link>
 
-				<p className="mt-8 text-sm text-slate-500">Bài {task.id} / 33</p>
+				<p className="mt-8 text-sm text-slate-500">Bài {task.id}</p>
 
 				<h1 className="mt-2 text-2xl font-bold">{task.title} 📖</h1>
 
@@ -44,10 +50,15 @@ function DialogueReviewTask({ task }) {
 
 				<div className="mt-8 flex justify-end">
 					<Link
-						href="/dialogue/office-introduction/6"
+						href={
+							nextTask
+								? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
+								: `/dialogue/${lessonId}`
+						}
+						onClick={onComplete}
 						className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500"
 					>
-						Tiếp tục →
+						{nextTask ? "Tiếp tục →" : "Hoàn thành hội thoại ✓"}
 					</Link>
 				</div>
 			</div>

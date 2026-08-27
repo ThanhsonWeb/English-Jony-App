@@ -1,7 +1,18 @@
 export const lessonData = {
 	"office-introduction": {
+		id: "office-introduction",
 		title: "Ngày đầu tiên tại văn phòng",
-		tasks: [
+		description:
+			"Maria gặp Tom trong ngày đầu đi làm. Học cách giới thiệu bản thân và giao tiếp trong văn phòng.",
+		level: "Beginner",
+		duration: "25 phút",
+		dialogues: [
+			{
+				id: "meeting-tom",
+				title: "Maria gặp Tom",
+				description:
+					"Maria làm quen với Tom trong ngày đầu tiên tại công ty.",
+				tasks: [
 			{
 				id: "1",
 				type: "listening",
@@ -103,6 +114,47 @@ export const lessonData = {
 					},
 				],
 			},
+				],
+			},
+			{
+				id: "office-tour",
+				title: "Tham quan văn phòng",
+				description:
+					"Tom giới thiệu Maria về các khu vực trong văn phòng.",
+				tasks: [],
+			},
+			{
+				id: "meet-coworkers",
+				title: "Gặp đồng nghiệp mới",
+				description:
+					"Maria gặp và làm quen với các đồng nghiệp khác.",
+				tasks: [],
+			},
+			{
+				id: "talk-about-work",
+				title: "Hỏi về công việc",
+				description:
+					"Maria và Tom nói về công việc và nhiệm vụ.",
+				tasks: [],
+			},
+			{
+				id: "lunch-break",
+				title: "Giờ nghỉ trưa",
+				description:
+					"Maria và Tom cùng ăn trưa và trò chuyện.",
+				tasks: [],
+			},
 		],
 	},
 };
+
+const officeLesson = lessonData["office-introduction"];
+const taskTemplates = officeLesson.dialogues[0].tasks;
+
+officeLesson.dialogues = officeLesson.dialogues.map((dialogue) => ({
+	...dialogue,
+	tasks: Array.from({ length: 20 }, (_, index) => ({
+		...taskTemplates[index % taskTemplates.length],
+		id: String(index + 1),
+	})),
+}));

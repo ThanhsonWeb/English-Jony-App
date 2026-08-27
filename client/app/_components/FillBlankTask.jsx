@@ -2,7 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-function FillBlankTask({ task, lessonId, nextTask }) {
+function FillBlankTask({ task, lessonId, dialogueId, nextTask, onComplete }) {
 	const [answer, setAnswer] = useState("");
 	const [result, setResult] = useState(null);
 
@@ -10,6 +10,7 @@ function FillBlankTask({ task, lessonId, nextTask }) {
 		const isCorrect = answer.trim().toLowerCase() === task.answer.toLowerCase();
 
 		setResult(isCorrect ? "correct" : "wrong");
+		if (isCorrect) onComplete?.();
 	}
 
 	return (
@@ -23,7 +24,7 @@ function FillBlankTask({ task, lessonId, nextTask }) {
 					Quay lại
 				</Link>
 
-				<p className="mt-8 text-sm text-slate-500">Bài {task.id} / 33</p>
+				<p className="mt-8 text-sm text-slate-500">Bài {task.id}</p>
 
 				<h1 className="mt-2 text-2xl font-bold">{task.title} ✍️</h1>
 
@@ -60,10 +61,14 @@ function FillBlankTask({ task, lessonId, nextTask }) {
 				<div className="mt-8 flex justify-end">
 					{result === "correct" ? (
 						<Link
-							href={`/dialogue/${lessonId}/${nextTask.id}`}
+							href={
+								nextTask
+									? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
+									: `/dialogue/${lessonId}`
+							}
 							className="rounded-xl bg-green-600 px-6 py-3 font-semibold"
 						>
-							Tiếp tục →
+							{nextTask ? "Tiếp tục →" : "Hoàn thành hội thoại ✓"}
 						</Link>
 					) : (
 						<button

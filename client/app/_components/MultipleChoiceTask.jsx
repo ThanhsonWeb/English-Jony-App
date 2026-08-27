@@ -2,7 +2,13 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-function MultipleChoiceTask({ task, lessonId, nextTask }) {
+function MultipleChoiceTask({
+	task,
+	lessonId,
+	dialogueId,
+	nextTask,
+	onComplete,
+}) {
 	const [selected, setSelected] = useState("");
 	const [result, setResult] = useState(null);
 
@@ -10,6 +16,7 @@ function MultipleChoiceTask({ task, lessonId, nextTask }) {
 		const isCorrect = selected === task.answer;
 
 		setResult(isCorrect ? "correct" : "wrong");
+		if (isCorrect) onComplete?.();
 	}
 
 	return (
@@ -23,7 +30,7 @@ function MultipleChoiceTask({ task, lessonId, nextTask }) {
 					Quay lại
 				</Link>
 
-				<p className="mt-8 text-sm text-slate-500">Bài {task.id} / 33</p>
+				<p className="mt-8 text-sm text-slate-500">Bài {task.id}</p>
 
 				<h1 className="mt-2 text-2xl font-bold">{task.title} 💬</h1>
 
@@ -33,7 +40,7 @@ function MultipleChoiceTask({ task, lessonId, nextTask }) {
 					<p className="text-blue-400">Maria</p>
 
 					<p className="mt-2 text-lg">
-						Hi, I'm Maria. I'm the product designer here.
+						Hi, I&apos;m Maria. I&apos;m the product designer here.
 					</p>
 				</div>
 
@@ -71,10 +78,14 @@ function MultipleChoiceTask({ task, lessonId, nextTask }) {
 				<div className="mt-8 flex justify-end">
 					{result === "correct" ? (
 						<Link
-							href={`/dialogue/${lessonId}/${nextTask.id}`}
+							href={
+								nextTask
+									? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
+									: `/dialogue/${lessonId}`
+							}
 							className="rounded-xl bg-green-600 px-6 py-3 font-semibold"
 						>
-							Tiếp tục →
+							{nextTask ? "Tiếp tục →" : "Hoàn thành hội thoại ✓"}
 						</Link>
 					) : (
 						<button
