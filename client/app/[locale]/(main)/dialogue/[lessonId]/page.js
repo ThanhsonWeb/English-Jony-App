@@ -9,6 +9,7 @@ import {
 	CheckCircle2,
 	ChevronDown,
 	Clock3,
+	Headphones,
 } from "lucide-react";
 import { lessonData } from "../_data/lessonData";
 import {
@@ -142,7 +143,16 @@ export default function DialogueLessonPage() {
 									</button>
 
 									{isOpen && (
-										<div className="border-t border-slate-800 px-4 py-4 sm:px-5">
+										<div className="space-y-4 border-t border-slate-800 px-4 py-4 sm:px-5">
+											{dialogue.dialogue?.length > 0 && (
+												<Link
+													href={`/dialogue/${lessonId}/${dialogue.id}`}
+													className="inline-flex items-center gap-2 rounded-xl border border-violet-500/40 bg-violet-500/10 px-4 py-2.5 text-sm font-semibold text-violet-300 transition hover:bg-violet-500/20 hover:text-white"
+												>
+													<Headphones size={17} />
+													Nghe hội thoại
+												</Link>
+											)}
 											{dialogue.tasks.length > 0 ? (
 												<div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10">
 													{dialogue.tasks.map((task) => {

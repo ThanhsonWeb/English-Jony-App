@@ -5,7 +5,6 @@ import { lessonData } from "../../../_data/lessonData";
 import { markDialogueTaskComplete } from "../../../_utils/dialogueProgress";
 
 import FillBlankTask from "@/app/_components/FillBlankTask";
-import ListeningTask from "@/app/_components/ListeningTask";
 import MultipleChoiceTask from "@/app/_components/MultipleChoiceTask";
 import ArrangeWordsTask from "@/app/_components/ArrangeWordsTask";
 import DialogueReviewTask from "@/app/_components/DialogueReviewTask";
@@ -27,8 +26,6 @@ export default function DialogueTaskPage() {
 	const props = { task, lessonId, dialogueId, nextTask, onComplete };
 
 	switch (task.type) {
-		case "listening":
-			return <ListeningTask {...props} />;
 		case "fillBlank":
 			return <FillBlankTask {...props} />;
 		case "multipleChoice":

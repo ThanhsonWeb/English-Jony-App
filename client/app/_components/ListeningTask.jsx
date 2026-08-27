@@ -249,8 +249,10 @@ export default function ListeningTask({
 									</div>
 
 									{/* Translation */}
-									{showTranslation && (
-										<p className="mt-2 text-sm text-slate-300">{translation}</p>
+									{showTranslation && activeLine?.translation && (
+										<p className="mt-2 text-sm text-slate-300">
+											{activeLine.translation}
+										</p>
 									)}
 								</div>
 							)}
