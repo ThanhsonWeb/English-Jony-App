@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Languages } from "lucide-react";
 
 import {
 	Play,
@@ -22,8 +23,12 @@ export default function ListeningTask({
 }) {
 	const [currentLine, setCurrentLine] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(false);
+	const [showTranslation, setShowTranslation] = useState(false);
+	const [translation, setTranslation] = useState("");
 	const [isTranscriptOpen, setIsTranscriptOpen] = useState(false);
 	const [hasWatched, setHasWatched] = useState(false);
+	const [hasStarted, setHasStarted] = useState(false);
+	const [dialogueFinished, setDialogueFinished] = useState(false);
 
 	const audioRef = useRef(null);
 
@@ -55,24 +60,31 @@ export default function ListeningTask({
 
 		if (!audio) return;
 
+		if (!hasStarted) {
+			setHasStarted(true);
+			setDialogueFinished(false);
+		}
+
+		// Currently playing → pause
 		if (isPlaying) {
 			audio.pause();
 			return;
 		}
 
-		// First time playing
+		// First time / dialogue finished
 		if (!audio.src) {
+			setDialogueFinished(false);
 			playCurrentLine(currentLine);
 			return;
 		}
 
-		// Audio finished → restart current line
+		// Current line finished
 		if (audio.ended) {
+			setDialogueFinished(false);
 			playCurrentLine(currentLine);
 			return;
 		}
 
-		// Resume paused audio
 		audio.play().catch((error) => {
 			console.error("Audio resume failed:", error);
 		});
@@ -83,7 +95,8 @@ export default function ListeningTask({
 		if (!audioRef.current) return;
 
 		audioRef.current.pause();
-
+		setDialogueFinished(false);
+		setHasStarted(true);
 		setCurrentLine(0);
 
 		playCurrentLine(0);
@@ -93,18 +106,34 @@ export default function ListeningTask({
 	function handleEnded() {
 		const nextIndex = currentLine + 1;
 
+		// Continue to next dialogue line
 		if (nextIndex < task.dialogue.length) {
 			playCurrentLine(nextIndex);
-		} else {
-			setIsPlaying(false);
-			setCurrentLine(0);
+			return;
+		}
 
-			if (audioRef.current) {
-				audioRef.current.removeAttribute("src");
-				audioRef.current.load();
-			}
+		// Whole dialogue finished
+		setIsPlaying(false);
+		setHasStarted(false);
+		setDialogueFinished(true);
+		setCurrentLine(0);
+
+		if (audioRef.current) {
+			audioRef.current.removeAttribute("src");
+			audioRef.current.load();
 		}
 	}
+
+	const handleTranslate = async () => {
+		if (showTranslation) {
+			setShowTranslation(false);
+			return;
+		}
+
+		// later call your translation API here
+		setTranslation("Đừng lo. Mọi người ở đây rất thân thiện.");
+		setShowTranslation(true);
+	};
 
 	return (
 		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
@@ -141,57 +170,90 @@ export default function ListeningTask({
 						<div className="absolute inset-0 bg-black/5" />
 
 						{/* Maria */}
+
 						<Image
 							src={task.characters.Maria}
 							alt="Maria"
 							width={400}
 							height={520}
-							className={`absolute bottom-0 left-[10%] w-auto object-contain transition-all duration-500 sm:left-[16%] ${
-								activeLine?.speaker === "Maria"
-									? "h-[350px] scale-105 opacity-100 sm:h-[420px]"
-									: "h-[330px] scale-100 opacity-45 brightness-75 sm:h-[395px]"
-							}`}
-						/>
+							className={`absolute bottom-0 left-[10%] w-auto object-contain
+    transition-all duration-700 ease-out sm:left-[16%]
 
+    ${
+			hasStarted && !dialogueFinished
+				? "translate-x-0 opacity-100"
+				: "-translate-x-24 opacity-0"
+		}
+
+    ${
+			activeLine?.speaker === "Maria"
+				? "h-[350px] scale-105 sm:h-[420px]"
+				: "h-[330px] scale-100 brightness-75 sm:h-[395px]"
+		}
+  `}
+						/>
 						{/* Tom */}
 						<Image
 							src={task.characters.Tom}
 							alt="Tom"
 							width={400}
 							height={520}
-							className={`absolute bottom-0 right-[10%] w-auto object-contain transition-all duration-500 sm:right-[16%] ${
-								activeLine?.speaker === "Tom"
-									? "h-[350px] scale-105 opacity-100 sm:h-[420px]"
-									: "h-[330px] scale-100 opacity-45 brightness-75 sm:h-[395px]"
-							}`}
+							className={`absolute bottom-0 right-[10%] w-auto object-contain
+    transition-all duration-700 ease-out sm:right-[16%]
+
+    ${
+			hasStarted && !dialogueFinished
+				? "translate-x-0 opacity-100"
+				: "translate-x-24 opacity-0"
+		}
+
+    ${
+			activeLine?.speaker === "Tom"
+				? "h-[350px] scale-105 sm:h-[420px]"
+				: "h-[330px] scale-100 brightness-75 sm:h-[395px]"
+		}
+  `}
 						/>
 
 						{/* Subtitle + controls */}
 						<div className="absolute inset-x-0 bottom-0 z-20 bg-black/70 backdrop-blur-[2px]">
-							{/* Subtitle */}
-							<div
-								className={`px-5 pb-3 pt-4 sm:px-6 ${
-									activeLine?.speaker === "Tom" ? "text-right" : "text-left"
-								}`}
-							>
-								<p
-									className={`text-sm font-bold ${
-										activeLine?.speaker === "Maria"
-											? "text-violet-400"
-											: "text-emerald-400"
+							{/* Subtitle - only visible while playing */}
+							{hasStarted && (
+								<div
+									className={`px-5 pb-3 pt-4 sm:px-6 ${
+										activeLine?.speaker === "Tom" ? "text-right" : "text-left"
 									}`}
 								>
-									{activeLine?.speaker}
-								</p>
+									{/* Speaker */}
+									<p
+										className={`text-sm font-bold ${
+											activeLine?.speaker === "Maria"
+												? "text-violet-400"
+												: "text-emerald-400"
+										}`}
+									>
+										{activeLine?.speaker}
+									</p>
 
-								<p
-									className={`mt-1 text-base font-medium leading-relaxed text-white sm:text-lg ${
-										activeLine?.speaker === "Tom" ? "ml-auto" : "mr-auto"
-									} max-w-2xl`}
-								>
-									{activeLine?.text}
-								</p>
-							</div>
+									{/* Sentence + translate */}
+									<div
+										className={`mt-1 flex items-start gap-2 ${
+											activeLine?.speaker === "Tom"
+												? "justify-end"
+												: "justify-start"
+										}`}
+									>
+										<p className="max-w-2xl text-base font-medium leading-relaxed text-white sm:text-lg">
+											{activeLine?.text}
+										</p>
+									</div>
+
+									{/* Translation */}
+									{showTranslation && (
+										<p className="mt-2 text-sm text-slate-300">{translation}</p>
+									)}
+								</div>
+							)}
 
 							{/* Controls */}
 							<div className="flex items-center justify-between border-t border-white/10 bg-[#050812]/90 px-4 py-2 sm:px-5">
@@ -201,7 +263,7 @@ export default function ListeningTask({
 										type="button"
 										onClick={handlePlayPause}
 										aria-label={isPlaying ? "Tạm dừng" : "Phát"}
-										className="relative z-30 flex h-10 w-10 items-center justify-center rounded-full border border-slate-700 bg-[#111827] text-slate-100 shadow-md transition hover:border-violet-500/50 hover:bg-[#1a2235] hover:text-violet-300 active:scale-95"
+										className="relative z-30 flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-[#111827] text-slate-100 shadow-md transition hover:border-violet-500/50 hover:bg-[#1a2235] hover:text-violet-300 active:scale-95 cursor-pointer "
 									>
 										{isPlaying ? (
 											<Pause size={18} fill="currentColor" />
@@ -215,9 +277,23 @@ export default function ListeningTask({
 										type="button"
 										onClick={handleRestart}
 										title="Phát lại từ đầu"
-										className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 transition hover:bg-white/10 hover:text-white"
+										className="flex h-10 w-10 items-center justify-center rounded-full text-slate-400 transition hover:bg-white/10 hover:text-white cursor-pointer"
 									>
-										<RotateCcw size={16} />
+										<RotateCcw size={20} />
+									</button>
+
+									<button
+										type="button"
+										onClick={handleTranslate}
+										aria-label="Dịch câu"
+										title="Dịch câu"
+										className={`flex h-9 w-9 items-center justify-center rounded-full transition ${
+											showTranslation
+												? "bg-violet-500/15 text-violet-400"
+												: "text-slate-400 hover:bg-white/10 hover:text-white"
+										}`}
+									>
+										<Languages size={16} />
 									</button>
 								</div>
 
