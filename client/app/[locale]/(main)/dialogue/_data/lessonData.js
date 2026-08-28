@@ -82,9 +82,24 @@ export const lessonData = {
 						id: "1",
 						type: "fillBlank",
 						title: "Điền từ còn thiếu",
-						sentenceBefore: "Hello.",
-						sentenceAfter: "the new graphic designer, right?",
-						answer: "you're",
+						instruction: "Nghe Maria và điền từ còn thiếu.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+
+						character: {
+							name: "Maria",
+							image: "/dialogue/office-introduction/shared/maria.png",
+						},
+
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/maria-01.mp3",
+
+						transcript:
+							"Hi, you must be Tom. I’m Maria, the product designer here.",
+
+						sentenceBefore: "Hi, you must be Tom. I’m Maria, the",
+						sentenceAfter: "designer here.",
+						answer: "product",
 					},
 					{
 						id: "2",
