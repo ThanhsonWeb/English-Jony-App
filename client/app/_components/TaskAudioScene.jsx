@@ -1,23 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import {
-	Captions,
-	ChevronDown,
-	ChevronRight,
-	Pause,
-	Play,
-	RotateCcw,
-} from "lucide-react";
+import { Captions, Pause, Play, RotateCcw } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 function TaskAudioScene({ task }) {
 	const audioRef = useRef(null);
 
 	const [isPlaying, setIsPlaying] = useState(false);
-	const [showCaptions, setShowCaptions] = useState(true);
-	const [showTranscript, setShowTranscript] = useState(false);
+	const [showCaptions, setShowCaptions] = useState(false);
 	const [isBlinking, setIsBlinking] = useState(false);
+	const [showCharacter, setShowCharacter] = useState(false);
 
 	const characterImage = task.character?.image;
 
@@ -28,8 +21,7 @@ function TaskAudioScene({ task }) {
 	const isMaria = task.character?.name?.toLowerCase() === "maria";
 
 	const eyesClosed = `${characterDirectory}eyes-closed.png`;
-
-	// Reset when changing task
+	// reset
 	useEffect(() => {
 		const audio = audioRef.current;
 
@@ -39,9 +31,8 @@ function TaskAudioScene({ task }) {
 		}
 
 		setIsPlaying(false);
-		setIsBlinking(false);
-		setShowCaptions(true);
-		setShowTranscript(false);
+		setShowCharacter(false);
+		setShowCaptions(false);
 	}, [task.audioUrl]);
 
 	// Preload blink image
@@ -54,10 +45,7 @@ function TaskAudioScene({ task }) {
 
 	// Random blinking every 2.5–5.5 seconds
 	useEffect(() => {
-		if (!isMaria) {
-			setIsBlinking(false);
-			return;
-		}
+		if (!isMaria) return;
 
 		let blinkTimer;
 		let reopenTimer;
@@ -83,18 +71,33 @@ function TaskAudioScene({ task }) {
 		};
 	}, [isMaria, characterImage]);
 
+	async function startSpeaking() {
+		const audio = audioRef.current;
+		if (!audio) return;
+
+		setShowCharacter(true);
+
+		await new Promise((resolve) => {
+			window.setTimeout(resolve, 450);
+		});
+
+		try {
+			await audio.play();
+		} catch {
+			setIsPlaying(false);
+			setShowCharacter(false);
+		}
+	}
+
 	async function toggleAudio() {
 		const audio = audioRef.current;
 		if (!audio) return;
 
 		if (audio.paused) {
-			try {
-				await audio.play();
-			} catch {
-				setIsPlaying(false);
-			}
+			await startSpeaking();
 		} else {
 			audio.pause();
+			setShowCharacter(false);
 		}
 	}
 
@@ -102,20 +105,21 @@ function TaskAudioScene({ task }) {
 		const audio = audioRef.current;
 		if (!audio) return;
 
+		audio.pause();
 		audio.currentTime = 0;
 
-		try {
-			await audio.play();
-		} catch {
-			setIsPlaying(false);
-		}
+		setShowCharacter(false);
+
+		window.setTimeout(() => {
+			startSpeaking();
+		}, 200);
 	}
 
 	return (
-		<div className="mt-8">
+		<div>
 			<div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950">
 				{/* Scene */}
-				<div className="relative aspect-video overflow-hidden">
+				<div className="relative aspect-[4/3] overflow-hidden">
 					<Image
 						src={task.scene}
 						alt="Văn phòng"
@@ -127,7 +131,13 @@ function TaskAudioScene({ task }) {
 
 					{/* Character */}
 					{characterImage && (
-						<div className="absolute bottom-0 left-1/2 z-10 h-[94%] w-[65%] -translate-x-1/2 sm:w-[52%]">
+						<div
+							className={`absolute bottom-0 left-1/2 z-10 h-[94%] w-[70%] -translate-x-1/2 transition-all duration-500 ease-out ${
+								showCharacter
+									? "translate-y-0 opacity-100"
+									: "translate-y-8 opacity-0"
+							}`}
+						>
 							{/* Original character */}
 							<Image
 								src={characterImage}
@@ -172,7 +182,13 @@ function TaskAudioScene({ task }) {
 					preload="metadata"
 					onPlay={() => setIsPlaying(true)}
 					onPause={() => setIsPlaying(false)}
-					onEnded={() => setIsPlaying(false)}
+					onEnded={() => {
+						setIsPlaying(false);
+
+						window.setTimeout(() => {
+							setShowCharacter(false);
+						}, 150);
+					}}
 				/>
 
 				{/* Controls */}
@@ -216,29 +232,6 @@ function TaskAudioScene({ task }) {
 					</button>
 				</div>
 			</div>
-
-			{/* Transcript */}
-			<button
-				type="button"
-				onClick={() => setShowTranscript((current) => !current)}
-				className="mt-4 flex items-center gap-2 font-semibold text-slate-300 transition hover:text-white"
-			>
-				{showTranscript ? (
-					<ChevronDown size={18} />
-				) : (
-					<ChevronRight size={18} />
-				)}
-				Transcript
-			</button>
-
-			{showTranscript && (
-				<div className="mt-3 rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-3 text-slate-200">
-					<span className="font-bold text-blue-300">
-						{task.character?.name}:
-					</span>{" "}
-					{task.transcript}
-				</div>
-			)}
 		</div>
 	);
 }

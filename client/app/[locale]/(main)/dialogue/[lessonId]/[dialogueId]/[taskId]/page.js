@@ -14,6 +14,7 @@ export default function DialogueTaskPage() {
 	const lesson = lessonData[lessonId];
 	const dialogue = lesson?.dialogues.find((item) => item.id === dialogueId);
 	const task = dialogue?.tasks.find((item) => item.id === taskId);
+	const totalTasks = dialogue.tasks.length;
 
 	if (!task) {
 		return <div className="p-8 text-white">Không tìm thấy bài học.</div>;
@@ -23,7 +24,14 @@ export default function DialogueTaskPage() {
 	const nextTask = dialogue.tasks[taskIndex + 1];
 	const onComplete = () =>
 		markDialogueTaskComplete(lessonId, dialogueId, taskId);
-	const props = { task, lessonId, dialogueId, nextTask, onComplete };
+	const props = {
+		task,
+		lessonId,
+		dialogueId,
+		nextTask,
+		totalTasks,
+		onComplete,
+	};
 
 	switch (task.type) {
 		case "fillBlank":
@@ -36,9 +44,7 @@ export default function DialogueTaskPage() {
 			return <DialogueReviewTask {...props} />;
 		default:
 			return (
-				<div className="p-8 text-white">
-					Loại bài học không được hỗ trợ.
-				</div>
+				<div className="p-8 text-white">Loại bài học không được hỗ trợ.</div>
 			);
 	}
 }
