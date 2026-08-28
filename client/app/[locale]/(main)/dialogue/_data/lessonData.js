@@ -7,6 +7,7 @@ export const lessonData = {
 		level: "Beginner",
 		duration: "25 phút",
 		dialogues: [
+			// meeting-tom
 			{
 				id: "meeting-tom",
 				title: "Maria gặp Tom",
@@ -78,6 +79,7 @@ export const lessonData = {
 					},
 				],
 				tasks: [
+					// 1
 					{
 						id: "1",
 						type: "fillBlank",
@@ -85,59 +87,436 @@ export const lessonData = {
 						instruction: "Nghe Maria và điền từ còn thiếu.",
 
 						scene: "/dialogue/office-introduction/shared/bg.png",
-
 						character: {
 							name: "Maria",
 							image: "/dialogue/office-introduction/shared/maria.png",
 						},
-
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-01.mp3",
-
 						transcript:
 							"Hi, you must be Tom. I’m Maria, the product designer here.",
 
-						sentenceBefore: "Hi, you must be Tom. I’m Maria, the",
-						sentenceAfter: "designer here.",
-						answer: "product",
+						sentenceBefore: "Hi, you must be",
+						sentenceAfter: ". I’m Maria, the product designer here.",
+						answer: "Tom",
 					},
+
+					// 2
 					{
 						id: "2",
 						type: "multipleChoice",
 						title: "Chọn câu phù hợp",
-						question: "Maria vừa giới thiệu bản thân. Tom nên trả lời thế nào?",
+						instruction: "Nghe Maria và chọn đáp án phù hợp nhất.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Maria",
+							image: "/dialogue/office-introduction/shared/maria.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/maria-01.mp3",
+						transcript:
+							"Hi, you must be Tom. I’m Maria, the product designer here.",
+
+						question: "Maria làm công việc gì?",
 						options: [
-							"Nice to meet you.",
-							"How old are you?",
-							"Where is the bathroom?",
+							"Product designer",
+							"Software engineer",
+							"Office manager",
 						],
-						answer: "Nice to meet you.",
+						answer: "Product designer",
 					},
+
+					// 3
 					{
 						id: "3",
-						type: "arrangeWords",
-						title: "Sắp xếp câu",
-						words: ["you", "meet", "Nice", "to"],
-						answer: ["Nice", "to", "meet", "you"],
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Tom và điền từ còn thiếu.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/tom-01.mp3",
+						transcript:
+							"Hi Maria, nice to meet you. Yeah, today’s my first day.",
+
+						sentenceBefore: "Hi Maria, nice to",
+						sentenceAfter: "you.",
+						answer: "meet",
 					},
+
+					// 4
 					{
 						id: "4",
-						type: "review",
-						title: "Ôn lại hội thoại",
-						dialogue: [
-							{
-								speaker: "Maria",
-								text: "Hello. You're the new graphic designer, right?",
-							},
-							{
-								speaker: "Tom",
-								text: "Yes, that's right. My name is Tom.",
-							},
-							{
-								speaker: "Maria",
-								text: "Nice to meet you, Tom. I'm Maria.",
-							},
+						type: "arrangeWords",
+						title: "Sắp xếp câu",
+						instruction: "Nghe Tom và sắp xếp câu đúng thứ tự.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/tom-01.mp3",
+						transcript: "Nice to meet you.",
+
+						words: ["meet", "you", "Nice", "to"],
+						answer: ["Nice", "to", "meet", "you"],
+					},
+
+					// 5
+					{
+						id: "5",
+						type: "multipleChoice",
+						title: "Chọn câu phù hợp",
+						instruction: "Nghe Tom và chọn đáp án đúng.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/tom-01.mp3",
+						transcript:
+							"Hi Maria, nice to meet you. Yeah, today’s my first day.",
+
+						question: "Hôm nay là ngày gì đối với Tom?",
+						options: [
+							"Ngày đầu tiên đi làm",
+							"Ngày cuối cùng đi làm",
+							"Ngày nghỉ",
 						],
+						answer: "Ngày đầu tiên đi làm",
+					},
+
+					// 6
+					{
+						id: "6",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Maria và điền từ còn thiếu.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Maria",
+							image: "/dialogue/office-introduction/shared/maria.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/maria-02.mp3",
+						transcript: "Welcome! How are you feeling so far?",
+
+						sentenceBefore: "How are you",
+						sentenceAfter: "so far?",
+						answer: "feeling",
+					},
+
+					// 7
+					{
+						id: "7",
+						type: "multipleChoice",
+						title: "Chọn câu phù hợp",
+						instruction: "Nghe Maria và chọn ý đúng.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Maria",
+							image: "/dialogue/office-introduction/shared/maria.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/maria-02.mp3",
+						transcript: "Welcome! How are you feeling so far?",
+
+						question: "Maria đang hỏi Tom điều gì?",
+						options: [
+							"Tom cảm thấy thế nào",
+							"Tom sống ở đâu",
+							"Tom bao nhiêu tuổi",
+						],
+						answer: "Tom cảm thấy thế nào",
+					},
+
+					// 8
+					{
+						id: "8",
+						type: "arrangeWords",
+						title: "Sắp xếp câu",
+						instruction: "Nghe Maria và sắp xếp câu đúng thứ tự.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Maria",
+							image: "/dialogue/office-introduction/shared/maria.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/maria-02.mp3",
+						transcript: "How are you feeling so far?",
+
+						words: ["feeling", "are", "so", "you", "How", "far"],
+						answer: ["How", "are", "you", "feeling", "so", "far"],
+					},
+
+					// 9
+					{
+						id: "9",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Tom và điền từ còn thiếu.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/tom-02.mp3",
+						transcript: "Pretty good, just a little nervous.",
+
+						sentenceBefore: "Pretty good, just a little",
+						sentenceAfter: ".",
+						answer: "nervous",
+					},
+
+					// 10
+					{
+						id: "10",
+						type: "multipleChoice",
+						title: "Chọn câu phù hợp",
+						instruction: "Nghe Tom và chọn đáp án đúng.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/tom-02.mp3",
+						transcript: "Pretty good, just a little nervous.",
+
+						question: "Tom đang cảm thấy thế nào?",
+						options: [
+							"Khá ổn nhưng hơi lo lắng",
+							"Rất tức giận",
+							"Rất buồn ngủ",
+						],
+						answer: "Khá ổn nhưng hơi lo lắng",
+					},
+
+					// 11
+					{
+						id: "11",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Maria và điền từ còn thiếu.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Maria",
+							image: "/dialogue/office-introduction/shared/maria.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/maria-03.mp3",
+						transcript: "Don’t worry. Everyone’s really friendly here.",
+
+						sentenceBefore: "Don’t",
+						sentenceAfter: ". Everyone’s really friendly here.",
+						answer: "worry",
+					},
+
+					// 12
+					{
+						id: "12",
+						type: "multipleChoice",
+						title: "Chọn câu phù hợp",
+						instruction: "Nghe Maria và chọn ý đúng.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Maria",
+							image: "/dialogue/office-introduction/shared/maria.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/maria-03.mp3",
+						transcript: "Don’t worry. Everyone’s really friendly here.",
+
+						question: "Maria nói mọi người trong công ty như thế nào?",
+						options: ["Rất thân thiện", "Rất nghiêm khắc", "Rất yên lặng"],
+						answer: "Rất thân thiện",
+					},
+
+					// 13
+					{
+						id: "13",
+						type: "arrangeWords",
+						title: "Sắp xếp câu",
+						instruction: "Nghe Maria và sắp xếp câu đúng thứ tự.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Maria",
+							image: "/dialogue/office-introduction/shared/maria.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/maria-03.mp3",
+						transcript: "Everyone’s really friendly here.",
+
+						words: ["friendly", "here", "really", "Everyone’s"],
+						answer: ["Everyone’s", "really", "friendly", "here"],
+					},
+
+					// 14
+					{
+						id: "14",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Tom và điền từ còn thiếu.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/tom-03.mp3",
+						transcript: "That’s good to hear. Thanks for helping me out.",
+
+						sentenceBefore: "That’s good to",
+						sentenceAfter: ". Thanks for helping me out.",
+						answer: "hear",
+					},
+
+					// 15
+					{
+						id: "15",
+						type: "multipleChoice",
+						title: "Chọn câu phù hợp",
+						instruction: "Nghe Tom và chọn đáp án đúng.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/tom-03.mp3",
+						transcript: "That’s good to hear. Thanks for helping me out.",
+
+						question: "Tom đang làm gì?",
+						options: ["Cảm ơn Maria", "Mời Maria ăn trưa", "Hỏi Maria một câu"],
+						answer: "Cảm ơn Maria",
+					},
+
+					// 16
+					{
+						id: "16",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Maria và điền từ còn thiếu.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Maria",
+							image: "/dialogue/office-introduction/shared/maria.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/maria-04.mp3",
+						transcript: "Of course. Let me show you around the office.",
+
+						sentenceBefore: "Let me show you around the",
+						sentenceAfter: ".",
+						answer: "office",
+					},
+
+					// 17
+					{
+						id: "17",
+						type: "multipleChoice",
+						title: "Chọn câu phù hợp",
+						instruction: "Nghe Maria và chọn đáp án đúng.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Maria",
+							image: "/dialogue/office-introduction/shared/maria.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/maria-04.mp3",
+						transcript: "Of course. Let me show you around the office.",
+
+						question: "Maria đề nghị làm gì?",
+						options: [
+							"Dẫn Tom tham quan văn phòng",
+							"Đưa Tom về nhà",
+							"Mời Tom uống cà phê",
+						],
+						answer: "Dẫn Tom tham quan văn phòng",
+					},
+
+					// 18
+					{
+						id: "18",
+						type: "arrangeWords",
+						title: "Sắp xếp câu",
+						instruction: "Nghe Maria và sắp xếp câu đúng thứ tự.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Maria",
+							image: "/dialogue/office-introduction/shared/maria.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/maria-04.mp3",
+						transcript: "Let me show you around the office.",
+
+						words: ["around", "you", "office", "show", "the", "Let", "me"],
+						answer: ["Let", "me", "show", "you", "around", "the", "office"],
+					},
+
+					// 19
+					{
+						id: "19",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Tom và điền từ còn thiếu.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/tom-04.mp3",
+						transcript: "Sounds great. Let’s go.",
+
+						sentenceBefore: "Sounds",
+						sentenceAfter: ". Let’s go.",
+						answer: "great",
+					},
+
+					// 20
+					{
+						id: "20",
+						type: "multipleChoice",
+						title: "Chọn câu phù hợp",
+						instruction: "Nghe Tom và chọn đáp án phù hợp nhất.",
+
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/meeting-tom/audio/tom-04.mp3",
+						transcript: "Sounds great. Let’s go.",
+
+						question: "Tom phản ứng thế nào với lời đề nghị của Maria?",
+						options: ["Anh ấy đồng ý", "Anh ấy từ chối", "Anh ấy không hiểu"],
+						answer: "Anh ấy đồng ý",
 					},
 				],
 			},

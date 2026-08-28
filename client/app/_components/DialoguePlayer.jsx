@@ -14,7 +14,7 @@ import {
 	ArrowLeft,
 } from "lucide-react";
 
-export default function ListeningTask({
+export default function DialoguePlayer({
 	task,
 	lessonId,
 	dialogueId,

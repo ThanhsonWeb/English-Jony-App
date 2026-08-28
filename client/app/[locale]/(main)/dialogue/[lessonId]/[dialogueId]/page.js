@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import ListeningTask from "@/app/_components/ListeningTask";
+import DialoguePlayer from "@/app/_components/DialoguePlayer";
 import { lessonData } from "../../_data/lessonData";
 
 export default function DialogueListeningPage() {
@@ -14,7 +14,7 @@ export default function DialogueListeningPage() {
 	}
 
 	return (
-		<ListeningTask
+		<DialoguePlayer
 			task={dialogue}
 			lessonId={lessonId}
 			dialogueId={dialogueId}

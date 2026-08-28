@@ -17,7 +17,19 @@ function TaskAudioScene({ task }) {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [showCaptions, setShowCaptions] = useState(true);
 	const [showTranscript, setShowTranscript] = useState(false);
+	const [isBlinking, setIsBlinking] = useState(false);
 
+	const characterImage = task.character?.image;
+
+	const characterDirectory = characterImage
+		? characterImage.slice(0, characterImage.lastIndexOf("/") + 1)
+		: "";
+
+	const isMaria = task.character?.name?.toLowerCase() === "maria";
+
+	const eyesClosed = `${characterDirectory}eyes-closed.png`;
+
+	// Reset when changing task
 	useEffect(() => {
 		const audio = audioRef.current;
 
@@ -27,9 +39,49 @@ function TaskAudioScene({ task }) {
 		}
 
 		setIsPlaying(false);
+		setIsBlinking(false);
 		setShowCaptions(true);
 		setShowTranscript(false);
 	}, [task.audioUrl]);
+
+	// Preload blink image
+	useEffect(() => {
+		if (!isMaria) return;
+
+		const image = new window.Image();
+		image.src = eyesClosed;
+	}, [isMaria, eyesClosed]);
+
+	// Random blinking every 2.5–5.5 seconds
+	useEffect(() => {
+		if (!isMaria) {
+			setIsBlinking(false);
+			return;
+		}
+
+		let blinkTimer;
+		let reopenTimer;
+
+		function scheduleBlink() {
+			const delay = 2500 + Math.random() * 3000;
+
+			blinkTimer = window.setTimeout(() => {
+				setIsBlinking(true);
+
+				reopenTimer = window.setTimeout(() => {
+					setIsBlinking(false);
+					scheduleBlink();
+				}, 130);
+			}, delay);
+		}
+
+		scheduleBlink();
+
+		return () => {
+			window.clearTimeout(blinkTimer);
+			window.clearTimeout(reopenTimer);
+		};
+	}, [isMaria, characterImage]);
 
 	async function toggleAudio() {
 		const audio = audioRef.current;
@@ -38,13 +90,11 @@ function TaskAudioScene({ task }) {
 		if (audio.paused) {
 			try {
 				await audio.play();
-				setIsPlaying(true);
 			} catch {
 				setIsPlaying(false);
 			}
 		} else {
 			audio.pause();
-			setIsPlaying(false);
 		}
 	}
 
@@ -56,7 +106,6 @@ function TaskAudioScene({ task }) {
 
 		try {
 			await audio.play();
-			setIsPlaying(true);
 		} catch {
 			setIsPlaying(false);
 		}
@@ -76,20 +125,34 @@ function TaskAudioScene({ task }) {
 						sizes="(max-width: 768px) 100vw, 768px"
 					/>
 
-					{/* Centered character */}
-					{task.character?.image && (
+					{/* Character */}
+					{characterImage && (
 						<div className="absolute bottom-0 left-1/2 z-10 h-[94%] w-[65%] -translate-x-1/2 sm:w-[52%]">
+							{/* Original character */}
 							<Image
-								src={task.character.image}
+								src={characterImage}
 								alt={task.character.name}
 								fill
+								priority
 								className="object-contain object-bottom"
 								sizes="(max-width: 640px) 65vw, 400px"
 							/>
+
+							{/* Closed-eye overlay */}
+							{isMaria && isBlinking && (
+								<Image
+									src={eyesClosed}
+									alt=""
+									fill
+									aria-hidden="true"
+									className="pointer-events-none object-contain object-bottom"
+									sizes="(max-width: 640px) 65vw, 400px"
+								/>
+							)}
 						</div>
 					)}
 
-					{/* Subtitle overlay */}
+					{/* Subtitle */}
 					{showCaptions && (
 						<div className="absolute inset-x-0 bottom-0 z-20 bg-slate-950/75 px-4 py-3 text-center backdrop-blur-sm sm:px-6">
 							<p className="text-sm font-bold text-blue-300">
@@ -112,7 +175,7 @@ function TaskAudioScene({ task }) {
 					onEnded={() => setIsPlaying(false)}
 				/>
 
-				{/* Player controls */}
+				{/* Controls */}
 				<div className="flex items-center justify-between bg-slate-950 px-4 py-3">
 					<div className="flex items-center gap-2">
 						<button
