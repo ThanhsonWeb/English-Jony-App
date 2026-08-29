@@ -16,7 +16,7 @@ export default function DialoguePage() {
 				{/* Hero */}
 				<div className="relative min-h-[300px] overflow-hidden rounded-xl bg-[#020817]">
 					{/* Content */}
-					<div className="relative  px-6 py-10 sm:px-8 sm:py-8 ">
+					<div className="relative   ">
 						<div className="max-w-[520px]">
 							<h1 className="flex items-center gap-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
 								Hội thoại thực tế
@@ -51,13 +51,12 @@ export default function DialoguePage() {
 
 						{/* Blend image into background */}
 						<div className="absolute inset-0 bg-gradient-to-r from-[#020817] via-[#020217]/2 to-transparent" />
-					
 					</div>
 				</div>
 
 				{/* Current course */}
 				{currentCourse && (
-					<div className="mt-10">
+					<div className="mt-3">
 						<h2 className="text-xl font-semibold">Đang học</h2>
 
 						<div className="mt-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
