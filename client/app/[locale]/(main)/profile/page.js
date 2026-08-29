@@ -2,7 +2,7 @@
 
 import StudyHeatmap from "@/app/_components/StudyHeatmap";
 import { useAuth } from "@/app/_contexts/AuthContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
 	Mail,
 	CalendarDays,
@@ -18,7 +18,11 @@ function Page() {
 	const { user, setUser } = useAuth();
 	const [isEditingName, setIsEditingName] = useState(false);
 	const [newName, setNewName] = useState(user?.name || "");
-
+	useEffect(() => {
+		if (user?.name) {
+			setNewName(user.name);
+		}
+	}, [user]);
 	async function handleUpdateName() {
 		try {
 			const res = await fetch("/api/v1/users/updateMe", {
@@ -52,7 +56,7 @@ function Page() {
 						<img
 							src={user.photo}
 							alt={user.name}
-							className="h-36 w-36 rounded-full border-4  object-cover"
+							className="h-36 w-36 rounded-full border-4 border-gray-300 object-cover"
 						/>
 					) : (
 						<div className="flex h-36 w-36 items-center justify-center rounded-full border-4 border-blue-200 bg-slate-800 text-4xl font-bold">
@@ -60,11 +64,14 @@ function Page() {
 						</div>
 					)}
 
-					<button className="absolute bottom-1 right-1 flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-lg">
+					<button
+						type="button"
+						className="absolute bottom-1 right-1 flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-lg"
+					>
 						<Camera size={20} />
 					</button>
 				</div>
-						
+
 				<div className="mt-5 sm:mt-0">
 					<div className="flex items-center gap-3">
 						<h1 className="text-3xl font-bold">{user?.name}</h1>

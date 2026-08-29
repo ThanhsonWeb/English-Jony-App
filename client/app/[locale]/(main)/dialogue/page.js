@@ -94,20 +94,32 @@ export default function DialoguePage() {
 					<div className="mt-3">
 						<h2 className="text-xl font-semibold">Đang học</h2>
 
-						<div className="mt-4 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-							<div className="flex flex-col gap-6 md:flex-row md:items-center">
-								<div className="flex h-32 w-full items-center justify-center rounded-xl bg-slate-800 text-5xl md:w-40">
-									🏢
+						<div className="mt-4 rounded-2xl border border-slate-800 bg-slate-900/40 p-5 sm:p-6">
+							<div className="flex flex-col gap-5 md:flex-row md:items-center">
+								{/* Thumbnail */}
+								<div className="relative h-28 w-full shrink-0 overflow-hidden rounded-xl md:w-40">
+									<Image
+										src="/dialogue/office-introduction/thumbnails/meeting-tem.png"
+										alt={currentCourse.title}
+										fill
+										className="object-cover"
+										sizes="(max-width: 768px) 100vw, 160px"
+									/>
 								</div>
 
-								<div className="flex-1">
-									<h3 className="text-2xl font-bold">{currentCourse.title}</h3>
+								{/* Content */}
+								<div className="min-w-0 flex-1">
+									<div className="flex flex-wrap items-center gap-3">
+										<h3 className="text-xl font-bold sm:text-2xl">
+											{currentCourse.title}
+										</h3>
 
-									<p className="mt-2 text-sm text-green-400">
-										{currentCourse.level}
-									</p>
+										<span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-400">
+											{currentCourse.level}
+										</span>
+									</div>
 
-									<p className="mt-3 text-slate-400">
+									<p className="mt-3 max-w-3xl leading-relaxed text-slate-400">
 										{currentCourse.description}
 									</p>
 
@@ -116,9 +128,10 @@ export default function DialoguePage() {
 									</p>
 								</div>
 
+								{/* CTA */}
 								<Link
 									href={`/dialogue/${currentCourse.id}`}
-									className="rounded-xl bg-blue-600 px-5 py-3 text-center font-semibold hover:bg-blue-500"
+									className="inline-flex shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-5 py-3 font-semibold text-white shadow-lg shadow-blue-950/30 transition hover:-translate-y-0.5 hover:from-blue-500 hover:to-violet-500"
 								>
 									Tiếp tục học →
 								</Link>
