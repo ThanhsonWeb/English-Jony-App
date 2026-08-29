@@ -4,8 +4,21 @@ const catchAsync = require("../utils/catchAsync.js");
 // GET /api/v1/dialogue-progress/:lessonId
 exports.getLessonProgress = catchAsync(async (req, res, next) => {
 	const progress = await DialogueProgress.find({
-		user: req.user._id,
+		user: req.user._id, // protect middleware
 		lessonId: req.params.lessonId,
+	}).sort({ updatedAt: -1 });
+
+	res.status(200).json({
+		status: "success",
+		data: {
+			progress,
+		},
+	});
+});
+
+exports.getLatestProgress = catchAsync(async (req, res, next) => {
+	const progress = await DialogueProgress.findOne({
+		user: req.user._id,
 	}).sort({ updatedAt: -1 });
 
 	res.status(200).json({

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useSyncExternalStore } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import {
@@ -12,12 +12,7 @@ import {
 	Headphones,
 } from "lucide-react";
 import { lessonData } from "../_data/lessonData";
-import {
-	getDialogueProgressServerSnapshot,
-	getDialogueProgressSnapshot,
-	parseDialogueProgress,
-	subscribeToDialogueProgress,
-} from "../_utils/dialogueProgress";
+
 import Image from "next/image";
 
 //for thumbnails
@@ -35,12 +30,39 @@ export default function DialogueLessonPage() {
 	const { lessonId } = useParams();
 	const lesson = lessonData[lessonId];
 	const [openDialogueId, setOpenDialogueId] = useState(null);
-	const progressSnapshot = useSyncExternalStore(
-		subscribeToDialogueProgress,
-		getDialogueProgressSnapshot,
-		getDialogueProgressServerSnapshot,
-	);
-	const progress = parseDialogueProgress(progressSnapshot);
+	const [progress, setProgress] = useState({});
+	useEffect(() => {
+		async function loadProgress() {
+			try {
+				const res = await fetch(`/api/v1/dialogue-progress/${lessonId}`, {
+					credentials: "include",
+				});
+
+				if (!res.ok) {
+					throw new Error("Failed to load dialogue progress");
+				}
+
+				const data = await res.json();
+
+				const lessonProgress = {};
+
+				data.data.progress.forEach((item) => {
+					lessonProgress[item.dialogueId] = item.completedTaskIds || [];
+				});
+
+				setProgress({
+					[lessonId]: lessonProgress,
+				});
+			} catch (error) {
+				console.error("Load dialogue progress error:", error);
+			}
+		}
+
+		if (lessonId) {
+			loadProgress();
+		}
+	}, [lessonId]);
+
 	const totalTaskCount =
 		lesson?.dialogues.reduce(
 			(total, dialogue) => total + dialogue.tasks.length,

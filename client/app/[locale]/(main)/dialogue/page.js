@@ -3,12 +3,47 @@
 import Link from "next/link";
 import { Search } from "lucide-react";
 import { lessonData } from "./_data/lessonData";
-
+import { useEffect, useState } from "react";
+import Image from "next/image";
+const courseImages = {
+	"office-introduction":
+		"/dialogue/office-introduction/thumbnails/meeting-tom.png",
+	"coffee-shop": "/dialogue/coffee-shop/thumbnail.png",
+	airport: "/dialogue/airport/thumbnail.png",
+};
 export default function DialoguePage() {
 	const courses = Object.values(lessonData);
 
-	const currentCourse = courses[0]; //office-introduction
-	const otherCourses = courses.slice(1);
+	const [currentCourseId, setCurrentCourseId] = useState(null);
+
+	useEffect(() => {
+		async function loadCurrentCourse() {
+			try {
+				const res = await fetch("/api/v1/dialogue-progress/latest", {
+					credentials: "include",
+				});
+
+				if (!res.ok) {
+					throw new Error("Failed to load latest dialogue progress");
+				}
+
+				const data = await res.json();
+
+				setCurrentCourseId(data.data.progress?.lessonId || null);
+			} catch (error) {
+				console.error(error);
+			}
+		}
+
+		loadCurrentCourse();
+	}, []);
+
+	const currentCourse =
+		courses.find((course) => course.id === currentCourseId) || null;
+
+	const otherCourses = courses.filter(
+		(course) => course.id !== currentCourse?.id,
+	);
 
 	return (
 		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
@@ -94,25 +129,55 @@ export default function DialoguePage() {
 
 				{/* Other courses */}
 				{otherCourses.length > 0 && (
-					<div className="mt-10">
+					<div className="mt-8">
 						<h2 className="text-xl font-semibold">Khám phá hội thoại</h2>
 
-						<div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+						<div className="mt-4 grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
 							{otherCourses.map((course) => (
 								<Link
 									key={course.id}
 									href={`/dialogue/${course.id}`}
-									className="rounded-2xl border border-slate-800 bg-slate-900/50 p-5 transition hover:border-blue-500/40"
+									className="
+		group block rounded-2xl p-3
+		transition-all duration-300
+		hover:bg-slate-900/70
+		hover:shadow-[0_16px_45px_rgba(0,0,0,0.5)]
+	"
 								>
-									<h3 className="font-semibold">{course.title}</h3>
+									{/* Thumbnail */}
+									<div className="relative aspect-video overflow-hidden rounded-xl bg-slate-900">
+										<Image
+											src="/dialogue/office-introduction/thumbnails/meeting-tem.png"
+											alt={course.title}
+											fill
+											className="object-cover transition duration-300 group-hover:scale-[1.02]"
+											sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+										/>
 
-									<p className="mt-2 text-sm text-green-400">{course.level}</p>
+										{/* Small badge */}
+										<span className="absolute bottom-2 right-2 rounded-md bg-black/75 px-2 py-1 text-xs font-semibold text-white">
+											{course.dialogues.length} hội thoại
+										</span>
+									</div>
 
-									<p className="mt-2 text-sm text-slate-500">
-										{course.dialogues.length} hội thoại
-									</p>
+									{/* Info */}
+									<div className="mt-3">
+										<h3 className="line-clamp-2 text-base font-semibold leading-snug text-white ">
+											{course.title}
+										</h3>
 
-									<p className="mt-5 text-sm text-blue-400">Bắt đầu học →</p>
+										<p className="mt-1 line-clamp-2 text-sm leading-relaxed text-slate-400">
+											{course.description}
+										</p>
+
+										<div className="mt-2 flex items-center gap-2 text-sm">
+											<span className="text-emerald-400">{course.level}</span>
+
+											<span className="text-slate-600">•</span>
+
+											<span className="text-slate-500">Bắt đầu học</span>
+										</div>
+									</div>
 								</Link>
 							))}
 						</div>
