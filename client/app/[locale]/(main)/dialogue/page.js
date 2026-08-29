@@ -51,7 +51,7 @@ export default function DialoguePage() {
 
 						{/* Blend image into background */}
 						<div className="absolute inset-0 bg-gradient-to-r from-[#020817] via-[#020217]/2 to-transparent" />
-						{/* <div className="absolute inset-0 bg-gradient-to-t from-[#020817]/40 to-transparent" /> */}
+					
 					</div>
 				</div>
 
