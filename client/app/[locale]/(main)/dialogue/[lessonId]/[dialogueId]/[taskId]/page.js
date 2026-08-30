@@ -7,6 +7,7 @@ import { lessonData } from "../../../_data/lessonData";
 import FillBlankTask from "@/app/_components/FillBlankTask";
 import MultipleChoiceTask from "@/app/_components/MultipleChoiceTask";
 import ArrangeWordsTask from "@/app/_components/ArrangeWordsTask";
+import DialogueClozeReviewTask from "@/app/_components/DialogueClozeReviewTask";
 import DialogueReviewTask from "@/app/_components/DialogueReviewTask";
 
 export default function DialogueTaskPage() {
@@ -68,6 +69,9 @@ export default function DialogueTaskPage() {
 
 		case "arrangeWords":
 			return <ArrangeWordsTask {...props} />;
+
+		case "dialogueCloze":
+			return <DialogueClozeReviewTask {...props} />;
 
 		case "review":
 			return <DialogueReviewTask {...props} />;

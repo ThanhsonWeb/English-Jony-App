@@ -10,8 +10,11 @@ const inter = Inter({
 });
 
 export const metadata = {
-	title: { template: "%s || English Jony", default: " English Jony" },
-	description: "Welcome to English-Jony start your journey here !",
+	title: {
+		default: "StudyJony",
+		template: "StudyJony | %s",
+	},
+	description: "Học tiếng Anh cùng StudyJony",
 };
 
 export default function RootLayout({ children }) {

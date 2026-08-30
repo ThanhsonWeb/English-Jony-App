@@ -2,6 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import TaskAudioScene from "./TaskAudioScene";
+import TaskTip from "./TaskTip";
 
 function ArrangeWordsTask({
 	task,
@@ -59,6 +60,7 @@ function ArrangeWordsTask({
 					Bài {task.id}/{totalTasks}
 				</p>
 				<h1 className="mt-2 text-2xl font-bold">{task.title} 🧩</h1>
+				{result === "correct" && <TaskTip tip={task.tip} />}
 
 				<div className="mt-8 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
 					<TaskAudioScene key={task.audioUrl} task={task} />
