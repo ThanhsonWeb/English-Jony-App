@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Languages } from "lucide-react";
@@ -8,11 +8,13 @@ import { Languages } from "lucide-react";
 import {
 	Play,
 	Pause,
-	RotateCcw,
 	ChevronDown,
 	MessageSquareText,
 	ArrowLeft,
+	Captions,
 } from "lucide-react";
+
+const CHARACTER_ENTRY_DELAY = 700;
 
 export default function DialoguePlayer({
 	task,
@@ -29,10 +31,26 @@ export default function DialoguePlayer({
 	const [hasWatched, setHasWatched] = useState(false);
 	const [hasStarted, setHasStarted] = useState(false);
 	const [dialogueFinished, setDialogueFinished] = useState(false);
+	const [playbackRate, setPlaybackRate] = useState(1);
+	const [showSpeedMenu, setShowSpeedMenu] = useState(false);
+	const [showSubtitles, setShowSubtitles] = useState(true);
 
 	const audioRef = useRef(null);
+	const playbackRateRef = useRef(1);
+	const startTimeoutRef = useRef(null);
 
 	const activeLine = task.dialogue[currentLine];
+
+	function clearStartTimeout() {
+		if (!startTimeoutRef.current) return;
+
+		clearTimeout(startTimeoutRef.current);
+		startTimeoutRef.current = null;
+	}
+
+	useEffect(() => {
+		return () => clearStartTimeout();
+	}, []);
 
 	// Play one dialogue line
 	function playCurrentLine(index = currentLine) {
@@ -47,11 +65,29 @@ export default function DialoguePlayer({
 		audio.pause();
 		audio.src = line.audioUrl;
 		audio.currentTime = 0;
+		audio.playbackRate = playbackRateRef.current;
 
 		audio.play().catch((error) => {
 			console.error("Audio play failed:", error);
 			setIsPlaying(false);
 		});
+	}
+
+	function startDialogueAfterCharacters(index = currentLine) {
+		clearStartTimeout();
+
+		if (audioRef.current) {
+			audioRef.current.pause();
+		}
+
+		setCurrentLine(index);
+		setHasStarted(true);
+		setDialogueFinished(false);
+
+		startTimeoutRef.current = setTimeout(() => {
+			startTimeoutRef.current = null;
+			playCurrentLine(index);
+		}, CHARACTER_ENTRY_DELAY);
 	}
 
 	// Play / pause
@@ -60,9 +96,9 @@ export default function DialoguePlayer({
 
 		if (!audio) return;
 
-		if (!hasStarted) {
-			setHasStarted(true);
-			setDialogueFinished(false);
+		if (startTimeoutRef.current) {
+			clearStartTimeout();
+			return;
 		}
 
 		// Currently playing → pause
@@ -71,7 +107,13 @@ export default function DialoguePlayer({
 			return;
 		}
 
-		// First time / dialogue finished
+		// First start / restart after characters have left the scene
+		if (!hasStarted || dialogueFinished) {
+			startDialogueAfterCharacters(currentLine);
+			return;
+		}
+
+		// Characters are already visible, so start immediately
 		if (!audio.src) {
 			setDialogueFinished(false);
 			playCurrentLine(currentLine);
@@ -90,16 +132,23 @@ export default function DialoguePlayer({
 		});
 	}
 
-	// Restart whole conversation
-	function handleRestart() {
-		if (!audioRef.current) return;
+	function handlePlaybackRateChange(newRate) {
+		setPlaybackRate(newRate);
+		playbackRateRef.current = newRate;
+		setShowSpeedMenu(false);
 
-		audioRef.current.pause();
-		setDialogueFinished(false);
-		setHasStarted(true);
-		setCurrentLine(0);
+		if (audioRef.current) {
+			audioRef.current.playbackRate = newRate;
+		}
+	}
 
-		playCurrentLine(0);
+	function handleTranscriptClick(index) {
+		if (!hasStarted || dialogueFinished || startTimeoutRef.current) {
+			startDialogueAfterCharacters(index);
+			return;
+		}
+
+		playCurrentLine(index);
 	}
 
 	// Automatically go Maria → Tom → Maria...
@@ -218,9 +267,9 @@ export default function DialoguePlayer({
 						{/* Subtitle + controls */}
 						<div className="absolute inset-x-0 bottom-0 z-20 bg-black/70 backdrop-blur-[2px]">
 							{/* Subtitle - only visible while playing */}
-							{hasStarted && (
+							{hasStarted && showSubtitles && !dialogueFinished && (
 								<div
-									className={`px-5 pb-3 pt-4 sm:px-6 ${
+									className={`px-8 pb-3 pt-4 sm:px-12 lg:px-16 ${
 										activeLine?.speaker === "Tom" ? "text-right" : "text-left"
 									}`}
 								>
@@ -236,13 +285,13 @@ export default function DialoguePlayer({
 									</p>
 
 									{/* Sentence + translate */}
-									<div
-										className={`mt-1 flex items-start gap-2 ${
-											activeLine?.speaker === "Tom"
-												? "justify-end"
-												: "justify-start"
-										}`}
-									>
+								<div
+									className={`mt-1 flex items-start gap-2 ${
+										activeLine?.speaker === "Tom"
+											? "justify-end"
+											: "justify-start"
+									}`}
+								>
 										<p className="max-w-2xl text-base font-medium leading-relaxed text-white sm:text-lg">
 											{activeLine?.text}
 										</p>
@@ -274,16 +323,6 @@ export default function DialoguePlayer({
 										)}
 									</button>
 
-									{/* Restart */}
-									<button
-										type="button"
-										onClick={handleRestart}
-										title="Phát lại từ đầu"
-										className="flex h-10 w-10 items-center justify-center rounded-full text-slate-400 transition hover:bg-white/10 hover:text-white cursor-pointer"
-									>
-										<RotateCcw size={20} />
-									</button>
-
 									<button
 										type="button"
 										onClick={handleTranslate}
@@ -295,13 +334,69 @@ export default function DialoguePlayer({
 												: "text-slate-400 hover:bg-white/10 hover:text-white"
 										}`}
 									>
-										<Languages size={16} />
+									<Languages size={16} />
+								</button>
+
+								<div className="relative">
+									<button
+										type="button"
+										onClick={() => setShowSpeedMenu((current) => !current)}
+										aria-label={`Chọn tốc độ phát, hiện tại ${playbackRate}x`}
+										aria-expanded={showSpeedMenu}
+										title="Tốc độ phát"
+										className="flex h-9 min-w-14 items-center justify-center gap-1 rounded-full px-2 text-xs font-semibold text-slate-400 transition hover:bg-white/10 hover:text-white"
+									>
+										{playbackRate}x
+										<ChevronDown
+											size={14}
+											className={`transition-transform ${
+												showSpeedMenu ? "rotate-180" : ""
+											}`}
+										/>
 									</button>
+
+									{showSpeedMenu && (
+										<div className="absolute bottom-full left-1/2 z-30 mb-2 w-20 -translate-x-1/2 overflow-hidden rounded-lg border border-slate-700 bg-slate-900 py-1 shadow-xl">
+											{[0.5, 0.75, 1, 1.25, 1.5].map((rate) => (
+												<button
+													key={rate}
+													type="button"
+													onClick={() => handlePlaybackRateChange(rate)}
+													className={`block w-full px-3 py-2 text-center text-xs font-semibold transition hover:bg-white/10 ${
+														playbackRate === rate
+															? "text-violet-400"
+															: "text-slate-300"
+													}`}
+												>
+													{rate}x
+												</button>
+											))}
+										</div>
+									)}
 								</div>
+							</div>
+
+							<div className="flex items-center gap-3">
+								<button
+									type="button"
+									onClick={() =>
+										setShowSubtitles((current) => !current)
+									}
+									aria-label={showSubtitles ? "Tắt phụ đề" : "Bật phụ đề"}
+									title={showSubtitles ? "Tắt phụ đề" : "Bật phụ đề"}
+									className={`flex h-11 w-11 items-center justify-center rounded-full transition ${
+										showSubtitles
+											? "bg-violet-500/15 text-violet-400"
+											: "text-slate-400 hover:bg-white/10 hover:text-white"
+									}`}
+								>
+									<Captions size={26} />
+								</button>
 
 								<p className="text-xs text-slate-400">
 									{currentLine + 1} / {task.dialogue.length}
 								</p>
+							</div>
 							</div>
 						</div>
 					</div>
@@ -343,7 +438,7 @@ export default function DialoguePlayer({
 								<button
 									key={index}
 									type="button"
-									onClick={() => playCurrentLine(index)}
+									onClick={() => handleTranscriptClick(index)}
 									className={`w-full rounded-lg p-3 transition ${
 										line.speaker === "Tom" ? "text-right" : "text-left"
 									} ${

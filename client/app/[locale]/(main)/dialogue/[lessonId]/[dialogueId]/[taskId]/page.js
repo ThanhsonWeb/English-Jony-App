@@ -28,6 +28,13 @@ export default function DialogueTaskPage() {
 	const taskIndex = dialogue.tasks.findIndex((item) => item.id === taskId);
 
 	const nextTask = dialogue.tasks[taskIndex + 1];
+	const matchingDialogueLine = dialogue.dialogue?.find(
+		(line) => line.audioUrl === task.audioUrl,
+	);
+	const taskWithTranslation = {
+		...task,
+		translation: task.translation || matchingDialogueLine?.translation,
+	};
 
 	const onComplete = async () => {
 		try {
@@ -52,7 +59,7 @@ export default function DialogueTaskPage() {
 	};
 
 	const props = {
-		task,
+		task: taskWithTranslation,
 		lessonId,
 		dialogueId,
 		nextTask,

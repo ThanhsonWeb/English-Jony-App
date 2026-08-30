@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Captions, Pause, Play, RotateCcw } from "lucide-react";
+import { Captions, ChevronDown, Languages, Pause, Play } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 function TaskAudioScene({ task }) {
@@ -11,6 +11,10 @@ function TaskAudioScene({ task }) {
 	const [showCaptions, setShowCaptions] = useState(false);
 	const [isBlinking, setIsBlinking] = useState(false);
 	const [showCharacter, setShowCharacter] = useState(false);
+	const [playbackRate, setPlaybackRate] = useState(1);
+	const [showSpeedMenu, setShowSpeedMenu] = useState(false);
+	const [showTranslation, setShowTranslation] = useState(false);
+	const playbackRateRef = useRef(1);
 
 	const characterImage = task.character?.image;
 
@@ -21,19 +25,6 @@ function TaskAudioScene({ task }) {
 	const isMaria = task.character?.name?.toLowerCase() === "maria";
 
 	const eyesClosed = `${characterDirectory}eyes-closed.png`;
-	// reset
-	useEffect(() => {
-		const audio = audioRef.current;
-
-		if (audio) {
-			audio.pause();
-			audio.currentTime = 0;
-		}
-
-		setIsPlaying(false);
-		setShowCharacter(false);
-		setShowCaptions(false);
-	}, [task.audioUrl]);
 
 	// Preload blink image
 	useEffect(() => {
@@ -75,17 +66,24 @@ function TaskAudioScene({ task }) {
 		const audio = audioRef.current;
 		if (!audio) return;
 
-		setShowCharacter(true);
+		if (!showCharacter) {
+			setShowCharacter(true);
 
-		await new Promise((resolve) => {
-			window.setTimeout(resolve, 450);
-		});
+			await new Promise((resolve) => {
+				window.setTimeout(resolve, 450);
+			});
+		}
+
+		if (audio.ended || audio.currentTime >= audio.duration) {
+			audio.currentTime = 0;
+		}
+
+		audio.playbackRate = playbackRateRef.current;
 
 		try {
 			await audio.play();
 		} catch {
 			setIsPlaying(false);
-			setShowCharacter(false);
 		}
 	}
 
@@ -97,22 +95,23 @@ function TaskAudioScene({ task }) {
 			await startSpeaking();
 		} else {
 			audio.pause();
-			setShowCharacter(false);
 		}
 	}
 
-	async function replayAudio() {
-		const audio = audioRef.current;
-		if (!audio) return;
+	function handlePlaybackRateChange(newRate) {
+		setPlaybackRate(newRate);
+		playbackRateRef.current = newRate;
+		setShowSpeedMenu(false);
 
-		audio.pause();
-		audio.currentTime = 0;
+		if (audioRef.current) {
+			audioRef.current.playbackRate = newRate;
+		}
+	}
 
-		setShowCharacter(false);
+	function handleTranslate() {
+		if (!task.translation) return;
 
-		window.setTimeout(() => {
-			startSpeaking();
-		}, 200);
+		setShowTranslation((current) => !current);
 	}
 
 	return (
@@ -172,6 +171,12 @@ function TaskAudioScene({ task }) {
 							<p className="mt-1 text-sm font-medium text-white sm:text-lg">
 								{task.transcript}
 							</p>
+
+							{showTranslation && task.translation && (
+								<p className="mt-2 text-sm text-slate-300">
+									{task.translation}
+								</p>
+							)}
 						</div>
 					)}
 				</div>
@@ -184,10 +189,7 @@ function TaskAudioScene({ task }) {
 					onPause={() => setIsPlaying(false)}
 					onEnded={() => {
 						setIsPlaying(false);
-
-						window.setTimeout(() => {
-							setShowCharacter(false);
-						}, 150);
+						setShowCharacter(false);
 					}}
 				/>
 
@@ -209,12 +211,55 @@ function TaskAudioScene({ task }) {
 
 						<button
 							type="button"
-							onClick={replayAudio}
-							aria-label="Nghe lại"
-							className="flex h-10 w-10 items-center justify-center rounded-full text-slate-400 transition hover:bg-white/10 hover:text-white"
+							onClick={handleTranslate}
+							aria-label="Dịch câu"
+							title="Dịch câu"
+							className={`flex h-9 w-9 items-center justify-center rounded-full transition ${
+								showTranslation
+									? "bg-violet-500/15 text-violet-400"
+									: "text-slate-400 hover:bg-white/10 hover:text-white"
+							}`}
 						>
-							<RotateCcw size={18} />
+							<Languages size={16} />
 						</button>
+
+						<div className="relative">
+							<button
+								type="button"
+								onClick={() => setShowSpeedMenu((current) => !current)}
+								aria-label={`Chọn tốc độ phát, hiện tại ${playbackRate}x`}
+								aria-expanded={showSpeedMenu}
+								title="Tốc độ phát"
+								className="flex h-9 min-w-14 items-center justify-center gap-1 rounded-full px-2 text-xs font-semibold text-slate-400 transition hover:bg-white/10 hover:text-white"
+							>
+								{playbackRate}x
+								<ChevronDown
+									size={14}
+									className={`transition-transform ${
+										showSpeedMenu ? "rotate-180" : ""
+									}`}
+								/>
+							</button>
+
+							{showSpeedMenu && (
+								<div className="absolute bottom-full left-1/2 z-30 mb-2 w-20 -translate-x-1/2 overflow-hidden rounded-lg border border-slate-700 bg-slate-900 py-1 shadow-xl">
+									{[0.5, 0.75, 1, 1.25, 1.5].map((rate) => (
+										<button
+											key={rate}
+											type="button"
+											onClick={() => handlePlaybackRateChange(rate)}
+											className={`block w-full px-3 py-2 text-center text-xs font-semibold transition hover:bg-white/10 ${
+												playbackRate === rate
+													? "text-violet-400"
+													: "text-slate-300"
+											}`}
+										>
+											{rate}x
+										</button>
+									))}
+								</div>
+							)}
+						</div>
 					</div>
 
 					<button

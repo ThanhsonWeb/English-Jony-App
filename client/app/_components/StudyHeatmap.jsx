@@ -18,6 +18,10 @@ function formatDate(date) {
 	return `${year}-${month}-${day}`;
 }
 
+function formatDisplayDate(dateString) {
+	return new Date(`${dateString}T00:00:00`).toLocaleDateString("vi-VN");
+}
+
 function getLevel(count) {
 	if (count === 0) return 0;
 	if (count <= 2) return 1;
@@ -28,20 +32,22 @@ function getLevel(count) {
 
 function StudyHeatmap() {
 	const [days, setDays] = useState([]);
-	const monthLabels = days
-		.map((day, index) => {
-			const date = new Date(`${day.date}T00:00:00`);
+	const totalWeeks = Math.ceil(days.length / 7);
+	const monthLabelsByWeek = new Map(
+		days
+			.map((day, index) => {
+				const date = new Date(`${day.date}T00:00:00`);
 
-			if (date.getDate() !== 1) return null;
+				if (date.getDate() !== 1) return null;
 
-			return {
-				name: date.toLocaleDateString("en-US", {
-					month: "short",
-				}),
-				left: Math.floor(index / 7) * 16,
-			};
-		})
-		.filter(Boolean);
+				return [
+					Math.floor(index / 7),
+					`Th${date.getMonth() + 1}`,
+				];
+			})
+			.filter(Boolean),
+	);
+	const totalActivities = days.reduce((total, day) => total + day.count, 0);
 
 	useEffect(() => {
 		async function fetchActivities() {
@@ -61,7 +67,8 @@ function StudyHeatmap() {
 			today.setHours(0, 0, 0, 0);
 
 			const startDate = new Date(today);
-			startDate.setDate(today.getDate() - 364);
+			// Show the current month and the five previous calendar months.
+			startDate.setMonth(today.getMonth() - 5, 1);
 
 			// Start from Sunday, like GitHub
 			startDate.setDate(startDate.getDate() - startDate.getDay());
@@ -91,43 +98,67 @@ function StudyHeatmap() {
 
 	return (
 		<div className="mt-10">
-			<h2 className="mb-4 text-lg font-semibold text-slate-100">
-				Hoạt động học tập
-			</h2>
-			<div className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900/40 p-5">
-				<div className="w-max min-w-[848px]">
-					{/* Months */}
-					<div className="relative mb-3 h-5 text-xs text-slate-400">
-						{monthLabels.map((month) => (
-							<span
-								key={`${month.name}-${month.left}`}
-								className="absolute"
-								style={{ left: `${month.left}px` }}
-							>
-								{month.name}
-							</span>
-						))}
-					</div>
+			<div className="rounded-2xl border border-slate-800 bg-slate-900/30 p-4 sm:p-6">
+				<h2 className="text-lg font-semibold text-white sm:text-xl">
+					Tổng quan hoạt động (6 tháng gần đây)
+				</h2>
 
-					{/* Days */}
-					<div className="grid w-max grid-flow-col auto-cols-max grid-rows-7 gap-1">
-						{days.map((day) => (
-							<div
-								key={day.date}
-								title={`${day.date}: ${day.count} từ`}
-								className={`h-3 w-3 rounded-sm ${levelClass[day.level]}`}
-							/>
-						))}
-					</div>
+				<div className="mt-6 overflow-x-auto">
+					<div className="w-max min-w-full">
+						{/* Months */}
+						<div className="mb-3 flex items-end gap-3">
+							<div className="w-7 shrink-0" aria-hidden="true" />
+							<div className="grid h-5 w-max grid-flow-col auto-cols-[12px] gap-1 text-xs text-slate-400 sm:auto-cols-[16px] lg:auto-cols-[20px]">
+								{Array.from({ length: totalWeeks }, (_, weekIndex) => (
+									<span
+										key={`month-week-${weekIndex}`}
+										className="whitespace-nowrap"
+									>
+										{monthLabelsByWeek.get(weekIndex) || ""}
+									</span>
+								))}
+							</div>
+						</div>
 
-					{/* Legend */}
-					<div className="mt-4 flex items-center justify-end gap-2 text-xs text-slate-500">
+						{/* Weekdays and days */}
+						<div className="flex items-start gap-3">
+							<div className="grid w-7 shrink-0 grid-rows-7 gap-1 text-xs text-slate-500">
+								{["", "T2", "", "T4", "", "T6", ""].map(
+									(label, index) => (
+										<span
+											key={`weekday-${index}`}
+											className="flex h-3 items-center sm:h-4 lg:h-5"
+										>
+											{label}
+										</span>
+									),
+								)}
+							</div>
+
+							<div className="grid w-max grid-flow-col auto-cols-max grid-rows-7 gap-1">
+								{days.map((day) => (
+									<div
+										key={day.date}
+										title={`${formatDisplayDate(day.date)}\n${day.count} hoạt động`}
+										className={`h-3 w-3 rounded-sm sm:h-4 sm:w-4 lg:h-5 lg:w-5 ${levelClass[day.level]}`}
+									/>
+								))}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{/* Footer */}
+				<div className="mt-5 flex flex-col gap-3 border-t border-slate-800 pt-4 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+					<span>{totalActivities} hoạt động trong 6 tháng</span>
+
+					<div className="flex items-center gap-2">
 						<span>Ít</span>
 
 						{[0, 1, 2, 3, 4].map((level) => (
 							<div
 								key={level}
-								className={`h-3 w-3 rounded-sm ${levelClass[level]}`}
+								className={`h-3 w-3 rounded-sm sm:h-4 sm:w-4 ${levelClass[level]}`}
 							/>
 						))}
 
