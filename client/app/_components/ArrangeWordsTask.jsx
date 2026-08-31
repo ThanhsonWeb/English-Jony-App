@@ -4,6 +4,54 @@ import { useState } from "react";
 import TaskAudioScene from "./TaskAudioScene";
 import TaskTip from "./TaskTip";
 
+function getAnswerText(answer) {
+	return Array.isArray(answer) ? answer.join(" ") : String(answer || "");
+}
+
+function normalizeAnswer(answer) {
+	return getAnswerText(answer)
+		.toLowerCase()
+		.replace(/[.,!?;:]/g, "")
+		.replace(/\s+/g, " ")
+		.trim();
+}
+
+function shuffleWords(words) {
+	const shuffled = [...words];
+
+	for (let index = shuffled.length - 1; index > 0; index -= 1) {
+		const randomIndex = Math.floor(Math.random() * (index + 1));
+		[shuffled[index], shuffled[randomIndex]] = [
+			shuffled[randomIndex],
+			shuffled[index],
+		];
+	}
+
+	if (
+		shuffled.length > 1 &&
+		shuffled.every((word, index) => word === words[index])
+	) {
+		[shuffled[0], shuffled[1]] = [shuffled[1], shuffled[0]];
+	}
+
+	return shuffled;
+}
+
+function mixWordsForInitialRender(words) {
+	const oddWords = words.filter((_, index) => index % 2 === 1);
+	const evenWords = words.filter((_, index) => index % 2 === 0);
+	const mixed = [...oddWords, ...evenWords];
+
+	if (
+		mixed.length > 1 &&
+		mixed.every((word, index) => word === words[index])
+	) {
+		[mixed[0], mixed[1]] = [mixed[1], mixed[0]];
+	}
+
+	return mixed;
+}
+
 function ArrangeWordsTask({
 	task,
 	lessonId,
@@ -12,9 +60,15 @@ function ArrangeWordsTask({
 	onComplete,
 	totalTasks,
 }) {
-	const [availableWords, setAvailableWords] = useState(task.words);
+	const [availableWords, setAvailableWords] = useState(() =>
+		mixWordsForInitialRender(task.words || []),
+	);
 	const [selectedWords, setSelectedWords] = useState([]);
 	const [result, setResult] = useState(null);
+	const hasMedia = Boolean(
+		task.audioUrl || task.scene || task.character?.image,
+	);
+	const answerText = getAnswerText(task.answer);
 
 	function selectWord(word, index) {
 		setSelectedWords((previous) => [...previous, word]);
@@ -33,14 +87,15 @@ function ArrangeWordsTask({
 	}
 
 	function checkAnswer() {
-		const isCorrect = selectedWords.join(" ") === task.answer.join(" ");
+		const isCorrect =
+			normalizeAnswer(selectedWords) === normalizeAnswer(task.answer);
 
 		setResult(isCorrect ? "correct" : "wrong");
 		if (isCorrect) onComplete?.();
 	}
 
 	function resetAnswer() {
-		setAvailableWords(task.words);
+		setAvailableWords(shuffleWords(task.words || []));
 		setSelectedWords([]);
 		setResult(null);
 	}
@@ -62,8 +117,12 @@ function ArrangeWordsTask({
 				<h1 className="mt-2 text-2xl font-bold">{task.title} 🧩</h1>
 				{result === "correct" && <TaskTip tip={task.tip} />}
 
-				<div className="mt-8 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-					<TaskAudioScene key={task.audioUrl} task={task} />
+				<div
+					className={`mt-8 grid gap-8 lg:items-start ${
+						hasMedia ? "lg:grid-cols-[0.8fr_1.2fr]" : ""
+					}`}
+				>
+					{hasMedia && <TaskAudioScene key={task.audioUrl} task={task} />}
 
 					<div>
 						<p className="text-sm font-semibold text-violet-400">Câu hỏi</p>
@@ -105,7 +164,7 @@ function ArrangeWordsTask({
 
 						{result === "correct" && (
 							<div className="mt-6 rounded-xl border border-green-500/30 bg-green-500/10 p-4 text-green-400">
-								✅ Chính xác! {task.answer.join(" ")}.
+								✅ Chính xác! {answerText}
 							</div>
 						)}
 

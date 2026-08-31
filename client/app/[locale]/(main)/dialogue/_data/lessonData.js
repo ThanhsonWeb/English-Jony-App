@@ -12,7 +12,7 @@ export const lessonData = {
 				id: "meeting-tom",
 				title: "Maria gặp Tom",
 				description: "Maria làm quen với Tom trong ngày đầu tiên tại công ty.",
-				scene: "/dialogue/office-introduction/shared/bg.png",
+				scene: "/dialogue/office-introduction/meeting-tom/bg.png",
 				characters: {
 					Maria: "/dialogue/office-introduction/shared/maria.png",
 					Tom: "/dialogue/office-introduction/shared/tom.png",
@@ -734,6 +734,12 @@ export const lessonData = {
 				title: "Gặp đồng nghiệp mới",
 				description:
 					"Maria giới thiệu Tom với Anna, một đồng nghiệp trong nhóm.",
+				scene: "/dialogue/office-introduction/meet-coworkers/bg.png",
+				characters: {
+					Maria: "/dialogue/office-introduction/shared/maria.png",
+					Anna: "/dialogue/office-introduction/shared/anna.png",
+					Tom: "/dialogue/office-introduction/shared/tom.png",
+				},
 
 				dialogue: [
 					{
@@ -827,7 +833,598 @@ export const lessonData = {
 					},
 				],
 
-				tasks: [],
+				tasks: [
+					// 1 — Fill Blank
+					{
+						id: "1",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Nghe Maria và điền từ còn thiếu.",
+						speaker: "Maria",
+						character: {
+							name: "Maria",
+							image: "/dialogue/office-introduction/shared/maria.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/maria-01.mp3",
+						transcript:
+							"Tom, let me introduce you to Anna. She’s a frontend developer on our team.",
+						sentenceBefore: "Tom, let me",
+						sentenceAfter: "you to Anna.",
+						answer: "introduce",
+					},
+
+					// 2 — Fill Blank
+					{
+						id: "2",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Nghe Tom và hoàn thành câu.",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-01.mp3",
+						transcript:
+							"Hi Anna, nice to meet you. I’m Tom, the new graphic designer.",
+						sentenceBefore: "Nice to",
+						sentenceAfter: "you.",
+						answer: "meet",
+					},
+
+					// 3 — Multiple Choice
+					{
+						id: "3",
+						type: "multipleChoice",
+						title: "Bạn nghe được gì?",
+						question: "Tom làm công việc gì?",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-01.mp3",
+						transcript:
+							"Hi Anna, nice to meet you. I’m Tom, the new graphic designer.",
+						options: [
+							"Graphic designer",
+							"Frontend developer",
+							"Product manager",
+						],
+						answer: "Graphic designer",
+					},
+
+					// 4 — Multiple Choice
+					{
+						id: "4",
+						type: "multipleChoice",
+						title: "Chọn ý đúng",
+						question: "Anna nói gì để chào đón Tom?",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/anna-01.mp3",
+						transcript: "Nice to meet you too, Tom. Welcome to the team!",
+						options: [
+							"Welcome to the team!",
+							"See you tomorrow!",
+							"Have a nice weekend!",
+						],
+						answer: "Welcome to the team!",
+					},
+
+					// 5 — Fill Blank
+					{
+						id: "5",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Hoàn thành câu chào đón.",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/anna-01.mp3",
+						transcript: "Nice to meet you too, Tom. Welcome to the team!",
+						sentenceBefore: "Welcome to the",
+						sentenceAfter: "!",
+						answer: "team",
+					},
+
+					// 6 — Arrange Words
+					{
+						id: "6",
+						type: "arrangeWords",
+						title: "Sắp xếp câu",
+						question: "Sắp xếp thành một câu hỏi đúng.",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-02.mp3",
+						transcript: "Thanks! How long have you been working here?",
+						words: ["How", "long", "have", "you", "been", "working", "here"],
+						answer: "How long have you been working here?",
+					},
+
+					// 7 — Multiple Choice
+					{
+						id: "7",
+						type: "multipleChoice",
+						title: "Hiểu hội thoại",
+						question: "Tom đang hỏi Anna điều gì?",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-02.mp3",
+						transcript: "Thanks! How long have you been working here?",
+						options: [
+							"Cô ấy đã làm ở đây bao lâu",
+							"Cô ấy sống ở đâu",
+							"Cô ấy bao nhiêu tuổi",
+						],
+						answer: "Cô ấy đã làm ở đây bao lâu",
+					},
+
+					// 8 — Multiple Choice
+					{
+						id: "8",
+						type: "multipleChoice",
+						title: "Chọn câu trả lời đúng",
+						question: "Anna đã làm ở công ty bao lâu?",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/anna-02.mp3",
+						transcript:
+							"About two years. What kind of projects do you usually work on?",
+						options: [
+							"About two years",
+							"About two months",
+							"About five years",
+						],
+						answer: "About two years",
+					},
+
+					// 9 — Fill Blank
+					{
+						id: "9",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Nghe và hoàn thành câu hỏi.",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/anna-02.mp3",
+						transcript:
+							"About two years. What kind of projects do you usually work on?",
+						sentenceBefore: "What kind of",
+						sentenceAfter: "do you usually work on?",
+						answer: "projects",
+					},
+
+					// 10 — Fill Blank
+					{
+						id: "10",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Tom thường làm loại công việc nào?",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-03.mp3",
+						transcript: "Mostly website and app designs.",
+						sentenceBefore: "Mostly website and app",
+						sentenceAfter: ".",
+						answer: "designs",
+					},
+
+					// 11 — Multiple Choice
+					{
+						id: "11",
+						type: "multipleChoice",
+						title: "Hiểu ý nghĩa",
+						question: "Tom thường làm việc với gì?",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-03.mp3",
+						transcript: "Mostly website and app designs.",
+						options: [
+							"Website và app",
+							"Video và âm nhạc",
+							"Tài chính và kế toán",
+						],
+						answer: "Website và app",
+					},
+
+					// 12 — Multiple Choice
+					{
+						id: "12",
+						type: "multipleChoice",
+						title: "Hiểu hội thoại",
+						question: "Anna làm việc ở mảng nào?",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/anna-03.mp3",
+						transcript:
+							"Nice. I work on the frontend, so we’ll probably work together a lot.",
+						options: ["Frontend", "Graphic design", "Marketing"],
+						answer: "Frontend",
+					},
+
+					// 13 — Fill Blank
+					{
+						id: "13",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Hoàn thành câu của Anna.",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/anna-03.mp3",
+						transcript:
+							"Nice. I work on the frontend, so we’ll probably work together a lot.",
+						sentenceBefore: "We’ll probably work",
+						sentenceAfter: "a lot.",
+						answer: "together",
+					},
+
+					// 14 — Arrange Words
+					{
+						id: "14",
+						type: "arrangeWords",
+						title: "Sắp xếp câu",
+						question: "Tạo lại câu Tom vừa nói.",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-04.mp3",
+						transcript: "That sounds great. I’m looking forward to it.",
+						words: ["I'm", "looking", "forward", "to", "it"],
+						answer: "I'm looking forward to it.",
+					},
+
+					// 15 — Fill Blank
+					{
+						id: "15",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Hoàn thành cụm từ hữu ích này.",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-04.mp3",
+						transcript: "That sounds great. I’m looking forward to it.",
+						sentenceBefore: "I’m looking",
+						sentenceAfter: "to it.",
+						answer: "forward",
+					},
+
+					// 16 — Fill Blank
+					{
+						id: "16",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Nghe lại và điền từ.",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-04.mp3",
+						transcript: "That sounds great. I’m looking forward to it.",
+						sentenceBefore: "That sounds",
+						sentenceAfter: ".",
+						answer: "great",
+					},
+
+					// 17 — Multiple Choice
+					{
+						id: "17",
+						type: "multipleChoice",
+						title: "Hiểu cụm từ",
+						question: `“I'm looking forward to it.” gần nghĩa nhất với câu nào?`,
+						options: [
+							"Tôi rất mong chờ điều đó.",
+							"Tôi không thích điều đó.",
+							"Tôi đã quên điều đó.",
+						],
+						answer: "Tôi rất mong chờ điều đó.",
+					},
+
+					// 18 — Multiple Choice
+					{
+						id: "18",
+						type: "multipleChoice",
+						title: "Chọn phản hồi tự nhiên",
+						question: `Một đồng nghiệp nói: “We'll probably work together a lot.” Bạn có thể trả lời thế nào?`,
+						options: [
+							"That sounds great.",
+							"I don't know where it is.",
+							"I worked yesterday.",
+						],
+						answer: "That sounds great.",
+					},
+
+					// 19 — Fill Blank
+					{
+						id: "19",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Anna đề nghị giúp Tom. Điền từ còn thiếu.",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/anna-04.mp3",
+						transcript: "If you need any help, just let me know.",
+						sentenceBefore: "If you need any",
+						sentenceAfter: ", just let me know.",
+						answer: "help",
+					},
+
+					// 20 — Fill Blank
+					{
+						id: "20",
+						type: "fillBlank",
+						title: "Điền cụm từ",
+						question: "Hoàn thành cách nói tự nhiên của Anna.",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/anna-04.mp3",
+						transcript: "If you need any help, just let me know.",
+						sentenceBefore: "Just let me",
+						sentenceAfter: ".",
+						answer: "know",
+					},
+
+					// 21 — Multiple Choice
+					{
+						id: "21",
+						type: "multipleChoice",
+						title: "Hiểu ý nghĩa",
+						question: `Anna nói “Just let me know.” Ý của cô ấy là gì?`,
+						options: [
+							"Hãy nói với tôi nếu bạn cần gì.",
+							"Hãy rời khỏi văn phòng.",
+							"Hãy gọi cho quản lý.",
+						],
+						answer: "Hãy nói với tôi nếu bạn cần gì.",
+					},
+
+					// 22 — Arrange Words
+					{
+						id: "22",
+						type: "arrangeWords",
+						title: "Sắp xếp câu",
+						question: "Sắp xếp thành câu hoàn chỉnh.",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/anna-04.mp3",
+						transcript: "If you need any help, just let me know.",
+						words: [
+							"If",
+							"you",
+							"need",
+							"any",
+							"help",
+							"just",
+							"let",
+							"me",
+							"know",
+						],
+						answer: "If you need any help, just let me know.",
+					},
+
+					// 23 — Multiple Choice
+					{
+						id: "23",
+						type: "multipleChoice",
+						title: "Chọn ý đúng",
+						question: "Maria muốn làm gì tiếp theo?",
+						speaker: "Maria",
+						character: {
+							name: "Maria",
+							image: "/dialogue/office-introduction/shared/maria.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/maria-02.mp3",
+						transcript: "Alright, let’s go meet the rest of the team.",
+						options: [
+							"Đi gặp những thành viên còn lại",
+							"Đi ăn trưa",
+							"Đi về nhà",
+						],
+						answer: "Đi gặp những thành viên còn lại",
+					},
+
+					// 24 — Fill Blank
+					{
+						id: "24",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Hoàn thành câu cuối của Tom.",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						scene: "/dialogue/office-introduction/shared/bg.png",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-06.mp3",
+						transcript: "Sounds good. Let’s go!",
+						sentenceBefore: "Sounds",
+						sentenceAfter: ". Let’s go!",
+						answer: "good",
+					},
+
+					{
+						id: "25",
+						type: "dialogueCloze",
+						title: "Ôn tập hội thoại",
+						instruction: "Điền các từ còn thiếu để hoàn thành hội thoại.",
+
+						lines: [
+							{
+								speaker: "Maria",
+								parts: [
+									"Tom, let me ",
+									{ blank: "introduce", id: "1" },
+									" you to Anna. She’s a frontend developer on our team.",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: [
+									"Hi Anna, nice to ",
+									{ blank: "meet", id: "2" },
+									" you. I’m Tom, the new graphic designer.",
+								],
+							},
+							{
+								speaker: "Anna",
+								parts: [
+									"Nice to meet you too, Tom. ",
+									{ blank: "Welcome", id: "3" },
+									" to the team!",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: [
+									"Thanks! How long have you been ",
+									{ blank: "working", id: "4" },
+									" here?",
+								],
+							},
+							{
+								speaker: "Anna",
+								parts: [
+									"About two years. What kind of ",
+									{ blank: "projects", id: "5" },
+									" do you usually work on?",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: [
+									"Mostly website and app ",
+									{ blank: "designs", id: "6" },
+									".",
+								],
+							},
+							{
+								speaker: "Anna",
+								parts: [
+									"Nice. I work on the ",
+									{ blank: "frontend", id: "7" },
+									", so we’ll probably work together a lot.",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: [
+									"That sounds great. I’m looking ",
+									{ blank: "forward", id: "8" },
+									" to it.",
+								],
+							},
+							{
+								speaker: "Anna",
+								parts: [
+									"If you need any ",
+									{ blank: "help", id: "9" },
+									", just let me know.",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: ["I will. ", { blank: "Thanks", id: "10" }, ", Anna."],
+							},
+							{
+								speaker: "Maria",
+								parts: [
+									"Alright, let’s go meet the ",
+									{ blank: "rest", id: "11" },
+									" of the team.",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: ["Sounds ", { blank: "good", id: "12" }, ". Let’s go!"],
+							},
+						],
+					},
+				],
 			},
 			{
 				id: "talk-about-work",

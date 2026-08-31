@@ -40,6 +40,7 @@ export default function DialoguePlayer({
 	const startTimeoutRef = useRef(null);
 
 	const activeLine = task.dialogue[currentLine];
+	const hasAnna = Boolean(task.characters?.Anna);
 
 	function clearStartTimeout() {
 		if (!startTimeoutRef.current) return;
@@ -187,13 +188,13 @@ export default function DialoguePlayer({
 	return (
 		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
 			<div className="mx-auto max-w-4xl">
-				<Link
+				{/* <Link
 					href={`/dialogue/${lessonId}`}
 					className="mb-8 inline-flex items-center gap-2 text-slate-400 hover:text-white"
 				>
 					<ArrowLeft size={18} />
 					Quay lại
-				</Link>
+				</Link> */}
 
 				{/* Header */}
 				<div>
@@ -211,22 +212,25 @@ export default function DialoguePlayer({
 					{/* Scene */}
 					<div
 						className="relative h-[390px] bg-cover bg-center sm:h-[460px]"
-						style={{
-							backgroundImage: `url(${task.scene})`,
-						}}
+						style={
+							task.scene
+								? { backgroundImage: `url(${task.scene})` }
+								: undefined
+						}
 					>
 						{/* Small overlay */}
 						<div className="absolute inset-0 bg-black/5" />
 
 						{/* Maria */}
 
+						{task.characters?.Maria && (
 						<Image
 							src={task.characters.Maria}
 							alt="Maria"
 							width={400}
 							height={520}
-							className={`absolute bottom-0 left-[10%] w-auto object-contain
-    transition-all duration-700 ease-out sm:left-[16%]
+							className={`absolute bottom-0 w-auto object-contain
+					transition-all duration-700 ease-out ${hasAnna ? "left-[2%] sm:left-[4%]" : "left-[10%] sm:left-[16%]"}
 
     ${
 			hasStarted && !dialogueFinished
@@ -236,19 +240,40 @@ export default function DialoguePlayer({
 
     ${
 			activeLine?.speaker === "Maria"
-				? "h-[350px] scale-105 sm:h-[420px]"
-				: "h-[330px] scale-100 brightness-75 sm:h-[395px]"
+			? hasAnna ? "h-[300px] scale-105 sm:h-[360px]" : "h-[350px] scale-105 sm:h-[420px]"
+				: hasAnna ? "h-[280px] scale-100 brightness-75 sm:h-[340px]" : "h-[330px] scale-100 brightness-75 sm:h-[395px]"
 		}
   `}
 						/>
+						)}
+
+						{task.characters?.Anna && (
+							<Image
+								src={task.characters.Anna}
+								alt="Anna"
+								width={400}
+								height={520}
+								className={`absolute bottom-0 left-[25%] w-auto object-contain transition-all duration-700 ease-out sm:left-[28%] ${
+									hasStarted && !dialogueFinished
+										? "translate-x-0 opacity-100"
+										: "-translate-x-24 opacity-0"
+								} ${
+									activeLine?.speaker === "Anna"
+										? "h-[300px] scale-105 sm:h-[360px]"
+										: "h-[280px] scale-100 brightness-75 sm:h-[340px]"
+								}`}
+							/>
+						)}
+
 						{/* Tom */}
+						{task.characters?.Tom && (
 						<Image
 							src={task.characters.Tom}
 							alt="Tom"
 							width={400}
 							height={520}
-							className={`absolute bottom-0 right-[10%] w-auto object-contain
-    transition-all duration-700 ease-out sm:right-[16%]
+							className={`absolute bottom-0 w-auto object-contain
+					transition-all duration-700 ease-out ${hasAnna ? "right-[3%] sm:right-[6%]" : "right-[10%] sm:right-[16%]"}
 
     ${
 			hasStarted && !dialogueFinished
@@ -258,11 +283,12 @@ export default function DialoguePlayer({
 
     ${
 			activeLine?.speaker === "Tom"
-				? "h-[350px] scale-105 sm:h-[420px]"
-				: "h-[330px] scale-100 brightness-75 sm:h-[395px]"
+			? hasAnna ? "h-[300px] scale-105 sm:h-[360px]" : "h-[350px] scale-105 sm:h-[420px]"
+				: hasAnna ? "h-[280px] scale-100 brightness-75 sm:h-[340px]" : "h-[330px] scale-100 brightness-75 sm:h-[395px]"
 		}
   `}
 						/>
+						)}
 
 						{/* Subtitle + controls */}
 						<div className="absolute inset-x-0 bottom-0 z-20 bg-black/70 backdrop-blur-[2px]">

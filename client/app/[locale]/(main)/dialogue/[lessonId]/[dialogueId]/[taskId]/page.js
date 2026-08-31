@@ -33,6 +33,7 @@ export default function DialogueTaskPage() {
 	);
 	const taskWithTranslation = {
 		...task,
+		scene: dialogue.scene || task.scene,
 		translation: task.translation || matchingDialogueLine?.translation,
 	};
 

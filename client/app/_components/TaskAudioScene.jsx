@@ -17,26 +17,30 @@ function TaskAudioScene({ task }) {
 	const playbackRateRef = useRef(1);
 
 	const characterImage = task.character?.image;
+	const hasScene = Boolean(task.scene);
+	const hasAudio = Boolean(task.audioUrl);
 
 	const characterDirectory = characterImage
 		? characterImage.slice(0, characterImage.lastIndexOf("/") + 1)
 		: "";
 
 	const isMaria = task.character?.name?.toLowerCase() === "maria";
-
-	const eyesClosed = `${characterDirectory}eyes-closed.png`;
+	const canBlink = Boolean(isMaria && characterImage);
+	const eyesClosed = canBlink
+		? `${characterDirectory}eyes-closed.png`
+		: null;
 
 	// Preload blink image
 	useEffect(() => {
-		if (!isMaria) return;
+		if (!canBlink) return;
 
 		const image = new window.Image();
 		image.src = eyesClosed;
-	}, [isMaria, eyesClosed]);
+	}, [canBlink, eyesClosed]);
 
 	// Random blinking every 2.5–5.5 seconds
 	useEffect(() => {
-		if (!isMaria) return;
+		if (!canBlink) return;
 
 		let blinkTimer;
 		let reopenTimer;
@@ -60,7 +64,7 @@ function TaskAudioScene({ task }) {
 			window.clearTimeout(blinkTimer);
 			window.clearTimeout(reopenTimer);
 		};
-	}, [isMaria, characterImage]);
+	}, [canBlink]);
 
 	async function startSpeaking() {
 		const audio = audioRef.current;
@@ -119,14 +123,16 @@ function TaskAudioScene({ task }) {
 			<div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950">
 				{/* Scene */}
 				<div className="relative aspect-[4/3] overflow-hidden">
-					<Image
-						src={task.scene}
-						alt="Văn phòng"
-						fill
-						priority
-						className="object-cover"
-						sizes="(max-width: 768px) 100vw, 768px"
-					/>
+					{hasScene && (
+						<Image
+							src={task.scene}
+							alt="Văn phòng"
+							fill
+							priority
+							className="object-cover"
+							sizes="(max-width: 768px) 100vw, 768px"
+						/>
+					)}
 
 					{/* Character */}
 					{characterImage && (
@@ -148,7 +154,7 @@ function TaskAudioScene({ task }) {
 							/>
 
 							{/* Closed-eye overlay */}
-							{isMaria && isBlinking && (
+							{canBlink && isBlinking && (
 								<Image
 									src={eyesClosed}
 									alt=""
@@ -181,17 +187,19 @@ function TaskAudioScene({ task }) {
 					)}
 				</div>
 
-				<audio
-					ref={audioRef}
-					src={task.audioUrl}
-					preload="metadata"
-					onPlay={() => setIsPlaying(true)}
-					onPause={() => setIsPlaying(false)}
-					onEnded={() => {
-						setIsPlaying(false);
-						setShowCharacter(false);
-					}}
-				/>
+				{hasAudio && (
+					<audio
+						ref={audioRef}
+						src={task.audioUrl}
+						preload="metadata"
+						onPlay={() => setIsPlaying(true)}
+						onPause={() => setIsPlaying(false)}
+						onEnded={() => {
+							setIsPlaying(false);
+							setShowCharacter(false);
+						}}
+					/>
+				)}
 
 				{/* Controls */}
 				<div className="flex items-center justify-between bg-slate-950 px-4 py-3">
