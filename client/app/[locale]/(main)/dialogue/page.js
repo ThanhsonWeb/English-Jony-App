@@ -47,48 +47,47 @@ export default function DialoguePage() {
 
 	return (
 		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
-			<div className="mx-auto max-w-6xl">
-				{/* Hero */}
-				<div className="relative min-h-[300px] overflow-hidden rounded-xl bg-[#020817]">
-					{/* Content */}
-					<div className="relative   ">
-						<div className="max-w-[520px]">
-							<h1 className="flex items-center gap-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-								Hội thoại thực tế
-								<span aria-hidden="true">🎧</span>
-							</h1>
+			{/* Hero */}
+			<div className="relative min-h-[300px] overflow-hidden rounded-xl bg-[#020817] mx-auto max-w-7xl">
+				{/* Content */}
+				<div className="relative z-10 flex min-h-[300px] items-center">
+					<div className="max-w-[520px]">
+						<h1 className="flex items-center gap-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+							Hội thoại thực tế
+							<span aria-hidden="true">🎧</span>
+						</h1>
 
-							<p className="mt-3 text-base text-slate-400">
-								Luyện nghe và phản xạ qua các tình huống đời thường.
-							</p>
+						<p className="mt-3 text-base text-slate-400">
+							Luyện nghe và phản xạ qua các tình huống đời thường.
+						</p>
 
-							<div className="relative mt-7 max-w-[485px]">
-								<Search
-									size={20}
-									className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"
-								/>
+						<div className="relative mt-7 max-w-[485px]">
+							<Search
+								size={20}
+								className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"
+							/>
 
-								<input
-									type="text"
-									placeholder="Tìm kiếm hội thoại..."
-									className="h-14 w-full rounded-xl border border-slate-800 bg-[#0b1428]/90 pl-12 pr-4 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10"
-								/>
-							</div>
+							<input
+								type="text"
+								placeholder="Tìm kiếm hội thoại..."
+								className="h-14 w-full rounded-xl border border-slate-800 bg-[#0b1428]/90 pl-12 pr-4 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10"
+							/>
 						</div>
 					</div>
-					{/* Right-side image */}
-					<div className="absolute inset-y-0 right-0 hidden w-[52%] md:block">
-						<img
-							src="/hero-img.png"
-							alt="Maria và Tom đang trò chuyện"
-							className="h-full w-full object-cover object-center"
-						/>
-
-						{/* Blend image into background */}
-						<div className="absolute inset-0 bg-gradient-to-r from-[#020817] via-[#020217]/2 to-transparent" />
-					</div>
 				</div>
-
+				{/* Right-side image */}
+				<div className="absolute inset-y-0 right-0 hidden w-[45%] md:block">
+					<Image
+						src="/hero-img.png"
+						alt="Maria và Tom đang trò chuyện"
+						fill
+						priority
+						className="object-cover object-center"
+						sizes="52vw"
+					/>
+				</div>
+			</div>
+			<div className="mx-auto max-w-6xl">
 				{/* Current course */}
 				{currentCourse && (
 					<div className="mt-3">

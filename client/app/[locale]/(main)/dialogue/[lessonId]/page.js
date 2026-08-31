@@ -18,7 +18,6 @@ import Image from "next/image";
 //for thumbnails
 const dialogueThumbnails = {
 	"meeting-tom": "/dialogue/office-introduction/thumbnails/meeting-tem.png",
-	"office-tour": "/dialogue/office-introduction/thumbnails/office-tour.png",
 	"meet-coworkers":
 		"/dialogue/office-introduction/thumbnails/meet-coworkers.png",
 	"talk-about-work":
@@ -89,9 +88,8 @@ export default function DialogueLessonPage() {
 
 	return (
 		<div className="min-h-screen px-4 py-2 text-white sm:px-8">
-			<div className="mx-auto max-w-5xl">
 				{/* Hero */}
-				<div className="relative mt-8 min-h-[290px] overflow-hidden rounded-sm border border-slate-800 bg-[#07101f]">
+				<div className="relative mt-4 min-h-[290px] overflow-hidden rounded-sm border border-slate-800 bg-[#07101f] mx-auto max-w-6xl">
 					{/* Hero image */}
 					<div className="absolute inset-y-0 right-0 hidden w-[58%] md:block">
 						<Image
@@ -160,6 +158,7 @@ export default function DialogueLessonPage() {
 						</div>
 					</div>
 				</div>
+			<div className="mx-auto max-w-5xl">
 				{/* Dialogues */}
 				<section className="mt-10">
 					<h2 className="text-xl font-semibold">Các hội thoại</h2>

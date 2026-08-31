@@ -728,16 +728,105 @@ export const lessonData = {
 					},
 				],
 			},
-			{
-				id: "office-tour",
-				title: "Tham quan văn phòng",
-				description: "Tom giới thiệu Maria về các khu vực trong văn phòng.",
-				tasks: [],
-			},
+			// meeting-coworkers
 			{
 				id: "meet-coworkers",
 				title: "Gặp đồng nghiệp mới",
-				description: "Maria gặp và làm quen với các đồng nghiệp khác.",
+				description:
+					"Maria giới thiệu Tom với Anna, một đồng nghiệp trong nhóm.",
+
+				dialogue: [
+					{
+						speaker: "Maria",
+						text: "Tom, let me introduce you to Anna. She’s a frontend developer on our team.",
+						translation:
+							"Tom, để tôi giới thiệu cậu với Anna. Cô ấy là lập trình viên frontend trong nhóm của chúng ta.",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/maria-01.mp3",
+					},
+					{
+						speaker: "Tom",
+						text: "Hi Anna, nice to meet you. I’m Tom, the new graphic designer.",
+						translation:
+							"Chào Anna, rất vui được gặp bạn. Tôi là Tom, nhà thiết kế đồ họa mới.",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-01.mp3",
+					},
+					{
+						speaker: "Anna",
+						text: "Nice to meet you too, Tom. Welcome to the team!",
+						translation:
+							"Tôi cũng rất vui được gặp bạn, Tom. Chào mừng bạn đến với nhóm!",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/anna-01.mp3",
+					},
+					{
+						speaker: "Tom",
+						text: "Thanks! How long have you been working here?",
+						translation: "Cảm ơn! Bạn đã làm việc ở đây bao lâu rồi?",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-02.mp3",
+					},
+					{
+						speaker: "Anna",
+						text: "About two years. What kind of projects do you usually work on?",
+						translation: "Khoảng hai năm. Bạn thường làm những loại dự án nào?",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/anna-02.mp3",
+					},
+					{
+						speaker: "Tom",
+						text: "Mostly website and app designs.",
+						translation: "Chủ yếu là thiết kế website và ứng dụng.",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-03.mp3",
+					},
+					{
+						speaker: "Anna",
+						text: "Nice. I work on the frontend, so we’ll probably work together a lot.",
+						translation:
+							"Hay đấy. Tôi làm frontend, nên có lẽ chúng ta sẽ làm việc cùng nhau khá nhiều.",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/anna-03.mp3",
+					},
+					{
+						speaker: "Tom",
+						text: "That sounds great. I’m looking forward to it.",
+						translation: "Nghe tuyệt đấy. Tôi rất mong chờ điều đó.",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-04.mp3",
+					},
+					{
+						speaker: "Anna",
+						text: "If you need any help, just let me know.",
+						translation: "Nếu bạn cần giúp gì thì cứ nói với tôi nhé.",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/anna-04.mp3",
+					},
+					{
+						speaker: "Tom",
+						text: "I will. Thanks, Anna.",
+						translation: "Tôi sẽ làm vậy. Cảm ơn Anna.",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-05.mp3",
+					},
+					{
+						speaker: "Maria",
+						text: "Alright, let’s go meet the rest of the team.",
+						translation:
+							"Được rồi, chúng ta đi gặp những người còn lại trong nhóm nhé.",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/maria-02.mp3",
+					},
+					{
+						speaker: "Tom",
+						text: "Sounds good. Let’s go!",
+						translation: "Được đấy. Đi thôi!",
+						audioUrl:
+							"/dialogue/office-introduction/meet-coworkers/audio/tom-06.mp3",
+					},
+				],
+
 				tasks: [],
 			},
 			{
