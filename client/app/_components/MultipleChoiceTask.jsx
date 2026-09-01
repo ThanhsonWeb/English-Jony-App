@@ -1,8 +1,8 @@
 import { ArrowLeft, CheckCircle2, Circle } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import GrammarNote from "./GrammarNote";
 import TaskAudioScene from "./TaskAudioScene";
-import TaskTip from "./TaskTip";
 
 function MultipleChoiceTask({
 	task,
@@ -27,7 +27,6 @@ function MultipleChoiceTask({
 
 				<p className="mt-8 text-sm text-slate-500">Bài {task.id}/{totalTasks}</p>
 				<h1 className="mt-2 text-2xl font-bold">{task.title}</h1>
-				{result === "correct" && <TaskTip tip={task.tip} />}
 
 				<div className="mt-8 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
 					<TaskAudioScene key={task.audioUrl} task={task} />
@@ -106,9 +105,11 @@ function MultipleChoiceTask({
 							</div>
 						)}
 
-						<div className="mt-8 flex justify-end">
-							{result === "correct" ? (
-								<Link
+						<div className="mt-8 flex items-start justify-between gap-4">
+							{result && <GrammarNote grammar={task.grammar} />}
+							<div className="ml-auto shrink-0">
+								{result === "correct" ? (
+									<Link
 									href={
 										nextTask
 											? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
@@ -117,17 +118,18 @@ function MultipleChoiceTask({
 									className="rounded-xl bg-emerald-600 px-6 py-3 font-semibold transition hover:bg-emerald-500"
 								>
 									{nextTask ? "Tiếp tục →" : "Hoàn thành hội thoại ✓"}
-								</Link>
-							) : (
-								<button
+									</Link>
+								) : (
+									<button
 									type="button"
 									onClick={checkAnswer}
 									disabled={!selected}
 									className="rounded-xl bg-violet-600 px-6 py-3 font-semibold transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-40"
 								>
 									Kiểm tra
-								</button>
-							)}
+									</button>
+								)}
+							</div>
 						</div>
 					</div>
 				</div>

@@ -1,8 +1,8 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import GrammarNote from "./GrammarNote";
 import TaskAudioScene from "./TaskAudioScene";
-import TaskTip from "./TaskTip";
 
 function getAnswerText(answer) {
 	return Array.isArray(answer) ? answer.join(" ") : String(answer || "");
@@ -115,7 +115,6 @@ function ArrangeWordsTask({
 					Bài {task.id}/{totalTasks}
 				</p>
 				<h1 className="mt-2 text-2xl font-bold">{task.title} 🧩</h1>
-				{result === "correct" && <TaskTip tip={task.tip} />}
 
 				<div
 					className={`mt-8 grid gap-8 lg:items-start ${
@@ -174,15 +173,19 @@ function ArrangeWordsTask({
 							</div>
 						)}
 
-						<div className="mt-8 flex items-center justify-between">
-							<button
-								type="button"
-								onClick={resetAnswer}
-								className="text-sm text-slate-400 hover:text-white"
-							>
-								Làm lại
-							</button>
+						<div className="mt-8 flex items-start justify-between gap-4">
+							<div className="flex items-start gap-4">
+								<button
+									type="button"
+									onClick={resetAnswer}
+									className="py-2 text-sm text-slate-400 hover:text-white"
+								>
+									Làm lại
+								</button>
+								{result && <GrammarNote grammar={task.grammar} />}
+							</div>
 
+							<div className="ml-auto shrink-0">
 							{result === "correct" ? (
 								<Link
 									href={
@@ -204,6 +207,7 @@ function ArrangeWordsTask({
 									Kiểm tra
 								</button>
 							)}
+							</div>
 						</div>
 					</div>
 				</div>
