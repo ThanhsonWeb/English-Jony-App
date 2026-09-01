@@ -2,9 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import { ArrowLeft, RotateCcw } from "lucide-react";
+import { CheckCircle2, Layers3 } from "lucide-react";
 import Loading from "@/app/_components/loading";
-import { X } from "lucide-react";
+import {
+	ReviewCompletion,
+	ReviewShell,
+	ReviewStatus,
+} from "@/app/_components/review/ReviewLayout";
 
 function Page() {
 	const { topicId } = useParams();
@@ -160,193 +164,47 @@ function Page() {
 		const total = results.forgot + results.hard + results.medium + results.easy;
 
 		return (
-			<div className="min-h-screen bg-[#030616] flex items-center justify-center px-4 py-10 text-white">
-				<div className="w-full max-w-2xl">
-					{/* Main card */}
-					<div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-[#0b1224] p-6 sm:p-10 shadow-2xl">
-						{/* glow */}
-						<div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.15),transparent_55%)] pointer-events-none" />
-
-						<div className="relative z-10 text-center">
-							<div className="text-5xl sm:text-6xl mb-5">🎉</div>
-
-							<h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
-								Hoàn thành buổi ôn!
-							</h2>
-
-							<p className="mt-3 text-sm sm:text-base text-slate-400">
-								Bạn vừa ôn xong{" "}
-								<span className="text-white font-semibold">{total} từ</span>.
-								Tiếp tục duy trì nhé 🔥
-							</p>
-
-							{/* Stats */}
-							<div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
-								<div className="rounded-2xl border border-red-500/20 bg-red-500/10 p-4">
-									<div className="text-2xl">😵</div>
-									<p className="mt-2 text-xs text-red-300">Quên</p>
-									<p className="text-2xl font-bold text-red-400">
-										{results.forgot}
-									</p>
-								</div>
-
-								<div className="rounded-2xl border border-orange-500/20 bg-orange-500/10 p-4">
-									<div className="text-2xl">😓</div>
-									<p className="mt-2 text-xs text-orange-300">Khó</p>
-									<p className="text-2xl font-bold text-orange-400">
-										{results.hard}
-									</p>
-								</div>
-
-								<div className="rounded-2xl border border-blue-500/20 bg-blue-500/10 p-4">
-									<div className="text-2xl">🙂</div>
-									<p className="mt-2 text-xs text-blue-300">Khá nhớ</p>
-									<p className="text-2xl font-bold text-blue-400">
-										{results.medium}
-									</p>
-								</div>
-
-								<div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-4">
-									<div className="text-2xl">✅</div>
-									<p className="mt-2 text-xs text-emerald-300">Dễ</p>
-									<p className="text-2xl font-bold text-emerald-400">
-										{results.easy}
-									</p>
-								</div>
-							</div>
-
-							{/* Progress message */}
-							<div className="mt-8 rounded-2xl border border-slate-800 bg-slate-900/50 p-4">
-								<p className="text-sm text-slate-300">
-									🌱 Những từ khó sẽ quay lại sớm hơn. Những từ dễ sẽ được giãn
-									thời gian ôn.
-								</p>
-							</div>
-
-							<div className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
-								<button
-									onClick={() => {
-										setPracticeMode(true);
-										setCurrentIndex(0);
-										setSessionFinished(false);
-										setShowAnswer(false);
-
-										setResults({
-											forgot: 0,
-											hard: 0,
-											medium: 0,
-											easy: 0,
-										});
-									}}
-									className="flex items-center justify-center gap-2 rounded-xl border border-blue-500/30 bg-blue-500/10 py-3.5 font-semibold text-blue-300 transition hover:bg-blue-500/20"
-								>
-									<RotateCcw size={18} />
-									Ôn lại
-								</button>
-
-								<button
-									onClick={() => router.push(`/wordlist/${topicId}`)}
-									className="
-			rounded-xl bg-blue-600 py-3.5
-			font-semibold text-white
-			transition hover:bg-blue-500
-			active:scale-[0.98]
-		"
-								>
-									Về danh sách từ →
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<ReviewCompletion
+				message={`Bạn vừa ôn xong ${total} từ trong chế độ Flashcard.`}
+				stats={[
+					{ label: "Quên rồi", value: results.forgot, tone: "red" },
+					{ label: "Còn mơ hồ", value: results.hard, tone: "orange" },
+					{ label: "Nhớ được", value: results.medium, tone: "blue" },
+					{ label: "Rất chắc", value: results.easy, tone: "emerald" },
+				]}
+				note="🌱 Từ khó sẽ quay lại sớm hơn, còn từ bạn nhớ tốt sẽ được giãn thời gian ôn."
+				onRestart={() => {
+					setPracticeMode(true);
+					setCurrentIndex(0);
+					setSessionFinished(false);
+					setShowAnswer(false);
+					setResults({ forgot: 0, hard: 0, medium: 0, easy: 0 });
+				}}
+				onBack={() => router.push(`/wordlist/${topicId}`)}
+			/>
 		);
 	}
 
 	if (!currentWord) {
 		return (
-			<div className="min-h-screen bg-[#030616] px-4 py-10 text-white flex items-center justify-center">
-				<div className="relative w-full max-w-xl overflow-hidden rounded-3xl border border-slate-800 bg-[#0b1224] p-8 sm:p-10 text-center shadow-2xl">
-					{/* Glow */}
-					<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.16),transparent_55%)]" />
-
-					<div className="relative z-10">
-						{/* Icon */}
-						<div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl border border-emerald-500/20 bg-emerald-500/10 text-4xl">
-							🎉
-						</div>
-
-						<h2 className="mt-6 text-2xl sm:text-3xl font-bold tracking-tight">
-							Bạn đã ôn hết rồi!
-						</h2>
-
-						<p className="mx-auto mt-3 max-w-md text-sm sm:text-base leading-relaxed text-slate-400">
-							Hiện tại không còn từ nào cần ôn. Hãy quay lại khi đến lượt ôn
-							tiếp theo nhé.
-						</p>
-
-						{/* Status */}
-						<div className="mt-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 px-4 py-4">
-							<p className="text-sm text-emerald-300">
-								✅ Không có từ nào đang chờ ôn
-							</p>
-						</div>
-
-						{/* Button */}
-						<button
-							onClick={() => router.push(`/wordlist/${topicId}`)}
-							className="mt-7 w-full rounded-xl bg-blue-600 py-3.5 font-semibold text-white transition hover:bg-blue-500 active:scale-[0.98]"
-						>
-							Về danh sách từ →
-						</button>
-					</div>
-				</div>
-			</div>
+			<ReviewStatus
+				icon={<CheckCircle2 className="h-14 w-14 text-emerald-400" />}
+				title="Bạn đã ôn hết rồi!"
+				message="Hiện tại không còn từ nào cần ôn. Hãy quay lại khi đến lượt ôn tiếp theo nhé."
+				onBack={() => router.push(`/wordlist/${topicId}`)}
+			/>
 		);
 	}
 	return (
-		<div className="min-h-screen bg-[#030616] px-4 py-5 text-white sm:py-7">
-			<div className="mx-auto max-w-3xl">
-				{/* ================= TOP BAR ================= */}
-				<div className="mb-5 flex items-center gap-3 sm:gap-4">
-					<button
-						onClick={() => router.back()}
-						className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-800 hover:text-white"
-					>
-						<X size={24} />
-					</button>
-
-					{/* Progress */}
-					<div className="h-3 flex-1 overflow-hidden rounded-full bg-slate-800">
-						<div
-							className="h-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 transition-all duration-500 ease-out"
-							style={{
-								width: `${((currentIndex + 1) / words.length) * 100}%`,
-							}}
-						/>
-					</div>
-
-					<p className="shrink-0 text-sm font-medium text-slate-400">
-						{currentIndex + 1}/{words.length}
-					</p>
-				</div>
-
-				{/* ================= SMALL HEADER ================= */}
-				<div className="mb-3 flex items-center justify-between">
-					<div>
-						<h1 className="text-lg font-semibold sm:text-xl">Ôn từ vựng</h1>
-
-						<p className="mt-0.5 text-xs text-slate-500">
-							Nhớ lại nghĩa trước khi lật thẻ
-						</p>
-					</div>
-
-					{practiceMode && (
-						<span className="rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-300">
-							Ôn lại
-						</span>
-					)}
-				</div>
+		<ReviewShell
+			title="Flashcard"
+			description="Nhớ lại nghĩa trước khi lật thẻ"
+			icon={<Layers3 size={21} />}
+			practiceMode={practiceMode}
+			current={currentIndex + 1}
+			total={words.length}
+			onBack={() => router.back()}
+		>
 
 				{/* ================= FLASHCARD ================= */}
 				<div className="group relative">
@@ -357,15 +215,15 @@ function Page() {
 						onClick={() => setShowAnswer((cur) => !cur)}
 						className="
 						relative
-						flex min-h-[240px] sm:min-h-[285px]
+						flex min-h-[300px] sm:min-h-[360px]
 						cursor-pointer select-none
 						overflow-hidden
-						rounded-3xl
-						border border-slate-800
-						bg-gradient-to-br from-[#101a31] via-[#0d1427] to-[#080f20]
-						px-5 py-6 sm:px-8 sm:py-8
+						rounded-[28px]
+						border border-blue-500/30
+						bg-gradient-to-br from-[#101c38] via-[#0b152b] to-[#070e1e]
+						px-5 py-8 sm:px-10 sm:py-10
 						text-center
-						shadow-[0_20px_60px_-30px_rgba(0,0,0,0.9)]
+						shadow-[0_28px_80px_-42px_rgba(37,99,235,0.65)]
 						transition-all duration-300
 						hover:-translate-y-0.5
 						hover:border-blue-500/40
@@ -385,32 +243,41 @@ function Page() {
 						>
 							{!showAnswer ? (
 								<>
-									<span className="mb-4 rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-[11px] font-medium text-blue-300 sm:text-xs">
-										Nhấn để xem nghĩa
-									</span>
-
-									<h2 className="max-w-full break-words text-4xl font-bold tracking-tight text-white sm:text-5xl">
+									<h2 className="max-w-full break-words text-5xl font-bold tracking-tight text-white sm:text-6xl">
 										{currentWord.english}
 									</h2>
 
 									{currentWord.pronunciation && (
 										<p className="mt-3 break-words font-mono text-sm text-blue-300 sm:text-base">
-											{currentWord.pronunciation}
-										</p>
-									)}
+										{currentWord.pronunciation}
+									</p>
+								)}
+
+									<div className="mt-8 flex items-center gap-3 text-sm text-slate-400">
+										<span className="h-px w-12 bg-slate-700" />
+										<span className="text-blue-400">◉</span>
+										<span>Nhấn để xem đáp án</span>
+										<span className="h-px w-12 bg-slate-700" />
+									</div>
 								</>
 							) : (
 								<>
-									<span className="mb-4 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-[11px] font-medium text-emerald-300 sm:text-xs">
-										Nghĩa tiếng Việt
-									</span>
+									<p className="mb-3 text-sm font-medium text-blue-300">
+										{currentWord.english}
+									</p>
 
-									<h2 className="max-w-full break-words text-3xl font-bold tracking-tight text-emerald-400 sm:text-4xl">
+									<h2 className="max-w-full break-words text-4xl font-bold tracking-tight text-white sm:text-5xl">
 										{currentWord.vietnamese}
 									</h2>
 
+									{currentWord.pronunciation && (
+										<p className="mt-3 font-mono text-sm text-blue-300 sm:text-base">
+											{currentWord.pronunciation}
+										</p>
+									)}
+
 									{currentWord.example && (
-										<div className="mt-5 max-w-xl rounded-xl border border-slate-800 bg-slate-950/30 px-4 py-3">
+										<div className="mt-6 max-w-xl border-t border-slate-700/70 px-4 pt-5">
 											<p className="break-words text-sm italic leading-relaxed text-slate-300">
 												“{currentWord.example}”
 											</p>
@@ -476,7 +343,7 @@ function Page() {
 							active:scale-[0.97]
 						"
 						>
-							<span className="text-sm font-medium sm:text-base">😓 Khó</span>
+							<span className="text-sm font-medium sm:text-base">😓 Còn mơ hồ</span>
 
 							<span className="mt-0.5 text-[10px] opacity-60 sm:text-xs">
 								{getReviewLabel(1)}
@@ -500,7 +367,7 @@ function Page() {
 						"
 						>
 							<span className="text-sm font-medium sm:text-base">
-								🙂 Khá nhớ
+								🙂 Nhớ được
 							</span>
 
 							<span className="mt-0.5 text-[10px] opacity-60 sm:text-xs">
@@ -524,7 +391,7 @@ function Page() {
 							active:scale-[0.97]
 						"
 						>
-							<span className="text-sm font-medium sm:text-base">✅ Dễ</span>
+							<span className="text-sm font-medium sm:text-base">✅ Rất chắc</span>
 
 							<span className="mt-0.5 text-[10px] opacity-60 sm:text-xs">
 								{getReviewLabel(3)}
@@ -532,8 +399,7 @@ function Page() {
 						</button>
 					</div>
 				</div>
-			</div>
-		</div>
+		</ReviewShell>
 	);
 }
 

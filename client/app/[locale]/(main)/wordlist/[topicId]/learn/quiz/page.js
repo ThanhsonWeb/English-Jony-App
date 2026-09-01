@@ -3,14 +3,17 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import {
-	ArrowLeft,
 	Brain,
 	CheckCircle2,
-	RotateCcw,
 	XCircle,
 } from "lucide-react";
 
 import Loading from "@/app/_components/loading";
+import {
+	ReviewCompletion,
+	ReviewShell,
+	ReviewStatus,
+} from "@/app/_components/review/ReviewLayout";
 
 function normalizeText(value) {
 	return String(value || "").trim().toLowerCase();
@@ -295,7 +298,7 @@ export default function QuizReviewPage() {
 
 	if (error) {
 		return (
-			<StatusScreen
+			<ReviewStatus
 				icon={<XCircle className="h-12 w-12 text-red-400" />}
 				title="Không thể mở bài ôn"
 				message={error}
@@ -306,7 +309,7 @@ export default function QuizReviewPage() {
 
 	if (notEnoughChoices) {
 		return (
-			<StatusScreen
+			<ReviewStatus
 				icon={<Brain className="h-12 w-12 text-cyan-400" />}
 				title="Chưa đủ từ để tạo câu hỏi"
 				message="Bạn cần ít nhất 4 nghĩa tiếng Việt khác nhau trong sổ tay để dùng chế độ Trắc nghiệm."
@@ -320,46 +323,23 @@ export default function QuizReviewPage() {
 		const accuracy = total > 0 ? Math.round((results.correct / total) * 100) : 0;
 
 		return (
-			<main className="flex min-h-[calc(100vh-80px)] items-center justify-center bg-[#030616] px-4 py-10 text-white">
-				<div className="relative w-full max-w-2xl overflow-hidden rounded-3xl border border-slate-800 bg-[#0b1224] p-6 shadow-2xl sm:p-10">
-					<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.15),transparent_55%)]" />
-					<div className="relative text-center">
-						<div className="text-5xl">🎉</div>
-						<h1 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">
-							Hoàn thành!
-						</h1>
-
-						<div className="mt-8 grid grid-cols-3 gap-3">
-							<ResultStat label="Đúng" value={results.correct} color="emerald" />
-							<ResultStat label="Sai" value={results.wrong} color="red" />
-							<ResultStat label="Chính xác" value={`${accuracy}%`} color="blue" />
-						</div>
-
-						<div className="mt-8 grid gap-3 sm:grid-cols-2">
-							<button
-								type="button"
-								onClick={restartQuiz}
-								className="inline-flex items-center justify-center gap-2 rounded-xl border border-cyan-500/30 bg-cyan-500/10 px-5 py-3.5 font-semibold text-cyan-300 transition hover:bg-cyan-500/20"
-							>
-								<RotateCcw size={18} /> Học lại
-							</button>
-							<button
-								type="button"
-								onClick={() => router.push(`/wordlist/${topicId}`)}
-								className="rounded-xl bg-blue-600 px-5 py-3.5 font-semibold transition hover:bg-blue-500 active:scale-[0.98]"
-							>
-								Quay lại danh sách từ
-							</button>
-						</div>
-					</div>
-				</div>
-			</main>
+			<ReviewCompletion
+				title="Hoàn thành!"
+				message={`Bạn đã hoàn thành ${total} câu hỏi Trắc nghiệm.`}
+				stats={[
+					{ label: "Đúng", value: results.correct, tone: "emerald" },
+					{ label: "Sai", value: results.wrong, tone: "red" },
+					{ label: "Chính xác", value: `${accuracy}%`, tone: "blue" },
+				]}
+				onRestart={restartQuiz}
+				onBack={() => router.push(`/wordlist/${topicId}`)}
+			/>
 		);
 	}
 
 	if (!currentQuestion) {
 		return (
-			<StatusScreen
+			<ReviewStatus
 				icon={<CheckCircle2 className="h-14 w-14 text-emerald-400" />}
 				title="Bạn đã ôn hết rồi!"
 				message="Hiện tại không có từ nào trong danh sách này cần ôn."
@@ -368,53 +348,23 @@ export default function QuizReviewPage() {
 		);
 	}
 
-	const progress = ((currentIndex + 1) / questions.length) * 100;
-
 	return (
-		<main className="min-h-[calc(100vh-80px)] bg-[#030616] px-4 py-6 text-white sm:px-6 sm:py-8">
-			<div className="mx-auto w-full max-w-3xl">
-				<div className="mb-6 flex items-center gap-3 sm:gap-4">
-					<button
-						type="button"
-						onClick={() => router.push(`/wordlist/${topicId}`)}
-						aria-label="Quay lại danh sách từ"
-						className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-800 hover:text-white"
-					>
-						<ArrowLeft size={21} />
-					</button>
-					<div className="h-3 flex-1 overflow-hidden rounded-full bg-slate-800">
-						<div
-							className="h-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 transition-all duration-500"
-							style={{ width: `${progress}%` }}
-						/>
-					</div>
-					<p className="shrink-0 text-sm font-semibold text-slate-400">
-						{currentIndex + 1} / {questions.length}
-					</p>
-				</div>
+		<ReviewShell
+			title="Trắc nghiệm"
+			description="Chọn nghĩa tiếng Việt đúng của từ"
+			icon={<Brain size={21} />}
+			practiceMode={practiceMode}
+			current={currentIndex + 1}
+			total={questions.length}
+			onBack={() => router.push(`/wordlist/${topicId}`)}
+		>
 
-				<div className="mb-4 flex items-center justify-between">
-					<div>
-						<h1 className="inline-flex items-center gap-2 text-xl font-bold sm:text-2xl">
-							<Brain className="h-5 w-5 text-cyan-400" /> Trắc nghiệm
-						</h1>
-						<p className="mt-1 text-sm text-slate-500">
-							Chọn nghĩa tiếng Việt đúng của từ.
-						</p>
-					</div>
-					{practiceMode && (
-						<span className="rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300">
-							Học lại
-						</span>
-					)}
-				</div>
-
-				<form ref={formRef} onSubmit={handleSubmit}>
-					<div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-br from-[#101a31] via-[#0d1427] to-[#080f20] p-5 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.9)] sm:p-8">
-						<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.12),transparent_50%)]" />
+			<form ref={formRef} onSubmit={handleSubmit}>
+				<div className="relative overflow-hidden rounded-[28px] border border-blue-500/25 bg-gradient-to-br from-[#101c38] via-[#0b152b] to-[#070e1e] p-5 shadow-[0_28px_80px_-42px_rgba(37,99,235,0.65)] sm:p-8">
+					<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.13),transparent_50%)]" />
 						<div className="relative">
-							<p className="text-center text-xs font-semibold uppercase tracking-[0.16em] text-cyan-300">
-								Chọn nghĩa đúng của từ
+							<p className="text-center text-sm font-semibold text-blue-300">
+								Từ tiếng Anh
 							</p>
 							<h2 className="mt-4 break-words text-center text-4xl font-bold tracking-tight sm:text-5xl">
 								{currentQuestion.word.english}
@@ -450,7 +400,7 @@ export default function QuizReviewPage() {
 							<button
 								type="submit"
 								disabled={(!result && !selectedChoice) || isSaving}
-								className="mt-6 w-full rounded-xl bg-blue-600 px-6 py-4 text-lg font-semibold shadow-lg shadow-blue-600/20 transition hover:bg-blue-500 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40"
+								className="mt-6 w-full rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-4 text-lg font-semibold shadow-lg shadow-blue-600/20 transition hover:brightness-110 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40"
 							>
 								{isSaving ? "Đang lưu..." : result ? "Tiếp tục" : "Kiểm tra"}
 							</button>
@@ -458,10 +408,9 @@ export default function QuizReviewPage() {
 								Phím 1–4 để chọn · Enter để kiểm tra hoặc tiếp tục
 							</p>
 						</div>
-					</div>
-				</form>
-			</div>
-		</main>
+				</div>
+			</form>
+		</ReviewShell>
 	);
 }
 
@@ -537,40 +486,6 @@ function QuizFeedback({ result, question }) {
 					“{question.word.example}”
 				</p>
 			)}
-		</div>
-	);
-}
-
-function StatusScreen({ icon, title, message, onBack }) {
-	return (
-		<main className="flex min-h-[calc(100vh-80px)] items-center justify-center bg-[#030616] px-4 text-white">
-			<div className="w-full max-w-lg rounded-3xl border border-slate-800 bg-[#0b1224] p-8 text-center shadow-2xl">
-				<div className="flex justify-center">{icon}</div>
-				<h1 className="mt-5 text-2xl font-bold">{title}</h1>
-				<p className="mt-3 leading-relaxed text-slate-400">{message}</p>
-				<button
-					type="button"
-					onClick={onBack}
-					className="mt-7 w-full rounded-xl bg-blue-600 px-5 py-3 font-semibold transition hover:bg-blue-500"
-				>
-					Quay lại danh sách từ
-				</button>
-			</div>
-		</main>
-	);
-}
-
-function ResultStat({ label, value, color }) {
-	const colors = {
-		emerald: "border-emerald-500/20 bg-emerald-500/10 text-emerald-400",
-		red: "border-red-500/20 bg-red-500/10 text-red-400",
-		blue: "border-blue-500/20 bg-blue-500/10 text-blue-400",
-	};
-
-	return (
-		<div className={`rounded-2xl border p-3 sm:p-4 ${colors[color]}`}>
-			<p className="text-xs font-medium opacity-80">{label}</p>
-			<p className="mt-1 text-2xl font-bold sm:text-3xl">{value}</p>
 		</div>
 	);
 }

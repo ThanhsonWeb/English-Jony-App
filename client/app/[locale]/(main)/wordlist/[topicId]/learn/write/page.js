@@ -3,14 +3,17 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import {
-	ArrowLeft,
 	CheckCircle2,
 	PenLine,
-	RotateCcw,
 	XCircle,
 } from "lucide-react";
 
 import Loading from "@/app/_components/loading";
+import {
+	ReviewCompletion,
+	ReviewShell,
+	ReviewStatus,
+} from "@/app/_components/review/ReviewLayout";
 
 function normalizeAnswer(value) {
 	return value.trim().toLowerCase();
@@ -172,20 +175,12 @@ export default function WriteReviewPage() {
 
 	if (error) {
 		return (
-			<main className="flex min-h-[calc(100vh-80px)] items-center justify-center bg-[#030616] px-4 text-white">
-				<div className="w-full max-w-lg rounded-3xl border border-red-500/20 bg-[#0b1224] p-8 text-center shadow-2xl">
-					<XCircle className="mx-auto h-12 w-12 text-red-400" />
-					<h1 className="mt-5 text-2xl font-bold">Không thể mở bài ôn</h1>
-					<p className="mt-3 text-slate-400">{error}</p>
-					<button
-						type="button"
-						onClick={() => router.push(`/wordlist/${topicId}`)}
-						className="mt-7 w-full rounded-xl bg-blue-600 px-5 py-3 font-semibold transition hover:bg-blue-500"
-					>
-						Quay lại danh sách từ
-					</button>
-				</div>
-			</main>
+			<ReviewStatus
+				icon={<XCircle className="h-12 w-12 text-red-400" />}
+				title="Không thể mở bài ôn"
+				message={error}
+				onBack={() => router.push(`/wordlist/${topicId}`)}
+			/>
 		);
 	}
 
@@ -194,69 +189,30 @@ export default function WriteReviewPage() {
 		const accuracy = total > 0 ? Math.round((results.correct / total) * 100) : 0;
 
 		return (
-			<main className="flex min-h-[calc(100vh-80px)] items-center justify-center bg-[#030616] px-4 py-10 text-white">
-				<div className="relative w-full max-w-2xl overflow-hidden rounded-3xl border border-slate-800 bg-[#0b1224] p-6 shadow-2xl sm:p-10">
-					<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.16),transparent_55%)]" />
-					<div className="relative text-center">
-						<div className="text-5xl">🎉</div>
-						<h1 className="mt-5 text-3xl font-bold tracking-tight sm:text-4xl">
-							Hoàn thành buổi ôn!
-						</h1>
-						<p className="mt-3 text-slate-400">
-							Bạn đã hoàn thành {total} từ trong chế độ Viết từ.
-						</p>
-
-						<div className="mt-8 grid grid-cols-3 gap-3">
-							<ResultStat label="Đúng" value={results.correct} color="emerald" />
-							<ResultStat label="Sai" value={results.wrong} color="red" />
-							<ResultStat label="Chính xác" value={`${accuracy}%`} color="blue" />
-						</div>
-
-						<div className="mt-8 grid gap-3 sm:grid-cols-2">
-							<button
-								type="button"
-								onClick={restartReview}
-								className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-500/30 bg-blue-500/10 px-5 py-3.5 font-semibold text-blue-300 transition hover:bg-blue-500/20"
-							>
-								<RotateCcw size={18} />
-								Học lại
-							</button>
-							<button
-								type="button"
-								onClick={() => router.push(`/wordlist/${topicId}`)}
-								className="rounded-xl bg-blue-600 px-5 py-3.5 font-semibold transition hover:bg-blue-500 active:scale-[0.98]"
-							>
-								Quay lại danh sách từ
-							</button>
-						</div>
-					</div>
-				</div>
-			</main>
+			<ReviewCompletion
+				message={`Bạn đã hoàn thành ${total} từ trong chế độ Viết từ.`}
+				stats={[
+					{ label: "Đúng", value: results.correct, tone: "emerald" },
+					{ label: "Sai", value: results.wrong, tone: "red" },
+					{ label: "Chính xác", value: `${accuracy}%`, tone: "blue" },
+				]}
+				onRestart={restartReview}
+				onBack={() => router.push(`/wordlist/${topicId}`)}
+			/>
 		);
 	}
 
 	if (!currentWord) {
 		return (
-			<main className="flex min-h-[calc(100vh-80px)] items-center justify-center bg-[#030616] px-4 text-white">
-				<div className="w-full max-w-lg rounded-3xl border border-slate-800 bg-[#0b1224] p-8 text-center shadow-2xl">
-					<CheckCircle2 className="mx-auto h-14 w-14 text-emerald-400" />
-					<h1 className="mt-5 text-2xl font-bold">Bạn đã ôn hết rồi!</h1>
-					<p className="mt-3 leading-relaxed text-slate-400">
-						Hiện tại không có từ nào trong danh sách này cần ôn.
-					</p>
-					<button
-						type="button"
-						onClick={() => router.push(`/wordlist/${topicId}`)}
-						className="mt-7 w-full rounded-xl bg-blue-600 px-5 py-3 font-semibold transition hover:bg-blue-500"
-					>
-						Quay lại danh sách từ
-					</button>
-				</div>
-			</main>
+			<ReviewStatus
+				icon={<CheckCircle2 className="h-14 w-14 text-emerald-400" />}
+				title="Bạn đã ôn hết rồi!"
+				message="Hiện tại không có từ nào trong danh sách này cần ôn."
+				onBack={() => router.push(`/wordlist/${topicId}`)}
+			/>
 		);
 	}
 
-	const progress = ((currentIndex + 1) / words.length) * 100;
 	const inputStateClass =
 		result === "correct"
 			? "border-emerald-500/60 bg-emerald-500/5 focus:border-emerald-400"
@@ -265,59 +221,29 @@ export default function WriteReviewPage() {
 				: "border-slate-700 bg-slate-950/60 focus:border-blue-500 focus:ring-blue-500/15";
 
 	return (
-		<main className="min-h-[calc(100vh-80px)] bg-[#030616] px-4 py-6 text-white sm:px-6 sm:py-8">
-			<div className="mx-auto w-full max-w-3xl">
-				<div className="mb-6 flex items-center gap-3 sm:gap-4">
-					<button
-						type="button"
-						onClick={() => router.push(`/wordlist/${topicId}`)}
-						aria-label="Quay lại danh sách từ"
-						className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-slate-400 transition hover:bg-slate-800 hover:text-white"
-					>
-						<ArrowLeft size={21} />
-					</button>
+		<ReviewShell
+			title="Viết từ"
+			description="Gõ từ tiếng Anh phù hợp với nghĩa bên dưới"
+			icon={<PenLine size={21} />}
+			practiceMode={practiceMode}
+			current={currentIndex + 1}
+			total={words.length}
+			onBack={() => router.push(`/wordlist/${topicId}`)}
+		>
 
-					<div className="h-3 flex-1 overflow-hidden rounded-full bg-slate-800">
-						<div
-							className="h-full rounded-full bg-gradient-to-r from-blue-600 to-cyan-400 transition-all duration-500"
-							style={{ width: `${progress}%` }}
-						/>
-					</div>
-
-					<p className="shrink-0 text-sm font-semibold text-slate-400">
-						{currentIndex + 1} / {words.length}
-					</p>
-				</div>
-
-				<div className="mb-4 flex items-center justify-between">
-					<div>
-						<h1 className="inline-flex items-center gap-2 text-xl font-bold sm:text-2xl">
-							<PenLine className="h-5 w-5 text-purple-400" /> Viết từ
-						</h1>
-						<p className="mt-1 text-sm text-slate-500">
-							Nhập từ tiếng Anh phù hợp với nghĩa bên dưới.
-						</p>
-					</div>
-					{practiceMode && (
-						<span className="rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-300">
-							Học lại
-						</span>
-					)}
-				</div>
-
-				<form onSubmit={handleSubmit}>
-					<div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-br from-[#101a31] via-[#0d1427] to-[#080f20] p-6 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.9)] sm:p-10">
-						<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(139,92,246,0.13),transparent_52%)]" />
+			<form onSubmit={handleSubmit}>
+				<div className="relative overflow-hidden rounded-[28px] border border-blue-500/25 bg-gradient-to-br from-[#101c38] via-[#0b152b] to-[#070e1e] p-6 shadow-[0_28px_80px_-42px_rgba(37,99,235,0.65)] sm:p-10">
+					<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.13),transparent_52%)]" />
 						<div className="relative">
-							<p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-purple-300">
+							<p className="text-sm font-semibold text-blue-300">
 								Nghĩa tiếng Việt
 							</p>
-							<h2 className="mx-auto mt-5 max-w-2xl break-words text-center text-3xl font-bold leading-tight tracking-tight sm:text-5xl">
+							<h2 className="mt-4 max-w-2xl break-words text-4xl font-bold leading-tight tracking-tight sm:text-6xl">
 								{currentWord.vietnamese}
 							</h2>
 
-							<label htmlFor="write-answer" className="mt-9 block text-sm font-medium text-slate-300">
-								Từ tiếng Anh
+							<label htmlFor="write-answer" className="mt-9 block text-sm font-medium text-slate-400">
+								Nhập từ tiếng Anh tương ứng
 							</label>
 							<input
 								ref={inputRef}
@@ -343,15 +269,14 @@ export default function WriteReviewPage() {
 							<button
 								type="submit"
 								disabled={(!result && !answer.trim()) || isSaving}
-								className="mt-6 w-full rounded-xl bg-blue-600 px-6 py-4 text-lg font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-500 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40"
+								className="mt-6 w-full rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-4 text-lg font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:brightness-110 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40"
 							>
 								{isSaving ? "Đang lưu..." : result ? "Tiếp tục" : "Kiểm tra"}
 							</button>
 						</div>
-					</div>
-				</form>
-			</div>
-		</main>
+				</div>
+			</form>
+		</ReviewShell>
 	);
 }
 
@@ -390,21 +315,6 @@ function AnswerFeedback({ result, word }) {
 					“{word.example}”
 				</p>
 			)}
-		</div>
-	);
-}
-
-function ResultStat({ label, value, color }) {
-	const colors = {
-		emerald: "border-emerald-500/20 bg-emerald-500/10 text-emerald-400",
-		red: "border-red-500/20 bg-red-500/10 text-red-400",
-		blue: "border-blue-500/20 bg-blue-500/10 text-blue-400",
-	};
-
-	return (
-		<div className={`rounded-2xl border p-3 sm:p-4 ${colors[color]}`}>
-			<p className="text-xs font-medium opacity-80">{label}</p>
-			<p className="mt-1 text-2xl font-bold sm:text-3xl">{value}</p>
 		</div>
 	);
 }
