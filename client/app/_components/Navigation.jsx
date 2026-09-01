@@ -32,7 +32,7 @@ function Navigation() {
 	return (
 		<nav className="relative">
 			{/* Desktop Navigation */}
-			<ul className="hidden md:flex items-center gap-8">
+			<ul className="hidden items-center gap-3 md:flex">
 				{navLinks.map((link) => {
 					const Icon = link.icon;
 					const isActive =
@@ -43,9 +43,11 @@ function Navigation() {
 						<li key={link.name}>
 							<Link
 								href={link.href}
-								className={`relative md:inline-flex items-center gap-2 text-lg font-medium transition-colors duration-200 pb-1  ${
-									isActive ? "text-white" : "text-slate-300 hover:text-white"
-								} after:content-[''] after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:bg-blue-300 after:origin-left after:transition-transform after:duration-300 after:ease-out  ${
+								className={`relative inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-lg font-medium transition-all duration-200 ${
+									isActive
+										? "border-slate-700/70 bg-slate-900/85 text-white shadow-[0_8px_24px_-14px_rgba(59,130,246,0.8)]"
+										: "border-transparent text-slate-300 hover:bg-slate-900/50 hover:text-white"
+								} after:absolute after:inset-x-3 after:bottom-0 after:h-[2px] after:origin-left after:rounded-full after:bg-blue-400 after:shadow-[0_0_10px_rgba(96,165,250,0.9)] after:transition-transform after:duration-300 after:ease-out ${
 									isActive ? "after:scale-x-100" : "after:scale-x-0"
 								}`}
 							>
@@ -72,17 +74,18 @@ function Navigation() {
 					{navLinks.map((link) => {
 						const Icon = link.icon;
 						const isActive =
-							link.href === "/"
-								? pathname === "/"
-								: pathname.startsWith(link.href);
+							activePathname === link.href ||
+							activePathname.startsWith(`${link.href}/`);
 
 						return (
 							<Link
 								key={link.name}
 								href={link.href}
 								onClick={() => setIsOpen(false)}
-								className={`inline-flex items-center gap-3 text-lg font-medium hover:text-blue-400 transition-colors ${
-									isActive ? "text-blue-400 font-semibold" : "text-slate-300"
+								className={`inline-flex items-center gap-3 rounded-xl border px-4 py-3 text-lg font-medium transition-all ${
+									isActive
+										? "border-blue-500/20 bg-blue-500/10 font-semibold text-blue-300"
+										: "border-transparent text-slate-300 hover:bg-slate-900 hover:text-white"
 								}`}
 							>
 								<Icon className="w-5 h-5" />

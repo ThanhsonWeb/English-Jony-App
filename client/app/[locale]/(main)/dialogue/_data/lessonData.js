@@ -1751,7 +1751,601 @@ export const lessonData = {
 							"/dialogue/office-introduction/talk-about-work/audio/anna-06.mp3",
 					},
 				],
-				tasks: [],
+				tasks: [
+					{
+						id: "1",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Nghe Tom và hoàn thành câu hỏi.",
+						grammar: {
+							title: "What are you + V-ing?",
+							explanation:
+								"Cấu trúc này dùng để hỏi một người đang làm gì ở thời điểm hiện tại.",
+							example:
+								"What are you reading? = Bạn đang đọc gì vậy?",
+						},
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-01.mp3",
+						transcript: "Hey Anna, what are you working on?",
+						sentenceBefore: "Hey Anna, what are you",
+						sentenceAfter: "on?",
+						answer: "working",
+					},
+					{
+						id: "2",
+						type: "multipleChoice",
+						title: "Hiểu hội thoại",
+						question: "Tom đang hỏi Anna điều gì?",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-01.mp3",
+						transcript: "Hey Anna, what are you working on?",
+						options: [
+							"Anna đang làm gì",
+							"Anna đang ở đâu",
+							"Anna đi làm lúc mấy giờ",
+						],
+						answer: "Anna đang làm gì",
+					},
+					{
+						id: "3",
+						type: "arrangeWords",
+						title: "Sắp xếp câu",
+						question: "Sắp xếp thành câu hỏi đúng.",
+						grammar: {
+							title: "work on + danh từ",
+							explanation:
+								"“Work on” dùng khi nói bạn đang dành thời gian làm một nhiệm vụ hoặc dự án.",
+							example:
+								"I’m working on a report. = Tôi đang làm một bản báo cáo.",
+						},
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-01.mp3",
+						transcript: "What are you working on?",
+						words: ["working", "What", "on", "you", "are"],
+						answer: "What are you working on?",
+					},
+					{
+						id: "4",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Anna đang làm sản phẩm gì?",
+						grammar: {
+							title: "be + V-ing",
+							explanation:
+								"Thì hiện tại tiếp diễn diễn tả một việc đang xảy ra hoặc đang được thực hiện.",
+							example:
+								"She’s making an app. = Cô ấy đang làm một ứng dụng.",
+						},
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-01.mp3",
+						transcript: "I’m making a new website.",
+						sentenceBefore: "I’m making a new",
+						sentenceAfter: ".",
+						answer: "website",
+					},
+					{
+						id: "5",
+						type: "multipleChoice",
+						title: "Bạn nghe được gì?",
+						question: "Anna đang làm gì?",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-01.mp3",
+						transcript: "I’m making a new website.",
+						options: [
+							"Một trang web mới",
+							"Một logo mới",
+							"Một video mới",
+						],
+						answer: "Một trang web mới",
+					},
+					{
+						id: "6",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Nghe Tom và điền từ còn thiếu.",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-02.mp3",
+						transcript: "Oh, nice! Is it for a client?",
+						sentenceBefore: "Oh, nice! Is it for a",
+						sentenceAfter: "?",
+						answer: "client",
+					},
+					{
+						id: "7",
+						type: "multipleChoice",
+						title: "Chọn ý đúng",
+						question: "Tom muốn biết trang web dành cho ai?",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-02.mp3",
+						transcript: "Oh, nice! Is it for a client?",
+						options: ["Một khách hàng", "Anna", "Công ty của Tom"],
+						answer: "Một khách hàng",
+					},
+					{
+						id: "8",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Hoàn thành câu trả lời ngắn của Anna.",
+						grammar: {
+							title: "Yes, it is.",
+							explanation:
+								"Với câu hỏi bắt đầu bằng “Is it...?”, ta có thể trả lời ngắn bằng “Yes, it is.”",
+							example: "Is it ready? Yes, it is. = Nó xong chưa? Xong rồi.",
+						},
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-02.mp3",
+						transcript: "Yes, it is.",
+						sentenceBefore: "Yes, it",
+						sentenceAfter: ".",
+						answer: "is",
+					},
+					{
+						id: "9",
+						type: "multipleChoice",
+						title: "Hiểu ý nghĩa",
+						question: "Câu “Yes, it is.” của Anna có nghĩa là gì?",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-02.mp3",
+						transcript: "Yes, it is.",
+						options: ["Đúng vậy", "Chưa xong", "Anna không biết"],
+						answer: "Đúng vậy",
+					},
+					{
+						id: "10",
+						type: "arrangeWords",
+						title: "Sắp xếp câu",
+						question: "Sắp xếp thành câu hỏi đúng.",
+						grammar: {
+							title: "Are you + V-ing?",
+							explanation:
+								"Cấu trúc này dùng để hỏi một người có đang làm một việc hay không.",
+							example:
+								"Are you waiting for me? = Bạn đang đợi tôi phải không?",
+						},
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-03.mp3",
+						transcript: "Are you working alone?",
+						words: ["alone", "you", "working", "Are"],
+						answer: "Are you working alone?",
+					},
+					{
+						id: "11",
+						type: "multipleChoice",
+						title: "Hiểu hội thoại",
+						question: "Tom đang hỏi Anna điều gì?",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-03.mp3",
+						transcript: "Are you working alone?",
+						options: [
+							"Anna có đang làm việc một mình không",
+							"Anna có muốn nghỉ không",
+							"Anna có làm việc ở nhà không",
+						],
+						answer: "Anna có đang làm việc một mình không",
+					},
+					{
+						id: "12",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Anna đang làm việc cùng những ai?",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-03.mp3",
+						transcript: "No. I’m working with Maria and two developers.",
+						sentenceBefore: "No. I’m working with Maria and two",
+						sentenceAfter: ".",
+						answer: "developers",
+					},
+					{
+						id: "13",
+						type: "multipleChoice",
+						title: "Chọn ý đúng",
+						question: "Ai đang cùng Anna làm dự án?",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-03.mp3",
+						transcript: "No. I’m working with Maria and two developers.",
+						options: [
+							"Maria và hai lập trình viên",
+							"Tom và một quản lý",
+							"Chỉ có Anna",
+						],
+						answer: "Maria và hai lập trình viên",
+					},
+					{
+						id: "14",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Hoàn thành câu hỏi của Tom.",
+						grammar: {
+							title: "What are you doing for...?",
+							explanation:
+								"Cấu trúc này dùng để hỏi một người đang đảm nhận phần việc gì cho một mục tiêu cụ thể.",
+							example:
+								"What are you doing for the event? = Bạn đang làm phần gì cho sự kiện?",
+						},
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-04.mp3",
+						transcript: "What are you doing for the project?",
+						sentenceBefore: "What are you doing for the",
+						sentenceAfter: "?",
+						answer: "project",
+					},
+					{
+						id: "15",
+						type: "multipleChoice",
+						title: "Hiểu câu hỏi",
+						question: "Tom muốn biết điều gì?",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-04.mp3",
+						transcript: "What are you doing for the project?",
+						options: [
+							"Phần việc Anna đang làm cho dự án",
+							"Thời hạn của dự án",
+							"Giá của dự án",
+						],
+						answer: "Phần việc Anna đang làm cho dự án",
+					},
+					{
+						id: "16",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Nghe Anna và điền từ còn thiếu.",
+						grammar: {
+							title: "be + V-ing and V-ing",
+							explanation:
+								"Khi hai hành động đang diễn ra song song, ta có thể nối hai động từ dạng V-ing bằng “and”.",
+							example:
+								"I’m reading and taking notes. = Tôi đang đọc và ghi chú.",
+						},
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-04.mp3",
+						transcript: "I’m planning the work and talking to the client.",
+						sentenceBefore: "I’m",
+						sentenceAfter: "the work and talking to the client.",
+						answer: "planning",
+					},
+					{
+						id: "17",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Hoàn thành nhiệm vụ thứ hai của Anna.",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-04.mp3",
+						transcript: "I’m planning the work and talking to the client.",
+						sentenceBefore: "I’m planning the work and talking to the",
+						sentenceAfter: ".",
+						answer: "client",
+					},
+					{
+						id: "18",
+						type: "multipleChoice",
+						title: "Chọn ý đúng",
+						question: "Anna đang làm hai việc gì?",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-04.mp3",
+						transcript: "I’m planning the work and talking to the client.",
+						options: [
+							"Lên kế hoạch và nói chuyện với khách hàng",
+							"Viết mã và thiết kế logo",
+							"Gọi điện và đặt lịch họp",
+						],
+						answer: "Lên kế hoạch và nói chuyện với khách hàng",
+					},
+					{
+						id: "19",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Hoàn thành lời đề nghị của Tom.",
+						grammar: {
+							title: "Do you need + danh từ?",
+							explanation:
+								"Cấu trúc này dùng để hỏi lịch sự xem một người có cần điều gì không.",
+							example: "Do you need a break? = Bạn có cần nghỉ một chút không?",
+						},
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-05.mp3",
+						transcript: "Do you need help?",
+						sentenceBefore: "Do you need",
+						sentenceAfter: "?",
+						answer: "help",
+					},
+					{
+						id: "20",
+						type: "multipleChoice",
+						title: "Hiểu ý nghĩa",
+						question: "Tom đang làm gì khi hỏi “Do you need help?”",
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-05.mp3",
+						transcript: "Do you need help?",
+						options: [
+							"Đề nghị giúp Anna",
+							"Yêu cầu Anna rời đi",
+							"Hỏi Anna về giờ nghỉ",
+						],
+						answer: "Đề nghị giúp Anna",
+					},
+					{
+						id: "21",
+						type: "arrangeWords",
+						title: "Sắp xếp câu",
+						question: "Sắp xếp thành lời nhờ giúp đỡ đúng.",
+						grammar: {
+							title: "Can you + động từ?",
+							explanation:
+								"“Can you + động từ?” là cách thông dụng để nhờ một người làm điều gì.",
+							example:
+								"Can you check this file? = Bạn có thể kiểm tra tệp này không?",
+						},
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-05.mp3",
+						transcript: "Can you look at the homepage?",
+						words: ["homepage", "you", "the", "Can", "at", "look"],
+						answer: "Can you look at the homepage?",
+					},
+					{
+						id: "22",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Anna muốn Tom xem phần nào?",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-05.mp3",
+						transcript: "Yes. Can you look at the homepage?",
+						sentenceBefore: "Yes. Can you look at the",
+						sentenceAfter: "?",
+						answer: "homepage",
+					},
+					{
+						id: "23",
+						type: "multipleChoice",
+						title: "Chọn phản hồi đúng",
+						question: "Tom phản hồi lời nhờ của Anna như thế nào?",
+						grammar: {
+							title: "can + động từ",
+							explanation:
+								"“Can + động từ” có thể dùng để nói rằng một người có khả năng hoặc sẵn sàng làm việc gì.",
+							example: "I can check it. = Tôi có thể kiểm tra nó.",
+						},
+						speaker: "Tom",
+						character: {
+							name: "Tom",
+							image: "/dialogue/office-introduction/shared/tom.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-06.mp3",
+						transcript: "Sure. I can help.",
+						options: [
+							"Đồng ý giúp Anna",
+							"Từ chối giúp Anna",
+							"Hỏi thêm về khách hàng",
+						],
+						answer: "Đồng ý giúp Anna",
+					},
+					{
+						id: "24",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						question: "Hoàn thành câu cảm ơn của Anna.",
+						speaker: "Anna",
+						character: {
+							name: "Anna",
+							image: "/dialogue/office-introduction/shared/anna.png",
+						},
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-06.mp3",
+						transcript: "Thanks, Tom!",
+						sentenceBefore: "",
+						sentenceAfter: ", Tom!",
+						answer: "Thanks",
+					},
+					{
+						id: "25",
+						type: "dialogueCloze",
+						title: "Ôn tập hội thoại",
+						instruction:
+							"Điền các từ còn thiếu để hoàn thành hội thoại.",
+						lines: [
+							{
+								speaker: "Tom",
+								parts: [
+									"Hey Anna, what are you ",
+									{ blank: "working", id: "1" },
+									" on?",
+								],
+							},
+							{
+								speaker: "Anna",
+								parts: [
+									"I’m making a new ",
+									{ blank: "website", id: "2" },
+									".",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: [
+									"Oh, nice! Is it for a ",
+									{ blank: "client", id: "3" },
+									"?",
+								],
+							},
+							{
+								speaker: "Anna",
+								parts: ["Yes, it ", { blank: "is", id: "4" }, "."],
+							},
+							{
+								speaker: "Tom",
+								parts: [
+									"Are you working ",
+									{ blank: "alone", id: "5" },
+									"?",
+								],
+							},
+							{
+								speaker: "Anna",
+								parts: [
+									"No. I’m working with Maria and two ",
+									{ blank: "developers", id: "6" },
+									".",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: [
+									"What are you doing for the ",
+									{ blank: "project", id: "7" },
+									"?",
+								],
+							},
+							{
+								speaker: "Anna",
+								parts: [
+									"I’m ",
+									{ blank: "planning", id: "8" },
+									" the work and talking to the client.",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: [
+									"Do you ",
+									{ blank: "need", id: "9" },
+									" help?",
+								],
+							},
+							{
+								speaker: "Anna",
+								parts: [
+									"Yes. Can you look at the ",
+									{ blank: "homepage", id: "10" },
+									"?",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: [
+									{ blank: "Sure", id: "11" },
+									". I can help.",
+								],
+							},
+							{
+								speaker: "Anna",
+								parts: [
+									{ blank: "Thanks", id: "12" },
+									", Tom!",
+								],
+							},
+						],
+					},
+				],
 			},
 			{
 				id: "lunch-break",
