@@ -1,37 +1,44 @@
 "use client";
 
-import Link from "next/link";
-import { Search } from "lucide-react";
-import { lessonData } from "./_data/lessonData";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import {
+	ArrowRight,
+	BookOpen,
+	Clock3,
+	Headphones,
+	Search,
+} from "lucide-react";
+import { lessonData } from "./_data/lessonData";
+
 const courseImages = {
 	"office-introduction":
-		"/dialogue/office-introduction/thumbnails/meeting-tom.png",
-	"coffee-shop": "/dialogue/coffee-shop/thumbnail.png",
-	airport: "/dialogue/airport/thumbnail.png",
+		"/dialogue/office-introduction/thumbnails/meeting-tem.png",
 };
-export default function DialoguePage() {
-	const courses = Object.values(lessonData);
 
-	const [currentCourseId, setCurrentCourseId] = useState(null);
+function getCourseImage(courseId) {
+	return courseImages[courseId] || "/hero-img.png";
+}
+
+export default function DialoguePage() {
+	const courses = useMemo(() => Object.values(lessonData), []);
+	const [search, setSearch] = useState("");
+	const [latestProgress, setLatestProgress] = useState(null);
 
 	useEffect(() => {
 		async function loadCurrentCourse() {
 			try {
-				const res = await fetch("/api/v1/dialogue-progress/latest", {
+				const response = await fetch("/api/v1/dialogue-progress/latest", {
 					credentials: "include",
 				});
 
-				if (!res.ok) {
-					throw new Error("Failed to load latest dialogue progress");
-				}
+				if (!response.ok) return;
 
-				const data = await res.json();
-
-				setCurrentCourseId(data.data.progress?.lessonId || null);
+				const data = await response.json();
+				setLatestProgress(data.data.progress || null);
 			} catch (error) {
-				console.error(error);
+				console.error("Load latest dialogue progress error:", error);
 			}
 		}
 
@@ -39,163 +46,218 @@ export default function DialoguePage() {
 	}, []);
 
 	const currentCourse =
-		courses.find((course) => course.id === currentCourseId) || null;
+		courses.find((course) => course.id === latestProgress?.lessonId) || null;
+	const normalizedSearch = search.trim().toLocaleLowerCase("vi");
+	const courseMatchesSearch = (course) =>
+		!normalizedSearch ||
+		[course.title, course.description, course.level].some((value) =>
+			value?.toLocaleLowerCase("vi").includes(normalizedSearch),
+		);
+	const currentCourseMatchesSearch =
+		currentCourse && courseMatchesSearch(currentCourse);
+	const otherCourses = courses.filter((course) => {
+		if (course.id === currentCourse?.id) return false;
+		return courseMatchesSearch(course);
+	});
 
-	const otherCourses = courses.filter(
-		(course) => course.id !== currentCourse?.id,
+	const currentDialogue = currentCourse?.dialogues.find(
+		(dialogue) => dialogue.id === latestProgress?.dialogueId,
 	);
+	const completedTaskIds = new Set(latestProgress?.completedTaskIds || []);
+	const currentCompletedCount =
+		currentDialogue?.tasks.filter((task) => completedTaskIds.has(task.id)).length ||
+		0;
+	const currentTaskCount = currentDialogue?.tasks.length || 0;
+	const currentProgressPercent = currentTaskCount
+		? Math.round((currentCompletedCount / currentTaskCount) * 100)
+		: 0;
 
 	return (
-		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
-			{/* Hero */}
-			<div className="relative min-h-[300px] overflow-hidden rounded-xl bg-[#020817] mx-auto max-w-7xl">
-				{/* Content */}
-				<div className="relative z-10 flex min-h-[300px] items-center">
-					<div className="max-w-[520px]">
-						<h1 className="flex items-center gap-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-							Hội thoại thực tế
-							<span aria-hidden="true">🎧</span>
-						</h1>
+		<main className="min-h-screen bg-[#030616] px-4 py-6 text-white sm:px-6 sm:py-8 lg:px-8">
+			<div className="mx-auto max-w-7xl">
+				<section className="relative isolate min-h-[330px] overflow-hidden rounded-3xl border border-slate-800 bg-[#050b18] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
+					<div className="absolute inset-y-0 right-0 w-full md:w-[57%]">
+						<Image
+							src="/hero-img.png"
+							alt="Maria và Tom đang luyện hội thoại"
+							fill
+							priority
+							className="object-cover object-center opacity-45 md:opacity-100"
+							sizes="(max-width: 768px) 100vw, 57vw"
+						/>
+						<div className="absolute inset-0 bg-[#050b18]/60 md:bg-transparent md:bg-gradient-to-r md:from-[#050b18] md:via-[#050b18]/20 md:to-transparent" />
+						<div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#050b18] to-transparent md:hidden" />
+					</div>
 
-						<p className="mt-3 text-base text-slate-400">
+					<div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-blue-800/5 blur-3xl" />
+
+					<div className="relative z-10 flex min-h-[330px] max-w-2xl flex-col justify-center px-6 py-10 sm:px-10 lg:px-14">
+						<div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-blue-500/20 bg-[#09172b]/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-blue-400">
+							<Headphones className="h-4 w-4" />
+							Luyện nghe mỗi ngày
+						</div>
+
+						<h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+							Hội thoại thực tế
+						</h1>
+						<p className="mt-3 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
 							Luyện nghe và phản xạ qua các tình huống đời thường.
 						</p>
 
-						<div className="relative mt-7 max-w-[485px]">
-							<Search
-								size={20}
-								className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"
-							/>
-
+						<label className="relative mt-7 block max-w-lg">
+							<span className="sr-only">Tìm kiếm hội thoại</span>
+							<Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-500" />
 							<input
-								type="text"
+								type="search"
+								value={search}
+								onChange={(event) => setSearch(event.target.value)}
 								placeholder="Tìm kiếm hội thoại..."
-								className="h-14 w-full rounded-xl border border-slate-800 bg-[#0b1428]/90 pl-12 pr-4 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10"
+								className="h-14 w-full rounded-2xl border border-slate-700/90 bg-[#081226]/90 pl-12 pr-4 text-sm text-white shadow-[0_12px_30px_rgba(0,0,0,0.18)] outline-none transition placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/15"
 							/>
-						</div>
+						</label>
 					</div>
-				</div>
-				{/* Right-side image */}
-				<div className="absolute inset-y-0 right-0 hidden w-[45%] md:block">
-					<Image
-						src="/hero-img.png"
-						alt="Maria và Tom đang trò chuyện"
-						fill
-						priority
-						className="object-cover object-center"
-						sizes="52vw"
-					/>
-				</div>
-			</div>
-			<div className="mx-auto max-w-6xl">
-				{/* Current course */}
-				{currentCourse && (
-					<div className="mt-3">
-						<h2 className="text-xl font-semibold">Đang học</h2>
+				</section>
 
-						<div className="mt-4 rounded-2xl border border-slate-800 bg-slate-900/40 p-5 sm:p-6">
-							<div className="flex flex-col gap-5 md:flex-row md:items-center">
-								{/* Thumbnail */}
-								<div className="relative h-28 w-full shrink-0 overflow-hidden rounded-xl md:w-40">
+				{currentCourseMatchesSearch && (
+					<section className="mt-10">
+						<div className="mb-4 flex items-end justify-between gap-4">
+							<div>
+								<p className="text-sm font-semibold uppercase tracking-[0.14em] text-blue-400">
+									Tiếp tục hành trình
+								</p>
+								<h2 className="mt-1 text-2xl font-bold text-white">Đang học</h2>
+							</div>
+							{currentProgressPercent > 0 && (
+								<span className="text-sm font-semibold text-emerald-400">
+									{currentProgressPercent}% hoàn thành gần nhất
+								</span>
+							)}
+						</div>
+
+						<div className="overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-br from-[#0b1529] to-[#07101f] p-4 shadow-[0_18px_50px_rgba(0,0,0,0.2)] sm:p-5">
+							<div className="flex flex-col gap-5 lg:flex-row lg:items-center">
+								<div className="relative aspect-[16/9] w-full shrink-0 overflow-hidden rounded-xl border border-slate-700/70 sm:w-64 lg:w-72">
 									<Image
-										src="/dialogue/office-introduction/thumbnails/meeting-tem.png"
+										src={getCourseImage(currentCourse.id)}
 										alt={currentCourse.title}
 										fill
 										className="object-cover"
-										sizes="(max-width: 768px) 100vw, 160px"
+										sizes="(max-width: 640px) 100vw, 288px"
 									/>
+									<div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent" />
 								</div>
 
-								{/* Content */}
 								<div className="min-w-0 flex-1">
-									<div className="flex flex-wrap items-center gap-3">
-										<h3 className="text-xl font-bold sm:text-2xl">
-											{currentCourse.title}
-										</h3>
-
-										<span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-400">
-											{currentCourse.level}
-										</span>
-									</div>
-
-									<p className="mt-3 max-w-3xl leading-relaxed text-slate-400">
+									<h3 className="text-xl font-bold text-white sm:text-2xl">
+										{currentCourse.title}
+									</h3>
+									<p className="mt-2 max-w-2xl line-clamp-2 leading-6 text-slate-400">
 										{currentCourse.description}
 									</p>
 
-									<p className="mt-4 text-sm text-slate-500">
-										{currentCourse.dialogues.length} hội thoại
-									</p>
+									<div className="mt-4 flex flex-wrap gap-2 text-sm text-slate-300">
+										<span className="inline-flex items-center gap-2 rounded-lg border border-blue-400/15 bg-blue-400/10 px-3 py-1.5 text-blue-300">
+											<span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+											{currentCourse.level}
+										</span>
+										<span className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-1.5">
+											<Clock3 className="h-4 w-4 text-slate-500" />
+											{currentCourse.duration}
+										</span>
+										<span className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-1.5">
+											<BookOpen className="h-4 w-4 text-slate-500" />
+											{currentCourse.dialogues.length} hội thoại
+										</span>
+									</div>
+
+									{currentTaskCount > 0 && (
+										<div className="mt-5 max-w-2xl">
+											<div className="h-1.5 overflow-hidden rounded-full bg-slate-800">
+												<div
+													className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-emerald-400 transition-all duration-500"
+													style={{ width: `${currentProgressPercent}%` }}
+												/>
+											</div>
+										</div>
+									)}
 								</div>
 
-								{/* CTA */}
 								<Link
 									href={`/dialogue/${currentCourse.id}`}
-									className="inline-flex shrink-0 items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-5 py-3 font-semibold text-white shadow-lg shadow-blue-950/30 transition hover:-translate-y-0.5 hover:from-blue-500 hover:to-violet-500"
+									className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 font-semibold text-white shadow-[0_10px_28px_rgba(79,70,229,0.25)] transition hover:-translate-y-0.5 hover:from-blue-500 hover:to-violet-500"
 								>
-									Tiếp tục học →
+									Tiếp tục học
+									<ArrowRight className="h-5 w-5" />
 								</Link>
 							</div>
 						</div>
-					</div>
+					</section>
 				)}
 
-				{/* Other courses */}
-				{otherCourses.length > 0 && (
-					<div className="mt-8">
-						<h2 className="text-xl font-semibold">Khám phá hội thoại</h2>
+				{otherCourses.length > 0 ? (
+					<section className="mt-12 pb-10">
+						<div className="flex items-end justify-between gap-4">
+							<div>
+								<p className="text-sm font-semibold uppercase tracking-[0.14em] text-blue-400">
+									Chọn một chủ đề
+								</p>
+								<h2 className="mt-1 text-2xl font-bold text-white">
+									Khám phá hội thoại
+								</h2>
+							</div>
+							<span className="text-sm text-slate-500">
+								{otherCourses.length} khóa học
+							</span>
+						</div>
 
-						<div className="mt-4 grid gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+						<div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 							{otherCourses.map((course) => (
 								<Link
 									key={course.id}
 									href={`/dialogue/${course.id}`}
-									className="
-		group block rounded-2xl p-3
-		transition-all duration-300
-		hover:bg-slate-900/70
-		hover:shadow-[0_16px_45px_rgba(0,0,0,0.5)]
-	"
+									className="group overflow-hidden rounded-2xl border border-slate-800 bg-[#091225] transition duration-300 hover:-translate-y-1 hover:border-blue-500/35 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
 								>
-									{/* Thumbnail */}
-									<div className="relative aspect-video overflow-hidden rounded-xl bg-slate-900">
+									<div className="relative aspect-video overflow-hidden bg-slate-900">
 										<Image
-											src="/dialogue/office-introduction/thumbnails/meeting-tem.png"
+											src={getCourseImage(course.id)}
 											alt={course.title}
 											fill
-											className="object-cover transition duration-300 group-hover:scale-[1.02]"
+											className="object-cover transition duration-500 group-hover:scale-[1.035]"
 											sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
 										/>
-
-										{/* Small badge */}
-										<span className="absolute bottom-2 right-2 rounded-md bg-black/75 px-2 py-1 text-xs font-semibold text-white">
+										<div className="absolute inset-0 bg-gradient-to-t from-[#091225]/80 via-transparent to-transparent" />
+										<span className="absolute right-3 top-3 rounded-lg border border-emerald-400/25 bg-emerald-500/15 px-2.5 py-1 text-xs font-semibold text-emerald-300 backdrop-blur-sm">
+											{course.level}
+										</span>
+										<span className="absolute bottom-3 right-3 rounded-lg border border-white/10 bg-slate-950/80 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
 											{course.dialogues.length} hội thoại
 										</span>
 									</div>
 
-									{/* Info */}
-									<div className="mt-3">
-										<h3 className="line-clamp-2 text-base font-semibold leading-snug text-white ">
+									<div className="p-5">
+										<h3 className="text-xl font-bold text-white transition group-hover:text-blue-300">
 											{course.title}
 										</h3>
-
-										<p className="mt-1 line-clamp-2 text-sm leading-relaxed text-slate-400">
+										<p className="mt-2 line-clamp-2 min-h-12 text-sm leading-6 text-slate-400">
 											{course.description}
 										</p>
 
-										<div className="mt-2 flex items-center gap-2 text-sm">
-											<span className="text-emerald-400">{course.level}</span>
-
-											<span className="text-slate-600">•</span>
-
-											<span className="text-slate-500">Bắt đầu học</span>
-										</div>
 									</div>
 								</Link>
 							))}
 						</div>
+					</section>
+				) : normalizedSearch && !currentCourseMatchesSearch ? (
+					<div className="mt-10 rounded-2xl border border-dashed border-slate-700 bg-slate-900/30 px-6 py-14 text-center">
+						<p className="text-lg font-semibold text-white">
+							Không tìm thấy hội thoại phù hợp.
+						</p>
+						<p className="mt-2 text-sm text-slate-400">
+							Thử tìm kiếm bằng từ khác.
+						</p>
 					</div>
-				)}
+				) : null}
 			</div>
-		</div>
+		</main>
 	);
 }
