@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 
 const CHARACTER_ENTRY_DELAY = 700;
+const DIALOGUE_LINE_DELAY = 300;
 
 export default function DialoguePlayer({
 	task,
@@ -38,9 +39,12 @@ export default function DialoguePlayer({
 	const audioRef = useRef(null);
 	const playbackRateRef = useRef(1);
 	const startTimeoutRef = useRef(null);
+	const lineTimeoutRef = useRef(null);
+	const pendingLineRef = useRef(null);
 
 	const activeLine = task.dialogue[currentLine];
 	const hasAnna = Boolean(task.characters?.Anna);
+	const isCenteredPair = hasAnna && !task.characters?.Maria;
 
 	function clearStartTimeout() {
 		if (!startTimeoutRef.current) return;
@@ -49,8 +53,18 @@ export default function DialoguePlayer({
 		startTimeoutRef.current = null;
 	}
 
+	function clearLineTimeout() {
+		if (!lineTimeoutRef.current) return;
+
+		clearTimeout(lineTimeoutRef.current);
+		lineTimeoutRef.current = null;
+	}
+
 	useEffect(() => {
-		return () => clearStartTimeout();
+		return () => {
+			clearStartTimeout();
+			clearLineTimeout();
+		};
 	}, []);
 
 	// Play one dialogue line
@@ -60,6 +74,8 @@ export default function DialoguePlayer({
 		if (!line?.audioUrl || !audioRef.current) return;
 
 		const audio = audioRef.current;
+		clearLineTimeout();
+		pendingLineRef.current = null;
 
 		setCurrentLine(index);
 
@@ -76,6 +92,8 @@ export default function DialoguePlayer({
 
 	function startDialogueAfterCharacters(index = currentLine) {
 		clearStartTimeout();
+		clearLineTimeout();
+		pendingLineRef.current = null;
 
 		if (audioRef.current) {
 			audioRef.current.pause();
@@ -102,9 +120,20 @@ export default function DialoguePlayer({
 			return;
 		}
 
+		if (lineTimeoutRef.current) {
+			clearLineTimeout();
+			setIsPlaying(false);
+			return;
+		}
+
 		// Currently playing → pause
 		if (isPlaying) {
 			audio.pause();
+			return;
+		}
+
+		if (pendingLineRef.current !== null) {
+			playCurrentLine(pendingLineRef.current);
 			return;
 		}
 
@@ -158,7 +187,12 @@ export default function DialoguePlayer({
 
 		// Continue to next dialogue line
 		if (nextIndex < task.dialogue.length) {
-			playCurrentLine(nextIndex);
+			pendingLineRef.current = nextIndex;
+			setCurrentLine(nextIndex);
+			lineTimeoutRef.current = setTimeout(() => {
+				lineTimeoutRef.current = null;
+				playCurrentLine(nextIndex);
+			}, DIALOGUE_LINE_DELAY);
 			return;
 		}
 
@@ -167,6 +201,7 @@ export default function DialoguePlayer({
 		setHasStarted(false);
 		setDialogueFinished(true);
 		setCurrentLine(0);
+		pendingLineRef.current = null;
 
 		if (audioRef.current) {
 			audioRef.current.removeAttribute("src");
@@ -253,14 +288,22 @@ export default function DialoguePlayer({
 								alt="Anna"
 								width={400}
 								height={520}
-								className={`absolute bottom-0 left-[25%] w-auto object-contain transition-all duration-700 ease-out sm:left-[28%] ${
+								className={`absolute bottom-0 w-auto object-contain transition-all duration-700 ease-out ${
+									isCenteredPair
+										? "left-[10%] sm:left-[14%]"
+										: "left-[25%] sm:left-[28%]"
+								} ${
 									hasStarted && !dialogueFinished
 										? "translate-x-0 opacity-100"
 										: "-translate-x-24 opacity-0"
 								} ${
 									activeLine?.speaker === "Anna"
-										? "h-[300px] scale-105 sm:h-[360px]"
-										: "h-[280px] scale-100 brightness-75 sm:h-[340px]"
+										? isCenteredPair
+											? "h-[340px] scale-105 sm:h-[420px]"
+											: "h-[300px] scale-105 sm:h-[360px]"
+										: isCenteredPair
+											? "h-[320px] scale-100 brightness-75 sm:h-[400px]"
+											: "h-[280px] scale-100 brightness-75 sm:h-[340px]"
 								}`}
 							/>
 						)}
@@ -273,7 +316,7 @@ export default function DialoguePlayer({
 							width={400}
 							height={520}
 							className={`absolute bottom-0 w-auto object-contain
-					transition-all duration-700 ease-out ${hasAnna ? "right-[3%] sm:right-[6%]" : "right-[10%] sm:right-[16%]"}
+					transition-all duration-700 ease-out ${isCenteredPair ? "right-[10%] sm:right-[14%]" : hasAnna ? "right-[3%] sm:right-[6%]" : "right-[10%] sm:right-[16%]"}
 
     ${
 			hasStarted && !dialogueFinished
@@ -283,8 +326,8 @@ export default function DialoguePlayer({
 
     ${
 			activeLine?.speaker === "Tom"
-			? hasAnna ? "h-[300px] scale-105 sm:h-[360px]" : "h-[350px] scale-105 sm:h-[420px]"
-				: hasAnna ? "h-[280px] scale-100 brightness-75 sm:h-[340px]" : "h-[330px] scale-100 brightness-75 sm:h-[395px]"
+			? isCenteredPair ? "h-[340px] scale-105 sm:h-[420px]" : hasAnna ? "h-[300px] scale-105 sm:h-[360px]" : "h-[350px] scale-105 sm:h-[420px]"
+				: isCenteredPair ? "h-[320px] scale-100 brightness-75 sm:h-[400px]" : hasAnna ? "h-[280px] scale-100 brightness-75 sm:h-[340px]" : "h-[330px] scale-100 brightness-75 sm:h-[395px]"
 		}
   `}
 						/>

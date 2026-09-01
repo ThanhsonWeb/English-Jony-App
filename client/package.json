@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:dialogue-audio": "node --env-file=.env.local scripts/generate-dialogue-audio.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

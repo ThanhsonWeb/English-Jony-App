@@ -94,7 +94,7 @@ export const lessonData = {
 						grammar: {
 							title: "must be",
 							explanation:
-								'“must be” dùng để đưa ra một phỏng đoán mà người nói khá chắc chắn.',
+								"“must be” dùng để đưa ra một phỏng đoán mà người nói khá chắc chắn.",
 							example: "You must be tired. = Chắc bạn mệt rồi.",
 						},
 						scene: "/dialogue/office-introduction/shared/bg.png",
@@ -848,12 +848,14 @@ export const lessonData = {
 						question: "Nghe Maria và điền từ còn thiếu.",
 						tip: {
 							title: "Mẹo",
-							lines: ['Cấu trúc "let me + động từ" dùng khi đề nghị tự mình làm điều gì.'],
+							lines: [
+								'Cấu trúc "let me + động từ" dùng khi đề nghị tự mình làm điều gì.',
+							],
 						},
 						grammar: {
 							title: "let me + động từ",
 							explanation:
-								'“Let me + động từ” dùng khi người nói đề nghị tự mình làm điều gì đó.',
+								"“Let me + động từ” dùng khi người nói đề nghị tự mình làm điều gì đó.",
 							example: "Let me help you. = Để tôi giúp bạn.",
 						},
 						speaker: "Maria",
@@ -879,7 +881,9 @@ export const lessonData = {
 						question: "Nghe Tom và hoàn thành câu.",
 						tip: {
 							title: "Mẹo",
-							lines: ['"Nice to meet you" là lời chào tự nhiên khi gặp ai đó lần đầu.'],
+							lines: [
+								'"Nice to meet you" là lời chào tự nhiên khi gặp ai đó lần đầu.',
+							],
 						},
 						speaker: "Tom",
 						character: {
@@ -904,7 +908,9 @@ export const lessonData = {
 						question: "Tom làm công việc gì?",
 						tip: {
 							title: "Mẹo",
-							lines: ['Cụm đứng sau "I’m Tom, the new..." cho biết nghề nghiệp của Tom.'],
+							lines: [
+								'Cụm đứng sau "I’m Tom, the new..." cho biết nghề nghiệp của Tom.',
+							],
 						},
 						speaker: "Tom",
 						character: {
@@ -932,7 +938,9 @@ export const lessonData = {
 						question: "Anna nói gì để chào đón Tom?",
 						tip: {
 							title: "Mẹo",
-							lines: ['Tìm câu có từ "welcome", thường dùng để chào đón người mới.'],
+							lines: [
+								'Tìm câu có từ "welcome", thường dùng để chào đón người mới.',
+							],
 						},
 						speaker: "Anna",
 						character: {
@@ -959,7 +967,9 @@ export const lessonData = {
 						question: "Hoàn thành câu chào đón.",
 						tip: {
 							title: "Mẹo",
-							lines: ['"Welcome to the..." thường đi với tên một nhóm, nơi hoặc tổ chức.'],
+							lines: [
+								'"Welcome to the..." thường đi với tên một nhóm, nơi hoặc tổ chức.',
+							],
 						},
 						speaker: "Anna",
 						character: {
@@ -983,13 +993,16 @@ export const lessonData = {
 						question: "Sắp xếp thành một câu hỏi đúng.",
 						tip: {
 							title: "Mẹo",
-							lines: ['Câu hỏi về khoảng thời gian bắt đầu bằng "How long", sau đó là "have you been + V-ing".'],
+							lines: [
+								'Câu hỏi về khoảng thời gian bắt đầu bằng "How long", sau đó là "have you been + V-ing".',
+							],
 						},
 						grammar: {
 							title: "How long have you been + V-ing?",
 							explanation:
 								"Cấu trúc này hỏi một hành động đã kéo dài bao lâu và vẫn còn tiếp diễn.",
-							example: "How long have you been studying English? = Bạn đã học tiếng Anh bao lâu rồi?",
+							example:
+								"How long have you been studying English? = Bạn đã học tiếng Anh bao lâu rồi?",
 						},
 						speaker: "Tom",
 						character: {
@@ -1012,7 +1025,9 @@ export const lessonData = {
 						question: "Tom đang hỏi Anna điều gì?",
 						tip: {
 							title: "Mẹo",
-							lines: ['"How long" hỏi về khoảng thời gian một việc đã kéo dài.'],
+							lines: [
+								'"How long" hỏi về khoảng thời gian một việc đã kéo dài.',
+							],
 						},
 						speaker: "Tom",
 						character: {
@@ -1039,7 +1054,9 @@ export const lessonData = {
 						question: "Anna đã làm ở công ty bao lâu?",
 						tip: {
 							title: "Mẹo",
-							lines: ['Câu trả lời mở đầu bằng "About" cho biết một khoảng thời gian gần đúng.'],
+							lines: [
+								'Câu trả lời mở đầu bằng "About" cho biết một khoảng thời gian gần đúng.',
+							],
 						},
 						speaker: "Anna",
 						character: {
@@ -1067,13 +1084,16 @@ export const lessonData = {
 						question: "Nghe và hoàn thành câu hỏi.",
 						tip: {
 							title: "Mẹo",
-							lines: ['"What kind of..." dùng để hỏi về loại hoặc dạng của một sự vật.'],
+							lines: [
+								'"What kind of..." dùng để hỏi về loại hoặc dạng của một sự vật.',
+							],
 						},
 						grammar: {
 							title: "What kind of + danh từ...?",
 							explanation:
-								'“What kind of” dùng để hỏi về loại hoặc dạng của một người hay sự vật.',
-							example: "What kind of music do you like? = Bạn thích loại nhạc nào?",
+								"“What kind of” dùng để hỏi về loại hoặc dạng của một người hay sự vật.",
+							example:
+								"What kind of music do you like? = Bạn thích loại nhạc nào?",
 						},
 						speaker: "Anna",
 						character: {
@@ -1098,7 +1118,9 @@ export const lessonData = {
 						question: "Tom thường làm loại công việc nào?",
 						tip: {
 							title: "Mẹo",
-							lines: ['Sau "website and app" cần một danh từ số nhiều chỉ sản phẩm thiết kế.'],
+							lines: [
+								'Sau "website and app" cần một danh từ số nhiều chỉ sản phẩm thiết kế.',
+							],
 						},
 						speaker: "Tom",
 						character: {
@@ -1122,7 +1144,9 @@ export const lessonData = {
 						question: "Tom thường làm việc với gì?",
 						tip: {
 							title: "Mẹo",
-							lines: ['Từ "mostly" giới thiệu những thứ Tom làm phần lớn thời gian.'],
+							lines: [
+								'Từ "mostly" giới thiệu những thứ Tom làm phần lớn thời gian.',
+							],
 						},
 						speaker: "Tom",
 						character: {
@@ -1149,7 +1173,9 @@ export const lessonData = {
 						question: "Anna làm việc ở mảng nào?",
 						tip: {
 							title: "Mẹo",
-							lines: ['Anna nói trực tiếp lĩnh vực của mình sau cụm "I work on the...".'],
+							lines: [
+								'Anna nói trực tiếp lĩnh vực của mình sau cụm "I work on the...".',
+							],
 						},
 						speaker: "Anna",
 						character: {
@@ -1173,13 +1199,16 @@ export const lessonData = {
 						question: "Hoàn thành câu của Anna.",
 						tip: {
 							title: "Mẹo",
-							lines: ['"Work together" nghĩa là cùng nhau làm việc hoặc hợp tác.'],
+							lines: [
+								'"Work together" nghĩa là cùng nhau làm việc hoặc hợp tác.',
+							],
 						},
 						grammar: {
 							title: "will probably + động từ",
 							explanation:
-								'“will probably” diễn tả một việc có khả năng cao sẽ xảy ra trong tương lai.',
-							example: "We’ll probably finish today. = Có lẽ hôm nay chúng ta sẽ hoàn thành.",
+								"“will probably” diễn tả một việc có khả năng cao sẽ xảy ra trong tương lai.",
+							example:
+								"We’ll probably finish today. = Có lẽ hôm nay chúng ta sẽ hoàn thành.",
 						},
 						speaker: "Anna",
 						character: {
@@ -1204,13 +1233,16 @@ export const lessonData = {
 						question: "Tạo lại câu Tom vừa nói.",
 						tip: {
 							title: "Mẹo",
-							lines: ['Cụm cố định là "look forward to + danh từ/đại từ", nghĩa là mong chờ điều gì.'],
+							lines: [
+								'Cụm cố định là "look forward to + danh từ/đại từ", nghĩa là mong chờ điều gì.',
+							],
 						},
 						grammar: {
 							title: "look forward to + danh từ/V-ing",
 							explanation:
-								'“look forward to” dùng để nói rằng bạn đang mong chờ một điều sắp tới.',
-							example: "I look forward to meeting you. = Tôi mong được gặp bạn.",
+								"“look forward to” dùng để nói rằng bạn đang mong chờ một điều sắp tới.",
+							example:
+								"I look forward to meeting you. = Tôi mong được gặp bạn.",
 						},
 						speaker: "Tom",
 						character: {
@@ -1233,7 +1265,9 @@ export const lessonData = {
 						question: "Hoàn thành cụm từ hữu ích này.",
 						tip: {
 							title: "Mẹo",
-							lines: ['Trong "look forward to", từ ở giữa mang nghĩa hướng về phía trước.'],
+							lines: [
+								'Trong "look forward to", từ ở giữa mang nghĩa hướng về phía trước.',
+							],
 						},
 						speaker: "Tom",
 						character: {
@@ -1257,7 +1291,9 @@ export const lessonData = {
 						question: "Nghe lại và điền từ.",
 						tip: {
 							title: "Mẹo",
-							lines: ['"That sounds + tính từ" dùng để phản hồi một ý tưởng hoặc kế hoạch.'],
+							lines: [
+								'"That sounds + tính từ" dùng để phản hồi một ý tưởng hoặc kế hoạch.',
+							],
 						},
 						grammar: {
 							title: "That sounds + tính từ",
@@ -1287,7 +1323,9 @@ export const lessonData = {
 						question: `“I'm looking forward to it.” gần nghĩa nhất với câu nào?`,
 						tip: {
 							title: "Mẹo",
-							lines: ['"Look forward to" diễn tả cảm giác vui và mong đợi điều sắp xảy ra.'],
+							lines: [
+								'"Look forward to" diễn tả cảm giác vui và mong đợi điều sắp xảy ra.',
+							],
 						},
 						options: [
 							"Tôi rất mong chờ điều đó.",
@@ -1305,7 +1343,9 @@ export const lessonData = {
 						question: `Một đồng nghiệp nói: “We'll probably work together a lot.” Bạn có thể trả lời thế nào?`,
 						tip: {
 							title: "Mẹo",
-							lines: ['Chọn câu phản hồi tích cực và phù hợp với một kế hoạch hợp tác.'],
+							lines: [
+								"Chọn câu phản hồi tích cực và phù hợp với một kế hoạch hợp tác.",
+							],
 						},
 						speaker: "Anna",
 						character: {
@@ -1332,13 +1372,16 @@ export const lessonData = {
 						question: "Anna đề nghị giúp Tom. Điền từ còn thiếu.",
 						tip: {
 							title: "Mẹo",
-							lines: ['"Need any..." thường đi với danh từ chỉ sự giúp đỡ hoặc hỗ trợ.'],
+							lines: [
+								'"Need any..." thường đi với danh từ chỉ sự giúp đỡ hoặc hỗ trợ.',
+							],
 						},
 						grammar: {
 							title: "If + hiện tại, mệnh lệnh",
 							explanation:
 								"Cấu trúc này nêu một điều kiện rồi đưa ra lời đề nghị hoặc chỉ dẫn.",
-							example: "If you need me, call me. = Nếu bạn cần tôi, hãy gọi cho tôi.",
+							example:
+								"If you need me, call me. = Nếu bạn cần tôi, hãy gọi cho tôi.",
 						},
 						speaker: "Anna",
 						character: {
@@ -1362,7 +1405,9 @@ export const lessonData = {
 						question: "Hoàn thành cách nói tự nhiên của Anna.",
 						tip: {
 							title: "Mẹo",
-							lines: ['"Let me know" là cách tự nhiên để nói "hãy cho tôi biết".'],
+							lines: [
+								'"Let me know" là cách tự nhiên để nói "hãy cho tôi biết".',
+							],
 						},
 						speaker: "Anna",
 						character: {
@@ -1386,7 +1431,9 @@ export const lessonData = {
 						question: `Anna nói “Just let me know.” Ý của cô ấy là gì?`,
 						tip: {
 							title: "Mẹo",
-							lines: ['Trong ngữ cảnh này, Anna đang mời Tom chủ động nói khi cần hỗ trợ.'],
+							lines: [
+								"Trong ngữ cảnh này, Anna đang mời Tom chủ động nói khi cần hỗ trợ.",
+							],
 						},
 						speaker: "Anna",
 						character: {
@@ -1412,13 +1459,16 @@ export const lessonData = {
 						question: "Sắp xếp thành câu hoàn chỉnh.",
 						tip: {
 							title: "Mẹo",
-							lines: ['Mệnh đề điều kiện bắt đầu bằng "If", sau đó là lời đề nghị "just let me know".'],
+							lines: [
+								'Mệnh đề điều kiện bắt đầu bằng "If", sau đó là lời đề nghị "just let me know".',
+							],
 						},
 						grammar: {
 							title: "If + hiện tại, mệnh lệnh",
 							explanation:
 								"Có thể dùng hiện tại đơn sau “if” và một câu mệnh lệnh để đưa ra lời đề nghị.",
-							example: "If you have questions, ask me. = Nếu bạn có câu hỏi, hãy hỏi tôi.",
+							example:
+								"If you have questions, ask me. = Nếu bạn có câu hỏi, hãy hỏi tôi.",
 						},
 						speaker: "Anna",
 						character: {
@@ -1451,7 +1501,9 @@ export const lessonData = {
 						question: "Maria muốn làm gì tiếp theo?",
 						tip: {
 							title: "Mẹo",
-							lines: ['"The rest of the team" nghĩa là những thành viên còn lại trong nhóm.'],
+							lines: [
+								'"The rest of the team" nghĩa là những thành viên còn lại trong nhóm.',
+							],
 						},
 						speaker: "Maria",
 						character: {
@@ -1478,12 +1530,14 @@ export const lessonData = {
 						question: "Hoàn thành câu cuối của Tom.",
 						tip: {
 							title: "Mẹo",
-							lines: ['"Sounds good" là câu phản hồi ngắn gọn để đồng ý với một kế hoạch.'],
+							lines: [
+								'"Sounds good" là câu phản hồi ngắn gọn để đồng ý với một kế hoạch.',
+							],
 						},
 						grammar: {
 							title: "Sounds + tính từ",
 							explanation:
-								'“Sounds + tính từ” là cách nói ngắn của “That sounds + tính từ”.',
+								"“Sounds + tính từ” là cách nói ngắn của “That sounds + tính từ”.",
 							example: "Sounds perfect. = Nghe hoàn hảo đấy.",
 						},
 						speaker: "Tom",
@@ -1599,10 +1653,104 @@ export const lessonData = {
 					},
 				],
 			},
+			// talk-about-work
 			{
 				id: "talk-about-work",
 				title: "Hỏi về công việc",
-				description: "Maria và Tom nói về công việc và nhiệm vụ.",
+				description: "Anna và Tom nói về công việc và nhiệm vụ.",
+				scene: "/dialogue/office-introduction/talk-about-work/bg.png",
+				characters: {
+					Tom: "/dialogue/office-introduction/shared/tom.png",
+					Anna: "/dialogue/office-introduction/shared/anna.png",
+				},
+				dialogue: [
+					{
+						speaker: "Tom",
+						text: "Hey Anna, what are you working on?",
+						translation: "Này Anna, bạn đang làm gì vậy?",
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-01.mp3",
+					},
+					{
+						speaker: "Anna",
+						text: "I’m making a new website.",
+						translation: "Mình đang làm một trang web mới.",
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-01.mp3",
+					},
+					{
+						speaker: "Tom",
+						text: "Oh, nice! Is it for a client?",
+						translation: "Ồ, hay đấy! Nó dành cho khách hàng à?",
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-02.mp3",
+					},
+					{
+						speaker: "Anna",
+						text: "Yes, it is.",
+						translation: "Đúng vậy.",
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-02.mp3",
+					},
+					{
+						speaker: "Tom",
+						text: "Are you working alone?",
+						translation: "Bạn đang làm một mình à?",
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-03.mp3",
+					},
+					{
+						speaker: "Anna",
+						text: "No. I’m working with Maria and two developers.",
+						translation:
+							"Không. Mình đang làm cùng Maria và hai lập trình viên.",
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-03.mp3",
+					},
+					{
+						speaker: "Tom",
+						text: "What are you doing for the project?",
+						translation: "Bạn đang làm phần gì cho dự án?",
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-04.mp3",
+					},
+					{
+						speaker: "Anna",
+						text: "I’m planning the work and talking to the client.",
+						translation:
+							"Mình đang lên kế hoạch công việc và nói chuyện với khách hàng.",
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-04.mp3",
+					},
+					{
+						speaker: "Tom",
+						text: "Do you need help?",
+						translation: "Bạn có cần giúp không?",
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-05.mp3",
+					},
+					{
+						speaker: "Anna",
+						text: "Yes. Can you look at the homepage?",
+						translation: "Có. Bạn có thể xem giúp trang chủ không?",
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-05.mp3",
+					},
+					{
+						speaker: "Tom",
+						text: "Sure. I can help.",
+						translation: "Được chứ. Mình có thể giúp.",
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/tom-06.mp3",
+					},
+					{
+						speaker: "Anna",
+						text: "Thanks, Tom!",
+						translation: "Cảm ơn, Tom!",
+						audioUrl:
+							"/dialogue/office-introduction/talk-about-work/audio/anna-06.mp3",
+					},
+				],
 				tasks: [],
 			},
 			{
