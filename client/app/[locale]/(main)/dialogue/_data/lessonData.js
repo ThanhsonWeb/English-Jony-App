@@ -4,7 +4,7 @@ export const lessonData = {
 		title: "Ngày đầu tiên tại văn phòng",
 		description:
 			"Maria gặp Tom trong ngày đầu đi làm. Học cách giới thiệu bản thân và giao tiếp trong văn phòng.",
-		level: "Beginner",
+		level: "Cơ bản",
 		duration: "25 phút",
 		dialogues: [
 			// meeting-tom
@@ -76,6 +76,52 @@ export const lessonData = {
 						translation: "Tuyệt đấy. Đi thôi.",
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/tom-04.mp3",
+					},
+				],
+				usefulWords: [
+					{
+						word: "product designer",
+						pronunciation: "/ˈprɒdʌkt dɪˈzaɪnə(r)/",
+						translation: "nhà thiết kế sản phẩm",
+						example: "I’m Maria, the product designer here.",
+					},
+					{
+						word: "first day",
+						pronunciation: "/fɜːrst deɪ/",
+						translation: "ngày đầu tiên",
+						example: "Today’s my first day.",
+					},
+					{
+						word: "so far",
+						pronunciation: "/səʊ fɑːr/",
+						translation: "cho đến lúc này",
+						example: "How are you feeling so far?",
+					},
+					{
+						word: "nervous",
+						pronunciation: "/ˈnɜːrvəs/",
+						translation: "lo lắng, hồi hộp",
+						example: "Pretty good, just a little nervous.",
+					},
+					{
+						word: "Don’t worry",
+						translation: "Đừng lo",
+						example: "Don’t worry. Everyone’s really friendly here.",
+					},
+					{
+						word: "That’s good to hear",
+						translation: "Nghe vậy thật tốt",
+						example: "That’s good to hear.",
+					},
+					{
+						word: "helping me out",
+						translation: "giúp đỡ tôi",
+						example: "Thanks for helping me out.",
+					},
+					{
+						word: "show you around",
+						translation: "dẫn bạn đi tham quan",
+						example: "Let me show you around the office.",
 					},
 				],
 				tasks: [
@@ -169,6 +215,12 @@ export const lessonData = {
 						type: "fillBlank",
 						title: "Điền từ còn thiếu",
 						instruction: "Nghe Tom và điền từ còn thiếu.",
+						grammar: {
+							title: "Nice to meet you",
+							explanation:
+								"Cụm này dùng khi bạn gặp một người lần đầu và muốn nói rằng bạn rất vui được làm quen.",
+							example: "Nice to meet you, Anna. = Rất vui được gặp bạn, Anna.",
+						},
 						tip: {
 							title: "Mẹo",
 							lines: [
@@ -264,6 +316,12 @@ export const lessonData = {
 						type: "fillBlank",
 						title: "Điền từ còn thiếu",
 						instruction: "Nghe Maria và điền từ còn thiếu.",
+						grammar: {
+							title: "How are you feeling?",
+							explanation:
+								"Câu hỏi này dùng để hỏi cảm xúc hoặc trạng thái của một người ở hiện tại.",
+							example: "How are you feeling today? = Hôm nay bạn cảm thấy thế nào?",
+						},
 						tip: {
 							title: "Mẹo",
 							lines: [
@@ -528,6 +586,12 @@ export const lessonData = {
 						type: "fillBlank",
 						title: "Điền từ còn thiếu",
 						instruction: "Nghe Tom và điền từ còn thiếu.",
+						grammar: {
+							title: "Thanks for + V-ing",
+							explanation:
+								"Dùng “Thanks for” với động từ thêm -ing để cảm ơn ai đó vì một hành động.",
+							example: "Thanks for waiting. = Cảm ơn bạn đã chờ.",
+						},
 						tip: {
 							title: "Mẹo",
 							lines: [
@@ -836,6 +900,52 @@ export const lessonData = {
 						translation: "Được đấy. Đi thôi!",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/tom-06.mp3",
+					},
+				],
+
+				usefulWords: [
+					{
+						word: "introduce",
+						pronunciation: "/ˌɪntrəˈduːs/",
+						translation: "giới thiệu",
+						example: "Let me introduce you to Anna.",
+					},
+					{
+						word: "frontend developer",
+						translation: "lập trình viên frontend",
+						example: "She’s a frontend developer on our team.",
+					},
+					{
+						word: "Welcome to the team",
+						translation: "Chào mừng bạn đến với nhóm",
+						example: "Welcome to the team!",
+					},
+					{
+						word: "How long",
+						pronunciation: "/haʊ lɔːŋ/",
+						translation: "bao lâu",
+						example: "How long have you been working here?",
+					},
+					{
+						word: "work on",
+						translation: "làm, thực hiện",
+						example: "What kind of projects do you usually work on?",
+					},
+					{
+						word: "work together",
+						translation: "làm việc cùng nhau",
+						example: "We’ll probably work together a lot.",
+					},
+					{
+						word: "looking forward to",
+						pronunciation: "/lʊk ˈfɔːrwərd tuː/",
+						translation: "mong chờ",
+						example: "I’m looking forward to it.",
+					},
+					{
+						word: "let me know",
+						translation: "hãy cho tôi biết",
+						example: "If you need any help, just let me know.",
 					},
 				],
 
@@ -1749,6 +1859,50 @@ export const lessonData = {
 						translation: "Cảm ơn, Tom!",
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/anna-06.mp3",
+					},
+				],
+				usefulWords: [
+					{
+						word: "working on",
+						translation: "làm, thực hiện",
+						example: "Hey Anna, what are you working on?",
+					},
+					{
+						word: "client",
+						pronunciation: "/ˈklaɪənt/",
+						translation: "khách hàng",
+						example: "Is it for a client?",
+					},
+					{
+						word: "working alone",
+						translation: "làm việc một mình",
+						example: "Are you working alone?",
+					},
+					{
+						word: "working with",
+						translation: "làm việc cùng",
+						example: "I’m working with Maria and two developers.",
+					},
+					{
+						word: "project",
+						pronunciation: "/ˈprɒdʒekt/",
+						translation: "dự án",
+						example: "What are you doing for the project?",
+					},
+					{
+						word: "planning the work",
+						translation: "lên kế hoạch công việc",
+						example: "I’m planning the work and talking to the client.",
+					},
+					{
+						word: "talking to",
+						translation: "nói chuyện với",
+						example: "I’m planning the work and talking to the client.",
+					},
+					{
+						word: "look at",
+						translation: "xem, nhìn vào",
+						example: "Can you look at the homepage?",
 					},
 				],
 				tasks: [

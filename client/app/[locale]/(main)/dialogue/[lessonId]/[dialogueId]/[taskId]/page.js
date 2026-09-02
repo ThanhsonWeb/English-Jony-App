@@ -28,6 +28,9 @@ export default function DialogueTaskPage() {
 	const taskIndex = dialogue.tasks.findIndex((item) => item.id === taskId);
 
 	const nextTask = dialogue.tasks[taskIndex + 1];
+	const completionHref = dialogue.usefulWords?.length
+		? `/dialogue/${lessonId}/${dialogueId}/useful-words`
+		: `/dialogue/${lessonId}`;
 	const matchingDialogueLine = dialogue.dialogue?.find(
 		(line) => line.audioUrl === task.audioUrl,
 	);
@@ -64,6 +67,7 @@ export default function DialogueTaskPage() {
 		lessonId,
 		dialogueId,
 		nextTask,
+		completionHref,
 		totalTasks,
 		onComplete,
 	};

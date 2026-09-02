@@ -42,6 +42,7 @@ function DialogueClozeReviewTask({
 	lessonId,
 	dialogueId,
 	nextTask,
+	completionHref,
 	totalTasks,
 	onComplete,
 }) {
@@ -209,7 +210,7 @@ function DialogueClozeReviewTask({
 							href={
 								nextTask
 									? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
-									: `/dialogue/${lessonId}`
+										: completionHref || `/dialogue/${lessonId}`
 							}
 							className="rounded-xl bg-emerald-600 px-6 py-3 font-semibold transition hover:bg-emerald-500"
 						>

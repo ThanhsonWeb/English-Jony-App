@@ -5,6 +5,7 @@ import { pathToFileURL } from "node:url";
 const ELEVENLABS_BASE_URL = "https://api.elevenlabs.io/v1/text-to-speech";
 const OUTPUT_FORMAT = "mp3_44100_128";
 const MODEL_ID = "eleven_multilingual_v2";
+const PRESERVED_SPEAKERS = new Set(["Maria"]);
 
 function fail(message) {
 	throw new Error(message);
@@ -46,19 +47,19 @@ async function loadLessonData() {
 	);
 	const source = await readFile(lessonDataPath, "utf8");
 	const sourceUrl = `data:text/javascript;base64,${Buffer.from(source).toString("base64")}`;
-	const module = await import(sourceUrl);
+	const lessonModule = await import(sourceUrl);
 
-	if (!module.lessonData) {
+	if (!lessonModule.lessonData) {
 		fail(`Lesson data export is missing in ${lessonDataPath}`);
 	}
 
-	return module.lessonData;
+	return lessonModule.lessonData;
 }
 
 function getVoiceId(speaker) {
 	const voiceIds = {
-		Tom: "ZggzN0JFXUgoc6rqB5S7",
-		Anna: "xqr0kkj3g88H8s8RQQgc",
+  Tom: "s3TPKV1kjDlVtZbl4Ksh",
+		Anna: "uYXf8XasLslADfZ2MB4u",
 	};
 	const voiceId = voiceIds[speaker];
 
@@ -85,7 +86,7 @@ function buildPlan(lessonId, dialogueId, dialogue) {
 		}
 
 		const speaker = line.speaker.trim();
-		if (speaker !== "Tom" && speaker !== "Anna") {
+		if (speaker !== "Tom" && speaker !== "Anna" && !PRESERVED_SPEAKERS.has(speaker)) {
 			fail(`Unsupported speaker "${speaker}" on dialogue line ${index + 1}`);
 		}
 
@@ -103,6 +104,8 @@ function buildPlan(lessonId, dialogueId, dialogue) {
 			);
 		}
 
+		if (PRESERVED_SPEAKERS.has(speaker)) return null;
+
 		return {
 			speaker,
 			text: line.text.trim(),
@@ -111,7 +114,7 @@ function buildPlan(lessonId, dialogueId, dialogue) {
 			publicUrl,
 			outputPath: path.resolve("public", "dialogue", lessonId, dialogueId, "audio", filename),
 		};
-	});
+	}).filter(Boolean);
 }
 
 async function fileExists(filePath) {
@@ -180,6 +183,9 @@ async function main() {
 	if (!dialogue) fail(`Dialogue not found: "${options.dialogueId}"`);
 
 	const plan = buildPlan(options.lessonId, options.dialogueId, dialogue);
+	if (plan.length === 0) {
+		fail(`No supported Tom or Anna dialogue lines found for "${dialogueId}"`);
+	}
 	const apiKey = process.env.ELEVENLABS_API_KEY;
 	if (!options.dryRun && !apiKey) fail("Missing ELEVENLABS_API_KEY");
 
@@ -190,7 +196,7 @@ async function main() {
 	let skipped = 0;
 
 	console.log(
-		`${options.dryRun ? "Dry run" : "Generating"}: ${options.lessonId}/${options.dialogueId} (${plan.length} lines)`,
+		`${options.dryRun ? "Dry run" : "Generating"}: ${options.lessonId}/${options.dialogueId} (${plan.length} Tom/Anna lines)`,
 	);
 
 	for (const item of plan) {

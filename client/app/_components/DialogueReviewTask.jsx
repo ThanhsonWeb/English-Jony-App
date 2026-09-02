@@ -6,6 +6,7 @@ function DialogueReviewTask({
 	lessonId,
 	dialogueId,
 	nextTask,
+	completionHref,
 	onComplete,
 }) {
 	return (
@@ -53,7 +54,7 @@ function DialogueReviewTask({
 						href={
 							nextTask
 								? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
-								: `/dialogue/${lessonId}`
+									: completionHref || `/dialogue/${lessonId}`
 						}
 						onClick={onComplete}
 						className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500"

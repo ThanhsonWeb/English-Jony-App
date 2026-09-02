@@ -9,6 +9,7 @@ function MultipleChoiceTask({
 	lessonId,
 	dialogueId,
 	nextTask,
+	completionHref,
 	onComplete,totalTasks
 }) {
 	const [selected, setSelected] = useState("");
@@ -112,8 +113,8 @@ function MultipleChoiceTask({
 									<Link
 									href={
 										nextTask
-											? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
-											: `/dialogue/${lessonId}`
+										? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
+											: completionHref || `/dialogue/${lessonId}`
 									}
 									className="rounded-xl bg-emerald-600 px-6 py-3 font-semibold transition hover:bg-emerald-500"
 								>

@@ -9,6 +9,7 @@ function FillBlankTask({
 	lessonId,
 	dialogueId,
 	nextTask,
+	completionHref,
 	onComplete,
 	totalTasks,
 }) {
@@ -82,8 +83,8 @@ function FillBlankTask({
 									<Link
 									href={
 										nextTask
-											? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
-											: `/dialogue/${lessonId}`
+										? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
+											: completionHref || `/dialogue/${lessonId}`
 									}
 									className="rounded-xl bg-green-600 px-6 py-3 font-semibold"
 								>

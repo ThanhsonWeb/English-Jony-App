@@ -40,7 +40,7 @@ function Header() {
 
 	return (
 		<header className="relative bg-slate-950/50 border-b border-slate-800/80 px-4 sm:px-8 py-4 backdrop-blur-md  top-0 z-50">
-			<div className="flex items-center justify-between max-w-7xl mx-auto">
+			<div className="flex items-center justify-between max-w-8xl mx-auto">
 				<Logo />
 				<div className="hidden md:block">
 					<Navigation />
