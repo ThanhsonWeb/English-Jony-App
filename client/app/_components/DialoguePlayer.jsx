@@ -16,6 +16,7 @@ import {
 
 const CHARACTER_ENTRY_DELAY = 700;
 const DIALOGUE_LINE_DELAY = 300;
+const PLAYBACK_RATES = [0.5, 0.75, 1, 1.25, 1.5];
 
 export default function DialoguePlayer({
 	task,
@@ -406,7 +407,7 @@ export default function DialoguePlayer({
 									<Languages size={16} />
 								</button>
 
-								<div className="relative">
+								<div className="relative sm:hidden">
 									<button
 										type="button"
 										onClick={() => setShowSpeedMenu((current) => !current)}
@@ -426,7 +427,7 @@ export default function DialoguePlayer({
 
 									{showSpeedMenu && (
 										<div className="absolute bottom-full left-1/2 z-30 mb-2 w-20 -translate-x-1/2 overflow-hidden rounded-lg border border-slate-700 bg-slate-900 py-1 shadow-xl">
-											{[0.5, 0.75, 1, 1.25, 1.5].map((rate) => (
+											{PLAYBACK_RATES.map((rate) => (
 												<button
 													key={rate}
 													type="button"
@@ -442,6 +443,27 @@ export default function DialoguePlayer({
 											))}
 										</div>
 									)}
+								</div>
+
+								<div
+									className="hidden h-8 w-52 items-center rounded-lg bg-[#221d2d] p-1 sm:flex"
+									aria-label="Tốc độ phát"
+								>
+									{PLAYBACK_RATES.map((rate) => (
+										<button
+											key={rate}
+											type="button"
+											onClick={() => handlePlaybackRateChange(rate)}
+											aria-pressed={playbackRate === rate}
+											className={`flex h-6 flex-1 items-center justify-center rounded-md text-xs font-medium transition ${
+												playbackRate === rate
+													? "bg-white text-slate-950 shadow-sm"
+													: "text-slate-300 hover:bg-white/10 hover:text-white"
+											}`}
+										>
+											{rate}x
+										</button>
+									))}
 								</div>
 							</div>
 

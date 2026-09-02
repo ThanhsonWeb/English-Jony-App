@@ -210,38 +210,52 @@ export default function DialoguePage() {
 							</span>
 						</div>
 
-						<div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+						<div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 							{otherCourses.map((course) => (
 								<Link
 									key={course.id}
 									href={`/dialogue/${course.id}`}
-									className="group overflow-hidden rounded-2xl border border-slate-800 bg-[#091225] transition duration-300 hover:-translate-y-1 hover:border-blue-500/35 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+									className="group relative flex overflow-hidden rounded-[1.75rem] border border-slate-800/90 bg-gradient-to-b from-[#0b162b] to-[#07101f] shadow-[0_18px_45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-1.5 hover:border-emerald-400/40 hover:shadow-[0_26px_65px_rgba(6,78,59,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-4 focus-visible:ring-offset-[#030616] sm:flex-col"
 								>
-									<div className="relative aspect-video overflow-hidden bg-slate-900">
+									<div className="relative min-h-48 w-[42%] shrink-0 overflow-hidden bg-slate-900 sm:aspect-[16/10] sm:min-h-0 sm:w-full">
 										<Image
 											src={getCourseImage(course.id)}
 											alt={course.title}
 											fill
-											className="object-cover transition duration-500 group-hover:scale-[1.035]"
+											className="object-cover transition duration-700 ease-out group-hover:scale-105"
 											sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
 										/>
-										<div className="absolute inset-0 bg-gradient-to-t from-[#091225]/80 via-transparent to-transparent" />
-										<span className="absolute right-3 top-3 rounded-lg border border-emerald-400/25 bg-emerald-500/15 px-2.5 py-1 text-xs font-semibold text-emerald-300 backdrop-blur-sm">
+										<div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0b162b]/45 sm:bg-gradient-to-t sm:from-[#0b162b]/75 sm:via-transparent sm:to-transparent" />
+										<span className="absolute left-3 top-3 rounded-full border border-emerald-300/25 bg-emerald-950/70 px-3 py-1.5 text-xs font-semibold text-emerald-300 shadow-lg backdrop-blur-md sm:left-auto sm:right-4 sm:top-4">
 											{course.level}
-										</span>
-										<span className="absolute bottom-3 right-3 rounded-lg border border-white/10 bg-slate-950/80 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur-sm">
-											{course.dialogues.length} hội thoại
 										</span>
 									</div>
 
-									<div className="p-5">
-										<h3 className="text-xl font-bold text-white transition group-hover:text-blue-300">
+									<div className="flex min-w-0 flex-1 flex-col p-5 sm:p-6">
+										<h3 className="text-lg font-bold leading-snug text-white transition group-hover:text-emerald-300 sm:text-xl">
 											{course.title}
 										</h3>
-										<p className="mt-2 line-clamp-2 min-h-12 text-sm leading-6 text-slate-400">
+										<p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-400 sm:min-h-[4.5rem]">
 											{course.description}
 										</p>
 
+										<div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-slate-800/80 pt-4 text-xs font-medium text-slate-400">
+											<span className="inline-flex items-center gap-1.5">
+												<BookOpen className="h-4 w-4 text-blue-400" />
+												{course.dialogues.length} hội thoại
+											</span>
+											<span className="inline-flex items-center gap-1.5">
+												<Clock3 className="h-4 w-4 text-violet-400" />
+												{course.duration}
+											</span>
+										</div>
+
+										<div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-300">
+											Bắt đầu học
+											<span className="grid h-8 w-8 place-items-center rounded-full bg-emerald-500/10 transition duration-300 group-hover:translate-x-1 group-hover:bg-emerald-500 group-hover:text-white">
+												<ArrowRight className="h-4 w-4" />
+											</span>
+										</div>
 									</div>
 								</Link>
 							))}
