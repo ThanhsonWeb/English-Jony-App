@@ -143,13 +143,23 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 					</p>
 				</div>
 			) : (
-			<div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-0 items-center text-sm p-5 md:p-4 bg-[#161c2e] hover:bg-[#1c243b] border border-slate-800/50 rounded-2xl md:rounded-xl transition-all duration-150">
+			<div className="grid grid-cols-1 items-center gap-4 rounded-2xl border border-slate-800/70 bg-[#111929] p-5 text-sm transition duration-200 hover:border-emerald-500/20 hover:bg-[#141e30] md:grid-cols-12 md:gap-0 md:rounded-xl md:px-5 md:py-4">
 				{/* Word */}
 				<div className="md:col-span-2">
 					<p className="md:hidden text-xs text-slate-500 mb-1">Từ vựng</p>
-					<p className="font-serif text-xl md:text-lg text-amber-100/90 font-semibold">
-						{word.english}
-					</p>
+					<div className="flex items-center gap-2">
+						<p className="text-xl font-semibold tracking-tight text-white md:text-base">
+							{word.english}
+						</p>
+						<button
+							type="button"
+							onClick={playPronunciation}
+							aria-label={`Phát âm ${word.english}`}
+							className="rounded-full p-1.5 text-emerald-400 transition hover:bg-emerald-500/10 hover:text-emerald-300"
+						>
+							<Volume2 className="h-3.5 w-3.5" />
+						</button>
+					</div>
 				</div>
 
 				{/* IPA */}
@@ -171,7 +181,7 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 				{/* Example */}
 				<div className="md:col-span-3">
 					<p className="md:hidden text-xs text-slate-500 mb-1">Ví dụ</p>
-					<p className="text-slate-400 text-sm md:text-md italic whitespace-normal break-words leading-relaxed">
+					<p className="whitespace-normal break-words text-sm italic leading-relaxed text-slate-400 md:pr-4">
 						{word.example || "—"}
 					</p>
 				</div>
@@ -181,36 +191,40 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 					<p className="md:hidden text-xs text-slate-500 mb-2">Trạng thái</p>
 
 					{wordStatus === "new" && (
-						<span className="inline-flex items-center rounded-full border border-slate-600 bg-slate-700/40 px-2.5 py-1 text-xs font-medium text-slate-300">
-							🌱 Mới
+						<span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-xs font-medium text-emerald-300">
+							<span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> Mới
 						</span>
 					)}
 
 					{wordStatus === "learning" && (
-						<span className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-2.5 py-1 text-xs font-medium text-blue-400">
+						<span className="inline-flex items-center gap-1.5 rounded-full border border-sky-500/20 bg-sky-500/10 px-2.5 py-1 text-xs font-medium text-sky-300">
+							<span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
 							Đang học
 						</span>
 					)}
 
 					{wordStatus === "review" && (
-						<span className="inline-flex items-center rounded-full border border-orange-500/30 bg-orange-500/10 px-2.5 py-1 text-xs font-medium text-orange-400">
+						<span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/20 bg-amber-500/10 px-2.5 py-1 text-xs font-medium text-amber-300">
+							<span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
 							Cần ôn
 						</span>
 					)}
 				</div>
 
 				{/* Actions */}
-				<div className="md:col-span-1 flex justify-end gap-2 border-t border-slate-800/70 pt-4 md:border-0 md:pt-0">
+				<div className="flex justify-end gap-1 border-t border-slate-800/70 pt-4 md:col-span-1 md:border-0 md:pt-0">
 					<button
 						onClick={() => setIsEditing((cur) => !cur)}
-						className="p-2 rounded-lg text-slate-400 hover:bg-slate-700/50 hover:text-white transition-colors cursor-pointer"
+						aria-label={`Chỉnh sửa ${word.english}`}
+						className="cursor-pointer rounded-lg p-2 text-slate-500 transition hover:bg-emerald-500/10 hover:text-emerald-300"
 					>
 						<Edit2 className="w-4 h-4" />
 					</button>
 
 					<button
 						onClick={() => onDelete(word._id)}
-						className="p-2 rounded-lg text-slate-400 hover:bg-red-500/10 hover:text-red-400 transition-colors cursor-pointer"
+						aria-label={`Xóa ${word.english}`}
+						className="cursor-pointer rounded-lg p-2 text-slate-500 transition hover:bg-red-500/10 hover:text-red-400"
 					>
 						<Trash2 className="w-4 h-4" />
 					</button>

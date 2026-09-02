@@ -45,6 +45,11 @@ export default function WordPage() {
 		(word.reviewCount || 0) > 0 &&
 		word.nextReview &&
 		new Date(word.nextReview) <= now;
+	const getWordPriority = (word) => {
+		if (isReviewDue(word)) return 2;
+		if ((word.reviewCount || 0) === 0) return 1;
+		return 0;
+	};
 
 	const filteredWords = words
 		.filter((word) => {
@@ -63,9 +68,9 @@ export default function WordPage() {
 			return matchesSearch && matchesStatus;
 		})
 		.sort((a, b) => {
-			const dueDifference = Number(isReviewDue(b)) - Number(isReviewDue(a));
+			const priorityDifference = getWordPriority(b) - getWordPriority(a);
 
-			if (dueDifference !== 0) return dueDifference;
+			if (priorityDifference !== 0) return priorityDifference;
 
 			return 0;
 		});
@@ -80,6 +85,9 @@ export default function WordPage() {
 		1,
 		Math.ceil(filteredWords.length / wordsPerPage),
 	);
+	const newWordCount = words.filter((word) => (word.reviewCount || 0) === 0).length;
+	const reviewWordCount = words.filter(isReviewDue).length;
+	const learningWordCount = words.length - newWordCount - reviewWordCount;
 
 	function handleViewModeChange(mode) {
 		setViewMode(mode);
@@ -262,36 +270,68 @@ export default function WordPage() {
 	if (loading) return <Loading />;
 
 	return (
-		<div className="min-h-screen text-slate-100 px-4 py-6 sm:p-8 flex flex-col items-center font-sans">
-			<div className="w-full max-w-5xl space-y-5 sm:space-y-6">
-				{/* Header */}
-				<div className="flex items-center justify-between gap-3">
-					<Link
-						href="/wordlist"
-						className="inline-flex items-center gap-2 text-sm sm:text-lg font-medium text-slate-400 transition-colors hover:text-white"
-					>
-						<ArrowLeft size={18} />
-						Quay lại
-					</Link>
+		<div className="min-h-screen px-4 py-6 font-sans text-slate-100 sm:px-8 sm:py-10">
+			<div className="mx-auto w-full max-w-6xl space-y-6">
+				<section className="relative overflow-hidden rounded-3xl border border-slate-700/70 bg-[#0c1525] p-6 shadow-[0_28px_80px_rgba(0,0,0,0.32)] sm:p-8">
+					<div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#101b30] via-[#0b1726] to-[#07191d]" />
+					<div className="pointer-events-none absolute -right-20 -top-28 h-80 w-80 rounded-full bg-emerald-400/10 blur-[100px]" />
+					<div className="pointer-events-none absolute bottom-0 right-0 h-[72%] w-[75%] bg-[#0b1a2b]/75 [clip-path:polygon(0_100%,18%_58%,29%_73%,43%_34%,58%_67%,73%_18%,100%_65%,100%_100%)] sm:w-[62%]" />
+					<div className="pointer-events-none absolute bottom-0 right-0 h-[58%] w-[82%] bg-[#081322]/90 [clip-path:polygon(0_100%,17%_53%,31%_76%,48%_40%,61%_68%,77%_28%,100%_63%,100%_100%)] sm:w-[68%]" />
+					<div className="pointer-events-none absolute bottom-0 right-0 h-[38%] w-full bg-[#050c18] [clip-path:polygon(0_100%,0_80%,13%_48%,27%_72%,42%_34%,58%_69%,72%_38%,86%_61%,100%_30%,100%_100%)] sm:w-[78%]" />
+					<div className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-emerald-400 via-emerald-500/60 to-transparent" />
+					<div className="pointer-events-none absolute inset-x-10 bottom-0 h-px bg-gradient-to-r from-transparent via-emerald-400/35 to-transparent" />
+					<div className="relative">
+						<Link
+							href="/wordlist"
+							aria-label="Quay lại danh sách chủ đề"
+							title="Quay lại"
+							className="absolute right-0 top-0 grid h-11 w-11 place-items-center rounded-xl border border-slate-700/70 bg-slate-950/25 text-slate-400 transition hover:border-emerald-400/40 hover:bg-emerald-500/10 hover:text-emerald-300 sm:right-44"
+						>
+							<ArrowLeft size={18} />
+						</Link>
+						<p className="pr-14 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400 sm:pr-0">
+							Bộ từ vựng của bạn
+						</p>
+						<h1 className="mt-2 pr-14 text-3xl font-bold tracking-tight text-white sm:pr-0 sm:text-4xl">
+							Danh sách từ vựng
+						</h1>
+						<p className="mt-3 max-w-xl text-sm leading-6 text-slate-400 sm:text-base">
+							Tìm từ, theo dõi tiến độ và bắt đầu ôn tập khi bạn sẵn sàng.
+						</p>
+						<button
+							onClick={() => router.push(`/wordlist/${topicId}/learn`)}
+							disabled={words.length === 0}
+							className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl bg-emerald-500 px-4 text-sm font-semibold text-emerald-950 shadow-[0_10px_30px_rgba(16,185,129,0.18)] transition hover:-translate-y-0.5 hover:bg-emerald-400 disabled:cursor-not-allowed disabled:opacity-40 sm:absolute sm:right-0 sm:top-0 sm:mt-0"
+						>
+							<RotateCcw size={18} />
+							Bắt đầu học
+						</button>
 
-					<button
-						onClick={() => router.push(`/wordlist/${topicId}/learn`)}
-						disabled={words.length === 0}
-						className="inline-flex items-center gap-2 rounded-xl border border-blue-500/30 bg-blue-500/10 px-3 py-2 sm:px-4 text-sm sm:text-lg font-semibold text-blue-300 transition-all hover:border-blue-400 hover:bg-blue-500/20 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed"
-					>
-						<RotateCcw size={18} />
-						Bắt đầu học
-					</button>
-				</div>
-
-				<h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white">
-					Danh sách từ vựng
-				</h2>
+						<div className="mt-7 grid max-w-2xl grid-cols-2 gap-y-5 border-t border-slate-700/60 pt-5 sm:grid-cols-4 sm:gap-y-0">
+							<div className="px-1 sm:pr-6">
+								<p className="text-xl font-bold text-white">{words.length}</p>
+								<p className="mt-0.5 text-xs text-slate-500">Tổng số từ</p>
+							</div>
+							<div className="border-l border-slate-700/60 pl-5 sm:px-6">
+								<p className="text-xl font-bold text-emerald-300">{newWordCount}</p>
+								<p className="mt-0.5 text-xs text-slate-500">Từ mới</p>
+							</div>
+							<div className="px-1 sm:border-l sm:border-slate-700/60 sm:px-6">
+								<p className="text-xl font-bold text-sky-300">{learningWordCount}</p>
+								<p className="mt-0.5 text-xs text-slate-500">Đang học</p>
+							</div>
+							<div className="border-l border-slate-700/60 pl-5 sm:px-6">
+								<p className="text-xl font-bold text-amber-300">{reviewWordCount}</p>
+								<p className="mt-0.5 text-xs text-slate-500">Cần ôn</p>
+							</div>
+						</div>
+					</div>
+				</section>
 
 				{/* Search & Actions */}
-				<div className="flex flex-col gap-3 sm:flex-row sm:gap-4 justify-between sm:items-center">
+				<div className="flex flex-col gap-3 rounded-2xl border border-slate-800/80 bg-[#0d1525]/80 p-3 shadow-lg sm:flex-row sm:items-center sm:justify-between sm:gap-4">
 					{/* Search */}
-					<div className="relative w-full sm:w-80">
+					<div className="relative w-full sm:max-w-md sm:flex-1">
 						<Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
 
 						<input
@@ -306,7 +346,7 @@ export default function WordPage() {
 								router.push(`?${params.toString()}`);
 							}}
 							placeholder="Tìm kiếm từ vựng..."
-							className="w-full pl-10 pr-4 py-3 sm:py-2.5 bg-[#131927] border border-slate-800 rounded-xl text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+							className="w-full rounded-xl border border-slate-700/70 bg-[#080f1d] py-3 pl-10 pr-4 text-sm text-slate-200 outline-none transition placeholder:text-slate-600 focus:border-emerald-500/70 focus:ring-4 focus:ring-emerald-500/10"
 						/>
 					</div>
 
@@ -323,7 +363,7 @@ export default function WordPage() {
 
 									router.push(`?${params.toString()}`);
 								}}
-								className="appearance-none w-full sm:w-auto bg-[#131927] border border-slate-800 text-slate-300 text-sm py-2.5 pl-9 pr-8 rounded-xl"
+								className="w-full appearance-none rounded-xl border border-slate-700/70 bg-[#080f1d] py-3 pl-9 pr-8 text-sm text-slate-300 outline-none focus:border-emerald-500/70"
 							>
 								<option value="all">Tất cả</option>
 								<option value="new">Mới</option>
@@ -334,7 +374,7 @@ export default function WordPage() {
 							<Filter className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
 						</div>
 
-						<div className="flex shrink-0 items-center rounded-xl border border-slate-800 bg-[#131927] p-1">
+						<div className="flex shrink-0 items-center rounded-xl border border-slate-700/70 bg-[#080f1d] p-1">
 							<button
 								type="button"
 								onClick={() => handleViewModeChange("list")}
@@ -342,7 +382,7 @@ export default function WordPage() {
 								title="Danh sách"
 								className={`rounded-lg p-2 transition-colors ${
 									viewMode === "list"
-										? "bg-yellow-800 text-white"
+										? "bg-emerald-500 text-emerald-950"
 										: "text-slate-500 hover:bg-slate-800 hover:text-slate-200"
 								}`}
 							>
@@ -356,7 +396,7 @@ export default function WordPage() {
 								title="Thẻ"
 								className={`rounded-lg p-2 transition-colors ${
 									viewMode === "card"
-										? "bg-yellow-800 text-white"
+										? "bg-emerald-500 text-emerald-950"
 										: "text-slate-500 hover:bg-slate-800 hover:text-slate-200"
 								}`}
 							>
@@ -367,7 +407,7 @@ export default function WordPage() {
 						<div className="flex-1 sm:flex-none">
 							<button
 								onClick={() => setIsOpen(!isOpen)}
-								className="flex-1 sm:flex-none whitespace-nowrap rounded-lg bg-green-800 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:bg-green-700 active:scale-[0.98] cursor-pointer"
+								className="min-h-11 flex-1 cursor-pointer whitespace-nowrap rounded-xl border border-emerald-500/25 bg-emerald-500/10 px-4 text-sm font-semibold text-emerald-300 transition hover:border-emerald-400/50 hover:bg-emerald-500/15 hover:text-emerald-200 active:scale-[0.98] sm:flex-none"
 							>
 								+ Thêm từ mới
 							</button>
@@ -508,19 +548,19 @@ export default function WordPage() {
 				<div
 					className={
 						viewMode === "list"
-							? "md:bg-[#111625]/60 md:border md:border-slate-800/80 md:rounded-xl md:p-4 md:backdrop-blur-sm md:shadow-2xl"
+							? "overflow-hidden rounded-2xl border border-slate-800/80 bg-[#0b1220]/70 p-3 shadow-[0_20px_60px_rgba(0,0,0,0.18)] sm:p-4"
 							: ""
 					}
 				>
 					{/* table Header */}
 					{viewMode === "list" && (
-						<div className="hidden md:grid grid-cols-12 items-center px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-500">
+						<div className="hidden grid-cols-12 items-center border-b border-slate-800/70 px-5 pb-4 pt-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500 md:grid">
 							<div className="col-span-2">Từ</div>
 							<div className="col-span-2">IPA</div>
 							<div className="col-span-2">Nghĩa</div>
 							<div className="col-span-3">Ví dụ</div>
-							<div className="col-span-1">Trạng thái</div>
-							{/* <div className="col-span-1 text-right">Thao Tác</div> */}
+							<div className="col-span-2">Trạng thái</div>
+							<div className="col-span-1 text-right">Thao tác</div>
 						</div>
 					)}
 
@@ -553,7 +593,7 @@ export default function WordPage() {
 						<div
 							className={
 								viewMode === "list"
-									? "md:mt-3 space-y-3 md:space-y-2"
+									? "mt-3 space-y-3 md:space-y-2"
 									: "grid grid-cols-1 gap-4 md:grid-cols-2"
 							}
 						>
@@ -569,9 +609,9 @@ export default function WordPage() {
 						</div>
 					)}
 					{/* Pagination */}
-					<div className="flex items-center justify-between mt-5 pt-4 border-t border-slate-800/60 text-xs text-slate-400 px-1 md:px-2">
+					<div className="mt-5 flex items-center justify-between border-t border-slate-800/60 px-1 pt-4 text-xs text-slate-400 md:px-2">
 						<span>
-							Trang {currentPage} / {totalPages}
+							{filteredWords.length} từ · Trang {currentPage}/{totalPages}
 						</span>
 
 						<div className="flex gap-2">
@@ -586,7 +626,7 @@ export default function WordPage() {
 							<button
 								onClick={() => setCurrentPage((page) => page + 1)}
 								disabled={currentPage === totalPages}
-								className="px-3 py-2 rounded-lg border border-blue-500/30 bg-blue-500/10 text-blue-400 transition-all hover:bg-blue-500 hover:text-white hover:border-blue-500 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-blue-500/10 disabled:hover:text-blue-400"
+								className="rounded-lg border border-emerald-500/25 bg-emerald-500/10 px-3 py-2 text-emerald-300 transition hover:border-emerald-400 hover:bg-emerald-500 hover:text-emerald-950 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-emerald-500/25 disabled:hover:bg-emerald-500/10 disabled:hover:text-emerald-300"
 							>
 								Sau
 							</button>
