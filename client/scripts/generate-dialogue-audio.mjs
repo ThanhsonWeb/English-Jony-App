@@ -5,7 +5,6 @@ import { pathToFileURL } from "node:url";
 const ELEVENLABS_BASE_URL = "https://api.elevenlabs.io/v1/text-to-speech";
 const OUTPUT_FORMAT = "mp3_44100_128";
 const MODEL_ID = "eleven_multilingual_v2";
-const PRESERVED_SPEAKERS = new Set(["Maria"]);
 
 function fail(message) {
 	throw new Error(message);
@@ -58,7 +57,8 @@ async function loadLessonData() {
 
 function getVoiceId(speaker) {
 	const voiceIds = {
-  Tom: "s3TPKV1kjDlVtZbl4Ksh",
+		Maria: "ogwqBH5bbF03DSbNiRNN",
+		Tom: "s3TPKV1kjDlVtZbl4Ksh",
 		Anna: "uYXf8XasLslADfZ2MB4u",
 	};
 	const voiceId = voiceIds[speaker];
@@ -86,7 +86,7 @@ function buildPlan(lessonId, dialogueId, dialogue) {
 		}
 
 		const speaker = line.speaker.trim();
-		if (speaker !== "Tom" && speaker !== "Anna" && !PRESERVED_SPEAKERS.has(speaker)) {
+		if (speaker !== "Maria" && speaker !== "Tom" && speaker !== "Anna") {
 			fail(`Unsupported speaker "${speaker}" on dialogue line ${index + 1}`);
 		}
 
@@ -103,8 +103,6 @@ function buildPlan(lessonId, dialogueId, dialogue) {
 				`audioUrl mismatch on line ${index + 1}: expected "${publicUrl}", found "${line.audioUrl}"`,
 			);
 		}
-
-		if (PRESERVED_SPEAKERS.has(speaker)) return null;
 
 		return {
 			speaker,
@@ -184,7 +182,7 @@ async function main() {
 
 	const plan = buildPlan(options.lessonId, options.dialogueId, dialogue);
 	if (plan.length === 0) {
-		fail(`No supported Tom or Anna dialogue lines found for "${dialogueId}"`);
+		fail(`No supported dialogue lines found for "${options.dialogueId}"`);
 	}
 	const apiKey = process.env.ELEVENLABS_API_KEY;
 	if (!options.dryRun && !apiKey) fail("Missing ELEVENLABS_API_KEY");
@@ -196,7 +194,7 @@ async function main() {
 	let skipped = 0;
 
 	console.log(
-		`${options.dryRun ? "Dry run" : "Generating"}: ${options.lessonId}/${options.dialogueId} (${plan.length} Tom/Anna lines)`,
+		`${options.dryRun ? "Dry run" : "Generating"}: ${options.lessonId}/${options.dialogueId} (${plan.length} dialogue lines)`,
 	);
 
 	for (const item of plan) {
