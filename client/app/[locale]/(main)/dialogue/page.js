@@ -6,6 +6,7 @@ import Link from "next/link";
 import {
 	ArrowRight,
 	BookOpen,
+	CircleCheck,
 	Clock3,
 	Headphones,
 	Search,
@@ -14,8 +15,22 @@ import { lessonData } from "./_data/lessonData";
 
 const courseImages = {
 	"office-introduction":
-		"/dialogue/office-introduction/thumbnails/meeting-tem.png",
+		"/dialogue/office-introduction/thumbnails/office-introduction.png",
+	"weekend-camping": "/dialogue/weekend-camping/thumbnails/weekend-camping.png",
 };
+
+const levelOptions = [
+	{ value: "all", label: "Tất cả" },
+	{ value: "beginner", label: "Cơ Bản" },
+	{ value: "intermediate", label: "Trung Cấp" },
+	{ value: "advanced", label: "Nâng Cao" },
+];
+
+const levelLabels = Object.fromEntries(
+	levelOptions
+		.filter((option) => option.value !== "all")
+		.map((option) => [option.value, option.label]),
+);
 
 function getCourseImage(courseId) {
 	return courseImages[courseId] || "/hero-img.png";
@@ -24,6 +39,7 @@ function getCourseImage(courseId) {
 export default function DialoguePage() {
 	const courses = useMemo(() => Object.values(lessonData), []);
 	const [search, setSearch] = useState("");
+	const [selectedLevel, setSelectedLevel] = useState("all");
 	const [latestProgress, setLatestProgress] = useState(null);
 
 	useEffect(() => {
@@ -48,25 +64,33 @@ export default function DialoguePage() {
 	const currentCourse =
 		courses.find((course) => course.id === latestProgress?.lessonId) || null;
 	const normalizedSearch = search.trim().toLocaleLowerCase("vi");
-	const courseMatchesSearch = (course) =>
-		!normalizedSearch ||
-		[course.title, course.description, course.level].some((value) =>
-			value?.toLocaleLowerCase("vi").includes(normalizedSearch),
+	const courseMatchesSearch = (course) => {
+		if (!normalizedSearch) return true;
+
+		return [course.title, course.description, levelLabels[course.level]].some(
+			(value) => value?.toLocaleLowerCase("vi").includes(normalizedSearch),
 		);
+	};
+	const courseMatchesLevel = (course) =>
+		selectedLevel === "all" || course.level === selectedLevel;
+	const courseMatchesFilters = (course) =>
+		courseMatchesSearch(course) && courseMatchesLevel(course);
 	const currentCourseMatchesSearch =
-		currentCourse && courseMatchesSearch(currentCourse);
+		currentCourse && courseMatchesFilters(currentCourse);
 	const otherCourses = courses.filter((course) => {
 		if (course.id === currentCourse?.id) return false;
-		return courseMatchesSearch(course);
+		return courseMatchesFilters(course);
 	});
+	const hasMatchingCourses =
+		currentCourseMatchesSearch || otherCourses.length > 0;
 
 	const currentDialogue = currentCourse?.dialogues.find(
 		(dialogue) => dialogue.id === latestProgress?.dialogueId,
 	);
 	const completedTaskIds = new Set(latestProgress?.completedTaskIds || []);
 	const currentCompletedCount =
-		currentDialogue?.tasks.filter((task) => completedTaskIds.has(task.id)).length ||
-		0;
+		currentDialogue?.tasks.filter((task) => completedTaskIds.has(task.id))
+			.length || 0;
 	const currentTaskCount = currentDialogue?.tasks.length || 0;
 	const currentProgressPercent = currentTaskCount
 		? Math.round((currentCompletedCount / currentTaskCount) * 100)
@@ -75,116 +99,150 @@ export default function DialoguePage() {
 	return (
 		<main className="min-h-screen bg-[#030616] px-4 py-6 text-white sm:px-6 sm:py-8 lg:px-8">
 			<div className="mx-auto max-w-7xl">
-				<section className="relative isolate min-h-[330px] overflow-hidden rounded-3xl border border-slate-800 bg-[#050b18] shadow-[0_24px_80px_rgba(0,0,0,0.28)]">
-					<div className="absolute inset-y-0 right-0 w-full md:w-[57%]">
-						<Image
-							src="/hero-img.png"
-							alt="Maria và Tom đang luyện hội thoại"
-							fill
-							priority
-							className="object-cover object-center opacity-45 md:opacity-100"
-							sizes="(max-width: 768px) 100vw, 57vw"
-						/>
-						<div className="absolute inset-0 bg-[#050b18]/60 md:bg-transparent md:bg-gradient-to-r md:from-[#050b18] md:via-[#050b18]/20 md:to-transparent" />
-						<div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#050b18] to-transparent md:hidden" />
+				{/* ==================== HERO SECTION ==================== */}
+				<section className="relative isolate min-h-[280px] overflow-hidden border-b border-slate-800/80 md:min-h-[300px]">
+					<div className="absolute inset-0 z-0 bg-gradient-to-r from-[#030616] via-[#030616]/90 to-transparent" />
+					<div className="pointer-events-none absolute right-[6%] top-[12%] z-[1] hidden h-52 w-[42%] rounded-full bg-violet-600/10 blur-[70px] md:block" />
+					<div className="pointer-events-none absolute bottom-[-15%] right-[3%] z-[1] hidden h-48 w-[48%] rounded-full bg-blue-600/10 blur-[65px] md:block" />
+
+					<div className="pointer-events-none absolute inset-y-0 right-[3%] z-20 hidden w-[45%] md:block lg:right-[5%] lg:w-[43%]">
+						<div className="absolute bottom-0 left-0 h-[96%] w-[56%]">
+							<Image
+								src="/dialogue/office-introduction/shared/maria.png"
+								alt=""
+								fill
+								priority
+								className="object-contain object-bottom  "
+								sizes="24vw"
+							/>
+						</div>
+						<div className="absolute bottom-0 right-[2%] h-full w-[55%]">
+							<Image
+								src="/dialogue/office-introduction/shared/tom.png"
+								alt=""
+								fill
+								priority
+								className="object-contain object-bottom  "
+								sizes="24vw"
+							/>
+						</div>
 					</div>
 
-					<div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-blue-800/5 blur-3xl" />
+					<div className="pointer-events-none absolute bottom-[-18%] right-[2%] z-10 hidden h-64 w-[58%] opacity-70 md:block">
+						<div className="absolute inset-0 rounded-[50%] border-t border-violet-500/55 [transform:rotate(-7deg)] shadow-[0_-10px_35px_rgba(124,58,237,0.08)]" />
+						<div className="absolute inset-x-4 inset-y-4 rounded-[50%] border-t border-blue-500/50 [transform:rotate(-7deg)]" />
+						<div className="absolute inset-x-8 inset-y-8 rounded-[50%] border-t border-violet-400/45 [transform:rotate(-7deg)]" />
+						<div className="absolute inset-x-12 inset-y-12 rounded-[50%] border-t border-blue-400/35 [transform:rotate(-7deg)]" />
+						<div className="absolute inset-x-16 inset-y-16 rounded-[50%] border-t border-violet-300/25 [transform:rotate(-7deg)]" />
+					</div>
 
-					<div className="relative z-10 flex min-h-[330px] max-w-2xl flex-col justify-center px-6 py-10 sm:px-10 lg:px-14">
-						<div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-blue-500/20 bg-[#09172b]/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-blue-400">
-							<Headphones className="h-4 w-4" />
-							Luyện nghe mỗi ngày
-						</div>
-
-						<h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-							Hội thoại thực tế
+					<div className="absolute -left-24 -top-24 z-[1] h-72 w-72 rounded-full bg-violet-700/10 blur-3xl" />
+					{/* Content  */}
+					<div className="relative z-30 flex min-h-[280px] max-w-2xl flex-col justify-center px-5 py-8 sm:px-8 md:min-h-[300px] md:max-w-[55%] md:px-9 lg:px-12 xl:px-14">
+						<h1 className="bg-gradient-to-r from-violet-300 to-blue-300 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
+							Hội thoại thực tế{" "}
+							<Headphones className="inline h-7 w-7 text-blue-300" />
 						</h1>
-						<p className="mt-3 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
+						<p className="mt-3 max-w-xl text-sm leading-6 text-slate-400 sm:text-base">
 							Luyện nghe và phản xạ qua các tình huống đời thường.
 						</p>
 
-						<label className="relative mt-7 block max-w-lg">
-							<span className="sr-only">Tìm kiếm hội thoại</span>
-							<Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-500" />
-							<input
-								type="search"
-								value={search}
-								onChange={(event) => setSearch(event.target.value)}
-								placeholder="Tìm kiếm hội thoại..."
-								className="h-14 w-full rounded-2xl border border-slate-700/90 bg-[#081226]/90 pl-12 pr-4 text-sm text-white shadow-[0_12px_30px_rgba(0,0,0,0.18)] outline-none transition placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/15"
-							/>
-						</label>
+						<div className="mt-6 flex w-full max-w-xl flex-col gap-3 sm:flex-row sm:items-center">
+							<label className="relative block flex-1">
+								<span className="sr-only">Tìm kiếm hội thoại</span>
+								<Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
+								<input
+									type="search"
+									value={search}
+									onChange={(event) => setSearch(event.target.value)}
+									placeholder="Tìm kiếm bài học hoặc chủ đề..."
+									className="h-11 w-full rounded-lg border border-slate-800 bg-[#081226]/85 pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/15"
+								/>
+							</label>
+
+							<label className="relative shrink-0 sm:w-48">
+								<span className="sr-only">Lọc hội thoại theo trình độ</span>
+								<select
+									value={selectedLevel}
+									onChange={(event) => setSelectedLevel(event.target.value)}
+									className="h-11 w-full rounded-lg border border-slate-800 bg-[#081226]/85 px-3 text-sm text-slate-300 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/15"
+								>
+									{levelOptions.map((option) => (
+										<option key={option.value} value={option.value}>
+											Cấp độ: {option.label}
+										</option>
+									))}
+								</select>
+							</label>
+						</div>
 					</div>
 				</section>
+				{/* ==================== CURRENT / IN-PROGRESS COURSE ==================== */}
 
 				{currentCourseMatchesSearch && (
-					<section className="mt-10">
-						<div className="mb-4 flex items-end justify-between gap-4">
-							<div>
-								<p className="text-sm font-semibold uppercase tracking-[0.14em] text-blue-400">
-									Tiếp tục hành trình
-								</p>
-								<h2 className="mt-1 text-2xl font-bold text-white">Đang học</h2>
-							</div>
-							{currentProgressPercent > 0 && (
-								<span className="text-sm font-semibold text-emerald-400">
-									{currentProgressPercent}% hoàn thành gần nhất
-								</span>
-							)}
-						</div>
-
-						<div className="overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-br from-[#0b1529] to-[#07101f] p-4 shadow-[0_18px_50px_rgba(0,0,0,0.2)] sm:p-5">
-							<div className="flex flex-col gap-5 lg:flex-row lg:items-center">
-								<div className="relative aspect-[16/9] w-full shrink-0 overflow-hidden rounded-xl border border-slate-700/70 sm:w-64 lg:w-72">
+					<section className="mt-6">
+						<div className="overflow-hidden rounded-xl  sm:p-5">
+							<div className="flex flex-col gap-5 md:flex-row md:items-center lg:gap-6">
+								<div className="relative aspect-[16/9] w-full shrink-0 overflow-hidden rounded-lg border border-slate-700/70 md:w-56 lg:w-64">
 									<Image
 										src={getCourseImage(currentCourse.id)}
 										alt={currentCourse.title}
 										fill
 										className="object-cover"
-										sizes="(max-width: 640px) 100vw, 288px"
+										sizes="(max-width: 768px) 100vw, 256px"
 									/>
 									<div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent" />
+									<span className="absolute left-2 top-2 rounded-full border border-violet-400/25 bg-violet-950/80 px-2.5 py-1 text-[11px] font-semibold text-violet-300 backdrop-blur-sm">
+										● Đang học
+									</span>
 								</div>
 
 								<div className="min-w-0 flex-1">
-									<h3 className="text-xl font-bold text-white sm:text-2xl">
-										{currentCourse.title}
-									</h3>
-									<p className="mt-2 max-w-2xl line-clamp-2 leading-6 text-slate-400">
+									<div className="flex flex-wrap items-center gap-2">
+										<h2 className="text-lg font-bold text-white sm:text-xl">
+											{currentCourse.title}
+										</h2>
+										<span className="rounded-full border border-emerald-400/20 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-semibold text-emerald-300">
+											{levelLabels[currentCourse.level]}
+										</span>
+									</div>
+									<p className="mt-1.5 max-w-2xl line-clamp-2 text-sm leading-5 text-slate-400">
 										{currentCourse.description}
 									</p>
 
-									<div className="mt-4 flex flex-wrap gap-2 text-sm text-slate-300">
-										<span className="inline-flex items-center gap-2 rounded-lg border border-blue-400/15 bg-blue-400/10 px-3 py-1.5 text-blue-300">
-											<span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
-											{currentCourse.level}
+									<div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-400">
+										<span className="inline-flex items-center gap-1.5">
+											<BookOpen className="h-4 w-4 text-violet-400" />
+											{currentTaskCount} bài học
 										</span>
-										<span className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-1.5">
-											<Clock3 className="h-4 w-4 text-slate-500" />
+										<span className="inline-flex items-center gap-1.5">
+											<Clock3 className="h-4 w-4 text-slate-500" />~
 											{currentCourse.duration}
 										</span>
-										<span className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900/60 px-3 py-1.5">
-											<BookOpen className="h-4 w-4 text-slate-500" />
-											{currentCourse.dialogues.length} hội thoại
+										<span className="inline-flex items-center gap-1.5">
+											<CircleCheck className="h-4 w-4 text-violet-400" />
+											{currentCompletedCount}/{currentTaskCount} hoàn thành
 										</span>
 									</div>
 
 									{currentTaskCount > 0 && (
-										<div className="mt-5 max-w-2xl">
-											<div className="h-1.5 overflow-hidden rounded-full bg-slate-800">
+										<div className="mt-3 flex max-w-xl items-center gap-3">
+											<div className="h-1.5 flex-1 overflow-hidden rounded-full bg-slate-800">
 												<div
 													className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-emerald-400 transition-all duration-500"
 													style={{ width: `${currentProgressPercent}%` }}
 												/>
 											</div>
+											<span className="w-9 text-right text-xs font-semibold text-slate-400">
+												{currentProgressPercent}%
+											</span>
 										</div>
 									)}
 								</div>
 
 								<Link
 									href={`/dialogue/${currentCourse.id}`}
-									className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 font-semibold text-white shadow-[0_10px_28px_rgba(79,70,229,0.25)] transition hover:-translate-y-0.5 hover:from-blue-500 hover:to-violet-500"
+									className="inline-flex min-h-11 shrink-0 self-stretch items-center justify-center gap-3 rounded-lg bg-gradient-to-r from-violet-600 to-blue-600 px-6 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(79,70,229,0.25)] transition hover:-translate-y-0.5 hover:from-violet-500 hover:to-blue-500 md:self-center"
 								>
 									Tiếp tục học
 									<ArrowRight className="h-5 w-5" />
@@ -193,14 +251,13 @@ export default function DialoguePage() {
 						</div>
 					</section>
 				)}
+				{/* ==================== OTHER COURSES / DISCOVERY ==================== */}
 
 				{otherCourses.length > 0 ? (
 					<section className="mt-12 pb-10">
 						<div className="flex items-end justify-between gap-4">
 							<div>
-								<p className="text-sm font-semibold uppercase tracking-[0.14em] text-blue-400">
-									Chọn một chủ đề
-								</p>
+							
 								<h2 className="mt-1 text-2xl font-bold text-white">
 									Khám phá hội thoại
 								</h2>
@@ -210,65 +267,64 @@ export default function DialoguePage() {
 							</span>
 						</div>
 
-						<div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+						<div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 							{otherCourses.map((course) => (
 								<Link
 									key={course.id}
 									href={`/dialogue/${course.id}`}
-									className="group relative flex overflow-hidden rounded-[1.75rem] border border-slate-800/90 bg-gradient-to-b from-[#0b162b] to-[#07101f] shadow-[0_18px_45px_rgba(0,0,0,0.22)] transition duration-300 hover:-translate-y-1.5 hover:border-emerald-400/40 hover:shadow-[0_26px_65px_rgba(6,78,59,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-4 focus-visible:ring-offset-[#030616] sm:flex-col"
+									className=" overflow-hidden rounded-xl transition duration-200 hover:-translate-y-1
+"
 								>
-									<div className="relative min-h-48 w-[42%] shrink-0 overflow-hidden bg-slate-900 sm:aspect-[16/10] sm:min-h-0 sm:w-full">
+									{/* Thumbnail */}
+									<div className="relative aspect-video overflow-hidden bg-slate-900">
 										<Image
 											src={getCourseImage(course.id)}
 											alt={course.title}
 											fill
-											className="object-cover transition duration-700 ease-out group-hover:scale-105"
+											className="object-cover transition duration-300 group-hover:scale-[1.02]"
 											sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
 										/>
-										<div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0b162b]/45 sm:bg-gradient-to-t sm:from-[#0b162b]/75 sm:via-transparent sm:to-transparent" />
-										<span className="absolute left-3 top-3 rounded-full border border-emerald-300/25 bg-emerald-950/70 px-3 py-1.5 text-xs font-semibold text-emerald-300 shadow-lg backdrop-blur-md sm:left-auto sm:right-4 sm:top-4">
-											{course.level}
+
+										<div className="absolute inset-0 bg-gradient-to-t from-[#0b1424]/85 via-transparent to-transparent" />
+
+										{/* Dialogue count */}
+										<span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-black/70 px-2.5 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
+											<BookOpen className="h-3.5 w-3.5" />
+											{course.dialogues.length} hội thoại
+										</span>
+
+										{/* Level badge */}
+										<span className="absolute right-3 top-3 rounded-md border border-blue-400/20 bg-[#0a1530]/90 px-2.5 py-1 text-[11px] font-semibold text-blue-300 backdrop-blur-sm">
+											{levelLabels[course.level]}
 										</span>
 									</div>
 
-									<div className="flex min-w-0 flex-1 flex-col p-5 sm:p-6">
-										<h3 className="text-lg font-bold leading-snug text-white transition group-hover:text-emerald-300 sm:text-xl">
+									{/* Content */}
+									<div className="p-4">
+										<h3 className="line-clamp-1 text-base font-bold text-white transition ">
 											{course.title}
 										</h3>
-										<p className="mt-2 line-clamp-3 text-sm leading-6 text-slate-400 sm:min-h-[4.5rem]">
+
+										<p className="mt-1.5 line-clamp-2 text-sm leading-5 text-slate-400">
 											{course.description}
 										</p>
-
-										<div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-slate-800/80 pt-4 text-xs font-medium text-slate-400">
-											<span className="inline-flex items-center gap-1.5">
-												<BookOpen className="h-4 w-4 text-blue-400" />
-												{course.dialogues.length} hội thoại
-											</span>
-											<span className="inline-flex items-center gap-1.5">
-												<Clock3 className="h-4 w-4 text-violet-400" />
-												{course.duration}
-											</span>
-										</div>
-
-										<div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-emerald-300">
-											Bắt đầu học
-											<span className="grid h-8 w-8 place-items-center rounded-full bg-emerald-500/10 transition duration-300 group-hover:translate-x-1 group-hover:bg-emerald-500 group-hover:text-white">
-												<ArrowRight className="h-4 w-4" />
-											</span>
-										</div>
 									</div>
 								</Link>
 							))}
 						</div>
 					</section>
-				) : normalizedSearch && !currentCourseMatchesSearch ? (
+				) : !hasMatchingCourses ? (
 					<div className="mt-10 rounded-2xl border border-dashed border-slate-700 bg-slate-900/30 px-6 py-14 text-center">
 						<p className="text-lg font-semibold text-white">
-							Không tìm thấy hội thoại phù hợp.
+							{normalizedSearch || selectedLevel === "all"
+								? "Không tìm thấy hội thoại phù hợp."
+								: "Chưa có chủ đề ở trình độ này."}
 						</p>
-						<p className="mt-2 text-sm text-slate-400">
-							Thử tìm kiếm bằng từ khác.
-						</p>
+						{normalizedSearch && (
+							<p className="mt-2 text-sm text-slate-400">
+								Thử tìm kiếm bằng từ khác.
+							</p>
+						)}
 					</div>
 				) : null}
 			</div>

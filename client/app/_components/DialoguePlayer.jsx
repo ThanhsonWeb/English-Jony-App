@@ -10,7 +10,6 @@ import {
 	Pause,
 	ChevronDown,
 	MessageSquareText,
-	ArrowLeft,
 	Captions,
 } from "lucide-react";
 
@@ -44,8 +43,44 @@ export default function DialoguePlayer({
 	const pendingLineRef = useRef(null);
 
 	const activeLine = task.dialogue[currentLine];
-	const hasAnna = Boolean(task.characters?.Anna);
-	const isCenteredPair = hasAnna && !task.characters?.Maria;
+	const characters = Object.entries(task.characters || {});
+	const characterCount = characters.length;
+
+	function getCharacterPosition(characterIndex) {
+		if (characterCount === 1) return "left-1/2 -translate-x-1/2";
+		if (characterCount === 2) {
+			return characterIndex === 0
+				? "left-[10%] sm:left-[16%]"
+				: "right-[10%] sm:right-[16%]";
+		}
+
+		if (characterIndex === 0) return "left-[2%] sm:left-[4%]";
+		if (characterIndex === characterCount - 1) {
+			return "right-[3%] sm:right-[6%]";
+		}
+
+		return characterIndex % 2 === 1
+			? "left-[25%] sm:left-[28%]"
+			: "right-[25%] sm:right-[28%]";
+	}
+
+	function isRightSideSpeaker(speaker) {
+		const characterIndex = characters.findIndex(([name]) => name === speaker);
+
+		return characterCount > 1 && characterIndex === characterCount - 1;
+	}
+
+	function getSpeakerColor(speaker) {
+		const characterIndex = characters.findIndex(([name]) => name === speaker);
+		const colors = [
+			"text-violet-400",
+			"text-emerald-400",
+			"text-sky-400",
+			"text-amber-400",
+		];
+
+		return colors[Math.max(characterIndex, 0) % colors.length];
+	}
 
 	function clearStartTimeout() {
 		if (!startTimeoutRef.current) return;
@@ -182,7 +217,7 @@ export default function DialoguePlayer({
 		playCurrentLine(index);
 	}
 
-	// Automatically go Maria → Tom → Maria...
+	// Automatically continue through each dialogue line.
 	function handleEnded() {
 		const nextIndex = currentLine + 1;
 
@@ -257,82 +292,36 @@ export default function DialoguePlayer({
 						{/* Small overlay */}
 						<div className="absolute inset-0 bg-black/5" />
 
-						{/* Maria */}
+						{characters.map(([characterName, imageUrl], characterIndex) => {
+							const isRightSide =
+								characterCount > 1 && characterIndex === characterCount - 1;
+							const isActive = activeLine?.speaker === characterName;
+							const characterSize =
+								characterCount > 2
+									? isActive
+										? "h-[300px] scale-105 brightness-110 sm:h-[360px]"
+										: "h-[280px] scale-100 brightness-75 sm:h-[340px]"
+									: isActive
+										? "h-[350px] scale-105 brightness-110 sm:h-[420px]"
+										: "h-[330px] scale-100 brightness-75 sm:h-[395px]";
 
-						{task.characters?.Maria && (
-						<Image
-							src={task.characters.Maria}
-							alt="Maria"
-							width={400}
-							height={520}
-							className={`absolute bottom-0 w-auto object-contain
-					transition-all duration-700 ease-out ${hasAnna ? "left-[2%] sm:left-[4%]" : "left-[10%] sm:left-[16%]"}
-
-    ${
-			hasStarted && !dialogueFinished
-				? "translate-x-0 opacity-100"
-				: "-translate-x-24 opacity-0"
-		}
-
-    ${
-			activeLine?.speaker === "Maria"
-			? hasAnna ? "h-[300px] scale-105 sm:h-[360px]" : "h-[350px] scale-105 sm:h-[420px]"
-				: hasAnna ? "h-[280px] scale-100 brightness-75 sm:h-[340px]" : "h-[330px] scale-100 brightness-75 sm:h-[395px]"
-		}
-  `}
-						/>
-						)}
-
-						{task.characters?.Anna && (
-							<Image
-								src={task.characters.Anna}
-								alt="Anna"
-								width={400}
-								height={520}
-								className={`absolute bottom-0 w-auto object-contain transition-all duration-700 ease-out ${
-									isCenteredPair
-										? "left-[10%] sm:left-[14%]"
-										: "left-[25%] sm:left-[28%]"
-								} ${
-									hasStarted && !dialogueFinished
-										? "translate-x-0 opacity-100"
-										: "-translate-x-24 opacity-0"
-								} ${
-									activeLine?.speaker === "Anna"
-										? isCenteredPair
-											? "h-[340px] scale-105 sm:h-[420px]"
-											: "h-[300px] scale-105 sm:h-[360px]"
-										: isCenteredPair
-											? "h-[320px] scale-100 brightness-75 sm:h-[400px]"
-											: "h-[280px] scale-100 brightness-75 sm:h-[340px]"
-								}`}
-							/>
-						)}
-
-						{/* Tom */}
-						{task.characters?.Tom && (
-						<Image
-							src={task.characters.Tom}
-							alt="Tom"
-							width={400}
-							height={520}
-							className={`absolute bottom-0 w-auto object-contain
-					transition-all duration-700 ease-out ${isCenteredPair ? "right-[10%] sm:right-[14%]" : hasAnna ? "right-[3%] sm:right-[6%]" : "right-[10%] sm:right-[16%]"}
-
-    ${
-			hasStarted && !dialogueFinished
-				? "translate-x-0 opacity-100"
-				: "translate-x-24 opacity-0"
-		}
-
-    ${
-			activeLine?.speaker === "Tom"
-			? isCenteredPair ? "h-[340px] scale-105 sm:h-[420px]" : hasAnna ? "h-[300px] scale-105 sm:h-[360px]" : "h-[350px] scale-105 sm:h-[420px]"
-				: isCenteredPair ? "h-[320px] scale-100 brightness-75 sm:h-[400px]" : hasAnna ? "h-[280px] scale-100 brightness-75 sm:h-[340px]" : "h-[330px] scale-100 brightness-75 sm:h-[395px]"
-		}
-  `}
-						/>
-						)}
+							return (
+								<Image
+									key={characterName}
+									src={imageUrl}
+									alt={characterName}
+									width={400}
+									height={520}
+									className={`absolute bottom-0 w-auto object-contain transition-all duration-700 ease-out ${getCharacterPosition(characterIndex)} ${
+										hasStarted && !dialogueFinished
+											? "translate-x-0 opacity-100"
+											: isRightSide
+												? "translate-x-24 opacity-0"
+												: "-translate-x-24 opacity-0"
+									} ${characterSize}`}
+								/>
+							);
+						})}
 
 						{/* Subtitle + controls */}
 						<div className="absolute inset-x-0 bottom-0 z-20 bg-black/70 backdrop-blur-[2px]">
@@ -340,15 +329,15 @@ export default function DialoguePlayer({
 							{hasStarted && showSubtitles && !dialogueFinished && (
 								<div
 									className={`px-8 pb-3 pt-4 sm:px-12 lg:px-16 ${
-										activeLine?.speaker === "Tom" ? "text-right" : "text-left"
+										isRightSideSpeaker(activeLine?.speaker)
+											? "text-right"
+											: "text-left"
 									}`}
 								>
 									{/* Speaker */}
 									<p
 										className={`text-sm font-bold ${
-											activeLine?.speaker === "Maria"
-												? "text-violet-400"
-												: "text-emerald-400"
+											getSpeakerColor(activeLine?.speaker)
 										}`}
 									>
 										{activeLine?.speaker}
@@ -357,7 +346,7 @@ export default function DialoguePlayer({
 									{/* Sentence + translate */}
 								<div
 									className={`mt-1 flex items-start gap-2 ${
-										activeLine?.speaker === "Tom"
+										isRightSideSpeaker(activeLine?.speaker)
 											? "justify-end"
 											: "justify-start"
 									}`}
@@ -531,7 +520,9 @@ export default function DialoguePlayer({
 									type="button"
 									onClick={() => handleTranscriptClick(index)}
 									className={`w-full rounded-lg p-3 transition ${
-										line.speaker === "Tom" ? "text-right" : "text-left"
+										isRightSideSpeaker(line.speaker)
+											? "text-right"
+											: "text-left"
 									} ${
 										index === currentLine
 											? "bg-violet-500/10"
@@ -540,9 +531,7 @@ export default function DialoguePlayer({
 								>
 									<p
 										className={`text-sm font-semibold ${
-											line.speaker === "Maria"
-												? "text-violet-400"
-												: "text-emerald-400"
+											getSpeakerColor(line.speaker)
 										}`}
 									>
 										{line.speaker}

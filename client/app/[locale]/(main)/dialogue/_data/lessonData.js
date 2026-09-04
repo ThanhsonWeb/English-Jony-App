@@ -20,7 +20,7 @@ export const lessonData = {
 		title: "Ngày đầu tiên tại văn phòng",
 		description:
 			"Maria gặp Tom trong ngày đầu đi làm. Học cách giới thiệu bản thân và giao tiếp trong văn phòng.",
-		level: "Cơ bản",
+		level: "beginner",
 		duration: "25 phút",
 		dialogues: [
 			// meeting-tom
@@ -146,13 +146,6 @@ export const lessonData = {
 						type: "fillBlank",
 						title: "Điền từ còn thiếu",
 						instruction: "Nghe Maria và điền từ còn thiếu.",
-						tip: {
-							title: "Mẹo",
-							lines: [
-								'Trong "You must be Tom", "must be" mang nghĩa phỏng đoán: chắc bạn là Tom.',
-								"Cách nói này dùng khi bạn khá chắc về điều mình đoán.",
-							],
-						},
 						grammar: {
 							title: "must be",
 							explanation:
@@ -336,7 +329,8 @@ export const lessonData = {
 							title: "How are you feeling?",
 							explanation:
 								"Câu hỏi này dùng để hỏi cảm xúc hoặc trạng thái của một người ở hiện tại.",
-							example: "How are you feeling today? = Hôm nay bạn cảm thấy thế nào?",
+							example:
+								"How are you feeling today? = Hôm nay bạn cảm thấy thế nào?",
 						},
 						tip: {
 							title: "Mẹo",
@@ -1931,8 +1925,7 @@ export const lessonData = {
 							title: "What are you + V-ing?",
 							explanation:
 								"Cấu trúc này dùng để hỏi một người đang làm gì ở thời điểm hiện tại.",
-							example:
-								"What are you reading? = Bạn đang đọc gì vậy?",
+							example: "What are you reading? = Bạn đang đọc gì vậy?",
 						},
 						speaker: "Tom",
 						character: {
@@ -1998,8 +1991,7 @@ export const lessonData = {
 							title: "be + V-ing",
 							explanation:
 								"Thì hiện tại tiếp diễn diễn tả một việc đang xảy ra hoặc đang được thực hiện.",
-							example:
-								"She’s making an app. = Cô ấy đang làm một ứng dụng.",
+							example: "She’s making an app. = Cô ấy đang làm một ứng dụng.",
 						},
 						speaker: "Anna",
 						character: {
@@ -2026,11 +2018,7 @@ export const lessonData = {
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/anna-01.mp3",
 						transcript: "I’m making a new website.",
-						options: [
-							"Một trang web mới",
-							"Một logo mới",
-							"Một video mới",
-						],
+						options: ["Một trang web mới", "Một logo mới", "Một video mới"],
 						answer: "Một trang web mới",
 					},
 					{
@@ -2114,8 +2102,7 @@ export const lessonData = {
 							title: "Are you + V-ing?",
 							explanation:
 								"Cấu trúc này dùng để hỏi một người có đang làm một việc hay không.",
-							example:
-								"Are you waiting for me? = Bạn đang đợi tôi phải không?",
+							example: "Are you waiting for me? = Bạn đang đợi tôi phải không?",
 						},
 						speaker: "Tom",
 						character: {
@@ -2420,8 +2407,7 @@ export const lessonData = {
 						id: "25",
 						type: "dialogueCloze",
 						title: "Ôn tập hội thoại",
-						instruction:
-							"Điền các từ còn thiếu để hoàn thành hội thoại.",
+						instruction: "Điền các từ còn thiếu để hoàn thành hội thoại.",
 						lines: [
 							{
 								speaker: "Tom",
@@ -2453,11 +2439,7 @@ export const lessonData = {
 							},
 							{
 								speaker: "Tom",
-								parts: [
-									"Are you working ",
-									{ blank: "alone", id: "5" },
-									"?",
-								],
+								parts: ["Are you working ", { blank: "alone", id: "5" }, "?"],
 							},
 							{
 								speaker: "Anna",
@@ -2485,11 +2467,7 @@ export const lessonData = {
 							},
 							{
 								speaker: "Tom",
-								parts: [
-									"Do you ",
-									{ blank: "need", id: "9" },
-									" help?",
-								],
+								parts: ["Do you ", { blank: "need", id: "9" }, " help?"],
 							},
 							{
 								speaker: "Anna",
@@ -2501,17 +2479,11 @@ export const lessonData = {
 							},
 							{
 								speaker: "Tom",
-								parts: [
-									{ blank: "Sure", id: "11" },
-									". I can help.",
-								],
+								parts: [{ blank: "Sure", id: "11" }, ". I can help."],
 							},
 							{
 								speaker: "Anna",
-								parts: [
-									{ blank: "Thanks", id: "12" },
-									", Tom!",
-								],
+								parts: [{ blank: "Thanks", id: "12" }, ", Tom!"],
 							},
 						],
 					},
@@ -2529,275 +2501,978 @@ export const lessonData = {
 						speaker: "Maria",
 						text: "Hey Tom, are you hungry?",
 						translation: "Này Tom, bạn có đói không?",
-						audioUrl: "/dialogue/office-introduction/lunch-break/audio/maria-01.mp3",
+						audioUrl:
+							"/dialogue/office-introduction/lunch-break/audio/maria-01.mp3",
 					},
 					{
 						speaker: "Tom",
 						text: "Yes, I am. Do you want to get lunch?",
 						translation: "Có. Bạn có muốn đi ăn trưa không?",
-						audioUrl: "/dialogue/office-introduction/lunch-break/audio/tom-01.mp3",
+						audioUrl:
+							"/dialogue/office-introduction/lunch-break/audio/tom-01.mp3",
 					},
 					{
 						speaker: "Maria",
 						text: "Sure. What do you usually eat for lunch?",
 						translation: "Được chứ. Bạn thường ăn gì vào bữa trưa?",
-						audioUrl: "/dialogue/office-introduction/lunch-break/audio/maria-02.mp3",
+						audioUrl:
+							"/dialogue/office-introduction/lunch-break/audio/maria-02.mp3",
 					},
 					{
 						speaker: "Tom",
 						text: "I usually bring food from home.",
 						translation: "Tôi thường mang đồ ăn từ nhà.",
-						audioUrl: "/dialogue/office-introduction/lunch-break/audio/tom-02.mp3",
+						audioUrl:
+							"/dialogue/office-introduction/lunch-break/audio/tom-02.mp3",
 					},
 					{
 						speaker: "Maria",
 						text: "That looks really good. What are you having today?",
 						translation: "Món đó trông ngon thật. Hôm nay bạn ăn gì?",
-						audioUrl: "/dialogue/office-introduction/lunch-break/audio/maria-03.mp3",
+						audioUrl:
+							"/dialogue/office-introduction/lunch-break/audio/maria-03.mp3",
 					},
 					{
 						speaker: "Tom",
 						text: "Chicken and rice. What about you?",
 						translation: "Gà và cơm. Còn bạn thì sao?",
-						audioUrl: "/dialogue/office-introduction/lunch-break/audio/tom-03.mp3",
+						audioUrl:
+							"/dialogue/office-introduction/lunch-break/audio/tom-03.mp3",
 					},
 					{
 						speaker: "Maria",
 						text: "I have a sandwich. Do you eat here every day?",
-						translation: "Tôi có một chiếc bánh mì kẹp. Bạn ăn ở đây mỗi ngày à?",
-						audioUrl: "/dialogue/office-introduction/lunch-break/audio/maria-04.mp3",
+						translation:
+							"Tôi có một chiếc bánh mì kẹp. Bạn ăn ở đây mỗi ngày à?",
+						audioUrl:
+							"/dialogue/office-introduction/lunch-break/audio/maria-04.mp3",
 					},
 					{
 						speaker: "Tom",
 						text: "Not every day. Sometimes I go out with coworkers.",
-						translation: "Không phải mỗi ngày. Đôi khi tôi ra ngoài ăn với đồng nghiệp.",
-						audioUrl: "/dialogue/office-introduction/lunch-break/audio/tom-04.mp3",
+						translation:
+							"Không phải mỗi ngày. Đôi khi tôi ra ngoài ăn với đồng nghiệp.",
+						audioUrl:
+							"/dialogue/office-introduction/lunch-break/audio/tom-04.mp3",
 					},
 					{
 						speaker: "Maria",
 						text: "How long is the lunch break?",
 						translation: "Giờ nghỉ trưa kéo dài bao lâu?",
-						audioUrl: "/dialogue/office-introduction/lunch-break/audio/maria-05.mp3",
+						audioUrl:
+							"/dialogue/office-introduction/lunch-break/audio/maria-05.mp3",
 					},
 					{
 						speaker: "Tom",
 						text: "We have about an hour.",
 						translation: "Chúng ta có khoảng một tiếng.",
-						audioUrl: "/dialogue/office-introduction/lunch-break/audio/tom-05.mp3",
+						audioUrl:
+							"/dialogue/office-introduction/lunch-break/audio/tom-05.mp3",
 					},
 					{
 						speaker: "Maria",
 						text: "That’s nice. Let’s grab coffee after lunch.",
 						translation: "Tuyệt đấy. Chúng ta đi uống cà phê sau bữa trưa nhé.",
-						audioUrl: "/dialogue/office-introduction/lunch-break/audio/maria-06.mp3",
+						audioUrl:
+							"/dialogue/office-introduction/lunch-break/audio/maria-06.mp3",
 					},
 					{
 						speaker: "Tom",
 						text: "Great idea!",
 						translation: "Ý hay đấy!",
-						audioUrl: "/dialogue/office-introduction/lunch-break/audio/tom-06.mp3",
+						audioUrl:
+							"/dialogue/office-introduction/lunch-break/audio/tom-06.mp3",
 					},
 				],
 				usefulWords: [
-					{ word: "hungry", pronunciation: "/ˈhʌŋɡri/", translation: "đói", example: "Hey Tom, are you hungry?" },
-					{ word: "get lunch", translation: "đi ăn trưa", example: "Do you want to get lunch?" },
-					{ word: "usually", pronunciation: "/ˈjuːʒuəli/", translation: "thường, thường xuyên", example: "What do you usually eat for lunch?" },
-					{ word: "bring food from home", translation: "mang đồ ăn từ nhà", example: "I usually bring food from home." },
-					{ word: "sandwich", pronunciation: "/ˈsænwɪtʃ/", translation: "bánh mì kẹp", example: "I have a sandwich." },
-					{ word: "go out with coworkers", translation: "ra ngoài cùng đồng nghiệp", example: "Sometimes I go out with coworkers." },
-					{ word: "lunch break", translation: "giờ nghỉ trưa", example: "How long is the lunch break?" },
-					{ word: "grab coffee", translation: "đi uống cà phê", example: "Let’s grab coffee after lunch." },
+					{
+						word: "hungry",
+						pronunciation: "/ˈhʌŋɡri/",
+						translation: "đói",
+						example: "Hey Tom, are you hungry?",
+					},
+					{
+						word: "get lunch",
+						translation: "đi ăn trưa",
+						example: "Do you want to get lunch?",
+					},
+					{
+						word: "usually",
+						pronunciation: "/ˈjuːʒuəli/",
+						translation: "thường, thường xuyên",
+						example: "What do you usually eat for lunch?",
+					},
+					{
+						word: "bring food from home",
+						translation: "mang đồ ăn từ nhà",
+						example: "I usually bring food from home.",
+					},
+					{
+						word: "sandwich",
+						pronunciation: "/ˈsænwɪtʃ/",
+						translation: "bánh mì kẹp",
+						example: "I have a sandwich.",
+					},
+					{
+						word: "go out with coworkers",
+						translation: "ra ngoài cùng đồng nghiệp",
+						example: "Sometimes I go out with coworkers.",
+					},
+					{
+						word: "lunch break",
+						translation: "giờ nghỉ trưa",
+						example: "How long is the lunch break?",
+					},
+					{
+						word: "grab coffee",
+						translation: "đi uống cà phê",
+						example: "Let’s grab coffee after lunch.",
+					},
 				],
 				tasks: [
 					{
-						id: "1", type: "fillBlank", title: "Điền từ còn thiếu",
+						id: "1",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
 						question: "Nghe Maria và hoàn thành câu hỏi.",
 						...lunchBreakTaskMedia("Maria", 1),
 						transcript: "Hey Tom, are you hungry?",
-						sentenceBefore: "Hey Tom, are you", sentenceAfter: "?", answer: "hungry",
+						sentenceBefore: "Hey Tom, are you",
+						sentenceAfter: "?",
+						answer: "hungry",
 					},
 					{
-						id: "2", type: "multipleChoice", title: "Hiểu hội thoại",
+						id: "2",
+						type: "multipleChoice",
+						title: "Hiểu hội thoại",
 						question: "Maria đang hỏi Tom điều gì?",
-						...lunchBreakTaskMedia("Maria", 1), transcript: "Hey Tom, are you hungry?",
-						options: ["Tom có đói không", "Tom có bận không", "Tom có mệt không"], answer: "Tom có đói không",
+						...lunchBreakTaskMedia("Maria", 1),
+						transcript: "Hey Tom, are you hungry?",
+						options: [
+							"Tom có đói không",
+							"Tom có bận không",
+							"Tom có mệt không",
+						],
+						answer: "Tom có đói không",
 					},
 					{
-						id: "3", type: "arrangeWords", title: "Sắp xếp câu",
+						id: "3",
+						type: "arrangeWords",
+						title: "Sắp xếp câu",
 						question: "Sắp xếp thành câu hỏi đúng.",
-						...lunchBreakTaskMedia("Maria", 1), transcript: "Are you hungry?",
-						words: ["hungry", "Are", "you"], answer: "Are you hungry?",
+						...lunchBreakTaskMedia("Maria", 1),
+						transcript: "Are you hungry?",
+						words: ["hungry", "Are", "you"],
+						answer: "Are you hungry?",
 					},
 					{
-						id: "4", type: "fillBlank", title: "Điền từ còn thiếu",
+						id: "4",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
 						question: "Hoàn thành câu trả lời của Tom.",
-						...lunchBreakTaskMedia("Tom", 1), transcript: "Yes, I am. Do you want to get lunch?",
-						sentenceBefore: "Yes, I", sentenceAfter: ". Do you want to get lunch?", answer: "am",
+						...lunchBreakTaskMedia("Tom", 1),
+						transcript: "Yes, I am. Do you want to get lunch?",
+						sentenceBefore: "Yes, I",
+						sentenceAfter: ". Do you want to get lunch?",
+						answer: "am",
 					},
 					{
-						id: "5", type: "multipleChoice", title: "Chọn ý đúng",
+						id: "5",
+						type: "multipleChoice",
+						title: "Chọn ý đúng",
 						question: "Tom rủ Maria làm gì?",
 						grammar: {
 							title: "Do you want to + động từ?",
-							explanation: "Dùng cấu trúc này để hỏi ai đó có muốn cùng làm một việc hay không.",
+							explanation:
+								"Dùng cấu trúc này để hỏi ai đó có muốn cùng làm một việc hay không.",
 							example: "Do you want to sit here? = Bạn có muốn ngồi đây không?",
 						},
-						...lunchBreakTaskMedia("Tom", 1), transcript: "Yes, I am. Do you want to get lunch?",
-						options: ["Đi ăn trưa", "Uống cà phê", "Về nhà"], answer: "Đi ăn trưa",
+						...lunchBreakTaskMedia("Tom", 1),
+						transcript: "Yes, I am. Do you want to get lunch?",
+						options: ["Đi ăn trưa", "Uống cà phê", "Về nhà"],
+						answer: "Đi ăn trưa",
 					},
 					{
-						id: "6", type: "arrangeWords", title: "Sắp xếp câu",
+						id: "6",
+						type: "arrangeWords",
+						title: "Sắp xếp câu",
 						question: "Sắp xếp thành lời rủ đúng.",
-						...lunchBreakTaskMedia("Tom", 1), transcript: "Do you want to get lunch?",
-						words: ["lunch", "you", "get", "Do", "to", "want"], answer: "Do you want to get lunch?",
+						...lunchBreakTaskMedia("Tom", 1),
+						transcript: "Do you want to get lunch?",
+						words: ["lunch", "you", "get", "Do", "to", "want"],
+						answer: "Do you want to get lunch?",
 					},
 					{
-						id: "7", type: "fillBlank", title: "Điền từ còn thiếu",
+						id: "7",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
 						question: "Maria hỏi về thói quen ăn trưa của Tom.",
 						grammar: {
 							title: "What do you usually + động từ?",
 							explanation: "Dùng câu hỏi này để hỏi một người thường làm gì.",
 							example: "What do you usually drink? = Bạn thường uống gì?",
 						},
-						...lunchBreakTaskMedia("Maria", 2), transcript: "Sure. What do you usually eat for lunch?",
-						sentenceBefore: "Sure. What do you", sentenceAfter: "eat for lunch?", answer: "usually",
+						...lunchBreakTaskMedia("Maria", 2),
+						transcript: "Sure. What do you usually eat for lunch?",
+						sentenceBefore: "Sure. What do you",
+						sentenceAfter: "eat for lunch?",
+						answer: "usually",
 					},
 					{
-						id: "8", type: "multipleChoice", title: "Hiểu câu hỏi",
+						id: "8",
+						type: "multipleChoice",
+						title: "Hiểu câu hỏi",
 						question: "Maria muốn biết điều gì?",
-						...lunchBreakTaskMedia("Maria", 2), transcript: "Sure. What do you usually eat for lunch?",
-						options: ["Tom thường ăn gì vào bữa trưa", "Tom ăn sáng lúc mấy giờ", "Tom mua đồ ăn ở đâu"],
+						...lunchBreakTaskMedia("Maria", 2),
+						transcript: "Sure. What do you usually eat for lunch?",
+						options: [
+							"Tom thường ăn gì vào bữa trưa",
+							"Tom ăn sáng lúc mấy giờ",
+							"Tom mua đồ ăn ở đâu",
+						],
 						answer: "Tom thường ăn gì vào bữa trưa",
 					},
 					{
-						id: "9", type: "fillBlank", title: "Điền từ còn thiếu",
+						id: "9",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
 						question: "Tom thường mang gì từ nhà?",
-						...lunchBreakTaskMedia("Tom", 2), transcript: "I usually bring food from home.",
-						sentenceBefore: "I usually bring", sentenceAfter: "from home.", answer: "food",
+						...lunchBreakTaskMedia("Tom", 2),
+						transcript: "I usually bring food from home.",
+						sentenceBefore: "I usually bring",
+						sentenceAfter: "from home.",
+						answer: "food",
 					},
 					{
-						id: "10", type: "multipleChoice", title: "Chọn ý đúng",
+						id: "10",
+						type: "multipleChoice",
+						title: "Chọn ý đúng",
 						question: "Tom thường chuẩn bị bữa trưa như thế nào?",
-						...lunchBreakTaskMedia("Tom", 2), transcript: "I usually bring food from home.",
-						options: ["Mang đồ ăn từ nhà", "Mua đồ ăn ở công ty", "Không ăn trưa"], answer: "Mang đồ ăn từ nhà",
+						...lunchBreakTaskMedia("Tom", 2),
+						transcript: "I usually bring food from home.",
+						options: [
+							"Mang đồ ăn từ nhà",
+							"Mua đồ ăn ở công ty",
+							"Không ăn trưa",
+						],
+						answer: "Mang đồ ăn từ nhà",
 					},
 					{
-						id: "11", type: "fillBlank", title: "Điền từ còn thiếu",
+						id: "11",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
 						question: "Maria nhận xét món ăn của Tom.",
-						...lunchBreakTaskMedia("Maria", 3), transcript: "That looks really good. What are you having today?",
-						sentenceBefore: "That looks really", sentenceAfter: ". What are you having today?", answer: "good",
+						...lunchBreakTaskMedia("Maria", 3),
+						transcript: "That looks really good. What are you having today?",
+						sentenceBefore: "That looks really",
+						sentenceAfter: ". What are you having today?",
+						answer: "good",
 					},
 					{
-						id: "12", type: "multipleChoice", title: "Bạn nghe được gì?",
+						id: "12",
+						type: "multipleChoice",
+						title: "Bạn nghe được gì?",
 						question: "Hôm nay Tom ăn gì?",
-						...lunchBreakTaskMedia("Tom", 3), transcript: "Chicken and rice. What about you?",
-						options: ["Gà và cơm", "Salad và súp", "Bánh mì kẹp"], answer: "Gà và cơm",
+						...lunchBreakTaskMedia("Tom", 3),
+						transcript: "Chicken and rice. What about you?",
+						options: ["Gà và cơm", "Salad và súp", "Bánh mì kẹp"],
+						answer: "Gà và cơm",
 					},
 					{
-						id: "13", type: "fillBlank", title: "Điền từ còn thiếu",
+						id: "13",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
 						question: "Hoàn thành câu Tom hỏi lại Maria.",
-						...lunchBreakTaskMedia("Tom", 3), transcript: "Chicken and rice. What about you?",
-						sentenceBefore: "Chicken and rice. What", sentenceAfter: "you?", answer: "about",
+						...lunchBreakTaskMedia("Tom", 3),
+						transcript: "Chicken and rice. What about you?",
+						sentenceBefore: "Chicken and rice. What",
+						sentenceAfter: "you?",
+						answer: "about",
 					},
 					{
-						id: "14", type: "multipleChoice", title: "Hiểu hội thoại",
+						id: "14",
+						type: "multipleChoice",
+						title: "Hiểu hội thoại",
 						question: "Maria mang món gì?",
-						...lunchBreakTaskMedia("Maria", 4), transcript: "I have a sandwich. Do you eat here every day?",
-						options: ["Một chiếc bánh mì kẹp", "Gà và cơm", "Một bát súp"], answer: "Một chiếc bánh mì kẹp",
+						...lunchBreakTaskMedia("Maria", 4),
+						transcript: "I have a sandwich. Do you eat here every day?",
+						options: ["Một chiếc bánh mì kẹp", "Gà và cơm", "Một bát súp"],
+						answer: "Một chiếc bánh mì kẹp",
 					},
 					{
-						id: "15", type: "fillBlank", title: "Điền từ còn thiếu",
+						id: "15",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
 						question: "Maria hỏi về thói quen ăn trưa ở công ty.",
-						...lunchBreakTaskMedia("Maria", 4), transcript: "I have a sandwich. Do you eat here every day?",
-						sentenceBefore: "I have a sandwich. Do you eat here every", sentenceAfter: "?", answer: "day",
+						...lunchBreakTaskMedia("Maria", 4),
+						transcript: "I have a sandwich. Do you eat here every day?",
+						sentenceBefore: "I have a sandwich. Do you eat here every",
+						sentenceAfter: "?",
+						answer: "day",
 					},
 					{
-						id: "16", type: "multipleChoice", title: "Chọn ý đúng",
+						id: "16",
+						type: "multipleChoice",
+						title: "Chọn ý đúng",
 						question: "Tom có ăn ở công ty mỗi ngày không?",
-						...lunchBreakTaskMedia("Tom", 4), transcript: "Not every day. Sometimes I go out with coworkers.",
-						options: ["Không, đôi khi anh ấy ra ngoài với đồng nghiệp", "Có, anh ấy luôn ăn ở công ty", "Không, anh ấy không bao giờ ăn trưa"],
+						...lunchBreakTaskMedia("Tom", 4),
+						transcript: "Not every day. Sometimes I go out with coworkers.",
+						options: [
+							"Không, đôi khi anh ấy ra ngoài với đồng nghiệp",
+							"Có, anh ấy luôn ăn ở công ty",
+							"Không, anh ấy không bao giờ ăn trưa",
+						],
 						answer: "Không, đôi khi anh ấy ra ngoài với đồng nghiệp",
 					},
 					{
-						id: "17", type: "fillBlank", title: "Điền từ còn thiếu",
+						id: "17",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
 						question: "Nghe Tom và điền từ chỉ tần suất.",
-						...lunchBreakTaskMedia("Tom", 4), transcript: "Not every day. Sometimes I go out with coworkers.",
-						sentenceBefore: "Not every day.", sentenceAfter: "I go out with coworkers.", answer: "Sometimes",
+						...lunchBreakTaskMedia("Tom", 4),
+						transcript: "Not every day. Sometimes I go out with coworkers.",
+						sentenceBefore: "Not every day.",
+						sentenceAfter: "I go out with coworkers.",
+						answer: "Sometimes",
 					},
 					{
-						id: "18", type: "arrangeWords", title: "Sắp xếp câu",
+						id: "18",
+						type: "arrangeWords",
+						title: "Sắp xếp câu",
 						question: "Sắp xếp thành câu hỏi về khoảng thời gian.",
 						grammar: {
 							title: "How long is...?",
-							explanation: "Dùng “How long is...?” để hỏi một việc hoặc khoảng thời gian kéo dài bao lâu.",
+							explanation:
+								"Dùng “How long is...?” để hỏi một việc hoặc khoảng thời gian kéo dài bao lâu.",
 							example: "How long is the meeting? = Cuộc họp kéo dài bao lâu?",
 						},
-						...lunchBreakTaskMedia("Maria", 5), transcript: "How long is the lunch break?",
-						words: ["break", "How", "the", "is", "lunch", "long"], answer: "How long is the lunch break?",
+						...lunchBreakTaskMedia("Maria", 5),
+						transcript: "How long is the lunch break?",
+						words: ["break", "How", "the", "is", "lunch", "long"],
+						answer: "How long is the lunch break?",
 					},
 					{
-						id: "19", type: "multipleChoice", title: "Hiểu câu trả lời",
+						id: "19",
+						type: "multipleChoice",
+						title: "Hiểu câu trả lời",
 						question: "Giờ nghỉ trưa kéo dài khoảng bao lâu?",
-						...lunchBreakTaskMedia("Tom", 5), transcript: "We have about an hour.",
-						options: ["Khoảng một tiếng", "Khoảng 30 phút", "Khoảng hai tiếng"], answer: "Khoảng một tiếng",
+						...lunchBreakTaskMedia("Tom", 5),
+						transcript: "We have about an hour.",
+						options: ["Khoảng một tiếng", "Khoảng 30 phút", "Khoảng hai tiếng"],
+						answer: "Khoảng một tiếng",
 					},
 					{
-						id: "20", type: "fillBlank", title: "Điền từ còn thiếu",
+						id: "20",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
 						question: "Hoàn thành câu trả lời của Tom.",
-						...lunchBreakTaskMedia("Tom", 5), transcript: "We have about an hour.",
-						sentenceBefore: "We have about an", sentenceAfter: ".", answer: "hour",
+						...lunchBreakTaskMedia("Tom", 5),
+						transcript: "We have about an hour.",
+						sentenceBefore: "We have about an",
+						sentenceAfter: ".",
+						answer: "hour",
 					},
 					{
-						id: "21", type: "fillBlank", title: "Điền từ còn thiếu",
+						id: "21",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
 						question: "Maria đề nghị làm gì sau bữa trưa?",
-						...lunchBreakTaskMedia("Maria", 6), transcript: "That’s nice. Let’s grab coffee after lunch.",
-						sentenceBefore: "That’s nice. Let’s grab", sentenceAfter: "after lunch.", answer: "coffee",
+						...lunchBreakTaskMedia("Maria", 6),
+						transcript: "That’s nice. Let’s grab coffee after lunch.",
+						sentenceBefore: "That’s nice. Let’s grab",
+						sentenceAfter: "after lunch.",
+						answer: "coffee",
 					},
 					{
-						id: "22", type: "multipleChoice", title: "Hiểu lời đề nghị",
+						id: "22",
+						type: "multipleChoice",
+						title: "Hiểu lời đề nghị",
 						question: "Câu “Let’s grab coffee” dùng để làm gì?",
 						grammar: {
 							title: "Let’s + động từ",
-							explanation: "Dùng “Let’s + động từ” để đề nghị cùng nhau làm một việc.",
+							explanation:
+								"Dùng “Let’s + động từ” để đề nghị cùng nhau làm một việc.",
 							example: "Let’s take a break. = Chúng ta nghỉ một chút nhé.",
 						},
-						...lunchBreakTaskMedia("Maria", 6), transcript: "That’s nice. Let’s grab coffee after lunch.",
-						options: ["Rủ ai đó cùng uống cà phê", "Hỏi giá một cốc cà phê", "Từ chối uống cà phê"],
+						...lunchBreakTaskMedia("Maria", 6),
+						transcript: "That’s nice. Let’s grab coffee after lunch.",
+						options: [
+							"Rủ ai đó cùng uống cà phê",
+							"Hỏi giá một cốc cà phê",
+							"Từ chối uống cà phê",
+						],
 						answer: "Rủ ai đó cùng uống cà phê",
 					},
 					{
-						id: "23", type: "fillBlank", title: "Điền từ còn thiếu",
+						id: "23",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
 						question: "Hoàn thành phản hồi của Tom.",
-						...lunchBreakTaskMedia("Tom", 6), transcript: "Great idea!",
-						sentenceBefore: "Great", sentenceAfter: "!", answer: "idea",
+						...lunchBreakTaskMedia("Tom", 6),
+						transcript: "Great idea!",
+						sentenceBefore: "Great",
+						sentenceAfter: "!",
+						answer: "idea",
 					},
 					{
-						id: "24", type: "multipleChoice", title: "Chọn phản hồi đúng",
+						id: "24",
+						type: "multipleChoice",
+						title: "Chọn phản hồi đúng",
 						question: "Tom cảm thấy thế nào về lời đề nghị của Maria?",
-						...lunchBreakTaskMedia("Tom", 6), transcript: "Great idea!",
-						options: ["Anh ấy đồng ý và thích ý tưởng đó", "Anh ấy không muốn đi", "Anh ấy chưa hiểu câu hỏi"],
+						...lunchBreakTaskMedia("Tom", 6),
+						transcript: "Great idea!",
+						options: [
+							"Anh ấy đồng ý và thích ý tưởng đó",
+							"Anh ấy không muốn đi",
+							"Anh ấy chưa hiểu câu hỏi",
+						],
 						answer: "Anh ấy đồng ý và thích ý tưởng đó",
 					},
 					{
-						id: "25", type: "dialogueCloze", title: "Ôn tập hội thoại",
+						id: "25",
+						type: "dialogueCloze",
+						title: "Ôn tập hội thoại",
 						instruction: "Điền các từ còn thiếu để hoàn thành hội thoại.",
 						lines: [
-							{ speaker: "Maria", parts: ["Hey Tom, are you ", { blank: "hungry", id: "1" }, "?"] },
-							{ speaker: "Tom", parts: ["Yes, I am. Do you want to get ", { blank: "lunch", id: "2" }, "?"] },
-							{ speaker: "Maria", parts: ["Sure. What do you ", { blank: "usually", id: "3" }, " eat for lunch?"] },
-							{ speaker: "Tom", parts: ["I usually bring food from ", { blank: "home", id: "4" }, "."] },
-							{ speaker: "Maria", parts: ["That looks really good. What are you ", { blank: "having", id: "5" }, " today?"] },
-							{ speaker: "Tom", parts: ["Chicken and rice. What ", { blank: "about", id: "6" }, " you?"] },
-							{ speaker: "Maria", parts: ["I have a sandwich. Do you eat here every ", { blank: "day", id: "7" }, "?"] },
-							{ speaker: "Tom", parts: ["Not every day. ", { blank: "Sometimes", id: "8" }, " I go out with coworkers."] },
-							{ speaker: "Maria", parts: ["How long is the lunch ", { blank: "break", id: "9" }, "?"] },
-							{ speaker: "Tom", parts: ["We have about an ", { blank: "hour", id: "10" }, "."] },
-							{ speaker: "Maria", parts: ["That’s nice. Let’s grab ", { blank: "coffee", id: "11" }, " after lunch."] },
-							{ speaker: "Tom", parts: ["Great ", { blank: "idea", id: "12" }, "!"] },
+							{
+								speaker: "Maria",
+								parts: ["Hey Tom, are you ", { blank: "hungry", id: "1" }, "?"],
+							},
+							{
+								speaker: "Tom",
+								parts: [
+									"Yes, I am. Do you want to get ",
+									{ blank: "lunch", id: "2" },
+									"?",
+								],
+							},
+							{
+								speaker: "Maria",
+								parts: [
+									"Sure. What do you ",
+									{ blank: "usually", id: "3" },
+									" eat for lunch?",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: [
+									"I usually bring food from ",
+									{ blank: "home", id: "4" },
+									".",
+								],
+							},
+							{
+								speaker: "Maria",
+								parts: [
+									"That looks really good. What are you ",
+									{ blank: "having", id: "5" },
+									" today?",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: [
+									"Chicken and rice. What ",
+									{ blank: "about", id: "6" },
+									" you?",
+								],
+							},
+							{
+								speaker: "Maria",
+								parts: [
+									"I have a sandwich. Do you eat here every ",
+									{ blank: "day", id: "7" },
+									"?",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: [
+									"Not every day. ",
+									{ blank: "Sometimes", id: "8" },
+									" I go out with coworkers.",
+								],
+							},
+							{
+								speaker: "Maria",
+								parts: [
+									"How long is the lunch ",
+									{ blank: "break", id: "9" },
+									"?",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: ["We have about an ", { blank: "hour", id: "10" }, "."],
+							},
+							{
+								speaker: "Maria",
+								parts: [
+									"That’s nice. Let’s grab ",
+									{ blank: "coffee", id: "11" },
+									" after lunch.",
+								],
+							},
+							{
+								speaker: "Tom",
+								parts: ["Great ", { blank: "idea", id: "12" }, "!"],
+							},
 						],
 					},
 				],
 			},
+		],
+	},
+	"weekend-camping": {
+		id: "weekend-camping",
+		title: "Cuối tuần cắm trại",
+		description:
+			"Theo chân Leo và Mia trong chuyến cắm trại cuối tuần và học tiếng Anh qua những tình huống thực tế.",
+		level: "beginner",
+		duration: "30 phút",
+		dialogues: [
+			// Dialogue 1
+			{
+				id: "arriving-at-the-campsite",
+				title: "Đến khu cắm trại",
+				description:
+					"Leo và Mia đến khu cắm trại và tìm một nơi phù hợp để dựng lều.",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				characters: {
+					Leo: "/dialogue/weekend-camping/shared/leo.png",
+					Mia: "/dialogue/weekend-camping/shared/mia.png",
+				},
+				dialogue: [
+					{
+						speaker: "Leo",
+						text: "We’re here! This place looks nice.",
+						translation: "Chúng ta đến rồi! Nơi này trông đẹp đấy.",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-01.mp3",
+					},
+					{
+						speaker: "Mia",
+						text: "Yeah, it’s really quiet here.",
+						translation: "Ừ, ở đây thật sự rất yên tĩnh.",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-01.mp3",
+					},
+					{
+						speaker: "Leo",
+						text: "Where should we put the tent?",
+						translation: "Chúng ta nên dựng lều ở đâu?",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-02.mp3",
+					},
+					{
+						speaker: "Mia",
+						text: "Maybe near those trees.",
+						translation: "Có lẽ gần những cái cây kia.",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-02.mp3",
+					},
+					{
+						speaker: "Leo",
+						text: "That looks like a good spot.",
+						translation: "Chỗ đó có vẻ ổn đấy.",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-03.mp3",
+					},
+					{
+						speaker: "Mia",
+						text: "Is the ground flat enough?",
+						translation: "Mặt đất có đủ bằng phẳng không?",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-03.mp3",
+					},
+					{
+						speaker: "Leo",
+						text: "I think so. Let me check.",
+						translation: "Mình nghĩ là có. Để mình kiểm tra.",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-04.mp3",
+					},
+					{
+						speaker: "Mia",
+						text: "Okay. I’ll bring our bags over.",
+						translation: "Được rồi. Mình sẽ mang túi của chúng ta qua đó.",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-04.mp3",
+					},
+					{
+						speaker: "Leo",
+						text: "Great. I’ll get the tent.",
+						translation: "Tuyệt. Mình sẽ lấy lều.",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-05.mp3",
+					},
+					{
+						speaker: "Mia",
+						text: "Do we need anything else?",
+						translation: "Chúng ta có cần gì khác không?",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-05.mp3",
+					},
+					{
+						speaker: "Leo",
+						text: "Not yet. Let’s set up the tent first.",
+						translation: "Chưa đâu. Hãy dựng lều trước đã.",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-06.mp3",
+					},
+					{
+						speaker: "Mia",
+						text: "Sounds good. Let’s do it.",
+						translation: "Nghe ổn đấy. Làm thôi.",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-06.mp3",
+					},
+				],
+				usefulWords: [
+					{
+						word: "campsite",
+						pronunciation: "/ˈkæmpsaɪt/",
+						translation: "khu cắm trại",
+						example: "We’re finally at the campsite.",
+					},
+					{
+						word: "quiet",
+						pronunciation: "/ˈkwaɪət/",
+						translation: "yên tĩnh",
+						example: "It’s really quiet here.",
+					},
+					{
+						word: "tent",
+						pronunciation: "/tent/",
+						translation: "cái lều",
+						example: "Where should we put the tent?",
+					},
+					{
+						word: "near",
+						pronunciation: "/nɪr/",
+						translation: "gần",
+						example: "Maybe near those trees.",
+					},
+					{
+						word: "spot",
+						pronunciation: "/spɒt/",
+						translation: "chỗ, vị trí",
+						example: "That looks like a good spot.",
+					},
+					{
+						word: "ground",
+						pronunciation: "/ɡraʊnd/",
+						translation: "mặt đất",
+						example: "Is the ground flat enough?",
+					},
+					{
+						word: "flat",
+						pronunciation: "/flæt/",
+						translation: "bằng phẳng",
+						example: "The ground is flat enough.",
+					},
+					{
+						word: "set up",
+						pronunciation: "/set ʌp/",
+						translation: "dựng, thiết lập",
+						example: "Let’s set up the tent first.",
+					},
+				],
+
+				tasks: [
+					// Task 1
+					{
+						id: "1",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Leo và điền từ còn thiếu.",
+						grammar: {
+							title: "We’re here!",
+							explanation:
+								"“We’re here!” thường được dùng khi bạn vừa đến một địa điểm.",
+							example: "We’re here! = Chúng ta đến rồi!",
+						},
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Leo",
+							image: "/dialogue/weekend-camping/shared/leo.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-01.mp3",
+						transcript: "We’re here! This place looks nice.",
+						sentenceBefore: "We’re ",
+						sentenceAfter: "! This place looks nice.",
+						answer: "here",
+					},
+
+					// Task 2
+					{
+						id: "2",
+						type: "multipleChoice",
+						title: "Chọn đáp án đúng",
+						instruction: "Nghe Mia và chọn nghĩa đúng của từ “quiet”.",
+						grammar: {
+							title: "really + adjective",
+							explanation: "“really” đứng trước tính từ để nhấn mạnh mức độ.",
+							example: "It’s really quiet. = Nó rất yên tĩnh.",
+						},
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Mia",
+							image: "/dialogue/weekend-camping/shared/mia.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-01.mp3",
+						transcript: "Yeah, it’s really quiet here.",
+						question: "“quiet” trong câu này có nghĩa là gì?",
+						options: ["đông đúc", "yên tĩnh", "nguy hiểm", "ồn ào"],
+						answer: "yên tĩnh",
+					},
+
+					// Task 3
+					{
+						id: "3",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Leo và điền từ còn thiếu.",
+						grammar: {
+							title: "should we...?",
+							explanation:
+								"“Should we...?” được dùng để hỏi ý kiến hoặc đề xuất làm điều gì đó.",
+							example: "Where should we go? = Chúng ta nên đi đâu?",
+						},
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Leo",
+							image: "/dialogue/weekend-camping/shared/leo.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-02.mp3",
+						transcript: "Where should we put the tent?",
+						sentenceBefore: "Where should we put the ",
+						sentenceAfter: "?",
+						answer: "tent",
+					},
+
+					// Task 4
+					{
+						id: "4",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Mia và điền từ còn thiếu.",
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Mia",
+							image: "/dialogue/weekend-camping/shared/mia.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-02.mp3",
+						transcript: "Maybe near those trees.",
+						sentenceBefore: "Maybe near those ",
+						sentenceAfter: ".",
+						answer: "trees",
+					},
+
+					// Task 5
+					{
+						id: "5",
+						type: "multipleChoice",
+						title: "Chọn đáp án đúng",
+						instruction: "Nghe Leo và chọn nghĩa phù hợp nhất.",
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Leo",
+							image: "/dialogue/weekend-camping/shared/leo.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-03.mp3",
+						transcript: "That looks like a good spot.",
+						question: "“a good spot” có nghĩa là gì trong câu này?",
+						options: [
+							"một cái cây đẹp",
+							"một chiếc lều tốt",
+							"một vị trí phù hợp",
+							"một chuyến đi dài",
+						],
+						answer: "một vị trí phù hợp",
+					},
+
+					// Task 6
+					{
+						id: "6",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Mia và điền từ còn thiếu.",
+						grammar: {
+							title: "adjective + enough",
+							explanation: "“enough” đứng sau tính từ để diễn tả mức độ đủ.",
+							example: "Is it warm enough? = Nó có đủ ấm không?",
+						},
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Mia",
+							image: "/dialogue/weekend-camping/shared/mia.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-03.mp3",
+						transcript: "Is the ground flat enough?",
+						sentenceBefore: "Is the ",
+						sentenceAfter: " flat enough?",
+						answer: "ground",
+					},
+
+					// Task 7
+					{
+						id: "7",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Leo và điền từ còn thiếu.",
+						grammar: {
+							title: "Let me + verb",
+							explanation:
+								"“Let me + động từ” dùng khi bạn muốn tự mình làm một việc.",
+							example: "Let me check. = Để mình kiểm tra.",
+						},
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Leo",
+							image: "/dialogue/weekend-camping/shared/leo.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-04.mp3",
+						transcript: "I think so. Let me check.",
+						sentenceBefore: "I think so. Let me ",
+						sentenceAfter: ".",
+						answer: "check",
+					},
+
+					// Task 8
+					{
+						id: "8",
+						type: "multipleChoice",
+						title: "Chọn đáp án đúng",
+						instruction: "Nghe Mia và chọn điều cô ấy sẽ làm.",
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Mia",
+							image: "/dialogue/weekend-camping/shared/mia.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-04.mp3",
+						transcript: "Okay. I’ll bring our bags over.",
+						question: "Mia sẽ làm gì?",
+						options: [
+							"Dựng lều",
+							"Kiểm tra mặt đất",
+							"Mang túi qua",
+							"Đi tìm thức ăn",
+						],
+						answer: "Mang túi qua",
+					},
+
+					// Task 9
+					{
+						id: "9",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Leo và điền từ còn thiếu.",
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Leo",
+							image: "/dialogue/weekend-camping/shared/leo.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-05.mp3",
+						transcript: "Great. I’ll get the tent.",
+						sentenceBefore: "Great. I’ll get the ",
+						sentenceAfter: ".",
+						answer: "tent",
+					},
+
+					// Task 10
+					{
+						id: "10",
+						type: "multipleChoice",
+						title: "Chọn đáp án đúng",
+						instruction: "Nghe Mia và chọn câu có nghĩa đúng.",
+						grammar: {
+							title: "anything else",
+							explanation:
+								"“anything else” có nghĩa là “còn gì khác nữa không”.",
+							example: "Do you need anything else? = Bạn có cần gì khác không?",
+						},
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Mia",
+							image: "/dialogue/weekend-camping/shared/mia.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-05.mp3",
+						transcript: "Do we need anything else?",
+						question: "Mia đang hỏi điều gì?",
+						options: [
+							"Chúng ta có cần gì khác không?",
+							"Chúng ta nên đi đâu?",
+							"Chiếc lều ở đâu?",
+							"Chúng ta có nên về nhà không?",
+						],
+						answer: "Chúng ta có cần gì khác không?",
+					},
+
+					// Task 11
+					{
+						id: "11",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Leo và điền cụm từ còn thiếu.",
+						grammar: {
+							title: "Let’s + verb",
+							explanation:
+								"“Let’s + động từ” dùng để đề nghị cùng nhau làm một việc.",
+							example: "Let’s go. = Đi thôi.",
+						},
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Leo",
+							image: "/dialogue/weekend-camping/shared/leo.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-06.mp3",
+						transcript: "Not yet. Let’s set up the tent first.",
+						sentenceBefore: "Not yet. Let’s ",
+						sentenceAfter: " the tent first.",
+						answer: "set up",
+					},
+
+					// Task 12
+					{
+						id: "12",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Mia và hoàn thành câu.",
+						grammar: {
+							title: "Sounds good",
+							explanation:
+								"“Sounds good” là cách nói tự nhiên để đồng ý với một đề xuất.",
+							example: "Sounds good! = Nghe ổn đấy!",
+						},
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Mia",
+							image: "/dialogue/weekend-camping/shared/mia.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-06.mp3",
+						transcript: "Sounds good. Let’s do it.",
+						sentenceBefore: "Sounds good. Let’s ",
+						sentenceAfter: " it.",
+						answer: "do",
+					},
+				],
+			},
+			// dialogue 2
+			// ...
 		],
 	},
 };
