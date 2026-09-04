@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import {
@@ -30,37 +30,65 @@ export default function DialogueLessonPage() {
 	const lesson = lessonData[lessonId];
 	const [openDialogueId, setOpenDialogueId] = useState(null);
 	const [progress, setProgress] = useState({});
-	useEffect(() => {
-		async function loadProgress() {
-			try {
-				const res = await fetch(`/api/v1/dialogue-progress/${lessonId}`, {
-					credentials: "include",
-				});
 
-				if (!res.ok) {
-					throw new Error("Failed to load dialogue progress");
-				}
+	const loadProgress = useCallback(async () => {
+		try {
+			const res = await fetch(`/api/v1/dialogue-progress/${lessonId}`, {
+				credentials: "include",
+				cache: "no-store",
+			});
 
-				const data = await res.json();
-
-				const lessonProgress = {};
-
-				data.data.progress.forEach((item) => {
-					lessonProgress[item.dialogueId] = item.completedTaskIds || [];
-				});
-
-				setProgress({
-					[lessonId]: lessonProgress,
-				});
-			} catch (error) {
-				console.error("Load dialogue progress error:", error);
+			if (!res.ok) {
+				throw new Error("Failed to load dialogue progress");
 			}
-		}
 
-		if (lessonId) {
-			loadProgress();
+			const data = await res.json();
+
+			const lessonProgress = {};
+
+			data.data.progress.forEach((item) => {
+				lessonProgress[item.dialogueId] = item.completedTaskIds || [];
+			});
+
+			setProgress({
+				[lessonId]: lessonProgress,
+			});
+		} catch (error) {
+			console.error("Load dialogue progress error:", error);
 		}
 	}, [lessonId]);
+
+	useEffect(() => {
+		function applySavedProgress(event) {
+			const savedProgress = event.detail;
+
+			if (!savedProgress || savedProgress.lessonId !== lessonId) return;
+
+			setProgress((current) => ({
+				...current,
+				[lessonId]: {
+					...current[lessonId],
+					[savedProgress.dialogueId]: savedProgress.completedTaskIds || [],
+				},
+			}));
+		}
+
+		const loadTimer = lessonId
+			? window.setTimeout(loadProgress, 0)
+			: null;
+
+		window.addEventListener("focus", loadProgress);
+		window.addEventListener("dialogue-progress-updated", applySavedProgress);
+
+		return () => {
+			if (loadTimer !== null) window.clearTimeout(loadTimer);
+			window.removeEventListener("focus", loadProgress);
+			window.removeEventListener(
+				"dialogue-progress-updated",
+				applySavedProgress,
+			);
+		};
+	}, [lessonId, loadProgress]);
 
 	const totalTaskCount =
 		lesson?.dialogues.reduce(

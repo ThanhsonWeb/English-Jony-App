@@ -1,6 +1,6 @@
 "use client";
 
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 import { lessonData } from "../../../_data/lessonData";
 
@@ -12,6 +12,7 @@ import DialogueReviewTask from "@/app/_components/DialogueReviewTask";
 
 export default function DialogueTaskPage() {
 	const { lessonId, dialogueId, taskId } = useParams();
+	const router = useRouter();
 
 	const lesson = lessonData[lessonId];
 
@@ -55,8 +56,14 @@ export default function DialogueTaskPage() {
 			}
 
 			const data = await res.json();
+			const savedProgress = data.data?.progress;
 
-			console.log("Progress saved:", data);
+			window.dispatchEvent(
+				new CustomEvent("dialogue-progress-updated", {
+					detail: savedProgress,
+				}),
+			);
+			router.refresh();
 		} catch (error) {
 			console.error(error);
 		}
