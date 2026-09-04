@@ -17,6 +17,7 @@ function lunchBreakTaskMedia(speaker, appearance) {
 export const lessonData = {
 	"office-introduction": {
 		id: "office-introduction",
+		heroImage: "/dialogue/office-introduction/shared/bg.png",
 		title: "Ngày đầu tiên tại văn phòng",
 		description:
 			"Maria gặp Tom trong ngày đầu đi làm. Học cách giới thiệu bản thân và giao tiếp trong văn phòng.",
@@ -26,6 +27,8 @@ export const lessonData = {
 			// meeting-tom
 			{
 				id: "meeting-tom",
+				thumbnail:
+					"/dialogue/office-introduction/thumbnails/meeting-tem.png",
 				title: "Maria gặp Tom",
 				description: "Maria làm quen với Tom trong ngày đầu tiên tại công ty.",
 				scene: "/dialogue/office-introduction/meeting-tom/bg.png",
@@ -811,6 +814,8 @@ export const lessonData = {
 			// meeting-coworkers
 			{
 				id: "meet-coworkers",
+				thumbnail:
+					"/dialogue/office-introduction/thumbnails/meet-coworkers.png",
 				title: "Gặp đồng nghiệp mới",
 				description:
 					"Maria giới thiệu Tom với Anna, một đồng nghiệp trong nhóm.",
@@ -1776,6 +1781,8 @@ export const lessonData = {
 			// talk-about-work
 			{
 				id: "talk-about-work",
+				thumbnail:
+					"/dialogue/office-introduction/thumbnails/talk-about-work.png",
 				title: "Hỏi về công việc",
 				description: "Anna và Tom nói về công việc và nhiệm vụ.",
 				scene: "/dialogue/office-introduction/talk-about-work/bg.png",
@@ -2492,6 +2499,8 @@ export const lessonData = {
 			// lunch break
 			{
 				id: "lunch-break",
+				thumbnail:
+					"/dialogue/office-introduction/thumbnails/lunch-break.png",
 				title: "Giờ nghỉ trưa",
 				description: "Maria và Tom cùng ăn trưa và trò chuyện.",
 				scene: "/dialogue/office-introduction/lunch-break/bg.png",
@@ -3026,7 +3035,10 @@ export const lessonData = {
 	},
 	"weekend-camping": {
 		id: "weekend-camping",
+		heroImage:
+			"/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
 		title: "Cuối tuần cắm trại",
+		image: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
 		description:
 			"Theo chân Leo và Mia trong chuyến cắm trại cuối tuần và học tiếng Anh qua những tình huống thực tế.",
 		level: "beginner",
@@ -3035,6 +3047,8 @@ export const lessonData = {
 			// Dialogue 1
 			{
 				id: "arriving-at-the-campsite",
+				thumbnail:
+					"/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
 				title: "Đến khu cắm trại",
 				description:
 					"Leo và Mia đến khu cắm trại và tìm một nơi phù hợp để dựng lều.",

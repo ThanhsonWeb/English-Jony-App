@@ -15,16 +15,6 @@ import { lessonData } from "../_data/lessonData";
 
 import Image from "next/image";
 
-//for thumbnails
-const dialogueThumbnails = {
-	"meeting-tom": "/dialogue/office-introduction/thumbnails/meeting-tem.png",
-	"meet-coworkers":
-		"/dialogue/office-introduction/thumbnails/meet-coworkers.png",
-	"talk-about-work":
-		"/dialogue/office-introduction/thumbnails/talk-about-work.png",
-	"lunch-break": "/dialogue/office-introduction/thumbnails/lunch-break.png",
-};
-
 export default function DialogueLessonPage() {
 	const { lessonId } = useParams();
 	const lesson = lessonData[lessonId];
@@ -121,8 +111,8 @@ export default function DialogueLessonPage() {
 					{/* Hero image */}
 					<div className="absolute inset-y-0 right-0 hidden w-[58%] md:block">
 						<Image
-							src="/dialogue/office-introduction/shared/bg.png"
-							alt="Maria và Tom tại văn phòng"
+							src={lesson.heroImage}
+							alt={lesson.title}
 							fill
 							priority
 							className="object-cover object-center"
@@ -140,7 +130,7 @@ export default function DialogueLessonPage() {
 					<div className="relative z-10 flex min-h-[290px] max-w-2xl flex-col justify-center p-6 sm:p-8">
 						<div className="flex flex-wrap items-center gap-3">
 							<h1 className="text-2xl font-bold text-white sm:text-3xl">
-								{lesson.title} 🏢
+								{lesson.title} 
 							</h1>
 
 							<span className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400">
@@ -209,7 +199,7 @@ export default function DialogueLessonPage() {
 								totalTasks > 0 && completedCount === totalTasks;
 
 							const isInProgress = completedCount > 0 && !isCompleted;
-							const thumbnail = dialogueThumbnails[dialogue.id];
+							const thumbnail = dialogue.thumbnail;
 
 							return (
 								<div
