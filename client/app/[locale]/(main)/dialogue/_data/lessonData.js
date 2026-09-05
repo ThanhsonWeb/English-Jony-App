@@ -14,6 +14,13 @@ function lunchBreakTaskMedia(speaker, appearance) {
 	};
 }
 
+function orderDialogueTasks(tasks, orderedTaskIds) {
+	return orderedTaskIds.map((taskId, index) => ({
+		...tasks.find((task) => task.id === taskId),
+		id: String(index + 1),
+	}));
+}
+
 export const lessonData = {
 	"office-introduction": {
 		id: "office-introduction",
@@ -27,8 +34,7 @@ export const lessonData = {
 			// meeting-tom
 			{
 				id: "meeting-tom",
-				thumbnail:
-					"/dialogue/office-introduction/thumbnails/meeting-tem.png",
+				thumbnail: "/dialogue/office-introduction/thumbnails/meeting-tem.png",
 				title: "Maria gặp Tom",
 				description: "Maria làm quen với Tom trong ngày đầu tiên tại công ty.",
 				scene: "/dialogue/office-introduction/meeting-tom/bg.png",
@@ -2499,8 +2505,7 @@ export const lessonData = {
 			// lunch break
 			{
 				id: "lunch-break",
-				thumbnail:
-					"/dialogue/office-introduction/thumbnails/lunch-break.png",
+				thumbnail: "/dialogue/office-introduction/thumbnails/lunch-break.png",
 				title: "Giờ nghỉ trưa",
 				description: "Maria và Tom cùng ăn trưa và trò chuyện.",
 				scene: "/dialogue/office-introduction/lunch-break/bg.png",
@@ -3035,8 +3040,7 @@ export const lessonData = {
 	},
 	"weekend-camping": {
 		id: "weekend-camping",
-		heroImage:
-			"/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+		heroImage: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
 		title: "Cuối tuần cắm trại",
 		image: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
 		description:
@@ -3044,11 +3048,10 @@ export const lessonData = {
 		level: "beginner",
 		duration: "30 phút",
 		dialogues: [
-			// Dialogue 1
+			// arriving at the campsite
 			{
 				id: "arriving-at-the-campsite",
-				thumbnail:
-					"/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				thumbnail: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
 				title: "Đến khu cắm trại",
 				description:
 					"Leo và Mia đến khu cắm trại và tìm một nơi phù hợp để dựng lều.",
@@ -3066,13 +3069,6 @@ export const lessonData = {
 							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-01.mp3",
 					},
 					{
-						speaker: "Mia",
-						text: "Yeah, it’s really quiet here.",
-						translation: "Ừ, ở đây thật sự rất yên tĩnh.",
-						audioUrl:
-							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-01.mp3",
-					},
-					{
 						speaker: "Leo",
 						text: "Where should we put the tent?",
 						translation: "Chúng ta nên dựng lều ở đâu?",
@@ -3081,17 +3077,17 @@ export const lessonData = {
 					},
 					{
 						speaker: "Mia",
+						text: "Yeah, it’s really quiet here.",
+						translation: "Ừ, ở đây thật sự rất yên tĩnh.",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-01.mp3",
+					},
+					{
+						speaker: "Mia",
 						text: "Maybe near those trees.",
 						translation: "Có lẽ gần những cái cây kia.",
 						audioUrl:
 							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-02.mp3",
-					},
-					{
-						speaker: "Leo",
-						text: "That looks like a good spot.",
-						translation: "Chỗ đó có vẻ ổn đấy.",
-						audioUrl:
-							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-03.mp3",
 					},
 					{
 						speaker: "Mia",
@@ -3102,17 +3098,17 @@ export const lessonData = {
 					},
 					{
 						speaker: "Leo",
+						text: "That looks like a good spot.",
+						translation: "Chỗ đó có vẻ ổn đấy.",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-03.mp3",
+					},
+					{
+						speaker: "Leo",
 						text: "I think so. Let me check.",
 						translation: "Mình nghĩ là có. Để mình kiểm tra.",
 						audioUrl:
 							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-04.mp3",
-					},
-					{
-						speaker: "Mia",
-						text: "Okay. I’ll bring our bags over.",
-						translation: "Được rồi. Mình sẽ mang túi của chúng ta qua đó.",
-						audioUrl:
-							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-04.mp3",
 					},
 					{
 						speaker: "Leo",
@@ -3120,6 +3116,13 @@ export const lessonData = {
 						translation: "Tuyệt. Mình sẽ lấy lều.",
 						audioUrl:
 							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-05.mp3",
+					},
+					{
+						speaker: "Mia",
+						text: "Okay. I’ll bring our bags over.",
+						translation: "Được rồi. Mình sẽ mang túi của chúng ta qua đó.",
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-04.mp3",
 					},
 					{
 						speaker: "Mia",
@@ -3194,7 +3197,7 @@ export const lessonData = {
 					},
 				],
 
-				tasks: [
+				tasks: orderDialogueTasks([
 					// Task 1
 					{
 						id: "1",
@@ -3224,13 +3227,8 @@ export const lessonData = {
 					{
 						id: "2",
 						type: "multipleChoice",
-						title: "Chọn đáp án đúng",
-						instruction: "Nghe Mia và chọn nghĩa đúng của từ “quiet”.",
-						grammar: {
-							title: "really + adjective",
-							explanation: "“really” đứng trước tính từ để nhấn mạnh mức độ.",
-							example: "It’s really quiet. = Nó rất yên tĩnh.",
-						},
+						title: "Hiểu tình huống",
+						instruction: "Nghe Mia và chọn đáp án đúng.",
 						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
 						character: {
 							name: "Mia",
@@ -3239,9 +3237,17 @@ export const lessonData = {
 						audioUrl:
 							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-01.mp3",
 						transcript: "Yeah, it’s really quiet here.",
-						question: "“quiet” trong câu này có nghĩa là gì?",
-						options: ["đông đúc", "yên tĩnh", "nguy hiểm", "ồn ào"],
-						answer: "yên tĩnh",
+
+						question: "Từ “here” trong câu của Mia đang nói đến đâu?",
+
+						options: [
+							"Trong chiếc lều",
+							"Khu cắm trại",
+							"Trong xe",
+							"Nhà của Mia",
+						],
+
+						answer: "Khu cắm trại",
 					},
 
 					// Task 3
@@ -3274,7 +3280,7 @@ export const lessonData = {
 						id: "4",
 						type: "fillBlank",
 						title: "Điền từ còn thiếu",
-						instruction: "Nghe Mia và điền từ còn thiếu.",
+						instruction: "Nghe Mia và hoàn thành gợi ý về vị trí.",
 						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
 						character: {
 							name: "Mia",
@@ -3283,17 +3289,16 @@ export const lessonData = {
 						audioUrl:
 							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-02.mp3",
 						transcript: "Maybe near those trees.",
-						sentenceBefore: "Maybe near those ",
-						sentenceAfter: ".",
-						answer: "trees",
+						parts: ["Maybe ", " those ", "."],
+						answers: ["near", "trees"],
 					},
 
 					// Task 5
 					{
 						id: "5",
 						type: "multipleChoice",
-						title: "Chọn đáp án đúng",
-						instruction: "Nghe Leo và chọn nghĩa phù hợp nhất.",
+						title: "Hiểu tình huống",
+						instruction: "Nghe Leo và chọn đáp án đúng.",
 						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
 						character: {
 							name: "Leo",
@@ -3302,14 +3307,17 @@ export const lessonData = {
 						audioUrl:
 							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-03.mp3",
 						transcript: "That looks like a good spot.",
-						question: "“a good spot” có nghĩa là gì trong câu này?",
+
+						question: "“That” trong câu của Leo đang nói đến chỗ nào?",
+
 						options: [
-							"một cái cây đẹp",
-							"một chiếc lều tốt",
-							"một vị trí phù hợp",
-							"một chuyến đi dài",
+							"Chiếc xe của họ",
+							"Lối vào khu cắm trại",
+							"Khu vực gần những cái cây",
+							"Nơi để túi của họ",
 						],
-						answer: "một vị trí phù hợp",
+
+						answer: "Khu vực gần những cái cây",
 					},
 
 					// Task 6
@@ -3317,23 +3325,17 @@ export const lessonData = {
 						id: "6",
 						type: "fillBlank",
 						title: "Điền từ còn thiếu",
-						instruction: "Nghe Mia và điền từ còn thiếu.",
-						grammar: {
-							title: "adjective + enough",
-							explanation: "“enough” đứng sau tính từ để diễn tả mức độ đủ.",
-							example: "Is it warm enough? = Nó có đủ ấm không?",
-						},
+						instruction: "Nghe Mia và hoàn thành nhận xét về khu cắm trại.",
 						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
 						character: {
 							name: "Mia",
 							image: "/dialogue/weekend-camping/shared/mia.png",
 						},
 						audioUrl:
-							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-03.mp3",
-						transcript: "Is the ground flat enough?",
-						sentenceBefore: "Is the ",
-						sentenceAfter: " flat enough?",
-						answer: "ground",
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-01.mp3",
+						transcript: "Yeah, it’s really quiet here.",
+						parts: ["Yeah, it’s really ", " ", "."],
+						answers: ["quiet", "here"],
 					},
 
 					// Task 7
@@ -3365,8 +3367,8 @@ export const lessonData = {
 					{
 						id: "8",
 						type: "multipleChoice",
-						title: "Chọn đáp án đúng",
-						instruction: "Nghe Mia và chọn điều cô ấy sẽ làm.",
+						title: "Hiểu tình huống",
+						instruction: "Nghe Mia và chọn ý nghĩa phù hợp với tình huống.",
 						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
 						character: {
 							name: "Mia",
@@ -3375,14 +3377,18 @@ export const lessonData = {
 						audioUrl:
 							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-04.mp3",
 						transcript: "Okay. I’ll bring our bags over.",
-						question: "Mia sẽ làm gì?",
+
+						question:
+							"Từ “over” trong câu “I’ll bring our bags over” đang chỉ điều gì?",
+
 						options: [
-							"Dựng lều",
-							"Kiểm tra mặt đất",
-							"Mang túi qua",
-							"Đi tìm thức ăn",
+							"Mang túi đến chỗ họ vừa chọn",
+							"Mang túi về nhà",
+							"Đặt túi lên trên lều",
+							"Mang túi sang cho người khác",
 						],
-						answer: "Mang túi qua",
+
+						answer: "Mang túi đến chỗ họ vừa chọn",
 					},
 
 					// Task 9
@@ -3408,13 +3414,14 @@ export const lessonData = {
 					{
 						id: "10",
 						type: "multipleChoice",
-						title: "Chọn đáp án đúng",
-						instruction: "Nghe Mia và chọn câu có nghĩa đúng.",
+						title: "Hiểu tình huống",
+						instruction: "Nghe Mia và chọn đáp án đúng.",
 						grammar: {
 							title: "anything else",
 							explanation:
-								"“anything else” có nghĩa là “còn gì khác nữa không”.",
-							example: "Do you need anything else? = Bạn có cần gì khác không?",
+								"“anything else” được dùng khi hỏi xem có cần thêm thứ gì nữa không.",
+							example:
+								"Do you need anything else? = Bạn có cần gì khác nữa không?",
 						},
 						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
 						character: {
@@ -3424,14 +3431,18 @@ export const lessonData = {
 						audioUrl:
 							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-05.mp3",
 						transcript: "Do we need anything else?",
-						question: "Mia đang hỏi điều gì?",
+
+						question: "Tại sao Mia hỏi “Do we need anything else?”",
+
 						options: [
-							"Chúng ta có cần gì khác không?",
-							"Chúng ta nên đi đâu?",
-							"Chiếc lều ở đâu?",
-							"Chúng ta có nên về nhà không?",
+							"Vì cô ấy muốn biết họ có cần lấy thêm đồ trước khi dựng lều không",
+							"Vì cô ấy muốn đổi chỗ cắm trại",
+							"Vì cô ấy muốn đi về nhà",
+							"Vì cô ấy không biết chiếc lều ở đâu",
 						],
-						answer: "Chúng ta có cần gì khác không?",
+
+						answer:
+							"Vì cô ấy muốn biết họ có cần lấy thêm đồ trước khi dựng lều không",
 					},
 
 					// Task 11
@@ -3454,9 +3465,9 @@ export const lessonData = {
 						audioUrl:
 							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-06.mp3",
 						transcript: "Not yet. Let’s set up the tent first.",
-						sentenceBefore: "Not yet. Let’s ",
-						sentenceAfter: " the tent first.",
-						answer: "set up",
+						sentenceBefore: "Not yet. Let’s set up the tent ",
+						sentenceAfter: ".",
+						answer: "first",
 					},
 
 					// Task 12
@@ -3483,7 +3494,191 @@ export const lessonData = {
 						sentenceAfter: " it.",
 						answer: "do",
 					},
-				],
+
+					// Task 13
+					{
+						id: "13",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Leo và hoàn thành mẫu câu hỏi ý kiến.",
+						grammar: {
+							title: "Where should we + verb?",
+							explanation:
+								"Dùng mẫu câu này để hỏi ý kiến về nơi nên thực hiện một việc.",
+							example: "Where should we sit? = Chúng ta nên ngồi ở đâu?",
+						},
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Leo",
+							image: "/dialogue/weekend-camping/shared/leo.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-02.mp3",
+						transcript: "Where should we put the tent?",
+						parts: ["Where ", " we put the ", "?"],
+						answers: ["should", "tent"],
+					},
+
+					// Task 14
+					{
+						id: "14",
+						type: "multipleChoice",
+						title: "Hiểu tình huống",
+						instruction: "Nghe Leo và chọn mục đích của câu hỏi.",
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Leo",
+							image: "/dialogue/weekend-camping/shared/leo.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-02.mp3",
+						transcript: "Where should we put the tent?",
+						question: "Tại sao Leo hỏi câu này?",
+						options: [
+							"Họ đang quyết định nơi dựng lều",
+							"Họ đang tìm đường về nhà",
+							"Họ đang kiểm tra hành lý",
+							"Họ đang hỏi giờ khởi hành",
+						],
+						answer: "Họ đang quyết định nơi dựng lều",
+					},
+
+					// Task 15
+					{
+						id: "15",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Mia và điền từ chỉ vị trí.",
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Mia",
+							image: "/dialogue/weekend-camping/shared/mia.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-02.mp3",
+						transcript: "Maybe near those trees.",
+						sentenceBefore: "Maybe ",
+						sentenceAfter: " those trees.",
+						answer: "near",
+					},
+
+					// Task 16
+					{
+						id: "16",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Leo và hoàn thành cụm từ chỉ địa điểm.",
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Leo",
+							image: "/dialogue/weekend-camping/shared/leo.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-03.mp3",
+						transcript: "That looks like a good spot.",
+						sentenceBefore: "That looks like a good ",
+						sentenceAfter: ".",
+						answer: "spot",
+					},
+
+					// Task 17
+					{
+						id: "17",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Mia và điền tính từ còn thiếu.",
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Mia",
+							image: "/dialogue/weekend-camping/shared/mia.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-03.mp3",
+						transcript: "Is the ground flat enough?",
+						parts: ["Is the ", " ", " enough?"],
+						answers: ["ground", "flat"],
+					},
+
+					// Task 18
+					{
+						id: "18",
+						type: "multipleChoice",
+						title: "Hiểu tình huống",
+						instruction: "Nghe Mia và chọn lý do phù hợp nhất.",
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Mia",
+							image: "/dialogue/weekend-camping/shared/mia.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-03.mp3",
+						transcript: "Is the ground flat enough?",
+						question: "Tại sao Mia kiểm tra mặt đất?",
+						options: [
+							"Để xem chỗ đó có phù hợp để dựng lều không",
+							"Để tìm chiếc túi bị mất",
+							"Để xem trời có sắp mưa không",
+							"Để tìm đường ra khỏi khu cắm trại",
+						],
+						answer: "Để xem chỗ đó có phù hợp để dựng lều không",
+					},
+
+					// Task 19
+					{
+						id: "19",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Mia và điền vật cô ấy sẽ mang tới.",
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Mia",
+							image: "/dialogue/weekend-camping/shared/mia.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-04.mp3",
+						transcript: "Okay. I’ll bring our bags over.",
+						parts: ["Okay. I’ll ", " our ", " over."],
+						answers: ["bring", "bags"],
+					},
+
+					// Task 20
+					{
+						id: "20",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Mia và hoàn thành cụm từ thường dùng.",
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Mia",
+							image: "/dialogue/weekend-camping/shared/mia.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-05.mp3",
+						transcript: "Do we need anything else?",
+						sentenceBefore: "Do we need anything ",
+						sentenceAfter: "?",
+						answer: "else",
+					},
+
+					// Task 21
+					{
+						id: "21",
+						type: "fillBlank",
+						title: "Điền từ còn thiếu",
+						instruction: "Nghe Leo và hoàn thành lời đề nghị.",
+						scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+						character: {
+							name: "Leo",
+							image: "/dialogue/weekend-camping/shared/leo.png",
+						},
+						audioUrl:
+							"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-06.mp3",
+						transcript: "Not yet. Let’s set up the tent first.",
+						parts: ["Not yet. ", " ", " ", " the tent first."],
+						answers: ["Let’s", "set", "up"],
+						choices: ["set", "first", "Let’s", "up"],
+					},
+				], ["1", "13", "14", "6", "2", "4", "17", "18", "16", "5", "7", "9", "19", "8", "20", "21", "11", "12"]),
 			},
 			// dialogue 2
 			// ...

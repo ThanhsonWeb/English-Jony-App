@@ -81,7 +81,7 @@ export default function DialogueTaskPage() {
 
 	switch (task.type) {
 		case "fillBlank":
-			return <FillBlankTask {...props} />;
+			return <FillBlankTask key={task.id} {...props} />;
 
 		case "multipleChoice":
 			return <MultipleChoiceTask {...props} />;

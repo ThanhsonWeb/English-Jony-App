@@ -1,8 +1,29 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import GrammarNote from "./GrammarNote";
 import TaskAudioScene from "./TaskAudioScene";
+
+function getExpectedAnswers(task) {
+	return Array.isArray(task.answers) ? task.answers : [task.answer];
+}
+
+function normalizeAnswer(value) {
+	return value
+		.trim()
+		.toLocaleLowerCase()
+		.replace(/[’‘]/g, "'")
+		.replace(/\s+/g, " ");
+}
+
+function getInputWidth(expectedAnswer) {
+	const characterWidth = Math.min(
+		Math.max(expectedAnswer.trim().length + 2, 4),
+		14,
+	);
+
+	return `${characterWidth}ch`;
+}
 
 function FillBlankTask({
 	task,
@@ -13,11 +34,35 @@ function FillBlankTask({
 	onComplete,
 	totalTasks,
 }) {
-	const [answer, setAnswer] = useState("");
+	const isMultiBlank = Array.isArray(task.parts) && Array.isArray(task.answers);
+	const expectedAnswers = getExpectedAnswers(task);
+	const [answerValues, setAnswerValues] = useState(() =>
+		expectedAnswers.map(() => ""),
+	);
 	const [result, setResult] = useState(null);
 
+	function updateAnswer(index, value) {
+		setAnswerValues((current) =>
+			current.map((answer, answerIndex) =>
+				answerIndex === index ? value : answer,
+			),
+		);
+		setResult(null);
+	}
+
+	function selectChoice(choice) {
+		const emptyIndex = answerValues.findIndex((answer) => !answer.trim());
+		if (emptyIndex === -1) return;
+
+		updateAnswer(emptyIndex, choice);
+	}
+
 	function checkAnswer() {
-		const isCorrect = answer.trim().toLowerCase() === task.answer.toLowerCase();
+		const isCorrect = expectedAnswers.every(
+			(expectedAnswer, index) =>
+				normalizeAnswer(answerValues[index] || "") ===
+				normalizeAnswer(expectedAnswer),
+		);
 
 		setResult(isCorrect ? "correct" : "wrong");
 		if (isCorrect) onComplete?.();
@@ -49,19 +94,61 @@ function FillBlankTask({
 						</p>
 
 						<div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-							<p className="text-lg">
-								{task.sentenceBefore}{" "}
-								<input
-									value={answer}
-									onChange={(event) => {
-										setAnswer(event.target.value);
-										setResult(null);
-									}}
-									placeholder="..."
-									className="mx-2 w-32 border-b-2 border-blue-500 bg-transparent px-2 py-1 text-center outline-none"
-								/>{" "}
-								{task.sentenceAfter}
+							<p className="text-lg leading-10">
+								{isMultiBlank ? (
+									task.parts.map((part, index) => (
+										<Fragment key={index}>
+											{part}
+											{index < expectedAnswers.length && (
+												<input
+													value={answerValues[index] || ""}
+													onChange={(event) =>
+														updateAnswer(index, event.target.value)
+													}
+													aria-label={`Chỗ trống ${index + 1}`}
+													placeholder="..."
+													style={{
+														width: getInputWidth(expectedAnswers[index]),
+													}}
+													className="mx-1 inline-block max-w-full border-b-2 border-blue-500 bg-transparent px-2 py-1 text-center outline-none"
+												/>
+											)}
+										</Fragment>
+									))
+								) : (
+									<>
+										{task.sentenceBefore}{" "}
+										<input
+											value={answerValues[0] || ""}
+											onChange={(event) => updateAnswer(0, event.target.value)}
+											placeholder="..."
+											style={{ width: getInputWidth(expectedAnswers[0]) }}
+											className="mx-2 max-w-full border-b-2 border-blue-500 bg-transparent px-2 py-1 text-center outline-none"
+										/>{" "}
+										{task.sentenceAfter}
+									</>
+								)}
 							</p>
+
+							{isMultiBlank && Array.isArray(task.choices) && (
+								<div className="mt-5 flex flex-wrap gap-2">
+									{task.choices.map((choice) => {
+										const isUsed = answerValues.includes(choice);
+
+										return (
+											<button
+												key={choice}
+												type="button"
+												onClick={() => selectChoice(choice)}
+												disabled={isUsed}
+												className="rounded-lg border border-slate-700 bg-slate-950/60 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-violet-500 hover:bg-violet-500/10 disabled:cursor-not-allowed disabled:opacity-35"
+											>
+												{choice}
+											</button>
+										);
+									})}
+								</div>
+							)}
 						</div>
 
 						{result === "correct" && (
@@ -94,7 +181,7 @@ function FillBlankTask({
 									<button
 									type="button"
 									onClick={checkAnswer}
-									disabled={!answer.trim()}
+									disabled={answerValues.some((answer) => !answer.trim())}
 									className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-40"
 								>
 									Kiểm tra
