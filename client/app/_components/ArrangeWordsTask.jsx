@@ -1,8 +1,10 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import DialogueShortcutHint from "./DialogueShortcutHint";
 import GrammarNote from "./GrammarNote";
 import TaskAudioScene from "./TaskAudioScene";
+import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 
 function getAnswerText(answer) {
 	return Array.isArray(answer) ? answer.join(" ") : String(answer || "");
@@ -66,6 +68,13 @@ function ArrangeWordsTask({
 	);
 	const [selectedWords, setSelectedWords] = useState([]);
 	const [result, setResult] = useState(null);
+	const actionRef = useRef(null);
+	const audioSceneRef = useRef(null);
+
+	useDialogueShortcuts({
+		onEnter: () => actionRef.current?.click(),
+		onReplay: () => audioSceneRef.current?.replay(),
+	});
 	const hasMedia = Boolean(
 		task.audioUrl || task.scene || task.character?.image,
 	);
@@ -122,7 +131,9 @@ function ArrangeWordsTask({
 						hasMedia ? "lg:grid-cols-[0.8fr_1.2fr]" : ""
 					}`}
 				>
-					{hasMedia && <TaskAudioScene key={task.audioUrl} task={task} />}
+					{hasMedia && (
+						<TaskAudioScene ref={audioSceneRef} key={task.audioUrl} task={task} />
+					)}
 
 					<div>
 						<p className="text-sm font-semibold text-violet-400">Câu hỏi</p>
@@ -174,7 +185,8 @@ function ArrangeWordsTask({
 							</div>
 						)}
 
-						<div className="mt-8 flex items-start justify-between gap-4">
+						<DialogueShortcutHint />
+						<div className="mt-4 flex items-start justify-between gap-4">
 							<div className="flex items-start gap-4">
 								<button
 									type="button"
@@ -189,6 +201,7 @@ function ArrangeWordsTask({
 							<div className="ml-auto shrink-0">
 							{result === "correct" ? (
 								<Link
+									ref={actionRef}
 									href={
 										nextTask
 										? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
@@ -200,6 +213,7 @@ function ArrangeWordsTask({
 								</Link>
 							) : (
 								<button
+									ref={actionRef}
 									type="button"
 									onClick={checkAnswer}
 									disabled={selectedWords.length === 0}

@@ -1,8 +1,10 @@
 import { ArrowLeft, CheckCircle2, Circle } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import DialogueShortcutHint from "./DialogueShortcutHint";
 import GrammarNote from "./GrammarNote";
 import TaskAudioScene from "./TaskAudioScene";
+import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 
 function MultipleChoiceTask({
 	task,
@@ -14,6 +16,13 @@ function MultipleChoiceTask({
 }) {
 	const [selected, setSelected] = useState("");
 	const [result, setResult] = useState(null);
+	const actionRef = useRef(null);
+	const audioSceneRef = useRef(null);
+
+	useDialogueShortcuts({
+		onEnter: () => actionRef.current?.click(),
+		onReplay: () => audioSceneRef.current?.replay(),
+	});
 
 	function checkAnswer() {
 		const isCorrect = selected === task.answer;
@@ -30,7 +39,7 @@ function MultipleChoiceTask({
 				<h1 className="mt-2 text-2xl font-bold">{task.title}</h1>
 
 				<div className="mt-8 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-					<TaskAudioScene key={task.audioUrl} task={task} />
+					<TaskAudioScene ref={audioSceneRef} key={task.audioUrl} task={task} />
 
 					<div>
 						<p className="text-sm font-semibold text-violet-400">Câu hỏi</p>
@@ -106,11 +115,13 @@ function MultipleChoiceTask({
 							</div>
 						)}
 
-						<div className="mt-8 flex items-start justify-between gap-4">
+						<DialogueShortcutHint />
+						<div className="mt-4 flex items-start justify-between gap-4">
 							{result && <GrammarNote grammar={task.grammar} />}
 							<div className="ml-auto shrink-0">
 								{result === "correct" ? (
 									<Link
+									ref={actionRef}
 									href={
 										nextTask
 										? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
@@ -122,6 +133,7 @@ function MultipleChoiceTask({
 									</Link>
 								) : (
 									<button
+									ref={actionRef}
 									type="button"
 									onClick={checkAnswer}
 									disabled={!selected}

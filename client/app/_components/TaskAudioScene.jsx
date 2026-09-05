@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { Captions, ChevronDown, Languages, Pause, Play } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
 
-function TaskAudioScene({ task }) {
+const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 	const audioRef = useRef(null);
 
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -101,6 +101,23 @@ function TaskAudioScene({ task }) {
 			audio.pause();
 		}
 	}
+
+	async function replayAudio() {
+		const audio = audioRef.current;
+		if (!audio) return;
+
+		audio.currentTime = 0;
+		audio.playbackRate = playbackRateRef.current;
+		setShowCharacter(true);
+
+		try {
+			await audio.play();
+		} catch {
+			setIsPlaying(false);
+		}
+	}
+
+	useImperativeHandle(ref, () => ({ replay: replayAudio }));
 
 	function handlePlaybackRateChange(newRate) {
 		setPlaybackRate(newRate);
@@ -287,6 +304,8 @@ function TaskAudioScene({ task }) {
 			</div>
 		</div>
 	);
-}
+});
+
+TaskAudioScene.displayName = "TaskAudioScene";
 
 export default TaskAudioScene;

@@ -97,7 +97,10 @@ export default function DialogueTaskPage() {
 
 		default:
 			return (
-				<div className="p-8 text-white">Loại bài học không được hỗ trợ.</div>
+				<p>
+					<div className="p-8 text-white">Loại bài học không được hỗ trợ.</div>
+					<h1 className="text-amber-50" >shortcut : </h1>
+				</p>
 			);
 	}
 }

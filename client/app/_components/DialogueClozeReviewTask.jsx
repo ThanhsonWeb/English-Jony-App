@@ -1,6 +1,8 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import DialogueShortcutHint from "./DialogueShortcutHint";
+import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 
 function shuffleWords(words) {
 	const shuffled = [...words];
@@ -58,6 +60,11 @@ function DialogueClozeReviewTask({
 	const [wordHints] = useState(() => shuffleWords(expectedAnswers));
 
 	const [result, setResult] = useState(null);
+	const actionRef = useRef(null);
+
+	useDialogueShortcuts({
+		onEnter: () => actionRef.current?.click(),
+	});
 
 	function handleAnswerChange(index, value) {
 		setAnswers((previous) => {
@@ -203,10 +210,12 @@ function DialogueClozeReviewTask({
 					</div>
 				)}
 
+				<DialogueShortcutHint showReplay={false} />
 				{/* Action */}
-				<div className="mt-8 flex justify-end">
+				<div className="mt-4 flex justify-end">
 					{result === "correct" ? (
 						<Link
+							ref={actionRef}
 							href={
 								nextTask
 									? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
@@ -218,6 +227,7 @@ function DialogueClozeReviewTask({
 						</Link>
 					) : (
 						<button
+							ref={actionRef}
 							type="button"
 							onClick={checkAnswers}
 							disabled={!allFilled}

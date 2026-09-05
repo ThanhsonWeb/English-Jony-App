@@ -1,5 +1,8 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { useRef } from "react";
+import DialogueShortcutHint from "./DialogueShortcutHint";
+import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 
 function DialogueReviewTask({
 	task,
@@ -9,6 +12,12 @@ function DialogueReviewTask({
 	completionHref,
 	onComplete,
 }) {
+	const actionRef = useRef(null);
+
+	useDialogueShortcuts({
+		onEnter: () => actionRef.current?.click(),
+	});
+
 	return (
 		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
 			<div className="mx-auto max-w-3xl">
@@ -49,8 +58,10 @@ function DialogueReviewTask({
 					))}
 				</div>
 
-				<div className="mt-8 flex justify-end">
+				<DialogueShortcutHint showReplay={false} />
+				<div className="mt-4 flex justify-end">
 					<Link
+						ref={actionRef}
 						href={
 							nextTask
 								? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
