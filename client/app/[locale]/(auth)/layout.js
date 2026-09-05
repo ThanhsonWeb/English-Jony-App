@@ -1,6 +1,6 @@
 function AuthLayout({ children }) {
 	return (
-		<main className="min-h-screen bg-slate-950 text-white">
+		<main className="min-h-screen bg-page text-main">
 			{children}
 		</main>
 	);

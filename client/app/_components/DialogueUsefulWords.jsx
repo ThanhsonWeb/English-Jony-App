@@ -195,7 +195,7 @@ export default function DialogueUsefulWords({
 						<button
 							type="button"
 							onClick={() => router.push(lessonHref)}
-							className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-3.5 font-semibold transition hover:brightness-110"
+							className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-3.5 font-semibold text-white transition hover:brightness-110"
 						>
 							Tiếp tục <ArrowRight size={18} />
 						</button>
@@ -360,7 +360,7 @@ export default function DialogueUsefulWords({
 							(Boolean(user) && libraryLoading) ||
 							(Boolean(user) && selectedUnsavedWords.length > 0 && !selectedTopicId)
 						}
-						className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-4 font-semibold shadow-lg shadow-blue-600/15 transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-45"
+						className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-4 font-semibold text-white shadow-lg shadow-blue-600/15 transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-45"
 					>
 						{isSaving ? (
 							<>

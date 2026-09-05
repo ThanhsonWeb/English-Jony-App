@@ -11,10 +11,10 @@ function Logo() {
 				quality={75}
 				priority
 				alt="English-Jony logo"
-				className="rounded-xl border border-slate-800 w-10 h-10 sm:w-12 sm:h-12"
+				className="h-10 w-10 rounded-xl border border-app sm:h-12 sm:w-12"
 			/>
-			<span className="text-lg sm:text-xl md:text-2xl  uppercase text-slate-100 tracking-wide">
-				<span className="text-blue-50">StudyJony</span>
+			<span className="hidden text-lg uppercase tracking-wide text-main sm:inline sm:text-xl md:text-2xl">
+				<span>StudyJony</span>
 			</span>
 		</Link>
 	);

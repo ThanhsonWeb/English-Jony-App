@@ -400,7 +400,7 @@ export default function QuizReviewPage() {
 							<button
 								type="submit"
 								disabled={(!result && !selectedChoice) || isSaving}
-								className="mt-6 w-full rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-4 text-lg font-semibold shadow-lg shadow-blue-600/20 transition hover:brightness-110 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40"
+								className="mt-6 w-full rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-4 text-lg font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:brightness-110 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40"
 							>
 								{isSaving ? "Đang lưu..." : result ? "Tiếp tục" : "Kiểm tra"}
 							</button>

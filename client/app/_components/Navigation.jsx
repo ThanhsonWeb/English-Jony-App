@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import AuthButtons from "./AuthButtons";
@@ -24,11 +24,9 @@ const navLinks = [
 function Navigation() {
 	const pathname = usePathname();
 	const activePathname = pathname.replace(/^\/(en|vi)(?=\/|$)/, "") || "/";
-	const [isOpen, setIsOpen] = useState(false);
+	const [openPathname, setOpenPathname] = useState(null);
+	const isOpen = openPathname === pathname;
 	const { user } = useAuth();
-	useEffect(() => {
-		setIsOpen(false);
-	}, [pathname]);
 	return (
 		<nav className="relative">
 			{/* Desktop Navigation */}
@@ -45,8 +43,8 @@ function Navigation() {
 								href={link.href}
 								className={`relative inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-lg font-medium transition-all duration-200 ${
 									isActive
-										? "border-slate-700/70 bg-slate-900/85 text-white shadow-[0_8px_24px_-14px_rgba(59,130,246,0.8)]"
-										: "border-transparent text-slate-300 hover:bg-slate-900/50 hover:text-white"
+										? "border-app bg-surface-muted text-main shadow-[0_8px_24px_-14px_rgba(59,130,246,0.8)]"
+										: "border-transparent text-secondary hover:bg-surface-muted hover:text-main"
 								} after:absolute after:inset-x-3 after:bottom-0 after:h-[2px] after:origin-left after:rounded-full after:bg-blue-400 after:shadow-[0_0_10px_rgba(96,165,250,0.9)] after:transition-transform after:duration-300 after:ease-out ${
 									isActive ? "after:scale-x-100" : "after:scale-x-0"
 								}`}
@@ -61,8 +59,8 @@ function Navigation() {
 
 			{/* Mobile Menu Button */}
 			<button
-				onClick={() => setIsOpen(!isOpen)}
-				className="md:hidden text-slate-300 hover:text-white p-2"
+				onClick={() => setOpenPathname(isOpen ? null : pathname)}
+				className="p-2 text-secondary hover:text-main md:hidden"
 				aria-label="Toggle menu"
 			>
 				{isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
@@ -70,7 +68,7 @@ function Navigation() {
 
 			{/* Mobile Dropdown Menu */}
 			{isOpen && (
-				<div className="fixed inset-x-0 top-[73px] bg-slate-950 border-b border-slate-800 p-6 flex flex-col gap-5 md:hidden z-50 shadow-2xl">
+				<div className="fixed inset-x-0 top-[73px] z-50 flex flex-col gap-5 border-b border-app bg-surface p-6 shadow-2xl md:hidden">
 					{navLinks.map((link) => {
 						const Icon = link.icon;
 						const isActive =
@@ -81,11 +79,11 @@ function Navigation() {
 							<Link
 								key={link.name}
 								href={link.href}
-								onClick={() => setIsOpen(false)}
+								onClick={() => setOpenPathname(null)}
 								className={`inline-flex items-center gap-3 rounded-xl border px-4 py-3 text-lg font-medium transition-all ${
 									isActive
 										? "border-blue-500/20 bg-blue-500/10 font-semibold text-blue-300"
-										: "border-transparent text-slate-300 hover:bg-slate-900 hover:text-white"
+										: "border-transparent text-secondary hover:bg-surface-muted hover:text-main"
 								}`}
 							>
 								<Icon className="w-5 h-5" />
@@ -96,7 +94,7 @@ function Navigation() {
 
 					{/* Auth Buttons inside mobile dropdown 🔑 */}
 					{!user && (
-						<div className="pt-4 border-t border-slate-800 flex flex-col gap-3 sm:hidden">
+						<div className="flex flex-col gap-3 border-t border-app pt-4 sm:hidden">
 							<AuthButtons />
 						</div>
 					)}

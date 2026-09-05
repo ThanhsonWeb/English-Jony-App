@@ -5,7 +5,33 @@ import AuthButtons from "./AuthButtons";
 import { useAuth } from "../_contexts/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { User, Settings, LogOut } from "lucide-react";
+import { User, LogOut } from "lucide-react";
+import ThemeSelector from "./ThemeSelector";
+
+function UserAvatar({ user }) {
+	const [failedPhotoUrl, setFailedPhotoUrl] = useState(null);
+	const photoUrl = typeof user?.photo === "string" ? user.photo.trim() : "";
+	const showPhoto = photoUrl && failedPhotoUrl !== photoUrl;
+	const initial = user?.name?.trim().charAt(0).toUpperCase() || "U";
+
+	if (showPhoto) {
+		return (
+			<img
+				src={photoUrl}
+				alt={user.name || "Ảnh đại diện"}
+				referrerPolicy="no-referrer"
+				onError={() => setFailedPhotoUrl(photoUrl)}
+				className="h-10 w-10 shrink-0 rounded-full border border-app object-cover md:h-12 md:w-12"
+			/>
+		);
+	}
+
+	return (
+		<div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white ring-1 ring-app transition group-hover:ring-primary/40 md:h-12 md:w-12">
+			{initial}
+		</div>
+	);
+}
 
 function Header() {
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -39,25 +65,26 @@ function Header() {
 	}
 
 	return (
-		<header className="relative bg-slate-950/50 border-b border-slate-800/80 px-4 sm:px-8 py-4 backdrop-blur-md  top-0 z-50">
+		<header className="relative top-0 z-50 border-b border-app bg-surface/90 px-4 py-4 backdrop-blur-md sm:px-8">
 			<div className="flex items-center justify-between max-w-8xl mx-auto">
 				<Logo />
 				<div className="hidden md:block">
 					<Navigation />
 				</div>
 
-				<div className="flex items-center gap-4">
+				<div className="flex items-center gap-1 sm:gap-4">
+					<ThemeSelector />
 					{loading ? (
 						// Show a blur blank space
-						<div className="w-24 h-6 bg-slate-800 rounded animate-pulse"></div>
+						<div className="h-6 w-24 animate-pulse rounded bg-surface-muted"></div>
 					) : user ? (
 						<div ref={dropdownRef} className="relative ">
 							<button
 								onClick={() => setIsDropdownOpen((open) => !open)}
-								className="group flex items-center gap-3 rounded-xl px-3 py-2 transition-all duration-200 hover:bg-slate-900 cursor-pointer"
+								className="group flex cursor-pointer items-center gap-3 rounded-xl px-1 py-2 transition-all duration-200 hover:bg-surface-muted sm:px-3"
 							>
 								<div className="text-right hidden sm:block">
-									<p className="text-md font-semibold text-white leading-tight">
+									<p className="text-md font-semibold leading-tight text-main">
 										{user.name}
 									</p>
 									<p className="text-sm font-semibold text-amber-200 leading-tight">
@@ -65,29 +92,19 @@ function Header() {
 									</p>
 								</div>
 
-								{user?.photo ? (
-									<img
-										src={user.photo}
-										alt={user.name}
-										className="md:h-12 md:w-12 h-10 w-10 rounded-full border border-slate-700 object-cover"
-									/>
-								) : (
-									<div className="flex md:h-12 md:w-12 h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-slate-700 to-slate-900 text-sm font-bold text-white ring-1 ring-slate-700 group-hover:ring-slate-500 transition">
-										{user.name?.charAt(0).toUpperCase()}
-									</div>
-								)}
+								<UserAvatar user={user} />
 							</button>
 
 							{/* DropdownList */}
 							{isDropdownOpen && (
-								<div className="absolute right-0 top-full mt-3 w-64 overflow-hidden rounded-2xl border border-slate-800 bg-slate-950 shadow-2xl z-50">
+								<div className="absolute right-0 top-full z-50 mt-3 w-64 overflow-hidden rounded-2xl border border-app bg-surface shadow-2xl">
 									{/* User Info */}
-									<div className="border-b border-slate-800 px-4 py-4">
-										<p className="text-sm font-semibold text-white">
+									<div className="border-b border-app px-4 py-4">
+										<p className="text-sm font-semibold text-main">
 											{user.name}
 										</p>
 
-										<p className="mt-1 truncate text-xs text-slate-500">
+										<p className="mt-1 truncate text-xs text-secondary">
 											{user.email}
 										</p>
 									</div>
@@ -98,14 +115,14 @@ function Header() {
 												setIsDropdownOpen(false);
 												router.push("/profile");
 											}}
-											className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-slate-300 hover:bg-slate-900 hover:text-white"
+											className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-secondary hover:bg-surface-muted hover:text-main"
 										>
 											<User size={18} />
 											Hồ sơ
 										</button>
 									</div>
 									{/* log out */}
-									<div className="border-t border-slate-800 p-2">
+									<div className="border-t border-app p-2">
 										<button
 											onClick={handleLogout}
 											className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-red-400 hover:bg-red-500/10 hover:text-red-300"

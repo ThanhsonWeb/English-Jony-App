@@ -2,16 +2,16 @@ import Link from "next/link";
 
 function AuthButtons() {
 	return (
-		<div className=" flex items-center gap-4">
+		<div className="flex items-center gap-4">
 			<Link
 				href="/login"
-				className="px-4 py-2 text-md font-medium text-slate-200 hover:text-blue-400 transition-colors border "
+				className="text-md border border-app px-4 py-2 font-medium text-main transition-colors hover:border-primary/50 hover:text-primary"
 			>
 				Đăng nhập
 			</Link>
 			<Link
 				href="/signup"
-				className="px-4 py-2 text-md font-medium text-gray-100 bg-blue-700 hover:bg-blue-600 rounded-lg transition-all duration-200 shadow-md shadow-blue-900/20"
+				className="text-md rounded-lg bg-primary px-4 py-2 font-medium text-white shadow-md shadow-blue-900/20 transition-all duration-200 hover:brightness-110"
 			>
 				Đăng ký
 			</Link>

@@ -107,7 +107,7 @@ export default function DialogueLessonPage() {
 	return (
 		<div className="min-h-screen px-4 py-2 text-white sm:px-8">
 				{/* Hero */}
-				<div className="relative mt-4 min-h-[290px] overflow-hidden rounded-sm border border-slate-800 bg-[#07101f] mx-auto max-w-6xl">
+				<div className="relative mx-auto mt-4 min-h-[290px] max-w-6xl overflow-hidden rounded-sm border border-app bg-hero">
 					{/* Hero image */}
 					<div className="absolute inset-y-0 right-0 hidden w-[58%] md:block">
 						<Image
@@ -120,7 +120,7 @@ export default function DialogueLessonPage() {
 						/>
 
 						{/* Fade image into background */}
-						<div className="absolute inset-0 bg-gradient-to-r from-[#07101f] via-[#07101f]/40 to-transparent" />
+						<div className="absolute inset-0 bg-gradient-to-r from-hero via-hero/40 to-transparent" />
 					</div>
 
 					{/* Mobile background decoration */}
