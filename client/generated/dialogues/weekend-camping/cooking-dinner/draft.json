@@ -1,0 +1,327 @@
+{
+"metadata": {
+"courseId": "weekend-camping",
+"dialogueId": "cooking-dinner",
+"title": "Nấu bữa tối",
+"level": "beginner",
+"situation": "Leo and Mia cook dinner beside the campfire.",
+"scene": "/dialogue/weekend-camping/cooking-dinner/bg.png",
+"thumbnail": "/dialogue/weekend-camping/thumbnails/cooking-dinner.png"
+},
+"dialogue": [
+{
+"id": 1,
+"speaker": "Leo",
+"text": "I'm getting hungry. Should we make dinner?",
+"translation": "Mình bắt đầu thấy đói rồi. Chúng ta làm bữa tối nhé?",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-01.mp3"
+},
+{
+"id": 2,
+"speaker": "Mia",
+"text": "Yes. What do we have?",
+"translation": "Ừ. Chúng ta có gì vậy?",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-01.mp3"
+},
+{
+"id": 3,
+"speaker": "Leo",
+"text": "We have noodles, eggs, and some vegetables.",
+"translation": "Chúng ta có mì, trứng và một ít rau.",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-02.mp3"
+},
+{
+"id": 4,
+"speaker": "Mia",
+"text": "Perfect. I'll boil the water.",
+"translation": "Tuyệt. Mình sẽ đun nước.",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-02.mp3"
+},
+{
+"id": 5,
+"speaker": "Leo",
+"text": "Great. I'll cut the vegetables.",
+"translation": "Được đấy. Mình sẽ cắt rau.",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-03.mp3"
+},
+{
+"id": 6,
+"speaker": "Mia",
+"text": "Can you pass me the pot?",
+"translation": "Bạn đưa mình cái nồi được không?",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-03.mp3"
+},
+{
+"id": 7,
+"speaker": "Leo",
+"text": "Sure. Here you go.",
+"translation": "Được chứ. Đây này.",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-04.mp3"
+},
+{
+"id": 8,
+"speaker": "Mia",
+"text": "Thanks. The water is boiling now.",
+"translation": "Cảm ơn. Nước đang sôi rồi.",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-04.mp3"
+},
+{
+"id": 9,
+"speaker": "Leo",
+"text": "Nice. Let's put the noodles in.",
+"translation": "Tốt rồi. Chúng ta cho mì vào nhé.",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-05.mp3"
+},
+{
+"id": 10,
+"speaker": "Mia",
+"text": "How long should we cook them?",
+"translation": "Chúng ta nên nấu chúng trong bao lâu?",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-05.mp3"
+},
+{
+"id": 11,
+"speaker": "Leo",
+"text": "About five minutes.",
+"translation": "Khoảng năm phút.",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-06.mp3"
+},
+{
+"id": 12,
+"speaker": "Mia",
+"text": "Okay. Dinner will be ready soon.",
+"translation": "Được rồi. Bữa tối sắp xong rồi.",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-06.mp3"
+}
+],
+"usefulWords": [
+{
+"word": "hungry",
+"meaning": "đói",
+"example": "I'm getting hungry."
+},
+{
+"word": "make dinner",
+"meaning": "làm bữa tối",
+"example": "Should we make dinner?"
+},
+{
+"word": "noodles",
+"meaning": "mì",
+"example": "We have noodles."
+},
+{
+"word": "Here you go.",
+"meaning": "Đây / Của bạn đây.",
+"example": "Sure. Here you go."
+},
+{
+"word": "vegetables",
+"meaning": "rau củ",
+"example": "I'll cut the vegetables."
+},
+{
+"word": "boil",
+"meaning": "đun sôi",
+"example": "I'll boil the water."
+},
+{
+"word": "pass me",
+"meaning": "đưa cho mình",
+"example": "Can you pass me the pot?"
+},
+{
+"word": "pot",
+"meaning": "cái nồi",
+"example": "Can you pass me the pot?"
+},
+{
+"word": "boiling",
+"meaning": "đang sôi",
+"example": "The water is boiling now."
+},
+{
+"word": "be ready",
+"meaning": "sẵn sàng / xong",
+"example": "Dinner will be ready soon."
+}
+],
+"tasks": [
+{
+"id": 1,
+"type": "fillBlank",
+"question": "I'm getting ___.",
+"answer": "hungry",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-01.mp3"
+},
+{
+"id": 2,
+"type": "fillBlank",
+"question": "Should we make ___?",
+"answer": "dinner",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-01.mp3"
+},
+{
+"id": 3,
+"type": "multipleChoice",
+"question": "Leo đề nghị làm gì?",
+"options": [
+"Làm bữa tối",
+"Đi ngủ",
+"Nhóm thêm lửa",
+"Rời khu cắm trại"
+],
+"answer": "Làm bữa tối",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-01.mp3"
+},
+{
+"id": 4,
+"type": "fillBlank",
+"question": "What do we ___?",
+"answer": "have",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-01.mp3"
+},
+{
+"id": 5,
+"type": "fillBlank",
+"question": "We have noodles, eggs, and some ___.",
+"answer": "vegetables",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-02.mp3"
+},
+{
+"id": 6,
+"type": "multipleChoice",
+"question": "Leo nói họ có những nguyên liệu nào?",
+"options": [
+"Mì, trứng và rau",
+"Cơm, thịt và rau",
+"Bánh mì và sữa",
+"Cá và khoai tây"
+],
+"answer": "Mì, trứng và rau",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-02.mp3"
+},
+{
+"id": 7,
+"type": "fillBlank",
+"question": "I'll ___ the water.",
+"answer": "boil",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-02.mp3"
+},
+{
+"id": 8,
+"type": "fillBlank",
+"question": "I'll cut the ___.",
+"answer": "vegetables",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-03.mp3"
+},
+{
+"id": 9,
+"type": "fillBlank",
+"question": "Can you pass me the ___?",
+"answer": "pot",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-03.mp3"
+},
+{
+"id": 10,
+"type": "multipleChoice",
+"question": "Mia muốn Leo đưa cho cô ấy thứ gì?",
+"options": [
+"Cái nồi",
+"Cái ghế",
+"Một quả trứng",
+"Một khúc củi"
+],
+"answer": "Cái nồi",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-03.mp3"
+},
+{
+"id": 11,
+"type": "fillBlank",
+"question": "Here you ___.",
+"answer": "go",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-04.mp3"
+},
+{
+"id": 12,
+"type": "fillBlank",
+"question": "The water is ___ now.",
+"answer": "boiling",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-04.mp3"
+},
+{
+"id": 13,
+"type": "multipleChoice",
+"question": "Điều gì cho thấy họ có thể cho mì vào nồi?",
+"options": [
+"Nước đang sôi",
+"Trời đang lạnh",
+"Lửa đã tắt",
+"Họ đã ăn xong"
+],
+"answer": "Nước đang sôi",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-04.mp3"
+},
+{
+"id": 14,
+"type": "fillBlank",
+"question": "Let's ___ the noodles in.",
+"answer": "put",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-05.mp3"
+},
+{
+"id": 15,
+"type": "fillBlank",
+"question": "How ___ should we cook them?",
+"answer": "long",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-05.mp3"
+},
+{
+"id": 16,
+"type": "multipleChoice",
+"question": "Leo nói họ nên nấu mì trong bao lâu?",
+"options": [
+"Khoảng hai phút",
+"Khoảng năm phút",
+"Khoảng mười phút",
+"Khoảng hai mươi phút"
+],
+"answer": "Khoảng năm phút",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-06.mp3"
+},
+{
+"id": 17,
+"type": "fillBlank",
+"question": "Dinner will be ready ___.",
+"answer": "soon",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-06.mp3"
+}
+],
+"grammarNotes": [
+{
+"title": "get + adjective",
+"explanation": "Dùng get + tính từ để nói một trạng thái đang thay đổi.",
+"example": "I'm getting hungry. = Mình bắt đầu thấy đói."
+},
+{
+"title": "Should we + verb...?",
+"explanation": "Dùng Should we + động từ để đề nghị cùng nhau làm một việc.",
+"example": "Should we make dinner? = Chúng ta làm bữa tối nhé?"
+},
+{
+"title": "I'll + verb",
+"explanation": "Dùng I'll + động từ để nói điều mình quyết định sẽ làm.",
+"example": "I'll boil the water. = Mình sẽ đun nước."
+},
+{
+"title": "Can you + verb...?",
+"explanation": "Dùng Can you + động từ để nhờ ai đó làm một việc.",
+"example": "Can you pass me the pot? = Bạn đưa mình cái nồi được không?"
+},
+{
+"title": "How long...?",
+"explanation": "Dùng How long để hỏi một việc kéo dài trong bao lâu.",
+"example": "How long should we cook them? = Chúng ta nên nấu chúng trong bao lâu?"
+}
+]
+}

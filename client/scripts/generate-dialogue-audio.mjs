@@ -21,17 +21,37 @@ function parseArguments(args) {
 		fail(`Unknown option: ${unknownFlags[0]}`);
 	}
 
-	if (values.length !== 2) {
+	if (values.length !== 1 && values.length !== 2) {
 		fail(
-			"Usage: npm run generate:dialogue-audio -- <lesson-id> <dialogue-id> [--dry-run] [--force]",
+			"Usage: node scripts/generate-dialogue-audio.mjs <draft.json> [--dry-run] [--force]\n   or: npm run generate:dialogue-audio -- <lesson-id> <dialogue-id> [--dry-run] [--force]",
 		);
 	}
 
 	return {
-		lessonId: values[0],
-		dialogueId: values[1],
+		jsonPath: values.length === 1 ? values[0] : null,
+		lessonId: values.length === 2 ? values[0] : null,
+		dialogueId: values.length === 2 ? values[1] : null,
 		dryRun: flags.has("--dry-run") || process.env.npm_config_dry_run === "true",
 		force: flags.has("--force") || process.env.npm_config_force === "true",
+	};
+}
+
+async function loadDraft(jsonPath) {
+	let data;
+
+	try {
+		data = JSON.parse(await readFile(jsonPath, "utf8"));
+	} catch (error) {
+		fail(`Could not read dialogue JSON: ${error.message}`);
+	}
+
+	if (!data?.metadata?.courseId) fail("Missing metadata.courseId");
+	if (!data?.metadata?.dialogueId) fail("Missing metadata.dialogueId");
+
+	return {
+		lessonId: data.metadata.courseId,
+		dialogueId: data.metadata.dialogueId,
+		dialogue: data,
 	};
 }
 
@@ -106,13 +126,26 @@ function buildPlan(lessonId, dialogueId, dialogue) {
 			);
 		}
 
+		const publicRoot = path.resolve("public");
+		const outputPath = path.resolve(
+			publicRoot,
+			line.audioUrl.replace(/^[/\\]+/, ""),
+		);
+		const relativeOutputPath = path.relative(publicRoot, outputPath);
+		if (
+			relativeOutputPath.startsWith("..") ||
+			path.isAbsolute(relativeOutputPath)
+		) {
+			fail(`Invalid audioUrl on dialogue line ${index + 1}: ${line.audioUrl}`);
+		}
+
 		return {
 			speaker,
 			text: line.text.trim(),
 			voiceId: getVoiceId(speaker),
 			filename,
 			publicUrl,
-			outputPath: path.resolve("public", "dialogue", lessonId, dialogueId, "audio", filename),
+			outputPath,
 		};
 	}).filter(Boolean);
 }
@@ -174,18 +207,35 @@ async function generateAudio(item, apiKey) {
 
 async function main() {
 	const options = parseArguments(process.argv.slice(2));
-	const lessonData = await loadLessonData();
-	const lesson = lessonData[options.lessonId];
+	let lessonId = options.lessonId;
+	let dialogueId = options.dialogueId;
+	let dialogue;
 
-	if (!lesson) fail(`Lesson not found: "${options.lessonId}"`);
+	if (options.jsonPath) {
+		({ lessonId, dialogueId, dialogue } = await loadDraft(options.jsonPath));
+	} else {
+		const lessonData = await loadLessonData();
+		const lesson = lessonData[lessonId];
 
-	const dialogue = lesson.dialogues?.find((item) => item.id === options.dialogueId);
-	if (!dialogue) fail(`Dialogue not found: "${options.dialogueId}"`);
+		if (!lesson) fail(`Lesson not found: "${lessonId}"`);
 
-	const plan = buildPlan(options.lessonId, options.dialogueId, dialogue);
-	if (plan.length === 0) {
-		fail(`No supported dialogue lines found for "${options.dialogueId}"`);
+		dialogue = lesson.dialogues?.find((item) => item.id === dialogueId);
+		if (!dialogue) fail(`Dialogue not found: "${dialogueId}"`);
 	}
+
+	const plan = buildPlan(lessonId, dialogueId, dialogue);
+	if (plan.length === 0) {
+		fail(`No supported dialogue lines found for "${dialogueId}"`);
+	}
+
+	if (!options.dryRun && !process.env.ELEVENLABS_API_KEY) {
+		try {
+			process.loadEnvFile(".env.local");
+		} catch (error) {
+			if (error.code !== "ENOENT") throw error;
+		}
+	}
+
 	const apiKey = process.env.ELEVENLABS_API_KEY;
 	if (!options.dryRun && !apiKey) fail("Missing ELEVENLABS_API_KEY");
 
@@ -194,10 +244,12 @@ async function main() {
 
 	let generated = 0;
 	let skipped = 0;
+	let failed = 0;
 
 	console.log(
-		`${options.dryRun ? "Dry run" : "Generating"}: ${options.lessonId}/${options.dialogueId} (${plan.length} dialogue lines)`,
+		`${options.dryRun ? "Dry run" : "Generating"}: ${lessonId}/${dialogueId} (${plan.length} dialogue lines)`,
 	);
+	console.log(`Destination: ${outputDirectory}`);
 
 	for (const item of plan) {
 		const exists = await fileExists(item.outputPath);
@@ -213,14 +265,24 @@ async function main() {
 		}
 
 		console.log(`${exists ? "REPLACE" : "CREATE  "} ${item.publicUrl}`);
-		await generateAudio(item, apiKey);
-		generated += 1;
+
+		try {
+			await generateAudio(item, apiKey);
+			generated += 1;
+		} catch (error) {
+			failed += 1;
+			console.error(`FAILED   ${item.publicUrl}\n${error.message}`);
+		}
 	}
 
 	if (options.dryRun) {
-		console.log(`Dry run complete: ${plan.length} valid audio paths.`);
+		console.log(`Dry run complete: ${plan.length} valid audio paths, 0 failed.`);
 	} else {
-		console.log(`Complete: ${generated} generated, ${skipped} skipped.`);
+		console.log(
+			`Complete: ${generated} generated, ${skipped} skipped, ${failed} failed.`,
+		);
+
+		if (failed > 0) process.exitCode = 1;
 	}
 }
 

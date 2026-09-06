@@ -1,0 +1,333 @@
+{
+  "metadata": {
+    "courseId": "weekend-camping",
+    "dialogueId": "talking-by-the-campfire",
+    "title": "Trò chuyện bên lửa trại",
+    "level": "beginner",
+    "situation": "Leo and Mia relax beside the campfire after dinner and talk about their day and plans for tomorrow.",
+    "scene": "/dialogue/weekend-camping/talking-by-the-campfire/bg.png",
+    "thumbnail": "/dialogue/weekend-camping/thumbnails/talking-by-the-campfire.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Leo",
+      "text": "That was a nice dinner. I'm full now.",
+      "translation": "Bữa tối ngon thật. Giờ mình no rồi.",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Mia",
+      "text": "Me too. It's nice to sit by the fire.",
+      "translation": "Mình cũng vậy. Ngồi bên đống lửa thật dễ chịu.",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Leo",
+      "text": "What was your favorite part of the day?",
+      "translation": "Phần bạn thích nhất trong ngày hôm nay là gì?",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Mia",
+      "text": "I liked the hike. The view was beautiful.",
+      "translation": "Mình thích chuyến đi bộ. Cảnh rất đẹp.",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Leo",
+      "text": "Yeah. I liked setting up the tent.",
+      "translation": "Ừ. Mình thích lúc dựng lều.",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Mia",
+      "text": "You did a good job. Are you tired?",
+      "translation": "Bạn làm tốt lắm. Bạn có mệt không?",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Leo",
+      "text": "A little, but I'm happy we came here.",
+      "translation": "Hơi mệt, nhưng mình vui vì chúng ta đã đến đây.",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Mia",
+      "text": "Me too. What should we do tomorrow?",
+      "translation": "Mình cũng vậy. Ngày mai chúng ta nên làm gì?",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Leo",
+      "text": "Maybe we can walk to the lake.",
+      "translation": "Có lẽ chúng ta có thể đi bộ đến hồ.",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Mia",
+      "text": "That sounds good. We can have breakfast first.",
+      "translation": "Nghe hay đấy. Chúng ta có thể ăn sáng trước.",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Leo",
+      "text": "Great. Let's wake up early.",
+      "translation": "Tuyệt. Chúng ta hãy dậy sớm nhé.",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Mia",
+      "text": "Okay. Let's sit by the fire for a while.",
+      "translation": "Được. Chúng ta ngồi bên đống lửa thêm một lúc nhé.",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "full",
+      "meaning": "no bụng",
+      "example": "I'm full now."
+    },
+    {
+      "word": "sit by the fire",
+      "meaning": "ngồi bên đống lửa",
+      "example": "It's nice to sit by the fire."
+    },
+    {
+      "word": "favorite part",
+      "meaning": "phần thích nhất",
+      "example": "What was your favorite part of the day?"
+    },
+    {
+      "word": "hike",
+      "meaning": "chuyến đi bộ đường dài",
+      "example": "I liked the hike."
+    },
+    {
+      "word": "view",
+      "meaning": "khung cảnh",
+      "example": "The view was beautiful."
+    },
+    {
+      "word": "set up the tent",
+      "meaning": "dựng lều",
+      "example": "I liked setting up the tent."
+    },
+    {
+      "word": "tired",
+      "meaning": "mệt",
+      "example": "Are you tired?"
+    },
+    {
+      "word": "have breakfast",
+      "meaning": "ăn sáng",
+      "example": "We can have breakfast first."
+    },
+    {
+      "word": "wake up early",
+      "meaning": "dậy sớm",
+      "example": "Let's wake up early."
+    },
+    {
+      "word": "for a while",
+      "meaning": "trong một lúc",
+      "example": "Let's sit by the fire for a while."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "type": "fillBlank",
+      "question": "I'm ___ now.",
+      "answer": "full",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-01.mp3"
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "Leo cảm thấy thế nào sau bữa tối?",
+      "options": [
+        "No rồi",
+        "Đói",
+        "Lạnh",
+        "Buồn ngủ"
+      ],
+      "answer": "No rồi",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-01.mp3"
+    },
+    {
+      "id": 3,
+      "type": "fillBlank",
+      "question": "It's nice to sit by the ___.",
+      "answer": "fire",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-01.mp3"
+    },
+    {
+      "id": 4,
+      "type": "fillBlank",
+      "question": "What was your favorite ___ of the day?",
+      "answer": "part",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-02.mp3"
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "Mia thích hoạt động nào nhất?",
+      "options": [
+        "Đi bộ đường dài",
+        "Nấu bữa tối",
+        "Ngủ trong lều",
+        "Câu cá"
+      ],
+      "answer": "Đi bộ đường dài",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-02.mp3"
+    },
+    {
+      "id": 6,
+      "type": "fillBlank",
+      "question": "The ___ was beautiful.",
+      "answer": "view",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-02.mp3"
+    },
+    {
+      "id": 7,
+      "type": "fillBlank",
+      "question": "I liked setting up the ___.",
+      "answer": "tent",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-03.mp3"
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "Leo thích làm gì trong ngày hôm nay?",
+      "options": [
+        "Dựng lều",
+        "Đi bơi",
+        "Nấu mì",
+        "Đọc sách"
+      ],
+      "answer": "Dựng lều",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-03.mp3"
+    },
+    {
+      "id": 9,
+      "type": "fillBlank",
+      "question": "Are you ___?",
+      "answer": "tired",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-03.mp3"
+    },
+    {
+      "id": 10,
+      "type": "fillBlank",
+      "question": "I'm happy we came ___.",
+      "answer": "here",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-04.mp3"
+    },
+    {
+      "id": 11,
+      "type": "multipleChoice",
+      "question": "Mia hỏi Leo điều gì về ngày mai?",
+      "options": [
+        "Ngày mai họ nên làm gì",
+        "Họ nên ăn gì tối nay",
+        "Họ nên ngủ ở đâu",
+        "Họ nên về nhà lúc nào"
+      ],
+      "answer": "Ngày mai họ nên làm gì",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-04.mp3"
+    },
+    {
+      "id": 12,
+      "type": "fillBlank",
+      "question": "What should we do ___?",
+      "answer": "tomorrow",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-04.mp3"
+    },
+    {
+      "id": 13,
+      "type": "fillBlank",
+      "question": "Maybe we can walk to the ___.",
+      "answer": "lake",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-05.mp3"
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "Leo đề nghị đi đâu vào ngày mai?",
+      "options": [
+        "Đến hồ",
+        "Đến thị trấn",
+        "Về nhà",
+        "Đến nhà hàng"
+      ],
+      "answer": "Đến hồ",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-05.mp3"
+    },
+    {
+      "id": 15,
+      "type": "fillBlank",
+      "question": "We can have ___ first.",
+      "answer": "breakfast",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-05.mp3"
+    },
+    {
+      "id": 16,
+      "type": "fillBlank",
+      "question": "Let's wake up ___.",
+      "answer": "early",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-06.mp3"
+    },
+    {
+      "id": 17,
+      "type": "multipleChoice",
+      "question": "Leo và Mia làm gì vào cuối cuộc trò chuyện?",
+      "options": [
+        "Ngồi bên đống lửa thêm một lúc",
+        "Đi ngủ ngay",
+        "Đi đến hồ",
+        "Nấu thêm đồ ăn"
+      ],
+      "answer": "Ngồi bên đống lửa thêm một lúc",
+      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-06.mp3"
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "What was your favorite...?",
+      "explanation": "Dùng mẫu này để hỏi điều ai đó thích nhất trong một trải nghiệm đã xảy ra.",
+      "example": "What was your favorite part of the day? = Phần bạn thích nhất trong ngày hôm nay là gì?"
+    },
+    {
+      "title": "like/liked + V-ing",
+      "explanation": "Dùng like + V-ing để nói về việc mình thích làm. Dùng liked khi nói về một trải nghiệm trong quá khứ.",
+      "example": "I liked setting up the tent. = Mình thích lúc dựng lều."
+    },
+    {
+      "title": "What should we + verb...?",
+      "explanation": "Dùng mẫu này để hỏi ý kiến về việc chúng ta nên làm gì.",
+      "example": "What should we do tomorrow? = Ngày mai chúng ta nên làm gì?"
+    },
+    {
+      "title": "Maybe we can + verb",
+      "explanation": "Dùng Maybe we can + động từ để đưa ra một gợi ý nhẹ nhàng.",
+      "example": "Maybe we can walk to the lake. = Có lẽ chúng ta có thể đi bộ đến hồ."
+    },
+    {
+      "title": "Let's + verb",
+      "explanation": "Dùng Let's + động từ để đề nghị cùng nhau làm một việc.",
+      "example": "Let's wake up early. = Chúng ta hãy dậy sớm nhé."
+    }
+  ]
+}

@@ -1,3 +1,6 @@
+import cookingDinnerDraft from "./dialogues/weekend-camping/cooking-dinner.json";
+import talkingByTheCampfireDraft from "./dialogues/weekend-camping/talking-by-the-campfire.json";
+
 const officeCharacterImages = {
 	Maria: "/dialogue/office-introduction/shared/maria.png",
 	Tom: "/dialogue/office-introduction/shared/tom.png",
@@ -47,6 +50,69 @@ const startingCampfireTaskMedia = (speaker, audioIndex) => ({
 		audioIndex,
 	).padStart(2, "0")}.mp3`,
 });
+
+function normalizeGrammarSentence(value = "") {
+	return value
+		.trim()
+		.toLocaleLowerCase("en")
+		.replace(/[’‘]/g, "'")
+		.replace(/\s+/g, " ");
+}
+
+function findGrammarNoteForTask(draft, task) {
+	if (task.type !== "fillBlank" || !task.question) return undefined;
+
+	let answerIndex = 0;
+	const answers = Array.isArray(task.answers) ? task.answers : [task.answer];
+	const completedQuestion = task.question.replace(
+		/___/g,
+		() => answers[answerIndex++] || "",
+	);
+	const normalizedQuestion = normalizeGrammarSentence(completedQuestion);
+
+	return draft.grammarNotes?.find((note) => {
+		const englishExample = note.example?.split("=")[0] || "";
+		return normalizeGrammarSentence(englishExample) === normalizedQuestion;
+	});
+}
+
+function buildGeneratedDialogueTasks(draft, characterImages) {
+	return draft.tasks.map((task) => {
+		const dialogueLine = draft.dialogue.find(
+			(line) => line.audioUrl === task.audioUrl,
+		);
+		const sharedFields = {
+			...task,
+			id: String(task.id),
+			title:
+				task.type === "multipleChoice"
+					? "Hiểu tình huống"
+					: "Điền từ còn thiếu",
+			instruction:
+				task.type === "multipleChoice"
+					? "Nghe và chọn đáp án đúng."
+					: "Nghe và điền từ còn thiếu.",
+			scene: draft.metadata.scene,
+			character: dialogueLine
+				? {
+						name: dialogueLine.speaker,
+						image: characterImages[dialogueLine.speaker],
+					}
+				: undefined,
+			transcript: dialogueLine?.text,
+			grammar: findGrammarNoteForTask(draft, task),
+		};
+
+		if (task.type !== "fillBlank") return sharedFields;
+
+		const [sentenceBefore = "", sentenceAfter = ""] = task.question.split("___");
+		return {
+			...sharedFields,
+			sentenceBefore,
+			sentenceAfter,
+		};
+	});
+}
 
 export const lessonData = {
 	"office-introduction": {
@@ -4186,6 +4252,7 @@ export const lessonData = {
 					},
 				],
 			},
+			//starting-a-campfire
 			{
 				id: "starting-a-campfire",
 				thumbnail:
@@ -4608,6 +4675,34 @@ export const lessonData = {
 						answer: "working",
 					},
 				],
+			},
+			//cooking dinner
+			{
+				...cookingDinnerDraft,
+				id: cookingDinnerDraft.metadata.dialogueId,
+				thumbnail: cookingDinnerDraft.metadata.thumbnail,
+				title: cookingDinnerDraft.metadata.title,
+				description: cookingDinnerDraft.metadata.situation,
+				scene: cookingDinnerDraft.metadata.scene,
+				characters: weekendCampingCharacterImages,
+				tasks: buildGeneratedDialogueTasks(
+					cookingDinnerDraft,
+					weekendCampingCharacterImages,
+				),
+			},
+			// talking by the campfire
+			{
+				...talkingByTheCampfireDraft,
+				id: talkingByTheCampfireDraft.metadata.dialogueId,
+				thumbnail: talkingByTheCampfireDraft.metadata.thumbnail,
+				title: talkingByTheCampfireDraft.metadata.title,
+				description: talkingByTheCampfireDraft.metadata.situation,
+				scene: talkingByTheCampfireDraft.metadata.scene,
+				characters: weekendCampingCharacterImages,
+				tasks: buildGeneratedDialogueTasks(
+					talkingByTheCampfireDraft,
+					weekendCampingCharacterImages,
+				),
 			},
 		],
 	},

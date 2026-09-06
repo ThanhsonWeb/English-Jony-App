@@ -1,27 +1,28 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
-    "generate:dialogue-audio": "node --env-file=.env.local scripts/generate-dialogue-audio.mjs"
-  },
-  "dependencies": {
-    "@vercel/analytics": "^2.0.1",
-    "lucide-react": "^1.28.0",
-    "next": "16.2.12",
-    "next-auth": "^4.24.15",
-    "next-intl": "^4.13.7",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.12",
-    "tailwindcss": "^4"
-  }
+	"name": "client",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "eslint",
+		"generate:dialogue-audio": "node --env-file=.env.local scripts/generate-dialogue-audio.mjs",
+		"create:dialogue": "node scripts/create-dialogue.mjs"
+	},
+	"dependencies": {
+		"@vercel/analytics": "^2.0.1",
+		"lucide-react": "^1.28.0",
+		"next": "16.2.12",
+		"next-auth": "^4.24.15",
+		"next-intl": "^4.13.7",
+		"react": "19.2.4",
+		"react-dom": "19.2.4"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "^4",
+		"eslint": "^9",
+		"eslint-config-next": "16.2.12",
+		"tailwindcss": "^4"
+	}
 }
