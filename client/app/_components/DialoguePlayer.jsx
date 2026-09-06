@@ -50,8 +50,8 @@ export default function DialoguePlayer({
 		if (characterCount === 1) return "left-1/2 -translate-x-1/2";
 		if (characterCount === 2) {
 			return characterIndex === 0
-				? "left-[10%] sm:left-[16%]"
-				: "right-[10%] sm:right-[16%]";
+				? "left-0 sm:left-[16%]"
+				: "right-0 sm:right-[16%]";
 		}
 
 		if (characterIndex === 0) return "left-[2%] sm:left-[4%]";
@@ -302,8 +302,8 @@ export default function DialoguePlayer({
 										? "h-[300px] scale-105 brightness-110 sm:h-[360px]"
 										: "h-[280px] scale-100 brightness-75 sm:h-[340px]"
 									: isActive
-										? "h-[350px] scale-105 brightness-110 sm:h-[420px]"
-										: "h-[330px] scale-100 brightness-75 sm:h-[395px]";
+										? "h-[64vw] max-h-[275px] scale-100 brightness-110 sm:h-[420px] sm:max-h-none sm:scale-105"
+										: "h-[62vw] max-h-[265px] scale-100 brightness-75 sm:h-[395px] sm:max-h-none";
 
 							return (
 								<Image
