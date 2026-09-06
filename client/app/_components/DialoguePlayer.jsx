@@ -302,8 +302,8 @@ export default function DialoguePlayer({
 										? "h-[300px] scale-105 brightness-110 sm:h-[360px]"
 										: "h-[280px] scale-100 brightness-75 sm:h-[340px]"
 									: isActive
-										? "h-[64vw] max-h-[275px] scale-100 brightness-110 sm:h-[420px] sm:max-h-none sm:scale-105"
-										: "h-[62vw] max-h-[265px] scale-100 brightness-75 sm:h-[395px] sm:max-h-none";
+										? "h-[68vw] max-h-[290px] scale-100 brightness-110 sm:h-[420px] sm:max-h-none sm:scale-105"
+										: "h-[66vw] max-h-[280px] scale-100 brightness-75 sm:h-[395px] sm:max-h-none";
 
 							return (
 								<Image
