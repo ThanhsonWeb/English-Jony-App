@@ -2,12 +2,30 @@
 
 import { useEffect, useRef } from "react";
 
-function useDialogueShortcuts({ onEnter, onReplay, disabled = false }) {
-	const handlersRef = useRef({ onEnter, onReplay, disabled });
+function useDialogueShortcuts({
+	onEnter,
+	onReplay,
+	onNumber,
+	numberShortcutsDisabled = false,
+	disabled = false,
+}) {
+	const handlersRef = useRef({
+		onEnter,
+		onReplay,
+		onNumber,
+		numberShortcutsDisabled,
+		disabled,
+	});
 
 	useEffect(() => {
-		handlersRef.current = { onEnter, onReplay, disabled };
-	}, [onEnter, onReplay, disabled]);
+		handlersRef.current = {
+			onEnter,
+			onReplay,
+			onNumber,
+			numberShortcutsDisabled,
+			disabled,
+		};
+	}, [onEnter, onReplay, onNumber, numberShortcutsDisabled, disabled]);
 
 	useEffect(() => {
 		let controlPressed = false;
@@ -15,6 +33,30 @@ function useDialogueShortcuts({ onEnter, onReplay, disabled = false }) {
 
 		function handleKeyDown(event) {
 			if (event.repeat || handlersRef.current.disabled) return;
+
+			const isTyping =
+				event.target instanceof Element &&
+				event.target.matches("input, textarea, [contenteditable='true']");
+			const isModalOpen = Boolean(
+				document.querySelector('[aria-modal="true"]'),
+			);
+			const isPlainNumber =
+				/^[1-4]$/.test(event.key) &&
+				!event.ctrlKey &&
+				!event.altKey &&
+				!event.metaKey &&
+				!event.shiftKey;
+
+			if (
+				isPlainNumber &&
+				handlersRef.current.onNumber &&
+				!handlersRef.current.numberShortcutsDisabled &&
+				!isTyping &&
+				!isModalOpen
+			) {
+				event.preventDefault();
+				handlersRef.current.onNumber(Number(event.key) - 1);
+			}
 
 			const isPlainEnter =
 				event.key === "Enter" &&

@@ -2,6 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
+import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
 import GrammarNote from "./GrammarNote";
 import TaskAudioScene from "./TaskAudioScene";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
@@ -58,6 +59,7 @@ function ArrangeWordsTask({
 	task,
 	lessonId,
 	dialogueId,
+	previousTask,
 	nextTask,
 	completionHref,
 	onComplete,
@@ -121,9 +123,6 @@ function ArrangeWordsTask({
 					Quay lại
 				</Link> */}
 
-				<p className="mt-8 text-sm text-slate-500">
-					Bài {task.id}/{totalTasks}
-				</p>
 				<h1 className="mt-2 text-2xl font-bold">{task.title} 🧩</h1>
 
 				<div
@@ -136,7 +135,14 @@ function ArrangeWordsTask({
 					)}
 
 					<div>
-						<p className="text-sm font-semibold text-violet-400">Câu hỏi</p>
+						<DialogueTaskNavigation
+							lessonId={lessonId}
+							dialogueId={dialogueId}
+							taskId={task.id}
+							previousTask={previousTask}
+							nextTask={nextTask}
+							totalTasks={totalTasks}
+						/>
 						<p className="mt-2 text-slate-400">
 							{task.instruction || "Chọn các từ theo đúng thứ tự."}
 						</p>

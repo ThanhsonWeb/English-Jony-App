@@ -55,7 +55,7 @@ Scene:
 "/dialogue/weekend-camping/talking-by-the-campfire/bg.png"
 
 Thumbnail:
-"/dialogue/weekend-camping/thumbnails/talking-by-the-campfire.png"
+"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail5.png"
 
 Audio format:
 "/dialogue/weekend-camping/talking-by-the-campfire/audio/{speaker}-{number}.mp3"

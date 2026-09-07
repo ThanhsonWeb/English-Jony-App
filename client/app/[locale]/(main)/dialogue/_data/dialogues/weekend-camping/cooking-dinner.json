@@ -6,7 +6,7 @@
 "level": "beginner",
 "situation": "Leo and Mia cook dinner beside the campfire.",
 "scene": "/dialogue/weekend-camping/cooking-dinner/bg.png",
-"thumbnail": "/dialogue/weekend-camping/thumbnails/setting-up-the-tent.png"
+"thumbnail": "/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail4.png"
 },
 "dialogue": [
 {
@@ -294,6 +294,62 @@
 "type": "fillBlank",
 "question": "Dinner will be ready ___.",
 "answer": "soon",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-06.mp3"
+},
+{
+"id": 18,
+"type": "fillBlank",
+"question": "We have ___, eggs, and some vegetables.",
+"answer": "noodles",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-02.mp3"
+},
+{
+"id": 19,
+"type": "fillBlank",
+"question": "___. I'll boil the water.",
+"answer": "Perfect",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-02.mp3"
+},
+{
+"id": 20,
+"type": "fillBlank",
+"question": "Can you ___ me the pot?",
+"answer": "pass",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-03.mp3"
+},
+{
+"id": 21,
+"type": "fillBlank",
+"question": "___. The water is boiling now.",
+"answer": "Thanks",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-04.mp3"
+},
+{
+"id": 22,
+"type": "fillBlank",
+"question": "Let's put the ___ in.",
+"answer": "noodles",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-05.mp3"
+},
+{
+"id": 23,
+"type": "fillBlank",
+"question": "How long should we ___ them?",
+"answer": "cook",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-05.mp3"
+},
+{
+"id": 24,
+"type": "fillBlank",
+"question": "About ___ minutes.",
+"answer": "five",
+"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-06.mp3"
+},
+{
+"id": 25,
+"type": "fillBlank",
+"question": "Dinner will be ___ soon.",
+"answer": "ready",
 "audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-06.mp3"
 }
 ],

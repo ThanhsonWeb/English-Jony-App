@@ -145,7 +145,7 @@ export default function DialogueUsefulWords({
 						headers: { "Content-Type": "application/json" },
 						body: JSON.stringify({
 							english: item.word,
-							vietnamese: item.translation,
+							vietnamese: item.translation || item.meaning,
 							pronunciation: item.pronunciation || "",
 							example: item.example || "",
 							topic: selectedTopicId,
@@ -325,7 +325,7 @@ export default function DialogueUsefulWords({
 										)}
 									</span>
 									<span className="mt-1 block text-sm font-medium text-slate-300">
-										{item.translation}
+										{item.translation || item.meaning}
 									</span>
 									{item.example && (
 										<span className="mt-2 block text-sm italic leading-6 text-slate-500">

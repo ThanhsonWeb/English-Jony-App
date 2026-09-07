@@ -1,15 +1,17 @@
-import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
+import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 
 function DialogueReviewTask({
 	task,
 	lessonId,
 	dialogueId,
+	previousTask,
 	nextTask,
 	completionHref,
+	totalTasks,
 	onComplete,
 }) {
 	const actionRef = useRef(null);
@@ -21,18 +23,16 @@ function DialogueReviewTask({
 	return (
 		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
 			<div className="mx-auto max-w-3xl">
-				<Link
-					href={`/dialogue/${lessonId}`}
-					className="inline-flex items-center gap-2 text-slate-400 hover:text-white"
-				>
-					<ArrowLeft size={18} />
-					Quay lại
-				</Link>
-
-				<p className="mt-8 text-sm text-slate-500">Bài {task.id}</p>
-
 				<h1 className="mt-2 text-2xl font-bold">{task.title} 📖</h1>
 
+				<DialogueTaskNavigation
+					lessonId={lessonId}
+					dialogueId={dialogueId}
+					taskId={task.id}
+					previousTask={previousTask}
+					nextTask={nextTask}
+					totalTasks={totalTasks}
+				/>
 				<p className="mt-2 text-slate-400">
 					Đọc lại toàn bộ đoạn hội thoại trước khi tiếp tục.
 				</p>

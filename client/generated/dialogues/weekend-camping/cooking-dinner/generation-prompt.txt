@@ -55,7 +55,7 @@ Scene:
 "/dialogue/weekend-camping/cooking-dinner/bg.png"
 
 Thumbnail:
-"/dialogue/weekend-camping/thumbnails/cooking-dinner.png"
+"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail4.png"
 
 Audio format:
 "/dialogue/weekend-camping/cooking-dinner/audio/{speaker}-{number}.mp3"

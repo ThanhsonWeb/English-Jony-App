@@ -2,6 +2,7 @@ import { ArrowLeft, CheckCircle2, Circle } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
+import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
 import GrammarNote from "./GrammarNote";
 import TaskAudioScene from "./TaskAudioScene";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
@@ -10,9 +11,11 @@ function MultipleChoiceTask({
 	task,
 	lessonId,
 	dialogueId,
+	previousTask,
 	nextTask,
 	completionHref,
-	onComplete,totalTasks
+	onComplete,
+	totalTasks,
 }) {
 	const [selected, setSelected] = useState("");
 	const [result, setResult] = useState(null);
@@ -22,6 +25,11 @@ function MultipleChoiceTask({
 	useDialogueShortcuts({
 		onEnter: () => actionRef.current?.click(),
 		onReplay: () => audioSceneRef.current?.replay(),
+		onNumber: (optionIndex) => {
+			const option = task.options[optionIndex];
+			if (option && !result) setSelected(option);
+		},
+		numberShortcutsDisabled: Boolean(result),
 	});
 
 	function checkAnswer() {
@@ -35,14 +43,20 @@ function MultipleChoiceTask({
 		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
 			<div className="mx-auto max-w-6xl">
 
-				<p className="mt-8 text-sm text-slate-500">Bài {task.id}/{totalTasks}</p>
 				<h1 className="mt-2 text-2xl font-bold">{task.title}</h1>
 
 				<div className="mt-8 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
 					<TaskAudioScene ref={audioSceneRef} key={task.audioUrl} task={task} />
 
 					<div>
-						<p className="text-sm font-semibold text-violet-400">Câu hỏi</p>
+						<DialogueTaskNavigation
+							lessonId={lessonId}
+							dialogueId={dialogueId}
+							taskId={task.id}
+							previousTask={previousTask}
+							nextTask={nextTask}
+							totalTasks={totalTasks}
+						/>
 						<h2 className="mt-2 text-lg font-semibold leading-relaxed text-white">
 							{task.question}
 						</h2>
@@ -57,7 +71,7 @@ function MultipleChoiceTask({
 						)}
 
 						<div className="mt-6 overflow-hidden rounded-xl border border-slate-800">
-							{task.options.map((option) => {
+							{task.options.map((option, optionIndex) => {
 								const isSelected = selected === option;
 								const isCorrectAnswer =
 									result === "correct" && option === task.answer;
@@ -90,6 +104,11 @@ function MultipleChoiceTask({
 											/>
 										)}
 										<span className="leading-relaxed">{option}</span>
+										{optionIndex < 4 && (
+                            <kbd className="ml-auto hidden h-6 min-w-6 shrink-0 items-center justify-center rounded border border-slate-700 bg-slate-900/70 px-1.5 font-mono text-xs text-slate-500 sm:flex">
+												{optionIndex + 1}
+											</kbd>
+										)}
 									</button>
 								);
 							})}

@@ -1,21 +1,15 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
+import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
 import GrammarNote from "./GrammarNote";
 import TaskAudioScene from "./TaskAudioScene";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
+import { fillBlankAnswersMatch } from "../_utils/fillBlankAnswer";
 
 function getExpectedAnswers(task) {
 	return Array.isArray(task.answers) ? task.answers : [task.answer];
-}
-
-function normalizeAnswer(value) {
-	return value
-		.trim()
-		.toLocaleLowerCase()
-		.replace(/[’‘]/g, "'")
-		.replace(/\s+/g, " ");
 }
 
 function getInputWidth(expectedAnswer) {
@@ -31,6 +25,7 @@ function FillBlankTask({
 	task,
 	lessonId,
 	dialogueId,
+	previousTask,
 	nextTask,
 	completionHref,
 	onComplete,
@@ -44,6 +39,19 @@ function FillBlankTask({
 	const [result, setResult] = useState(null);
 	const actionRef = useRef(null);
 	const audioSceneRef = useRef(null);
+	const inputRefs = useRef([]);
+
+	useEffect(() => {
+		if (task.completed || task.locked) return;
+		if (!window.matchMedia("(min-width: 768px) and (pointer: fine)").matches) {
+			return;
+		}
+
+		const focusFrame = requestAnimationFrame(() =>
+			inputRefs.current[0]?.focus(),
+		);
+		return () => cancelAnimationFrame(focusFrame);
+	}, [task.completed, task.id, task.locked]);
 
 	useDialogueShortcuts({
 		onEnter: () => actionRef.current?.click(),
@@ -69,12 +77,31 @@ function FillBlankTask({
 	function checkAnswer() {
 		const isCorrect = expectedAnswers.every(
 			(expectedAnswer, index) =>
-				normalizeAnswer(answerValues[index] || "") ===
-				normalizeAnswer(expectedAnswer),
+				fillBlankAnswersMatch(answerValues[index] || "", expectedAnswer),
 		);
 
 		setResult(isCorrect ? "correct" : "wrong");
 		if (isCorrect) onComplete?.();
+	}
+
+	function handleInputKeyDown(event, index) {
+		const isPlainEnter =
+			event.key === "Enter" &&
+			!event.ctrlKey &&
+			!event.altKey &&
+			!event.metaKey &&
+			!event.shiftKey;
+		if (!isPlainEnter) return;
+
+		event.preventDefault();
+		event.stopPropagation();
+
+		if (index < expectedAnswers.length - 1) {
+			inputRefs.current[index + 1]?.focus();
+			return;
+		}
+
+		actionRef.current?.click();
 	}
 
 	return (
@@ -88,16 +115,20 @@ function FillBlankTask({
 					Quay lại
 				</Link> */}
 
-				<p className="mt-8 text-sm text-slate-500">
-					Bài {task.id}/{totalTasks}
-				</p>
 				<h1 className="mt-2 text-2xl font-bold">{task.title} ✍️</h1>
 
 				<div className="mt-8 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
 					<TaskAudioScene ref={audioSceneRef} key={task.audioUrl} task={task} />
 
 					<div>
-						<p className="text-sm font-semibold text-violet-400">Câu hỏi</p>
+						<DialogueTaskNavigation
+							lessonId={lessonId}
+							dialogueId={dialogueId}
+							taskId={task.id}
+							previousTask={previousTask}
+							nextTask={nextTask}
+							totalTasks={totalTasks}
+						/>
 						<p className="mt-2 text-slate-400">
 							{task.instruction || "Điền từ đúng vào câu bên dưới."}
 						</p>
@@ -110,9 +141,15 @@ function FillBlankTask({
 											{part}
 											{index < expectedAnswers.length && (
 												<input
+													ref={(input) => {
+														inputRefs.current[index] = input;
+													}}
 													value={answerValues[index] || ""}
 													onChange={(event) =>
 														updateAnswer(index, event.target.value)
+													}
+													onKeyDown={(event) =>
+														handleInputKeyDown(event, index)
 													}
 													aria-label={`Chỗ trống ${index + 1}`}
 													placeholder="..."
@@ -128,8 +165,12 @@ function FillBlankTask({
 									<>
 										{task.sentenceBefore}{" "}
 										<input
+											ref={(input) => {
+												inputRefs.current[0] = input;
+											}}
 											value={answerValues[0] || ""}
 											onChange={(event) => updateAnswer(0, event.target.value)}
+											onKeyDown={(event) => handleInputKeyDown(event, 0)}
 											placeholder="..."
 											style={{ width: getInputWidth(expectedAnswers[0]) }}
 											className="mx-2 max-w-full border-b-2 border-blue-500 bg-transparent px-2 py-1 text-center outline-none"
@@ -172,7 +213,7 @@ function FillBlankTask({
 							</div>
 						)}
 
-						<DialogueShortcutHint />
+						<DialogueShortcutHint showBlankAdvance />
 						<div className="mt-4 flex items-start justify-between gap-4">
 							{result && <GrammarNote grammar={task.grammar} />}
 							<div className="ml-auto shrink-0">

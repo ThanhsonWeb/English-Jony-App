@@ -11,6 +11,7 @@ import MultipleChoiceTask from "@/app/_components/MultipleChoiceTask";
 import ArrangeWordsTask from "@/app/_components/ArrangeWordsTask";
 import DialogueClozeReviewTask from "@/app/_components/DialogueClozeReviewTask";
 import DialogueReviewTask from "@/app/_components/DialogueReviewTask";
+import DialogueExerciseHeader from "@/app/_components/DialogueExerciseHeader";
 import { useAuth } from "@/app/_contexts/AuthContext";
 
 const GUEST_REMINDER_DISMISSED_KEY =
@@ -40,6 +41,7 @@ export default function DialogueTaskPage() {
 
 	const taskIndex = dialogue.tasks.findIndex((item) => item.id === taskId);
 
+	const previousTask = dialogue.tasks[taskIndex - 1];
 	const nextTask = dialogue.tasks[taskIndex + 1];
 	const completionHref = dialogue.usefulWords?.length
 		? `/dialogue/${lessonId}/${dialogueId}/useful-words`
@@ -96,6 +98,7 @@ export default function DialogueTaskPage() {
 		task: taskWithTranslation,
 		lessonId,
 		dialogueId,
+		previousTask,
 		nextTask,
 		completionHref,
 		totalTasks,
@@ -135,6 +138,7 @@ export default function DialogueTaskPage() {
 
 	return (
 		<>
+			<DialogueExerciseHeader lessonId={lessonId} />
 			{taskContent}
 			<GuestProgressReminder
 				isOpen={guestReminderRequested && !authLoading && !user}

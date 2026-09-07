@@ -51,6 +51,34 @@ const startingCampfireTaskMedia = (speaker, audioIndex) => ({
 	).padStart(2, "0")}.mp3`,
 });
 
+function weekendCampingFillBlankTask(
+	id,
+	dialogueId,
+	speaker,
+	audioIndex,
+	transcript,
+	sentenceBefore,
+	answer,
+	sentenceAfter,
+) {
+	return {
+		id,
+		type: "fillBlank",
+		title: "Điền từ còn thiếu",
+		instruction: "Nghe và điền từ còn thiếu.",
+		scene: `/dialogue/weekend-camping/${dialogueId}/bg.png`,
+		character: {
+			name: speaker,
+			image: weekendCampingCharacterImages[speaker],
+		},
+		audioUrl: `/dialogue/weekend-camping/${dialogueId}/audio/${speaker.toLowerCase()}-${String(audioIndex).padStart(2, "0")}.mp3`,
+		transcript,
+		sentenceBefore,
+		sentenceAfter,
+		answer,
+	};
+}
+
 function normalizeGrammarSentence(value = "") {
 	return value
 		.trim()
@@ -77,6 +105,10 @@ function findGrammarNoteForTask(draft, task) {
 }
 
 function buildGeneratedDialogueTasks(draft, characterImages) {
+	const dialogueOrder = new Map(
+		draft.dialogue.map((line, index) => [line.audioUrl, index]),
+	);
+
 	return draft.tasks.map((task) => {
 		const dialogueLine = draft.dialogue.find(
 			(line) => line.audioUrl === task.audioUrl,
@@ -111,7 +143,12 @@ function buildGeneratedDialogueTasks(draft, characterImages) {
 			sentenceBefore,
 			sentenceAfter,
 		};
-	});
+	})
+		.sort(
+			(a, b) =>
+				dialogueOrder.get(a.audioUrl) - dialogueOrder.get(b.audioUrl),
+		)
+		.map((task, index) => ({ ...task, id: String(index + 1) }));
 }
 
 export const lessonData = {
@@ -3144,7 +3181,8 @@ export const lessonData = {
 			// arriving at the campsite
 			{
 				id: "arriving-at-the-campsite",
-				thumbnail: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				thumbnail:
+					"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail1.png",
 				title: "Đến khu cắm trại",
 				description:
 					"Leo và Mia đến khu cắm trại và tìm một nơi phù hợp để dựng lều.",
@@ -3793,26 +3831,40 @@ export const lessonData = {
 							answers: ["Let’s", "set", "up"],
 							choices: ["set", "first", "Let’s", "up"],
 						},
+						weekendCampingFillBlankTask("22", "arriving-at-the-campsite", "Leo", 1, "We’re here! This place looks nice.", "We’re here! This place ", "looks", " nice."),
+						weekendCampingFillBlankTask("23", "arriving-at-the-campsite", "Mia", 1, "Yeah, it’s really quiet here.", "Yeah, it’s ", "really", " quiet here."),
+						weekendCampingFillBlankTask("24", "arriving-at-the-campsite", "Mia", 3, "Is the ground flat enough?", "Is the ground flat ", "enough", "?"),
+						weekendCampingFillBlankTask("25", "arriving-at-the-campsite", "Leo", 4, "I think so. Let me check.", "I ", "think", " so. Let me check."),
+						weekendCampingFillBlankTask("26", "arriving-at-the-campsite", "Leo", 5, "Great. I’ll get the tent.", "Great. I’ll ", "get", " the tent."),
+						weekendCampingFillBlankTask("27", "arriving-at-the-campsite", "Mia", 4, "Okay. I’ll bring our bags over.", "Okay. I’ll bring our bags ", "over", "."),
+						weekendCampingFillBlankTask("28", "arriving-at-the-campsite", "Mia", 6, "Sounds good. Let’s do it.", "Sounds ", "good", ". Let’s do it."),
 					],
 					[
 						"1",
+						"22",
 						"13",
 						"14",
 						"6",
 						"2",
+						"23",
 						"4",
 						"17",
 						"18",
+						"24",
 						"16",
 						"5",
+						"25",
 						"7",
+						"26",
 						"9",
 						"19",
 						"8",
+						"27",
 						"20",
 						"21",
 						"11",
 						"12",
+						"28",
 					],
 				),
 			},
@@ -3820,7 +3872,7 @@ export const lessonData = {
 			{
 				id: "setting-up-the-tent",
 				thumbnail:
-					"/dialogue/weekend-camping/thumbnails/setting-up-the-tent.png",
+					"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail2.png",
 				title: "Dựng lều",
 				description:
 					"Leo và Mia cùng nhau dựng lều sau khi đã chọn được chỗ cắm trại.",
@@ -3968,7 +4020,7 @@ export const lessonData = {
 						example: "Let’s put our bags inside.",
 					},
 				],
-				tasks: [
+				tasks: orderDialogueTasks([
 					{
 						id: "1",
 						type: "fillBlank",
@@ -4250,13 +4302,32 @@ export const lessonData = {
 						answers: ["put", "bags", "inside"],
 						choices: ["inside", "bags", "put", "tent"],
 					},
-				],
+					weekendCampingFillBlankTask("20", "setting-up-the-tent", "Leo", 1, "Okay, let’s set up the tent.", "", "Okay", ", let’s set up the tent."),
+					weekendCampingFillBlankTask("21", "setting-up-the-tent", "Mia", 1, "Sure. Where should I hold it?", "", "Sure", ". Where should I hold it?"),
+					weekendCampingFillBlankTask("22", "setting-up-the-tent", "Leo", 3, "Yes, perfect. Hold it there for a second.", "Yes, perfect. ", "Hold", " it there for a second."),
+					weekendCampingFillBlankTask("23", "setting-up-the-tent", "Leo", 4, "Now I’ll put this side up.", "", "Now", " I’ll put this side up."),
+					weekendCampingFillBlankTask("24", "setting-up-the-tent", "Leo", 6, "I think we’re almost done.", "I think we’re almost ", "done", "."),
+					weekendCampingFillBlankTask("25", "setting-up-the-tent", "Mia", 6, "Let’s put our bags inside.", "", "Let’s", " put our bags inside."),
+				], [
+					"1", "20",
+					"2", "3", "4",
+					"5", "6", "21",
+					"7",
+					"8", "9", "22",
+					"10", "23",
+					"11", "12",
+					"13",
+					"14", "15",
+					"16", "17", "24",
+					"18",
+					"19", "25",
+				]),
 			},
 			//starting-a-campfire
 			{
 				id: "starting-a-campfire",
 				thumbnail:
-					"/dialogue/weekend-camping/thumbnails/setting-up-the-tent.png",
+					"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail3.png",
 				title: "Nhóm lửa trại",
 				description:
 					"Leo và Mia cùng nhau chuẩn bị và nhóm lửa sau khi dựng lều xong.",
@@ -4410,7 +4481,7 @@ export const lessonData = {
 						example: "Just be careful.",
 					},
 				],
-				tasks: [
+				tasks: orderDialogueTasks([
 					{
 						id: "1",
 						type: "fillBlank",
@@ -4674,7 +4745,28 @@ export const lessonData = {
 						sentenceAfter: "!",
 						answer: "working",
 					},
-				],
+					weekendCampingFillBlankTask("18", "starting-a-campfire", "Leo", 1, "The tent is finally ready!", "The tent is ", "finally", " ready!"),
+					weekendCampingFillBlankTask("19", "starting-a-campfire", "Mia", 1, "Yeah! Should we make a fire now?", "Yeah! Should we make a ", "fire", " now?"),
+					weekendCampingFillBlankTask("20", "starting-a-campfire", "Leo", 2, "Good idea. It’s getting a little cold.", "Good ", "idea", ". It’s getting a little cold."),
+					weekendCampingFillBlankTask("21", "starting-a-campfire", "Mia", 2, "I’ll get some firewood.", "I’ll get ", "some", " firewood."),
+					weekendCampingFillBlankTask("22", "starting-a-campfire", "Leo", 4, "Almost. Let’s get a few more pieces.", "Almost. Let’s get a few more ", "pieces", "."),
+					weekendCampingFillBlankTask("23", "starting-a-campfire", "Mia", 4, "All right. I’ll be right back.", "", "All", " right. I’ll be right back."),
+					weekendCampingFillBlankTask("24", "starting-a-campfire", "Leo", 5, "Great. Everything is ready now.", "Great. ", "Everything", " is ready now."),
+					weekendCampingFillBlankTask("25", "starting-a-campfire", "Leo", 6, "Sure. Just be careful.", "", "Sure", ". Just be careful."),
+				], [
+					"1", "18",
+					"2", "3", "19",
+					"4", "5", "20",
+					"6", "21",
+					"7",
+					"8", "9",
+					"10", "11", "22",
+					"12", "23",
+					"13", "24",
+					"14", "15",
+					"16", "25",
+					"17",
+				]),
 			},
 			//cooking dinner
 			{
