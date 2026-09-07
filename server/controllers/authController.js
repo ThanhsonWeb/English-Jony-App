@@ -25,16 +25,20 @@ const signToken = (id) => {
 	});
 };
 
+const getAuthCookieOptions = () => ({
+	httpOnly: true,
+	secure: process.env.NODE_ENV === "production",
+	sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+	domain: process.env.NODE_ENV === "production" ? ".studyjony.com" : undefined,
+	path: "/",
+});
+
 const setAuthCookie = (user, res) => {
 	const token = signToken(user._id);
 
 	res.cookie("jwt", token, {
+		...getAuthCookieOptions(),
 		expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
-		httpOnly: true,
-		secure: process.env.NODE_ENV === "production",
-		sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-		domain:
-			process.env.NODE_ENV === "production" ? ".studyjony.com" : undefined,
 	});
 
 	return token;
@@ -53,7 +57,13 @@ const createSendToken = (user, statusCode, res) => {
 
 // request Handlers
 exports.signup = catchAsync(async (req, res, next) => {
-	const newUser = await User.create(req.body);
+	const { name, email, password, passwordConfirm } = req.body;
+	const newUser = await User.create({
+		name,
+		email,
+		password,
+		passwordConfirm,
+	});
 
 	createSendToken(newUser, 201, res);
 });
@@ -74,11 +84,8 @@ exports.login = catchAsync(async (req, res, next) => {
 
 	createSendToken(user, 200, res);
 });
-exports.logout = catchAsync((req, res) => {
-	res.cookie("jwt", "loggedout", {
-		expires: new Date(Date.now() + 10 * 1000),
-		httpOnly: true,
-	});
+exports.logout = catchAsync(async (req, res) => {
+	res.clearCookie("jwt", getAuthCookieOptions());
 
 	res.status(200).json({ status: "success" });
 });
