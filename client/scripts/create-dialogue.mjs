@@ -48,7 +48,7 @@ try {
 	);
 
 	const { courseId, characters, level } = course;
-	const { dialogueId, title, situation } = selectedDialogue;
+	const { dialogueId, title, situation, thumbnail } = selectedDialogue;
 
 	const lessonConfig = {
 		courseId,
@@ -57,6 +57,7 @@ try {
 		characters,
 		level,
 		situation,
+		thumbnail,
 		dialogueLines: 12,
 		taskCount: 17,
 	};

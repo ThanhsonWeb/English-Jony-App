@@ -272,9 +272,9 @@ export default function WordPage() {
 	return (
 		<div className="min-h-screen px-4 py-6 font-sans text-slate-100 sm:px-8 sm:py-10">
 			<div className="mx-auto w-full max-w-6xl space-y-6">
-				<section className="relative overflow-hidden rounded-3xl border border-slate-700/70 bg-[#0c1525] p-6 shadow-[0_28px_80px_rgba(0,0,0,0.32)] sm:p-8">
+				<section className="relative overflow-hidden rounded-3xl border border-slate-700/70 bg-[#0c1525] p-6 shadow-[0_8px_24px_rgba(16,35,31,0.08)] dark:shadow-[0_28px_80px_rgba(0,0,0,0.32)] sm:p-8">
 					<div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#101b30] via-[#0b1726] to-[#07191d]" />
-					<div className="pointer-events-none absolute -right-20 -top-28 h-80 w-80 rounded-full bg-emerald-400/10 blur-[100px]" />
+					<div className="pointer-events-none absolute -right-20 -top-28 h-80 w-80 rounded-full bg-emerald-400/10 opacity-0 blur-[100px] dark:opacity-100" />
 					<div className="pointer-events-none absolute bottom-0 right-0 h-[72%] w-[75%] bg-[#0b1a2b]/75 [clip-path:polygon(0_100%,18%_58%,29%_73%,43%_34%,58%_67%,73%_18%,100%_65%,100%_100%)] sm:w-[62%]" />
 					<div className="pointer-events-none absolute bottom-0 right-0 h-[58%] w-[82%] bg-[#081322]/90 [clip-path:polygon(0_100%,17%_53%,31%_76%,48%_40%,61%_68%,77%_28%,100%_63%,100%_100%)] sm:w-[68%]" />
 					<div className="pointer-events-none absolute bottom-0 right-0 h-[38%] w-full bg-[#050c18] [clip-path:polygon(0_100%,0_80%,13%_48%,27%_72%,42%_34%,58%_69%,72%_38%,86%_61%,100%_30%,100%_100%)] sm:w-[78%]" />
@@ -329,7 +329,7 @@ export default function WordPage() {
 				</section>
 
 				{/* Search & Actions */}
-				<div className="flex flex-col gap-3 rounded-2xl border border-slate-800/80 bg-[#0d1525]/80 p-3 shadow-lg sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+				<div className="flex flex-col gap-3 rounded-2xl border border-slate-800/80 bg-[#0d1525]/80 p-3 shadow-sm dark:shadow-lg sm:flex-row sm:items-center sm:justify-between sm:gap-4">
 					{/* Search */}
 					<div className="relative w-full sm:max-w-md sm:flex-1">
 						<Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />

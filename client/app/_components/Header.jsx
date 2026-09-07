@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { User, LogOut } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 function UserAvatar({ user }) {
 	const [failedPhotoUrl, setFailedPhotoUrl] = useState(null);
@@ -73,6 +74,7 @@ function Header() {
 				</div>
 
 				<div className="flex items-center gap-1 sm:gap-4">
+					<LanguageSwitcher />
 					<ThemeSelector />
 					{loading ? (
 						// Show a blur blank space

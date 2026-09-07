@@ -5,6 +5,7 @@ export function buildDialoguePrompt({
   characters,
   level,
   situation,
+  thumbnail,
   dialogueLines = 12,
   taskCount = 17,
 }) {
@@ -65,7 +66,7 @@ Scene:
 "/dialogue/${courseId}/${dialogueId}/bg.png"
 
 Thumbnail:
-"/dialogue/${courseId}/thumbnails/${dialogueId}.png"
+"${thumbnail}"
 
 Audio format:
 "/dialogue/${courseId}/${dialogueId}/audio/{speaker}-{number}.mp3"

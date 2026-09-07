@@ -9,8 +9,13 @@
 	--color-hero: var(--sj-hero);
 	--color-main: var(--sj-text);
 	--color-secondary: var(--sj-text-secondary);
+	--color-muted: var(--sj-text-muted);
 	--color-app: var(--sj-border);
 	--color-primary: var(--sj-primary);
+	--color-primary-hover: var(--sj-primary-hover);
+	--color-primary-soft: var(--sj-primary-soft);
+	--color-success: var(--sj-success);
+	--color-success-soft: var(--sj-success-soft);
 }
 
 :root,
@@ -22,19 +27,26 @@ html[data-theme="dark"] {
 	--sj-text: #f8fafc;
 	--sj-text-secondary: #94a3b8;
 	--sj-border: #1e293b;
-	--sj-primary: #3b82f6;
+	--sj-primary: #0f8f83;
+	--sj-primary-hover: #0b766d;
+	--sj-primary-soft: color-mix(in srgb, var(--sj-primary) 16%, transparent);
 	color-scheme: dark;
 }
 
 html[data-theme="light"] {
-	--sj-page: #f7f8f4;
+	--sj-page: #f6f8f7;
 	--sj-surface: #ffffff;
-	--sj-surface-muted: #f0f5f2;
-	--sj-hero: #eaf4ef;
-	--sj-text: #172e2b;
-	--sj-text-secondary: #526660;
-	--sj-border: #d8e5de;
-	--sj-primary: #087f73;
+	--sj-surface-muted: #e8f5f2;
+	--sj-hero: #e8f5f2;
+	--sj-text: #10231f;
+	--sj-text-secondary: #53645f;
+	--sj-text-muted: #71817c;
+	--sj-border: #d9e3df;
+	--sj-primary: #0f8f83;
+	--sj-primary-hover: #0b766d;
+	--sj-primary-soft: #e8f5f2;
+	--sj-success: #16a36a;
+	--sj-success-soft: #e8f7ef;
 	color-scheme: light;
 }
 
@@ -106,10 +118,15 @@ html[data-theme="light"] :where(
 }
 
 html[data-theme="light"] :where(
-	[class~="text-slate-300"], [class~="text-slate-400"],
-	[class~="text-slate-500"], [class~="text-slate-600"]
+	[class~="text-slate-300"], [class~="text-slate-400"]
 ) {
 	color: var(--sj-text-secondary) !important;
+}
+
+html[data-theme="light"] :where(
+	[class~="text-slate-500"], [class~="text-slate-600"]
+) {
+	color: var(--sj-text-muted) !important;
 }
 
 html[data-theme="light"] :where(
@@ -170,8 +187,8 @@ html[data-theme="light"] :where(
 	[class~="placeholder:text-slate-500"],
 	[class~="placeholder:text-slate-600"]
 )::placeholder {
-	color: var(--sj-text-secondary) !important;
-	opacity: 0.78;
+	color: var(--sj-text-muted) !important;
+	opacity: 1;
 }
 
 html[data-theme="light"] :where(
@@ -186,7 +203,24 @@ html[data-theme="light"] :where(
 	[class~="text-emerald-300"], [class~="text-emerald-400"],
 	[class~="text-green-400"]
 ) {
-	color: #047857 !important;
+	color: var(--sj-success) !important;
+}
+
+html[data-theme="light"] :where(
+	[class~="bg-emerald-400/10"], [class~="bg-emerald-500/10"],
+	[class~="bg-emerald-500/15"], [class~="bg-emerald-500/20"],
+	[class~="bg-green-400/10"], [class~="bg-green-500/10"],
+	[class~="bg-green-500/15"], [class~="bg-green-500/20"]
+) {
+	background-color: var(--sj-success-soft) !important;
+}
+
+html[data-theme="light"] :where(
+	[class~="border-emerald-400/20"], [class~="border-emerald-400/25"],
+	[class~="border-emerald-500/20"], [class~="border-emerald-500/30"],
+	[class~="border-green-500/20"], [class~="border-green-500/30"]
+) {
+	border-color: color-mix(in srgb, var(--sj-success) 45%, transparent) !important;
 }
 
 html[data-theme="light"] :where(
@@ -218,7 +252,7 @@ html[data-theme="light"] :where(
 	[class~="bg-blue-500/20"], [class~="bg-violet-500/10"],
 	[class~="bg-violet-500/15"], [class~="bg-violet-500/20"]
 ) {
-	background-color: color-mix(in srgb, var(--sj-primary) 12%, transparent) !important;
+	background-color: var(--sj-primary-soft) !important;
 }
 
 html[data-theme="light"] :where([class~="bg-blue-600"], [class~="bg-blue-700"]) {
@@ -287,14 +321,14 @@ html[data-theme="light"] :where(
 	[class~="hover:bg-blue-600"]:hover,
 	[class~="hover:bg-blue-700"]:hover
 ) {
-	background-color: #066b62 !important;
+	background-color: var(--sj-primary-hover) !important;
 }
 
 html[data-theme="light"] :where(
 	[class~="hover:from-blue-500"]:hover,
 	[class~="hover:from-violet-500"]:hover
 ) {
-	--tw-gradient-from: #066b62 !important;
+	--tw-gradient-from: var(--sj-primary-hover) !important;
 	--tw-gradient-to: transparent !important;
 }
 
@@ -303,7 +337,24 @@ html[data-theme="light"] :where(
 	[class~="hover:to-violet-400"]:hover,
 	[class~="hover:to-violet-500"]:hover
 ) {
-	--tw-gradient-to: #066b62 !important;
+	--tw-gradient-to: var(--sj-primary-hover) !important;
+}
+
+html[data-theme="light"] :where(
+	[class~="bg-emerald-500"], [class~="bg-emerald-600"],
+	[class~="bg-green-500"], [class~="bg-green-600"]
+) {
+	background-color: var(--sj-success) !important;
+}
+
+/* Solid primary actions use a high-contrast foreground in light mode. */
+html[data-theme="light"] :where(
+	[class~="bg-primary"],
+	[class~="bg-blue-500"], [class~="bg-blue-600"], [class~="bg-blue-700"],
+	[class~="bg-emerald-500"], [class~="bg-emerald-600"],
+	[class~="bg-green-500"], [class~="bg-green-600"]
+) {
+	color: #ffffff !important;
 }
 
 /* Solid and gradient action buttons always need white foreground text. */
@@ -381,4 +432,76 @@ html[data-theme="light"] .theme-dark-overlay :where(
 
 html[data-theme="light"] .theme-dark-overlay [class~="hover:text-white"]:hover {
 	color: #ffffff !important;
+}
+
+/* Legacy brand-color utilities use the single teal primary in dark mode. */
+html[data-theme="dark"] :where(
+	[class~="text-blue-300"], [class~="text-blue-400"],
+	[class~="text-violet-300"], [class~="text-violet-400"]
+) {
+	color: var(--sj-primary) !important;
+}
+
+html[data-theme="dark"] :where(
+	[class~="border-blue-500"], [class~="border-blue-500/20"],
+	[class~="border-blue-500/30"], [class~="border-blue-500/40"],
+	[class~="border-violet-500/30"], [class~="border-violet-500/40"]
+) {
+	border-color: color-mix(in srgb, var(--sj-primary) 55%, transparent) !important;
+}
+
+html[data-theme="dark"] :where(
+	[class~="bg-blue-500/10"], [class~="bg-blue-500/15"],
+	[class~="bg-blue-500/20"], [class~="bg-violet-500/10"],
+	[class~="bg-violet-500/15"], [class~="bg-violet-500/20"]
+) {
+	background-color: var(--sj-primary-soft) !important;
+}
+
+html[data-theme="dark"] :where(
+	[class~="bg-blue-500"], [class~="bg-blue-600"],
+	[class~="bg-blue-700"], [class~="bg-blue-800"],
+	[class~="bg-blue-900"], [class~="bg-violet-500"],
+	[class~="bg-violet-600"]
+) {
+	background-color: var(--sj-primary) !important;
+}
+
+html[data-theme="dark"] :where(
+	[class~="hover:bg-blue-500"]:hover,
+	[class~="hover:bg-blue-600"]:hover,
+	[class~="hover:bg-blue-700"]:hover
+) {
+	background-color: var(--sj-primary-hover) !important;
+}
+
+html[data-theme="dark"] :where(
+	[class~="from-blue-500"], [class~="from-blue-600"],
+	[class~="from-violet-300"], [class~="from-violet-500"],
+	[class~="from-violet-600"]
+) {
+	--tw-gradient-from: var(--sj-primary) !important;
+}
+
+html[data-theme="dark"] :where(
+	[class~="to-blue-300"], [class~="to-blue-500"],
+	[class~="to-blue-600"], [class~="to-violet-400"],
+	[class~="to-violet-500"], [class~="to-violet-600"]
+) {
+	--tw-gradient-to: var(--sj-primary) !important;
+}
+
+html[data-theme="dark"] :where(
+	[class~="hover:from-blue-500"]:hover,
+	[class~="hover:from-violet-500"]:hover
+) {
+	--tw-gradient-from: var(--sj-primary-hover) !important;
+}
+
+html[data-theme="dark"] :where(
+	[class~="hover:to-blue-500"]:hover,
+	[class~="hover:to-violet-400"]:hover,
+	[class~="hover:to-violet-500"]:hover
+) {
+	--tw-gradient-to: var(--sj-primary-hover) !important;
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, MonitorCog, Moon, Sun } from "lucide-react";
+import { MonitorCog, Moon, Sun } from "lucide-react";
 import { useTheme } from "@/app/_contexts/ThemeContext";
 
 const themeOptions = [
@@ -18,21 +18,20 @@ export default function ThemeSelector() {
 		"Theo hệ thống";
 
 	return (
-		<label className="relative block shrink-0" title={currentLabel}>
+		<label
+			className="relative flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-xl border border-app bg-surface text-secondary transition hover:border-primary/50 hover:text-main focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20"
+			title={currentLabel}
+		>
 			<span className="sr-only">Chọn giao diện</span>
 			<ThemeIcon
 				aria-hidden="true"
-				className="pointer-events-none absolute left-2.5 top-1/2 z-10 h-4 w-4 -translate-y-1/2 text-secondary"
-			/>
-			<ChevronDown
-				aria-hidden="true"
-				className="pointer-events-none absolute right-2.5 top-1/2 hidden h-4 w-4 -translate-y-1/2 text-secondary sm:block"
+				className="pointer-events-none h-4.5 w-4.5"
 			/>
 			<select
 				value={theme}
 				onChange={(event) => setTheme(event.target.value)}
 				aria-label="Chọn giao diện"
-				className="h-10 w-10 cursor-pointer appearance-none rounded-xl border border-app bg-surface pl-9 pr-2 text-sm font-medium text-transparent outline-none transition hover:border-primary/50 focus:border-primary focus:ring-2 focus:ring-primary/20 sm:w-40 sm:pr-8 sm:text-main"
+				className="absolute inset-0 cursor-pointer opacity-0"
 			>
 				{themeOptions.map((option) => (
 					<option className="bg-surface text-main" key={option.value} value={option.value}>
