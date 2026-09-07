@@ -3,7 +3,7 @@
 import { useAuth } from "@/app/_contexts/AuthContext";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useLocale } from "next-intl";
 import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
@@ -12,6 +12,14 @@ function LoginPage() {
 	const { getMe } = useAuth();
 	const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 	const locale = useLocale();
+	const searchParams = useSearchParams();
+	const authError = searchParams.get("error");
+	const callbackError =
+		authError === "google_session_failed"
+			? "Google Sign-In finished, but no valid session was found. Please try again."
+			: authError === "google_oauth_failed"
+				? "Google Sign-In was not completed. Please try again."
+				: "";
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -158,9 +166,10 @@ function LoginPage() {
 					</div>
 
 					{/* Error */}
-					{(error || !googleClientId) && (
+					{(error || callbackError || !googleClientId) && (
 						<div className="mb-4 rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-400">
 							{error ||
+								callbackError ||
 								"Google Sign-In is not configured. Add NEXT_PUBLIC_GOOGLE_CLIENT_ID and redeploy the app."}
 						</div>
 					)}

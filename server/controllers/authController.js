@@ -35,10 +35,11 @@ const getAuthCookieOptions = () => ({
 
 const setAuthCookie = (user, res) => {
 	const token = signToken(user._id);
+	const tokenExpiresAt = new Date(jwt.decode(token).exp * 1000);
 
 	res.cookie("jwt", token, {
 		...getAuthCookieOptions(),
-		expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
+		expires: tokenExpiresAt,
 	});
 
 	return token;
@@ -157,7 +158,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 	try {
 		await sendEmail({
 			email: user.email,
-			subject: "Your reset Password here (valid for 10 mins)",
+			subject: "Your password reset link (valid for 20 minutes)",
 			message: `Forgot your password? Submit a PATCH request with your new password to: ${resetURL}\nIf you didn't request this, ignore this email.`,
 		});
 	} catch (error) {
