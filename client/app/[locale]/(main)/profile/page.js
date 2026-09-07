@@ -2,7 +2,8 @@
 
 import StudyHeatmap from "@/app/_components/StudyHeatmap";
 import { useAuth } from "@/app/_contexts/AuthContext";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import {
 	Mail,
 	CalendarDays,
@@ -15,14 +16,11 @@ import {
 } from "lucide-react";
 
 function Page() {
+	const t = useTranslations("Profile");
+	const locale = useLocale();
 	const { user, setUser } = useAuth();
 	const [isEditingName, setIsEditingName] = useState(false);
 	const [newName, setNewName] = useState(user?.name || "");
-	useEffect(() => {
-		if (user?.name) {
-			setNewName(user.name);
-		}
-	}, [user]);
 	async function handleUpdateName() {
 		try {
 			const res = await fetch("/api/v1/users/updateMe", {
@@ -66,6 +64,7 @@ function Page() {
 
 					<button
 						type="button"
+						aria-label={t("editName")}
 						className="absolute bottom-1 right-1 flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-lg"
 					>
 						<Camera size={20} />
@@ -76,7 +75,10 @@ function Page() {
 					<div className="flex items-center gap-3">
 						<h1 className="text-3xl font-bold">{user?.name}</h1>
 						<button
-							onClick={() => setIsEditingName(true)}
+							onClick={() => {
+								setNewName(user?.name || "");
+								setIsEditingName(true);
+							}}
 							className="text-slate-400 hover:text-white cursor-pointer"
 						>
 							<Pencil size={18} />
@@ -85,15 +87,16 @@ function Page() {
 					{isEditingName && (
 						<div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
 							<div className="relative w-full max-w-lg rounded-3xl border border-slate-800 bg-slate-900 p-8 shadow-2xl">
-								<button
-									onClick={() => setIsEditingName(false)}
+						<button
+							onClick={() => setIsEditingName(false)}
+							aria-label={t("close")}
 									className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-xl text-slate-400 transition hover:bg-slate-700 hover:text-white"
 								>
 									✕
 								</button>
 
 								<h2 className="mb-6 text-center text-2xl font-bold text-white">
-									Cập nhật tên của bạn
+									{t("updateName")}
 								</h2>
 
 								<input
@@ -108,7 +111,7 @@ function Page() {
 									onClick={handleUpdateName}
 									className="mx-auto mt-8 block rounded-2xl bg-blue-900 px-16 py-3 font-semibold text-white transition hover:bg-blue-800"
 								>
-									Lưu
+									{t("save")}
 								</button>
 							</div>
 						</div>
@@ -122,9 +125,9 @@ function Page() {
 					<div className="mt-2 flex items-center gap-2 text-slate-300">
 						<CalendarDays size={18} />
 						<span>
-							Ngày tham gia:{" "}
-							{user?.createdAt
-								? new Date(user.createdAt).toLocaleDateString("vi-VN")
+								{t("joined")}:{" "}
+								{user?.createdAt
+									? new Date(user.createdAt).toLocaleDateString(locale)
 								: "—"}
 						</span>
 					</div>
@@ -138,18 +141,18 @@ function Page() {
 				<div className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
 					<div className="flex items-center gap-4">
 						<Languages className="text-blue-400" />
-						<span className="font-medium">Ngôn ngữ hiển thị</span>
+						<span className="font-medium">{t("language")}</span>
 					</div>
 
 					<button className="rounded-xl bg-gray-900 px-4 py-2 font-medium">
-						🇻🇳 Tiếng Việt
+						{t("languageValue")}
 					</button>
 				</div>
 
 				<div className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
 					<div className="flex items-center gap-4">
 						<Volume2 className="text-blue-400" />
-						<span className="font-medium">Hiệu ứng âm thanh</span>
+						<span className="font-medium">{t("sound")}</span>
 					</div>
 
 					<input type="range" className="w-32" />
@@ -158,7 +161,7 @@ function Page() {
 				<div className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
 					<div className="flex items-center gap-4">
 						<Moon className="text-blue-400" />
-						<span className="font-medium">Chế độ dark mode</span>
+						<span className="font-medium">{t("darkMode")}</span>
 					</div>
 				</div>
 			</div>

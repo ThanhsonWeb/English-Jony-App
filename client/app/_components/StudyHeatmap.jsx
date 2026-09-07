@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 const levelClass = {
 	0: "bg-slate-900",
@@ -18,8 +19,8 @@ function formatDate(date) {
 	return `${year}-${month}-${day}`;
 }
 
-function formatDisplayDate(dateString) {
-	return new Date(`${dateString}T00:00:00`).toLocaleDateString("vi-VN");
+function formatDisplayDate(dateString, locale) {
+	return new Date(`${dateString}T00:00:00`).toLocaleDateString(locale);
 }
 
 function getLevel(count) {
@@ -31,6 +32,8 @@ function getLevel(count) {
 }
 
 function StudyHeatmap() {
+	const t = useTranslations("Profile");
+	const locale = useLocale();
 	const [days, setDays] = useState([]);
 	const totalWeeks = Math.ceil(days.length / 7);
 	const monthLabelsByWeek = new Map(
@@ -42,7 +45,7 @@ function StudyHeatmap() {
 
 				return [
 					Math.floor(index / 7),
-					`Th${date.getMonth() + 1}`,
+					new Intl.DateTimeFormat(locale, { month: "short" }).format(date),
 				];
 			})
 			.filter(Boolean),
@@ -100,7 +103,7 @@ function StudyHeatmap() {
 		<div className="mt-10">
 			<div className="rounded-2xl border border-slate-800 bg-slate-900/30 p-4 sm:p-6">
 				<h2 className="text-lg font-semibold text-white sm:text-xl">
-					Tổng quan hoạt động (6 tháng gần đây)
+					{t("activity")}
 				</h2>
 
 				<div className="mt-6 overflow-x-auto">
@@ -123,7 +126,10 @@ function StudyHeatmap() {
 						{/* Weekdays and days */}
 						<div className="flex items-start gap-3">
 							<div className="grid w-7 shrink-0 grid-rows-7 gap-1 text-xs text-slate-500">
-								{["", "T2", "", "T4", "", "T6", ""].map(
+								{(locale === "vi"
+									? ["", "T2", "", "T4", "", "T6", ""]
+									: ["", "Mon", "", "Wed", "", "Fri", ""]
+								).map(
 									(label, index) => (
 										<span
 											key={`weekday-${index}`}
@@ -139,7 +145,7 @@ function StudyHeatmap() {
 								{days.map((day) => (
 									<div
 										key={day.date}
-										title={`${formatDisplayDate(day.date)}\n${day.count} hoạt động`}
+									title={`${formatDisplayDate(day.date, locale)}\n${t("activityTooltip", { count: day.count })}`}
 										className={`h-3 w-3 rounded-sm sm:h-4 sm:w-4 lg:h-5 lg:w-5 ${levelClass[day.level]}`}
 									/>
 								))}
@@ -150,10 +156,10 @@ function StudyHeatmap() {
 
 				{/* Footer */}
 				<div className="mt-5 flex flex-col gap-3 border-t border-slate-800 pt-4 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-					<span>{totalActivities} hoạt động trong 6 tháng</span>
+					<span>{t("activityCount", { count: totalActivities })}</span>
 
 					<div className="flex items-center gap-2">
-						<span>Ít</span>
+						<span>{t("less")}</span>
 
 						{[0, 1, 2, 3, 4].map((level) => (
 							<div
@@ -162,7 +168,7 @@ function StudyHeatmap() {
 							/>
 						))}
 
-						<span>Nhiều</span>
+						<span>{t("more")}</span>
 					</div>
 				</div>
 			</div>

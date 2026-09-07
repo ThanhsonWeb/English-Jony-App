@@ -1,11 +1,24 @@
 "use client";
 
-import { Edit2, MoreVertical, Trash2, Volume2 } from "lucide-react";
+import {
+	BookPlus,
+	Edit2,
+	Languages,
+	MoreVertical,
+	NotebookText,
+	Sparkles,
+	Tag,
+	Trash2,
+	Volume2,
+	X,
+} from "lucide-react";
 import { useState } from "react";
 import Button from "./Button";
 import { createPortal } from "react-dom";
+import { useTranslations } from "next-intl";
 
 function Word({ word, onDelete, onFix, variant = "list" }) {
+	const t = useTranslations("WordlistDetail");
 	const [isEditing, setIsEditing] = useState(false);
 	const [editEnglish, setEditEnglish] = useState(word.english);
 	const [editVietnamese, setEditVietnamese] = useState(word.vietnamese);
@@ -77,19 +90,19 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 						<div className="flex shrink-0 items-center gap-1.5">
 							{wordStatus === "new" && (
 								<span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium text-emerald-400">
-									Từ mới
+									{t("new")}
 								</span>
 							)}
 
 							{wordStatus === "learning" && (
 								<span className="rounded-full border border-blue-500/30 bg-blue-500/10 px-2 py-0.5 text-[10px] font-medium text-blue-400">
-									Đang học
+									{t("learning")}
 								</span>
 							)}
 
 							{wordStatus === "review" && (
 								<span className="rounded-full border border-orange-500/30 bg-orange-500/10 px-2 py-0.5 text-[10px] font-medium text-orange-400">
-									Cần ôn
+									{t("review")}
 								</span>
 							)}
 
@@ -114,7 +127,7 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 											className="flex w-full items-center gap-2 px-3 py-2 text-left text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white"
 										>
 											<Edit2 className="h-3.5 w-3.5" />
-											Chỉnh sửa
+											{t("edit")}
 										</button>
 
 										<button
@@ -126,7 +139,7 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 											className="flex w-full items-center gap-2 px-3 py-2 text-left text-xs text-red-400 transition hover:bg-red-500/10"
 										>
 											<Trash2 className="h-3.5 w-3.5" />
-											Xóa
+											{t("delete")}
 										</button>
 									</div>
 								)}
@@ -146,7 +159,7 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 			<div className="grid grid-cols-1 items-center gap-4 rounded-2xl border border-slate-800/70 bg-[#111929] p-5 text-sm transition duration-200 hover:border-emerald-500/20 hover:bg-[#141e30] md:grid-cols-12 md:gap-0 md:rounded-xl md:px-5 md:py-4">
 				{/* Word */}
 				<div className="md:col-span-2">
-					<p className="md:hidden text-xs text-slate-500 mb-1">Từ vựng</p>
+					<p className="md:hidden text-xs text-slate-500 mb-1">{t("word")}</p>
 					<div className="flex items-center gap-2">
 						<p className="text-xl font-semibold tracking-tight text-white md:text-base">
 							{word.english}
@@ -172,7 +185,7 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 
 				{/* Definition */}
 				<div className="md:col-span-2">
-					<p className="md:hidden text-xs text-slate-500 mb-1">Nghĩa</p>
+					<p className="md:hidden text-xs text-slate-500 mb-1">{t("meaning")}</p>
 					<p className="text-slate-200 text-base md:text-sm">
 						{word.vietnamese}
 					</p>
@@ -180,7 +193,7 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 
 				{/* Example */}
 				<div className="md:col-span-3">
-					<p className="md:hidden text-xs text-slate-500 mb-1">Ví dụ</p>
+					<p className="md:hidden text-xs text-slate-500 mb-1">{t("example")}</p>
 					<p className="whitespace-normal break-words text-sm italic leading-relaxed text-slate-400 md:pr-4">
 						{word.example || "—"}
 					</p>
@@ -188,25 +201,25 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 
 				{/* Status */}
 				<div className="md:col-span-2">
-					<p className="md:hidden text-xs text-slate-500 mb-2">Trạng thái</p>
+					<p className="md:hidden text-xs text-slate-500 mb-2">{t("status")}</p>
 
 					{wordStatus === "new" && (
 						<span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-xs font-medium text-emerald-300">
-							<span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> Mới
+							<span className="h-1.5 w-1.5 rounded-full bg-emerald-400" /> {t("new")}
 						</span>
 					)}
 
 					{wordStatus === "learning" && (
 						<span className="inline-flex items-center gap-1.5 rounded-full border border-sky-500/20 bg-sky-500/10 px-2.5 py-1 text-xs font-medium text-sky-300">
 							<span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
-							Đang học
+							{t("learning")}
 						</span>
 					)}
 
 					{wordStatus === "review" && (
 						<span className="inline-flex items-center gap-1.5 rounded-full border border-amber-500/20 bg-amber-500/10 px-2.5 py-1 text-xs font-medium text-amber-300">
 							<span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-							Cần ôn
+							{t("review")}
 						</span>
 					)}
 				</div>
@@ -234,79 +247,95 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 
 			{isEditing &&
 				createPortal(
-					<div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+					<div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/75 p-4 backdrop-blur-md">
 						<form
 							onSubmit={handleEditSubmit}
-							className="relative w-full max-w-md rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl"
+							className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border border-violet-500/35 bg-[#0b1022]"
 						>
+							<div className="pointer-events-none absolute inset-x-0 top-0 h-32 overflow-hidden">
+								<div className="absolute -left-16 -top-20 h-36 w-[130%] rotate-[-7deg] rounded-[50%] bg-gradient-to-r from-violet-500/20 via-purple-500/10 to-transparent blur-xl" />
+								<div className="absolute left-1/2 top-4 h-20 w-40 -translate-x-1/2 rounded-full bg-violet-500/15 blur-3xl" />
+							</div>
 							<button
 								type="button"
 								onClick={() => setIsEditing(false)}
-								className="absolute right-4 top-3 text-2xl text-slate-500 transition hover:text-white cursor-pointer"
+								aria-label={t("form.close")}
+								className="absolute right-4 top-4 z-10 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/70 text-slate-500 transition hover:border-violet-400/50 hover:bg-violet-500/10 hover:text-white active:scale-95"
 							>
-								&times;
+								<X className="h-4 w-4" />
 							</button>
 
-							<h2 className="mb-6 text-xl font-bold text-slate-100">
-								Chỉnh sửa từ vựng
-							</h2>
+							<div className="relative px-6 pb-6 pt-5 sm:px-8">
+								<div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-violet-400/30 bg-violet-500/15 text-violet-300">
+									<BookPlus className="h-6 w-6" />
+								</div>
+								<div className="mt-4 text-center">
+									<h2 className="text-xl font-bold text-white sm:text-2xl">
+										{t("form.editTitle")}
+									</h2>
+								</div>
 
-							<div className="flex flex-col gap-4">
-								<div>
-									<label className="mb-1.5 block text-sm font-medium text-slate-300">
-										Từ vựng
-									</label>
-
+								<div className="mt-6 flex flex-col gap-2">
+									<label className="text-sm font-medium text-slate-300">{t("word")}</label>
+									<div className="relative">
+										<Tag className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-violet-400" />
 									<input
 										type="text"
 										value={editEnglish}
 										onChange={(e) => setEditEnglish(e.target.value)}
-										className="w-full rounded-xl border border-slate-700 bg-slate-950/60 px-4 py-3 text-slate-100 focus:border-blue-500 focus:outline-none"
+										className="w-full rounded-xl border border-slate-700/80 bg-[#080d1c] py-3 pl-10 pr-4 text-sm text-slate-100 outline-none transition focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10"
 									/>
+									</div>
 								</div>
 
-								<div>
-									<label className="mb-1.5 block text-sm font-medium text-slate-300">
-										Nghĩa
+								<div className="mt-4 flex flex-col gap-2">
+									<label className="text-sm font-medium text-slate-300">
+										{t("meaning")}
 									</label>
-
+									<div className="relative">
+										<Languages className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-violet-400" />
 									<input
 										type="text"
 										value={editVietnamese}
 										onChange={(e) => setEditVietnamese(e.target.value)}
-										className="w-full rounded-xl border border-slate-700 bg-slate-950/60 px-4 py-3 text-slate-100 focus:border-blue-500 focus:outline-none"
+										className="w-full rounded-xl border border-slate-700/80 bg-[#080d1c] py-3 pl-10 pr-4 text-sm text-slate-100 outline-none transition focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10"
 									/>
+									</div>
 								</div>
 
-								<div>
-									<label className="mb-1.5 block text-sm font-medium text-slate-300">
-										Ví dụ
+								<div className="mt-4 flex flex-col gap-2">
+									<label className="text-sm font-medium text-slate-300">
+										{t("example")}
 									</label>
-
+									<div className="relative">
+										<NotebookText className="pointer-events-none absolute left-3.5 top-3.5 h-4 w-4 text-violet-400" />
 									<textarea
 										value={editExample}
 										onChange={(e) => setEditExample(e.target.value)}
-										rows={4}
-										className="w-full resize-none rounded-xl border border-slate-700 bg-slate-950/60 px-4 py-3 text-slate-100 focus:border-blue-500 focus:outline-none"
+										rows={3}
+										className="w-full resize-none rounded-xl border border-slate-700/80 bg-[#080d1c] py-3 pl-10 pr-4 text-sm text-slate-100 outline-none transition focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10"
 									/>
+									</div>
 								</div>
+							</div>
 
-								<div className="mt-2 flex gap-3">
+							<div className="flex gap-3 border-t border-violet-500/15 bg-[#090e1d]/80 px-6 py-4 sm:px-8">
 									<button
 										type="button"
 										onClick={() => setIsEditing(false)}
-										className="flex-1 rounded-xl border border-slate-700 px-4 py-3 font-medium text-slate-300 transition hover:bg-slate-800 cursor-pointer"
+										className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-600 hover:bg-slate-800 hover:text-white active:scale-[0.98]"
 									>
-										Hủy
+										<X className="h-4 w-4 text-violet-400" />
+										{t("form.cancel")}
 									</button>
 
 									<button
 										type="submit"
-										className="flex-1 rounded-xl bg-blue-600 px-4 py-3 font-semibold text-white transition hover:bg-blue-500 cursor-pointer"
+										className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-500 px-3 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_-12px_rgba(139,92,246,0.9)] transition hover:from-blue-500 hover:to-violet-400 active:scale-[0.98]"
 									>
-										Lưu thay đổi
+										<Sparkles className="h-4 w-4" />
+										{t("form.save")}
 									</button>
-								</div>
 							</div>
 						</form>
 					</div>,

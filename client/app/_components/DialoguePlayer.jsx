@@ -415,7 +415,7 @@ export default function DialoguePlayer({
 									</button>
 
 									{showSpeedMenu && (
-										<div className="absolute bottom-full left-1/2 z-30 mb-2 w-20 -translate-x-1/2 overflow-hidden rounded-lg border border-slate-700 bg-slate-900 py-1 shadow-xl">
+										<div className="absolute bottom-full left-1/2 z-30 mb-2 w-20 -translate-x-1/2 overflow-hidden rounded-lg border border-slate-700 bg-[#111827] py-1 shadow-xl">
 											{PLAYBACK_RATES.map((rate) => (
 												<button
 													key={rate}
@@ -423,8 +423,8 @@ export default function DialoguePlayer({
 													onClick={() => handlePlaybackRateChange(rate)}
 													className={`block w-full px-3 py-2 text-center text-xs font-semibold transition hover:bg-white/10 ${
 														playbackRate === rate
-															? "text-violet-400"
-															: "text-slate-300"
+														? "bg-slate-100 text-slate-950"
+														: "text-slate-400"
 													}`}
 												>
 													{rate}x
@@ -435,7 +435,7 @@ export default function DialoguePlayer({
 								</div>
 
 								<div
-									className="hidden h-8 w-52 items-center rounded-lg bg-[#221d2d] p-1 sm:flex"
+									className="hidden h-8 w-52 items-center rounded-lg bg-[#111827] p-1 sm:flex"
 									aria-label="Tốc độ phát"
 								>
 									{PLAYBACK_RATES.map((rate) => (
@@ -447,7 +447,7 @@ export default function DialoguePlayer({
 											className={`flex h-6 flex-1 items-center justify-center rounded-md text-xs font-medium transition ${
 												playbackRate === rate
 													? "bg-white text-slate-950 shadow-sm"
-													: "text-slate-300 hover:bg-white/10 hover:text-white"
+												: "text-slate-400 hover:bg-slate-700/60 hover:text-slate-200"
 											}`}
 										>
 											{rate}x

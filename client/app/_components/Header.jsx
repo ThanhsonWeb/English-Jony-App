@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { User, LogOut } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 function UserAvatar({ user }) {
 	const [failedPhotoUrl, setFailedPhotoUrl] = useState(null);
@@ -35,6 +36,7 @@ function UserAvatar({ user }) {
 }
 
 function Header() {
+	const t = useTranslations("Header");
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const dropdownRef = useRef(null);
 	const router = useRouter();
@@ -90,7 +92,7 @@ function Header() {
 										{user.name}
 									</p>
 									<p className="text-sm font-semibold text-amber-200 leading-tight">
-										🌟 Vip
+										🌟 {t("vip")}
 									</p>
 								</div>
 
@@ -120,7 +122,7 @@ function Header() {
 											className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-secondary hover:bg-surface-muted hover:text-main"
 										>
 											<User size={18} />
-											Hồ sơ
+											{t("profile")}
 										</button>
 									</div>
 									{/* log out */}
@@ -130,7 +132,7 @@ function Header() {
 											className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-red-400 hover:bg-red-500/10 hover:text-red-300"
 										>
 											<LogOut size={18} />
-											Đăng xuất
+											{t("logout")}
 										</button>
 									</div>
 								</div>

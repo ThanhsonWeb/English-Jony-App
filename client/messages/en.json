@@ -1,12 +1,165 @@
 {
+	"Navigation": {
+		"dialogue": "Dialogues",
+		"vocabulary": "Vocabulary",
+		"wordlist": "Wordlist"
+	},
+	"Theme": {
+		"light": "Light",
+		"dark": "Dark",
+		"system": "System",
+		"choose": "Choose theme"
+	},
+	"Header": {
+		"vip": "Vip",
+		"profile": "Profile",
+		"logout": "Log out"
+	},
+	"DialogueLanding": {
+		"title": "Real-life dialogues",
+		"subtitle": "Practice listening and responding through everyday situations.",
+		"searchLabel": "Search dialogues",
+		"searchPlaceholder": "Search lessons or topics...",
+		"levelFilter": "Filter dialogues by level",
+		"levelPrefix": "Level: {level}",
+		"levels": {
+			"all": "All",
+			"beginner": "Beginner",
+			"intermediate": "Intermediate",
+			"advanced": "Advanced"
+		},
+		"learning": "In progress",
+		"completed": "Completed",
+		"notStarted": "Not started",
+		"review": "Review again",
+		"continue": "Continue learning",
+		"start": "Start learning",
+		"exercises": "{count} exercises",
+		"completedCount": "{completed}/{total} completed",
+		"explore": "Explore dialogues",
+		"topics": "{count} topics",
+		"dialogues": "{count} dialogues",
+		"noResults": "No matching dialogues found.",
+		"noLevelResults": "There are no topics at this level yet.",
+		"tryAnotherSearch": "Try searching with different words.",
+		"courses": {
+			"office-introduction": {
+				"title": "First day at the office",
+				"description": "Maria meets Tom on her first day at work. Learn how to introduce yourself and communicate in the office."
+			},
+			"weekend-camping": {
+				"title": "Weekend camping",
+				"description": "Follow Leo and Mia on a weekend camping trip and learn English through practical situations."
+			}
+		}
+	},
 	"Profile": {
 		"title": "Profile",
 		"joined": "Joined",
-		"activity": "Study activity",
+		"editName": "Edit name",
+		"updateName": "Update your name",
+		"save": "Save",
+		"close": "Close",
+		"activity": "Activity overview (last 6 months)",
+		"activityCount": "{count} activities in 6 months",
+		"activityTooltip": "{count} activities",
 		"language": "Display language",
+		"languageValue": "🇺🇸 English",
 		"sound": "Sound effects",
 		"darkMode": "Dark mode",
 		"less": "Less",
 		"more": "More"
+	},
+	"WordlistLearn": {
+		"close": "Close learning mode selection",
+		"eyebrow": "Choose a learning mode",
+		"title": "How would you like to learn today?",
+		"subtitle": "Each mode trains a different skill. Choose one that fits your available time.",
+		"modesLabel": "Learning modes",
+		"recommended": "Recommended",
+		"start": "Start",
+		"changeAnytime": "You can change modes at any time.",
+		"modes": {
+			"write": { "title": "Write", "description": "Type answers yourself to practice spelling and build stronger recall.", "detail": "Deep focus", "time": "5–10 min" },
+			"flashcard": { "title": "Flashcards", "description": "Flip cards and review quickly at your own pace.", "detail": "Easy to start", "time": "3–5 min" },
+			"quiz": { "title": "Quiz", "description": "Test your memory with short, visual questions.", "detail": "Quick check", "time": "5 min" }
+		}
+	},
+	"Wordlist": {
+		"currentStreak": "Current learning streak",
+		"days": "{count} days",
+		"thisWeek": "Activity this week",
+		"totalWords": "Total words",
+		"learned": "Learned",
+		"reviewToday": "Review today",
+		"title": "Vocabulary lists",
+		"summary": "{topics} lists · {words} words",
+		"createNew": "+ Create new list",
+		"noDescription": "No description for this list.",
+		"words": "words",
+		"review": "to review",
+		"study": "Study",
+		"edit": "Edit",
+		"delete": "Delete"
+		,"quotes": {
+			"musk": "🚀 When something is important enough, you do it even if the odds are not in your favor.",
+			"jobs": "🍎 Stay hungry. Stay foolish.",
+			"einstein": "💡 Imagination is more important than knowledge.",
+			"laoTzu": "👣 A journey of a thousand miles begins with a single step.",
+			"gandhi": "⏳ The future depends on what you do today.",
+			"ali": "🥊 Don't count the days; make the days count."
+		},
+		"form": {
+			"close": "Close",
+			"createTitle": "Create a new list",
+			"createSubtitle": "Add a topic you want to learn.",
+			"title": "Title",
+			"titlePlaceholder": "For example: Travel, Food...",
+			"notes": "Notes",
+			"notesPlaceholder": "Short description of this list...",
+			"cancel": "Cancel",
+			"create": "Create list",
+			"editTitle": "Edit list",
+			"editSubtitle": "Change the list name or notes.",
+			"save": "Save changes"
+		}
+	},
+	"WordlistDetail": {
+		"back": "Back to vocabulary lists",
+		"eyebrow": "Your vocabulary collection",
+		"title": "Vocabulary list",
+		"subtitle": "Find words, track progress, and start reviewing when you are ready.",
+		"start": "Start learning",
+		"total": "Total words",
+		"new": "New words",
+		"learning": "Learning",
+		"review": "To review",
+		"search": "Search vocabulary...",
+		"all": "All",
+		"listView": "List view",
+		"cardView": "Card view",
+		"addNew": "+ Add new word",
+		"word": "Word",
+		"meaning": "Meaning",
+		"example": "Example",
+		"status": "Status",
+		"actions": "Actions"
+		,"edit": "Edit",
+		"delete": "Delete",
+		"form": {
+			"close": "Close",
+			"addTitle": "Add a new word",
+			"addSubtitle": "Add a new word to your list.",
+			"word": "Word",
+			"wordPlaceholder": "Enter an English word",
+			"translation": "Translation",
+			"translationPlaceholder": "Enter a translation",
+			"example": "Example sentence",
+			"examplePlaceholder": "Enter an example sentence (optional)",
+			"cancel": "Cancel",
+			"add": "Add word",
+			"editTitle": "Edit vocabulary",
+			"save": "Save changes"
+		}
 	}
 }

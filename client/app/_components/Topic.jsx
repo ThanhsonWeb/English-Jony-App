@@ -8,8 +8,11 @@ import {
 	BookOpen,
 	ArrowRight,
 } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 
 function Topic({ topic, onDelete, onFix, words }) {
+	const t = useTranslations("Wordlist");
+	const locale = useLocale();
 	const router = useRouter();
 	const dropdownRef = useRef(null);
 
@@ -22,7 +25,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 	const formatDate = (dateString) => {
 		if (!dateString) return "";
 
-		return new Intl.DateTimeFormat("vi-VN", {
+		return new Intl.DateTimeFormat(locale, {
 			month: "long",
 			day: "numeric",
 			year: "numeric",
@@ -145,7 +148,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 							leading-relaxed text-slate-400
 						"
 						>
-							{topic.description || "Chưa có mô tả cho danh sách này."}
+							{topic.description || t("noDescription")}
 						</p>
 
 						{/* Bottom */}
@@ -163,7 +166,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 											{words?.length || 0}
 										</span>
 
-										<span className="mb-[2px] text-sm text-blue-300">từ</span>
+										<span className="mb-[2px] text-sm text-blue-300">{t("words")}</span>
 									</div>
 								</div>
 
@@ -184,7 +187,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 										</span>
 
 										<span className="mb-[2px] text-xs text-slate-500">
-											cần ôn
+											{t("review")}
 										</span>
 									</div>
 								</div>
@@ -208,7 +211,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 									active:scale-[0.97]
 								"
 							>
-								Học
+								{t("study")}
 								<ArrowRight className="h-4 w-4" />
 							</button>
 						</div>
@@ -239,7 +242,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 							transition hover:bg-slate-700/60
 						"
 					>
-						Chỉnh sửa
+						{t("edit")}
 					</button>
 
 					<div className="h-px bg-slate-700/60" />
@@ -256,7 +259,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 							transition hover:bg-red-500/10
 						"
 					>
-						Xóa
+						{t("delete")}
 					</button>
 				</div>
 			)}
@@ -286,18 +289,18 @@ function Topic({ topic, onDelete, onFix, words }) {
 						{/* Header */}
 						<div>
 							<h4 className="text-xl font-bold text-white">
-								Chỉnh sửa danh sách
+								{t("form.editTitle")}
 							</h4>
 
 							<p className="mt-1 text-sm text-slate-500">
-								Thay đổi tên hoặc ghi chú của danh sách.
+								{t("form.editSubtitle")}
 							</p>
 						</div>
 
 						{/* Name */}
 						<div className="mt-6 flex flex-col gap-2">
 							<label className="text-sm font-medium text-slate-300">
-								Tiêu đề
+								{t("form.title")}
 							</label>
 
 							<input
@@ -319,7 +322,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 						{/* Description */}
 						<div className="mt-4 flex flex-col gap-2">
 							<label className="text-sm font-medium text-slate-300">
-								Ghi chú
+								{t("form.notes")}
 							</label>
 
 							<textarea
@@ -351,7 +354,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 									transition hover:bg-slate-800
 								"
 							>
-								Hủy
+								{t("form.cancel")}
 							</button>
 
 							<button
@@ -363,7 +366,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 									transition hover:bg-blue-500
 								"
 							>
-								Lưu thay đổi
+								{t("form.save")}
 							</button>
 						</div>
 					</form>

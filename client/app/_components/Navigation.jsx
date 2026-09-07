@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import AuthButtons from "./AuthButtons";
 import { useAuth } from "../_contexts/AuthContext";
+import { useTranslations } from "next-intl";
 import {
 	Menu,
 	X,
@@ -16,12 +17,13 @@ import {
 
 const navLinks = [
 	// { name: "Luyện viết", href: "/writing", icon: PenLine },
-	{ name: "Hội thoại", href: "/dialogue", icon: Headphones },
-	{ name: "Từ vựng", href: "/vocabulary", icon: Languages },
-	{ name: "Sổ tay", href: "/wordlist", icon: BookOpen },
+	{ key: "dialogue", href: "/dialogue", icon: Headphones },
+	{ key: "vocabulary", href: "/vocabulary", icon: Languages },
+	{ key: "wordlist", href: "/wordlist", icon: BookOpen },
 ];
 
 function Navigation() {
+	const t = useTranslations("Navigation");
 	const pathname = usePathname();
 	const activePathname = pathname.replace(/^\/(en|vi)(?=\/|$)/, "") || "/";
 	const [openPathname, setOpenPathname] = useState(null);
@@ -38,19 +40,19 @@ function Navigation() {
 						activePathname.startsWith(`${link.href}/`);
 
 					return (
-						<li key={link.name}>
+						<li key={link.key}>
 							<Link
 								href={link.href}
 								className={`relative inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-lg font-medium transition-all duration-200 ${
 									isActive
 										? "border-app bg-surface-muted text-main shadow-[0_8px_24px_-14px_rgba(59,130,246,0.8)]"
 										: "border-transparent text-secondary hover:bg-surface-muted hover:text-main"
-								} after:absolute after:inset-x-3 after:bottom-0 after:h-[2px] after:origin-left after:rounded-full after:bg-blue-400 after:shadow-[0_0_10px_rgba(96,165,250,0.9)] after:transition-transform after:duration-300 after:ease-out ${
+								} after:absolute after:inset-x-3 after:bottom-0 after:h-[2px] after:origin-left after:rounded-full after:bg-primary after:shadow-[0_0_10px_var(--sj-primary)] after:transition-transform after:duration-300 after:ease-out ${
 									isActive ? "after:scale-x-100" : "after:scale-x-0"
 								}`}
 							>
 								<Icon className="w-5 h-5" />
-								<span>{link.name}</span>
+								<span>{t(link.key)}</span>
 							</Link>
 						</li>
 					);
@@ -77,7 +79,7 @@ function Navigation() {
 
 						return (
 							<Link
-								key={link.name}
+								key={link.key}
 								href={link.href}
 								onClick={() => setOpenPathname(null)}
 								className={`inline-flex items-center gap-3 rounded-xl border px-4 py-3 text-lg font-medium transition-all ${
@@ -87,7 +89,7 @@ function Navigation() {
 								}`}
 							>
 								<Icon className="w-5 h-5" />
-								<span>{link.name}</span>
+								<span>{t(link.key)}</span>
 							</Link>
 						);
 					})}

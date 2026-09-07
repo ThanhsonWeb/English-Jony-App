@@ -15,35 +15,38 @@ import {
 import Link from "next/link";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import StatCard from "@/app/_components/StatCard";
+import { useLocale, useTranslations } from "next-intl";
 
 const quotes = [
 	{
-		text: "🚀 Khi điều gì đó đủ quan trọng, bạn sẽ làm nó ngay cả khi cơ hội không đứng về phía bạn.",
+		id: "musk",
 		author: "Elon Musk",
 	},
 	{
-		text: "🍎 Hãy cứ khát khao. Hãy cứ dại khờ.",
+		id: "jobs",
 		author: "Steve Jobs",
 	},
 	{
-		text: "💡 Trí tưởng tượng quan trọng hơn kiến thức.",
+		id: "einstein",
 		author: "Albert Einstein",
 	},
 	{
-		text: "👣 Hành trình vạn dặm bắt đầu từ một bước chân.",
-		author: "Lão Tử",
+		id: "laoTzu",
+		author: "Lao Tzu",
 	},
 	{
-		text: "⏳ Tương lai phụ thuộc vào những gì bạn làm hôm nay.",
+		id: "gandhi",
 		author: "Mahatma Gandhi",
 	},
 	{
-		text: "🥊 Đừng đếm ngày, hãy khiến từng ngày trở nên đáng giá.",
+		id: "ali",
 		author: "Muhammad Ali",
 	},
 ];
 
 function Page() {
+	const t = useTranslations("Wordlist");
+	const locale = useLocale();
 	const { user } = useAuth();
 	const [loading, setLoading] = useState(true);
 	const [isOpen, setIsOpen] = useState(false);
@@ -84,7 +87,10 @@ function Page() {
 		const date = new Date(monday);
 		date.setDate(monday.getDate() + index);
 		return {
-			label: ["T2", "T3", "T4", "T5", "T6", "T7", "CN"][index],
+			label:
+				locale === "vi"
+					? ["T2", "T3", "T4", "T5", "T6", "T7", "CN"][index]
+					: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][index],
 			date: formatLocalDate(date),
 			active: activeDates.has(formatLocalDate(date)),
 			isToday: formatLocalDate(date) === formatLocalDate(today),
@@ -101,9 +107,12 @@ function Page() {
 	// Random quote
 	useEffect(() => {
 		const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-		const timer = setTimeout(() => setQuote(randomQuote), 0);
+		const timer = setTimeout(
+			() => setQuote({ ...randomQuote, text: t(`quotes.${randomQuote.id}`) }),
+			0,
+		);
 		return () => clearTimeout(timer);
-	}, []);
+	}, [t]);
 
 	useEffect(() => {
 		async function fetchWords() {
@@ -258,10 +267,10 @@ function Page() {
 									</div>
 									<div>
 										<p className="text-sm font-medium text-orange-300">
-											Chuỗi học tập hiện tại
+											{t("currentStreak")}
 										</p>
 										<h1 className="mt-1 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-											{currentStreak} ngày
+											{t("days", { count: currentStreak })}
 										</h1>
 									</div>
 								</div>
@@ -269,7 +278,7 @@ function Page() {
 
 							<div>
 								<p className="mb-3 text-sm text-slate-400">
-									Hoạt động tuần này
+									{t("thisWeek")}
 								</p>
 								<div className="grid grid-cols-7 gap-1.5 sm:gap-3">
 									{weekDays.map((day) => (
@@ -335,21 +344,21 @@ function Page() {
 				{/* ================= STATS ================= */}
 				<div className="mb-6 grid grid-cols-3 gap-2 sm:mb-8 sm:gap-4">
 					<StatCard
-						title="Tổng số từ"
+						title={t("totalWords")}
 						value={words.length}
 						icon={<Layers className="h-6 w-6" />}
 						accent="violet"
 					/>
 
 					<StatCard
-						title="Đã học"
+						title={t("learned")}
 						value={learnedWords.length}
 						icon={<BookOpen className="h-6 w-6" />}
 						accent="emerald"
 					/>
 
 					<StatCard
-						title="Cần ôn hôm nay"
+						title={t("reviewToday")}
 						value={wordsToReview.length}
 						icon={<CheckCircle2 className="h-6 w-6" />}
 						accent="amber"
@@ -363,11 +372,11 @@ function Page() {
 				>
 					<div className="hidden md:block ">
 						<h2 className="text-lg sm:text-xl font-semibold text-white">
-							Danh sách từ vựng
+							{t("title")}
 						</h2>
 
 						<p className="mt-1 text-xs sm:text-sm text-slate-500">
-							{topics.length} danh sách · {words.length} từ
+							{t("summary", { topics: topics.length, words: words.length })}
 						</p>
 					</div>
 					{user && (
@@ -375,7 +384,7 @@ function Page() {
 							onClick={() => setIsOpen(true)}
 							className="shrink-0 rounded-xl border border-blue-500/40 bg-blue-500/5 px-4 py-2.5 text-xs sm:text-sm font-semibold text-blue-300 transition hover:bg-blue-500/10 hover:border-blue-400"
 						>
-							+ Tạo danh sách mới
+							{t("createNew")}
 						</button>
 					)}
 				</div>
@@ -476,7 +485,7 @@ function Page() {
 							<button
 								type="button"
 								onClick={() => setIsOpen(false)}
-								aria-label="Đóng"
+								aria-label={t("form.close")}
 								className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/70 text-slate-500 transition hover:border-violet-400/50 hover:bg-violet-500/10 hover:text-white active:scale-95"
 							>
 								<X className="h-4 w-4" />
@@ -489,22 +498,22 @@ function Page() {
 
 								<div className="mt-4 text-center">
 									<h4 className="text-xl font-bold text-white sm:text-2xl">
-										Tạo danh sách mới
+										{t("form.createTitle")}
 									</h4>
 									<p className="mt-1 text-sm text-slate-400">
-										Thêm một chủ đề bạn muốn học.
+										{t("form.createSubtitle")}
 									</p>
 								</div>
 
 								<div className="mt-6 flex flex-col gap-2">
 									<label className="text-sm font-medium text-slate-300">
-										Tiêu đề
+									{t("form.title")}
 									</label>
 									<div className="relative">
 										<Tag className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-violet-400" />
 										<input
 											type="text"
-											placeholder="Ví dụ: Travel, Food..."
+										placeholder={t("form.titlePlaceholder")}
 											value={newTopic}
 											onChange={(e) => setNewTopic(e.target.value)}
 											className="w-full rounded-xl border border-slate-700/80 bg-[#080d1c] py-3 pl-10 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-600 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10"
@@ -515,12 +524,12 @@ function Page() {
 
 								<div className="mt-4 flex flex-col gap-2">
 									<label className="text-sm font-medium text-slate-300">
-										Ghi chú
+									{t("form.notes")}
 									</label>
 									<div className="relative">
 										<NotebookText className="pointer-events-none absolute left-3.5 top-3.5 h-4 w-4 text-violet-400" />
 										<textarea
-											placeholder="Mô tả ngắn về danh sách..."
+										placeholder={t("form.notesPlaceholder")}
 											value={description}
 											onChange={(e) => setDescription(e.target.value)}
 											rows={3}
@@ -537,7 +546,7 @@ function Page() {
 									className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-600 hover:bg-slate-800 hover:text-white active:scale-[0.98]"
 								>
 									<X className="h-4 w-4 text-violet-400" />
-									Hủy
+									{t("form.cancel")}
 								</button>
 
 								<button
@@ -545,7 +554,7 @@ function Page() {
 									className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-500 px-3 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_-12px_rgba(139,92,246,0.9)] transition hover:from-blue-500 hover:to-violet-400 active:scale-[0.98]"
 								>
 									<Sparkles className="h-4 w-4" />
-									Tạo danh sách
+									{t("form.create")}
 								</button>
 							</div>
 						</form>

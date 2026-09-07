@@ -1,12 +1,165 @@
 {
+	"Navigation": {
+		"dialogue": "Hội thoại",
+		"vocabulary": "Từ vựng",
+		"wordlist": "Sổ tay"
+	},
+	"Theme": {
+		"light": "Sáng",
+		"dark": "Tối",
+		"system": "Theo hệ thống",
+		"choose": "Chọn giao diện"
+	},
+	"Header": {
+		"vip": "Vip",
+		"profile": "Hồ sơ",
+		"logout": "Đăng xuất"
+	},
+	"DialogueLanding": {
+		"title": "Hội thoại thực tế",
+		"subtitle": "Luyện nghe và phản xạ qua các tình huống đời thường.",
+		"searchLabel": "Tìm kiếm hội thoại",
+		"searchPlaceholder": "Tìm kiếm bài học hoặc chủ đề...",
+		"levelFilter": "Lọc hội thoại theo trình độ",
+		"levelPrefix": "Cấp độ: {level}",
+		"levels": {
+			"all": "Tất cả",
+			"beginner": "Cơ Bản",
+			"intermediate": "Trung Cấp",
+			"advanced": "Nâng Cao"
+		},
+		"learning": "Đang học",
+		"completed": "Hoàn thành",
+		"notStarted": "Chưa bắt đầu",
+		"review": "Ôn tập lại",
+		"continue": "Tiếp tục học",
+		"start": "Bắt đầu học",
+		"exercises": "{count} bài tập",
+		"completedCount": "{completed}/{total} hoàn thành",
+		"explore": "Khám phá hội thoại",
+		"topics": "{count} chủ đề",
+		"dialogues": "{count} hội thoại",
+		"noResults": "Không tìm thấy hội thoại phù hợp.",
+		"noLevelResults": "Chưa có chủ đề ở trình độ này.",
+		"tryAnotherSearch": "Thử tìm kiếm bằng từ khác.",
+		"courses": {
+			"office-introduction": {
+				"title": "Ngày đầu tiên tại văn phòng",
+				"description": "Maria gặp Tom trong ngày đầu đi làm. Học cách giới thiệu bản thân và giao tiếp trong văn phòng."
+			},
+			"weekend-camping": {
+				"title": "Cuối tuần cắm trại",
+				"description": "Theo chân Leo và Mia trong chuyến cắm trại cuối tuần và học tiếng Anh qua những tình huống thực tế."
+			}
+		}
+	},
 	"Profile": {
 		"title": "Hồ sơ",
 		"joined": "Ngày tham gia",
-		"activity": "Hoạt động học tập",
+		"editName": "Chỉnh sửa tên",
+		"updateName": "Cập nhật tên của bạn",
+		"save": "Lưu",
+		"close": "Đóng",
+		"activity": "Tổng quan hoạt động (6 tháng gần đây)",
+		"activityCount": "{count} hoạt động trong 6 tháng",
+		"activityTooltip": "{count} hoạt động",
 		"language": "Ngôn ngữ hiển thị",
+		"languageValue": "🇻🇳 Tiếng Việt",
 		"sound": "Hiệu ứng âm thanh",
 		"darkMode": "Chế độ tối",
 		"less": "Ít",
 		"more": "Nhiều"
+	},
+	"WordlistLearn": {
+		"close": "Đóng trang chọn chế độ học",
+		"eyebrow": "Chọn cách học",
+		"title": "Hôm nay bạn muốn học thế nào?",
+		"subtitle": "Mỗi chế độ rèn một kỹ năng khác nhau. Chọn cách phù hợp với thời gian của bạn.",
+		"modesLabel": "Các chế độ học",
+		"recommended": "Gợi ý",
+		"start": "Bắt đầu",
+		"changeAnytime": "Bạn có thể đổi chế độ bất cứ lúc nào.",
+		"modes": {
+			"write": { "title": "Viết từ", "description": "Tự nhập câu trả lời để luyện chính tả và ghi nhớ sâu hơn.", "detail": "Tập trung cao", "time": "5–10 phút" },
+			"flashcard": { "title": "Flashcard", "description": "Lật thẻ và ôn tập nhanh theo nhịp độ của riêng bạn.", "detail": "Dễ bắt đầu", "time": "3–5 phút" },
+			"quiz": { "title": "Trắc nghiệm", "description": "Kiểm tra khả năng ghi nhớ bằng những câu hỏi ngắn, trực quan.", "detail": "Kiểm tra nhanh", "time": "5 phút" }
+		}
+	},
+	"Wordlist": {
+		"currentStreak": "Chuỗi học tập hiện tại",
+		"days": "{count} ngày",
+		"thisWeek": "Hoạt động tuần này",
+		"totalWords": "Tổng số từ",
+		"learned": "Đã học",
+		"reviewToday": "Cần ôn hôm nay",
+		"title": "Danh sách từ vựng",
+		"summary": "{topics} danh sách · {words} từ",
+		"createNew": "+ Tạo danh sách mới",
+		"noDescription": "Chưa có mô tả cho danh sách này.",
+		"words": "từ",
+		"review": "cần ôn",
+		"study": "Học",
+		"edit": "Chỉnh sửa",
+		"delete": "Xóa"
+		,"quotes": {
+			"musk": "🚀 Khi điều gì đó đủ quan trọng, bạn sẽ làm nó ngay cả khi cơ hội không đứng về phía bạn.",
+			"jobs": "🍎 Hãy cứ khát khao. Hãy cứ dại khờ.",
+			"einstein": "💡 Trí tưởng tượng quan trọng hơn kiến thức.",
+			"laoTzu": "👣 Hành trình vạn dặm bắt đầu từ một bước chân.",
+			"gandhi": "⏳ Tương lai phụ thuộc vào những gì bạn làm hôm nay.",
+			"ali": "🥊 Đừng đếm ngày, hãy khiến từng ngày trở nên đáng giá."
+		},
+		"form": {
+			"close": "Đóng",
+			"createTitle": "Tạo danh sách mới",
+			"createSubtitle": "Thêm một chủ đề bạn muốn học.",
+			"title": "Tiêu đề",
+			"titlePlaceholder": "Ví dụ: Travel, Food...",
+			"notes": "Ghi chú",
+			"notesPlaceholder": "Mô tả ngắn về danh sách...",
+			"cancel": "Hủy",
+			"create": "Tạo danh sách",
+			"editTitle": "Chỉnh sửa danh sách",
+			"editSubtitle": "Thay đổi tên hoặc ghi chú của danh sách.",
+			"save": "Lưu thay đổi"
+		}
+	},
+	"WordlistDetail": {
+		"back": "Quay lại danh sách chủ đề",
+		"eyebrow": "Bộ từ vựng của bạn",
+		"title": "Danh sách từ vựng",
+		"subtitle": "Tìm từ, theo dõi tiến độ và bắt đầu ôn tập khi bạn sẵn sàng.",
+		"start": "Bắt đầu học",
+		"total": "Tổng số từ",
+		"new": "Từ mới",
+		"learning": "Đang học",
+		"review": "Cần ôn",
+		"search": "Tìm kiếm từ vựng...",
+		"all": "Tất cả",
+		"listView": "Hiển thị dạng danh sách",
+		"cardView": "Hiển thị dạng thẻ",
+		"addNew": "+ Thêm từ mới",
+		"word": "Từ",
+		"meaning": "Nghĩa",
+		"example": "Ví dụ",
+		"status": "Trạng thái",
+		"actions": "Thao tác"
+		,"edit": "Chỉnh sửa",
+		"delete": "Xóa",
+		"form": {
+			"close": "Đóng",
+			"addTitle": "Thêm từ mới",
+			"addSubtitle": "Bổ sung một từ mới vào danh sách của bạn.",
+			"word": "Từ",
+			"wordPlaceholder": "Nhập từ bằng tiếng Anh",
+			"translation": "Bản dịch",
+			"translationPlaceholder": "Nhập bản dịch",
+			"example": "Câu ví dụ",
+			"examplePlaceholder": "Nhập câu ví dụ (tùy chọn)",
+			"cancel": "Hủy",
+			"add": "Thêm từ",
+			"editTitle": "Chỉnh sửa từ vựng",
+			"save": "Lưu thay đổi"
+		}
 	}
 }

@@ -14,6 +14,10 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 	const [playbackRate, setPlaybackRate] = useState(1);
 	const [showSpeedMenu, setShowSpeedMenu] = useState(false);
 	const [showTranslation, setShowTranslation] = useState(false);
+	const [isAudioFinished, setIsAudioFinished] = useState(false);
+	const [hasAudioStarted, setHasAudioStarted] = useState(false);
+	const [showFinishedCaptionBackground, setShowFinishedCaptionBackground] =
+		useState(false);
 	const playbackRateRef = useRef(1);
 
 	const characterImage = task.character?.image;
@@ -83,6 +87,8 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 		}
 
 		audio.playbackRate = playbackRateRef.current;
+		setIsAudioFinished(false);
+		setShowFinishedCaptionBackground(false);
 
 		try {
 			await audio.play();
@@ -109,6 +115,8 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 		audio.currentTime = 0;
 		audio.playbackRate = playbackRateRef.current;
 		setShowCharacter(true);
+		setIsAudioFinished(false);
+		setShowFinishedCaptionBackground(false);
 
 		try {
 			await audio.play();
@@ -134,6 +142,28 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 
 		setShowTranslation((current) => !current);
 	}
+
+	function handleCaptionsClick() {
+		if (!isAudioFinished) {
+			setShowCaptions((current) => !current);
+			return;
+		}
+
+		if (!showCaptions) {
+			setShowCaptions(true);
+			setShowFinishedCaptionBackground(true);
+			return;
+		}
+
+		setShowFinishedCaptionBackground((current) => !current);
+	}
+
+	const showSubtitleBackground =
+		showCaptions &&
+		hasAudioStarted &&
+		(!isAudioFinished || showFinishedCaptionBackground);
+	const showSubtitleText =
+		showCaptions && hasAudioStarted && !isAudioFinished;
 
 	return (
 		<div>
@@ -185,21 +215,23 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 					)}
 
 					{/* Subtitle */}
-					{showCaptions && (
+					{showSubtitleBackground && (
 						<div className="absolute inset-x-0 bottom-0 z-20 bg-slate-950/75 px-4 py-3 text-center backdrop-blur-sm sm:px-6">
-							<p className="text-sm font-bold text-blue-300">
-								{task.character?.name}
-							</p>
-
-							<p className="mt-1 text-sm font-medium text-white sm:text-lg">
-								{task.transcript}
-							</p>
-
-							{showTranslation && task.translation && (
-								<p className="mt-2 text-sm text-slate-300">
-									{task.translation}
+							<div className={showSubtitleText ? "" : "invisible"}>
+								<p className="text-sm font-bold text-blue-300">
+									{task.character?.name}
 								</p>
-							)}
+
+								<p className="mt-1 text-sm font-medium text-white sm:text-lg">
+									{task.transcript}
+								</p>
+
+								{showTranslation && task.translation && (
+									<p className="mt-2 text-sm text-slate-300">
+										{task.translation}
+									</p>
+								)}
+							</div>
 						</div>
 					)}
 				</div>
@@ -209,10 +241,16 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 						ref={audioRef}
 						src={task.audioUrl}
 						preload="metadata"
-						onPlay={() => setIsPlaying(true)}
+						onPlay={() => {
+							setIsPlaying(true);
+							setHasAudioStarted(true);
+							setIsAudioFinished(false);
+						}}
 						onPause={() => setIsPlaying(false)}
 						onEnded={() => {
 							setIsPlaying(false);
+							setIsAudioFinished(true);
+							setShowFinishedCaptionBackground(false);
 							setShowCharacter(false);
 						}}
 					/>
@@ -289,7 +327,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 
 					<button
 						type="button"
-						onClick={() => setShowCaptions((current) => !current)}
+						onClick={handleCaptionsClick}
 						aria-label="Bật hoặc tắt phụ đề"
 						aria-pressed={showCaptions}
 						className={`flex h-9 w-11 items-center justify-center rounded-md transition ${

@@ -20,8 +20,10 @@ import Word from "@/app/_components/Word.jsx";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import Loading from "@/app/_components/loading";
+import { useTranslations } from "next-intl";
 
 export default function WordPage() {
+	const t = useTranslations("WordlistDetail");
 	// state
 	const [viewMode, setViewMode] = useState("list");
 	const [wordList, setWordList] = useState([]);
@@ -283,20 +285,20 @@ export default function WordPage() {
 					<div className="relative">
 						<Link
 							href="/wordlist"
-							aria-label="Quay lại danh sách chủ đề"
-							title="Quay lại"
+							aria-label={t("back")}
+							title={t("back")}
 							className="absolute right-0 top-0 grid h-11 w-11 place-items-center rounded-xl border border-slate-700/70 bg-slate-950/25 text-slate-400 transition hover:border-emerald-400/40 hover:bg-emerald-500/10 hover:text-emerald-300 sm:right-44"
 						>
 							<ArrowLeft size={18} />
 						</Link>
 						<p className="pr-14 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-400 sm:pr-0">
-							Bộ từ vựng của bạn
+							{t("eyebrow")}
 						</p>
 						<h1 className="mt-2 pr-14 text-3xl font-bold tracking-tight text-white sm:pr-0 sm:text-4xl">
-							Danh sách từ vựng
+							{t("title")}
 						</h1>
 						<p className="mt-3 max-w-xl text-sm leading-6 text-slate-400 sm:text-base">
-							Tìm từ, theo dõi tiến độ và bắt đầu ôn tập khi bạn sẵn sàng.
+							{t("subtitle")}
 						</p>
 						<button
 							onClick={() => router.push(`/wordlist/${topicId}/learn`)}
@@ -304,25 +306,25 @@ export default function WordPage() {
 							className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl bg-emerald-500 px-4 text-sm font-semibold text-emerald-950 shadow-[0_10px_30px_rgba(16,185,129,0.18)] transition hover:-translate-y-0.5 hover:bg-emerald-400 disabled:cursor-not-allowed disabled:opacity-40 sm:absolute sm:right-0 sm:top-0 sm:mt-0"
 						>
 							<RotateCcw size={18} />
-							Bắt đầu học
+							{t("start")}
 						</button>
 
 						<div className="mt-7 grid max-w-2xl grid-cols-2 gap-y-5 border-t border-slate-700/60 pt-5 sm:grid-cols-4 sm:gap-y-0">
 							<div className="px-1 sm:pr-6">
 								<p className="text-xl font-bold text-white">{words.length}</p>
-								<p className="mt-0.5 text-xs text-slate-500">Tổng số từ</p>
+								<p className="mt-0.5 text-xs text-slate-500">{t("total")}</p>
 							</div>
 							<div className="border-l border-slate-700/60 pl-5 sm:px-6">
 								<p className="text-xl font-bold text-emerald-300">{newWordCount}</p>
-								<p className="mt-0.5 text-xs text-slate-500">Từ mới</p>
+								<p className="mt-0.5 text-xs text-slate-500">{t("new")}</p>
 							</div>
 							<div className="px-1 sm:border-l sm:border-slate-700/60 sm:px-6">
 								<p className="text-xl font-bold text-sky-300">{learningWordCount}</p>
-								<p className="mt-0.5 text-xs text-slate-500">Đang học</p>
+								<p className="mt-0.5 text-xs text-slate-500">{t("learning")}</p>
 							</div>
 							<div className="border-l border-slate-700/60 pl-5 sm:px-6">
 								<p className="text-xl font-bold text-amber-300">{reviewWordCount}</p>
-								<p className="mt-0.5 text-xs text-slate-500">Cần ôn</p>
+								<p className="mt-0.5 text-xs text-slate-500">{t("review")}</p>
 							</div>
 						</div>
 					</div>
@@ -345,7 +347,7 @@ export default function WordPage() {
 
 								router.push(`?${params.toString()}`);
 							}}
-							placeholder="Tìm kiếm từ vựng..."
+							placeholder={t("search")}
 							className="w-full rounded-xl border border-slate-700/70 bg-[#080f1d] py-3 pl-10 pr-4 text-sm text-slate-200 outline-none transition placeholder:text-slate-600 focus:border-emerald-500/70 focus:ring-4 focus:ring-emerald-500/10"
 						/>
 					</div>
@@ -365,10 +367,10 @@ export default function WordPage() {
 								}}
 								className="w-full appearance-none rounded-xl border border-slate-700/70 bg-[#080f1d] py-3 pl-9 pr-8 text-sm text-slate-300 outline-none focus:border-emerald-500/70"
 							>
-								<option value="all">Tất cả</option>
-								<option value="new">Mới</option>
-								<option value="learning">Đang học</option>
-								<option value="review">Cần ôn</option>
+								<option value="all">{t("all")}</option>
+								<option value="new">{t("new")}</option>
+								<option value="learning">{t("learning")}</option>
+								<option value="review">{t("review")}</option>
 							</select>
 
 							<Filter className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
@@ -378,8 +380,8 @@ export default function WordPage() {
 							<button
 								type="button"
 								onClick={() => handleViewModeChange("list")}
-								aria-label="Hiển thị dạng danh sách"
-								title="Danh sách"
+								aria-label={t("listView")}
+								title={t("listView")}
 								className={`rounded-lg p-2 transition-colors ${
 									viewMode === "list"
 										? "bg-emerald-500 text-emerald-950"
@@ -392,8 +394,8 @@ export default function WordPage() {
 							<button
 								type="button"
 								onClick={() => handleViewModeChange("card")}
-								aria-label="Hiển thị dạng thẻ"
-								title="Thẻ"
+								aria-label={t("cardView")}
+								title={t("cardView")}
 								className={`rounded-lg p-2 transition-colors ${
 									viewMode === "card"
 										? "bg-emerald-500 text-emerald-950"
@@ -409,7 +411,7 @@ export default function WordPage() {
 								onClick={() => setIsOpen(!isOpen)}
 								className="min-h-11 flex-1 cursor-pointer whitespace-nowrap rounded-xl border border-emerald-500/25 bg-emerald-500/10 px-4 text-sm font-semibold text-emerald-300 transition hover:border-emerald-400/50 hover:bg-emerald-500/15 hover:text-emerald-200 active:scale-[0.98] sm:flex-none"
 							>
-								+ Thêm từ mới
+								{t("addNew")}
 							</button>
 						</div>
 
@@ -428,7 +430,7 @@ export default function WordPage() {
 									<button
 										type="button"
 										onClick={() => setIsOpen(false)}
-										aria-label="Đóng"
+									aria-label={t("form.close")}
 										className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/70 text-slate-500 transition hover:border-violet-400/50 hover:bg-violet-500/10 hover:text-white active:scale-95"
 									>
 										<X className="h-4 w-4" />
@@ -440,17 +442,17 @@ export default function WordPage() {
 										</div>
 										<div className="mt-4 text-center">
 											<h2 className="text-xl font-bold text-white sm:text-2xl">
-												Thêm từ mới
+											{t("form.addTitle")}
 											</h2>
 											<p className="mt-1 text-sm text-slate-400">
-												Bổ sung một từ mới vào danh sách của bạn.
+											{t("form.addSubtitle")}
 											</p>
 										</div>
 
 										{/* nhập từ */}
 										<div className="relative mt-6 flex flex-col gap-2">
 											<label className="text-sm font-medium text-slate-300">
-												Từ
+											{t("form.word")}
 											</label>
 											<div className="relative">
 												<Tag className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-violet-400" />
@@ -459,7 +461,7 @@ export default function WordPage() {
 													name="word"
 													value={english}
 													onChange={handleEnglishChange}
-													placeholder="Nhập từ bằng tiếng Anh"
+												placeholder={t("form.wordPlaceholder")}
 													required
 													autoComplete="off"
 													className="w-full rounded-xl border border-slate-700/80 bg-[#080d1c] py-3 pl-10 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-600 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10"
@@ -485,7 +487,7 @@ export default function WordPage() {
 										{/* nhập nghĩa */}
 										<div className="mt-4 flex flex-col gap-2">
 											<label className="text-sm font-medium text-slate-300">
-												Bản dịch
+											{t("form.translation")}
 											</label>
 											<div className="relative">
 												<Languages className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-violet-400" />
@@ -494,7 +496,7 @@ export default function WordPage() {
 													name="translation"
 													value={vietnamese}
 													onChange={(e) => setVietnamese(e.target.value)}
-													placeholder="Nhập bản dịch"
+												placeholder={t("form.translationPlaceholder")}
 													required
 													className="w-full rounded-xl border border-slate-700/80 bg-[#080d1c] py-3 pl-10 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-600 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10"
 												/>
@@ -504,7 +506,7 @@ export default function WordPage() {
 										{/* nhập câu ví dụ */}
 										<div className="mt-4 flex flex-col gap-2">
 											<label className="text-sm font-medium text-slate-300">
-												Câu ví dụ
+											{t("form.example")}
 											</label>
 											<div className="relative">
 												<NotebookText className="pointer-events-none absolute left-3.5 top-3.5 h-4 w-4 text-violet-400" />
@@ -513,7 +515,7 @@ export default function WordPage() {
 													value={example}
 													onChange={(e) => setExample(e.target.value)}
 													rows={3}
-													placeholder="Nhập câu ví dụ (tùy chọn)"
+												placeholder={t("form.examplePlaceholder")}
 													className="w-full resize-none rounded-xl border border-slate-700/80 bg-[#080d1c] py-3 pl-10 pr-4 text-sm text-slate-100 outline-none transition placeholder:text-slate-600 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10"
 												/>
 											</div>
@@ -527,7 +529,7 @@ export default function WordPage() {
 											className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-600 hover:bg-slate-800 hover:text-white active:scale-[0.98]"
 										>
 											<X className="h-4 w-4 text-violet-400" />
-											Hủy
+										{t("form.cancel")}
 										</button>
 
 										<button
@@ -535,7 +537,7 @@ export default function WordPage() {
 											className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-500 px-3 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_-12px_rgba(139,92,246,0.9)] transition hover:from-blue-500 hover:to-violet-400 active:scale-[0.98]"
 										>
 											<Sparkles className="h-4 w-4" />
-											Thêm từ
+										{t("form.add")}
 										</button>
 									</div>
 								</form>
@@ -555,12 +557,12 @@ export default function WordPage() {
 					{/* table Header */}
 					{viewMode === "list" && (
 						<div className="hidden grid-cols-12 items-center border-b border-slate-800/70 px-5 pb-4 pt-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500 md:grid">
-							<div className="col-span-2">Từ</div>
+							<div className="col-span-2">{t("word")}</div>
 							<div className="col-span-2">IPA</div>
-							<div className="col-span-2">Nghĩa</div>
-							<div className="col-span-3">Ví dụ</div>
-							<div className="col-span-2">Trạng thái</div>
-							<div className="col-span-1 text-right">Thao tác</div>
+							<div className="col-span-2">{t("meaning")}</div>
+							<div className="col-span-3">{t("example")}</div>
+							<div className="col-span-2">{t("status")}</div>
+							<div className="col-span-1 text-right">{t("actions")}</div>
 						</div>
 					)}
 

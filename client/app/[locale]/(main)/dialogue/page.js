@@ -12,6 +12,7 @@ import {
 	Search,
 } from "lucide-react";
 import { lessonData } from "./_data/lessonData";
+import { useLocale, useTranslations } from "next-intl";
 
 const courseImages = {
 	"office-introduction":
@@ -19,24 +20,23 @@ const courseImages = {
 	"weekend-camping": "/dialogue/weekend-camping/thumbnails/weekend-camping.png",
 };
 
-const levelOptions = [
-	{ value: "all", label: "Tất cả" },
-	{ value: "beginner", label: "Cơ Bản" },
-	{ value: "intermediate", label: "Trung Cấp" },
-	{ value: "advanced", label: "Nâng Cao" },
-];
-
-const levelLabels = Object.fromEntries(
-	levelOptions
-		.filter((option) => option.value !== "all")
-		.map((option) => [option.value, option.label]),
-);
-
 function getCourseImage(courseId) {
 	return courseImages[courseId] || "/hero-img.png";
 }
 
 export default function DialoguePage() {
+	const t = useTranslations("DialogueLanding");
+	const locale = useLocale();
+	const levelOptions = ["all", "beginner", "intermediate", "advanced"].map(
+		(value) => ({ value, label: t(`levels.${value}`) }),
+	);
+	const levelLabels = Object.fromEntries(
+		levelOptions.map((option) => [option.value, option.label]),
+	);
+	const getLocalizedCourseValue = (course, field) => {
+		const key = `courses.${course.id}.${field}`;
+		return t.has(key) ? t(key) : course[field];
+	};
 	const courses = useMemo(() => Object.values(lessonData), []);
 	const [search, setSearch] = useState("");
 	const [selectedLevel, setSelectedLevel] = useState("all");
@@ -145,12 +145,16 @@ export default function DialoguePage() {
 				courseStats[first.id].latestUpdatedAt,
 		)[0];
 
-	const normalizedSearch = search.trim().toLocaleLowerCase("vi");
+	const normalizedSearch = search.trim().toLocaleLowerCase(locale);
 	const courseMatchesSearch = (course) => {
 		if (!normalizedSearch) return true;
 
-		return [course.title, course.description, levelLabels[course.level]].some(
-			(value) => value?.toLocaleLowerCase("vi").includes(normalizedSearch),
+		return [
+			getLocalizedCourseValue(course, "title"),
+			getLocalizedCourseValue(course, "description"),
+			levelLabels[course.level],
+		].some(
+			(value) => value?.toLocaleLowerCase(locale).includes(normalizedSearch),
 		);
 	};
 	const courseMatchesLevel = (course) =>
@@ -207,28 +211,28 @@ export default function DialoguePage() {
 					{/* Content  */}
 					<div className="relative z-30 flex min-h-[205px] max-w-2xl flex-col justify-center px-5 py-6 sm:px-8 md:min-h-[220px] md:max-w-[55%] md:px-9 lg:px-12 xl:px-14">
 						<h1 className="bg-gradient-to-r from-violet-300 to-blue-300 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
-							Hội thoại thực tế{" "}
+							{t("title")}{" "}
 							<Headphones className="inline h-7 w-7 text-blue-300" />
 						</h1>
 						<p className="mt-3 max-w-xl text-sm leading-6 text-slate-400 sm:text-base">
-							Luyện nghe và phản xạ qua các tình huống đời thường.
+							{t("subtitle")}
 						</p>
 
 						<div className="mt-4 flex w-full max-w-xl flex-col gap-3 sm:flex-row sm:items-center">
 							<label className="relative block flex-1">
-								<span className="sr-only">Tìm kiếm hội thoại</span>
+								<span className="sr-only">{t("searchLabel")}</span>
 								<Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
 								<input
 									type="search"
 									value={search}
 									onChange={(event) => setSearch(event.target.value)}
-									placeholder="Tìm kiếm bài học hoặc chủ đề..."
+									placeholder={t("searchPlaceholder")}
 									className="h-11 w-full rounded-lg border border-app bg-surface pl-11 pr-4 text-sm text-main outline-none transition placeholder:text-secondary focus:border-primary focus:ring-2 focus:ring-primary/15"
 								/>
 							</label>
 
 							<label className="relative shrink-0 sm:w-48">
-								<span className="sr-only">Lọc hội thoại theo trình độ</span>
+								<span className="sr-only">{t("levelFilter")}</span>
 								<select
 									value={selectedLevel}
 									onChange={(event) => setSelectedLevel(event.target.value)}
@@ -236,7 +240,7 @@ export default function DialoguePage() {
 								>
 									{levelOptions.map((option) => (
 										<option key={option.value} value={option.value}>
-											Cấp độ: {option.label}
+											{t("levelPrefix", { level: option.label })}
 										</option>
 									))}
 								</select>
@@ -260,27 +264,27 @@ export default function DialoguePage() {
 									/>
 									<div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent" />
 									<span className="absolute left-2 top-2 rounded-full border border-white/20 bg-primary px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm">
-										● Đang học
+										● {t("learning")}
 									</span>
 								</div>
 
 								<div className="min-w-0 flex-1">
 									<div className="flex flex-wrap items-center gap-2">
 										<h2 className="text-lg font-bold text-white sm:text-xl">
-											{currentCourse.title}
+											{getLocalizedCourseValue(currentCourse, "title")}
 										</h2>
 										<span className="rounded-full border border-emerald-400/20 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-semibold text-emerald-300">
 											{levelLabels[currentCourse.level]}
 										</span>
 									</div>
 									<p className="mt-1.5 max-w-2xl line-clamp-2 text-sm leading-5 text-slate-400">
-										{currentCourse.description}
+										{getLocalizedCourseValue(currentCourse, "description")}
 									</p>
 
 									<div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-400">
 										<span className="inline-flex items-center gap-1.5">
 											<BookOpen className="h-4 w-4 text-violet-400" />
-											{currentStats.totalTaskCount} bài tập
+											{t("exercises", { count: currentStats.totalTaskCount })}
 										</span>
 										<span className="inline-flex items-center gap-1.5">
 											<Clock3 className="h-4 w-4 text-slate-500" />~
@@ -288,8 +292,10 @@ export default function DialoguePage() {
 										</span>
 										<span className="inline-flex items-center gap-1.5">
 											<CircleCheck className="h-4 w-4 text-violet-400" />
-											{currentStats.completedTaskCount}/
-											{currentStats.totalTaskCount} hoàn thành
+											{t("completedCount", {
+												completed: currentStats.completedTaskCount,
+												total: currentStats.totalTaskCount,
+											})}
 										</span>
 									</div>
 
@@ -312,7 +318,7 @@ export default function DialoguePage() {
 									href={`/dialogue/${currentCourse.id}`}
 									className="inline-flex min-h-11 shrink-0 self-stretch items-center justify-center gap-3 rounded-lg bg-gradient-to-r from-violet-600 to-blue-600 px-6 text-sm font-semibold text-white shadow-lg shadow-primary/15 transition hover:-translate-y-0.5 hover:from-violet-500 hover:to-blue-500 md:self-center"
 								>
-									Tiếp tục học
+									{t("continue")}
 									<ArrowRight className="h-5 w-5" />
 								</Link>
 							</div>
@@ -327,11 +333,11 @@ export default function DialoguePage() {
 							<div>
 							
 								<h2 className="mt-1 text-2xl font-bold text-white">
-									Khám phá hội thoại
+									{t("explore")}
 								</h2>
 							</div>
 							<span className="text-sm text-slate-500">
-								{visibleCourses.length} chủ đề
+								{t("topics", { count: visibleCourses.length })}
 							</span>
 						</div>
 
@@ -339,15 +345,15 @@ export default function DialoguePage() {
 							{visibleCourses.map((course) => {
 								const stats = courseStats[course.id];
 								const statusLabel = stats.isCompleted
-									? "Hoàn thành"
+									? t("completed")
 									: stats.isStarted
-										? "Đang học"
-										: "Chưa bắt đầu";
+										? t("learning")
+										: t("notStarted");
 								const actionLabel = stats.isCompleted
-									? "Ôn tập lại"
+									? t("review")
 									: stats.isStarted
-										? "Tiếp tục học"
-										: "Bắt đầu học";
+										? t("continue")
+										: t("start");
 								const statusClassName = stats.isCompleted
 									? "border-emerald-500/30 bg-emerald-600 text-white"
 									: stats.isStarted
@@ -375,7 +381,7 @@ export default function DialoguePage() {
 										{/* Dialogue count */}
 										<span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-black/70 px-2.5 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
 											<BookOpen className="h-3.5 w-3.5" />
-											{course.dialogues.length} hội thoại
+											{t("dialogues", { count: course.dialogues.length })}
 										</span>
 
 										{/* Level badge */}
@@ -393,11 +399,11 @@ export default function DialoguePage() {
 									{/* Content */}
 									<div className="p-4">
 										<h3 className="line-clamp-1 text-base font-bold text-white transition ">
-											{course.title}
+											{getLocalizedCourseValue(course, "title")}
 										</h3>
 
 										<p className="mt-1.5 line-clamp-2 text-sm leading-5 text-slate-400">
-											{course.description}
+											{getLocalizedCourseValue(course, "description")}
 										</p>
 
 										<div className="mt-4 flex items-center gap-3">
@@ -426,12 +432,12 @@ export default function DialoguePage() {
 					<div className="mt-10 rounded-2xl border border-dashed border-slate-700 bg-slate-900/30 px-6 py-14 text-center">
 						<p className="text-lg font-semibold text-white">
 							{normalizedSearch || selectedLevel === "all"
-								? "Không tìm thấy hội thoại phù hợp."
-								: "Chưa có chủ đề ở trình độ này."}
+								? t("noResults")
+								: t("noLevelResults")}
 						</p>
 						{normalizedSearch && (
 							<p className="mt-2 text-sm text-slate-400">
-								Thử tìm kiếm bằng từ khác.
+								{t("tryAnotherSearch")}
 							</p>
 						)}
 					</div>
