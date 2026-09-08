@@ -84,6 +84,17 @@ function FillBlankTask({
 		if (isCorrect) onComplete?.();
 	}
 
+	function getInputBorderColor(index) {
+		if (!result) return "var(--sj-primary)";
+
+		return fillBlankAnswersMatch(
+			answerValues[index] || "",
+			expectedAnswers[index],
+		)
+			? "#22c55e"
+			: "#ef4444";
+	}
+
 	function handleInputKeyDown(event, index) {
 		const isPlainEnter =
 			event.key === "Enter" &&
@@ -155,8 +166,9 @@ function FillBlankTask({
 													placeholder="..."
 													style={{
 														width: getInputWidth(expectedAnswers[index]),
+														borderBottomColor: getInputBorderColor(index),
 													}}
-													className="mx-1 inline-block max-w-full border-b-2 border-blue-500 bg-transparent px-2 py-1 text-center outline-none"
+													className="mx-1 inline-block max-w-full border-b-2 bg-transparent px-2 py-1 text-center outline-none transition-colors"
 												/>
 											)}
 										</Fragment>
@@ -172,8 +184,11 @@ function FillBlankTask({
 											onChange={(event) => updateAnswer(0, event.target.value)}
 											onKeyDown={(event) => handleInputKeyDown(event, 0)}
 											placeholder="..."
-											style={{ width: getInputWidth(expectedAnswers[0]) }}
-											className="mx-2 max-w-full border-b-2 border-blue-500 bg-transparent px-2 py-1 text-center outline-none"
+											style={{
+												width: getInputWidth(expectedAnswers[0]),
+												borderBottomColor: getInputBorderColor(0),
+											}}
+											className="mx-2 max-w-full border-b-2 bg-transparent px-2 py-1 text-center outline-none transition-colors"
 										/>{" "}
 										{task.sentenceAfter}
 									</>

@@ -68,7 +68,7 @@ export default function Home() {
 					<div className="mt-8 flex flex-col gap-3 sm:flex-row">
 						<Link
 							href="/dialogue"
-							className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-3 font-semibold text-white shadow-[0_14px_35px_-16px_rgba(59,130,246,0.9)] transition hover:brightness-110 active:scale-[0.98]"
+							className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-3 font-semibold text-white transition hover:brightness-110 active:scale-[0.98]"
 						>
 							Bắt đầu học
 							<ArrowRight size={18} />
