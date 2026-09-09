@@ -17,7 +17,7 @@ function countFillBlankAnswers(task) {
   }
 
   const blankMarkers = String(task.question || "").match(/_{2,}|\{\{blank\}\}/gi);
-  return blankMarkers?.length || 1;
+  return blankMarkers?.length || 0;
 }
 
 function normalizeText(value) {
@@ -202,6 +202,20 @@ export function validateDialogue(data, options = {}) {
           blankCount > structureRules.fillBlankRange.max
         ) {
           errors.push(`${taskLabel}: Fill Blank must contain 1-3 blanks.`);
+        }
+
+        const answers = Array.isArray(task.answers) ? task.answers : [task.answer];
+        if (sourceLine && blankCount === answers.length) {
+          let answerIndex = 0;
+          const completedQuestion = String(task.question).replace(
+            /_{2,}|\{\{blank\}\}/gi,
+            () => answers[answerIndex++] || "",
+          );
+          if (completedQuestion !== sourceLine.text) {
+            errors.push(
+              `${taskLabel}: replacing blanks with answers must reconstruct dialogue line ${task.dialogueLineId} exactly.`,
+            );
+          }
         }
       }
 

@@ -1,5 +1,7 @@
 import cookingDinnerDraft from "./dialogues/weekend-camping/cooking-dinner.json";
 import talkingByTheCampfireDraft from "./dialogues/weekend-camping/talking-by-the-campfire.json";
+import askingForDirectionsCourse from "./courses/asking-for-directions";
+import { buildGeneratedDialogueTasks } from "./helpers/buildDialogue";
 
 const officeCharacterImages = {
 	Maria: "/dialogue/office-introduction/shared/maria.png",
@@ -77,78 +79,6 @@ function weekendCampingFillBlankTask(
 		sentenceAfter,
 		answer,
 	};
-}
-
-function normalizeGrammarSentence(value = "") {
-	return value
-		.trim()
-		.toLocaleLowerCase("en")
-		.replace(/[’‘]/g, "'")
-		.replace(/\s+/g, " ");
-}
-
-function findGrammarNoteForTask(draft, task) {
-	if (task.type !== "fillBlank" || !task.question) return undefined;
-
-	let answerIndex = 0;
-	const answers = Array.isArray(task.answers) ? task.answers : [task.answer];
-	const completedQuestion = task.question.replace(
-		/___/g,
-		() => answers[answerIndex++] || "",
-	);
-	const normalizedQuestion = normalizeGrammarSentence(completedQuestion);
-
-	return draft.grammarNotes?.find((note) => {
-		const englishExample = note.example?.split("=")[0] || "";
-		return normalizeGrammarSentence(englishExample) === normalizedQuestion;
-	});
-}
-
-function buildGeneratedDialogueTasks(draft, characterImages) {
-	const dialogueOrder = new Map(
-		draft.dialogue.map((line, index) => [line.audioUrl, index]),
-	);
-
-	return draft.tasks.map((task) => {
-		const dialogueLine = draft.dialogue.find(
-			(line) => line.audioUrl === task.audioUrl,
-		);
-		const sharedFields = {
-			...task,
-			id: String(task.id),
-			title:
-				task.type === "multipleChoice"
-					? "Hiểu tình huống"
-					: "Điền từ còn thiếu",
-			instruction:
-				task.type === "multipleChoice"
-					? "Nghe và chọn đáp án đúng."
-					: "Nghe và điền từ còn thiếu.",
-			scene: draft.metadata.scene,
-			character: dialogueLine
-				? {
-						name: dialogueLine.speaker,
-						image: characterImages[dialogueLine.speaker],
-					}
-				: undefined,
-			transcript: dialogueLine?.text,
-			grammar: findGrammarNoteForTask(draft, task),
-		};
-
-		if (task.type !== "fillBlank") return sharedFields;
-
-		const [sentenceBefore = "", sentenceAfter = ""] = task.question.split("___");
-		return {
-			...sharedFields,
-			sentenceBefore,
-			sentenceAfter,
-		};
-	})
-		.sort(
-			(a, b) =>
-				dialogueOrder.get(a.audioUrl) - dialogueOrder.get(b.audioUrl),
-		)
-		.map((task, index) => ({ ...task, id: String(index + 1) }));
 }
 
 export const lessonData = {
@@ -4798,4 +4728,5 @@ export const lessonData = {
 			},
 		],
 	},
+	[askingForDirectionsCourse.id]: askingForDirectionsCourse,
 };

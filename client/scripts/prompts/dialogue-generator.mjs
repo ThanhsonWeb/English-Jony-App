@@ -55,10 +55,13 @@ Tasks:
 
 Fill Blank:
 - Use 1–3 blanks and vary what the blanks test.
+- Mark every blank with underscores exactly where the missing word or phrase appears in the original dialogue line.
+- Replacing each underscore marker with its answer must reconstruct the original transcript in the original word order.
 - Never repeat the exact same task.
 
 Multiple Choice:
-- Test conversation or context understanding, not dictionary definitions.
+- Test a useful phrase's meaning or genuine conversation/context understanding.
+- A short useful phrase may be translated, but do not ask for a Vietnamese translation of the full English sentence.
 - Ask only about information clearly supported by the dialogue.
 - Include exactly one correct answer, and the answer must appear in options.
 
