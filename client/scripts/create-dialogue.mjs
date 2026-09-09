@@ -58,8 +58,6 @@ try {
 		level,
 		situation,
 		thumbnail,
-		dialogueLines: 12,
-		taskCount: 17,
 	};
 
 	const prompt = buildDialoguePrompt(lessonConfig);

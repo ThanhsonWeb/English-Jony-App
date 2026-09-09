@@ -138,7 +138,11 @@ export default function DialogueTaskPage() {
 
 	return (
 		<>
-			<DialogueExerciseHeader lessonId={lessonId} />
+			<DialogueExerciseHeader
+				lessonId={lessonId}
+				lessonTitle={lesson.title}
+				dialogueTitle={dialogue.title}
+			/>
 			{taskContent}
 			<GuestProgressReminder
 				isOpen={guestReminderRequested && !authLoading && !user}

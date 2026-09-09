@@ -1,12 +1,14 @@
 "use client";
 
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, TentTree } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function DialogueExerciseHeader({
 	lessonId,
+	lessonTitle,
+	dialogueTitle,
 }) {
 	const router = useRouter();
 	const continueButtonRef = useRef(null);
@@ -26,15 +28,25 @@ export default function DialogueExerciseHeader({
 
 	return (
 		<>
-			<header className="mx-auto w-full max-w-6xl px-4 pt-6 sm:px-8">
+			<header className="w-full px-4 pt-6 sm:px-8">
+				<div className="mx-auto max-w-6xl">
+				<div className="flex min-w-0 items-center gap-3">
 				<button
 					type="button"
 					onClick={() => setIsExitOpen(true)}
-					className="inline-flex min-h-10 items-center gap-2 rounded-lg px-2 text-sm font-semibold text-secondary transition hover:bg-surface-muted hover:text-main"
+					className="-ml-2 inline-flex min-h-10 items-center gap-2 rounded-lg px-2 text-sm font-semibold text-secondary transition hover:bg-surface-muted hover:text-main"
 				>
 					<ArrowLeft size={18} />
 					Thoát
 				</button>
+				<div className="flex min-w-0 items-center gap-2 text-sm sm:text-base">
+					<TentTree size={20} className="shrink-0 text-secondary" />
+					<span className="truncate text-secondary">{lessonTitle}</span>
+					<span className="text-muted">/</span>
+					<span className="truncate font-medium text-main">{dialogueTitle}</span>
+				</div>
+				</div>
+				</div>
 			</header>
 
 			{isExitOpen && (
