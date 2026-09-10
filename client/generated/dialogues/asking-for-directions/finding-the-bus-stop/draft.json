@@ -4,7 +4,7 @@
 "dialogueId": "finding-the-bus-stop",
 "title": "Tìm trạm xe buýt",
 "level": "a1",
-"situation": "Ben asks Emma how to get to the nearest bus stop.",
+"situation": "Ben hỏi Emma cách đi đến trạm xe buýt gần nhất",
 "scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
 "thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-the-bus-stop.png"
 },

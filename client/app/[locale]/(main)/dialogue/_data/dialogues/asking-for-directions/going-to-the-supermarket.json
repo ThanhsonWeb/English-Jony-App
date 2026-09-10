@@ -1,0 +1,416 @@
+{
+	"metadata": {
+		"courseId": "asking-for-directions",
+		"dialogueId": "going-to-the-supermarket",
+		"title": "Đi đến siêu thị",
+		"level": "a1",
+		"situation": "Ben asks Emma how to get to a nearby supermarket.",
+		"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+		"thumbnail": "/dialogue/asking-for-directions/thumbnails/going-to-the-supermarket.png"
+	},
+	"dialogue": [
+		{
+			"id": 1,
+			"speaker": "Ben",
+			"text": "Excuse me. Is there a supermarket near here?",
+			"translation": "Xin lỗi, cho tôi hỏi. Có siêu thị nào gần đây không?",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-01.mp3"
+		},
+		{
+			"id": 2,
+			"speaker": "Emma",
+			"text": "Yes, there is. It's on Park Street.",
+			"translation": "Có đấy. Siêu thị nằm trên phố Park.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-01.mp3"
+		},
+		{
+			"id": 3,
+			"speaker": "Emma",
+			"text": "Go straight, then turn right at the bank.",
+			"translation": "Đi thẳng, rồi rẽ phải ở chỗ ngân hàng.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-02.mp3"
+		},
+		{
+			"id": 4,
+			"speaker": "Ben",
+			"text": "Right at the bank?",
+			"translation": "Rẽ phải ở chỗ ngân hàng phải không?",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-02.mp3"
+		},
+		{
+			"id": 5,
+			"speaker": "Emma",
+			"text": "Yes. The supermarket is next to the bakery.",
+			"translation": "Đúng rồi. Siêu thị ở cạnh tiệm bánh.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-03.mp3"
+		},
+		{
+			"id": 6,
+			"speaker": "Ben",
+			"text": "Is it across from the park?",
+			"translation": "Siêu thị có ở đối diện công viên không?",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-03.mp3"
+		},
+		{
+			"id": 7,
+			"speaker": "Emma",
+			"text": "No. The park is behind the supermarket.",
+			"translation": "Không. Công viên ở phía sau siêu thị.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-04.mp3"
+		},
+		{
+			"id": 8,
+			"speaker": "Ben",
+			"text": "Okay. Is it about five minutes on foot?",
+			"translation": "À, được rồi. Đi bộ mất khoảng năm phút phải không?",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-04.mp3"
+		},
+		{
+			"id": 9,
+			"speaker": "Emma",
+			"text": "Yes, only five minutes.",
+			"translation": "Đúng rồi, chỉ năm phút thôi.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-05.mp3"
+		},
+		{
+			"id": 10,
+			"speaker": "Ben",
+			"text": "Great. Thanks for your help!",
+			"translation": "Tuyệt quá. Cảm ơn bạn đã giúp tôi!",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-05.mp3"
+		}
+	],
+	"usefulWords": [
+		{
+			"word": "supermarket",
+			"pronunciation": "/ˈsuːpɚˌmɑːrkɪt/",
+			"meaning": "siêu thị",
+			"example": "The supermarket is near my house."
+		},
+		{
+			"word": "near here",
+			"pronunciation": "/nɪr hɪr/",
+			"meaning": "gần đây",
+			"example": "Is there a bank near here?"
+		},
+		{
+			"word": "Go straight",
+			"pronunciation": "/ɡoʊ streɪt/",
+			"meaning": "đi thẳng",
+			"example": "Go straight to the bank."
+		},
+		{
+			"word": "turn right",
+			"pronunciation": "/tɝːn raɪt/",
+			"meaning": "rẽ phải",
+			"example": "Please turn right at the bank."
+		},
+		{
+			"word": "bank",
+			"pronunciation": "/bæŋk/",
+			"meaning": "ngân hàng",
+			"example": "The bank is on Park Street."
+		},
+		{
+			"word": "next to",
+			"pronunciation": "/nekst tuː/",
+			"meaning": "bên cạnh",
+			"example": "The bakery is next to the bank."
+		},
+		{
+			"word": "bakery",
+			"pronunciation": "/ˈbeɪkɚi/",
+			"meaning": "tiệm bánh",
+			"example": "I buy bread at the bakery."
+		},
+		{
+			"word": "across from",
+			"pronunciation": "/əˈkrɔːs frəm/",
+			"meaning": "đối diện",
+			"example": "The bank is across from the park."
+		},
+		{
+			"word": "behind",
+			"pronunciation": "/bɪˈhaɪnd/",
+			"meaning": "phía sau",
+			"example": "The park is behind the supermarket."
+		},
+		{
+			"word": "on foot",
+			"pronunciation": "/ɑːn fʊt/",
+			"meaning": "đi bộ",
+			"example": "I go to the supermarket on foot."
+		}
+	],
+	"tasks": [
+		{
+			"id": 1,
+			"dialogueLineId": 1,
+			"type": "fillBlank",
+			"question": "Excuse me. Is there a ____ near here?",
+			"answer": "supermarket",
+			"speaker": "Ben",
+			"transcript": "Excuse me. Is there a supermarket near here?",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-01.mp3"
+		},
+		{
+			"id": 2,
+			"dialogueLineId": 1,
+			"type": "multipleChoice",
+			"question": "Ben dùng “Excuse me” để làm gì trong tình huống này?",
+			"options": [
+				"Lịch sự mở lời để hỏi đường",
+				"Chào tạm biệt Emma",
+				"Cảm ơn Emma đã chỉ đường",
+				"Giới thiệu tên của mình"
+			],
+			"answer": "Lịch sự mở lời để hỏi đường",
+			"speaker": "Ben",
+			"transcript": "Excuse me. Is there a supermarket near here?",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-01.mp3"
+		},
+		{
+			"id": 3,
+			"dialogueLineId": 2,
+			"type": "fillBlank",
+			"question": "Yes, there is. It's ____ Park Street.",
+			"answer": "on",
+			"speaker": "Emma",
+			"transcript": "Yes, there is. It's on Park Street.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-01.mp3"
+		},
+		{
+			"id": 4,
+			"dialogueLineId": 2,
+			"type": "multipleChoice",
+			"question": "Theo Emma, siêu thị nằm trên phố nào?",
+			"options": ["King Street", "Green Street", "Park Street", "West Street"],
+			"answer": "Park Street",
+			"speaker": "Emma",
+			"transcript": "Yes, there is. It's on Park Street.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-01.mp3"
+		},
+		{
+			"id": 5,
+			"dialogueLineId": 3,
+			"type": "fillBlank",
+			"question": "Go ___, then turn right at the bank.",
+			"answer": "straight",
+			"speaker": "Emma",
+			"transcript": "Go straight, then turn right at the bank.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-02.mp3"
+		},
+		{
+			"id": 6,
+			"dialogueLineId": 3,
+			"type": "fillBlank",
+			"question": "Go straight, then ____ at the bank.",
+			"answer": "turn right",
+			"speaker": "Emma",
+			"transcript": "Go straight, then turn right at the bank.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-02.mp3"
+		},
+		{
+			"id": 7,
+			"dialogueLineId": 3,
+			"type": "multipleChoice",
+			"question": "Sau khi đi thẳng, Ben cần làm gì ở chỗ ngân hàng?",
+			"options": ["Rẽ trái", "Rẽ phải", "Đi vào ngân hàng", "Quay lại"],
+			"answer": "Rẽ phải",
+			"speaker": "Emma",
+			"transcript": "Go straight, then turn right at the bank.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-02.mp3"
+		},
+		{
+			"id": 8,
+			"dialogueLineId": 4,
+			"type": "fillBlank",
+			"question": "___ at the bank?",
+			"answer": "Right",
+			"speaker": "Ben",
+			"transcript": "Right at the bank?",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-02.mp3"
+		},
+		{
+			"id": 9,
+			"dialogueLineId": 4,
+			"type": "fillBlank",
+			"question": "Right ____ the bank?",
+			"answer": "at",
+			"speaker": "Ben",
+			"transcript": "Right at the bank?",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-02.mp3"
+		},
+		{
+			"id": 10,
+			"dialogueLineId": 5,
+			"type": "fillBlank",
+			"question": "Yes. The supermarket is ____ the bakery.",
+			"answer": "next to",
+			"speaker": "Emma",
+			"transcript": "Yes. The supermarket is next to the bakery.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-03.mp3"
+		},
+		{
+			"id": 11,
+			"dialogueLineId": 5,
+			"type": "multipleChoice",
+			"question": "Địa điểm nào nằm ngay cạnh siêu thị?",
+			"options": ["Trạm xe buýt", "Trường học", "Ga tàu", "Tiệm bánh"],
+			"answer": "Tiệm bánh",
+			"speaker": "Emma",
+			"transcript": "Yes. The supermarket is next to the bakery.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-03.mp3"
+		},
+		{
+			"id": 12,
+			"dialogueLineId": 6,
+			"type": "fillBlank",
+			"question": "Is it ____ the park?",
+			"answer": "across from",
+			"speaker": "Ben",
+			"transcript": "Is it across from the park?",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-03.mp3"
+		},
+		{
+			"id": 13,
+			"dialogueLineId": 6,
+			"type": "fillBlank",
+			"question": "____ it across from the park?",
+			"answer": "Is",
+			"speaker": "Ben",
+			"transcript": "Is it across from the park?",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-03.mp3"
+		},
+		{
+			"id": 14,
+			"dialogueLineId": 7,
+			"type": "fillBlank",
+			"question": "No. The park is ____ the supermarket.",
+			"answer": "behind",
+			"speaker": "Emma",
+			"transcript": "No. The park is behind the supermarket.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-04.mp3"
+		},
+		{
+			"id": 15,
+			"dialogueLineId": 7,
+			"type": "fillBlank",
+			"question": "No. The ____ is behind the supermarket.",
+			"answer": "park",
+			"speaker": "Emma",
+			"transcript": "No. The park is behind the supermarket.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-04.mp3"
+		},
+		{
+			"id": 16,
+			"dialogueLineId": 7,
+			"type": "multipleChoice",
+			"question": "Emma nói công viên ở đâu so với siêu thị?",
+			"options": [
+				"Phía sau siêu thị",
+				"Đối diện siêu thị",
+				"Bên trong siêu thị",
+				"Phía trước siêu thị"
+			],
+			"answer": "Phía sau siêu thị",
+			"speaker": "Emma",
+			"transcript": "No. The park is behind the supermarket.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-04.mp3"
+		},
+		{
+			"id": 17,
+			"dialogueLineId": 8,
+			"type": "fillBlank",
+			"question": "Okay. Is it about five minutes ____?",
+			"answer": "on foot",
+			"speaker": "Ben",
+			"transcript": "Okay. Is it about five minutes on foot?",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-04.mp3"
+		},
+		{
+			"id": 18,
+			"dialogueLineId": 8,
+			"type": "multipleChoice",
+			"question": "Cụm “on foot” có nghĩa là gì?",
+			"options": ["Đi xe buýt", "Đi xe đạp", "Đi bộ", "Đi ô tô"],
+			"answer": "Đi bộ",
+			"speaker": "Ben",
+			"transcript": "Okay. Is it about five minutes on foot?",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-04.mp3"
+		},
+		{
+			"id": 19,
+			"dialogueLineId": 9,
+			"type": "fillBlank",
+			"question": "Yes, only ____ minutes.",
+			"answer": "five",
+			"speaker": "Emma",
+			"transcript": "Yes, only five minutes.",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-05.mp3"
+		},
+		{
+			"id": 20,
+			"dialogueLineId": 10,
+			"type": "fillBlank",
+			"question": "Great. Thanks ____ your help!",
+			"answer": "for",
+			"speaker": "Ben",
+			"transcript": "Great. Thanks for your help!",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-05.mp3"
+		}
+	],
+	"grammarNotes": [
+		{
+			"title": "Is there a ... near here?",
+			"explanation": "Dùng mẫu “Is there a + địa điểm số ít + near here?” để hỏi gần đây có địa điểm đó không. Có thể trả lời ngắn bằng “Yes, there is.” hoặc “No, there isn't.”",
+			"example": "Is there a supermarket near here?"
+		},
+		{
+			"title": "Go straight, then turn ...",
+			"explanation": "Khi chỉ đường, bắt đầu bằng động từ như “Go” hoặc “Turn”, không cần thêm “you”. “Then” nghĩa là “rồi”, giúp nối các bước theo thứ tự.",
+			"example": "Go straight, then turn right at the bank."
+		},
+		{
+			"title": "Mô tả vị trí với is",
+			"explanation": "Dùng “Địa điểm + is + cụm chỉ vị trí”. “Next to” là bên cạnh, “across from” là đối diện và “behind” là phía sau.",
+			"example": "The supermarket is next to the bakery."
+		},
+		{
+			"title": "Is it ...?",
+			"explanation": "Để hỏi vị trí với “it”, đặt “Is” trước “it”. Trong hội thoại này, “it” thay cho “the supermarket” để tránh lặp lại.",
+			"example": "Is it across from the park?"
+		}
+	]
+}
+
