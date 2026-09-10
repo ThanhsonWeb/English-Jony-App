@@ -1,4 +1,5 @@
 import findingTheBusStop from "../dialogues/asking-for-directions/finding-the-bus-stop.json";
+import findingTheTrainStation from "../dialogues/asking-for-directions/finding-the-train-station.json";
 import goingToTheSupermarket from "../dialogues/asking-for-directions/going-to-the-supermarket.json";
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
 import askingForDirectionsConfig from "@/scripts/config/courses/asking-for-direction.mjs";
@@ -16,7 +17,9 @@ function buildCourseDialogue(draft) {
 
 	return {
 		...dialogue,
+		title: config?.title?.trim() ?? dialogue.title,
 		description: config?.situation ?? dialogue.description,
+		thumbnail: config?.thumbnail ?? dialogue.thumbnail,
 	};
 }
 
@@ -31,6 +34,7 @@ const askingForDirectionsCourse = {
 	dialogues: [
 		buildCourseDialogue(findingTheBusStop),
 		buildCourseDialogue(goingToTheSupermarket),
+		buildCourseDialogue(findingTheTrainStation),
 	],
 };
 

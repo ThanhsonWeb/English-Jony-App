@@ -1,0 +1,435 @@
+{
+"metadata": {
+"courseId": "asking-for-directions",
+"dialogueId": "finding-the-train-station",
+"title": "Tìm ga tàu",
+"level": "a1",
+"situation": "Ben hỏi Emma cách đi đến ga tàu.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-the-train-station.png"
+},
+"dialogue": [
+{
+"id": 1,
+"speaker": "Ben",
+"text": "Excuse me. Where is the train station?",
+"translation": "Xin lỗi, cho tôi hỏi. Ga tàu ở đâu?",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-01.mp3"
+},
+{
+"id": 2,
+"speaker": "Emma",
+"text": "It's on King Street.",
+"translation": "Ga tàu nằm trên phố King.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-01.mp3"
+},
+{
+"id": 3,
+"speaker": "Emma",
+"text": "Go straight, then turn left at the bank.",
+"translation": "Đi thẳng, rồi rẽ trái ở chỗ ngân hàng.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-02.mp3"
+},
+{
+"id": 4,
+"speaker": "Ben",
+"text": "Is it near the supermarket?",
+"translation": "Ga tàu có gần siêu thị không?",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-02.mp3"
+},
+{
+"id": 5,
+"speaker": "Emma",
+"text": "Yes. The station is next to the supermarket.",
+"translation": "Có. Ga tàu ở ngay cạnh siêu thị.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-03.mp3"
+},
+{
+"id": 6,
+"speaker": "Ben",
+"text": "Is the park across from the station?",
+"translation": "Công viên có ở đối diện ga tàu không?",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-03.mp3"
+},
+{
+"id": 7,
+"speaker": "Emma",
+"text": "No. The park is behind the station.",
+"translation": "Không. Công viên ở phía sau ga tàu.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-04.mp3"
+},
+{
+"id": 8,
+"speaker": "Ben",
+"text": "Okay. Turn left at the bank. The station is next to the supermarket.",
+"translation": "Được rồi. Rẽ trái ở chỗ ngân hàng. Ga tàu ở cạnh siêu thị.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-04.mp3"
+},
+{
+"id": 9,
+"speaker": "Emma",
+"text": "That's right!",
+"translation": "Đúng rồi!",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-05.mp3"
+},
+{
+"id": 10,
+"speaker": "Ben",
+"text": "Thank you for your help!",
+"translation": "Cảm ơn bạn đã giúp đỡ!",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-05.mp3"
+}
+],
+"usefulWords": [
+{
+"word": "train station",
+"pronunciation": "/ˈtreɪn ˌsteɪʃən/",
+"meaning": "ga tàu",
+"example": "Where is the train station?"
+},
+{
+"word": "street",
+"pronunciation": "/striːt/",
+"meaning": "phố, đường phố",
+"example": "The bank is on King Street."
+},
+{
+"word": "go straight",
+"pronunciation": "/ɡoʊ streɪt/",
+"meaning": "đi thẳng",
+"example": "Go straight to the bank."
+},
+{
+"word": "turn left",
+"pronunciation": "/tɝːn left/",
+"meaning": "rẽ trái",
+"example": "Turn left at the park."
+},
+{
+"word": "bank",
+"pronunciation": "/bæŋk/",
+"meaning": "ngân hàng",
+"example": "The bank is near here."
+},
+{
+"word": "near",
+"pronunciation": "/nɪr/",
+"meaning": "gần",
+"example": "The station is near the supermarket."
+},
+{
+"word": "next to",
+"pronunciation": "/nekst tuː/",
+"meaning": "ngay cạnh, bên cạnh",
+"example": "The bank is next to the supermarket."
+},
+{
+"word": "across from",
+"pronunciation": "/əˈkrɔːs frəm/",
+"meaning": "đối diện",
+"example": "The supermarket is across from the bank."
+},
+{
+"word": "behind",
+"pronunciation": "/bɪˈhaɪnd/",
+"meaning": "ở phía sau",
+"example": "The park is behind the station."
+}
+],
+"tasks": [
+{
+"id": 1,
+"dialogueLineId": 1,
+"type": "fillBlank",
+"question": "Excuse me. Where is the ____?",
+"answer": "train station",
+"speaker": "Ben",
+"transcript": "Excuse me. Where is the train station?",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-01.mp3"
+},
+{
+"id": 2,
+"dialogueLineId": 1,
+"type": "multipleChoice",
+"question": "Ben muốn tìm địa điểm nào?",
+"options": [
+"Trạm xe buýt",
+"Ga tàu",
+"Siêu thị",
+"Ngân hàng"
+],
+"answer": "Ga tàu",
+"speaker": "Ben",
+"transcript": "Excuse me. Where is the train station?",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-01.mp3"
+},
+{
+"id": 3,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"question": "It's ____ King Street.",
+"answer": "on",
+"speaker": "Emma",
+"transcript": "It's on King Street.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-01.mp3"
+},
+{
+"id": 4,
+"dialogueLineId": 2,
+"type": "multipleChoice",
+"question": "Từ “It” trong câu của Emma chỉ địa điểm nào?",
+"options": [
+"Công viên",
+"Ngân hàng",
+"Siêu thị",
+"Ga tàu"
+],
+"answer": "Ga tàu",
+"speaker": "Emma",
+"transcript": "It's on King Street.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-01.mp3"
+},
+{
+"id": 5,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"question": "Go ____, then turn left at the bank.",
+"answer": "straight",
+"speaker": "Emma",
+"transcript": "Go straight, then turn left at the bank.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-02.mp3"
+},
+{
+"id": 6,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"question": "Go straight, then ____ at the bank.",
+"answer": "turn left",
+"speaker": "Emma",
+"transcript": "Go straight, then turn left at the bank.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-02.mp3"
+},
+{
+"id": 7,
+"dialogueLineId": 3,
+"type": "multipleChoice",
+"question": "Ben cần rẽ trái ở chỗ nào?",
+"options": [
+"Ngân hàng",
+"Công viên",
+"Siêu thị",
+"Ga tàu"
+],
+"answer": "Ngân hàng",
+"speaker": "Emma",
+"transcript": "Go straight, then turn left at the bank.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-02.mp3"
+},
+{
+"id": 8,
+"dialogueLineId": 4,
+"type": "fillBlank",
+"question": "Is it ____ the supermarket?",
+"answer": "near",
+"speaker": "Ben",
+"transcript": "Is it near the supermarket?",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-02.mp3"
+},
+{
+"id": 9,
+"dialogueLineId": 4,
+"type": "multipleChoice",
+"question": "Ben muốn biết ga tàu có gần nơi nào không?",
+"options": [
+"Công viên",
+"Ngân hàng",
+"Siêu thị",
+"Trạm xe buýt"
+],
+"answer": "Siêu thị",
+"speaker": "Ben",
+"transcript": "Is it near the supermarket?",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-02.mp3"
+},
+{
+"id": 10,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"question": "Yes. The station is ____ the supermarket.",
+"answer": "next to",
+"speaker": "Emma",
+"transcript": "Yes. The station is next to the supermarket.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-03.mp3"
+},
+{
+"id": 11,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"question": "Yes. The station is next to the ____.",
+"answer": "supermarket",
+"speaker": "Emma",
+"transcript": "Yes. The station is next to the supermarket.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-03.mp3"
+},
+{
+"id": 12,
+"dialogueLineId": 5,
+"type": "multipleChoice",
+"question": "Cụm “next to” cho biết ga tàu ở vị trí nào so với siêu thị?",
+"options": [
+"Ở phía sau siêu thị",
+"Ở ngay cạnh siêu thị",
+"Ở đối diện siêu thị",
+"Ở bên trong siêu thị"
+],
+"answer": "Ở ngay cạnh siêu thị",
+"speaker": "Emma",
+"transcript": "Yes. The station is next to the supermarket.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-03.mp3"
+},
+{
+"id": 13,
+"dialogueLineId": 6,
+"type": "fillBlank",
+"question": "Is the park ____ the station?",
+"answer": "across from",
+"speaker": "Ben",
+"transcript": "Is the park across from the station?",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-03.mp3"
+},
+{
+"id": 14,
+"dialogueLineId": 6,
+"type": "multipleChoice",
+"question": "Cụm “across from” có nghĩa là gì?",
+"options": [
+"Ngay cạnh",
+"Phía sau",
+"Bên trong",
+"Đối diện"
+],
+"answer": "Đối diện",
+"speaker": "Ben",
+"transcript": "Is the park across from the station?",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-03.mp3"
+},
+{
+"id": 15,
+"dialogueLineId": 7,
+"type": "fillBlank",
+"question": "No. The park is ____ the station.",
+"answer": "behind",
+"speaker": "Emma",
+"transcript": "No. The park is behind the station.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-04.mp3"
+},
+{
+"id": 16,
+"dialogueLineId": 7,
+"type": "multipleChoice",
+"question": "Emma xác nhận công viên nằm ở đâu?",
+"options": [
+"Phía sau ga tàu",
+"Đối diện ga tàu",
+"Bên trong ga tàu",
+"Đối diện ngân hàng"
+],
+"answer": "Phía sau ga tàu",
+"speaker": "Emma",
+"transcript": "No. The park is behind the station.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-04.mp3"
+},
+{
+"id": 17,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"question": "Okay. Turn left ____ the bank. The station is next to the supermarket.",
+"answer": "at",
+"speaker": "Ben",
+"transcript": "Okay. Turn left at the bank. The station is next to the supermarket.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-04.mp3"
+},
+{
+"id": 18,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"question": "Okay. Turn left at the bank. The station ____ next to the supermarket.",
+"answer": "is",
+"speaker": "Ben",
+"transcript": "Okay. Turn left at the bank. The station is next to the supermarket.",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-04.mp3"
+},
+{
+"id": 19,
+"dialogueLineId": 9,
+"type": "fillBlank",
+"question": "That's ____!",
+"answer": "right",
+"speaker": "Emma",
+"transcript": "That's right!",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-05.mp3"
+},
+{
+"id": 20,
+"dialogueLineId": 10,
+"type": "fillBlank",
+"question": "Thank you ____ your help!",
+"answer": "for",
+"speaker": "Ben",
+"transcript": "Thank you for your help!",
+"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-05.mp3"
+}
+],
+"grammarNotes": [
+{
+"title": "Hỏi vị trí: Where is ...?",
+"explanation": "Dùng “Where is + địa điểm?” để hỏi một nơi ở đâu. “Where is” có nghĩa là “ở đâu”.",
+"example": "Where is the train station?"
+},
+{
+"title": "Chỉ vị trí: near, next to, across from, behind",
+"explanation": "Dùng “Địa điểm + is + cụm chỉ vị trí + địa điểm khác”. “Near” là gần, “next to” là ngay cạnh, “across from” là đối diện và “behind” là phía sau.",
+"example": "The station is next to the supermarket."
+},
+{
+"title": "Chỉ đường: Go ..., then turn ...",
+"explanation": "Khi chỉ đường, có thể bắt đầu trực tiếp bằng động từ như “Go” hoặc “Turn”. “Then” nghĩa là “sau đó”. Dùng “at” để nêu chỗ cần rẽ.",
+"example": "Go straight, then turn left at the bank."
+},
+{
+"title": "Hỏi để xác nhận: Is it ...?",
+"explanation": "Dùng “Is it + cụm chỉ vị trí?” để hỏi địa điểm vừa nhắc đến có ở vị trí đó không. Trong bài, “it” thay cho ga tàu.",
+"example": "Is it near the supermarket?"
+}
+]
+}
