@@ -87,7 +87,8 @@ function Header() {
 								onClick={() => setIsDropdownOpen((open) => !open)}
 								className="group flex cursor-pointer items-center gap-3 rounded-xl px-1 py-2 transition-all duration-200 hover:bg-surface-muted sm:px-3"
 							>
-								<div className="text-right hidden sm:block">
+								<UserAvatar user={user} />
+								<div className=" hidden sm:block">
 									<p className="text-md font-semibold leading-tight text-main">
 										{user.name}
 									</p>
@@ -95,8 +96,6 @@ function Header() {
 										🌟 {t("vip")}
 									</p>
 								</div>
-
-								<UserAvatar user={user} />
 							</button>
 
 							{/* DropdownList */}

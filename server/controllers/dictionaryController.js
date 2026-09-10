@@ -49,34 +49,57 @@ async function fetchDictionaryEntryWithTimeout(word) {
 
 function getDictionaryFields(entry) {
 	if (!entry) {
-		return { pronunciation: "", example: "" };
+		return {
+			pronunciation: "",
+			audioUrl: "",
+			partOfSpeech: "",
+			example: "",
+		};
 	}
 
 	const pronunciation =
 		entry.phonetic ||
 		entry.phonetics?.find((item) => item.text)?.text ||
 		"";
-	const example =
-		entry.meanings
-			?.flatMap((meaning) => meaning.definitions)
-			.find((definition) => definition.example)?.example || "";
+	const audioUrl = entry.phonetics?.find((item) => item.audio)?.audio || "";
+	const meaningWithExample = entry.meanings?.find((meaning) =>
+		meaning.definitions?.some((definition) => definition.example),
+	);
+	const example = meaningWithExample?.definitions?.find(
+		(definition) => definition.example,
+	)?.example || "";
+	const partOfSpeech =
+		meaningWithExample?.partOfSpeech || entry.meanings?.[0]?.partOfSpeech || "";
 
-	return { pronunciation, example };
+	return { pronunciation, audioUrl, partOfSpeech, example };
+}
+
+async function translateExample(example) {
+	if (!example) return "";
+
+	try {
+		const [translation] = await translate.translate(example, "vi");
+		return translation;
+	} catch {
+		return "";
+	}
 }
 
 function enrichCachedResult(word) {
 	if (dictionaryEnrichmentRequests.has(word)) return;
 
 	const request = fetchDictionaryEntryWithTimeout(word)
-		.then((entry) => {
+		.then(async (entry) => {
 			if (!entry) return;
 
 			const cached = dictionaryCache.get(word);
 			if (!cached) return;
+			const dictionaryFields = getDictionaryFields(entry);
 
 			cached.data = {
 				...cached.data,
-				...getDictionaryFields(entry),
+				...dictionaryFields,
+				exampleVietnamese: await translateExample(dictionaryFields.example),
 			};
 			cached.dictionaryComplete = true;
 			cached.createdAt = Date.now();
@@ -118,13 +141,14 @@ exports.lookupWord = catchAsync(async (req, res, next) => {
 			: "";
 	const entry =
 		dictionaryResult.status === "fulfilled" ? dictionaryResult.value : null;
-	const { pronunciation, example } = getDictionaryFields(entry);
+	const dictionaryFields = getDictionaryFields(entry);
+	const exampleVietnamese = await translateExample(dictionaryFields.example);
 
 	const data = {
 		english: word,
 		vietnamese: translation,
-		pronunciation,
-		example,
+		...dictionaryFields,
+		exampleVietnamese,
 	};
 
 	if (translationResult.status === "fulfilled") {

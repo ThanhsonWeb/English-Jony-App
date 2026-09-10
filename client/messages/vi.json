@@ -161,5 +161,24 @@
 			"editTitle": "Chỉnh sửa từ vựng",
 			"save": "Lưu thay đổi"
 		}
+	},
+	"MiniDictionary": {
+		"title": "Từ điển nhanh",
+		"toggle": "Mở từ điển nhanh",
+		"close": "Đóng từ điển",
+		"searchLabel": "Tra từ tiếng Anh",
+		"placeholder": "Nhập từ tiếng Anh...",
+		"search": "Tra từ",
+		"loading": "Đang tra từ...",
+		"empty": "Nhập một từ để xem nghĩa nhanh.",
+		"enterWord": "Hãy nhập một từ tiếng Anh.",
+		"notFound": "Không tìm thấy từ này.",
+		"lookupError": "Không thể tra từ lúc này.",
+		"play": "Nghe cách phát âm {word}",
+		"save": "Thêm vào sổ tay",
+		"saved": "Đã thêm vào sổ tay",
+		"saveError": "Không thể thêm từ vào Sổ tay.",
+		"signInToSave": "Đăng nhập để thêm vào Sổ tay",
+		"createList": "Tạo danh sách để lưu từ"
 	}
 }

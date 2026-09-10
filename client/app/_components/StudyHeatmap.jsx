@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 
 const levelClass = {
-	0: "bg-slate-900",
+	0: "bg-app dark:bg-slate-900",
 	1: "bg-emerald-950",
 	2: "bg-emerald-800",
 	3: "bg-emerald-600",

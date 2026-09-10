@@ -1,6 +1,8 @@
 "use client";
 
 import StudyHeatmap from "@/app/_components/StudyHeatmap";
+import LanguageSwitcher from "@/app/_components/LanguageSwitcher";
+import ThemeSelector from "@/app/_components/ThemeSelector";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
@@ -140,13 +142,11 @@ function Page() {
 			<div className="mt-4 space-y-4">
 				<div className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
 					<div className="flex items-center gap-4">
-						<Languages className="text-blue-400" />
+						<Languages className="text-primary" />
 						<span className="font-medium">{t("language")}</span>
 					</div>
 
-					<button className="rounded-xl bg-gray-900 px-4 py-2 font-medium">
-						{t("languageValue")}
-					</button>
+					<LanguageSwitcher variant="settings" />
 				</div>
 
 				<div className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
@@ -160,9 +160,11 @@ function Page() {
 
 				<div className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
 					<div className="flex items-center gap-4">
-						<Moon className="text-blue-400" />
+						<Moon className="text-primary" />
 						<span className="font-medium">{t("darkMode")}</span>
 					</div>
+
+					<ThemeSelector variant="toggle" />
 				</div>
 			</div>
 		</div>

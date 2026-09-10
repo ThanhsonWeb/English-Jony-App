@@ -161,5 +161,24 @@
 			"editTitle": "Edit vocabulary",
 			"save": "Save changes"
 		}
+	},
+	"MiniDictionary": {
+		"title": "Quick dictionary",
+		"toggle": "Open quick dictionary",
+		"close": "Close dictionary",
+		"searchLabel": "Look up an English word",
+		"placeholder": "Enter an English word...",
+		"search": "Search",
+		"loading": "Looking up word...",
+		"empty": "Enter a word to see a quick meaning.",
+		"enterWord": "Please enter an English word.",
+		"notFound": "This word could not be found.",
+		"lookupError": "The word cannot be looked up right now.",
+		"play": "Play the pronunciation of {word}",
+		"save": "Add to wordlist",
+		"saved": "Added to wordlist",
+		"saveError": "The word could not be added to your wordlist.",
+		"signInToSave": "Sign in to add to your wordlist",
+		"createList": "Create a list to save words"
 	}
 }
