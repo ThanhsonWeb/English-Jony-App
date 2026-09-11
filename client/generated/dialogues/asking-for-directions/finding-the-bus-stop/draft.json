@@ -1,441 +1,431 @@
 {
-"metadata": {
-"courseId": "asking-for-directions",
-"dialogueId": "finding-the-bus-stop",
-"title": "Tìm trạm xe buýt",
-"level": "a1",
-"situation": "Ben hỏi Emma cách đi đến trạm xe buýt gần nhất",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-the-bus-stop.png"
-},
-"dialogue": [
-{
-"id": 1,
-"speaker": "Ben",
-"text": "Excuse me. Where is the nearest bus stop?",
-"translation": "Xin lỗi, cho tôi hỏi. Trạm xe buýt gần nhất ở đâu?",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-01.mp3"
-},
-{
-"id": 2,
-"speaker": "Emma",
-"text": "Go straight along this street.",
-"translation": "Đi thẳng dọc theo con đường này.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-01.mp3"
-},
-{
-"id": 3,
-"speaker": "Emma",
-"text": "Then turn left at the bank.",
-"translation": "Sau đó rẽ trái ở chỗ ngân hàng.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-02.mp3"
-},
-{
-"id": 4,
-"speaker": "Ben",
-"text": "Is the bank near the supermarket?",
-"translation": "Ngân hàng có gần siêu thị không?",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-02.mp3"
-},
-{
-"id": 5,
-"speaker": "Emma",
-"text": "Yes, it's next to the supermarket.",
-"translation": "Có, nó ở ngay cạnh siêu thị.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-03.mp3"
-},
-{
-"id": 6,
-"speaker": "Ben",
-"text": "Is the bus stop next to the bank?",
-"translation": "Trạm xe buýt có ở ngay cạnh ngân hàng không?",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-03.mp3"
-},
-{
-"id": 7,
-"speaker": "Emma",
-"text": "No, it's across from the bank.",
-"translation": "Không, nó ở đối diện ngân hàng.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-04.mp3"
-},
-{
-"id": 8,
-"speaker": "Ben",
-"text": "How far is it from here?",
-"translation": "Từ đây đến đó bao xa?",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-04.mp3"
-},
-{
-"id": 9,
-"speaker": "Emma",
-"text": "It's about two minutes on foot.",
-"translation": "Đi bộ mất khoảng hai phút.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-05.mp3"
-},
-{
-"id": 10,
-"speaker": "Ben",
-"text": "Thank you for your help!",
-"translation": "Cảm ơn bạn đã giúp đỡ!",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-05.mp3"
-}
-],
-"usefulWords": [
-{
-"word": "Excuse me",
-"pronunciation": "/ɪkˈskjuːz miː/",
-"meaning": "Xin lỗi, cho tôi hỏi; dùng để lịch sự gọi sự chú ý",
-"example": "Excuse me. Where is the bank?"
-},
-{
-"word": "nearest",
-"pronunciation": "/ˈnɪrɪst/",
-"meaning": "gần nhất",
-"example": "Where is the nearest supermarket?"
-},
-{
-"word": "bus stop",
-"pronunciation": "/ˈbʌs stɑːp/",
-"meaning": "trạm xe buýt",
-"example": "The bus stop is near my house."
-},
-{
-"word": "go straight",
-"pronunciation": "/ɡoʊ streɪt/",
-"meaning": "đi thẳng",
-"example": "Go straight along this street."
-},
-{
-"word": "turn left",
-"pronunciation": "/tɝːn left/",
-"meaning": "rẽ trái",
-"example": "Turn left at the bank."
-},
-{
-"word": "bank",
-"pronunciation": "/bæŋk/",
-"meaning": "ngân hàng",
-"example": "The bank is near here."
-},
-{
-"word": "next to",
-"pronunciation": "/nekst tuː/",
-"meaning": "ngay cạnh",
-"example": "The bank is next to the supermarket."
-},
-{
-"word": "across from",
-"pronunciation": "/əˈkrɔːs frəm/",
-"meaning": "đối diện",
-"example": "The bus stop is across from the bank."
-},
-{
-"word": "How far",
-"pronunciation": "/haʊ fɑːr/",
-"meaning": "bao xa",
-"example": "How far is the bank from here?"
-},
-{
-"word": "on foot",
-"pronunciation": "/ɑːn fʊt/",
-"meaning": "đi bộ",
-"example": "I go to the supermarket on foot."
-}
-],
-"tasks": [
-{
-"id": 1,
-"dialogueLineId": 1,
-"type": "fillBlank",
-"question": "_____ me. Where is the nearest bus stop?",
-"answer": "Excuse",
-"speaker": "Ben",
-"transcript": "Excuse me. Where is the nearest bus stop?",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-01.mp3"
-},
-{
-"id": 2,
-"dialogueLineId": 1,
-"type": "fillBlank",
-"question": "Excuse me. Where is the nearest _____?",
-"answer": "bus stop",
-"speaker": "Ben",
-"transcript": "Excuse me. Where is the nearest bus stop?",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-01.mp3"
-},
-{
-"id": 3,
-"dialogueLineId": 1,
-"type": "multipleChoice",
-"question": "Ben muốn tìm địa điểm nào?",
-"options": [
-"Trạm xe buýt gần nhất",
-"Ga tàu gần nhất",
-"Siêu thị gần nhất",
-"Quán cà phê gần nhất"
-],
-"answer": "Trạm xe buýt gần nhất",
-"speaker": "Ben",
-"transcript": "Excuse me. Where is the nearest bus stop?",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-01.mp3"
-},
-{
-"id": 4,
-"dialogueLineId": 2,
-"type": "fillBlank",
-"question": "Go _____ along this street.",
-"answer": "straight",
-"speaker": "Emma",
-"transcript": "Go straight along this street.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-01.mp3"
-},
-{
-"id": 5,
-"dialogueLineId": 2,
-"type": "multipleChoice",
-"question": "Theo Emma, Ben cần làm gì trước tiên?",
-"options": [
-"Rẽ phải ngay",
-"Đi thẳng theo con đường này",
-"Quay lại",
-"Băng qua đường ngay"
-],
-"answer": "Đi thẳng theo con đường này",
-"speaker": "Emma",
-"transcript": "Go straight along this street.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-01.mp3"
-},
-{
-"id": 6,
-"dialogueLineId": 3,
-"type": "fillBlank",
-"question": "Then turn _____ at the bank.",
-"answer": "left",
-"speaker": "Emma",
-"transcript": "Then turn left at the bank.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-02.mp3"
-},
-{
-"id": 7,
-"dialogueLineId": 3,
-"type": "fillBlank",
-      "question": "Then turn left at the _____.",
-"answer": "bank",
-"speaker": "Emma",
-"transcript": "Then turn left at the bank.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-02.mp3"
-},
-{
-"id": 8,
-"dialogueLineId": 4,
-"type": "fillBlank",
-"question": "Is the bank _____ the supermarket?",
-"answer": "near",
-"speaker": "Ben",
-"transcript": "Is the bank near the supermarket?",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-02.mp3"
-},
-{
-"id": 9,
-"dialogueLineId": 4,
-"type": "multipleChoice",
-"question": "Ben đang muốn xác nhận điều gì?",
-"options": [
-"Siêu thị có mở cửa không",
-"Trạm xe buýt có xa không",
-"Ngân hàng có gần siêu thị không",
-"Ngân hàng có ở bên phải không"
-],
-"answer": "Ngân hàng có gần siêu thị không",
-"speaker": "Ben",
-"transcript": "Is the bank near the supermarket?",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-02.mp3"
-},
-{
-"id": 10,
-"dialogueLineId": 5,
-"type": "fillBlank",
-"question": "Yes, it's _____ the supermarket.",
-"answer": "next to",
-"speaker": "Emma",
-"transcript": "Yes, it's next to the supermarket.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-03.mp3"
-},
-{
-"id": 11,
-"dialogueLineId": 5,
-"type": "multipleChoice",
-"question": "Emma xác nhận ngân hàng nằm ở đâu?",
-"options": [
-"Đối diện siêu thị",
-"Bên trong siêu thị",
-"Phía sau siêu thị",
-"Ngay cạnh siêu thị"
-],
-"answer": "Ngay cạnh siêu thị",
-"speaker": "Emma",
-"transcript": "Yes, it's next to the supermarket.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-03.mp3"
-},
-{
-"id": 12,
-"dialogueLineId": 6,
-"type": "fillBlank",
-      "question": "___ the bus stop next to the bank?",
-"answer": "Is",
-"speaker": "Ben",
-"transcript": "Is the bus stop next to the bank?",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-03.mp3"
-},
-{
-"id": 13,
-"dialogueLineId": 6,
-"type": "fillBlank",
-"question": "Is the bus stop _____ the bank?",
-"answer": "next to",
-"speaker": "Ben",
-"transcript": "Is the bus stop next to the bank?",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-03.mp3"
-},
-{
-"id": 14,
-"dialogueLineId": 7,
-"type": "fillBlank",
-"question": "No, it's _____ the bank.",
-"answer": "across from",
-"speaker": "Emma",
-"transcript": "No, it's across from the bank.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-04.mp3"
-},
-{
-"id": 15,
-"dialogueLineId": 7,
-"type": "multipleChoice",
-      "question": "“across from” có nghĩa là gì?",
-      "options": [
-        "đối diện",
-        "ngay cạnh",
-        "phía sau",
-        "bên trong"
-      ],
-      "answer": "đối diện",
-"speaker": "Emma",
-"transcript": "No, it's across from the bank.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-04.mp3"
-},
-{
-"id": 16,
-"dialogueLineId": 8,
-"type": "fillBlank",
-"question": "How _____ is it from here?",
-"answer": "far",
-"speaker": "Ben",
-"transcript": "How far is it from here?",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-04.mp3"
-},
-{
-"id": 17,
-"dialogueLineId": 8,
-"type": "multipleChoice",
-"question": "Ben muốn biết thêm điều gì về trạm xe buýt?",
-"options": [
-"Giá vé xe buýt",
-"Giờ xe buýt đến",
-"Khoảng cách từ chỗ đang đứng đến trạm",
-"Số hiệu xe buýt"
-],
-"answer": "Khoảng cách từ chỗ đang đứng đến trạm",
-"speaker": "Ben",
-"transcript": "How far is it from here?",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-04.mp3"
-},
-{
-"id": 18,
-"dialogueLineId": 9,
-"type": "fillBlank",
-"question": "It's about two minutes _____.",
-"answer": "on foot",
-"speaker": "Emma",
-"transcript": "It's about two minutes on foot.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-05.mp3"
-},
-{
-"id": 19,
-"dialogueLineId": 9,
-"type": "multipleChoice",
-"question": "Ben đi bộ đến trạm xe buýt mất khoảng bao lâu?",
-"options": [
-"Hai phút",
-"Năm phút",
-"Mười phút",
-"Hai mươi phút"
-],
-"answer": "Hai phút",
-"speaker": "Emma",
-"transcript": "It's about two minutes on foot.",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-05.mp3"
-},
-{
-"id": 20,
-"dialogueLineId": 10,
-"type": "fillBlank",
-"question": "Thank you for your _____!",
-"answer": "help",
-"speaker": "Ben",
-"transcript": "Thank you for your help!",
-"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-05.mp3"
-}
-],
-"grammarNotes": [
-{
-"title": "Where is ...? — Hỏi địa điểm",
-"explanation": "Dùng “Where is + địa điểm?” để hỏi một nơi ở đâu. Có thể thêm “Excuse me” trước câu hỏi để lịch sự hơn.",
-"example": "Excuse me. Where is the nearest bus stop?"
-},
-{
-"title": "Go / Turn — Chỉ đường",
-"explanation": "Khi chỉ đường, bắt đầu bằng động từ, không cần thêm “you”. “Go straight” là đi thẳng; “turn left” là rẽ trái. “Then” có nghĩa là sau đó.",
-"example": "Go straight along this street. Then turn left at the bank."
-},
-{
-"title": "Next to / Across from — Nói vị trí",
-"explanation": "Dùng “next to” để nói ngay cạnh và “across from” để nói đối diện. Đặt tên địa điểm sau các cụm này.",
-"example": "The bank is next to the supermarket. The bus stop is across from the bank."
-},
-{
-"title": "How far is it from here? — Hỏi khoảng cách",
-"explanation": "Câu này có nghĩa là “Từ đây đến đó bao xa?”. Có thể trả lời bằng thời gian đi bộ. “About” là khoảng; “on foot” là đi bộ.",
-"example": "How far is it from here? — It's about two minutes on foot."
-}
-]
+	"metadata": {
+		"courseId": "asking-for-directions",
+		"dialogueId": "finding-the-bus-stop",
+		"title": "Tìm trạm xe buýt",
+		"level": "a1",
+		"situation": "Ben hỏi Emma cách đi đến trạm xe buýt gần nhất",
+		"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+		"thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-the-bus-stop.png"
+	},
+	"dialogue": [
+		{
+			"id": 1,
+			"speaker": "Ben",
+			"text": "Excuse me. Where is the nearest bus stop?",
+			"translation": "Xin lỗi, cho tôi hỏi. Trạm xe buýt gần nhất ở đâu?",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-01.mp3"
+		},
+		{
+			"id": 2,
+			"speaker": "Emma",
+			"text": "Go straight along this street.",
+			"translation": "Đi thẳng dọc theo con đường này.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-01.mp3"
+		},
+		{
+			"id": 3,
+			"speaker": "Emma",
+			"text": "Then turn left at the bank.",
+			"translation": "Sau đó rẽ trái ở chỗ ngân hàng.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-02.mp3"
+		},
+		{
+			"id": 4,
+			"speaker": "Ben",
+			"text": "Is the bank near the supermarket?",
+			"translation": "Ngân hàng có gần siêu thị không?",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-02.mp3"
+		},
+		{
+			"id": 5,
+			"speaker": "Emma",
+			"text": "Yes, it's next to the supermarket.",
+			"translation": "Có, nó ở ngay cạnh siêu thị.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-03.mp3"
+		},
+		{
+			"id": 6,
+			"speaker": "Ben",
+			"text": "Is the bus stop next to the bank?",
+			"translation": "Trạm xe buýt có ở ngay cạnh ngân hàng không?",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-03.mp3"
+		},
+		{
+			"id": 7,
+			"speaker": "Emma",
+			"text": "No, it's across from the bank.",
+			"translation": "Không, nó ở đối diện ngân hàng.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-04.mp3"
+		},
+		{
+			"id": 8,
+			"speaker": "Ben",
+			"text": "How far is it from here?",
+			"translation": "Từ đây đến đó bao xa?",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-04.mp3"
+		},
+		{
+			"id": 9,
+			"speaker": "Emma",
+			"text": "It's about two minutes on foot.",
+			"translation": "Đi bộ mất khoảng hai phút.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-05.mp3"
+		},
+		{
+			"id": 10,
+			"speaker": "Ben",
+			"text": "Thank you for your help!",
+			"translation": "Cảm ơn bạn đã giúp đỡ!",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-05.mp3"
+		}
+	],
+	"usefulWords": [
+		{
+			"word": "Excuse me",
+			"pronunciation": "/ɪkˈskjuːz miː/",
+			"meaning": "Xin lỗi, cho tôi hỏi; dùng để lịch sự gọi sự chú ý",
+			"example": "Excuse me. Where is the bank?"
+		},
+		{
+			"word": "nearest",
+			"pronunciation": "/ˈnɪrɪst/",
+			"meaning": "gần nhất",
+			"example": "Where is the nearest supermarket?"
+		},
+		{
+			"word": "bus stop",
+			"pronunciation": "/ˈbʌs stɑːp/",
+			"meaning": "trạm xe buýt",
+			"example": "The bus stop is near my house."
+		},
+		{
+			"word": "go straight",
+			"pronunciation": "/ɡoʊ streɪt/",
+			"meaning": "đi thẳng",
+			"example": "Go straight along this street."
+		},
+		{
+			"word": "turn left",
+			"pronunciation": "/tɝːn left/",
+			"meaning": "rẽ trái",
+			"example": "Turn left at the bank."
+		},
+		{
+			"word": "bank",
+			"pronunciation": "/bæŋk/",
+			"meaning": "ngân hàng",
+			"example": "The bank is near here."
+		},
+		{
+			"word": "next to",
+			"pronunciation": "/nekst tuː/",
+			"meaning": "ngay cạnh",
+			"example": "The bank is next to the supermarket."
+		},
+		{
+			"word": "across from",
+			"pronunciation": "/əˈkrɔːs frəm/",
+			"meaning": "đối diện",
+			"example": "The bus stop is across from the bank."
+		},
+		{
+			"word": "How far",
+			"pronunciation": "/haʊ fɑːr/",
+			"meaning": "bao xa",
+			"example": "How far is the bank from here?"
+		},
+		{
+			"word": "on foot",
+			"pronunciation": "/ɑːn fʊt/",
+			"meaning": "đi bộ",
+			"example": "I go to the supermarket on foot."
+		}
+	],
+	"tasks": [
+		{
+			"id": 1,
+			"dialogueLineId": 1,
+			"type": "fillBlank",
+			"question": "_____ me. Where is the nearest bus stop?",
+			"answer": "Excuse",
+			"speaker": "Ben",
+			"transcript": "Excuse me. Where is the nearest bus stop?",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-01.mp3"
+		},
+		{
+			"id": 2,
+			"dialogueLineId": 1,
+			"type": "fillBlank",
+			"question": "Excuse me. Where is the nearest _____?",
+			"answer": "bus stop",
+			"speaker": "Ben",
+			"transcript": "Excuse me. Where is the nearest bus stop?",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-01.mp3"
+		},
+		{
+			"id": 3,
+			"dialogueLineId": 1,
+			"type": "multipleChoice",
+			"question": "Ben muốn tìm địa điểm nào?",
+			"options": [
+				"Trạm xe buýt gần nhất",
+				"Ga tàu gần nhất",
+				"Siêu thị gần nhất",
+				"Quán cà phê gần nhất"
+			],
+			"answer": "Trạm xe buýt gần nhất",
+			"speaker": "Ben",
+			"transcript": "Excuse me. Where is the nearest bus stop?",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-01.mp3"
+		},
+		{
+			"id": 4,
+			"dialogueLineId": 2,
+			"type": "fillBlank",
+			"question": "Go _____ along this street.",
+			"answer": "straight",
+			"speaker": "Emma",
+			"transcript": "Go straight along this street.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-01.mp3"
+		},
+		{
+			"id": 5,
+			"dialogueLineId": 2,
+			"type": "multipleChoice",
+			"question": "Theo Emma, Ben cần làm gì trước tiên?",
+			"options": [
+				"Rẽ phải ngay",
+				"Đi thẳng theo con đường này",
+				"Quay lại",
+				"Băng qua đường ngay"
+			],
+			"answer": "Đi thẳng theo con đường này",
+			"speaker": "Emma",
+			"transcript": "Go straight along this street.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-01.mp3"
+		},
+		{
+			"id": 6,
+			"dialogueLineId": 3,
+			"type": "fillBlank",
+			"question": "Then turn _____ at the bank.",
+			"answer": "left",
+			"speaker": "Emma",
+			"transcript": "Then turn left at the bank.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-02.mp3"
+		},
+		{
+			"id": 7,
+			"dialogueLineId": 3,
+			"type": "fillBlank",
+			"question": "Then turn left at the _____.",
+			"answer": "bank",
+			"speaker": "Emma",
+			"transcript": "Then turn left at the bank.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-02.mp3"
+		},
+		{
+			"id": 8,
+			"dialogueLineId": 4,
+			"type": "fillBlank",
+			"question": "Is the bank _____ the supermarket?",
+			"answer": "near",
+			"speaker": "Ben",
+			"transcript": "Is the bank near the supermarket?",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-02.mp3"
+		},
+		{
+			"id": 9,
+			"dialogueLineId": 4,
+			"type": "multipleChoice",
+			"question": "Ben đang muốn xác nhận điều gì?",
+			"options": [
+				"Siêu thị có mở cửa không",
+				"Trạm xe buýt có xa không",
+				"Ngân hàng có gần siêu thị không",
+				"Ngân hàng có ở bên phải không"
+			],
+			"answer": "Ngân hàng có gần siêu thị không",
+			"speaker": "Ben",
+			"transcript": "Is the bank near the supermarket?",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-02.mp3"
+		},
+		{
+			"id": 10,
+			"dialogueLineId": 5,
+			"type": "fillBlank",
+			"question": "Yes, it's _____ the supermarket.",
+			"answer": "next to",
+			"speaker": "Emma",
+			"transcript": "Yes, it's next to the supermarket.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-03.mp3"
+		},
+		{
+			"id": 11,
+			"dialogueLineId": 5,
+			"type": "multipleChoice",
+			"question": "Emma xác nhận ngân hàng nằm ở đâu?",
+			"options": [
+				"Đối diện siêu thị",
+				"Bên trong siêu thị",
+				"Phía sau siêu thị",
+				"Ngay cạnh siêu thị"
+			],
+			"answer": "Ngay cạnh siêu thị",
+			"speaker": "Emma",
+			"transcript": "Yes, it's next to the supermarket.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-03.mp3"
+		},
+		{
+			"id": 12,
+			"dialogueLineId": 6,
+			"type": "fillBlank",
+			"question": "___ the bus stop next to the bank?",
+			"answer": "Is",
+			"speaker": "Ben",
+			"transcript": "Is the bus stop next to the bank?",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-03.mp3"
+		},
+		{
+			"id": 13,
+			"dialogueLineId": 6,
+			"type": "fillBlank",
+			"question": "Is the bus stop _____ the bank?",
+			"answer": "next to",
+			"speaker": "Ben",
+			"transcript": "Is the bus stop next to the bank?",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-03.mp3"
+		},
+		{
+			"id": 14,
+			"dialogueLineId": 7,
+			"type": "fillBlank",
+			"question": "No, it's _____ the bank.",
+			"answer": "across from",
+			"speaker": "Emma",
+			"transcript": "No, it's across from the bank.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-04.mp3"
+		},
+		{
+			"id": 15,
+			"dialogueLineId": 7,
+			"type": "multipleChoice",
+			"question": "“across from” có nghĩa là gì?",
+			"options": ["đối diện", "ngay cạnh", "phía sau", "bên trong"],
+			"answer": "đối diện",
+			"speaker": "Emma",
+			"transcript": "No, it's across from the bank.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-04.mp3"
+		},
+		{
+			"id": 16,
+			"dialogueLineId": 8,
+			"type": "fillBlank",
+			"question": "How _____ is it from here?",
+			"answer": "far",
+			"speaker": "Ben",
+			"transcript": "How far is it from here?",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-04.mp3"
+		},
+		{
+			"id": 17,
+			"dialogueLineId": 8,
+			"type": "multipleChoice",
+			"question": "Ben muốn biết thêm điều gì về trạm xe buýt?",
+			"options": [
+				"Giá vé xe buýt",
+				"Giờ xe buýt đến",
+				"Khoảng cách từ chỗ đang đứng đến trạm",
+				"Số hiệu xe buýt"
+			],
+			"answer": "Khoảng cách từ chỗ đang đứng đến trạm",
+			"speaker": "Ben",
+			"transcript": "How far is it from here?",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-04.mp3"
+		},
+		{
+			"id": 18,
+			"dialogueLineId": 9,
+			"type": "fillBlank",
+			"question": "It's about two minutes _____.",
+			"answer": "on foot",
+			"speaker": "Emma",
+			"transcript": "It's about two minutes on foot.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-05.mp3"
+		},
+		{
+			"id": 19,
+			"dialogueLineId": 9,
+			"type": "multipleChoice",
+			"question": "Ben đi bộ đến trạm xe buýt mất khoảng bao lâu?",
+			"options": ["Hai phút", "Năm phút", "Mười phút", "Hai mươi phút"],
+			"answer": "Hai phút",
+			"speaker": "Emma",
+			"transcript": "It's about two minutes on foot.",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-05.mp3"
+		},
+		{
+			"id": 20,
+			"dialogueLineId": 10,
+			"type": "fillBlank",
+			"question": "Thank you for your _____!",
+			"answer": "help",
+			"speaker": "Ben",
+			"transcript": "Thank you for your help!",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-05.mp3"
+		}
+	],
+	"grammarNotes": [
+		{
+			"title": "Where is ...? — Hỏi địa điểm",
+			"explanation": "Dùng “Where is + địa điểm?” để hỏi một nơi ở đâu. Có thể thêm “Excuse me” trước câu hỏi để lịch sự hơn.",
+			"example": "Excuse me. Where is the nearest bus stop?"
+		},
+		{
+			"title": "Go / Turn — Chỉ đường",
+			"explanation": "Khi chỉ đường, bắt đầu bằng động từ, không cần thêm “you”. “Go straight” là đi thẳng; “turn left” là rẽ trái. “Then” có nghĩa là sau đó.",
+			"example": "Go straight along this street. Then turn left at the bank."
+		},
+		{
+			"title": "Next to / Across from — Nói vị trí",
+			"explanation": "Dùng “next to” để nói ngay cạnh và “across from” để nói đối diện. Đặt tên địa điểm sau các cụm này.",
+			"example": "The bank is next to the supermarket. The bus stop is across from the bank."
+		},
+		{
+			"title": "How far is it from here? — Hỏi khoảng cách",
+			"explanation": "Câu này có nghĩa là “Từ đây đến đó bao xa?”. Có thể trả lời bằng thời gian đi bộ. “About” là khoảng; “on foot” là đi bộ.",
+			"example": "How far is it from here? — It's about two minutes on foot."
+		}
+	]
 }

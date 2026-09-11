@@ -27,6 +27,27 @@ function getCourseImage(courseId) {
 	return courseImages[courseId] || "/hero-img.png";
 }
 
+const cefrLevelLabels = {
+	beginner: "A1",
+	a1: "A1",
+	a2: "A2",
+	b1: "B1",
+	b2: "B2",
+	c1: "C1",
+	c2: "C2",
+};
+
+const courseLevelsByFilter = {
+	beginner: ["beginner", "a1", "a2"],
+	intermediate: ["intermediate", "b1", "b2"],
+	advanced: ["advanced", "c1", "c2"],
+};
+
+function getCefrLevelLabel(level) {
+	const normalizedLevel = level?.toLowerCase();
+	return cefrLevelLabels[normalizedLevel] ?? level;
+}
+
 export default function DialoguePage() {
 	const t = useTranslations("DialogueLanding");
 	const locale = useLocale();
@@ -160,8 +181,13 @@ export default function DialoguePage() {
 			value?.toLocaleLowerCase(locale).includes(normalizedSearch),
 		);
 	};
-	const courseMatchesLevel = (course) =>
-		selectedLevel === "all" || course.level === selectedLevel;
+	const courseMatchesLevel = (course) => {
+		if (selectedLevel === "all") return true;
+
+		return courseLevelsByFilter[selectedLevel].includes(
+			course.level?.toLowerCase(),
+		);
+	};
 	const courseMatchesFilters = (course) =>
 		courseMatchesSearch(course) && courseMatchesLevel(course);
 	const currentCourseMatchesSearch = Boolean(
@@ -234,16 +260,16 @@ export default function DialoguePage() {
 								/>
 							</label>
 
-							<label className="relative shrink-0 sm:w-48">
-								<span className="sr-only">{t("levelFilter")}</span>
+							<label className="relative shrink-0 sm:w-52">
+								<span className="sr-only ">{t("levelFilter")}</span>
 								<select
 									value={selectedLevel}
 									onChange={(event) => setSelectedLevel(event.target.value)}
-									className="h-11 w-full rounded-lg border border-app bg-surface px-3 text-sm text-secondary outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/15"
+									className="h-11  w-full rounded-lg border border-app bg-surface px-3 text-sm text-secondary outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/15"
 								>
 									{levelOptions.map((option) => (
 										<option key={option.value} value={option.value}>
-											{t("levelPrefix", { level: option.label })}
+											{option.label}
 										</option>
 									))}
 								</select>
@@ -277,7 +303,7 @@ export default function DialoguePage() {
 											{getLocalizedCourseValue(currentCourse, "title")}
 										</h2>
 										<span className="rounded-full border border-emerald-400/20 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-semibold text-emerald-300">
-											{levelLabels[currentCourse.level]}
+											{getCefrLevelLabel(currentCourse.level)}
 										</span>
 									</div>
 									<p className="mt-1.5 max-w-2xl line-clamp-2 text-sm leading-5 text-slate-400">
@@ -378,7 +404,7 @@ export default function DialoguePage() {
 												sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
 											/>
 
-											<div className="absolute inset-0 bg-gradient-to-t from-[#0b1424]/85 via-transparent to-transparent" />
+											<div className="absolute inset-0 bg-gradient-to-t from-[#0b1424]/30 via-transparent to-transparent" />
 
 											{/* Dialogue count */}
 											<span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-black/70 px-2.5 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
@@ -388,7 +414,7 @@ export default function DialoguePage() {
 
 											{/* Level badge */}
 											<span className="absolute right-3 top-3 rounded-md border border-blue-400/20 bg-[#0a1530]/90 px-2.5 py-1 text-[11px] font-semibold text-blue-300 backdrop-blur-sm">
-												{levelLabels[course.level]}
+												{getCefrLevelLabel(course.level)}
 											</span>
 
 											<span

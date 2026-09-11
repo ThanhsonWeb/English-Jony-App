@@ -21,12 +21,11 @@
 		"searchLabel": "Search dialogues",
 		"searchPlaceholder": "Search lessons or topics...",
 		"levelFilter": "Filter dialogues by level",
-		"levelPrefix": "Level: {level}",
 		"levels": {
 			"all": "All",
-			"beginner": "Beginner",
-			"intermediate": "Intermediate",
-			"advanced": "Advanced"
+			"beginner": "Beginner (A1–A2)",
+			"intermediate": "Intermediate (B1–B2)",
+			"advanced": "Advanced (C1–C2)"
 		},
 		"learning": "In progress",
 		"completed": "Completed",

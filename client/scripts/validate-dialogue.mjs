@@ -12,6 +12,13 @@ function isPresent(value) {
 
 function countFillBlankAnswers(task) {
   if (Array.isArray(task.answers)) return task.answers.length;
+  if (
+    typeof task.sentenceBefore === "string" &&
+    typeof task.sentenceAfter === "string" &&
+    isPresent(task.answer)
+  ) {
+    return 1;
+  }
   if (Array.isArray(task.parts)) {
     return task.parts.filter((part) => typeof part === "object").length || 1;
   }
@@ -155,7 +162,9 @@ export function validateDialogue(data, options = {}) {
       if (!supportedTaskTypes.has(task.type)) {
         errors.push(`${taskLabel}: unsupported type "${task.type}".`);
       }
-      if (!isPresent(task.answer)) errors.push(`${taskLabel}: missing answer.`);
+      if (task.type !== "fillBlank" && !isPresent(task.answer)) {
+        errors.push(`${taskLabel}: missing answer.`);
+      }
       if (!isPresent(task.dialogueLineId)) {
         errors.push(`${taskLabel}: missing dialogueLineId.`);
       }
@@ -204,16 +213,45 @@ export function validateDialogue(data, options = {}) {
           errors.push(`${taskLabel}: Fill Blank must contain 1-3 blanks.`);
         }
 
-        const answers = Array.isArray(task.answers) ? task.answers : [task.answer];
-        if (sourceLine && blankCount === answers.length) {
-          let answerIndex = 0;
-          const completedQuestion = String(task.question).replace(
-            /_{2,}|\{\{blank\}\}/gi,
-            () => answers[answerIndex++] || "",
-          );
-          if (completedQuestion !== sourceLine.text) {
+        const isMultiBlank =
+          Array.isArray(task.parts) && Array.isArray(task.answers);
+        const isSingleBlank =
+          typeof task.sentenceBefore === "string" &&
+          typeof task.sentenceAfter === "string" &&
+          isPresent(task.answer);
+        const isLegacyBlank = isPresent(task.question) && isPresent(task.answer);
+
+        if (!isMultiBlank && !isSingleBlank && !isLegacyBlank) {
+          errors.push(`${taskLabel}: Fill Blank schema is invalid.`);
+        }
+
+        let completedSentence = "";
+        if (isMultiBlank) {
+          if (task.parts.length !== task.answers.length + 1) {
             errors.push(
-              `${taskLabel}: replacing blanks with answers must reconstruct dialogue line ${task.dialogueLineId} exactly.`,
+              `${taskLabel}: parts must contain one more item than answers.`,
+            );
+          } else {
+            completedSentence = task.parts.reduce(
+              (sentence, part, partIndex) =>
+                sentence + part + (task.answers[partIndex] || ""),
+              "",
+            );
+          }
+        } else if (isSingleBlank) {
+          completedSentence =
+            task.sentenceBefore + task.answer + task.sentenceAfter;
+        } else if (isLegacyBlank) {
+          completedSentence = String(task.question).replace(
+            /_{2,}|\{\{blank\}\}/i,
+            task.answer,
+          );
+        }
+
+        if (sourceLine && completedSentence) {
+          if (completedSentence !== sourceLine.text) {
+            errors.push(
+              `${taskLabel}: Fill Blank fields must reconstruct dialogue line ${task.dialogueLineId} exactly.`,
             );
           }
         }

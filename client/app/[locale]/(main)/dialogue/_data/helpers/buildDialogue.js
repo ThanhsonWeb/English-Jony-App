@@ -6,15 +6,38 @@ export function normalizeGrammarSentence(value = "") {
 		.replace(/\s+/g, " ");
 }
 
-export function findGrammarNoteForTask(draft, task) {
-	if (task.type !== "fillBlank" || !task.question) return undefined;
+function reconstructFillBlankSentence(task) {
+	if (Array.isArray(task.parts) && Array.isArray(task.answers)) {
+		return task.parts.reduce(
+			(sentence, part, index) =>
+				sentence + part + (task.answers[index] || ""),
+			"",
+		);
+	}
+
+	if (
+		typeof task.sentenceBefore === "string" &&
+		typeof task.sentenceAfter === "string" &&
+		task.answer
+	) {
+		return task.sentenceBefore + task.answer + task.sentenceAfter;
+	}
+
+	if (!task.question) return "";
 
 	let answerIndex = 0;
 	const answers = Array.isArray(task.answers) ? task.answers : [task.answer];
-	const completedQuestion = task.question.replace(
+	return task.question.replace(
 		/_{3,}/g,
 		() => answers[answerIndex++] || "",
 	);
+}
+
+export function findGrammarNoteForTask(draft, task) {
+	if (task.type !== "fillBlank") return undefined;
+
+	const completedQuestion = reconstructFillBlankSentence(task);
+	if (!completedQuestion) return undefined;
 	const normalizedQuestion = normalizeGrammarSentence(completedQuestion);
 
 	return draft.grammarNotes?.find((note) => {
@@ -56,6 +79,13 @@ export function buildGeneratedDialogueTasks(draft, characterImages) {
 			};
 
 			if (task.type !== "fillBlank") return sharedFields;
+			if (
+				(Array.isArray(task.parts) && Array.isArray(task.answers)) ||
+				(typeof task.sentenceBefore === "string" &&
+					typeof task.sentenceAfter === "string")
+			) {
+				return sharedFields;
+			}
 
 			const [sentenceBefore = "", sentenceAfter = ""] =
 				task.question.split(/_{3,}/);

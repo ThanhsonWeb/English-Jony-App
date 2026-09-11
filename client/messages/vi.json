@@ -21,12 +21,11 @@
 		"searchLabel": "Tìm kiếm hội thoại",
 		"searchPlaceholder": "Tìm kiếm bài học hoặc chủ đề...",
 		"levelFilter": "Lọc hội thoại theo trình độ",
-		"levelPrefix": "Cấp độ: {level}",
 		"levels": {
 			"all": "Tất cả",
-			"beginner": "Cơ Bản",
-			"intermediate": "Trung Cấp",
-			"advanced": "Nâng Cao"
+			"beginner": "Cơ bản (A1–A2)",
+			"intermediate": "Trung cấp (B1–B2)",
+			"advanced": "Nâng cao (C1–C2)"
 		},
 		"learning": "Đang học",
 		"completed": "Hoàn thành",

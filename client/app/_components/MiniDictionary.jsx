@@ -11,21 +11,83 @@ import {
 	X,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { Link } from "@/i18n/navigation";
 
 const normalizeWord = (value = "") => value.trim().toLocaleLowerCase("en");
+const MAX_SUGGESTIONS = 6;
+let englishWordsPromise;
+
+const subscribeToBrowserFeatures = () => () => {};
+const getSpeechSynthesisSupport = () => "speechSynthesis" in window;
+const getServerSpeechSynthesisSupport = () => false;
+
+function loadEnglishWords() {
+	if (!englishWordsPromise) {
+		englishWordsPromise = fetch("/data/english_words.json")
+			.then((response) => {
+				if (!response.ok) throw new Error("Unable to load word suggestions");
+				return response.json();
+			})
+			.then((words) => (Array.isArray(words) ? words : []))
+			.catch(() => []);
+	}
+
+	return englishWordsPromise;
+}
+
+function findSuggestions(words, query) {
+	const prefixMatches = [];
+	const otherMatches = [];
+
+	for (const word of words) {
+		const normalizedWord = normalizeWord(word);
+		if (normalizedWord.startsWith(query)) {
+			prefixMatches.push(word);
+		} else if (
+			otherMatches.length < MAX_SUGGESTIONS &&
+			normalizedWord.includes(query)
+		) {
+			otherMatches.push(word);
+		}
+
+		if (prefixMatches.length >= MAX_SUGGESTIONS) break;
+	}
+
+	return [...prefixMatches, ...otherMatches].slice(0, MAX_SUGGESTIONS);
+}
+
+function HighlightedSuggestion({ word, query }) {
+	const matchStart = normalizeWord(word).indexOf(normalizeWord(query));
+	if (matchStart < 0) return word;
+
+	const matchEnd = matchStart + query.trim().length;
+	return (
+		<>
+			{word.slice(0, matchStart)}
+			<span className="rounded bg-primary-soft px-0.5 font-semibold text-primary">
+				{word.slice(matchStart, matchEnd)}
+			</span>
+			{word.slice(matchEnd)}
+		</>
+	);
+}
 
 export default function MiniDictionary() {
 	const t = useTranslations("MiniDictionary");
 	const { user, loading: authLoading } = useAuth();
 	const containerRef = useRef(null);
+	const searchAreaRef = useRef(null);
+	const suggestionsListRef = useRef(null);
 	const inputRef = useRef(null);
 	const audioRef = useRef(null);
+	const speechRef = useRef(null);
 	const requestIdRef = useRef(0);
 	const libraryUserRef = useRef(null);
+	const suggestionsOpenRef = useRef(false);
+	const skipAutocompleteRef = useRef(false);
 	const [isOpen, setIsOpen] = useState(false);
 	const [query, setQuery] = useState("");
 	const [result, setResult] = useState(null);
@@ -36,6 +98,39 @@ export default function MiniDictionary() {
 	const [isLibraryLoading, setIsLibraryLoading] = useState(false);
 	const [isSaving, setIsSaving] = useState(false);
 	const [saveError, setSaveError] = useState("");
+	const [isPronunciationPlaying, setIsPronunciationPlaying] = useState(false);
+	const [suggestions, setSuggestions] = useState([]);
+	const [isSuggestionsOpen, setIsSuggestionsOpen] = useState(false);
+	const [highlightedSuggestion, setHighlightedSuggestion] = useState(-1);
+	const canUseSpeechSynthesis = useSyncExternalStore(
+		subscribeToBrowserFeatures,
+		getSpeechSynthesisSupport,
+		getServerSpeechSynthesisSupport,
+	);
+
+	useEffect(() => {
+		suggestionsOpenRef.current = isSuggestionsOpen;
+	}, [isSuggestionsOpen]);
+
+	useEffect(() => {
+		return () => {
+			window.speechSynthesis?.cancel();
+			if (!audioRef.current) return;
+			audioRef.current.pause();
+			audioRef.current.onplay = null;
+			audioRef.current.onpause = null;
+			audioRef.current.onended = null;
+			audioRef.current.onerror = null;
+		};
+	}, []);
+
+	useEffect(() => {
+		if (highlightedSuggestion < 0) return;
+
+		suggestionsListRef.current?.children[
+			highlightedSuggestion
+		]?.scrollIntoView({ block: "nearest" });
+	}, [highlightedSuggestion]);
 
 	useEffect(() => {
 		if (!isOpen) return undefined;
@@ -43,11 +138,26 @@ export default function MiniDictionary() {
 		const focusTimer = window.setTimeout(() => inputRef.current?.focus(), 0);
 
 		function handlePointerDown(event) {
+			if (
+				suggestionsOpenRef.current &&
+				!searchAreaRef.current?.contains(event.target)
+			) {
+				setIsSuggestionsOpen(false);
+				setHighlightedSuggestion(-1);
+			}
+
 			if (!containerRef.current?.contains(event.target)) setIsOpen(false);
 		}
 
 		function handleKeyDown(event) {
-			if (event.key === "Escape") setIsOpen(false);
+			if (event.key !== "Escape") return;
+
+			if (suggestionsOpenRef.current) {
+				setIsSuggestionsOpen(false);
+				setHighlightedSuggestion(-1);
+			} else {
+				setIsOpen(false);
+			}
 		}
 
 		document.addEventListener("pointerdown", handlePointerDown);
@@ -59,6 +169,33 @@ export default function MiniDictionary() {
 			window.removeEventListener("keydown", handleKeyDown);
 		};
 	}, [isOpen]);
+
+	useEffect(() => {
+		if (!isOpen) return undefined;
+		if (skipAutocompleteRef.current) {
+			skipAutocompleteRef.current = false;
+			return undefined;
+		}
+
+		const normalizedQuery = normalizeWord(query);
+		if (normalizedQuery.length < 2) return undefined;
+
+		let cancelled = false;
+		const debounceTimer = window.setTimeout(async () => {
+			const words = await loadEnglishWords();
+			if (cancelled) return;
+
+			const nextSuggestions = findSuggestions(words, normalizedQuery);
+			setSuggestions(nextSuggestions);
+			setIsSuggestionsOpen(nextSuggestions.length > 0);
+			setHighlightedSuggestion(-1);
+		}, 200);
+
+		return () => {
+			cancelled = true;
+			window.clearTimeout(debounceTimer);
+		};
+	}, [isOpen, query]);
 
 	useEffect(() => {
 		if (!isOpen || authLoading || !user) return undefined;
@@ -106,13 +243,13 @@ export default function MiniDictionary() {
 
 	function closePanel() {
 		audioRef.current?.pause();
+		window.speechSynthesis?.cancel();
+		setIsPronunciationPlaying(false);
+		setIsSuggestionsOpen(false);
 		setIsOpen(false);
 	}
 
-	async function handleSearch(event) {
-		event.preventDefault();
-		const word = query.trim();
-
+	async function lookupWord(word) {
 		if (!word) {
 			setResult(null);
 			setError(t("enterWord"));
@@ -120,6 +257,11 @@ export default function MiniDictionary() {
 		}
 
 		const requestId = ++requestIdRef.current;
+		audioRef.current?.pause();
+		window.speechSynthesis?.cancel();
+		setIsPronunciationPlaying(false);
+		setIsSuggestionsOpen(false);
+		setHighlightedSuggestion(-1);
 		setIsLoading(true);
 		setError("");
 		setSaveError("");
@@ -150,16 +292,76 @@ export default function MiniDictionary() {
 		}
 	}
 
+	function handleSearch(event) {
+		event.preventDefault();
+		lookupWord(query.trim());
+	}
+
+	function handleQueryChange(event) {
+		setQuery(event.target.value);
+		setSuggestions([]);
+		setIsSuggestionsOpen(false);
+		setHighlightedSuggestion(-1);
+	}
+
+	function selectSuggestion(word) {
+		skipAutocompleteRef.current = true;
+		setQuery(word);
+		lookupWord(word);
+	}
+
+	function handleSearchKeyDown(event) {
+		if (!isSuggestionsOpen || suggestions.length === 0) return;
+
+		if (event.key === "ArrowDown") {
+			event.preventDefault();
+			setHighlightedSuggestion((current) =>
+				current >= suggestions.length - 1 ? 0 : current + 1,
+			);
+		} else if (event.key === "ArrowUp") {
+			event.preventDefault();
+			setHighlightedSuggestion((current) =>
+				current <= 0 ? suggestions.length - 1 : current - 1,
+			);
+		} else if (event.key === "Enter" && highlightedSuggestion >= 0) {
+			event.preventDefault();
+			selectSuggestion(suggestions[highlightedSuggestion]);
+		}
+	}
+
 	function playPronunciation() {
-		if (!result?.audioUrl) return;
+		if (!result) return;
+
+		if (!result.audioUrl && canUseSpeechSynthesis) {
+			window.speechSynthesis.cancel();
+			const speech = new SpeechSynthesisUtterance(result.english);
+			speech.lang = "en-US";
+			speech.rate = 0.85;
+			speech.onstart = () => setIsPronunciationPlaying(true);
+			speech.onend = () => setIsPronunciationPlaying(false);
+			speech.onerror = () => setIsPronunciationPlaying(false);
+			speechRef.current = speech;
+			window.speechSynthesis.speak(speech);
+			return;
+		}
+
+		if (!result.audioUrl) return;
 
 		if (!audioRef.current || audioRef.current.src !== result.audioUrl) {
 			audioRef.current?.pause();
-			audioRef.current = new Audio(result.audioUrl);
+			const audio = new Audio(result.audioUrl);
+			audio.onplay = () => setIsPronunciationPlaying(true);
+			audio.onpause = () => setIsPronunciationPlaying(false);
+			audio.onended = () => setIsPronunciationPlaying(false);
+			audio.onerror = () => setIsPronunciationPlaying(false);
+			audioRef.current = audio;
 		}
 
 		audioRef.current.currentTime = 0;
-		audioRef.current.play().catch(() => {});
+		setIsPronunciationPlaying(true);
+		audioRef.current
+			.play()
+			.catch(() => setIsPronunciationPlaying(false));
 	}
 
 	async function saveWord() {
@@ -213,7 +415,7 @@ export default function MiniDictionary() {
 					/>
 					<section
 						aria-label={t("title")}
-						className="mini-dictionary-panel fixed inset-x-4 bottom-4 z-10 max-h-[82vh] overflow-y-auto rounded-3xl border border-app bg-surface p-5 pb-[calc(env(safe-area-inset-bottom)+1.25rem)] text-main sm:absolute sm:inset-auto sm:bottom-16 sm:right-0 sm:max-h-[min(620px,calc(100vh-7rem))] sm:w-[390px] sm:rounded-2xl sm:p-5"
+						className="mini-dictionary-panel fixed inset-x-4 bottom-4 z-10 max-h-[82vh] overflow-y-auto rounded-3xl border border-app bg-surface p-5 pb-[calc(env(safe-area-inset-bottom)+1.25rem)] text-main sm:absolute sm:inset-auto sm:bottom-16 sm:right-12 sm:flex sm:min-h-[480px] sm:max-h-[70vh] sm:w-[390px] sm:flex-col sm:rounded-2xl sm:p-5"
 					>
 					<div className="flex items-center justify-between gap-4">
 						<div className="flex items-center gap-2.5">
@@ -233,17 +435,69 @@ export default function MiniDictionary() {
 					</div>
 
 					<form onSubmit={handleSearch} className="mt-4 flex gap-2">
-						<label className="relative min-w-0 flex-1">
-							<span className="sr-only">{t("searchLabel")}</span>
-							<Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
-							<input
-								ref={inputRef}
-								value={query}
-								onChange={(event) => setQuery(event.target.value)}
-								placeholder={t("placeholder")}
-								className="h-11 w-full rounded-xl border border-app bg-page pl-10 pr-3 text-sm text-main outline-none transition placeholder:text-muted focus:border-primary focus:ring-2 focus:ring-primary/15"
-							/>
-						</label>
+						<div ref={searchAreaRef} className="relative min-w-0 flex-1">
+							<label>
+								<span className="sr-only">{t("searchLabel")}</span>
+								<Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
+								<input
+									ref={inputRef}
+									value={query}
+									onChange={handleQueryChange}
+									onFocus={() => {
+										if (query.trim().length >= 2 && suggestions.length > 0) {
+											setIsSuggestionsOpen(true);
+										}
+									}}
+									onKeyDown={handleSearchKeyDown}
+									placeholder={t("placeholder")}
+									role="combobox"
+									aria-autocomplete="list"
+									aria-controls="mini-dictionary-suggestions"
+									aria-expanded={isSuggestionsOpen}
+									aria-activedescendant={
+										highlightedSuggestion >= 0
+											? `mini-dictionary-suggestion-${highlightedSuggestion}`
+											: undefined
+									}
+									className="h-11 w-full rounded-xl border border-app bg-page pl-10 pr-3 text-sm text-main outline-none transition placeholder:text-muted focus:border-primary focus:ring-2 focus:ring-primary/15"
+								/>
+							</label>
+
+							{isSuggestionsOpen && (
+								<ul
+									ref={suggestionsListRef}
+									id="mini-dictionary-suggestions"
+									role="listbox"
+									className={`absolute inset-x-0 top-full z-30 mt-2 max-h-[176px] overscroll-contain rounded-lg border border-app bg-surface p-1.5 shadow-[0_14px_32px_rgba(2,6,23,0.38)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
+										suggestions.length > 4
+											? "overflow-y-auto"
+											: "overflow-y-hidden"
+									}`}
+								>
+									{suggestions.map((word, index) => (
+										<li
+											key={word}
+											id={`mini-dictionary-suggestion-${index}`}
+											role="option"
+											aria-selected={highlightedSuggestion === index}
+										>
+											<button
+												type="button"
+												onClick={() => selectSuggestion(word)}
+												onMouseEnter={() => setHighlightedSuggestion(index)}
+												className={`flex h-10 w-full cursor-pointer items-center rounded-md px-3 text-left text-sm text-main transition ${
+													highlightedSuggestion === index
+														? "bg-primary-soft"
+														: "hover:bg-surface-muted"
+												}`}
+											>
+												<HighlightedSuggestion word={word} query={query} />
+											</button>
+										</li>
+									))}
+								</ul>
+							)}
+						</div>
 						<button
 							type="submit"
 							disabled={isLoading}
@@ -253,7 +507,10 @@ export default function MiniDictionary() {
 						</button>
 					</form>
 
-					<div className="mt-4 min-h-28" aria-live="polite">
+					<div
+						className="mt-4 min-h-28 sm:flex sm:flex-1 sm:flex-col"
+						aria-live="polite"
+					>
 						{isLoading ? (
 							<div className="flex min-h-28 items-center justify-center gap-2 text-sm text-secondary">
 								<LoaderCircle className="h-4 w-4 animate-spin" />
@@ -266,10 +523,25 @@ export default function MiniDictionary() {
 							</div>
 						) : result ? (
 							<div className="rounded-2xl border border-app bg-page p-4">
-								<div className="flex items-start justify-between gap-3">
+								<div>
 									<div className="min-w-0">
 										<div className="flex flex-wrap items-center gap-2">
 											<h3 className="text-xl font-bold capitalize">{result.english}</h3>
+							{(result.audioUrl || canUseSpeechSynthesis) && (
+												<button
+													type="button"
+													onClick={playPronunciation}
+													aria-label={t("play", { word: result.english })}
+													aria-pressed={isPronunciationPlaying}
+													className={`grid h-8 w-8 shrink-0 cursor-pointer place-items-center rounded-lg transition ${
+														isPronunciationPlaying
+															? "bg-primary text-white"
+															: "bg-primary-soft text-primary hover:bg-primary/15"
+													}`}
+												>
+													<Volume2 className="h-4 w-4" />
+												</button>
+											)}
 											{result.partOfSpeech && (
 												<span className="rounded-full bg-primary-soft px-2 py-0.5 text-xs font-medium text-primary">
 													{result.partOfSpeech}
@@ -282,16 +554,6 @@ export default function MiniDictionary() {
 											</p>
 										)}
 									</div>
-									{result.audioUrl && (
-										<button
-											type="button"
-											onClick={playPronunciation}
-											aria-label={t("play", { word: result.english })}
-											className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-primary-soft text-primary transition hover:bg-primary hover:text-white"
-										>
-											<Volume2 className="h-5 w-5" />
-										</button>
-									)}
 								</div>
 
 								<p className="mt-3 font-semibold text-primary">{result.vietnamese}</p>
@@ -345,7 +607,7 @@ export default function MiniDictionary() {
 								</div>
 							</div>
 						) : (
-							<div className="flex min-h-28 flex-col items-center justify-center text-center text-sm text-secondary">
+							<div className="flex min-h-28 flex-col items-center justify-center text-center text-sm text-secondary sm:flex-1 sm:justify-start sm:pt-14">
 								<BookOpen className="mb-2 h-6 w-6 text-primary" />
 								{t("empty")}
 							</div>
