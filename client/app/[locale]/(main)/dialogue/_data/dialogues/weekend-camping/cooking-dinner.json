@@ -346,11 +346,144 @@
 "audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/leo-06.mp3"
 },
 {
-"id": 25,
-"type": "fillBlank",
-"question": "Dinner will be ___ soon.",
-"answer": "ready",
-"audioUrl": "/dialogue/weekend-camping/cooking-dinner/audio/mia-06.mp3"
+"id": "25",
+"type": "dialogueCloze",
+"title": "Ôn tập hội thoại",
+"instruction": "Điền các từ còn thiếu để hoàn thành hội thoại.",
+"lines": [
+{
+"speaker": "Leo",
+"parts": [
+"I'm getting ",
+{
+"blank": "hungry",
+"id": "1"
+},
+". Should we make dinner?"
+]
+},
+{
+"speaker": "Mia",
+"parts": [
+"Yes. What do we ",
+{
+"blank": "have",
+"id": "2"
+},
+"?"
+]
+},
+{
+"speaker": "Leo",
+"parts": [
+"We have ",
+{
+"blank": "noodles",
+"id": "3"
+},
+", eggs, and some vegetables."
+]
+},
+{
+"speaker": "Mia",
+"parts": [
+"Perfect. I'll ",
+{
+"blank": "boil",
+"id": "4"
+},
+" the water."
+]
+},
+{
+"speaker": "Leo",
+"parts": [
+"Great. I'll ",
+{
+"blank": "cut",
+"id": "5"
+},
+" the vegetables."
+]
+},
+{
+"speaker": "Mia",
+"parts": [
+"Can you pass me the ",
+{
+"blank": "pot",
+"id": "6"
+},
+"?"
+]
+},
+{
+"speaker": "Leo",
+"parts": [
+"",
+{
+"blank": "Sure",
+"id": "7"
+},
+". Here you go."
+]
+},
+{
+"speaker": "Mia",
+"parts": [
+"Thanks. The water is ",
+{
+"blank": "boiling",
+"id": "8"
+},
+" now."
+]
+},
+{
+"speaker": "Leo",
+"parts": [
+"Nice. Let's ",
+{
+"blank": "put",
+"id": "9"
+},
+" the noodles in."
+]
+},
+{
+"speaker": "Mia",
+"parts": [
+"How long should we ",
+{
+"blank": "cook",
+"id": "10"
+},
+" them?"
+]
+},
+{
+"speaker": "Leo",
+"parts": [
+"About ",
+{
+"blank": "five",
+"id": "11"
+},
+" minutes."
+]
+},
+{
+"speaker": "Mia",
+"parts": [
+"Okay. Dinner will be ",
+{
+"blank": "ready",
+"id": "12"
+},
+" soon."
+]
+}
+]
 }
 ],
 "grammarNotes": [

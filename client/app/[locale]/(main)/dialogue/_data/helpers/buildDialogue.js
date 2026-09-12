@@ -53,6 +53,13 @@ export function buildGeneratedDialogueTasks(draft, characterImages) {
 
 	return draft.tasks
 		.map((task) => {
+			if (task.type === "dialogueCloze") {
+				return {
+					...task,
+					id: String(task.id),
+				};
+			}
+
 			const dialogueLine = draft.dialogue.find(
 				(line) => line.audioUrl === task.audioUrl,
 			);
@@ -95,10 +102,14 @@ export function buildGeneratedDialogueTasks(draft, characterImages) {
 				sentenceAfter,
 			};
 		})
-		.sort(
-			(a, b) =>
-				dialogueOrder.get(a.audioUrl) - dialogueOrder.get(b.audioUrl),
-		)
+		.sort((a, b) => {
+			if (a.type === "dialogueCloze") {
+				return b.type === "dialogueCloze" ? 0 : 1;
+			}
+			if (b.type === "dialogueCloze") return -1;
+
+			return dialogueOrder.get(a.audioUrl) - dialogueOrder.get(b.audioUrl);
+		})
 		.map((task, index) => ({ ...task, id: String(index + 1) }));
 }
 

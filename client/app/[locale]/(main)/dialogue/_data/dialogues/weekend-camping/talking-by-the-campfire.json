@@ -121,7 +121,7 @@
       "example": "The view was beautiful."
     },
     {
-      "word": "set up the tent",
+      "word": "setting up the tent",
       "meaning": "dựng lều",
       "example": "I liked setting up the tent."
     },
@@ -352,11 +352,144 @@
       "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/leo-05.mp3"
     },
     {
-      "id": 25,
-      "type": "fillBlank",
-      "question": "Let's sit by the fire for a ___.",
-      "answer": "while",
-      "audioUrl": "/dialogue/weekend-camping/talking-by-the-campfire/audio/mia-06.mp3"
+      "id": "25",
+      "type": "dialogueCloze",
+      "title": "Ôn tập hội thoại",
+      "instruction": "Điền các từ còn thiếu để hoàn thành hội thoại.",
+      "lines": [
+        {
+          "speaker": "Leo",
+          "parts": [
+            "That was a nice ",
+            {
+              "blank": "dinner",
+              "id": "1"
+            },
+            ". I'm full now."
+          ]
+        },
+        {
+          "speaker": "Mia",
+          "parts": [
+            "Me too. It's nice to sit by the ",
+            {
+              "blank": "fire",
+              "id": "2"
+            },
+            "."
+          ]
+        },
+        {
+          "speaker": "Leo",
+          "parts": [
+            "What was your ",
+            {
+              "blank": "favorite",
+              "id": "3"
+            },
+            " part of the day?"
+          ]
+        },
+        {
+          "speaker": "Mia",
+          "parts": [
+            "I liked the hike. The ",
+            {
+              "blank": "view",
+              "id": "4"
+            },
+            " was beautiful."
+          ]
+        },
+        {
+          "speaker": "Leo",
+          "parts": [
+            "Yeah. I liked setting up the ",
+            {
+              "blank": "tent",
+              "id": "5"
+            },
+            "."
+          ]
+        },
+        {
+          "speaker": "Mia",
+          "parts": [
+            "You did a good ",
+            {
+              "blank": "job",
+              "id": "6"
+            },
+            ". Are you tired?"
+          ]
+        },
+        {
+          "speaker": "Leo",
+          "parts": [
+            "A little, but I'm ",
+            {
+              "blank": "happy",
+              "id": "7"
+            },
+            " we came here."
+          ]
+        },
+        {
+          "speaker": "Mia",
+          "parts": [
+            "Me too. What should we do ",
+            {
+              "blank": "tomorrow",
+              "id": "8"
+            },
+            "?"
+          ]
+        },
+        {
+          "speaker": "Leo",
+          "parts": [
+            "Maybe we can walk to the ",
+            {
+              "blank": "lake",
+              "id": "9"
+            },
+            "."
+          ]
+        },
+        {
+          "speaker": "Mia",
+          "parts": [
+            "That sounds good. We can have ",
+            {
+              "blank": "breakfast",
+              "id": "10"
+            },
+            " first."
+          ]
+        },
+        {
+          "speaker": "Leo",
+          "parts": [
+            "Great. Let's wake up ",
+            {
+              "blank": "early",
+              "id": "11"
+            },
+            "."
+          ]
+        },
+        {
+          "speaker": "Mia",
+          "parts": [
+            "Okay. Let's sit by the fire for a ",
+            {
+              "blank": "while",
+              "id": "12"
+            },
+            "."
+          ]
+        }
+      ]
     }
   ],
   "grammarNotes": [

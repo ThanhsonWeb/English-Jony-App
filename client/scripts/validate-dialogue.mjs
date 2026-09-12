@@ -4,7 +4,11 @@ import { pathToFileURL } from "node:url";
 
 import { structureRules } from "./prompts/dialogue-rules.mjs";
 
-const supportedTaskTypes = new Set(["fillBlank", "multipleChoice"]);
+const supportedTaskTypes = new Set([
+  "fillBlank",
+  "multipleChoice",
+  "dialogueCloze",
+]);
 
 function isPresent(value) {
   return typeof value === "string" ? value.trim().length > 0 : value != null;
@@ -36,6 +40,57 @@ function normalizeText(value) {
     .trim();
 }
 
+function validateDialogueClozeTask(task, taskLabel, errors) {
+  if (!Array.isArray(task.lines) || task.lines.length === 0) {
+    errors.push(`${taskLabel}: dialogueCloze lines must be a non-empty array.`);
+    return;
+  }
+
+  const blankIds = new Set();
+
+  task.lines.forEach((line, lineIndex) => {
+    const lineLabel = `${taskLabel}, dialogueCloze line ${lineIndex + 1}`;
+    if (!line || typeof line !== "object" || Array.isArray(line)) {
+      errors.push(`${lineLabel}: line must be an object.`);
+      return;
+    }
+    if (!isPresent(line.speaker)) {
+      errors.push(`${lineLabel}: missing speaker.`);
+    }
+    if (!Array.isArray(line.parts)) {
+      errors.push(`${lineLabel}: parts must be an array.`);
+      return;
+    }
+
+    let blankCount = 0;
+    line.parts.forEach((part, partIndex) => {
+      if (typeof part === "string") return;
+      if (!part || typeof part !== "object" || Array.isArray(part)) {
+        errors.push(`${lineLabel}: part ${partIndex + 1} cannot be reconstructed.`);
+        return;
+      }
+
+      blankCount += 1;
+      if (!isPresent(part.blank)) {
+        errors.push(`${lineLabel}: blank ${blankCount} is missing blank text.`);
+      }
+      if (!isPresent(part.id)) {
+        errors.push(`${lineLabel}: blank ${blankCount} is missing id.`);
+      } else {
+        const blankId = String(part.id);
+        if (blankIds.has(blankId)) {
+          errors.push(`${taskLabel}: duplicate dialogueCloze blank id "${blankId}".`);
+        }
+        blankIds.add(blankId);
+      }
+    });
+
+    if (blankCount === 0) {
+      errors.push(`${lineLabel}: must contain at least one blank.`);
+    }
+  });
+}
+
 export function validateDialogue(data, options = {}) {
   const dialogueRange = options.dialogueLines || structureRules.dialogueLines;
   const usefulWordsRange = options.usefulWords || structureRules.usefulWords;
@@ -46,6 +101,13 @@ export function validateDialogue(data, options = {}) {
 
   const dialogueLines = Array.isArray(data?.dialogue) ? data.dialogue : null;
   const dialogueById = new Map();
+  const dialogueByAudioUrl = new Map();
+  const normalTasks = Array.isArray(data?.tasks)
+    ? data.tasks.filter((task) => task.type !== "dialogueCloze")
+    : [];
+  const usesLinkedTaskFormat =
+    normalTasks.length === 0 ||
+    normalTasks.some((task) => isPresent(task.dialogueLineId));
 
   if (!dialogueLines) {
     errors.push("dialogue must be an array.");
@@ -79,6 +141,7 @@ export function validateDialogue(data, options = {}) {
         errors.push(`${label}: audioUrl must be unique per dialogue line.`);
       } else {
         seenAudioUrls.add(line.audioUrl);
+        dialogueByAudioUrl.set(line.audioUrl, { ...line, index });
       }
 
       if (isPresent(line.speaker) && isPresent(line.audioUrl)) {
@@ -112,8 +175,16 @@ export function validateDialogue(data, options = {}) {
     );
     data.usefulWords.forEach((item, index) => {
       const label = `Useful word ${index + 1}`;
-      for (const field of ["word", "pronunciation", "meaning", "example"]) {
+      for (const field of ["word", "meaning", "example"]) {
         if (!isPresent(item[field])) errors.push(`${label}: missing ${field}.`);
+      }
+      if (
+        usesLinkedTaskFormat
+          ? !isPresent(item.pronunciation)
+          : Object.hasOwn(item, "pronunciation") &&
+            !isPresent(item.pronunciation)
+      ) {
+        errors.push(`${label}: missing pronunciation.`);
       }
       if (isPresent(item.word) && !dialogueText.includes(normalizeText(item.word))) {
         errors.push(`${label}: "${item.word}" does not appear in the dialogue.`);
@@ -125,7 +196,14 @@ export function validateDialogue(data, options = {}) {
     errors.push("tasks must be an array.");
   } else {
     const tasks = data.tasks;
-    if (tasks.length < taskRange.min || tasks.length > taskRange.max) {
+    if (!usesLinkedTaskFormat && tasks.length !== 25) {
+      errors.push(
+        `Generated dialogues must contain exactly 25 tasks, found ${tasks.length}.`,
+      );
+    } else if (
+      usesLinkedTaskFormat &&
+      (tasks.length < taskRange.min || tasks.length > taskRange.max)
+    ) {
       errors.push(
         `Tasks must contain ${taskRange.min}-${taskRange.max} items, found ${tasks.length}.`,
       );
@@ -144,7 +222,7 @@ export function validateDialogue(data, options = {}) {
         `Fill Blank must be the majority; found ${fillBlankCount} of ${tasks.length} tasks.`,
       );
     }
-    if (multipleChoiceCount < minimumQuizCount) {
+    if (usesLinkedTaskFormat && multipleChoiceCount < minimumQuizCount) {
       errors.push(
         `Multiple Choice must be at least 30%; expected at least ${minimumQuizCount}, found ${multipleChoiceCount}.`,
       );
@@ -152,56 +230,100 @@ export function validateDialogue(data, options = {}) {
 
     const tasksPerLine = new Map();
     const seenTasks = new Set();
+    const seenTaskIds = new Set();
     let previousLineIndex = -1;
 
     tasks.forEach((task, index) => {
       const taskLabel = `Task ${task.id ?? index + 1}`;
-      if (task.id !== index + 1) {
+      const taskId = isPresent(task.id) ? String(task.id) : "";
+      if (!taskId) {
+        errors.push(`${taskLabel}: missing id.`);
+      } else if (seenTaskIds.has(taskId)) {
+        errors.push(`${taskLabel}: duplicate task id "${taskId}".`);
+      } else {
+        seenTaskIds.add(taskId);
+      }
+      const hasExpectedId = usesLinkedTaskFormat
+        ? task.id === index + 1
+        : taskId === String(index + 1);
+      if (taskId && !hasExpectedId) {
         errors.push(`${taskLabel}: expected ID ${index + 1}, found ${task.id}.`);
       }
       if (!supportedTaskTypes.has(task.type)) {
         errors.push(`${taskLabel}: unsupported type "${task.type}".`);
       }
-      if (task.type !== "fillBlank" && !isPresent(task.answer)) {
+      if (
+        task.type !== "fillBlank" &&
+        task.type !== "dialogueCloze" &&
+        !isPresent(task.answer)
+      ) {
         errors.push(`${taskLabel}: missing answer.`);
       }
-      if (!isPresent(task.dialogueLineId)) {
+      if (
+        usesLinkedTaskFormat &&
+        task.type !== "dialogueCloze" &&
+        !isPresent(task.dialogueLineId)
+      ) {
         errors.push(`${taskLabel}: missing dialogueLineId.`);
       }
 
-      const sourceLine = dialogueById.get(String(task.dialogueLineId));
-      if (isPresent(task.dialogueLineId) && !sourceLine) {
+      let sourceLine;
+      if (task.type !== "dialogueCloze") {
+        sourceLine = usesLinkedTaskFormat
+          ? dialogueById.get(String(task.dialogueLineId))
+          : dialogueByAudioUrl.get(task.audioUrl);
+      }
+      if (
+        usesLinkedTaskFormat &&
+        isPresent(task.dialogueLineId) &&
+        !sourceLine
+      ) {
         errors.push(
           `${taskLabel}: dialogueLineId "${task.dialogueLineId}" does not exist.`,
         );
+      } else if (
+        !usesLinkedTaskFormat &&
+        task.type !== "dialogueCloze" &&
+        !isPresent(task.audioUrl)
+      ) {
+        errors.push(`${taskLabel}: missing audioUrl.`);
+      } else if (
+        !usesLinkedTaskFormat &&
+        task.type !== "dialogueCloze" &&
+        isPresent(task.audioUrl) &&
+        !sourceLine
+      ) {
+        errors.push(`${taskLabel}: audioUrl does not match a dialogue line.`);
       }
 
       if (sourceLine) {
-        if (sourceLine.index < previousLineIndex) {
-          errors.push(
-            `${taskLabel}: tasks must practice each dialogue line before moving to the next.`,
-          );
-        }
-        previousLineIndex = sourceLine.index;
-        tasksPerLine.set(
-          String(task.dialogueLineId),
-          (tasksPerLine.get(String(task.dialogueLineId)) || 0) + 1,
-        );
-
-        const expectedScene = sourceLine.scene || data.metadata?.scene;
-        const sourceFields = {
-          speaker: sourceLine.speaker,
-          transcript: sourceLine.text,
-          scene: expectedScene,
-          audioUrl: sourceLine.audioUrl,
-        };
-        Object.entries(sourceFields).forEach(([field, expected]) => {
-          if (!isPresent(task[field])) {
-            errors.push(`${taskLabel}: missing ${field}.`);
-          } else if (task[field] !== expected) {
-            errors.push(`${taskLabel}: ${field} must match dialogue line ${task.dialogueLineId}.`);
+        if (usesLinkedTaskFormat) {
+          if (sourceLine.index < previousLineIndex) {
+            errors.push(
+              `${taskLabel}: tasks must practice each dialogue line before moving to the next.`,
+            );
           }
-        });
+          previousLineIndex = sourceLine.index;
+          tasksPerLine.set(
+            String(task.dialogueLineId),
+            (tasksPerLine.get(String(task.dialogueLineId)) || 0) + 1,
+          );
+
+          const expectedScene = sourceLine.scene || data.metadata?.scene;
+          const sourceFields = {
+            speaker: sourceLine.speaker,
+            transcript: sourceLine.text,
+            scene: expectedScene,
+            audioUrl: sourceLine.audioUrl,
+          };
+          Object.entries(sourceFields).forEach(([field, expected]) => {
+            if (!isPresent(task[field])) {
+              errors.push(`${taskLabel}: missing ${field}.`);
+            } else if (task[field] !== expected) {
+              errors.push(`${taskLabel}: ${field} must match dialogue line ${task.dialogueLineId}.`);
+            }
+          });
+        }
       }
 
       if (task.type === "fillBlank") {
@@ -249,9 +371,14 @@ export function validateDialogue(data, options = {}) {
         }
 
         if (sourceLine && completedSentence) {
-          if (completedSentence !== sourceLine.text) {
+          const matchesSourceLine = usesLinkedTaskFormat
+            ? completedSentence === sourceLine.text
+            : sourceLine.text.includes(completedSentence);
+          if (!matchesSourceLine) {
             errors.push(
-              `${taskLabel}: Fill Blank fields must reconstruct dialogue line ${task.dialogueLineId} exactly.`,
+              usesLinkedTaskFormat
+                ? `${taskLabel}: Fill Blank fields must reconstruct dialogue line ${task.dialogueLineId} exactly.`
+                : `${taskLabel}: Fill Blank fields must reconstruct text from its audio-linked dialogue line.`,
             );
           }
         }
@@ -272,6 +399,10 @@ export function validateDialogue(data, options = {}) {
         }
       }
 
+      if (task.type === "dialogueCloze") {
+        validateDialogueClozeTask(task, taskLabel, errors);
+      }
+
       const taskFingerprint = JSON.stringify({
         dialogueLineId: task.dialogueLineId,
         type: task.type,
@@ -279,6 +410,7 @@ export function validateDialogue(data, options = {}) {
         answer: task.answer,
         answers: task.answers,
         options: task.options,
+        lines: task.lines,
       });
       if (seenTasks.has(taskFingerprint)) {
         errors.push(`${taskLabel}: exact duplicate task.`);
@@ -286,14 +418,16 @@ export function validateDialogue(data, options = {}) {
       seenTasks.add(taskFingerprint);
     });
 
-    dialogueLines?.forEach((line, index) => {
-      const count = tasksPerLine.get(String(line.id)) || 0;
-      if (count < 1 || count > 3) {
-        errors.push(
-          `Dialogue line ${index + 1}: expected 1-3 practice tasks, found ${count}.`,
-        );
-      }
-    });
+    if (usesLinkedTaskFormat) {
+      dialogueLines?.forEach((line, index) => {
+        const count = tasksPerLine.get(String(line.id)) || 0;
+        if (count < 1 || count > 3) {
+          errors.push(
+            `Dialogue line ${index + 1}: expected 1-3 practice tasks, found ${count}.`,
+          );
+        }
+      });
+    }
   }
 
   return { valid: errors.length === 0, errors };
