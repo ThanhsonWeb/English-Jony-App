@@ -403,7 +403,7 @@ export default function DialoguePlayer({
 										aria-label={`Chọn tốc độ phát, hiện tại ${playbackRate}x`}
 										aria-expanded={showSpeedMenu}
 										title="Tốc độ phát"
-										className="flex h-9 min-w-14 items-center justify-center gap-1 rounded-full px-2 text-xs font-semibold text-slate-400 transition hover:bg-white/10 hover:text-white"
+										className="flex h-9 min-w-14 cursor-pointer items-center justify-center gap-1 rounded-full px-2 text-xs font-semibold text-slate-400 transition hover:bg-white/10 hover:text-white"
 									>
 										{playbackRate}x
 										<ChevronDown
@@ -415,13 +415,13 @@ export default function DialoguePlayer({
 									</button>
 
 									{showSpeedMenu && (
-										<div className="absolute bottom-full left-1/2 z-30 mb-2 w-20 -translate-x-1/2 overflow-hidden rounded-lg border border-slate-700 bg-[#111827] py-1 shadow-xl">
+										<div className="absolute bottom-full left-1/2 z-30 mb-2 w-20 -translate-x-1/2 overflow-hidden rounded-lg border border-slate-700 bg-[#151f31] py-1 shadow-xl dark:bg-[#111827]">
 											{PLAYBACK_RATES.map((rate) => (
 												<button
 													key={rate}
 													type="button"
 													onClick={() => handlePlaybackRateChange(rate)}
-													className={`block w-full px-3 py-2 text-center text-xs font-semibold transition hover:bg-white/10 ${
+												className={`block w-full cursor-pointer px-3 py-2 text-center text-xs font-semibold transition hover:bg-white/10 ${
 														playbackRate === rate
 														? "bg-slate-100 text-slate-950"
 														: "text-slate-400"
@@ -435,7 +435,7 @@ export default function DialoguePlayer({
 								</div>
 
 								<div
-									className="hidden h-8 w-52 items-center rounded-lg bg-[#111827] p-1 sm:flex"
+									className="hidden h-8 w-52 items-center rounded-lg bg-[#151f31] p-1 sm:flex dark:bg-[#111827]"
 									aria-label="Tốc độ phát"
 								>
 									{PLAYBACK_RATES.map((rate) => (
@@ -444,7 +444,7 @@ export default function DialoguePlayer({
 											type="button"
 											onClick={() => handlePlaybackRateChange(rate)}
 											aria-pressed={playbackRate === rate}
-											className={`flex h-6 flex-1 items-center justify-center rounded-md text-xs font-medium transition ${
+										className={`flex h-6 flex-1 cursor-pointer items-center justify-center rounded-md text-xs font-medium transition ${
 												playbackRate === rate
 													? "bg-white text-slate-950 shadow-sm"
 												: "text-slate-400 hover:bg-slate-700/60 hover:text-slate-200"

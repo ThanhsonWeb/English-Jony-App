@@ -59,7 +59,7 @@ export default function LanguageSwitcher({ variant = "compact" }) {
 				aria-label={locale === "vi" ? "Chọn ngôn ngữ" : "Choose language"}
 				aria-expanded={isOpen}
 				aria-haspopup="menu"
-				className={`flex items-center font-semibold outline-none transition focus-visible:ring-2 focus-visible:ring-primary/30 ${
+				className={`flex cursor-pointer items-center font-semibold outline-none transition focus-visible:ring-2 focus-visible:ring-primary/30 ${
 					isSettingsVariant
 						? "h-12 min-w-40 gap-2.5 rounded-2xl border border-primary bg-primary px-3.5 text-white shadow-lg shadow-primary/15 hover:brightness-95"
 						: "h-10 gap-1.5 rounded-xl border border-app bg-surface px-2.5 text-sm text-main hover:border-primary/50 focus-visible:border-primary"

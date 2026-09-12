@@ -66,7 +66,7 @@ export default function ThemeSelector({ variant = "menu" }) {
 				aria-checked={isDark}
 				aria-label={t("dark")}
 				onClick={() => setTheme(isDark ? "light" : "dark")}
-				className={`relative h-8 w-14 shrink-0 rounded-full border outline-none transition-colors focus-visible:ring-2 focus-visible:ring-primary/30 ${
+				className={`relative h-8 w-14 shrink-0 cursor-pointer rounded-full border outline-none transition-colors focus-visible:ring-2 focus-visible:ring-primary/30 ${
 					isDark
 						? "border-primary bg-primary"
 						: "border-app bg-surface-muted"
@@ -91,7 +91,7 @@ export default function ThemeSelector({ variant = "menu" }) {
 				aria-expanded={isOpen}
 				aria-haspopup="menu"
 				title={currentLabel}
-				className="flex h-10 w-10 items-center justify-center rounded-xl border border-app bg-surface text-secondary outline-none transition hover:border-primary/50 hover:text-main focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20"
+				className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border border-app bg-surface text-secondary outline-none transition hover:border-primary/50 hover:text-main focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20"
 			>
 				<ThemeIcon aria-hidden="true" className="h-[18px] w-[18px]" />
 			</button>
