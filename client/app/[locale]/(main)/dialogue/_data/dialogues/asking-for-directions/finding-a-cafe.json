@@ -1,0 +1,652 @@
+{
+"metadata": {
+"courseId": "asking-for-directions",
+"dialogueId": "finding-a-cafe",
+"title": "Tìm quán cà phê",
+"level": "a1",
+"situation": "Buổi tối, Ben đang trên đường đến gặp Emma tại một quán cà phê. Emma đã ở quán, còn Ben đang ở ngoài đường và không tìm thấy quán nên gọi cho Emma để hỏi đường.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-a-cafe.png"
+},
+"dialogue": [
+{
+"id": 1,
+"speaker": "Ben",
+"text": "Hi, Emma! I can't find the cafe.",
+"translation": "Chào Emma! Tôi không tìm thấy quán cà phê.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-01.mp3"
+},
+{
+"id": 2,
+"speaker": "Emma",
+"text": "Hi, Ben! I'm inside. Where are you?",
+"translation": "Chào Ben! Tôi đang ở trong quán. Bạn đang ở đâu?",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-01.mp3"
+},
+{
+"id": 3,
+"speaker": "Ben",
+"text": "I'm outside the bank on Green Street.",
+"translation": "Tôi đang ở bên ngoài ngân hàng trên phố Green.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-02.mp3"
+},
+{
+"id": 4,
+"speaker": "Emma",
+"text": "Go straight ahead. Turn left at the traffic lights.",
+"translation": "Bạn đi thẳng nhé. Rẽ trái ở chỗ đèn giao thông.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-02.mp3"
+},
+{
+"id": 5,
+"speaker": "Ben",
+"text": "Okay. Is the cafe near the bus stop?",
+"translation": "Được rồi. Quán cà phê có gần trạm xe buýt không?",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-03.mp3"
+},
+{
+"id": 6,
+"speaker": "Emma",
+"text": "Yes. It's next to the bakery.",
+"translation": "Có. Quán nằm ngay cạnh tiệm bánh.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-03.mp3"
+},
+{
+"id": 7,
+"speaker": "Emma",
+"text": "Look for a blue door. That's the cafe.",
+"translation": "Bạn tìm một cánh cửa màu xanh dương nhé. Đó là quán cà phê.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-04.mp3"
+},
+{
+"id": 8,
+"speaker": "Ben",
+"text": "Oh, I can see it now! It's across the street.",
+"translation": "Ồ, giờ tôi thấy quán rồi! Quán ở bên kia đường.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-04.mp3"
+},
+{
+"id": 9,
+"speaker": "Emma",
+"text": "Great! I'll meet you at the door.",
+"translation": "Tốt quá! Tôi sẽ gặp bạn ở cửa quán.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-05.mp3"
+},
+{
+"id": 10,
+"speaker": "Ben",
+"text": "Thanks for your help. See you soon!",
+"translation": "Cảm ơn bạn đã giúp đỡ. Hẹn gặp bạn lát nữa!",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-05.mp3"
+}
+],
+"usefulWords": [
+{
+"word": "find",
+"pronunciation": "/faɪnd/",
+"meaning": "tìm thấy",
+"example": "I can't find the bank."
+},
+{
+"word": "inside",
+"pronunciation": "/ˌɪnˈsaɪd/",
+"meaning": "ở bên trong",
+"example": "I'm inside the cafe."
+},
+{
+"word": "outside",
+"pronunciation": "/ˌaʊtˈsaɪd/",
+"meaning": "ở bên ngoài",
+"example": "She's outside the shop."
+},
+{
+"word": "Go straight ahead",
+"pronunciation": "/ɡoʊ streɪt əˈhed/",
+"meaning": "đi thẳng",
+"example": "Go straight ahead to the bank."
+},
+{
+"word": "Turn left",
+"pronunciation": "/tɜːrn left/",
+"meaning": "rẽ trái",
+"example": "Turn left at the bank."
+},
+{
+"word": "traffic lights",
+"pronunciation": "/ˈtræfɪk laɪts/",
+"meaning": "đèn giao thông",
+"example": "The bus stop is near the traffic lights."
+},
+{
+"word": "next to",
+"pronunciation": "/nekst tə/",
+"meaning": "ngay cạnh",
+"example": "The bank is next to the shop."
+},
+{
+"word": "bakery",
+"pronunciation": "/ˈbeɪkəri/",
+"meaning": "tiệm bánh",
+"example": "The bakery has a red door."
+},
+{
+"word": "Look for",
+"pronunciation": "/lʊk fɔːr/",
+"meaning": "tìm kiếm",
+"example": "Look for a green door."
+},
+{
+"word": "across the street",
+"pronunciation": "/əˈkrɔːs ðə striːt/",
+"meaning": "ở bên kia đường",
+"example": "The cafe is across the street."
+}
+],
+"tasks": [
+{
+"id": 1,
+"dialogueLineId": 1,
+"type": "fillBlank",
+"question": "Hi, Emma! I can't ___ the cafe.",
+"answer": "find",
+"speaker": "Ben",
+"transcript": "Hi, Emma! I can't find the cafe.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-01.mp3"
+},
+{
+"id": 2,
+"dialogueLineId": 1,
+"type": "multipleChoice",
+"question": "Vì sao Ben gọi cho Emma?",
+"options": [
+"Anh ấy muốn mua vé tàu.",
+"Anh ấy không tìm thấy quán cà phê.",
+"Anh ấy muốn tìm ngân hàng.",
+"Anh ấy không thấy trạm xe buýt."
+],
+"answer": "Anh ấy không tìm thấy quán cà phê.",
+"speaker": "Ben",
+"transcript": "Hi, Emma! I can't find the cafe.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-01.mp3"
+},
+{
+"id": 3,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"question": "Hi, Ben! I'm ___. Where are you?",
+"answer": "inside",
+"speaker": "Emma",
+"transcript": "Hi, Ben! I'm inside. Where are you?",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-01.mp3"
+},
+{
+"id": 4,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"question": "I'm ___ the bank on Green Street.",
+"answer": "outside",
+"speaker": "Ben",
+"transcript": "I'm outside the bank on Green Street.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-02.mp3"
+},
+{
+"id": 5,
+"dialogueLineId": 3,
+"type": "multipleChoice",
+"question": "Ben đang ở đâu khi nói câu này?",
+"options": [
+"Bên trong quán cà phê",
+"Bên ngoài tiệm bánh",
+"Bên trong ngân hàng",
+"Bên ngoài ngân hàng"
+],
+"answer": "Bên ngoài ngân hàng",
+"speaker": "Ben",
+"transcript": "I'm outside the bank on Green Street.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-02.mp3"
+},
+{
+"id": 6,
+"dialogueLineId": 4,
+"type": "fillBlank",
+"question": "Go ___. Turn left at the traffic lights.",
+"answer": "straight ahead",
+"speaker": "Emma",
+"transcript": "Go straight ahead. Turn left at the traffic lights.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-02.mp3"
+},
+{
+"id": 7,
+"dialogueLineId": 4,
+"type": "multipleChoice",
+"question": "Sau khi đi thẳng, Ben cần làm gì?",
+"options": [
+"Rẽ trái ở chỗ đèn giao thông",
+"Rẽ phải ở chỗ đèn giao thông",
+"Dừng lại ở ngân hàng",
+"Đi vào tiệm bánh"
+],
+"answer": "Rẽ trái ở chỗ đèn giao thông",
+"speaker": "Emma",
+"transcript": "Go straight ahead. Turn left at the traffic lights.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-02.mp3"
+},
+{
+"id": 8,
+"dialogueLineId": 4,
+"type": "fillBlank",
+"question": "Go straight ahead. Turn left at the ___.",
+"answer": "traffic lights",
+"speaker": "Emma",
+"transcript": "Go straight ahead. Turn left at the traffic lights.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-02.mp3"
+},
+{
+"id": 9,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"question": "Okay. Is the cafe ___ the bus stop?",
+"answer": "near",
+"speaker": "Ben",
+"transcript": "Okay. Is the cafe near the bus stop?",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-03.mp3"
+},
+{
+"id": 10,
+"dialogueLineId": 5,
+"type": "multipleChoice",
+"question": "Ben muốn xác nhận điều gì?",
+"options": [
+"Xe buýt có dừng ở ngân hàng không",
+"Emma có đang đợi xe buýt không",
+"Quán cà phê có gần trạm xe buýt không",
+"Quán cà phê có đang mở cửa không"
+],
+"answer": "Quán cà phê có gần trạm xe buýt không",
+"speaker": "Ben",
+"transcript": "Okay. Is the cafe near the bus stop?",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-03.mp3"
+},
+{
+"id": 11,
+"dialogueLineId": 6,
+"type": "fillBlank",
+"question": "Yes. It's ___ the bakery.",
+"answer": "next to",
+"speaker": "Emma",
+"transcript": "Yes. It's next to the bakery.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-03.mp3"
+},
+{
+"id": 12,
+"dialogueLineId": 6,
+"type": "multipleChoice",
+"question": "Cụm “next to” có nghĩa là gì?",
+"options": [
+"Ở bên trong",
+"Ngay cạnh",
+"Ở phía sau",
+"Cách xa"
+],
+"answer": "Ngay cạnh",
+"speaker": "Emma",
+"transcript": "Yes. It's next to the bakery.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-03.mp3"
+},
+{
+"id": 13,
+"dialogueLineId": 6,
+"type": "fillBlank",
+      "question": "Yes. It's next to the _____.",
+"answer": "bakery",
+"speaker": "Emma",
+"transcript": "Yes. It's next to the bakery.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-03.mp3"
+},
+{
+"id": 14,
+"dialogueLineId": 7,
+"type": "fillBlank",
+      "question": "_____ a blue door. That's the cafe.",
+"answer": "Look for",
+"speaker": "Emma",
+"transcript": "Look for a blue door. That's the cafe.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-04.mp3"
+},
+{
+"id": 15,
+"dialogueLineId": 7,
+"type": "multipleChoice",
+"question": "Emma đưa ra dấu hiệu nào để Ben nhận ra quán?",
+"options": [
+"Một biển hiệu màu đỏ",
+"Một cửa sổ màu xanh lá",
+"Một chiếc bàn màu trắng",
+"Một cánh cửa màu xanh dương"
+],
+"answer": "Một cánh cửa màu xanh dương",
+"speaker": "Emma",
+"transcript": "Look for a blue door. That's the cafe.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-04.mp3"
+},
+{
+"id": 16,
+"dialogueLineId": 7,
+"type": "fillBlank",
+"question": "Look for a blue ___. That's the cafe.",
+"answer": "door",
+"speaker": "Emma",
+"transcript": "Look for a blue door. That's the cafe.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-04.mp3"
+},
+{
+"id": 17,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"question": "Oh, I ___ it now! It's across the street.",
+"answer": "can see",
+"speaker": "Ben",
+"transcript": "Oh, I can see it now! It's across the street.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-04.mp3"
+},
+{
+"id": 18,
+"dialogueLineId": 8,
+"type": "multipleChoice",
+"question": "Quán cà phê ở đâu so với vị trí hiện tại của Ben?",
+"options": [
+"Ở bên kia đường",
+"Ở ngay phía sau anh ấy",
+"Ở bên trong ngân hàng",
+"Ở trên tầng hai"
+],
+"answer": "Ở bên kia đường",
+"speaker": "Ben",
+"transcript": "Oh, I can see it now! It's across the street.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-04.mp3"
+},
+{
+"id": 19,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"question": "Oh, I can see it now! It's ___.",
+"answer": "across the street",
+"speaker": "Ben",
+"transcript": "Oh, I can see it now! It's across the street.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-04.mp3"
+},
+{
+"id": 20,
+"dialogueLineId": 9,
+"type": "fillBlank",
+"question": "Great! I'll ___ you at the door.",
+"answer": "meet",
+"speaker": "Emma",
+"transcript": "Great! I'll meet you at the door.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-05.mp3"
+},
+{
+"id": 21,
+"dialogueLineId": 9,
+"type": "multipleChoice",
+"question": "Emma sẽ gặp Ben ở đâu?",
+"options": [
+"Ở trạm xe buýt",
+"Ở ngân hàng",
+"Ở cửa quán cà phê",
+"Ở tiệm bánh"
+],
+"answer": "Ở cửa quán cà phê",
+"speaker": "Emma",
+"transcript": "Great! I'll meet you at the door.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-05.mp3"
+},
+{
+"id": 22,
+"dialogueLineId": 9,
+"type": "fillBlank",
+"question": "Great! I'll meet you ___ the door.",
+"answer": "at",
+"speaker": "Emma",
+"transcript": "Great! I'll meet you at the door.",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-05.mp3"
+},
+{
+"id": 23,
+"dialogueLineId": 10,
+"type": "fillBlank",
+"question": "Thanks ___ your help. See you soon!",
+"answer": "for",
+"speaker": "Ben",
+"transcript": "Thanks for your help. See you soon!",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-05.mp3"
+},
+{
+"id": 24,
+"dialogueLineId": 10,
+"type": "fillBlank",
+"question": "Thanks for your help. ___!",
+"answer": "See you soon",
+"speaker": "Ben",
+"transcript": "Thanks for your help. See you soon!",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-05.mp3"
+},
+{
+"id": 25,
+"type": "dialogueCloze",
+"lines": [
+{
+"dialogueLineId": 1,
+"speaker": "Ben",
+"parts": [
+"Hi, Emma! I can't ",
+{
+"id": "1",
+"blank": "find"
+},
+" the cafe."
+]
+},
+{
+"dialogueLineId": 2,
+"speaker": "Emma",
+"parts": [
+"Hi, Ben! I'm ",
+{
+"id": "2",
+"blank": "inside"
+},
+". Where are you?"
+]
+},
+{
+"dialogueLineId": 3,
+"speaker": "Ben",
+"parts": [
+"I'm ",
+{
+"id": "3",
+"blank": "outside"
+},
+" the bank on Green Street."
+]
+},
+{
+"dialogueLineId": 4,
+"speaker": "Emma",
+"parts": [
+"Go ",
+{
+"id": "4",
+"blank": "straight ahead"
+},
+". Turn ",
+{
+"id": "5",
+"blank": "left"
+},
+" at the ",
+{
+"id": "6",
+"blank": "traffic lights"
+},
+"."
+]
+},
+{
+"dialogueLineId": 5,
+"speaker": "Ben",
+"parts": [
+"Okay. Is the cafe ",
+{
+"id": "7",
+"blank": "near"
+},
+" the bus stop?"
+]
+},
+{
+"dialogueLineId": 6,
+"speaker": "Emma",
+"parts": [
+"Yes. It's ",
+{
+"id": "8",
+"blank": "next to"
+},
+" the ",
+{
+"id": "9",
+"blank": "bakery"
+},
+"."
+]
+},
+{
+"dialogueLineId": 7,
+"speaker": "Emma",
+"parts": [
+"",
+{
+"id": "10",
+"blank": "Look for"
+},
+" a ",
+{
+"id": "11",
+"blank": "blue door"
+},
+". That's the cafe."
+]
+},
+{
+"dialogueLineId": 8,
+"speaker": "Ben",
+"parts": [
+"Oh, I can see it now! It's ",
+{
+"id": "12",
+"blank": "across the street"
+},
+"."
+]
+},
+{
+"dialogueLineId": 9,
+"speaker": "Emma",
+"parts": [
+"Great! I'll ",
+{
+"id": "13",
+"blank": "meet"
+},
+" you ",
+{
+"id": "14",
+"blank": "at the door"
+},
+"."
+]
+},
+{
+"dialogueLineId": 10,
+"speaker": "Ben",
+"parts": [
+"Thanks ",
+{
+"id": "15",
+"blank": "for"
+},
+" your help. ",
+{
+"id": "16",
+"blank": "See you soon"
+},
+"!"
+]
+}
+]
+}
+],
+"grammarNotes": [
+{
+"title": "I can't + động từ",
+"explanation": "Dùng “I can't + động từ nguyên mẫu” để nói mình không thể làm gì. “Can't” là dạng viết tắt của “cannot”.",
+"example": "I can't find the cafe."
+},
+{
+"title": "Chỉ đường bằng Go và Turn",
+"explanation": "Khi chỉ đường, có thể bắt đầu câu bằng động từ, không cần thêm “you”. “Go straight ahead” là đi thẳng; “Turn left” là rẽ trái.",
+"example": "Go straight ahead. Turn left at the traffic lights."
+},
+{
+"title": "It's next to + địa điểm",
+"explanation": "Dùng “It's next to + địa điểm” để nói một nơi nằm ngay cạnh nơi khác. Trong bài, “It” chỉ quán cà phê.",
+"example": "It's next to the bakery."
+},
+{
+"title": "I'll + động từ",
+"explanation": "“I'll” là dạng viết tắt của “I will”. Dùng “I'll + động từ nguyên mẫu” để nói việc mình sẽ làm. Ở đây, Emma nói cô ấy sẽ gặp Ben ở cửa quán.",
+"example": "I'll meet you at the door."
+},
+{
+"title": "Thanks for + danh từ",
+"explanation": "Dùng “Thanks for + danh từ” để cảm ơn ai vì điều gì. “Your help” nghĩa là sự giúp đỡ của bạn.",
+"example": "Thanks for your help."
+}
+]
+}

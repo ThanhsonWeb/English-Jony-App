@@ -1,4 +1,5 @@
 import findingTheBusStop from "../dialogues/asking-for-directions/finding-the-bus-stop.json";
+import findingACafe from "../dialogues/asking-for-directions/finding-a-cafe.json";
 import findingTheTrainStation from "../dialogues/asking-for-directions/finding-the-train-station.json";
 import goingToTheSupermarket from "../dialogues/asking-for-directions/going-to-the-supermarket.json";
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
@@ -35,6 +36,7 @@ const askingForDirectionsCourse = {
 		buildCourseDialogue(findingTheBusStop),
 		buildCourseDialogue(goingToTheSupermarket),
 		buildCourseDialogue(findingTheTrainStation),
+		buildCourseDialogue(findingACafe),
 	],
 };
 

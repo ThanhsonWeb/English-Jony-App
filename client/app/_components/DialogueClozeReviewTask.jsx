@@ -127,12 +127,17 @@ function DialogueClozeReviewTask({
 	}
 
 	function assignWord(item) {
-		if (
-			selectedBlankIndex === null ||
-			blankResults[selectedBlankIndex] === "correct"
-		) {
-			return;
-		}
+		const firstEmptyIndex = answers.findIndex(
+			(answer, index) =>
+				!answer.trim() && blankResults[index] !== "correct",
+		);
+		const targetIndex =
+			selectedBlankIndex !== null &&
+			blankResults[selectedBlankIndex] !== "correct"
+				? selectedBlankIndex
+				: firstEmptyIndex;
+
+		if (targetIndex === -1 || targetIndex === null) return;
 
 		setAssignments((previous) => {
 			const updated = [...previous];
@@ -142,23 +147,27 @@ function DialogueClozeReviewTask({
 				updated[previousOwner] = null;
 			}
 
-			updated[selectedBlankIndex] = item.id;
+			updated[targetIndex] = item.id;
 			return updated;
 		});
-		setAnswers((previous) => {
-			const updated = [...previous];
-			updated[selectedBlankIndex] = item.word;
-			return updated;
-		});
-		resetBlankResult(selectedBlankIndex);
+		const updatedAnswers = [...answers];
+		updatedAnswers[targetIndex] = item.word;
+		setAnswers(updatedAnswers);
+		resetBlankResult(targetIndex);
 
-		const nextEmptyIndex = answers.findIndex(
+		let nextEmptyIndex = updatedAnswers.findIndex(
 			(answer, index) =>
-				index > selectedBlankIndex &&
+				index > targetIndex &&
 				!answer.trim() &&
 				blankResults[index] !== "correct",
 		);
-		setSelectedBlankIndex(nextEmptyIndex === -1 ? selectedBlankIndex : nextEmptyIndex);
+		if (nextEmptyIndex === -1) {
+			nextEmptyIndex = updatedAnswers.findIndex(
+				(answer, index) =>
+					!answer.trim() && blankResults[index] !== "correct",
+			);
+		}
+		setSelectedBlankIndex(nextEmptyIndex === -1 ? targetIndex : nextEmptyIndex);
 	}
 
 	function clearSelectedAnswer(index, event) {
@@ -233,7 +242,7 @@ function DialogueClozeReviewTask({
 			return "border-red-500 bg-red-500/10 text-red-300";
 		}
 		if (mode === "select" && selectedBlankIndex === index) {
-			return "border-primary bg-primary/10 text-main ring-2 ring-primary/20";
+			return "border-primary bg-primary/10 text-main ring-2 ring-primary/20 shadow-sm";
 		}
 		return "border-slate-600 bg-slate-950/40 text-main hover:border-slate-500";
 	}
@@ -312,7 +321,7 @@ function DialogueClozeReviewTask({
 										key={item.id}
 										type="button"
 										onClick={() => assignWord(item)}
-										disabled={selectedBlankIndex === null || isComplete}
+										disabled={isComplete}
 										className="min-h-10 rounded-lg border border-slate-700 bg-slate-950/40 px-3 py-2 text-left text-sm font-medium text-slate-200 transition hover:border-primary hover:bg-primary/10 hover:text-main disabled:cursor-not-allowed disabled:opacity-40"
 									>
 										{item.word}
@@ -389,7 +398,7 @@ function DialogueClozeReviewTask({
 												<span
 													key={`blank-${lineIndex}-${partIndex}`}
 													style={{ minWidth: width }}
-													className={`group mx-1 inline-flex min-h-9 items-center justify-center rounded-lg border font-semibold outline-none transition ${getBlankClass(
+													className={`group mx-1 inline-flex min-h-9 cursor-pointer items-center justify-center rounded-lg border font-semibold outline-none transition ${getBlankClass(
 														blankIndex,
 													)}`}
 												>
@@ -399,7 +408,7 @@ function DialogueClozeReviewTask({
 														disabled={blankResults[blankIndex] === "correct"}
 														aria-label={`Ô trống ${blankIndex + 1}`}
 														aria-pressed={selectedBlankIndex === blankIndex}
-														className="min-h-8 px-2 outline-none"
+														className="min-h-8 flex-1 cursor-pointer px-2 outline-none"
 													>
 														{answers[blankIndex] || "\u00a0"}
 													</button>

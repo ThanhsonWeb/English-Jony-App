@@ -45,6 +45,13 @@ export default function DialoguePlayer({
 	const activeLine = task.dialogue[currentLine];
 	const characters = Object.entries(task.characters || {});
 	const characterCount = characters.length;
+	const activeScene = activeLine?.scene || task.scene;
+	const usesSpeakerSpecificScenes =
+		new Set(
+			task.dialogue
+				.map((line) => line.scene || task.scene)
+				.filter(Boolean),
+		).size > 1;
 
 	function getCharacterPosition(characterIndex) {
 		if (characterCount === 1) return "left-1/2 -translate-x-1/2";
@@ -283,16 +290,30 @@ export default function DialoguePlayer({
 					{/* Scene */}
 					<div
 						className="relative h-[390px] bg-cover bg-center sm:h-[460px]"
-						style={
-							task.scene
-								? { backgroundImage: `url(${task.scene})` }
-								: undefined
-						}
 					>
+						{activeScene && (
+							<div
+								key={activeScene}
+								aria-hidden="true"
+								className="absolute inset-0 bg-cover bg-center"
+								style={{
+									backgroundImage: `url(${activeScene})`,
+									animation: "dialogue-scene-fade-in 500ms ease-out both",
+								}}
+							/>
+						)}
+
 						{/* Small overlay */}
 						<div className="absolute inset-0 bg-black/5" />
 
 						{characters.map(([characterName, imageUrl], characterIndex) => {
+							if (
+								usesSpeakerSpecificScenes &&
+								activeLine?.speaker !== characterName
+							) {
+								return null;
+							}
+
 							const isRightSide =
 								characterCount > 1 && characterIndex === characterCount - 1;
 							const isActive = activeLine?.speaker === characterName;
@@ -310,9 +331,19 @@ export default function DialoguePlayer({
 									key={characterName}
 									src={imageUrl}
 									alt={characterName}
-									width={400}
-									height={520}
-									className={`absolute bottom-0 w-auto object-contain transition-all duration-700 ease-out ${getCharacterPosition(characterIndex)} ${
+								width={400}
+								height={520}
+								style={
+									usesSpeakerSpecificScenes &&
+									hasStarted &&
+									!dialogueFinished
+										? {
+											animation:
+												"dialogue-speaker-fade-in 450ms ease-out both",
+										}
+										: undefined
+								}
+								className={`absolute bottom-0 w-auto object-contain transition-all duration-700 ease-out ${getCharacterPosition(characterIndex)} ${
 										hasStarted && !dialogueFinished
 											? "translate-x-0 opacity-100"
 											: isRightSide
@@ -588,6 +619,26 @@ export default function DialoguePlayer({
 						</Link>
 					</div>
 				)}
+
+				<style jsx global>{`
+					@keyframes dialogue-scene-fade-in {
+						from {
+							opacity: 0.35;
+						}
+						to {
+							opacity: 1;
+						}
+					}
+
+					@keyframes dialogue-speaker-fade-in {
+						from {
+							opacity: 0;
+						}
+						to {
+							opacity: 1;
+						}
+					}
+				`}</style>
 			</div>
 		</div>
 	);

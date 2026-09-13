@@ -11,6 +11,18 @@ const rl = readline.createInterface({
 	output,
 });
 
+const ALLOWED_LEVELS = new Set(["a1", "a2", "b1", "b2"]);
+
+function normalizeLevel(level) {
+	const value = String(level || "").toLowerCase();
+
+	if (value === "beginner") {
+		return "a1";
+	}
+
+	return value;
+}
+
 async function chooseFromList(items, getLabel, question) {
 	items.forEach((item, index) => {
 		console.log(`${index + 1}. ${getLabel(item)}`);
@@ -39,6 +51,7 @@ try {
 				);
 
 	console.log(`Khóa học: ${course.courseId}\n`);
+
 	console.log("Các hội thoại có sẵn:");
 
 	const selectedDialogue = await chooseFromList(
@@ -47,8 +60,20 @@ try {
 		"Chọn hội thoại: ",
 	);
 
-	const { courseId, characters, level } = course;
-	const { dialogueId, title, situation, thumbnail } = selectedDialogue;
+	const { courseId, characters, level: courseLevel } = course;
+
+	const { dialogueId, title, situation, thumbnail, scene, scenes } =
+		selectedDialogue;
+
+	// Optional CLI level:
+	// npm run create:dialogue a1
+	const cliLevel = process.argv[2];
+
+	const level = normalizeLevel(cliLevel || courseLevel);
+
+	if (!ALLOWED_LEVELS.has(level)) {
+		throw new Error(`Invalid level "${level}". Use one of: a1, a2, b1, b2.`);
+	}
 
 	const lessonConfig = {
 		courseId,
@@ -58,6 +83,12 @@ try {
 		level,
 		situation,
 		thumbnail,
+
+		// Normal dialogue: one shared scene
+		scene,
+
+		// Special dialogue: different scene per speaker
+		scenes,
 	};
 
 	const prompt = buildDialoguePrompt(lessonConfig);
@@ -79,7 +110,13 @@ try {
 	await fs.writeFile(promptPath, prompt, "utf8");
 
 	console.log("\n✅ Dialogue request created.");
+	console.log(`🎯 Level: ${level}`);
 	console.log(`📁 ${promptPath}`);
+
+	if (scenes) {
+		console.log("🎬 Speaker-specific scenes enabled.");
+	}
+
 	console.log("\nNext:");
 	console.log("1. Send this prompt to the AI.");
 	console.log("2. Save its JSON response.");
@@ -88,7 +125,6 @@ try {
 } catch (error) {
 	console.error("\n❌ Dialogue creation failed:");
 	console.error(error.message);
-
 	process.exitCode = 1;
 } finally {
 	rl.close();

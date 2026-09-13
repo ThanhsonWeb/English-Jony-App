@@ -30,9 +30,17 @@ const askingForDirections = {
 		{
 			dialogueId: "finding-a-cafe",
 			title: "Tìm quán cà phê",
+
+			situation:
+				"Buổi tối, Ben đang trên đường đến gặp Emma tại một quán cà phê. Emma đã ở quán, còn Ben đang ở ngoài đường và không tìm thấy quán nên gọi cho Emma để hỏi đường.",
+
 			thumbnail:
 				"/dialogue/asking-for-directions/thumbnails/finding-a-cafe.png",
-			situation: "Ben hỏi Emma nơi có thể tìm một quán cà phê gần đó.",
+
+			scenes: {
+				Ben: "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+				Emma: "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+			},
 		},
 		{
 			dialogueId: "finding-the-restroom",
