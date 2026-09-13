@@ -414,7 +414,195 @@
 "transcript": "Thank you for your help!",
 "scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
 "audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-05.mp3"
-}
+},
+    {
+      "id": 21,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "parts": [
+        "",
+        " ",
+        " this street."
+      ],
+      "answers": [
+        "Go",
+        "straight along"
+      ],
+      "speaker": "Emma",
+      "transcript": "Go straight along this street.",
+      "scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+      "audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-01.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "Then ",
+        " ",
+        " the bank."
+      ],
+      "answers": [
+        "turn left",
+        "at"
+      ],
+      "speaker": "Emma",
+      "transcript": "Then turn left at the bank.",
+      "scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+      "audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-02.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": [
+        "No, it's ",
+        " the bank."
+      ],
+      "answers": [
+        "across from"
+      ],
+      "speaker": "Emma",
+      "transcript": "No, it's across from the bank.",
+      "scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+      "audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-04.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": [
+        "It's about ",
+        " minutes ",
+        "."
+      ],
+      "answers": [
+        "two",
+        "on foot"
+      ],
+      "speaker": "Emma",
+      "transcript": "It's about two minutes on foot.",
+      "scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+      "audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-05.mp3"
+    },
+    {
+      "id": "25",
+      "type": "dialogueCloze",
+      "title": "Ôn tập hội thoại",
+      "instruction": "Điền các từ còn thiếu để hoàn thành hội thoại.",
+      "lines": [
+        {
+          "speaker": "Ben",
+          "parts": [
+            "",
+            {
+              "blank": "Excuse me",
+              "id": "1"
+            },
+            ". Where is the nearest bus stop?"
+          ]
+        },
+        {
+          "speaker": "Emma",
+          "parts": [
+            "Go ",
+            {
+              "blank": "straight",
+              "id": "2"
+            },
+            " along this street."
+          ]
+        },
+        {
+          "speaker": "Emma",
+          "parts": [
+            "Then turn ",
+            {
+              "blank": "left",
+              "id": "3"
+            },
+            " at the bank."
+          ]
+        },
+        {
+          "speaker": "Ben",
+          "parts": [
+            "Is the bank ",
+            {
+              "blank": "near",
+              "id": "4"
+            },
+            " the supermarket?"
+          ]
+        },
+        {
+          "speaker": "Emma",
+          "parts": [
+            "Yes, it's ",
+            {
+              "blank": "next to",
+              "id": "5"
+            },
+            " the supermarket."
+          ]
+        },
+        {
+          "speaker": "Ben",
+          "parts": [
+            "Is the ",
+            {
+              "blank": "bus stop",
+              "id": "6"
+            },
+            " next to the bank?"
+          ]
+        },
+        {
+          "speaker": "Emma",
+          "parts": [
+            "No, it's ",
+            {
+              "blank": "across from",
+              "id": "7"
+            },
+            " the bank."
+          ]
+        },
+        {
+          "speaker": "Ben",
+          "parts": [
+            "How ",
+            {
+              "blank": "far",
+              "id": "8"
+            },
+            " is it from here?"
+          ]
+        },
+        {
+          "speaker": "Emma",
+          "parts": [
+            "It's about two minutes ",
+            {
+              "blank": "on foot",
+              "id": "9"
+            },
+            "."
+          ]
+        },
+        {
+          "speaker": "Ben",
+          "parts": [
+            "Thank you for your ",
+            {
+              "blank": "help",
+              "id": "10"
+            },
+            "!"
+          ]
+        }
+      ]
+    }
 ],
 "grammarNotes": [
 {

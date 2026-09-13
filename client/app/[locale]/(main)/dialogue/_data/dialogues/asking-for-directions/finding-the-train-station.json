@@ -421,6 +421,106 @@
 			"answer": "Khi ai đó chuẩn bị đi du lịch hoặc di chuyển đến nơi khác",
 			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-06.mp3"
+		},
+		{
+			"id": 21,
+			"type": "fillBlank",
+			"dialogueLineId": 3,
+			"speaker": "Ben",
+			"transcript": "Where can I buy a ticket?",
+			"parts": ["", " ", "?"],
+			"answers": ["Where can I buy", "a ticket"],
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-02.mp3"
+		},
+		{
+			"id": 22,
+			"type": "fillBlank",
+			"dialogueLineId": 5,
+			"speaker": "Ben",
+			"transcript": "Okay. Which platform do I need?",
+			"parts": ["Okay. ", " do I ", "?"],
+			"answers": ["Which platform", "need"],
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-03.mp3"
+		},
+		{
+			"id": 23,
+			"type": "fillBlank",
+			"dialogueLineId": 6,
+			"speaker": "Emma",
+			"transcript": "Platform three. Your train leaves in ten minutes.",
+			"parts": ["Platform three. Your train ", " in ", "."],
+			"answers": ["leaves", "ten minutes"],
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-03.mp3"
+		},
+		{
+			"id": 24,
+			"type": "fillBlank",
+			"dialogueLineId": 9,
+			"speaker": "Ben",
+			"transcript": "Do I need to change trains?",
+			"parts": ["Do I need to ", "?"],
+			"answers": ["change trains"],
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-05.mp3"
+		},
+		{
+			"id": "25",
+			"type": "dialogueCloze",
+			"title": "Ôn tập hội thoại",
+			"instruction": "Điền các từ còn thiếu để hoàn thành hội thoại.",
+			"lines": [
+				{
+					"speaker": "Ben",
+					"parts": ["Hi, Emma! I'm going to ", { "blank": "Lake Town", "id": "1" }, " today."]
+				},
+				{
+					"speaker": "Emma",
+					"parts": ["Hi, Ben! You can take the ", { "blank": "number ten train", "id": "2" }, "."]
+				},
+				{
+					"speaker": "Ben",
+					"parts": ["Where can I ", { "blank": "buy a ticket", "id": "3" }, "?"]
+				},
+				{
+					"speaker": "Emma",
+					"parts": ["You can use the ", { "blank": "ticket machine", "id": "4" }, " here."]
+				},
+				{
+					"speaker": "Ben",
+					"parts": ["Okay. Which ", { "blank": "platform", "id": "5" }, " do I need?"]
+				},
+				{
+					"speaker": "Emma",
+					"parts": ["Platform three. Your train ", { "blank": "leaves", "id": "6" }, " in ten minutes."]
+				},
+				{
+					"speaker": "Ben",
+					"parts": ["", { "blank": "How long", "id": "7" }, " does the trip take?"]
+				},
+				{
+					"speaker": "Emma",
+					"parts": ["It takes ", { "blank": "twenty", "id": "8" }, " minutes."]
+				},
+				{
+					"speaker": "Ben",
+					"parts": ["Do I need to ", { "blank": "change trains", "id": "9" }, "?"]
+				},
+				{
+					"speaker": "Emma",
+					"parts": ["No. This train ", { "blank": "goes straight", "id": "10" }, " to Lake Town."]
+				},
+				{
+					"speaker": "Ben",
+					"parts": ["Great! Thanks for your ", { "blank": "help", "id": "11" }, " again."]
+				},
+				{
+					"speaker": "Emma",
+					"parts": ["You're welcome. Have a ", { "blank": "good trip", "id": "12" }, "!"]
+				}
+			]
 		}
 	],
 	"grammarNotes": [

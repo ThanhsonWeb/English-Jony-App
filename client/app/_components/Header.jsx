@@ -68,7 +68,7 @@ function Header() {
 	}
 
 	return (
-		<header className="relative top-0 z-50 border-b border-app bg-surface/90 px-4 py-4 backdrop-blur-md sm:px-8">
+		<header className="relative top-0 z-50 border-b border-app bg-surface/90 px-4 py-2 backdrop-blur-md sm:px-8">
 			<div className="flex items-center justify-between max-w-8xl mx-auto">
 				<Logo />
 				<div className="hidden md:block">

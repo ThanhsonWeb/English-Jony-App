@@ -196,12 +196,17 @@ export function validateDialogue(data, options = {}) {
     errors.push("tasks must be an array.");
   } else {
     const tasks = data.tasks;
+    const usesLinked25TaskFormat =
+      usesLinkedTaskFormat &&
+      tasks.length === 25 &&
+      tasks[24]?.type === "dialogueCloze";
     if (!usesLinkedTaskFormat && tasks.length !== 25) {
       errors.push(
         `Generated dialogues must contain exactly 25 tasks, found ${tasks.length}.`,
       );
     } else if (
       usesLinkedTaskFormat &&
+      !usesLinked25TaskFormat &&
       (tasks.length < taskRange.min || tasks.length > taskRange.max)
     ) {
       errors.push(
@@ -210,11 +215,14 @@ export function validateDialogue(data, options = {}) {
     }
 
     const fillBlankCount = tasks.filter((task) => task.type === "fillBlank").length;
-    const multipleChoiceCount = tasks.filter(
+    const multipleChoiceTasks = usesLinked25TaskFormat
+      ? tasks.slice(0, 20)
+      : tasks;
+    const multipleChoiceCount = multipleChoiceTasks.filter(
       (task) => task.type === "multipleChoice",
     ).length;
     const minimumQuizCount = Math.ceil(
-      tasks.length * structureRules.multipleChoiceRatio,
+      multipleChoiceTasks.length * structureRules.multipleChoiceRatio,
     );
 
     if (fillBlankCount <= tasks.length / 2) {
@@ -226,6 +234,19 @@ export function validateDialogue(data, options = {}) {
       errors.push(
         `Multiple Choice must be at least 30%; expected at least ${minimumQuizCount}, found ${multipleChoiceCount}.`,
       );
+    }
+
+    if (usesLinked25TaskFormat) {
+      tasks.slice(0, 20).forEach((task, index) => {
+        if (task.type === "dialogueCloze") {
+          errors.push(`Task ${index + 1}: dialogueCloze is only allowed at Task 25.`);
+        }
+      });
+      tasks.slice(20, 24).forEach((task, index) => {
+        if (task.type !== "fillBlank") {
+          errors.push(`Task ${index + 21}: Tasks 21-24 must be fillBlank review tasks.`);
+        }
+      });
     }
 
     const tasksPerLine = new Map();
@@ -244,7 +265,9 @@ export function validateDialogue(data, options = {}) {
         seenTaskIds.add(taskId);
       }
       const hasExpectedId = usesLinkedTaskFormat
-        ? task.id === index + 1
+        ? usesLinked25TaskFormat
+          ? taskId === String(index + 1)
+          : task.id === index + 1
         : taskId === String(index + 1);
       if (taskId && !hasExpectedId) {
         errors.push(`${taskLabel}: expected ID ${index + 1}, found ${task.id}.`);
@@ -298,6 +321,9 @@ export function validateDialogue(data, options = {}) {
 
       if (sourceLine) {
         if (usesLinkedTaskFormat) {
+          if (usesLinked25TaskFormat && index === 20) {
+            previousLineIndex = -1;
+          }
           if (sourceLine.index < previousLineIndex) {
             errors.push(
               `${taskLabel}: tasks must practice each dialogue line before moving to the next.`,

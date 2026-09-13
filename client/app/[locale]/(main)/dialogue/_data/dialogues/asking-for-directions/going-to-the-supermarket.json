@@ -354,6 +354,98 @@
 			"answer": "Đi bộ khoảng mười phút.",
 			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-05.mp3"
+		},
+		{
+			"id": 21,
+			"type": "fillBlank",
+			"dialogueLineId": 4,
+			"speaker": "Ben",
+			"transcript": "Do you know where the supermarket is?",
+			"parts": ["", " know ", " the supermarket is?"],
+			"answers": ["Do you", "where"],
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-03.mp3"
+		},
+		{
+			"id": 22,
+			"type": "fillBlank",
+			"dialogueLineId": 6,
+			"speaker": "Emma",
+			"transcript": "Then turn right at the traffic lights.",
+			"parts": ["Then ", " at the ", "."],
+			"answers": ["turn right", "traffic lights"],
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-03.mp3"
+		},
+		{
+			"id": 23,
+			"type": "fillBlank",
+			"dialogueLineId": 9,
+			"speaker": "Ben",
+			"transcript": "Is it far from here?",
+			"parts": ["", " ", " here?"],
+			"answers": ["Is it far", "from"],
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-05.mp3"
+		},
+		{
+			"id": 24,
+			"type": "fillBlank",
+			"dialogueLineId": 10,
+			"speaker": "Emma",
+			"transcript": "No, it's about ten minutes on foot.",
+			"parts": ["No, it's about ", " minutes ", "."],
+			"answers": ["ten", "on foot"],
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-05.mp3"
+		},
+		{
+			"id": "25",
+			"type": "dialogueCloze",
+			"title": "Ôn tập hội thoại",
+			"instruction": "Điền các từ còn thiếu để hoàn thành hội thoại.",
+			"lines": [
+				{
+					"speaker": "Ben",
+					"parts": ["Hi! You ", { "blank": "helped", "id": "1" }, " me at the bus stop yesterday."]
+				},
+				{
+					"speaker": "Emma",
+					"parts": ["Oh, hi! I ", { "blank": "remember", "id": "2" }, " you."]
+				},
+				{
+					"speaker": "Ben",
+					"parts": ["I'm still learning my ", { "blank": "way around", "id": "3" }, " the city."]
+				},
+				{
+					"speaker": "Ben",
+					"parts": ["Do you know where the ", { "blank": "supermarket", "id": "4" }, " is?"]
+				},
+				{
+					"speaker": "Emma",
+					"parts": ["Yes. Walk along this street and ", { "blank": "go past", "id": "5" }, " the bank."]
+				},
+				{
+					"speaker": "Emma",
+					"parts": ["Then ", { "blank": "turn right", "id": "6" }, " at the traffic lights."]
+				},
+				{
+					"speaker": "Ben",
+					"parts": ["Okay. Right at the ", { "blank": "traffic lights", "id": "7" }, "?"]
+				},
+				{
+					"speaker": "Emma",
+					"parts": ["Yes. The supermarket is on the corner, ", { "blank": "across from", "id": "8" }, " the bakery."]
+				},
+				{
+					"speaker": "Ben",
+					"parts": ["Is it ", { "blank": "far", "id": "9" }, " from here?"]
+				},
+				{
+					"speaker": "Emma",
+					"parts": ["No, it's about ten minutes ", { "blank": "on foot", "id": "10" }, "."]
+				}
+			]
 		}
 	],
 	"usefulWords": [
