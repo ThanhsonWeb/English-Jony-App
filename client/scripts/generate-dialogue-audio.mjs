@@ -79,7 +79,7 @@ function getVoiceId(speaker) {
 	const voiceIds = {
 		Maria: "ogwqBH5bbF03DSbNiRNN",
 		Tom: "s3TPKV1kjDlVtZbl4Ksh",
-		Anna: "uYXf8XasLslADfZ2MB4u",
+		Anna: "Cy8NxOxWnzsargZaVHUo",
 		Leo: "s3TPKV1kjDlVtZbl4Ksh",
 		Mia: "uYXf8XasLslADfZ2MB4u",
 		Ben: "oF10V53nXu6mNLtJLgko",

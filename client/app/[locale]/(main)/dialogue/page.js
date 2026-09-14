@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { lessonData } from "./_data/lessonData";
 import { useLocale, useTranslations } from "next-intl";
-
+import { ChevronDown, ChevronUp } from "lucide-react";
 const courseImages = {
 	"office-introduction":
 		"/dialogue/office-introduction/thumbnails/office-introduction.png",
@@ -49,6 +49,8 @@ function getCefrLevelLabel(level) {
 }
 
 export default function DialoguePage() {
+	const selectRef = useRef(null);
+	const [isLevelOpen, setIsLevelOpen] = useState(false);
 	const t = useTranslations("DialogueLanding");
 	const locale = useLocale();
 	const levelOptions = ["all", "beginner", "intermediate", "advanced"].map(
@@ -206,7 +208,9 @@ export default function DialoguePage() {
 					<div className="pointer-events-none absolute bottom-[-15%] right-[3%] z-[1] hidden h-48 w-[48%] rounded-full bg-blue-600/10 blur-[65px] md:block" />
 
 					<div className="pointer-events-none absolute inset-y-0 right-[5%] z-20 hidden w-[42%] md:block lg:right-[7%] lg:w-[40%]">
-						<div className="absolute bottom-0 left-0 h-[92%] w-[54%]">
+						<div className="absolute bottom-[2%] left-1/2 h-[70%] w-[78%] -translate-x-1/2 rounded-full bg-primary/10 blur-[55px]" />
+						<div className="absolute bottom-[-4%] left-[4%] h-[98%] w-[58%]">
+					
 							<Image
 								src="/dialogue/office-introduction/shared/maria.png"
 								alt=""
@@ -216,7 +220,8 @@ export default function DialoguePage() {
 								sizes="24vw"
 							/>
 						</div>
-						<div className="absolute bottom-0 right-[2%] h-[96%] w-[53%]">
+						<div className="absolute bottom-[-4%] right-[4%] h-full w-[57%]">
+						
 							<Image
 								src="/dialogue/office-introduction/shared/tom.png"
 								alt=""
@@ -261,11 +266,18 @@ export default function DialoguePage() {
 							</label>
 
 							<label className="relative shrink-0 sm:w-52">
-								<span className="sr-only ">{t("levelFilter")}</span>
+								<span className="sr-only">{t("levelFilter")}</span>
+
 								<select
+									ref={selectRef}
 									value={selectedLevel}
-									onChange={(event) => setSelectedLevel(event.target.value)}
-									className="h-11  w-full rounded-lg border border-app bg-surface px-3 text-sm text-secondary outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/15"
+									onChange={(event) => {
+										setSelectedLevel(event.target.value);
+										setIsLevelOpen(false);
+									}}
+									onFocus={() => setIsLevelOpen(true)}
+									onBlur={() => setIsLevelOpen(false)}
+									className="h-11 w-full appearance-none rounded-lg border border-app bg-surface px-3 pr-10 text-sm text-secondary outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/15"
 								>
 									{levelOptions.map((option) => (
 										<option key={option.value} value={option.value}>
@@ -273,6 +285,29 @@ export default function DialoguePage() {
 										</option>
 									))}
 								</select>
+
+								<button
+									type="button"
+									onMouseDown={(event) => {
+										event.preventDefault();
+
+										if (isLevelOpen) {
+											selectRef.current?.blur();
+											setIsLevelOpen(false);
+										} else {
+											selectRef.current?.focus();
+											selectRef.current?.showPicker?.();
+											setIsLevelOpen(true);
+										}
+									}}
+									className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center"
+								>
+									<ChevronDown
+										className={`h-4 w-4 text-secondary transition-transform duration-200 ease-out ${
+											isLevelOpen ? "rotate-180" : "rotate-0"
+										}`}
+									/>
+								</button>
 							</label>
 						</div>
 					</div>

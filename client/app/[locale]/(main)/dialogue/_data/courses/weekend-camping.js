@@ -21,7 +21,7 @@ const weekendCampingCourse = {
 			// setting-up-the-tent
 			settingUpTheTent,
 			//starting-a-campfire
-			startingACampfire,
+			// startingACampfire,
 			//cooking dinner
 			{
 				...cookingDinnerDraft,
