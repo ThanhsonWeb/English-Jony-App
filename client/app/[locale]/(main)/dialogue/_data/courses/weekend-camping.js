@@ -1,10 +1,8 @@
-import cookingDinnerDraft from "../dialogues/weekend-camping/cooking-dinner.json";
-import talkingByTheCampfireDraft from "../dialogues/weekend-camping/talking-by-the-campfire.json";
-import { buildGeneratedDialogueTasks } from "../helpers/buildDialogue";
 import arrivingAtTheCampsite from "../dialogues/weekend-camping/arriving-at-the-campsite";
+import cookingDinner from "../dialogues/weekend-camping/cooking-dinner";
 import settingUpTheTent from "../dialogues/weekend-camping/setting-up-the-tent";
 import startingACampfire from "../dialogues/weekend-camping/starting-a-campfire";
-import { weekendCampingCharacterImages } from "../dialogues/weekend-camping/helpers";
+import talkingByTheCampfire from "../dialogues/weekend-camping/talking-by-the-campfire";
 
 const weekendCampingCourse = {
 		id: "weekend-camping",
@@ -22,34 +20,10 @@ const weekendCampingCourse = {
 			settingUpTheTent,
 			//starting-a-campfire
 			// startingACampfire,
-			//cooking dinner
-			{
-				...cookingDinnerDraft,
-				id: cookingDinnerDraft.metadata.dialogueId,
-				thumbnail: cookingDinnerDraft.metadata.thumbnail,
-				title: cookingDinnerDraft.metadata.title,
-				description: cookingDinnerDraft.metadata.situation,
-				scene: cookingDinnerDraft.metadata.scene,
-				characters: weekendCampingCharacterImages,
-				tasks: buildGeneratedDialogueTasks(
-					cookingDinnerDraft,
-					weekendCampingCharacterImages,
-				),
-			},
+			//cooking dinner 
+			cookingDinner,
 			// talking by the campfire
-			{
-				...talkingByTheCampfireDraft,
-				id: talkingByTheCampfireDraft.metadata.dialogueId,
-				thumbnail: talkingByTheCampfireDraft.metadata.thumbnail,
-				title: talkingByTheCampfireDraft.metadata.title,
-				description: talkingByTheCampfireDraft.metadata.situation,
-				scene: talkingByTheCampfireDraft.metadata.scene,
-				characters: weekendCampingCharacterImages,
-				tasks: buildGeneratedDialogueTasks(
-					talkingByTheCampfireDraft,
-					weekendCampingCharacterImages,
-				),
-			},
+			talkingByTheCampfire,
 		],
 	};
 

@@ -1,4 +1,9 @@
-{
+import { buildGeneratedDialogue } from "../../helpers/buildDialogue";
+import { weekendCampingMedia } from "./helpers";
+
+const media = weekendCampingMedia["cooking-dinner"];
+
+const cookingDinnerDraft = {
 "metadata": {
 "courseId": "weekend-camping",
 "dialogueId": "cooking-dinner",
@@ -513,4 +518,11 @@
 "example": "How long should we cook them? = Chúng ta nên nấu chúng trong bao lâu?"
 }
 ]
-}
+};
+
+const cookingDinner = buildGeneratedDialogue(
+	cookingDinnerDraft,
+	media.characters,
+);
+
+export default cookingDinner;

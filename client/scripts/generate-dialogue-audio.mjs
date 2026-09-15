@@ -77,11 +77,11 @@ async function loadLessonData() {
 
 function getVoiceId(speaker) {
 	const voiceIds = {
-		Maria: "ogwqBH5bbF03DSbNiRNN",
+		Maria: "xHKaiky3urvwNvwRMmgo",
 		Tom: "s3TPKV1kjDlVtZbl4Ksh",
 		Anna: "Cy8NxOxWnzsargZaVHUo",
 		Leo: "s3TPKV1kjDlVtZbl4Ksh",
-		Mia: "uYXf8XasLslADfZ2MB4u",
+		Mia: "ur0MtycxCulNrunXsdLx",
 		Ben: "oF10V53nXu6mNLtJLgko",
 		Emma: "Cy8NxOxWnzsargZaVHUo",
 	};
