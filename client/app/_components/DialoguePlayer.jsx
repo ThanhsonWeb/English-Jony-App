@@ -171,6 +171,7 @@ export default function DialoguePlayer({
 
 		// Currently playing → pause
 		if (isPlaying) {
+			setIsPlaying(false);
 			audio.pause();
 			return;
 		}
@@ -519,7 +520,6 @@ export default function DialoguePlayer({
 					preload="auto"
 					onEnded={handleEnded}
 					onPlay={() => setIsPlaying(true)}
-					onPause={() => setIsPlaying(false)}
 				/>
 
 				{/* Transcript */}
