@@ -25,7 +25,29 @@ function normalizeText(value) {
     .trim();
 }
 
+function countQuestionBlankMarkers(question) {
+  return String(question || "").match(
+    /_{2,}/g,
+  )?.length || 0;
+}
+
 function countFillBlankAnswers(task) {
+  if (
+    Array.isArray(task.parts) &&
+    Array.isArray(task.answers)
+  ) {
+    return task.answers.length;
+  }
+
+  if (
+    isPresent(task.question) &&
+    Array.isArray(task.answers)
+  ) {
+    return countQuestionBlankMarkers(
+      task.question,
+    );
+  }
+
   if (Array.isArray(task.answers)) {
     return task.answers.length;
   }
@@ -614,6 +636,11 @@ export function validateDialogue(data, options = {}) {
           Array.isArray(task.parts) &&
           Array.isArray(task.answers);
 
+        const isQuestionAnswersBlank =
+          !isMultiBlank &&
+          isPresent(task.question) &&
+          Array.isArray(task.answers);
+
         const isSingleBlank =
           typeof task.sentenceBefore ===
             "string" &&
@@ -627,6 +654,7 @@ export function validateDialogue(data, options = {}) {
 
         if (
           !isMultiBlank &&
+          !isQuestionAnswersBlank &&
           !isSingleBlank &&
           !isLegacyBlank
         ) {
@@ -661,6 +689,33 @@ export function validateDialogue(data, options = {}) {
                 "",
               );
           }
+        } else if (isQuestionAnswersBlank) {
+          const questionBlankCount =
+            countQuestionBlankMarkers(
+              task.question,
+            );
+
+          if (
+            questionBlankCount !==
+            task.answers.length
+          ) {
+            errors.push(
+              `${taskLabel}: question blank count must match answers length.`,
+            );
+          }
+
+          let answerIndex = 0;
+          completedSentence = String(
+            task.question,
+          ).replace(
+            /_{2,}/g,
+            () =>
+              String(
+                task.answers[
+                  answerIndex++
+                ] ?? "",
+              ),
+          );
         } else if (isSingleBlank) {
           completedSentence =
             task.sentenceBefore +

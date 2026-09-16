@@ -1,0 +1,478 @@
+{
+"metadata": {
+"courseId": "coffee-shop",
+"dialogueId": "ordering-a-coffee",
+"title": "Gọi cà phê",
+"level": "a1",
+"situation": "Ben và Emma đến một quán cà phê cùng nhau. Ben muốn gọi cà phê nhưng chưa biết chọn loại nào, nên Emma gợi ý cho Ben trước khi nhân viên quán nhận món.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"thumbnail": "/dialogue/coffee-shop/thumbnails/ordering-a-coffee.png"
+},
+"dialogue": [
+{
+"id": 1,
+"speaker": "Ben",
+"text": "There are so many drinks on this menu.",
+"translation": "Có nhiều đồ uống quá trên thực đơn này.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/ben-01.mp3"
+},
+{
+"id": 2,
+"speaker": "Emma",
+"text": "What kind of coffee do you like?",
+"translation": "Bạn thích loại cà phê nào?",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/emma-01.mp3"
+},
+{
+"id": 3,
+"speaker": "Ben",
+"text": "I like coffee, but I don't like it very strong.",
+"translation": "Mình thích cà phê, nhưng mình không thích cà phê quá đậm.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/ben-02.mp3"
+},
+{
+"id": 4,
+"speaker": "Emma",
+"text": "Then you can try a latte.",
+"translation": "Vậy bạn có thể thử latte.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/emma-02.mp3"
+},
+{
+"id": 5,
+"speaker": "Emma",
+"text": "It has coffee and a lot of milk.",
+"translation": "Nó có cà phê và nhiều sữa.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/emma-03.mp3"
+},
+{
+"id": 6,
+"speaker": "Ben",
+"text": "That sounds good. Is it sweet?",
+"translation": "Nghe ngon đấy. Nó có ngọt không?",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/ben-03.mp3"
+},
+{
+"id": 7,
+"speaker": "Emma",
+"text": "No, but you can add some sugar.",
+"translation": "Không, nhưng bạn có thể thêm một ít đường.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/emma-04.mp3"
+},
+{
+"id": 8,
+"speaker": "Ben",
+"text": "Okay. I'll get a small latte.",
+"translation": "Được rồi. Mình sẽ gọi một ly latte nhỏ.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/ben-04.mp3"
+},
+{
+"id": 9,
+"speaker": "Emma",
+"text": "Good choice. I want an iced coffee.",
+"translation": "Lựa chọn hay đấy. Mình muốn một ly cà phê đá.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/emma-05.mp3"
+},
+{
+"id": 10,
+"speaker": "Ben",
+"text": "Great. We're ready to order now.",
+"translation": "Tuyệt. Giờ chúng ta sẵn sàng gọi món rồi.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/ben-05.mp3"
+}
+],
+"usefulWords": [
+{
+"word": "menu",
+"pronunciation": "/ˈmenjuː/",
+"meaning": "thực đơn",
+"example": "Can I see the menu?"
+},
+{
+"word": "What kind of",
+"pronunciation": "/wʌt kaɪnd əv/",
+"meaning": "loại nào",
+"example": "What kind of tea do you like?"
+},
+{
+"word": "very strong",
+"pronunciation": "/ˈveri strɔːŋ/",
+"meaning": "rất đậm",
+"example": "This coffee is very strong."
+},
+{
+"word": "try a latte",
+"pronunciation": "/traɪ ə ˈlɑːteɪ/",
+"meaning": "thử một ly latte",
+"example": "You can try a latte."
+},
+{
+"word": "a lot of milk",
+"pronunciation": "/ə lɒt əv mɪlk/",
+"meaning": "nhiều sữa",
+"example": "My coffee has a lot of milk."
+},
+{
+"word": "That sounds good",
+"pronunciation": "/ðæt saʊndz ɡʊd/",
+"meaning": "Nghe hay/ngon đấy",
+"example": "A latte? That sounds good."
+},
+{
+"word": "add some sugar",
+"pronunciation": "/æd sʌm ˈʃʊɡər/",
+"meaning": "thêm một ít đường",
+"example": "I want to add some sugar."
+},
+{
+"word": "ready to order",
+"pronunciation": "/ˈredi tə ˈɔːrdər/",
+"meaning": "sẵn sàng gọi món",
+"example": "We are ready to order."
+}
+],
+"tasks": [
+{
+"id": 1,
+"dialogueLineId": 1,
+"type": "fillBlank",
+"question": "There are so many ____ on this ____.",
+"answers": ["drinks", "menu"],
+"speaker": "Ben",
+"transcript": "There are so many drinks on this menu.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/ben-01.mp3"
+},
+{
+"id": 2,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"question": "What kind of ____ do you like?",
+"answers": ["coffee"],
+"speaker": "Emma",
+"transcript": "What kind of coffee do you like?",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/emma-01.mp3"
+},
+{
+"id": 3,
+"dialogueLineId": 2,
+"type": "multipleChoice",
+"question": "Emma muốn biết điều gì về Ben?",
+"options": [
+"Ben thích loại cà phê nào.",
+"Ben muốn ngồi ở đâu.",
+"Ben muốn ăn món gì.",
+"Ben đã uống bao nhiêu cà phê."
+],
+"answer": "Ben thích loại cà phê nào.",
+"speaker": "Emma",
+"transcript": "What kind of coffee do you like?",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/emma-01.mp3"
+},
+{
+"id": 4,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"question": "I like coffee, but I don't like it very ____.",
+"answers": ["strong"],
+"speaker": "Ben",
+"transcript": "I like coffee, but I don't like it very strong.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/ben-02.mp3"
+},
+{
+"id": 5,
+"dialogueLineId": 3,
+"type": "multipleChoice",
+"question": "Ben không thích cà phê như thế nào?",
+"options": [
+"Quá đậm.",
+"Quá lạnh.",
+"Quá ngọt.",
+"Quá nhiều sữa."
+],
+"answer": "Quá đậm.",
+"speaker": "Ben",
+"transcript": "I like coffee, but I don't like it very strong.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/ben-02.mp3"
+},
+{
+"id": 6,
+"dialogueLineId": 4,
+"type": "fillBlank",
+"question": "Then you can ____ a latte.",
+"answers": ["try"],
+"speaker": "Emma",
+"transcript": "Then you can try a latte.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/emma-02.mp3"
+},
+{
+"id": 7,
+"dialogueLineId": 4,
+"type": "multipleChoice",
+"question": "Emma gợi ý Ben thử món gì?",
+"options": [
+"Một ly latte.",
+"Một ly trà.",
+"Một ly nước cam.",
+"Một ly cà phê đá."
+],
+"answer": "Một ly latte.",
+"speaker": "Emma",
+"transcript": "Then you can try a latte.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/emma-02.mp3"
+},
+{
+"id": 8,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"question": "It has coffee and a lot of ____.",
+"answers": ["milk"],
+"speaker": "Emma",
+"transcript": "It has coffee and a lot of milk.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/emma-03.mp3"
+},
+{
+"id": 9,
+"dialogueLineId": 6,
+"type": "fillBlank",
+"question": "That sounds ____. Is it sweet?",
+"answers": ["good"],
+"speaker": "Ben",
+"transcript": "That sounds good. Is it sweet?",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/ben-03.mp3"
+},
+{
+"id": 10,
+"dialogueLineId": 7,
+"type": "fillBlank",
+"question": "No, but you can add some ____.",
+"answers": ["sugar"],
+"speaker": "Emma",
+"transcript": "No, but you can add some sugar.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/emma-04.mp3"
+},
+{
+"id": 11,
+"dialogueLineId": 7,
+"type": "multipleChoice",
+"question": "Emma nói Ben có thể làm gì nếu muốn đồ uống ngọt hơn?",
+"options": [
+"Thêm một ít đường.",
+"Thêm nước.",
+"Gọi cà phê đậm hơn.",
+"Chọn ly lớn hơn."
+],
+"answer": "Thêm một ít đường.",
+"speaker": "Emma",
+"transcript": "No, but you can add some sugar.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/emma-04.mp3"
+},
+{
+"id": 12,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"question": "Okay. I'll get a ____ latte.",
+"answers": ["small"],
+"speaker": "Ben",
+"transcript": "Okay. I'll get a small latte.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/ben-04.mp3"
+},
+{
+"id": 13,
+"dialogueLineId": 8,
+"type": "multipleChoice",
+"question": "Cuối cùng Ben chọn đồ uống nào?",
+"options": [
+"Một ly latte nhỏ.",
+"Một ly cà phê đá.",
+"Một ly latte lớn.",
+"Một ly trà nóng."
+],
+"answer": "Một ly latte nhỏ.",
+"speaker": "Ben",
+"transcript": "Okay. I'll get a small latte.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/ben-04.mp3"
+},
+{
+"id": 14,
+"dialogueLineId": 9,
+"type": "fillBlank",
+"question": "Good choice. I want an ____ coffee.",
+"answers": ["iced"],
+"speaker": "Emma",
+"transcript": "Good choice. I want an iced coffee.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/emma-05.mp3"
+},
+{
+"id": 15,
+"dialogueLineId": 10,
+"type": "fillBlank",
+"question": "Great. We're ready to ____ now.",
+"answers": ["order"],
+"speaker": "Ben",
+"transcript": "Great. We're ready to order now.",
+"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
+"audioUrl": "/dialogue/coffee-shop/ordering-a-coffee/audio/ben-05.mp3"
+},
+{
+"id": 16,
+"type": "dialogueCloze",
+"lines": [
+{
+"dialogueLineId": 1,
+"speaker": "Ben",
+"parts": [
+"There are so many ",
+{
+"id": "1",
+"blank": "drinks"
+},
+" on this menu."
+]
+},
+{
+"dialogueLineId": 2,
+"speaker": "Emma",
+"parts": [
+"",
+{
+"id": "2",
+"blank": "What kind of"
+},
+" coffee do you like?"
+]
+},
+{
+"dialogueLineId": 3,
+"speaker": "Ben",
+"parts": [
+"I like coffee, but I don't like it very ",
+{
+"id": "3",
+"blank": "strong"
+},
+"."
+]
+},
+{
+"dialogueLineId": 4,
+"speaker": "Emma",
+"parts": [
+"Then you can ",
+{
+"id": "4",
+"blank": "try a latte"
+},
+"."
+]
+},
+{
+"dialogueLineId": 5,
+"speaker": "Emma",
+"parts": [
+"It has coffee and ",
+{
+"id": "5",
+"blank": "a lot of milk"
+},
+"."
+]
+},
+{
+"dialogueLineId": 6,
+"speaker": "Ben",
+"parts": [
+"",
+{
+"id": "6",
+"blank": "That sounds good"
+},
+". Is it sweet?"
+]
+},
+{
+"dialogueLineId": 7,
+"speaker": "Emma",
+"parts": [
+"No, but you can ",
+{
+"id": "7",
+"blank": "add some sugar"
+},
+"."
+]
+},
+{
+"dialogueLineId": 8,
+"speaker": "Ben",
+"parts": [
+"Okay. ",
+{
+"id": "8",
+"blank": "I'll get"
+},
+" a small latte."
+]
+},
+{
+"dialogueLineId": 9,
+"speaker": "Emma",
+"parts": [
+"Good choice. I want an ",
+{
+"id": "9",
+"blank": "iced coffee"
+},
+"."
+]
+},
+{
+"dialogueLineId": 10,
+"speaker": "Ben",
+"parts": [
+"Great. We're ",
+{
+"id": "10",
+"blank": "ready to order"
+},
+" now."
+]
+}
+]
+}
+],
+"grammarNotes": [
+{
+"title": "Hỏi loại nào với “What kind of...?”",
+"explanation": "Dùng “What kind of + danh từ...?” khi muốn hỏi ai đó thích hoặc muốn loại nào.",
+"example": "What kind of coffee do you like?"
+},
+{
+"title": "Chọn món với “I'll get...”",
+"explanation": "Dùng “I'll get + món” để nói bạn quyết định gọi món gì.",
+"example": "I'll get a small latte."
+}
+]
+}
