@@ -101,55 +101,61 @@ function buildPlan(lessonId, dialogueId, dialogue) {
 
 	const appearances = new Map();
 
-	return dialogue.dialogue.map((line, index) => {
-		if (!line?.speaker) {
-			fail(`Speaker is missing on dialogue line ${index + 1}`);
-		}
-		if (!line?.text?.trim()) {
-			fail(`Text is missing on dialogue line ${index + 1}`);
-		}
+	return dialogue.dialogue
+		.map((line, index) => {
+			if (!line?.speaker) {
+				fail(`Speaker is missing on dialogue line ${index + 1}`);
+			}
+			if (!line?.text?.trim()) {
+				fail(`Text is missing on dialogue line ${index + 1}`);
+			}
 
-		const speaker = line.speaker.trim();
-		if (!["Maria", "Tom", "Anna", "Leo", "Mia", "Ben", "Emma"].includes(speaker)) {
-			fail(`Unsupported speaker "${speaker}" on dialogue line ${index + 1}`);
-		}
+			const speaker = line.speaker.trim();
+			if (
+				!["Maria", "Tom", "Anna", "Leo", "Mia", "Ben", "Emma"].includes(speaker)
+			) {
+				fail(`Unsupported speaker "${speaker}" on dialogue line ${index + 1}`);
+			}
 
-		const appearance = (appearances.get(speaker) ?? 0) + 1;
-		appearances.set(speaker, appearance);
-		const filename = `${speaker.toLowerCase()}-${String(appearance).padStart(2, "0")}.mp3`;
-		const publicUrl = `/dialogue/${lessonId}/${dialogueId}/audio/${filename}`;
+			const appearance = (appearances.get(speaker) ?? 0) + 1;
+			appearances.set(speaker, appearance);
+			const filename = `${speaker.toLowerCase()}-${String(appearance).padStart(2, "0")}.mp3`;
+			const publicUrl = `/dialogue/${lessonId}/${dialogueId}/audio/${filename}`;
 
-		if (!line.audioUrl) {
-			fail(`audioUrl is missing on dialogue line ${index + 1}`);
-		}
-		if (line.audioUrl !== publicUrl) {
-			fail(
-				`audioUrl mismatch on line ${index + 1}: expected "${publicUrl}", found "${line.audioUrl}"`,
+			if (!line.audioUrl) {
+				fail(`audioUrl is missing on dialogue line ${index + 1}`);
+			}
+			if (line.audioUrl !== publicUrl) {
+				fail(
+					`audioUrl mismatch on line ${index + 1}: expected "${publicUrl}", found "${line.audioUrl}"`,
+				);
+			}
+
+			const publicRoot = path.resolve("public");
+			const outputPath = path.resolve(
+				publicRoot,
+				line.audioUrl.replace(/^[/\\]+/, ""),
 			);
-		}
+			const relativeOutputPath = path.relative(publicRoot, outputPath);
+			if (
+				relativeOutputPath.startsWith("..") ||
+				path.isAbsolute(relativeOutputPath)
+			) {
+				fail(
+					`Invalid audioUrl on dialogue line ${index + 1}: ${line.audioUrl}`,
+				);
+			}
 
-		const publicRoot = path.resolve("public");
-		const outputPath = path.resolve(
-			publicRoot,
-			line.audioUrl.replace(/^[/\\]+/, ""),
-		);
-		const relativeOutputPath = path.relative(publicRoot, outputPath);
-		if (
-			relativeOutputPath.startsWith("..") ||
-			path.isAbsolute(relativeOutputPath)
-		) {
-			fail(`Invalid audioUrl on dialogue line ${index + 1}: ${line.audioUrl}`);
-		}
-
-		return {
-			speaker,
-			text: line.text.trim(),
-			voiceId: getVoiceId(speaker),
-			filename,
-			publicUrl,
-			outputPath,
-		};
-	}).filter(Boolean);
+			return {
+				speaker,
+				text: line.text.trim(),
+				voiceId: getVoiceId(speaker),
+				filename,
+				publicUrl,
+				outputPath,
+			};
+		})
+		.filter(Boolean);
 }
 
 async function fileExists(filePath) {
@@ -193,11 +199,13 @@ async function generateAudio(item, apiKey) {
 
 		const safeDetails = [
 			detail.type && `type: ${detail.type}`,
-			(detail.code || detail.status) && `code/status: ${detail.code || detail.status}`,
+			(detail.code || detail.status) &&
+				`code/status: ${detail.code || detail.status}`,
 			detail.message && `message: ${detail.message}`,
 			detail.request_id && `request_id: ${detail.request_id}`,
 		].filter(Boolean);
-		const detailText = safeDetails.length > 0 ? `\n${safeDetails.join("\n")}` : "";
+		const detailText =
+			safeDetails.length > 0 ? `\n${safeDetails.join("\n")}` : "";
 
 		fail(
 			`ElevenLabs request failed for ${item.filename} (HTTP ${response.status})${detailText}`,
@@ -262,7 +270,9 @@ async function main() {
 		}
 
 		if (options.dryRun) {
-			console.log(`${exists && options.force ? "REPLACE" : "CREATE  "} ${item.publicUrl}`);
+			console.log(
+				`${exists && options.force ? "REPLACE" : "CREATE  "} ${item.publicUrl}`,
+			);
 			continue;
 		}
 
@@ -278,7 +288,9 @@ async function main() {
 	}
 
 	if (options.dryRun) {
-		console.log(`Dry run complete: ${plan.length} valid audio paths, 0 failed.`);
+		console.log(
+			`Dry run complete: ${plan.length} valid audio paths, 0 failed.`,
+		);
 	} else {
 		console.log(
 			`Complete: ${generated} generated, ${skipped} skipped, ${failed} failed.`,

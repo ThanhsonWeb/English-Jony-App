@@ -1,8 +1,8 @@
 export const structureRules = Object.freeze({
 	dialogueLines: { min: 8, max: 12 },
-	tasks: { min: 18, max: 22 },
+	
 	usefulWords: { min: 6, max: 10 },
-	multipleChoiceRatio: 0.3,
+
 	fillBlankRange: { min: 1, max: 3 },
 });
 
@@ -12,6 +12,10 @@ export const levelRules = Object.freeze({
 		"Use short, clear sentences with simple grammar and usually one idea per sentence.",
 		"Avoid unnecessary idioms, slang, and difficult words.",
 		"Make the language very easy for beginners.",
+		"Use one clear communication goal for the dialogue.",
+		"Prefer useful everyday phrases and chunks.",
+		"Do not force speakers to alternate.",
+		"Avoid dialogue that depends on invisible physical actions when the characters are static.",
 	],
 	a2: [
 		"Use common everyday vocabulary and slightly more varied sentences.",
@@ -35,7 +39,9 @@ export const levelRules = Object.freeze({
 const levelAliases = Object.freeze({ beginner: "a1" });
 
 export function normalizeLevel(level) {
-	const normalized = String(level || "").trim().toLowerCase();
+	const normalized = String(level || "")
+		.trim()
+		.toLowerCase();
 	const resolved = levelAliases[normalized] || normalized;
 
 	if (!levelRules[resolved]) {

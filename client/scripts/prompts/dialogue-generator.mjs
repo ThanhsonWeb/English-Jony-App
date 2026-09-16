@@ -1,54 +1,54 @@
 import {
-	levelRules,
-	normalizeLevel,
-	structureRules,
+  levelRules,
+  normalizeLevel,
+  structureRules,
 } from "./dialogue-rules.mjs";
 
 function formatRules(rules) {
-	return rules.map((rule) => `- ${rule}`).join("\n");
+  return rules.map((rule) => `- ${rule}`).join("\n");
 }
 
 function formatSpeakerScenes(characters, scenes) {
-	if (!scenes) {
-		return "";
-	}
+  if (!scenes) {
+    return "";
+  }
 
-	return characters
-		.filter((character) => scenes[character])
-		.map((character) => `- ${character}: "${scenes[character]}"`)
-		.join("\n");
+  return characters
+    .filter((character) => scenes[character])
+    .map((character) => `- ${character}: "${scenes[character]}"`)
+    .join("\n");
 }
 
 export function buildDialoguePrompt(lessonConfig) {
-	const {
-		courseId,
-		dialogueId,
-		title,
-		characters,
-		level,
-		situation,
-		thumbnail,
-		scene: configuredScene,
-		scenes,
-	} = lessonConfig;
+  const {
+    courseId,
+    dialogueId,
+    title,
+    characters,
+    level,
+    situation,
+    thumbnail,
+    scene: configuredScene,
+    scenes,
+  } = lessonConfig;
 
-	const normalizedLevel = normalizeLevel(level);
-	const selectedLevelRules = levelRules[normalizedLevel];
+  const normalizedLevel = normalizeLevel(level);
+  const selectedLevelRules = levelRules[normalizedLevel];
 
-	if (!selectedLevelRules) {
-		throw new Error(`Unsupported CEFR level: ${normalizedLevel}`);
-	}
+  if (!selectedLevelRules) {
+    throw new Error(`Unsupported CEFR level: ${normalizedLevel}`);
+  }
 
-	const defaultScene =
-		configuredScene ||
-		scenes?.[characters[0]] ||
-		`/dialogue/${courseId}/${dialogueId}/bg.png`;
+  const defaultScene =
+    configuredScene ||
+    scenes?.[characters[0]] ||
+    `/dialogue/${courseId}/${dialogueId}/bg.png`;
 
-	const hasSpeakerScenes =
-		scenes && characters.some((character) => Boolean(scenes[character]));
+  const hasSpeakerScenes =
+    scenes && characters.some((character) => Boolean(scenes[character]));
 
-	const sceneRules = hasSpeakerScenes
-		? `
+  const sceneRules = hasSpeakerScenes
+    ? `
 SCENE RULES
 
 The characters are not necessarily in the same physical place.
@@ -58,13 +58,14 @@ Use these exact speaker-specific scene paths:
 ${formatSpeakerScenes(characters, scenes)}
 
 Rules:
+
 - Every dialogue line must use the scene belonging to its speaker.
 - Every linked task must reuse the exact scene from its dialogue line.
 - Never replace a speaker-specific scene with the default scene.
 - Repeated tasks for the same dialogue line must preserve the same scene exactly.
 - metadata.scene is only the fallback/default scene.
 `
-		: `
+    : `
 SCENE RULES
 
 All dialogue lines use this shared scene:
@@ -74,7 +75,7 @@ All dialogue lines use this shared scene:
 Every linked task must reuse the same scene as its dialogue line.
 `;
 
-	return `
+  return `
 You are creating a dialogue lesson for StudyJony,
 an English-learning application for Vietnamese learners.
 
@@ -88,99 +89,167 @@ Configured level: ${level}
 Normalized CEFR level: ${normalizedLevel.toUpperCase()}
 Situation: ${situation}
 
-SHARED LESSON STRUCTURE
-
-Dialogue:
+==================================================
+DIALOGUE RULES
+==================================================
 
 - Create ${structureRules.dialogueLines.min}–${structureRules.dialogueLines.max} natural, connected dialogue lines.
-- Keep the conversation realistic. Do not force speakers to alternate.
+- Use beginner-friendly language appropriate for the configured CEFR level.
+- Use short sentences, common vocabulary, and simple structures where appropriate.
+- Give the dialogue ONE clear communication goal.
+- Every line should naturally connect to the next.
+- Do NOT force speakers to alternate.
+- Avoid awkward sentences written only to teach grammar or vocabulary.
+- Prefer useful everyday phrases and chunks.
+- Repeat useful phrases naturally when it helps memory.
 - Every line must have a Vietnamese translation.
 - Give every dialogue line a unique numeric id.
 
-TASK STRUCTURE — EXACTLY 25 TASKS
+STATIC-SCENE RULE
 
-Tasks 1–24 — Core practice:
+The StudyJony characters are mostly static images.
 
-- Create exactly 24 normal linked practice tasks.
-- Tasks 1–24 are one continuous learning flow. Do not treat Tasks 21–24 as a separate review section.
-- Use only fillBlank and multipleChoice.
-- Fill Blank must be the majority of Tasks 1–24.
-- Multiple Choice must be at least 30% of Tasks 1–24.
-- Therefore, create at least 8 multipleChoice tasks among Tasks 1–24.
+Avoid dialogue that depends on visible physical actions the UI cannot show.
+
+Avoid lines such as:
+- "Pass me the pot."
+- "Here you go."
+- "Hold this."
+- "Pull the rope."
+- "Put this there."
+
+Prefer:
+- talking about what they see
+- asking simple questions
+- making plans
+- giving opinions
+- reacting
+- describing the situation
+- making simple decisions
+
+A line should still feel believable if the learner only sees static characters.
+
+Dialogue = what the learner hears and understands.
+
+==================================================
+EXERCISE RULES
+==================================================
 
 - Practice the dialogue from beginning to end.
-- Practice each dialogue line immediately before moving to the next dialogue line.
-- Once you move to a later dialogueLineId, never go back to an earlier dialogueLineId.
-- Give important/useful lines 2–3 tasks.
+- Practice each dialogue line before moving to the next.
+- Important or useful lines may receive 2–3 tasks.
 - Simple lines usually receive 1 task.
-- Every dialogue line must receive at least 1 task.
-- Every task must include dialogueLineId and reference an existing dialogue line.
-- Repeated tasks for one line must preserve that line's speaker, transcript, scene, and audioUrl exactly.
-- Do not create filler tasks just to reach 24.
+- Every dialogue line should receive at least 1 task.
+- Fill Blank is the main task type.
+- Multiple Choice should only be used when it genuinely tests conversation understanding.
+- Do NOT create filler tasks just to reach a number.
+- Quality is more important than task count.
+- Every linked task must include dialogueLineId and reference an existing dialogue line.
+- Repeated tasks for the same line must preserve that line's speaker, transcript, scene, and audioUrl exactly.
+- Once practice moves to a later dialogueLineId, do not go back to an earlier line unless the final full-dialogue review requires it.
 
-Task 25 — Full dialogue review:
+Fill Blank:
 
-- Task 25 must have type "dialogueCloze".
+- Use ${structureRules.fillBlankRange.min}–${structureRules.fillBlankRange.max} meaningful blanks.
+- Blank useful words or phrases, not random filler words.
+- Mark each blank with underscores exactly where the missing text appears.
+- Replacing every blank with its answer must reconstruct the original transcript exactly.
+- Do NOT create the exact same task twice.
+
+Multiple Choice:
+
+- Test genuine conversation or context understanding.
+- A short useful phrase may be tested for meaning.
+- Do NOT ask for a Vietnamese translation of the entire English sentence.
+- Wrong answers should be believable.
+- Ask only about information clearly supported by the dialogue.
+- Include exactly one correct answer.
+- The answer must appear in options.
+
+Final review:
+
+- The final task must have type "dialogueCloze".
 - It must review the entire dialogue.
 - Include every dialogue line in the original order.
 - Preserve every speaker and original transcript exactly.
 - Replace useful words or phrases with blanks.
 - The completed cloze must reconstruct the original dialogue exactly.
 - Use unique sequential blank IDs starting from "1".
-- Task 25 does not require dialogueLineId.
-- Do not add task-level speaker, transcript, scene, or audioUrl to Task 25.
+- The final dialogueCloze does not require dialogueLineId.
+- Do not add task-level speaker, transcript, scene, or audioUrl to the final dialogueCloze.
+- The final dialogueCloze task ID must be the next sequential number after the last practice task.
 
-Fill Blank:
+Exercise = how the learner practices and remembers the dialogue.
 
-- Use 1–3 blanks and vary what the blanks test.
-- Mark every blank with underscores exactly where the missing word or phrase appears in the original dialogue line.
-- Replacing each underscore marker with its answer must reconstruct the original transcript in the original word order.
-- Never repeat the exact same task.
-
-Multiple Choice:
-
-- Test a useful phrase's meaning or genuine conversation/context understanding.
-- A short useful phrase may be translated, but do not ask for a Vietnamese translation of the full English sentence.
-- Ask only about information clearly supported by the dialogue.
-- Include exactly one correct answer.
-- The answer must appear in options.
-
-Audio:
+==================================================
+AUDIO
+==================================================
 
 - Use exactly one MP3 per dialogue line.
 - Number each speaker's audio independently, starting at 01.
 - Every linked task for a line must reuse that original line's audioUrl.
 - Never create task-specific audio.
+- The same dialogue line must always preserve the same speaker, character, scene, transcript, and audioUrl.
 
-Useful Words:
+==================================================
+USEFUL WORDS
+==================================================
 
-- Include ${structureRules.usefulWords.min}–${structureRules.usefulWords.max} useful words or phrases that appear in the dialogue.
-- Include pronunciation, Vietnamese meaning, and a simple example for every item.
+- Include ${structureRules.usefulWords.min}–${structureRules.usefulWords.max} useful words or phrases.
+- Every useful word or phrase must appear in the dialogue.
+- Prefer useful conversational chunks over low-value isolated vocabulary.
+- Include pronunciation.
+- Include Vietnamese meaning.
+- Include a simple beginner-friendly example.
 
-Grammar:
+==================================================
+GRAMMAR
+==================================================
 
 - Grammar notes are optional.
-- Include only genuinely useful patterns.
-- Explain them simply for Vietnamese learners.
+- Include only genuinely useful beginner patterns that already appear naturally in the dialogue.
+- Do not force grammar into the dialogue just to teach it.
+- Explain grammar simply for Vietnamese learners.
 
-Core learning loop:
+==================================================
+CORE LEARNING LOOP
+==================================================
 
-Natural dialogue → listen → practice each line 1–3× → full dialogue cloze → useful words → Sổ tay
+Natural dialogue
+→ listen
+→ practice each line
+→ repeat useful language
+→ check conversation understanding
+→ full dialogue cloze
+→ useful words
+→ Sổ tay
 
+==================================================
 LANGUAGE DIFFICULTY — ${normalizedLevel.toUpperCase()}
+==================================================
 
 ${formatRules(selectedLevelRules)}
 
 The CEFR level controls language difficulty only.
-It must not change the dialogue-line range or the exact 25-task structure.
+
+Task count may vary depending on the dialogue.
+Prioritize learning quality over a fixed number of tasks.
 
 ${sceneRules}
 
+==================================================
 ASSET PATHS
+==================================================
 
 Default/fallback scene: "${defaultScene}"
 Thumbnail: "${thumbnail}"
-Audio format: "/dialogue/${courseId}/${dialogueId}/audio/{speaker}-{number}.mp3"
+
+Audio format:
+"/dialogue/${courseId}/${dialogueId}/audio/{speaker}-{number}.mp3"
+
+==================================================
+OUTPUT
+==================================================
 
 RETURN JSON ONLY.
 
@@ -242,9 +311,9 @@ Use this structure:
       "scene": "",
       "audioUrl": ""
     },
-
+// The final dialogueCloze task ID must be the next sequential number after the last practice task.
     {
-      "id": 25,
+      "id": 3,
       "type": "dialogueCloze",
       "lines": [
         {

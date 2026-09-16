@@ -11,11 +11,24 @@ const supportedTaskTypes = new Set([
 ]);
 
 function isPresent(value) {
-  return typeof value === "string" ? value.trim().length > 0 : value != null;
+  return typeof value === "string"
+    ? value.trim().length > 0
+    : value != null;
+}
+
+function normalizeText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[’‘]/g, "'")
+    .replace(/[^a-z0-9' ]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function countFillBlankAnswers(task) {
-  if (Array.isArray(task.answers)) return task.answers.length;
+  if (Array.isArray(task.answers)) {
+    return task.answers.length;
+  }
 
   if (
     typeof task.sentenceBefore === "string" &&
@@ -28,7 +41,10 @@ function countFillBlankAnswers(task) {
   if (Array.isArray(task.parts)) {
     return (
       task.parts.filter(
-        (part) => part && typeof part === "object" && !Array.isArray(part),
+        (part) =>
+          part &&
+          typeof part === "object" &&
+          !Array.isArray(part),
       ).length || 1
     );
   }
@@ -40,16 +56,36 @@ function countFillBlankAnswers(task) {
   return blankMarkers?.length || 0;
 }
 
-function normalizeText(value) {
-  return String(value || "")
-    .toLowerCase()
-    .replace(/[’‘]/g, "'")
-    .replace(/[^a-z0-9' ]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+function reconstructDialogueClozeLine(line) {
+  if (!Array.isArray(line.parts)) {
+    return "";
+  }
+
+  return line.parts
+    .map((part) => {
+      if (typeof part === "string") {
+        return part;
+      }
+
+      if (
+        part &&
+        typeof part === "object" &&
+        !Array.isArray(part)
+      ) {
+        return part.blank || "";
+      }
+
+      return "";
+    })
+    .join("");
 }
 
-function validateDialogueClozeTask(task, taskLabel, errors) {
+function validateDialogueClozeTask(
+  task,
+  dialogueLines,
+  taskLabel,
+  errors,
+) {
   if (!Array.isArray(task.lines) || task.lines.length === 0) {
     errors.push(
       `${taskLabel}: dialogueCloze lines must be a non-empty array.`,
@@ -57,18 +93,43 @@ function validateDialogueClozeTask(task, taskLabel, errors) {
     return;
   }
 
+  if (task.lines.length !== dialogueLines.length) {
+    errors.push(
+      `${taskLabel}: dialogueCloze must include all ${dialogueLines.length} dialogue lines.`,
+    );
+  }
+
   const blankIds = new Set();
+  let expectedBlankId = 1;
 
   task.lines.forEach((line, lineIndex) => {
-    const lineLabel = `${taskLabel}, dialogueCloze line ${lineIndex + 1}`;
+    const lineLabel =
+      `${taskLabel}, dialogueCloze line ${lineIndex + 1}`;
+
+    const sourceLine = dialogueLines[lineIndex];
 
     if (!line || typeof line !== "object" || Array.isArray(line)) {
       errors.push(`${lineLabel}: line must be an object.`);
       return;
     }
 
-    if (!isPresent(line.speaker)) {
-      errors.push(`${lineLabel}: missing speaker.`);
+    if (!sourceLine) {
+      errors.push(
+        `${lineLabel}: no matching source dialogue line.`,
+      );
+      return;
+    }
+
+    if (String(line.dialogueLineId) !== String(sourceLine.id)) {
+      errors.push(
+        `${lineLabel}: dialogueLineId must match dialogue line ${sourceLine.id}.`,
+      );
+    }
+
+    if (line.speaker !== sourceLine.speaker) {
+      errors.push(
+        `${lineLabel}: speaker must match dialogue line ${sourceLine.id}.`,
+      );
     }
 
     if (!Array.isArray(line.parts)) {
@@ -79,9 +140,15 @@ function validateDialogueClozeTask(task, taskLabel, errors) {
     let blankCount = 0;
 
     line.parts.forEach((part, partIndex) => {
-      if (typeof part === "string") return;
+      if (typeof part === "string") {
+        return;
+      }
 
-      if (!part || typeof part !== "object" || Array.isArray(part)) {
+      if (
+        !part ||
+        typeof part !== "object" ||
+        Array.isArray(part)
+      ) {
         errors.push(
           `${lineLabel}: part ${partIndex + 1} cannot be reconstructed.`,
         );
@@ -97,22 +164,44 @@ function validateDialogueClozeTask(task, taskLabel, errors) {
       }
 
       if (!isPresent(part.id)) {
-        errors.push(`${lineLabel}: blank ${blankCount} is missing id.`);
-      } else {
-        const blankId = String(part.id);
-
-        if (blankIds.has(blankId)) {
-          errors.push(
-            `${taskLabel}: duplicate dialogueCloze blank id "${blankId}".`,
-          );
-        }
-
-        blankIds.add(blankId);
+        errors.push(
+          `${lineLabel}: blank ${blankCount} is missing id.`,
+        );
+        return;
       }
+
+      const blankId = String(part.id);
+
+      if (blankIds.has(blankId)) {
+        errors.push(
+          `${taskLabel}: duplicate dialogueCloze blank id "${blankId}".`,
+        );
+      }
+
+      blankIds.add(blankId);
+
+      if (blankId !== String(expectedBlankId)) {
+        errors.push(
+          `${lineLabel}: expected blank id "${expectedBlankId}", found "${blankId}".`,
+        );
+      }
+
+      expectedBlankId += 1;
     });
 
     if (blankCount === 0) {
-      errors.push(`${lineLabel}: must contain at least one blank.`);
+      errors.push(
+        `${lineLabel}: must contain at least one blank.`,
+      );
+    }
+
+    const reconstructed =
+      reconstructDialogueClozeLine(line);
+
+    if (reconstructed !== sourceLine.text) {
+      errors.push(
+        `${lineLabel}: completed cloze must reconstruct dialogue line ${sourceLine.id} exactly.`,
+      );
     }
   });
 }
@@ -124,34 +213,25 @@ export function validateDialogue(data, options = {}) {
   const usefulWordsRange =
     options.usefulWords || structureRules.usefulWords;
 
-  // Kept for backward compatibility with older linked dialogues.
-  const taskRange =
-    options.tasks || structureRules.tasks;
-
   const errors = [];
+
+  // ------------------------------------------------------------
+  // Metadata
+  // ------------------------------------------------------------
 
   if (!data?.metadata) {
     errors.push("Missing metadata.");
   }
+
+  // ------------------------------------------------------------
+  // Dialogue
+  // ------------------------------------------------------------
 
   const dialogueLines = Array.isArray(data?.dialogue)
     ? data.dialogue
     : null;
 
   const dialogueById = new Map();
-  const dialogueByAudioUrl = new Map();
-
-  const normalTasks = Array.isArray(data?.tasks)
-    ? data.tasks.filter((task) => task.type !== "dialogueCloze")
-    : [];
-
-  const usesLinkedTaskFormat =
-    normalTasks.length === 0 ||
-    normalTasks.some((task) => isPresent(task.dialogueLineId));
-
-  // ------------------------------------------------------------
-  // Dialogue
-  // ------------------------------------------------------------
 
   if (!dialogueLines) {
     errors.push("dialogue must be an array.");
@@ -175,8 +255,16 @@ export function validateDialogue(data, options = {}) {
         errors.push(`${label}: missing id.`);
       }
 
+      if (String(line.id) !== String(index + 1)) {
+        errors.push(
+          `${label}: expected id ${index + 1}, found ${line.id}.`,
+        );
+      }
+
       if (dialogueById.has(String(line.id))) {
-        errors.push(`${label}: duplicate id "${line.id}".`);
+        errors.push(
+          `${label}: duplicate id "${line.id}".`,
+        );
       } else if (isPresent(line.id)) {
         dialogueById.set(String(line.id), {
           ...line,
@@ -204,29 +292,32 @@ export function validateDialogue(data, options = {}) {
         );
       } else {
         seenAudioUrls.add(line.audioUrl);
-
-        dialogueByAudioUrl.set(line.audioUrl, {
-          ...line,
-          index,
-        });
       }
 
-      if (isPresent(line.speaker) && isPresent(line.audioUrl)) {
-        const speakerKey = normalizeText(line.speaker).replace(
-          /\s+/g,
-          "-",
-        );
+      if (
+        isPresent(line.speaker) &&
+        isPresent(line.audioUrl)
+      ) {
+        const speakerKey = normalizeText(
+          line.speaker,
+        ).replace(/\s+/g, "-");
 
         const appearance =
           (speakerAudioCounts.get(speakerKey) || 0) + 1;
 
-        speakerAudioCounts.set(speakerKey, appearance);
-
-        const expectedFile = `${speakerKey}-${String(
+        speakerAudioCounts.set(
+          speakerKey,
           appearance,
-        ).padStart(2, "0")}.mp3`;
+        );
 
-        if (!line.audioUrl.endsWith(`/${expectedFile}`)) {
+        const expectedFile =
+          `${speakerKey}-${String(appearance).padStart(2, "0")}.mp3`;
+
+        if (
+          !line.audioUrl.endsWith(
+            `/${expectedFile}`,
+          )
+        ) {
           errors.push(
             `${label}: expected speaker audio numbering to end with "${expectedFile}".`,
           );
@@ -243,8 +334,10 @@ export function validateDialogue(data, options = {}) {
     errors.push("usefulWords must be an array.");
   } else {
     if (
-      data.usefulWords.length < usefulWordsRange.min ||
-      data.usefulWords.length > usefulWordsRange.max
+      data.usefulWords.length <
+        usefulWordsRange.min ||
+      data.usefulWords.length >
+        usefulWordsRange.max
     ) {
       errors.push(
         `usefulWords must contain ${usefulWordsRange.min}-${usefulWordsRange.max} items, found ${data.usefulWords.length}.`,
@@ -252,36 +345,41 @@ export function validateDialogue(data, options = {}) {
     }
 
     const dialogueText = normalizeText(
-      dialogueLines?.map((line) => line.text).join(" "),
+      dialogueLines
+        ?.map((line) => line.text)
+        .join(" "),
     );
 
-    data.usefulWords.forEach((item, index) => {
-      const label = `Useful word ${index + 1}`;
+    data.usefulWords.forEach(
+      (item, index) => {
+        const label =
+          `Useful word ${index + 1}`;
 
-      for (const field of ["word", "meaning", "example"]) {
-        if (!isPresent(item[field])) {
-          errors.push(`${label}: missing ${field}.`);
+        for (const field of [
+          "word",
+          "pronunciation",
+          "meaning",
+          "example",
+        ]) {
+          if (!isPresent(item[field])) {
+            errors.push(
+              `${label}: missing ${field}.`,
+            );
+          }
         }
-      }
 
-      if (
-        usesLinkedTaskFormat
-          ? !isPresent(item.pronunciation)
-          : Object.hasOwn(item, "pronunciation") &&
-            !isPresent(item.pronunciation)
-      ) {
-        errors.push(`${label}: missing pronunciation.`);
-      }
-
-      if (
-        isPresent(item.word) &&
-        !dialogueText.includes(normalizeText(item.word))
-      ) {
-        errors.push(
-          `${label}: "${item.word}" does not appear in the dialogue.`,
-        );
-      }
-    });
+        if (
+          isPresent(item.word) &&
+          !dialogueText.includes(
+            normalizeText(item.word),
+          )
+        ) {
+          errors.push(
+            `${label}: "${item.word}" does not appear in the dialogue.`,
+          );
+        }
+      },
+    );
   }
 
   // ------------------------------------------------------------
@@ -290,259 +388,210 @@ export function validateDialogue(data, options = {}) {
 
   if (!Array.isArray(data?.tasks)) {
     errors.push("tasks must be an array.");
+  } else if (data.tasks.length === 0) {
+    errors.push("tasks must not be empty.");
   } else {
     const tasks = data.tasks;
 
-    const usesLinked25TaskFormat =
-      usesLinkedTaskFormat &&
-      tasks.length === 25 &&
-      tasks[24]?.type === "dialogueCloze";
+    const finalTask = tasks.at(-1);
 
-    // Non-linked generated dialogue format.
-    if (!usesLinkedTaskFormat && tasks.length !== 25) {
+    if (finalTask?.type !== "dialogueCloze") {
       errors.push(
-        `Generated dialogues must contain exactly 25 tasks, found ${tasks.length}.`,
+        "The final task must be dialogueCloze.",
       );
     }
 
-    // Preserve support for older linked dialogues that still use
-    // the legacy 18-22 task structure.
-    if (
-      usesLinkedTaskFormat &&
-      !usesLinked25TaskFormat &&
-      (tasks.length < taskRange.min ||
-        tasks.length > taskRange.max)
-    ) {
+    const practiceTasks =
+      finalTask?.type === "dialogueCloze"
+        ? tasks.slice(0, -1)
+        : tasks;
+
+    const dialogueClozeCount =
+      tasks.filter(
+        (task) =>
+          task.type === "dialogueCloze",
+      ).length;
+
+    if (dialogueClozeCount !== 1) {
       errors.push(
-        `Tasks must contain ${taskRange.min}-${taskRange.max} items, found ${tasks.length}.`,
+        `Expected exactly 1 dialogueCloze task, found ${dialogueClozeCount}.`,
       );
     }
 
-    // ----------------------------------------------------------
-    // New 25-task format:
-    //
-    // Tasks 1-24 = one continuous practice flow
-    // Task 25     = dialogueCloze
-    // ----------------------------------------------------------
+    const fillBlankCount =
+      practiceTasks.filter(
+        (task) =>
+          task.type === "fillBlank",
+      ).length;
 
-    const practiceTasks = usesLinked25TaskFormat
-      ? tasks.slice(0, 24)
-      : tasks;
-
-    const fillBlankCount = practiceTasks.filter(
-      (task) => task.type === "fillBlank",
-    ).length;
-
-    const multipleChoiceCount = practiceTasks.filter(
-      (task) => task.type === "multipleChoice",
-    ).length;
-
-    const minimumQuizCount = Math.ceil(
-      practiceTasks.length *
-        structureRules.multipleChoiceRatio,
-    );
-
-    if (fillBlankCount <= practiceTasks.length / 2) {
-      errors.push(
-        `Fill Blank must be the majority of practice tasks; found ${fillBlankCount} of ${practiceTasks.length}.`,
-      );
-    }
+    const multipleChoiceCount =
+      practiceTasks.filter(
+        (task) =>
+          task.type === "multipleChoice",
+      ).length;
 
     if (
-      usesLinkedTaskFormat &&
-      multipleChoiceCount < minimumQuizCount
+      practiceTasks.length > 0 &&
+      fillBlankCount <=
+        multipleChoiceCount
     ) {
       errors.push(
-        `Multiple Choice must be at least 30% of practice tasks; expected at least ${minimumQuizCount}, found ${multipleChoiceCount}.`,
+        `Fill Blank should be the main practice type; found ${fillBlankCount} Fill Blank and ${multipleChoiceCount} Multiple Choice tasks.`,
       );
-    }
-
-    if (usesLinked25TaskFormat) {
-      // Tasks 1-24 may only be normal practice tasks.
-      tasks.slice(0, 24).forEach((task, index) => {
-        if (
-          task.type !== "fillBlank" &&
-          task.type !== "multipleChoice"
-        ) {
-          errors.push(
-            `Task ${index + 1}: Tasks 1-24 must be fillBlank or multipleChoice.`,
-          );
-        }
-      });
-
-      // Task 25 must always be the final cloze.
-      if (tasks[24]?.type !== "dialogueCloze") {
-        errors.push(
-          "Task 25 must be dialogueCloze.",
-        );
-      }
     }
 
     const tasksPerLine = new Map();
-    const seenTasks = new Set();
     const seenTaskIds = new Set();
+    const seenTasks = new Set();
 
-    // Important:
-    // This now tracks one continuous order across Tasks 1-24.
-    // There is NO reset at Task 21.
     let previousLineIndex = -1;
 
     tasks.forEach((task, index) => {
       const taskLabel =
         `Task ${task.id ?? index + 1}`;
 
-      const taskId = isPresent(task.id)
-        ? String(task.id)
-        : "";
-
-      // --------------------------------------------------------
+      // ----------------------------------------------------------
       // Task ID
-      // --------------------------------------------------------
+      // ----------------------------------------------------------
 
-      if (!taskId) {
-        errors.push(`${taskLabel}: missing id.`);
-      } else if (seenTaskIds.has(taskId)) {
+      if (!isPresent(task.id)) {
         errors.push(
-          `${taskLabel}: duplicate task id "${taskId}".`,
+          `${taskLabel}: missing id.`,
         );
       } else {
+        const taskId = String(task.id);
+
+        if (seenTaskIds.has(taskId)) {
+          errors.push(
+            `${taskLabel}: duplicate task id "${taskId}".`,
+          );
+        }
+
         seenTaskIds.add(taskId);
+
+        if (taskId !== String(index + 1)) {
+          errors.push(
+            `${taskLabel}: expected ID ${index + 1}, found ${task.id}.`,
+          );
+        }
       }
 
-      const hasExpectedId = usesLinkedTaskFormat
-        ? usesLinked25TaskFormat
-          ? taskId === String(index + 1)
-          : task.id === index + 1
-        : taskId === String(index + 1);
-
-      if (taskId && !hasExpectedId) {
-        errors.push(
-          `${taskLabel}: expected ID ${index + 1}, found ${task.id}.`,
-        );
-      }
-
-      // --------------------------------------------------------
-      // Task type
-      // --------------------------------------------------------
+      // ----------------------------------------------------------
+      // Type
+      // ----------------------------------------------------------
 
       if (!supportedTaskTypes.has(task.type)) {
         errors.push(
           `${taskLabel}: unsupported type "${task.type}".`,
         );
+        return;
       }
 
-      if (
-        task.type !== "fillBlank" &&
-        task.type !== "dialogueCloze" &&
-        !isPresent(task.answer)
-      ) {
-        errors.push(`${taskLabel}: missing answer.`);
+      // ----------------------------------------------------------
+      // Dialogue Cloze
+      // ----------------------------------------------------------
+
+      if (task.type === "dialogueCloze") {
+        if (index !== tasks.length - 1) {
+          errors.push(
+            `${taskLabel}: dialogueCloze must be the final task.`,
+          );
+        }
+
+        validateDialogueClozeTask(
+          task,
+          dialogueLines || [],
+          taskLabel,
+          errors,
+        );
+
+        return;
       }
 
-      // --------------------------------------------------------
+      // ----------------------------------------------------------
       // dialogueLineId
-      // --------------------------------------------------------
+      // ----------------------------------------------------------
 
       if (
-        usesLinkedTaskFormat &&
-        task.type !== "dialogueCloze" &&
         !isPresent(task.dialogueLineId)
       ) {
         errors.push(
           `${taskLabel}: missing dialogueLineId.`,
         );
+        return;
       }
 
-      let sourceLine;
+      const sourceLine =
+        dialogueById.get(
+          String(task.dialogueLineId),
+        );
 
-      if (task.type !== "dialogueCloze") {
-        sourceLine = usesLinkedTaskFormat
-          ? dialogueById.get(
-              String(task.dialogueLineId),
-            )
-          : dialogueByAudioUrl.get(task.audioUrl);
-      }
-
-      if (
-        usesLinkedTaskFormat &&
-        isPresent(task.dialogueLineId) &&
-        !sourceLine
-      ) {
+      if (!sourceLine) {
         errors.push(
           `${taskLabel}: dialogueLineId "${task.dialogueLineId}" does not exist.`,
         );
-      } else if (
-        !usesLinkedTaskFormat &&
-        task.type !== "dialogueCloze" &&
-        !isPresent(task.audioUrl)
+        return;
+      }
+
+      // ----------------------------------------------------------
+      // Forward dialogue flow
+      // ----------------------------------------------------------
+
+      if (
+        sourceLine.index <
+        previousLineIndex
       ) {
         errors.push(
-          `${taskLabel}: missing audioUrl.`,
-        );
-      } else if (
-        !usesLinkedTaskFormat &&
-        task.type !== "dialogueCloze" &&
-        isPresent(task.audioUrl) &&
-        !sourceLine
-      ) {
-        errors.push(
-          `${taskLabel}: audioUrl does not match a dialogue line.`,
+          `${taskLabel}: tasks must practice dialogue lines in forward order without returning to an earlier line.`,
         );
       }
 
-      // --------------------------------------------------------
-      // Continuous dialogue flow + source consistency
-      // --------------------------------------------------------
+      previousLineIndex =
+        sourceLine.index;
 
-      if (sourceLine && usesLinkedTaskFormat) {
-        // Do NOT reset at Task 21.
-        //
-        // Once the lesson moves to a later dialogue line,
-        // Tasks 1-24 cannot jump backwards.
-        if (sourceLine.index < previousLineIndex) {
-          errors.push(
-            `${taskLabel}: tasks must practice dialogue lines in forward order without returning to an earlier line.`,
-          );
-        }
-
-        previousLineIndex = sourceLine.index;
-
-        tasksPerLine.set(
+      tasksPerLine.set(
+        String(task.dialogueLineId),
+        (tasksPerLine.get(
           String(task.dialogueLineId),
-          (tasksPerLine.get(
-            String(task.dialogueLineId),
-          ) || 0) + 1,
-        );
+        ) || 0) + 1,
+      );
 
-        const expectedScene =
-          sourceLine.scene ||
-          data.metadata?.scene;
+      // ----------------------------------------------------------
+      // Source consistency
+      // ----------------------------------------------------------
 
-        const sourceFields = {
-          speaker: sourceLine.speaker,
-          transcript: sourceLine.text,
-          scene: expectedScene,
-          audioUrl: sourceLine.audioUrl,
-        };
+      const expectedScene =
+        sourceLine.scene ||
+        data.metadata?.scene;
 
-        Object.entries(sourceFields).forEach(
-          ([field, expected]) => {
-            if (!isPresent(task[field])) {
-              errors.push(
-                `${taskLabel}: missing ${field}.`,
-              );
-            } else if (task[field] !== expected) {
-              errors.push(
-                `${taskLabel}: ${field} must match dialogue line ${task.dialogueLineId}.`,
-              );
-            }
-          },
-        );
-      }
+      const sourceFields = {
+        speaker: sourceLine.speaker,
+        transcript: sourceLine.text,
+        scene: expectedScene,
+        audioUrl: sourceLine.audioUrl,
+      };
 
-      // --------------------------------------------------------
+      Object.entries(
+        sourceFields,
+      ).forEach(
+        ([field, expected]) => {
+          if (!isPresent(task[field])) {
+            errors.push(
+              `${taskLabel}: missing ${field}.`,
+            );
+          } else if (
+            task[field] !== expected
+          ) {
+            errors.push(
+              `${taskLabel}: ${field} must match dialogue line ${task.dialogueLineId}.`,
+            );
+          }
+        },
+      );
+
+      // ----------------------------------------------------------
       // Fill Blank
-      // --------------------------------------------------------
+      // ----------------------------------------------------------
 
       if (task.type === "fillBlank") {
         const blankCount =
@@ -550,12 +599,14 @@ export function validateDialogue(data, options = {}) {
 
         if (
           blankCount <
-            structureRules.fillBlankRange.min ||
+            structureRules
+              .fillBlankRange.min ||
           blankCount >
-            structureRules.fillBlankRange.max
+            structureRules
+              .fillBlankRange.max
         ) {
           errors.push(
-            `${taskLabel}: Fill Blank must contain 1-3 blanks.`,
+            `${taskLabel}: Fill Blank must contain ${structureRules.fillBlankRange.min}-${structureRules.fillBlankRange.max} blanks.`,
           );
         }
 
@@ -564,8 +615,10 @@ export function validateDialogue(data, options = {}) {
           Array.isArray(task.answers);
 
         const isSingleBlank =
-          typeof task.sentenceBefore === "string" &&
-          typeof task.sentenceAfter === "string" &&
+          typeof task.sentenceBefore ===
+            "string" &&
+          typeof task.sentenceAfter ===
+            "string" &&
           isPresent(task.answer);
 
         const isLegacyBlank =
@@ -602,7 +655,9 @@ export function validateDialogue(data, options = {}) {
                 ) =>
                   sentence +
                   part +
-                  (task.answers[partIndex] || ""),
+                  (task.answers[
+                    partIndex
+                  ] || ""),
                 "",
               );
           }
@@ -613,42 +668,53 @@ export function validateDialogue(data, options = {}) {
             task.sentenceAfter;
         } else if (isLegacyBlank) {
           completedSentence =
-            String(task.question).replace(
+            String(
+              task.question,
+            ).replace(
               /_{2,}|\{\{blank\}\}/i,
               task.answer,
             );
         }
 
         if (
-          sourceLine &&
-          completedSentence
+          completedSentence &&
+          completedSentence !==
+            sourceLine.text
         ) {
-          const matchesSourceLine =
-            usesLinkedTaskFormat
-              ? completedSentence ===
-                sourceLine.text
-              : sourceLine.text.includes(
-                  completedSentence,
-                );
-
-          if (!matchesSourceLine) {
-            errors.push(
-              usesLinkedTaskFormat
-                ? `${taskLabel}: Fill Blank fields must reconstruct dialogue line ${task.dialogueLineId} exactly.`
-                : `${taskLabel}: Fill Blank fields must reconstruct text from its audio-linked dialogue line.`,
-            );
-          }
+          errors.push(
+            `${taskLabel}: Fill Blank fields must reconstruct dialogue line ${task.dialogueLineId} exactly.`,
+          );
         }
       }
 
-      // --------------------------------------------------------
+      // ----------------------------------------------------------
       // Multiple Choice
-      // --------------------------------------------------------
+      // ----------------------------------------------------------
 
-      if (task.type === "multipleChoice") {
-        if (!Array.isArray(task.options)) {
+      if (
+        task.type ===
+        "multipleChoice"
+      ) {
+        if (!isPresent(task.question)) {
           errors.push(
-            `${taskLabel}: options are missing.`,
+            `${taskLabel}: missing question.`,
+          );
+        }
+
+        if (!isPresent(task.answer)) {
+          errors.push(
+            `${taskLabel}: missing answer.`,
+          );
+        }
+
+        if (
+          !Array.isArray(
+            task.options,
+          ) ||
+          task.options.length < 2
+        ) {
+          errors.push(
+            `${taskLabel}: options are missing or invalid.`,
           );
         } else {
           const answerOccurrences =
@@ -657,7 +723,9 @@ export function validateDialogue(data, options = {}) {
                 option === task.answer,
             ).length;
 
-          if (answerOccurrences !== 1) {
+          if (
+            answerOccurrences !== 1
+          ) {
             errors.push(
               `${taskLabel}: answer must appear exactly once in options.`,
             );
@@ -665,21 +733,9 @@ export function validateDialogue(data, options = {}) {
         }
       }
 
-      // --------------------------------------------------------
-      // Dialogue Cloze
-      // --------------------------------------------------------
-
-      if (task.type === "dialogueCloze") {
-        validateDialogueClozeTask(
-          task,
-          taskLabel,
-          errors,
-        );
-      }
-
-      // --------------------------------------------------------
-      // Duplicate-task detection
-      // --------------------------------------------------------
+      // ----------------------------------------------------------
+      // Duplicate task detection
+      // ----------------------------------------------------------
 
       const taskFingerprint =
         JSON.stringify({
@@ -690,10 +746,14 @@ export function validateDialogue(data, options = {}) {
           answer: task.answer,
           answers: task.answers,
           options: task.options,
-          lines: task.lines,
+          parts: task.parts,
         });
 
-      if (seenTasks.has(taskFingerprint)) {
+      if (
+        seenTasks.has(
+          taskFingerprint,
+        )
+      ) {
         errors.push(
           `${taskLabel}: exact duplicate task.`,
         );
@@ -702,26 +762,27 @@ export function validateDialogue(data, options = {}) {
       seenTasks.add(taskFingerprint);
     });
 
-    // ----------------------------------------------------------
-    // Every dialogue line must be practiced 1-3 times
-    // ----------------------------------------------------------
+    // ------------------------------------------------------------
+    // Every dialogue line: 1–3 practice tasks
+    // ------------------------------------------------------------
 
-    if (usesLinkedTaskFormat) {
-      dialogueLines?.forEach(
-        (line, index) => {
-          const count =
-            tasksPerLine.get(
-              String(line.id),
-            ) || 0;
+    dialogueLines?.forEach(
+      (line, index) => {
+        const count =
+          tasksPerLine.get(
+            String(line.id),
+          ) || 0;
 
-          if (count < 1 || count > 3) {
-            errors.push(
-              `Dialogue line ${index + 1}: expected 1-3 practice tasks, found ${count}.`,
-            );
-          }
-        },
-      );
-    }
+        if (
+          count < 1 ||
+          count > 3
+        ) {
+          errors.push(
+            `Dialogue line ${index + 1}: expected 1-3 practice tasks, found ${count}.`,
+          );
+        }
+      },
+    );
   }
 
   return {
@@ -755,10 +816,11 @@ async function runCli() {
   let fileContents;
 
   try {
-    fileContents = await fs.readFile(
-      filePath,
-      "utf8",
-    );
+    fileContents =
+      await fs.readFile(
+        filePath,
+        "utf8",
+      );
   } catch (error) {
     printFailure([
       error.code === "ENOENT"
@@ -773,7 +835,8 @@ async function runCli() {
   let data;
 
   try {
-    data = JSON.parse(fileContents);
+    data =
+      JSON.parse(fileContents);
   } catch (error) {
     printFailure([
       `Invalid JSON: ${error.message}`,
@@ -790,7 +853,6 @@ async function runCli() {
     console.log(
       "✅ Dialogue validation passed!",
     );
-
     return;
   }
 
