@@ -182,9 +182,6 @@ function validateDialogueClozeTask(
 }
 
 export function validateDialogue(data, options = {}) {
-  const dialogueRange =
-    options.dialogueLines || structureRules.dialogueLines;
-
   const usefulWordsRange =
     options.usefulWords || structureRules.usefulWords;
 
@@ -211,12 +208,9 @@ export function validateDialogue(data, options = {}) {
   if (!dialogueLines) {
     errors.push("dialogue must be an array.");
   } else {
-    if (
-      dialogueLines.length < dialogueRange.min ||
-      dialogueLines.length > dialogueRange.max
-    ) {
+    if (dialogueLines.length === 0) {
       errors.push(
-        `Dialogue must contain ${dialogueRange.min}-${dialogueRange.max} lines, found ${dialogueLines.length}.`,
+        "dialogue must contain at least one line.",
       );
     }
 

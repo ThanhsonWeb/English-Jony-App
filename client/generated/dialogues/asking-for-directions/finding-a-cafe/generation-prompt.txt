@@ -16,7 +16,15 @@ SHARED LESSON STRUCTURE
 
 Dialogue:
 
-- Create 8–12 natural, connected dialogue lines.
+Dialogue length should depend on the situation.
+
+- Use as many lines as needed to complete the communication goal naturally.
+- Simple situations may be short.
+- More complex situations may need more lines.
+- Do not add filler just to reach a target.
+- Do not cut useful dialogue just to stay under a limit.
+- Keep the language appropriate for the configured CEFR level.
+- Most dialogues may naturally fall around 8–16 lines, but this is guidance, not a strict requirement.
 - Keep the conversation realistic. Do not force speakers to alternate.
 - Every line must have a Vietnamese translation.
 - Give every dialogue line a unique numeric id.

@@ -1,6 +1,4 @@
 export const structureRules = Object.freeze({
-	dialogueLines: { min: 8, max: 12 },
-	
 	usefulWords: { min: 6, max: 10 },
 
 	fillBlankRange: { min: 1, max: 3 },

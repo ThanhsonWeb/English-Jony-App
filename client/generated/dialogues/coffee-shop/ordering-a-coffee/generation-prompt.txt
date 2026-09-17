@@ -15,8 +15,15 @@ Situation: Ben và Emma đến một quán cà phê cùng nhau. Ben muốn gọi
 DIALOGUE RULES
 ==================================================
 
-- Create 8–12 natural, connected dialogue lines.
-- Use beginner-friendly language appropriate for the configured CEFR level.
+Dialogue length should depend on the situation.
+
+- Use as many lines as needed to complete the communication goal naturally.
+- Simple situations may be short.
+- More complex situations may need more lines.
+- Do not add filler just to reach a target.
+- Do not cut useful dialogue just to stay under a limit.
+- Keep the language appropriate for the configured CEFR level.
+- Most dialogues may naturally fall around 8–16 lines, but this is guidance, not a strict requirement.
 - Use short sentences, common vocabulary, and simple structures.
 - Give the dialogue ONE clear communication goal.
 - Every line should naturally connect to the next.
