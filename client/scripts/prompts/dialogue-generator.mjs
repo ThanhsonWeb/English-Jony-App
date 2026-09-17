@@ -157,12 +157,13 @@ Fill Blank:
 
 - Use ${structureRules.fillBlankRange.min}–${structureRules.fillBlankRange.max} meaningful blanks per task.
 - Blank useful words or phrases, not random filler words.
-- Mark every missing section with underscores exactly where it appears.
+- Store the unchanged text around the blanks in a "parts" array.
 - Use one entry in "answers" for every blank.
-- Store answers in the same left-to-right order as the blanks.
-- The number of answers must exactly match the number of blanks.
-- Replacing every blank with its matching answer must reconstruct the original transcript exactly.
+- Store parts and answers in left-to-right order.
+- "parts" must contain exactly one more item than "answers".
+- Interleaving parts and answers must reconstruct the original transcript exactly.
 - Preserve punctuation and contractions from the original transcript.
+- Do NOT use an underscore-based "question" field for Fill Blank tasks.
 - Do NOT create the exact same Fill Blank task twice.
 - If the same line receives multiple Fill Blank tasks, blank different useful words or phrases.
 
@@ -171,8 +172,8 @@ Example:
 Transcript:
 "I'd like a small coffee, please."
 
-Question:
-"I'd like a ____ ____, please."
+Parts:
+["I'd like a ", " ", ", please."]
 
 Answers:
 ["small", "coffee"]
@@ -320,7 +321,7 @@ Use this structure:
 			"id": 1,
 			"dialogueLineId": 1,
 			"type": "fillBlank",
-			"question": "",
+			"parts": ["", ""],
 			"answers": [""],
 			"speaker": "",
 			"transcript": "",

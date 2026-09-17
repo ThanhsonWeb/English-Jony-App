@@ -25,57 +25,10 @@ function normalizeText(value) {
     .trim();
 }
 
-function countQuestionBlankMarkers(question) {
-  return String(question || "").match(
-    /_{2,}/g,
-  )?.length || 0;
-}
-
 function countFillBlankAnswers(task) {
-  if (
-    Array.isArray(task.parts) &&
-    Array.isArray(task.answers)
-  ) {
-    return task.answers.length;
-  }
-
-  if (
-    isPresent(task.question) &&
-    Array.isArray(task.answers)
-  ) {
-    return countQuestionBlankMarkers(
-      task.question,
-    );
-  }
-
-  if (Array.isArray(task.answers)) {
-    return task.answers.length;
-  }
-
-  if (
-    typeof task.sentenceBefore === "string" &&
-    typeof task.sentenceAfter === "string" &&
-    isPresent(task.answer)
-  ) {
-    return 1;
-  }
-
-  if (Array.isArray(task.parts)) {
-    return (
-      task.parts.filter(
-        (part) =>
-          part &&
-          typeof part === "object" &&
-          !Array.isArray(part),
-      ).length || 1
-    );
-  }
-
-  const blankMarkers = String(task.question || "").match(
-    /_{2,}|\{\{blank\}\}/gi,
-  );
-
-  return blankMarkers?.length || 0;
+  return Array.isArray(task.answers)
+    ? task.answers.length
+    : 0;
 }
 
 function reconstructDialogueClozeLine(line) {
@@ -632,40 +585,48 @@ export function validateDialogue(data, options = {}) {
           );
         }
 
-        const isMultiBlank =
-          Array.isArray(task.parts) &&
+        const hasParts =
+          Array.isArray(task.parts);
+        const hasAnswers =
           Array.isArray(task.answers);
 
-        const isQuestionAnswersBlank =
-          !isMultiBlank &&
-          isPresent(task.question) &&
-          Array.isArray(task.answers);
-
-        const isSingleBlank =
-          typeof task.sentenceBefore ===
-            "string" &&
-          typeof task.sentenceAfter ===
-            "string" &&
-          isPresent(task.answer);
-
-        const isLegacyBlank =
-          isPresent(task.question) &&
-          isPresent(task.answer);
-
-        if (
-          !isMultiBlank &&
-          !isQuestionAnswersBlank &&
-          !isSingleBlank &&
-          !isLegacyBlank
-        ) {
+        if (!hasParts || !hasAnswers) {
           errors.push(
-            `${taskLabel}: Fill Blank schema is invalid.`,
+            `${taskLabel}: Fill Blank requires parts and answers arrays.`,
           );
         }
 
-        let completedSentence = "";
+        if (Object.hasOwn(task, "question")) {
+          errors.push(
+            `${taskLabel}: Fill Blank must use parts instead of question.`,
+          );
+        }
 
-        if (isMultiBlank) {
+        if (hasParts && hasAnswers) {
+          const hasValidParts =
+            task.parts.every(
+              (part) =>
+                typeof part === "string",
+            );
+          const hasValidAnswers =
+            task.answers.every(
+              (answer) =>
+                typeof answer === "string" &&
+                answer.length > 0,
+            );
+
+          if (!hasValidParts) {
+            errors.push(
+              `${taskLabel}: every Fill Blank part must be a string.`,
+            );
+          }
+
+          if (!hasValidAnswers) {
+            errors.push(
+              `${taskLabel}: every Fill Blank answer must be a non-empty string.`,
+            );
+          }
+
           if (
             task.parts.length !==
             task.answers.length + 1
@@ -673,8 +634,11 @@ export function validateDialogue(data, options = {}) {
             errors.push(
               `${taskLabel}: parts must contain one more item than answers.`,
             );
-          } else {
-            completedSentence =
+          } else if (
+            hasValidParts &&
+            hasValidAnswers
+          ) {
+            const completedSentence =
               task.parts.reduce(
                 (
                   sentence,
@@ -688,57 +652,16 @@ export function validateDialogue(data, options = {}) {
                   ] || ""),
                 "",
               );
+
+            if (
+              completedSentence !==
+                sourceLine.text
+            ) {
+              errors.push(
+                `${taskLabel}: Fill Blank fields must reconstruct dialogue line ${task.dialogueLineId} exactly.`,
+              );
+            }
           }
-        } else if (isQuestionAnswersBlank) {
-          const questionBlankCount =
-            countQuestionBlankMarkers(
-              task.question,
-            );
-
-          if (
-            questionBlankCount !==
-            task.answers.length
-          ) {
-            errors.push(
-              `${taskLabel}: question blank count must match answers length.`,
-            );
-          }
-
-          let answerIndex = 0;
-          completedSentence = String(
-            task.question,
-          ).replace(
-            /_{2,}/g,
-            () =>
-              String(
-                task.answers[
-                  answerIndex++
-                ] ?? "",
-              ),
-          );
-        } else if (isSingleBlank) {
-          completedSentence =
-            task.sentenceBefore +
-            task.answer +
-            task.sentenceAfter;
-        } else if (isLegacyBlank) {
-          completedSentence =
-            String(
-              task.question,
-            ).replace(
-              /_{2,}|\{\{blank\}\}/i,
-              task.answer,
-            );
-        }
-
-        if (
-          completedSentence &&
-          completedSentence !==
-            sourceLine.text
-        ) {
-          errors.push(
-            `${taskLabel}: Fill Blank fields must reconstruct dialogue line ${task.dialogueLineId} exactly.`,
-          );
         }
       }
 
