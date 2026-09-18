@@ -19,7 +19,7 @@ const coffeeShop = {
 			title: "Chọn đồ ăn nhẹ",
 			thumbnail: "/dialogue/coffee-shop/thumbnails/choosing-a-snack.png",
 			situation:
-				"Ben muốn gọi thêm một món ăn nhẹ và hỏi Emma về những món có sẵn.",
+				"Ben và Emma đang ngồi ở quán cà phê. Ben muốn gọi thêm một món ăn nhẹ và hỏi Emma xem món nào nghe ngon hoặc phù hợp.",
 		},
 		{
 			dialogueId: "asking-about-the-wifi",

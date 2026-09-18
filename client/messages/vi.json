@@ -5,8 +5,10 @@
 		"wordlist": "Sổ tay"
 	},
 	"Theme": {
-		"light": "Sáng",
-		"dark": "Tối",
+		"light": "Sáng dịu",
+		"cream": "Kem ấm",
+		"dark": "Navy tối",
+		"black": "Đen tối",
 		"system": "Theo hệ thống",
 		"choose": "Chọn giao diện"
 	},
@@ -65,7 +67,7 @@
 		"language": "Ngôn ngữ hiển thị",
 		"languageValue": "🇻🇳 Tiếng Việt",
 		"sound": "Hiệu ứng âm thanh",
-		"darkMode": "Chế độ tối",
+		"darkMode": "Giao diện",
 		"less": "Ít",
 		"more": "Nhiều"
 	},

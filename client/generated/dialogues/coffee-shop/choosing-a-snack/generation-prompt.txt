@@ -5,12 +5,12 @@ an English-learning application for Vietnamese learners.
 COURSE
 
 Course ID: coffee-shop
-Dialogue ID: ordering-a-coffee
-Vietnamese title: Gọi cà phê
+Dialogue ID: choosing-a-snack
+Vietnamese title: Chọn đồ ăn nhẹ
 Characters: Ben, Emma
 Configured level: a1
 Normalized CEFR level: A1
-Situation: Ben gọi một ly cà phê tại quầy và Emma giúp Ben chọn loại đồ uống phù hợp.
+Situation: Ben và Emma đang ngồi ở quán cà phê. Ben muốn gọi thêm một món ăn nhẹ và hỏi Emma xem món nào nghe ngon hoặc phù hợp.
 
 ==================================================
 DIALOGUE RULES
@@ -71,12 +71,8 @@ EXERCISE RULES
 - Practice the dialogue from beginning to end.
 - Practice each dialogue line before moving to the next.
 - Every dialogue line must receive at least 1 task.
-- Do not automatically give every dialogue line exactly 1 task.
-- Important or useful lines should usually receive 2 tasks.
+- Important or useful lines may receive 2–3 tasks.
 - Simple lines usually receive 1 task.
-- Keep repeated practice directly in the natural dialogue flow.
-- Do NOT create a separate review section just for repetition.
-- Avoid two tasks that test exactly the same thing.
 - Fill Blank is the main task type.
 - Multiple Choice should only be used when it genuinely tests understanding.
 - Do NOT create filler tasks just to increase task count.
@@ -92,7 +88,7 @@ EXERCISE RULES
 
 Fill Blank:
 
-- Use 1–2 meaningful blanks per task.
+- Use 1–3 meaningful blanks per task.
 - Blank useful words or phrases, not random filler words.
 - Store the unchanged text around the blanks in a "parts" array.
 - Use one entry in "answers" for every blank.
@@ -103,22 +99,6 @@ Fill Blank:
 - Do NOT use an underscore-based "question" field for Fill Blank tasks.
 - Do NOT create the exact same Fill Blank task twice.
 - If the same line receives multiple Fill Blank tasks, blank different useful words or phrases.
-
-A1 Fill Blank rules:
-
-- Usually use only 1–2 blanks per task.
-- Prefer meaningful content words or useful short chunks.
-- Keep most of the sentence structure visible.
-- Do NOT make learners reconstruct the whole sentence.
-- Avoid removing several grammar or function words.
-
-GOOD:
-"There are so many ____ on this ____."
-Answers: ["drinks", "menu"]
-
-BAD:
-"____ are so many drinks ____ this menu."
-
 
 Example:
 
@@ -138,21 +118,11 @@ Multiple Choice:
 - Test conversation understanding, context, preference, intention, reason, or decision.
 - A short useful phrase may also be tested for meaning.
 - Do NOT ask for a Vietnamese translation of the entire English sentence.
-- Do NOT simply ask for the Vietnamese meaning of the current dialogue line.
 - Ask only about information clearly supported by the dialogue.
 - Wrong answers should be believable but clearly incorrect.
 - Include exactly one correct answer.
 - Include exactly four options.
 - The correct answer must appear in options.
-
-BAD:
-English: "Is it very sweet?"
-Question: "Ben muốn nói gì?"
-Answer: "Nó có ngọt lắm không?"
-
-GOOD:
-Question: "Ben đang hỏi về điều gì của chiếc muffin?"
-Answer: "Độ ngọt."
 
 Final review:
 
@@ -242,7 +212,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/coffee-shop/ordering-a-coffee/bg.png"
+"/dialogue/coffee-shop/choosing-a-snack/bg.png"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -252,13 +222,13 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/coffee-shop/ordering-a-coffee/bg.png"
+"/dialogue/coffee-shop/choosing-a-snack/bg.png"
 
 Thumbnail:
-"/dialogue/coffee-shop/ordering-a-coffee/thumbnails/ordering-a-coffee.png"
+"/dialogue/coffee-shop/thumbnails/choosing-a-snack.png"
 
 Audio format:
-"/dialogue/coffee-shop/ordering-a-coffee/audio/{speaker}-{number}.mp3"
+"/dialogue/coffee-shop/choosing-a-snack/audio/{speaker}-{number}.mp3"
 
 ==================================================
 OUTPUT
@@ -275,12 +245,12 @@ Use this structure:
 {
 	"metadata": {
 		"courseId": "coffee-shop",
-		"dialogueId": "ordering-a-coffee",
-		"title": "Gọi cà phê",
+		"dialogueId": "choosing-a-snack",
+		"title": "Chọn đồ ăn nhẹ",
 		"level": "a1",
-		"situation": "Ben gọi một ly cà phê tại quầy và Emma giúp Ben chọn loại đồ uống phù hợp.",
-		"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
-		"thumbnail": "/dialogue/coffee-shop/ordering-a-coffee/thumbnails/ordering-a-coffee.png"
+		"situation": "Ben và Emma đang ngồi ở quán cà phê. Ben muốn gọi thêm một món ăn nhẹ và hỏi Emma xem món nào nghe ngon hoặc phù hợp.",
+		"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+		"thumbnail": "/dialogue/coffee-shop/thumbnails/choosing-a-snack.png"
 	},
 
 	"dialogue": [

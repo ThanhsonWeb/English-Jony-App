@@ -34,6 +34,29 @@ export function buildDialoguePrompt(lessonConfig) {
 
 	const normalizedLevel = normalizeLevel(level);
 	const selectedLevelRules = levelRules[normalizedLevel];
+	const fillBlankRange =
+		normalizedLevel === "a1"
+			? structureRules.a1FillBlankRange
+			: structureRules.fillBlankRange;
+	const a1FillBlankRules =
+		normalizedLevel === "a1"
+			? `
+A1 Fill Blank rules:
+
+- Usually use only 1–2 blanks per task.
+- Prefer meaningful content words or useful short chunks.
+- Keep most of the sentence structure visible.
+- Do NOT make learners reconstruct the whole sentence.
+- Avoid removing several grammar or function words.
+
+GOOD:
+"There are so many ____ on this ____."
+Answers: ["drinks", "menu"]
+
+BAD:
+"____ are so many drinks ____ this menu."
+`
+			: "";
 
 	if (!selectedLevelRules) {
 		throw new Error(`Unsupported CEFR level: ${normalizedLevel}`);
@@ -110,7 +133,7 @@ Dialogue length should depend on the situation.
 - Prefer useful everyday phrases and conversational chunks.
 - Repeat useful language naturally when it helps memory.
 - Every dialogue line must have a Vietnamese translation.
-- Give every dialogue line a unique numeric id.
+- Give every dialogue line a unique sequential numeric id, starting from 1.
 
 STATIC-SCENE RULE
 
@@ -148,21 +171,28 @@ EXERCISE RULES
 - Practice the dialogue from beginning to end.
 - Practice each dialogue line before moving to the next.
 - Every dialogue line must receive at least 1 task.
-- Important or useful lines may receive 2–3 tasks.
+- Do not automatically give every dialogue line exactly 1 task.
+- Important or useful lines should usually receive 2 tasks.
 - Simple lines usually receive 1 task.
+- Keep repeated practice directly in the natural dialogue flow.
+- Do NOT create a separate review section just for repetition.
+- Avoid two tasks that test exactly the same thing.
 - Fill Blank is the main task type.
 - Multiple Choice should only be used when it genuinely tests understanding.
 - Do NOT create filler tasks just to increase task count.
 - Quality is more important than task count.
+- Give every task a unique sequential numeric id, starting from 1.
 - Every linked task must include dialogueLineId.
 - dialogueLineId must reference an existing dialogue line.
 - Repeated tasks for the same line must preserve speaker, transcript, scene, and audioUrl exactly.
 - Once practice moves to a later dialogueLineId, do not return to an earlier one.
 - The only exception is the final full-dialogue review.
+- For a typical dialogue, usually include around 4–6 meaningful Multiple Choice tasks when the conversation supports them.
+- Do not force a quiz when it would be weak or repetitive.
 
 Fill Blank:
 
-- Use ${structureRules.fillBlankRange.min}–${structureRules.fillBlankRange.max} meaningful blanks per task.
+- Use ${fillBlankRange.min}–${fillBlankRange.max} meaningful blanks per task.
 - Blank useful words or phrases, not random filler words.
 - Store the unchanged text around the blanks in a "parts" array.
 - Use one entry in "answers" for every blank.
@@ -173,6 +203,7 @@ Fill Blank:
 - Do NOT use an underscore-based "question" field for Fill Blank tasks.
 - Do NOT create the exact same Fill Blank task twice.
 - If the same line receives multiple Fill Blank tasks, blank different useful words or phrases.
+${a1FillBlankRules}
 
 Example:
 
@@ -192,11 +223,21 @@ Multiple Choice:
 - Test conversation understanding, context, preference, intention, reason, or decision.
 - A short useful phrase may also be tested for meaning.
 - Do NOT ask for a Vietnamese translation of the entire English sentence.
+- Do NOT simply ask for the Vietnamese meaning of the current dialogue line.
 - Ask only about information clearly supported by the dialogue.
 - Wrong answers should be believable but clearly incorrect.
 - Include exactly one correct answer.
 - Include exactly four options.
 - The correct answer must appear in options.
+
+BAD:
+English: "Is it very sweet?"
+Question: "Ben muốn nói gì?"
+Answer: "Nó có ngọt lắm không?"
+
+GOOD:
+Question: "Ben đang hỏi về điều gì của chiếc muffin?"
+Answer: "Độ ngọt."
 
 Final review:
 
@@ -217,6 +258,9 @@ Exercise = how the learner practices and remembers the dialogue.
 AUDIO
 ==================================================
 
+- Do not leave scene or audioUrl empty.
+- Every dialogue line must use the configured scene and its correctly numbered audioUrl.
+- Every linked task must reuse those exact values.
 - Use exactly one MP3 per dialogue line.
 - Number each speaker's audio independently starting at 01.
 - Every task linked to a dialogue line must reuse that line's original audioUrl.
@@ -227,7 +271,8 @@ AUDIO
 USEFUL WORDS
 ==================================================
 
-- Include ${structureRules.usefulWords.min}–${structureRules.usefulWords.max} useful words or phrases.
+- Include around ${structureRules.usefulWords.min}–${structureRules.usefulWords.max} useful words or phrases, depending on the dialogue.
+- Do not add low-value vocabulary just to reach a number.
 - Every useful word or phrase must actually appear in the dialogue.
 - Prefer useful conversational chunks over low-value isolated vocabulary.
 - Include pronunciation.
@@ -243,6 +288,7 @@ GRAMMAR
 - Do NOT force grammar into the conversation.
 - Explain grammar simply for Vietnamese learners.
 - Keep examples beginner-friendly.
+- If no useful grammar point exists, return "grammarNotes": [].
 
 ==================================================
 CORE LEARNING LOOP
@@ -289,6 +335,10 @@ OUTPUT
 ==================================================
 
 RETURN JSON ONLY.
+
+The Fill Blank, Multiple Choice, and Dialogue Cloze objects below are examples of possible task types only.
+Do not create every task type for every dialogue line.
+Task selection must follow the Exercise Rules above.
 
 Use this structure:
 

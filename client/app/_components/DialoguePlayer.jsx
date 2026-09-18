@@ -356,7 +356,7 @@ export default function DialoguePlayer({
 						})}
 
 						{/* Subtitle + controls */}
-						<div className="theme-dark-overlay absolute inset-x-0 bottom-0 z-20 bg-black/70 backdrop-blur-[2px]">
+						<div className="theme-dark-overlay player-overlay absolute inset-x-0 bottom-0 z-20 bg-black/70 backdrop-blur-[2px]">
 							{/* Subtitle - only visible while playing */}
 							{hasStarted && showSubtitles && !dialogueFinished && (
 								<div
@@ -398,7 +398,7 @@ export default function DialoguePlayer({
 							)}
 
 							{/* Controls */}
-							<div className="flex items-center justify-between border-t border-white/10 bg-[#050812]/90 px-4 py-2 sm:px-5">
+							<div className="flex items-center justify-between border-t border-white/10 bg-player-toolbar px-4 py-2 sm:px-5">
 								<div className="flex items-center gap-2">
 									{/* Play */}
 									<button
@@ -447,7 +447,7 @@ export default function DialoguePlayer({
 									</button>
 
 									{showSpeedMenu && (
-										<div className="absolute bottom-full left-1/2 z-30 mb-2 w-20 -translate-x-1/2 overflow-hidden rounded-lg border border-slate-700 bg-[#151f31] py-1 shadow-xl dark:bg-[#111827]">
+										<div className="absolute bottom-full left-1/2 z-30 mb-2 w-20 -translate-x-1/2 overflow-hidden rounded-lg border border-slate-700 bg-player-control py-1 shadow-xl">
 											{PLAYBACK_RATES.map((rate) => (
 												<button
 													key={rate}
@@ -455,7 +455,7 @@ export default function DialoguePlayer({
 													onClick={() => handlePlaybackRateChange(rate)}
 												className={`block w-full cursor-pointer px-3 py-2 text-center text-xs font-semibold transition hover:bg-white/10 ${
 														playbackRate === rate
-														? "bg-slate-100 text-slate-950"
+														? "bg-player-selected text-player-selected"
 														: "text-slate-400"
 													}`}
 												>
@@ -467,7 +467,7 @@ export default function DialoguePlayer({
 								</div>
 
 								<div
-									className="hidden h-8 w-52 items-center rounded-lg bg-[#151f31] p-1 sm:flex dark:bg-[#111827]"
+									className="hidden h-8 w-52 items-center rounded-lg bg-player-control p-1 sm:flex"
 									aria-label="Tốc độ phát"
 								>
 									{PLAYBACK_RATES.map((rate) => (
@@ -478,7 +478,7 @@ export default function DialoguePlayer({
 											aria-pressed={playbackRate === rate}
 										className={`flex h-6 flex-1 cursor-pointer items-center justify-center rounded-md text-xs font-medium transition ${
 												playbackRate === rate
-													? "bg-white text-slate-950 shadow-sm"
+													? "bg-player-selected text-player-selected-text shadow-sm"
 												: "text-slate-400 hover:bg-slate-700/60 hover:text-slate-200"
 											}`}
 										>

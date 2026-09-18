@@ -25,6 +25,20 @@ function normalizeText(value) {
     .trim();
 }
 
+function normalizeVietnameseText(value) {
+  return String(value || "")
+    .toLocaleLowerCase("vi")
+    .replace(/[^\p{L}\p{N}' ]/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function isObviousTranslationQuestion(question) {
+  return /(?:dịch|nghĩa|có nghĩa|muốn nói gì|tiếng việt|translation|mean in vietnamese)/iu.test(
+    String(question || ""),
+  );
+}
+
 function countFillBlankAnswers(task) {
   return Array.isArray(task.answers)
     ? task.answers.length
@@ -185,6 +199,15 @@ export function validateDialogue(data, options = {}) {
   const usefulWordsRange =
     options.usefulWords || structureRules.usefulWords;
 
+  const normalizedLevel = String(
+    data?.metadata?.level || "",
+  ).toLowerCase();
+  const fillBlankRange =
+    normalizedLevel === "a1" ||
+    normalizedLevel === "beginner"
+      ? structureRules.a1FillBlankRange
+      : structureRules.fillBlankRange;
+
   const errors = [];
 
   // ------------------------------------------------------------
@@ -222,9 +245,16 @@ export function validateDialogue(data, options = {}) {
 
       if (!isPresent(line.id)) {
         errors.push(`${label}: missing id.`);
+      } else if (
+        !Number.isInteger(line.id) ||
+        line.id < 1
+      ) {
+        errors.push(
+          `${label}: id must be a positive integer.`,
+        );
       }
 
-      if (String(line.id) !== String(index + 1)) {
+      if (line.id !== index + 1) {
         errors.push(
           `${label}: expected id ${index + 1}, found ${line.id}.`,
         );
@@ -430,6 +460,15 @@ export function validateDialogue(data, options = {}) {
       } else {
         const taskId = String(task.id);
 
+        if (
+          !Number.isInteger(task.id) ||
+          task.id < 1
+        ) {
+          errors.push(
+            `${taskLabel}: id must be a positive integer.`,
+          );
+        }
+
         if (seenTaskIds.has(taskId)) {
           errors.push(
             `${taskLabel}: duplicate task id "${taskId}".`,
@@ -438,7 +477,7 @@ export function validateDialogue(data, options = {}) {
 
         seenTaskIds.add(taskId);
 
-        if (taskId !== String(index + 1)) {
+        if (task.id !== index + 1) {
           errors.push(
             `${taskLabel}: expected ID ${index + 1}, found ${task.id}.`,
           );
@@ -568,14 +607,12 @@ export function validateDialogue(data, options = {}) {
 
         if (
           blankCount <
-            structureRules
-              .fillBlankRange.min ||
+            fillBlankRange.min ||
           blankCount >
-            structureRules
-              .fillBlankRange.max
+            fillBlankRange.max
         ) {
           errors.push(
-            `${taskLabel}: Fill Blank must contain ${structureRules.fillBlankRange.min}-${structureRules.fillBlankRange.max} blanks.`,
+            `${taskLabel}: Fill Blank must contain ${fillBlankRange.min}-${fillBlankRange.max} blanks for level ${normalizedLevel || "unknown"}.`,
           );
         }
 
@@ -680,6 +717,22 @@ export function validateDialogue(data, options = {}) {
         }
 
         if (
+          isObviousTranslationQuestion(
+            task.question,
+          ) &&
+          normalizeVietnameseText(
+            task.answer,
+          ) ===
+            normalizeVietnameseText(
+              sourceLine.translation,
+            )
+        ) {
+          errors.push(
+            `${taskLabel}: Multiple Choice must not simply ask for the Vietnamese translation of dialogue line ${task.dialogueLineId}.`,
+          );
+        }
+
+        if (
           !Array.isArray(
             task.options,
           ) ||
@@ -755,6 +808,19 @@ export function validateDialogue(data, options = {}) {
         }
       },
     );
+
+    if (
+      dialogueLines &&
+      practiceTasks.length >
+        dialogueLines.length &&
+      !Array.from(
+        tasksPerLine.values(),
+      ).some((count) => count > 1)
+    ) {
+      errors.push(
+        "When practice task count exceeds dialogue-line count, at least one important line must receive multiple distinct tasks.",
+      );
+    }
   }
 
   return {

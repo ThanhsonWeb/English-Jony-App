@@ -1,0 +1,553 @@
+{
+"metadata": {
+"courseId": "coffee-shop",
+"dialogueId": "choosing-a-snack",
+"title": "Chọn đồ ăn nhẹ",
+"level": "a1",
+"situation": "Ben và Emma đang ngồi ở quán cà phê. Ben muốn gọi thêm một món ăn nhẹ và hỏi Emma xem món nào nghe ngon hoặc phù hợp.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"thumbnail": "/dialogue/coffee-shop/thumbnails/choosing-a-snack.png"
+},
+"dialogue": [
+{
+"id": 1,
+"speaker": "Ben",
+"text": "I'm a little hungry. Should we get a snack?",
+"translation": "Mình hơi đói. Chúng ta gọi món ăn nhẹ nhé?",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-01.mp3"
+},
+{
+"id": 2,
+"speaker": "Emma",
+"text": "Sure. What do you feel like eating?",
+"translation": "Được chứ. Bạn muốn ăn gì?",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-01.mp3"
+},
+{
+"id": 3,
+"speaker": "Ben",
+"text": "Something small. I don't want a big meal.",
+"translation": "Món gì đó nhỏ thôi. Mình không muốn ăn một bữa lớn.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-02.mp3"
+},
+{
+"id": 4,
+"speaker": "Emma",
+"text": "They have muffins, cookies, and sandwiches.",
+"translation": "Ở đây có bánh muffin, bánh quy và bánh sandwich.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-02.mp3"
+},
+{
+"id": 5,
+"speaker": "Emma",
+"text": "The chocolate muffin looks good.",
+"translation": "Bánh muffin sô-cô-la trông ngon đấy.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-03.mp3"
+},
+{
+"id": 6,
+"speaker": "Ben",
+"text": "Is it very sweet?",
+"translation": "Nó có ngọt lắm không?",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-03.mp3"
+},
+{
+"id": 7,
+"speaker": "Emma",
+"text": "Not really. It's soft and a little sweet.",
+"translation": "Không hẳn. Nó mềm và hơi ngọt.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-04.mp3"
+},
+{
+"id": 8,
+"speaker": "Ben",
+"text": "That sounds good. I'll get the muffin.",
+"translation": "Nghe ngon đấy. Mình sẽ chọn bánh muffin.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-04.mp3"
+},
+{
+"id": 9,
+"speaker": "Emma",
+"text": "Good choice. I might get a cookie.",
+"translation": "Lựa chọn hay đấy. Có lẽ mình sẽ chọn một chiếc bánh quy.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-05.mp3"
+},
+{
+"id": 10,
+"speaker": "Ben",
+"text": "Nice. We can share if you want.",
+"translation": "Hay đấy. Chúng ta có thể chia sẻ nếu bạn muốn.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-05.mp3"
+}
+],
+"usefulWords": [
+{
+"word": "a little hungry",
+"pronunciation": "/ə ˈlɪtl ˈhʌŋɡri/",
+"meaning": "hơi đói",
+"example": "I'm a little hungry now."
+},
+{
+"word": "feel like eating",
+"pronunciation": "/fiːl laɪk ˈiːtɪŋ/",
+"meaning": "muốn ăn",
+"example": "What do you feel like eating?"
+},
+{
+"word": "something small",
+"pronunciation": "/ˈsʌmθɪŋ smɔːl/",
+"meaning": "món gì đó nhỏ",
+"example": "I want something small."
+},
+{
+"word": "big meal",
+"pronunciation": "/bɪɡ miːl/",
+"meaning": "bữa ăn lớn",
+"example": "I don't want a big meal."
+},
+{
+"word": "looks good",
+"pronunciation": "/lʊks ɡʊd/",
+"meaning": "trông ngon / trông hấp dẫn",
+"example": "That sandwich looks good."
+},
+{
+"word": "very sweet",
+"pronunciation": "/ˈveri swiːt/",
+"meaning": "rất ngọt",
+"example": "Is this cake very sweet?"
+},
+{
+"word": "a little sweet",
+"pronunciation": "/ə ˈlɪtl swiːt/",
+"meaning": "hơi ngọt",
+"example": "The cookie is a little sweet."
+},
+{
+"word": "Good choice",
+"pronunciation": "/ɡʊd tʃɔɪs/",
+"meaning": "Lựa chọn hay",
+"example": "A muffin? Good choice."
+},
+{
+"word": "share",
+"pronunciation": "/ʃer/",
+"meaning": "chia sẻ, chia nhau",
+"example": "We can share this sandwich."
+}
+],
+"tasks": [
+{
+"id": 1,
+"dialogueLineId": 1,
+"type": "fillBlank",
+"parts": [
+"I'm ",
+". Should we get a snack?"
+],
+"answers": [
+"a little hungry"
+],
+"speaker": "Ben",
+"transcript": "I'm a little hungry. Should we get a snack?",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-01.mp3"
+},
+{
+"id": 2,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"parts": [
+"Sure. What do you ",
+"?"
+],
+"answers": [
+"feel like eating"
+],
+"speaker": "Emma",
+"transcript": "Sure. What do you feel like eating?",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-01.mp3"
+},
+{
+"id": 3,
+"dialogueLineId": 2,
+"type": "multipleChoice",
+"question": "Emma muốn biết điều gì?",
+"options": [
+"Ben muốn ăn gì.",
+"Ben muốn uống gì.",
+"Ben muốn ngồi ở đâu.",
+"Ben muốn về lúc nào."
+],
+"answer": "Ben muốn ăn gì.",
+"speaker": "Emma",
+"transcript": "Sure. What do you feel like eating?",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-01.mp3"
+},
+{
+"id": 4,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"parts": [
+"",
+". I don't want a big meal."
+],
+"answers": [
+"Something small"
+],
+"speaker": "Ben",
+"transcript": "Something small. I don't want a big meal.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-02.mp3"
+},
+{
+"id": 5,
+"dialogueLineId": 3,
+"type": "multipleChoice",
+"question": "Vì sao Ben muốn một món nhỏ?",
+"options": [
+"Ben không muốn ăn một bữa lớn.",
+"Ben không thích đồ ăn ở quán.",
+"Ben đã gọi một chiếc sandwich.",
+"Ben chỉ muốn uống cà phê."
+],
+"answer": "Ben không muốn ăn một bữa lớn.",
+"speaker": "Ben",
+"transcript": "Something small. I don't want a big meal.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-02.mp3"
+},
+{
+"id": 6,
+"dialogueLineId": 4,
+"type": "fillBlank",
+"parts": [
+"They have ",
+", ",
+", and sandwiches."
+],
+"answers": [
+"muffins",
+"cookies"
+],
+"speaker": "Emma",
+"transcript": "They have muffins, cookies, and sandwiches.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-02.mp3"
+},
+{
+"id": 7,
+"dialogueLineId": 4,
+"type": "multipleChoice",
+"question": "Quán có những món ăn nhẹ nào?",
+"options": [
+"Muffin, bánh quy và sandwich.",
+"Pizza, salad và sandwich.",
+"Kem, bánh ngọt và pizza.",
+"Trứng, mì và bánh mì."
+],
+"answer": "Muffin, bánh quy và sandwich.",
+"speaker": "Emma",
+"transcript": "They have muffins, cookies, and sandwiches.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-02.mp3"
+},
+{
+"id": 8,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"parts": [
+"The chocolate muffin ",
+"."
+],
+"answers": [
+"looks good"
+],
+"speaker": "Emma",
+"transcript": "The chocolate muffin looks good.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-03.mp3"
+},
+{
+"id": 9,
+"dialogueLineId": 6,
+"type": "fillBlank",
+"parts": [
+"Is it ",
+"?"
+],
+"answers": [
+"very sweet"
+],
+"speaker": "Ben",
+"transcript": "Is it very sweet?",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-03.mp3"
+},
+{
+"id": 10,
+"dialogueLineId": 6,
+"type": "multipleChoice",
+"question": "Ben muốn biết gì về chiếc bánh muffin?",
+"options": [
+"Nó có ngọt lắm không.",
+"Nó có nóng không.",
+"Nó có lớn không.",
+"Nó có đắt không."
+],
+"answer": "Nó có ngọt lắm không.",
+"speaker": "Ben",
+"transcript": "Is it very sweet?",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-03.mp3"
+},
+{
+"id": 11,
+"dialogueLineId": 7,
+"type": "fillBlank",
+"parts": [
+"Not really. It's soft and ",
+"."
+],
+"answers": [
+"a little sweet"
+],
+"speaker": "Emma",
+"transcript": "Not really. It's soft and a little sweet.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-04.mp3"
+},
+{
+"id": 12,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"parts": [
+"That sounds good. ",
+" the muffin."
+],
+"answers": [
+"I'll get"
+],
+"speaker": "Ben",
+"transcript": "That sounds good. I'll get the muffin.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-04.mp3"
+},
+{
+"id": 13,
+"dialogueLineId": 8,
+"type": "multipleChoice",
+"question": "Cuối cùng Ben chọn món nào?",
+"options": [
+"Bánh muffin sô-cô-la.",
+"Một chiếc sandwich.",
+"Một chiếc bánh quy.",
+"Ben không chọn món nào."
+],
+"answer": "Bánh muffin sô-cô-la.",
+"speaker": "Ben",
+"transcript": "That sounds good. I'll get the muffin.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-04.mp3"
+},
+{
+"id": 14,
+"dialogueLineId": 9,
+"type": "fillBlank",
+"parts": [
+"",
+". I might get a cookie."
+],
+"answers": [
+"Good choice"
+],
+"speaker": "Emma",
+"transcript": "Good choice. I might get a cookie.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-05.mp3"
+},
+{
+"id": 15,
+"dialogueLineId": 10,
+"type": "fillBlank",
+"parts": [
+"Nice. We can ",
+" if you want."
+],
+"answers": [
+"share"
+],
+"speaker": "Ben",
+"transcript": "Nice. We can share if you want.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-05.mp3"
+},
+{
+"id": 16,
+"dialogueLineId": 10,
+"type": "multipleChoice",
+"question": "Ben gợi ý điều gì ở cuối cuộc trò chuyện?",
+"options": [
+"Hai người có thể chia sẻ đồ ăn.",
+"Hai người nên gọi thêm cà phê.",
+"Emma nên đổi sang sandwich.",
+"Ben muốn rời quán ngay."
+],
+"answer": "Hai người có thể chia sẻ đồ ăn.",
+"speaker": "Ben",
+"transcript": "Nice. We can share if you want.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-05.mp3"
+},
+{
+"id": 17,
+"type": "dialogueCloze",
+"lines": [
+{
+"dialogueLineId": 1,
+"speaker": "Ben",
+"parts": [
+"I'm ",
+{
+"id": "1",
+"blank": "a little hungry"
+},
+". Should we get a snack?"
+]
+},
+{
+"dialogueLineId": 2,
+"speaker": "Emma",
+"parts": [
+"Sure. What do you ",
+{
+"id": "2",
+"blank": "feel like eating"
+},
+"?"
+]
+},
+{
+"dialogueLineId": 3,
+"speaker": "Ben",
+"parts": [
+"",
+{
+"id": "3",
+"blank": "Something small"
+},
+". I don't want a big meal."
+]
+},
+{
+"dialogueLineId": 4,
+"speaker": "Emma",
+"parts": [
+"They have ",
+{
+"id": "4",
+"blank": "muffins"
+},
+", cookies, and sandwiches."
+]
+},
+{
+"dialogueLineId": 5,
+"speaker": "Emma",
+"parts": [
+"The chocolate muffin ",
+{
+"id": "5",
+"blank": "looks good"
+},
+"."
+]
+},
+{
+"dialogueLineId": 6,
+"speaker": "Ben",
+"parts": [
+"Is it ",
+{
+"id": "6",
+"blank": "very sweet"
+},
+"?"
+]
+},
+{
+"dialogueLineId": 7,
+"speaker": "Emma",
+"parts": [
+"Not really. It's soft and ",
+{
+"id": "7",
+"blank": "a little sweet"
+},
+"."
+]
+},
+{
+"dialogueLineId": 8,
+"speaker": "Ben",
+"parts": [
+"That sounds good. ",
+{
+"id": "8",
+"blank": "I'll get"
+},
+" the muffin."
+]
+},
+{
+"dialogueLineId": 9,
+"speaker": "Emma",
+"parts": [
+"",
+{
+"id": "9",
+"blank": "Good choice"
+},
+". I might get a cookie."
+]
+},
+{
+"dialogueLineId": 10,
+"speaker": "Ben",
+"parts": [
+"Nice. We can ",
+{
+"id": "10",
+"blank": "share"
+},
+" if you want."
+]
+}
+]
+}
+],
+"grammarNotes": [
+{
+"title": "Nói điều mình muốn với “feel like”",
+"explanation": "Dùng “feel like + V-ing” để nói bạn đang muốn làm gì.",
+"example": "What do you feel like eating?"
+},
+{
+"title": "Chọn món với “I'll get...”",
+"explanation": "Dùng “I'll get + món” khi bạn quyết định mình sẽ chọn hoặc gọi món gì.",
+"example": "I'll get the muffin."
+}
+]
+}

@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/next";
 import "./_styles/globals.css";
+import { themeScript } from "./_lib/theme.mjs";
 import { Inter } from "next/font/google";
 import { AuthProvider } from "./_contexts/AuthContext";
 import { ThemeProvider } from "./_contexts/ThemeContext";
@@ -18,20 +19,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-	const themeScript = `
-		(function () {
-			try {
-				var preference = localStorage.getItem("studyjony-theme");
-				if (!["light", "dark", "system"].includes(preference)) preference = "system";
-				var resolved = preference === "system"
-					? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
-					: preference;
-				document.documentElement.dataset.theme = resolved;
-				document.documentElement.dataset.themePreference = preference;
-				document.documentElement.style.colorScheme = resolved;
-			} catch {}
-		})();
-	`;
 
 	return (
 		<html lang="en" className={inter.className} suppressHydrationWarning>

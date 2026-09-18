@@ -5,8 +5,10 @@
 		"wordlist": "Wordlist"
 	},
 	"Theme": {
-		"light": "Light",
-		"dark": "Dark",
+		"light": "Soft light",
+		"cream": "Warm cream",
+		"dark": "Dark navy",
+		"black": "Near black",
 		"system": "System",
 		"choose": "Choose theme"
 	},
@@ -65,7 +67,7 @@
 		"language": "Display language",
 		"languageValue": "🇺🇸 English",
 		"sound": "Sound effects",
-		"darkMode": "Dark mode",
+		"darkMode": "Theme",
 		"less": "Less",
 		"more": "More"
 	},

@@ -164,7 +164,7 @@ function Page() {
 						<span className="font-medium">{t("darkMode")}</span>
 					</div>
 
-					<ThemeSelector variant="toggle" />
+					<ThemeSelector />
 				</div>
 			</div>
 		</div>

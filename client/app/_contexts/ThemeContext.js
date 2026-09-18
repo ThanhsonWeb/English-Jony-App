@@ -8,13 +8,16 @@ import {
 	useSyncExternalStore,
 } from "react";
 
-const THEME_STORAGE_KEY = "studyjony-theme";
+import { applyTheme, THEME_STORAGE_KEY, THEME_VALUES } from "@/app/_lib/theme.mjs";
+
+let temporaryTheme = null;
 const THEME_CHANGE_EVENT = "studyjony-theme-change";
-const VALID_THEMES = new Set(["light", "dark", "system"]);
+const VALID_THEMES = new Set(THEME_VALUES);
 const ThemeContext = createContext(null);
 
 function getSavedTheme() {
 	if (typeof window === "undefined") return "system";
+	if (temporaryTheme) return temporaryTheme;
 
 	try {
 		const savedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
@@ -34,20 +37,6 @@ function subscribeToTheme(callback) {
 	};
 }
 
-function applyTheme(preference) {
-	const resolvedTheme =
-		preference === "system"
-			? window.matchMedia("(prefers-color-scheme: dark)").matches
-				? "dark"
-				: "light"
-			: preference;
-	const root = document.documentElement;
-
-	root.dataset.theme = resolvedTheme;
-	root.dataset.themePreference = preference;
-	root.style.colorScheme = resolvedTheme;
-}
-
 export function ThemeProvider({ children }) {
 	const theme = useSyncExternalStore(
 		subscribeToTheme,
@@ -56,9 +45,11 @@ export function ThemeProvider({ children }) {
 	);
 
 	useEffect(() => {
-		applyTheme(theme);
+		// Hydration starts with system; apply the actual saved preference.
+		const preference = getSavedTheme();
+		applyTheme(preference);
 
-		if (theme !== "system") return undefined;
+		if (preference !== "system") return undefined;
 
 		const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 		const handleSystemThemeChange = () => applyTheme("system");
@@ -77,8 +68,9 @@ export function ThemeProvider({ children }) {
 
 				try {
 					window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+					temporaryTheme = null;
 				} catch {
-					// The selected theme still applies for this page if storage is blocked.
+					temporaryTheme = nextTheme;
 				}
 				applyTheme(nextTheme);
 				window.dispatchEvent(new Event(THEME_CHANGE_EVENT));

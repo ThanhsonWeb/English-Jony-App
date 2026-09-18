@@ -1,4 +1,5 @@
 import orderingACoffee from "../dialogues/coffee-shop/ordering-a-coffee.json";
+import choosingASnack from "../dialogues/coffee-shop/choosing-a-snack.json";
 
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
 import { coffeeShopMedia } from "../dialogues/coffee-shop/media";
@@ -29,7 +30,10 @@ const coffeeShopCourse = {
 		"Học cách gọi đồ uống và giao tiếp trong những tình huống quen thuộc tại quán cà phê.",
 	level: "beginner",
 	duration: "10 phút",
-	dialogues: [buildCourseDialogue(orderingACoffee)],
+	dialogues: [
+		buildCourseDialogue(orderingACoffee),
+		buildCourseDialogue(choosingASnack),
+	],
 };
 
 export default coffeeShopCourse;

@@ -1,6 +1,7 @@
 export const structureRules = Object.freeze({
-	usefulWords: { min: 6, max: 10 },
+	usefulWords: { min: 4, max: 10 },
 
+	a1FillBlankRange: { min: 1, max: 2 },
 	fillBlankRange: { min: 1, max: 3 },
 });
 
