@@ -695,3 +695,55 @@ html:is([data-theme="light"], [data-theme="cream"], [data-theme="black"]) [class
 html:is([data-theme="light"], [data-theme="cream"]) .player-overlay .bg-player-toolbar :where([class~="text-slate-100"], [class~="hover:text-white"]:hover) { color: var(--sj-text) !important; }
 html:is([data-theme="light"], [data-theme="cream"]) .player-overlay .bg-player-toolbar :where([class~="text-slate-300"], [class~="text-slate-400"]) { color: var(--sj-text-secondary) !important; }
 html:is([data-theme="light"], [data-theme="cream"]) .player-overlay .bg-player-toolbar :where([class~="text-violet-400"], [class~="hover:text-violet-300"]:hover) { color: var(--sj-brand-text) !important; }
+
+/* Dialogue banner decoration: geometry and artwork stay in the component.
+   Navy uses the exact original Tailwind colors, opacity and shadow. */
+:root, html[data-theme="dark"] {
+	--sj-banner-glow-primary: color-mix(in oklab, var(--color-violet-600) 10%, transparent);
+	--sj-banner-glow-secondary: color-mix(in oklab, var(--color-blue-600) 10%, transparent);
+	--sj-banner-glow-ground: color-mix(in oklab, var(--sj-primary) 10%, transparent);
+	--sj-banner-glow-corner: color-mix(in oklab, var(--color-violet-700) 10%, transparent);
+	--sj-banner-arc-1: color-mix(in oklab, var(--color-violet-500) 55%, transparent);
+	--sj-banner-arc-2: color-mix(in oklab, var(--color-blue-500) 50%, transparent);
+	--sj-banner-arc-3: color-mix(in oklab, var(--color-violet-400) 45%, transparent);
+	--sj-banner-arc-4: color-mix(in oklab, var(--color-blue-400) 35%, transparent);
+	--sj-banner-arc-5: color-mix(in oklab, var(--color-violet-300) 25%, transparent);
+	--sj-banner-shadow: 0 -10px 35px rgba(124, 58, 237, 0.08);
+}
+html[data-theme="light"] {
+	--sj-banner-glow-primary: #6c91800a;
+	--sj-banner-glow-secondary: #6c918008;
+	--sj-banner-glow-ground: #3c8a780a;
+	--sj-banner-glow-corner: #6c918008;
+	--sj-banner-arc-1: #78958a2e;
+	--sj-banner-arc-2: #78958a26;
+	--sj-banner-arc-3: #78958a1f;
+	--sj-banner-arc-4: #78958a17;
+	--sj-banner-arc-5: #78958a10;
+	--sj-banner-shadow: 0 -10px 35px #53756808;
+}
+html[data-theme="cream"] {
+	--sj-banner-glow-primary: #b6935f0d;
+	--sj-banner-glow-secondary: #b89c730a;
+	--sj-banner-glow-ground: #c3a87e0d;
+	--sj-banner-glow-corner: #b6935f0a;
+	--sj-banner-arc-1: #ac90672e;
+	--sj-banner-arc-2: #ac906726;
+	--sj-banner-arc-3: #ac90671f;
+	--sj-banner-arc-4: #ac906717;
+	--sj-banner-arc-5: #ac906710;
+	--sj-banner-shadow: 0 -10px 35px #8e704308;
+}
+html[data-theme="black"] {
+	--sj-banner-glow-primary: #5260780d;
+	--sj-banner-glow-secondary: #485c780a;
+	--sj-banner-glow-ground: #5260780a;
+	--sj-banner-glow-corner: #5260780a;
+	--sj-banner-arc-1: #68758a38;
+	--sj-banner-arc-2: #68758a2e;
+	--sj-banner-arc-3: #68758a26;
+	--sj-banner-arc-4: #68758a1f;
+	--sj-banner-arc-5: #68758a17;
+	--sj-banner-shadow: 0 -10px 35px #35425908;
+}
+.banner-decoration-shadow { box-shadow: var(--sj-banner-shadow); }

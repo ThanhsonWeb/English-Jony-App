@@ -13,6 +13,7 @@ import {
 	BookOpen,
 	PenLine,
 	Languages,
+	Trophy,
 } from "lucide-react";
 
 const navLinks = [
@@ -20,6 +21,7 @@ const navLinks = [
 	{ key: "dialogue", href: "/dialogue", icon: Headphones },
 	// { key: "vocabulary", href: "/vocabulary", icon: Languages },
 	{ key: "wordlist", href: "/wordlist", icon: BookOpen },
+	{ key: "rank", href: "/rank", icon: Trophy },
 ];
 
 function Navigation() {

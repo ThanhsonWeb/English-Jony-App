@@ -455,7 +455,7 @@ export default function DialoguePlayer({
 													onClick={() => handlePlaybackRateChange(rate)}
 												className={`block w-full cursor-pointer px-3 py-2 text-center text-xs font-semibold transition hover:bg-white/10 ${
 														playbackRate === rate
-														? "bg-player-selected text-player-selected"
+														? "bg-player-selected text-player-selected-text"
 														: "text-slate-400"
 													}`}
 												>

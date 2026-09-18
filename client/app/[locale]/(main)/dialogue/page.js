@@ -204,11 +204,11 @@ export default function DialoguePage() {
 				{/* ==================== HERO SECTION ==================== */}
 				<section className="relative isolate min-h-[205px] overflow-hidden border-b border-app bg-hero md:min-h-[220px]">
 					<div className="absolute inset-0 z-0 bg-gradient-to-r from-hero via-hero/90 to-transparent" />
-					<div className="pointer-events-none absolute right-[6%] top-[12%] z-[1] hidden h-52 w-[42%] rounded-full bg-violet-600/10 blur-[70px] md:block" />
-					<div className="pointer-events-none absolute bottom-[-15%] right-[3%] z-[1] hidden h-48 w-[48%] rounded-full bg-blue-600/10 blur-[65px] md:block" />
+					<div className="pointer-events-none absolute right-[6%] top-[12%] z-[1] hidden h-52 w-[42%] rounded-full bg-[var(--sj-banner-glow-primary)] blur-[70px] md:block" />
+					<div className="pointer-events-none absolute bottom-[-15%] right-[3%] z-[1] hidden h-48 w-[48%] rounded-full bg-[var(--sj-banner-glow-secondary)] blur-[65px] md:block" />
 
 					<div className="pointer-events-none absolute inset-y-0 right-[5%] z-20 hidden w-[42%] md:block lg:right-[7%] lg:w-[40%]">
-						<div className="absolute bottom-[2%] left-1/2 h-[70%] w-[78%] -translate-x-1/2 rounded-full bg-primary/10 blur-[55px]" />
+						<div className="absolute bottom-[2%] left-1/2 h-[70%] w-[78%] -translate-x-1/2 rounded-full bg-[var(--sj-banner-glow-ground)] blur-[55px]" />
 						<div className="absolute bottom-[-4%] left-[4%] h-[98%] w-[58%]">
 					
 							<Image
@@ -234,14 +234,14 @@ export default function DialoguePage() {
 					</div>
 
 					<div className="pointer-events-none absolute bottom-[-18%] right-[2%] z-10 hidden h-64 w-[58%] opacity-70 md:block">
-						<div className="absolute inset-0 rounded-[50%] border-t border-violet-500/55 [transform:rotate(-7deg)] shadow-[0_-10px_35px_rgba(124,58,237,0.08)]" />
-						<div className="absolute inset-x-4 inset-y-4 rounded-[50%] border-t border-blue-500/50 [transform:rotate(-7deg)]" />
-						<div className="absolute inset-x-8 inset-y-8 rounded-[50%] border-t border-violet-400/45 [transform:rotate(-7deg)]" />
-						<div className="absolute inset-x-12 inset-y-12 rounded-[50%] border-t border-blue-400/35 [transform:rotate(-7deg)]" />
-						<div className="absolute inset-x-16 inset-y-16 rounded-[50%] border-t border-violet-300/25 [transform:rotate(-7deg)]" />
+						<div className="absolute inset-0 rounded-[50%] border-t border-[var(--sj-banner-arc-1)] [transform:rotate(-7deg)] banner-decoration-shadow" />
+						<div className="absolute inset-x-4 inset-y-4 rounded-[50%] border-t border-[var(--sj-banner-arc-2)] [transform:rotate(-7deg)]" />
+						<div className="absolute inset-x-8 inset-y-8 rounded-[50%] border-t border-[var(--sj-banner-arc-3)] [transform:rotate(-7deg)]" />
+						<div className="absolute inset-x-12 inset-y-12 rounded-[50%] border-t border-[var(--sj-banner-arc-4)] [transform:rotate(-7deg)]" />
+						<div className="absolute inset-x-16 inset-y-16 rounded-[50%] border-t border-[var(--sj-banner-arc-5)] [transform:rotate(-7deg)]" />
 					</div>
 
-					<div className="absolute -left-24 -top-24 z-[1] h-72 w-72 rounded-full bg-violet-700/10 blur-3xl" />
+					<div className="absolute -left-24 -top-24 z-[1] h-72 w-72 rounded-full bg-[var(--sj-banner-glow-corner)] blur-3xl" />
 					{/* Content  */}
 					<div className="relative z-30 flex min-h-[205px] max-w-2xl flex-col justify-center px-5 py-6 sm:px-8 md:min-h-[220px] md:max-w-[55%] md:px-9 lg:px-12 xl:px-14">
 						<h1 className="bg-gradient-to-r from-violet-300 to-blue-300 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
