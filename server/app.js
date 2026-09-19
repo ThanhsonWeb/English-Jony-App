@@ -6,6 +6,7 @@ const topicRouter = require("./routes/topicRoutes.js");
 const studyActivityRoutes = require("./routes/studyActivityRoutes.js");
 const dictionaryRouter = require("./routes/dictionaryRoutes.js");
 const dialogueProgressRouter = require("./routes/dialogueProgressRoutes.js");
+const leaderboardRouter = require("./routes/leaderboardRoutes.js");
 const AppError = require("./utils/appError.js");
 const globalErrorHandler = require("./controllers/errorController.js");
 const helmet = require("helmet");
@@ -64,6 +65,7 @@ app.use("/api/v1/topics", apiLimiter, topicRouter);
 app.use("/api/v1/dictionary", apiLimiter, dictionaryRouter);
 app.use("/api/v1/study-activities", studyActivityRoutes);
 app.use("/api/v1/dialogue-progress", dialogueProgressRouter);
+app.use("/api/v1/leaderboard", apiLimiter, leaderboardRouter);
 // Route doesn't exist
 app.all("/*splat", (req, res, next) => {
 	next(new AppError(`Can't find ${req.originalUrl} route ! `, 404));

@@ -1,4 +1,4 @@
-wconst DialogueProgress = require("../models/dialogueProgressModel.js");
+const DialogueProgress = require("../models/dialogueProgressModel.js");
 const catchAsync = require("../utils/catchAsync.js");
 const mongoose = require("mongoose");
 const User = require("../models/userModel.js");
