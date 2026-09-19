@@ -35,9 +35,10 @@ function duplicateResult(event, user, input) {
 /**
  * Internal only: callers must verify the learning action and choose its reward/key.
  * Requires a replica set (or sharded cluster) and the XPEvent unique index.
- * Owns its transaction; do not call from inside another transaction.
+ * Owns its transaction by default. An active caller session can be supplied
+ * after initializing XPEvent indexes; that caller owns commit and retries.
  */
-async function awardXp({ userId, awardKey, sourceType, sourceId, amount, ruleVersion = 1, attemptId } = {}) {
+async function awardXp({ userId, awardKey, sourceType, sourceId, amount, ruleVersion = 1, attemptId } = {}, { session } = {}) {
 	validateInput({ userId, awardKey, sourceType, sourceId, amount, ruleVersion, attemptId });
 	const input = { awardKey: awardKey.trim(), sourceId: sourceId.trim(), sourceType, amount, ruleVersion };
 	const filter = { user: userId, awardKey: input.awardKey };
@@ -47,36 +48,44 @@ async function awardXp({ userId, awardKey, sourceType, sourceId, amount, ruleVer
 		timeZone: "Asia/Ho_Chi_Minh", year: "numeric", month: "2-digit", day: "2-digit",
 	}).format(earnedAt);
 
+	const performAward = async (session) => {
+		const existing = await XPEvent.findOne(filter).session(session).lean();
+		if (existing) {
+			const user = await User.findById(userId).select("totalXp").session(session).lean();
+			return duplicateResult(existing, user, input);
+		}
+
+		const [event] = await XPEvent.create([{
+			...input, user: userId, attemptId, earnedAt, dayKey,
+		}], { session });
+
+		// $inc initializes missing totals on users created before XP existed.
+		// An explicit bound is needed because update validators do not validate $inc.
+		const user = await User.findOneAndUpdate({
+			_id: userId,
+			$or: [
+				{ totalXp: { $exists: false } },
+				{ totalXp: { $gte: 0, $lte: Number.MAX_SAFE_INTEGER - amount } },
+			],
+		}, { $inc: { totalXp: amount } }, { returnDocument: "after", session }).select("totalXp").lean();
+
+		if (!user) {
+			const exists = await User.exists({ _id: userId }).session(session);
+			throw xpError(exists ? "XP_INVALID_TOTAL" : "XP_USER_NOT_FOUND",
+				exists ? "XP total is invalid or would exceed the safe integer limit" : "XP recipient does not exist");
+		}
+		return { awarded: amount, totalXp: user.totalXp, reason: "awarded", eventId: event._id };
+	};
+
+	if (session) {
+		if (!session.inTransaction()) throw xpError("XP_INVALID_SESSION", "XP requires an active transaction");
+		return performAward(session);
+	}
+
 	await XPEvent.init();
 	try {
-		return await mongoose.connection.transaction(async (session) => {
-			const existing = await XPEvent.findOne(filter).session(session).lean();
-			if (existing) {
-				const user = await User.findById(userId).select("totalXp").session(session).lean();
-				return duplicateResult(existing, user, input);
-			}
-
-			const [event] = await XPEvent.create([{
-				...input, user: userId, attemptId, earnedAt, dayKey,
-			}], { session });
-
-			// $inc initializes missing totals on users created before XP existed.
-			// An explicit bound is needed because update validators do not validate $inc.
-			const user = await User.findOneAndUpdate({
-				_id: userId,
-				$or: [
-					{ totalXp: { $exists: false } },
-					{ totalXp: { $gte: 0, $lte: Number.MAX_SAFE_INTEGER - amount } },
-				],
-			}, { $inc: { totalXp: amount } }, { returnDocument: "after", session }).select("totalXp").lean();
-
-			if (!user) {
-				const exists = await User.exists({ _id: userId }).session(session);
-				throw xpError(exists ? "XP_INVALID_TOTAL" : "XP_USER_NOT_FOUND",
-					exists ? "XP total is invalid or would exceed the safe integer limit" : "XP recipient does not exist");
-			}
-			return { awarded: amount, totalXp: user.totalXp, reason: "awarded", eventId: event._id };
-		}, { readPreference: "primary", readConcern: { level: "snapshot" }, writeConcern: { w: "majority" } });
+		return await mongoose.connection.transaction(performAward,
+			{ readPreference: "primary", readConcern: { level: "snapshot" }, writeConcern: { w: "majority" } });
 	} catch (error) {
 		// A concurrent insert may win after our first read. The losing transaction
 		// has already rolled back; only this specific unique-key violation is a retry.

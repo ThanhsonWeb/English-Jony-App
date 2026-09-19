@@ -1,6 +1,6 @@
 # XP foundation
 
-`awardXp` is an internal service. No route or learning action calls it yet.
+`awardXp` is an internal service, used by the dialogue task completion handler.
 The caller must authenticate the user, verify completion, enforce reward rules
 and limits, and choose a stable award key. Never pass an HTTP request body through.
 
@@ -33,17 +33,33 @@ const result = await awardXp({
 ## Database prerequisites
 
 Use a MongoDB replica set or sharded cluster. Standalone MongoDB is unsupported;
-there is no non-transactional fallback. The service owns its transaction and
-must not be called inside a future learning transaction without refactoring it
-to share that session.
+there is no non-transactional fallback. By default the service owns its
+transaction. To commit learning progress and XP together, initialize indexes
+before starting the transaction and call `awardXp(input, { session })` with an
+active session. The caller then owns commit, rollback, and retries, including
+unique-key races. Never catch and ignore an award error inside that transaction.
 
-Before connecting real learning actions, ensure the `xp_award_once` unique index
+Before deploying, ensure the `xp_award_once` unique index
 and query indexes exist. `XPEvent.init()` waits for normal Mongoose index setup;
 if deployment disables `autoIndex`, explicitly run `XPEvent.createIndexes()` as
 a deployment step. No deployment or database migration is performed here.
 
-No daily totals, XP rules, ranking query, streak logic, attempt persistence,
+No daily totals, ranking query, streak logic, attempt persistence,
 or historical awards are implemented in this foundation.
+
+## Dialogue completion
+
+The existing authenticated completion PATCH returns `data.progress` unchanged
+and adds `data.xp: { awarded, total, reason }`. A previously incomplete task
+earns 10 XP under `dialogue:{lessonId}:{dialogueId}:{taskId}` (each component is
+URI-encoded to avoid delimiter collisions). Progress and XP share a transaction.
+Already completed tasks, including pre-XP completions, return zero with
+`already_completed`. An existing award event also prevents rewards if progress
+is later restored. Vocabulary and the ranking UI are not connected.
+
+This integration retains the existing client-reported completion contract.
+The endpoint does not independently verify answers or task catalogue membership;
+server-side answer verification is still a separate task.
 
 ## Tests
 
