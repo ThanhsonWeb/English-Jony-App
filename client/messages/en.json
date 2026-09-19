@@ -20,13 +20,7 @@
 		"notCompleted": "Not yet studied",
 		"currentRank": "Current rank",
 		"rankHelp": "Keep going to reach the Top 3!",
-		"totalKn": "Lifetime KN",
-		"knPeriod": {
-			"thisWeek": "KN this week",
-			"lastWeek": "KN last week",
-			"thisMonth": "KN this month",
-			"lastMonth": "KN last month"
-		},
+		"totalKn": "Total KN",
 		"earnedThisWeek": "this week",
 		"level": "Level",
 		"levelProgress": "Progress to the next level",

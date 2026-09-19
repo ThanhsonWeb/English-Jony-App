@@ -34,7 +34,7 @@ function Navigation() {
 	return (
 		<nav className="relative">
 			{/* Desktop Navigation */}
-			<ul className="hidden items-center gap-3 md:flex">
+			<ul className="hidden items-center gap-1 md:flex">
 				{navLinks.map((link) => {
 					const Icon = link.icon;
 					const isActive =

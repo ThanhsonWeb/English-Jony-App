@@ -20,13 +20,7 @@
 		"notCompleted": "Chưa học",
 		"currentRank": "Hạng hiện tại",
 		"rankHelp": "Cố gắng thêm để vào Top 3!",
-		"totalKn": "KN tích lũy",
-		"knPeriod": {
-			"thisWeek": "KN tuần này",
-			"lastWeek": "KN tuần trước",
-			"thisMonth": "KN tháng này",
-			"lastMonth": "KN tháng trước"
-		},
+		"totalKn": "Tổng KN",
 		"earnedThisWeek": "tuần này",
 		"level": "Cấp độ",
 		"levelProgress": "Tiến độ lên cấp",

@@ -137,9 +137,7 @@ export default function RankDashboard() {
 	const leaderboard = getMockLeaderboard(period, timeframe);
 	const currentUser = leaderboard.find(user => user.isCurrentUser);
 	const format = value => new Intl.NumberFormat(locale).format(value);
-	const periodKey = period === "month" ? (timeframe === "current" ? "thisMonth" : "lastMonth") : (timeframe === "current" ? "thisWeek" : "lastWeek");
-	const activePeriod = t(periodKey);
-	const leaderboardKnLabel = t(`knPeriod.${periodKey}`);
+	const activePeriod = t(period === "month" ? (timeframe === "current" ? "thisMonth" : "lastMonth") : (timeframe === "current" ? "thisWeek" : "lastWeek"));
 
 	function changePeriod(nextPeriod) {
 		setPeriod(nextPeriod);
@@ -156,8 +154,8 @@ export default function RankDashboard() {
 					</div>
 					<aside className={styles.quote} aria-label={t("motivation")}>
 						<MountainDecoration />
-						<blockquote>“{t("quote")}”</blockquote>
-						<p>— StudyJony</p>
+						
+						
 					</aside>
 				</header>
 
@@ -178,15 +176,14 @@ export default function RankDashboard() {
 				<RankPeriodSwitch period={period} timeframe={timeframe} onPeriodChange={changePeriod} onTimeframeChange={setTimeframe} t={t} />
 				<p className="sr-only" role="status">{t("results", { period: activePeriod, rank: currentUser.rank })}</p>
 
-				<p className={styles.scorePeriod}>{leaderboardKnLabel}</p>
-				<section aria-label={`${t("topThree")} — ${leaderboardKnLabel}`} className={styles.podium}>
+				<section aria-label={t("topThree")} className={styles.podium}>
 					{[leaderboard[1], leaderboard[0], leaderboard[2]].map(user => <RankTopCard key={user.id} user={user} t={t} format={format} />)}
 				</section>
 
 				<section aria-label={t("leaderboard")}>
 					<table className={styles.leaderboard}>
 						<caption className="sr-only">{t("leaderboard")} — {activePeriod}</caption>
-						<thead><tr><th scope="col">#</th><th scope="col">{t("user")}</th><th scope="col">{t("streak")}</th><th scope="col">{leaderboardKnLabel}</th></tr></thead>
+						<thead><tr><th scope="col">#</th><th scope="col">{t("user")}</th><th scope="col">{t("streak")}</th><th scope="col">{t("totalKn")}</th></tr></thead>
 						<tbody>{leaderboard.slice(3).map(user => <LeaderboardRow key={user.id} user={user} t={t} format={format} />)}</tbody>
 					</table>
 				</section>
