@@ -55,11 +55,21 @@ earns 10 XP under `dialogue:{lessonId}:{dialogueId}:{taskId}` (each component is
 URI-encoded to avoid delimiter collisions). Progress and XP share a transaction.
 Already completed tasks, including pre-XP completions, return zero with
 `already_completed`. An existing award event also prevents rewards if progress
-is later restored. Vocabulary and the ranking UI are not connected.
+is later restored. Vocabulary and the ranking UI use the XP system as documented
+in VOCABULARY_REVIEW.md and LEADERBOARD.md.
 
-This integration retains the existing client-reported completion contract.
-The endpoint does not independently verify answers or task catalogue membership;
-server-side answer verification is still a separate task.
+The endpoint validates the full lesson/dialogue/task ID combination against
+`data/dialogueTaskCatalogue.json` before any writes. Unknown combinations return
+404 and cannot qualify streaks or earn XP. Completion of a known task remains
+client-reported; server-side answer verification is still a separate task.
+
+The catalogue is generated from the existing frontend dialogue modules, not
+maintained by hand. After publishing or removing dialogue tasks, run
+`npm run dialogue:catalogue` from `server` and commit the generated JSON with the
+content change. `npm test` checks that the catalogue matches the frontend source;
+run tests from a complete repository checkout. Backend-only deployments need
+only the committed JSON, not frontend modules or the generator. Deploy the
+catalogue before or together with corresponding frontend content changes.
 
 ## Tests
 

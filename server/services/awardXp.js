@@ -38,12 +38,12 @@ function duplicateResult(event, user, input) {
  * Owns its transaction by default. An active caller session can be supplied
  * after initializing XPEvent indexes; that caller owns commit and retries.
  */
-async function awardXp({ userId, awardKey, sourceType, sourceId, amount, ruleVersion = 1, attemptId } = {}, { session } = {}) {
+async function awardXp({ userId, awardKey, sourceType, sourceId, amount, ruleVersion = 1, attemptId } = {}, { session, now = new Date() } = {}) {
 	validateInput({ userId, awardKey, sourceType, sourceId, amount, ruleVersion, attemptId });
 	const input = { awardKey: awardKey.trim(), sourceId: sourceId.trim(), sourceType, amount, ruleVersion };
 	const filter = { user: userId, awardKey: input.awardKey };
 	// Fix the server timestamp once, including across automatic transaction retries.
-	const earnedAt = new Date();
+	const earnedAt = new Date(now);
 	const dayKey = new Intl.DateTimeFormat("en-CA", {
 		timeZone: "Asia/Ho_Chi_Minh", year: "numeric", month: "2-digit", day: "2-digit",
 	}).format(earnedAt);

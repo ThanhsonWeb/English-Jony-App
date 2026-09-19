@@ -7,6 +7,7 @@ const awardXp = require("../services/awardXp.js");
 const AppError = require("../utils/appError.js");
 const StudyActivity = require("../models/studyActivityModel");
 const { markQualifiedStudy } = require("../services/studyStreak");
+const { isKnownDialogueTask } = require("../utils/dialogueCatalogue");
 
 // GET /api/v1/dialogue-progress/:lessonId
 exports.getLessonProgress = catchAsync(async (req, res, next) => {
@@ -39,6 +40,9 @@ exports.getLatestProgress = catchAsync(async (req, res, next) => {
 // PATCH /api/v1/dialogue-progress/:lessonId/:dialogueId/tasks/:taskId
 exports.completeTask = catchAsync(async (req, res, next) => {
 	const { lessonId, dialogueId, taskId } = req.params;
+	if (!isKnownDialogueTask(lessonId, dialogueId, taskId)) {
+		throw new AppError("Dialogue task not found", 404);
+	}
 	const filter = { user: req.user._id, lessonId, dialogueId };
 	const awardKey = `dialogue:${[lessonId, dialogueId, taskId].map(encodeURIComponent).join(":")}`;
 	const studiedAt = new Date();
@@ -68,7 +72,7 @@ exports.completeTask = catchAsync(async (req, res, next) => {
 					sourceType: "dialogue_task",
 					sourceId: [lessonId, dialogueId, taskId].map(encodeURIComponent).join("/"),
 					amount: 10,
-				}, { session });
+				}, { session, now: studiedAt });
 				return { progress, xp: { awarded: xp.awarded, total: xp.totalXp, reason: xp.reason } };
 			}, { readPreference: "primary", readConcern: { level: "snapshot" }, writeConcern: { w: "majority" } });
 			break;

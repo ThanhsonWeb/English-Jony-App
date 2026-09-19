@@ -152,42 +152,15 @@ export default function QuizReviewPage() {
 		};
 	}, [topicId]);
 
-	async function saveReviewProgress(word, isCorrect) {
-		if (practiceMode) return;
-
-		const nextReview = new Date();
-		const reviewCount = word.reviewCount || 0;
-		let learningLevel = 0;
-		let newReviewCount = 0;
-
-		if (isCorrect) {
-			const mediumIntervals = [3, 7, 14, 30];
-			const days =
-				mediumIntervals[Math.min(reviewCount, mediumIntervals.length - 1)];
-			nextReview.setDate(nextReview.getDate() + days);
-			learningLevel = 2;
-			newReviewCount = reviewCount + 1;
-		} else {
-			nextReview.setHours(nextReview.getHours() + 1);
-		}
-
-		const response = await fetch(`/api/v1/vocab/${word._id}`, {
-			method: "PATCH",
-			credentials: "include",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({
-				learningLevel,
-				nextReview,
-				reviewCount: newReviewCount,
-			}),
-		});
-
-		if (!response.ok) throw new Error("Không thể lưu tiến độ ôn tập.");
-
-		await fetch("/api/v1/study-activities", {
+	async function saveReviewProgress(word) {
+		const response = await fetch(`/api/v1/vocab/${word._id}/review`, {
 			method: "POST",
 			credentials: "include",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ mode: "quiz", answer: selectedChoice, practice: practiceMode }),
 		});
+		if (!response.ok) throw new Error("Không thể lưu tiến độ ôn tập.");
+		if (!practiceMode) await fetch("/api/v1/study-activities", { method: "POST", credentials: "include" });
 	}
 
 	async function checkAnswer() {
@@ -214,11 +187,10 @@ export default function QuizReviewPage() {
 		}));
 		setProgressError("");
 
-		if (practiceMode) return;
 
 		setIsSaving(true);
 		try {
-			await saveReviewProgress(currentQuestion.word, isCorrect);
+			await saveReviewProgress(currentQuestion.word);
 		} catch (saveError) {
 			setProgressError(saveError.message || "Không thể lưu tiến độ ôn tập.");
 		} finally {

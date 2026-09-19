@@ -55,7 +55,7 @@ beforeEach(async () => {
 	token = jwt.sign({ id: user.id }, testSecret, { expiresIn: "1h" });
 });
 
-async function complete(taskId = "1", { lessonId = "course", dialogueId = "dialogue", authToken = token, body = {} } = {}) {
+async function complete(taskId = "1", { lessonId = "office-introduction", dialogueId = "meeting-tom", authToken = token, body = {} } = {}) {
 	const response = await fetch(`${baseUrl}/${encodeURIComponent(lessonId)}/${encodeURIComponent(dialogueId)}/tasks/${encodeURIComponent(taskId)}`, {
 		method: "PATCH",
 		headers: { "Content-Type": "application/json", ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}) },
@@ -82,9 +82,12 @@ test("first completion preserves the progress response and awards exactly 10 XP"
 	assert.deepEqual(data.progress.completedTaskIds, ["1"]);
 	assert.deepEqual(data.xp, { awarded: 10, total: 10, reason: "awarded" });
 	const event = await XPEvent.findOne().lean();
-	assert.equal(event.awardKey, "dialogue:course:dialogue:1");
+	assert.equal(event.awardKey, "dialogue:office-introduction:meeting-tom:1");
 	assert.equal(event.sourceType, "dialogue_task");
-	assert.equal(event.sourceId, "course/dialogue/1");
+	assert.equal(event.sourceId, "office-introduction/meeting-tom/1");
+	const activity = await StudyActivity.findOne().lean();
+	assert.deepEqual(event.earnedAt, activity.firstStudyAt);
+	assert.equal(event.dayKey, activity.date);
 	await assertState(["1"], 10, 1);
 });
 
@@ -103,7 +106,7 @@ test("replaying an earlier task after completing another task gives zero XP", as
 });
 
 test("legacy completion without an XP event does not receive a replay reward", async () => {
-	await DialogueProgress.create({ user: user._id, lessonId: "course", dialogueId: "dialogue", completedTaskIds: ["1"] });
+	await DialogueProgress.create({ user: user._id, lessonId: "office-introduction", dialogueId: "meeting-tom", completedTaskIds: ["1"] });
 	assert.deepEqual(success(await complete()).xp, { awarded: 0, total: 0, reason: "already_completed" });
 	await assertState(["1"], 0, 0);
 	success(await complete("2"));
@@ -128,7 +131,7 @@ test("concurrent different tasks retain every completed ID and reward", async ()
 });
 
 test("existing XP event prevents another award if progress needs restoring", async () => {
-	await awardXp({ userId: user._id, awardKey: "dialogue:course:dialogue:1", sourceType: "dialogue_task", sourceId: "course/dialogue/1", amount: 10 });
+	await awardXp({ userId: user._id, awardKey: "dialogue:office-introduction:meeting-tom:1", sourceType: "dialogue_task", sourceId: "office-introduction/meeting-tom/1", amount: 10 });
 	assert.deepEqual(success(await complete()).xp, { awarded: 0, total: 10, reason: "already_awarded" });
 	await assertState(["1"], 10, 1);
 });
@@ -162,11 +165,21 @@ test("unauthenticated completion cannot save progress or earn XP", async () => {
 	assert.equal(await XPEvent.countDocuments(), 0);
 });
 
-test("delimiter characters do not create ambiguous award keys", async () => {
-	success(await complete("1", { lessonId: "a:b", dialogueId: "c" }));
-	success(await complete("1", { lessonId: "a", dialogueId: "b:c" }));
-	assert.equal(await XPEvent.countDocuments(), 2);
-	assert.equal((await User.findById(user._id)).totalXp, 20);
+test("unknown task IDs and mismatched catalogue IDs cannot save progress, qualify study or earn XP", async () => {
+	for (const [taskId, options] of [
+		["99999", {}], ["01", {}], ["1", { lessonId: "fake-course" }],
+		["1", { dialogueId: "fake-dialogue" }], ["1", { lessonId: "coffee-shop" }],
+		["1", { lessonId: "__proto__", dialogueId: "constructor" }],
+		["1", { lessonId: "a:b", dialogueId: "c" }],
+		["1", { lessonId: "a", dialogueId: "b:c" }],
+	]) {
+		assert.equal((await complete(taskId, options)).status, 404);
+	}
+	assert.equal(await DialogueProgress.countDocuments(), 0);
+	assert.equal(await XPEvent.countDocuments(), 0);
+	assert.equal(await StudyActivity.countDocuments(), 0);
+	assert.equal((await User.findById(user._id)).totalXp, 0);
+	assert.equal(success(await complete()).xp.awarded, 10);
 });
 
 test("legacy increments and visits never qualify; zero-XP replay does and preserves count", async () => {
@@ -183,7 +196,7 @@ test("legacy increments and visits never qualify; zero-XP replay does and preser
 	assert.equal(legacy.count, 2);
 	assert.equal(legacy.hasQualifiedStudy, false);
 	assert.equal(legacy.firstStudyAt, undefined);
-	await DialogueProgress.create({ user: user._id, lessonId: "course", dialogueId: "dialogue", completedTaskIds: ["1"] });
+	await DialogueProgress.create({ user: user._id, lessonId: "office-introduction", dialogueId: "meeting-tom", completedTaskIds: ["1"] });
 	assert.equal(success(await complete()).xp.awarded, 0);
 	const first = await StudyActivity.findOne().lean();
 	assert.equal(first.count, 2);

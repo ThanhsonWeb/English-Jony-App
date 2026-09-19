@@ -18,6 +18,8 @@ const studyActivitySchema = new mongoose.Schema(
 		hasQualifiedStudy: { type: Boolean, default: false },
 		firstStudyAt: Date,
 		lastStudyAt: Date,
+		// Internal serialization counter for the daily vocabulary XP cap.
+		vocabularyReviewVersion: { type: Number, default: 0, select: false },
 	},
 	{ timestamps: true },
 );

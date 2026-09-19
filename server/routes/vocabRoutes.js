@@ -7,8 +7,10 @@ const {
 	deleteVocab,
 } = require("../controllers/vocabController");
 const { protect } = require("../controllers/authController");
+const { reviewVocabulary } = require("../controllers/vocabularyReviewController");
 
 const router = express.Router();
+router.post("/:id/review", protect, reviewVocabulary);
 // /api/v1/vocab
 // routes
 router.route("/").get(protect, getAllVocab).post(protect, createNewVocab);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { CheckCircle2, Layers3 } from "lucide-react";
 import Loading from "@/app/_components/loading";
@@ -27,6 +27,9 @@ function Page() {
 	});
 
 	const currentWord = words[currentIndex];
+	const savingRef = useRef(false);
+	const [isSaving, setIsSaving] = useState(false);
+	const [progressError, setProgressError] = useState("");
 	// get all word of that topic
 	useEffect(() => {
 		async function fetchWords() {
@@ -78,87 +81,36 @@ function Page() {
 	}
 
 	async function handleAnswer(level) {
+		if (savingRef.current) return;
+		savingRef.current = true;
+		setIsSaving(true);
+		setProgressError("");
 		const word = words[currentIndex];
-
-		const nextReview = new Date();
-		const easyIntervals = [7, 14, 30, 60];
-		const mediumIntervals = [3, 7, 14, 30];
-		const hardIntervals = [1, 3, 7, 14];
-		const reviewCount = word.reviewCount || 0;
-		const getInterval = (intervals) =>
-			intervals[Math.min(reviewCount, intervals.length - 1)];
-
-		setResults((prev) => {
-			if (level === 0) return { ...prev, forgot: prev.forgot + 1 };
-			if (level === 1) return { ...prev, hard: prev.hard + 1 };
-			if (level === 2) return { ...prev, medium: prev.medium + 1 };
-			if (level === 3) return { ...prev, easy: prev.easy + 1 };
-
-			return prev;
-		});
-
-		if (level === 0) {
-			nextReview.setHours(nextReview.getHours() + 1);
-		}
-
-		if (level === 1) {
-			nextReview.setDate(nextReview.getDate() + getInterval(hardIntervals));
-		}
-
-		if (level === 2) {
-			nextReview.setDate(nextReview.getDate() + getInterval(mediumIntervals));
-		}
-		if (level === 3) {
-			nextReview.setDate(nextReview.getDate() + getInterval(easyIntervals));
-		}
-
-		const newReviewCount = level === 0 ? 0 : (word.reviewCount || 0) + 1;
-
-		if (!practiceMode) {
-			const res = await fetch(`/api/v1/vocab/${word._id}`, {
-				method: "PATCH",
-				credentials: "include",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
-					learningLevel: level,
-					nextReview,
-					reviewCount: newReviewCount,
-				}),
+		try {
+			const response = await fetch(`/api/v1/vocab/${word._id}/review`, {
+				method: "POST", credentials: "include",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ mode: "flashcard", rating: ["again", "hard", "medium", "easy"][level], practice: practiceMode }),
 			});
-
-			if (res.ok) {
-				await fetch("/api/v1/study-activities", {
-					method: "POST",
-					credentials: "include",
-				});
+			if (!response.ok) throw new Error("Could not save review. Please try again.");
+			const { data } = await response.json();
+			if (!practiceMode) {
+				setWords(previous => previous.map(item => item._id === word._id ? data.updatedVocab : item));
+				await fetch("/api/v1/study-activities", { method: "POST", credentials: "include" }).catch(() => {});
 			}
+			const outcome = ["forgot", "hard", "medium", "easy"][level];
+			setResults(previous => ({ ...previous, [outcome]: previous[outcome] + 1 }));
+			if (currentIndex === words.length - 1) setSessionFinished(true);
+			else setCurrentIndex(index => index + 1);
+			setShowAnswer(false);
+		} catch (error) {
+			setProgressError(error.message);
+		} finally {
+			savingRef.current = false;
+			setIsSaving(false);
 		}
-		// just for safe
-		if (!practiceMode) {
-			setWords((prev) =>
-				prev.map((item) =>
-					item._id === word._id
-						? {
-								...item,
-								learningLevel: level,
-								nextReview,
-								reviewCount: newReviewCount,
-							}
-						: item,
-				),
-			);
-		}
-
-		if (currentIndex === words.length - 1) {
-			setSessionFinished(true);
-			return;
-		}
-
-		setCurrentIndex((cur) => cur + 1);
-		setShowAnswer(false);
 	}
+
 	if (loading) return <Loading />;
 	if (sessionFinished) {
 		const total = results.forgot + results.hard + results.medium + results.easy;
@@ -289,6 +241,7 @@ function Page() {
 					</div>
 				</div>
 
+				{progressError && <p role="alert" className="mt-3 text-sm text-amber-300">{progressError}</p>}
 				{/* ================= ANSWER SECTION ================= */}
 				<div className="mt-4">
 					<div className="mb-2 flex items-center justify-between">
@@ -304,6 +257,7 @@ function Page() {
 					<div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
 						{/* Forgot */}
 						<button
+							disabled={isSaving}
 							onClick={() => handleAnswer(0)}
 							className="
 							flex min-w-0 flex-col items-center justify-center
@@ -329,6 +283,7 @@ function Page() {
 
 						{/* Hard */}
 						<button
+							disabled={isSaving}
 							onClick={() => handleAnswer(1)}
 							className="
 							flex min-w-0 flex-col items-center justify-center
@@ -352,6 +307,7 @@ function Page() {
 
 						{/* Medium */}
 						<button
+							disabled={isSaving}
 							onClick={() => handleAnswer(2)}
 							className="
 							flex min-w-0 flex-col items-center justify-center
@@ -377,6 +333,7 @@ function Page() {
 
 						{/* Easy */}
 						<button
+							disabled={isSaving}
 							onClick={() => handleAnswer(3)}
 							className="
 							flex min-w-0 flex-col items-center justify-center
