@@ -52,6 +52,17 @@ const userSchema = new mongoose.Schema(
 			default: "",
 		},
 
+		totalXp: {
+			type: Number,
+			default: 0,
+			min: 0,
+			max: Number.MAX_SAFE_INTEGER,
+			validate: {
+				validator: Number.isSafeInteger,
+				message: "totalXp must be a non-negative safe integer",
+			},
+		},
+
 		passwordChangedAt: Date,
 		passwordResetToken: String,
 		passwordResetExpires: Date,
