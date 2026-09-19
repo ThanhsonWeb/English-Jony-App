@@ -62,6 +62,33 @@ The pipeline uses the existing `earnedAt` XPEvent index and MongoDB 5.0+
 window functions. It aggregates all qualifying users before taking the top list;
 materialized rankings/caching can be considered later if volume requires it.
 
-The frontend is not connected. Its mock `kn` maps to `periodXp`, `avatar` to
-`avatar`, and `rank` to `rank`. Streaks, level progress, and weekday activity are
-not supplied or fabricated by this API. No vocabulary changes are included.
+Every leaderboard entry and `currentUser` also includes level fields, calculated
+by `utils/learnerLevel.js` from `User.totalXp` alone. Period filters do not affect level.
+
+- Level starts: 1 at 0 XP, 2 at 100, 3 at 250, 4 at 500, 5 at 1000.
+- `currentLevelXp`: lifetime XP minus the current level's starting threshold.
+- `nextLevelXp`: XP required to complete this level, or `null` at level 5.
+- `progressPercent`: progress within the level (0–100); level 5 is always 100.
+
+For example, 175 lifetime XP returns `level: 2`, `currentLevelXp: 75`,
+`nextLevelXp: 150`, `progressPercent: 50`. At 1000 XP it returns level 5,
+0 current-level XP, no next level, and 100% progress. Further XP is retained.
+No separate level field is stored in MongoDB and no migration is needed.
+
+The rank frontend consumes these fields directly.
+
+Every returned user also has `streakDays` and `completedWeekdays` (seven booleans,
+Monday through Sunday for the current Vietnam week). These describe current
+study activity, independent of the selected XP ranking period.
+
+Only StudyActivity records with `hasQualifiedStudy: true` count. The streak
+counts backward from today if qualified, otherwise from yesterday, stopping at
+the first missing day. Future days are excluded. Dates use Asia/Ho_Chi_Minh.
+
+Successful dialogue completion, including a replay awarding zero XP, marks the
+day inside the completion transaction. `firstStudyAt` and `lastStudyAt` retain
+the earliest and latest completion timestamps. Qualification never increments
+`count`: existing values remain intact and new qualification-only rows start at
+zero. The legacy activity endpoint still increments count without qualifying
+the day. Old activity records are not backfilled into streaks. No vocabulary
+XP changes are included.

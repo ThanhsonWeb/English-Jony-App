@@ -24,6 +24,7 @@
 		"earnedThisWeek": "tuần này",
 		"level": "Cấp độ",
 		"levelProgress": "Tiến độ lên cấp",
+		"maxLevel": "Cấp độ tối đa",
 		"periodLabel": "Xếp hạng theo tuần hoặc tháng",
 		"timeframeLabel": "Chọn thời gian xếp hạng",
 		"week": "Tuần",
@@ -39,7 +40,15 @@
 		"user": "Người dùng",
 		"streak": "Chuỗi ngày",
 		"you": "Bạn",
-		"sampleNote": "Bảng xếp hạng minh họa · Số liệu và người học là dữ liệu mẫu."
+		"loading": "Đang tải bảng xếp hạng…",
+		"loadError": "Không thể tải bảng xếp hạng. Vui lòng thử lại.",
+		"signIn": "Đăng nhập để xem bảng xếp hạng.",
+		"retry": "Thử lại",
+		"empty": "Chưa có KN trong khoảng thời gian này.",
+		"unranked": "Chưa xếp hạng",
+		"unavailable": "Chưa có dữ liệu",
+		"weekKn": "KN trong tuần",
+		"monthKn": "KN trong tháng"
 	},
 	"Theme": {
 		"light": "Sáng dịu",

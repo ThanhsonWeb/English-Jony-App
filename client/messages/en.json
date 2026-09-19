@@ -24,6 +24,7 @@
 		"earnedThisWeek": "this week",
 		"level": "Level",
 		"levelProgress": "Progress to the next level",
+		"maxLevel": "Max level",
 		"periodLabel": "Weekly or monthly rankings",
 		"timeframeLabel": "Choose ranking period",
 		"week": "Week",
@@ -39,7 +40,15 @@
 		"user": "Learner",
 		"streak": "Study streak",
 		"you": "You",
-		"sampleNote": "Leaderboard preview · Learners and statistics are sample data."
+		"loading": "Loading leaderboard…",
+		"loadError": "Could not load the leaderboard. Please try again.",
+		"signIn": "Sign in to see the leaderboard.",
+		"retry": "Try again",
+		"empty": "No XP earned in this period yet.",
+		"unranked": "Unranked",
+		"unavailable": "Not available yet",
+		"weekKn": "Weekly KN",
+		"monthKn": "Monthly KN"
 	},
 	"Theme": {
 		"light": "Soft light",

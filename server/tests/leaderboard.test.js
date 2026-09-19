@@ -8,9 +8,10 @@ const User = require("../models/userModel");
 const XPEvent = require("../models/xpEventModel");
 const { getPeriodBounds, getLeaderboard } = require("../services/leaderboard");
 const leaderboardRoutes = require("../routes/leaderboardRoutes");
+const StudyActivity = require("../models/studyActivityModel");
 
 const NOW = new Date("2026-09-18T12:00:00Z");
-const PUBLIC_KEYS = ["avatar", "id", "isCurrentUser", "lifetimeXp", "name", "periodXp", "rank"];
+const PUBLIC_KEYS = ["avatar", "completedWeekdays", "currentLevelXp", "id", "isCurrentUser", "level", "lifetimeXp", "name", "nextLevelXp", "periodXp", "progressPercent", "rank", "streakDays"];
 let replicaSet;
 let server;
 let baseUrl;
@@ -48,7 +49,7 @@ async function learner(name, totalXp = 1000) {
 }
 
 beforeEach(async () => {
-	await Promise.all([XPEvent.deleteMany({}), User.deleteMany({})]);
+	await Promise.all([XPEvent.deleteMany({}), User.deleteMany({}), StudyActivity.deleteMany({})]);
 	user = await learner("Current Learner", 5000);
 	token = jwt.sign({ id: user.id }, testSecret, { expiresIn: "1h" });
 });
@@ -95,6 +96,46 @@ test("equal XP uses stable ascending user IDs and sequential positions", async (
 	assert.deepEqual(result.leaderboard.map(row => row.id), [a.id, b.id, user.id].sort());
 	assert.deepEqual(result.leaderboard.map(row => row.rank), [1, 2, 3]);
 	assert.deepEqual((await ranking()).leaderboard, result.leaderboard);
+});
+
+test("streaks use only qualified days for leaderboard and unranked current user", async () => {
+	const leader = await learner("Leader");
+	await event(leader, 10);
+	await StudyActivity.create([
+		{ user: leader._id, date: "2026-09-18", hasQualifiedStudy: true },
+		{ user: user._id, date: "2026-09-16", hasQualifiedStudy: true },
+		{ user: user._id, date: "2026-09-17", hasQualifiedStudy: true },
+		{ user: user._id, date: "2026-09-18", count: 100 },
+	]);
+	const result = await ranking({ limit: 1 });
+	assert.equal(result.leaderboard[0].streakDays, 1);
+	assert.equal(result.currentUser.rank, null);
+	assert.equal(result.currentUser.streakDays, 2);
+	assert.deepEqual(result.currentUser.completedWeekdays, [false, false, true, true, false, false, false]);
+	assert.equal((await ranking({ timeframe: "previous" })).currentUser.streakDays, 2);
+	await event(user, 1);
+	assert.equal((await ranking({ limit: 1 })).currentUser.streakDays, 2);
+});
+
+test("level follows lifetime XP for ranked, outside-top and unranked users across periods", async () => {
+	await User.updateOne({ _id: user._id }, { $set: { totalXp: 175 } });
+	const leader = await learner("Leader", 1000);
+	await event(leader, 90);
+	await event(user, 10);
+	const result = await ranking({ limit: 1 });
+	assert.equal(result.leaderboard[0].level, 5);
+	assert.equal(result.leaderboard[0].nextLevelXp, null);
+	assert.equal(result.leaderboard[0].progressPercent, 100);
+	for (const options of [{ limit: 1 }, { period: "week" }, { timeframe: "previous" }]) {
+		const { currentUser } = await ranking(options);
+		assert.equal(currentUser.level, 2);
+		assert.equal(currentUser.currentLevelXp, 75);
+		assert.equal(currentUser.nextLevelXp, 150);
+		assert.equal(currentUser.progressPercent, 50);
+	}
+	await User.collection.updateOne({ _id: user._id }, { $unset: { totalXp: "" } });
+	assert.equal((await ranking()).currentUser.level, 1);
+	assert.equal((await ranking({ timeframe: "previous" })).currentUser.level, 1);
 });
 
 test("current user rank is included outside the requested top users", async () => {

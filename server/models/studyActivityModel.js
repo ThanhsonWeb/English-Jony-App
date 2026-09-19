@@ -15,6 +15,9 @@ const studyActivitySchema = new mongoose.Schema(
 			type: Number,
 			default: 1,
 		},
+		hasQualifiedStudy: { type: Boolean, default: false },
+		firstStudyAt: Date,
+		lastStudyAt: Date,
 	},
 	{ timestamps: true },
 );

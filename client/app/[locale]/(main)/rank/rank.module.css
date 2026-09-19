@@ -130,7 +130,8 @@
 .leaderboard .currentUser > :first-child, .leaderboard .currentUser > :last-child { border-color: var(--sj-primary); }
 .currentUser .rankNumber, .currentUser .streak { color: var(--sj-brand-text); }
 .currentUser .rankNumber { font-weight: 700; }
-.sampleNote { display: flex; align-items: center; justify-content: center; gap: 7px; color: var(--sj-text-muted); font-size: 11px; margin: 14px 0 0; text-align: center; }
+.statusMessage { padding: 20px; text-align: center; color: var(--sj-text-secondary); }
+.statusMessage button { margin-top: 10px; padding: 7px 16px; border: 1px solid var(--sj-border); border-radius: 20px; background: var(--sj-primary-soft); color: var(--sj-brand-text); cursor: pointer; }
 
 @media (max-width: 1199px) {
 	.summaryGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
@@ -203,8 +204,6 @@
 	.userName { font-size: 12px; }
 	.youBadge { font-size: 10px; padding: 2px 7px; }
 	.rowStreak svg { width: 15px; }
-	.sampleNote { font-size: 10px; line-height: 1.6; }
-	.sampleNote svg { flex-shrink: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

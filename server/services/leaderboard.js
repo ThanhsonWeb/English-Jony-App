@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 const XPEvent = require("../models/xpEventModel");
 const User = require("../models/userModel");
 const AppError = require("../utils/appError");
+const { getLearnerLevel } = require("../utils/learnerLevel");
+const { getStudyStreaks } = require("./studyStreak");
 
 const TIME_ZONE = "Asia/Ho_Chi_Minh";
 // Vietnam uses UTC+07:00 without daylight saving for current ranking periods.
@@ -88,11 +90,14 @@ async function getLeaderboard({ userId, period = "month", timeframe = "current",
 			avatar: profile.photo ?? "", periodXp: 0, lifetimeXp: profile.totalXp ?? 0, isCurrentUser: true,
 		};
 	}
+	const streaks = await getStudyStreaks([...new Set([...result.leaderboard.map(profile => profile.id), currentUser.id])], now);
+	const enrich = profile => ({ ...profile, ...getLearnerLevel(profile.lifetimeXp), ...streaks.get(profile.id) });
 	return {
 		period, timeframe, timeZone: TIME_ZONE,
 		start: start.toISOString(), end: end.toISOString(),
 		limit, totalRanked: result.count[0]?.total ?? 0,
-		leaderboard: result.leaderboard, currentUser,
+		leaderboard: result.leaderboard.map(enrich),
+		currentUser: enrich(currentUser),
 	};
 }
 

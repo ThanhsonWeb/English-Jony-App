@@ -1,18 +1,19 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
-import { CalendarDays, ChartNoAxesColumnIncreasing, Check, ChevronDown, Crown, Flame, Target, Trophy } from "lucide-react";
-import { getMockLeaderboard, mockLearner } from "../_data/mock-rank";
+import { CalendarDays, ChartNoAxesColumnIncreasing, Check, ChevronDown, Crown, Flame, Target } from "lucide-react";
 import styles from "../rank.module.css";
 
 function RankAvatar({ user, large = false }) {
+	const [failedAvatar, setFailedAvatar] = useState(null);
+	const initials = user.name.trim().split(/\s+/).slice(0, 2).map(part => part[0]).join("").toUpperCase() || "?";
 	return (
-		<span className={`${styles.avatar} ${large ? styles.avatarLarge : ""}`} data-tone={user.tone}>
-			{user.avatar ? (
-				<Image src={user.avatar} alt="" fill sizes={large ? "88px" : "38px"} />
-			) : <span aria-hidden="true">{user.initials}</span>}
+		<span className={`${styles.avatar} ${large ? styles.avatarLarge : ""}`} data-tone="cyan">
+			{user.avatar && failedAvatar !== user.avatar ? (
+				<Image src={user.avatar} alt="" fill unoptimized onError={() => setFailedAvatar(user.avatar)} sizes={large ? "88px" : "38px"} />
+			) : <span aria-hidden="true">{initials}</span>}
 		</span>
 	);
 }
@@ -55,7 +56,7 @@ function RankSummaryCard({ icon: Icon, label, value, children, tone }) {
 	);
 }
 
-function StreakCard({ t }) {
+function StreakCard({ t, user }) {
 	const weekdays = t.raw("weekdays");
 	return (
 		<section className={`${styles.summaryCard} ${styles.streakCard}`} aria-label={t("streakTitle")}>
@@ -63,15 +64,15 @@ function StreakCard({ t }) {
 				<span className={styles.streakIcon}><Flame size={43} strokeWidth={1.6} aria-hidden="true" /></span>
 				<div className={styles.summaryText}>
 					<h2>{t("streakTitle")}</h2>
-					<p className={styles.summaryValue}>{t("days", { count: mockLearner.streakDays })}</p>
-					<p className={styles.streakHelp}>{t("streakHelp")}</p>
+					<p className={styles.summaryValue}>{user ? t("days", { count: user.streakDays }) : "—"}</p>
+					<p className={styles.streakHelp}>{user ? t("studyWeek") : t("unavailable")}</p>
 				</div>
 			</div>
 			<ul className={styles.weekdays} aria-label={t("studyWeek")}>
 				{weekdays.map((day, index) => (
-					<li key={day} aria-label={`${day}: ${t(mockLearner.completedWeekdays[index] ? "completed" : "notCompleted")}`}>
-						<span className={mockLearner.completedWeekdays[index] ? styles.dayComplete : styles.dayPending}>
-							{mockLearner.completedWeekdays[index] ? <Check size={16} strokeWidth={3} aria-hidden="true" /> : <span aria-hidden="true">—</span>}
+					<li key={day} aria-label={`${day}: ${t(user ? (user.completedWeekdays[index] ? "completed" : "notCompleted") : "unavailable")}`}>
+						<span className={user?.completedWeekdays[index] ? styles.dayComplete : styles.dayPending}>
+							{user?.completedWeekdays[index] ? <Check size={16} strokeWidth={3} aria-hidden="true" /> : <span aria-hidden="true">—</span>}
 						</span>
 						<span>{day}</span>
 					</li>
@@ -90,7 +91,7 @@ function RankTopCard({ user, t, format }) {
 			<RankAvatar user={user} large />
 			<h3>{user.name}</h3>
 			<div className={styles.topStats}>
-				<strong>{format(user.kn)} KN</strong>
+				<strong>{format(user.periodXp)} KN</strong>
 				<span className={styles.streak}><Flame size={18} aria-hidden="true" />{t("days", { count: user.streakDays })}</span>
 			</div>
 			<span className={styles.podiumBase} aria-hidden="true" />
@@ -101,10 +102,10 @@ function RankTopCard({ user, t, format }) {
 function LeaderboardRow({ user, t, format }) {
 	return (
 		<tr className={`${styles.leaderboardRow} ${user.isCurrentUser ? styles.currentUser : ""}`} aria-current={user.isCurrentUser ? "true" : undefined}>
-			<td className={styles.rankNumber}>{user.rank}</td>
+			<td className={styles.rankNumber}>{user.rank ?? "—"}</td>
 			<th scope="row"><div className={styles.rowUser}><RankAvatar user={user} /><span className={styles.userName}>{user.name}</span>{user.isCurrentUser && <span className={styles.youBadge}>{t("you")}</span>}</div></th>
 			<td className={styles.rowStreak}><span className={styles.streak}><Flame size={19} aria-hidden="true" />{t("days", { count: user.streakDays })}</span></td>
-			<td className={styles.rowKn}>{format(user.kn)} KN</td>
+			<td className={styles.rowKn}>{format(user.periodXp)} KN</td>
 		</tr>
 	);
 }
@@ -134,8 +135,36 @@ export default function RankDashboard() {
 	const locale = useLocale();
 	const [period, setPeriod] = useState("month");
 	const [timeframe, setTimeframe] = useState("current");
-	const leaderboard = getMockLeaderboard(period, timeframe);
-	const currentUser = leaderboard.find(user => user.isCurrentUser);
+	const [attempt, setAttempt] = useState(0);
+	const [result, setResult] = useState(null);
+	const requestKey = `${period}:${timeframe}:${attempt}`;
+	const loading = result?.key !== requestKey;
+	const data = loading ? null : result.data;
+	const error = loading ? null : result.error;
+	const leaderboard = data?.leaderboard ?? [];
+	const currentUser = data?.currentUser;
+	const rows = leaderboard.filter(user => user.rank > 3);
+	// Keep a personal row for podium users, users outside the top ten, and unranked users.
+	if (currentUser && !rows.some(user => user.id === currentUser.id)) rows.push(currentUser);
+
+	useEffect(() => {
+		const controller = new AbortController();
+		async function loadLeaderboard() {
+			try {
+				const query = new URLSearchParams({ period, timeframe, limit: "10" });
+				const response = await fetch(`/api/v1/leaderboard?${query}`, {
+					credentials: "include", cache: "no-store", signal: controller.signal,
+				});
+				if (!response.ok) throw new Error(response.status === 401 ? "signIn" : "loadError");
+				const payload = await response.json();
+				if (!controller.signal.aborted) setResult({ key: requestKey, data: payload.data });
+			} catch (error) {
+				if (!controller.signal.aborted) setResult({ key: requestKey, error: error.message === "signIn" ? "signIn" : "loadError" });
+			}
+		}
+		loadLeaderboard();
+		return () => controller.abort();
+	}, [period, timeframe, requestKey]);
 	const format = value => new Intl.NumberFormat(locale).format(value);
 	const activePeriod = t(period === "month" ? (timeframe === "current" ? "thisMonth" : "lastMonth") : (timeframe === "current" ? "thisWeek" : "lastWeek"));
 
@@ -160,34 +189,42 @@ export default function RankDashboard() {
 				</header>
 
 				<div className={styles.summaryGrid}>
-					<StreakCard t={t} />
-					<RankSummaryCard icon={Crown} label={t("currentRank")} value={`#${currentUser.rank}`} tone="rank">
-						<p>{t("rankHelp")}</p>
+					<StreakCard t={t} user={currentUser} />
+					<RankSummaryCard icon={Crown} label={t("currentRank")} value={currentUser ? (currentUser.rank === null ? t("unranked") : `#${currentUser.rank}`) : "—"} tone="rank">
+						<p>{activePeriod}</p>
 					</RankSummaryCard>
-					<RankSummaryCard icon={ChartNoAxesColumnIncreasing} label={t("totalKn")} value={`${format(mockLearner.totalKn)} KN`} tone="kn">
-						<p><span className={styles.brandText}>+{format(mockLearner.weeklyKn)} KN</span> {t("earnedThisWeek")}</p>
+					<RankSummaryCard icon={ChartNoAxesColumnIncreasing} label={t("totalKn")} value={currentUser ? `${format(currentUser.lifetimeXp)} KN` : "—"} tone="kn">
+						<p><span className={styles.brandText}>{currentUser ? `${format(currentUser.periodXp)} KN` : "—"}</span> · {activePeriod}</p>
 					</RankSummaryCard>
-					<RankSummaryCard icon={Target} label={t("level")} value={`Lv. ${mockLearner.level}`} tone="level">
-						<progress className={styles.levelProgress} value={mockLearner.levelKn} max={mockLearner.nextLevelKn} aria-label={t("levelProgress")} />
-						<div className={styles.levelLabels}><span>{mockLearner.levelKn} / {mockLearner.nextLevelKn} KN</span><span>Lv. {mockLearner.level + 1}</span></div>
+					<RankSummaryCard icon={Target} label={t("level")} value={currentUser ? `Lv. ${currentUser.level}` : "—"} tone="level">
+						{currentUser ? <>
+							<progress className={styles.levelProgress} value={currentUser.progressPercent} max={100} aria-label={t("levelProgress")} />
+							<div className={styles.levelLabels}>
+								{currentUser.nextLevelXp === null ? <span>{t("maxLevel")}</span> : <><span>{format(currentUser.currentLevelXp)} / {format(currentUser.nextLevelXp)} KN</span><span>Lv. {currentUser.level + 1}</span></>}
+							</div>
+						</> : <div className={styles.levelProgress} aria-hidden="true" />}
 					</RankSummaryCard>
 				</div>
 
 				<RankPeriodSwitch period={period} timeframe={timeframe} onPeriodChange={changePeriod} onTimeframeChange={setTimeframe} t={t} />
-				<p className="sr-only" role="status">{t("results", { period: activePeriod, rank: currentUser.rank })}</p>
+				<div aria-live="polite" aria-busy={loading}>
+					{loading && <p className={styles.statusMessage} role="status">{t("loading")}</p>}
+					{error && <div className={styles.statusMessage} role="alert"><p>{t(error)}</p><button type="button" onClick={() => setAttempt(value => value + 1)}>{t("retry")}</button></div>}
+					{data && leaderboard.length === 0 && <p className={styles.statusMessage}>{t("empty")}</p>}
+					{currentUser && <p className="sr-only">{t("results", { period: activePeriod, rank: currentUser.rank ?? t("unranked") })}</p>}
+				</div>
 
 				<section aria-label={t("topThree")} className={styles.podium}>
-					{[leaderboard[1], leaderboard[0], leaderboard[2]].map(user => <RankTopCard key={user.id} user={user} t={t} format={format} />)}
+					{[leaderboard[1], leaderboard[0], leaderboard[2]].filter(Boolean).map(user => <RankTopCard key={user.id} user={user} t={t} format={format} />)}
 				</section>
 
 				<section aria-label={t("leaderboard")}>
 					<table className={styles.leaderboard}>
 						<caption className="sr-only">{t("leaderboard")} — {activePeriod}</caption>
-						<thead><tr><th scope="col">#</th><th scope="col">{t("user")}</th><th scope="col">{t("streak")}</th><th scope="col">{t("totalKn")}</th></tr></thead>
-						<tbody>{leaderboard.slice(3).map(user => <LeaderboardRow key={user.id} user={user} t={t} format={format} />)}</tbody>
+						<thead><tr><th scope="col">#</th><th scope="col">{t("user")}</th><th scope="col">{t("streak")}</th><th scope="col">{t(period === "week" ? "weekKn" : "monthKn")}</th></tr></thead>
+						<tbody>{rows.map(user => <LeaderboardRow key={user.id} user={user} t={t} format={format} />)}</tbody>
 					</table>
 				</section>
-				<p className={styles.sampleNote}><Trophy size={13} aria-hidden="true" />{t("sampleNote")}</p>
 			</div>
 		</main>
 	);

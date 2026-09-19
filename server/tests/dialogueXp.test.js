@@ -9,6 +9,8 @@ const DialogueProgress = require("../models/dialogueProgressModel");
 const XPEvent = require("../models/xpEventModel");
 const awardXp = require("../services/awardXp");
 const dialogueRoutes = require("../routes/dialogueProgressRoutes");
+const StudyActivity = require("../models/studyActivityModel");
+const { markQualifiedStudy, vietnamDay } = require("../services/studyStreak");
 
 let replicaSet;
 let server;
@@ -29,6 +31,7 @@ before(async () => {
 	const app = express();
 	app.use(express.json());
 	app.use("/api/v1/dialogue-progress", dialogueRoutes);
+	app.use("/api/v1/study-activities", require("../routes/studyActivityRoutes"));
 	app.use((error, req, res, next) => {
 		res.status(error.statusCode || 500).json({ code: error.code, message: error.message });
 	});
@@ -47,7 +50,7 @@ after(async () => {
 });
 
 beforeEach(async () => {
-	await Promise.all([DialogueProgress.deleteMany({}), XPEvent.deleteMany({}), User.deleteMany({})]);
+	await Promise.all([DialogueProgress.deleteMany({}), XPEvent.deleteMany({}), User.deleteMany({}), StudyActivity.deleteMany({})]);
 	user = await User.create({ name: "Test Learner", email: "dialogue@example.com", googleId: "dialogue-test" });
 	token = jwt.sign({ id: user.id }, testSecret, { expiresIn: "1h" });
 });
@@ -113,6 +116,8 @@ test("concurrent duplicate HTTP requests create one progress record and one awar
 	assert.equal(results.filter(result => result.xp.reason === "awarded").length, 1);
 	assert.equal(results.filter(result => result.xp.reason === "already_completed").length, 11);
 	assert.equal(await DialogueProgress.countDocuments(), 1);
+	assert.equal(await StudyActivity.countDocuments({ hasQualifiedStudy: true }), 1);
+	assert.equal((await StudyActivity.findOne()).count, 0);
 	await assertState(["1"], 10, 1);
 });
 
@@ -138,6 +143,7 @@ test("failed XP write rolls back progress and the event; retry can still earn XP
 	assert.equal(await DialogueProgress.countDocuments(), 0);
 	assert.equal(await XPEvent.countDocuments(), 0);
 	assert.equal((await User.findById(user._id)).totalXp, 0);
+	assert.equal(await StudyActivity.countDocuments(), 0);
 	assert.equal(success(await complete()).xp.awarded, 10);
 	await assertState(["1"], 10, 1);
 });
@@ -161,4 +167,43 @@ test("delimiter characters do not create ambiguous award keys", async () => {
 	success(await complete("1", { lessonId: "a", dialogueId: "b:c" }));
 	assert.equal(await XPEvent.countDocuments(), 2);
 	assert.equal((await User.findById(user._id)).totalXp, 20);
+});
+
+test("legacy increments and visits never qualify; zero-XP replay does and preserves count", async () => {
+	await fetch(`${baseUrl}/course`, { headers: { Authorization: `Bearer ${token}` } });
+	assert.equal(await StudyActivity.countDocuments(), 0);
+	for (let i = 0; i < 2; i++) {
+		const response = await fetch(baseUrl.replace("dialogue-progress", "study-activities"), {
+			method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+			body: JSON.stringify({ hasQualifiedStudy: true }),
+		});
+		assert.equal(response.status, 200);
+	}
+	const legacy = await StudyActivity.findOne().lean();
+	assert.equal(legacy.count, 2);
+	assert.equal(legacy.hasQualifiedStudy, false);
+	assert.equal(legacy.firstStudyAt, undefined);
+	await DialogueProgress.create({ user: user._id, lessonId: "course", dialogueId: "dialogue", completedTaskIds: ["1"] });
+	assert.equal(success(await complete()).xp.awarded, 0);
+	const first = await StudyActivity.findOne().lean();
+	assert.equal(first.count, 2);
+	assert.equal(first.hasQualifiedStudy, true);
+	assert.equal(first.date, vietnamDay(first.firstStudyAt));
+	assert.equal(success(await complete()).xp.awarded, 0);
+	const last = await StudyActivity.findOne().lean();
+	assert.equal(last.count, 2);
+	assert.deepEqual(last.firstStudyAt, first.firstStudyAt);
+	assert.ok(last.lastStudyAt >= first.lastStudyAt);
+});
+
+test("qualified timestamps stay ordered and midnight creates separate Vietnam days", async () => {
+	await StudyActivity.init();
+	for (const instant of ["2026-09-18T16:59:59Z", "2026-09-18T17:00:00Z", "2026-09-18T16:00:00Z"]) {
+		await markQualifiedStudy(user._id, { now: new Date(instant) });
+	}
+	const days = await StudyActivity.find().sort("date").lean();
+	assert.deepEqual(days.map(day => day.date), ["2026-09-18", "2026-09-19"]);
+	assert.equal(days[0].firstStudyAt.toISOString(), "2026-09-18T16:00:00.000Z");
+	assert.equal(days[0].lastStudyAt.toISOString(), "2026-09-18T16:59:59.000Z");
+	assert.deepEqual(days.map(day => day.count), [0, 0]);
 });

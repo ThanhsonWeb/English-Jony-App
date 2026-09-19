@@ -5,6 +5,8 @@ const User = require("../models/userModel.js");
 const XPEvent = require("../models/xpEventModel.js");
 const awardXp = require("../services/awardXp.js");
 const AppError = require("../utils/appError.js");
+const StudyActivity = require("../models/studyActivityModel");
+const { markQualifiedStudy } = require("../services/studyStreak");
 
 // GET /api/v1/dialogue-progress/:lessonId
 exports.getLessonProgress = catchAsync(async (req, res, next) => {
@@ -39,7 +41,8 @@ exports.completeTask = catchAsync(async (req, res, next) => {
 	const { lessonId, dialogueId, taskId } = req.params;
 	const filter = { user: req.user._id, lessonId, dialogueId };
 	const awardKey = `dialogue:${[lessonId, dialogueId, taskId].map(encodeURIComponent).join(":")}`;
-	await Promise.all([DialogueProgress.init(), XPEvent.init()]);
+	const studiedAt = new Date();
+	await Promise.all([DialogueProgress.init(), XPEvent.init(), StudyActivity.init()]);
 
 	let result;
 	for (let attempt = 0; attempt < 3; attempt += 1) {
@@ -51,6 +54,7 @@ exports.completeTask = catchAsync(async (req, res, next) => {
 					{ $addToSet: { completedTaskIds: taskId } },
 					{ returnDocument: "after", upsert: true, runValidators: true, session });
 
+				await markQualifiedStudy(req.user._id, { session, now: studiedAt });
 				if (alreadyCompleted) {
 					// Old completions with no XP event are replays, not new rewards.
 					const user = await User.findById(req.user._id).select("totalXp").session(session).lean();
@@ -73,7 +77,8 @@ exports.completeTask = catchAsync(async (req, res, next) => {
 			// write conflict. Restart the entire transaction to read the winner.
 			const progressCollision = error.keyPattern?.user && error.keyPattern?.lessonId && error.keyPattern?.dialogueId;
 			const awardCollision = error.keyPattern?.user && error.keyPattern?.awardKey;
-			if (error.code !== 11000 || (!progressCollision && !awardCollision) || attempt === 2) throw error;
+			const activityCollision = error.keyPattern?.user && error.keyPattern?.date;
+			if (error.code !== 11000 || (!progressCollision && !awardCollision && !activityCollision) || attempt === 2) throw error;
 		}
 	}
 
