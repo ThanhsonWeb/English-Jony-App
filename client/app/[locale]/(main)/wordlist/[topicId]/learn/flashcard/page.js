@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
+import { fetchVocabulary, selectReviewWords } from "@/app/_lib/vocabulary.mjs";
 import { CheckCircle2, Layers3 } from "lucide-react";
 import Loading from "@/app/_components/loading";
 import {
@@ -15,6 +17,7 @@ function Page() {
 	const router = useRouter();
 	const [practiceMode, setPracticeMode] = useState(false);
 	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState("");
 	const [words, setWords] = useState([]);
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [showAnswer, setShowAnswer] = useState(false);
@@ -32,24 +35,20 @@ function Page() {
 	const [progressError, setProgressError] = useState("");
 	// get all word of that topic
 	useEffect(() => {
+		const controller = new AbortController();
 		async function fetchWords() {
-			const res = await fetch(`/api/v1/vocab?topic=${topicId}`, {
-				credentials: "include",
-			});
-
-			const data = await res.json();
-
-			const now = new Date();
-
-			const reviewWords = data.data.vocabularies.filter(
-				(word) => new Date(word.nextReview) <= now,
-			);
-
-			setWords(reviewWords);
-			setLoading(false);
+			try {
+				const vocabulary = await fetchVocabulary(topicId, controller.signal);
+				if (!controller.signal.aborted) setWords(selectReviewWords(vocabulary, { global: !topicId }));
+			} catch {
+				if (!controller.signal.aborted) setError("Không thể tải từ vựng. Vui lòng thử lại.");
+			} finally {
+				if (!controller.signal.aborted) setLoading(false);
+			}
 		}
 
 		fetchWords();
+		return () => controller.abort();
 	}, [topicId]);
 
 	function getReviewLabel(level) {
@@ -112,6 +111,7 @@ function Page() {
 	}
 
 	if (loading) return <Loading />;
+	if (error) return <ReviewStatus title="Không thể mở bài ôn" message={error} onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")} />;
 	if (sessionFinished) {
 		const total = results.forgot + results.hard + results.medium + results.easy;
 
@@ -132,7 +132,7 @@ function Page() {
 					setShowAnswer(false);
 					setResults({ forgot: 0, hard: 0, medium: 0, easy: 0 });
 				}}
-				onBack={() => router.push(`/wordlist/${topicId}`)}
+				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);
 	}
@@ -143,7 +143,7 @@ function Page() {
 				icon={<CheckCircle2 className="h-14 w-14 text-emerald-400" />}
 				title="Bạn đã ôn hết rồi!"
 				message="Hiện tại không còn từ nào cần ôn. Hãy quay lại khi đến lượt ôn tiếp theo nhé."
-				onBack={() => router.push(`/wordlist/${topicId}`)}
+				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);
 	}

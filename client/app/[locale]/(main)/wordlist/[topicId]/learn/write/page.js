@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
+import { fetchVocabulary, selectReviewWords } from "@/app/_lib/vocabulary.mjs";
 import {
 	CheckCircle2,
 	PenLine,
@@ -42,22 +44,13 @@ export default function WriteReviewPage() {
 
 		async function fetchWords() {
 			try {
-				const response = await fetch(`/api/v1/vocab?topic=${topicId}`, {
-					credentials: "include",
-				});
-
-				if (!response.ok) throw new Error("Không thể tải danh sách từ.");
-
-				const data = await response.json();
-				const now = new Date();
-				const reviewWords = (data.data?.vocabularies || []).filter(
-					(word) => word.nextReview && new Date(word.nextReview) <= now,
-				);
+				const vocabulary = await fetchVocabulary(topicId);
+				const reviewWords = selectReviewWords(vocabulary, { global: !topicId });
 
 				if (!cancelled) setWords(reviewWords);
 			} catch (fetchError) {
 				if (!cancelled) {
-					setError(fetchError.message || "Không thể tải danh sách từ.");
+					setError(fetchError.message === "unauthorized" ? "Vui lòng đăng nhập để ôn tập." : "Không thể tải danh sách từ. Vui lòng thử lại.");
 				}
 			} finally {
 				if (!cancelled) setLoading(false);
@@ -151,7 +144,7 @@ export default function WriteReviewPage() {
 				icon={<XCircle className="h-12 w-12 text-red-400" />}
 				title="Không thể mở bài ôn"
 				message={error}
-				onBack={() => router.push(`/wordlist/${topicId}`)}
+				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);
 	}
@@ -169,7 +162,7 @@ export default function WriteReviewPage() {
 					{ label: "Chính xác", value: `${accuracy}%`, tone: "blue" },
 				]}
 				onRestart={restartReview}
-				onBack={() => router.push(`/wordlist/${topicId}`)}
+				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);
 	}
@@ -180,7 +173,7 @@ export default function WriteReviewPage() {
 				icon={<CheckCircle2 className="h-14 w-14 text-emerald-400" />}
 				title="Bạn đã ôn hết rồi!"
 				message="Hiện tại không có từ nào trong danh sách này cần ôn."
-				onBack={() => router.push(`/wordlist/${topicId}`)}
+				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);
 	}
@@ -200,7 +193,7 @@ export default function WriteReviewPage() {
 			practiceMode={practiceMode}
 			current={currentIndex + 1}
 			total={words.length}
-			onBack={() => router.push(`/wordlist/${topicId}`)}
+			onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 		>
 
 			<form onSubmit={handleSubmit}>

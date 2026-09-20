@@ -42,6 +42,18 @@ beforeEach(async () => {
 });
 const review = (input, target = word, now = NOW) => reviewVocabulary(user._id, target._id, input, { now });
 const writing = { mode: "writing", answer: "hello" };
+
+test("topic-free notebook words support the existing review and XP flow", async () => {
+	const response = await fetch(url, { method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }, body: JSON.stringify({ english: "global word", vietnamese: "tu moi" }) });
+	assert.equal(response.status, 201);
+	const saved = (await response.json()).data.newVocab;
+	assert.equal(saved.topic, undefined);
+	const result = await review({ mode: "writing", answer: "global word" }, saved);
+	assert.equal(result.xp.awarded, 5);
+	assert.equal(result.updatedVocab.reviewCount, 1);
+	assert.equal((await StudyActivity.findOne()).hasQualifiedStudy, true);
+	assert.equal((await Vocab.findById(word._id)).topic.toString(), word.topic.toString());
+});
 const quiz = { mode: "quiz", answer: "xin chao" };
 const flashcard = { mode: "flashcard", rating: "hard" };
 

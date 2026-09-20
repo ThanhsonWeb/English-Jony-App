@@ -16,9 +16,11 @@ import { useState } from "react";
 import Button from "./Button";
 import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
+import { getWordStatus, speakWord } from "@/app/_lib/vocabulary.mjs";
 
 function Word({ word, onDelete, onFix, variant = "list" }) {
 	const t = useTranslations("WordlistDetail");
+	const notebookT = useTranslations("Notebook");
 	const [isEditing, setIsEditing] = useState(false);
 	const [editEnglish, setEditEnglish] = useState(word.english);
 	const [editVietnamese, setEditVietnamese] = useState(word.vietnamese);
@@ -31,34 +33,16 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 		setIsEditing(false);
 	};
 	// helper function
-	function getWordStatus(word) {
-		const reviewCount = word.reviewCount || 0;
-		const now = new Date();
-
-		if (reviewCount === 0) {
-			return "new";
-		}
-
-		if (new Date(word.nextReview) <= now) {
-			return "review";
-		}
-
-		return "learning";
-	}
 	const wordStatus = getWordStatus(word);
 	const cardAccentClass = {
 		new: "border-l-emerald-500",
 		learning: "border-l-blue-500",
 		review: "border-l-orange-500",
+		mastered: "border-l-emerald-500",
 	}[wordStatus];
 
 	function playPronunciation() {
-		if (!("speechSynthesis" in window)) return;
-
-		window.speechSynthesis.cancel();
-		const utterance = new SpeechSynthesisUtterance(word.english);
-		utterance.lang = "en-US";
-		window.speechSynthesis.speak(utterance);
+		speakWord(word.english);
 	}
 
 	return (
@@ -94,9 +78,9 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 								</span>
 							)}
 
-							{wordStatus === "learning" && (
+							{(wordStatus === "learning" || wordStatus === "mastered") && (
 								<span className="rounded-full border border-blue-500/30 bg-blue-500/10 px-2 py-0.5 text-[10px] font-medium text-blue-400">
-									{t("learning")}
+									{wordStatus === "mastered" ? notebookT("mastered") : t("learning")}
 								</span>
 							)}
 
@@ -209,10 +193,10 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 						</span>
 					)}
 
-					{wordStatus === "learning" && (
+					{(wordStatus === "learning" || wordStatus === "mastered") && (
 						<span className="inline-flex items-center gap-1.5 rounded-full border border-sky-500/20 bg-sky-500/10 px-2.5 py-1 text-xs font-medium text-sky-300">
 							<span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
-							{t("learning")}
+							{wordStatus === "mastered" ? notebookT("mastered") : t("learning")}
 						</span>
 					)}
 

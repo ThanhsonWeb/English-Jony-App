@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
+import { fetchVocabulary, selectReviewWords } from "@/app/_lib/vocabulary.mjs";
 import {
 	Brain,
 	CheckCircle2,
@@ -51,7 +53,7 @@ function buildQuestions(reviewWords, vocabularyPool) {
 
 	if (translations.length < 4) return [];
 
-	return shuffle(reviewWords).map((word) => {
+	return reviewWords.map((word) => {
 		const correctAnswer = word.vietnamese.trim();
 		const distractors = shuffle(
 			translations.filter(
@@ -93,25 +95,16 @@ export default function QuizReviewPage() {
 	useEffect(() => {
 		let cancelled = false;
 
-		async function fetchVocabulary() {
+		async function loadVocabulary() {
 			try {
-				const topicResponse = await fetch(`/api/v1/vocab?topic=${topicId}`, {
-					credentials: "include",
-				});
-
-				if (!topicResponse.ok) throw new Error("Không thể tải danh sách từ.");
-
-				const topicData = await topicResponse.json();
-				const topicWords = (topicData.data?.vocabularies || []).filter(
+				const vocabulary = await fetchVocabulary(topicId);
+				const topicWords = vocabulary.filter(
 					(word) => word.english?.trim() && word.vietnamese?.trim(),
 				);
-				const now = new Date();
-				const reviewWords = topicWords.filter(
-					(word) => word.nextReview && new Date(word.nextReview) <= now,
-				);
+				const reviewWords = selectReviewWords(topicWords, { global: !topicId });
 				let vocabularyPool = topicWords;
 
-				if (reviewWords.length > 0 && getUniqueTranslations(topicWords).length < 4) {
+				if (topicId && reviewWords.length > 0 && getUniqueTranslations(topicWords).length < 4) {
 					const allWordsResponse = await fetch("/api/v1/vocab", {
 						credentials: "include",
 					});
@@ -138,14 +131,14 @@ export default function QuizReviewPage() {
 				}
 			} catch (fetchError) {
 				if (!cancelled) {
-					setError(fetchError.message || "Không thể tải danh sách từ.");
+					setError(fetchError.message === "unauthorized" ? "Vui lòng đăng nhập để ôn tập." : "Không thể tải danh sách từ. Vui lòng thử lại.");
 				}
 			} finally {
 				if (!cancelled) setLoading(false);
 			}
 		}
 
-		fetchVocabulary();
+		loadVocabulary();
 
 		return () => {
 			cancelled = true;
@@ -274,7 +267,7 @@ export default function QuizReviewPage() {
 				icon={<XCircle className="h-12 w-12 text-red-400" />}
 				title="Không thể mở bài ôn"
 				message={error}
-				onBack={() => router.push(`/wordlist/${topicId}`)}
+				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);
 	}
@@ -285,7 +278,7 @@ export default function QuizReviewPage() {
 				icon={<Brain className="h-12 w-12 text-cyan-400" />}
 				title="Chưa đủ từ để tạo câu hỏi"
 				message="Bạn cần ít nhất 4 nghĩa tiếng Việt khác nhau trong sổ tay để dùng chế độ Trắc nghiệm."
-				onBack={() => router.push(`/wordlist/${topicId}`)}
+				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);
 	}
@@ -304,7 +297,7 @@ export default function QuizReviewPage() {
 					{ label: "Chính xác", value: `${accuracy}%`, tone: "blue" },
 				]}
 				onRestart={restartQuiz}
-				onBack={() => router.push(`/wordlist/${topicId}`)}
+				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);
 	}
@@ -315,7 +308,7 @@ export default function QuizReviewPage() {
 				icon={<CheckCircle2 className="h-14 w-14 text-emerald-400" />}
 				title="Bạn đã ôn hết rồi!"
 				message="Hiện tại không có từ nào trong danh sách này cần ôn."
-				onBack={() => router.push(`/wordlist/${topicId}`)}
+				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);
 	}
@@ -328,7 +321,7 @@ export default function QuizReviewPage() {
 			practiceMode={practiceMode}
 			current={currentIndex + 1}
 			total={questions.length}
-			onBack={() => router.push(`/wordlist/${topicId}`)}
+			onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 		>
 
 			<form ref={formRef} onSubmit={handleSubmit}>

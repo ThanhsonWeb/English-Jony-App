@@ -9,7 +9,7 @@ const vocabSchema = new mongoose.Schema({
 	topic: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: "Topic",
-		required: true,
+		// Optional for global notebook words; existing topic links remain valid.
 	},
 
 	english: {

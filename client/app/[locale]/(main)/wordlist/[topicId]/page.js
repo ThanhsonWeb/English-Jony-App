@@ -21,6 +21,7 @@ import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import Loading from "@/app/_components/loading";
 import { useTranslations } from "next-intl";
+import { getWordStatus, isReviewDue as reviewDue } from "@/app/_lib/vocabulary.mjs";
 
 export default function WordPage() {
 	const t = useTranslations("WordlistDetail");
@@ -43,10 +44,7 @@ export default function WordPage() {
 	const status = searchParams.get("status") || "all";
 	const now = new Date();
 
-	const isReviewDue = (word) =>
-		(word.reviewCount || 0) > 0 &&
-		word.nextReview &&
-		new Date(word.nextReview) <= now;
+	const isReviewDue = (word) => reviewDue(word, now);
 	const getWordPriority = (word) => {
 		if (isReviewDue(word)) return 2;
 		if ((word.reviewCount || 0) === 0) return 1;
@@ -61,11 +59,7 @@ export default function WordPage() {
 
 			const matchesStatus =
 				status === "all" ||
-				(status === "new" && (word.reviewCount || 0) === 0) ||
-				(status === "learning" &&
-					(word.reviewCount || 0) > 0 &&
-					!isReviewDue(word)) ||
-				(status === "review" && isReviewDue(word));
+				getWordStatus(word, now) === status;
 
 			return matchesSearch && matchesStatus;
 		})
