@@ -3,16 +3,15 @@ const coffeeShop = {
 
 	level: "beginner",
 
-	characters: ["Ben", "Emma"],
+	characters: ["Ben", "Emma", "Alex"],
 
 	dialogues: [
 		{
 			dialogueId: "ordering-a-coffee",
 			title: "Gọi cà phê",
-			thumbnail:
-				"/dialogue/coffee-shop/thumbnails/ordering-a-coffee.png",
+			thumbnail: "/dialogue/coffee-shop/thumbnails/ordering-a-coffee.png",
 			situation:
-				"Ben gọi một ly cà phê tại quầy và Emma giúp Ben chọn loại đồ uống phù hợp.",
+				"Ben và Emma đến quầy gọi cà phê. Emma giúp Ben chọn đồ uống và Alex nhận order.",
 		},
 		{
 			dialogueId: "choosing-a-snack",
@@ -32,14 +31,14 @@ const coffeeShop = {
 			title: "Sửa món đã gọi",
 			thumbnail: "/dialogue/coffee-shop/thumbnails/fixing-an-order.png",
 			situation:
-				"Ben nhận ra đồ uống của mình không đúng và lịch sự nhờ Emma kiểm tra lại.",
+				"Ben nhận ra đồ uống của mình không đúng và lịch sự nhờ Alex, nhân viên của quán, kiểm tra lại.",
 		},
 		{
 			dialogueId: "paying-at-the-counter",
 			title: "Thanh toán tại quầy",
 			thumbnail: "/dialogue/coffee-shop/thumbnails/paying-at-the-counter.png",
 			situation:
-				"Ben thanh toán đồ uống và hỏi Emma về giá tiền và cách thanh toán.",
+				"Ben thanh toán tại quầy và hỏi Alex về giá tiền và cách thanh toán.",
 		},
 	],
 };

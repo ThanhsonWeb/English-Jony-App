@@ -356,7 +356,7 @@ export default function DialoguePlayer({
 						})}
 
 						{/* Subtitle + controls */}
-						<div className="theme-dark-overlay player-overlay absolute inset-x-0 bottom-0 z-20 bg-black/70 backdrop-blur-[2px]">
+						<div className="dialogue-subtitle-surface player-overlay absolute inset-x-0 bottom-0 z-20 backdrop-blur-[2px]">
 							{/* Subtitle - only visible while playing */}
 							{hasStarted && showSubtitles && !dialogueFinished && (
 								<div

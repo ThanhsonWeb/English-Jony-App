@@ -55,6 +55,8 @@ html[data-theme="dark"] {
 	--sj-success-soft: #123229;
 	--sj-shadow: #020617;
 	--sj-shadow-color: #00000040;
+	--sj-dialogue-subtitle-bg: rgba(0, 0, 0, 0.7);
+	--sj-dialogue-task-subtitle-bg: rgba(2, 6, 23, 0.75);
 	color-scheme: dark;
 }
 
@@ -85,6 +87,8 @@ html[data-theme="cream"] {
 	--sj-success-soft: #e8f7ef;
 	--sj-shadow: #253c30;
 	--sj-shadow-color: #253c301a;
+	--sj-dialogue-subtitle-bg: rgba(255, 255, 255, 0.7);
+	--sj-dialogue-task-subtitle-bg: rgba(255, 255, 255, 0.75);
 	color-scheme: light;
 }
 
@@ -106,6 +110,8 @@ html[data-theme="cream"] {
 	--sj-success-soft: #eaf0df;
 	--sj-shadow: #493a22;
 	--sj-shadow-color: #493a221c;
+	--sj-dialogue-subtitle-bg: rgba(255, 250, 240, 0.7);
+	--sj-dialogue-task-subtitle-bg: rgba(255, 250, 240, 0.75);
 }
 
 html[data-theme="black"] {
@@ -128,6 +134,8 @@ html[data-theme="black"] {
 	--sj-active: #303740;
 	--sj-shadow: #000000;
 	--sj-shadow-color: #00000066;
+	--sj-dialogue-subtitle-bg: rgba(23, 26, 31, 0.7);
+	--sj-dialogue-task-subtitle-bg: rgba(17, 19, 23, 0.75);
 	color-scheme: dark;
 }
 
@@ -141,6 +149,14 @@ body {
 body {
 	background-color: var(--sj-page);
 	color: var(--sj-text);
+}
+
+.dialogue-subtitle-surface {
+	background-color: var(--sj-dialogue-subtitle-bg);
+}
+
+.dialogue-task-subtitle-surface {
+	background-color: var(--sj-dialogue-task-subtitle-bg);
 }
 
 /* Legacy slate aliases let existing screens share the tokens without changing layout. */

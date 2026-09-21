@@ -13,4 +13,18 @@ export const coffeeShopMedia = {
 			Emma: "/dialogue/coffee-shop/shared/emma.png",
 		},
 	},
+	"asking-about-the-wifi": {
+		scene: "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+		characters: {
+			Ben: "/dialogue/coffee-shop/shared/ben.png",
+			Emma: "/dialogue/coffee-shop/shared/emma.png",
+		},
+	},
+	"fixing-an-order": {
+		scene: "/dialogue/coffee-shop/fixing-an-order/bg.png",
+		characters: {
+			Ben: "/dialogue/coffee-shop/shared/ben.png",
+			Alex: "/dialogue/coffee-shop/shared/Alex.png",
+		},
+	},
 };

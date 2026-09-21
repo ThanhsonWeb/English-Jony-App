@@ -5,12 +5,12 @@ an English-learning application for Vietnamese learners.
 COURSE
 
 Course ID: coffee-shop
-Dialogue ID: asking-about-the-wifi
-Vietnamese title: Hỏi mật khẩu Wi-Fi
-Characters: Ben, Emma
+Dialogue ID: fixing-an-order
+Vietnamese title: Sửa món đã gọi
+Characters: Ben, Emma, Alex
 Configured level: a1
 Normalized CEFR level: A1
-Situation: Ben muốn sử dụng Wi-Fi của quán và hỏi Emma cách kết nối.
+Situation: Ben nhận ra đồ uống của mình không đúng và lịch sự nhờ Alex, nhân viên của quán, kiểm tra lại.
 
 ==================================================
 DIALOGUE RULES
@@ -249,7 +249,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/coffee-shop/asking-about-the-wifi/bg.png"
+"/dialogue/coffee-shop/fixing-an-order/bg.png"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -259,13 +259,13 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/coffee-shop/asking-about-the-wifi/bg.png"
+"/dialogue/coffee-shop/fixing-an-order/bg.png"
 
 Thumbnail:
-"/dialogue/coffee-shop/thumbnails/asking-about-the-wifi.png"
+"/dialogue/coffee-shop/thumbnails/fixing-an-order.png"
 
 Audio format:
-"/dialogue/coffee-shop/asking-about-the-wifi/audio/{speaker}-{number}.mp3"
+"/dialogue/coffee-shop/fixing-an-order/audio/{speaker}-{number}.mp3"
 
 ==================================================
 OUTPUT
@@ -282,12 +282,12 @@ Use this structure:
 {
 	"metadata": {
 		"courseId": "coffee-shop",
-		"dialogueId": "asking-about-the-wifi",
-		"title": "Hỏi mật khẩu Wi-Fi",
+		"dialogueId": "fixing-an-order",
+		"title": "Sửa món đã gọi",
 		"level": "a1",
-		"situation": "Ben muốn sử dụng Wi-Fi của quán và hỏi Emma cách kết nối.",
-		"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
-		"thumbnail": "/dialogue/coffee-shop/thumbnails/asking-about-the-wifi.png"
+		"situation": "Ben nhận ra đồ uống của mình không đúng và lịch sự nhờ Alex, nhân viên của quán, kiểm tra lại.",
+		"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+		"thumbnail": "/dialogue/coffee-shop/thumbnails/fixing-an-order.png"
 	},
 
 	"dialogue": [

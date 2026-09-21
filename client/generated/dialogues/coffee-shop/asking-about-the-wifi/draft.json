@@ -1,0 +1,634 @@
+{
+"metadata": {
+"courseId": "coffee-shop",
+"dialogueId": "asking-about-the-wifi",
+"title": "Hỏi mật khẩu Wi-Fi",
+"level": "a1",
+"situation": "Ben muốn sử dụng Wi-Fi của quán và hỏi Emma cách kết nối.",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"thumbnail": "/dialogue/coffee-shop/thumbnails/asking-about-the-wifi.png"
+},
+"dialogue": [
+{
+"id": 1,
+"speaker": "Ben",
+"text": "Is there Wi-Fi here?",
+"translation": "Ở đây có Wi-Fi không?",
+"practicePriority": "veryImportant",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-01.mp3"
+},
+{
+"id": 2,
+"speaker": "Emma",
+"text": "Yes, there is free Wi-Fi.",
+"translation": "Có, ở đây có Wi-Fi miễn phí.",
+"practicePriority": "important",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-01.mp3"
+},
+{
+"id": 3,
+"speaker": "Ben",
+"text": "Great. What's the Wi-Fi name?",
+"translation": "Tuyệt. Tên Wi-Fi là gì?",
+"practicePriority": "veryImportant",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-02.mp3"
+},
+{
+"id": 4,
+"speaker": "Emma",
+"text": "The Wi-Fi name is Coffee House Guest.",
+"translation": "Tên Wi-Fi là Coffee House Guest.",
+"practicePriority": "simple",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-02.mp3"
+},
+{
+"id": 5,
+"speaker": "Ben",
+"text": "And what's the password?",
+"translation": "Còn mật khẩu là gì?",
+"practicePriority": "veryImportant",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-03.mp3"
+},
+{
+"id": 6,
+"speaker": "Emma",
+"text": "It's coffee123.",
+"translation": "Là coffee123.",
+"practicePriority": "simple",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-03.mp3"
+},
+{
+"id": 7,
+"speaker": "Ben",
+"text": "Can you say that again, please?",
+"translation": "Bạn có thể nói lại được không?",
+"practicePriority": "important",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-04.mp3"
+},
+{
+"id": 8,
+"speaker": "Emma",
+"text": "Sure. It's coffee one two three.",
+"translation": "Được chứ. Là coffee một hai ba.",
+"practicePriority": "simple",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-04.mp3"
+},
+{
+"id": 9,
+"speaker": "Ben",
+"text": "Thanks. How do I connect?",
+"translation": "Cảm ơn. Tôi kết nối như thế nào?",
+"practicePriority": "important",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-05.mp3"
+},
+{
+"id": 10,
+"speaker": "Emma",
+"text": "Choose the Wi-Fi name and enter the password.",
+"translation": "Chọn tên Wi-Fi và nhập mật khẩu.",
+"practicePriority": "important",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-05.mp3"
+},
+{
+"id": 11,
+"speaker": "Ben",
+"text": "Got it. I'm connected now.",
+"translation": "Hiểu rồi. Bây giờ tôi đã kết nối.",
+"practicePriority": "simple",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-06.mp3"
+},
+{
+"id": 12,
+"speaker": "Emma",
+"text": "Perfect. Enjoy your coffee.",
+"translation": "Tuyệt. Chúc bạn thưởng thức cà phê ngon miệng.",
+"practicePriority": "simple",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-06.mp3"
+}
+],
+"usefulWords": [
+{
+"word": "Wi-Fi",
+"pronunciation": "/ˈwaɪ faɪ/",
+"meaning": "Wi-Fi, mạng không dây",
+"example": "Is there Wi-Fi here?"
+},
+{
+"word": "free Wi-Fi",
+"pronunciation": "/friː ˈwaɪ faɪ/",
+"meaning": "Wi-Fi miễn phí",
+"example": "This café has free Wi-Fi."
+},
+{
+"word": "Wi-Fi name",
+"pronunciation": "/ˈwaɪ faɪ neɪm/",
+"meaning": "tên Wi-Fi",
+"example": "What's the Wi-Fi name?"
+},
+{
+"word": "password",
+"pronunciation": "/ˈpæs.wɜːrd/",
+"meaning": "mật khẩu",
+"example": "What's the password?"
+},
+{
+"word": "say that again",
+"pronunciation": "/seɪ ðæt əˈɡen/",
+"meaning": "nói lại điều đó",
+"example": "Can you say that again?"
+},
+{
+"word": "connect",
+"pronunciation": "/kəˈnekt/",
+"meaning": "kết nối",
+"example": "How do I connect?"
+},
+{
+"word": "choose",
+"pronunciation": "/tʃuːz/",
+"meaning": "chọn",
+"example": "Choose the Wi-Fi name."
+},
+{
+"word": "enter",
+"pronunciation": "/ˈen.tər/",
+"meaning": "nhập",
+"example": "Enter the password."
+}
+],
+"tasks": [
+{
+"id": 1,
+"dialogueLineId": 1,
+"type": "fillBlank",
+"parts": ["Is there ", " here?"],
+"answers": ["Wi-Fi"],
+"speaker": "Ben",
+"transcript": "Is there Wi-Fi here?",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-01.mp3"
+},
+{
+"id": 2,
+"dialogueLineId": 1,
+"type": "fillBlank",
+"parts": ["", " Wi-Fi here?"],
+"answers": ["Is there"],
+"speaker": "Ben",
+"transcript": "Is there Wi-Fi here?",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-01.mp3"
+},
+{
+"id": 3,
+"dialogueLineId": 1,
+"type": "multipleChoice",
+"question": "Ben muốn biết điều gì?",
+"options": [
+"Quán có Wi-Fi không.",
+"Quán đóng cửa lúc mấy giờ.",
+"Cà phê giá bao nhiêu.",
+"Emma đang uống gì."
+],
+"answer": "Quán có Wi-Fi không.",
+"speaker": "Ben",
+"transcript": "Is there Wi-Fi here?",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-01.mp3"
+},
+{
+"id": 4,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"parts": ["Yes, there is ", " Wi-Fi."],
+"answers": ["free"],
+"speaker": "Emma",
+"transcript": "Yes, there is free Wi-Fi.",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-01.mp3"
+},
+{
+"id": 5,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"parts": ["", " free Wi-Fi."],
+"answers": ["Yes, there is"],
+"speaker": "Emma",
+"transcript": "Yes, there is free Wi-Fi.",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-01.mp3"
+},
+{
+"id": 6,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"parts": ["Great. What's the ", "?"],
+"answers": ["Wi-Fi name"],
+"speaker": "Ben",
+"transcript": "Great. What's the Wi-Fi name?",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-02.mp3"
+},
+{
+"id": 7,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"parts": ["Great. ", " Wi-Fi name?"],
+"answers": ["What's the"],
+"speaker": "Ben",
+"transcript": "Great. What's the Wi-Fi name?",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-02.mp3"
+},
+{
+"id": 8,
+"dialogueLineId": 3,
+"type": "multipleChoice",
+"question": "Sau khi biết quán có Wi-Fi, Ben hỏi tiếp điều gì?",
+"options": [
+"Tên Wi-Fi.",
+"Giá cà phê.",
+"Giờ đóng cửa.",
+"Tên của Emma."
+],
+"answer": "Tên Wi-Fi.",
+"speaker": "Ben",
+"transcript": "Great. What's the Wi-Fi name?",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-02.mp3"
+},
+{
+"id": 9,
+"dialogueLineId": 4,
+"type": "fillBlank",
+"parts": ["The Wi-Fi name is ", "."],
+"answers": ["Coffee House Guest"],
+"speaker": "Emma",
+"transcript": "The Wi-Fi name is Coffee House Guest.",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-02.mp3"
+},
+{
+"id": 10,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"parts": ["And what's the ", "?"],
+"answers": ["password"],
+"speaker": "Ben",
+"transcript": "And what's the password?",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-03.mp3"
+},
+{
+"id": 11,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"parts": ["And ", " password?"],
+"answers": ["what's the"],
+"speaker": "Ben",
+"transcript": "And what's the password?",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-03.mp3"
+},
+{
+"id": 12,
+"dialogueLineId": 5,
+"type": "multipleChoice",
+"question": "Ben cần thêm thông tin gì để dùng Wi-Fi?",
+"options": [
+"Mật khẩu.",
+"Số điện thoại.",
+"Tên món uống.",
+"Số bàn."
+],
+"answer": "Mật khẩu.",
+"speaker": "Ben",
+"transcript": "And what's the password?",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-03.mp3"
+},
+{
+"id": 13,
+"dialogueLineId": 6,
+"type": "fillBlank",
+"parts": ["It's ", "."],
+"answers": ["coffee123"],
+"speaker": "Emma",
+"transcript": "It's coffee123.",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-03.mp3"
+},
+{
+"id": 14,
+"dialogueLineId": 7,
+"type": "fillBlank",
+"parts": ["Can you ", ", please?"],
+"answers": ["say that again"],
+"speaker": "Ben",
+"transcript": "Can you say that again, please?",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-04.mp3"
+},
+{
+"id": 15,
+"dialogueLineId": 7,
+"type": "fillBlank",
+"parts": ["Can you say that again, ", "?"],
+"answers": ["please"],
+"speaker": "Ben",
+"transcript": "Can you say that again, please?",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-04.mp3"
+},
+{
+"id": 16,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"parts": ["Sure. It's ", "."],
+"answers": ["coffee one two three"],
+"speaker": "Emma",
+"transcript": "Sure. It's coffee one two three.",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-04.mp3"
+},
+{
+"id": 17,
+"dialogueLineId": 9,
+"type": "fillBlank",
+"parts": ["Thanks. How do I ", "?"],
+"answers": ["connect"],
+"speaker": "Ben",
+"transcript": "Thanks. How do I connect?",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-05.mp3"
+},
+{
+"id": 18,
+"dialogueLineId": 9,
+"type": "fillBlank",
+"parts": ["Thanks. ", " connect?"],
+"answers": ["How do I"],
+"speaker": "Ben",
+"transcript": "Thanks. How do I connect?",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-05.mp3"
+},
+{
+"id": 19,
+"dialogueLineId": 9,
+"type": "multipleChoice",
+"question": "Ben đang hỏi cách làm gì?",
+"options": [
+"Kết nối vào Wi-Fi.",
+"Gọi thêm cà phê.",
+"Tìm nhà vệ sinh.",
+"Thanh toán hóa đơn."
+],
+"answer": "Kết nối vào Wi-Fi.",
+"speaker": "Ben",
+"transcript": "Thanks. How do I connect?",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-05.mp3"
+},
+{
+"id": 20,
+"dialogueLineId": 10,
+"type": "fillBlank",
+"parts": ["", " the Wi-Fi name and enter the password."],
+"answers": ["Choose"],
+"speaker": "Emma",
+"transcript": "Choose the Wi-Fi name and enter the password.",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-05.mp3"
+},
+{
+"id": 21,
+"dialogueLineId": 10,
+"type": "fillBlank",
+"parts": ["Choose the Wi-Fi name and ", "."],
+"answers": ["enter the password"],
+"speaker": "Emma",
+"transcript": "Choose the Wi-Fi name and enter the password.",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-05.mp3"
+},
+{
+"id": 22,
+"dialogueLineId": 10,
+"type": "multipleChoice",
+"question": "Emma hướng dẫn Ben làm gì?",
+"options": [
+"Chọn tên Wi-Fi và nhập mật khẩu.",
+"Tắt điện thoại.",
+"Hỏi nhân viên khác.",
+"Đổi sang một bàn khác."
+],
+"answer": "Chọn tên Wi-Fi và nhập mật khẩu.",
+"speaker": "Emma",
+"transcript": "Choose the Wi-Fi name and enter the password.",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-05.mp3"
+},
+{
+"id": 23,
+"dialogueLineId": 11,
+"type": "fillBlank",
+"parts": ["Got it. I'm ", " now."],
+"answers": ["connected"],
+"speaker": "Ben",
+"transcript": "Got it. I'm connected now.",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-06.mp3"
+},
+{
+"id": 24,
+"dialogueLineId": 12,
+"type": "fillBlank",
+"parts": ["Perfect. ", "."],
+"answers": ["Enjoy your coffee"],
+"speaker": "Emma",
+"transcript": "Perfect. Enjoy your coffee.",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-06.mp3"
+},
+{
+"id": 25,
+"type": "dialogueCloze",
+"lines": [
+{
+"dialogueLineId": 1,
+"speaker": "Ben",
+"parts": [
+"Is there ",
+{
+"id": "1",
+"blank": "Wi-Fi"
+},
+" here?"
+]
+},
+{
+"dialogueLineId": 2,
+"speaker": "Emma",
+"parts": [
+"Yes, there is ",
+{
+"id": "2",
+"blank": "free"
+},
+" Wi-Fi."
+]
+},
+{
+"dialogueLineId": 3,
+"speaker": "Ben",
+"parts": [
+"Great. What's the ",
+{
+"id": "3",
+"blank": "Wi-Fi name"
+},
+"?"
+]
+},
+{
+"dialogueLineId": 4,
+"speaker": "Emma",
+"parts": [
+"The Wi-Fi name is ",
+{
+"id": "4",
+"blank": "Coffee House Guest"
+},
+"."
+]
+},
+{
+"dialogueLineId": 5,
+"speaker": "Ben",
+"parts": [
+"And what's the ",
+{
+"id": "5",
+"blank": "password"
+},
+"?"
+]
+},
+{
+"dialogueLineId": 6,
+"speaker": "Emma",
+"parts": [
+"It's ",
+{
+"id": "6",
+"blank": "coffee123"
+},
+"."
+]
+},
+{
+"dialogueLineId": 7,
+"speaker": "Ben",
+"parts": [
+"Can you ",
+{
+"id": "7",
+"blank": "say that again"
+},
+", please?"
+]
+},
+{
+"dialogueLineId": 8,
+"speaker": "Emma",
+"parts": [
+"Sure. It's ",
+{
+"id": "8",
+"blank": "coffee one two three"
+},
+"."
+]
+},
+{
+"dialogueLineId": 9,
+"speaker": "Ben",
+"parts": [
+"Thanks. How do I ",
+{
+"id": "9",
+"blank": "connect"
+},
+"?"
+]
+},
+{
+"dialogueLineId": 10,
+"speaker": "Emma",
+"parts": [
+"Choose the Wi-Fi name and ",
+{
+"id": "10",
+"blank": "enter the password"
+},
+"."
+]
+},
+{
+"dialogueLineId": 11,
+"speaker": "Ben",
+"parts": [
+"Got it. I'm ",
+{
+"id": "11",
+"blank": "connected"
+},
+" now."
+]
+},
+{
+"dialogueLineId": 12,
+"speaker": "Emma",
+"parts": [
+"Perfect. ",
+{
+"id": "12",
+"blank": "Enjoy your coffee"
+},
+"."
+]
+}
+]
+}
+],
+"grammarNotes": [
+{
+"title": "Is there ...?",
+"explanation": "Dùng “Is there ...?” để hỏi xem một thứ có ở đâu đó hay không.",
+"example": "Is there Wi-Fi here?"
+},
+{
+"title": "What's the ...?",
+"explanation": "Dùng “What's the ...?” để hỏi một thông tin cụ thể như tên hoặc mật khẩu.",
+"example": "What's the Wi-Fi name?"
+},
+{
+"title": "How do I ...?",
+"explanation": "Dùng “How do I ...?” khi muốn hỏi cách làm một việc.",
+"example": "How do I connect?"
+}
+]
+}

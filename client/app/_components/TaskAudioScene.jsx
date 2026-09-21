@@ -216,7 +216,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 
 					{/* Subtitle */}
 					{showSubtitleBackground && (
-						<div className="absolute inset-x-0 bottom-0 z-20 bg-slate-950/75 px-4 py-3 text-center backdrop-blur-sm sm:px-6">
+						<div className="dialogue-task-subtitle-surface absolute inset-x-0 bottom-0 z-20 px-4 py-3 text-center backdrop-blur-sm sm:px-6">
 							<div className={showSubtitleText ? "" : "invisible"}>
 								<p className="text-sm font-bold text-blue-300">
 									{task.character?.name}

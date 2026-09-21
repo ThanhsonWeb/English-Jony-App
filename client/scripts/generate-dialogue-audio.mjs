@@ -84,6 +84,7 @@ function getVoiceId(speaker) {
 		Mia: "ur0MtycxCulNrunXsdLx",
 		Ben: "oF10V53nXu6mNLtJLgko",
 		Emma: "Cy8NxOxWnzsargZaVHUo",
+		Alex: "oflxQzyUUjpgLlEYlSq2",
 	};
 	const voiceId = voiceIds[speaker];
 
@@ -112,7 +113,9 @@ function buildPlan(lessonId, dialogueId, dialogue) {
 
 			const speaker = line.speaker.trim();
 			if (
-				!["Maria", "Tom", "Anna", "Leo", "Mia", "Ben", "Emma"].includes(speaker)
+				!["Maria", "Tom", "Anna", "Leo", "Mia", "Ben", "Emma", "Alex"].includes(
+					speaker,
+				)
 			) {
 				fail(`Unsupported speaker "${speaker}" on dialogue line ${index + 1}`);
 			}

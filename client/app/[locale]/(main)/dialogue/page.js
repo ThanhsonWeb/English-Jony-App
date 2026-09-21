@@ -15,6 +15,7 @@ import { lessonData } from "./_data/lessonData";
 import { useLocale, useTranslations } from "next-intl";
 import { ChevronDown, ChevronUp } from "lucide-react";
 const courseImages = {
+	"coffee-shop": "/dialogue/coffee-shop/thumbnails/coffee-shop.png",
 	"office-introduction":
 		"/dialogue/office-introduction/thumbnails/office-introduction.png",
 	"weekend-camping": "/dialogue/weekend-camping/thumbnails/weekend-camping.png",

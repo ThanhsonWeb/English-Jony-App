@@ -1,0 +1,593 @@
+{
+"metadata": {
+"courseId": "coffee-shop",
+"dialogueId": "fixing-an-order",
+"title": "Sửa món đã gọi",
+"level": "a1",
+"situation": "Ben nhận ra đồ uống của mình không đúng và lịch sự nhờ Alex, nhân viên của quán, kiểm tra lại.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"thumbnail": "/dialogue/coffee-shop/thumbnails/fixing-an-order.png"
+},
+"dialogue": [
+{
+"id": 1,
+"speaker": "Ben",
+"text": "Excuse me. I think this is the wrong drink.",
+"translation": "Xin lỗi. Tôi nghĩ đây là đồ uống không đúng.",
+"practicePriority": "veryImportant",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-01.mp3"
+},
+{
+"id": 2,
+"speaker": "Alex",
+"text": "I'm sorry. What did you order?",
+"translation": "Tôi xin lỗi. Bạn đã gọi món gì?",
+"practicePriority": "important",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-01.mp3"
+},
+{
+"id": 3,
+"speaker": "Ben",
+"text": "I ordered a small latte.",
+"translation": "Tôi đã gọi một ly latte nhỏ.",
+"practicePriority": "veryImportant",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-02.mp3"
+},
+{
+"id": 4,
+"speaker": "Alex",
+"text": "And what drink did you get?",
+"translation": "Vậy bạn đã nhận được đồ uống gì?",
+"practicePriority": "important",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-02.mp3"
+},
+{
+"id": 5,
+"speaker": "Ben",
+"text": "I got a large cappuccino.",
+"translation": "Tôi nhận được một ly cappuccino lớn.",
+"practicePriority": "important",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-03.mp3"
+},
+{
+"id": 6,
+"speaker": "Alex",
+"text": "You're right. That's not your order.",
+"translation": "Bạn nói đúng. Đó không phải món bạn đã gọi.",
+"practicePriority": "important",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-03.mp3"
+},
+{
+"id": 7,
+"speaker": "Ben",
+"text": "Could you check my order, please?",
+"translation": "Bạn có thể kiểm tra lại món tôi đã gọi được không?",
+"practicePriority": "veryImportant",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-04.mp3"
+},
+{
+"id": 8,
+"speaker": "Alex",
+"text": "Of course. You ordered a small latte.",
+"translation": "Tất nhiên. Bạn đã gọi một ly latte nhỏ.",
+"practicePriority": "important",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-04.mp3"
+},
+{
+"id": 9,
+"speaker": "Ben",
+"text": "Yes, that's right. Thank you.",
+"translation": "Vâng, đúng rồi. Cảm ơn bạn.",
+"practicePriority": "simple",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-05.mp3"
+},
+{
+"id": 10,
+"speaker": "Alex",
+"text": "No problem. I'll make the right drink for you.",
+"translation": "Không sao. Tôi sẽ làm đúng món cho bạn.",
+"practicePriority": "important",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-05.mp3"
+}
+],
+"usefulWords": [
+{
+"word": "wrong drink",
+"pronunciation": "/rɔːŋ drɪŋk/",
+"meaning": "đồ uống không đúng",
+"example": "I think this is the wrong drink."
+},
+{
+"word": "order",
+"pronunciation": "/ˈɔːr.dər/",
+"meaning": "gọi món; món đã gọi",
+"example": "What did you order?"
+},
+{
+"word": "small latte",
+"pronunciation": "/smɔːl ˈlɑː.teɪ/",
+"meaning": "ly latte nhỏ",
+"example": "I ordered a small latte."
+},
+{
+"word": "cappuccino",
+"pronunciation": "/ˌkæp.uˈtʃiː.noʊ/",
+"meaning": "cà phê cappuccino",
+"example": "I got a large cappuccino."
+},
+{
+"word": "You're right",
+"pronunciation": "/jʊr raɪt/",
+"meaning": "Bạn nói đúng",
+"example": "You're right. That's not your order."
+},
+{
+"word": "check my order",
+"pronunciation": "/tʃek maɪ ˈɔːr.dər/",
+"meaning": "kiểm tra lại món tôi đã gọi",
+"example": "Could you check my order, please?"
+},
+{
+"word": "Of course",
+"pronunciation": "/əv kɔːrs/",
+"meaning": "Tất nhiên",
+"example": "Of course. I can help you."
+},
+{
+"word": "No problem",
+"pronunciation": "/noʊ ˈprɑː.bləm/",
+"meaning": "Không sao; không có gì",
+"example": "No problem. I'll help you."
+}
+],
+"tasks": [
+{
+"id": 1,
+"dialogueLineId": 1,
+"type": "fillBlank",
+"parts": ["", ". I think this is the wrong drink."],
+"answers": ["Excuse me"],
+"speaker": "Ben",
+"transcript": "Excuse me. I think this is the wrong drink.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-01.mp3"
+},
+{
+"id": 2,
+"dialogueLineId": 1,
+"type": "fillBlank",
+"parts": ["Excuse me. I think this is the ", "."],
+"answers": ["wrong drink"],
+"speaker": "Ben",
+"transcript": "Excuse me. I think this is the wrong drink.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-01.mp3"
+},
+{
+"id": 3,
+"dialogueLineId": 1,
+"type": "multipleChoice",
+"question": "Ben gặp vấn đề gì?",
+"options": [
+"Ben nhận nhầm đồ uống.",
+"Ben chưa gọi đồ uống.",
+"Đồ uống quá nóng.",
+"Ben muốn gọi thêm bánh."
+],
+"answer": "Ben nhận nhầm đồ uống.",
+"speaker": "Ben",
+"transcript": "Excuse me. I think this is the wrong drink.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-01.mp3"
+},
+{
+"id": 4,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"parts": ["", ". What did you order?"],
+"answers": ["I'm sorry"],
+"speaker": "Alex",
+"transcript": "I'm sorry. What did you order?",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-01.mp3"
+},
+{
+"id": 5,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"parts": ["I'm sorry. What did you ", "?"],
+"answers": ["order"],
+"speaker": "Alex",
+"transcript": "I'm sorry. What did you order?",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-01.mp3"
+},
+{
+"id": 6,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"parts": ["I ", " a small latte."],
+"answers": ["ordered"],
+"speaker": "Ben",
+"transcript": "I ordered a small latte.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-02.mp3"
+},
+{
+"id": 7,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"parts": ["I ordered a ", "."],
+"answers": ["small latte"],
+"speaker": "Ben",
+"transcript": "I ordered a small latte.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-02.mp3"
+},
+{
+"id": 8,
+"dialogueLineId": 3,
+"type": "multipleChoice",
+"question": "Ben đã gọi món gì?",
+"options": [
+"Một ly latte nhỏ.",
+"Một ly cappuccino lớn.",
+"Một ly trà nóng.",
+"Một ly cà phê đen."
+],
+"answer": "Một ly latte nhỏ.",
+"speaker": "Ben",
+"transcript": "I ordered a small latte.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-02.mp3"
+},
+{
+"id": 9,
+"dialogueLineId": 4,
+"type": "fillBlank",
+"parts": ["And ", " did you get?"],
+"answers": ["what drink"],
+"speaker": "Alex",
+"transcript": "And what drink did you get?",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-02.mp3"
+},
+{
+"id": 10,
+"dialogueLineId": 4,
+"type": "fillBlank",
+"parts": ["And what drink did you ", "?"],
+"answers": ["get"],
+"speaker": "Alex",
+"transcript": "And what drink did you get?",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-02.mp3"
+},
+{
+"id": 11,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"parts": ["I ", " a large cappuccino."],
+"answers": ["got"],
+"speaker": "Ben",
+"transcript": "I got a large cappuccino.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-03.mp3"
+},
+{
+"id": 12,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"parts": ["I got a ", "."],
+"answers": ["large cappuccino"],
+"speaker": "Ben",
+"transcript": "I got a large cappuccino.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-03.mp3"
+},
+{
+"id": 13,
+"dialogueLineId": 5,
+"type": "multipleChoice",
+"question": "Ben thực sự nhận được món gì?",
+"options": [
+"Một ly cappuccino lớn.",
+"Một ly latte nhỏ.",
+"Một ly nước cam.",
+"Một ly trà đá."
+],
+"answer": "Một ly cappuccino lớn.",
+"speaker": "Ben",
+"transcript": "I got a large cappuccino.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-03.mp3"
+},
+{
+"id": 14,
+"dialogueLineId": 6,
+"type": "fillBlank",
+"parts": ["", ". That's not your order."],
+"answers": ["You're right"],
+"speaker": "Alex",
+"transcript": "You're right. That's not your order.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-03.mp3"
+},
+{
+"id": 15,
+"dialogueLineId": 6,
+"type": "fillBlank",
+"parts": ["You're right. That's not ", "."],
+"answers": ["your order"],
+"speaker": "Alex",
+"transcript": "You're right. That's not your order.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-03.mp3"
+},
+{
+"id": 16,
+"dialogueLineId": 7,
+"type": "fillBlank",
+"parts": ["", " check my order, please?"],
+"answers": ["Could you"],
+"speaker": "Ben",
+"transcript": "Could you check my order, please?",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-04.mp3"
+},
+{
+"id": 17,
+"dialogueLineId": 7,
+"type": "fillBlank",
+"parts": ["Could you ", ", please?"],
+"answers": ["check my order"],
+"speaker": "Ben",
+"transcript": "Could you check my order, please?",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-04.mp3"
+},
+{
+"id": 18,
+"dialogueLineId": 7,
+"type": "multipleChoice",
+"question": "Ben muốn Alex làm gì?",
+"options": [
+"Kiểm tra lại món Ben đã gọi.",
+"Mang thêm bánh.",
+"Đổi bàn cho Ben.",
+"Đưa mật khẩu Wi-Fi."
+],
+"answer": "Kiểm tra lại món Ben đã gọi.",
+"speaker": "Ben",
+"transcript": "Could you check my order, please?",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-04.mp3"
+},
+{
+"id": 19,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"parts": ["", ". You ordered a small latte."],
+"answers": ["Of course"],
+"speaker": "Alex",
+"transcript": "Of course. You ordered a small latte.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-04.mp3"
+},
+{
+"id": 20,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"parts": ["Of course. You ordered a ", "."],
+"answers": ["small latte"],
+"speaker": "Alex",
+"transcript": "Of course. You ordered a small latte.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-04.mp3"
+},
+{
+"id": 21,
+"dialogueLineId": 9,
+"type": "fillBlank",
+"parts": ["Yes, that's right. ", "."],
+"answers": ["Thank you"],
+"speaker": "Ben",
+"transcript": "Yes, that's right. Thank you.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/ben-05.mp3"
+},
+{
+"id": 22,
+"dialogueLineId": 10,
+"type": "fillBlank",
+"parts": ["", ". I'll make the right drink for you."],
+"answers": ["No problem"],
+"speaker": "Alex",
+"transcript": "No problem. I'll make the right drink for you.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-05.mp3"
+},
+{
+"id": 23,
+"dialogueLineId": 10,
+"type": "fillBlank",
+"parts": ["No problem. I'll make the ", " for you."],
+"answers": ["right drink"],
+"speaker": "Alex",
+"transcript": "No problem. I'll make the right drink for you.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-05.mp3"
+},
+{
+"id": 24,
+"dialogueLineId": 10,
+"type": "multipleChoice",
+"question": "Alex sẽ làm gì sau khi kiểm tra?",
+"options": [
+"Làm đúng đồ uống cho Ben.",
+"Tính tiền lại cho Ben.",
+"Đưa Ben sang bàn khác.",
+"Đưa Ben mật khẩu Wi-Fi."
+],
+"answer": "Làm đúng đồ uống cho Ben.",
+"speaker": "Alex",
+"transcript": "No problem. I'll make the right drink for you.",
+"scene": "/dialogue/coffee-shop/fixing-an-order/bg.png",
+"audioUrl": "/dialogue/coffee-shop/fixing-an-order/audio/alex-05.mp3"
+},
+{
+"id": 25,
+"type": "dialogueCloze",
+"lines": [
+{
+"dialogueLineId": 1,
+"speaker": "Ben",
+"parts": [
+"Excuse me. I think this is the ",
+{
+"id": "1",
+"blank": "wrong drink"
+},
+"."
+]
+},
+{
+"dialogueLineId": 2,
+"speaker": "Alex",
+"parts": [
+"I'm sorry. What did you ",
+{
+"id": "2",
+"blank": "order"
+},
+"?"
+]
+},
+{
+"dialogueLineId": 3,
+"speaker": "Ben",
+"parts": [
+"I ordered a ",
+{
+"id": "3",
+"blank": "small latte"
+},
+"."
+]
+},
+{
+"dialogueLineId": 4,
+"speaker": "Alex",
+"parts": [
+"And what drink did you ",
+{
+"id": "4",
+"blank": "get"
+},
+"?"
+]
+},
+{
+"dialogueLineId": 5,
+"speaker": "Ben",
+"parts": [
+"I got a ",
+{
+"id": "5",
+"blank": "large cappuccino"
+},
+"."
+]
+},
+{
+"dialogueLineId": 6,
+"speaker": "Alex",
+"parts": [
+"",
+{
+"id": "6",
+"blank": "You're right"
+},
+". That's not your order."
+]
+},
+{
+"dialogueLineId": 7,
+"speaker": "Ben",
+"parts": [
+"Could you ",
+{
+"id": "7",
+"blank": "check my order"
+},
+", please?"
+]
+},
+{
+"dialogueLineId": 8,
+"speaker": "Alex",
+"parts": [
+"",
+{
+"id": "8",
+"blank": "Of course"
+},
+". You ordered a small latte."
+]
+},
+{
+"dialogueLineId": 9,
+"speaker": "Ben",
+"parts": [
+"Yes, that's right. ",
+{
+"id": "9",
+"blank": "Thank you"
+},
+"."
+]
+},
+{
+"dialogueLineId": 10,
+"speaker": "Alex",
+"parts": [
+"No problem. I'll make the ",
+{
+"id": "10",
+"blank": "right drink"
+},
+" for you."
+]
+}
+]
+}
+],
+"grammarNotes": [
+{
+"title": "I think ...",
+"explanation": "Dùng “I think ...” để nói điều bạn nghĩ hoặc nhận thấy một cách nhẹ nhàng.",
+"example": "I think this is the wrong drink."
+},
+{
+"title": "What did you ...?",
+"explanation": "Dùng “What did you ...?” để hỏi về một việc đã xảy ra.",
+"example": "What did you order?"
+},
+{
+"title": "Could you ... please?",
+"explanation": "Dùng “Could you ... please?” để nhờ ai đó làm điều gì một cách lịch sự.",
+"example": "Could you check my order, please?"
+}
+],
+"_sourceCitation": ""
+}

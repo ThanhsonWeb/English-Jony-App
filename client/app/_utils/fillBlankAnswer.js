@@ -23,11 +23,12 @@ const SIMPLE_NUMBER_WORDS = {
 };
 
 export function normalizeAnswer(value) {
-	return value
-		.trim()
+	return String(value ?? "")
 		.toLocaleLowerCase()
+		.replace(/[,.?!]/g, " ")
 		.replace(/[’‘]/g, "'")
-		.replace(/\s+/g, " ");
+		.replace(/\s+/g, " ")
+		.trim();
 }
 
 function getSimpleNumberValue(value) {
@@ -39,11 +40,40 @@ function getSimpleNumberValue(value) {
 	return null;
 }
 
+function isShortHyphenatedWord(value) {
+	return (
+		/^[\p{L}\p{N}]+(?:-[\p{L}\p{N}]+)+$/u.test(value) &&
+		value.replace(/-/g, "").length <= 24
+	);
+}
+
+function getCompactWord(value) {
+	if (!/^[\p{L}\p{N}]+(?:[- ]+[\p{L}\p{N}]+)*$/u.test(value)) {
+		return null;
+	}
+
+	const compactValue = value.replace(/[- ]/g, "");
+	return compactValue.length <= 24 ? compactValue : null;
+}
+
 export function fillBlankAnswersMatch(value, expectedAnswer) {
 	const normalizedValue = normalizeAnswer(value);
 	const normalizedExpected = normalizeAnswer(expectedAnswer);
 	const expectedNumber = getSimpleNumberValue(normalizedExpected);
 
-	if (expectedNumber === null) return normalizedValue === normalizedExpected;
-	return getSimpleNumberValue(normalizedValue) === expectedNumber;
+	if (normalizedValue === normalizedExpected) return true;
+	if (expectedNumber !== null) {
+		return getSimpleNumberValue(normalizedValue) === expectedNumber;
+	}
+
+	if (
+		!isShortHyphenatedWord(normalizedValue) &&
+		!isShortHyphenatedWord(normalizedExpected)
+	) {
+		return false;
+	}
+
+	const compactValue = getCompactWord(normalizedValue);
+	const compactExpected = getCompactWord(normalizedExpected);
+	return compactValue !== null && compactValue === compactExpected;
 }
