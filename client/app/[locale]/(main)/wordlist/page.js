@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import {
 	BookOpen,
@@ -28,6 +28,7 @@ import {
 import NotebookIllustration from "./_components/NotebookIllustration";
 import { WordDialog, DeleteDialog } from "./_components/WordDialogs";
 import styles from "./wordlist.module.css";
+import { splitExample } from "@/app/_lib/exampleHighlight.mjs";
 
 const statuses = ["all", "new", "learning", "review", "mastered"];
 const statusIcons = {
@@ -62,6 +63,7 @@ export default function WordlistPage() {
 	const [deleting, setDeleting] = useState(null);
 	const [audioError, setAudioError] = useState(false);
 	const [page, setPage] = useState(1);
+	const reviewCardRef = useRef(null);
 	const userId = user?._id;
 	const requestKey = `${userId || "guest"}:${retry}`;
 	useEffect(() => {
@@ -134,6 +136,10 @@ export default function WordlistPage() {
 			words: previous.words.filter((word) => word._id !== id),
 		}));
 	}
+	function showReviewCard() {
+		reviewCardRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+		reviewCardRef.current?.focus({ preventScroll: true });
+	}
 	const reviewButton = (
 		<ReviewButton available={canReview} mode={mode} label={t("reviewNow")} />
 	);
@@ -148,7 +154,10 @@ export default function WordlistPage() {
 						<h1>{t("title")}</h1>
 						<p>{t("subtitle")}</p>
 						<div className={styles.heroActions}>
-							{reviewButton}
+							<button className={styles.primary} onClick={showReviewCard}>
+								<Play size={18} fill="currentColor" />
+								{t("viewDueWords")}
+							</button>
 							<button
 								className={styles.secondary}
 								disabled={!user || loading || Boolean(error)}
@@ -172,6 +181,7 @@ export default function WordlistPage() {
 								["dueToday", counts.review, CalendarDays],
 							].map(([label, count, Icon]) => (
 								<section key={label} className={styles.stat}>
+									<svg className={styles.statWave} data-wave={label} viewBox="0 0 220 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90C45 90 40 60 95 55S150 5 220 25V90Z" fill="currentColor" fillOpacity=".10" stroke="currentColor" strokeOpacity=".25" /></svg>
 									<span className={styles.statIcon} data-tone={label}>
 										<Icon size={29} />
 									</span>
@@ -182,6 +192,7 @@ export default function WordlistPage() {
 								</section>
 							))}
 						</div>
+						<div className={styles.toolbar}>
 						<div className={styles.search}>
 							<Search size={21} />
 							<input
@@ -217,6 +228,7 @@ export default function WordlistPage() {
 									{t(status)} <span>({counts[status]})</span>
 								</button>
 							))}
+						</div>
 						</div>
 						{audioError && <p role="alert">{t("audioError")}</p>}
 						{loading ? (
@@ -316,7 +328,7 @@ export default function WordlistPage() {
 															{word.vietnamese}
 														</td>
 														<td className={styles.example}>
-															{word.example || "—"}
+															{splitExample(word.example, word.english).map((part, index) => part.matched ? <span key={index} className={styles.exampleMatch}>{part.text}</span> : part.text)}
 														</td>
 														<td className={styles.statusCell}>
 															<span
@@ -372,7 +384,11 @@ export default function WordlistPage() {
 							</>
 						)}
 					</div>
-					<aside className={styles.reviewCard}>
+					<aside
+						ref={reviewCardRef}
+						tabIndex={-1}
+						className={styles.reviewCard}
+					>
 						<Sprout size={54} strokeWidth={1.4} />
 						<h2>
 							{loading || error || !user

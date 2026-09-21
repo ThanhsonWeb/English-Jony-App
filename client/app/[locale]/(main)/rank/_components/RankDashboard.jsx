@@ -181,11 +181,8 @@ export default function RankDashboard() {
 						<h1><Crown size={38} strokeWidth={1.7} aria-hidden="true" />{t("title")}</h1>
 						<p>{t("subtitle")}</p>
 					</div>
-					<aside className={styles.quote} aria-label={t("motivation")}>
 						<MountainDecoration />
-						
-						
-					</aside>
+				
 				</header>
 
 				<div className={styles.summaryGrid}>

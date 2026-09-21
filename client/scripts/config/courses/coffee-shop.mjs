@@ -10,7 +10,7 @@ const coffeeShop = {
 			dialogueId: "ordering-a-coffee",
 			title: "Gọi cà phê",
 			thumbnail:
-				"/dialogue/coffee-shop/ordering-a-coffee/thumbnails/ordering-a-coffee.png",
+				"/dialogue/coffee-shop/thumbnails/ordering-a-coffee.png",
 			situation:
 				"Ben gọi một ly cà phê tại quầy và Emma giúp Ben chọn loại đồ uống phù hợp.",
 		},

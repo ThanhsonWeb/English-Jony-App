@@ -45,12 +45,11 @@ function Navigation() {
 						<li key={link.key}>
 							<Link
 								href={link.href}
-								className={`relative inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-lg font-medium transition-all duration-200 ${
+								aria-current={isActive ? "page" : undefined}
+								className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-lg font-medium transition-[color,background-color,border-color,box-shadow,transform] duration-200 ease-out ${
 									isActive
-										? "border-app bg-surface-muted text-main shadow-[0_8px_24px_-14px_rgba(59,130,246,0.8)]"
-										: "border-transparent text-secondary hover:bg-surface-muted hover:text-main"
-								} after:absolute after:inset-x-3 after:bottom-0 after:h-[2px] after:origin-left after:rounded-full after:bg-primary after:shadow-[0_0_10px_var(--sj-primary)] after:transition-transform after:duration-300 after:ease-out ${
-									isActive ? "after:scale-x-100" : "after:scale-x-0"
+										? "border-primary/25 bg-active text-brand-text shadow-[0_4px_14px_var(--sj-shadow-color)]"
+										: "border-transparent text-secondary hover:border-app hover:bg-hover hover:text-main"
 								}`}
 							>
 								<Icon className="w-5 h-5" />
@@ -84,10 +83,11 @@ function Navigation() {
 								key={link.key}
 								href={link.href}
 								onClick={() => setOpenPathname(null)}
-								className={`inline-flex items-center gap-3 rounded-xl border px-4 py-3 text-lg font-medium transition-all ${
+								aria-current={isActive ? "page" : undefined}
+								className={`inline-flex items-center gap-3 rounded-xl border px-4 py-3 text-lg font-medium transition-[color,background-color,border-color,box-shadow] duration-200 ease-out ${
 									isActive
-										? "border-blue-500/20 bg-blue-500/10 font-semibold text-blue-300"
-										: "border-transparent text-secondary hover:bg-surface-muted hover:text-main"
+										? "border-primary/25 bg-active font-semibold text-brand-text shadow-[0_4px_14px_var(--sj-shadow-color)]"
+										: "border-transparent text-secondary hover:border-app hover:bg-hover hover:text-main"
 								}`}
 							>
 								<Icon className="w-5 h-5" />

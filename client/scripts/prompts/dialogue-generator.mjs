@@ -131,7 +131,9 @@ Dialogue length should depend on the situation.
 - Do NOT force speakers to alternate.
 - Avoid awkward sentences written only to teach grammar or vocabulary.
 - Prefer useful everyday phrases and conversational chunks.
-- Repeat useful language naturally when it helps memory.
+- Repeat useful vocabulary and conversational chunks naturally when helpful.
+- Avoid repeating the same whole sentence or sentence pattern just to create practice.
+- Prefer vocabulary and chunk repetition over full-sentence repetition.
 - Every dialogue line must have a Vietnamese translation.
 - Give every dialogue line a unique sequential numeric id, starting from 1.
 
@@ -169,11 +171,16 @@ EXERCISE RULES
 ==================================================
 
 - Practice the dialogue from beginning to end.
-- Practice each dialogue line before moving to the next.
-- Every dialogue line must receive at least 1 task.
-- Do not automatically give every dialogue line exactly 1 task.
-- Important or useful lines should usually receive 2 tasks.
-- Simple lines usually receive 1 task.
+- Classify every dialogue line with practicePriority: "simple", "important", or "veryImportant".
+- Use "simple" for a supporting, reaction, or low-value transition line.
+- Use "important" for a useful reusable sentence or phrase worth practicing twice.
+- Use "veryImportant" only for a core sentence directly tied to the dialogue's main communication goal and worth deeper repetition.
+- Count only standalone Fill Blank tasks for per-line practice repetition.
+- Multiple Choice is a separate comprehension check and does NOT count toward per-line practice.
+- The final Dialogue Cloze is review and does NOT count toward per-line practice.
+- A simple line must receive exactly 1 Fill Blank task.
+- An important line must receive exactly 2 distinct Fill Blank tasks.
+- A very important line must receive 2 distinct Fill Blank tasks and may receive a third only when the line contains a third meaningful target.
 - Keep repeated practice directly in the natural dialogue flow.
 - Do NOT create a separate review section just for repetition.
 - Avoid two tasks that test exactly the same thing.
@@ -202,7 +209,7 @@ Fill Blank:
 - Preserve punctuation and contractions from the original transcript.
 - Do NOT use an underscore-based "question" field for Fill Blank tasks.
 - Do NOT create the exact same Fill Blank task twice.
-- If the same line receives multiple Fill Blank tasks, blank different useful words or phrases.
+- If the same line receives multiple Fill Blank tasks, blank different useful words or phrases that do not overlap in the source sentence.
 ${a1FillBlankRules}
 
 Example:
@@ -220,8 +227,8 @@ Multiple Choice:
 
 - Use Multiple Choice only when it adds real learning value.
 - Do NOT create a Multiple Choice task for every dialogue line.
-- Test conversation understanding, context, preference, intention, reason, or decision.
-- A short useful phrase may also be tested for meaning.
+- Test conversation comprehension, context, intention, preference, reason, or decision.
+- Do NOT use Multiple Choice for vocabulary definitions or dictionary-style meaning questions.
 - Do NOT ask for a Vietnamese translation of the entire English sentence.
 - Do NOT simply ask for the Vietnamese meaning of the current dialogue line.
 - Ask only about information clearly supported by the dialogue.
@@ -359,6 +366,7 @@ Use this structure:
 			"speaker": "",
 			"text": "",
 			"translation": "",
+			"practicePriority": "simple",
 			"scene": "",
 			"audioUrl": ""
 		}

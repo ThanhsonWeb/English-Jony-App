@@ -13,6 +13,7 @@
 "id": 1,
 "speaker": "Ben",
 "text": "I'm a little hungry. Should we get a snack?",
+"practicePriority": "important",
 "translation": "Mình hơi đói. Chúng ta gọi món ăn nhẹ nhé?",
 "scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-01.mp3"
@@ -21,6 +22,7 @@
 "id": 2,
 "speaker": "Emma",
 "text": "Sure. What do you feel like eating?",
+"practicePriority": "veryImportant",
 "translation": "Được chứ. Bạn muốn ăn gì?",
 "scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-01.mp3"
@@ -29,6 +31,7 @@
 "id": 3,
 "speaker": "Ben",
 "text": "Something small. I don't want a big meal.",
+"practicePriority": "important",
 "translation": "Món gì đó nhỏ thôi. Mình không muốn ăn một bữa lớn.",
 "scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-02.mp3"
@@ -37,6 +40,7 @@
 "id": 4,
 "speaker": "Emma",
 "text": "They have muffins, cookies, and sandwiches.",
+"practicePriority": "simple",
 "translation": "Ở đây có bánh muffin, bánh quy và bánh sandwich.",
 "scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-02.mp3"
@@ -45,6 +49,7 @@
 "id": 5,
 "speaker": "Emma",
 "text": "The chocolate muffin looks good.",
+"practicePriority": "important",
 "translation": "Bánh muffin sô-cô-la trông ngon đấy.",
 "scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-03.mp3"
@@ -53,6 +58,7 @@
 "id": 6,
 "speaker": "Ben",
 "text": "Is it very sweet?",
+"practicePriority": "important",
 "translation": "Nó có ngọt lắm không?",
 "scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-03.mp3"
@@ -61,6 +67,7 @@
 "id": 7,
 "speaker": "Emma",
 "text": "Not really. It's soft and a little sweet.",
+"practicePriority": "important",
 "translation": "Không hẳn. Nó mềm và hơi ngọt.",
 "scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-04.mp3"
@@ -69,6 +76,7 @@
 "id": 8,
 "speaker": "Ben",
 "text": "That sounds good. I'll get the muffin.",
+"practicePriority": "veryImportant",
 "translation": "Nghe ngon đấy. Mình sẽ chọn bánh muffin.",
 "scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-04.mp3"
@@ -77,6 +85,7 @@
 "id": 9,
 "speaker": "Emma",
 "text": "Good choice. I might get a cookie.",
+"practicePriority": "simple",
 "translation": "Lựa chọn hay đấy. Có lẽ mình sẽ chọn một chiếc bánh quy.",
 "scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-05.mp3"
@@ -85,6 +94,7 @@
 "id": 10,
 "speaker": "Ben",
 "text": "Nice. We can share if you want.",
+"practicePriority": "important",
 "translation": "Hay đấy. Chúng ta có thể chia sẻ nếu bạn muốn.",
 "scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-05.mp3"
@@ -165,6 +175,22 @@
 },
 {
 "id": 2,
+"dialogueLineId": 1,
+"type": "fillBlank",
+"parts": [
+"I'm a little hungry. Should we ",
+"?"
+],
+"answers": [
+"get a snack"
+],
+"speaker": "Ben",
+"transcript": "I'm a little hungry. Should we get a snack?",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-01.mp3"
+},
+{
+"id": 3,
 "dialogueLineId": 2,
 "type": "fillBlank",
 "parts": [
@@ -180,7 +206,23 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-01.mp3"
 },
 {
-"id": 3,
+"id": 4,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"parts": [
+"Sure. ",
+" feel like eating?"
+],
+"answers": [
+"What do you"
+],
+"speaker": "Emma",
+"transcript": "Sure. What do you feel like eating?",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-01.mp3"
+},
+{
+"id": 5,
 "dialogueLineId": 2,
 "type": "multipleChoice",
 "question": "Emma muốn biết điều gì?",
@@ -197,7 +239,7 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-01.mp3"
 },
 {
-"id": 4,
+"id": 6,
 "dialogueLineId": 3,
 "type": "fillBlank",
 "parts": [
@@ -213,7 +255,23 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-02.mp3"
 },
 {
-"id": 5,
+"id": 7,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"parts": [
+"Something small. I don't want a ",
+"."
+],
+"answers": [
+"big meal"
+],
+"speaker": "Ben",
+"transcript": "Something small. I don't want a big meal.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-02.mp3"
+},
+{
+"id": 8,
 "dialogueLineId": 3,
 "type": "multipleChoice",
 "question": "Vì sao Ben muốn một món nhỏ?",
@@ -230,7 +288,7 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-02.mp3"
 },
 {
-"id": 6,
+"id": 9,
 "dialogueLineId": 4,
 "type": "fillBlank",
 "parts": [
@@ -248,7 +306,7 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-02.mp3"
 },
 {
-"id": 7,
+"id": 10,
 "dialogueLineId": 4,
 "type": "multipleChoice",
 "question": "Quán có những món ăn nhẹ nào?",
@@ -265,7 +323,7 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-02.mp3"
 },
 {
-"id": 8,
+"id": 11,
 "dialogueLineId": 5,
 "type": "fillBlank",
 "parts": [
@@ -281,7 +339,23 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-03.mp3"
 },
 {
-"id": 9,
+"id": 12,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"parts": [
+"The ",
+" looks good."
+],
+"answers": [
+"chocolate muffin"
+],
+"speaker": "Emma",
+"transcript": "The chocolate muffin looks good.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-03.mp3"
+},
+{
+"id": 13,
 "dialogueLineId": 6,
 "type": "fillBlank",
 "parts": [
@@ -297,7 +371,23 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-03.mp3"
 },
 {
-"id": 10,
+"id": 14,
+"dialogueLineId": 6,
+"type": "fillBlank",
+"parts": [
+"",
+" very sweet?"
+],
+"answers": [
+"Is it"
+],
+"speaker": "Ben",
+"transcript": "Is it very sweet?",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-03.mp3"
+},
+{
+"id": 15,
 "dialogueLineId": 6,
 "type": "multipleChoice",
 "question": "Ben muốn biết gì về chiếc bánh muffin?",
@@ -314,7 +404,7 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-03.mp3"
 },
 {
-"id": 11,
+"id": 16,
 "dialogueLineId": 7,
 "type": "fillBlank",
 "parts": [
@@ -330,7 +420,23 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-04.mp3"
 },
 {
-"id": 12,
+"id": 17,
+"dialogueLineId": 7,
+"type": "fillBlank",
+"parts": [
+"Not really. It's ",
+" and a little sweet."
+],
+"answers": [
+"soft"
+],
+"speaker": "Emma",
+"transcript": "Not really. It's soft and a little sweet.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-04.mp3"
+},
+{
+"id": 18,
 "dialogueLineId": 8,
 "type": "fillBlank",
 "parts": [
@@ -346,7 +452,23 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-04.mp3"
 },
 {
-"id": 13,
+"id": 19,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"parts": [
+"That sounds good. I'll get ",
+"."
+],
+"answers": [
+"the muffin"
+],
+"speaker": "Ben",
+"transcript": "That sounds good. I'll get the muffin.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-04.mp3"
+},
+{
+"id": 20,
 "dialogueLineId": 8,
 "type": "multipleChoice",
 "question": "Cuối cùng Ben chọn món nào?",
@@ -363,7 +485,7 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-04.mp3"
 },
 {
-"id": 14,
+"id": 21,
 "dialogueLineId": 9,
 "type": "fillBlank",
 "parts": [
@@ -379,7 +501,7 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/emma-05.mp3"
 },
 {
-"id": 15,
+"id": 22,
 "dialogueLineId": 10,
 "type": "fillBlank",
 "parts": [
@@ -395,7 +517,23 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-05.mp3"
 },
 {
-"id": 16,
+"id": 23,
+"dialogueLineId": 10,
+"type": "fillBlank",
+"parts": [
+"Nice. We can share ",
+"."
+],
+"answers": [
+"if you want"
+],
+"speaker": "Ben",
+"transcript": "Nice. We can share if you want.",
+"scene": "/dialogue/coffee-shop/choosing-a-snack/bg.png",
+"audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-05.mp3"
+},
+{
+"id": 24,
 "dialogueLineId": 10,
 "type": "multipleChoice",
 "question": "Ben gợi ý điều gì ở cuối cuộc trò chuyện?",
@@ -412,7 +550,7 @@
 "audioUrl": "/dialogue/coffee-shop/choosing-a-snack/audio/ben-05.mp3"
 },
 {
-"id": 17,
+"id": 25,
 "type": "dialogueCloze",
 "lines": [
 {

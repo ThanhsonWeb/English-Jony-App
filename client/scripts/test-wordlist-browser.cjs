@@ -99,6 +99,50 @@ async function run() {
 			for (const theme of ["light", "cream", "dark", "black", "system"]) {
 				const { page, requests, errors } = await setup(browser, width, theme);
 				await page.getByRole("rowheader", { name: /nature/ }).waitFor();
+				await page.getByRole("button", { name: messages.viewDueWords }).click();
+				assert.equal(
+					await page.locator("aside").evaluate((element) => element === document.activeElement),
+					true,
+				);
+				assert.equal(
+					await page.getByRole("link", { name: messages.reviewNow, exact: true }).count(),
+					1,
+				);
+				if (theme === "dark" || theme === "black") {
+					for (const [tone, color, background] of [
+						["total", "rgb(66, 245, 224)", "rgba(45, 212, 191, 0.14)"],
+						["learning", "rgb(196, 181, 253)", "rgba(167, 139, 250, 0.16)"],
+						["dueToday", "rgb(252, 211, 77)", "rgba(251, 191, 36, 0.16)"],
+					]) {
+						const styles = await page.locator(`[data-tone="${tone}"]`).evaluate((element) => ({
+							color: getComputedStyle(element).color,
+							background: getComputedStyle(element).backgroundColor,
+						}));
+						assert.deepEqual(styles, { color, background });
+					}
+					const reviewIcon = await page.locator("aside > svg").evaluate((element) => ({
+						color: getComputedStyle(element).color,
+						background: getComputedStyle(element).backgroundColor,
+					}));
+					assert.deepEqual(reviewIcon, {
+						color: "rgb(66, 245, 224)",
+						background: "rgba(45, 212, 191, 0.14)",
+					});
+				}
+				if (width >= 768) {
+					const activeNav = page.locator('header nav a[aria-current="page"]:visible');
+					assert.equal(await activeNav.count(), 1);
+					assert.match(await activeNav.innerText(), /Sổ tay/);
+					const headerBackground = await page.getByRole("banner").evaluate((element) => getComputedStyle(element).backgroundColor);
+					const activeBackground = await activeNav.evaluate((element) => getComputedStyle(element).backgroundColor);
+					assert.notEqual(activeBackground, headerBackground);
+				} else {
+					await page.getByRole("button", { name: "Toggle menu" }).click();
+					const activeNav = page.locator('header nav a[aria-current="page"]:visible');
+					assert.equal(await activeNav.count(), 1);
+					assert.match(await activeNav.innerText(), /Sổ tay/);
+					await page.getByRole("button", { name: "Toggle menu" }).click();
+				}
 				assert.equal(await page.locator("tbody tr").count(), 5);
 				assert.equal(
 					requests.filter((r) => r.path === "/api/v1/vocab").length,
@@ -125,11 +169,11 @@ async function run() {
 					.fill("no-matching-word");
 				await page.getByText(messages.noResults).waitFor();
 				await page.getByRole("textbox", { name: messages.search }).fill("");
-				if (theme === "cream")
+				if (theme === "light" || theme === "dark")
 					await page.screenshot({
 						path: require("node:path").join(
 							require("node:os").tmpdir(),
-							`wordlist-${width}.png`,
+							`wordlist-${theme}-${width}.png`,
 						),
 						fullPage: true,
 					});

@@ -69,10 +69,16 @@ EXERCISE RULES
 ==================================================
 
 - Practice the dialogue from beginning to end.
-- Practice each dialogue line before moving to the next.
-- Every dialogue line must receive at least 1 task.
-- Important or useful lines may receive 2–3 tasks.
-- Simple lines usually receive 1 task.
+- Classify every dialogue line with practicePriority: "simple", "important", or "veryImportant".
+- Count only standalone Fill Blank tasks for per-line practice repetition.
+- Multiple Choice is a separate comprehension check and does NOT count toward per-line practice.
+- The final Dialogue Cloze is review and does NOT count toward per-line practice.
+- A simple line must receive exactly 1 Fill Blank task.
+- An important line must receive exactly 2 distinct Fill Blank tasks.
+- A very important line must receive 2 distinct Fill Blank tasks and may receive a third only when the line contains a third meaningful target.
+- Keep repeated practice directly in the natural dialogue flow.
+- Do NOT create a separate review section just for repetition.
+- Avoid two tasks that test exactly the same thing.
 - Fill Blank is the main task type.
 - Multiple Choice should only be used when it genuinely tests understanding.
 - Do NOT create filler tasks just to increase task count.
@@ -88,7 +94,7 @@ EXERCISE RULES
 
 Fill Blank:
 
-- Use 1–3 meaningful blanks per task.
+- Use 1–2 meaningful blanks per task.
 - Blank useful words or phrases, not random filler words.
 - Store the unchanged text around the blanks in a "parts" array.
 - Use one entry in "answers" for every blank.
@@ -98,7 +104,23 @@ Fill Blank:
 - Preserve punctuation and contractions from the original transcript.
 - Do NOT use an underscore-based "question" field for Fill Blank tasks.
 - Do NOT create the exact same Fill Blank task twice.
-- If the same line receives multiple Fill Blank tasks, blank different useful words or phrases.
+- If the same line receives multiple Fill Blank tasks, blank different useful words or phrases that do not overlap in the source sentence.
+
+A1 Fill Blank rules:
+
+- Usually use only 1–2 blanks per task.
+- Prefer meaningful content words or useful short chunks.
+- Keep most of the sentence structure visible.
+- Do NOT make learners reconstruct the whole sentence.
+- Avoid removing several grammar or function words.
+
+GOOD:
+"There are so many ____ on this ____."
+Answers: ["drinks", "menu"]
+
+BAD:
+"____ are so many drinks ____ this menu."
+
 
 Example:
 
@@ -118,11 +140,21 @@ Multiple Choice:
 - Test conversation understanding, context, preference, intention, reason, or decision.
 - A short useful phrase may also be tested for meaning.
 - Do NOT ask for a Vietnamese translation of the entire English sentence.
+- Do NOT simply ask for the Vietnamese meaning of the current dialogue line.
 - Ask only about information clearly supported by the dialogue.
 - Wrong answers should be believable but clearly incorrect.
 - Include exactly one correct answer.
 - Include exactly four options.
 - The correct answer must appear in options.
+
+BAD:
+English: "Is it very sweet?"
+Question: "Ben muốn nói gì?"
+Answer: "Nó có ngọt lắm không?"
+
+GOOD:
+Question: "Ben đang hỏi về điều gì của chiếc muffin?"
+Answer: "Độ ngọt."
 
 Final review:
 
@@ -259,6 +291,7 @@ Use this structure:
 			"speaker": "",
 			"text": "",
 			"translation": "",
+			"practicePriority": "simple",
 			"scene": "",
 			"audioUrl": ""
 		}

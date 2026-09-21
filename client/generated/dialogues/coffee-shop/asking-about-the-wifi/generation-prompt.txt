@@ -5,12 +5,12 @@ an English-learning application for Vietnamese learners.
 COURSE
 
 Course ID: coffee-shop
-Dialogue ID: ordering-a-coffee
-Vietnamese title: Gọi cà phê
+Dialogue ID: asking-about-the-wifi
+Vietnamese title: Hỏi mật khẩu Wi-Fi
 Characters: Ben, Emma
 Configured level: a1
 Normalized CEFR level: A1
-Situation: Ben gọi một ly cà phê tại quầy và Emma giúp Ben chọn loại đồ uống phù hợp.
+Situation: Ben muốn sử dụng Wi-Fi của quán và hỏi Emma cách kết nối.
 
 ==================================================
 DIALOGUE RULES
@@ -244,7 +244,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/coffee-shop/ordering-a-coffee/bg.png"
+"/dialogue/coffee-shop/asking-about-the-wifi/bg.png"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -254,13 +254,13 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/coffee-shop/ordering-a-coffee/bg.png"
+"/dialogue/coffee-shop/asking-about-the-wifi/bg.png"
 
 Thumbnail:
-"/dialogue/coffee-shop/thumbnails/ordering-a-coffee.png"
+"/dialogue/coffee-shop/thumbnails/asking-about-the-wifi.png"
 
 Audio format:
-"/dialogue/coffee-shop/ordering-a-coffee/audio/{speaker}-{number}.mp3"
+"/dialogue/coffee-shop/asking-about-the-wifi/audio/{speaker}-{number}.mp3"
 
 ==================================================
 OUTPUT
@@ -277,12 +277,12 @@ Use this structure:
 {
 	"metadata": {
 		"courseId": "coffee-shop",
-		"dialogueId": "ordering-a-coffee",
-		"title": "Gọi cà phê",
+		"dialogueId": "asking-about-the-wifi",
+		"title": "Hỏi mật khẩu Wi-Fi",
 		"level": "a1",
-		"situation": "Ben gọi một ly cà phê tại quầy và Emma giúp Ben chọn loại đồ uống phù hợp.",
-		"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
-		"thumbnail": "/dialogue/coffee-shop/thumbnails/ordering-a-coffee.png"
+		"situation": "Ben muốn sử dụng Wi-Fi của quán và hỏi Emma cách kết nối.",
+		"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+		"thumbnail": "/dialogue/coffee-shop/thumbnails/asking-about-the-wifi.png"
 	},
 
 	"dialogue": [
