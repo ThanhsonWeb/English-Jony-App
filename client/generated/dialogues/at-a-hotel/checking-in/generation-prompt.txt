@@ -1,116 +1,16 @@
-import {
-	levelRules,
-	normalizeLevel,
-	structureRules,
-} from "./dialogue-rules.mjs";
 
-function formatRules(rules) {
-	return rules.map((rule) => `- ${rule}`).join("\n");
-}
-
-function formatSpeakerScenes(characters, scenes) {
-	if (!scenes) {
-		return "";
-	}
-
-	return characters
-		.filter((character) => scenes[character])
-		.map((character) => `- ${character}: "${scenes[character]}"`)
-		.join("\n");
-}
-
-export function buildDialoguePrompt(lessonConfig) {
-	const {
-		courseId,
-		dialogueId,
-		title,
-		characters,
-		level,
-		situation,
-		thumbnail,
-		scene: configuredScene,
-		scenes,
-	} = lessonConfig;
-
-	const normalizedLevel = normalizeLevel(level);
-	const selectedLevelRules = levelRules[normalizedLevel];
-	const fillBlankRange =
-		normalizedLevel === "a1"
-			? structureRules.a1FillBlankRange
-			: structureRules.fillBlankRange;
-	const a1FillBlankRules =
-		normalizedLevel === "a1"
-			? `
-A1 Fill Blank rules:
-
-- Usually use only 1–2 blanks per task.
-- Prefer meaningful content words or useful short chunks.
-- Keep most of the sentence structure visible.
-- Do NOT make learners reconstruct the whole sentence.
-- Avoid removing several grammar or function words.
-
-GOOD:
-"There are so many ____ on this ____."
-Answers: ["drinks", "menu"]
-
-BAD:
-"____ are so many drinks ____ this menu."
-`
-			: "";
-
-	if (!selectedLevelRules) {
-		throw new Error(`Unsupported CEFR level: ${normalizedLevel}`);
-	}
-
-	const defaultScene =
-		configuredScene ||
-		scenes?.[characters[0]] ||
-		`/dialogue/${courseId}/${dialogueId}/bg.png`;
-
-	const hasSpeakerScenes =
-		scenes && characters.some((character) => Boolean(scenes[character]));
-
-	const sceneRules = hasSpeakerScenes
-		? `
-SCENE RULES
-
-The characters are not necessarily in the same physical place.
-
-Use these exact speaker-specific scene paths:
-
-${formatSpeakerScenes(characters, scenes)}
-
-Rules:
-
-- Every dialogue line must use the scene belonging to its speaker.
-- Every linked task must reuse the exact scene from its dialogue line.
-- Never replace a speaker-specific scene with the default scene.
-- Repeated tasks for the same dialogue line must preserve the same scene exactly.
-- metadata.scene is only the fallback/default scene.
-`
-		: `
-SCENE RULES
-
-All dialogue lines use this shared scene:
-
-"${defaultScene}"
-
-Every linked task must reuse the same scene as its dialogue line.
-`;
-
-	return `
 You are creating a dialogue lesson for StudyJony,
 an English-learning application for Vietnamese learners.
 
 COURSE
 
-Course ID: ${courseId}
-Dialogue ID: ${dialogueId}
-Vietnamese title: ${title}
-Characters: ${characters.join(", ")}
-Configured level: ${level}
-Normalized CEFR level: ${normalizedLevel.toUpperCase()}
-Situation: ${situation}
+Course ID: at-a-hotel
+Dialogue ID: checking-in
+Vietnamese title: Làm thủ tục nhận phòng
+Characters: Ben, Maya, Daniel
+Configured level: a1
+Normalized CEFR level: A1
+Situation: Ben đến khách sạn và làm thủ tục nhận phòng với lễ tân.
 
 ==================================================
 DIALOGUE RULES
@@ -199,7 +99,7 @@ EXERCISE RULES
 
 Fill Blank:
 
-- Use ${fillBlankRange.min}–${fillBlankRange.max} meaningful blanks per task.
+- Use 1–2 meaningful blanks per task.
 - Blank useful words or phrases, not random filler words.
 - Store the unchanged text around the blanks in a "parts" array.
 - Use one entry in "answers" for every blank.
@@ -210,7 +110,22 @@ Fill Blank:
 - Do NOT use an underscore-based "question" field for Fill Blank tasks.
 - Do NOT create the exact same Fill Blank task twice.
 - If the same line receives multiple Fill Blank tasks, blank different useful words or phrases that do not overlap in the source sentence.
-${a1FillBlankRules}
+
+A1 Fill Blank rules:
+
+- Usually use only 1–2 blanks per task.
+- Prefer meaningful content words or useful short chunks.
+- Keep most of the sentence structure visible.
+- Do NOT make learners reconstruct the whole sentence.
+- Avoid removing several grammar or function words.
+
+GOOD:
+"There are so many ____ on this ____."
+Answers: ["drinks", "menu"]
+
+BAD:
+"____ are so many drinks ____ this menu."
+
 
 Example:
 
@@ -292,7 +207,7 @@ AUDIO
 USEFUL WORDS
 ==================================================
 
-- Include around ${structureRules.usefulWords.min}–${structureRules.usefulWords.max} useful words or phrases, depending on the dialogue.
+- Include around 4–10 useful words or phrases, depending on the dialogue.
 - Do not add low-value vocabulary just to reach a number.
 - Every useful word or phrase must actually appear in the dialogue.
 - Prefer useful conversational chunks over low-value isolated vocabulary.
@@ -325,10 +240,17 @@ Natural dialogue
 → Sổ tay
 
 ==================================================
-LANGUAGE DIFFICULTY — ${normalizedLevel.toUpperCase()}
+LANGUAGE DIFFICULTY — A1
 ==================================================
 
-${formatRules(selectedLevelRules)}
+- Use very common everyday vocabulary.
+- Use short, clear sentences with simple grammar and usually one idea per sentence.
+- Avoid unnecessary idioms, slang, and difficult words.
+- Make the language very easy for beginners.
+- Use one clear communication goal for the dialogue.
+- Prefer useful everyday phrases and chunks.
+- Do not force speakers to alternate.
+- Avoid dialogue that depends on invisible physical actions when the characters are static.
 
 The CEFR level controls language difficulty only.
 
@@ -336,20 +258,28 @@ Task count may vary depending on the dialogue.
 
 Prioritize learning quality over a fixed number of tasks.
 
-${sceneRules}
+
+SCENE RULES
+
+All dialogue lines use this shared scene:
+
+"/dialogue/at-a-hotel/checking-in/bg.png"
+
+Every linked task must reuse the same scene as its dialogue line.
+
 
 ==================================================
 ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"${defaultScene}"
+"/dialogue/at-a-hotel/checking-in/bg.png"
 
 Thumbnail:
-"${thumbnail}"
+"/dialogue/at-a-hotel/thumbnails/checking-in.png"
 
 Audio format:
-"/dialogue/${courseId}/${dialogueId}/audio/{speaker}-{number}.mp3"
+"/dialogue/at-a-hotel/checking-in/audio/{speaker}-{number}.mp3"
 
 ==================================================
 OUTPUT
@@ -365,13 +295,13 @@ Use this structure:
 
 {
 	"metadata": {
-		"courseId": "${courseId}",
-		"dialogueId": "${dialogueId}",
-		"title": "${title}",
-		"level": "${normalizedLevel}",
-		"situation": "${situation}",
-		"scene": "${defaultScene}",
-		"thumbnail": "${thumbnail}"
+		"courseId": "at-a-hotel",
+		"dialogueId": "checking-in",
+		"title": "Làm thủ tục nhận phòng",
+		"level": "a1",
+		"situation": "Ben đến khách sạn và làm thủ tục nhận phòng với lễ tân.",
+		"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+		"thumbnail": "/dialogue/at-a-hotel/thumbnails/checking-in.png"
 	},
 
 	"dialogue": [
@@ -448,6 +378,4 @@ Use this structure:
 			"example": ""
 		}
 	]
-}
-`;
 }

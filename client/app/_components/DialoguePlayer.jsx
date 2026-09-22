@@ -265,8 +265,8 @@ export default function DialoguePlayer({
 	};
 
 	return (
-		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
-			<div className="mx-auto max-w-4xl">
+		<div className="min-h-screen px-4 py-8 text-white sm:px-8 ">
+			<div className="mx-auto max-w-4xl ">
 				{/* <Link
 					href={`/dialogue/${lessonId}`}
 					className="mb-8 inline-flex items-center gap-2 text-slate-400 hover:text-white"
@@ -360,7 +360,7 @@ export default function DialoguePlayer({
 							{/* Subtitle - only visible while playing */}
 							{hasStarted && showSubtitles && !dialogueFinished && (
 								<div
-									className={`px-8 pb-3 pt-4 sm:px-12 lg:px-16 ${
+									className={`px-8 pb-3 pt-3 sm:px-12 lg:px-16 ${
 										isRightSideSpeaker(activeLine?.speaker)
 											? "text-right"
 											: "text-left"
@@ -377,20 +377,20 @@ export default function DialoguePlayer({
 
 									{/* Sentence + translate */}
 								<div
-									className={`mt-1 flex items-start gap-2 ${
+									className={`px-4 mt-1 flex items-start gap-2 ${
 										isRightSideSpeaker(activeLine?.speaker)
 											? "justify-end"
 											: "justify-start"
 									}`}
 								>
-										<p className="max-w-2xl text-base font-medium leading-relaxed text-white sm:text-lg">
+										<p className=" max-w-2xl text-base  leading-relaxed text-white sm:text-xl">
 											{activeLine?.text}
 										</p>
 									</div>
 
 									{/* Translation */}
 									{showTranslation && activeLine?.translation && (
-										<p className="mt-2 text-sm text-slate-300">
+										<p className=" px-4 mt-2 text-md text-slate-300">
 											{activeLine.translation}
 										</p>
 									)}

@@ -1,0 +1,331 @@
+{
+	"metadata": {
+		"courseId": "at-a-hotel",
+		"dialogueId": "checking-in",
+		"title": "Làm thủ tục nhận phòng",
+		"level": "a1",
+		"situation": "Ben đến khách sạn và làm thủ tục nhận phòng với Maya.",
+		"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+		"thumbnail": "/dialogue/at-a-hotel/thumbnails/checking-in.png"
+	},
+
+	"dialogue": [
+		{
+			"id": 1,
+			"speaker": "Ben",
+			"text": "Hi. I'd like to check in, please.",
+			"translation": "Chào bạn. Tôi muốn làm thủ tục nhận phòng.",
+			"practicePriority": "veryImportant",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-01.mp3"
+		},
+		{
+			"id": 2,
+			"speaker": "Maya",
+			"text": "Of course. What's your name?",
+			"translation": "Tất nhiên. Tên của bạn là gì?",
+			"practicePriority": "simple",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-01.mp3"
+		},
+		{
+			"id": 3,
+			"speaker": "Ben",
+			"text": "Ben Carter. I have a reservation.",
+			"translation": "Ben Carter. Tôi đã đặt phòng trước.",
+			"practicePriority": "veryImportant",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-02.mp3"
+		},
+		{
+			"id": 4,
+			"speaker": "Maya",
+			"text": "Great. How many nights are you staying?",
+			"translation": "Tốt. Bạn sẽ ở bao nhiêu đêm?",
+			"practicePriority": "important",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-02.mp3"
+		},
+		{
+			"id": 5,
+			"speaker": "Ben",
+			"text": "Three nights.",
+			"translation": "Ba đêm.",
+			"practicePriority": "simple",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-03.mp3"
+		},
+		{
+			"id": 6,
+			"speaker": "Maya",
+			"text": "Perfect. Your room is 204, on the second floor.",
+			"translation": "Tuyệt. Phòng của bạn là phòng 204, ở tầng hai.",
+			"practicePriority": "important",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-03.mp3"
+		},
+		{
+			"id": 7,
+			"speaker": "Maya",
+			"text": "Your key card is ready.",
+			"translation": "Thẻ phòng của bạn đã sẵn sàng.",
+			"practicePriority": "simple",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-04.mp3"
+		},
+		{
+			"id": 8,
+			"speaker": "Ben",
+			"text": "Great. Thank you.",
+			"translation": "Tuyệt. Cảm ơn bạn.",
+			"practicePriority": "simple",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-04.mp3"
+		},
+		{
+			"id": 9,
+			"speaker": "Maya",
+			"text": "You're welcome. Enjoy your stay.",
+			"translation": "Không có gì. Chúc bạn có kỳ nghỉ vui vẻ.",
+			"practicePriority": "important",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-05.mp3"
+		}
+	],
+
+	"tasks": [
+		{
+			"id": 1,
+			"dialogueLineId": 1,
+			"type": "fillBlank",
+			"parts": ["Hi. I'd like to ", ", please."],
+			"answers": ["check in"]
+		},
+		{
+			"id": 2,
+			"dialogueLineId": 1,
+			"type": "fillBlank",
+			"parts": ["Hi. ", " to check in, please."],
+			"answers": ["I'd like"]
+		},
+		{
+			"id": 3,
+			"dialogueLineId": 1,
+			"type": "multipleChoice",
+			"question": "Vì sao Ben dùng “I'd like to...”?",
+			"options": [
+				"Để nói nhanh hơn.",
+				"Để hỏi tên Maya.",
+				"Để nói về quá khứ.",
+				"Để nói mong muốn một cách lịch sự."
+			],
+			"answer": "Để nói mong muốn một cách lịch sự."
+		},
+
+		{
+			"id": 4,
+			"dialogueLineId": 2,
+			"type": "fillBlank",
+			"parts": ["Of course. What's ", "?"],
+			"answers": ["your name"]
+		},
+
+		{
+			"id": 5,
+			"dialogueLineId": 3,
+			"type": "fillBlank",
+			"parts": ["Ben Carter. I have a ", "."],
+			"answers": ["reservation"]
+		},
+		{
+			"id": 6,
+			"dialogueLineId": 3,
+			"type": "fillBlank",
+			"parts": ["Ben Carter. ", " a reservation."],
+			"answers": ["I have"]
+		},
+		{
+			"id": 7,
+			"dialogueLineId": 3,
+			"type": "multipleChoice",
+			"question": "Thông tin này giúp Maya làm gì?",
+			"options": [
+				"Tìm thông tin đặt phòng của Ben.",
+				"Chọn món ăn cho Ben.",
+				"Gọi taxi cho Ben.",
+				"Đổi giờ ăn sáng."
+			],
+			"answer": "Tìm thông tin đặt phòng của Ben."
+		},
+
+		{
+			"id": 8,
+			"dialogueLineId": 4,
+			"type": "fillBlank",
+			"parts": ["Great. How many ", " are you staying?"],
+			"answers": ["nights"]
+		},
+		{
+			"id": 9,
+			"dialogueLineId": 4,
+			"type": "fillBlank",
+			"parts": ["Great. ", " nights are you staying?"],
+			"answers": ["How many"]
+		},
+		{
+			"id": 10,
+			"dialogueLineId": 4,
+			"type": "multipleChoice",
+			"question": "Maya cần biết điều gì để tiếp tục nhận phòng?",
+			"options": [
+				"Ben muốn ăn gì.",
+				"Ben sẽ ở bao nhiêu đêm.",
+				"Ben đến bằng phương tiện gì.",
+				"Ben muốn dùng Wi-Fi không."
+			],
+			"answer": "Ben sẽ ở bao nhiêu đêm."
+		},
+
+		{
+			"id": 11,
+			"dialogueLineId": 5,
+			"type": "fillBlank",
+			"parts": ["Three ", "."],
+			"answers": ["nights"]
+		},
+
+		{
+			"id": 12,
+			"dialogueLineId": 6,
+			"type": "fillBlank",
+			"parts": ["Perfect. Your room is ", ", on the second floor."],
+			"answers": ["204"]
+		},
+		{
+			"id": 13,
+			"dialogueLineId": 6,
+			"type": "fillBlank",
+			"parts": ["Perfect. Your room is 204, on the ", "."],
+			"answers": ["second floor"]
+		},
+		{
+			"id": 14,
+			"dialogueLineId": 6,
+			"type": "multipleChoice",
+			"question": "Maya đang cung cấp thông tin gì cho Ben?",
+			"options": [
+				"Giờ trả phòng.",
+				"Giá phòng.",
+				"Số phòng và tầng.",
+				"Mật khẩu Wi-Fi."
+			],
+			"answer": "Số phòng và tầng."
+		},
+
+		{
+			"id": 15,
+			"dialogueLineId": 7,
+			"type": "fillBlank",
+			"parts": ["Your ", " is ready."],
+			"answers": ["key card"]
+		},
+
+		{
+			"id": 16,
+			"dialogueLineId": 8,
+			"type": "fillBlank",
+			"parts": ["Great. ", "."],
+			"answers": ["Thank you"]
+		},
+
+		{
+			"id": 17,
+			"dialogueLineId": 9,
+			"type": "fillBlank",
+			"parts": ["You're welcome. Enjoy your ", "."],
+			"answers": ["stay"]
+		},
+		{
+			"id": 18,
+			"dialogueLineId": 9,
+			"type": "fillBlank",
+			"parts": ["You're welcome. ", " your stay."],
+			"answers": ["Enjoy"]
+		},
+		{
+			"id": 19,
+			"dialogueLineId": 9,
+			"type": "multipleChoice",
+			"question": "Maya nói câu cuối để làm gì?",
+			"options": [
+				"Chúc Ben có thời gian vui vẻ ở khách sạn.",
+				"Yêu cầu Ben trả thêm tiền.",
+				"Hỏi Ben muốn đổi phòng không.",
+				"Nhắc Ben gọi lại sau."
+			],
+			"answer": "Chúc Ben có thời gian vui vẻ ở khách sạn."
+		}
+	],
+	"usefulWords": [
+		{
+			"word": "check in",
+			"pronunciation": "/tʃek ɪn/",
+			"meaning": "làm thủ tục nhận phòng",
+			"example": "I'd like to check in."
+		},
+		{
+			"word": "I'd like to",
+			"pronunciation": "/aɪd laɪk tə/",
+			"meaning": "tôi muốn",
+			"example": "I'd like to book a room."
+		},
+		{
+			"word": "reservation",
+			"pronunciation": "/ˌrezərˈveɪʃən/",
+			"meaning": "đặt chỗ, đặt phòng",
+			"example": "I have a reservation."
+		},
+		{
+			"word": "How many nights",
+			"pronunciation": "/haʊ ˈmeni naɪts/",
+			"meaning": "bao nhiêu đêm",
+			"example": "How many nights are you staying?"
+		},
+		{
+			"word": "second floor",
+			"pronunciation": "/ˈsekənd flɔːr/",
+			"meaning": "tầng hai",
+			"example": "My room is on the second floor."
+		},
+		{
+			"word": "from seven to ten",
+			"pronunciation": "/frəm ˈsevən tə ten/",
+			"meaning": "từ bảy giờ đến mười giờ",
+			"example": "Breakfast is from seven to ten."
+		},
+		{
+			"word": "Wi-Fi",
+			"pronunciation": "/ˈwaɪ faɪ/",
+			"meaning": "Wi-Fi",
+			"example": "Is Wi-Fi free?"
+		},
+		{
+			"word": "Enjoy your stay",
+			"pronunciation": "/ɪnˈdʒɔɪ jʊr steɪ/",
+			"meaning": "chúc bạn có kỳ nghỉ vui vẻ",
+			"example": "Enjoy your stay at the hotel."
+		}
+	],
+	"grammarNotes": [
+		{
+			"title": "Nói mong muốn với “I'd like to...”",
+			"explanation": "Dùng “I'd like to + động từ” để nói điều bạn muốn một cách lịch sự.",
+			"example": "I'd like to check in, please."
+		},
+		{
+			"title": "Hỏi số lượng với “How many...?”",
+			"explanation": "Dùng “How many + danh từ số nhiều...?” để hỏi số lượng.",
+			"example": "How many nights are you staying?"
+		}
+	]
+}

@@ -43,6 +43,40 @@ function isObviousTranslationQuestion(question) {
 	);
 }
 
+function isTranslationOnlyMultipleChoice(task, sourceLine) {
+	return (
+		isObviousTranslationQuestion(task.question) ||
+		(isPresent(task.answer) &&
+			normalizeVietnameseText(task.answer) ===
+				normalizeVietnameseText(sourceLine?.translation))
+	);
+}
+
+function isGrammarInContextQuestion(question) {
+	return /(?:kiểu câu|cấu trúc|ngữ pháp|lịch sự|polite|grammar|vì sao (?:lại )?dùng|tại sao (?:lại )?dùng)/iu.test(
+		String(question || ""),
+	);
+}
+
+function getQuestionSimilarity(firstQuestion, secondQuestion) {
+	const firstWords = new Set(normalizeVietnameseText(firstQuestion).split(" "));
+	const secondWords = new Set(normalizeVietnameseText(secondQuestion).split(" "));
+
+	firstWords.delete("");
+	secondWords.delete("");
+
+	if (firstWords.size === 0 || secondWords.size === 0) return 0;
+
+	const sharedWords = [...firstWords].filter((word) => secondWords.has(word));
+	const allWords = new Set([...firstWords, ...secondWords]);
+	return sharedWords.length / allWords.size;
+}
+
+function getAnswerPosition(task) {
+	if (!Array.isArray(task.options)) return -1;
+	return task.options.findIndex((option) => option === task.answer);
+}
+
 function countFillBlankAnswers(task) {
 	return Array.isArray(task.answers) ? task.answers.length : 0;
 }
@@ -205,6 +239,13 @@ export function validateDialogue(data, options = {}) {
 			: structureRules.fillBlankRange;
 
 	const errors = [];
+	const warnings = [];
+	const mcReport = {
+		total: 0,
+		translationOnly: 0,
+		answerPositionDistribution: { A: 0, B: 0, C: 0, D: 0 },
+		grammarInContext: 0,
+	};
 
 	// ------------------------------------------------------------
 	// Metadata
@@ -376,9 +417,10 @@ export function validateDialogue(data, options = {}) {
 			(task) => task.type === "fillBlank",
 		).length;
 
-		const multipleChoiceCount = practiceTasks.filter(
+		const multipleChoiceTasks = practiceTasks.filter(
 			(task) => task.type === "multipleChoice",
-		).length;
+		);
+		const multipleChoiceCount = multipleChoiceTasks.length;
 
 		if (practiceTasks.length > 0 && fillBlankCount <= multipleChoiceCount) {
 			errors.push(
@@ -601,6 +643,8 @@ export function validateDialogue(data, options = {}) {
 			// ----------------------------------------------------------
 
 			if (task.type === "multipleChoice") {
+				mcReport.total += 1;
+
 				if (!isPresent(task.question)) {
 					errors.push(`${taskLabel}: missing question.`);
 				}
@@ -609,19 +653,34 @@ export function validateDialogue(data, options = {}) {
 					errors.push(`${taskLabel}: missing answer.`);
 				}
 
-				if (
-					isObviousTranslationQuestion(task.question) &&
-					normalizeVietnameseText(task.answer) ===
-						normalizeVietnameseText(sourceLine.translation)
-				) {
+				if (isTranslationOnlyMultipleChoice(task, sourceLine)) {
+					mcReport.translationOnly += 1;
 					errors.push(
 						`${taskLabel}: Multiple Choice must not simply ask for the Vietnamese translation of dialogue line ${task.dialogueLineId}.`,
 					);
 				}
 
-				if (!Array.isArray(task.options) || task.options.length < 2) {
-					errors.push(`${taskLabel}: options are missing or invalid.`);
+				if (isGrammarInContextQuestion(task.question)) {
+					mcReport.grammarInContext += 1;
+				}
+
+				if (!Array.isArray(task.options) || task.options.length !== 4) {
+					errors.push(`${taskLabel}: Multiple Choice must have exactly 4 options.`);
 				} else {
+					const normalizedOptions = task.options.map((option) =>
+						normalizeVietnameseText(option),
+					);
+					const uniqueOptions = new Set(normalizedOptions);
+
+					if (
+						task.options.some((option) => !isPresent(option)) ||
+						uniqueOptions.size !== task.options.length
+					) {
+						errors.push(
+							`${taskLabel}: Multiple Choice options must be non-empty and unique.`,
+						);
+					}
+
 					const answerOccurrences = task.options.filter(
 						(option) => option === task.answer,
 					).length;
@@ -630,6 +689,12 @@ export function validateDialogue(data, options = {}) {
 						errors.push(
 							`${taskLabel}: answer must appear exactly once in options.`,
 						);
+					}
+
+					const answerPosition = getAnswerPosition(task);
+					if (answerPosition >= 0 && answerPosition <= 3) {
+						const answerLetter = String.fromCharCode(65 + answerPosition);
+						mcReport.answerPositionDistribution[answerLetter] += 1;
 					}
 				}
 			}
@@ -656,6 +721,84 @@ export function validateDialogue(data, options = {}) {
 		});
 
 		// ------------------------------------------------------------
+		// Multiple Choice quality and distribution
+		// ------------------------------------------------------------
+
+		const answerPositions = multipleChoiceTasks
+			.map(getAnswerPosition)
+			.filter((position) => position >= 0 && position <= 3);
+
+		if (mcReport.grammarInContext > 2) {
+			warnings.push(
+				`Found ${mcReport.grammarInContext} detectable grammar-in-context Multiple Choice tasks; usually use no more than 2 per dialogue.`,
+			);
+		}
+
+		if (
+			multipleChoiceCount >= 4 &&
+			answerPositions.length === multipleChoiceCount
+		) {
+			const mostUsedPosition = Math.max(
+				...Object.values(mcReport.answerPositionDistribution),
+			);
+
+			if (mostUsedPosition / multipleChoiceCount > 0.6) {
+				errors.push(
+					`Multiple Choice correct-answer positions are too concentrated: A=${mcReport.answerPositionDistribution.A}, B=${mcReport.answerPositionDistribution.B}, C=${mcReport.answerPositionDistribution.C}, D=${mcReport.answerPositionDistribution.D}.`,
+				);
+			}
+
+			if (
+				answerPositions.length >= 8 &&
+				new Set(answerPositions.slice(0, 4)).size === 4 &&
+				answerPositions.every(
+					(position, index) => position === answerPositions[index % 4],
+				)
+			) {
+				warnings.push(
+					"Multiple Choice correct-answer positions follow an obvious repeating four-position pattern.",
+				);
+			}
+		}
+
+		const multipleChoiceTasksPerLine = new Map();
+		for (const task of multipleChoiceTasks) {
+			const lineKey = String(task.dialogueLineId);
+			const fillBlankTargets = fillBlankTargetsPerLine.get(lineKey) || [];
+			const normalizedAnswer = normalizeText(task.answer);
+
+			if (
+				normalizedAnswer &&
+				fillBlankTargets.some(
+					(target) => target.normalized === normalizedAnswer,
+				)
+			) {
+				warnings.push(
+					`Task ${task.id}: Multiple Choice answer duplicates a Fill Blank target on dialogue line ${task.dialogueLineId}. Check that it tests a different skill.`,
+				);
+			}
+
+			const sameLineTasks = multipleChoiceTasksPerLine.get(lineKey) || [];
+			for (const previousTask of sameLineTasks) {
+				const similarity = getQuestionSimilarity(
+					previousTask.question,
+					task.question,
+				);
+				const sameAnswer =
+					normalizeVietnameseText(previousTask.answer) ===
+					normalizeVietnameseText(task.answer);
+
+				if (similarity >= 0.8 || (sameAnswer && similarity >= 0.5)) {
+					warnings.push(
+						`Tasks ${previousTask.id} and ${task.id}: Multiple Choice questions on dialogue line ${task.dialogueLineId} may test the same thing.`,
+					);
+				}
+			}
+
+			multipleChoiceTasksPerLine.set(lineKey, [...sameLineTasks, task]);
+		}
+
+		// ------------------------------------------------------------
 		// Every dialogue line: 1–3 practice tasks
 		// ------------------------------------------------------------
 
@@ -676,6 +819,11 @@ export function validateDialogue(data, options = {}) {
 	return {
 		valid: errors.length === 0,
 		errors,
+		warnings,
+		report: {
+			...mcReport,
+			validationResult: errors.length === 0 ? "passed" : "failed",
+		},
 	};
 }
 
@@ -683,6 +831,26 @@ function printFailure(errors) {
 	console.error("❌ Dialogue validation failed:\n");
 
 	errors.forEach((error) => console.error(`- ${error}`));
+}
+
+function printWarnings(warnings) {
+	if (warnings.length === 0) return;
+
+	console.warn("\nWarnings:");
+	warnings.forEach((warning) => console.warn(`- ${warning}`));
+}
+
+function printMcReport(report) {
+	const positions = report.answerPositionDistribution;
+
+	console.log("\nMultiple Choice report:");
+	console.log(`- Total MC count: ${report.total}`);
+	console.log(`- Translation-only MC count: ${report.translationOnly}`);
+	console.log(
+		`- Correct-answer positions: A=${positions.A}, B=${positions.B}, C=${positions.C}, D=${positions.D}`,
+	);
+	console.log(`- Grammar-in-context MC count: ${report.grammarInContext}`);
+	console.log(`- Validation result: ${report.validationResult}`);
 }
 
 async function runCli() {
@@ -725,10 +893,14 @@ async function runCli() {
 
 	if (result.valid) {
 		console.log("✅ Dialogue validation passed!");
+		printWarnings(result.warnings);
+		printMcReport(result.report);
 		return;
 	}
 
 	printFailure(result.errors);
+	printWarnings(result.warnings);
+	printMcReport(result.report);
 	process.exitCode = 1;
 }
 

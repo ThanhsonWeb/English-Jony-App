@@ -14,11 +14,13 @@ export default function DialogueListeningPage() {
 	}
 
 	return (
-		<DialoguePlayer
-			task={dialogue}
-			lessonId={lessonId}
-			dialogueId={dialogueId}
-			nextTask={dialogue.tasks[0]}
-		/>
+
+			<DialoguePlayer
+				task={dialogue}
+				lessonId={lessonId}
+				dialogueId={dialogueId}
+				nextTask={dialogue.tasks[0]}
+			/>
+
 	);
 }

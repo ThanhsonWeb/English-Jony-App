@@ -85,6 +85,7 @@ export default function DialogueLessonPage() {
 			(total, dialogue) => total + dialogue.tasks.length,
 			0,
 		) || 0;
+	const estimatedDurationMinutes = Math.ceil(totalTaskCount * 0.4);
 
 	const totalCompletedTaskCount =
 		lesson?.dialogues.reduce((total, dialogue) => {
@@ -105,7 +106,7 @@ export default function DialogueLessonPage() {
 	}
 
 	return (
-		<div className="min-h-screen px-4 py-2 text-white sm:px-8">
+		<div className="min-h-screen px-4 pb-20 pt-2 text-white sm:px-8">
 				{/* Hero */}
 				<div className="relative mx-auto mt-4 min-h-[290px] max-w-6xl overflow-hidden rounded-sm border border-app bg-hero">
 					{/* Hero image */}
@@ -149,7 +150,7 @@ export default function DialogueLessonPage() {
 							</span>
 
 							<span className="flex items-center gap-2">
-								<Clock3 size={16} />~{lesson.duration}
+								<Clock3 size={16} />~{estimatedDurationMinutes} phút
 							</span>
 
 							<span className="flex items-center gap-2">
