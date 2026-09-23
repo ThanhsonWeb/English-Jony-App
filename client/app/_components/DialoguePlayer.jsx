@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { Languages } from "lucide-react";
+import { lookupWord } from "@/app/_lib/dictionary/lookupWord";
+import { resolveMeaning } from "@/app/_lib/dictionary/resolveMeaning";
 
 import {
 	Play,
@@ -11,11 +14,110 @@ import {
 	ChevronDown,
 	MessageSquareText,
 	Captions,
+	Volume2,
 } from "lucide-react";
 
 const CHARACTER_ENTRY_DELAY = 700;
 const DIALOGUE_LINE_DELAY = 300;
 const PLAYBACK_RATES = [0.5, 0.75, 1, 1.25, 1.5];
+const SUBTITLE_WORD_PATTERN = /([A-Za-z]+(?:['’\-][A-Za-z]+)*)/g;
+const SUBTITLE_WORD_TOKEN_PATTERN = /^[A-Za-z]+(?:['’\-][A-Za-z]+)*$/;
+
+
+function findPreferredLookup(text, clickedWordIndex) {
+	const words = Array.from(text.matchAll(SUBTITLE_WORD_PATTERN), (match) =>
+		match[0],
+	);
+
+	for (let length = words.length; length >= 2; length -= 1) {
+		for (let start = 0; start + length <= words.length; start += 1) {
+			const end = start + length - 1;
+			if (clickedWordIndex < start || clickedWordIndex > end) continue;
+
+			const result = lookupWord(words.slice(start, end + 1).join(" "));
+			if (result?.source === "phrase") {
+				return { result, startWordIndex: start, endWordIndex: end };
+			}
+		}
+	}
+
+	const result = lookupWord(words[clickedWordIndex]);
+	return result
+		? {
+				result,
+				startWordIndex: clickedWordIndex,
+				endWordIndex: clickedWordIndex,
+			}
+		: null;
+}
+
+function renderSubtitleTokens(text, onWordClick, activeWordRange) {
+	let wordIndex = -1;
+	const segments = text.split(SUBTITLE_WORD_PATTERN).map((token, index) => ({
+		index,
+		token,
+		wordIndex: SUBTITLE_WORD_TOKEN_PATTERN.test(token) ? (wordIndex += 1) : null,
+	}));
+	const hasActivePhrase =
+		activeWordRange &&
+		activeWordRange.startWordIndex < activeWordRange.endWordIndex;
+	const phraseStart = hasActivePhrase
+		? segments.findIndex(
+				(segment) =>
+					segment.wordIndex === activeWordRange.startWordIndex,
+			)
+		: -1;
+	const phraseEnd = hasActivePhrase
+		? segments.findLastIndex(
+				(segment) => segment.wordIndex === activeWordRange.endWordIndex,
+			)
+		: -1;
+
+	function renderWordButton(segment, isActive = false, grouped = false) {
+		return (
+			<button
+				key={`${segment.token}-${segment.index}`}
+				type="button"
+				onClick={(event) => onWordClick(segment.wordIndex, event)}
+				data-dictionary-token="true"
+				className={`${grouped ? "" : "rounded-sm"} transition-colors hover:text-cyan-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 ${
+					!grouped ? "hover:bg-white/10" : ""
+				} ${
+					isActive
+						? "bg-cyan-400/15 text-cyan-100"
+						: ""
+				}`}
+			>
+				{segment.token}
+			</button>
+		);
+	}
+
+	return segments.map((segment, index) => {
+		if (index === phraseStart) {
+			return (
+				<span
+					key={`active-phrase-${phraseStart}-${phraseEnd}`}
+					className="box-decoration-clone rounded-sm bg-cyan-400/15 text-cyan-100"
+				>
+					{segments.slice(phraseStart, phraseEnd + 1).map((phraseSegment) =>
+						phraseSegment.wordIndex === null
+							? phraseSegment.token
+							: renderWordButton(phraseSegment, false, true),
+					)}
+				</span>
+			);
+		}
+
+		if (index > phraseStart && index <= phraseEnd) return null;
+		if (segment.wordIndex === null) return segment.token;
+
+		const isActive =
+			activeWordRange?.startWordIndex === segment.wordIndex &&
+			activeWordRange.endWordIndex === segment.wordIndex;
+		return renderWordButton(segment, isActive);
+	});
+}
 
 export default function DialoguePlayer({
 	task,
@@ -35,12 +137,14 @@ export default function DialoguePlayer({
 	const [playbackRate, setPlaybackRate] = useState(1);
 	const [showSpeedMenu, setShowSpeedMenu] = useState(false);
 	const [showSubtitles, setShowSubtitles] = useState(true);
+	const [selectedLookup, setSelectedLookup] = useState(null);
 
 	const audioRef = useRef(null);
 	const playbackRateRef = useRef(1);
 	const startTimeoutRef = useRef(null);
 	const lineTimeoutRef = useRef(null);
 	const pendingLineRef = useRef(null);
+	const dictionaryPopupRef = useRef(null);
 
 	const activeLine = task.dialogue[currentLine];
 	const characters = Object.entries(task.characters || {});
@@ -109,6 +213,93 @@ export default function DialoguePlayer({
 			clearLineTimeout();
 		};
 	}, []);
+
+	useEffect(() => {
+		if (!selectedLookup) return;
+
+		function handlePointerDown(event) {
+			if (
+				dictionaryPopupRef.current?.contains(event.target) ||
+				event.target.closest?.('[data-dictionary-token="true"]')
+			) {
+				return;
+			}
+
+			setSelectedLookup(null);
+		}
+
+		function handleKeyDown(event) {
+			if (event.key === "Escape") setSelectedLookup(null);
+		}
+
+		function handleViewportChange() {
+			setSelectedLookup(null);
+		}
+
+		document.addEventListener("pointerdown", handlePointerDown);
+		document.addEventListener("keydown", handleKeyDown);
+		window.addEventListener("resize", handleViewportChange);
+		window.addEventListener("scroll", handleViewportChange, true);
+
+		return () => {
+			document.removeEventListener("pointerdown", handlePointerDown);
+			document.removeEventListener("keydown", handleKeyDown);
+			window.removeEventListener("resize", handleViewportChange);
+			window.removeEventListener("scroll", handleViewportChange, true);
+		};
+	}, [selectedLookup]);
+
+	function handleSubtitleWordClick(wordIndex, event) {
+		const lookup = findPreferredLookup(activeLine?.text || "", wordIndex);
+		if (!lookup) {
+			setSelectedLookup(null);
+			return;
+		}
+
+		const wordBounds = event.currentTarget.getBoundingClientRect();
+		const isMobile = window.innerWidth < 640;
+		const popupWidth = 256;
+		const viewportPadding = 12;
+		const opensAbove = wordBounds.top >= 180;
+		const left = Math.min(
+			Math.max(
+				wordBounds.left + wordBounds.width / 2 - popupWidth / 2,
+				viewportPadding,
+			),
+			window.innerWidth - popupWidth - viewportPadding,
+		);
+		const result = resolveMeaning({
+			result: lookup.result,
+			transcript: activeLine?.text,
+			clickedWord: lookup.result.text,
+			matchedPhrase:
+				lookup.result.source === "phrase" ? lookup.result.text : "",
+		});
+
+		setSelectedLookup({
+			lineIndex: currentLine,
+			...lookup,
+			result,
+			isMobile,
+			position: {
+				left,
+				top: opensAbove ? wordBounds.top - 10 : wordBounds.bottom + 10,
+				opensAbove,
+			},
+		});
+	}
+
+	function handlePronounceLookup() {
+		if (!selectedLookup || !("speechSynthesis" in window)) return;
+
+		window.speechSynthesis.cancel();
+		const utterance = new SpeechSynthesisUtterance(
+			selectedLookup.result.text,
+		);
+		utterance.lang = "en-US";
+		utterance.rate = 0.9;
+		window.speechSynthesis.speak(utterance);
+	}
 
 	// Play one dialogue line
 	function playCurrentLine(index = currentLine) {
@@ -383,8 +574,15 @@ export default function DialoguePlayer({
 											: "justify-start"
 									}`}
 								>
-										<p className=" max-w-2xl text-base  leading-relaxed text-white sm:text-xl">
-											{activeLine?.text}
+										<p className="max-w-2xl text-base leading-relaxed text-white sm:text-xl">
+											{activeLine?.text &&
+												renderSubtitleTokens(
+													activeLine.text,
+													handleSubtitleWordClick,
+													selectedLookup?.lineIndex === currentLine
+														? selectedLookup
+														: null,
+												)}
 										</p>
 									</div>
 
@@ -639,6 +837,62 @@ export default function DialoguePlayer({
 						}
 					}
 				`}</style>
+
+				{selectedLookup?.lineIndex === currentLine &&
+					createPortal(
+						<div
+							ref={dictionaryPopupRef}
+							role="dialog"
+							aria-label={`Nghĩa của ${selectedLookup.result.text}`}
+							className={
+								selectedLookup.isMobile
+									? "fixed inset-x-3 bottom-3 z-[100] rounded-2xl border border-slate-700/80 bg-slate-950/95 px-3.5 py-3 text-left text-sm text-slate-200 shadow-2xl backdrop-blur-md"
+									: `fixed z-[100] w-64 rounded-xl border border-slate-700/80 bg-slate-950/95 px-3.5 py-3 text-left text-sm text-slate-200 shadow-2xl backdrop-blur-md ${
+										selectedLookup.position.opensAbove
+											? "-translate-y-full"
+											: ""
+									}`
+							}
+							style={
+								selectedLookup.isMobile
+									? undefined
+									: {
+											left: selectedLookup.position.left,
+											top: selectedLookup.position.top,
+										}
+							}
+						>
+							<div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+								<div className="flex items-center gap-1.5">
+									<strong className="text-base text-white">
+										{selectedLookup.result.text}
+									</strong>
+									<button
+										type="button"
+										onClick={handlePronounceLookup}
+										aria-label={`Phát âm ${selectedLookup.result.text}`}
+										className="inline-flex h-7 w-7 items-center justify-center rounded-full text-cyan-300 transition hover:bg-cyan-400/15 hover:text-cyan-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
+									>
+										<Volume2 size={15} />
+									</button>
+								</div>
+								<span className="text-cyan-300">
+									{selectedLookup.result.type}
+								</span>
+							</div>
+
+							{selectedLookup.result.ipa && (
+								<p className="mt-1 text-slate-400">
+									{selectedLookup.result.ipa}
+								</p>
+							)}
+
+							<p className="mt-2 leading-relaxed text-slate-100">
+								{selectedLookup.result.displayMeaning}
+							</p>
+						</div>,
+						document.body,
+					)}
 			</div>
 		</div>
 	);

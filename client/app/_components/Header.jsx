@@ -67,6 +67,7 @@ function Header() {
 		router.push("/");
 	}
 
+
 	return (
 		<header className="relative top-0 z-50 border-b border-app bg-surface/90 px-4 py-2 backdrop-blur-md sm:px-8">
 			<div className="flex items-center justify-between max-w-8xl mx-auto">
@@ -87,7 +88,6 @@ function Header() {
 								onClick={() => setIsDropdownOpen((open) => !open)}
 								className="group flex cursor-pointer items-center gap-3 rounded-xl px-1 py-2 transition-all duration-200 hover:bg-surface-muted sm:px-3"
 							>
-								
 								<div className=" hidden sm:block">
 									<p className="text-md font-semibold leading-tight text-main">
 										{user.name}

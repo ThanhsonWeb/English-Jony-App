@@ -7,6 +7,10 @@
     "type": "phrase",
     "meaning": "tôi muốn..."
   },
+  "how many": {
+    "type": "phrase",
+    "meaning": "bao nhiêu"
+  },
   "enjoy your stay": {
     "type": "phrase",
     "meaning": "chúc bạn có kỳ nghỉ vui vẻ"
