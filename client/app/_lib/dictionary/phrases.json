@@ -1,0 +1,14 @@
+{
+  "check in": {
+    "type": "phrase",
+    "meaning": "làm thủ tục nhận phòng"
+  },
+  "i'd like to": {
+    "type": "phrase",
+    "meaning": "tôi muốn..."
+  },
+  "enjoy your stay": {
+    "type": "phrase",
+    "meaning": "chúc bạn có kỳ nghỉ vui vẻ"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "reservation": {
+    "type": "noun",
+    "ipa": "/ˌrezərˈveɪʃən/",
+    "meaning": "đặt phòng, đặt chỗ"
+  },
+  "room": {
+    "type": "noun",
+    "ipa": "/ruːm/",
+    "meaning": "phòng"
+  },
+  "stay": {
+    "type": "verb",
+    "ipa": "/steɪ/",
+    "meaning": "ở, lưu trú"
+  }
+}
