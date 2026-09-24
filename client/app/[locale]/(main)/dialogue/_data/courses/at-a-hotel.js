@@ -1,6 +1,7 @@
 import atAHotelConfig from "@/scripts/config/courses/at-a-hotel.mjs";
 
 import checkingIn from "../dialogues/at-a-hotel/checking-in.json";
+import askingForExtraTowels from "../dialogues/at-a-hotel/asking-for-extra-towels.json";
 import { atAHotelMedia } from "../dialogues/at-a-hotel/media";
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
 
@@ -63,7 +64,10 @@ const atAHotelCourse = {
 	description:
 		"Học cách nhận phòng và giao tiếp trong những tình huống quen thuộc tại khách sạn.",
 	level: "beginner",
-	dialogues: [buildCourseDialogue(checkingIn)],
+	dialogues: [
+		buildCourseDialogue(checkingIn),
+		buildCourseDialogue(askingForExtraTowels),
+	],
 };
 
 export default atAHotelCourse;

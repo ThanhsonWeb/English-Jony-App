@@ -173,7 +173,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 					{hasScene && (
 						<Image
 							src={task.scene}
-							alt="Văn phòng"
+							alt={`Khung cảnh của ${task.character?.name || "nhân vật"}`}
 							fill
 							priority
 							className="object-cover"

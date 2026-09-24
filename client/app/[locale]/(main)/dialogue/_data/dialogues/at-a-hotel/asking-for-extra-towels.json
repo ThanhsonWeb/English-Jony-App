@@ -1,0 +1,638 @@
+{
+"metadata": {
+"courseId": "at-a-hotel",
+"dialogueId": "asking-for-extra-towels",
+"title": "Xin thêm khăn",
+"level": "a1",
+"situation": "Ben liên hệ nhân viên khách sạn để xin thêm khăn một cách lịch sự.",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/bg.png",
+"thumbnail": "/dialogue/at-a-hotel/thumbnails/asking-for-extra-towels.png"
+},
+"dialogue": [
+{
+"id": 1,
+"speaker": "Maya",
+"text": "Front desk. How can I help you?",
+"translation": "Lễ tân đây. Tôi có thể giúp gì cho bạn?",
+"practicePriority": "simple",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-01.mp3"
+},
+{
+"id": 2,
+"speaker": "Ben",
+"text": "Hi. Can I have two extra towels, please?",
+"translation": "Chào bạn. Tôi có thể xin thêm hai chiếc khăn được không?",
+"practicePriority": "veryImportant",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-01.mp3"
+},
+{
+"id": 3,
+"speaker": "Maya",
+"text": "Of course. What is your room number?",
+"translation": "Tất nhiên. Số phòng của bạn là bao nhiêu?",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-02.mp3"
+},
+{
+"id": 4,
+"speaker": "Ben",
+"text": "I'm in room 204.",
+"translation": "Tôi ở phòng 305.",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-02.mp3"
+},
+{
+"id": 5,
+"speaker": "Maya",
+"text": "Thank you. We'll bring the towels to your room.",
+"translation": "Cảm ơn bạn. Chúng tôi sẽ mang khăn đến phòng của bạn.",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-03.mp3"
+},
+{
+"id": 6,
+"speaker": "Ben",
+"text": "Great. How long will it take?",
+"translation": "Tuyệt. Sẽ mất bao lâu?",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-03.mp3"
+},
+{
+"id": 7,
+"speaker": "Maya",
+"text": "About ten minutes.",
+"translation": "Khoảng mười phút.",
+"practicePriority": "simple",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-04.mp3"
+},
+{
+"id": 8,
+"speaker": "Ben",
+"text": "Okay. Can you leave them at the door, please?",
+"translation": "Được rồi. Bạn có thể để chúng ở cửa được không?",
+"practicePriority": "veryImportant",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-04.mp3"
+},
+{
+"id": 9,
+"speaker": "Maya",
+"text": "Sure. We'll leave them at your door.",
+"translation": "Được. Chúng tôi sẽ để chúng ở cửa phòng của bạn.",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-05.mp3"
+},
+{
+"id": 10,
+"speaker": "Ben",
+"text": "Thank you very much.",
+"translation": "Cảm ơn bạn rất nhiều.",
+"practicePriority": "simple",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-05.mp3"
+}
+],
+"usefulWords": [
+{
+"word": "extra towels",
+"pronunciation": "/ˈekstrə ˈtaʊəlz/",
+"meaning": "khăn thêm",
+"example": "Can I have two extra towels?"
+},
+{
+"word": "room number",
+"pronunciation": "/ruːm ˈnʌmbər/",
+"meaning": "số phòng",
+"example": "What is your room number?"
+},
+{
+"word": "bring",
+"pronunciation": "/brɪŋ/",
+"meaning": "mang đến",
+"example": "We'll bring the towels to your room."
+},
+{
+"word": "How long",
+"pronunciation": "/haʊ lɔːŋ/",
+"meaning": "bao lâu",
+"example": "How long will it take?"
+},
+{
+"word": "ten minutes",
+"pronunciation": "/ten ˈmɪnɪts/",
+"meaning": "mười phút",
+"example": "It will take ten minutes."
+},
+{
+"word": "at the door",
+"pronunciation": "/æt ðə dɔːr/",
+"meaning": "ở cửa",
+"example": "Please leave it at the door."
+}
+],
+"tasks": [
+{
+"id": 1,
+"dialogueLineId": 1,
+"type": "fillBlank",
+"parts": [
+"Front desk. How can I ",
+" you?"
+],
+"answers": [
+"help"
+],
+"speaker": "Maya",
+"transcript": "Front desk. How can I help you?",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-01.mp3"
+},
+{
+"id": 2,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"parts": [
+"Hi. ",
+" two extra towels, please?"
+],
+"answers": [
+"Can I have"
+],
+"speaker": "Ben",
+"transcript": "Hi. Can I have two extra towels, please?",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-01.mp3"
+},
+{
+"id": 3,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"parts": [
+"Hi. Can I have ",
+", please?"
+],
+"answers": [
+"two extra towels"
+],
+"speaker": "Ben",
+"transcript": "Hi. Can I have two extra towels, please?",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-01.mp3"
+},
+{
+"id": 4,
+"dialogueLineId": 2,
+"type": "multipleChoice",
+"question": "Ben đang cần gì từ khách sạn?",
+"options": [
+"Thêm một chiếc gối",
+"Một thẻ phòng mới",
+"Đồ ăn",
+"Hai chiếc khăn thêm"
+],
+"answer": "Hai chiếc khăn thêm",
+"speaker": "Ben",
+"transcript": "Hi. Can I have two extra towels, please?",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-01.mp3"
+},
+{
+"id": 5,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"parts": [
+"Of course. What is your ",
+"?"
+],
+"answers": [
+"room number"
+],
+"speaker": "Maya",
+"transcript": "Of course. What is your room number?",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-02.mp3"
+},
+{
+"id": 6,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"parts": [
+"",
+". What is your room number?"
+],
+"answers": [
+"Of course"
+],
+"speaker": "Maya",
+"transcript": "Of course. What is your room number?",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-02.mp3"
+},
+{
+"id": 7,
+"dialogueLineId": 3,
+"type": "multipleChoice",
+"question": "Vì sao Maya hỏi số phòng của Ben?",
+"options": [
+"Để biết nơi mang khăn đến",
+"Để tính tiền bữa sáng",
+"Để đổi phòng cho Ben",
+"Để kiểm tra Wi-Fi"
+],
+"answer": "Để biết nơi mang khăn đến",
+"speaker": "Maya",
+"transcript": "Of course. What is your room number?",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-02.mp3"
+},
+{
+"id": 8,
+"dialogueLineId": 4,
+"type": "fillBlank",
+"parts": [
+"",
+" room 305."
+],
+"answers": [
+"I'm in"
+],
+"speaker": "Ben",
+"transcript": "I'm in room 305.",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-02.mp3"
+},
+{
+"id": 9,
+"dialogueLineId": 4,
+"type": "fillBlank",
+"parts": [
+"I'm in ",
+"."
+],
+"answers": [
+"room 305"
+],
+"speaker": "Ben",
+"transcript": "I'm in room 305.",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-02.mp3"
+},
+{
+"id": 10,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"parts": [
+"Thank you. We'll ",
+" the towels to your room."
+],
+"answers": [
+"bring"
+],
+"speaker": "Maya",
+"transcript": "Thank you. We'll bring the towels to your room.",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-03.mp3"
+},
+{
+"id": 11,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"parts": [
+"Thank you. We'll bring the towels ",
+"."
+],
+"answers": [
+"to your room"
+],
+"speaker": "Maya",
+"transcript": "Thank you. We'll bring the towels to your room.",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-03.mp3"
+},
+{
+"id": 12,
+"dialogueLineId": 5,
+"type": "multipleChoice",
+"question": "Nhân viên khách sạn sẽ làm gì tiếp theo?",
+"options": [
+"Gọi lại cho Ben",
+"Đổi phòng cho Ben",
+"Mang khăn đến phòng Ben",
+"Đưa Ben xuống lễ tân"
+],
+"answer": "Mang khăn đến phòng Ben",
+"speaker": "Maya",
+"transcript": "Thank you. We'll bring the towels to your room.",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-03.mp3"
+},
+{
+"id": 13,
+"dialogueLineId": 6,
+"type": "fillBlank",
+"parts": [
+"Great. ",
+" will it take?"
+],
+"answers": [
+"How long"
+],
+"speaker": "Ben",
+"transcript": "Great. How long will it take?",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-03.mp3"
+},
+{
+"id": 14,
+"dialogueLineId": 6,
+"type": "fillBlank",
+"parts": [
+"Great. How long will it ",
+"?"
+],
+"answers": [
+"take"
+],
+"speaker": "Ben",
+"transcript": "Great. How long will it take?",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-03.mp3"
+},
+{
+"id": 15,
+"dialogueLineId": 6,
+"type": "multipleChoice",
+"question": "Ben muốn biết thêm điều gì?",
+"options": [
+"Ai sẽ mang khăn",
+"Anh ấy phải chờ bao lâu",
+"Khăn có giá bao nhiêu",
+"Khăn ở đâu"
+],
+"answer": "Anh ấy phải chờ bao lâu",
+"speaker": "Ben",
+"transcript": "Great. How long will it take?",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-03.mp3"
+},
+{
+"id": 16,
+"dialogueLineId": 7,
+"type": "fillBlank",
+"parts": [
+"About ",
+"."
+],
+"answers": [
+"ten minutes"
+],
+"speaker": "Maya",
+"transcript": "About ten minutes.",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-04.mp3"
+},
+{
+"id": 17,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"parts": [
+"Okay. ",
+" at the door, please?"
+],
+"answers": [
+"Can you leave them"
+],
+"speaker": "Ben",
+"transcript": "Okay. Can you leave them at the door, please?",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-04.mp3"
+},
+{
+"id": 18,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"parts": [
+"Okay. Can you leave them ",
+", please?"
+],
+"answers": [
+"at the door"
+],
+"speaker": "Ben",
+"transcript": "Okay. Can you leave them at the door, please?",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-04.mp3"
+},
+{
+"id": 19,
+"dialogueLineId": 8,
+"type": "multipleChoice",
+"question": "Ben muốn nhân viên để khăn ở đâu?",
+"options": [
+"Ở cửa phòng",
+"Tại lễ tân",
+"Trong nhà hàng",
+"Trong thang máy"
+],
+"answer": "Ở cửa phòng",
+"speaker": "Ben",
+"transcript": "Okay. Can you leave them at the door, please?",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-04.mp3"
+},
+{
+"id": 20,
+"dialogueLineId": 9,
+"type": "fillBlank",
+"parts": [
+"Sure. We'll ",
+" at your door."
+],
+"answers": [
+"leave them"
+],
+"speaker": "Maya",
+"transcript": "Sure. We'll leave them at your door.",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-05.mp3"
+},
+{
+"id": 21,
+"dialogueLineId": 9,
+"type": "fillBlank",
+"parts": [
+"Sure. We'll leave them ",
+"."
+],
+"answers": [
+"at your door"
+],
+"speaker": "Maya",
+"transcript": "Sure. We'll leave them at your door.",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/maya-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/maya-05.mp3"
+},
+{
+"id": 22,
+"dialogueLineId": 10,
+"type": "fillBlank",
+"parts": [
+"",
+" very much."
+],
+"answers": [
+"Thank you"
+],
+"speaker": "Ben",
+"transcript": "Thank you very much.",
+"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
+"audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-05.mp3"
+},
+{
+"id": 23,
+"type": "dialogueCloze",
+"lines": [
+{
+"dialogueLineId": 1,
+"speaker": "Maya",
+"parts": [
+"Front desk. How can I ",
+{
+"id": "1",
+"blank": "help"
+},
+" you?"
+]
+},
+{
+"dialogueLineId": 2,
+"speaker": "Ben",
+"parts": [
+"Hi. Can I have ",
+{
+"id": "2",
+"blank": "two extra towels"
+},
+", please?"
+]
+},
+{
+"dialogueLineId": 3,
+"speaker": "Maya",
+"parts": [
+"Of course. What is your ",
+{
+"id": "3",
+"blank": "room number"
+},
+"?"
+]
+},
+{
+"dialogueLineId": 4,
+"speaker": "Ben",
+"parts": [
+"I'm in ",
+{
+"id": "4",
+"blank": "room 305"
+},
+"."
+]
+},
+{
+"dialogueLineId": 5,
+"speaker": "Maya",
+"parts": [
+"Thank you. We'll ",
+{
+"id": "5",
+"blank": "bring"
+},
+" the towels to your room."
+]
+},
+{
+"dialogueLineId": 6,
+"speaker": "Ben",
+"parts": [
+"Great. ",
+{
+"id": "6",
+"blank": "How long"
+},
+" will it take?"
+]
+},
+{
+"dialogueLineId": 7,
+"speaker": "Maya",
+"parts": [
+"About ",
+{
+"id": "7",
+"blank": "ten minutes"
+},
+"."
+]
+},
+{
+"dialogueLineId": 8,
+"speaker": "Ben",
+"parts": [
+"Okay. Can you leave them ",
+{
+"id": "8",
+"blank": "at the door"
+},
+", please?"
+]
+},
+{
+"dialogueLineId": 9,
+"speaker": "Maya",
+"parts": [
+"Sure. We'll ",
+{
+"id": "9",
+"blank": "leave them"
+},
+" at your door."
+]
+},
+{
+"dialogueLineId": 10,
+"speaker": "Ben",
+"parts": [
+{
+"id": "10",
+"blank": "Thank you"
+},
+" very much."
+]
+}
+]
+}
+],
+"grammarNotes": [
+{
+"title": "Can I have ...?",
+"explanation": "Dùng để xin hoặc yêu cầu một thứ gì đó một cách lịch sự.",
+"example": "Can I have two extra towels, please?"
+},
+{
+"title": "Can you ...?",
+"explanation": "Dùng để nhờ ai đó làm một việc một cách đơn giản và lịch sự.",
+"example": "Can you leave them at the door, please?"
+}
+],
+"_sourceCitation": ""
+}

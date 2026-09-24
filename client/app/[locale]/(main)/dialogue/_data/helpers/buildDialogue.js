@@ -74,7 +74,7 @@ export function buildGeneratedDialogueTasks(draft, characterImages) {
 					task.type === "multipleChoice"
 						? "Nghe và chọn đáp án đúng."
 						: "Nghe và điền từ còn thiếu.",
-				scene: draft.metadata.scene,
+				scene: dialogueLine?.scene ?? task.scene ?? draft.metadata.scene,
 				character: dialogueLine
 					? {
 							name: dialogueLine.speaker,
