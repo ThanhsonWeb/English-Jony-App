@@ -1,18 +1,26 @@
 {
-  "check in": {
-    "type": "phrase",
-    "meaning": "làm thủ tục nhận phòng"
-  },
-  "i'd like to": {
-    "type": "phrase",
-    "meaning": "tôi muốn..."
-  },
-  "how many": {
-    "type": "phrase",
-    "meaning": "bao nhiêu"
-  },
-  "enjoy your stay": {
-    "type": "phrase",
-    "meaning": "chúc bạn có kỳ nghỉ vui vẻ"
-  }
+	"check in": {
+		"type": "phrase",
+		"meaning": "làm thủ tục nhận phòng"
+	},
+	"i'd like to": {
+		"type": "phrase",
+		"meaning": "tôi muốn..."
+	},
+	"how many": {
+		"type": "phrase",
+		"meaning": "bao nhiêu"
+	},
+	"enjoy your stay": {
+		"type": "phrase",
+		"meaning": "chúc bạn có kỳ nghỉ vui vẻ"
+	},
+	"of course": {
+		"type": "phrase",
+		"meaning": "tất nhiên rồi ^^"
+	},
+  "you're welcome": {
+		"type": "phrase",
+		"meaning": "không có gì ^^"
+	}
 }

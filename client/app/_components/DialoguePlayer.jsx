@@ -877,13 +877,13 @@ export default function DialoguePlayer({
 									</button>
 								</div>
 								<span className="text-cyan-300">
-									{selectedLookup.result.type}
+									{selectedLookup.result.source === "phrase" ? selectedLookup.result.type : selectedLookup.result.pos?.join(", ")}
 								</span>
 							</div>
 
-							{selectedLookup.result.ipa && (
+							{selectedLookup.result.pron?.length > 0 && (
 								<p className="mt-1 text-slate-400">
-									{selectedLookup.result.ipa}
+									{selectedLookup.result.pron.join(", ")}
 								</p>
 							)}
 

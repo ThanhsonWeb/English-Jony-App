@@ -1,0 +1,3010 @@
+{
+  "summary": {
+    "sourceEntries": 2003,
+    "cleanedEntries": 1939,
+    "beginnerFunctionWordsPreserved": 8,
+    "lemmaMappings": 281,
+    "suspiciousEntries": 12,
+    "grammarDescriptions": 295,
+    "brokenIpa": 1,
+    "questionablePos": 2
+  },
+  "suspiciousEntries": [
+    {
+      "word": "an",
+      "meaning": "Xem a",
+      "reasons": [
+        "meaning appears to be English"
+      ]
+    },
+    {
+      "word": "functional",
+      "meaning": "Functionary",
+      "reasons": [
+        "meaning appears to be English"
+      ]
+    },
+    {
+      "word": "hardly",
+      "meaning": "Not much, very little",
+      "reasons": [
+        "meaning appears to be English"
+      ]
+    },
+    {
+      "word": "is",
+      "meaning": "Xem be",
+      "reasons": [
+        "meaning appears to be English"
+      ]
+    },
+    {
+      "word": "means",
+      "meaning": "Số nhiều của mean",
+      "reasons": [
+        "meaning appears to be English"
+      ]
+    },
+    {
+      "word": "meant",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của mean",
+      "reasons": [
+        "meaning appears to be English"
+      ]
+    },
+    {
+      "word": "primarily",
+      "meaning": "Primarily means mostly",
+      "reasons": [
+        "meaning appears to be English"
+      ]
+    },
+    {
+      "word": "quite",
+      "meaning": "Very; much",
+      "reasons": [
+        "meaning appears to be English"
+      ]
+    },
+    {
+      "word": "send",
+      "meaning": "Gửi, chuyển (đi) cái gì đó; thu xếp, xếp đặt, sắp đặt, sắp xếp cho cái gì đó đến, tới hoặc được mang, được đem, được dẫn, được đưa, được trao, được giao đến, tới một nơi nào khác, nhất là bằng đường bưu điện",
+      "reasons": [
+        "unusually long meaning"
+      ]
+    },
+    {
+      "word": "should",
+      "meaning": "",
+      "reasons": [
+        "empty meaning"
+      ]
+    },
+    {
+      "word": "suddenly",
+      "meaning": "Xem sudden",
+      "reasons": [
+        "meaning appears to be English"
+      ]
+    },
+    {
+      "word": "y",
+      "meaning": "Xem Y",
+      "reasons": [
+        "meaning appears to be English"
+      ]
+    }
+  ],
+  "lemmaCandidates": [
+    {
+      "word": "accepted",
+      "lemma": "accept",
+      "mapped": true
+    },
+    {
+      "word": "accounts",
+      "lemma": "account",
+      "mapped": true
+    },
+    {
+      "word": "acting",
+      "lemma": "act",
+      "mapped": true
+    },
+    {
+      "word": "activities",
+      "lemma": "activity",
+      "mapped": true
+    },
+    {
+      "word": "acts",
+      "lemma": "act",
+      "mapped": true
+    },
+    {
+      "word": "added",
+      "lemma": "add",
+      "mapped": true
+    },
+    {
+      "word": "advanced",
+      "lemma": "advance",
+      "mapped": true
+    },
+    {
+      "word": "affected",
+      "lemma": "affect",
+      "mapped": true
+    },
+    {
+      "word": "agencies",
+      "lemma": "agency",
+      "mapped": true
+    },
+    {
+      "word": "agents",
+      "lemma": "agent",
+      "mapped": true
+    },
+    {
+      "word": "allowed",
+      "lemma": "allow",
+      "mapped": true
+    },
+    {
+      "word": "allows",
+      "lemma": "allow",
+      "mapped": true
+    },
+    {
+      "word": "appeared",
+      "lemma": "appear",
+      "mapped": true
+    },
+    {
+      "word": "applied",
+      "lemma": "apply",
+      "mapped": true
+    },
+    {
+      "word": "approaches",
+      "lemma": "approach",
+      "mapped": true
+    },
+    {
+      "word": "areas",
+      "lemma": "area",
+      "mapped": true
+    },
+    {
+      "word": "arts",
+      "lemma": "art",
+      "mapped": true
+    },
+    {
+      "word": "asked",
+      "lemma": "ask",
+      "mapped": true
+    },
+    {
+      "word": "assumed",
+      "lemma": "assume",
+      "mapped": true
+    },
+    {
+      "word": "authorities",
+      "lemma": "authority",
+      "mapped": true
+    },
+    {
+      "word": "banks",
+      "lemma": "bank",
+      "mapped": true
+    },
+    {
+      "word": "based",
+      "lemma": "base",
+      "mapped": true
+    },
+    {
+      "word": "becoming",
+      "lemma": "become",
+      "mapped": true
+    },
+    {
+      "word": "been",
+      "lemma": "be",
+      "mapped": true
+    },
+    {
+      "word": "better",
+      "lemma": "good",
+      "mapped": true
+    },
+    {
+      "word": "bodies",
+      "lemma": "body",
+      "mapped": true
+    },
+    {
+      "word": "books",
+      "lemma": "book",
+      "mapped": true
+    },
+    {
+      "word": "boys",
+      "lemma": "boy",
+      "mapped": true
+    },
+    {
+      "word": "brought",
+      "lemma": "bring",
+      "mapped": true
+    },
+    {
+      "word": "building",
+      "lemma": "build",
+      "mapped": true
+    },
+    {
+      "word": "buildings",
+      "lemma": "building",
+      "mapped": true
+    },
+    {
+      "word": "called",
+      "lemma": "call",
+      "mapped": true
+    },
+    {
+      "word": "calls",
+      "lemma": "call",
+      "mapped": true
+    },
+    {
+      "word": "carried",
+      "lemma": "carry",
+      "mapped": true
+    },
+    {
+      "word": "carrying",
+      "lemma": "carry",
+      "mapped": true
+    },
+    {
+      "word": "cases",
+      "lemma": "case",
+      "mapped": true
+    },
+    {
+      "word": "categories",
+      "lemma": "category",
+      "mapped": true
+    },
+    {
+      "word": "caused",
+      "lemma": "cause",
+      "mapped": true
+    },
+    {
+      "word": "causes",
+      "lemma": "cause",
+      "mapped": true
+    },
+    {
+      "word": "cells",
+      "lemma": "cell",
+      "mapped": true
+    },
+    {
+      "word": "changes",
+      "lemma": "change",
+      "mapped": true
+    },
+    {
+      "word": "changing",
+      "lemma": "change",
+      "mapped": true
+    },
+    {
+      "word": "characteristics",
+      "lemma": "characteristic",
+      "mapped": true
+    },
+    {
+      "word": "cities",
+      "lemma": "city",
+      "mapped": true
+    },
+    {
+      "word": "claims",
+      "lemma": "claim",
+      "mapped": true
+    },
+    {
+      "word": "closed",
+      "lemma": "close",
+      "mapped": true
+    },
+    {
+      "word": "communities",
+      "lemma": "community",
+      "mapped": true
+    },
+    {
+      "word": "companies",
+      "lemma": "company",
+      "mapped": true
+    },
+    {
+      "word": "completed",
+      "lemma": "complete",
+      "mapped": true
+    },
+    {
+      "word": "conditions",
+      "lemma": "condition",
+      "mapped": true
+    },
+    {
+      "word": "conducted",
+      "lemma": "conduct",
+      "mapped": true
+    },
+    {
+      "word": "considered",
+      "lemma": "consider",
+      "mapped": true
+    },
+    {
+      "word": "contained",
+      "lemma": "contain",
+      "mapped": true
+    },
+    {
+      "word": "containing",
+      "lemma": "contain",
+      "mapped": true
+    },
+    {
+      "word": "continued",
+      "lemma": "continue",
+      "mapped": true
+    },
+    {
+      "word": "controlled",
+      "lemma": "control",
+      "mapped": true
+    },
+    {
+      "word": "countries",
+      "lemma": "country",
+      "mapped": true
+    },
+    {
+      "word": "courts",
+      "lemma": "court",
+      "mapped": true
+    },
+    {
+      "word": "covered",
+      "lemma": "cover",
+      "mapped": true
+    },
+    {
+      "word": "dealing",
+      "lemma": "deal",
+      "mapped": true
+    },
+    {
+      "word": "decisions",
+      "lemma": "decision",
+      "mapped": true
+    },
+    {
+      "word": "designed",
+      "lemma": "design",
+      "mapped": true
+    },
+    {
+      "word": "desired",
+      "lemma": "desire",
+      "mapped": true
+    },
+    {
+      "word": "detailed",
+      "lemma": "detail",
+      "mapped": true
+    },
+    {
+      "word": "details",
+      "lemma": "detail",
+      "mapped": true
+    },
+    {
+      "word": "determined",
+      "lemma": "determine",
+      "mapped": true
+    },
+    {
+      "word": "developed",
+      "lemma": "develop",
+      "mapped": true
+    },
+    {
+      "word": "developing",
+      "lemma": "develop",
+      "mapped": true
+    },
+    {
+      "word": "did",
+      "lemma": "do",
+      "mapped": true
+    },
+    {
+      "word": "died",
+      "lemma": "die",
+      "mapped": true
+    },
+    {
+      "word": "directed",
+      "lemma": "direct",
+      "mapped": true
+    },
+    {
+      "word": "documents",
+      "lemma": "document",
+      "mapped": true
+    },
+    {
+      "word": "does",
+      "lemma": "do",
+      "mapped": true
+    },
+    {
+      "word": "done",
+      "lemma": "do",
+      "mapped": true
+    },
+    {
+      "word": "drawing",
+      "lemma": "draw",
+      "mapped": true
+    },
+    {
+      "word": "drugs",
+      "lemma": "drug",
+      "mapped": true
+    },
+    {
+      "word": "effects",
+      "lemma": "effect",
+      "mapped": true
+    },
+    {
+      "word": "entered",
+      "lemma": "enter",
+      "mapped": true
+    },
+    {
+      "word": "established",
+      "lemma": "establish",
+      "mapped": true
+    },
+    {
+      "word": "evening",
+      "lemma": "even",
+      "mapped": true
+    },
+    {
+      "word": "existing",
+      "lemma": "exist",
+      "mapped": true
+    },
+    {
+      "word": "exists",
+      "lemma": "exist",
+      "mapped": true
+    },
+    {
+      "word": "expected",
+      "lemma": "expect",
+      "mapped": true
+    },
+    {
+      "word": "experienced",
+      "lemma": "experience",
+      "mapped": true
+    },
+    {
+      "word": "explained",
+      "lemma": "explain",
+      "mapped": true
+    },
+    {
+      "word": "expressed",
+      "lemma": "express",
+      "mapped": true
+    },
+    {
+      "word": "eyes",
+      "lemma": "eye",
+      "mapped": true
+    },
+    {
+      "word": "features",
+      "lemma": "feature",
+      "mapped": true
+    },
+    {
+      "word": "feeling",
+      "lemma": "feel",
+      "mapped": true
+    },
+    {
+      "word": "fields",
+      "lemma": "field",
+      "mapped": true
+    },
+    {
+      "word": "finding",
+      "lemma": "find",
+      "mapped": true
+    },
+    {
+      "word": "firms",
+      "lemma": "firm",
+      "mapped": true
+    },
+    {
+      "word": "followed",
+      "lemma": "follow",
+      "mapped": true
+    },
+    {
+      "word": "following",
+      "lemma": "follow",
+      "mapped": true
+    },
+    {
+      "word": "forced",
+      "lemma": "force",
+      "mapped": true
+    },
+    {
+      "word": "forms",
+      "lemma": "form",
+      "mapped": true
+    },
+    {
+      "word": "found",
+      "lemma": "find",
+      "mapped": true
+    },
+    {
+      "word": "funds",
+      "lemma": "fund",
+      "mapped": true
+    },
+    {
+      "word": "girls",
+      "lemma": "girl",
+      "mapped": true
+    },
+    {
+      "word": "goes",
+      "lemma": "go",
+      "mapped": true
+    },
+    {
+      "word": "got",
+      "lemma": "get",
+      "mapped": true
+    },
+    {
+      "word": "governments",
+      "lemma": "government",
+      "mapped": true
+    },
+    {
+      "word": "groups",
+      "lemma": "group",
+      "mapped": true
+    },
+    {
+      "word": "had",
+      "lemma": "have",
+      "mapped": true
+    },
+    {
+      "word": "hands",
+      "lemma": "hand",
+      "mapped": true
+    },
+    {
+      "word": "has",
+      "lemma": "have",
+      "mapped": true
+    },
+    {
+      "word": "helped",
+      "lemma": "help",
+      "mapped": true
+    },
+    {
+      "word": "holding",
+      "lemma": "hold",
+      "mapped": true
+    },
+    {
+      "word": "houses",
+      "lemma": "house",
+      "mapped": true
+    },
+    {
+      "word": "housing",
+      "lemma": "house",
+      "mapped": true
+    },
+    {
+      "word": "identified",
+      "lemma": "identify",
+      "mapped": true
+    },
+    {
+      "word": "images",
+      "lemma": "image",
+      "mapped": true
+    },
+    {
+      "word": "improved",
+      "lemma": "improve",
+      "mapped": true
+    },
+    {
+      "word": "included",
+      "lemma": "include",
+      "mapped": true
+    },
+    {
+      "word": "including",
+      "lemma": "include",
+      "mapped": true
+    },
+    {
+      "word": "indicated",
+      "lemma": "indicate",
+      "mapped": true
+    },
+    {
+      "word": "interested",
+      "lemma": "interest",
+      "mapped": true
+    },
+    {
+      "word": "interesting",
+      "lemma": "interest",
+      "mapped": true
+    },
+    {
+      "word": "issued",
+      "lemma": "issue",
+      "mapped": true
+    },
+    {
+      "word": "issues",
+      "lemma": "issue",
+      "mapped": true
+    },
+    {
+      "word": "jobs",
+      "lemma": "job",
+      "mapped": true
+    },
+    {
+      "word": "kinds",
+      "lemma": "kind",
+      "mapped": true
+    },
+    {
+      "word": "knew",
+      "lemma": "know",
+      "mapped": true
+    },
+    {
+      "word": "knowing",
+      "lemma": "know",
+      "mapped": true
+    },
+    {
+      "word": "leaders",
+      "lemma": "leader",
+      "mapped": true
+    },
+    {
+      "word": "leading",
+      "lemma": "lead",
+      "mapped": true
+    },
+    {
+      "word": "leads",
+      "lemma": "lead",
+      "mapped": true
+    },
+    {
+      "word": "learned",
+      "lemma": "learn",
+      "mapped": true
+    },
+    {
+      "word": "learning",
+      "lemma": "learn",
+      "mapped": true
+    },
+    {
+      "word": "leaves",
+      "lemma": "leave",
+      "mapped": true
+    },
+    {
+      "word": "left",
+      "lemma": "leave",
+      "mapped": true
+    },
+    {
+      "word": "levels",
+      "lemma": "level",
+      "mapped": true
+    },
+    {
+      "word": "lies",
+      "lemma": "lie",
+      "mapped": true
+    },
+    {
+      "word": "limited",
+      "lemma": "limit",
+      "mapped": true
+    },
+    {
+      "word": "limits",
+      "lemma": "limit",
+      "mapped": true
+    },
+    {
+      "word": "lines",
+      "lemma": "line",
+      "mapped": true
+    },
+    {
+      "word": "lived",
+      "lemma": "live",
+      "mapped": true
+    },
+    {
+      "word": "lives",
+      "lemma": "live",
+      "mapped": true
+    },
+    {
+      "word": "looked",
+      "lemma": "look",
+      "mapped": true
+    },
+    {
+      "word": "looking",
+      "lemma": "look",
+      "mapped": true
+    },
+    {
+      "word": "looks",
+      "lemma": "look",
+      "mapped": true
+    },
+    {
+      "word": "maintained",
+      "lemma": "maintain",
+      "mapped": true
+    },
+    {
+      "word": "making",
+      "lemma": "make",
+      "mapped": true
+    },
+    {
+      "word": "marked",
+      "lemma": "mark",
+      "mapped": true
+    },
+    {
+      "word": "marketing",
+      "lemma": "market",
+      "mapped": true
+    },
+    {
+      "word": "meaning",
+      "lemma": "mean",
+      "mapped": true
+    },
+    {
+      "word": "means",
+      "lemma": "mean",
+      "mapped": true
+    },
+    {
+      "word": "measured",
+      "lemma": "measure",
+      "mapped": true
+    },
+    {
+      "word": "measures",
+      "lemma": "measure",
+      "mapped": true
+    },
+    {
+      "word": "meeting",
+      "lemma": "meet",
+      "mapped": true
+    },
+    {
+      "word": "minutes",
+      "lemma": "minute",
+      "mapped": true
+    },
+    {
+      "word": "models",
+      "lemma": "model",
+      "mapped": true
+    },
+    {
+      "word": "moved",
+      "lemma": "move",
+      "mapped": true
+    },
+    {
+      "word": "named",
+      "lemma": "name",
+      "mapped": true
+    },
+    {
+      "word": "names",
+      "lemma": "name",
+      "mapped": true
+    },
+    {
+      "word": "needed",
+      "lemma": "need",
+      "mapped": true
+    },
+    {
+      "word": "needs",
+      "lemma": "need",
+      "mapped": true
+    },
+    {
+      "word": "noted",
+      "lemma": "not",
+      "mapped": true
+    },
+    {
+      "word": "notes",
+      "lemma": "not",
+      "mapped": true
+    },
+    {
+      "word": "objects",
+      "lemma": "object",
+      "mapped": true
+    },
+    {
+      "word": "observations",
+      "lemma": "observation",
+      "mapped": true
+    },
+    {
+      "word": "obtained",
+      "lemma": "obtain",
+      "mapped": true
+    },
+    {
+      "word": "occurred",
+      "lemma": "occur",
+      "mapped": true
+    },
+    {
+      "word": "occurs",
+      "lemma": "occur",
+      "mapped": true
+    },
+    {
+      "word": "offered",
+      "lemma": "offer",
+      "mapped": true
+    },
+    {
+      "word": "offers",
+      "lemma": "offer",
+      "mapped": true
+    },
+    {
+      "word": "opened",
+      "lemma": "open",
+      "mapped": true
+    },
+    {
+      "word": "opening",
+      "lemma": "open",
+      "mapped": true
+    },
+    {
+      "word": "pages",
+      "lemma": "page",
+      "mapped": true
+    },
+    {
+      "word": "papers",
+      "lemma": "paper",
+      "mapped": true
+    },
+    {
+      "word": "parts",
+      "lemma": "part",
+      "mapped": true
+    },
+    {
+      "word": "passed",
+      "lemma": "pass",
+      "mapped": true
+    },
+    {
+      "word": "patterns",
+      "lemma": "pattern",
+      "mapped": true
+    },
+    {
+      "word": "pieces",
+      "lemma": "piece",
+      "mapped": true
+    },
+    {
+      "word": "placed",
+      "lemma": "place",
+      "mapped": true
+    },
+    {
+      "word": "places",
+      "lemma": "place",
+      "mapped": true
+    },
+    {
+      "word": "planning",
+      "lemma": "plan",
+      "mapped": true
+    },
+    {
+      "word": "plans",
+      "lemma": "plan",
+      "mapped": true
+    },
+    {
+      "word": "plants",
+      "lemma": "plant",
+      "mapped": true
+    },
+    {
+      "word": "played",
+      "lemma": "play",
+      "mapped": true
+    },
+    {
+      "word": "pointed",
+      "lemma": "point",
+      "mapped": true
+    },
+    {
+      "word": "points",
+      "lemma": "point",
+      "mapped": true
+    },
+    {
+      "word": "positions",
+      "lemma": "position",
+      "mapped": true
+    },
+    {
+      "word": "powers",
+      "lemma": "power",
+      "mapped": true
+    },
+    {
+      "word": "presented",
+      "lemma": "present",
+      "mapped": true
+    },
+    {
+      "word": "processes",
+      "lemma": "process",
+      "mapped": true
+    },
+    {
+      "word": "processing",
+      "lemma": "process",
+      "mapped": true
+    },
+    {
+      "word": "produced",
+      "lemma": "produce",
+      "mapped": true
+    },
+    {
+      "word": "properties",
+      "lemma": "property",
+      "mapped": true
+    },
+    {
+      "word": "proved",
+      "lemma": "prove",
+      "mapped": true
+    },
+    {
+      "word": "provided",
+      "lemma": "provide",
+      "mapped": true
+    },
+    {
+      "word": "providing",
+      "lemma": "provide",
+      "mapped": true
+    },
+    {
+      "word": "provisions",
+      "lemma": "provision",
+      "mapped": true
+    },
+    {
+      "word": "rates",
+      "lemma": "rate",
+      "mapped": true
+    },
+    {
+      "word": "reached",
+      "lemma": "reach",
+      "mapped": true
+    },
+    {
+      "word": "received",
+      "lemma": "receive",
+      "mapped": true
+    },
+    {
+      "word": "recognized",
+      "lemma": "recognize",
+      "mapped": true
+    },
+    {
+      "word": "recorded",
+      "lemma": "record",
+      "mapped": true
+    },
+    {
+      "word": "records",
+      "lemma": "record",
+      "mapped": true
+    },
+    {
+      "word": "reduced",
+      "lemma": "reduce",
+      "mapped": true
+    },
+    {
+      "word": "referred",
+      "lemma": "refer",
+      "mapped": true
+    },
+    {
+      "word": "regarded",
+      "lemma": "regard",
+      "mapped": true
+    },
+    {
+      "word": "regulations",
+      "lemma": "regulation",
+      "mapped": true
+    },
+    {
+      "word": "relationships",
+      "lemma": "relationship",
+      "mapped": true
+    },
+    {
+      "word": "remained",
+      "lemma": "remain",
+      "mapped": true
+    },
+    {
+      "word": "remaining",
+      "lemma": "remain",
+      "mapped": true
+    },
+    {
+      "word": "remains",
+      "lemma": "remain",
+      "mapped": true
+    },
+    {
+      "word": "removed",
+      "lemma": "remove",
+      "mapped": true
+    },
+    {
+      "word": "reported",
+      "lemma": "report",
+      "mapped": true
+    },
+    {
+      "word": "represented",
+      "lemma": "represent",
+      "mapped": true
+    },
+    {
+      "word": "required",
+      "lemma": "require",
+      "mapped": true
+    },
+    {
+      "word": "requires",
+      "lemma": "require",
+      "mapped": true
+    },
+    {
+      "word": "returned",
+      "lemma": "return",
+      "mapped": true
+    },
+    {
+      "word": "rights",
+      "lemma": "right",
+      "mapped": true
+    },
+    {
+      "word": "rules",
+      "lemma": "rule",
+      "mapped": true
+    },
+    {
+      "word": "running",
+      "lemma": "run",
+      "mapped": true
+    },
+    {
+      "word": "said",
+      "lemma": "say",
+      "mapped": true
+    },
+    {
+      "word": "saying",
+      "lemma": "say",
+      "mapped": true
+    },
+    {
+      "word": "schools",
+      "lemma": "school",
+      "mapped": true
+    },
+    {
+      "word": "seeing",
+      "lemma": "see",
+      "mapped": true
+    },
+    {
+      "word": "seemed",
+      "lemma": "seem",
+      "mapped": true
+    },
+    {
+      "word": "seems",
+      "lemma": "seem",
+      "mapped": true
+    },
+    {
+      "word": "selected",
+      "lemma": "select",
+      "mapped": true
+    },
+    {
+      "word": "served",
+      "lemma": "serve",
+      "mapped": true
+    },
+    {
+      "word": "services",
+      "lemma": "service",
+      "mapped": true
+    },
+    {
+      "word": "sets",
+      "lemma": "set",
+      "mapped": true
+    },
+    {
+      "word": "setting",
+      "lemma": "set",
+      "mapped": true
+    },
+    {
+      "word": "shared",
+      "lemma": "share",
+      "mapped": true
+    },
+    {
+      "word": "showed",
+      "lemma": "show",
+      "mapped": true
+    },
+    {
+      "word": "showing",
+      "lemma": "show",
+      "mapped": true
+    },
+    {
+      "word": "shows",
+      "lemma": "show",
+      "mapped": true
+    },
+    {
+      "word": "sides",
+      "lemma": "side",
+      "mapped": true
+    },
+    {
+      "word": "signs",
+      "lemma": "sign",
+      "mapped": true
+    },
+    {
+      "word": "sites",
+      "lemma": "sit",
+      "mapped": true
+    },
+    {
+      "word": "sitting",
+      "lemma": "sit",
+      "mapped": true
+    },
+    {
+      "word": "stages",
+      "lemma": "stage",
+      "mapped": true
+    },
+    {
+      "word": "standing",
+      "lemma": "stand",
+      "mapped": true
+    },
+    {
+      "word": "starting",
+      "lemma": "start",
+      "mapped": true
+    },
+    {
+      "word": "steps",
+      "lemma": "step",
+      "mapped": true
+    },
+    {
+      "word": "stopped",
+      "lemma": "stop",
+      "mapped": true
+    },
+    {
+      "word": "strategies",
+      "lemma": "strategy",
+      "mapped": true
+    },
+    {
+      "word": "studied",
+      "lemma": "study",
+      "mapped": true
+    },
+    {
+      "word": "studies",
+      "lemma": "study",
+      "mapped": true
+    },
+    {
+      "word": "suggested",
+      "lemma": "suggest",
+      "mapped": true
+    },
+    {
+      "word": "supported",
+      "lemma": "support",
+      "mapped": true
+    },
+    {
+      "word": "supposed",
+      "lemma": "suppose",
+      "mapped": true
+    },
+    {
+      "word": "taken",
+      "lemma": "take",
+      "mapped": true
+    },
+    {
+      "word": "takes",
+      "lemma": "take",
+      "mapped": true
+    },
+    {
+      "word": "taking",
+      "lemma": "take",
+      "mapped": true
+    },
+    {
+      "word": "talking",
+      "lemma": "talk",
+      "mapped": true
+    },
+    {
+      "word": "tasks",
+      "lemma": "task",
+      "mapped": true
+    },
+    {
+      "word": "taxes",
+      "lemma": "tax",
+      "mapped": true
+    },
+    {
+      "word": "terms",
+      "lemma": "term",
+      "mapped": true
+    },
+    {
+      "word": "testing",
+      "lemma": "test",
+      "mapped": true
+    },
+    {
+      "word": "tests",
+      "lemma": "test",
+      "mapped": true
+    },
+    {
+      "word": "theories",
+      "lemma": "theory",
+      "mapped": true
+    },
+    {
+      "word": "told",
+      "lemma": "tell",
+      "mapped": true
+    },
+    {
+      "word": "training",
+      "lemma": "train",
+      "mapped": true
+    },
+    {
+      "word": "trees",
+      "lemma": "tree",
+      "mapped": true
+    },
+    {
+      "word": "tried",
+      "lemma": "try",
+      "mapped": true
+    },
+    {
+      "word": "turned",
+      "lemma": "turn",
+      "mapped": true
+    },
+    {
+      "word": "turning",
+      "lemma": "turn",
+      "mapped": true
+    },
+    {
+      "word": "types",
+      "lemma": "type",
+      "mapped": true
+    },
+    {
+      "word": "united",
+      "lemma": "unit",
+      "mapped": true
+    },
+    {
+      "word": "used",
+      "lemma": "us",
+      "mapped": true
+    },
+    {
+      "word": "values",
+      "lemma": "value",
+      "mapped": true
+    },
+    {
+      "word": "variables",
+      "lemma": "variable",
+      "mapped": true
+    },
+    {
+      "word": "views",
+      "lemma": "view",
+      "mapped": true
+    },
+    {
+      "word": "waiting",
+      "lemma": "wait",
+      "mapped": true
+    },
+    {
+      "word": "walked",
+      "lemma": "walk",
+      "mapped": true
+    },
+    {
+      "word": "walls",
+      "lemma": "wall",
+      "mapped": true
+    },
+    {
+      "word": "wanted",
+      "lemma": "want",
+      "mapped": true
+    },
+    {
+      "word": "wants",
+      "lemma": "want",
+      "mapped": true
+    },
+    {
+      "word": "weeks",
+      "lemma": "week",
+      "mapped": true
+    },
+    {
+      "word": "went",
+      "lemma": "go",
+      "mapped": true
+    },
+    {
+      "word": "willing",
+      "lemma": "will",
+      "mapped": true
+    },
+    {
+      "word": "windows",
+      "lemma": "window",
+      "mapped": true
+    },
+    {
+      "word": "words",
+      "lemma": "word",
+      "mapped": true
+    },
+    {
+      "word": "worked",
+      "lemma": "work",
+      "mapped": true
+    },
+    {
+      "word": "working",
+      "lemma": "work",
+      "mapped": true
+    },
+    {
+      "word": "works",
+      "lemma": "work",
+      "mapped": true
+    }
+  ],
+  "grammarDescriptions": [
+    {
+      "word": "accepted",
+      "meaning": "Quá khứ và phân từ quá khứ của accept",
+      "lemma": "accept"
+    },
+    {
+      "word": "according",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của accord",
+      "lemma": null
+    },
+    {
+      "word": "accounts",
+      "meaning": "Số nhiều của account",
+      "lemma": "account"
+    },
+    {
+      "word": "activities",
+      "meaning": "Số nhiều của activity",
+      "lemma": "activity"
+    },
+    {
+      "word": "acts",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của act",
+      "lemma": "act"
+    },
+    {
+      "word": "added",
+      "meaning": "Quá khứ và phân từ quá khứ của add",
+      "lemma": "add"
+    },
+    {
+      "word": "adopted",
+      "meaning": "Quá khứ và phân từ quá khứ của adopt",
+      "lemma": null
+    },
+    {
+      "word": "advanced",
+      "meaning": "Quá khứ và phân từ quá khứ của advance",
+      "lemma": "advance"
+    },
+    {
+      "word": "affected",
+      "meaning": "Quá khứ và phân từ quá khứ của affect",
+      "lemma": "affect"
+    },
+    {
+      "word": "agencies",
+      "meaning": "Số nhiều của agency",
+      "lemma": "agency"
+    },
+    {
+      "word": "agents",
+      "meaning": "Số nhiều của agent",
+      "lemma": "agent"
+    },
+    {
+      "word": "allowed",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của allow",
+      "lemma": "allow"
+    },
+    {
+      "word": "allows",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của allow",
+      "lemma": "allow"
+    },
+    {
+      "word": "appeared",
+      "meaning": "Quá khứ và phân từ quá khứ của appear",
+      "lemma": "appear"
+    },
+    {
+      "word": "applied",
+      "meaning": "Quá khứ và phân từ quá khứ của apply",
+      "lemma": "apply"
+    },
+    {
+      "word": "appointed",
+      "meaning": "Quá khứ và phân từ quá khứ của appoint",
+      "lemma": null
+    },
+    {
+      "word": "approaches",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của approach",
+      "lemma": "approach"
+    },
+    {
+      "word": "areas",
+      "meaning": "Số nhiều của area",
+      "lemma": "area"
+    },
+    {
+      "word": "argued",
+      "meaning": "Quá khứ và phân từ quá khứ của argue",
+      "lemma": null
+    },
+    {
+      "word": "asked",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của ask",
+      "lemma": "ask"
+    },
+    {
+      "word": "assumed",
+      "meaning": "Quá khứ và phân từ quá khứ của assume",
+      "lemma": "assume"
+    },
+    {
+      "word": "authorities",
+      "meaning": "Số nhiều của authority",
+      "lemma": "authority"
+    },
+    {
+      "word": "banks",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của bank",
+      "lemma": "bank"
+    },
+    {
+      "word": "based",
+      "meaning": "Quá khứ và phân từ quá khứ của base",
+      "lemma": "base"
+    },
+    {
+      "word": "bodies",
+      "meaning": "Số nhiều của body",
+      "lemma": "body"
+    },
+    {
+      "word": "books",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của book",
+      "lemma": "book"
+    },
+    {
+      "word": "boys",
+      "meaning": "Số nhiều của boy",
+      "lemma": "boy"
+    },
+    {
+      "word": "buildings",
+      "meaning": "Số nhiều của building",
+      "lemma": "building"
+    },
+    {
+      "word": "called",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của call",
+      "lemma": "call"
+    },
+    {
+      "word": "calls",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của call",
+      "lemma": "call"
+    },
+    {
+      "word": "carried",
+      "meaning": "Quá khứ và phân từ quá khứ của carry",
+      "lemma": "carry"
+    },
+    {
+      "word": "carrying",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của carry",
+      "lemma": "carry"
+    },
+    {
+      "word": "cases",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của case",
+      "lemma": "case"
+    },
+    {
+      "word": "categories",
+      "meaning": "Số nhiều của category",
+      "lemma": "category"
+    },
+    {
+      "word": "caught",
+      "meaning": "Quá khứ và phân từ quá khứ của catch",
+      "lemma": null
+    },
+    {
+      "word": "caused",
+      "meaning": "Quá khứ và phân từ quá khứ của cause",
+      "lemma": "cause"
+    },
+    {
+      "word": "causes",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của cause",
+      "lemma": "cause"
+    },
+    {
+      "word": "cells",
+      "meaning": "Số nhiều của cell",
+      "lemma": "cell"
+    },
+    {
+      "word": "changes",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của change",
+      "lemma": "change"
+    },
+    {
+      "word": "changing",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của change",
+      "lemma": "change"
+    },
+    {
+      "word": "characteristics",
+      "meaning": "Số nhiều của characteristic",
+      "lemma": "characteristic"
+    },
+    {
+      "word": "children",
+      "meaning": "Số nhiều của child",
+      "lemma": null
+    },
+    {
+      "word": "circumstances",
+      "meaning": "Số nhiều của circumstance",
+      "lemma": null
+    },
+    {
+      "word": "cities",
+      "meaning": "Số nhiều của city",
+      "lemma": "city"
+    },
+    {
+      "word": "claims",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của claim",
+      "lemma": "claim"
+    },
+    {
+      "word": "closed",
+      "meaning": "Quá khứ và phân từ quá khứ của close",
+      "lemma": "close"
+    },
+    {
+      "word": "communities",
+      "meaning": "Số nhiều của community",
+      "lemma": "community"
+    },
+    {
+      "word": "companies",
+      "meaning": "Số nhiều của company",
+      "lemma": "company"
+    },
+    {
+      "word": "completed",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của complete",
+      "lemma": "complete"
+    },
+    {
+      "word": "conditions",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của condition",
+      "lemma": "condition"
+    },
+    {
+      "word": "conducted",
+      "meaning": "Quá khứ và phân từ quá khứ của conduct",
+      "lemma": "conduct"
+    },
+    {
+      "word": "connected",
+      "meaning": "Quá khứ và phân từ quá khứ của connect",
+      "lemma": null
+    },
+    {
+      "word": "considered",
+      "meaning": "Quá khứ và phân từ quá khứ của consider",
+      "lemma": "consider"
+    },
+    {
+      "word": "contained",
+      "meaning": "Quá khứ và phân từ quá khứ của contain",
+      "lemma": "contain"
+    },
+    {
+      "word": "containing",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của contain",
+      "lemma": "contain"
+    },
+    {
+      "word": "continued",
+      "meaning": "Quá khứ và phân từ quá khứ của continue",
+      "lemma": "continue"
+    },
+    {
+      "word": "controlled",
+      "meaning": "Quá khứ và phân từ quá khứ của control",
+      "lemma": "control"
+    },
+    {
+      "word": "corresponding",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của correspond",
+      "lemma": null
+    },
+    {
+      "word": "countries",
+      "meaning": "Số nhiều của country",
+      "lemma": "country"
+    },
+    {
+      "word": "courts",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của court",
+      "lemma": "court"
+    },
+    {
+      "word": "covered",
+      "meaning": "Quá khứ và phân từ quá khứ của cover",
+      "lemma": "cover"
+    },
+    {
+      "word": "declared",
+      "meaning": "Quá khứ và phân từ quá khứ của declare",
+      "lemma": null
+    },
+    {
+      "word": "defined",
+      "meaning": "Quá khứ và phân từ quá khứ của define",
+      "lemma": null
+    },
+    {
+      "word": "derived",
+      "meaning": "Quá khứ và phân từ quá khứ của derive",
+      "lemma": null
+    },
+    {
+      "word": "designed",
+      "meaning": "Quá khứ và phân từ quá khứ của design",
+      "lemma": "design"
+    },
+    {
+      "word": "desired",
+      "meaning": "Quá khứ và phân từ quá khứ của desire",
+      "lemma": "desire"
+    },
+    {
+      "word": "detailed",
+      "meaning": "Quá khứ và phân từ quá khứ của detail",
+      "lemma": "detail"
+    },
+    {
+      "word": "details",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của detail",
+      "lemma": "detail"
+    },
+    {
+      "word": "determined",
+      "meaning": "Quá khứ và phân từ quá khứ của determine",
+      "lemma": "determine"
+    },
+    {
+      "word": "developed",
+      "meaning": "Quá khứ và phân từ quá khứ của develop",
+      "lemma": "develop"
+    },
+    {
+      "word": "developing",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của develop",
+      "lemma": "develop"
+    },
+    {
+      "word": "did",
+      "meaning": "Quá khứ của do (nghĩa là “làm, thực hiện”)Biến thể hình thái động từ tiếng Anh",
+      "lemma": "do"
+    },
+    {
+      "word": "died",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của die",
+      "lemma": "die"
+    },
+    {
+      "word": "directed",
+      "meaning": "Quá khứ và phân từ quá khứ của direct",
+      "lemma": "direct"
+    },
+    {
+      "word": "discovered",
+      "meaning": "Quá khứ và phân từ quá khứ của discover",
+      "lemma": null
+    },
+    {
+      "word": "documents",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của document",
+      "lemma": "document"
+    },
+    {
+      "word": "done",
+      "meaning": "đồng từ quá khứ hoàn thành của do",
+      "lemma": "do"
+    },
+    {
+      "word": "drugs",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của drug",
+      "lemma": "drug"
+    },
+    {
+      "word": "effects",
+      "meaning": "Số nhiều của effect",
+      "lemma": "effect"
+    },
+    {
+      "word": "engineering",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của engineer",
+      "lemma": null
+    },
+    {
+      "word": "entered",
+      "meaning": "Quá khứ và phân từ quá khứ của enter",
+      "lemma": "enter"
+    },
+    {
+      "word": "established",
+      "meaning": "Quá khứ và phân từ quá khứ của establish",
+      "lemma": "establish"
+    },
+    {
+      "word": "estimated",
+      "meaning": "Quá khứ và phân từ quá khứ của estimate",
+      "lemma": null
+    },
+    {
+      "word": "existing",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của exist",
+      "lemma": "exist"
+    },
+    {
+      "word": "exists",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của exist",
+      "lemma": "exist"
+    },
+    {
+      "word": "expected",
+      "meaning": "Quá khứ và phân từ quá khứ của expect",
+      "lemma": "expect"
+    },
+    {
+      "word": "experienced",
+      "meaning": "Quá khứ và phân từ quá khứ của experience",
+      "lemma": "experience"
+    },
+    {
+      "word": "explained",
+      "meaning": "Quá khứ và phân từ quá khứ của explain",
+      "lemma": "explain"
+    },
+    {
+      "word": "expressed",
+      "meaning": "Quá khứ và phân từ quá khứ của express",
+      "lemma": "express"
+    },
+    {
+      "word": "extended",
+      "meaning": "Quá khứ và phân từ quá khứ của extend",
+      "lemma": null
+    },
+    {
+      "word": "eyes",
+      "meaning": "Số nhiều của eye",
+      "lemma": "eye"
+    },
+    {
+      "word": "features",
+      "meaning": "Số nhiều của feature",
+      "lemma": "feature"
+    },
+    {
+      "word": "feet",
+      "meaning": "Số nhiều của foot",
+      "lemma": null
+    },
+    {
+      "word": "fields",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của field",
+      "lemma": "field"
+    },
+    {
+      "word": "filled",
+      "meaning": "Quá khứ và phân từ quá khứ của fill",
+      "lemma": null
+    },
+    {
+      "word": "finished",
+      "meaning": "Quá khứ và phân từ quá khứ của finish",
+      "lemma": null
+    },
+    {
+      "word": "firms",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của firm",
+      "lemma": "firm"
+    },
+    {
+      "word": "fixed",
+      "meaning": "Quá khứ và phân từ quá khứ của fix",
+      "lemma": null
+    },
+    {
+      "word": "followed",
+      "meaning": "Quá khứ và phân từ quá khứ của follow",
+      "lemma": "follow"
+    },
+    {
+      "word": "forced",
+      "meaning": "Quá khứ và phân từ quá khứ của force",
+      "lemma": "force"
+    },
+    {
+      "word": "forms",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của form",
+      "lemma": "form"
+    },
+    {
+      "word": "found",
+      "meaning": "tìm thấy (quá khứ của find); thành lập",
+      "lemma": "find"
+    },
+    {
+      "word": "funds",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của fund",
+      "lemma": "fund"
+    },
+    {
+      "word": "girls",
+      "meaning": "Số nhiều của girl",
+      "lemma": "girl"
+    },
+    {
+      "word": "given",
+      "meaning": "Dạng phân từ quá khứ của give",
+      "lemma": null
+    },
+    {
+      "word": "goes",
+      "meaning": "Số nhiều của go",
+      "lemma": "go"
+    },
+    {
+      "word": "going",
+      "meaning": "hiện tại phân từ của go",
+      "lemma": null
+    },
+    {
+      "word": "gone",
+      "meaning": "Dạng phân từ quá khứ của go",
+      "lemma": null
+    },
+    {
+      "word": "got",
+      "meaning": "Quá khứ và phân từ quá khứ của get",
+      "lemma": "get"
+    },
+    {
+      "word": "governments",
+      "meaning": "Số nhiều của government",
+      "lemma": "government"
+    },
+    {
+      "word": "ground",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của grind",
+      "lemma": null
+    },
+    {
+      "word": "groups",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của group",
+      "lemma": "group"
+    },
+    {
+      "word": "had",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của have",
+      "lemma": "have"
+    },
+    {
+      "word": "hands",
+      "meaning": "Số nhiều của hand",
+      "lemma": "hand"
+    },
+    {
+      "word": "held",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của hold",
+      "lemma": null
+    },
+    {
+      "word": "helped",
+      "meaning": "Quá khứ và phân từ quá khứ của help",
+      "lemma": "help"
+    },
+    {
+      "word": "houses",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của house",
+      "lemma": "house"
+    },
+    {
+      "word": "housing",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của house",
+      "lemma": "house"
+    },
+    {
+      "word": "identified",
+      "meaning": "Quá khứ và phân từ quá khứ của identify",
+      "lemma": "identify"
+    },
+    {
+      "word": "images",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của image",
+      "lemma": "image"
+    },
+    {
+      "word": "included",
+      "meaning": "Quá khứ và phân từ quá khứ của include",
+      "lemma": "include"
+    },
+    {
+      "word": "including",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của include",
+      "lemma": "include"
+    },
+    {
+      "word": "indicated",
+      "meaning": "Quá khứ và phân từ quá khứ của indicate",
+      "lemma": "indicate"
+    },
+    {
+      "word": "intended",
+      "meaning": "Quá khứ và phân từ quá khứ của intend",
+      "lemma": null
+    },
+    {
+      "word": "interested",
+      "meaning": "Quá khứ và phân từ quá khứ của interest",
+      "lemma": "interest"
+    },
+    {
+      "word": "interesting",
+      "meaning": "hiện tại phân từ của interest",
+      "lemma": "interest"
+    },
+    {
+      "word": "involved",
+      "meaning": "Quá khứ và phân từ quá khứ của involve",
+      "lemma": null
+    },
+    {
+      "word": "issued",
+      "meaning": "Quá khứ và phân từ quá khứ của issue",
+      "lemma": "issue"
+    },
+    {
+      "word": "issues",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của issue",
+      "lemma": "issue"
+    },
+    {
+      "word": "jobs",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của job",
+      "lemma": "job"
+    },
+    {
+      "word": "killed",
+      "meaning": "Quá khứ và phân từ quá khứ của kill",
+      "lemma": null
+    },
+    {
+      "word": "kinds",
+      "meaning": "Số nhiều của kind",
+      "lemma": "kind"
+    },
+    {
+      "word": "leaders",
+      "meaning": "Số nhiều của leader",
+      "lemma": "leader"
+    },
+    {
+      "word": "leads",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của lead",
+      "lemma": "lead"
+    },
+    {
+      "word": "learned",
+      "meaning": "Quá khứ và phân từ quá khứ của learn",
+      "lemma": "learn"
+    },
+    {
+      "word": "learning",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của learn",
+      "lemma": "learn"
+    },
+    {
+      "word": "levels",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của level",
+      "lemma": "level"
+    },
+    {
+      "word": "lies",
+      "meaning": "Số nhiều của lie",
+      "lemma": "lie"
+    },
+    {
+      "word": "limited",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của limit",
+      "lemma": "limit"
+    },
+    {
+      "word": "limits",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của limit",
+      "lemma": "limit"
+    },
+    {
+      "word": "lines",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của line",
+      "lemma": "line"
+    },
+    {
+      "word": "lived",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của live",
+      "lemma": "live"
+    },
+    {
+      "word": "lives",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của live",
+      "lemma": "live"
+    },
+    {
+      "word": "looked",
+      "meaning": "Quá khứ và phân từ quá khứ của look",
+      "lemma": "look"
+    },
+    {
+      "word": "looking",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của look",
+      "lemma": "look"
+    },
+    {
+      "word": "looks",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của look",
+      "lemma": "look"
+    },
+    {
+      "word": "lost",
+      "meaning": "Quá khứ và phân từ quá khứ của lose",
+      "lemma": null
+    },
+    {
+      "word": "maintained",
+      "meaning": "Quá khứ và phân từ quá khứ của maintain",
+      "lemma": "maintain"
+    },
+    {
+      "word": "marked",
+      "meaning": "Quá khứ và phân từ quá khứ của mark",
+      "lemma": "mark"
+    },
+    {
+      "word": "marketing",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của market",
+      "lemma": "market"
+    },
+    {
+      "word": "married",
+      "meaning": "Quá khứ và phân từ quá khứ của marry",
+      "lemma": null
+    },
+    {
+      "word": "means",
+      "meaning": "Số nhiều của mean",
+      "lemma": "mean"
+    },
+    {
+      "word": "meant",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của mean",
+      "lemma": null
+    },
+    {
+      "word": "measured",
+      "meaning": "Quá khứ và phân từ quá khứ của measure",
+      "lemma": "measure"
+    },
+    {
+      "word": "measures",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của measure",
+      "lemma": "measure"
+    },
+    {
+      "word": "men",
+      "meaning": "số nhiều của man, nghĩa là đàn ông, nam giới",
+      "lemma": null
+    },
+    {
+      "word": "mentioned",
+      "meaning": "Quá khứ và phân từ quá khứ của mention",
+      "lemma": null
+    },
+    {
+      "word": "met",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của meet",
+      "lemma": null
+    },
+    {
+      "word": "minutes",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của minute",
+      "lemma": "minute"
+    },
+    {
+      "word": "mixed",
+      "meaning": "Quá khứ và phân từ quá khứ của mix",
+      "lemma": null
+    },
+    {
+      "word": "models",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của model",
+      "lemma": "model"
+    },
+    {
+      "word": "moved",
+      "meaning": "Quá khứ và phân từ quá khứ của move",
+      "lemma": "move"
+    },
+    {
+      "word": "mr",
+      "meaning": "viết tắt của mister",
+      "lemma": null
+    },
+    {
+      "word": "named",
+      "meaning": "Quá khứ và phân từ quá khứ của name",
+      "lemma": "name"
+    },
+    {
+      "word": "names",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của name",
+      "lemma": "name"
+    },
+    {
+      "word": "needed",
+      "meaning": "Quá khứ và phân từ quá khứ của need",
+      "lemma": "need"
+    },
+    {
+      "word": "needs",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của need",
+      "lemma": "need"
+    },
+    {
+      "word": "noted",
+      "meaning": "Quá khứ và phân từ quá khứ của note",
+      "lemma": "not"
+    },
+    {
+      "word": "notes",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của note",
+      "lemma": "not"
+    },
+    {
+      "word": "objects",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của object",
+      "lemma": "object"
+    },
+    {
+      "word": "observations",
+      "meaning": "Số nhiều của observation",
+      "lemma": "observation"
+    },
+    {
+      "word": "observed",
+      "meaning": "Quá khứ và phân từ quá khứ của observe",
+      "lemma": null
+    },
+    {
+      "word": "obtained",
+      "meaning": "Quá khứ và phân từ quá khứ của obtain",
+      "lemma": "obtain"
+    },
+    {
+      "word": "occurred",
+      "meaning": "Quá khứ và phân từ quá khứ của occur",
+      "lemma": "occur"
+    },
+    {
+      "word": "occurs",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của occur",
+      "lemma": "occur"
+    },
+    {
+      "word": "offered",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của offer",
+      "lemma": "offer"
+    },
+    {
+      "word": "offers",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của offer",
+      "lemma": "offer"
+    },
+    {
+      "word": "opened",
+      "meaning": "Quá khứ và phân từ quá khứ của open",
+      "lemma": "open"
+    },
+    {
+      "word": "opening",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của open",
+      "lemma": "open"
+    },
+    {
+      "word": "organized",
+      "meaning": "Quá khứ và phân từ quá khứ của organize",
+      "lemma": null
+    },
+    {
+      "word": "pages",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của page",
+      "lemma": "page"
+    },
+    {
+      "word": "papers",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của paper",
+      "lemma": "paper"
+    },
+    {
+      "word": "parts",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của part",
+      "lemma": "part"
+    },
+    {
+      "word": "passed",
+      "meaning": "Quá khứ và phân từ quá khứ của pass",
+      "lemma": "pass"
+    },
+    {
+      "word": "past",
+      "meaning": "Quá khứ, đã qua, (thuộc) dĩ vãng",
+      "lemma": null
+    },
+    {
+      "word": "patterns",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của pattern",
+      "lemma": "pattern"
+    },
+    {
+      "word": "pieces",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của piece",
+      "lemma": "piece"
+    },
+    {
+      "word": "placed",
+      "meaning": "Quá khứ và phân từ quá khứ của place",
+      "lemma": "place"
+    },
+    {
+      "word": "places",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của place",
+      "lemma": "place"
+    },
+    {
+      "word": "planning",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của plan",
+      "lemma": "plan"
+    },
+    {
+      "word": "plans",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của plan",
+      "lemma": "plan"
+    },
+    {
+      "word": "plants",
+      "meaning": "Số nhiều của plant",
+      "lemma": "plant"
+    },
+    {
+      "word": "played",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của play",
+      "lemma": "play"
+    },
+    {
+      "word": "pointed",
+      "meaning": "Quá khứ và phân từ quá khứ của point",
+      "lemma": "point"
+    },
+    {
+      "word": "points",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của point",
+      "lemma": "point"
+    },
+    {
+      "word": "positions",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của position",
+      "lemma": "position"
+    },
+    {
+      "word": "powers",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của power",
+      "lemma": "power"
+    },
+    {
+      "word": "prepared",
+      "meaning": "Quá khứ và phân từ quá khứ của prepare",
+      "lemma": null
+    },
+    {
+      "word": "presented",
+      "meaning": "Quá khứ và phân từ quá khứ của present",
+      "lemma": "present"
+    },
+    {
+      "word": "processes",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của process",
+      "lemma": "process"
+    },
+    {
+      "word": "produced",
+      "meaning": "Quá khứ và phân từ quá khứ của produce",
+      "lemma": "produce"
+    },
+    {
+      "word": "properties",
+      "meaning": "Số nhiều của property",
+      "lemma": "property"
+    },
+    {
+      "word": "proposed",
+      "meaning": "Quá khứ và phân từ quá khứ của propose",
+      "lemma": null
+    },
+    {
+      "word": "proved",
+      "meaning": "Quá khứ và phân từ quá khứ của prove",
+      "lemma": "prove"
+    },
+    {
+      "word": "provided",
+      "meaning": "Quá khứ và phân từ quá khứ của provide",
+      "lemma": "provide"
+    },
+    {
+      "word": "providing",
+      "meaning": "hiện tại phân từ của provide",
+      "lemma": "provide"
+    },
+    {
+      "word": "provisions",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của provision",
+      "lemma": "provision"
+    },
+    {
+      "word": "published",
+      "meaning": "Quá khứ và phân từ quá khứ của publish",
+      "lemma": null
+    },
+    {
+      "word": "raised",
+      "meaning": "Quá khứ và phân từ quá khứ của raise",
+      "lemma": null
+    },
+    {
+      "word": "rates",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của rate",
+      "lemma": "rate"
+    },
+    {
+      "word": "reached",
+      "meaning": "Quá khứ và phân từ quá khứ của reach",
+      "lemma": "reach"
+    },
+    {
+      "word": "received",
+      "meaning": "Quá khứ và phân từ quá khứ của receive",
+      "lemma": "receive"
+    },
+    {
+      "word": "recognized",
+      "meaning": "Quá khứ và phân từ quá khứ của recognize",
+      "lemma": "recognize"
+    },
+    {
+      "word": "recorded",
+      "meaning": "Quá khứ và phân từ quá khứ của record",
+      "lemma": "record"
+    },
+    {
+      "word": "records",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của record",
+      "lemma": "record"
+    },
+    {
+      "word": "reduced",
+      "meaning": "Quá khứ và phân từ quá khứ của reduce",
+      "lemma": "reduce"
+    },
+    {
+      "word": "referred",
+      "meaning": "Quá khứ và phân từ quá khứ của refer",
+      "lemma": "refer"
+    },
+    {
+      "word": "regarded",
+      "meaning": "Quá khứ và phân từ quá khứ của regard",
+      "lemma": "regard"
+    },
+    {
+      "word": "regulations",
+      "meaning": "Số nhiều của regulation",
+      "lemma": "regulation"
+    },
+    {
+      "word": "related",
+      "meaning": "Quá khứ và phân từ quá khứ của relate",
+      "lemma": null
+    },
+    {
+      "word": "remained",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của remained",
+      "lemma": "remain"
+    },
+    {
+      "word": "remaining",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của remain",
+      "lemma": "remain"
+    },
+    {
+      "word": "remains",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của remain",
+      "lemma": "remain"
+    },
+    {
+      "word": "removed",
+      "meaning": "Quá khứ và phân từ quá khứ của remove",
+      "lemma": "remove"
+    },
+    {
+      "word": "repeated",
+      "meaning": "Quá khứ và phân từ quá khứ của repeat",
+      "lemma": null
+    },
+    {
+      "word": "reported",
+      "meaning": "Quá khứ và phân từ quá khứ của report",
+      "lemma": "report"
+    },
+    {
+      "word": "requires",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của require",
+      "lemma": "require"
+    },
+    {
+      "word": "returned",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của return",
+      "lemma": "return"
+    },
+    {
+      "word": "rights",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của right",
+      "lemma": "right"
+    },
+    {
+      "word": "rules",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của rule",
+      "lemma": "rule"
+    },
+    {
+      "word": "schools",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của school",
+      "lemma": "school"
+    },
+    {
+      "word": "seeing",
+      "meaning": "hiện tại phân từ của see",
+      "lemma": "see"
+    },
+    {
+      "word": "seemed",
+      "meaning": "Quá khứ và phân từ quá khứ của seem",
+      "lemma": "seem"
+    },
+    {
+      "word": "seems",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của seem",
+      "lemma": "seem"
+    },
+    {
+      "word": "served",
+      "meaning": "Quá khứ và phân từ quá khứ của serve",
+      "lemma": "serve"
+    },
+    {
+      "word": "services",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của service",
+      "lemma": "service"
+    },
+    {
+      "word": "sets",
+      "meaning": "Số nhiều của set",
+      "lemma": "set"
+    },
+    {
+      "word": "shared",
+      "meaning": "Quá khứ và phân từ quá khứ của share",
+      "lemma": "share"
+    },
+    {
+      "word": "showed",
+      "meaning": "Quá khứ và phân từ quá khứ của show",
+      "lemma": "show"
+    },
+    {
+      "word": "showing",
+      "meaning": "hiện tại phân từ của show",
+      "lemma": "show"
+    },
+    {
+      "word": "shows",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của show",
+      "lemma": "show"
+    },
+    {
+      "word": "sides",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của side",
+      "lemma": "side"
+    },
+    {
+      "word": "signs",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của sign",
+      "lemma": "sign"
+    },
+    {
+      "word": "sites",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của site",
+      "lemma": "sit"
+    },
+    {
+      "word": "sitting",
+      "meaning": "hiện tại phân từ của sit",
+      "lemma": "sit"
+    },
+    {
+      "word": "soldiers",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của soldier",
+      "lemma": null
+    },
+    {
+      "word": "stages",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của stage",
+      "lemma": "stage"
+    },
+    {
+      "word": "starting",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của start",
+      "lemma": "start"
+    },
+    {
+      "word": "steps",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của step",
+      "lemma": "step"
+    },
+    {
+      "word": "stood",
+      "meaning": "Quá khứ và phân từ quá khứ của stand",
+      "lemma": null
+    },
+    {
+      "word": "stopped",
+      "meaning": "Quá khứ và phân từ quá khứ của stop",
+      "lemma": "stop"
+    },
+    {
+      "word": "strategies",
+      "meaning": "Số nhiều của strategy",
+      "lemma": "strategy"
+    },
+    {
+      "word": "studied",
+      "meaning": "Quá khứ và phân từ quá khứ của study",
+      "lemma": "study"
+    },
+    {
+      "word": "studies",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của study",
+      "lemma": "study"
+    },
+    {
+      "word": "suggested",
+      "meaning": "Quá khứ và phân từ quá khứ của suggest",
+      "lemma": "suggest"
+    },
+    {
+      "word": "supported",
+      "meaning": "Quá khứ và phân từ quá khứ của support",
+      "lemma": "support"
+    },
+    {
+      "word": "supposed",
+      "meaning": "Quá khứ và phân từ quá khứ của suppose",
+      "lemma": "suppose"
+    },
+    {
+      "word": "taken",
+      "meaning": "Dạng phân từ quá khứ của take",
+      "lemma": "take"
+    },
+    {
+      "word": "takes",
+      "meaning": "Số nhiều của take",
+      "lemma": "take"
+    },
+    {
+      "word": "tasks",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của task",
+      "lemma": "task"
+    },
+    {
+      "word": "taught",
+      "meaning": "Quá khứ và phân từ quá khứ của teach",
+      "lemma": null
+    },
+    {
+      "word": "taxes",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của tax",
+      "lemma": "tax"
+    },
+    {
+      "word": "terms",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của term",
+      "lemma": "term"
+    },
+    {
+      "word": "tests",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của test",
+      "lemma": "test"
+    },
+    {
+      "word": "theories",
+      "meaning": "Số nhiều của theory",
+      "lemma": "theory"
+    },
+    {
+      "word": "those",
+      "meaning": "Số nhiều của that",
+      "lemma": null
+    },
+    {
+      "word": "took",
+      "meaning": "Quá khứ của take",
+      "lemma": null
+    },
+    {
+      "word": "tools",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của tool",
+      "lemma": null
+    },
+    {
+      "word": "training",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của train",
+      "lemma": "train"
+    },
+    {
+      "word": "treated",
+      "meaning": "Quá khứ và phân từ quá khứ của treat",
+      "lemma": null
+    },
+    {
+      "word": "trees",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của tree",
+      "lemma": "tree"
+    },
+    {
+      "word": "tried",
+      "meaning": "Quá khứ và phân từ quá khứ của try",
+      "lemma": "try"
+    },
+    {
+      "word": "troops",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của troop",
+      "lemma": null
+    },
+    {
+      "word": "turned",
+      "meaning": "Quá khứ và phân từ quá khứ của turn",
+      "lemma": "turn"
+    },
+    {
+      "word": "turning",
+      "meaning": "hiện tại phân từ của turn",
+      "lemma": "turn"
+    },
+    {
+      "word": "types",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của type",
+      "lemma": "type"
+    },
+    {
+      "word": "understood",
+      "meaning": "Dạng quá khứ đơn và phân từ quá khứ của understand",
+      "lemma": null
+    },
+    {
+      "word": "united",
+      "meaning": "Quá khứ và phân từ quá khứ của unite",
+      "lemma": "unit"
+    },
+    {
+      "word": "used",
+      "meaning": "Quá khứ và phân từ quá khứ của use",
+      "lemma": "us"
+    },
+    {
+      "word": "using",
+      "meaning": "Dạng phân từ hiện tại và danh động từ (gerund) của use",
+      "lemma": null
+    },
+    {
+      "word": "values",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của value",
+      "lemma": "value"
+    },
+    {
+      "word": "variables",
+      "meaning": "Số nhiều của variable",
+      "lemma": "variable"
+    },
+    {
+      "word": "views",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của view",
+      "lemma": "view"
+    },
+    {
+      "word": "walked",
+      "meaning": "Quá khứ và phân từ quá khứ của walk",
+      "lemma": "walk"
+    },
+    {
+      "word": "walls",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của wall",
+      "lemma": "wall"
+    },
+    {
+      "word": "wanted",
+      "meaning": "Quá khứ và phân từ quá khứ của want",
+      "lemma": "want"
+    },
+    {
+      "word": "wants",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của want",
+      "lemma": "want"
+    },
+    {
+      "word": "weeks",
+      "meaning": "Số nhiều của week",
+      "lemma": "week"
+    },
+    {
+      "word": "went",
+      "meaning": "động từ quá khứ của go",
+      "lemma": "go"
+    },
+    {
+      "word": "willing",
+      "meaning": "hiện tại phân từ của will",
+      "lemma": "will"
+    },
+    {
+      "word": "windows",
+      "meaning": "(nhiều) cửa sổ (số nhiều của window)",
+      "lemma": "window"
+    },
+    {
+      "word": "words",
+      "meaning": "Số nhiều của word",
+      "lemma": "word"
+    },
+    {
+      "word": "worked",
+      "meaning": "Quá khứ và phân từ quá khứ của work",
+      "lemma": "work"
+    },
+    {
+      "word": "works",
+      "meaning": "Động từ chia ở ngôi thứ ba số ít của work",
+      "lemma": "work"
+    },
+    {
+      "word": "would",
+      "meaning": "Đã sẽ; trợ động từ will chia ở thời quá khứ",
+      "lemma": null
+    }
+  ],
+  "brokenIpa": [
+    {
+      "word": "welcome",
+      "ipa": "/weo-cơm/"
+    }
+  ],
+  "questionablePos": [
+    {
+      "word": "welcome",
+      "type": "word",
+      "reason": "missing part of speech"
+    },
+    {
+      "word": "carefully",
+      "type": "adjective",
+      "reason": "-ly entry is likely an adverb"
+    }
+  ],
+  "preservedFunctionWords": [
+    "a",
+    "an",
+    "at",
+    "for",
+    "from",
+    "on",
+    "the",
+    "to"
+  ]
+}
