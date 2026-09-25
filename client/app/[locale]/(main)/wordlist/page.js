@@ -14,7 +14,9 @@ import {
 	Sprout,
 	X,
 	Check,
+	ChevronDown,
 	Clock3,
+	Filter,
 	Sparkles,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -31,12 +33,78 @@ import styles from "./wordlist.module.css";
 import { splitExample } from "@/app/_lib/exampleHighlight.mjs";
 
 const statuses = ["all", "new", "learning", "review", "mastered"];
+const filterStatuses = ["all", "new", "learning", "review"];
 const statusIcons = {
 	new: Sparkles,
 	learning: GraduationCap,
 	review: Clock3,
 	mastered: Check,
 };
+
+function StatusFilter({ value, onChange, t }) {
+	const [isOpen, setIsOpen] = useState(false);
+	const filterRef = useRef(null);
+
+	useEffect(() => {
+		if (!isOpen) return undefined;
+
+		function closeOnPointerDown(event) {
+			if (!filterRef.current?.contains(event.target)) setIsOpen(false);
+		}
+
+		function closeOnEscape(event) {
+			if (event.key === "Escape") setIsOpen(false);
+		}
+
+		document.addEventListener("pointerdown", closeOnPointerDown);
+		window.addEventListener("keydown", closeOnEscape);
+		return () => {
+			document.removeEventListener("pointerdown", closeOnPointerDown);
+			window.removeEventListener("keydown", closeOnEscape);
+		};
+	}, [isOpen]);
+
+	return (
+		<div ref={filterRef} className={styles.statusFilter}>
+			<button
+				type="button"
+				className={styles.statusTrigger}
+				onClick={() => setIsOpen((open) => !open)}
+				aria-expanded={isOpen}
+				aria-haspopup="listbox"
+				aria-label={`${t("status")}: ${t(value)}`}
+			>
+				<Filter aria-hidden="true" size={18} />
+				<strong>{t(value)}</strong>
+				<ChevronDown
+					aria-hidden="true"
+					size={17}
+					className={isOpen ? styles.chevronOpen : ""}
+				/>
+			</button>
+			{isOpen && (
+				<div className={styles.statusMenu} role="listbox" aria-label={t("status")}>
+					{filterStatuses.map((status) => (
+						<button
+							type="button"
+							role="option"
+							aria-selected={value === status}
+							key={status}
+							onClick={() => {
+								onChange(status);
+								setIsOpen(false);
+							}}
+						>
+							<span>{t(status)}</span>
+							{value === status && <Check aria-hidden="true" size={16} />}
+						</button>
+					))}
+				</div>
+			)}
+		</div>
+	);
+}
+
 function ReviewButton({ available, mode, label }) {
 	return available ? (
 		<Link href={`/wordlist/review/${mode}`} className={styles.primary}>
@@ -63,7 +131,6 @@ export default function WordlistPage() {
 	const [deleting, setDeleting] = useState(null);
 	const [audioError, setAudioError] = useState(false);
 	const [page, setPage] = useState(1);
-	const reviewCardRef = useRef(null);
 	const userId = user?._id;
 	const requestKey = `${userId || "guest"}:${retry}`;
 	useEffect(() => {
@@ -136,16 +203,13 @@ export default function WordlistPage() {
 			words: previous.words.filter((word) => word._id !== id),
 		}));
 	}
-	function showReviewCard() {
-		reviewCardRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-		reviewCardRef.current?.focus({ preventScroll: true });
-	}
 	const reviewButton = (
 		<ReviewButton available={canReview} mode={mode} label={t("reviewNow")} />
 	);
 	return (
 		<main className={styles.page}>
 			<div className={styles.container}>
+				{/* header */}
 				<header className={styles.hero}>
 					<div className={styles.heroCopy}>
 						<span className={styles.eyebrow}>
@@ -153,20 +217,6 @@ export default function WordlistPage() {
 						</span>
 						<h1>{t("title")}</h1>
 						<p>{t("subtitle")}</p>
-						<div className={styles.heroActions}>
-							<button className={styles.primary} onClick={showReviewCard}>
-								<Play size={18} fill="currentColor" />
-								{t("viewDueWords")}
-							</button>
-							<button
-								className={styles.secondary}
-								disabled={!user || loading || Boolean(error)}
-								onClick={() => setEditor({ word: null })}
-							>
-								<Plus size={20} />
-								{t("addWord")}
-							</button>
-						</div>
 					</div>
 					<div className={styles.illustration}>
 						<NotebookIllustration />
@@ -183,7 +233,7 @@ export default function WordlistPage() {
 								<section key={label} className={styles.stat}>
 									<svg className={styles.statWave} data-wave={label} viewBox="0 0 220 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90C45 90 40 60 95 55S150 5 220 25V90Z" fill="currentColor" fillOpacity=".10" stroke="currentColor" strokeOpacity=".25" /></svg>
 									<span className={styles.statIcon} data-tone={label}>
-										<Icon size={29} />
+									<Icon size={24} />
 									</span>
 									<div>
 										<h2>{t(label)}</h2>
@@ -210,25 +260,21 @@ export default function WordlistPage() {
 								</button>
 							)}
 						</div>
-						<div
-							className={styles.filters}
-							role="group"
-							aria-label={t("status")}
+						<StatusFilter
+							value={filter}
+							t={t}
+							onChange={(status) => {
+								setFilter(status);
+								setPage(1);
+							}}
+						/>
+						<button
+							className={`${styles.primary} ${styles.addButton}`}
+							disabled={!user || loading || Boolean(error)}
+							onClick={() => setEditor({ word: null })}
 						>
-							{statuses.map((status) => (
-								<button
-									key={status}
-									data-status={status}
-									aria-pressed={filter === status}
-									onClick={() => {
-										setFilter(status);
-										setPage(1);
-									}}
-								>
-									{t(status)} <span>({counts[status]})</span>
-								</button>
-							))}
-						</div>
+							<Plus size={18} /> {t("addWord")}
+						</button>
 						</div>
 						{audioError && <p role="alert">{t("audioError")}</p>}
 						{loading ? (
@@ -384,11 +430,7 @@ export default function WordlistPage() {
 							</>
 						)}
 					</div>
-					<aside
-						ref={reviewCardRef}
-						tabIndex={-1}
-						className={styles.reviewCard}
-					>
+					<aside className={styles.reviewCard}>
 						<Sprout size={54} strokeWidth={1.4} />
 						<h2>
 							{loading || error || !user
@@ -417,6 +459,27 @@ export default function WordlistPage() {
 						</select>
 						{mode === "quiz" && !canQuiz && <small>{t("quizHelp")}</small>}
 						{reviewButton}
+						<div className={styles.quickLinks} aria-label={t("status")}>
+							{[
+								["all", BookOpen, counts.all],
+								["learning", GraduationCap, counts.learning],
+								["review", CalendarDays, counts.review],
+							].map(([status, Icon, count]) => (
+								<button
+									key={status}
+									type="button"
+									onClick={() => {
+										setFilter(status);
+										setPage(1);
+									}}
+									aria-current={filter === status ? "true" : undefined}
+								>
+									<Icon size={17} />
+									<span>{status === "review" ? t("dueToday") : t(status === "all" ? "allWords" : status)}</span>
+									<strong>{loading || error || !user ? "—" : count}</strong>
+								</button>
+							))}
+						</div>
 					</aside>
 				</div>
 			</div>

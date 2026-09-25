@@ -22,6 +22,7 @@ const courseImages = {
 
 	"asking-for-directions":
 		"/dialogue/asking-for-directions/thumbnails/asking-for-direction.png",
+	"at-a-hotel": "/dialogue/at-a-hotel/thumbnails/at-a-hotel.png",
 };
 
 function getCourseImage(courseId) {
@@ -211,7 +212,6 @@ export default function DialoguePage() {
 					<div className="pointer-events-none absolute inset-y-0 right-[5%] z-20 hidden w-[42%] md:block lg:right-[7%] lg:w-[40%]">
 						<div className="absolute bottom-[2%] left-1/2 h-[70%] w-[78%] -translate-x-1/2 rounded-full bg-[var(--sj-banner-glow-ground)] blur-[55px]" />
 						<div className="absolute bottom-[-4%] left-[4%] h-[98%] w-[58%]">
-					
 							<Image
 								src="/dialogue/office-introduction/shared/maria.png"
 								alt=""
@@ -222,7 +222,6 @@ export default function DialoguePage() {
 							/>
 						</div>
 						<div className="absolute bottom-[-4%] right-[4%] h-full w-[57%]">
-						
 							<Image
 								src="/dialogue/office-introduction/shared/tom.png"
 								alt=""

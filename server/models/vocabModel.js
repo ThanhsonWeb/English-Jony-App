@@ -11,6 +11,24 @@ const vocabSchema = new mongoose.Schema({
 		ref: "Topic",
 		// Optional for global notebook words; existing topic links remain valid.
 	},
+	source: {
+		type: {
+			type: String,
+			enum: ["dialogue"],
+		},
+		lessonId: {
+			type: String,
+			trim: true,
+		},
+		dialogueId: {
+			type: String,
+			trim: true,
+		},
+		dialogueTitle: {
+			type: String,
+			trim: true,
+		},
+	},
 
 	english: {
 		type: String,

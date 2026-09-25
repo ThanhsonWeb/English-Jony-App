@@ -40,7 +40,7 @@
 "id": 4,
 "speaker": "Ben",
 "text": "I'm in room 204.",
-"translation": "Tôi ở phòng 305.",
+"translation": "Tôi ở phòng 204.",
 "practicePriority": "important",
 "scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
 "audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-02.mp3"
@@ -259,13 +259,13 @@
 "type": "fillBlank",
 "parts": [
 "",
-" room 305."
+" room 204."
 ],
 "answers": [
 "I'm in"
 ],
 "speaker": "Ben",
-"transcript": "I'm in room 305.",
+"transcript": "I'm in room 204.",
 "scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
 "audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-02.mp3"
 },
@@ -278,10 +278,10 @@
 "."
 ],
 "answers": [
-"room 305"
+"room 204"
 ],
 "speaker": "Ben",
-"transcript": "I'm in room 305.",
+"transcript": "I'm in room 204.",
 "scene": "/dialogue/at-a-hotel/asking-for-extra-towels/ben-bg.png",
 "audioUrl": "/dialogue/at-a-hotel/asking-for-extra-towels/audio/ben-02.mp3"
 },
@@ -543,7 +543,7 @@
 "I'm in ",
 {
 "id": "4",
-"blank": "room 305"
+"blank": "room 204"
 },
 "."
 ]

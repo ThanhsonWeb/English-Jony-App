@@ -3,12 +3,15 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"dev": "nodemon server.js",
+		"predev": "npm run dialogue:catalogue",
+		"dev": "node scripts/run-dev-with-dialogue-catalogue.js server",
 		"test": "node --test tests/*.test.js",
 		"dialogue:catalogue": "node --experimental-vm-modules scripts/generate-dialogue-catalogue.js",
 		"dialogue:catalogue:check": "node --experimental-vm-modules scripts/generate-dialogue-catalogue.js --check",
 		"verify:production-db": "node scripts/verify-production-db.js",
+		"prestart": "npm run dialogue:catalogue",
 		"start": "node server.js",
+		"preprod": "npm run dialogue:catalogue",
 		"prod": "cross-env NODE_ENV=production node server.js"
 	},
 	"keywords": [],
@@ -16,7 +19,6 @@
 	"license": "ISC",
 	"config": {
 		"mongodbMemoryServer": {
-			"disablePostinstall": true
 		}
 	},
 	"description": "",

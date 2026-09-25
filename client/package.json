@@ -3,7 +3,9 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
+		"predev": "npm --prefix ../server run dialogue:catalogue",
+		"dev": "node ../server/scripts/run-dev-with-dialogue-catalogue.js client",
+		"prebuild": "npm --prefix ../server run dialogue:catalogue",
 		"build": "next build",
 		"start": "next start",
 		"lint": "eslint",

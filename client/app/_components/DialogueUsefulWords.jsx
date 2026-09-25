@@ -19,6 +19,7 @@ const normalizeWord = (value = "") => value.trim().toLocaleLowerCase("en");
 export default function DialogueUsefulWords({
 	words: sourceWords,
 	lessonId,
+	dialogueId,
 	dialogueTitle,
 }) {
 	const router = useRouter();
@@ -38,8 +39,6 @@ export default function DialogueUsefulWords({
 		() => new Set(words.map((item) => normalizeWord(item.word))),
 	);
 	const [savedWords, setSavedWords] = useState(() => new Set());
-	const [topics, setTopics] = useState([]);
-	const [selectedTopicId, setSelectedTopicId] = useState("");
 	const [libraryLoading, setLibraryLoading] = useState(true);
 	const [isSaving, setIsSaving] = useState(false);
 	const [error, setError] = useState("");
@@ -61,27 +60,20 @@ export default function DialogueUsefulWords({
 			setError("");
 
 			try {
-				const [topicsResponse, wordsResponse] = await Promise.all([
-					fetch("/api/v1/topics", { credentials: "include" }),
-					fetch("/api/v1/vocab", { credentials: "include" }),
-				]);
+				const wordsResponse = await fetch("/api/v1/vocab", {
+					credentials: "include",
+				});
 
-				if (!topicsResponse.ok || !wordsResponse.ok) {
+				if (!wordsResponse.ok) {
 					throw new Error("Không thể tải Sổ tay.");
 				}
 
-				const [topicsData, wordsData] = await Promise.all([
-					topicsResponse.json(),
-					wordsResponse.json(),
-				]);
+				const wordsData = await wordsResponse.json();
 
 				if (cancelled) return;
 
-				const loadedTopics = topicsData.data?.topics || [];
 				const loadedWords = wordsData.data?.vocabularies || [];
 
-				setTopics(loadedTopics);
-				setSelectedTopicId(loadedTopics[0]?._id || "");
 				setSavedWords(
 					new Set(loadedWords.map((item) => normalizeWord(item.english))),
 				);
@@ -130,8 +122,6 @@ export default function DialogueUsefulWords({
 			return;
 		}
 
-		if (!selectedTopicId) return;
-
 		isSubmittingRef.current = true;
 		setIsSaving(true);
 		setError("");
@@ -148,7 +138,12 @@ export default function DialogueUsefulWords({
 							vietnamese: item.translation || item.meaning,
 							pronunciation: item.pronunciation || "",
 							example: item.example || "",
-							topic: selectedTopicId,
+							source: {
+								type: "dialogue",
+								lessonId,
+								dialogueId,
+								dialogueTitle,
+							},
 						}),
 					});
 
@@ -217,7 +212,7 @@ export default function DialogueUsefulWords({
 						Từ vựng trong bài
 					</h1>
 					<p className="mx-auto mt-3 max-w-xl leading-7 text-slate-400">
-						Chọn những từ bạn muốn lưu vào Sổ tay để ôn tập sau.
+						Chọn những từ bạn muốn lưu trực tiếp vào Sổ tay chung để ôn tập sau.
 					</p>
 				</header>
 
@@ -235,38 +230,6 @@ export default function DialogueUsefulWords({
 						>
 							<LogIn size={16} /> Đăng nhập
 						</Link>
-					</div>
-				)}
-
-				{user && !libraryLoading && topics.length > 0 && selectableWords.length > 0 && (
-					<label className="mt-7 block rounded-2xl border border-slate-800 bg-[#081123] p-4 sm:flex sm:items-center sm:justify-between sm:gap-5">
-						<div>
-							<p className="font-semibold text-white">Lưu vào danh sách</p>
-							<p className="mt-1 text-sm text-slate-400">
-								Chọn Sổ tay bạn muốn dùng.
-							</p>
-						</div>
-						<select
-							value={selectedTopicId}
-							onChange={(event) => setSelectedTopicId(event.target.value)}
-							className="mt-3 h-11 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 text-white outline-none focus:border-blue-500 sm:mt-0 sm:w-64"
-						>
-							{topics.map((topic) => (
-								<option key={topic._id} value={topic._id}>
-									{topic.name}
-								</option>
-							))}
-						</select>
-					</label>
-				)}
-
-				{user && !libraryLoading && topics.length === 0 && (
-					<div className="mt-7 rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4 text-sm text-amber-200">
-						Bạn chưa có danh sách từ. Hãy{" "}
-						<Link href="/wordlist" className="font-semibold underline">
-							tạo một danh sách trong Sổ tay
-						</Link>{" "}
-						trước khi lưu.
 					</div>
 				)}
 
@@ -357,8 +320,7 @@ export default function DialogueUsefulWords({
 						disabled={
 							isSaving ||
 							authLoading ||
-							(Boolean(user) && libraryLoading) ||
-							(Boolean(user) && selectedUnsavedWords.length > 0 && !selectedTopicId)
+							(Boolean(user) && libraryLoading)
 						}
 						className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-4 font-semibold text-white shadow-lg shadow-blue-600/15 transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-45"
 					>

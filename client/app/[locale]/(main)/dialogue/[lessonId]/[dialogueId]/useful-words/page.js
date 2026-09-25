@@ -35,6 +35,7 @@ export default function DialogueUsefulWordsPage() {
 		<DialogueUsefulWords
 			words={usefulWords}
 			lessonId={lessonId}
+			dialogueId={dialogueId}
 			dialogueTitle={dialogue.title}
 		/>
 	);

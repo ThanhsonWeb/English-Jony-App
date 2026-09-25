@@ -6,10 +6,30 @@ import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 
 const themeOptions = [
-	{ value: "light", labelKey: "light", Icon: Sun, colors: ["#f4f7f6", "#ffffff", "#0f8f83"] },
-	{ value: "cream", labelKey: "cream", Icon: Coffee, colors: ["#f7f2e8", "#fffdf8", "#0f8f83"] },
-	{ value: "dark", labelKey: "dark", Icon: Moon, colors: ["#020617", "#1e293b", "#0f8f83"] },
-	{ value: "black", labelKey: "black", Icon: Eclipse, colors: ["#090a0c", "#25282e", "#0f8f83"] },
+	{
+		value: "light",
+		labelKey: "light",
+		Icon: Sun,
+		colors: ["#f4f7f6", "#ffffff", "#0f8f83"],
+	},
+	{
+		value: "cream",
+		labelKey: "cream",
+		Icon: Coffee,
+		colors: ["#f7f2e8", "#fffdf8", "#0f8f83"],
+	},
+	{
+		value: "dark",
+		labelKey: "dark",
+		Icon: Moon,
+		colors: ["#020617", "#1e293b", "#0f8f83"],
+	},
+	{
+		value: "black",
+		labelKey: "black",
+		Icon: Eclipse,
+		colors: ["#090a0c", "#25282e", "#0f8f83"],
+	},
 	{ value: "system", labelKey: "system", Icon: MonitorCog },
 ];
 
@@ -43,7 +63,6 @@ export default function ThemeSelector() {
 		};
 	}, [isOpen]);
 
-
 	return (
 		<div ref={containerRef} className="relative shrink-0">
 			<button
@@ -53,7 +72,7 @@ export default function ThemeSelector() {
 				aria-expanded={isOpen}
 				aria-haspopup="menu"
 				title={currentLabel}
-				className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border border-app bg-surface text-secondary outline-none transition hover:border-primary/50 hover:text-main focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20"
+				className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl   text-secondary outline-none transition hover:bg-black/5 dark:hover:bg-white/10 hover:text-main focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20"
 			>
 				<ThemeIcon aria-hidden="true" className="h-[18px] w-[18px]" />
 			</button>
@@ -86,9 +105,17 @@ export default function ThemeSelector() {
 							>
 								<OptionIcon aria-hidden="true" className="h-[18px] w-[18px]" />
 								<span className="flex-1">{t(option.labelKey)}</span>
-								{option.colors && <span aria-hidden="true" className="flex -space-x-1">
-									{option.colors.map((color) => <span key={color} className="h-2.5 w-2.5 rounded-full border border-app" style={{ backgroundColor: color }} />)}
-								</span>}
+								{option.colors && (
+									<span aria-hidden="true" className="flex -space-x-1">
+										{option.colors.map((color) => (
+											<span
+												key={color}
+												className="h-2.5 w-2.5 rounded-full border border-app"
+												style={{ backgroundColor: color }}
+											/>
+										))}
+									</span>
+								)}
 								{isActive && <Check aria-hidden="true" className="h-4 w-4" />}
 							</button>
 						);

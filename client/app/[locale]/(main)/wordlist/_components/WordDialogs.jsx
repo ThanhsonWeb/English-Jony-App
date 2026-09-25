@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { X } from "lucide-react";
+import { BookOpen, X } from "lucide-react";
 import styles from "../wordlist.module.css";
 
 export function WordDialog({ word, onClose, onSave, t }) {
@@ -29,7 +29,7 @@ export function WordDialog({ word, onClose, onSave, t }) {
 	return (
 		<dialog
 			ref={dialog}
-			className={styles.dialog}
+			className={`${styles.dialog} ${styles.wordDialog}`}
 			onCancel={(event) => {
 				if (busy) event.preventDefault();
 				else onClose();
@@ -38,35 +38,46 @@ export function WordDialog({ word, onClose, onSave, t }) {
 		>
 			<form onSubmit={submit}>
 				<div className={styles.dialogHeading}>
-					<h2 id="word-dialog-title">{t(word ? "editTitle" : "addWord")}</h2>
+					<div className={styles.dialogTitle}>
+						<span className={styles.dialogIcon} aria-hidden="true">
+							<BookOpen size={21} />
+						</span>
+						<h2 id="word-dialog-title">{t(word ? "editTitle" : "addWord")}</h2>
+					</div>
 					<button
 						type="button"
 						disabled={busy}
 						onClick={onClose}
 						aria-label={t("close")}
+						className={styles.dialogClose}
 					>
 						<X size={20} />
 					</button>
 				</div>
 				{[
 					["english", "word"],
-					["pronunciation", "ipa"],
 					["vietnamese", "meaning"],
 					["example", "example"],
 				].map(([name, label]) => (
 					<label key={name} className={styles.field}>
 						{t(label)}
-						{["pronunciation", "example"].includes(name) && (
+						{name === "example" && (
 							<small> · {t("optional")}</small>
 						)}
-						<input
+						{name === "example" ? <textarea
 							name={name}
 							defaultValue={word?.[name] || ""}
-							required={["english", "vietnamese"].includes(name)}
-							maxLength={name === "example" ? 2000 : 500}
+							maxLength={2000}
+							disabled={busy}
+							rows={3}
+						/> : <input
+							name={name}
+							defaultValue={word?.[name] || ""}
+							required
+							maxLength={500}
 							disabled={busy}
 							autoComplete="off"
-						/>
+						/>}
 					</label>
 				))}
 				{error && <p role="alert">{error}</p>}

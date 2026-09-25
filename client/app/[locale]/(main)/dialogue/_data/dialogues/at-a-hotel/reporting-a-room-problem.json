@@ -1,0 +1,645 @@
+{
+"metadata": {
+"courseId": "at-a-hotel",
+"dialogueId": "reporting-a-room-problem",
+"title": "Báo vấn đề trong phòng",
+"level": "a1",
+"situation": "Ben báo với nhân viên rằng một thiết bị trong phòng không hoạt động và nhờ giúp đỡ.",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"thumbnail": "/dialogue/at-a-hotel/thumbnails/reporting-a-room-problem.png"
+},
+"dialogue": [
+{
+"id": 1,
+"speaker": "Maya",
+"text": "Front desk. How can I help you?",
+"translation": "Lễ tân đây. Tôi có thể giúp gì cho bạn?",
+"practicePriority": "simple",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-01.mp3"
+},
+{
+"id": 2,
+"speaker": "Ben",
+"text": "Hi. The TV in my room isn't working.",
+"translation": "Chào bạn. TV trong phòng tôi không hoạt động.",
+"practicePriority": "veryImportant",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-01.mp3"
+},
+{
+"id": 3,
+"speaker": "Maya",
+"text": "I'm sorry about that. What is your room number?",
+"translation": "Tôi rất tiếc về việc đó. Số phòng của bạn là bao nhiêu?",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-02.mp3"
+},
+{
+"id": 4,
+"speaker": "Ben",
+"text": "I'm in room 204.",
+"translation": "Tôi ở phòng 204.",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-02.mp3"
+},
+{
+"id": 5,
+"speaker": "Maya",
+"text": "Can you see anything on the screen?",
+"translation": "Bạn có thấy gì trên màn hình không?",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-03.mp3"
+},
+{
+"id": 6,
+"speaker": "Ben",
+"text": "No. The screen is black.",
+"translation": "Không. Màn hình màu đen.",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-03.mp3"
+},
+{
+"id": 7,
+"speaker": "Maya",
+"text": "Okay. I'll send someone to check it.",
+"translation": "Được rồi. Tôi sẽ cử người đến kiểm tra.",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-04.mp3"
+},
+{
+"id": 8,
+"speaker": "Ben",
+"text": "Thank you. How long will it take?",
+"translation": "Cảm ơn. Sẽ mất bao lâu?",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-04.mp3"
+},
+{
+"id": 9,
+"speaker": "Maya",
+"text": "About fifteen minutes.",
+"translation": "Khoảng mười lăm phút.",
+"practicePriority": "simple",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-05.mp3"
+},
+{
+"id": 10,
+"speaker": "Ben",
+"text": "That's fine. Thank you for your help.",
+"translation": "Được thôi. Cảm ơn bạn đã giúp đỡ.",
+"practicePriority": "simple",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-05.mp3"
+}
+],
+"usefulWords": [
+{
+"word": "isn't working",
+"pronunciation": "/ˈɪzənt ˈwɜːrkɪŋ/",
+"meaning": "không hoạt động",
+"example": "The TV isn't working."
+},
+{
+"word": "room number",
+"pronunciation": "/ruːm ˈnʌmbər/",
+"meaning": "số phòng",
+"example": "What is your room number?"
+},
+{
+"word": "screen",
+"pronunciation": "/skriːn/",
+"meaning": "màn hình",
+"example": "The screen is black."
+},
+{
+"word": "send someone",
+"pronunciation": "/send ˈsʌmwʌn/",
+"meaning": "cử ai đó đến",
+"example": "I'll send someone to your room."
+},
+{
+"word": "check it",
+"pronunciation": "/tʃek ɪt/",
+"meaning": "kiểm tra nó",
+"example": "Someone will check it."
+},
+{
+"word": "How long",
+"pronunciation": "/haʊ lɔːŋ/",
+"meaning": "bao lâu",
+"example": "How long will it take?"
+},
+{
+"word": "fifteen minutes",
+"pronunciation": "/ˌfɪfˈtiːn ˈmɪnɪts/",
+"meaning": "mười lăm phút",
+"example": "It will take fifteen minutes."
+}
+],
+"tasks": [
+{
+"id": 1,
+"dialogueLineId": 1,
+"type": "fillBlank",
+"parts": [
+"Front desk. How can I ",
+" you?"
+],
+"answers": [
+"help"
+],
+"speaker": "Maya",
+"transcript": "Front desk. How can I help you?",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-01.mp3"
+},
+{
+"id": 2,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"parts": [
+"Hi. The ",
+" in my room isn't working."
+],
+"answers": [
+"TV"
+],
+"speaker": "Ben",
+"transcript": "Hi. The TV in my room isn't working.",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-01.mp3"
+},
+{
+"id": 3,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"parts": [
+"Hi. The TV in my room ",
+"."
+],
+"answers": [
+"isn't working"
+],
+"speaker": "Ben",
+"transcript": "Hi. The TV in my room isn't working.",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-01.mp3"
+},
+{
+"id": 4,
+"dialogueLineId": 2,
+"type": "multipleChoice",
+"question": "Ben đang gặp vấn đề gì?",
+"options": [
+"Điều hòa quá lạnh",
+"TV không hoạt động",
+"Wi-Fi quá chậm",
+"Cửa phòng không mở"
+],
+"answer": "TV không hoạt động",
+"speaker": "Ben",
+"transcript": "Hi. The TV in my room isn't working.",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-01.mp3"
+},
+{
+"id": 5,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"parts": [
+"I'm ",
+" about that. What is your room number?"
+],
+"answers": [
+"sorry"
+],
+"speaker": "Maya",
+"transcript": "I'm sorry about that. What is your room number?",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-02.mp3"
+},
+{
+"id": 6,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"parts": [
+"I'm sorry about that. What is your ",
+"?"
+],
+"answers": [
+"room number"
+],
+"speaker": "Maya",
+"transcript": "I'm sorry about that. What is your room number?",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-02.mp3"
+},
+{
+"id": 7,
+"dialogueLineId": 3,
+"type": "multipleChoice",
+"question": "Vì sao Maya hỏi số phòng của Ben?",
+"options": [
+"Để biết nơi cần đến kiểm tra",
+"Để đổi phòng ngay",
+"Để đặt bữa sáng",
+"Để tính tiền phòng"
+],
+"answer": "Để biết nơi cần đến kiểm tra",
+"speaker": "Maya",
+"transcript": "I'm sorry about that. What is your room number?",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-02.mp3"
+},
+{
+"id": 8,
+"dialogueLineId": 4,
+"type": "fillBlank",
+"parts": [
+"",
+" room 204."
+],
+"answers": [
+"I'm in"
+],
+"speaker": "Ben",
+"transcript": "I'm in room 204.",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-02.mp3"
+},
+{
+"id": 9,
+"dialogueLineId": 4,
+"type": "fillBlank",
+"parts": [
+"I'm in ",
+"."
+],
+"answers": [
+"room 204"
+],
+"speaker": "Ben",
+"transcript": "I'm in room 204.",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-02.mp3"
+},
+{
+"id": 10,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"parts": [
+"Can you ",
+" anything on the screen?"
+],
+"answers": [
+"see"
+],
+"speaker": "Maya",
+"transcript": "Can you see anything on the screen?",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-03.mp3"
+},
+{
+"id": 11,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"parts": [
+"Can you see anything on the ",
+"?"
+],
+"answers": [
+"screen"
+],
+"speaker": "Maya",
+"transcript": "Can you see anything on the screen?",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-03.mp3"
+},
+{
+"id": 12,
+"dialogueLineId": 5,
+"type": "multipleChoice",
+"question": "Maya đang cố kiểm tra điều gì?",
+"options": [
+"TV có hình ảnh hay không",
+"Ben có điều khiển TV không",
+"TV có quá to không",
+"Ben muốn xem kênh nào"
+],
+"answer": "TV có hình ảnh hay không",
+"speaker": "Maya",
+"transcript": "Can you see anything on the screen?",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-03.mp3"
+},
+{
+"id": 13,
+"dialogueLineId": 6,
+"type": "fillBlank",
+"parts": [
+"No. The ",
+" is black."
+],
+"answers": [
+"screen"
+],
+"speaker": "Ben",
+"transcript": "No. The screen is black.",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-03.mp3"
+},
+{
+"id": 14,
+"dialogueLineId": 6,
+"type": "fillBlank",
+"parts": [
+"No. The screen is ",
+"."
+],
+"answers": [
+"black"
+],
+"speaker": "Ben",
+"transcript": "No. The screen is black.",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-03.mp3"
+},
+{
+"id": 15,
+"dialogueLineId": 7,
+"type": "fillBlank",
+"parts": [
+"Okay. I'll ",
+" to check it."
+],
+"answers": [
+"send someone"
+],
+"speaker": "Maya",
+"transcript": "Okay. I'll send someone to check it.",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-04.mp3"
+},
+{
+"id": 16,
+"dialogueLineId": 7,
+"type": "fillBlank",
+"parts": [
+"Okay. I'll send someone to ",
+"."
+],
+"answers": [
+"check it"
+],
+"speaker": "Maya",
+"transcript": "Okay. I'll send someone to check it.",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-04.mp3"
+},
+{
+"id": 17,
+"dialogueLineId": 7,
+"type": "multipleChoice",
+"question": "Maya sẽ làm gì tiếp theo?",
+"options": [
+"Mang một TV mới ngay",
+"Yêu cầu Ben xuống lễ tân",
+"Cử người đến kiểm tra TV",
+"Tắt điện trong phòng"
+],
+"answer": "Cử người đến kiểm tra TV",
+"speaker": "Maya",
+"transcript": "Okay. I'll send someone to check it.",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-04.mp3"
+},
+{
+"id": 18,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"parts": [
+"Thank you. ",
+" will it take?"
+],
+"answers": [
+"How long"
+],
+"speaker": "Ben",
+"transcript": "Thank you. How long will it take?",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-04.mp3"
+},
+{
+"id": 19,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"parts": [
+"Thank you. How long will it ",
+"?"
+],
+"answers": [
+"take"
+],
+"speaker": "Ben",
+"transcript": "Thank you. How long will it take?",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-04.mp3"
+},
+{
+"id": 20,
+"dialogueLineId": 8,
+"type": "multipleChoice",
+"question": "Ben muốn biết thêm điều gì?",
+"options": [
+"Ai sẽ đến",
+"Người sửa TV tên gì",
+"TV có giá bao nhiêu",
+"Anh ấy phải chờ bao lâu"
+],
+"answer": "Anh ấy phải chờ bao lâu",
+"speaker": "Ben",
+"transcript": "Thank you. How long will it take?",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-04.mp3"
+},
+{
+"id": 21,
+"dialogueLineId": 9,
+"type": "fillBlank",
+"parts": [
+"About ",
+"."
+],
+"answers": [
+"fifteen minutes"
+],
+"speaker": "Maya",
+"transcript": "About fifteen minutes.",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/maya-05.mp3"
+},
+{
+"id": 22,
+"dialogueLineId": 10,
+"type": "fillBlank",
+"parts": [
+"That's fine. Thank you for your ",
+"."
+],
+"answers": [
+"help"
+],
+"speaker": "Ben",
+"transcript": "That's fine. Thank you for your help.",
+"scene": "/dialogue/at-a-hotel/reporting-a-room-problem/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/reporting-a-room-problem/audio/ben-05.mp3"
+},
+{
+"id": 23,
+"type": "dialogueCloze",
+"lines": [
+{
+"dialogueLineId": 1,
+"speaker": "Maya",
+"parts": [
+"Front desk. How can I ",
+{
+"id": "1",
+"blank": "help"
+},
+" you?"
+]
+},
+{
+"dialogueLineId": 2,
+"speaker": "Ben",
+"parts": [
+"Hi. The TV in my room ",
+{
+"id": "2",
+"blank": "isn't working"
+},
+"."
+]
+},
+{
+"dialogueLineId": 3,
+"speaker": "Maya",
+"parts": [
+"I'm sorry about that. What is your ",
+{
+"id": "3",
+"blank": "room number"
+},
+"?"
+]
+},
+{
+"dialogueLineId": 4,
+"speaker": "Ben",
+"parts": [
+"I'm in ",
+{
+"id": "4",
+"blank": "room 204"
+},
+"."
+]
+},
+{
+"dialogueLineId": 5,
+"speaker": "Maya",
+"parts": [
+"Can you see anything on the ",
+{
+"id": "5",
+"blank": "screen"
+},
+"?"
+]
+},
+{
+"dialogueLineId": 6,
+"speaker": "Ben",
+"parts": [
+"No. The screen is ",
+{
+"id": "6",
+"blank": "black"
+},
+"."
+]
+},
+{
+"dialogueLineId": 7,
+"speaker": "Maya",
+"parts": [
+"Okay. I'll ",
+{
+"id": "7",
+"blank": "send someone"
+},
+" to check it."
+]
+},
+{
+"dialogueLineId": 8,
+"speaker": "Ben",
+"parts": [
+"Thank you. ",
+{
+"id": "8",
+"blank": "How long"
+},
+" will it take?"
+]
+},
+{
+"dialogueLineId": 9,
+"speaker": "Maya",
+"parts": [
+"About ",
+{
+"id": "9",
+"blank": "fifteen minutes"
+},
+"."
+]
+},
+{
+"dialogueLineId": 10,
+"speaker": "Ben",
+"parts": [
+"That's fine. Thank you for your ",
+{
+"id": "10",
+"blank": "help"
+},
+"."
+]
+}
+]
+}
+],
+"grammarNotes": [
+{
+"title": "isn't working",
+"explanation": "Dùng khi muốn nói một thiết bị hoặc đồ vật không hoạt động bình thường.",
+"example": "The TV isn't working."
+},
+{
+"title": "How long will it take?",
+"explanation": "Dùng để hỏi một việc sẽ mất bao lâu.",
+"example": "How long will it take?"
+}
+],
+"_sourceCitation": ""
+}

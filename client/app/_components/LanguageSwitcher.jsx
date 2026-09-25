@@ -7,9 +7,48 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 
 const languages = [
-	{ locale: "vi", shortLabel: "VI", label: "Tiếng Việt", flag: "🇻🇳" },
-	{ locale: "en", shortLabel: "EN", label: "English", flag: "🇺🇸" },
+	{ locale: "vi", shortLabel: "VI", label: "Tiếng Việt" },
+	{ locale: "en", shortLabel: "EN", label: "English" },
 ];
+
+function LanguageIcon({ locale, large = false }) {
+	const sizeClass = large ? "h-8 w-8" : "h-5 w-5";
+
+	if (locale === "vi") {
+		return (
+			<svg
+				viewBox="0 0 24 24"
+				aria-hidden="true"
+				className={`${sizeClass} shrink-0 rounded-full shadow-sm`}
+			>
+				<circle cx="12" cy="12" r="12" fill="#da251d" />
+				<path
+					fill="#ff0"
+					d="m12 5.2 1.53 4.7h4.94l-4 2.9 1.53 4.7-4-2.9-4 2.9 1.53-4.7-4-2.9h4.94z"
+				/>
+			</svg>
+		);
+	}
+
+	return (
+		<svg
+			viewBox="0 0 24 24"
+			aria-hidden="true"
+			className={`${sizeClass} shrink-0 rounded-full shadow-sm`}
+		>
+			<rect width="24" height="24" fill="#b22234" />
+			{[2, 6, 10, 14, 18, 22].map((y) => (
+				<rect key={y} y={y} width="24" height="2" fill="#fff" />
+			))}
+			<rect width="13" height="12" fill="#3c3b6e" />
+			{[2, 6, 10].flatMap((y) =>
+				[2, 5, 8, 11].map((x) => (
+					<circle key={`${x}-${y}`} cx={x} cy={y} r="0.65" fill="#fff" />
+				)),
+			)}
+		</svg>
+	);
+}
 
 export default function LanguageSwitcher({ variant = "compact" }) {
 	const locale = useLocale();
@@ -65,16 +104,10 @@ export default function LanguageSwitcher({ variant = "compact" }) {
 						: "h-10 gap-1.5 rounded-xl border border-app bg-surface px-2.5 text-sm text-main hover:border-primary/50 focus-visible:border-primary"
 				}`}
 			>
-				<span
-					aria-hidden="true"
-					className={
-						isSettingsVariant
-							? "grid h-8 w-8 place-items-center rounded-full bg-white/15 text-lg"
-							: ""
-					}
-				>
-					{currentLanguage.flag}
-				</span>
+				<LanguageIcon
+					locale={currentLanguage.locale}
+					large={isSettingsVariant}
+				/>
 				<span className={isSettingsVariant ? "flex-1 text-left" : ""}>
 					{isSettingsVariant
 						? currentLanguage.label
@@ -111,16 +144,10 @@ export default function LanguageSwitcher({ variant = "compact" }) {
 										: "text-secondary hover:bg-surface-muted hover:text-main"
 								}`}
 							>
-								<span
-									aria-hidden="true"
-									className={
-										isSettingsVariant
-											? "grid h-8 w-8 place-items-center rounded-full bg-surface-muted text-lg"
-											: ""
-									}
-								>
-									{language.flag}
-								</span>
+								<LanguageIcon
+									locale={language.locale}
+									large={isSettingsVariant}
+								/>
 								<span className="flex-1">{language.label}</span>
 								{isActive && <Check aria-hidden="true" className="h-4 w-4" />}
 							</button>

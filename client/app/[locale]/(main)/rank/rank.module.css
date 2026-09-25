@@ -9,7 +9,7 @@
 	--rank-glow: 14%;
 	--rank-panel: color-mix(in srgb, var(--sj-surface) 78%, var(--sj-page));
 	min-height: calc(100vh - 65px);
-	padding: 28px 32px 30px;
+	padding: 20px 32px 30px;
 	color: var(--sj-text);
 	background: radial-gradient(ellipse at 70% 0%, color-mix(in srgb, var(--sj-primary) 5%, transparent), transparent 50%), var(--sj-page);
 }
@@ -30,48 +30,49 @@
 :global(html[data-theme="cream"]) .page { --rank-silver: #756d60; }
 :global(html[data-theme="black"]) .page { --rank-glow: 7%; }
 
-.container { max-width: 1332px; margin: 0 auto; }
-.pageHeader { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 98px; margin-bottom: 22px; }
+.container { max-width: 1480px; margin: 0 auto; }
+.pageHeader { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 74px; margin-bottom: 18px; }
 .heading { min-width: 0; }
-.heading h1 { display: flex; align-items: center; gap: 14px; margin: 0; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.25; letter-spacing: -.025em; font-weight: 750; }
+.heading h1 { display: flex; align-items: center; gap: 14px; margin: 0; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.15; letter-spacing: -.025em; font-weight: 750; }
 .heading h1 svg { color: var(--rank-gold); flex-shrink: 0; fill: color-mix(in srgb, var(--rank-gold) 24%, transparent); }
-.heading > p { color: var(--sj-text-secondary); font-size: 15px; line-height: 1.65; margin: 12px 0 0; max-width: 760px; }
+.heading > p { color: var(--sj-text-secondary); font-size: 14px; line-height: 1.5; margin: 5px 0 0 53px; max-width: 760px; }
 .quote { flex: 0 0 330px; position: relative; min-height: 98px; padding: 4px 24px 8px 16px; border-left: 2px solid var(--sj-border-strong); isolation: isolate; }
 .quote blockquote { font-size: 16px; font-weight: 500; line-height: 1.6; color: var(--sj-text); }
 .quote p { font-size: 12px; color: var(--sj-text-secondary); margin: 8px 0 0; }
-.mountains { position: absolute; width: 300px; height: 115px; right: -12px; bottom: -18px; color: color-mix(in srgb, var(--sj-primary) 28%, var(--sj-surface-muted)); opacity: .7; z-index: -1; }
+.mountains { position: absolute; width: 230px; height: 85px; right: 0; bottom: -10px; color: color-mix(in srgb, var(--sj-primary) 28%, var(--sj-surface-muted)); opacity: .35; pointer-events: none; }
 .moon { fill: var(--rank-gold); opacity: .65; }
 
-.summaryGrid { display: grid; grid-template-columns: 1.9fr 1fr 1.05fr 1fr; gap: 14px; align-items: end; }
-.summaryCard { border: 1px solid var(--sj-border); border-radius: 16px; padding: 20px; min-height: 154px; background: linear-gradient(130deg, var(--sj-surface), var(--rank-panel)); box-shadow: 0 8px 28px -20px var(--sj-shadow-color); }
-.summaryMain { display: flex; align-items: center; gap: 16px; min-width: 0; }
+.summaryGrid { display: grid; grid-template-columns: 1.5fr repeat(3, minmax(0, 1fr)); gap: 12px; align-items: stretch; }
+.summaryCard { min-width: 0; border: 1px solid var(--sj-border); border-radius: 16px; padding: 16px 18px; min-height: 138px; background: linear-gradient(130deg, var(--sj-surface), var(--rank-panel)); box-shadow: 0 8px 28px -20px var(--sj-shadow-color); }
+.summaryMain { display: flex; align-items: center; gap: 14px; min-width: 0; }
 .summaryText { min-width: 0; }
 .summaryText h2 { color: var(--sj-text-secondary); font-size: 13px; font-weight: 400; line-height: 1.45; margin: 0 0 4px; }
 .summaryValue { font-size: clamp(23px, 2vw, 29px); font-weight: 750; line-height: 1.25; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.summaryIcon, .streakIcon { display: grid; place-items: center; height: 62px; width: 62px; border-radius: 17px; flex-shrink: 0; background: var(--sj-surface-muted); color: var(--rank-gold); }
+.summaryIcon, .streakIcon { display: grid; place-items: center; height: 52px; width: 52px; border-radius: 14px; flex-shrink: 0; background: var(--sj-surface-muted); color: var(--rank-gold); }
+.summaryIcon svg { width: 27px; height: 27px; }
 .summaryCard[data-tone="rank"] .summaryValue { color: var(--sj-brand-text); }
 .summaryCard[data-tone="kn"] .summaryIcon { color: var(--sj-brand-text); background: var(--sj-primary-soft); }
 .summaryCard[data-tone="level"] .summaryIcon { color: var(--rank-rose); background: color-mix(in srgb, var(--rank-violet) 12%, var(--sj-surface)); }
-.summaryFooter { margin-top: 15px; font-size: 12px; line-height: 1.5; color: var(--sj-text-secondary); }
+.summaryFooter { margin: 9px 0 0 66px; font-size: 11px; line-height: 1.4; color: var(--sj-text-secondary); }
 .brandText { color: var(--sj-brand-text); }
 .levelProgress { display: block; width: 100%; height: 8px; border: 0; border-radius: 20px; overflow: hidden; background: var(--sj-surface-muted); color: var(--sj-primary); accent-color: var(--sj-primary); }
 .levelProgress::-webkit-progress-bar { background: var(--sj-surface-muted); border-radius: 20px; }
 .levelProgress::-webkit-progress-value { background: linear-gradient(90deg, var(--sj-primary), var(--sj-brand-text)); border-radius: 20px; }
 .levelProgress::-moz-progress-bar { background: var(--sj-primary); border-radius: 20px; }
 .levelLabels { display: flex; justify-content: space-between; gap: 6px; margin-top: 6px; font-size: 10px; }
-.streakCard { min-height: 176px; padding: 17px 21px 13px; background: linear-gradient(125deg, color-mix(in srgb, var(--rank-fire) 14%, var(--sj-surface)), var(--rank-panel) 70%); border-color: color-mix(in srgb, var(--rank-fire) 25%, var(--sj-border)); }
+.streakCard { min-height: 138px; padding: 13px 17px 11px; background: linear-gradient(125deg, color-mix(in srgb, var(--rank-fire) 14%, var(--sj-surface)), var(--rank-panel) 70%); border-color: color-mix(in srgb, var(--rank-fire) 25%, var(--sj-border)); }
 .streakCard h2 { color: var(--rank-gold); font-weight: 500; }
 .streakIcon { color: var(--rank-fire); background: color-mix(in srgb, var(--rank-fire) 16%, transparent); }
 .streakIcon svg { fill: color-mix(in srgb, var(--rank-fire) 28%, transparent); }
-.streakHelp { font-size: 11px; margin-top: 5px; line-height: 1.45; color: var(--sj-text-secondary); }
-.weekdays { display: flex; justify-content: space-between; list-style: none; margin: 16px 0 0; padding: 0; }
-.weekdays li { display: flex; flex-direction: column; align-items: center; gap: 5px; font-size: 11px; color: var(--sj-text-secondary); }
-.dayComplete, .dayPending { display: grid; width: 27px; height: 27px; place-items: center; border-radius: 50%; }
+.streakHelp { display: none; }
+.weekdays { display: flex; justify-content: space-between; list-style: none; margin: 10px 0 0; padding: 0; }
+.weekdays li { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 10px; color: var(--sj-text-secondary); }
+.dayComplete, .dayPending { display: grid; width: 25px; height: 25px; place-items: center; border-radius: 50%; }
 .dayComplete { color: var(--sj-page); background: var(--sj-brand-text); box-shadow: 0 0 13px color-mix(in srgb, var(--sj-brand-text) 22%, transparent); }
 .dayPending { border: 1px solid var(--sj-border-strong); color: var(--sj-text-muted); }
 
-.periodControls { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; padding: 10px 0; }
-.periodSwitch { grid-column: 2; display: flex; padding: 3px; border: 1px solid var(--sj-border); border-radius: 30px; background: var(--sj-surface); }
+.periodControls { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0 10px; }
+.periodSwitch { display: flex; padding: 3px; border: 1px solid var(--sj-border); border-radius: 30px; background: var(--sj-surface); }
 .periodSwitch button { min-width: 102px; border-radius: 25px; padding: 7px 22px; color: var(--sj-text-secondary); font-size: 14px; cursor: pointer; transition: background .18s, color .18s; }
 .periodSwitch button:hover { background: var(--sj-hover); }
 .periodSwitch button[aria-pressed="true"] { background: var(--sj-primary); color: #fff; box-shadow: 0 2px 10px color-mix(in srgb, var(--sj-primary) 25%, transparent); }
@@ -111,6 +112,7 @@
 .avatarLarge { width: 80px; height: 80px; font-size: 36px; font-weight: 500; border: 3px solid var(--medal); box-shadow: 0 0 0 4px color-mix(in srgb, var(--medal) 10%, transparent), 0 0 21px color-mix(in srgb, var(--medal) var(--rank-glow), transparent); }
 .winner .avatarLarge { width: 86px; height: 86px; border-color: var(--sj-brand-text); box-shadow: 0 0 0 3px color-mix(in srgb, var(--rank-gold) 70%, transparent), 0 0 23px color-mix(in srgb, var(--sj-brand-text) var(--rank-glow), transparent); }
 
+.leaderboardPanel { padding: 4px 14px; border: 1px solid var(--sj-border); border-radius: 16px; background: linear-gradient(125deg, var(--rank-panel), var(--sj-surface)); }
 .leaderboard { border-collapse: separate; border-spacing: 0 4px; width: 100%; table-layout: fixed; font-size: 13px; }
 .leaderboard th, .leaderboard td { padding: 5px 16px; text-align: left; height: 45px; border-block: 1px solid var(--sj-border); background: var(--rank-panel); }
 .leaderboard thead th { color: var(--sj-text-secondary); font-size: 12px; font-weight: 400; height: 40px; }
@@ -135,20 +137,19 @@
 
 @media (max-width: 1199px) {
 	.summaryGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
-	.summaryCard { min-height: 160px; }
+	.summaryCard { min-height: 138px; }
 	.summaryMain { gap: 15px; }
-	.quote { flex-basis: 270px; padding-right: 25px; }
 	.podium { padding-inline: 0; }
 	.medal { left: 10%; }
 	.leaderboard th:last-child, .leaderboard td:last-child { padding-right: 24px; }
 }
 
 @media (max-width: 767px) {
-	.page { padding: 24px 20px; }
+	.page { padding: 18px 20px 28px; }
 	.pageHeader { display: block; margin-bottom: 20px; }
 	.heading h1 { font-size: 27px; gap: 10px; }
 	.heading h1 svg { width: 30px; }
-	.heading > p { font-size: 13px; }
+	.heading > p { font-size: 13px; margin-left: 40px; }
 	.quote { min-height: 0; padding: 4px 0 4px 14px; margin-top: 18px; }
 	.quote blockquote { font-size: 14px; }
 	.quote p { margin: 5px 0 0; font-size: 11px; }
@@ -173,15 +174,22 @@
 	.page { padding-inline: 16px; }
 	.heading h1 { font-size: 25px; align-items: start; }
 	.heading h1 svg { margin-top: 2px; }
-	.summaryGrid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-	.summaryCard { min-height: 0; padding: 18px; }
-	.summaryMain { gap: 18px; }
-	.summaryFooter { margin-left: 80px; margin-top: 8px; }
-	.streakCard { padding: 20px; }
-	.weekdays { margin-top: 20px; }
-	.periodControls { grid-template-columns: 1fr; justify-items: center; gap: 12px; padding: 22px 0; }
-	.periodSwitch { grid-column: 1; }
-	.periodSelect { justify-self: center; width: 210px; }
+	.summaryGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+	.summaryCard { min-height: 112px; padding: 12px; }
+	.summaryMain { align-items: flex-start; gap: 8px; }
+	.summaryIcon, .streakIcon { width: 36px; height: 36px; border-radius: 10px; }
+	.summaryIcon svg, .streakIcon svg { width: 22px; height: 22px; }
+	.summaryText h2 { font-size: 11px; }
+	.summaryValue { font-size: 21px; white-space: normal; }
+	.summaryFooter { margin: 8px 0 0; }
+	.streakCard { grid-column: 1 / -1; padding: 12px 14px; }
+	.weekdays { margin-top: 10px; }
+	.periodControls { gap: 8px; padding: 14px 0 10px; }
+	.periodSwitch button { min-width: 70px; padding: 7px 12px; }
+	.periodSelect { min-width: 0; width: 150px; }
+	.periodSelect select { padding: 9px 25px 9px 32px; font-size: 12px; }
+	.periodSelect > svg:first-child { left: 9px; width: 15px; }
+	.periodSelect > svg:last-child { right: 8px; width: 14px; }
 	.podium { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-bottom: 16px; }
 	.topCard { min-height: 211px; padding: 23px 24px 32px; }
 	.winner { order: -1; min-height: 243px; }
@@ -190,6 +198,7 @@
 	.medal { left: 18%; top: 32px; transform: none; }
 	.topCard h3 { font-size: 17px; }
 	.topStats { flex-direction: row; font-size: 12px; gap: 18px; }
+	.leaderboardPanel { padding: 6px; }
 	.leaderboard, .leaderboard tbody { display: block; }
 	.leaderboard thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 	.leaderboard tr { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 8px 6px; padding: 12px 10px; margin-bottom: 8px; border: 1px solid var(--sj-border); border-radius: 13px; background: var(--rank-panel); }

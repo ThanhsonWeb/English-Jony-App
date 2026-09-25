@@ -143,8 +143,8 @@ export default function RankDashboard() {
 	const error = loading ? null : result.error;
 	const leaderboard = data?.leaderboard ?? [];
 	const currentUser = data?.currentUser;
-	const rows = leaderboard.filter(user => user.rank > 3);
-	// Keep a personal row for podium users, users outside the top ten, and unranked users.
+	const rows = [...leaderboard];
+	// Keep a personal row for users outside the top ten and unranked users.
 	if (currentUser && !rows.some(user => user.id === currentUser.id)) rows.push(currentUser);
 
 	useEffect(() => {
@@ -215,7 +215,7 @@ export default function RankDashboard() {
 					{[leaderboard[1], leaderboard[0], leaderboard[2]].filter(Boolean).map(user => <RankTopCard key={user.id} user={user} t={t} format={format} />)}
 				</section>
 
-				<section aria-label={t("leaderboard")}>
+				<section aria-label={t("leaderboard")} className={styles.leaderboardPanel}>
 					<table className={styles.leaderboard}>
 						<caption className="sr-only">{t("leaderboard")} — {activePeriod}</caption>
 						<thead><tr><th scope="col">#</th><th scope="col">{t("user")}</th><th scope="col">{t("streak")}</th><th scope="col">{t(period === "week" ? "weekKn" : "monthKn")}</th></tr></thead>

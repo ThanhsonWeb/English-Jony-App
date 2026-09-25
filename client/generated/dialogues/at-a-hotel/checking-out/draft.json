@@ -1,0 +1,666 @@
+{
+"metadata": {
+"courseId": "at-a-hotel",
+"dialogueId": "checking-out",
+"title": "Làm thủ tục trả phòng",
+"level": "a1",
+"situation": "Ben trả phòng, kiểm tra hóa đơn và nói lời cảm ơn trước khi rời khách sạn.",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"thumbnail": "/dialogue/at-a-hotel/thumbnails/checking-out.png"
+},
+"dialogue": [
+{
+"id": 1,
+"speaker": "Maya",
+"text": "Good morning. How can I help you?",
+"translation": "Chào buổi sáng. Tôi có thể giúp gì cho bạn?",
+"practicePriority": "simple",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-01.mp3"
+},
+{
+"id": 2,
+"speaker": "Ben",
+"text": "Hi. I'd like to check out, please.",
+"translation": "Chào bạn. Tôi muốn làm thủ tục trả phòng.",
+"practicePriority": "veryImportant",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-01.mp3"
+},
+{
+"id": 3,
+"speaker": "Maya",
+"text": "Of course. What is your room number?",
+"translation": "Tất nhiên. Số phòng của bạn là bao nhiêu?",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-02.mp3"
+},
+{
+"id": 4,
+"speaker": "Ben",
+"text": "Room 305.",
+"translation": "Phòng 305.",
+"practicePriority": "simple",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-02.mp3"
+},
+{
+"id": 5,
+"speaker": "Maya",
+"text": "Thank you. Let me check your bill.",
+"translation": "Cảm ơn bạn. Để tôi kiểm tra hóa đơn của bạn.",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-03.mp3"
+},
+{
+"id": 6,
+"speaker": "Maya",
+"text": "Your total is eighty dollars.",
+"translation": "Tổng cộng là tám mươi đô la.",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-04.mp3"
+},
+{
+"id": 7,
+"speaker": "Ben",
+"text": "Okay. Can I pay by card?",
+"translation": "Được rồi. Tôi có thể thanh toán bằng thẻ không?",
+"practicePriority": "veryImportant",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-03.mp3"
+},
+{
+"id": 8,
+"speaker": "Maya",
+"text": "Yes, you can.",
+"translation": "Có, bạn có thể.",
+"practicePriority": "simple",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-05.mp3"
+},
+{
+"id": 9,
+"speaker": "Ben",
+"text": "Great. Is everything paid now?",
+"translation": "Tuyệt. Bây giờ mọi thứ đã được thanh toán chưa?",
+"practicePriority": "important",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-04.mp3"
+},
+{
+"id": 10,
+"speaker": "Maya",
+"text": "Yes. Everything is paid. Thank you for staying with us.",
+"translation": "Vâng. Mọi thứ đã được thanh toán. Cảm ơn bạn đã ở tại khách sạn của chúng tôi.",
+"practicePriority": "simple",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-06.mp3"
+},
+{
+"id": 11,
+"speaker": "Ben",
+"text": "Thank you. I had a nice stay.",
+"translation": "Cảm ơn bạn. Tôi đã có một kỳ nghỉ vui vẻ.",
+"practicePriority": "simple",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-05.mp3"
+}
+],
+"usefulWords": [
+{
+"word": "check out",
+"pronunciation": "/tʃek aʊt/",
+"meaning": "trả phòng",
+"example": "I'd like to check out, please."
+},
+{
+"word": "room number",
+"pronunciation": "/ruːm ˈnʌmbər/",
+"meaning": "số phòng",
+"example": "What is your room number?"
+},
+{
+"word": "bill",
+"pronunciation": "/bɪl/",
+"meaning": "hóa đơn",
+"example": "Let me check your bill."
+},
+{
+"word": "total",
+"pronunciation": "/ˈtoʊtəl/",
+"meaning": "tổng cộng",
+"example": "Your total is eighty dollars."
+},
+{
+"word": "pay by card",
+"pronunciation": "/peɪ baɪ kɑːrd/",
+"meaning": "thanh toán bằng thẻ",
+"example": "Can I pay by card?"
+},
+{
+"word": "everything is paid",
+"pronunciation": "/ˈevriθɪŋ ɪz peɪd/",
+"meaning": "mọi thứ đã được thanh toán",
+"example": "Everything is paid now."
+},
+{
+"word": "nice stay",
+"pronunciation": "/naɪs steɪ/",
+"meaning": "kỳ nghỉ dễ chịu",
+"example": "I had a nice stay."
+}
+],
+"tasks": [
+{
+"id": 1,
+"dialogueLineId": 1,
+"type": "fillBlank",
+"parts": [
+"Good morning. How can I ",
+" you?"
+],
+"answers": [
+"help"
+],
+"speaker": "Maya",
+"transcript": "Good morning. How can I help you?",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-01.mp3"
+},
+{
+"id": 2,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"parts": [
+"Hi. ",
+" to check out, please."
+],
+"answers": [
+"I'd like"
+],
+"speaker": "Ben",
+"transcript": "Hi. I'd like to check out, please.",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-01.mp3"
+},
+{
+"id": 3,
+"dialogueLineId": 2,
+"type": "fillBlank",
+"parts": [
+"Hi. I'd like to ",
+", please."
+],
+"answers": [
+"check out"
+],
+"speaker": "Ben",
+"transcript": "Hi. I'd like to check out, please.",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-01.mp3"
+},
+{
+"id": 4,
+"dialogueLineId": 2,
+"type": "multipleChoice",
+"question": "Ben muốn làm gì?",
+"options": [
+"Đặt thêm một đêm",
+"Đổi phòng",
+"Hỏi giờ ăn sáng",
+"Làm thủ tục trả phòng"
+],
+"answer": "Làm thủ tục trả phòng",
+"speaker": "Ben",
+"transcript": "Hi. I'd like to check out, please.",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-01.mp3"
+},
+{
+"id": 5,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"parts": [
+"Of course. What is your ",
+"?"
+],
+"answers": [
+"room number"
+],
+"speaker": "Maya",
+"transcript": "Of course. What is your room number?",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-02.mp3"
+},
+{
+"id": 6,
+"dialogueLineId": 3,
+"type": "fillBlank",
+"parts": [
+"",
+". What is your room number?"
+],
+"answers": [
+"Of course"
+],
+"speaker": "Maya",
+"transcript": "Of course. What is your room number?",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-02.mp3"
+},
+{
+"id": 7,
+"dialogueLineId": 3,
+"type": "multipleChoice",
+"question": "Maya cần thông tin gì từ Ben?",
+"options": [
+"Số phòng",
+"Số điện thoại",
+"Tên nhà hàng",
+"Mật khẩu Wi-Fi"
+],
+"answer": "Số phòng",
+"speaker": "Maya",
+"transcript": "Of course. What is your room number?",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-02.mp3"
+},
+{
+"id": 8,
+"dialogueLineId": 4,
+"type": "fillBlank",
+"parts": [
+"Room ",
+"."
+],
+"answers": [
+"305"
+],
+"speaker": "Ben",
+"transcript": "Room 305.",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-02.mp3"
+},
+{
+"id": 9,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"parts": [
+"Thank you. Let me ",
+" your bill."
+],
+"answers": [
+"check"
+],
+"speaker": "Maya",
+"transcript": "Thank you. Let me check your bill.",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-03.mp3"
+},
+{
+"id": 10,
+"dialogueLineId": 5,
+"type": "fillBlank",
+"parts": [
+"Thank you. Let me check your ",
+"."
+],
+"answers": [
+"bill"
+],
+"speaker": "Maya",
+"transcript": "Thank you. Let me check your bill.",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-03.mp3"
+},
+{
+"id": 11,
+"dialogueLineId": 5,
+"type": "multipleChoice",
+"question": "Maya sẽ làm gì tiếp theo?",
+"options": [
+"Gọi nhân viên dọn phòng",
+"Đưa Ben chìa khóa mới",
+"Kiểm tra hóa đơn",
+"Đặt taxi cho Ben"
+],
+"answer": "Kiểm tra hóa đơn",
+"speaker": "Maya",
+"transcript": "Thank you. Let me check your bill.",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-03.mp3"
+},
+{
+"id": 12,
+"dialogueLineId": 6,
+"type": "fillBlank",
+"parts": [
+"Your ",
+" is eighty dollars."
+],
+"answers": [
+"total"
+],
+"speaker": "Maya",
+"transcript": "Your total is eighty dollars.",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-04.mp3"
+},
+{
+"id": 13,
+"dialogueLineId": 6,
+"type": "fillBlank",
+"parts": [
+"Your total is ",
+"."
+],
+"answers": [
+"eighty dollars"
+],
+"speaker": "Maya",
+"transcript": "Your total is eighty dollars.",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-04.mp3"
+},
+{
+"id": 14,
+"dialogueLineId": 6,
+"type": "multipleChoice",
+"question": "Ben cần trả bao nhiêu?",
+"options": [
+"Tám mươi đô la",
+"Ba mươi đô la",
+"Năm mươi đô la",
+"Một trăm đô la"
+],
+"answer": "Tám mươi đô la",
+"speaker": "Maya",
+"transcript": "Your total is eighty dollars.",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-04.mp3"
+},
+{
+"id": 15,
+"dialogueLineId": 7,
+"type": "fillBlank",
+"parts": [
+"Okay. ",
+" pay by card?"
+],
+"answers": [
+"Can I"
+],
+"speaker": "Ben",
+"transcript": "Okay. Can I pay by card?",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-03.mp3"
+},
+{
+"id": 16,
+"dialogueLineId": 7,
+"type": "fillBlank",
+"parts": [
+"Okay. Can I ",
+"?"
+],
+"answers": [
+"pay by card"
+],
+"speaker": "Ben",
+"transcript": "Okay. Can I pay by card?",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-03.mp3"
+},
+{
+"id": 17,
+"dialogueLineId": 7,
+"type": "multipleChoice",
+"question": "Ben đang hỏi về điều gì?",
+"options": [
+"Giờ trả phòng",
+"Hóa đơn có đúng không",
+"Cách thanh toán",
+"Giá phòng ngày mai"
+],
+"answer": "Cách thanh toán",
+"speaker": "Ben",
+"transcript": "Okay. Can I pay by card?",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-03.mp3"
+},
+{
+"id": 18,
+"dialogueLineId": 8,
+"type": "fillBlank",
+"parts": [
+"Yes, you ",
+"."
+],
+"answers": [
+"can"
+],
+"speaker": "Maya",
+"transcript": "Yes, you can.",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-05.mp3"
+},
+{
+"id": 19,
+"dialogueLineId": 9,
+"type": "fillBlank",
+"parts": [
+"Great. Is ",
+" paid now?"
+],
+"answers": [
+"everything"
+],
+"speaker": "Ben",
+"transcript": "Great. Is everything paid now?",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-04.mp3"
+},
+{
+"id": 20,
+"dialogueLineId": 9,
+"type": "fillBlank",
+"parts": [
+"Great. Is everything ",
+"?"
+],
+"answers": [
+"paid now"
+],
+"speaker": "Ben",
+"transcript": "Great. Is everything paid now?",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-04.mp3"
+},
+{
+"id": 21,
+"dialogueLineId": 10,
+"type": "fillBlank",
+"parts": [
+"Yes. Everything is paid. Thank you for ",
+"."
+],
+"answers": [
+"staying with us"
+],
+"speaker": "Maya",
+"transcript": "Yes. Everything is paid. Thank you for staying with us.",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-06.mp3"
+},
+{
+"id": 22,
+"dialogueLineId": 11,
+"type": "fillBlank",
+"parts": [
+"Thank you. I had a ",
+"."
+],
+"answers": [
+"nice stay"
+],
+"speaker": "Ben",
+"transcript": "Thank you. I had a nice stay.",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-05.mp3"
+},
+{
+"id": 23,
+"type": "dialogueCloze",
+"lines": [
+{
+"dialogueLineId": 1,
+"speaker": "Maya",
+"parts": [
+"Good morning. How can I ",
+{
+"id": "1",
+"blank": "help"
+},
+" you?"
+]
+},
+{
+"dialogueLineId": 2,
+"speaker": "Ben",
+"parts": [
+"Hi. I'd like to ",
+{
+"id": "2",
+"blank": "check out"
+},
+", please."
+]
+},
+{
+"dialogueLineId": 3,
+"speaker": "Maya",
+"parts": [
+"Of course. What is your ",
+{
+"id": "3",
+"blank": "room number"
+},
+"?"
+]
+},
+{
+"dialogueLineId": 4,
+"speaker": "Ben",
+"parts": [
+"Room ",
+{
+"id": "4",
+"blank": "305"
+},
+"."
+]
+},
+{
+"dialogueLineId": 5,
+"speaker": "Maya",
+"parts": [
+"Thank you. Let me check your ",
+{
+"id": "5",
+"blank": "bill"
+},
+"."
+]
+},
+{
+"dialogueLineId": 6,
+"speaker": "Maya",
+"parts": [
+"Your total is ",
+{
+"id": "6",
+"blank": "eighty dollars"
+},
+"."
+]
+},
+{
+"dialogueLineId": 7,
+"speaker": "Ben",
+"parts": [
+"Okay. Can I ",
+{
+"id": "7",
+"blank": "pay by card"
+},
+"?"
+]
+},
+{
+"dialogueLineId": 8,
+"speaker": "Maya",
+"parts": [
+"Yes, you ",
+{
+"id": "8",
+"blank": "can"
+},
+"."
+]
+},
+{
+"dialogueLineId": 9,
+"speaker": "Ben",
+"parts": [
+"Great. Is everything ",
+{
+"id": "9",
+"blank": "paid now"
+},
+"?"
+]
+},
+{
+"dialogueLineId": 10,
+"speaker": "Maya",
+"parts": [
+"Yes. Everything is paid. Thank you for ",
+{
+"id": "10",
+"blank": "staying with us"
+},
+"."
+]
+},
+{
+"dialogueLineId": 11,
+"speaker": "Ben",
+"parts": [
+"Thank you. I had a ",
+{
+"id": "11",
+"blank": "nice stay"
+},
+"."
+]
+}
+]
+}
+],
+"grammarNotes": [
+{
+"title": "I'd like to ...",
+"explanation": "Dùng để nói điều bạn muốn làm một cách lịch sự.",
+"example": "I'd like to check out, please."
+},
+{
+"title": "Can I ...?",
+"explanation": "Dùng để hỏi xem bạn có thể làm một việc hay không.",
+"example": "Can I pay by card?"
+}
+],
+"_sourceCitation": ""
+}

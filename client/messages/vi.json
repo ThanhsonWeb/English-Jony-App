@@ -1,10 +1,11 @@
 {
 	"Notebook": {
 	  "title": "Sổ tay từ vựng",
-	  "subtitle": "Tất cả từ bạn đã lưu, ở một nơi dễ tìm kiếm và ôn tập nhanh hơn.",
+	  "subtitle": "Tất cả từ bạn đã lưu, ở một nơi để tìm kiếm và ôn tập nhanh hơn.",
 	  "reviewNow": "Ôn tập ngay",
 	  "viewDueWords": "Xem từ cần ôn",
 	  "addWord": "Thêm từ mới",
+	  "allWords": "Tất cả từ",
 	  "total": "Tổng số từ",
 	  "learning": "Đang học",
 	  "dueToday": "Cần ôn hôm nay",
@@ -65,8 +66,8 @@
 	},
 	"Rank": {
 		"pageTitle": "Xếp hạng",
-		"title": "Bảng xếp hạng học tập",
-		"subtitle": "Theo dõi hành trình học tập của bạn và so sánh với những người học khác trên StudyJony.",
+		"title": "Bảng xếp hạng",
+		"subtitle": "Theo dõi tiến độ và vị trí của bạn trên StudyJony.",
 		"motivation": "Một chút động lực mỗi ngày",
 		"quote": "Kiến thức hôm nay là phiên bản tốt hơn của ngày mai.",
 		"streakTitle": "Chuỗi học tập hiện tại",

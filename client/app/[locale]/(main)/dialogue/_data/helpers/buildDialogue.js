@@ -113,15 +113,27 @@ export function buildGeneratedDialogueTasks(draft, characterImages) {
 		.map((task, index) => ({ ...task, id: String(index + 1) }));
 }
 
-export function buildGeneratedDialogue(draft, characterImages) {
+export function buildGeneratedDialogue(draft, characterImages, media = {}) {
+	const dialogue = draft.dialogue.map((dialogueLine) => ({
+		...dialogueLine,
+		scene:
+			media.scenes?.[dialogueLine.speaker] ??
+			dialogueLine.scene ??
+			media.scene,
+	}));
+
 	return {
 		...draft,
+		dialogue,
 		id: draft.metadata.dialogueId,
 		thumbnail: draft.metadata.thumbnail,
 		title: draft.metadata.title,
 		description: draft.metadata.situation,
 		scene: draft.metadata.scene,
 		characters: characterImages,
-		tasks: buildGeneratedDialogueTasks(draft, characterImages),
+		tasks: buildGeneratedDialogueTasks(
+			{ ...draft, dialogue },
+			characterImages,
+		),
 	};
 }
