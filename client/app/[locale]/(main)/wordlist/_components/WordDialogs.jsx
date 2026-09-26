@@ -5,15 +5,75 @@ import styles from "../wordlist.module.css";
 
 export function WordDialog({ word, onClose, onSave, t }) {
 	const dialog = useRef(null);
+	const latestEnglish = useRef(word?.english?.trim() || "");
+	const manuallyEdited = useRef({ vietnamese: false, pronunciation: false, example: false });
+	const [fields, setFields] = useState({
+		english: word?.english || "",
+		vietnamese: word?.vietnamese || "",
+		pronunciation: word?.pronunciation || "",
+		example: word?.example || "",
+	});
+	const [lookupState, setLookupState] = useState("idle");
 	const [busy, setBusy] = useState(false);
 	const [error, setError] = useState("");
 	useEffect(() => {
 		dialog.current.showModal();
 	}, []);
+	useEffect(() => {
+		if (word || !fields.english.trim()) return;
+		const english = fields.english.trim();
+		const controller = new AbortController();
+		const timer = setTimeout(async () => {
+			try {
+				const response = await fetch(
+					`/api/v1/dictionary/${encodeURIComponent(english)}`,
+					{ credentials: "include", signal: controller.signal },
+				);
+				if (!response.ok) throw new Error("lookup failed");
+				const { data } = await response.json();
+				if (controller.signal.aborted || latestEnglish.current !== english) return;
+				setFields((current) => ({
+					...current,
+					vietnamese: manuallyEdited.current.vietnamese
+						? current.vietnamese : data?.vietnamese || current.vietnamese,
+					pronunciation: manuallyEdited.current.pronunciation
+						? current.pronunciation : data?.pronunciation || current.pronunciation,
+					example: manuallyEdited.current.example
+						? current.example : data?.example || current.example,
+				}));
+				setLookupState("idle");
+			} catch {
+				if (!controller.signal.aborted) setLookupState("error");
+			}
+		}, 400);
+		return () => {
+			clearTimeout(timer);
+			controller.abort();
+		};
+	}, [fields.english, word]);
+	function changeField(event) {
+		const { name, value } = event.target;
+		if (name === "english") {
+			latestEnglish.current = value.trim();
+			setLookupState(!word && value.trim() ? "loading" : "idle");
+			setFields((current) => ({
+				...current,
+				english: value,
+				...(word ? {} : {
+					vietnamese: manuallyEdited.current.vietnamese ? current.vietnamese : "",
+					pronunciation: manuallyEdited.current.pronunciation ? current.pronunciation : "",
+					example: manuallyEdited.current.example ? current.example : "",
+				}),
+			}));
+			return;
+		}
+		manuallyEdited.current[name] = true;
+		setFields((current) => ({ ...current, [name]: value }));
+	}
 	async function submit(event) {
 		event.preventDefault();
 		if (busy) return;
-		const body = Object.fromEntries(new FormData(event.currentTarget));
+		const body = { ...fields };
 		for (const key of Object.keys(body)) body[key] = body[key].trim();
 		if (!body.english || !body.vietnamese) return;
 		setBusy(true);
@@ -57,27 +117,35 @@ export function WordDialog({ word, onClose, onSave, t }) {
 				{[
 					["english", "word"],
 					["vietnamese", "meaning"],
+					["pronunciation", "ipa"],
 					["example", "example"],
 				].map(([name, label]) => (
 					<label key={name} className={styles.field}>
 						{t(label)}
-						{name === "example" && (
+						{(name === "example" || name === "pronunciation") && (
 							<small> · {t("optional")}</small>
 						)}
 						{name === "example" ? <textarea
 							name={name}
-							defaultValue={word?.[name] || ""}
+							value={fields[name]}
+							onChange={changeField}
 							maxLength={2000}
 							disabled={busy}
 							rows={3}
 						/> : <input
 							name={name}
-							defaultValue={word?.[name] || ""}
-							required
+							value={fields[name]}
+							onChange={changeField}
+							required={name === "english" || name === "vietnamese"}
 							maxLength={500}
 							disabled={busy}
 							autoComplete="off"
 						/>}
+						{name === "english" && lookupState !== "idle" && (
+							<span className={styles.lookupHint} role="status">
+								{lookupState === "loading" ? t("lookingUpWord") : t("lookupUnavailable")}
+							</span>
+						)}
 					</label>
 				))}
 				{error && <p role="alert">{error}</p>}

@@ -4,16 +4,18 @@ import { useEffect, useId, useState } from "react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { useAuth } from "@/app/_contexts/AuthContext";
+import { resolveAvatarUrl } from "@/app/_lib/resolveAvatarUrl";
 import { CalendarDays, ChartNoAxesColumnIncreasing, Check, ChevronDown, Crown, Flame, Target } from "lucide-react";
 import styles from "../rank.module.css";
 
 function RankAvatar({ user, large = false }) {
-	const [failedAvatar, setFailedAvatar] = useState(null);
+	const [failedAvatarUrls, setFailedAvatarUrls] = useState([]);
+	const avatarUrl = resolveAvatarUrl(user, failedAvatarUrls);
 	const initials = user.name.trim().split(/\s+/).slice(0, 2).map(part => part[0]).join("").toUpperCase() || "?";
 	return (
 		<span className={`${styles.avatar} ${large ? styles.avatarLarge : ""}`} data-tone="cyan">
-			{user.avatar && failedAvatar !== user.avatar ? (
-				<Image src={user.avatar} alt="" fill unoptimized onError={() => setFailedAvatar(user.avatar)} sizes={large ? "88px" : "38px"} />
+			{avatarUrl ? (
+				<Image src={avatarUrl} alt="" fill unoptimized onError={() => setFailedAvatarUrls((urls) => [...urls, avatarUrl])} sizes={large ? "88px" : "38px"} />
 			) : <span aria-hidden="true">{initials}</span>}
 		</span>
 	);
@@ -143,8 +145,9 @@ export default function RankDashboard() {
 	const loading = result?.key !== requestKey;
 	const data = loading ? null : result.data;
 	const error = loading ? null : result.error;
-	const currentAvatar = signedInUser?.avatar || signedInUser?.photo;
-	const withCurrentAvatar = profile => profile?.isCurrentUser && currentAvatar ? { ...profile, avatar: currentAvatar } : profile;
+	const withCurrentAvatar = profile => profile?.isCurrentUser && signedInUser
+		? { ...profile, avatar: signedInUser.avatar || profile.avatar, photo: signedInUser.photo || profile.photo }
+		: profile;
 	const leaderboard = (data?.leaderboard ?? []).map(withCurrentAvatar);
 	const currentUser = withCurrentAvatar(data?.currentUser);
 	const rows = [...leaderboard];

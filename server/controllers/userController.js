@@ -53,6 +53,9 @@ exports.updateAvatar = catchAsync(async (req, res, next) => {
 		avatar = await uploadAvatar(req.body, type, req.user.id);
 	} catch (error) {
 		console.error("Avatar upload failed:", error.message);
+		if (error.message === "Avatar storage is not configured") {
+			return next(new AppError("Avatar storage is not configured.", 503));
+		}
 		return next(new AppError("Could not upload avatar. Please try again.", 502));
 	}
 

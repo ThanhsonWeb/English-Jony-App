@@ -402,17 +402,17 @@
 .reviewCard {
 	background: linear-gradient(
 		145deg,
-		var(--sj-primary-soft),
-		var(--sj-surface)
+		color-mix(in srgb, var(--sj-primary) 10%, var(--sj-surface)),
+		var(--sj-surface) 55%
 	);
-	border: 1px solid var(--sj-border);
+	border: 1px solid color-mix(in srgb, var(--sj-primary) 35%, var(--sj-border));
 	border-radius: 18px;
-	padding: 26px 22px;
+	padding: 25px 20px 20px;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 14px;
+	gap: 11px;
 	scroll-margin-top: 96px;
 }
 .reviewCard:focus-visible {
@@ -421,6 +421,10 @@
 }
 .reviewCard > svg {
 	color: var(--sj-brand-text);
+	padding: 10px;
+	border-radius: 15px;
+	background: color-mix(in srgb, var(--sj-primary) 14%, transparent);
+	box-sizing: content-box;
 }
 :global(html[data-theme="dark"]) .reviewCard > svg,
 :global(html[data-theme="black"]) .reviewCard > svg {
@@ -432,32 +436,110 @@
 	filter: brightness(1.15) saturate(1.15);
 }
 .reviewCard h2 {
-	font-size: 22px;
+	font-size: 21px;
 	font-weight: 720;
 	line-height: 1.35;
 }
 .reviewCard p {
 	color: var(--sj-text-secondary);
 	font-size: 13px;
-	line-height: 1.8;
+	line-height: 1.55;
 }
-.reviewCard label {
-	font-size: 11px;
-	align-self: start;
-	color: var(--sj-text-secondary);
-	margin-top: 4px;
-}
-.reviewCard select {
-	margin-top: -8px;
+.reviewModes {
 	width: 100%;
-	border: 1px solid var(--sj-border);
-	background: var(--sj-input);
-	color: var(--sj-text);
-	border-radius: 9px;
+	min-width: 0;
+	margin: 8px 0 0;
+	padding: 0;
+	border: 0;
+	text-align: left;
+}
+.reviewModes legend {
+	margin-bottom: 10px;
+	color: var(--sj-text-secondary);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+}
+.reviewMode {
+	--mode-accent: var(--sj-primary);
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	width: 100%;
+	min-height: 74px;
 	padding: 10px;
+	border: 1px solid color-mix(in srgb, var(--mode-accent) 25%, var(--sj-border));
+	border-radius: 13px;
+	background: color-mix(in srgb, var(--mode-accent) 4%, var(--sj-surface));
+	cursor: pointer;
+	transition: border-color 0.15s, background 0.15s;
+}
+.reviewMode + .reviewMode { margin-top: 8px; }
+.reviewMode[data-mode="quiz"] { --mode-accent: #a678ee; }
+.reviewMode[data-mode="write"] { --mode-accent: #e6aa38; }
+.reviewMode:hover { border-color: var(--mode-accent); }
+.reviewMode[data-selected="true"] {
+	border-color: var(--sj-primary);
+	background: color-mix(in srgb, var(--sj-primary) 15%, var(--sj-surface));
+	box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--sj-primary) 25%, transparent);
+}
+.reviewMode input {
+	position: absolute;
+	opacity: 0;
+	width: 1px;
+	height: 1px;
+}
+.reviewMode:has(input:focus-visible) {
+	outline: 3px solid var(--sj-primary);
+	outline-offset: 3px;
+}
+.reviewModeIcon {
+	flex: 0 0 42px;
+	display: grid;
+	place-items: center;
+	width: 42px;
+	height: 42px;
+	border-radius: 11px;
+	color: var(--mode-accent);
+	background: color-mix(in srgb, var(--mode-accent) 15%, var(--sj-surface));
+	border: 1px solid color-mix(in srgb, var(--mode-accent) 22%, transparent);
+}
+.reviewModeCopy {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+.reviewModeCopy strong {
+	color: var(--sj-text);
+	font-size: 14px;
+	line-height: 1.2;
+}
+.reviewModeCopy > span {
+	color: var(--sj-text-secondary);
+	font-size: 11px;
+	line-height: 1.4;
+}
+.reviewModeRadio {
+	flex: 0 0 18px;
+	width: 18px;
+	height: 18px;
+	border: 2px solid var(--sj-text-muted);
+	border-radius: 50%;
+}
+.reviewMode[data-selected="true"] .reviewModeRadio {
+	border-color: var(--sj-primary);
+	background: var(--sj-primary);
+	box-shadow: inset 0 0 0 3px var(--sj-surface);
 }
 .reviewCard .primary {
 	width: 100%;
+	min-height: 52px;
+	margin-top: 5px;
+	font-size: 15px;
 }
 .reviewCard small {
 	font-size: 11px;
@@ -628,6 +710,13 @@
 	border-color: var(--sj-primary);
 	box-shadow: 0 0 0 3px color-mix(in srgb, var(--sj-primary) 13%, transparent);
 	outline: none;
+}
+.lookupHint {
+	display: block;
+	margin-top: 8px;
+	color: var(--sj-text-secondary);
+	font-size: 12px;
+	font-weight: 400;
 }
 .dialogActions {
 	margin-top: 26px;

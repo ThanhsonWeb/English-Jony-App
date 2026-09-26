@@ -9,6 +9,7 @@
 		"dialogue:catalogue": "node --experimental-vm-modules scripts/generate-dialogue-catalogue.js",
 		"dialogue:catalogue:check": "node --experimental-vm-modules scripts/generate-dialogue-catalogue.js --check",
 		"verify:production-db": "node scripts/verify-production-db.js",
+		"audit:avatar-urls": "node scripts/audit-avatar-urls.js",
 		"prestart": "npm run dialogue:catalogue",
 		"start": "node server.js",
 		"preprod": "npm run dialogue:catalogue",

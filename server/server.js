@@ -1,5 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
+const { assertAvatarStorageConfigured } = require("./services/avatarUpload");
 process.on("uncaughtException", (err) => {
 	console.error("UNCAUGHT EXCEPTION! 💥 Đang tắt server...");
 	console.error(err.name, err.message, err.stack);
@@ -8,6 +9,8 @@ process.on("uncaughtException", (err) => {
 });
 // 2. Load file app after uncaughtException's protection
 const app = require("./app");
+
+assertAvatarStorageConfigured(process.env);
 
 //-----------------------Connect to mongoDB------------
 mongoose

@@ -10,6 +10,7 @@ import {
 	ChevronDown,
 	CircleCheck,
 	Clock3,
+	GraduationCap,
 	Grid2X2,
 	House,
 	MessageCircleMore,
@@ -245,18 +246,18 @@ export default function DialoguePage() {
 	const currentStats = currentCourse ? courseStats[currentCourse.id] : null;
 
 	return (
-		<main className="min-h-screen bg-page px-4 pb-6 text-main sm:px-6 sm:pb-8 lg:px-8">
+		<main className="min-h-screen bg-page px-4 pb-10 text-main sm:px-6 lg:px-8">
 			<div className="mx-auto max-w-[1548px]">
 				{/* ==================== HERO SECTION ==================== */}
 				<section className="bg-hero">
-					<div className="grid min-h-[150px] items-center gap-5 px-5 py-5 sm:px-8 md:grid-cols-[minmax(0,1fr)_minmax(250px,430px)] md:gap-8 md:py-4">
+					<div className="grid items-center gap-5 px-5 py-6 sm:px-8 sm:py-7 md:grid-cols-[minmax(0,1fr)_minmax(250px,400px)] md:gap-8">
 						<div className="min-w-0">
 							<h1 className="text-3xl font-bold tracking-tight text-main sm:text-4xl">
 								{t.rich("title", {
 									accent: (text) => <span className="text-brand-text">{text}</span>,
 								})}
 							</h1>
-							<p className="mt-2 max-w-2xl text-sm leading-6 text-secondary sm:text-base">
+							<p className="mt-1.5 max-w-2xl text-sm leading-6 text-secondary sm:text-base">
 								{t("subtitle")}
 							</p>
 						</div>
@@ -268,7 +269,7 @@ export default function DialoguePage() {
 								value={search}
 								onChange={(event) => setSearch(event.target.value)}
 								placeholder={t("searchPlaceholder")}
-								className="h-12 w-full rounded-xl border border-app bg-surface pl-11 pr-4 text-sm text-main outline-none transition placeholder:text-secondary focus:border-primary focus:ring-2 focus:ring-primary/15"
+								className="h-12 w-full rounded-xl border border-app bg-surface pl-11 pr-4 text-sm text-main shadow-sm outline-none transition placeholder:text-secondary focus:border-primary focus:ring-2 focus:ring-primary/15"
 							/>
 						</label>
 					</div>
@@ -276,10 +277,10 @@ export default function DialoguePage() {
 				{/* ==================== CURRENT / IN-PROGRESS COURSE ==================== */}
 
 				{currentCourseMatchesSearch && (
-					<section className="mt-6">
-						<div className="overflow-hidden rounded-xl border border-app bg-surface p-4 shadow-sm sm:p-5">
+					<section className="mt-5">
+						<div className="overflow-hidden rounded-xl border border-app bg-gradient-to-br from-surface via-surface to-primary/5 p-4 shadow-sm sm:p-5">
 							<div className="flex flex-col gap-5 md:flex-row md:items-center lg:gap-6">
-								<div className="relative aspect-[16/9] w-full shrink-0 overflow-hidden rounded-lg border border-slate-700/70 md:w-56 lg:w-64">
+								<div className="relative aspect-[16/9] w-full shrink-0 overflow-hidden rounded-lg border border-app md:w-56 lg:w-64">
 									<Image
 										src={getCourseImage(currentCourse.id)}
 										alt={currentCourse.title}
@@ -295,28 +296,28 @@ export default function DialoguePage() {
 
 								<div className="min-w-0 flex-1">
 									<div className="flex flex-wrap items-center gap-2">
-										<h2 className="text-lg font-bold text-white sm:text-xl">
+										<h2 className="text-lg font-bold text-main sm:text-xl">
 											{getLocalizedCourseValue(currentCourse, "title")}
 										</h2>
-										<span className="rounded-full border border-emerald-400/20 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-semibold text-emerald-300">
+										<span className="rounded-full border border-primary/25 bg-primary/10 px-2 py-0.5 text-[11px] font-semibold text-brand-text">
 											{getCefrLevelLabel(currentCourse.level)}
 										</span>
 									</div>
-									<p className="mt-1.5 max-w-2xl line-clamp-2 text-sm leading-5 text-slate-400">
+									<p className="mt-1.5 max-w-2xl line-clamp-2 text-sm leading-5 text-secondary">
 										{getLocalizedCourseValue(currentCourse, "description")}
 									</p>
 
-									<div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs text-slate-400">
+									<div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs text-secondary">
 										<span className="inline-flex items-center gap-1.5">
-											<BookOpen className="h-4 w-4 text-violet-400" />
+											<BookOpen className="h-4 w-4 text-brand-text" />
 											{t("exercises", { count: currentStats.totalTaskCount })}
 										</span>
 										<span className="inline-flex items-center gap-1.5">
-											<Clock3 className="h-4 w-4 text-slate-500" />~
+											<Clock3 className="h-4 w-4 text-secondary" />~
 											{currentCourse.duration}
 										</span>
 										<span className="inline-flex items-center gap-1.5">
-											<CircleCheck className="h-4 w-4 text-violet-400" />
+											<CircleCheck className="h-4 w-4 text-brand-text" />
 											{t("completedCount", {
 												completed: currentStats.completedTaskCount,
 												total: currentStats.totalTaskCount,
@@ -326,13 +327,13 @@ export default function DialoguePage() {
 
 									{currentStats.totalTaskCount > 0 && (
 										<div className="mt-3 flex max-w-xl items-center gap-3">
-											<div className="h-1.5 flex-1 overflow-hidden rounded-full bg-slate-800">
+											<div className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-muted">
 												<div
-													className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-emerald-400 transition-all duration-500"
+												className="h-full rounded-full bg-primary transition-all duration-500"
 													style={{ width: `${currentStats.progressPercent}%` }}
 												/>
 											</div>
-											<span className="w-9 text-right text-xs font-semibold text-slate-400">
+											<span className="w-9 text-right text-xs font-semibold text-secondary">
 												{currentStats.progressPercent}%
 											</span>
 										</div>
@@ -341,7 +342,7 @@ export default function DialoguePage() {
 
 								<Link
 									href={`/dialogue/${currentCourse.id}`}
-									className="inline-flex min-h-11 shrink-0 self-stretch items-center justify-center gap-3 rounded-lg bg-gradient-to-r from-violet-600 to-blue-600 px-6 text-sm font-semibold text-white shadow-lg shadow-primary/15 transition hover:-translate-y-0.5 hover:from-violet-500 hover:to-blue-500 md:self-center"
+									className="inline-flex min-h-11 shrink-0 self-stretch items-center justify-center gap-3 rounded-lg bg-primary px-6 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:self-center"
 								>
 									{t("continue")}
 									<ArrowRight className="h-5 w-5" />
@@ -352,12 +353,12 @@ export default function DialoguePage() {
 				)}
 				{/* ==================== OTHER COURSES / DISCOVERY ==================== */}
 
-				<section className="mt-7 pb-10">
-					<div className="grid gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-8 xl:grid-cols-[296px_minmax(0,1fr)]">
+				<section className="mt-6 pb-10">
+					<div className="grid gap-5 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-6 xl:grid-cols-[272px_minmax(0,1fr)]">
 						<div className="min-w-0 lg:sticky lg:top-24 lg:self-start">
 						<nav
 							aria-label={t("categoryNavLabel")}
-							className="-mx-4 flex gap-1 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:border-r lg:border-app lg:pr-7 lg:pb-0"
+							className="-mx-4 flex gap-1 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:border-r lg:border-app lg:pr-4 lg:pb-0"
 						>
 							{dialogueCategories.map((category) => {
 								const isActive = selectedCategory === category;
@@ -373,7 +374,7 @@ export default function DialoguePage() {
 										type="button"
 										aria-pressed={isActive}
 										onClick={() => setSelectedCategory(category)}
-										className={`relative flex h-12 shrink-0 items-center gap-3 rounded-xl px-4 text-left text-sm font-medium transition lg:w-full ${
+										className={`relative flex h-11 shrink-0 items-center gap-3 rounded-xl px-4 text-left text-sm font-medium transition lg:w-full ${
 											isActive
 												? "bg-primary/15 text-brand-text before:absolute before:inset-y-0 before:left-0 before:w-1 before:rounded-full before:bg-primary before:shadow-[0_0_12px_var(--sj-primary)]"
 												: "text-secondary hover:bg-hover hover:text-main"
@@ -381,7 +382,7 @@ export default function DialoguePage() {
 									>
 										<Icon className={`h-5 w-5 shrink-0 ${isActive ? "text-primary" : ""}`} strokeWidth={1.8} />
 										<span className="whitespace-nowrap">{t(`categories.${category}`)}</span>
-										<span className="ml-auto hidden min-w-8 rounded-full bg-surface-muted px-2 py-1 text-center text-xs text-secondary lg:inline-block">
+										<span className={`ml-auto hidden min-w-8 rounded-full px-2 py-1 text-center text-xs xl:inline-block ${isActive ? "bg-primary/15 text-brand-text" : "bg-surface-muted text-secondary"}`}>
 											{count}
 										</span>
 									</button>
@@ -390,7 +391,7 @@ export default function DialoguePage() {
 						</nav>
 						</div>
 						<div className="min-w-0">
-							<div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+							<div className="mb-3 flex flex-wrap items-center justify-between gap-3">
 								<h2 className="relative pb-3 text-2xl font-bold text-main after:absolute after:bottom-0 after:left-0 after:h-1 after:w-12 after:rounded-full after:bg-primary">
 									{t("explore")}
 								</h2>
@@ -400,10 +401,11 @@ export default function DialoguePage() {
 									</span>
 									<label className="relative block">
 										<span className="sr-only">{t("levelFilter")}</span>
+										<GraduationCap className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-text" />
 										<select
 											value={selectedLevel}
 											onChange={(event) => setSelectedLevel(event.target.value)}
-											className="h-11 min-w-36 appearance-none rounded-xl border border-app bg-surface pl-4 pr-9 text-sm font-medium text-main outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+											className="h-11 min-w-36 appearance-none rounded-xl border border-app bg-surface pl-10 pr-9 text-sm font-medium text-main outline-none transition hover:border-primary/40 focus:border-primary focus:ring-2 focus:ring-primary/20"
 										>
 											{levelOptions.map((option) => (
 												<option key={option.value} value={option.value}>
@@ -416,7 +418,7 @@ export default function DialoguePage() {
 								</div>
 							</div>
 							{visibleCourses.length > 0 ? (
-						<div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+						<div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
 							{visibleCourses.map((course) => {
 								const stats = courseStats[course.id];
 								const statusLabel = stats.isCompleted
@@ -439,7 +441,7 @@ export default function DialoguePage() {
 									<Link
 										key={course.id}
 										href={`/dialogue/${course.id}`}
-										className="group flex h-full flex-col overflow-hidden rounded-[14px] border border-app bg-surface shadow-sm transition duration-200 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
+										className="group flex h-full flex-col overflow-hidden rounded-[14px] border border-app bg-surface shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
 									>
 										{/* Thumbnail */}
 										<div className="relative aspect-[2.1/1] overflow-hidden bg-slate-900">
@@ -472,16 +474,16 @@ export default function DialoguePage() {
 										</div>
 
 										{/* Content */}
-										<div className="flex min-h-[196px] flex-1 flex-col p-5">
+										<div className="flex min-h-[178px] flex-1 flex-col p-4 sm:p-[18px]">
 											<h3 className="line-clamp-1 text-lg font-bold text-main">
 												{getLocalizedCourseValue(course, "title")}
 											</h3>
 
-											<p className="mt-1.5 min-h-12 line-clamp-2 text-sm leading-6 text-secondary">
+											<p className="mt-1.5 min-h-10 line-clamp-2 text-sm leading-5 text-secondary">
 												{getLocalizedCourseValue(course, "description")}
 											</p>
 
-											<div className="mt-auto flex items-center gap-3 pt-4">
+											<div className="mt-auto flex items-center gap-3 pt-3">
 												<div className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-muted">
 													<div
 														className="h-full rounded-full bg-primary transition-all duration-500"
@@ -493,7 +495,7 @@ export default function DialoguePage() {
 												</span>
 											</div>
 
-											<span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-text">
+											<span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-brand-text">
 												{actionLabel}
 												<ArrowRight className="h-4 w-4" />
 											</span>

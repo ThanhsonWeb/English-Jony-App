@@ -4,6 +4,7 @@ import StudyHeatmap from "@/app/_components/StudyHeatmap";
 import LanguageSwitcher from "@/app/_components/LanguageSwitcher";
 import ThemeSelector from "@/app/_components/ThemeSelector";
 import { useAuth } from "@/app/_contexts/AuthContext";
+import { resolveAvatarUrl } from "@/app/_lib/resolveAvatarUrl";
 import { useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import {
@@ -59,9 +60,7 @@ function Page() {
 	const [isUploadingAvatar, setIsUploadingAvatar] = useState(false);
 	const [avatarError, setAvatarError] = useState("");
 	const [failedAvatarUrls, setFailedAvatarUrls] = useState([]);
-	const avatarUrl = [user?.avatar, user?.photo].find((url) =>
-		typeof url === "string" && url.trim() && !failedAvatarUrls.includes(url),
-	);
+	const avatarUrl = resolveAvatarUrl(user, failedAvatarUrls);
 
 	async function handleAvatarChange(event) {
 		const file = event.target.files?.[0];
@@ -87,13 +86,18 @@ function Page() {
 				headers: { "Content-Type": "image/jpeg" },
 				body: image,
 			});
-			if (!response.ok) throw new Error("Avatar upload failed");
+			if (!response.ok) {
+				if (response.status === 404) throw new Error("avatarServerUnavailable");
+				if (response.status === 503) throw new Error("avatarStorageUnavailable");
+				throw new Error("avatarUploadError");
+			}
 			const data = await response.json();
 			if (!data?.data?.user?.avatar) throw new Error("Avatar URL is missing");
 			setUser(data.data.user);
 		} catch (error) {
-			console.error("Avatar upload failed:", error);
-			setAvatarError(t("avatarUploadError"));
+			const key = ["avatarServerUnavailable", "avatarStorageUnavailable"].includes(error.message)
+				? error.message : "avatarUploadError";
+			setAvatarError(t(key));
 		} finally {
 			setIsUploadingAvatar(false);
 		}

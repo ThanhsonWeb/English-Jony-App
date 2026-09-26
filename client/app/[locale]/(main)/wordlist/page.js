@@ -33,6 +33,11 @@ import styles from "./wordlist.module.css";
 import { splitExample } from "@/app/_lib/exampleHighlight.mjs";
 
 const statuses = ["all", "new", "learning", "review", "mastered"];
+const reviewModes = [
+	{ value: "flashcard", Icon: BookOpen },
+	{ value: "quiz", Icon: GraduationCap },
+	{ value: "write", Icon: Pencil },
+];
 const motivationalQuotes = {
 	vi: [
 		"Một từ hôm nay, một câu chuyện ngày mai.",
@@ -504,20 +509,34 @@ export default function WordlistPage() {
 										)}
 							</h2>
 							<p>{t(queue.length ? "readyBody" : "caughtUpBody")}</p>
-							<label htmlFor="review-mode">{t("mode")}</label>
-							<select
-								id="review-mode"
-								value={mode}
-								onChange={(event) => setMode(event.target.value)}
-							>
-								{["flashcard", "quiz", "write"].map((value) => (
-									<option key={value} value={value}>
-										{t(value)}
-									</option>
+							<fieldset className={styles.reviewModes}>
+								<legend>{t("mode")}</legend>
+								{reviewModes.map(({ value, Icon }) => (
+									<label
+										key={value}
+										className={styles.reviewMode}
+										data-mode={value}
+										data-selected={mode === value}
+									>
+										<input
+											type="radio"
+											name="review-mode"
+											value={value}
+											checked={mode === value}
+											onChange={() => setMode(value)}
+										/>
+										<span className={styles.reviewModeIcon} aria-hidden="true">
+											<Icon size={23} strokeWidth={1.9} />
+										</span>
+										<span className={styles.reviewModeCopy}>
+											<strong>{t(value)}</strong>
+											<span>{t(`${value}Description`)}</span>
+										</span>
+										<span className={styles.reviewModeRadio} aria-hidden="true" />
+									</label>
 								))}
-							</select>
+							</fieldset>
 							{mode === "quiz" && !canQuiz && <small>{t("quizHelp")}</small>}
-							{reviewButton}
 							<div className={styles.quickLinks} aria-label={t("status")}>
 								{[
 									["all", BookOpen, counts.all],
@@ -543,6 +562,7 @@ export default function WordlistPage() {
 									</button>
 								))}
 							</div>
+							{reviewButton}
 						</div>
 					</aside>
 				</div>

@@ -1,6 +1,8 @@
 const { before, after, test } = require("node:test");
 const assert = require("node:assert/strict");
 const crypto = require("node:crypto");
+const fs = require("node:fs/promises");
+const path = require("node:path");
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
@@ -8,12 +10,14 @@ const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const cookieParser = require("cookie-parser");
 const User = require("../models/userModel");
 const userRoutes = require("../routes/userRoutes");
+const { localAvatarDirectory } = require("../services/avatarUpload");
 
 let replicaSet;
 let server;
 let baseUrl;
 let user;
 const originalSecret = process.env.JWT_SECRET;
+const originalNodeEnv = process.env.NODE_ENV;
 const originalCloudinary = Object.fromEntries(
 	["CLOUDINARY_CLOUD_NAME", "CLOUDINARY_API_KEY", "CLOUDINARY_API_SECRET"]
 		.map((key) => [key, process.env[key]]),
@@ -72,6 +76,38 @@ test("avatar route requires a user and stores only the verified URL", async () =
 		assert.equal(saved.photo, "https://google.example/photo.jpg");
 	} finally {
 		global.fetch = originalFetch;
+		for (const [key, value] of Object.entries(originalCloudinary)) {
+			if (value === undefined) delete process.env[key];
+			else process.env[key] = value;
+		}
+	}
+});
+
+test("development without cloud credentials stores and serves the resized image URL", async () => {
+	process.env.NODE_ENV = "development";
+	for (const key of Object.keys(originalCloudinary)) delete process.env[key];
+	const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+	const bytes = Buffer.from([0xff, 0xd8, 0xff, 0x00]);
+	let filename;
+	try {
+		const response = await fetch(baseUrl, {
+			method: "PATCH",
+			headers: { Authorization: `Bearer ${token}`, "Content-Type": "image/jpeg" },
+			body: bytes,
+		});
+		assert.equal(response.status, 200);
+		const avatar = (await response.json()).data.user.avatar;
+		assert.match(avatar, /^\/api\/v1\/users\/avatar-files\/user_[0-9a-f]{24}_[0-9a-f-]{36}\.jpg$/);
+		filename = path.basename(avatar);
+		assert.equal((await fs.stat(path.join(localAvatarDirectory, filename))).size, bytes.length);
+		const image = await fetch(new URL(avatar, baseUrl));
+		assert.equal(image.status, 200, image.status === 200 ? "" : await image.text());
+		assert.deepEqual(Buffer.from(await image.arrayBuffer()), bytes);
+		assert.equal((await User.findById(user.id).lean()).avatar, avatar);
+	} finally {
+		if (filename) await fs.unlink(path.join(localAvatarDirectory, filename));
+		if (originalNodeEnv === undefined) delete process.env.NODE_ENV;
+		else process.env.NODE_ENV = originalNodeEnv;
 		for (const [key, value] of Object.entries(originalCloudinary)) {
 			if (value === undefined) delete process.env[key];
 			else process.env[key] = value;

@@ -49,6 +49,20 @@ async function setup(browser, width = 1440, theme = "cream", state = "normal") {
 					data: { user: { _id: "learner", name: "Son Jony", role: "user" } },
 				},
 			});
+		if (url.pathname.startsWith("/api/v1/dictionary/")) {
+			if (state === "lookup-error") return route.fulfill({ status: 500, json: {} });
+			if (state === "lookup") {
+				await new Promise((resolve) => setTimeout(resolve, 200));
+				return route.fulfill({
+					json: { data: {
+						vietnamese: "xin chào",
+						pronunciation: "/həˈloʊ/",
+						example: "Hello, my friend!",
+					} },
+				});
+			}
+			return route.fulfill({ json: { data: {} } });
+		}
 		if (url.pathname === "/api/v1/vocab") {
 			if (request.method() === "POST") {
 				const newVocab = {
@@ -222,11 +236,45 @@ async function run() {
 		assert.equal(await page.locator("tbody tr").count(), 5);
 		await page.close();
 		console.log("PASS topic-free create/edit/delete");
+		const lookup = await setup(browser, 1440, "cream", "lookup");
+		await lookup.page.getByRole("rowheader", { name: /nature/ }).waitFor();
+		await lookup.page.getByRole("button", { name: messages.addWord, exact: true }).click();
+		await lookup.page.locator('input[name="english"]').fill("hello");
+		await lookup.page.locator('input[name="vietnamese"]').fill("chào bạn");
+		await lookup.page.waitForFunction(() =>
+			document.querySelector('input[name="pronunciation"]')?.value === "/həˈloʊ/",
+		);
+		assert.equal(await lookup.page.locator('input[name="vietnamese"]').inputValue(), "chào bạn");
+		assert.equal(await lookup.page.locator('textarea[name="example"]').inputValue(), "Hello, my friend!");
+		await lookup.page.locator('textarea[name="example"]').fill("Hello there!");
+		await lookup.page.getByRole("button", { name: messages.save, exact: true }).click();
+		await lookup.page.getByRole("rowheader", { name: /hello/ }).waitFor();
+		assert.deepEqual(
+			Object.fromEntries(Object.entries(lookup.requests.find((r) => r.method === "POST").body)
+				.filter(([key]) => ["english", "vietnamese", "pronunciation", "example"].includes(key))),
+			{ english: "hello", vietnamese: "chào bạn", pronunciation: "/həˈloʊ/", example: "Hello there!" },
+		);
+		await lookup.page.close();
+		console.log("PASS dictionary autofill and manual edits");
+		const fallback = await setup(browser, 390, "cream", "lookup-error");
+		await fallback.page.getByRole("rowheader", { name: /nature/ }).waitFor();
+		await fallback.page.getByRole("button", { name: messages.addWord, exact: true }).click();
+		await fallback.page.locator('input[name="english"]').fill("hello");
+		await fallback.page.getByText(messages.lookupUnavailable).waitFor();
+		await fallback.page.locator('input[name="vietnamese"]').fill("xin chào");
+		await fallback.page.getByRole("button", { name: messages.save, exact: true }).click();
+		await fallback.page.getByRole("rowheader", { name: /hello/ }).waitFor();
+		await fallback.page.close();
+		console.log("PASS manual save after dictionary failure");
 		for (const width of [1440, 390])
 			for (const mode of ["flashcard", "quiz", "write"]) {
 				const { page, requests, errors } = await setup(browser, width);
 				await page.getByRole("rowheader", { name: /nature/ }).waitFor();
-				await page.locator("#review-mode").selectOption(mode);
+				await page.locator(`[data-mode="${mode}"]`).click();
+				assert.equal(
+					await page.locator(`input[name="review-mode"][value="${mode}"]`).isChecked(),
+					true,
+				);
 				await page
 					.getByRole("link", { name: messages.reviewNow, exact: true })
 					.first()
@@ -294,6 +342,10 @@ async function run() {
 					.getByRole("link", { name: messages.reviewNow, exact: true })
 					.count(),
 				0,
+			);
+			assert.equal(
+				await page.getByRole("button", { name: messages.reviewNow, exact: true }).isDisabled(),
+				true,
 			);
 			await page.close();
 			console.log(`PASS ${state} state`);

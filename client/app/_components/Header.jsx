@@ -9,12 +9,11 @@ import { User, LogOut } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
+import { resolveAvatarUrl } from "../_lib/resolveAvatarUrl";
 
 function UserAvatar({ user }) {
 	const [failedPhotoUrls, setFailedPhotoUrls] = useState([]);
-	const customAvatar = typeof user?.avatar === "string" ? user.avatar.trim() : "";
-	const googleAvatar = typeof user?.photo === "string" ? user.photo.trim() : "";
-	const photoUrl = [customAvatar, googleAvatar].find((url) => url && !failedPhotoUrls.includes(url));
+	const photoUrl = resolveAvatarUrl(user, failedPhotoUrls);
 	const initial = user?.name?.trim().charAt(0).toUpperCase() || "U";
 
 	if (photoUrl) {
@@ -70,7 +69,7 @@ function Header() {
 
 
 	return (
-		<header className="relative top-0 z-50 border-b border-app bg-surface/90 px-4 py-1 backdrop-blur-md sm:px-8">
+		<header className="sticky top-0 z-50 border-b border-app bg-surface/90 px-4 py-1 backdrop-blur-md sm:px-8">
 			<div className="flex items-center justify-between max-w-8xl mx-auto">
 				<Logo />
 				<div className="hidden md:block">

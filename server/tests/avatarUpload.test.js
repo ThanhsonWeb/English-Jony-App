@@ -1,7 +1,11 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const crypto = require("node:crypto");
-const { isValidAvatar, uploadAvatar } = require("../services/avatarUpload");
+const {
+	assertAvatarStorageConfigured,
+	isValidAvatar,
+	uploadAvatar,
+} = require("../services/avatarUpload");
 
 const config = {
 	CLOUDINARY_CLOUD_NAME: "studyjony-test",
@@ -13,6 +17,21 @@ test("avatar validation checks file signatures and size", () => {
 	assert.equal(isValidAvatar(Buffer.from([0xff, 0xd8, 0xff, 0x00]), "image/jpeg"), true);
 	assert.equal(isValidAvatar(Buffer.from([0xff, 0xd8, 0xff, 0x00]), "image/png"), false);
 	assert.equal(isValidAvatar(Buffer.alloc(2 * 1024 * 1024 + 1), "image/jpeg"), false);
+});
+
+test("production requires a complete Cloudinary configuration", () => {
+	assert.doesNotThrow(() => assertAvatarStorageConfigured({
+		NODE_ENV: "production",
+		...config,
+	}));
+	assert.throws(
+		() => assertAvatarStorageConfigured({
+			NODE_ENV: "production",
+			CLOUDINARY_CLOUD_NAME: "studyjony-test",
+		}),
+		/require CLOUDINARY/,
+	);
+	assert.doesNotThrow(() => assertAvatarStorageConfigured({ NODE_ENV: "development" }));
 });
 
 test("avatar upload signs the request and accepts only the signed storage URL", async () => {
