@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import {
 	BookOpen,
 	GraduationCap,
@@ -33,7 +33,28 @@ import styles from "./wordlist.module.css";
 import { splitExample } from "@/app/_lib/exampleHighlight.mjs";
 
 const statuses = ["all", "new", "learning", "review", "mastered"];
-const filterStatuses = ["all", "new", "learning", "review"];
+const motivationalQuotes = {
+	vi: [
+		"Một từ hôm nay, một câu chuyện ngày mai.",
+		"Từng từ một, bạn đang xây cả một ngôn ngữ.",
+		"Đừng chỉ lưu từ. Hãy biến chúng thành lời nói.",
+		"Học ít thôi, nhưng nhớ thật lâu.",
+		"Mỗi từ mới là một bước gần hơn đến sự tự tin.",
+		"Từ vựng nhỏ, tiến bộ lớn.",
+		"Mỗi ngày một từ, mỗi ngày thêm tự tin.",
+		"Những từ bạn nhớ hôm nay sẽ thành lời nói ngày mai.",
+	],
+	en: [
+		"One word today, one story tomorrow.",
+		"Word by word, you are building a whole language.",
+		"Do not just save words. Turn them into speech.",
+		"Learn a little, remember it for longer.",
+		"Every new word is one step closer to confidence.",
+		"Small words, big progress.",
+		"One word a day, a little more confidence every day.",
+		"The words you remember today become tomorrow's voice.",
+	],
+};
 const statusIcons = {
 	new: Sparkles,
 	learning: GraduationCap,
@@ -83,8 +104,12 @@ function StatusFilter({ value, onChange, t }) {
 				/>
 			</button>
 			{isOpen && (
-				<div className={styles.statusMenu} role="listbox" aria-label={t("status")}>
-					{filterStatuses.map((status) => (
+				<div
+					className={styles.statusMenu}
+					role="listbox"
+					aria-label={t("status")}
+				>
+					{statuses.map((status) => (
 						<button
 							type="button"
 							role="option"
@@ -121,6 +146,7 @@ function ReviewButton({ available, mode, label }) {
 
 export default function WordlistPage() {
 	const t = useTranslations("Notebook");
+	const locale = useLocale();
 	const { user, loading: authLoading } = useAuth();
 	const [result, setResult] = useState(null);
 	const [retry, setRetry] = useState(0);
@@ -131,8 +157,17 @@ export default function WordlistPage() {
 	const [deleting, setDeleting] = useState(null);
 	const [audioError, setAudioError] = useState(false);
 	const [page, setPage] = useState(1);
+	const [motivationalQuote, setMotivationalQuote] = useState("");
+	const quoteChosenRef = useRef(false);
 	const userId = user?._id;
 	const requestKey = `${userId || "guest"}:${retry}`;
+	useEffect(() => {
+		if (quoteChosenRef.current) return;
+
+		const quotes = motivationalQuotes[locale] || motivationalQuotes.en;
+		quoteChosenRef.current = true;
+		setMotivationalQuote(quotes[Math.floor(Math.random() * quotes.length)]);
+	}, [locale]);
 	useEffect(() => {
 		if (authLoading || !userId) return;
 		const controller = new AbortController();
@@ -209,21 +244,15 @@ export default function WordlistPage() {
 	return (
 		<main className={styles.page}>
 			<div className={styles.container}>
-				{/* header */}
-				<header className={styles.hero}>
-					<div className={styles.heroCopy}>
-						<span className={styles.eyebrow}>
-							<BookOpen size={17} /> STUDYJONY · NOTEBOOK
-						</span>
-						<h1>{t("title")}</h1>
-						<p>{t("subtitle")}</p>
-					</div>
-					<div className={styles.illustration}>
-						<NotebookIllustration />
-					</div>
-				</header>
 				<div className={styles.content}>
 					<div className={styles.mainColumn}>
+						<p
+							className={styles.motivationalQuote}
+							data-ready={Boolean(motivationalQuote)}
+						>
+							<Sparkles size={14} aria-hidden="true" />
+							<span>{motivationalQuote || "\u00a0"}</span>
+						</p>
 						<div className={styles.stats}>
 							{[
 								["total", counts.all, BookOpen],
@@ -231,9 +260,23 @@ export default function WordlistPage() {
 								["dueToday", counts.review, CalendarDays],
 							].map(([label, count, Icon]) => (
 								<section key={label} className={styles.stat}>
-									<svg className={styles.statWave} data-wave={label} viewBox="0 0 220 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 90C45 90 40 60 95 55S150 5 220 25V90Z" fill="currentColor" fillOpacity=".10" stroke="currentColor" strokeOpacity=".25" /></svg>
+									<svg
+										className={styles.statWave}
+										data-wave={label}
+										viewBox="0 0 220 90"
+										preserveAspectRatio="none"
+										aria-hidden="true"
+									>
+										<path
+											d="M0 90C45 90 40 60 95 55S150 5 220 25V90Z"
+											fill="currentColor"
+											fillOpacity=".10"
+											stroke="currentColor"
+											strokeOpacity=".25"
+										/>
+									</svg>
 									<span className={styles.statIcon} data-tone={label}>
-									<Icon size={24} />
+										<Icon size={24} />
 									</span>
 									<div>
 										<h2>{t(label)}</h2>
@@ -243,38 +286,38 @@ export default function WordlistPage() {
 							))}
 						</div>
 						<div className={styles.toolbar}>
-						<div className={styles.search}>
-							<Search size={21} />
-							<input
-								aria-label={t("search")}
-								placeholder={t("search")}
-								value={search}
-								onChange={(event) => {
-									setSearch(event.target.value);
+							<div className={styles.search}>
+								<Search size={21} />
+								<input
+									aria-label={t("search")}
+									placeholder={t("search")}
+									value={search}
+									onChange={(event) => {
+										setSearch(event.target.value);
+										setPage(1);
+									}}
+								/>
+								{search && (
+									<button onClick={() => setSearch("")} aria-label={t("clear")}>
+										<X size={17} />
+									</button>
+								)}
+							</div>
+							<StatusFilter
+								value={filter}
+								t={t}
+								onChange={(status) => {
+									setFilter(status);
 									setPage(1);
 								}}
 							/>
-							{search && (
-								<button onClick={() => setSearch("")} aria-label={t("clear")}>
-									<X size={17} />
-								</button>
-							)}
-						</div>
-						<StatusFilter
-							value={filter}
-							t={t}
-							onChange={(status) => {
-								setFilter(status);
-								setPage(1);
-							}}
-						/>
-						<button
-							className={`${styles.primary} ${styles.addButton}`}
-							disabled={!user || loading || Boolean(error)}
-							onClick={() => setEditor({ word: null })}
-						>
-							<Plus size={18} /> {t("addWord")}
-						</button>
+							<button
+								className={`${styles.primary} ${styles.addButton}`}
+								disabled={!user || loading || Boolean(error)}
+								onClick={() => setEditor({ word: null })}
+							>
+								<Plus size={18} /> {t("addWord")}
+							</button>
 						</div>
 						{audioError && <p role="alert">{t("audioError")}</p>}
 						{loading ? (
@@ -374,7 +417,19 @@ export default function WordlistPage() {
 															{word.vietnamese}
 														</td>
 														<td className={styles.example}>
-															{splitExample(word.example, word.english).map((part, index) => part.matched ? <span key={index} className={styles.exampleMatch}>{part.text}</span> : part.text)}
+															{splitExample(word.example, word.english).map(
+																(part, index) =>
+																	part.matched ? (
+																		<span
+																			key={index}
+																			className={styles.exampleMatch}
+																		>
+																			{part.text}
+																		</span>
+																	) : (
+																		part.text
+																	),
+															)}
 														</td>
 														<td className={styles.statusCell}>
 															<span
@@ -430,55 +485,64 @@ export default function WordlistPage() {
 							</>
 						)}
 					</div>
-					<aside className={styles.reviewCard}>
-						<Sprout size={54} strokeWidth={1.4} />
-						<h2>
-							{loading || error || !user
-								? "—"
-								: t(
-										counts.review
-											? "dueHeading"
-											: queue.length
-												? "learningHeading"
-												: "caughtUp",
-										{ count: counts.review || queue.length },
-									)}
-						</h2>
-						<p>{t(queue.length ? "readyBody" : "caughtUpBody")}</p>
-						<label htmlFor="review-mode">{t("mode")}</label>
-						<select
-							id="review-mode"
-							value={mode}
-							onChange={(event) => setMode(event.target.value)}
-						>
-							{["flashcard", "quiz", "write"].map((value) => (
-								<option key={value} value={value}>
-									{t(value)}
-								</option>
-							))}
-						</select>
-						{mode === "quiz" && !canQuiz && <small>{t("quizHelp")}</small>}
-						{reviewButton}
-						<div className={styles.quickLinks} aria-label={t("status")}>
-							{[
-								["all", BookOpen, counts.all],
-								["learning", GraduationCap, counts.learning],
-								["review", CalendarDays, counts.review],
-							].map(([status, Icon, count]) => (
-								<button
-									key={status}
-									type="button"
-									onClick={() => {
-										setFilter(status);
-										setPage(1);
-									}}
-									aria-current={filter === status ? "true" : undefined}
-								>
-									<Icon size={17} />
-									<span>{status === "review" ? t("dueToday") : t(status === "all" ? "allWords" : status)}</span>
-									<strong>{loading || error || !user ? "—" : count}</strong>
-								</button>
-							))}
+					<aside className={styles.sideColumn}>
+						<div className={styles.illustration}>
+							<NotebookIllustration />
+						</div>
+						<div className={styles.reviewCard}>
+							<Sprout size={54} strokeWidth={1.4} />
+							<h2>
+								{loading || error || !user
+									? "—"
+									: t(
+											counts.review
+												? "dueHeading"
+												: queue.length
+													? "learningHeading"
+													: "caughtUp",
+											{ count: counts.review || queue.length },
+										)}
+							</h2>
+							<p>{t(queue.length ? "readyBody" : "caughtUpBody")}</p>
+							<label htmlFor="review-mode">{t("mode")}</label>
+							<select
+								id="review-mode"
+								value={mode}
+								onChange={(event) => setMode(event.target.value)}
+							>
+								{["flashcard", "quiz", "write"].map((value) => (
+									<option key={value} value={value}>
+										{t(value)}
+									</option>
+								))}
+							</select>
+							{mode === "quiz" && !canQuiz && <small>{t("quizHelp")}</small>}
+							{reviewButton}
+							<div className={styles.quickLinks} aria-label={t("status")}>
+								{[
+									["all", BookOpen, counts.all],
+									["learning", GraduationCap, counts.learning],
+									["review", CalendarDays, counts.review],
+								].map(([status, Icon, count]) => (
+									<button
+										key={status}
+										type="button"
+										onClick={() => {
+											setFilter(status);
+											setPage(1);
+										}}
+										aria-current={filter === status ? "true" : undefined}
+									>
+										<Icon size={17} />
+										<span>
+											{status === "review"
+												? t("dueToday")
+												: t(status === "all" ? "allWords" : status)}
+										</span>
+										<strong>{loading || error || !user ? "—" : count}</strong>
+									</button>
+								))}
+							</div>
 						</div>
 					</aside>
 				</div>

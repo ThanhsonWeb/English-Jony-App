@@ -143,6 +143,16 @@
 		"exercises": "{count} exercises",
 		"completedCount": "{completed}/{total} completed",
 		"explore": "Explore dialogues",
+		"categoryNavLabel": "Dialogue categories",
+		"categories": {
+			"all": "All",
+			"office": "Office",
+			"travel": "Travel",
+			"food": "Food & drink",
+			"life": "Life",
+			"daily": "Everyday communication",
+			"story": "Story of Life"
+		},
 		"topics": "{count} topics",
 		"dialogues": "{count} dialogues",
 		"noResults": "No matching dialogues found.",

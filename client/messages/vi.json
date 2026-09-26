@@ -143,6 +143,16 @@
 		"exercises": "{count} bài tập",
 		"completedCount": "{completed}/{total} hoàn thành",
 		"explore": "Khám phá hội thoại",
+		"categoryNavLabel": "Danh mục hội thoại",
+		"categories": {
+			"all": "Tất cả",
+			"office": "Văn phòng",
+			"travel": "Du lịch",
+			"food": "Ăn uống",
+			"life": "Cuộc sống",
+			"daily": "Giao tiếp hằng ngày",
+			"story": "Story of Life"
+		},
 		"topics": "{count} chủ đề",
 		"dialogues": "{count} hội thoại",
 		"noResults": "Không tìm thấy hội thoại phù hợp.",

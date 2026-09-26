@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
-import { Languages } from "lucide-react";
+import { Languages, ArrowLeft } from "lucide-react";
 import { lookupWord } from "@/app/_lib/dictionary/lookupWord";
 import { resolveMeaning } from "@/app/_lib/dictionary/resolveMeaning";
 
@@ -20,13 +20,25 @@ import {
 const CHARACTER_ENTRY_DELAY = 700;
 const DIALOGUE_LINE_DELAY = 300;
 const PLAYBACK_RATES = [0.5, 0.75, 1, 1.25, 1.5];
+const preloadedDialogueAssets = new Map();
+
+function preloadDialogueAsset(src) {
+	if (!src || preloadedDialogueAssets.has(src)) return;
+
+	const image = new window.Image();
+	preloadedDialogueAssets.set(src, image);
+	image.src = src;
+	if (typeof image.decode === "function") {
+		void image.decode().catch(() => {});
+	}
+}
 const SUBTITLE_WORD_PATTERN = /([A-Za-z]+(?:['’\-][A-Za-z]+)*)/g;
 const SUBTITLE_WORD_TOKEN_PATTERN = /^[A-Za-z]+(?:['’\-][A-Za-z]+)*$/;
 
-
 function findPreferredLookup(text, clickedWordIndex) {
-	const words = Array.from(text.matchAll(SUBTITLE_WORD_PATTERN), (match) =>
-		match[0],
+	const words = Array.from(
+		text.matchAll(SUBTITLE_WORD_PATTERN),
+		(match) => match[0],
 	);
 
 	for (let length = words.length; length >= 2; length -= 1) {
@@ -56,15 +68,16 @@ function renderSubtitleTokens(text, onWordClick, activeWordRange) {
 	const segments = text.split(SUBTITLE_WORD_PATTERN).map((token, index) => ({
 		index,
 		token,
-		wordIndex: SUBTITLE_WORD_TOKEN_PATTERN.test(token) ? (wordIndex += 1) : null,
+		wordIndex: SUBTITLE_WORD_TOKEN_PATTERN.test(token)
+			? (wordIndex += 1)
+			: null,
 	}));
 	const hasActivePhrase =
 		activeWordRange &&
 		activeWordRange.startWordIndex < activeWordRange.endWordIndex;
 	const phraseStart = hasActivePhrase
 		? segments.findIndex(
-				(segment) =>
-					segment.wordIndex === activeWordRange.startWordIndex,
+				(segment) => segment.wordIndex === activeWordRange.startWordIndex,
 			)
 		: -1;
 	const phraseEnd = hasActivePhrase
@@ -82,11 +95,7 @@ function renderSubtitleTokens(text, onWordClick, activeWordRange) {
 				data-dictionary-token="true"
 				className={`${grouped ? "" : "rounded-sm"} transition-colors hover:text-cyan-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 ${
 					!grouped ? "hover:bg-white/10" : ""
-				} ${
-					isActive
-						? "bg-cyan-400/15 text-cyan-100"
-						: ""
-				}`}
+				} ${isActive ? "bg-cyan-400/15 text-cyan-100" : ""}`}
 			>
 				{segment.token}
 			</button>
@@ -100,11 +109,13 @@ function renderSubtitleTokens(text, onWordClick, activeWordRange) {
 					key={`active-phrase-${phraseStart}-${phraseEnd}`}
 					className="box-decoration-clone rounded-sm bg-cyan-400/15 text-cyan-100"
 				>
-					{segments.slice(phraseStart, phraseEnd + 1).map((phraseSegment) =>
-						phraseSegment.wordIndex === null
-							? phraseSegment.token
-							: renderWordButton(phraseSegment, false, true),
-					)}
+					{segments
+						.slice(phraseStart, phraseEnd + 1)
+						.map((phraseSegment) =>
+							phraseSegment.wordIndex === null
+								? phraseSegment.token
+								: renderWordButton(phraseSegment, false, true),
+						)}
 				</span>
 			);
 		}
@@ -152,10 +163,54 @@ export default function DialoguePlayer({
 	const activeScene = activeLine?.scene || task.scene;
 	const usesSpeakerSpecificScenes =
 		new Set(
-			task.dialogue
-				.map((line) => line.scene || task.scene)
-				.filter(Boolean),
+			task.dialogue.map((line) => line.scene || task.scene).filter(Boolean),
 		).size > 1;
+
+	useEffect(() => {
+		if (!activeScene) return;
+
+		const currentAssets = new Set([activeScene]);
+		if (usesSpeakerSpecificScenes) {
+			currentAssets.add(task.characters?.[activeLine?.speaker]);
+		} else {
+			Object.values(task.characters || {}).forEach((src) =>
+				currentAssets.add(src),
+			);
+		}
+		currentAssets.forEach((src) => {
+			if (src && !preloadedDialogueAssets.has(src)) {
+				preloadedDialogueAssets.set(src, null);
+			}
+		});
+
+		const nextSceneStart = task.dialogue.findIndex(
+			(line, index) =>
+				index > currentLine && (line.scene || task.scene) !== activeScene,
+		);
+		if (nextSceneStart === -1) return;
+
+		const nextScene = task.dialogue[nextSceneStart].scene || task.scene;
+		const nextAssets = new Set([nextScene]);
+
+		for (let index = nextSceneStart; index < task.dialogue.length; index += 1) {
+			const line = task.dialogue[index];
+			if ((line.scene || task.scene) !== nextScene) break;
+
+			nextAssets.add(task.characters?.[line.speaker]);
+		}
+
+		nextAssets.forEach((src) => {
+			if (!currentAssets.has(src)) preloadDialogueAsset(src);
+		});
+	}, [
+		activeLine?.speaker,
+		activeScene,
+		currentLine,
+		task.characters,
+		task.dialogue,
+		task.scene,
+		usesSpeakerSpecificScenes,
+	]);
 
 	function getCharacterPosition(characterIndex) {
 		if (characterCount === 1) return "left-1/2 -translate-x-1/2";
@@ -293,9 +348,7 @@ export default function DialoguePlayer({
 		if (!selectedLookup || !("speechSynthesis" in window)) return;
 
 		window.speechSynthesis.cancel();
-		const utterance = new SpeechSynthesisUtterance(
-			selectedLookup.result.text,
-		);
+		const utterance = new SpeechSynthesisUtterance(selectedLookup.result.text);
 		utterance.lang = "en-US";
 		utterance.rate = 0.9;
 		window.speechSynthesis.speak(utterance);
@@ -456,33 +509,27 @@ export default function DialoguePlayer({
 	};
 
 	return (
-		<div className="min-h-screen px-4 py-8 text-white sm:px-8 ">
+		<div className="min-h-screen px-4 pb-8 pt-4 text-white sm:px-8">
 			<div className="mx-auto max-w-4xl ">
-				{/* <Link
-					href={`/dialogue/${lessonId}`}
-					className="mb-8 inline-flex items-center gap-2 text-slate-400 hover:text-white"
-				>
-					<ArrowLeft size={18} />
-					Quay lại
-				</Link> */}
-
 				{/* Header */}
 				<div>
-					<p className="text-sm font-medium text-violet-400">Hội thoại</p>
+					<Link
+							href={`/dialogue/${lessonId}`}
+							className="-ml-2 mb-3 inline-flex items-center gap-2 rounded-lg px-2 py-1 font-medium text-secondary transition hover:bg-hover hover:text-main"
+						>
+							<ArrowLeft size={18} />
+							Quay lại
+					</Link>
 
-					<h1 className="mt-2 text-2xl font-bold sm:text-3xl">
-						{task.title} 🎧
-					</h1>
+					<h1 className=" text-2xl font-bold sm:text-3xl">{task.title} 🎧</h1>
 
-					<p className="mt-2 text-slate-400">{task.description}</p>
+					<p className="mt-2 text-slate-400 ">{task.description}</p>
 				</div>
 
 				{/* Player */}
 				<div className="mt-8 overflow-hidden rounded-2xl border border-slate-800 bg-[#0b1020] shadow-xl">
 					{/* Scene */}
-					<div
-						className="relative h-[390px] bg-cover bg-center sm:h-[460px]"
-					>
+					<div className="relative h-[390px] bg-cover bg-center sm:h-[460px]">
 						{activeScene && (
 							<div
 								key={activeScene}
@@ -523,19 +570,18 @@ export default function DialoguePlayer({
 									key={characterName}
 									src={imageUrl}
 									alt={characterName}
-								width={400}
-								height={520}
-								style={
-									usesSpeakerSpecificScenes &&
-									hasStarted &&
-									!dialogueFinished
-										? {
-											animation:
-												"dialogue-speaker-fade-in 450ms ease-out both",
-										}
-										: undefined
-								}
-								className={`absolute bottom-0 w-auto object-contain transition-all duration-700 ease-out ${getCharacterPosition(characterIndex)} ${
+									unoptimized
+									width={400}
+									height={520}
+									style={
+										usesSpeakerSpecificScenes && hasStarted && !dialogueFinished
+											? {
+													animation:
+														"dialogue-speaker-fade-in 450ms ease-out both",
+												}
+											: undefined
+									}
+									className={`absolute bottom-0 w-auto object-contain transition-all duration-700 ease-out ${getCharacterPosition(characterIndex)} ${
 										hasStarted && !dialogueFinished
 											? "translate-x-0 opacity-100"
 											: isRightSide
@@ -559,21 +605,21 @@ export default function DialoguePlayer({
 								>
 									{/* Speaker */}
 									<p
-										className={`text-sm font-bold ${
-											getSpeakerColor(activeLine?.speaker)
-										}`}
+										className={`text-sm font-bold ${getSpeakerColor(
+											activeLine?.speaker,
+										)}`}
 									>
 										{activeLine?.speaker}
 									</p>
 
 									{/* Sentence + translate */}
-								<div
-									className={`px-4 mt-1 flex items-start gap-2 ${
-										isRightSideSpeaker(activeLine?.speaker)
-											? "justify-end"
-											: "justify-start"
-									}`}
-								>
+									<div
+										className={`px-4 mt-1 flex items-start gap-2 ${
+											isRightSideSpeaker(activeLine?.speaker)
+												? "justify-end"
+												: "justify-start"
+										}`}
+									>
 										<p className="max-w-2xl text-base leading-relaxed text-white sm:text-xl">
 											{activeLine?.text &&
 												renderSubtitleTokens(
@@ -623,90 +669,88 @@ export default function DialoguePlayer({
 												: "text-slate-400 hover:bg-white/10 hover:text-white"
 										}`}
 									>
-									<Languages size={16} />
-								</button>
-
-								<div className="relative sm:hidden">
-									<button
-										type="button"
-										onClick={() => setShowSpeedMenu((current) => !current)}
-										aria-label={`Chọn tốc độ phát, hiện tại ${playbackRate}x`}
-										aria-expanded={showSpeedMenu}
-										title="Tốc độ phát"
-										className="flex h-9 min-w-14 cursor-pointer items-center justify-center gap-1 rounded-full px-2 text-xs font-semibold text-slate-400 transition hover:bg-white/10 hover:text-white"
-									>
-										{playbackRate}x
-										<ChevronDown
-											size={14}
-											className={`transition-transform ${
-												showSpeedMenu ? "rotate-180" : ""
-											}`}
-										/>
+										<Languages size={16} />
 									</button>
 
-									{showSpeedMenu && (
-										<div className="absolute bottom-full left-1/2 z-30 mb-2 w-20 -translate-x-1/2 overflow-hidden rounded-lg border border-slate-700 bg-player-control py-1 shadow-xl">
-											{PLAYBACK_RATES.map((rate) => (
-												<button
-													key={rate}
-													type="button"
-													onClick={() => handlePlaybackRateChange(rate)}
-												className={`block w-full cursor-pointer px-3 py-2 text-center text-xs font-semibold transition hover:bg-white/10 ${
-														playbackRate === rate
-														? "bg-player-selected text-player-selected-text"
-														: "text-slate-400"
-													}`}
-												>
-													{rate}x
-												</button>
-											))}
-										</div>
-									)}
-								</div>
-
-								<div
-									className="hidden h-8 w-52 items-center rounded-lg bg-player-control p-1 sm:flex"
-									aria-label="Tốc độ phát"
-								>
-									{PLAYBACK_RATES.map((rate) => (
+									<div className="relative sm:hidden">
 										<button
-											key={rate}
 											type="button"
-											onClick={() => handlePlaybackRateChange(rate)}
-											aria-pressed={playbackRate === rate}
-										className={`flex h-6 flex-1 cursor-pointer items-center justify-center rounded-md text-xs font-medium transition ${
-												playbackRate === rate
-													? "bg-player-selected text-player-selected-text shadow-sm"
-												: "text-slate-400 hover:bg-slate-700/60 hover:text-slate-200"
-											}`}
+											onClick={() => setShowSpeedMenu((current) => !current)}
+											aria-label={`Chọn tốc độ phát, hiện tại ${playbackRate}x`}
+											aria-expanded={showSpeedMenu}
+											title="Tốc độ phát"
+											className="flex h-9 min-w-14 cursor-pointer items-center justify-center gap-1 rounded-full px-2 text-xs font-semibold text-slate-400 transition hover:bg-white/10 hover:text-white"
 										>
-											{rate}x
+											{playbackRate}x
+											<ChevronDown
+												size={14}
+												className={`transition-transform ${
+													showSpeedMenu ? "rotate-180" : ""
+												}`}
+											/>
 										</button>
-									))}
+
+										{showSpeedMenu && (
+											<div className="absolute bottom-full left-1/2 z-30 mb-2 w-20 -translate-x-1/2 overflow-hidden rounded-lg border border-slate-700 bg-player-control py-1 shadow-xl">
+												{PLAYBACK_RATES.map((rate) => (
+													<button
+														key={rate}
+														type="button"
+														onClick={() => handlePlaybackRateChange(rate)}
+														className={`block w-full cursor-pointer px-3 py-2 text-center text-xs font-semibold transition hover:bg-white/10 ${
+															playbackRate === rate
+																? "bg-player-selected text-player-selected-text"
+																: "text-slate-400"
+														}`}
+													>
+														{rate}x
+													</button>
+												))}
+											</div>
+										)}
+									</div>
+
+									<div
+										className="hidden h-8 w-52 items-center rounded-lg bg-player-control p-1 sm:flex"
+										aria-label="Tốc độ phát"
+									>
+										{PLAYBACK_RATES.map((rate) => (
+											<button
+												key={rate}
+												type="button"
+												onClick={() => handlePlaybackRateChange(rate)}
+												aria-pressed={playbackRate === rate}
+												className={`flex h-6 flex-1 cursor-pointer items-center justify-center rounded-md text-xs font-medium transition ${
+													playbackRate === rate
+														? "bg-player-selected text-player-selected-text shadow-sm"
+														: "text-slate-400 hover:bg-slate-700/60 hover:text-slate-200"
+												}`}
+											>
+												{rate}x
+											</button>
+										))}
+									</div>
 								</div>
-							</div>
 
-							<div className="flex items-center gap-3">
-								<button
-									type="button"
-									onClick={() =>
-										setShowSubtitles((current) => !current)
-									}
-									aria-label={showSubtitles ? "Tắt phụ đề" : "Bật phụ đề"}
-									title={showSubtitles ? "Tắt phụ đề" : "Bật phụ đề"}
-									className={`flex h-11 w-11 items-center justify-center rounded-full transition ${
-										showSubtitles
-											? "bg-violet-500/15 text-violet-400"
-											: "text-slate-400 hover:bg-white/10 hover:text-white"
-									}`}
-								>
-									<Captions size={26} />
-								</button>
+								<div className="flex items-center gap-3">
+									<button
+										type="button"
+										onClick={() => setShowSubtitles((current) => !current)}
+										aria-label={showSubtitles ? "Tắt phụ đề" : "Bật phụ đề"}
+										title={showSubtitles ? "Tắt phụ đề" : "Bật phụ đề"}
+										className={`flex h-11 w-11 items-center justify-center rounded-full transition ${
+											showSubtitles
+												? "bg-violet-500/15 text-violet-400"
+												: "text-slate-400 hover:bg-white/10 hover:text-white"
+										}`}
+									>
+										<Captions size={26} />
+									</button>
 
-								<p className="text-xs text-slate-400">
-									{currentLine + 1} / {task.dialogue.length}
-								</p>
-							</div>
+									<p className="text-xs text-slate-400">
+										{currentLine + 1} / {task.dialogue.length}
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -759,9 +803,9 @@ export default function DialoguePlayer({
 									}`}
 								>
 									<p
-										className={`text-sm font-semibold ${
-											getSpeakerColor(line.speaker)
-										}`}
+										className={`text-sm font-semibold ${getSpeakerColor(
+											line.speaker,
+										)}`}
 									>
 										{line.speaker}
 									</p>
@@ -848,10 +892,10 @@ export default function DialoguePlayer({
 								selectedLookup.isMobile
 									? "fixed inset-x-3 bottom-3 z-[100] rounded-2xl border border-slate-700/80 bg-slate-950/95 px-3.5 py-3 text-left text-sm text-slate-200 shadow-2xl backdrop-blur-md"
 									: `fixed z-[100] w-64 rounded-xl border border-slate-700/80 bg-slate-950/95 px-3.5 py-3 text-left text-sm text-slate-200 shadow-2xl backdrop-blur-md ${
-										selectedLookup.position.opensAbove
-											? "-translate-y-full"
-											: ""
-									}`
+											selectedLookup.position.opensAbove
+												? "-translate-y-full"
+												: ""
+										}`
 							}
 							style={
 								selectedLookup.isMobile
@@ -877,7 +921,9 @@ export default function DialoguePlayer({
 									</button>
 								</div>
 								<span className="text-cyan-300">
-									{selectedLookup.result.source === "phrase" ? selectedLookup.result.type : selectedLookup.result.pos?.join(", ")}
+									{selectedLookup.result.source === "phrase"
+										? selectedLookup.result.type
+										: selectedLookup.result.pos?.join(", ")}
 								</span>
 							</div>
 

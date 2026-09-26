@@ -1,19 +1,24 @@
 "use client";
 
-import { useEffect, useMemo, useState, useRef } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
 	ArrowRight,
 	BookOpen,
+	BriefcaseBusiness,
+	ChevronDown,
 	CircleCheck,
 	Clock3,
-	Headphones,
+	Grid2X2,
+	House,
+	MessageCircleMore,
+	Plane,
 	Search,
+	Utensils,
 } from "lucide-react";
 import { lessonData } from "./_data/lessonData";
 import { useLocale, useTranslations } from "next-intl";
-import { ChevronDown, ChevronUp } from "lucide-react";
 const courseImages = {
 	"coffee-shop": "/dialogue/coffee-shop/thumbnails/coffee-shop.png",
 	"office-introduction":
@@ -45,14 +50,47 @@ const courseLevelsByFilter = {
 	advanced: ["advanced", "c1", "c2"],
 };
 
+const dialogueCategories = [
+	"all",
+	"office",
+	"travel",
+	"food",
+	"life",
+	"daily",
+	"story",
+];
+
+const categoryIcons = {
+	all: Grid2X2,
+	office: BriefcaseBusiness,
+	travel: Plane,
+	food: Utensils,
+	life: House,
+	daily: MessageCircleMore,
+	story: BookOpen,
+};
+
+const courseIdsByCategory = {
+	office: ["office-introduction"],
+	travel: ["at-a-hotel", "asking-for-directions", "weekend-camping"],
+	food: ["coffee-shop"],
+	life: ["at-a-hotel", "weekend-camping"],
+	daily: [
+		"at-a-hotel",
+		"asking-for-directions",
+		"coffee-shop",
+		"office-introduction",
+		"weekend-camping",
+	],
+	story: ["weekend-camping"],
+};
+
 function getCefrLevelLabel(level) {
 	const normalizedLevel = level?.toLowerCase();
 	return cefrLevelLabels[normalizedLevel] ?? level;
 }
 
 export default function DialoguePage() {
-	const selectRef = useRef(null);
-	const [isLevelOpen, setIsLevelOpen] = useState(false);
 	const t = useTranslations("DialogueLanding");
 	const locale = useLocale();
 	const levelOptions = ["all", "beginner", "intermediate", "advanced"].map(
@@ -68,6 +106,7 @@ export default function DialoguePage() {
 	const courses = useMemo(() => Object.values(lessonData), []);
 	const [search, setSearch] = useState("");
 	const [selectedLevel, setSelectedLevel] = useState("all");
+	const [selectedCategory, setSelectedCategory] = useState("all");
 	const [progressByLesson, setProgressByLesson] = useState({});
 
 	useEffect(() => {
@@ -192,124 +231,68 @@ export default function DialoguePage() {
 			course.level?.toLowerCase(),
 		);
 	};
+	const courseMatchesCategory = (course) =>
+		selectedCategory === "all" ||
+		courseIdsByCategory[selectedCategory]?.includes(course.id);
 	const courseMatchesFilters = (course) =>
 		courseMatchesSearch(course) && courseMatchesLevel(course);
 	const currentCourseMatchesSearch = Boolean(
 		currentCourse && courseMatchesFilters(currentCourse),
 	);
-	const visibleCourses = courses.filter(courseMatchesFilters);
+	const visibleCourses = courses.filter(
+		(course) => courseMatchesFilters(course) && courseMatchesCategory(course),
+	);
 	const currentStats = currentCourse ? courseStats[currentCourse.id] : null;
 
 	return (
-		<main className="min-h-screen bg-page px-4 py-6 text-main sm:px-6 sm:py-8 lg:px-8">
-			<div className="mx-auto max-w-7xl">
+		<main className="min-h-screen bg-page px-4 pb-6 text-main sm:px-6 sm:pb-8 lg:px-8">
+			<div className="mx-auto max-w-[1548px]">
 				{/* ==================== HERO SECTION ==================== */}
-				<section className="relative isolate min-h-[205px] overflow-hidden border-b border-app bg-hero md:min-h-[220px]">
-					<div className="absolute inset-0 z-0 bg-gradient-to-r from-hero via-hero/90 to-transparent" />
-					<div className="pointer-events-none absolute right-[6%] top-[12%] z-[1] hidden h-52 w-[42%] rounded-full bg-[var(--sj-banner-glow-primary)] blur-[70px] md:block" />
-					<div className="pointer-events-none absolute bottom-[-15%] right-[3%] z-[1] hidden h-48 w-[48%] rounded-full bg-[var(--sj-banner-glow-secondary)] blur-[65px] md:block" />
-
-					<div className="pointer-events-none absolute inset-y-0 right-[5%] z-20 hidden w-[42%] md:block lg:right-[7%] lg:w-[40%]">
-						<div className="absolute bottom-[2%] left-1/2 h-[70%] w-[78%] -translate-x-1/2 rounded-full bg-[var(--sj-banner-glow-ground)] blur-[55px]" />
-						<div className="absolute bottom-[-4%] left-[4%] h-[98%] w-[58%]">
+				<section className="relative isolate overflow-hidden border-b border-app bg-hero">
+					<div className="pointer-events-none absolute -right-12 bottom-[-70px] hidden h-44 w-72 rounded-full bg-[var(--sj-banner-glow-primary)] opacity-40 blur-3xl xl:block" />
+					<div className="pointer-events-none absolute bottom-0 right-4 hidden h-[145px] w-[180px] xl:block">
+						<div className="absolute bottom-0 left-0 h-[130px] w-[95px]">
 							<Image
 								src="/dialogue/office-introduction/shared/maria.png"
 								alt=""
 								fill
 								priority
-								className="object-contain object-bottom  "
-								sizes="24vw"
+								className="object-contain object-bottom"
+								sizes="95px"
 							/>
 						</div>
-						<div className="absolute bottom-[-4%] right-[4%] h-full w-[57%]">
+						<div className="absolute bottom-0 right-0 h-[145px] w-[100px]">
 							<Image
 								src="/dialogue/office-introduction/shared/tom.png"
 								alt=""
 								fill
 								priority
-								className="object-contain object-bottom  "
-								sizes="24vw"
+								className="object-contain object-bottom"
+								sizes="100px"
 							/>
 						</div>
 					</div>
 
-					<div className="pointer-events-none absolute bottom-[-18%] right-[2%] z-10 hidden h-64 w-[58%] opacity-70 md:block">
-						<div className="absolute inset-0 rounded-[50%] border-t border-[var(--sj-banner-arc-1)] [transform:rotate(-7deg)] banner-decoration-shadow" />
-						<div className="absolute inset-x-4 inset-y-4 rounded-[50%] border-t border-[var(--sj-banner-arc-2)] [transform:rotate(-7deg)]" />
-						<div className="absolute inset-x-8 inset-y-8 rounded-[50%] border-t border-[var(--sj-banner-arc-3)] [transform:rotate(-7deg)]" />
-						<div className="absolute inset-x-12 inset-y-12 rounded-[50%] border-t border-[var(--sj-banner-arc-4)] [transform:rotate(-7deg)]" />
-						<div className="absolute inset-x-16 inset-y-16 rounded-[50%] border-t border-[var(--sj-banner-arc-5)] [transform:rotate(-7deg)]" />
-					</div>
-
-					<div className="absolute -left-24 -top-24 z-[1] h-72 w-72 rounded-full bg-[var(--sj-banner-glow-corner)] blur-3xl" />
-					{/* Content  */}
-					<div className="relative z-30 flex min-h-[205px] max-w-2xl flex-col justify-center px-5 py-6 sm:px-8 md:min-h-[220px] md:max-w-[55%] md:px-9 lg:px-12 xl:px-14">
-						<h1 className="bg-gradient-to-r from-violet-300 to-blue-300 bg-clip-text text-3xl font-bold tracking-tight text-transparent sm:text-4xl">
-							{t("title")}{" "}
-							<Headphones className="inline h-7 w-7 text-blue-300" />
-						</h1>
-						<p className="mt-3 max-w-xl text-sm leading-6 text-slate-400 sm:text-base">
-							{t("subtitle")}
-						</p>
-
-						<div className="mt-4 flex w-full max-w-xl flex-col gap-3 sm:flex-row sm:items-center">
-							<label className="relative block flex-1">
-								<span className="sr-only">{t("searchLabel")}</span>
-								<Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500" />
-								<input
-									type="search"
-									value={search}
-									onChange={(event) => setSearch(event.target.value)}
-									placeholder={t("searchPlaceholder")}
-									className="h-11 w-full rounded-lg border border-app bg-surface pl-11 pr-4 text-sm text-main outline-none transition placeholder:text-secondary focus:border-primary focus:ring-2 focus:ring-primary/15"
-								/>
-							</label>
-
-							<label className="relative shrink-0 sm:w-52">
-								<span className="sr-only">{t("levelFilter")}</span>
-
-								<select
-									ref={selectRef}
-									value={selectedLevel}
-									onChange={(event) => {
-										setSelectedLevel(event.target.value);
-										setIsLevelOpen(false);
-									}}
-									onFocus={() => setIsLevelOpen(true)}
-									onBlur={() => setIsLevelOpen(false)}
-									className="h-11 w-full appearance-none rounded-lg border border-app bg-surface px-3 pr-10 text-sm text-secondary outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/15"
-								>
-									{levelOptions.map((option) => (
-										<option key={option.value} value={option.value}>
-											{option.label}
-										</option>
-									))}
-								</select>
-
-								<button
-									type="button"
-									onMouseDown={(event) => {
-										event.preventDefault();
-
-										if (isLevelOpen) {
-											selectRef.current?.blur();
-											setIsLevelOpen(false);
-										} else {
-											selectRef.current?.focus();
-											selectRef.current?.showPicker?.();
-											setIsLevelOpen(true);
-										}
-									}}
-									className="absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center"
-								>
-									<ChevronDown
-										className={`h-4 w-4 text-secondary transition-transform duration-200 ease-out ${
-											isLevelOpen ? "rotate-180" : "rotate-0"
-										}`}
-									/>
-								</button>
-							</label>
+					<div className="relative z-10 grid min-h-[150px] items-center gap-5 px-5 py-5 sm:px-8 md:grid-cols-[minmax(0,1fr)_minmax(250px,400px)] md:gap-8 md:py-4 xl:grid-cols-[minmax(0,1fr)_minmax(280px,430px)_180px]">
+						<div className="min-w-0">
+							<h1 className="text-3xl font-bold tracking-tight text-main sm:text-4xl">
+								{t("title")}
+							</h1>
+							<p className="mt-2 max-w-2xl text-sm leading-6 text-secondary sm:text-base">
+								{t("subtitle")}
+							</p>
 						</div>
+						<label className="relative block w-full">
+							<span className="sr-only">{t("searchLabel")}</span>
+							<Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-secondary" />
+							<input
+								type="search"
+								value={search}
+								onChange={(event) => setSearch(event.target.value)}
+								placeholder={t("searchPlaceholder")}
+								className="h-12 w-full rounded-xl border border-app bg-surface pl-11 pr-4 text-sm text-main outline-none transition placeholder:text-secondary focus:border-primary focus:ring-2 focus:ring-primary/15"
+							/>
+						</label>
 					</div>
 				</section>
 				{/* ==================== CURRENT / IN-PROGRESS COURSE ==================== */}
@@ -391,20 +374,71 @@ export default function DialoguePage() {
 				)}
 				{/* ==================== OTHER COURSES / DISCOVERY ==================== */}
 
-				{visibleCourses.length > 0 ? (
-					<section className="mt-12 pb-10">
-						<div className="flex items-end justify-between gap-4">
-							<div>
-								<h2 className="mt-1 text-2xl font-bold text-white">
+				<section className="mt-7 pb-10">
+					<div className="grid gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-8 xl:grid-cols-[296px_minmax(0,1fr)]">
+						<div className="min-w-0 lg:sticky lg:top-24 lg:self-start">
+						<nav
+							aria-label={t("categoryNavLabel")}
+							className="-mx-4 flex gap-1 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:border-r lg:border-app lg:pr-7 lg:pb-0"
+						>
+							{dialogueCategories.map((category) => {
+								const isActive = selectedCategory === category;
+								const Icon = categoryIcons[category];
+								const count = category === "all"
+									? courses.length
+									: courses.filter((course) =>
+										courseIdsByCategory[category].includes(course.id),
+									).length;
+								return (
+									<button
+										key={category}
+										type="button"
+										aria-pressed={isActive}
+										onClick={() => setSelectedCategory(category)}
+										className={`relative flex h-12 shrink-0 items-center gap-3 rounded-xl px-4 text-left text-sm font-medium transition lg:w-full ${
+											isActive
+												? "bg-primary/15 text-brand-text before:absolute before:inset-y-0 before:left-0 before:w-1 before:rounded-full before:bg-primary before:shadow-[0_0_12px_var(--sj-primary)]"
+												: "text-secondary hover:bg-hover hover:text-main"
+										}`}
+									>
+										<Icon className={`h-5 w-5 shrink-0 ${isActive ? "text-primary" : ""}`} strokeWidth={1.8} />
+										<span className="whitespace-nowrap">{t(`categories.${category}`)}</span>
+										<span className="ml-auto hidden min-w-8 rounded-full bg-surface-muted px-2 py-1 text-center text-xs text-secondary lg:inline-block">
+											{count}
+										</span>
+									</button>
+								);
+							})}
+						</nav>
+						</div>
+						<div className="min-w-0">
+							<div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+								<h2 className="relative pb-3 text-2xl font-bold text-main after:absolute after:bottom-0 after:left-0 after:h-1 after:w-12 after:rounded-full after:bg-primary">
 									{t("explore")}
 								</h2>
+								<div className="flex items-center gap-4">
+									<span className="text-sm text-secondary">
+										{t("topics", { count: visibleCourses.length })}
+									</span>
+									<label className="relative block">
+										<span className="sr-only">{t("levelFilter")}</span>
+										<select
+											value={selectedLevel}
+											onChange={(event) => setSelectedLevel(event.target.value)}
+											className="h-11 min-w-36 appearance-none rounded-xl border border-app bg-surface pl-4 pr-9 text-sm font-medium text-main outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+										>
+											{levelOptions.map((option) => (
+												<option key={option.value} value={option.value}>
+													{option.label}
+												</option>
+											))}
+										</select>
+										<ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-secondary" />
+									</label>
+								</div>
 							</div>
-							<span className="text-sm text-slate-500">
-								{t("topics", { count: visibleCourses.length })}
-							</span>
-						</div>
-
-						<div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+							{visibleCourses.length > 0 ? (
+						<div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
 							{visibleCourses.map((course) => {
 								const stats = courseStats[course.id];
 								const statusLabel = stats.isCompleted
@@ -427,15 +461,15 @@ export default function DialoguePage() {
 									<Link
 										key={course.id}
 										href={`/dialogue/${course.id}`}
-										className="group overflow-hidden rounded-xl border border-app bg-surface shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md"
+										className="group flex h-full flex-col overflow-hidden rounded-[14px] border border-app bg-surface shadow-sm transition duration-200 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
 									>
 										{/* Thumbnail */}
-										<div className="relative aspect-video overflow-hidden bg-slate-900">
+										<div className="relative aspect-[2.1/1] overflow-hidden bg-slate-900">
 											<Image
 												src={getCourseImage(course.id)}
 												alt={course.title}
 												fill
-												className="object-cover transition duration-300 group-hover:scale-[1.02]"
+											className="object-cover transition duration-300 group-hover:scale-[1.03]"
 												sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
 											/>
 
@@ -448,7 +482,7 @@ export default function DialoguePage() {
 											</span>
 
 											{/* Level badge */}
-											<span className="absolute right-3 top-3 rounded-md border border-blue-400/20 bg-[#0a1530]/90 px-2.5 py-1 text-[11px] font-semibold text-blue-300 backdrop-blur-sm">
+											<span className="absolute right-3 top-3 rounded-md border border-primary/20 bg-[#062435]/90 px-2.5 py-1 text-[11px] font-semibold text-cyan-300 backdrop-blur-sm">
 												{getCefrLevelLabel(course.level)}
 											</span>
 
@@ -460,19 +494,19 @@ export default function DialoguePage() {
 										</div>
 
 										{/* Content */}
-										<div className="p-4">
-											<h3 className="line-clamp-1 text-base font-bold text-white transition ">
+										<div className="flex min-h-[196px] flex-1 flex-col p-5">
+											<h3 className="line-clamp-1 text-lg font-bold text-main">
 												{getLocalizedCourseValue(course, "title")}
 											</h3>
 
-											<p className="mt-1.5 line-clamp-2 text-sm leading-5 text-slate-400">
+											<p className="mt-1.5 min-h-12 line-clamp-2 text-sm leading-6 text-secondary">
 												{getLocalizedCourseValue(course, "description")}
 											</p>
 
-											<div className="mt-4 flex items-center gap-3">
+											<div className="mt-auto flex items-center gap-3 pt-4">
 												<div className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-muted">
 													<div
-														className="h-full rounded-full bg-emerald-500 transition-all duration-500"
+														className="h-full rounded-full bg-primary transition-all duration-500"
 														style={{ width: `${stats.progressPercent}%` }}
 													/>
 												</div>
@@ -481,7 +515,7 @@ export default function DialoguePage() {
 												</span>
 											</div>
 
-											<span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+											<span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-text">
 												{actionLabel}
 												<ArrowRight className="h-4 w-4" />
 											</span>
@@ -490,21 +524,25 @@ export default function DialoguePage() {
 								);
 							})}
 						</div>
-					</section>
-				) : (
-					<div className="mt-10 rounded-2xl border border-dashed border-slate-700 bg-slate-900/30 px-6 py-14 text-center">
-						<p className="text-lg font-semibold text-white">
-							{normalizedSearch || selectedLevel === "all"
-								? t("noResults")
-								: t("noLevelResults")}
-						</p>
-						{normalizedSearch && (
-							<p className="mt-2 text-sm text-slate-400">
-								{t("tryAnotherSearch")}
-							</p>
-						)}
+							) : (
+							<div className="mt-2 rounded-2xl border border-dashed border-app bg-surface/40 px-6 py-14 text-center">
+								<p className="text-lg font-semibold text-main">
+									{normalizedSearch ||
+									selectedLevel === "all" ||
+									selectedCategory !== "all"
+										? t("noResults")
+										: t("noLevelResults")}
+								</p>
+								{normalizedSearch && (
+									<p className="mt-2 text-sm text-secondary">
+										{t("tryAnotherSearch")}
+									</p>
+								)}
+							</div>
+							)}
+						</div>
 					</div>
-				)}
+				</section>
 			</div>
 		</main>
 	);
