@@ -4,18 +4,50 @@ import StudyHeatmap from "@/app/_components/StudyHeatmap";
 import LanguageSwitcher from "@/app/_components/LanguageSwitcher";
 import ThemeSelector from "@/app/_components/ThemeSelector";
 import { useAuth } from "@/app/_contexts/AuthContext";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import {
 	Mail,
 	CalendarDays,
 	Pencil,
 	Camera,
+	LoaderCircle,
 	Languages,
 	Volume2,
 	Moon,
 	LogOut,
 } from "lucide-react";
+
+const AVATAR_TYPES = ["image/jpeg", "image/png", "image/webp"];
+const MAX_SOURCE_BYTES = 10 * 1024 * 1024;
+const MAX_UPLOAD_BYTES = 2 * 1024 * 1024;
+
+async function compressAvatar(file) {
+	const objectUrl = URL.createObjectURL(file);
+	try {
+		const image = new Image();
+		await new Promise((resolve, reject) => {
+			image.onload = resolve;
+			image.onerror = reject;
+			image.src = objectUrl;
+		});
+		const scale = Math.min(1, 512 / Math.max(image.naturalWidth, image.naturalHeight));
+		const canvas = document.createElement("canvas");
+		canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
+		canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+		const context = canvas.getContext("2d");
+		if (!context) throw new Error("Canvas is unavailable");
+		context.fillStyle = "#fff";
+		context.fillRect(0, 0, canvas.width, canvas.height);
+		context.drawImage(image, 0, 0, canvas.width, canvas.height);
+		const blob = await new Promise((resolve, reject) => {
+			canvas.toBlob((result) => result ? resolve(result) : reject(new Error("Image compression failed")), "image/jpeg", 0.82);
+		});
+		return blob;
+	} finally {
+		URL.revokeObjectURL(objectUrl);
+	}
+}
 
 function Page() {
 	const t = useTranslations("Profile");
@@ -23,6 +55,49 @@ function Page() {
 	const { user, setUser } = useAuth();
 	const [isEditingName, setIsEditingName] = useState(false);
 	const [newName, setNewName] = useState(user?.name || "");
+	const avatarInputRef = useRef(null);
+	const [isUploadingAvatar, setIsUploadingAvatar] = useState(false);
+	const [avatarError, setAvatarError] = useState("");
+	const [failedAvatarUrls, setFailedAvatarUrls] = useState([]);
+	const avatarUrl = [user?.avatar, user?.photo].find((url) =>
+		typeof url === "string" && url.trim() && !failedAvatarUrls.includes(url),
+	);
+
+	async function handleAvatarChange(event) {
+		const file = event.target.files?.[0];
+		event.target.value = "";
+		if (!file) return;
+		setAvatarError("");
+		if (!AVATAR_TYPES.includes(file.type)) {
+			setAvatarError(t("avatarTypeError"));
+			return;
+		}
+		if (file.size > MAX_SOURCE_BYTES) {
+			setAvatarError(t("avatarSizeError"));
+			return;
+		}
+
+		setIsUploadingAvatar(true);
+		try {
+			const image = await compressAvatar(file);
+			if (image.size > MAX_UPLOAD_BYTES) throw new Error("Avatar exceeds upload limit");
+			const response = await fetch("/api/v1/users/avatar", {
+				method: "PATCH",
+				credentials: "include",
+				headers: { "Content-Type": "image/jpeg" },
+				body: image,
+			});
+			if (!response.ok) throw new Error("Avatar upload failed");
+			const data = await response.json();
+			if (!data?.data?.user?.avatar) throw new Error("Avatar URL is missing");
+			setUser(data.data.user);
+		} catch (error) {
+			console.error("Avatar upload failed:", error);
+			setAvatarError(t("avatarUploadError"));
+		} finally {
+			setIsUploadingAvatar(false);
+		}
+	}
 	async function handleUpdateName() {
 		try {
 			const res = await fetch("/api/v1/users/updateMe", {
@@ -52,10 +127,12 @@ function Page() {
 			{/* Profile top */}
 			<div className="mb-10 flex flex-col items-center gap-6 sm:flex-row">
 				<div className="relative">
-					{user?.photo ? (
+					{avatarUrl ? (
 						<img
-							src={user.photo}
+							src={avatarUrl}
 							alt={user.name}
+							referrerPolicy="no-referrer"
+							onError={() => setFailedAvatarUrls((urls) => [...urls, avatarUrl])}
 							className="h-36 w-36 rounded-full border-4 border-gray-300 object-cover"
 						/>
 					) : (
@@ -64,12 +141,22 @@ function Page() {
 						</div>
 					)}
 
+					<input
+						ref={avatarInputRef}
+						type="file"
+						accept="image/jpeg,image/png,image/webp"
+						className="sr-only"
+						onChange={handleAvatarChange}
+					/>
 					<button
 						type="button"
-						aria-label={t("editName")}
-						className="absolute bottom-1 right-1 flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-lg"
+						aria-label={t("uploadAvatar")}
+						title={t("uploadAvatar")}
+						disabled={!user || isUploadingAvatar}
+						onClick={() => avatarInputRef.current?.click()}
+						className="absolute bottom-1 right-1 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-primary text-white shadow-lg transition hover:bg-primary-hover disabled:cursor-wait disabled:opacity-60"
 					>
-						<Camera size={20} />
+						{isUploadingAvatar ? <LoaderCircle size={20} className="animate-spin" /> : <Camera size={20} />}
 					</button>
 				</div>
 
@@ -135,6 +222,11 @@ function Page() {
 					</div>
 				</div>
 			</div>
+			{(isUploadingAvatar || avatarError) && (
+				<p role={avatarError ? "alert" : "status"} className={`mb-6 text-center text-sm ${avatarError ? "text-red-400" : "text-secondary"}`}>
+					{avatarError || t("uploadingAvatar")}
+				</p>
+			)}
 
 			<StudyHeatmap />
 

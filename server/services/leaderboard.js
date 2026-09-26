@@ -49,7 +49,11 @@ async function getLeaderboard({ userId, period = "month", timeframe = "current",
 		id: { $toString: "$_id" },
 		rank: 1,
 		name: { $ifNull: ["$profile.name", "Learner"] },
-		avatar: { $ifNull: ["$profile.photo", ""] },
+		avatar: { $cond: [
+			{ $ne: [{ $ifNull: ["$profile.avatar", ""] }, ""] },
+			"$profile.avatar",
+			{ $ifNull: ["$profile.photo", ""] },
+		] },
 		periodXp: 1,
 		lifetimeXp: { $ifNull: ["$profile.totalXp", 0] },
 		isCurrentUser: { $eq: ["$_id", currentUserId] },
@@ -62,7 +66,7 @@ async function getLeaderboard({ userId, period = "month", timeframe = "current",
 			from: User.collection.name,
 			localField: "_id",
 			foreignField: "_id",
-			pipeline: [{ $project: { name: 1, photo: 1, totalXp: 1 } }],
+			pipeline: [{ $project: { name: 1, photo: 1, avatar: 1, totalXp: 1 } }],
 			as: "profile",
 		} },
 		// Deleted users must not occupy positions or leave gaps in the ranking.
@@ -83,11 +87,11 @@ async function getLeaderboard({ userId, period = "month", timeframe = "current",
 
 	let currentUser = result.currentUser[0];
 	if (!currentUser) {
-		const profile = await User.findById(currentUserId).select("name photo totalXp").lean();
+		const profile = await User.findById(currentUserId).select("name photo avatar totalXp").lean();
 		if (!profile) throw new AppError("User not found", 404);
 		currentUser = {
 			id: String(profile._id), rank: null, name: profile.name ?? "Learner",
-			avatar: profile.photo ?? "", periodXp: 0, lifetimeXp: profile.totalXp ?? 0, isCurrentUser: true,
+			avatar: profile.avatar || profile.photo || "", periodXp: 0, lifetimeXp: profile.totalXp ?? 0, isCurrentUser: true,
 		};
 	}
 	const streaks = await getStudyStreaks([...new Set([...result.leaderboard.map(profile => profile.id), currentUser.id])], now);

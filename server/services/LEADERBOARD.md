@@ -45,7 +45,8 @@ The response is `{ status: "success", data: { ... } }`:
 The signed-in user is always returned separately, including outside `limit`.
 Without period XP they have `rank: null` and `periodXp: 0`; they are not inserted
 into the ranked list. Lifetime XP comes from `User.totalXp`, defaulting to zero
-for legacy records. Avatar comes from `User.photo`; missing photos return `""`.
+for legacy records. Avatar comes from `User.avatar`, then falls back to the
+Google photo in `User.photo`; missing photos return `""`.
 
 XP is summed from `XPEvent.earnedAt >= start && earnedAt < end`, not `dayKey`,
 activity counts, or the user's lifetime total. Weeks begin Monday at midnight

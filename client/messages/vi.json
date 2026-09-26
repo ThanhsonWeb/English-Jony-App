@@ -123,7 +123,7 @@
 		"logout": "Đăng xuất"
 	},
 	"DialogueLanding": {
-		"title": "Hội thoại thực tế",
+		"title": "Hội thoại <accent>thực tế</accent>",
 		"subtitle": "Luyện nghe và phản xạ qua các tình huống đời thường.",
 		"searchLabel": "Tìm kiếm hội thoại",
 		"searchPlaceholder": "Tìm kiếm bài học hoặc chủ đề...",
@@ -173,6 +173,11 @@
 		"title": "Hồ sơ",
 		"joined": "Ngày tham gia",
 		"editName": "Chỉnh sửa tên",
+		"uploadAvatar": "Tải ảnh đại diện lên",
+		"uploadingAvatar": "Đang tải ảnh lên...",
+		"avatarTypeError": "Chọn ảnh JPG, PNG hoặc WebP.",
+		"avatarSizeError": "Chọn ảnh nhỏ hơn 10 MB.",
+		"avatarUploadError": "Không thể tải ảnh lên. Vui lòng thử lại.",
 		"updateName": "Cập nhật tên của bạn",
 		"save": "Lưu",
 		"close": "Đóng",

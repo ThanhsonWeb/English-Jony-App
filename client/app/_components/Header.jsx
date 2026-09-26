@@ -11,18 +11,19 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
 
 function UserAvatar({ user }) {
-	const [failedPhotoUrl, setFailedPhotoUrl] = useState(null);
-	const photoUrl = typeof user?.photo === "string" ? user.photo.trim() : "";
-	const showPhoto = photoUrl && failedPhotoUrl !== photoUrl;
+	const [failedPhotoUrls, setFailedPhotoUrls] = useState([]);
+	const customAvatar = typeof user?.avatar === "string" ? user.avatar.trim() : "";
+	const googleAvatar = typeof user?.photo === "string" ? user.photo.trim() : "";
+	const photoUrl = [customAvatar, googleAvatar].find((url) => url && !failedPhotoUrls.includes(url));
 	const initial = user?.name?.trim().charAt(0).toUpperCase() || "U";
 
-	if (showPhoto) {
+	if (photoUrl) {
 		return (
 			<img
 				src={photoUrl}
 				alt={user.name || "Ảnh đại diện"}
 				referrerPolicy="no-referrer"
-				onError={() => setFailedPhotoUrl(photoUrl)}
+				onError={() => setFailedPhotoUrls((urls) => [...urls, photoUrl])}
 				className="h-10 w-10 shrink-0 rounded-full border border-app object-cover md:h-12 md:w-12"
 			/>
 		);

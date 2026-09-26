@@ -248,35 +248,13 @@ export default function DialoguePage() {
 		<main className="min-h-screen bg-page px-4 pb-6 text-main sm:px-6 sm:pb-8 lg:px-8">
 			<div className="mx-auto max-w-[1548px]">
 				{/* ==================== HERO SECTION ==================== */}
-				<section className="relative isolate overflow-hidden border-b border-app bg-hero">
-					<div className="pointer-events-none absolute -right-12 bottom-[-70px] hidden h-44 w-72 rounded-full bg-[var(--sj-banner-glow-primary)] opacity-40 blur-3xl xl:block" />
-					<div className="pointer-events-none absolute bottom-0 right-4 hidden h-[145px] w-[180px] xl:block">
-						<div className="absolute bottom-0 left-0 h-[130px] w-[95px]">
-							<Image
-								src="/dialogue/office-introduction/shared/maria.png"
-								alt=""
-								fill
-								priority
-								className="object-contain object-bottom"
-								sizes="95px"
-							/>
-						</div>
-						<div className="absolute bottom-0 right-0 h-[145px] w-[100px]">
-							<Image
-								src="/dialogue/office-introduction/shared/tom.png"
-								alt=""
-								fill
-								priority
-								className="object-contain object-bottom"
-								sizes="100px"
-							/>
-						</div>
-					</div>
-
-					<div className="relative z-10 grid min-h-[150px] items-center gap-5 px-5 py-5 sm:px-8 md:grid-cols-[minmax(0,1fr)_minmax(250px,400px)] md:gap-8 md:py-4 xl:grid-cols-[minmax(0,1fr)_minmax(280px,430px)_180px]">
+				<section className="bg-hero">
+					<div className="grid min-h-[150px] items-center gap-5 px-5 py-5 sm:px-8 md:grid-cols-[minmax(0,1fr)_minmax(250px,430px)] md:gap-8 md:py-4">
 						<div className="min-w-0">
 							<h1 className="text-3xl font-bold tracking-tight text-main sm:text-4xl">
-								{t("title")}
+								{t.rich("title", {
+									accent: (text) => <span className="text-brand-text">{text}</span>,
+								})}
 							</h1>
 							<p className="mt-2 max-w-2xl text-sm leading-6 text-secondary sm:text-base">
 								{t("subtitle")}

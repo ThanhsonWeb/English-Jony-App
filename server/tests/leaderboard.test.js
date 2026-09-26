@@ -246,6 +246,16 @@ test("HTTP response exposes only public fields for ranked and unranked users", a
 	assert.doesNotMatch(JSON.stringify(response.body), /private-hash|private-reset-token|@example.com|googleId|password|email/);
 });
 
+test("custom avatar takes priority over the Google photo for ranked and unranked users", async () => {
+	const avatar = "https://res.cloudinary.com/studyjony/image/upload/avatar.jpg";
+	await User.updateOne({ _id: user._id }, { $set: { avatar } });
+	assert.equal((await ranking()).currentUser.avatar, avatar);
+	await event(user, 10);
+	const result = await ranking();
+	assert.equal(result.currentUser.avatar, avatar);
+	assert.equal(result.leaderboard[0].avatar, avatar);
+});
+
 test("HTTP filters select previous week/month and ignore caller-supplied user identity", async () => {
 	const other = await learner("Other Learner");
 	for (const period of ["week", "month"]) {

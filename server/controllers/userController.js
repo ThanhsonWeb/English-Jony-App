@@ -1,5 +1,7 @@
 const User = require("../models/userModel");
 const catchAsync = require("../utils/catchAsync");
+const AppError = require("../utils/appError");
+const { isValidAvatar, uploadAvatar } = require("../services/avatarUpload");
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
 	const users = await User.find();
@@ -38,4 +40,25 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 			user: updatedUser,
 		},
 	});
+});
+
+exports.updateAvatar = catchAsync(async (req, res, next) => {
+	const type = req.headers["content-type"]?.split(";")[0].toLowerCase();
+	if (!isValidAvatar(req.body, type)) {
+		return next(new AppError("Choose a JPG, PNG, or WebP image under 2 MB.", 400));
+	}
+
+	let avatar;
+	try {
+		avatar = await uploadAvatar(req.body, type, req.user.id);
+	} catch (error) {
+		console.error("Avatar upload failed:", error.message);
+		return next(new AppError("Could not upload avatar. Please try again.", 502));
+	}
+
+	const user = await User.findByIdAndUpdate(req.user.id, { avatar }, {
+		returnDocument: "after",
+		runValidators: true,
+	});
+	res.status(200).json({ status: "success", data: { user } });
 });

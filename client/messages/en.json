@@ -123,7 +123,7 @@
 		"logout": "Log out"
 	},
 	"DialogueLanding": {
-		"title": "Real-life dialogues",
+		"title": "<accent>Real-life</accent> dialogues",
 		"subtitle": "Practice listening and responding through everyday situations.",
 		"searchLabel": "Search dialogues",
 		"searchPlaceholder": "Search lessons or topics...",
@@ -173,6 +173,11 @@
 		"title": "Profile",
 		"joined": "Joined",
 		"editName": "Edit name",
+		"uploadAvatar": "Upload a profile photo",
+		"uploadingAvatar": "Uploading your photo...",
+		"avatarTypeError": "Choose a JPG, PNG, or WebP image.",
+		"avatarSizeError": "Choose an image smaller than 10 MB.",
+		"avatarUploadError": "Could not upload your photo. Please try again.",
 		"updateName": "Update your name",
 		"save": "Save",
 		"close": "Close",

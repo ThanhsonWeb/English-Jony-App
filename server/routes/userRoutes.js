@@ -1,5 +1,6 @@
 const express = require("express");
-const { getAllUsers, getMe } = require("../controllers/userController");
+const rateLimit = require("express-rate-limit");
+const { getAllUsers, getMe, updateAvatar } = require("../controllers/userController");
 const {
 	protect,
 	restrictTo,
@@ -11,6 +12,11 @@ const {
 
 // /api/v1/users
 const router = express.Router();
+const avatarLimiter = rateLimit({
+	windowMs: 60 * 60 * 1000,
+	limit: 10,
+	keyGenerator: (req) => String(req.user.id),
+});
 router.use((req, res, next) => {
 	console.log(req.method, req.originalUrl);
 	next();
@@ -23,5 +29,12 @@ router.post("/forgotPassword", forgotPassword);
 router.patch("/resetPassword/:token", resetPassword);
 router.patch("/updatePassword", protect, updatePassword);
 router.patch("/updateMe", protect, updateMe);
+router.patch(
+	"/avatar",
+	protect,
+	avatarLimiter,
+	express.raw({ type: ["image/jpeg", "image/png", "image/webp"], limit: "2mb" }),
+	updateAvatar,
+);
 
 module.exports = router;

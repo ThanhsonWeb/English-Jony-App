@@ -3,6 +3,7 @@
 import { useEffect, useId, useState } from "react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
+import { useAuth } from "@/app/_contexts/AuthContext";
 import { CalendarDays, ChartNoAxesColumnIncreasing, Check, ChevronDown, Crown, Flame, Target } from "lucide-react";
 import styles from "../rank.module.css";
 
@@ -133,6 +134,7 @@ function RankPeriodSwitch({ period, timeframe, onPeriodChange, onTimeframeChange
 export default function RankDashboard() {
 	const t = useTranslations("Rank");
 	const locale = useLocale();
+	const { user: signedInUser } = useAuth();
 	const [period, setPeriod] = useState("month");
 	const [timeframe, setTimeframe] = useState("current");
 	const [attempt, setAttempt] = useState(0);
@@ -141,8 +143,10 @@ export default function RankDashboard() {
 	const loading = result?.key !== requestKey;
 	const data = loading ? null : result.data;
 	const error = loading ? null : result.error;
-	const leaderboard = data?.leaderboard ?? [];
-	const currentUser = data?.currentUser;
+	const currentAvatar = signedInUser?.avatar || signedInUser?.photo;
+	const withCurrentAvatar = profile => profile?.isCurrentUser && currentAvatar ? { ...profile, avatar: currentAvatar } : profile;
+	const leaderboard = (data?.leaderboard ?? []).map(withCurrentAvatar);
+	const currentUser = withCurrentAvatar(data?.currentUser);
 	const rows = [...leaderboard];
 	// Keep a personal row for users outside the top ten and unranked users.
 	if (currentUser && !rows.some(user => user.id === currentUser.id)) rows.push(currentUser);
