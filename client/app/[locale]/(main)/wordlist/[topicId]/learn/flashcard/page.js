@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import { useRouter } from "@/i18n/navigation";
-import { fetchVocabulary, selectReviewWords } from "@/app/_lib/vocabulary.mjs";
+import { fetchVocabulary, isReviewDue, selectReviewWords } from "@/app/_lib/vocabulary.mjs";
 import { CheckCircle2, Layers3 } from "lucide-react";
 import Loading from "@/app/_components/loading";
 import {
@@ -14,6 +14,8 @@ import {
 
 function Page() {
 	const { topicId } = useParams();
+	const searchParams = useSearchParams();
+	const dueOnly = searchParams.get("reviewMode") === "due";
 	const router = useRouter();
 	const [practiceMode, setPracticeMode] = useState(false);
 	const [loading, setLoading] = useState(true);
@@ -39,7 +41,10 @@ function Page() {
 		async function fetchWords() {
 			try {
 				const vocabulary = await fetchVocabulary(topicId, controller.signal);
-				if (!controller.signal.aborted) setWords(selectReviewWords(vocabulary, { global: !topicId }));
+				if (!controller.signal.aborted) {
+					const reviewWords = selectReviewWords(vocabulary, { global: !topicId });
+					setWords(dueOnly ? reviewWords.filter((word) => isReviewDue(word)) : reviewWords);
+				}
 			} catch {
 				if (!controller.signal.aborted) setError("Không thể tải từ vựng. Vui lòng thử lại.");
 			} finally {
@@ -49,7 +54,7 @@ function Page() {
 
 		fetchWords();
 		return () => controller.abort();
-	}, [topicId]);
+	}, [topicId, dueOnly]);
 
 	function getReviewLabel(level) {
 		const reviewCount = currentWord.reviewCount || 0;

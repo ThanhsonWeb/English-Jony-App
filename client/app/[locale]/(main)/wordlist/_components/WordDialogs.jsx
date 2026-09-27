@@ -115,19 +115,19 @@ export function WordDialog({ word, onClose, onSave, t }) {
 					</button>
 				</div>
 				{[
-					["english", "word"],
-					["vietnamese", "meaning"],
-					["pronunciation", "ipa"],
-					["example", "example"],
-				].map(([name, label]) => (
+					["english", "word", "wordPlaceholder"],
+					["vietnamese", "meaning", "meaningPlaceholder"],
+					["example", "example", "examplePlaceholder"],
+				].map(([name, label, placeholder]) => (
 					<label key={name} className={styles.field}>
 						{t(label)}
-						{(name === "example" || name === "pronunciation") && (
+						{name === "example" && (
 							<small> · {t("optional")}</small>
 						)}
 						{name === "example" ? <textarea
 							name={name}
 							value={fields[name]}
+							placeholder={t(placeholder)}
 							onChange={changeField}
 							maxLength={2000}
 							disabled={busy}
@@ -135,6 +135,7 @@ export function WordDialog({ word, onClose, onSave, t }) {
 						/> : <input
 							name={name}
 							value={fields[name]}
+							placeholder={t(placeholder)}
 							onChange={changeField}
 							required={name === "english" || name === "vietnamese"}
 							maxLength={500}

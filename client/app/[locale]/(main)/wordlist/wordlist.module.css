@@ -388,6 +388,12 @@
 	background: color-mix(in srgb, #e89a4d 14%, var(--sj-surface));
 	color: var(--sj-text);
 }
+:global(html[data-theme="dark"]) .badge[data-status="review"],
+:global(html[data-theme="black"]) .badge[data-status="review"] {
+	background: color-mix(in srgb, #e89a4d 24%, var(--sj-surface));
+	color: #ffd09a;
+	font-weight: 600;
+}
 .badge[data-status="new"] {
 	background: var(--sj-surface-muted);
 	color: var(--sj-text-secondary);

@@ -135,9 +135,9 @@ function StatusFilter({ value, onChange, t }) {
 	);
 }
 
-function ReviewButton({ available, mode, label }) {
+function ReviewButton({ available, mode, label, reviewMode }) {
 	return available ? (
-		<Link href={`/wordlist/review/${mode}`} className={styles.primary}>
+		<Link href={`/wordlist/review/${mode}${reviewMode ? `?reviewMode=${reviewMode}` : ""}`} className={styles.primary}>
 			<Play size={18} fill="currentColor" />
 			{label}
 		</Link>
@@ -156,7 +156,7 @@ export default function WordlistPage() {
 	const [result, setResult] = useState(null);
 	const [retry, setRetry] = useState(0);
 	const [search, setSearch] = useState("");
-	const [filter, setFilter] = useState("all");
+	const [filter, setFilter] = useState("review");
 	const [mode, setMode] = useState("flashcard");
 	const [editor, setEditor] = useState(null);
 	const [deleting, setDeleting] = useState(null);
@@ -198,6 +198,9 @@ export default function WordlistPage() {
 				: words.filter((word) => getWordStatus(word, now) === status).length,
 		]),
 	);
+	const activeFilter = !loading && filter === "review" && counts.review === 0
+		? counts.new > 0 ? "new" : "all"
+		: filter;
 	const queue = selectReviewWords(words, { global: true, now });
 	const canQuiz =
 		new Set(words.map((word) => word.vietnamese.trim().toLowerCase())).size >=
@@ -206,7 +209,7 @@ export default function WordlistPage() {
 	const query = search.trim().toLocaleLowerCase();
 	const filtered = words.filter(
 		(word) =>
-			(filter === "all" || getWordStatus(word, now) === filter) &&
+		(activeFilter === "all" || getWordStatus(word, now) === activeFilter) &&
 			[word.english, word.vietnamese, word.example, word.pronunciation].some(
 				(value) => value?.toLocaleLowerCase().includes(query),
 			),
@@ -244,7 +247,12 @@ export default function WordlistPage() {
 		}));
 	}
 	const reviewButton = (
-		<ReviewButton available={canReview} mode={mode} label={t("reviewNow")} />
+		<ReviewButton
+			available={canReview}
+			mode={mode}
+			label={t("reviewNow")}
+			reviewMode={mode === "flashcard" && counts.review > 0 ? "due" : undefined}
+		/>
 	);
 	return (
 		<main className={styles.page}>
@@ -309,7 +317,7 @@ export default function WordlistPage() {
 								)}
 							</div>
 							<StatusFilter
-								value={filter}
+				value={activeFilter}
 								t={t}
 								onChange={(status) => {
 									setFilter(status);
@@ -550,7 +558,7 @@ export default function WordlistPage() {
 											setFilter(status);
 											setPage(1);
 										}}
-										aria-current={filter === status ? "true" : undefined}
+						aria-current={activeFilter === status ? "true" : undefined}
 									>
 										<Icon size={17} />
 										<span>
