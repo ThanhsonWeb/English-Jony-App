@@ -34,7 +34,7 @@ function Navigation() {
 	return (
 		<nav className="relative">
 			{/* Desktop Navigation */}
-			<ul className="hidden items-center gap-1 md:flex">
+			<ul className="hidden items-center gap-1 xl:flex">
 				{navLinks.map((link) => {
 					const Icon = link.icon;
 					const isActive =
@@ -63,7 +63,7 @@ function Navigation() {
 			{/* Mobile Menu Button */}
 			<button
 				onClick={() => setOpenPathname(isOpen ? null : pathname)}
-				className="p-2 text-secondary hover:text-main md:hidden"
+				className="p-2 text-secondary hover:text-main xl:hidden"
 				aria-label="Toggle menu"
 			>
 				{isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
@@ -71,7 +71,7 @@ function Navigation() {
 
 			{/* Mobile Dropdown Menu */}
 			{isOpen && (
-				<div className="fixed inset-x-0 top-[73px] z-50 flex flex-col gap-5 border-b border-app bg-surface p-6 shadow-2xl md:hidden">
+				<div className="fixed inset-x-0 top-[73px] z-50 flex flex-col gap-5 border-b border-app bg-surface p-6 shadow-2xl xl:hidden">
 					{navLinks.map((link) => {
 						const Icon = link.icon;
 						const isActive =

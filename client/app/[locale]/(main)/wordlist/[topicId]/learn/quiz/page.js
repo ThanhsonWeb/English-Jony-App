@@ -323,15 +323,9 @@ export default function QuizReviewPage() {
 		>
 
 			<form ref={formRef} onSubmit={handleSubmit}>
-				<div className="relative overflow-hidden rounded-[28px] border border-blue-500/25 bg-gradient-to-br from-[#101c38] via-[#0b152b] to-[#070e1e] p-5 shadow-[0_28px_80px_-42px_rgba(37,99,235,0.65)] sm:p-8">
+				<div className="quiz-review-card relative overflow-hidden rounded-[28px] border border-blue-500/25 bg-gradient-to-br from-[#101c38] via-[#0b152b] to-[#070e1e] p-5 shadow-[0_28px_80px_-42px_rgba(37,99,235,0.65)] sm:p-8">
 					<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.13),transparent_50%)]" />
 						<div className="relative">
-							{lastFeedback && (
-								<p aria-live="polite" className={`mb-5 rounded-xl px-3 py-2 text-sm ${lastFeedback.type === "correct" ? "bg-emerald-500/10 text-emerald-300" : "bg-red-500/10 text-red-300"}`}>
-									{lastFeedback.type === "correct" ? "Chính xác!" : <>Chưa đúng. Đáp án đúng: <strong>{lastFeedback.answer}</strong></>}
-									{lastFeedback.example && <span className="mt-1 block text-slate-300">“{lastFeedback.example}”</span>}
-								</p>
-							)}
 							<p className="text-center text-sm font-semibold text-blue-300">
 								Từ tiếng Anh
 							</p>
@@ -357,6 +351,13 @@ export default function QuizReviewPage() {
 									/>
 								))}
 							</div>
+
+							{lastFeedback && (
+								<p aria-live="polite" className={`mt-5 rounded-xl px-3 py-2 text-sm ${lastFeedback.type === "correct" ? "bg-emerald-500/10 text-emerald-300" : "bg-red-500/10 text-red-300"}`}>
+									{lastFeedback.type === "correct" ? "Chính xác!" : <>Chưa đúng. Đáp án đúng: <strong>{lastFeedback.answer}</strong></>}
+									{lastFeedback.example && <span className="mt-1 block text-slate-300">“{lastFeedback.example}”</span>}
+								</p>
+							)}
 
 							<button
 								type="submit"

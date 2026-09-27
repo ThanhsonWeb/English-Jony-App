@@ -70,13 +70,13 @@ function Header() {
 
 	return (
 		<header className="sticky top-0 z-50 border-b border-app bg-surface/90 px-4 py-1 backdrop-blur-md sm:px-8">
-			<div className="flex items-center justify-between max-w-8xl mx-auto">
+			<div className="mx-auto flex max-w-8xl items-center justify-between gap-2">
 				<Logo />
-				<div className="hidden md:block">
+				<div className="hidden xl:block">
 					<Navigation />
 				</div>
 
-				<div className="flex items-center gap-1 sm:gap-4">
+				<div className="flex shrink-0 items-center gap-1 sm:gap-2 xl:gap-4">
 					<LanguageSwitcher />
 					<ThemeSelector />
 					{loading ? (
@@ -86,13 +86,13 @@ function Header() {
 						<div ref={dropdownRef} className="relative ">
 							<button
 								onClick={() => setIsDropdownOpen((open) => !open)}
-								className="group flex cursor-pointer items-center gap-3 rounded-xl px-1 py-2 transition-all duration-200 hover:bg-surface-muted sm:px-3"
+								className="group flex cursor-pointer items-center gap-2 rounded-xl px-1 py-2 transition-all duration-200 hover:bg-surface-muted sm:px-2 xl:gap-3 xl:px-3"
 							>
-								<div className=" hidden sm:block">
-									<p className="text-md font-semibold leading-tight text-main">
+								<div className="hidden min-w-0 sm:block">
+									<p className="max-w-20 truncate whitespace-nowrap text-md font-semibold leading-tight text-main sm:max-w-24 xl:max-w-none">
 										{user.name}
 									</p>
-									<p className="text-sm font-semibold text-amber-200 leading-tight">
+									<p className="whitespace-nowrap text-sm font-semibold leading-tight text-amber-200">
 										🌟 {t("vip")}
 									</p>
 								</div>
@@ -144,7 +144,7 @@ function Header() {
 						</div>
 					)}
 					{/* Mobile menu */}
-					<div className="md:hidden">
+					<div className="xl:hidden">
 						<Navigation />
 					</div>
 				</div>

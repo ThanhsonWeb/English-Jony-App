@@ -545,31 +545,6 @@ export default function WordlistPage() {
 								))}
 							</fieldset>
 							{mode === "quiz" && !canQuiz && <small>{t("quizHelp")}</small>}
-							<div className={styles.quickLinks} aria-label={t("status")}>
-								{[
-									["all", BookOpen, counts.all],
-									["learning", GraduationCap, counts.learning],
-									["review", CalendarDays, counts.review],
-								].map(([status, Icon, count]) => (
-									<button
-										key={status}
-										type="button"
-										onClick={() => {
-											setFilter(status);
-											setPage(1);
-										}}
-						aria-current={activeFilter === status ? "true" : undefined}
-									>
-										<Icon size={17} />
-										<span>
-											{status === "review"
-												? t("dueToday")
-												: t(status === "all" ? "allWords" : status)}
-										</span>
-										<strong>{loading || error || !user ? "—" : count}</strong>
-									</button>
-								))}
-							</div>
 							{reviewButton}
 						</div>
 					</aside>

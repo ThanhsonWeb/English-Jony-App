@@ -354,8 +354,8 @@ export default function DialoguePage() {
 				{/* ==================== OTHER COURSES / DISCOVERY ==================== */}
 
 				<section className="mt-6 pb-10">
-					<div className="grid gap-5 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-6 xl:grid-cols-[272px_minmax(0,1fr)]">
-						<div className="min-w-0 lg:sticky lg:top-24 lg:self-start">
+					<div className="grid items-start gap-5 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-6 xl:grid-cols-[272px_minmax(0,1fr)]">
+						<div className="min-w-0 lg:sticky lg:top-[140px] lg:self-start lg:h-fit">
 						<nav
 							aria-label={t("categoryNavLabel")}
 							className="-mx-4 flex gap-1 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:border-r lg:border-app lg:pr-4 lg:pb-0"
