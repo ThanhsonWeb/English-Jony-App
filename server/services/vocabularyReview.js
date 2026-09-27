@@ -10,13 +10,41 @@ const { markQualifiedStudy, vietnamDay } = require("./studyStreak");
 
 const normalizeAnswer = text => text.trim().toLowerCase();
 const stableWordKey = text => createHash("sha256").update(text.normalize("NFKC").trim().toLowerCase().replace(/\s+/g, " ")).digest("hex");
+const ratingLevels = { again: 0, hard: 1, medium: 2, easy: 3 };
+const reviewIntervals = {
+	1: [1, 3, 7, 14],
+	2: [3, 7, 14, 30],
+	3: [7, 14, 30, 60],
+};
+
+function getReviewOutcome(word, { mode, answer, rating }) {
+	if (mode === "flashcard") {
+		return { correct: rating !== "again", rating };
+	}
+
+	const correct = normalizeAnswer(answer) === normalizeAnswer(mode === "quiz" ? word.vietnamese : word.english);
+	return { correct, rating: correct ? "medium" : "again" };
+}
+
+function scheduleVocabularyReview(word, rating, now) {
+	const level = ratingLevels[rating];
+	const count = word.reviewCount || 0;
+	const days = level === 0
+		? 1 / 24
+		: reviewIntervals[level][Math.min(Math.max(count, 0), 3)];
+
+	word.learningLevel = level;
+	word.reviewCount = level === 0 ? 0 : count + 1;
+	if (level === 0) word.status = false;
+	word.nextReview = new Date(now.getTime() + days * 24 * 60 * 60 * 1000);
+}
 
 async function reviewVocabulary(userId, wordId, input, { now = new Date() } = {}) {
 	const { mode, answer, rating, practice = false } = input;
 	if (!mongoose.isObjectIdOrHexString(wordId) || !["flashcard", "quiz", "writing"].includes(mode) || typeof practice !== "boolean") {
 		throw new AppError("Invalid vocabulary review", 400);
 	}
-	const ratings = ["again", "hard", "medium", "easy"];
+	const ratings = Object.keys(ratingLevels);
 	if (mode === "flashcard" ? !ratings.includes(rating) : typeof answer !== "string" || !answer.trim() || answer.length > 10000) {
 		throw new AppError("A valid rating or answer is required", 400);
 	}
@@ -27,15 +55,10 @@ async function reviewVocabulary(userId, wordId, input, { now = new Date() } = {}
 			return await mongoose.connection.transaction(async session => {
 				const word = await Vocab.findOne({ _id: wordId, user: userId }).session(session);
 				if (!word) throw new AppError("Vocabulary not found", 404);
-				const correct = mode === "flashcard" ? rating !== "again" : normalizeAnswer(answer) === normalizeAnswer(mode === "quiz" ? word.vietnamese : word.english);
-				const level = mode === "flashcard" ? ratings.indexOf(rating) : correct ? 2 : 0;
+				const outcome = getReviewOutcome(word, { mode, answer, rating });
+				const { correct } = outcome;
 				if (!practice) {
-					const intervals = { 1: [1, 3, 7, 14], 2: [3, 7, 14, 30], 3: [7, 14, 30, 60] };
-					const count = word.reviewCount || 0;
-					const hours = level === 0 ? 1 : intervals[level][Math.min(Math.max(count, 0), 3)] * 24;
-					word.learningLevel = level;
-					word.reviewCount = level === 0 ? 0 : count + 1;
-					word.nextReview = new Date(now.getTime() + hours * 3600000);
+					scheduleVocabularyReview(word, outcome.rating, now);
 					await word.save({ session });
 				}
 				// The shared daily write serializes reviews of different words too.
@@ -72,4 +95,4 @@ async function reviewVocabulary(userId, wordId, input, { now = new Date() } = {}
 	}
 }
 
-module.exports = { reviewVocabulary, stableWordKey };
+module.exports = { reviewVocabulary, stableWordKey, getReviewOutcome, scheduleVocabularyReview };

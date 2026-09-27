@@ -251,7 +251,7 @@ export default function WordlistPage() {
 			available={canReview}
 			mode={mode}
 			label={t("reviewNow")}
-			reviewMode={mode === "flashcard" && counts.review > 0 ? "due" : undefined}
+			reviewMode={counts.review > 0 ? "due" : undefined}
 		/>
 	);
 	return (

@@ -35,7 +35,7 @@ async function run() {
 					if (mode === "write") await page.locator('input[type="text"]').first().fill("hello");
 					else await page.getByRole("button", { name: /xin chao/ }).click();
 					await page.getByRole("button", { name: "Kiểm tra", exact: true }).click();
-					await page.getByRole("button", { name: "Tiếp tục", exact: true }).waitFor();
+					await page.getByRole("heading", { name: mode === "write" ? "tao" : "apple", exact: true }).waitFor();
 				}
 				assert.equal(submitted.length, 1);
 				assert.equal(submitted[0].mode, mode === "write" ? "writing" : mode);

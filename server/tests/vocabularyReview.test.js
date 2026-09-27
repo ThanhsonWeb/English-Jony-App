@@ -8,7 +8,7 @@ const User = require("../models/userModel");
 const Vocab = require("../models/vocabModel");
 const XPEvent = require("../models/xpEventModel");
 const StudyActivity = require("../models/studyActivityModel");
-const { reviewVocabulary, stableWordKey } = require("../services/vocabularyReview");
+const { reviewVocabulary, stableWordKey, getReviewOutcome, scheduleVocabularyReview } = require("../services/vocabularyReview");
 const awardXp = require("../services/awardXp");
 const NOW = new Date("2026-09-19T10:00:00Z");
 let db, server, url, user, word, token;
@@ -56,6 +56,29 @@ test("topic-free notebook words support the existing review and XP flow", async 
 });
 const quiz = { mode: "quiz", answer: "xin chao" };
 const flashcard = { mode: "flashcard", rating: "hard" };
+
+test("all review modes use the same schedule for correct and incorrect outcomes", () => {
+	const cases = [
+		[{ mode: "flashcard", rating: "again" }, false, 0, 0, "2026-09-19T11:00:00.000Z"],
+		[{ mode: "flashcard", rating: "hard" }, true, 1, 3, "2026-09-26T10:00:00.000Z"],
+		[{ mode: "flashcard", rating: "medium" }, true, 2, 3, "2026-10-03T10:00:00.000Z"],
+		[{ mode: "flashcard", rating: "easy" }, true, 3, 3, "2026-10-19T10:00:00.000Z"],
+		[{ mode: "quiz", answer: "xin chao" }, true, 2, 3, "2026-10-03T10:00:00.000Z"],
+		[{ mode: "quiz", answer: "wrong" }, false, 0, 0, "2026-09-19T11:00:00.000Z"],
+		[{ mode: "writing", answer: "hello" }, true, 2, 3, "2026-10-03T10:00:00.000Z"],
+		[{ mode: "writing", answer: "wrong" }, false, 0, 0, "2026-09-19T11:00:00.000Z"],
+	];
+	for (const [input, correct, level, count, nextReview] of cases) {
+		const reviewWord = { english: "hello", vietnamese: "xin chao", reviewCount: 2, status: true };
+		const outcome = getReviewOutcome(reviewWord, input);
+		scheduleVocabularyReview(reviewWord, outcome.rating, NOW);
+		assert.equal(outcome.correct, correct, JSON.stringify(input));
+		assert.equal(reviewWord.learningLevel, level, JSON.stringify(input));
+		assert.equal(reviewWord.reviewCount, count, JSON.stringify(input));
+		assert.equal(reviewWord.nextReview.toISOString(), nextReview, JSON.stringify(input));
+		assert.equal(reviewWord.status, correct, JSON.stringify(input));
+	}
+});
 
 test("correct writing/quiz award five, flashcard ratings award two; scheduling stays compatible", async () => {
 	const result = await review(writing);

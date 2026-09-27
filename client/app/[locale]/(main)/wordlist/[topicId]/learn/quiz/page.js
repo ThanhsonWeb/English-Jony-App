@@ -1,9 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import { useRouter } from "@/i18n/navigation";
 import { fetchVocabulary, selectReviewWords } from "@/app/_lib/vocabulary.mjs";
+import { isReviewCompletionReady } from "@/app/_lib/reviewSaveController.mjs";
+import { createMistakeReviewSession } from "@/app/_lib/mistakeReviewSession.mjs";
+import { submitQuizletReviewAnswer } from "@/app/_lib/quizletReviewAction.mjs";
+import { useBackgroundReviewSave } from "@/app/_lib/useBackgroundReviewSave.mjs";
 import {
 	Brain,
 	CheckCircle2,
@@ -11,6 +15,7 @@ import {
 } from "lucide-react";
 
 import Loading from "@/app/_components/loading";
+import { ReviewPendingCompletion, ReviewSaveNotice } from "@/app/_components/review/BackgroundReviewSave";
 import {
 	ReviewCompletion,
 	ReviewShell,
@@ -72,24 +77,28 @@ function buildQuestions(reviewWords, vocabularyPool) {
 
 export default function QuizReviewPage() {
 	const { topicId } = useParams();
+	const searchParams = useSearchParams();
+	const dueOnly = searchParams.get("reviewMode") === "due";
 	const router = useRouter();
 	const reviewWordsRef = useRef([]);
 	const vocabularyPoolRef = useRef([]);
-	const hasSubmittedRef = useRef(false);
 	const formRef = useRef(null);
+	const sessionRef = useRef(null);
 	const [questions, setQuestions] = useState([]);
-	const [currentIndex, setCurrentIndex] = useState(0);
+	const [sessionState, setSessionState] = useState(null);
 	const [selectedChoice, setSelectedChoice] = useState("");
-	const [result, setResult] = useState(null);
+	const [lastFeedback, setLastFeedback] = useState(null);
 	const [results, setResults] = useState({ correct: 0, wrong: 0 });
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState("");
-	const [progressError, setProgressError] = useState("");
-	const [isSaving, setIsSaving] = useState(false);
+	const reviewSave = useBackgroundReviewSave();
+	const { resetAnswers, pending, failed } = reviewSave;
 	const [sessionFinished, setSessionFinished] = useState(false);
 	const [practiceMode, setPracticeMode] = useState(false);
 	const [notEnoughChoices, setNotEnoughChoices] = useState(false);
 
+	const currentIndex = sessionState?.currentIndex ?? 0;
+	const waitingForContinue = sessionState?.waitingForContinue ?? false;
 	const currentQuestion = questions[currentIndex];
 
 	useEffect(() => {
@@ -101,7 +110,7 @@ export default function QuizReviewPage() {
 				const topicWords = vocabulary.filter(
 					(word) => word.english?.trim() && word.vietnamese?.trim(),
 				);
-				const reviewWords = selectReviewWords(topicWords, { global: !topicId });
+				const reviewWords = selectReviewWords(topicWords, { global: !topicId, dueOnly });
 				let vocabularyPool = topicWords;
 
 				if (topicId && reviewWords.length > 0 && getUniqueTranslations(topicWords).length < 4) {
@@ -127,7 +136,10 @@ export default function QuizReviewPage() {
 				if (reviewWords.length > 0 && getUniqueTranslations(vocabularyPool).length < 4) {
 					setNotEnoughChoices(true);
 				} else {
-					setQuestions(buildQuestions(reviewWords, vocabularyPool));
+					const nextQuestions = buildQuestions(reviewWords, vocabularyPool);
+					sessionRef.current = createMistakeReviewSession(nextQuestions.length);
+					setSessionState(sessionRef.current.getSnapshot());
+					setQuestions(nextQuestions);
 				}
 			} catch (fetchError) {
 				if (!cancelled) {
@@ -143,72 +155,52 @@ export default function QuizReviewPage() {
 		return () => {
 			cancelled = true;
 		};
-	}, [topicId]);
+	}, [topicId, dueOnly]);
 
-	async function saveReviewProgress(word) {
-		const response = await fetch(`/api/v1/vocab/${word._id}/review`, {
-			method: "POST",
-			credentials: "include",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ mode: "quiz", answer: selectedChoice, practice: practiceMode }),
-		});
-		if (!response.ok) throw new Error("Không thể lưu tiến độ ôn tập.");
-		if (!practiceMode) await fetch("/api/v1/study-activities", { method: "POST", credentials: "include" });
-	}
+	function checkAnswer() {
+		if (!currentQuestion || !selectedChoice || sessionRef.current?.getSnapshot().waitingForContinue) return;
 
-	async function checkAnswer() {
-		if (
-			!currentQuestion ||
-			!selectedChoice ||
-			result ||
-			isSaving ||
-			hasSubmittedRef.current
-		) {
-			return;
-		}
-
-		hasSubmittedRef.current = true;
+		const answer = selectedChoice;
 		const isCorrect =
-			normalizeText(selectedChoice) ===
+			normalizeText(answer) ===
 			normalizeText(currentQuestion.correctAnswer);
+		const step = submitQuizletReviewAnswer({
+			reviewSave, session: sessionRef.current, index: currentIndex,
+			wordId: currentQuestion.word._id, mode: "quiz", answer,
+			correctAnswer: currentQuestion.correctAnswer,
+			practice: practiceMode, correct: isCorrect,
+		});
+		if (!step.accepted) return;
+		setSessionState(step.state);
 
-		setResult(isCorrect ? "correct" : "wrong");
-		setResults((previous) => ({
-			...previous,
-			[isCorrect ? "correct" : "wrong"]:
-				previous[isCorrect ? "correct" : "wrong"] + 1,
-		}));
-		setProgressError("");
-
-
-		setIsSaving(true);
-		try {
-			await saveReviewProgress(currentQuestion.word);
-		} catch (saveError) {
-			setProgressError(saveError.message || "Không thể lưu tiến độ ôn tập.");
-		} finally {
-			setIsSaving(false);
+		if (step.firstAttempt) {
+			setResults((previous) => ({
+				...previous,
+				[isCorrect ? "correct" : "wrong"]:
+					previous[isCorrect ? "correct" : "wrong"] + 1,
+			}));
 		}
-	}
-
-	function continueQuiz() {
-		if (!result || isSaving) return;
-
-		if (currentIndex === questions.length - 1) {
-			setSessionFinished(true);
+		if (!isCorrect) {
+			setLastFeedback({ ...step.feedback, example: currentQuestion.word.example });
 			return;
 		}
-
-		hasSubmittedRef.current = false;
-		setCurrentIndex((index) => index + 1);
+		setLastFeedback({ ...step.feedback, example: currentQuestion.word.example });
 		setSelectedChoice("");
-		setResult(null);
-		setProgressError("");
+		if (step.state.finished) setSessionFinished(true);
+	}
+
+	function continueAfterWrong() {
+		const nextSession = sessionRef.current?.continueAfterWrong();
+		if (!nextSession?.accepted) return;
+		setSessionState(nextSession.state);
+		setSelectedChoice("");
+		setLastFeedback(null);
+		if (nextSession.state.finished) setSessionFinished(true);
 	}
 
 	function handleSubmit(event) {
 		event.preventDefault();
-		if (result) continueQuiz();
+		if (waitingForContinue) continueAfterWrong();
 		else checkAnswer();
 	}
 
@@ -218,13 +210,13 @@ export default function QuizReviewPage() {
 			vocabularyPoolRef.current,
 		);
 
-		hasSubmittedRef.current = false;
+		resetAnswers();
+		sessionRef.current = createMistakeReviewSession(nextQuestions.length);
+		setSessionState(sessionRef.current.getSnapshot());
 		setQuestions(nextQuestions);
-		setCurrentIndex(0);
 		setSelectedChoice("");
-		setResult(null);
+		setLastFeedback(null);
 		setResults({ correct: 0, wrong: 0 });
-		setProgressError("");
 		setSessionFinished(false);
 		setPracticeMode(true);
 	}
@@ -239,9 +231,9 @@ export default function QuizReviewPage() {
 				return;
 			}
 
-			if (!currentQuestion || isSaving) return;
+			if (!currentQuestion) return;
 
-			if (["1", "2", "3", "4"].includes(event.key) && !result) {
+			if (["1", "2", "3", "4"].includes(event.key) && !waitingForContinue) {
 				const choice = currentQuestion.choices[Number(event.key) - 1];
 				if (choice) {
 					event.preventDefault();
@@ -257,7 +249,7 @@ export default function QuizReviewPage() {
 
 		window.addEventListener("keydown", handleKeyDown);
 		return () => window.removeEventListener("keydown", handleKeyDown);
-	}, [currentQuestion, isSaving, result]);
+	}, [currentQuestion, waitingForContinue]);
 
 	if (loading) return <Loading />;
 
@@ -283,11 +275,15 @@ export default function QuizReviewPage() {
 		);
 	}
 
+	if (sessionFinished && !isReviewCompletionReady(sessionFinished, pending)) {
+		return <ReviewPendingCompletion pending={pending} failed={failed} onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")} />;
+	}
+
 	if (sessionFinished) {
 		const total = results.correct + results.wrong;
 		const accuracy = total > 0 ? Math.round((results.correct / total) * 100) : 0;
 
-		return (
+		return <>
 			<ReviewCompletion
 				title="Hoàn thành!"
 				message={`Bạn đã hoàn thành ${total} câu hỏi Trắc nghiệm.`}
@@ -299,7 +295,8 @@ export default function QuizReviewPage() {
 				onRestart={restartQuiz}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
-		);
+			<ReviewSaveNotice pending={pending} failed={failed} />
+		</>;
 	}
 
 	if (!currentQuestion) {
@@ -314,13 +311,14 @@ export default function QuizReviewPage() {
 	}
 
 	return (
+		<>
 		<ReviewShell
-			title="Trắc nghiệm"
-			description="Chọn nghĩa tiếng Việt đúng của từ"
+			title={sessionState?.phase === "mistakes" ? "Ôn từ đã sai" : "Trắc nghiệm"}
+			description={sessionState?.phase === "mistakes" ? "Thử lại những từ bạn đã bỏ lỡ" : "Chọn nghĩa tiếng Việt đúng của từ"}
 			icon={<Brain size={21} />}
 			practiceMode={practiceMode}
-			current={currentIndex + 1}
-			total={questions.length}
+			current={sessionState?.current ?? 1}
+			total={sessionState?.total ?? questions.length}
 			onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 		>
 
@@ -328,6 +326,12 @@ export default function QuizReviewPage() {
 				<div className="relative overflow-hidden rounded-[28px] border border-blue-500/25 bg-gradient-to-br from-[#101c38] via-[#0b152b] to-[#070e1e] p-5 shadow-[0_28px_80px_-42px_rgba(37,99,235,0.65)] sm:p-8">
 					<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.13),transparent_50%)]" />
 						<div className="relative">
+							{lastFeedback && (
+								<p aria-live="polite" className={`mb-5 rounded-xl px-3 py-2 text-sm ${lastFeedback.type === "correct" ? "bg-emerald-500/10 text-emerald-300" : "bg-red-500/10 text-red-300"}`}>
+									{lastFeedback.type === "correct" ? "Chính xác!" : <>Chưa đúng. Đáp án đúng: <strong>{lastFeedback.answer}</strong></>}
+									{lastFeedback.example && <span className="mt-1 block text-slate-300">“{lastFeedback.example}”</span>}
+								</p>
+							)}
 							<p className="text-center text-sm font-semibold text-blue-300">
 								Từ tiếng Anh
 							</p>
@@ -348,34 +352,28 @@ export default function QuizReviewPage() {
 										index={index}
 										selectedChoice={selectedChoice}
 										correctAnswer={currentQuestion.correctAnswer}
-										result={result}
+										reveal={waitingForContinue}
 										onSelect={setSelectedChoice}
 									/>
 								))}
 							</div>
 
-							{result && (
-								<QuizFeedback result={result} question={currentQuestion} />
-							)}
-
-							{progressError && (
-								<p className="mt-3 text-sm text-amber-300">⚠️ {progressError}</p>
-							)}
-
 							<button
 								type="submit"
-								disabled={(!result && !selectedChoice) || isSaving}
+								disabled={!waitingForContinue && !selectedChoice}
 								className="mt-6 w-full rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-4 text-lg font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:brightness-110 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40"
 							>
-								{isSaving ? "Đang lưu..." : result ? "Tiếp tục" : "Kiểm tra"}
+								{waitingForContinue ? "Tiếp tục" : "Kiểm tra"}
 							</button>
 							<p className="mt-3 text-center text-xs text-slate-600">
-								Phím 1–4 để chọn · Enter để kiểm tra hoặc tiếp tục
+								{waitingForContinue ? "Enter để tiếp tục" : "Phím 1–4 để chọn · Enter để kiểm tra"}
 							</p>
 						</div>
 				</div>
 			</form>
 		</ReviewShell>
+		<ReviewSaveNotice pending={pending} failed={failed} />
+		</>
 	);
 }
 
@@ -384,7 +382,7 @@ function ChoiceButton({
 	index,
 	selectedChoice,
 	correctAnswer,
-	result,
+	reveal,
 	onSelect,
 }) {
 	const isSelected = normalizeText(choice) === normalizeText(selectedChoice);
@@ -392,21 +390,19 @@ function ChoiceButton({
 	let stateClass =
 		"border-slate-700 bg-slate-950/45 text-slate-200 hover:border-blue-500/50 hover:bg-blue-500/5";
 
-	if (!result && isSelected) {
-		stateClass = "border-blue-400 bg-blue-500/15 text-white ring-2 ring-blue-500/15";
-	}
-	if (result && isCorrect) {
+	if (reveal && isCorrect) {
 		stateClass = "border-emerald-500 bg-emerald-500/15 text-emerald-100";
-	}
-	if (result === "wrong" && isSelected && !isCorrect) {
+	} else if (reveal && isSelected) {
 		stateClass = "border-red-500 bg-red-500/15 text-red-100";
+	} else if (isSelected) {
+		stateClass = "border-blue-400 bg-blue-500/15 text-white ring-2 ring-blue-500/15";
 	}
 
 	return (
 		<button
 			type="button"
 			onClick={() => onSelect(choice)}
-			disabled={Boolean(result)}
+			disabled={reveal}
 			className={`flex min-h-16 items-center gap-3 rounded-2xl border px-4 py-4 text-left font-medium transition active:scale-[0.99] disabled:cursor-default ${stateClass}`}
 		>
 			<span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-current/20 bg-black/10 text-xs font-bold opacity-80">
@@ -414,43 +410,5 @@ function ChoiceButton({
 			</span>
 			<span className="break-words">{choice}</span>
 		</button>
-	);
-}
-
-function QuizFeedback({ result, question }) {
-	const isCorrect = result === "correct";
-
-	return (
-		<div
-			className={`mt-5 rounded-2xl border p-5 ${
-				isCorrect
-					? "border-emerald-500/25 bg-emerald-500/10"
-					: "border-red-500/25 bg-red-500/10"
-			}`}
-		>
-			<div className="flex items-start gap-3">
-				{isCorrect ? (
-					<CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-emerald-400" />
-				) : (
-					<XCircle className="mt-0.5 h-6 w-6 shrink-0 text-red-400" />
-				)}
-				<div>
-					<p className={`font-semibold ${isCorrect ? "text-emerald-300" : "text-red-300"}`}>
-						{isCorrect ? "Chính xác! 🎉" : "Chưa đúng"}
-					</p>
-					{!isCorrect && (
-						<p className="mt-1 text-slate-200">
-							Đáp án đúng: <strong className="text-white">{question.correctAnswer}</strong>
-						</p>
-					)}
-				</div>
-			</div>
-
-			{question.word.example && (
-				<p className="mt-4 border-t border-white/10 pt-4 text-sm italic leading-relaxed text-slate-300">
-					“{question.word.example}”
-				</p>
-			)}
-		</div>
 	);
 }

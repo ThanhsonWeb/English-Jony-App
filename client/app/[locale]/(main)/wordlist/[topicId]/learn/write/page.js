@@ -1,9 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useSearchParams } from "next/navigation";
 import { useRouter } from "@/i18n/navigation";
 import { fetchVocabulary, selectReviewWords } from "@/app/_lib/vocabulary.mjs";
+import { isReviewCompletionReady } from "@/app/_lib/reviewSaveController.mjs";
+import { createMistakeReviewSession } from "@/app/_lib/mistakeReviewSession.mjs";
+import { submitQuizletReviewAnswer } from "@/app/_lib/quizletReviewAction.mjs";
+import { useBackgroundReviewSave } from "@/app/_lib/useBackgroundReviewSave.mjs";
 import {
 	CheckCircle2,
 	PenLine,
@@ -11,6 +15,7 @@ import {
 } from "lucide-react";
 
 import Loading from "@/app/_components/loading";
+import { ReviewPendingCompletion, ReviewSaveNotice } from "@/app/_components/review/BackgroundReviewSave";
 import {
 	ReviewCompletion,
 	ReviewShell,
@@ -23,20 +28,25 @@ function normalizeAnswer(value) {
 
 export default function WriteReviewPage() {
 	const { topicId } = useParams();
+	const searchParams = useSearchParams();
+	const dueOnly = searchParams.get("reviewMode") === "due";
 	const router = useRouter();
 	const inputRef = useRef(null);
+	const sessionRef = useRef(null);
 	const [words, setWords] = useState([]);
-	const [currentIndex, setCurrentIndex] = useState(0);
+	const [sessionState, setSessionState] = useState(null);
 	const [answer, setAnswer] = useState("");
-	const [result, setResult] = useState(null);
+	const [lastFeedback, setLastFeedback] = useState(null);
 	const [results, setResults] = useState({ correct: 0, wrong: 0 });
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState("");
-	const [progressError, setProgressError] = useState("");
-	const [isSaving, setIsSaving] = useState(false);
+	const reviewSave = useBackgroundReviewSave();
+	const { resetAnswers, pending, failed } = reviewSave;
 	const [sessionFinished, setSessionFinished] = useState(false);
 	const [practiceMode, setPracticeMode] = useState(false);
 
+	const currentIndex = sessionState?.currentIndex ?? 0;
+	const waitingForContinue = sessionState?.waitingForContinue ?? false;
 	const currentWord = words[currentIndex];
 
 	useEffect(() => {
@@ -45,9 +55,13 @@ export default function WriteReviewPage() {
 		async function fetchWords() {
 			try {
 				const vocabulary = await fetchVocabulary(topicId);
-				const reviewWords = selectReviewWords(vocabulary, { global: !topicId });
+				const reviewWords = selectReviewWords(vocabulary, { global: !topicId, dueOnly });
 
-				if (!cancelled) setWords(reviewWords);
+				if (!cancelled) {
+					sessionRef.current = createMistakeReviewSession(reviewWords.length);
+					setSessionState(sessionRef.current.getSnapshot());
+					setWords(reviewWords);
+				}
 			} catch (fetchError) {
 				if (!cancelled) {
 					setError(fetchError.message === "unauthorized" ? "Vui lòng đăng nhập để ôn tập." : "Không thể tải danh sách từ. Vui lòng thử lại.");
@@ -62,77 +76,67 @@ export default function WriteReviewPage() {
 		return () => {
 			cancelled = true;
 		};
-	}, [topicId]);
+	}, [topicId, dueOnly]);
 
 	useEffect(() => {
-		if (!loading && !sessionFinished && !result) {
+		if (!loading && !sessionFinished && !waitingForContinue) {
 			inputRef.current?.focus();
 		}
-	}, [currentIndex, loading, result, sessionFinished]);
+	}, [currentIndex, loading, sessionFinished, waitingForContinue]);
 
-	async function saveReviewProgress(word) {
-		const response = await fetch(`/api/v1/vocab/${word._id}/review`, {
-			method: "POST",
-			credentials: "include",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify({ mode: "writing", answer: answer, practice: practiceMode }),
-		});
-		if (!response.ok) throw new Error("Không thể lưu tiến độ ôn tập.");
-		if (!practiceMode) await fetch("/api/v1/study-activities", { method: "POST", credentials: "include" });
-	}
-
-	async function checkAnswer() {
-		if (!currentWord || !answer.trim() || result || isSaving) return;
-
+	function checkAnswer() {
+		if (!currentWord || !answer.trim() || sessionRef.current?.getSnapshot().waitingForContinue) return;
+		const submittedAnswer = answer;
 		const isCorrect =
-			normalizeAnswer(answer) === normalizeAnswer(currentWord.english);
+			normalizeAnswer(submittedAnswer) === normalizeAnswer(currentWord.english);
+		const step = submitQuizletReviewAnswer({
+			reviewSave, session: sessionRef.current, index: currentIndex,
+			wordId: currentWord._id, mode: "writing", answer: submittedAnswer,
+			correctAnswer: currentWord.english,
+			practice: practiceMode, correct: isCorrect,
+		});
+		if (!step.accepted) return;
+		setSessionState(step.state);
 
-		setResult(isCorrect ? "correct" : "wrong");
-		setResults((previous) => ({
-			...previous,
-			[isCorrect ? "correct" : "wrong"]:
-				previous[isCorrect ? "correct" : "wrong"] + 1,
-		}));
-		setProgressError("");
-
-
-		setIsSaving(true);
-		try {
-			await saveReviewProgress(currentWord);
-		} catch (saveError) {
-			setProgressError(saveError.message || "Không thể lưu tiến độ ôn tập.");
-		} finally {
-			setIsSaving(false);
+		if (step.firstAttempt) {
+			setResults((previous) => ({
+				...previous,
+				[isCorrect ? "correct" : "wrong"]:
+					previous[isCorrect ? "correct" : "wrong"] + 1,
+			}));
 		}
-	}
-
-	function continueReview() {
-		if (!result || isSaving) return;
-
-		if (currentIndex === words.length - 1) {
-			setSessionFinished(true);
+		if (!isCorrect) {
+			setLastFeedback({ ...step.feedback, example: currentWord.example, pronunciation: currentWord.pronunciation });
 			return;
 		}
-
-		setCurrentIndex((index) => index + 1);
+		setLastFeedback({ ...step.feedback, example: currentWord.example });
 		setAnswer("");
-		setResult(null);
-		setProgressError("");
+		if (step.state.finished) setSessionFinished(true);
+	}
+
+	function continueAfterWrong() {
+		const nextSession = sessionRef.current?.continueAfterWrong();
+		if (!nextSession?.accepted) return;
+		setSessionState(nextSession.state);
+		setAnswer("");
+		setLastFeedback(null);
+		if (nextSession.state.finished) setSessionFinished(true);
 	}
 
 	function handleSubmit(event) {
 		event.preventDefault();
-		if (result) continueReview();
+		if (waitingForContinue) continueAfterWrong();
 		else checkAnswer();
 	}
 
 	function restartReview() {
+		resetAnswers();
+		sessionRef.current = createMistakeReviewSession(words.length);
+		setSessionState(sessionRef.current.getSnapshot());
 		setPracticeMode(true);
-		setCurrentIndex(0);
 		setAnswer("");
-		setResult(null);
+		setLastFeedback(null);
 		setResults({ correct: 0, wrong: 0 });
-		setProgressError("");
 		setSessionFinished(false);
 	}
 
@@ -149,11 +153,15 @@ export default function WriteReviewPage() {
 		);
 	}
 
+	if (sessionFinished && !isReviewCompletionReady(sessionFinished, pending)) {
+		return <ReviewPendingCompletion pending={pending} failed={failed} onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")} />;
+	}
+
 	if (sessionFinished) {
 		const total = results.correct + results.wrong;
 		const accuracy = total > 0 ? Math.round((results.correct / total) * 100) : 0;
 
-		return (
+		return <>
 			<ReviewCompletion
 				message={`Bạn đã hoàn thành ${total} từ trong chế độ Viết từ.`}
 				stats={[
@@ -164,7 +172,8 @@ export default function WriteReviewPage() {
 				onRestart={restartReview}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
-		);
+			<ReviewSaveNotice pending={pending} failed={failed} />
+		</>;
 	}
 
 	if (!currentWord) {
@@ -178,21 +187,15 @@ export default function WriteReviewPage() {
 		);
 	}
 
-	const inputStateClass =
-		result === "correct"
-			? "border-emerald-500/60 bg-emerald-500/5 focus:border-emerald-400"
-			: result === "wrong"
-				? "border-red-500/60 bg-red-500/5 focus:border-red-400"
-				: "border-slate-700 bg-slate-950/60 focus:border-blue-500 focus:ring-blue-500/15";
-
 	return (
+		<>
 		<ReviewShell
-			title="Viết từ"
-			description="Gõ từ tiếng Anh phù hợp với nghĩa bên dưới"
+			title={sessionState?.phase === "mistakes" ? "Ôn từ đã sai" : "Viết từ"}
+			description={sessionState?.phase === "mistakes" ? "Thử lại những từ bạn đã bỏ lỡ" : "Gõ từ tiếng Anh phù hợp với nghĩa bên dưới"}
 			icon={<PenLine size={21} />}
 			practiceMode={practiceMode}
-			current={currentIndex + 1}
-			total={words.length}
+			current={sessionState?.current ?? 1}
+			total={sessionState?.total ?? words.length}
 			onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 		>
 
@@ -200,6 +203,13 @@ export default function WriteReviewPage() {
 				<div className="relative overflow-hidden rounded-[28px] border border-blue-500/25 bg-gradient-to-br from-[#101c38] via-[#0b152b] to-[#070e1e] p-6 shadow-[0_28px_80px_-42px_rgba(37,99,235,0.65)] sm:p-10">
 					<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.13),transparent_52%)]" />
 						<div className="relative">
+							{lastFeedback && (
+								<p aria-live="polite" className={`mb-5 rounded-xl px-3 py-2 text-sm ${lastFeedback.type === "correct" ? "bg-emerald-500/10 text-emerald-300" : "bg-red-500/10 text-red-300"}`}>
+									{lastFeedback.type === "correct" ? "Chính xác!" : <>Chưa đúng. Đáp án đúng: <strong>{lastFeedback.answer}</strong></>}
+									{lastFeedback.type === "wrong" && lastFeedback.pronunciation && <span className="mt-1 block font-mono text-slate-300">{lastFeedback.pronunciation}</span>}
+									{lastFeedback.example && <span className="mt-1 block text-slate-300">“{lastFeedback.example}”</span>}
+								</p>
+							)}
 							<p className="text-sm font-semibold text-blue-300">
 								Nghĩa tiếng Việt
 							</p>
@@ -215,71 +225,26 @@ export default function WriteReviewPage() {
 								id="write-answer"
 								type="text"
 								value={answer}
-								onChange={(event) => {
-									if (!result) setAnswer(event.target.value);
-								}}
-								disabled={Boolean(result)}
+								onChange={(event) => setAnswer(event.target.value)}
+								disabled={waitingForContinue}
 								autoComplete="off"
 								spellCheck="false"
 								placeholder="Nhập từ tiếng Anh..."
-								className={`mt-2 w-full rounded-2xl border px-5 py-4 text-xl font-semibold text-white outline-none transition placeholder:font-normal placeholder:text-slate-600 focus:ring-4 disabled:cursor-default sm:px-6 sm:py-5 sm:text-2xl ${inputStateClass}`}
+								className={`mt-2 w-full rounded-2xl border bg-slate-950/60 px-5 py-4 text-xl font-semibold text-white outline-none transition placeholder:font-normal placeholder:text-slate-600 focus:ring-4 sm:px-6 sm:py-5 sm:text-2xl ${waitingForContinue ? "border-red-500/60" : "border-slate-700 focus:border-blue-500 focus:ring-blue-500/15"}`}
 							/>
-
-							{result && <AnswerFeedback result={result} word={currentWord} />}
-
-							{progressError && (
-								<p className="mt-3 text-sm text-amber-300">⚠️ {progressError}</p>
-							)}
 
 							<button
 								type="submit"
-								disabled={(!result && !answer.trim()) || isSaving}
+								disabled={!waitingForContinue && !answer.trim()}
 								className="mt-6 w-full rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-4 text-lg font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:brightness-110 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40"
 							>
-								{isSaving ? "Đang lưu..." : result ? "Tiếp tục" : "Kiểm tra"}
+								{waitingForContinue ? "Tiếp tục" : "Kiểm tra"}
 							</button>
 						</div>
 				</div>
 			</form>
 		</ReviewShell>
-	);
-}
-
-function AnswerFeedback({ result, word }) {
-	const isCorrect = result === "correct";
-
-	return (
-		<div
-			className={`mt-5 rounded-2xl border p-5 ${
-				isCorrect
-					? "border-emerald-500/25 bg-emerald-500/10"
-					: "border-red-500/25 bg-red-500/10"
-			}`}
-		>
-			<div className="flex items-start gap-3">
-				{isCorrect ? (
-					<CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-emerald-400" />
-				) : (
-					<XCircle className="mt-0.5 h-6 w-6 shrink-0 text-red-400" />
-				)}
-				<div>
-					<p className={`font-semibold ${isCorrect ? "text-emerald-300" : "text-red-300"}`}>
-						{isCorrect ? "Chính xác!" : "Chưa chính xác."}
-					</p>
-					<p className="mt-1 text-slate-200">
-						Đáp án đúng: <strong className="text-white">{word.english}</strong>
-					</p>
-					{word.pronunciation && (
-						<p className="mt-1 font-mono text-sm text-blue-300">{word.pronunciation}</p>
-					)}
-				</div>
-			</div>
-
-			{word.example && (
-				<p className="mt-4 border-t border-white/10 pt-4 text-sm italic leading-relaxed text-slate-300">
-					“{word.example}”
-				</p>
-			)}
-		</div>
+		<ReviewSaveNotice pending={pending} failed={failed} />
+		</>
 	);
 }

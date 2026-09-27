@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { useRouter } from "@/i18n/navigation";
-import { fetchVocabulary, isReviewDue, selectReviewWords } from "@/app/_lib/vocabulary.mjs";
+import { fetchVocabulary, selectReviewWords } from "@/app/_lib/vocabulary.mjs";
+import { isReviewCompletionReady } from "@/app/_lib/reviewSaveController.mjs";
 import { CheckCircle2, Layers3 } from "lucide-react";
 import Loading from "@/app/_components/loading";
+import { ReviewPendingCompletion, ReviewSaveNotice, useBackgroundReviewSave } from "@/app/_components/review/BackgroundReviewSave";
 import {
 	ReviewCompletion,
 	ReviewShell,
@@ -32,9 +34,7 @@ function Page() {
 	});
 
 	const currentWord = words[currentIndex];
-	const savingRef = useRef(false);
-	const [isSaving, setIsSaving] = useState(false);
-	const [progressError, setProgressError] = useState("");
+	const { submitAnswer, resetAnswers, pending, failed } = useBackgroundReviewSave();
 	// get all word of that topic
 	useEffect(() => {
 		const controller = new AbortController();
@@ -42,8 +42,7 @@ function Page() {
 			try {
 				const vocabulary = await fetchVocabulary(topicId, controller.signal);
 				if (!controller.signal.aborted) {
-					const reviewWords = selectReviewWords(vocabulary, { global: !topicId });
-					setWords(dueOnly ? reviewWords.filter((word) => isReviewDue(word)) : reviewWords);
+					setWords(selectReviewWords(vocabulary, { global: !topicId, dueOnly }));
 				}
 			} catch {
 				if (!controller.signal.aborted) setError("Không thể tải từ vựng. Vui lòng thử lại.");
@@ -56,71 +55,26 @@ function Page() {
 		return () => controller.abort();
 	}, [topicId, dueOnly]);
 
-	function getReviewLabel(level) {
-		const reviewCount = currentWord.reviewCount || 0;
-
-		const hardIntervals = [1, 3, 7, 14];
-		const mediumIntervals = [3, 7, 14, 30];
-		const easyIntervals = [7, 14, 30, 60];
-
-		if (level === 0) return "1 giờ";
-
-		if (level === 1) {
-			const days =
-				hardIntervals[Math.min(reviewCount, hardIntervals.length - 1)];
-			return `${days} ngày`;
-		}
-
-		if (level === 2) {
-			const days =
-				mediumIntervals[Math.min(reviewCount, mediumIntervals.length - 1)];
-			return `${days} ngày`;
-		}
-
-		if (level === 3) {
-			const days =
-				easyIntervals[Math.min(reviewCount, easyIntervals.length - 1)];
-			return `${days} ngày`;
-		}
-	}
-
-	async function handleAnswer(level) {
-		if (savingRef.current) return;
-		savingRef.current = true;
-		setIsSaving(true);
-		setProgressError("");
+	function handleAnswer(level) {
+		if (!currentWord) return;
 		const word = words[currentIndex];
-		try {
-			const response = await fetch(`/api/v1/vocab/${word._id}/review`, {
-				method: "POST", credentials: "include",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ mode: "flashcard", rating: ["again", "hard", "medium", "easy"][level], practice: practiceMode }),
-			});
-			if (!response.ok) throw new Error("Could not save review. Please try again.");
-			const { data } = await response.json();
-			if (!practiceMode) {
-				setWords(previous => previous.map(item => item._id === word._id ? data.updatedVocab : item));
-				await fetch("/api/v1/study-activities", { method: "POST", credentials: "include" }).catch(() => {});
-			}
-			const outcome = ["forgot", "hard", "medium", "easy"][level];
-			setResults(previous => ({ ...previous, [outcome]: previous[outcome] + 1 }));
-			if (currentIndex === words.length - 1) setSessionFinished(true);
-			else setCurrentIndex(index => index + 1);
-			setShowAnswer(false);
-		} catch (error) {
-			setProgressError(error.message);
-		} finally {
-			savingRef.current = false;
-			setIsSaving(false);
-		}
+		if (!submitAnswer(currentIndex, word._id, { mode: "flashcard", rating: ["again", "hard", "medium", "easy"][level], practice: practiceMode })) return;
+		const outcome = ["forgot", "hard", "medium", "easy"][level];
+		setResults(previous => ({ ...previous, [outcome]: previous[outcome] + 1 }));
+		if (currentIndex === words.length - 1) setSessionFinished(true);
+		else setCurrentIndex(index => index + 1);
+		setShowAnswer(false);
 	}
 
 	if (loading) return <Loading />;
 	if (error) return <ReviewStatus title="Không thể mở bài ôn" message={error} onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")} />;
+	if (sessionFinished && !isReviewCompletionReady(sessionFinished, pending)) {
+		return <ReviewPendingCompletion pending={pending} failed={failed} onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")} />;
+	}
 	if (sessionFinished) {
 		const total = results.forgot + results.hard + results.medium + results.easy;
 
-		return (
+		return <>
 			<ReviewCompletion
 				message={`Bạn vừa ôn xong ${total} từ trong chế độ Flashcard.`}
 				stats={[
@@ -131,6 +85,7 @@ function Page() {
 				]}
 				note="🌱 Từ khó sẽ quay lại sớm hơn, còn từ bạn nhớ tốt sẽ được giãn thời gian ôn."
 				onRestart={() => {
+					resetAnswers();
 					setPracticeMode(true);
 					setCurrentIndex(0);
 					setSessionFinished(false);
@@ -139,7 +94,8 @@ function Page() {
 				}}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
-		);
+			<ReviewSaveNotice pending={pending} failed={failed} />
+		</>;
 	}
 
 	if (!currentWord) {
@@ -153,6 +109,7 @@ function Page() {
 		);
 	}
 	return (
+		<>
 		<ReviewShell
 			title="Flashcard"
 			description="Nhớ lại nghĩa trước khi lật thẻ"
@@ -246,7 +203,6 @@ function Page() {
 					</div>
 				</div>
 
-				{progressError && <p role="alert" className="mt-3 text-sm text-amber-300">{progressError}</p>}
 				{/* ================= ANSWER SECTION ================= */}
 				<div className="mt-4">
 					<div className="mb-2 flex items-center justify-between">
@@ -262,7 +218,6 @@ function Page() {
 					<div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
 						{/* Forgot */}
 						<button
-							disabled={isSaving}
 							onClick={() => handleAnswer(0)}
 							className="
 							flex min-w-0 flex-col items-center justify-center
@@ -281,14 +236,10 @@ function Page() {
 								😵 Quên rồi
 							</span>
 
-							<span className="mt-0.5 text-[10px] opacity-60 sm:text-xs">
-								{getReviewLabel(0)}
-							</span>
 						</button>
 
 						{/* Hard */}
 						<button
-							disabled={isSaving}
 							onClick={() => handleAnswer(1)}
 							className="
 							flex min-w-0 flex-col items-center justify-center
@@ -305,14 +256,10 @@ function Page() {
 						>
 							<span className="text-sm font-medium sm:text-base">😓 Còn mơ hồ</span>
 
-							<span className="mt-0.5 text-[10px] opacity-60 sm:text-xs">
-								{getReviewLabel(1)}
-							</span>
 						</button>
 
 						{/* Medium */}
 						<button
-							disabled={isSaving}
 							onClick={() => handleAnswer(2)}
 							className="
 							flex min-w-0 flex-col items-center justify-center
@@ -331,14 +278,10 @@ function Page() {
 								🙂 Nhớ được
 							</span>
 
-							<span className="mt-0.5 text-[10px] opacity-60 sm:text-xs">
-								{getReviewLabel(2)}
-							</span>
 						</button>
 
 						{/* Easy */}
 						<button
-							disabled={isSaving}
 							onClick={() => handleAnswer(3)}
 							className="
 							flex min-w-0 flex-col items-center justify-center
@@ -355,13 +298,12 @@ function Page() {
 						>
 							<span className="text-sm font-medium sm:text-base">✅ Rất chắc</span>
 
-							<span className="mt-0.5 text-[10px] opacity-60 sm:text-xs">
-								{getReviewLabel(3)}
-							</span>
 						</button>
 					</div>
 				</div>
 		</ReviewShell>
+		<ReviewSaveNotice pending={pending} failed={failed} />
+		</>
 	);
 }
 

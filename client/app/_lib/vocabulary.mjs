@@ -15,11 +15,12 @@ export function getWordStatus(word, now = new Date()) {
 
 export function selectReviewWords(
 	words,
-	{ global = false, now = new Date() } = {},
+	{ global = false, dueOnly = false, now = new Date() } = {},
 ) {
 	const valid = words.filter(
 		(word) => word.english?.trim() && word.vietnamese?.trim(),
 	);
+	if (dueOnly) return valid.filter((word) => isReviewDue(word, now));
 	if (!global)
 		return valid.filter(
 			(word) => word.nextReview && new Date(word.nextReview) <= now,
