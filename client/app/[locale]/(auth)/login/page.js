@@ -9,7 +9,7 @@ import { useLocale } from "next-intl";
 import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
 
 function LoginPage() {
-	const { getMe } = useAuth();
+	const { setUser } = useAuth();
 	const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 	const locale = useLocale();
 	const searchParams = useSearchParams();
@@ -102,12 +102,8 @@ function LoginPage() {
 			}
 
 			if (data.status === "success") {
-				await getMe();
-				// Wait a tiny bit to ensure the bro
-				setTimeout(() => {
-					router.push("/wordlist");
-				}, 100);
-
+				setUser(data.data.user);
+				router.push("/wordlist");
 				return;
 			}
 			// console.log(data);

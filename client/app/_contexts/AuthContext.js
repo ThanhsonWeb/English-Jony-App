@@ -1,13 +1,22 @@
 "use client";
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
-    const [user, setUser] = useState(null);
+    const [user, setStoredUser] = useState(null);
     const [loading, setLoading] = useState(true); 
+    const requestId = useRef(0);
+
+    const setUser = useCallback((nextUser) => {
+        requestId.current += 1;
+        setStoredUser(nextUser);
+        setLoading(false);
+    }, []);
 
     const getMe = useCallback(async () => {
+        const currentRequest = ++requestId.current;
+        setLoading(true);
         try {
             const res = await fetch("/api/v1/users/me", {
                 credentials: "include", // Sends the cookie automatically
@@ -15,17 +24,17 @@ export function AuthProvider({ children }) {
 
             if (res.ok) {
                 const data = await res.json();
-                setUser(data.data.user); //  user = req.user
+                if (currentRequest === requestId.current) setStoredUser(data.data.user);
                 return data.data.user;
             } else {
-                setUser(null);
+                if (currentRequest === requestId.current) setStoredUser(null);
                 return null;
             }
         } catch (error) {
-            setUser(null);
+            if (currentRequest === requestId.current) setStoredUser(null);
             return null;
         } finally {
-            setLoading(false); 
+            if (currentRequest === requestId.current) setLoading(false);
         }
     }, []);
 

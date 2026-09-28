@@ -1,6 +1,11 @@
 export const THEME_STORAGE_KEY = "studyjony-theme";
 export const THEME_VALUES = ["light", "cream", "dark", "black", "system"];
 
+export function getThemePreference(user, guestTheme) {
+	if (!user) return guestTheme;
+	return THEME_VALUES.includes(user.theme) ? user.theme : "system";
+}
+
 // Self-contained so the same function can run before React and during updates.
 export function applyTheme(preference) {
 	const resolved = preference === "system"

@@ -5,7 +5,6 @@ import {
 	BookOpen,
 	GraduationCap,
 	CalendarDays,
-	Play,
 	Plus,
 	Search,
 	Volume2,
@@ -15,6 +14,7 @@ import {
 	X,
 	Check,
 	ChevronDown,
+	ChevronRight,
 	Clock3,
 	Filter,
 	Sparkles,
@@ -135,20 +135,6 @@ function StatusFilter({ value, onChange, t }) {
 	);
 }
 
-function ReviewButton({ available, mode, label, reviewMode }) {
-	return available ? (
-		<Link href={`/wordlist/review/${mode}${reviewMode ? `?reviewMode=${reviewMode}` : ""}`} className={styles.primary}>
-			<Play size={18} fill="currentColor" />
-			{label}
-		</Link>
-	) : (
-		<button disabled className={styles.primary}>
-			<Play size={18} />
-			{label}
-		</button>
-	);
-}
-
 export default function WordlistPage() {
 	const t = useTranslations("Notebook");
 	const locale = useLocale();
@@ -157,7 +143,6 @@ export default function WordlistPage() {
 	const [retry, setRetry] = useState(0);
 	const [search, setSearch] = useState("");
 	const [filter, setFilter] = useState("review");
-	const [mode, setMode] = useState("flashcard");
 	const [editor, setEditor] = useState(null);
 	const [deleting, setDeleting] = useState(null);
 	const [audioError, setAudioError] = useState(false);
@@ -205,7 +190,6 @@ export default function WordlistPage() {
 	const canQuiz =
 		new Set(words.map((word) => word.vietnamese.trim().toLowerCase())).size >=
 		4;
-	const canReview = queue.length > 0 && (mode !== "quiz" || canQuiz);
 	const query = search.trim().toLocaleLowerCase();
 	const filtered = words.filter(
 		(word) =>
@@ -246,14 +230,6 @@ export default function WordlistPage() {
 			words: previous.words.filter((word) => word._id !== id),
 		}));
 	}
-	const reviewButton = (
-		<ReviewButton
-			available={canReview}
-			mode={mode}
-			label={t("reviewNow")}
-			reviewMode={counts.review > 0 ? "due" : undefined}
-		/>
-	);
 	return (
 		<main className={styles.page}>
 			<div className={styles.container}>
@@ -503,49 +479,60 @@ export default function WordlistPage() {
 							<NotebookIllustration />
 						</div>
 						<div className={styles.reviewCard}>
-							<Sprout size={54} strokeWidth={1.4} />
-							<h2>
-								{loading || error || !user
-									? "—"
-									: t(
-											counts.review
-												? "dueHeading"
-												: queue.length
-													? "learningHeading"
-													: "caughtUp",
-											{ count: counts.review || queue.length },
-										)}
-							</h2>
-							<p>{t(queue.length ? "readyBody" : "caughtUpBody")}</p>
+							<div className={styles.reviewHeader}>
+								<Sprout className={styles.reviewHeaderIcon} size={36} strokeWidth={1.8} aria-hidden="true" />
+								<div>
+									<h2>{t("reviewPanelTitle")}</h2>
+									<p>{t("reviewPanelSubtitle")}</p>
+								</div>
+							</div>
 							<fieldset className={styles.reviewModes}>
 								<legend>{t("mode")}</legend>
-								{reviewModes.map(({ value, Icon }) => (
-									<label
-										key={value}
-										className={styles.reviewMode}
-										data-mode={value}
-										data-selected={mode === value}
-									>
-										<input
-											type="radio"
-											name="review-mode"
-											value={value}
-											checked={mode === value}
-											onChange={() => setMode(value)}
-										/>
-										<span className={styles.reviewModeIcon} aria-hidden="true">
-											<Icon size={23} strokeWidth={1.9} />
-										</span>
-										<span className={styles.reviewModeCopy}>
-											<strong>{t(value)}</strong>
-											<span>{t(`${value}Description`)}</span>
-										</span>
-										<span className={styles.reviewModeRadio} aria-hidden="true" />
-									</label>
-								))}
+								{reviewModes.map(({ value, Icon }) => {
+									const available = queue.length > 0 && (value !== "quiz" || canQuiz);
+									const href = `/wordlist/review/${value}${counts.review > 0 ? "?reviewMode=due" : ""}`;
+									const modeContents = (
+										<>
+											<span className={styles.reviewModeIcon} aria-hidden="true">
+												<Icon size={23} strokeWidth={1.9} />
+											</span>
+											<span className={styles.reviewModeCopy}>
+												<strong>{t(value)}</strong>
+												<span>{t(`${value}Description`)}</span>
+											</span>
+											<span className={styles.reviewModeArrow} aria-hidden="true">
+												<ChevronRight size={18} />
+											</span>
+										</>
+									);
+
+									if (!available) {
+										return (
+											<div
+												key={value}
+												className={`${styles.reviewMode} ${styles.reviewModeDisabled}`}
+												data-mode={value}
+												aria-disabled="true"
+											>
+												{modeContents}
+											</div>
+										);
+									}
+
+									return (
+										<Link
+											key={value}
+											href={href}
+											className={styles.reviewMode}
+											data-mode={value}
+											aria-label={`${t(value)}. ${t(`${value}Description`)}`}
+										>
+											{modeContents}
+										</Link>
+									);
+								})}
 							</fieldset>
-							{mode === "quiz" && !canQuiz && <small>{t("quizHelp")}</small>}
-							{reviewButton}
+							{queue.length > 0 && !canQuiz && <small className={styles.reviewHint}>{t("quizHelp")}</small>}
 						</div>
 					</aside>
 				</div>

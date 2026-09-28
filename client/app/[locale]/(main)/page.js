@@ -25,7 +25,7 @@ const learningFeatures = [
 		description:
 			"Khám phá những từ phổ biến theo chủ đề và lưu lại những từ bạn cần.",
 			cta: "Khám phá từ vựng",
-		href: "/vocabulary",
+		href: "/wordlist",
 		icon: Languages,
 	},
 	{

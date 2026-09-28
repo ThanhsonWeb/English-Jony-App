@@ -40,6 +40,8 @@
 	  "readyBody": "Ôn lại những từ đã đến hẹn, rồi tiếp tục với những từ bạn đang học.",
 	  "caughtUp": "Bạn đã ôn xong!",
 	  "caughtUpBody": "Thêm từ mới hoặc quay lại khi đến lịch ôn tiếp theo.",
+	  "reviewPanelTitle": "Ôn tập ngay",
+	  "reviewPanelSubtitle": "Biến kiến thức thành kỹ năng ✨",
 	  "mode": "Chế độ ôn tập",
 	  "flashcard": "Flashcard",
 	  "flashcardDescription": "Xem từ và nghĩa, lật thẻ để ghi nhớ.",
@@ -123,7 +125,8 @@
 		"dark": "Navy tối",
 		"black": "Đen tối",
 		"system": "Theo hệ thống",
-		"choose": "Chọn giao diện"
+		"choose": "Chọn giao diện",
+		"saveFailed": "Chưa lưu được giao diện. Hãy thử lại."
 	},
 	"Header": {
 		"vip": "Vip",

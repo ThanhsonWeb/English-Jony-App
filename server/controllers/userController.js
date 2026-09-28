@@ -22,6 +22,23 @@ exports.getMe = catchAsync(async (req, res, next) => {
 	});
 });
 
+exports.updateTheme = catchAsync(async (req, res, next) => {
+	const { theme, expectedUserId } = req.body || {};
+	if (typeof theme !== "string" || !User.schema.path("theme").enumValues.includes(theme)) {
+		return next(new AppError("Invalid theme preference.", 400));
+	}
+	if (expectedUserId !== req.user.id) {
+		return next(new AppError("Account changed. Please try again.", 409));
+	}
+
+	const user = await User.findByIdAndUpdate(
+		req.user.id,
+		{ theme },
+		{ returnDocument: "after", runValidators: true },
+	);
+	res.status(200).json({ status: "success", data: { theme: user.theme } });
+});
+
 exports.updateMe = catchAsync(async (req, res, next) => {
 	const updatedUser = await User.findByIdAndUpdate(
 		req.user.id,

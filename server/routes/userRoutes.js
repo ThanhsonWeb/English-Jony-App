@@ -1,7 +1,7 @@
 const express = require("express");
 const rateLimit = require("express-rate-limit");
 const path = require("node:path");
-const { getAllUsers, getMe, updateAvatar } = require("../controllers/userController");
+const { getAllUsers, getMe, updateAvatar, updateTheme } = require("../controllers/userController");
 const { localAvatarDirectory } = require("../services/avatarUpload");
 const {
 	protect,
@@ -26,6 +26,7 @@ router.use((req, res, next) => {
 // routes
 
 router.get("/me", protect, getMe);
+router.patch("/theme", protect, updateTheme);
 router.get("/avatar-files/:filename", (req, res, next) => {
 	if (process.env.NODE_ENV !== "development" ||
 		!/^user_[0-9a-f]{24}_[0-9a-f-]{36}\.(jpg|png|webp)$/.test(req.params.filename)) {

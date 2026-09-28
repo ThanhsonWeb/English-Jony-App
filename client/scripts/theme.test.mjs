@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import vm from "node:vm";
-import { themeScript, THEME_VALUES } from "../app/_lib/theme.mjs";
+import { getThemePreference, themeScript, THEME_VALUES } from "../app/_lib/theme.mjs";
 
 function bootstrap(saved, prefersDark, blocked = false) {
 	const root = { dataset: {}, style: {} };
@@ -39,6 +39,18 @@ test("missing, invalid and inaccessible storage still resolve the OS before pain
 			}
 		}
 	}
+});
+
+test("account theme follows the signed-in user and guests keep their local preference", () => {
+	const guestTheme = "cream";
+	const userA = { _id: "a", theme: "dark" };
+	const userB = { _id: "b", theme: "light" };
+
+	assert.equal(getThemePreference(userA, guestTheme), "dark");
+	assert.equal(getThemePreference(null, guestTheme), "cream");
+	assert.equal(getThemePreference(userB, guestTheme), "light");
+	assert.equal(getThemePreference(userA, guestTheme), "dark");
+	assert.equal(getThemePreference({ _id: "legacy" }, guestTheme), "system");
 });
 
 function luminance(hex) {

@@ -40,6 +40,8 @@
 	  "readyBody": "Review words that are due, then keep going with the words you are learning.",
 	  "caughtUp": "You're all caught up!",
 	  "caughtUpBody": "Add new words or come back when your next review is due.",
+	  "reviewPanelTitle": "Review now",
+	  "reviewPanelSubtitle": "Turn knowledge into skill ✨",
 	  "mode": "Review mode",
 	  "flashcard": "Flashcard",
 	  "flashcardDescription": "Flip cards to remember words and meanings.",
@@ -123,7 +125,8 @@
 		"dark": "Dark navy",
 		"black": "Near black",
 		"system": "System",
-		"choose": "Choose theme"
+		"choose": "Choose theme",
+		"saveFailed": "Could not save your theme. Please try again."
 	},
 	"Header": {
 		"vip": "Vip",

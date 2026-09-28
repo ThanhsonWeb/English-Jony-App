@@ -406,111 +406,94 @@
 	white-space: nowrap;
 }
 .reviewCard {
-	background: linear-gradient(
-		145deg,
-		color-mix(in srgb, var(--sj-primary) 10%, var(--sj-surface)),
-		var(--sj-surface) 55%
-	);
-	border: 1px solid color-mix(in srgb, var(--sj-primary) 35%, var(--sj-border));
+	background: linear-gradient(145deg, color-mix(in srgb, var(--sj-primary) 5%, var(--sj-surface)), var(--sj-surface) 70%);
+	border: 1px solid var(--sj-border);
 	border-radius: 18px;
-	padding: 25px 20px 20px;
-	text-align: center;
+	padding: 16px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	gap: 11px;
+	align-items: stretch;
+	gap: 0;
 	scroll-margin-top: 96px;
 }
 .reviewCard:focus-visible {
 	outline: 3px solid color-mix(in srgb, var(--sj-primary) 70%, white);
 	outline-offset: 4px;
 }
-.reviewCard > svg {
-	color: var(--sj-brand-text);
-	padding: 10px;
-	border-radius: 15px;
-	background: color-mix(in srgb, var(--sj-primary) 14%, transparent);
-	box-sizing: content-box;
+.reviewHeader {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 14px;
 }
-:global(html[data-theme="dark"]) .reviewCard > svg,
-:global(html[data-theme="black"]) .reviewCard > svg {
-	padding: 9px;
-	border-radius: 16px;
-	background: rgba(45, 212, 191, 0.14);
-	color: #42f5e0;
-	box-shadow: inset 0 0 0 1px rgba(66, 245, 224, 0.08);
-	filter: brightness(1.15) saturate(1.15);
+.reviewHeaderIcon {
+	flex: 0 0 36px;
+	color: #2dd4bf;
 }
-.reviewCard h2 {
-	font-size: 21px;
+.reviewHeader h2 {
+	font-size: 16px;
 	font-weight: 720;
-	line-height: 1.35;
+	line-height: 1.25;
 }
-.reviewCard p {
+.reviewHeader p {
+	margin-top: 3px;
 	color: var(--sj-text-secondary);
-	font-size: 13px;
-	line-height: 1.55;
+	font-size: 12px;
+	line-height: 1.4;
 }
 .reviewModes {
 	width: 100%;
 	min-width: 0;
-	margin: 8px 0 0;
+	margin: 0;
 	padding: 0;
 	border: 0;
 	text-align: left;
 }
 .reviewModes legend {
-	margin-bottom: 10px;
-	color: var(--sj-text-secondary);
-	font-size: 11px;
-	font-weight: 700;
-	letter-spacing: 0.09em;
-	text-transform: uppercase;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
 }
 .reviewMode {
 	--mode-accent: var(--sj-primary);
-	position: relative;
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: 12px;
 	width: 100%;
-	min-height: 74px;
+	min-height: 76px;
 	padding: 10px;
-	border: 1px solid color-mix(in srgb, var(--mode-accent) 25%, var(--sj-border));
-	border-radius: 13px;
-	background: color-mix(in srgb, var(--mode-accent) 4%, var(--sj-surface));
+	border: 1px solid color-mix(in srgb, var(--mode-accent) 44%, var(--sj-border));
+	border-radius: 14px;
+	background: linear-gradient(110deg, color-mix(in srgb, var(--mode-accent) 10%, var(--sj-surface)), color-mix(in srgb, var(--mode-accent) 4%, var(--sj-surface)));
 	cursor: pointer;
-	transition: border-color 0.15s, background 0.15s;
+	color: inherit;
+	text-align: left;
+	text-decoration: none;
+	transition: border-color 0.15s, background 0.15s, transform 0.15s;
 }
 .reviewMode + .reviewMode { margin-top: 8px; }
 .reviewMode[data-mode="quiz"] { --mode-accent: #a678ee; }
 .reviewMode[data-mode="write"] { --mode-accent: #e6aa38; }
-.reviewMode:hover { border-color: var(--mode-accent); }
-.reviewMode[data-selected="true"] {
-	border-color: var(--sj-primary);
-	background: color-mix(in srgb, var(--sj-primary) 15%, var(--sj-surface));
-	box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--sj-primary) 25%, transparent);
-}
-.reviewMode input {
-	position: absolute;
-	opacity: 0;
-	width: 1px;
-	height: 1px;
-}
-.reviewMode:has(input:focus-visible) {
-	outline: 3px solid var(--sj-primary);
-	outline-offset: 3px;
-}
+.reviewMode:hover { border-color: var(--mode-accent); transform: translateY(-1px); }
+.reviewMode:focus-visible { outline: 3px solid var(--mode-accent); outline-offset: 3px; }
+.reviewModeDisabled { cursor: not-allowed; opacity: 0.5; }
+.reviewModeDisabled:hover { transform: none; }
 .reviewModeIcon {
-	flex: 0 0 42px;
+	flex: 0 0 48px;
 	display: grid;
 	place-items: center;
-	width: 42px;
-	height: 42px;
-	border-radius: 11px;
+	width: 48px;
+	height: 48px;
+	border-radius: 12px;
 	color: var(--mode-accent);
-	background: color-mix(in srgb, var(--mode-accent) 15%, var(--sj-surface));
-	border: 1px solid color-mix(in srgb, var(--mode-accent) 22%, transparent);
+	background: color-mix(in srgb, var(--mode-accent) 14%, var(--sj-surface));
+	border: 1px solid color-mix(in srgb, var(--mode-accent) 32%, transparent);
 }
 .reviewModeCopy {
 	flex: 1;
@@ -522,6 +505,7 @@
 .reviewModeCopy strong {
 	color: var(--sj-text);
 	font-size: 14px;
+	font-weight: 700;
 	line-height: 1.2;
 }
 .reviewModeCopy > span {
@@ -529,49 +513,26 @@
 	font-size: 11px;
 	line-height: 1.4;
 }
-.reviewModeRadio {
-	flex: 0 0 18px;
-	width: 18px;
-	height: 18px;
-	border: 2px solid var(--sj-text-muted);
+.reviewModeArrow {
+	flex: 0 0 28px;
+	display: grid;
+	place-items: center;
+	width: 28px;
+	height: 28px;
+	border: 1px solid color-mix(in srgb, var(--mode-accent) 45%, var(--sj-border));
 	border-radius: 50%;
+	color: var(--mode-accent);
+	transition: transform 0.15s, background 0.15s;
 }
-.reviewMode[data-selected="true"] .reviewModeRadio {
-	border-color: var(--sj-primary);
-	background: var(--sj-primary);
-	box-shadow: inset 0 0 0 3px var(--sj-surface);
+.reviewMode:hover .reviewModeArrow {
+	transform: translateX(2px);
+	background: color-mix(in srgb, var(--mode-accent) 13%, transparent);
 }
-.reviewCard .primary {
-	width: 100%;
-	min-height: 52px;
-	margin-top: 5px;
-	font-size: 15px;
-}
-.reviewCard small {
+.reviewHint {
+	margin-top: 10px;
 	font-size: 11px;
 	color: var(--sj-text-secondary);
 }
-.quickLinks {
-	width: 100%;
-	margin-top: 8px;
-	padding-top: 12px;
-	border-top: 1px solid var(--sj-border);
-}
-.quickLinks button {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	width: 100%;
-	padding: 9px 3px;
-	color: var(--sj-text-secondary);
-	font-size: 12px;
-	text-align: left;
-}
-.quickLinks button + button { border-top: 1px solid var(--sj-border); }
-.quickLinks button:hover,
-.quickLinks button[aria-current="true"] { color: var(--sj-brand-text); }
-.quickLinks button span { flex: 1; }
-.quickLinks button strong { color: var(--sj-text); font-size: 13px; }
 .empty {
 	display: flex;
 	align-items: center;

@@ -34,7 +34,7 @@ const themeOptions = [
 ];
 
 export default function ThemeSelector() {
-	const { theme, setTheme } = useTheme();
+	const { theme, setTheme, saveFailed } = useTheme();
 	const t = useTranslations("Theme");
 	const containerRef = useRef(null);
 	const [isOpen, setIsOpen] = useState(false);
@@ -77,6 +77,11 @@ export default function ThemeSelector() {
 				<ThemeIcon aria-hidden="true" className="h-[18px] w-[18px]" />
 			</button>
 
+			{saveFailed && !isOpen && (
+				<p role="status" className="absolute right-0 top-full z-[60] mt-2 w-52 rounded-lg border border-red-500/30 bg-elevated p-2 text-xs text-red-500 shadow-lg">
+					{t("saveFailed")}
+				</p>
+			)}
 			{isOpen && (
 				<div
 					role="menu"

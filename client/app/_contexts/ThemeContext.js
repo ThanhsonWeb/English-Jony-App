@@ -4,11 +4,15 @@ import {
 	createContext,
 	useContext,
 	useEffect,
+	useLayoutEffect,
 	useMemo,
+	useRef,
+	useState,
 	useSyncExternalStore,
 } from "react";
 
-import { applyTheme, THEME_STORAGE_KEY, THEME_VALUES } from "@/app/_lib/theme.mjs";
+import { applyTheme, getThemePreference, THEME_STORAGE_KEY, THEME_VALUES } from "@/app/_lib/theme.mjs";
+import { useAuth } from "@/app/_contexts/AuthContext";
 
 let temporaryTheme = null;
 const THEME_CHANGE_EVENT = "studyjony-theme-change";
@@ -38,18 +42,31 @@ function subscribeToTheme(callback) {
 }
 
 export function ThemeProvider({ children }) {
-	const theme = useSyncExternalStore(
+	const { user, setUser, loading } = useAuth();
+	const guestTheme = useSyncExternalStore(
 		subscribeToTheme,
 		getSavedTheme,
 		() => "system",
 	);
+	const theme = getThemePreference(user, guestTheme);
+	const userId = user?._id || user?.id || null;
+	const activeAccount = useRef({ id: null, generation: 0 });
+	const saveQueue = useRef(Promise.resolve());
+	const latestSelection = useRef(0);
+	const [saveError, setSaveError] = useState(null);
+
+	useLayoutEffect(() => {
+		if (activeAccount.current.id !== userId) {
+			activeAccount.current = {
+				id: userId,
+				generation: activeAccount.current.generation + 1,
+			};
+		}
+		if (!loading) applyTheme(theme);
+	}, [loading, theme, userId]);
 
 	useEffect(() => {
-		// Hydration starts with system; apply the actual saved preference.
-		const preference = getSavedTheme();
-		applyTheme(preference);
-
-		if (preference !== "system") return undefined;
+		if (loading || theme !== "system") return undefined;
 
 		const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 		const handleSystemThemeChange = () => applyTheme("system");
@@ -58,13 +75,44 @@ export function ThemeProvider({ children }) {
 		return () => {
 			mediaQuery.removeEventListener("change", handleSystemThemeChange);
 		};
-	}, [theme]);
+	}, [loading, theme]);
 
 	const value = useMemo(
 		() => ({
 			theme,
+			saveFailed: saveError?.id === userId,
 			setTheme(nextTheme) {
 				if (!VALID_THEMES.has(nextTheme)) return;
+				setSaveError(null);
+				applyTheme(nextTheme);
+
+				if (userId) {
+					const account = { ...activeAccount.current };
+					const selection = ++latestSelection.current;
+					setUser((currentUser) =>
+						(currentUser?._id || currentUser?.id) === userId
+							? { ...currentUser, theme: nextTheme }
+							: currentUser,
+					);
+					saveQueue.current = saveQueue.current.catch(() => {}).then(async () => {
+						if (activeAccount.current.generation !== account.generation) return;
+						const response = await fetch("/api/v1/users/theme", {
+							method: "PATCH",
+							headers: { "Content-Type": "application/json" },
+							credentials: "include",
+							body: JSON.stringify({ theme: nextTheme, expectedUserId: userId }),
+						});
+						if (!response.ok) throw new Error("Could not save theme");
+						if (activeAccount.current.generation === account.generation &&
+							latestSelection.current === selection) setSaveError(null);
+					}).catch(() => {
+						if (activeAccount.current.generation === account.generation &&
+							latestSelection.current === selection) {
+							setSaveError(account);
+						}
+					});
+					return;
+				}
 
 				try {
 					window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
@@ -72,14 +120,17 @@ export function ThemeProvider({ children }) {
 				} catch {
 					temporaryTheme = nextTheme;
 				}
-				applyTheme(nextTheme);
 				window.dispatchEvent(new Event(THEME_CHANGE_EVENT));
 			},
 		}),
-		[theme],
+		[theme, saveError, setUser, userId],
 	);
 
-	return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
+	return (
+		<ThemeContext.Provider value={value}>
+			<div className={loading ? "contents invisible" : "contents"}>{children}</div>
+		</ThemeContext.Provider>
+	);
 }
 
 export function useTheme() {

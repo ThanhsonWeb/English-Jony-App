@@ -23,12 +23,12 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className={inter.className} suppressHydrationWarning>
 			<body className="flex min-h-full flex-col bg-page text-main">
-				<ThemeProvider>
-					<AuthProvider>
+				<AuthProvider>
+					<ThemeProvider>
 						<Analytics />
 						{children}
-					</AuthProvider>
-				</ThemeProvider>
+					</ThemeProvider>
+				</AuthProvider>
 			</body>
 		</html>
 	);

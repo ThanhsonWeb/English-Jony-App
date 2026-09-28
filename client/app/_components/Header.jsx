@@ -69,10 +69,10 @@ function Header() {
 
 
 	return (
-		<header className="sticky top-0 z-50 border-b border-app bg-surface/90 px-4 py-1 backdrop-blur-md sm:px-8">
+		<header className="sticky top-0 z-50 border-b border-app bg-surface/90 px-4 py-1 backdrop-blur-md sm:px-8 lg:px-4 xl:px-8">
 			<div className="mx-auto flex max-w-8xl items-center justify-between gap-2">
 				<Logo />
-				<div className="hidden xl:block">
+				<div className="hidden shrink-0 lg:block">
 					<Navigation />
 				</div>
 
@@ -144,7 +144,7 @@ function Header() {
 						</div>
 					)}
 					{/* Mobile menu */}
-					<div className="xl:hidden">
+					<div className="lg:hidden">
 						<Navigation />
 					</div>
 				</div>
