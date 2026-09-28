@@ -23,6 +23,7 @@ function LoginPage() {
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [showPassword, setShowPassword] = useState(false);
 	const [loading, setIsLoading] = useState(false);
 	const [error, setError] = useState("");
 
@@ -190,14 +191,45 @@ function LoginPage() {
 							Mật khẩu
 						</label>
 
-						<input
-							type="password"
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-							placeholder="••••••••"
-							className="w-full rounded-xl border border-slate-700/80 bg-slate-950/60 px-4 py-3.5 text-slate-100 placeholder:text-slate-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/10"
-							required
-						/>
+						<div className="relative">
+							<input
+								type={showPassword ? "text" : "password"}
+								value={password}
+								onChange={(e) => setPassword(e.target.value)}
+								placeholder="••••••••"
+								className="w-full rounded-xl border border-slate-700/80 bg-slate-950/60 px-4 py-3.5 pr-12 text-slate-100 placeholder:text-slate-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/10"
+								required
+							/>
+							<button
+								type="button"
+								onClick={() => setShowPassword((visible) => !visible)}
+								aria-label={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
+								aria-pressed={showPassword}
+								className="absolute inset-y-0 right-3 flex cursor-pointer items-center text-slate-400 transition hover:text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+							>
+								<svg
+									aria-hidden="true"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth="1.8"
+									className="h-5 w-5"
+								>
+									{showPassword ? (
+										<>
+											<path d="M3 3l18 18" />
+											<path d="M10.6 10.6a2 2 0 002.8 2.8" />
+											<path d="M9.9 5.2A10.8 10.8 0 0112 5c5 0 8.5 4.2 9.5 7-.4 1.1-1.2 2.3-2.3 3.4M6.2 6.2C4.2 7.5 2.9 9.5 2.5 12c1 2.8 4.5 7 9.5 7 1 0 1.9-.2 2.8-.5" />
+										</>
+									) : (
+										<>
+											<path d="M2.5 12s3.5-7 9.5-7 9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7Z" />
+											<circle cx="12" cy="12" r="3" />
+										</>
+									)}
+								</svg>
+							</button>
+						</div>
 					</div>
 
 					{/* Submit */}

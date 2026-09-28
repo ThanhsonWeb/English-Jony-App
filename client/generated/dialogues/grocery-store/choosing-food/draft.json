@@ -1,0 +1,729 @@
+{
+  "metadata": {
+    "courseId": "grocery-store",
+    "dialogueId": "choosing-food",
+    "title": "Chọn đồ ăn",
+    "level": "a1",
+    "situation": "Ben và Emma đang chọn thực phẩm. Họ nói về các lựa chọn và quyết định nên mua món nào.",
+    "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+    "thumbnail": "/dialogue/grocery-store/thumbnails/choosing-food.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Ben",
+      "text": "We found the bread. Now we just need the orange juice.",
+      "translation": "Chúng ta đã tìm thấy bánh mì rồi. Bây giờ chỉ còn cần nước cam thôi.",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Emma",
+      "text": "Here it is. There are two sizes.",
+      "translation": "Nó ở đây này. Có hai kích cỡ.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Ben",
+      "text": "Which one should we get?",
+      "translation": "Chúng ta nên lấy loại nào?",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Emma",
+      "text": "Let's get the small one. We don't need much.",
+      "translation": "Lấy chai nhỏ nhé. Chúng ta không cần nhiều.",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Ben",
+      "text": "Okay. This bottle is cheaper too.",
+      "translation": "Được. Chai này cũng rẻ hơn.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Emma",
+      "text": "What about the apples? Red or green?",
+      "translation": "Còn táo thì sao? Đỏ hay xanh?",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Ben",
+      "text": "I like the red ones. They look fresh.",
+      "translation": "Mình thích những quả màu đỏ. Trông chúng tươi.",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Emma",
+      "text": "How many should we get?",
+      "translation": "Chúng ta nên lấy bao nhiêu quả?",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Ben",
+      "text": "Let's get four.",
+      "translation": "Lấy bốn quả nhé.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Emma",
+      "text": "And these bananas are ripe.",
+      "translation": "Và những quả chuối này đã chín.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Ben",
+      "text": "Great. I think we have everything now.",
+      "translation": "Tuyệt. Mình nghĩ bây giờ chúng ta đã có đủ mọi thứ rồi.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Emma",
+      "text": "Yes. Let's go to the checkout.",
+      "translation": "Ừ. Đi đến quầy thanh toán nhé.",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "Which one",
+      "pronunciation": "/wɪtʃ wʌn/",
+      "meaning": "cái nào",
+      "example": "Which one do you like?"
+    },
+    {
+      "word": "small one",
+      "pronunciation": "/smɔːl wʌn/",
+      "meaning": "cái nhỏ",
+      "example": "I'll take the small one."
+    },
+    {
+      "word": "cheaper",
+      "pronunciation": "/ˈtʃiːpər/",
+      "meaning": "rẻ hơn",
+      "example": "This one is cheaper."
+    },
+    {
+      "word": "What about",
+      "pronunciation": "/wʌt əˈbaʊt/",
+      "meaning": "còn ... thì sao?",
+      "example": "What about the bread?"
+    },
+    {
+      "word": "fresh",
+      "pronunciation": "/freʃ/",
+      "meaning": "tươi",
+      "example": "These apples look fresh."
+    },
+    {
+      "word": "How many",
+      "pronunciation": "/haʊ ˈmeni/",
+      "meaning": "bao nhiêu",
+      "example": "How many apples do we need?"
+    },
+    {
+      "word": "ripe",
+      "pronunciation": "/raɪp/",
+      "meaning": "chín",
+      "example": "The bananas are ripe."
+    },
+    {
+      "word": "checkout",
+      "pronunciation": "/ˈtʃekaʊt/",
+      "meaning": "quầy thanh toán",
+      "example": "Let's go to the checkout."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "parts": [
+        "We ",
+        ". Now we just need the orange juice."
+      ],
+      "answers": [
+        "found the bread"
+      ],
+      "speaker": "Ben",
+      "transcript": "We found the bread. Now we just need the orange juice.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "parts": [
+        "We found the bread. Now we just need the ",
+        "."
+      ],
+      "answers": [
+        "orange juice"
+      ],
+      "speaker": "Ben",
+      "transcript": "We found the bread. Now we just need the orange juice.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "parts": [
+        "Here it is. There are ",
+        "."
+      ],
+      "answers": [
+        "two sizes"
+      ],
+      "speaker": "Emma",
+      "transcript": "Here it is. There are two sizes.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "",
+        " should we get?"
+      ],
+      "answers": [
+        "Which one"
+      ],
+      "speaker": "Ben",
+      "transcript": "Which one should we get?",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-02.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "Which one ",
+        "?"
+      ],
+      "answers": [
+        "should we get"
+      ],
+      "speaker": "Ben",
+      "transcript": "Which one should we get?",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Ben đang muốn quyết định điều gì?",
+      "options": [
+        "Họ nên đi đến quầy nào.",
+        "Họ nên mua bao nhiêu quả táo.",
+        "Họ nên chọn táo đỏ hay xanh.",
+        "Họ nên chọn chai nước cam nào."
+      ],
+      "answer": "Họ nên chọn chai nước cam nào.",
+      "speaker": "Ben",
+      "transcript": "Which one should we get?",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": [
+        "",
+        " the small one. We don't need much."
+      ],
+      "answers": [
+        "Let's get"
+      ],
+      "speaker": "Emma",
+      "transcript": "Let's get the small one. We don't need much.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": [
+        "Let's get the small one. We ",
+        "."
+      ],
+      "answers": [
+        "don't need much"
+      ],
+      "speaker": "Emma",
+      "transcript": "Let's get the small one. We don't need much.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "multipleChoice",
+      "question": "Vì sao Emma muốn lấy chai nhỏ?",
+      "options": [
+        "Họ không cần nhiều nước cam.",
+        "Chai lớn đã hết.",
+        "Emma không thích nước cam.",
+        "Chai nhỏ có vị khác."
+      ],
+      "answer": "Họ không cần nhiều nước cam.",
+      "speaker": "Emma",
+      "transcript": "Let's get the small one. We don't need much.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "parts": [
+        "Okay. This bottle is ",
+        " too."
+      ],
+      "answers": [
+        "cheaper"
+      ],
+      "speaker": "Ben",
+      "transcript": "Okay. This bottle is cheaper too.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": [
+        "",
+        " the apples? Red or green?"
+      ],
+      "answers": [
+        "What about"
+      ],
+      "speaker": "Emma",
+      "transcript": "What about the apples? Red or green?",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": [
+        "What about the apples? ",
+        "?"
+      ],
+      "answers": [
+        "Red or green"
+      ],
+      "speaker": "Emma",
+      "transcript": "What about the apples? Red or green?",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Emma đang so sánh điều gì?",
+      "options": [
+        "Táo và chuối.",
+        "Táo đỏ và táo xanh.",
+        "Hai loại nước cam.",
+        "Táo lớn và táo nhỏ."
+      ],
+      "answer": "Táo đỏ và táo xanh.",
+      "speaker": "Emma",
+      "transcript": "What about the apples? Red or green?",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": [
+        "I like the ",
+        ". They look fresh."
+      ],
+      "answers": [
+        "red ones"
+      ],
+      "speaker": "Ben",
+      "transcript": "I like the red ones. They look fresh.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-04.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": [
+        "I like the red ones. They ",
+        "."
+      ],
+      "answers": [
+        "look fresh"
+      ],
+      "speaker": "Ben",
+      "transcript": "I like the red ones. They look fresh.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "parts": [
+        "",
+        " should we get?"
+      ],
+      "answers": [
+        "How many"
+      ],
+      "speaker": "Emma",
+      "transcript": "How many should we get?",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "parts": [
+        "How many ",
+        "?"
+      ],
+      "answers": [
+        "should we get"
+      ],
+      "speaker": "Emma",
+      "transcript": "How many should we get?",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 8,
+      "type": "multipleChoice",
+      "question": "Emma muốn Ben quyết định thông tin nào?",
+      "options": [
+        "Nên chọn táo màu gì.",
+        "Táo có tươi hay không.",
+        "Nên lấy bao nhiêu quả táo.",
+        "Táo nằm ở đâu."
+      ],
+      "answer": "Nên lấy bao nhiêu quả táo.",
+      "speaker": "Emma",
+      "transcript": "How many should we get?",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-04.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": [
+        "Let's get ",
+        "."
+      ],
+      "answers": [
+        "four"
+      ],
+      "speaker": "Ben",
+      "transcript": "Let's get four.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-05.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "parts": [
+        "And these bananas are ",
+        "."
+      ],
+      "answers": [
+        "ripe"
+      ],
+      "speaker": "Emma",
+      "transcript": "And these bananas are ripe.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "parts": [
+        "Great. I think we have ",
+        " now."
+      ],
+      "answers": [
+        "everything"
+      ],
+      "speaker": "Ben",
+      "transcript": "Great. I think we have everything now.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-06.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "parts": [
+        "Yes. ",
+        " to the checkout."
+      ],
+      "answers": [
+        "Let's go"
+      ],
+      "speaker": "Emma",
+      "transcript": "Yes. Let's go to the checkout.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-06.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "parts": [
+        "Yes. Let's go to the ",
+        "."
+      ],
+      "answers": [
+        "checkout"
+      ],
+      "speaker": "Emma",
+      "transcript": "Yes. Let's go to the checkout.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-06.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 12,
+      "type": "multipleChoice",
+      "question": "Sau khi chọn xong đồ, Ben và Emma sẽ làm gì?",
+      "options": [
+        "Đi đến quầy thanh toán.",
+        "Quay lại tìm bánh mì.",
+        "Hỏi Lee về nước cam.",
+        "Đi tìm thêm trái cây."
+      ],
+      "answer": "Đi đến quầy thanh toán.",
+      "speaker": "Emma",
+      "transcript": "Yes. Let's go to the checkout.",
+      "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+      "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-06.mp3"
+    },
+    {
+      "id": 25,
+      "type": "dialogueCloze",
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Ben",
+          "parts": [
+            "We found the bread. Now we just need the ",
+            {
+              "id": "1",
+              "blank": "orange juice"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Emma",
+          "parts": [
+            "Here it is. There are ",
+            {
+              "id": "2",
+              "blank": "two sizes"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Ben",
+          "parts": [
+            "",
+            {
+              "id": "3",
+              "blank": "Which one should we get"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Emma",
+          "parts": [
+            "Let's get the ",
+            {
+              "id": "4",
+              "blank": "small one"
+            },
+            ". We ",
+            {
+              "id": "5",
+              "blank": "don't need much"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Ben",
+          "parts": [
+            "Okay. This bottle is ",
+            {
+              "id": "6",
+              "blank": "cheaper"
+            },
+            " too."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Emma",
+          "parts": [
+            "What about the apples? ",
+            {
+              "id": "7",
+              "blank": "Red or green"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Ben",
+          "parts": [
+            "I like the red ones. They ",
+            {
+              "id": "8",
+              "blank": "look fresh"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Emma",
+          "parts": [
+            "",
+            {
+              "id": "9",
+              "blank": "How many"
+            },
+            " should we get?"
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Ben",
+          "parts": [
+            "Let's get ",
+            {
+              "id": "10",
+              "blank": "four"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Emma",
+          "parts": [
+            "And these bananas are ",
+            {
+              "id": "11",
+              "blank": "ripe"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Ben",
+          "parts": [
+            "Great. I think we have ",
+            {
+              "id": "12",
+              "blank": "everything"
+            },
+            " now."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Emma",
+          "parts": [
+            "Yes. Let's go to the ",
+            {
+              "id": "13",
+              "blank": "checkout"
+            },
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Which one should we get?",
+      "explanation": "Dùng “Which one should we get?” khi có nhiều lựa chọn và muốn hỏi nên chọn cái nào.",
+      "example": "Which one should we get?"
+    },
+    {
+      "title": "Let's + động từ",
+      "explanation": "Dùng “Let's + động từ” để đề nghị cùng làm một việc.",
+      "example": "Let's get the small one."
+    }
+  ]
+}

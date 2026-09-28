@@ -85,6 +85,7 @@ function getVoiceId(speaker) {
 		Ben: "oF10V53nXu6mNLtJLgko",
 		Emma: "Cy8NxOxWnzsargZaVHUo",
 		Alex: "oflxQzyUUjpgLlEYlSq2",
+		Lee: "meo5QemHRPp1cJE08w1a",
 		Maya: "ur0MtycxCulNrunXsdLx",
 	};
 	const voiceId = voiceIds[speaker];
@@ -123,6 +124,7 @@ function buildPlan(lessonId, dialogueId, dialogue) {
 					"Ben",
 					"Emma",
 					"Alex",
+					"Lee",
 					"Maya",
 				].includes(speaker)
 			) {

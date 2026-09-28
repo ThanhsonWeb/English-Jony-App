@@ -1,6 +1,8 @@
 import groceryStoreConfig from "@/scripts/config/courses/grocery-store.mjs";
 
 import makingAShoppingList from "../dialogues/grocery-store/making-a-shopping-list.json";
+import findingItems from "../dialogues/grocery-store/finding-items.json";
+import choosingFood from "../dialogues/grocery-store/choosing-food.json";
 import { groceryStoreMedia } from "../dialogues/grocery-store/media";
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
 
@@ -73,6 +75,8 @@ const groceryStoreCourse = {
    level: "beginner",
    dialogues: [
       buildCourseDialogue(makingAShoppingList),
+      buildCourseDialogue(findingItems),
+      buildCourseDialogue(choosingFood),
    ],
 };
 

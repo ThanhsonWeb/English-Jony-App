@@ -27,6 +27,7 @@ export function normalizeAnswer(value) {
 		.toLocaleLowerCase()
 		.replace(/[,.?!]/g, " ")
 		.replace(/[’‘]/g, "'")
+		.replace(/'/g, "")
 		.replace(/\s+/g, " ")
 		.trim();
 }
@@ -38,6 +39,18 @@ function getSimpleNumberValue(value) {
 
 	if (/^\d+$/.test(value)) return String(Number(value));
 	return null;
+}
+
+function normalizeNumberWords(value) {
+	const numberWordPattern = new RegExp(
+		`\\b(${Object.keys(SIMPLE_NUMBER_WORDS).join("|")})\\b`,
+		"g",
+	);
+
+	return value.replace(
+		numberWordPattern,
+		(numberWord) => String(SIMPLE_NUMBER_WORDS[numberWord]),
+	);
 }
 
 function isShortHyphenatedWord(value) {
@@ -59,6 +72,13 @@ function getCompactWord(value) {
 export function fillBlankAnswersMatch(value, expectedAnswer) {
 	const normalizedValue = normalizeAnswer(value);
 	const normalizedExpected = normalizeAnswer(expectedAnswer);
+	if (
+		normalizeNumberWords(normalizedValue) ===
+		normalizeNumberWords(normalizedExpected)
+	) {
+		return true;
+	}
+
 	const expectedNumber = getSimpleNumberValue(normalizedExpected);
 
 	if (normalizedValue === normalizedExpected) return true;

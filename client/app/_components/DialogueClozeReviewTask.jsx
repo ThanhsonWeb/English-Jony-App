@@ -252,9 +252,11 @@ function DialogueClozeReviewTask({
 			<div className="mx-auto max-w-6xl">
 				<div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
 					<div>
-						<h1 className="text-2xl font-bold">{task.title} 📖</h1>
+						<h1 className="text-2xl font-bold">
+							{task.title || "Hoàn thành hội thoại"} 📖
+						</h1>
 						<p className="mt-2 text-sm text-secondary sm:text-base">
-							{task.instruction}
+							{task.instruction || "Điền từ còn thiếu vào đoạn hội thoại."}
 						</p>
 					</div>
 					<div className="w-full shrink-0 sm:w-64">

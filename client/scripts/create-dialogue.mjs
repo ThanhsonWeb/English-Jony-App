@@ -38,6 +38,70 @@ async function chooseFromList(items, getLabel, question) {
 	return items[selectedIndex];
 }
 
+async function loadPreviousDialogue(courseId, dialogues, dialogueId) {
+	const currentIndex = dialogues.findIndex(
+		(dialogue) => dialogue.dialogueId === dialogueId,
+	);
+	if (currentIndex <= 0) return null;
+
+	const previousDialogueId = dialogues[currentIndex - 1].dialogueId;
+	const candidates = [
+		path.resolve(
+			"app",
+			"[locale]",
+			"(main)",
+			"dialogue",
+			"_data",
+			"dialogues",
+			courseId,
+			`${previousDialogueId}.json`,
+		),
+		path.resolve(
+			"generated",
+			"dialogues",
+			courseId,
+			previousDialogueId,
+			"draft.json",
+		),
+	];
+
+	for (const candidate of candidates) {
+		let contents;
+		try {
+			contents = await fs.readFile(candidate, "utf8");
+		} catch (error) {
+			if (error.code === "ENOENT") continue;
+			throw error;
+		}
+
+		let previous;
+		try {
+			previous = JSON.parse(contents);
+		} catch (error) {
+			throw new Error(
+				`Could not parse previous dialogue JSON at ${candidate}: ${error.message}`,
+			);
+		}
+
+		if (
+			previous?.metadata?.courseId !== courseId ||
+			previous?.metadata?.dialogueId !== previousDialogueId ||
+			!Array.isArray(previous.dialogue) ||
+			previous.dialogue.length === 0
+		) {
+			throw new Error(
+				`Previous dialogue JSON is missing valid dialogue data: ${candidate}`,
+			);
+		}
+
+		return { dialogue: previous.dialogue, source: candidate };
+	}
+
+	throw new Error(
+		`Could not find the previous dialogue JSON for ${courseId}/${previousDialogueId}.`,
+	);
+}
+
 try {
 	console.log("\n🔥 StudyJony Dialogue Builder\n");
 
@@ -64,6 +128,11 @@ try {
 
 	const { dialogueId, title, situation, thumbnail, scene, scenes } =
 		selectedDialogue;
+	const previousDialogueContext = await loadPreviousDialogue(
+		courseId,
+		course.dialogues,
+		dialogueId,
+	);
 
 	// Optional CLI level:
 	// npm run create:dialogue a1
@@ -89,6 +158,7 @@ try {
 
 		// Special dialogue: different scene per speaker
 		scenes,
+		previousDialogue: previousDialogueContext?.dialogue,
 	};
 
 	const prompt = buildDialoguePrompt(lessonConfig);
