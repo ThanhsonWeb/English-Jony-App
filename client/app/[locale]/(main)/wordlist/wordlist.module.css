@@ -20,11 +20,19 @@
 	background:
 		linear-gradient(90deg, rgb(4 13 25 / 88%) 0%, rgb(4 13 25 / 56%) 48%, rgb(4 13 25 / 12%) 100%),
 		linear-gradient(0deg, rgb(4 13 25 / 84%) 0%, transparent 54%),
-		url("/hero-bg-wordlist.png") center 34% / cover no-repeat;
+		url("/hero-bg-wordlist.png") center 60% / cover no-repeat;
+}
+:global(html:is([data-theme="light"], [data-theme="cream"])) .heroHeader {
+	background:
+		linear-gradient(to top, var(--sj-page) 0%, transparent 34%),
+		linear-gradient(90deg, rgb(4 13 25 / 88%) 0%, rgb(4 13 25 / 56%) 48%, rgb(4 13 25 / 12%) 100%),
+		url("/hero-bg-wordlist.png") center 60% / cover no-repeat;
+	background-repeat: no-repeat;
 }
 .heroCopy {
 	position: relative;
 	z-index: 1;
+	padding: 4px 2px;
 }
 .heroCopy h1 {
 	color: #fff;
@@ -36,7 +44,7 @@
 .heroCopy p {
 	margin-top: 4px;
 	color: #d6e3f1;
-	font-size: 12px;
+	font-size: 14px;
 	text-shadow: 0 1px 8px rgb(0 0 0 / 50%);
 }
 .page button,
@@ -192,7 +200,7 @@
 .heroHeader .stats {
 	position: relative;
 	z-index: 1;
-	width: min(880px, calc(100% - 270px));
+	width: min(760px, calc(100% - 270px));
 	margin: 0;
 }
 .stat {
@@ -202,8 +210,8 @@
 	display: flex;
 	align-items: center;
 	gap: 13px;
-	min-height: 56px;
-	padding: 7px 10px;
+	min-height: 64px;
+	padding: 9px 12px;
 	background: linear-gradient(125deg, color-mix(in srgb, var(--stat-accent) 20%, var(--sj-surface)), var(--sj-surface));
 	border: 1px solid color-mix(in srgb, var(--stat-accent) 35%, var(--sj-border));
 	border-radius: 14px;
@@ -296,9 +304,9 @@
 	flex-shrink: 0;
 	display: grid;
 	place-items: center;
-	width: 36px;
-	height: 36px;
-	border-radius: 11px;
+	width: 40px;
+	height: 40px;
+	border-radius: 12px;
 	background: var(--sj-primary-soft);
 	color: var(--sj-brand-text);
 }
@@ -333,7 +341,7 @@
 	filter: brightness(1.15) saturate(1.15);
 }
 .stat h2 {
-	font-size: 10px;
+	font-size: 11px;
 	font-weight: 400;
 	color: var(--sj-text-secondary);
 	line-height: 1.5;
@@ -341,7 +349,7 @@
 .stat strong {
 	display: block;
 	margin-top: 0;
-	font-size: 20px;
+	font-size: 21px;
 	line-height: 1.2;
 	font-weight: 750;
 }

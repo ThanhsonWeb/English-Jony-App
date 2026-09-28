@@ -29,6 +29,7 @@ const courseImages = {
 	"asking-for-directions":
 		"/dialogue/asking-for-directions/thumbnails/asking-for-direction.png",
 	"at-a-hotel": "/dialogue/at-a-hotel/thumbnails/at-a-hotel.png",
+	"grocery-store": "/dialogue/grocery-store/thumbnails/grocery-store.png",
 };
 
 function getCourseImage(courseId) {
