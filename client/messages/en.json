@@ -1,7 +1,7 @@
 {
 	"Notebook": {
 	  "title": "Vocabulary notebook",
-	  "subtitle": "All your saved words, in one place to find and review more easily.",
+	  "subtitle": "Save, review, and remember a little more every day ✨",
 	  "reviewNow": "Start reviewing",
 	  "viewDueWords": "View words to review",
 	  "addWord": "Add new word",
@@ -42,6 +42,7 @@
 	  "caughtUpBody": "Add new words or come back when your next review is due.",
 	  "reviewPanelTitle": "Review now",
 	  "reviewPanelSubtitle": "Turn knowledge into skill ✨",
+	  "dailyTip": "A tip for today",
 	  "mode": "Review mode",
 	  "flashcard": "Flashcard",
 	  "flashcardDescription": "Flip cards to remember words and meanings.",

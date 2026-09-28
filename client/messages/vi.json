@@ -1,7 +1,7 @@
 {
 	"Notebook": {
 	  "title": "Sổ tay từ vựng",
-	  "subtitle": "Tất cả từ bạn đã lưu, ở một nơi để tìm kiếm và ôn tập nhanh hơn.",
+	  "subtitle": "Lưu từ, ôn tập và ghi nhớ mỗi ngày ✨",
 	  "reviewNow": "Bắt đầu ôn tập",
 	  "viewDueWords": "Xem từ cần ôn",
 	  "addWord": "Thêm từ mới",
@@ -42,6 +42,7 @@
 	  "caughtUpBody": "Thêm từ mới hoặc quay lại khi đến lịch ôn tiếp theo.",
 	  "reviewPanelTitle": "Ôn tập ngay",
 	  "reviewPanelSubtitle": "Biến kiến thức thành kỹ năng ✨",
+	  "dailyTip": "Mẹo nhỏ hôm nay",
 	  "mode": "Chế độ ôn tập",
 	  "flashcard": "Flashcard",
 	  "flashcardDescription": "Xem từ và nghĩa, lật thẻ để ghi nhớ.",

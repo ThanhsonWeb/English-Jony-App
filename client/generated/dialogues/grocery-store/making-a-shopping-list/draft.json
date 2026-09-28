@@ -1,0 +1,586 @@
+{
+  "metadata": {
+    "courseId": "grocery-store",
+    "dialogueId": "making-a-shopping-list",
+    "title": "Lập danh sách mua sắm",
+    "level": "a1",
+    "situation": "Ben và Emma chuẩn bị đi siêu thị. Họ cùng kiểm tra xem cần mua những gì và lập một danh sách mua sắm đơn giản.",
+    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+    "thumbnail": "/dialogue/grocery-store/thumbnails/making-a-shopping-list.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Ben",
+      "text": "We need some food for this week.",
+      "translation": "Chúng ta cần một ít đồ ăn cho tuần này.",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Emma",
+      "text": "Okay. What do we need?",
+      "translation": "Được rồi. Chúng ta cần gì?",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Ben",
+      "text": "We need some milk and eggs.",
+      "translation": "Chúng ta cần một ít sữa và trứng.",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Emma",
+      "text": "Do we have any bread at home?",
+      "translation": "Ở nhà chúng ta còn bánh mì không?",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Ben",
+      "text": "No, we don't. Let's buy one loaf.",
+      "translation": "Không, hết rồi. Hãy mua một ổ nhé.",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Emma",
+      "text": "What about fruit?",
+      "translation": "Còn trái cây thì sao?",
+      "practicePriority": "simple",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Ben",
+      "text": "Let's get some bananas and apples.",
+      "translation": "Hãy mua một ít chuối và táo.",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Emma",
+      "text": "Do we need anything to drink?",
+      "translation": "Chúng ta có cần mua gì để uống không?",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Ben",
+      "text": "Yes. Let's get some orange juice.",
+      "translation": "Có. Hãy mua một ít nước cam.",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Emma",
+      "text": "Great. That's everything on our list.",
+      "translation": "Tuyệt. Đó là tất cả những gì có trong danh sách của chúng ta.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-05.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "need",
+      "pronunciation": "/niːd/",
+      "meaning": "cần",
+      "example": "We need some milk."
+    },
+    {
+      "word": "food",
+      "pronunciation": "/fuːd/",
+      "meaning": "đồ ăn, thực phẩm",
+      "example": "We need some food."
+    },
+    {
+      "word": "milk",
+      "pronunciation": "/mɪlk/",
+      "meaning": "sữa",
+      "example": "I drink milk every morning."
+    },
+    {
+      "word": "eggs",
+      "pronunciation": "/eɡz/",
+      "meaning": "trứng",
+      "example": "We need six eggs."
+    },
+    {
+      "word": "bread",
+      "pronunciation": "/bred/",
+      "meaning": "bánh mì",
+      "example": "Do we have any bread?"
+    },
+    {
+      "word": "loaf",
+      "pronunciation": "/loʊf/",
+      "meaning": "ổ bánh mì",
+      "example": "Let's buy one loaf."
+    },
+    {
+      "word": "fruit",
+      "pronunciation": "/fruːt/",
+      "meaning": "trái cây",
+      "example": "I eat fruit every day."
+    },
+    {
+      "word": "orange juice",
+      "pronunciation": "/ˈɔːrɪndʒ dʒuːs/",
+      "meaning": "nước cam",
+      "example": "I'd like some orange juice."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "parts": ["We ", " some food for this week."],
+      "answers": ["need"],
+      "speaker": "Ben",
+      "transcript": "We need some food for this week.",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "parts": ["We need some food for ", "."],
+      "answers": ["this week"],
+      "speaker": "Ben",
+      "transcript": "We need some food for this week.",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "parts": ["Okay. ", " do we need?"],
+      "answers": ["What"],
+      "speaker": "Emma",
+      "transcript": "Okay. What do we need?",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "parts": ["Okay. What ", "?"],
+      "answers": ["do we need"],
+      "speaker": "Emma",
+      "transcript": "Okay. What do we need?",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 2,
+      "type": "multipleChoice",
+      "question": "Ben và Emma đang làm gì?",
+      "options": [
+        "Chuẩn bị nấu bữa tối.",
+        "Dọn dẹp nhà.",
+        "Gọi đồ ăn.",
+        "Lập danh sách đồ cần mua."
+      ],
+      "answer": "Lập danh sách đồ cần mua.",
+      "speaker": "Emma",
+      "transcript": "Okay. What do we need?",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": ["We need some ", " and eggs."],
+      "answers": ["milk"],
+      "speaker": "Ben",
+      "transcript": "We need some milk and eggs.",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": ["We need some milk and ", "."],
+      "answers": ["eggs"],
+      "speaker": "Ben",
+      "transcript": "We need some milk and eggs.",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": ["Do we have any ", " at home?"],
+      "answers": ["bread"],
+      "speaker": "Emma",
+      "transcript": "Do we have any bread at home?",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": ["Do we have any bread ", "?"],
+      "answers": ["at home"],
+      "speaker": "Emma",
+      "transcript": "Do we have any bread at home?",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 4,
+      "type": "multipleChoice",
+      "question": "Emma đang kiểm tra điều gì?",
+      "options": [
+        "Họ còn bánh mì ở nhà không.",
+        "Ben có thích bánh mì không.",
+        "Siêu thị có mở cửa không.",
+        "Bánh mì giá bao nhiêu."
+      ],
+      "answer": "Họ còn bánh mì ở nhà không.",
+      "speaker": "Emma",
+      "transcript": "Do we have any bread at home?",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-02.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "parts": ["No, we ", ". Let's buy one loaf."],
+      "answers": ["don't"],
+      "speaker": "Ben",
+      "transcript": "No, we don't. Let's buy one loaf.",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "parts": ["No, we don't. Let's buy ", "."],
+      "answers": ["one loaf"],
+      "speaker": "Ben",
+      "transcript": "No, we don't. Let's buy one loaf.",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 5,
+      "type": "multipleChoice",
+      "question": "Ben quyết định mua gì?",
+      "options": [
+        "Một chai sữa.",
+        "Một ổ bánh mì.",
+        "Một túi táo.",
+        "Một hộp trứng."
+      ],
+      "answer": "Một ổ bánh mì.",
+      "speaker": "Ben",
+      "transcript": "No, we don't. Let's buy one loaf.",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": ["What about ", "?"],
+      "answers": ["fruit"],
+      "speaker": "Emma",
+      "transcript": "What about fruit?",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-03.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": ["Let's get some ", " and apples."],
+      "answers": ["bananas"],
+      "speaker": "Ben",
+      "transcript": "Let's get some bananas and apples.",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": ["Let's get some bananas and ", "."],
+      "answers": ["apples"],
+      "speaker": "Ben",
+      "transcript": "Let's get some bananas and apples.",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "parts": ["Do we need ", " to drink?"],
+      "answers": ["anything"],
+      "speaker": "Emma",
+      "transcript": "Do we need anything to drink?",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "parts": ["Do we need anything ", "?"],
+      "answers": ["to drink"],
+      "speaker": "Emma",
+      "transcript": "Do we need anything to drink?",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-04.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 8,
+      "type": "multipleChoice",
+      "question": "Emma đang hỏi về điều gì?",
+      "options": [
+        "Họ có cần mua thêm trái cây không.",
+        "Họ có cần về nhà không.",
+        "Họ có cần mua đồ uống không.",
+        "Họ có cần mua bánh mì không."
+      ],
+      "answer": "Họ có cần mua đồ uống không.",
+      "speaker": "Emma",
+      "transcript": "Do we need anything to drink?",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-04.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": ["Yes. ", " some orange juice."],
+      "answers": ["Let's get"],
+      "speaker": "Ben",
+      "transcript": "Yes. Let's get some orange juice.",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": ["Yes. Let's get some ", "."],
+      "answers": ["orange juice"],
+      "speaker": "Ben",
+      "transcript": "Yes. Let's get some orange juice.",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "parts": ["Great. That's ", " on our list."],
+      "answers": ["everything"],
+      "speaker": "Emma",
+      "transcript": "Great. That's everything on our list.",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Emma muốn nói gì?",
+      "options": [
+        "Danh sách đã đủ đồ cần mua.",
+        "Họ cần thêm một danh sách khác.",
+        "Họ không cần đi siêu thị.",
+        "Họ quên mua đồ uống."
+      ],
+      "answer": "Danh sách đã đủ đồ cần mua.",
+      "speaker": "Emma",
+      "transcript": "Great. That's everything on our list.",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-05.mp3"
+    },
+    {
+      "id": 24,
+      "type": "dialogueCloze",
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Ben",
+          "parts": [
+            "We need some ",
+            {
+              "id": "1",
+              "blank": "food"
+            },
+            " for this week."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Emma",
+          "parts": [
+            "Okay. ",
+            {
+              "id": "2",
+              "blank": "What do we need"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Ben",
+          "parts": [
+            "We need some ",
+            {
+              "id": "3",
+              "blank": "milk"
+            },
+            " and ",
+            {
+              "id": "4",
+              "blank": "eggs"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Emma",
+          "parts": [
+            "Do we have any ",
+            {
+              "id": "5",
+              "blank": "bread"
+            },
+            " at home?"
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Ben",
+          "parts": [
+            "No, we don't. Let's buy ",
+            {
+              "id": "6",
+              "blank": "one loaf"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Emma",
+          "parts": [
+            "What about ",
+            {
+              "id": "7",
+              "blank": "fruit"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Ben",
+          "parts": [
+            "Let's get some ",
+            {
+              "id": "8",
+              "blank": "bananas"
+            },
+            " and ",
+            {
+              "id": "9",
+              "blank": "apples"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Emma",
+          "parts": [
+            "Do we need anything ",
+            {
+              "id": "10",
+              "blank": "to drink"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Ben",
+          "parts": [
+            "Yes. Let's get some ",
+            {
+              "id": "11",
+              "blank": "orange juice"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Emma",
+          "parts": [
+            "Great. That's everything on ",
+            {
+              "id": "12",
+              "blank": "our list"
+            },
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "need + danh từ",
+      "explanation": "Dùng need + danh từ để nói mình cần một thứ gì đó.",
+      "example": "We need some milk."
+    },
+    {
+      "title": "Let's + động từ",
+      "explanation": "Dùng Let's + động từ để đề nghị cùng làm một việc.",
+      "example": "Let's get some bananas and apples."
+    }
+  ]
+}

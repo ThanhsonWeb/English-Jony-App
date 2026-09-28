@@ -10,6 +10,7 @@ import {
 	Volume2,
 	Pencil,
 	Trash2,
+	Lightbulb,
 	Sprout,
 	X,
 	Check,
@@ -27,7 +28,6 @@ import {
 	selectReviewWords,
 	speakWord,
 } from "@/app/_lib/vocabulary.mjs";
-import NotebookIllustration from "./_components/NotebookIllustration";
 import { WordDialog, DeleteDialog } from "./_components/WordDialogs";
 import styles from "./wordlist.module.css";
 import { splitExample } from "@/app/_lib/exampleHighlight.mjs";
@@ -233,47 +233,32 @@ export default function WordlistPage() {
 	return (
 		<main className={styles.page}>
 			<div className={styles.container}>
+				<header className={styles.heroHeader}>
+					<div className={styles.heroCopy}>
+						<h1>{t("title")}</h1>
+						<p>{t("subtitle")}</p>
+					</div>
+					<div className={styles.stats}>
+						{[
+							["total", counts.all, BookOpen],
+							["learning", counts.learning, GraduationCap],
+							["dueToday", counts.review, CalendarDays],
+						].map(([label, count, Icon]) => (
+							<section key={label} className={styles.stat}>
+								<svg className={styles.statWave} data-wave={label} viewBox="0 0 220 90" preserveAspectRatio="none" aria-hidden="true">
+									<path d="M0 90C45 90 40 60 95 55S150 5 220 25V90Z" fill="currentColor" fillOpacity=".10" stroke="currentColor" strokeOpacity=".25" />
+								</svg>
+								<span className={styles.statIcon} data-tone={label}><Icon size={24} /></span>
+								<div>
+									<h2>{t(label)}</h2>
+									<strong>{loading || error || !user ? "—" : count}</strong>
+								</div>
+							</section>
+						))}
+					</div>
+				</header>
 				<div className={styles.content}>
 					<div className={styles.mainColumn}>
-						<p
-							className={styles.motivationalQuote}
-							data-ready={Boolean(motivationalQuote)}
-						>
-							<Sparkles size={14} aria-hidden="true" />
-							<span>{motivationalQuote || "\u00a0"}</span>
-						</p>
-						<div className={styles.stats}>
-							{[
-								["total", counts.all, BookOpen],
-								["learning", counts.learning, GraduationCap],
-								["dueToday", counts.review, CalendarDays],
-							].map(([label, count, Icon]) => (
-								<section key={label} className={styles.stat}>
-									<svg
-										className={styles.statWave}
-										data-wave={label}
-										viewBox="0 0 220 90"
-										preserveAspectRatio="none"
-										aria-hidden="true"
-									>
-										<path
-											d="M0 90C45 90 40 60 95 55S150 5 220 25V90Z"
-											fill="currentColor"
-											fillOpacity=".10"
-											stroke="currentColor"
-											strokeOpacity=".25"
-										/>
-									</svg>
-									<span className={styles.statIcon} data-tone={label}>
-										<Icon size={24} />
-									</span>
-									<div>
-										<h2>{t(label)}</h2>
-										<strong>{loading || error || !user ? "—" : count}</strong>
-									</div>
-								</section>
-							))}
-						</div>
 						<div className={styles.toolbar}>
 							<div className={styles.search}>
 								<Search size={21} />
@@ -475,9 +460,6 @@ export default function WordlistPage() {
 						)}
 					</div>
 					<aside className={styles.sideColumn}>
-						<div className={styles.illustration}>
-							<NotebookIllustration />
-						</div>
 						<div className={styles.reviewCard}>
 							<div className={styles.reviewHeader}>
 								<Sprout className={styles.reviewHeaderIcon} size={36} strokeWidth={1.8} aria-hidden="true" />
@@ -534,6 +516,17 @@ export default function WordlistPage() {
 							</fieldset>
 							{queue.length > 0 && !canQuiz && <small className={styles.reviewHint}>{t("quizHelp")}</small>}
 						</div>
+						<section className={styles.dailyTip} data-ready={Boolean(motivationalQuote)}>
+							<div className={styles.dailyTipHeading}>
+								<Lightbulb size={19} strokeWidth={1.8} aria-hidden="true" />
+								<h2>{t("dailyTip")}</h2>
+							</div>
+							<blockquote>“{motivationalQuote || "\u00a0"}”</blockquote>
+							<div className={styles.dailyTipPlant} aria-hidden="true">
+								<Sprout size={62} strokeWidth={1.35} />
+								<span />
+							</div>
+						</section>
 					</aside>
 				</div>
 			</div>
