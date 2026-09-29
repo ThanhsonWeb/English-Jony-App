@@ -77,13 +77,14 @@ const categoryIcons = {
 const courseIdsByCategory = {
 	office: ["office-introduction"],
 	travel: ["at-a-hotel", "asking-for-directions", "weekend-camping"],
-	food: ["coffee-shop", "grocery-store"],
+	food: ["coffee-shop", "grocery-store", "restaurant"],
 	life: ["at-a-hotel", "weekend-camping"],
 	daily: [
 		"at-a-hotel",
 		"asking-for-directions",
 		"coffee-shop",
 		"grocery-store",
+		"restaurant",
 		"office-introduction",
 		"weekend-camping",
 	],

@@ -81,6 +81,29 @@ function countFillBlankAnswers(task) {
 	return Array.isArray(task.answers) ? task.answers.length : 0;
 }
 
+function countAnswerWords(answer) {
+	return (
+		String(answer || "").match(/[\p{L}\p{N}]+(?:['’][\p{L}\p{N}]+)*/gu) || []
+	).length;
+}
+
+function normalizeA1Phrase(value) {
+	return String(value || "")
+		.toLowerCase()
+		.replace(/[’‘]/g, "'")
+		.replace(/[^\p{L}\p{N}' ]/gu, " ")
+		.replace(/\s+/g, " ")
+		.trim();
+}
+
+function phraseAppearsInSource(phrase, source) {
+	const normalizedPhrase = normalizeA1Phrase(phrase);
+	const normalizedSource = normalizeA1Phrase(source);
+	return Boolean(
+		normalizedPhrase && ` ${normalizedSource} `.includes(` ${normalizedPhrase} `),
+	);
+}
+
 function getFillBlankTargets(task) {
 	if (
 		!Array.isArray(task.parts) ||
@@ -233,6 +256,9 @@ export function validateDialogue(data, options = {}) {
 	const usefulWordsRange = options.usefulWords || structureRules.usefulWords;
 
 	const normalizedLevel = String(data?.metadata?.level || "").toLowerCase();
+	const isA1 = normalizedLevel === "a1" || normalizedLevel === "beginner";
+	const strictA1Rules =
+		isA1 && Number(data?.metadata?.a1ContentRulesVersion) >= 2;
 	const fillBlankRange =
 		normalizedLevel === "a1" || normalizedLevel === "beginner"
 			? structureRules.a1FillBlankRange
@@ -245,7 +271,15 @@ export function validateDialogue(data, options = {}) {
 		translationOnly: 0,
 		answerPositionDistribution: { A: 0, B: 0, C: 0, D: 0 },
 		grammarInContext: 0,
+		categoryDistribution: { comprehension: 0, grammar: 0, usage: 0 },
 	};
+	const restrictedA1ContractionPattern =
+		/\b(?:i['’](?:ll|d|ve)|we['’](?:ll|ve)|you['’]d)\b/giu;
+	const allowedMcCategories = new Set([
+		"comprehension",
+		"grammar",
+		"usage",
+	]);
 
 	// ------------------------------------------------------------
 	// Metadata
@@ -275,6 +309,26 @@ export function validateDialogue(data, options = {}) {
 
 		dialogueLines.forEach((line, index) => {
 			const label = `Dialogue line ${index + 1}`;
+			if (strictA1Rules && typeof line.text === "string") {
+				for (const match of line.text.matchAll(restrictedA1ContractionPattern)) {
+					const contraction = normalizeA1Phrase(match[0]);
+					const explicitlyListed = Array.isArray(
+						data.metadata?.teachesContractions,
+					)
+						? data.metadata.teachesContractions.some(
+								(item) => normalizeA1Phrase(item) === contraction,
+							)
+						: false;
+					const grammarNotes = normalizeA1Phrase(
+						JSON.stringify(data.grammarNotes || []),
+					);
+					if (!explicitlyListed || !grammarNotes.includes(contraction)) {
+						errors.push(
+							`${label}: harder A1 contraction "${match[0]}" must be listed in metadata.teachesContractions and explained in grammarNotes.`,
+						);
+					}
+				}
+			}
 
 			if (!isPresent(line.id)) {
 				errors.push(`${label}: missing id.`);
@@ -596,6 +650,30 @@ export function validateDialogue(data, options = {}) {
 						);
 					}
 
+					if (strictA1Rules && hasValidAnswers) {
+						let consecutiveHiddenWords = 0;
+						task.answers.forEach((answer, answerIndex) => {
+							const separator = task.parts[answerIndex] || "";
+							if (/[\p{L}\p{N}]/u.test(separator)) {
+								consecutiveHiddenWords = 0;
+							}
+							const answerWordCount = countAnswerWords(answer);
+							if (
+								answerWordCount > structureRules.a1FillBlankMaxAnswerWords
+							) {
+								errors.push(
+									`${taskLabel}: A1 Fill Blank answers may contain at most ${structureRules.a1FillBlankMaxAnswerWords} words; found ${answerWordCount} in "${answer}".`,
+								);
+							}
+							consecutiveHiddenWords += answerWordCount;
+							if (consecutiveHiddenWords > structureRules.a1FillBlankMaxAnswerWords) {
+								errors.push(
+									`${taskLabel}: A1 Fill Blank must not hide 3 or more consecutive words across adjacent blanks.`,
+								);
+							}
+						});
+					}
+
 					if (task.parts.length !== task.answers.length + 1) {
 						errors.push(
 							`${taskLabel}: parts must contain one more item than answers.`,
@@ -644,6 +722,27 @@ export function validateDialogue(data, options = {}) {
 
 			if (task.type === "multipleChoice") {
 				mcReport.total += 1;
+				if (allowedMcCategories.has(task.mcCategory)) {
+					mcReport.categoryDistribution[task.mcCategory] += 1;
+				}
+				if (isA1 && (strictA1Rules || isPresent(task.mcCategory))) {
+					if (!allowedMcCategories.has(task.mcCategory)) {
+						errors.push(
+							`${taskLabel}: A1 Multiple Choice mcCategory must be comprehension, grammar, or usage.`,
+						);
+					}
+					if (task.mcCategory === "grammar" || task.mcCategory === "usage") {
+						if (!isPresent(task.mcTarget)) {
+							errors.push(
+								`${taskLabel}: A1 ${task.mcCategory} questions require mcTarget from the linked dialogue line.`,
+							);
+						} else if (!phraseAppearsInSource(task.mcTarget, sourceLine.text)) {
+							errors.push(
+								`${taskLabel}: mcTarget "${task.mcTarget}" must appear in dialogue line ${task.dialogueLineId}.`,
+							);
+						}
+					}
+				}
 
 				if (!isPresent(task.question)) {
 					errors.push(`${taskLabel}: missing question.`);
@@ -732,6 +831,28 @@ export function validateDialogue(data, options = {}) {
 			warnings.push(
 				`Found ${mcReport.grammarInContext} detectable grammar-in-context Multiple Choice tasks; usually use no more than 2 per dialogue.`,
 			);
+		}
+
+		if (strictA1Rules && multipleChoiceCount >= 4) {
+			const comprehensionShare =
+				mcReport.categoryDistribution.comprehension / multipleChoiceCount;
+			if (
+				comprehensionShare < structureRules.a1McComprehensionShare.min ||
+				comprehensionShare > structureRules.a1McComprehensionShare.max
+			) {
+				errors.push(
+					`A1 Multiple Choice should contain ${Math.round(structureRules.a1McComprehensionShare.min * 100)}-${Math.round(structureRules.a1McComprehensionShare.max * 100)}% comprehension questions; found ${mcReport.categoryDistribution.comprehension}/${multipleChoiceCount}.`,
+				);
+			}
+			if (
+				mcReport.categoryDistribution.grammar +
+					mcReport.categoryDistribution.usage ===
+				0
+			) {
+				errors.push(
+					"A1 Multiple Choice must include grammar-in-context or usage questions grounded in dialogue lines.",
+				);
+			}
 		}
 
 		if (
@@ -845,11 +966,13 @@ function printMcReport(report) {
 
 	console.log("\nMultiple Choice report:");
 	console.log(`- Total MC count: ${report.total}`);
+	console.log(`- Comprehension: ${report.categoryDistribution.comprehension}`);
+	console.log(`- Grammar: ${report.categoryDistribution.grammar}`);
+	console.log(`- Usage: ${report.categoryDistribution.usage}`);
 	console.log(`- Translation-only MC count: ${report.translationOnly}`);
 	console.log(
 		`- Correct-answer positions: A=${positions.A}, B=${positions.B}, C=${positions.C}, D=${positions.D}`,
 	);
-	console.log(`- Grammar-in-context MC count: ${report.grammarInContext}`);
 	console.log(`- Validation result: ${report.validationResult}`);
 }
 

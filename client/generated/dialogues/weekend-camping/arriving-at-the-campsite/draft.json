@@ -1,444 +1,749 @@
 {
-"metadata": {
-"courseId": "weekend-camping",
-"dialogueId": "arriving-at-the-campsite",
-"title": "Đến khu cắm trại",
-"level": "a1",
-"situation": "Leo and Mia arrive at the campsite and choose a suitable place for their tent.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"thumbnail": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png"
-},
-"dialogue": [
-{
-"id": 1,
-"speaker": "Leo",
-"text": "This campsite is nice and quiet.",
-"translation": "Khu cắm trại này đẹp và yên tĩnh.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-01.mp3"
-},
-{
-"id": 2,
-"speaker": "Mia",
-"text": "Yes! Where can we put our tent?",
-"translation": "Ừ! Mình có thể dựng lều ở đâu nhỉ?",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-01.mp3"
-},
-{
-"id": 3,
-"speaker": "Leo",
-"text": "How about that place near the lake?",
-"translation": "Chỗ kia gần hồ thì sao?",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-02.mp3"
-},
-{
-"id": 4,
-"speaker": "Mia",
-"text": "It's nice, but it's too sunny.",
-"translation": "Chỗ đó đẹp, nhưng nắng quá.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-02.mp3"
-},
-{
-"id": 5,
-"speaker": "Leo",
-"text": "What about under this tree?",
-"translation": "Thế còn dưới gốc cây này thì sao?",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-03.mp3"
-},
-{
-"id": 6,
-"speaker": "Mia",
-"text": "Yes, there's some shade here.",
-"translation": "Ừ, ở đây có bóng mát.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-03.mp3"
-},
-{
-"id": 7,
-"speaker": "Mia",
-"text": "Is there enough space for our tent?",
-"translation": "Có đủ chỗ cho lều của mình không?",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-04.mp3"
-},
-{
-"id": 8,
-"speaker": "Leo",
-"text": "Yes, our tent is small.",
-"translation": "Có chứ, lều của mình nhỏ mà.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-04.mp3"
-},
-{
-"id": 9,
-"speaker": "Mia",
-"text": "Great! Let's camp here.",
-"translation": "Tuyệt! Mình cắm trại ở đây nhé.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-05.mp3"
-},
-{
-"id": 10,
-"speaker": "Leo",
-"text": "Good idea! It's near the lake, too.",
-"translation": "Ý hay đấy! Chỗ này cũng gần hồ nữa.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-05.mp3"
-}
-],
-"usefulWords": [
-{
-"word": "campsite",
-"pronunciation": "/ˈkæmpsaɪt/",
-"meaning": "khu cắm trại",
-"example": "This campsite is quiet."
-},
-{
-"word": "tent",
-"pronunciation": "/tent/",
-"meaning": "lều",
-"example": "Our tent is small."
-},
-{
-"word": "How about",
-"pronunciation": "/haʊ əˈbaʊt/",
-"meaning": "… thì sao? (dùng để gợi ý)",
-"example": "How about this place?"
-},
-{
-"word": "near the lake",
-"pronunciation": "/nɪr ðə leɪk/",
-"meaning": "gần hồ",
-"example": "Our tent is near the lake."
-},
-{
-"word": "too sunny",
-"pronunciation": "/tuː ˈsʌni/",
-"meaning": "quá nắng",
-"example": "It's too sunny here."
-},
-{
-"word": "under this tree",
-"pronunciation": "/ˈʌndər ðɪs triː/",
-"meaning": "dưới cây này",
-"example": "It's cool under this tree."
-},
-{
-"word": "shade",
-"pronunciation": "/ʃeɪd/",
-"meaning": "bóng mát",
-"example": "There's some shade here."
-},
-{
-"word": "enough space",
-"pronunciation": "/ɪˈnʌf speɪs/",
-"meaning": "đủ chỗ",
-"example": "There is enough space for two tents."
-},
-{
-"word": "Let's camp here",
-"pronunciation": "/lets kæmp hɪr/",
-"meaning": "Mình cắm trại ở đây nhé.",
-"example": "Let's camp here near the lake."
-}
-],
-"tasks": [
-{
-"id": 1,
-"dialogueLineId": 1,
-"type": "fillBlank",
-"question": "This campsite is nice and ____.",
-"answer": "quiet",
-"speaker": "Leo",
-"transcript": "This campsite is nice and quiet.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-01.mp3"
-},
-{
-"id": 2,
-"dialogueLineId": 2,
-"type": "fillBlank",
-"question": "Yes! Where can we put our ?",
-"answer": "tent",
-"speaker": "Mia",
-"transcript": "Yes! Where can we put our tent?",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-01.mp3"
-},
-{
-"id": 3,
-"dialogueLineId": 3,
-"type": "fillBlank",
-"question": " that place near the lake?",
-"answer": "How about",
-"speaker": "Leo",
-"transcript": "How about that place near the lake?",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-02.mp3"
-},
-{
-"id": 4,
-"dialogueLineId": 3,
-"type": "fillBlank",
-"question": "How about that place ____?",
-"answer": "near the lake",
-"speaker": "Leo",
-"transcript": "How about that place near the lake?",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-02.mp3"
-},
-{
-"id": 5,
-"dialogueLineId": 4,
-"type": "fillBlank",
-"question": "It's nice, but it's ____.",
-"answer": "too sunny",
-"speaker": "Mia",
-"transcript": "It's nice, but it's too sunny.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-02.mp3"
-},
-{
-"id": 6,
-"dialogueLineId": 4,
-"type": "multipleChoice",
-"question": "Vì sao Mia chưa muốn chọn chỗ Leo vừa gợi ý?",
-"options": [
-"Chỗ đó quá nhỏ.",
-"Chỗ đó quá nắng.",
-"Chỗ đó quá xa hồ.",
-"Chỗ đó quá ồn."
-],
-"answer": "Chỗ đó quá nắng.",
-"speaker": "Mia",
-"transcript": "It's nice, but it's too sunny.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-02.mp3"
-},
-{
-"id": 7,
-"dialogueLineId": 5,
-"type": "fillBlank",
-"question": "What about ____?",
-"answer": "under this tree",
-"speaker": "Leo",
-"transcript": "What about under this tree?",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-03.mp3"
-},
-{
-"id": 8,
-"dialogueLineId": 6,
-"type": "fillBlank",
-"question": "Yes, there's some ____ here.",
-"answer": "shade",
-"speaker": "Mia",
-"transcript": "Yes, there's some shade here.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-03.mp3"
-},
-{
-"id": 9,
-"dialogueLineId": 7,
-"type": "fillBlank",
-"question": "Is there ____ for our tent?",
-"answer": "enough space",
-"speaker": "Mia",
-"transcript": "Is there enough space for our tent?",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-04.mp3"
-},
-{
-"id": 10,
-"dialogueLineId": 8,
-"type": "fillBlank",
-"question": "Yes, our tent is ____.",
-"answer": "small",
-"speaker": "Leo",
-"transcript": "Yes, our tent is small.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-04.mp3"
-},
-{
-"id": 11,
-"dialogueLineId": 9,
-"type": "fillBlank",
-"question": "Great! ____ here.",
-"answer": "Let's camp",
-"speaker": "Mia",
-"transcript": "Great! Let's camp here.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-05.mp3"
-},
-{
-"id": 12,
-"dialogueLineId": 9,
-"type": "multipleChoice",
-"question": "Khi nói “Let's camp here”, Mia chọn cắm trại ở đâu?",
-"options": [
-"Chỗ quá nắng lúc đầu.",
-"Một chỗ khác xa hồ.",
-"Dưới cây vừa nhắc đến.",
-"Mia vẫn chưa chọn chỗ."
-],
-"answer": "Dưới cây vừa nhắc đến.",
-"speaker": "Mia",
-"transcript": "Great! Let's camp here.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-05.mp3"
-},
-{
-"id": 13,
-"dialogueLineId": 10,
-"type": "fillBlank",
-"question": "Good idea! It's ____, too.",
-"answer": "near the lake",
-"speaker": "Leo",
-"transcript": "Good idea! It's near the lake, too.",
-"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-"audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-05.mp3"
-},
-{
-"id": 14,
-"type": "dialogueCloze",
-"lines": [
-{
-"dialogueLineId": 1,
-"speaker": "Leo",
-"parts": [
-"This campsite is nice and ",
-{
-"id": "1",
-"blank": "quiet"
-},
-"."
-]
-},
-{
-"dialogueLineId": 2,
-"speaker": "Mia",
-"parts": [
-"Yes! Where can we put our ",
-{
-"id": "2",
-"blank": "tent"
-},
-"?"
-]
-},
-{
-"dialogueLineId": 3,
-"speaker": "Leo",
-"parts": [
-"",
-{
-"id": "3",
-"blank": "How about"
-},
-" that place near the lake?"
-]
-},
-{
-"dialogueLineId": 4,
-"speaker": "Mia",
-"parts": [
-"It's nice, but it's ",
-{
-"id": "4",
-"blank": "too sunny"
-},
-"."
-]
-},
-{
-"dialogueLineId": 5,
-"speaker": "Leo",
-"parts": [
-"What about ",
-{
-"id": "5",
-"blank": "under this tree"
-},
-"?"
-]
-},
-{
-"dialogueLineId": 6,
-"speaker": "Mia",
-"parts": [
-"Yes, there's some ",
-{
-"id": "6",
-"blank": "shade"
-},
-" here."
-]
-},
-{
-"dialogueLineId": 7,
-"speaker": "Mia",
-"parts": [
-"Is there ",
-{
-"id": "7",
-"blank": "enough space"
-},
-" for our tent?"
-]
-},
-{
-"dialogueLineId": 8,
-"speaker": "Leo",
-"parts": [
-"Yes, our tent is ",
-{
-"id": "8",
-"blank": "small"
-},
-"."
-]
-},
-{
-"dialogueLineId": 9,
-"speaker": "Mia",
-"parts": [
-"Great! ",
-{
-"id": "9",
-"blank": "Let's camp"
-},
-" here."
-]
-},
-{
-"dialogueLineId": 10,
-"speaker": "Leo",
-"parts": [
-"Good idea! It's ",
-{
-"id": "10",
-"blank": "near the lake"
-},
-", too."
-]
-}
-]
-}
-],
-"grammarNotes": [
-{
-"title": "Gợi ý với How about / What about",
-"explanation": "Dùng “How about…?” hoặc “What about…?” để gợi ý một lựa chọn, nghĩa là “… thì sao?”. Trong hội thoại, Leo dùng hai mẫu này để gợi ý chỗ dựng lều.",
-"example": "What about under this tree?"
-},
-{
-"title": "Rủ cùng làm với Let's",
-"explanation": "Dùng “Let's + động từ” để rủ ai đó cùng làm việc gì, nghĩa là “Mình cùng… nhé”. Sau “Let's”, giữ nguyên động từ.",
-"example": "Let's camp here."
-}
-]
+  "metadata": {
+    "courseId": "weekend-camping",
+    "dialogueId": "arriving-at-the-campsite",
+    "title": "Đến khu cắm trại",
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Leo and Mia arrive at the campsite and choose a suitable place for their tent.",
+    "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+    "thumbnail": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Leo",
+      "text": "We are here. This campsite looks nice.",
+      "translation": "Chúng ta đến rồi. Khu cắm trại này trông đẹp đấy.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Mia",
+      "text": "Yes. We need a good place for the tent.",
+      "translation": "Ừ. Chúng ta cần một chỗ tốt để dựng lều.",
+      "practicePriority": "important",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Leo",
+      "text": "What about the space near those trees?",
+      "translation": "Chỗ gần những cái cây kia thì sao?",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Mia",
+      "text": "It looks good, but the ground is a little wet.",
+      "translation": "Trông ổn đấy, nhưng mặt đất hơi ướt.",
+      "practicePriority": "important",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Leo",
+      "text": "You're right. We can look over there.",
+      "translation": "Bạn nói đúng. Chúng ta có thể xem chỗ đằng kia.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Mia",
+      "text": "That spot is flat and dry.",
+      "translation": "Chỗ đó bằng phẳng và khô.",
+      "practicePriority": "important",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Leo",
+      "text": "Is there enough space for the tent?",
+      "translation": "Có đủ chỗ cho cái lều không?",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Mia",
+      "text": "Yes, there is. It is also close to the water.",
+      "translation": "Có. Chỗ này cũng gần nguồn nước.",
+      "practicePriority": "important",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Leo",
+      "text": "Is it too close to the water?",
+      "translation": "Nó có quá gần nước không?",
+      "practicePriority": "important",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Mia",
+      "text": "No, I think this spot is safe.",
+      "translation": "Không, mình nghĩ chỗ này an toàn.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Leo",
+      "text": "Good. This is the best place for our tent.",
+      "translation": "Tốt. Đây là chỗ tốt nhất cho lều của chúng ta.",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Mia",
+      "text": "Great. We can stay here tonight.",
+      "translation": "Tuyệt. Tối nay chúng ta có thể ở đây.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "campsite",
+      "pronunciation": "/ˈkæmpsaɪt/",
+      "meaning": "khu cắm trại",
+      "example": "This campsite looks nice."
+    },
+    {
+      "word": "good place",
+      "pronunciation": "/ɡʊd pleɪs/",
+      "meaning": "chỗ tốt, nơi phù hợp",
+      "example": "We need a good place."
+    },
+    {
+      "word": "near those trees",
+      "pronunciation": "/nɪr ðoʊz triːz/",
+      "meaning": "gần những cái cây kia",
+      "example": "The tent is near those trees."
+    },
+    {
+      "word": "a little wet",
+      "pronunciation": "/ə ˈlɪtl wet/",
+      "meaning": "hơi ướt",
+      "example": "The ground is a little wet."
+    },
+    {
+      "word": "flat and dry",
+      "pronunciation": "/flæt ænd draɪ/",
+      "meaning": "bằng phẳng và khô",
+      "example": "This place is flat and dry."
+    },
+    {
+      "word": "enough space",
+      "pronunciation": "/ɪˈnʌf speɪs/",
+      "meaning": "đủ không gian",
+      "example": "There is enough space."
+    },
+    {
+      "word": "close to",
+      "pronunciation": "/kloʊs tə/",
+      "meaning": "gần",
+      "example": "The campsite is close to the water."
+    },
+    {
+      "word": "best place",
+      "pronunciation": "/best pleɪs/",
+      "meaning": "chỗ tốt nhất",
+      "example": "This is the best place."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "parts": [
+        "We are here. This ",
+        " looks nice."
+      ],
+      "answers": [
+        "campsite"
+      ],
+      "speaker": "Leo",
+      "transcript": "We are here. This campsite looks nice.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "parts": [
+        "Yes. We need a good ",
+        " for the tent."
+      ],
+      "answers": [
+        "place"
+      ],
+      "speaker": "Mia",
+      "transcript": "Yes. We need a good place for the tent.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "parts": [
+        "Yes. We need a good place for the ",
+        "."
+      ],
+      "answers": [
+        "tent"
+      ],
+      "speaker": "Mia",
+      "transcript": "Yes. We need a good place for the tent.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "What about the ",
+        " near those trees?"
+      ],
+      "answers": [
+        "space"
+      ],
+      "speaker": "Leo",
+      "transcript": "What about the space near those trees?",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-02.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "What about the space near those ",
+        "?"
+      ],
+      "answers": [
+        "trees"
+      ],
+      "speaker": "Leo",
+      "transcript": "What about the space near those trees?",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Leo đang gợi ý chỗ nào để dựng lều?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Chỗ gần đường.",
+        "Chỗ gần mặt nước.",
+        "Chỗ cạnh xe.",
+        "Chỗ gần những cái cây."
+      ],
+      "answer": "Chỗ gần những cái cây.",
+      "speaker": "Leo",
+      "transcript": "What about the space near those trees?",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": [
+        "It looks good, but the ",
+        " is a little wet."
+      ],
+      "answers": [
+        "ground"
+      ],
+      "speaker": "Mia",
+      "transcript": "It looks good, but the ground is a little wet.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": [
+        "It looks good, but the ground is a little ",
+        "."
+      ],
+      "answers": [
+        "wet"
+      ],
+      "speaker": "Mia",
+      "transcript": "It looks good, but the ground is a little wet.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "parts": [
+        "",
+        ". We can look over there."
+      ],
+      "answers": [
+        "You're right"
+      ],
+      "speaker": "Leo",
+      "transcript": "You're right. We can look over there.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-03.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "multipleChoice",
+      "question": "\"You're right\" giúp Leo làm gì trong cuộc trò chuyện?",
+      "mcCategory": "usage",
+      "mcTarget": "You're right",
+      "options": [
+        "Đồng ý với nhận xét của Mia.",
+        "Hỏi Mia một câu mới.",
+        "Từ chối ý kiến của Mia.",
+        "Chào Mia."
+      ],
+      "answer": "Đồng ý với nhận xét của Mia.",
+      "speaker": "Leo",
+      "transcript": "You're right. We can look over there.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": [
+        "That spot is ",
+        " and dry."
+      ],
+      "answers": [
+        "flat"
+      ],
+      "speaker": "Mia",
+      "transcript": "That spot is flat and dry.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": [
+        "That spot is flat and ",
+        "."
+      ],
+      "answers": [
+        "dry"
+      ],
+      "speaker": "Mia",
+      "transcript": "That spot is flat and dry.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Điều gì làm chỗ mới phù hợp hơn?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Nó có nhiều bóng râm nhưng ướt.",
+        "Nó bằng phẳng và khô.",
+        "Nó ở gần đường.",
+        "Nó rất nhỏ."
+      ],
+      "answer": "Nó bằng phẳng và khô.",
+      "speaker": "Mia",
+      "transcript": "That spot is flat and dry.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": [
+        "Is there enough ",
+        " for the tent?"
+      ],
+      "answers": [
+        "space"
+      ],
+      "speaker": "Leo",
+      "transcript": "Is there enough space for the tent?",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-04.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": [
+        "Is there enough space for the ",
+        "?"
+      ],
+      "answers": [
+        "tent"
+      ],
+      "speaker": "Leo",
+      "transcript": "Is there enough space for the tent?",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "question": "Trong câu này, \"Is there enough...?\" được dùng để làm gì?",
+      "mcCategory": "grammar",
+      "mcTarget": "Is there enough",
+      "options": [
+        "Hỏi cái lều ở đâu.",
+        "Miêu tả mặt đất.",
+        "Hỏi xem có đủ không gian hay không.",
+        "Nói rằng không có chỗ."
+      ],
+      "answer": "Hỏi xem có đủ không gian hay không.",
+      "speaker": "Leo",
+      "transcript": "Is there enough space for the tent?",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "parts": [
+        "Yes, there is. It is also ",
+        " to the water."
+      ],
+      "answers": [
+        "close"
+      ],
+      "speaker": "Mia",
+      "transcript": "Yes, there is. It is also close to the water.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "parts": [
+        "Yes, there is. It is also close to the ",
+        "."
+      ],
+      "answers": [
+        "water"
+      ],
+      "speaker": "Mia",
+      "transcript": "Yes, there is. It is also close to the water.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-04.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": [
+        "Is it too ",
+        " to the water?"
+      ],
+      "answers": [
+        "close"
+      ],
+      "speaker": "Leo",
+      "transcript": "Is it too close to the water?",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-05.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": [
+        "Is it too close to the ",
+        "?"
+      ],
+      "answers": [
+        "water"
+      ],
+      "speaker": "Leo",
+      "transcript": "Is it too close to the water?",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Leo lo điều gì về chỗ này?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Nó có thể quá gần nước.",
+        "Nó quá xa những cái cây.",
+        "Nó quá tối.",
+        "Nó quá nhỏ."
+      ],
+      "answer": "Nó có thể quá gần nước.",
+      "speaker": "Leo",
+      "transcript": "Is it too close to the water?",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "parts": [
+        "No, I think this spot is ",
+        "."
+      ],
+      "answers": [
+        "safe"
+      ],
+      "speaker": "Mia",
+      "transcript": "No, I think this spot is safe.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "parts": [
+        "Good. This is the best ",
+        " for our tent."
+      ],
+      "answers": [
+        "place"
+      ],
+      "speaker": "Leo",
+      "transcript": "Good. This is the best place for our tent.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-06.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "parts": [
+        "Good. This is the best place for our ",
+        "."
+      ],
+      "answers": [
+        "tent"
+      ],
+      "speaker": "Leo",
+      "transcript": "Good. This is the best place for our tent.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-06.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "parts": [
+        "Great. We can stay here ",
+        "."
+      ],
+      "answers": [
+        "tonight"
+      ],
+      "speaker": "Mia",
+      "transcript": "Great. We can stay here tonight.",
+      "scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+      "audioUrl": "/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-06.mp3"
+    },
+    {
+      "id": 26,
+      "type": "dialogueCloze",
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Leo",
+          "parts": [
+            "We are here. This ",
+            {
+              "id": "1",
+              "blank": "campsite"
+            },
+            " looks nice."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Mia",
+          "parts": [
+            "Yes. We need a ",
+            {
+              "id": "2",
+              "blank": "good place"
+            },
+            " for the tent."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Leo",
+          "parts": [
+            "What about the space near ",
+            {
+              "id": "3",
+              "blank": "those trees"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Mia",
+          "parts": [
+            "It looks good, but the ground is a little ",
+            {
+              "id": "4",
+              "blank": "wet"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Leo",
+          "parts": [
+            "You're right. We can look ",
+            {
+              "id": "5",
+              "blank": "over there"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Mia",
+          "parts": [
+            "That spot is ",
+            {
+              "id": "6",
+              "blank": "flat"
+            },
+            " and dry."
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Leo",
+          "parts": [
+            "Is there ",
+            {
+              "id": "7",
+              "blank": "enough space"
+            },
+            " for the tent?"
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Mia",
+          "parts": [
+            "Yes, there is. It is also ",
+            {
+              "id": "8",
+              "blank": "close to"
+            },
+            " the water."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Leo",
+          "parts": [
+            "Is it ",
+            {
+              "id": "9",
+              "blank": "too close"
+            },
+            " to the water?"
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Mia",
+          "parts": [
+            "No, I think this spot is ",
+            {
+              "id": "10",
+              "blank": "safe"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Leo",
+          "parts": [
+            "Good. This is the ",
+            {
+              "id": "11",
+              "blank": "best place"
+            },
+            " for our tent."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Mia",
+          "parts": [
+            "Great. We can stay here ",
+            {
+              "id": "12",
+              "blank": "tonight"
+            },
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Hỏi xem có đủ với “Is there enough...?”",
+      "explanation": "Dùng “Is there enough + danh từ...?” để hỏi xem một thứ có đủ hay không.",
+      "example": "Is there enough space for the tent?"
+    },
+    {
+      "title": "Nói mức độ với “too + tính từ”",
+      "explanation": "Dùng “too + tính từ” khi một đặc điểm nhiều hơn mức phù hợp hoặc mong muốn.",
+      "example": "Is it too close to the water?"
+    }
+  ]
 }

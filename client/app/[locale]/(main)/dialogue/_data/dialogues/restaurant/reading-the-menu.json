@@ -1,0 +1,749 @@
+{
+  "metadata": {
+    "courseId": "restaurant",
+    "dialogueId": "reading-the-menu",
+    "title": "Xem thực đơn",
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Ben và Emma xem thực đơn và nói về các món ăn. Họ hỏi nhau món nào trông ngon và món nào họ muốn thử.",
+    "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+    "thumbnail": "/dialogue/restaurant/thumbnails/reading-the-menu.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Emma",
+      "text": "This table is nice. We can look at the menu now.",
+      "translation": "Bàn này đẹp đấy. Bây giờ chúng ta có thể xem thực đơn.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Ben",
+      "text": "There are so many dishes on this menu.",
+      "translation": "Có rất nhiều món trong thực đơn này.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Emma",
+      "text": "What do you want to try?",
+      "translation": "Bạn muốn thử món gì?",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Ben",
+      "text": "The chicken pasta looks good.",
+      "translation": "Món mì Ý gà trông ngon đấy.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Emma",
+      "text": "I like pasta too, but I want something lighter.",
+      "translation": "Mình cũng thích mì Ý, nhưng mình muốn món gì đó nhẹ hơn.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Ben",
+      "text": "What about the tomato soup?",
+      "translation": "Món súp cà chua thì sao?",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Emma",
+      "text": "That sounds good. Is it spicy?",
+      "translation": "Nghe ngon đấy. Nó có cay không?",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Ben",
+      "text": "I do not think so.",
+      "translation": "Mình không nghĩ vậy.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Emma",
+      "text": "Then I want the tomato soup.",
+      "translation": "Vậy thì mình muốn món súp cà chua.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Ben",
+      "text": "I think I want the chicken pasta.",
+      "translation": "Mình nghĩ mình muốn món mì Ý gà.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Emma",
+      "text": "Great. We know what we want now.",
+      "translation": "Tuyệt. Bây giờ chúng ta biết mình muốn món gì rồi.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Ben",
+      "text": "Yes. We are ready to order.",
+      "translation": "Ừ. Chúng ta đã sẵn sàng gọi món.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "menu",
+      "pronunciation": "/ˈmenjuː/",
+      "meaning": "thực đơn",
+      "example": "Can I see the menu?"
+    },
+    {
+      "word": "dishes",
+      "pronunciation": "/ˈdɪʃɪz/",
+      "meaning": "các món ăn",
+      "example": "There are many dishes."
+    },
+    {
+      "word": "want to try",
+      "pronunciation": "/wɑːnt tə traɪ/",
+      "meaning": "muốn thử",
+      "example": "What do you want to try?"
+    },
+    {
+      "word": "looks good",
+      "pronunciation": "/lʊks ɡʊd/",
+      "meaning": "trông ngon, trông hấp dẫn",
+      "example": "The pasta looks good."
+    },
+    {
+      "word": "something lighter",
+      "pronunciation": "/ˈsʌmθɪŋ ˈlaɪtər/",
+      "meaning": "món gì đó nhẹ hơn",
+      "example": "I want something lighter."
+    },
+    {
+      "word": "What about",
+      "pronunciation": "/wʌt əˈbaʊt/",
+      "meaning": "còn... thì sao?",
+      "example": "What about the soup?"
+    },
+    {
+      "word": "spicy",
+      "pronunciation": "/ˈspaɪsi/",
+      "meaning": "cay",
+      "example": "Is the soup spicy?"
+    },
+    {
+      "word": "ready to order",
+      "pronunciation": "/ˈredi tə ˈɔːrdər/",
+      "meaning": "sẵn sàng gọi món",
+      "example": "We are ready to order."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "parts": [
+        "This table is nice. We can look at the ",
+        " now."
+      ],
+      "answers": [
+        "menu"
+      ],
+      "speaker": "Emma",
+      "transcript": "This table is nice. We can look at the menu now.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "parts": [
+        "There are so ",
+        " on this menu."
+      ],
+      "answers": [
+        "many dishes"
+      ],
+      "speaker": "Ben",
+      "transcript": "There are so many dishes on this menu.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "parts": [
+        "There are so many dishes on this ",
+        "."
+      ],
+      "answers": [
+        "menu"
+      ],
+      "speaker": "Ben",
+      "transcript": "There are so many dishes on this menu.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "What do you ",
+        " to try?"
+      ],
+      "answers": [
+        "want"
+      ],
+      "speaker": "Emma",
+      "transcript": "What do you want to try?",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-02.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "What do you want to ",
+        "?"
+      ],
+      "answers": [
+        "try"
+      ],
+      "speaker": "Emma",
+      "transcript": "What do you want to try?",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Trong câu này, \"do you want\" giúp Emma hỏi điều gì?",
+      "mcCategory": "grammar",
+      "mcTarget": "do you want",
+      "options": [
+        "Ben đã ăn món gì.",
+        "Ben có thích nhà hàng không.",
+        "Ben muốn uống gì.",
+        "Ben muốn thử món gì."
+      ],
+      "answer": "Ben muốn thử món gì.",
+      "speaker": "Emma",
+      "transcript": "What do you want to try?",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": [
+        "The ",
+        " pasta looks good."
+      ],
+      "answers": [
+        "chicken"
+      ],
+      "speaker": "Ben",
+      "transcript": "The chicken pasta looks good.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": [
+        "The chicken pasta ",
+        "."
+      ],
+      "answers": [
+        "looks good"
+      ],
+      "speaker": "Ben",
+      "transcript": "The chicken pasta looks good.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "multipleChoice",
+      "question": "Món nào làm Ben chú ý?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Mì Ý gà.",
+        "Súp cà chua.",
+        "Salad.",
+        "Bánh mì."
+      ],
+      "answer": "Mì Ý gà.",
+      "speaker": "Ben",
+      "transcript": "The chicken pasta looks good.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "parts": [
+        "I like ",
+        " too, but I want something lighter."
+      ],
+      "answers": [
+        "pasta"
+      ],
+      "speaker": "Emma",
+      "transcript": "I like pasta too, but I want something lighter.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "parts": [
+        "I like pasta too, but I want something ",
+        "."
+      ],
+      "answers": [
+        "lighter"
+      ],
+      "speaker": "Emma",
+      "transcript": "I like pasta too, but I want something lighter.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": [
+        "",
+        " the tomato soup?"
+      ],
+      "answers": [
+        "What about"
+      ],
+      "speaker": "Ben",
+      "transcript": "What about the tomato soup?",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": [
+        "What about the ",
+        "?"
+      ],
+      "answers": [
+        "tomato soup"
+      ],
+      "speaker": "Ben",
+      "transcript": "What about the tomato soup?",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "\"What about\" được Ben dùng để làm gì?",
+      "mcCategory": "usage",
+      "mcTarget": "What about",
+      "options": [
+        "Từ chối món súp.",
+        "Gợi ý món súp cà chua.",
+        "Hỏi giá món súp.",
+        "Gọi nhân viên phục vụ."
+      ],
+      "answer": "Gợi ý món súp cà chua.",
+      "speaker": "Ben",
+      "transcript": "What about the tomato soup?",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-03.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": [
+        "That ",
+        ". Is it spicy?"
+      ],
+      "answers": [
+        "sounds good"
+      ],
+      "speaker": "Emma",
+      "transcript": "That sounds good. Is it spicy?",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": [
+        "That sounds good. Is it ",
+        "?"
+      ],
+      "answers": [
+        "spicy"
+      ],
+      "speaker": "Emma",
+      "transcript": "That sounds good. Is it spicy?",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "question": "Emma muốn biết điều gì về món súp?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Nó có nóng không.",
+        "Nó có đắt không.",
+        "Nó có cay không.",
+        "Nó có lớn không."
+      ],
+      "answer": "Nó có cay không.",
+      "speaker": "Emma",
+      "transcript": "That sounds good. Is it spicy?",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "parts": [
+        "I do not ",
+        " so."
+      ],
+      "answers": [
+        "think"
+      ],
+      "speaker": "Ben",
+      "transcript": "I do not think so.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-04.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": [
+        "Then I ",
+        " the tomato soup."
+      ],
+      "answers": [
+        "want"
+      ],
+      "speaker": "Emma",
+      "transcript": "Then I want the tomato soup.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-05.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": [
+        "Then I want the ",
+        "."
+      ],
+      "answers": [
+        "tomato soup"
+      ],
+      "speaker": "Emma",
+      "transcript": "Then I want the tomato soup.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "parts": [
+        "I ",
+        " I want the chicken pasta."
+      ],
+      "answers": [
+        "think"
+      ],
+      "speaker": "Ben",
+      "transcript": "I think I want the chicken pasta.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "parts": [
+        "I think I want the ",
+        "."
+      ],
+      "answers": [
+        "chicken pasta"
+      ],
+      "speaker": "Ben",
+      "transcript": "I think I want the chicken pasta.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "parts": [
+        "Great. We ",
+        " what we want now."
+      ],
+      "answers": [
+        "know"
+      ],
+      "speaker": "Emma",
+      "transcript": "Great. We know what we want now.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-06.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 11,
+      "type": "multipleChoice",
+      "question": "Đến lúc này Ben và Emma đã làm gì?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Họ đã chọn món mình muốn.",
+        "Họ đã thanh toán.",
+        "Họ muốn đổi bàn.",
+        "Họ muốn rời nhà hàng."
+      ],
+      "answer": "Họ đã chọn món mình muốn.",
+      "speaker": "Emma",
+      "transcript": "Great. We know what we want now.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-06.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "parts": [
+        "Yes. We are ",
+        " to order."
+      ],
+      "answers": [
+        "ready"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes. We are ready to order.",
+      "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+      "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-06.mp3"
+    },
+    {
+      "id": 26,
+      "type": "dialogueCloze",
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Emma",
+          "parts": [
+            "This table is nice. We can look at the ",
+            {
+              "id": "1",
+              "blank": "menu"
+            },
+            " now."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Ben",
+          "parts": [
+            "There are so many ",
+            {
+              "id": "2",
+              "blank": "dishes"
+            },
+            " on this menu."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Emma",
+          "parts": [
+            "What do you want to ",
+            {
+              "id": "3",
+              "blank": "try"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Ben",
+          "parts": [
+            "The ",
+            {
+              "id": "4",
+              "blank": "chicken pasta"
+            },
+            " looks good."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Emma",
+          "parts": [
+            "I like pasta too, but I want something ",
+            {
+              "id": "5",
+              "blank": "lighter"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Ben",
+          "parts": [
+            "",
+            {
+              "id": "6",
+              "blank": "What about"
+            },
+            " the tomato soup?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Emma",
+          "parts": [
+            "That sounds good. Is it ",
+            {
+              "id": "7",
+              "blank": "spicy"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Ben",
+          "parts": [
+            "I do not ",
+            {
+              "id": "8",
+              "blank": "think"
+            },
+            " so."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Emma",
+          "parts": [
+            "Then I want the ",
+            {
+              "id": "9",
+              "blank": "tomato soup"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Ben",
+          "parts": [
+            "I think I want the ",
+            {
+              "id": "10",
+              "blank": "chicken pasta"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Emma",
+          "parts": [
+            "Great. We ",
+            {
+              "id": "11",
+              "blank": "know"
+            },
+            " what we want now."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Ben",
+          "parts": [
+            "Yes. We are ",
+            {
+              "id": "12",
+              "blank": "ready"
+            },
+            " to order."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Hỏi mong muốn với “What do you want to...?”",
+      "explanation": "Dùng “What do you want to + động từ...?” để hỏi một người muốn làm hoặc thử điều gì.",
+      "example": "What do you want to try?"
+    },
+    {
+      "title": "Gợi ý với “What about...?”",
+      "explanation": "Dùng “What about + danh từ...?” để đưa ra một lựa chọn hoặc gợi ý.",
+      "example": "What about the tomato soup?"
+    }
+  ]
+}

@@ -2,7 +2,21 @@ export const structureRules = Object.freeze({
 	usefulWords: { min: 4, max: 10 },
 
 	a1FillBlankRange: { min: 1, max: 2 },
+	a1FillBlankMaxAnswerWords: 2,
 	fillBlankRange: { min: 1, max: 3 },
+	a1McComprehensionShare: { min: 0.5, max: 0.6 },
+	a1AllowedContractions: [
+		"I'm",
+		"you're",
+		"he's",
+		"she's",
+		"it's",
+		"don't",
+		"can't",
+		"isn't",
+		"aren't",
+	],
+	a1RestrictedContractions: ["I'll", "we'll", "I'd", "you'd", "I've", "we've"],
 });
 
 export const levelRules = Object.freeze({

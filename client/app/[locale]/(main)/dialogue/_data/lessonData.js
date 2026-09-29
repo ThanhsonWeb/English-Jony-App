@@ -3,6 +3,7 @@ import atAHotelCourse from "./courses/at-a-hotel";
 import coffeeShopCourse from "./courses/coffee-shop";
 import groceryStoreCourse from "./courses/grocery-store";
 import officeIntroductionCourse from "./courses/office-introduction";
+import restaurantCourse from "./courses/restaurant";
 import weekendCampingCourse from "./courses/weekend-camping";
 
 export const lessonData = {
@@ -12,4 +13,5 @@ export const lessonData = {
    [askingForDirectionsCourse.id]: askingForDirectionsCourse,
    [coffeeShopCourse.id]: coffeeShopCourse,
    [groceryStoreCourse.id]: groceryStoreCourse,
+   [restaurantCourse.id]: restaurantCourse,
 };

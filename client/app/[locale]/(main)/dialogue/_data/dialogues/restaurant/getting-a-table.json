@@ -1,0 +1,733 @@
+{
+  "metadata": {
+    "courseId": "restaurant",
+    "dialogueId": "getting-a-table",
+    "title": "Xin bàn tại nhà hàng",
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Ben và Emma đến một nhà hàng. Alex là nhân viên phục vụ và giúp họ tìm một bàn phù hợp.",
+    "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+    "thumbnail": "/dialogue/restaurant/thumbnails/getting-a-table.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Alex",
+      "text": "Good evening. How many people?",
+      "translation": "Chào buổi tối. Có bao nhiêu người?",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Ben",
+      "text": "A table for two, please.",
+      "translation": "Cho chúng tôi một bàn cho hai người.",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Alex",
+      "text": "Do you have a reservation?",
+      "translation": "Hai bạn có đặt bàn trước không?",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Emma",
+      "text": "No, we do not.",
+      "translation": "Không, chúng tôi chưa đặt.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-01.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Alex",
+      "text": "That is fine. We have a table near the window.",
+      "translation": "Không sao. Chúng tôi có một bàn gần cửa sổ.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Ben",
+      "text": "Is it quiet near the window?",
+      "translation": "Chỗ gần cửa sổ có yên tĩnh không?",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-02.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Alex",
+      "text": "Yes, it is. It is a quiet area.",
+      "translation": "Có. Đó là một khu vực yên tĩnh.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Emma",
+      "text": "That sounds good.",
+      "translation": "Nghe ổn đấy.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-02.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Ben",
+      "text": "We would like that table, please.",
+      "translation": "Chúng tôi muốn chọn bàn đó.",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-03.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Alex",
+      "text": "Great. The table is ready.",
+      "translation": "Tuyệt. Bàn đã sẵn sàng.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Emma",
+      "text": "Thank you.",
+      "translation": "Cảm ơn bạn.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-03.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Alex",
+      "text": "You are welcome. Enjoy your meal.",
+      "translation": "Không có gì. Chúc hai bạn ngon miệng.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "table for two",
+      "pronunciation": "/ˈteɪbəl fər tuː/",
+      "meaning": "bàn cho hai người",
+      "example": "We need a table for two."
+    },
+    {
+      "word": "reservation",
+      "pronunciation": "/ˌrezərˈveɪʃən/",
+      "meaning": "đặt bàn trước",
+      "example": "Do you have a reservation?"
+    },
+    {
+      "word": "near the window",
+      "pronunciation": "/nɪr ðə ˈwɪndoʊ/",
+      "meaning": "gần cửa sổ",
+      "example": "The table is near the window."
+    },
+    {
+      "word": "quiet",
+      "pronunciation": "/ˈkwaɪət/",
+      "meaning": "yên tĩnh",
+      "example": "This area is quiet."
+    },
+    {
+      "word": "That sounds good",
+      "pronunciation": "/ðæt saʊndz ɡʊd/",
+      "meaning": "Nghe ổn đấy",
+      "example": "A table near the window? That sounds good."
+    },
+    {
+      "word": "would like",
+      "pronunciation": "/wʊd laɪk/",
+      "meaning": "muốn, mong muốn",
+      "example": "We would like that table."
+    },
+    {
+      "word": "ready",
+      "pronunciation": "/ˈredi/",
+      "meaning": "sẵn sàng",
+      "example": "The table is ready."
+    },
+    {
+      "word": "Enjoy your meal",
+      "pronunciation": "/ɪnˈdʒɔɪ jʊr miːl/",
+      "meaning": "Chúc ngon miệng",
+      "example": "Enjoy your meal."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "parts": [
+        "Good ",
+        ". How many people?"
+      ],
+      "answers": [
+        "evening"
+      ],
+      "speaker": "Alex",
+      "transcript": "Good evening. How many people?",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "parts": [
+        "Good evening. ",
+        " people?"
+      ],
+      "answers": [
+        "How many"
+      ],
+      "speaker": "Alex",
+      "transcript": "Good evening. How many people?",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "parts": [
+        "A ",
+        " for two, please."
+      ],
+      "answers": [
+        "table"
+      ],
+      "speaker": "Ben",
+      "transcript": "A table for two, please.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "parts": [
+        "A table for ",
+        ", please."
+      ],
+      "answers": [
+        "two"
+      ],
+      "speaker": "Ben",
+      "transcript": "A table for two, please.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 2,
+      "type": "multipleChoice",
+      "question": "Ben và Emma cần bàn cho bao nhiêu người?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Bốn người.",
+        "Ba người.",
+        "Một người.",
+        "Hai người."
+      ],
+      "answer": "Hai người.",
+      "speaker": "Ben",
+      "transcript": "A table for two, please.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "Do you ",
+        " a reservation?"
+      ],
+      "answers": [
+        "have"
+      ],
+      "speaker": "Alex",
+      "transcript": "Do you have a reservation?",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "Do you have a ",
+        "?"
+      ],
+      "answers": [
+        "reservation"
+      ],
+      "speaker": "Alex",
+      "transcript": "Do you have a reservation?",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Trong câu này, \"Do you have\" được dùng để làm gì?",
+      "mcCategory": "grammar",
+      "mcTarget": "Do you have",
+      "options": [
+        "Hỏi khách có đặt bàn trước hay không.",
+        "Hỏi khách muốn ăn món gì.",
+        "Hỏi khách muốn thanh toán thế nào.",
+        "Chào khách khi họ rời đi."
+      ],
+      "answer": "Hỏi khách có đặt bàn trước hay không.",
+      "speaker": "Alex",
+      "transcript": "Do you have a reservation?",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": [
+        "No, we do ",
+        "."
+      ],
+      "answers": [
+        "not"
+      ],
+      "speaker": "Emma",
+      "transcript": "No, we do not.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-01.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "parts": [
+        "That is ",
+        ". We have a table near the window."
+      ],
+      "answers": [
+        "fine"
+      ],
+      "speaker": "Alex",
+      "transcript": "That is fine. We have a table near the window.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "parts": [
+        "That is fine. We have a table near the ",
+        "."
+      ],
+      "answers": [
+        "window"
+      ],
+      "speaker": "Alex",
+      "transcript": "That is fine. We have a table near the window.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": [
+        "Is it ",
+        " near the window?"
+      ],
+      "answers": [
+        "quiet"
+      ],
+      "speaker": "Ben",
+      "transcript": "Is it quiet near the window?",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-02.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": [
+        "Is it quiet near the ",
+        "?"
+      ],
+      "answers": [
+        "window"
+      ],
+      "speaker": "Ben",
+      "transcript": "Is it quiet near the window?",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-02.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Ben muốn biết điều gì về bàn gần cửa sổ?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Bàn có đắt không.",
+        "Chỗ đó có yên tĩnh không.",
+        "Bàn có đủ lớn cho bốn người không.",
+        "Nhà hàng đóng cửa lúc nào."
+      ],
+      "answer": "Chỗ đó có yên tĩnh không.",
+      "speaker": "Ben",
+      "transcript": "Is it quiet near the window?",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-02.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": [
+        "Yes, it is. It is a ",
+        " area."
+      ],
+      "answers": [
+        "quiet"
+      ],
+      "speaker": "Alex",
+      "transcript": "Yes, it is. It is a quiet area.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "parts": [
+        "That ",
+        "."
+      ],
+      "answers": [
+        "sounds good"
+      ],
+      "speaker": "Emma",
+      "transcript": "That sounds good.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-02.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "multipleChoice",
+      "question": "\"That sounds good\" cho thấy Emma nghĩ gì?",
+      "mcCategory": "usage",
+      "mcTarget": "That sounds good",
+      "options": [
+        "Emma không hiểu Alex.",
+        "Emma không muốn bàn đó.",
+        "Emma thấy lựa chọn đó phù hợp.",
+        "Emma muốn rời nhà hàng."
+      ],
+      "answer": "Emma thấy lựa chọn đó phù hợp.",
+      "speaker": "Emma",
+      "transcript": "That sounds good.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-02.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": [
+        "We ",
+        " that table, please."
+      ],
+      "answers": [
+        "would like"
+      ],
+      "speaker": "Ben",
+      "transcript": "We would like that table, please.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-03.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": [
+        "We would like that ",
+        ", please."
+      ],
+      "answers": [
+        "table"
+      ],
+      "speaker": "Ben",
+      "transcript": "We would like that table, please.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-03.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Ben và Emma quyết định chọn bàn nào?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Bàn gần cửa sổ.",
+        "Bàn gần cửa ra vào.",
+        "Bàn ở ngoài trời.",
+        "Họ chưa chọn bàn."
+      ],
+      "answer": "Bàn gần cửa sổ.",
+      "speaker": "Ben",
+      "transcript": "We would like that table, please.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-03.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "parts": [
+        "Great. The table is ",
+        "."
+      ],
+      "answers": [
+        "ready"
+      ],
+      "speaker": "Alex",
+      "transcript": "Great. The table is ready.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "parts": [
+        "",
+        "."
+      ],
+      "answers": [
+        "Thank you"
+      ],
+      "speaker": "Emma",
+      "transcript": "Thank you.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-03.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "parts": [
+        "You are ",
+        ". Enjoy your meal."
+      ],
+      "answers": [
+        "welcome"
+      ],
+      "speaker": "Alex",
+      "transcript": "You are welcome. Enjoy your meal.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-06.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "parts": [
+        "You are welcome. Enjoy your ",
+        "."
+      ],
+      "answers": [
+        "meal"
+      ],
+      "speaker": "Alex",
+      "transcript": "You are welcome. Enjoy your meal.",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-06.mp3"
+    },
+    {
+      "id": 25,
+      "type": "dialogueCloze",
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Alex",
+          "parts": [
+            "Good evening. ",
+            {
+              "id": "1",
+              "blank": "How many"
+            },
+            " people?"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Ben",
+          "parts": [
+            "A table ",
+            {
+              "id": "2",
+              "blank": "for two"
+            },
+            ", please."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Alex",
+          "parts": [
+            "Do you have a ",
+            {
+              "id": "3",
+              "blank": "reservation"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Emma",
+          "parts": [
+            "No, we ",
+            {
+              "id": "4",
+              "blank": "do not"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Alex",
+          "parts": [
+            "That is fine. We have a table near the ",
+            {
+              "id": "5",
+              "blank": "window"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Ben",
+          "parts": [
+            "Is it ",
+            {
+              "id": "6",
+              "blank": "quiet"
+            },
+            " near the window?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Alex",
+          "parts": [
+            "Yes, it is. It is a ",
+            {
+              "id": "7",
+              "blank": "quiet area"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Emma",
+          "parts": [
+            "That ",
+            {
+              "id": "8",
+              "blank": "sounds good"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Ben",
+          "parts": [
+            "We ",
+            {
+              "id": "9",
+              "blank": "would like"
+            },
+            " that table, please."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Alex",
+          "parts": [
+            "Great. The table is ",
+            {
+              "id": "10",
+              "blank": "ready"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Emma",
+          "parts": [
+            "",
+            {
+              "id": "11",
+              "blank": "Thank you"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Alex",
+          "parts": [
+            "You are welcome. Enjoy ",
+            {
+              "id": "12",
+              "blank": "your meal"
+            },
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Hỏi với “Do you have...?”",
+      "explanation": "Dùng “Do you have + danh từ...?” để hỏi xem một người có một thứ gì đó hay không.",
+      "example": "Do you have a reservation?"
+    },
+    {
+      "title": "Nói mong muốn lịch sự với “would like”",
+      "explanation": "Dùng “would like” để nói điều bạn muốn một cách lịch sự.",
+      "example": "We would like that table, please."
+    }
+  ]
+}

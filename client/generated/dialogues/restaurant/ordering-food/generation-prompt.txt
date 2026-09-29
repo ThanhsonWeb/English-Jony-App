@@ -1,30 +1,17 @@
-import {
-	levelRules,
-	normalizeLevel,
-	structureRules,
-} from "./dialogue-rules.mjs";
 
-function formatRules(rules) {
-	return rules.map((rule) => `- ${rule}`).join("\n");
-}
+You are creating a dialogue lesson for StudyJony,
+an English-learning application for Vietnamese learners.
 
-function formatSpeakerScenes(characters, scenes) {
-	if (!scenes) {
-		return "";
-	}
+COURSE
 
-	return characters
-		.filter((character) => scenes[character])
-		.map((character) => `- ${character}: "${scenes[character]}"`)
-		.join("\n");
-}
+Course ID: restaurant
+Dialogue ID: ordering-food
+Vietnamese title: Gọi món
+Characters: Ben, Emma, Alex
+Configured level: a1
+Normalized CEFR level: A1
+Situation: Alex đến nhận món. Ben và Emma gọi món ăn và đồ uống bằng những câu đơn giản, lịch sự.
 
-function formatPreviousDialogueSection(previousDialogue) {
-	if (!Array.isArray(previousDialogue) || previousDialogue.length === 0) {
-		return "";
-	}
-
-	return `
 ==================================================
 PREVIOUS DIALOGUE — CONTINUITY CONTEXT
 ==================================================
@@ -36,146 +23,117 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
 - Do not reset the situation or make the characters act as if they are meeting for the first time.
 - Avoid contradictions with events or details in the previous dialogue.
 
-${JSON.stringify(previousDialogue, null, 2)}
-`;
-}
+[
+  {
+    "id": 1,
+    "speaker": "Emma",
+    "text": "This table is nice. We can look at the menu now.",
+    "translation": "Bàn này đẹp đấy. Bây giờ chúng ta có thể xem thực đơn.",
+    "practicePriority": "simple",
+    "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+    "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-01.mp3"
+  },
+  {
+    "id": 2,
+    "speaker": "Ben",
+    "text": "There are so many dishes on this menu.",
+    "translation": "Có rất nhiều món trong thực đơn này.",
+    "practicePriority": "important",
+    "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+    "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-01.mp3"
+  },
+  {
+    "id": 3,
+    "speaker": "Emma",
+    "text": "What do you want to try?",
+    "translation": "Bạn muốn thử món gì?",
+    "practicePriority": "veryImportant",
+    "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+    "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-02.mp3"
+  },
+  {
+    "id": 4,
+    "speaker": "Ben",
+    "text": "The chicken pasta looks good.",
+    "translation": "Món mì Ý gà trông ngon đấy.",
+    "practicePriority": "important",
+    "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+    "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-02.mp3"
+  },
+  {
+    "id": 5,
+    "speaker": "Emma",
+    "text": "I like pasta too, but I want something lighter.",
+    "translation": "Mình cũng thích mì Ý, nhưng mình muốn món gì đó nhẹ hơn.",
+    "practicePriority": "important",
+    "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+    "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-03.mp3"
+  },
+  {
+    "id": 6,
+    "speaker": "Ben",
+    "text": "What about the tomato soup?",
+    "translation": "Món súp cà chua thì sao?",
+    "practicePriority": "important",
+    "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+    "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-03.mp3"
+  },
+  {
+    "id": 7,
+    "speaker": "Emma",
+    "text": "That sounds good. Is it spicy?",
+    "translation": "Nghe ngon đấy. Nó có cay không?",
+    "practicePriority": "veryImportant",
+    "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+    "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-04.mp3"
+  },
+  {
+    "id": 8,
+    "speaker": "Ben",
+    "text": "I do not think so.",
+    "translation": "Mình không nghĩ vậy.",
+    "practicePriority": "simple",
+    "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+    "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-04.mp3"
+  },
+  {
+    "id": 9,
+    "speaker": "Emma",
+    "text": "Then I want the tomato soup.",
+    "translation": "Vậy thì mình muốn món súp cà chua.",
+    "practicePriority": "important",
+    "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+    "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-05.mp3"
+  },
+  {
+    "id": 10,
+    "speaker": "Ben",
+    "text": "I think I want the chicken pasta.",
+    "translation": "Mình nghĩ mình muốn món mì Ý gà.",
+    "practicePriority": "important",
+    "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+    "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-05.mp3"
+  },
+  {
+    "id": 11,
+    "speaker": "Emma",
+    "text": "Great. We know what we want now.",
+    "translation": "Tuyệt. Bây giờ chúng ta biết mình muốn món gì rồi.",
+    "practicePriority": "simple",
+    "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+    "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/emma-06.mp3"
+  },
+  {
+    "id": 12,
+    "speaker": "Ben",
+    "text": "Yes. We are ready to order.",
+    "translation": "Ừ. Chúng ta đã sẵn sàng gọi món.",
+    "practicePriority": "simple",
+    "scene": "/dialogue/restaurant/reading-the-menu/bg.png",
+    "audioUrl": "/dialogue/restaurant/reading-the-menu/audio/ben-06.mp3"
+  }
+]
 
-export function buildDialoguePrompt(lessonConfig) {
-	const {
-		courseId,
-		dialogueId,
-		title,
-		characters,
-		level,
-		situation,
-		thumbnail,
-		scene: configuredScene,
-		scenes,
-		previousDialogue,
-		teachesContractions = [],
-	} = lessonConfig;
-
-	const normalizedLevel = normalizeLevel(level);
-	const selectedLevelRules = levelRules[normalizedLevel];
-	const fillBlankRange =
-		normalizedLevel === "a1"
-			? structureRules.a1FillBlankRange
-			: structureRules.fillBlankRange;
-	const a1FillBlankRules =
-		normalizedLevel === "a1"
-			? `
-A1 Fill Blank rules:
-
-- Usually use only 1–2 blanks per task.
-- Every answer may contain at most ${structureRules.a1FillBlankMaxAnswerWords} words total.
-- Never hide 3 or more consecutive words in one blank. If two answer slots have only spaces or punctuation between them, count their words together.
-- Prefer a one-word answer most of the time.
-- Use a two-word answer only for a natural beginner chunk such as "thank you", "how much", or "would like".
-- Prefer meaningful content words or useful short chunks.
-- Keep enough words around each blank so its meaning is clear.
-- Keep most of the sentence visible; do NOT make learners reconstruct a sentence.
-- Do NOT hide a long phrase just because it is useful.
-
-GOOD:
-"There are so many ____ on this ____."
-Answers: ["drinks", "menu"]
-
-GOOD two-word chunk:
-"____ very much."
-Answer: ["Thank you"]
-
-BAD:
-"____ the bread for this week."
-Answer: ["We need to buy"]
-`
-			: "";
-	const a1MultipleChoiceRules =
-		normalizedLevel === "a1"
-			? `
-A1 Multiple Choice balance:
-
-- Add an "mcCategory" to every Multiple Choice task: "comprehension", "grammar", or "usage".
-- For 4–6 Multiple Choice tasks, aim for 50–60% comprehension and 40–50% grammar plus usage. A useful split is 2/1/1 for 4 tasks, 3/1/1 for 5, and 3/1/2 or 3/2/1 for 6 (comprehension/grammar/usage).
-- Include grammar-in-context questions about forms that actually appear in the linked dialogue line. Keep the question grounded in what the speaker said, not textbook terminology.
-- When the dialogue naturally contains a useful A1 grammar pattern, include at least 1 grammar-in-context question (usually 1-2). Do not force one when there is no natural pattern.
-- For every "grammar" or "usage" task, add "mcTarget" with the exact word or short phrase from that dialogue line that the question tests.
-- Use "usage" for choosing a natural word or phrase in the situation; do not make it a dictionary definition.
-- Keep the existing situation, intent, and meaning questions as the comprehension category.
-- If the dialogue does not naturally support a grammar or usage question, do not invent one; use fewer MC tasks instead of forcing unrelated content.
-`
-			: "";
-	const a1ContractionRules =
-		normalizedLevel === "a1"
-			? `
-A1 contractions:
-
-- Only these listed contractions may be used freely: ${structureRules.a1AllowedContractions.join(", ")}.
-- Avoid every other contraction by default, including ${structureRules.a1RestrictedContractions.join(", ")}.
-- Use a contraction outside the allowed list only when this lesson intentionally teaches it. List each exact form in metadata.teachesContractions and explain it in grammarNotes.
-${teachesContractions.length ? `- This lesson explicitly teaches: ${teachesContractions.join(", ")}.` : ""}
-`
-			: "";
-	const a1MetadataFields =
-		normalizedLevel === "a1"
-			? `\n\t\t"a1ContentRulesVersion": 2,\n\t\t"teachesContractions": ${JSON.stringify(teachesContractions)},`
-			: "";
-	const a1McCategoryField =
-		normalizedLevel === "a1" ? `\n\t\t\t"mcCategory": "comprehension",` : "";
-
-	if (!selectedLevelRules) {
-		throw new Error(`Unsupported CEFR level: ${normalizedLevel}`);
-	}
-
-	const defaultScene =
-		configuredScene ||
-		scenes?.[characters[0]] ||
-		`/dialogue/${courseId}/${dialogueId}/bg.png`;
-
-	const hasSpeakerScenes =
-		scenes && characters.some((character) => Boolean(scenes[character]));
-
-	const sceneRules = hasSpeakerScenes
-		? `
-SCENE RULES
-
-The characters are not necessarily in the same physical place.
-
-Use these exact speaker-specific scene paths:
-
-${formatSpeakerScenes(characters, scenes)}
-
-Rules:
-
-- Every dialogue line must use the scene belonging to its speaker.
-- Every linked task must reuse the exact scene from its dialogue line.
-- Never replace a speaker-specific scene with the default scene.
-- Repeated tasks for the same dialogue line must preserve the same scene exactly.
-- metadata.scene is only the fallback/default scene.
-`
-		: `
-SCENE RULES
-
-All dialogue lines use this shared scene:
-
-"${defaultScene}"
-
-Every linked task must reuse the same scene as its dialogue line.
-`;
-
-	return `
-You are creating a dialogue lesson for StudyJony,
-an English-learning application for Vietnamese learners.
-
-COURSE
-
-Course ID: ${courseId}
-Dialogue ID: ${dialogueId}
-Vietnamese title: ${title}
-Characters: ${characters.join(", ")}
-Configured level: ${level}
-Normalized CEFR level: ${normalizedLevel.toUpperCase()}
-Situation: ${situation}
-${formatPreviousDialogueSection(previousDialogue)}
 
 ==================================================
 DIALOGUE RULES
@@ -285,7 +243,7 @@ EXERCISE RULES
 
 Fill Blank:
 
-- Use ${fillBlankRange.min}–${fillBlankRange.max} meaningful blanks per task.
+- Use 1–2 meaningful blanks per task.
 - Blank useful words or phrases, not random filler words.
 - Store the unchanged text around the blanks in a "parts" array.
 - Use one entry in "answers" for every blank.
@@ -296,7 +254,31 @@ Fill Blank:
 - Do NOT use an underscore-based "question" field for Fill Blank tasks.
 - Do NOT create the exact same Fill Blank task twice.
 - If the same line receives multiple Fill Blank tasks, blank different useful words or phrases that do not overlap in the source sentence.
-${a1FillBlankRules}
+
+A1 Fill Blank rules:
+
+- Usually use only 1–2 blanks per task.
+- Every answer may contain at most 2 words total.
+- Never hide 3 or more consecutive words in one blank. If two answer slots have only spaces or punctuation between them, count their words together.
+- Prefer a one-word answer most of the time.
+- Use a two-word answer only for a natural beginner chunk such as "thank you", "how much", or "would like".
+- Prefer meaningful content words or useful short chunks.
+- Keep enough words around each blank so its meaning is clear.
+- Keep most of the sentence visible; do NOT make learners reconstruct a sentence.
+- Do NOT hide a long phrase just because it is useful.
+
+GOOD:
+"There are so many ____ on this ____."
+Answers: ["drinks", "menu"]
+
+GOOD two-word chunk:
+"____ very much."
+Answer: ["Thank you"]
+
+BAD:
+"____ the bread for this week."
+Answer: ["We need to buy"]
+
 
 Example:
 
@@ -317,7 +299,18 @@ Multiple Choice:
 - Prefer questions about sequence, decisions, and reactions: what should happen next, what the speaker decided, or how the speaker feels from context.
 - Grammar-in-context is allowed only when the dialogue naturally contains a useful grammar or politeness pattern.
 - Grammar-in-context questions must explain the function of language in the real situation, not test grammar terminology for its own sake.
-${normalizedLevel === "a1" ? a1MultipleChoiceRules : "- Usually use 0-2 grammar-in-context questions per dialogue. Never force one when there is no useful natural pattern."}
+
+A1 Multiple Choice balance:
+
+- Add an "mcCategory" to every Multiple Choice task: "comprehension", "grammar", or "usage".
+- For 4–6 Multiple Choice tasks, aim for 50–60% comprehension and 40–50% grammar plus usage. A useful split is 2/1/1 for 4 tasks, 3/1/1 for 5, and 3/1/2 or 3/2/1 for 6 (comprehension/grammar/usage).
+- Include grammar-in-context questions about forms that actually appear in the linked dialogue line. Keep the question grounded in what the speaker said, not textbook terminology.
+- When the dialogue naturally contains a useful A1 grammar pattern, include at least 1 grammar-in-context question (usually 1-2). Do not force one when there is no natural pattern.
+- For every "grammar" or "usage" task, add "mcTarget" with the exact word or short phrase from that dialogue line that the question tests.
+- Use "usage" for choosing a natural word or phrase in the situation; do not make it a dictionary definition.
+- Keep the existing situation, intent, and meaning questions as the comprehension category.
+- If the dialogue does not naturally support a grammar or usage question, do not invent one; use fewer MC tasks instead of forcing unrelated content.
+
 - Use Multiple Choice only when it adds real learning value.
 - Do NOT create a Multiple Choice task for every dialogue line.
 - Each Multiple Choice task must test something different from every Fill Blank task linked to the same dialogue line.
@@ -378,7 +371,7 @@ AUDIO
 USEFUL WORDS
 ==================================================
 
-- Include around ${structureRules.usefulWords.min}–${structureRules.usefulWords.max} useful words or phrases, depending on the dialogue.
+- Include around 4–10 useful words or phrases, depending on the dialogue.
 - Do not add low-value vocabulary just to reach a number.
 - Every useful word or phrase must actually appear in the dialogue.
 - Prefer useful conversational chunks over low-value isolated vocabulary.
@@ -411,11 +404,25 @@ Natural dialogue
 → Sổ tay
 
 ==================================================
-LANGUAGE DIFFICULTY — ${normalizedLevel.toUpperCase()}
+LANGUAGE DIFFICULTY — A1
 ==================================================
 
-${formatRules(selectedLevelRules)}
-${a1ContractionRules}
+- Use very common everyday vocabulary.
+- Use short, clear sentences with simple grammar and usually one idea per sentence.
+- Avoid unnecessary idioms, slang, and difficult words.
+- Make the language very easy for beginners.
+- Use one clear communication goal for the dialogue.
+- Prefer useful everyday phrases and chunks.
+- Do not force speakers to alternate.
+- Avoid dialogue that depends on invisible physical actions when the characters are static.
+
+A1 contractions:
+
+- Only these listed contractions may be used freely: I'm, you're, he's, she's, it's, don't, can't, isn't, aren't.
+- Avoid every other contraction by default, including I'll, we'll, I'd, you'd, I've, we've.
+- Use a contraction outside the allowed list only when this lesson intentionally teaches it. List each exact form in metadata.teachesContractions and explain it in grammarNotes.
+
+
 
 The CEFR level controls language difficulty only.
 
@@ -423,26 +430,34 @@ Task count may vary depending on the dialogue.
 
 Prioritize learning quality over a fixed number of tasks.
 
-${sceneRules}
+
+SCENE RULES
+
+All dialogue lines use this shared scene:
+
+"/dialogue/restaurant/ordering-food/bg.png"
+
+Every linked task must reuse the same scene as its dialogue line.
+
 
 ==================================================
 ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"${defaultScene}"
+"/dialogue/restaurant/ordering-food/bg.png"
 
 Thumbnail:
-"${thumbnail}"
+"/dialogue/restaurant/thumbnails/ordering-food.png"
 
 Audio format:
-"/dialogue/${courseId}/${dialogueId}/audio/{speaker}-{number}.mp3"
+"/dialogue/restaurant/ordering-food/audio/{speaker}-{number}.mp3"
 
 ==================================================
 OUTPUT
 ==================================================
 
-Return the complete JSON inside one fenced \`json\` code block.
+Return the complete JSON inside one fenced `json` code block.
 Do not write explanations, summaries, or comments before or after the code block.
 Keep the entire JSON in this single code block so it can be copied at once.
 
@@ -454,14 +469,16 @@ Use this structure:
 
 {
 	"metadata": {
-		"courseId": "${courseId}",
-		"dialogueId": "${dialogueId}",
-		"title": "${title}",
-		"level": "${normalizedLevel}",
-		${a1MetadataFields}
-		"situation": "${situation}",
-		"scene": "${defaultScene}",
-		"thumbnail": "${thumbnail}"
+		"courseId": "restaurant",
+		"dialogueId": "ordering-food",
+		"title": "Gọi món",
+		"level": "a1",
+		
+		"a1ContentRulesVersion": 2,
+		"teachesContractions": [],
+		"situation": "Alex đến nhận món. Ben và Emma gọi món ăn và đồ uống bằng những câu đơn giản, lịch sự.",
+		"scene": "/dialogue/restaurant/ordering-food/bg.png",
+		"thumbnail": "/dialogue/restaurant/thumbnails/ordering-food.png"
 	},
 
 	"dialogue": [
@@ -503,8 +520,9 @@ Use this structure:
 			"dialogueLineId": 1,
 			"type": "multipleChoice",
 			"question": "",
-			${a1McCategoryField}
-			${normalizedLevel === "a1" ? '"mcTarget": "",' : ""}
+			
+			"mcCategory": "comprehension",
+			"mcTarget": "",
 			"options": ["", "", "", ""],
 			"answer": "",
 			"speaker": "",
@@ -540,6 +558,4 @@ Use this structure:
 			"example": ""
 		}
 	]
-}
-`;
 }

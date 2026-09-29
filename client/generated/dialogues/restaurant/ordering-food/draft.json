@@ -1,0 +1,712 @@
+{
+  "metadata": {
+    "courseId": "restaurant",
+    "dialogueId": "ordering-food",
+    "title": "Gọi món",
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Alex đến nhận món. Ben và Emma gọi món ăn và đồ uống bằng những câu đơn giản, lịch sự.",
+    "scene": "/dialogue/restaurant/ordering-food/bg.png",
+    "thumbnail": "/dialogue/restaurant/thumbnails/ordering-food.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Alex",
+      "text": "Are you ready to order?",
+      "translation": "Hai bạn đã sẵn sàng gọi món chưa?",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Ben",
+      "text": "Yes, please. I would like the chicken pasta.",
+      "translation": "Vâng. Tôi muốn món mì Ý gà.",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Ben",
+      "text": "And a glass of water, please.",
+      "translation": "Và một ly nước nữa nhé.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Alex",
+      "text": "Sure. Would you like anything else?",
+      "translation": "Được. Bạn có muốn thêm gì nữa không?",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Emma",
+      "text": "Yes. I would like the tomato soup, please.",
+      "translation": "Có. Tôi muốn món súp cà chua.",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-01.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Emma",
+      "text": "Can I have some bread too?",
+      "translation": "Tôi có thể gọi thêm một ít bánh mì không?",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-02.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Alex",
+      "text": "Of course. What would you like to drink?",
+      "translation": "Tất nhiên. Bạn muốn uống gì?",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Emma",
+      "text": "Orange juice, please.",
+      "translation": "Nước cam nhé.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-03.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Alex",
+      "text": "Okay. One chicken pasta, one tomato soup, water, and orange juice.",
+      "translation": "Được. Một mì Ý gà, một súp cà chua, nước lọc và nước cam.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Ben",
+      "text": "Yes, that is right.",
+      "translation": "Vâng, đúng rồi.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-03.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Alex",
+      "text": "Great. Thank you.",
+      "translation": "Tuyệt. Cảm ơn hai bạn.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-05.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "ready to order",
+      "pronunciation": "/ˈredi tə ˈɔːrdər/",
+      "meaning": "sẵn sàng gọi món",
+      "example": "We are ready to order."
+    },
+    {
+      "word": "would like",
+      "pronunciation": "/wʊd laɪk/",
+      "meaning": "muốn, muốn gọi",
+      "example": "I would like some soup."
+    },
+    {
+      "word": "chicken pasta",
+      "pronunciation": "/ˈtʃɪkɪn ˈpɑːstə/",
+      "meaning": "mì Ý gà",
+      "example": "The chicken pasta looks good."
+    },
+    {
+      "word": "glass of water",
+      "pronunciation": "/ɡlæs əv ˈwɔːtər/",
+      "meaning": "một ly nước",
+      "example": "Can I have a glass of water?"
+    },
+    {
+      "word": "anything else",
+      "pronunciation": "/ˈeniθɪŋ els/",
+      "meaning": "thêm gì nữa",
+      "example": "Would you like anything else?"
+    },
+    {
+      "word": "Can I have",
+      "pronunciation": "/kæn aɪ hæv/",
+      "meaning": "Tôi có thể gọi / lấy ... được không?",
+      "example": "Can I have some bread?"
+    },
+    {
+      "word": "orange juice",
+      "pronunciation": "/ˈɔːrɪndʒ dʒuːs/",
+      "meaning": "nước cam",
+      "example": "I would like orange juice."
+    },
+    {
+      "word": "that is right",
+      "pronunciation": "/ðæt ɪz raɪt/",
+      "meaning": "đúng rồi",
+      "example": "Yes, that is right."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "parts": [
+        "Are you ",
+        " to order?"
+      ],
+      "answers": [
+        "ready"
+      ],
+      "speaker": "Alex",
+      "transcript": "Are you ready to order?",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "parts": [
+        "Are you ready to ",
+        "?"
+      ],
+      "answers": [
+        "order"
+      ],
+      "speaker": "Alex",
+      "transcript": "Are you ready to order?",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 1,
+      "type": "multipleChoice",
+      "question": "Alex đang làm gì?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Hỏi họ muốn đổi bàn không.",
+        "Hỏi họ có cần thực đơn không.",
+        "Hỏi họ đã ăn xong chưa.",
+        "Hỏi họ đã sẵn sàng gọi món chưa."
+      ],
+      "answer": "Hỏi họ đã sẵn sàng gọi món chưa.",
+      "speaker": "Alex",
+      "transcript": "Are you ready to order?",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "parts": [
+        "Yes, please. I ",
+        " the chicken pasta."
+      ],
+      "answers": [
+        "would like"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes, please. I would like the chicken pasta.",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "parts": [
+        "Yes, please. I would like the ",
+        "."
+      ],
+      "answers": [
+        "chicken pasta"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes, please. I would like the chicken pasta.",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "And a ",
+        " of water, please."
+      ],
+      "answers": [
+        "glass"
+      ],
+      "speaker": "Ben",
+      "transcript": "And a glass of water, please.",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "And a glass of ",
+        ", please."
+      ],
+      "answers": [
+        "water"
+      ],
+      "speaker": "Ben",
+      "transcript": "And a glass of water, please.",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": [
+        "Sure. Would you like ",
+        " else?"
+      ],
+      "answers": [
+        "anything"
+      ],
+      "speaker": "Alex",
+      "transcript": "Sure. Would you like anything else?",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": [
+        "Sure. Would you like anything ",
+        "?"
+      ],
+      "answers": [
+        "else"
+      ],
+      "speaker": "Alex",
+      "transcript": "Sure. Would you like anything else?",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 4,
+      "type": "multipleChoice",
+      "question": "\"Would you like\" giúp Alex hỏi như thế nào?",
+      "mcCategory": "grammar",
+      "mcTarget": "Would you like",
+      "options": [
+        "Một cách lịch sự về điều khách muốn thêm.",
+        "Một cách yêu cầu khách thanh toán.",
+        "Một cách hỏi khách đến từ đâu.",
+        "Một cách nói món ăn đã hết."
+      ],
+      "answer": "Một cách lịch sự về điều khách muốn thêm.",
+      "speaker": "Alex",
+      "transcript": "Sure. Would you like anything else?",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-02.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "parts": [
+        "Yes. I ",
+        " the tomato soup, please."
+      ],
+      "answers": [
+        "would like"
+      ],
+      "speaker": "Emma",
+      "transcript": "Yes. I would like the tomato soup, please.",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-01.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "parts": [
+        "Yes. I would like the ",
+        ", please."
+      ],
+      "answers": [
+        "tomato soup"
+      ],
+      "speaker": "Emma",
+      "transcript": "Yes. I would like the tomato soup, please.",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-01.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 5,
+      "type": "multipleChoice",
+      "question": "Sau khi Ben gọi món, Emma làm gì?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Cô ấy hỏi giá.",
+        "Cô ấy gọi món của mình.",
+        "Cô ấy muốn đổi bàn.",
+        "Cô ấy nói chưa muốn ăn."
+      ],
+      "answer": "Cô ấy gọi món của mình.",
+      "speaker": "Emma",
+      "transcript": "Yes. I would like the tomato soup, please.",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-01.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": [
+        "Can I have some ",
+        " too?"
+      ],
+      "answers": [
+        "bread"
+      ],
+      "speaker": "Emma",
+      "transcript": "Can I have some bread too?",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-02.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": [
+        "Can I have some bread ",
+        "?"
+      ],
+      "answers": [
+        "too"
+      ],
+      "speaker": "Emma",
+      "transcript": "Can I have some bread too?",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-02.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Trong tình huống này, \"Can I have\" được dùng để làm gì?",
+      "mcCategory": "usage",
+      "mcTarget": "Can I have",
+      "options": [
+        "Nói rằng Emma đã có bánh mì.",
+        "Hỏi bánh mì ở đâu.",
+        "Yêu cầu thêm bánh mì một cách lịch sự.",
+        "Nói rằng Emma không thích bánh mì."
+      ],
+      "answer": "Yêu cầu thêm bánh mì một cách lịch sự.",
+      "speaker": "Emma",
+      "transcript": "Can I have some bread too?",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-02.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": [
+        "Of course. What would you like to ",
+        "?"
+      ],
+      "answers": [
+        "drink"
+      ],
+      "speaker": "Alex",
+      "transcript": "Of course. What would you like to drink?",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-03.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": [
+        "Of course. What would you ",
+        " to drink?"
+      ],
+      "answers": [
+        "like"
+      ],
+      "speaker": "Alex",
+      "transcript": "Of course. What would you like to drink?",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-03.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "parts": [
+        "Orange ",
+        ", please."
+      ],
+      "answers": [
+        "juice"
+      ],
+      "speaker": "Emma",
+      "transcript": "Orange juice, please.",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-03.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": [
+        "Okay. One chicken pasta, one tomato soup, ",
+        ", and orange juice."
+      ],
+      "answers": [
+        "water"
+      ],
+      "speaker": "Alex",
+      "transcript": "Okay. One chicken pasta, one tomato soup, water, and orange juice.",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-04.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": [
+        "Okay. One chicken pasta, one tomato soup, water, and ",
+        "."
+      ],
+      "answers": [
+        "orange juice"
+      ],
+      "speaker": "Alex",
+      "transcript": "Okay. One chicken pasta, one tomato soup, water, and orange juice.",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-04.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Tại sao Alex nhắc lại các món và đồ uống?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Để xác nhận đơn gọi món.",
+        "Để giới thiệu món mới.",
+        "Để hỏi họ có muốn đổi bàn không.",
+        "Để nói nhà hàng sắp đóng cửa."
+      ],
+      "answer": "Để xác nhận đơn gọi món.",
+      "speaker": "Alex",
+      "transcript": "Okay. One chicken pasta, one tomato soup, water, and orange juice.",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-04.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "parts": [
+        "Yes, that is ",
+        "."
+      ],
+      "answers": [
+        "right"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes, that is right.",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-03.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "parts": [
+        "Great. ",
+        "."
+      ],
+      "answers": [
+        "Thank you"
+      ],
+      "speaker": "Alex",
+      "transcript": "Great. Thank you.",
+      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-05.mp3"
+    },
+    {
+      "id": 25,
+      "type": "dialogueCloze",
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Alex",
+          "parts": [
+            "Are you ",
+            {
+              "id": "1",
+              "blank": "ready"
+            },
+            " to order?"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Ben",
+          "parts": [
+            "Yes, please. I ",
+            {
+              "id": "2",
+              "blank": "would like"
+            },
+            " the chicken pasta."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Ben",
+          "parts": [
+            "And a glass of ",
+            {
+              "id": "3",
+              "blank": "water"
+            },
+            ", please."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Alex",
+          "parts": [
+            "Sure. Would you like anything ",
+            {
+              "id": "4",
+              "blank": "else"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Emma",
+          "parts": [
+            "Yes. I would like the ",
+            {
+              "id": "5",
+              "blank": "tomato soup"
+            },
+            ", please."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Emma",
+          "parts": [
+            "Can I have some ",
+            {
+              "id": "6",
+              "blank": "bread"
+            },
+            " too?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Alex",
+          "parts": [
+            "Of course. What would you like to ",
+            {
+              "id": "7",
+              "blank": "drink"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Emma",
+          "parts": [
+            "",
+            {
+              "id": "8",
+              "blank": "Orange juice"
+            },
+            ", please."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Alex",
+          "parts": [
+            "Okay. One chicken pasta, one tomato soup, water, and ",
+            {
+              "id": "9",
+              "blank": "orange juice"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Ben",
+          "parts": [
+            "Yes, that is ",
+            {
+              "id": "10",
+              "blank": "right"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Alex",
+          "parts": [
+            "Great. ",
+            {
+              "id": "11",
+              "blank": "Thank you"
+            },
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Gọi món lịch sự với “would like”",
+      "explanation": "Dùng “I would like + món ăn hoặc đồ uống” để nói mình muốn gọi gì một cách lịch sự.",
+      "example": "I would like the tomato soup, please."
+    },
+    {
+      "title": "Yêu cầu lịch sự với “Can I have...?”",
+      "explanation": "Dùng “Can I have + món hoặc đồ uống?” để yêu cầu một thứ gì đó một cách lịch sự.",
+      "example": "Can I have some bread too?"
+    }
+  ]
+}
