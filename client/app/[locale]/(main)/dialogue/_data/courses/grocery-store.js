@@ -3,6 +3,7 @@ import groceryStoreConfig from "@/scripts/config/courses/grocery-store.mjs";
 import makingAShoppingList from "../dialogues/grocery-store/making-a-shopping-list.json";
 import findingItems from "../dialogues/grocery-store/finding-items.json";
 import choosingFood from "../dialogues/grocery-store/choosing-food.json";
+import checkingOut from "../dialogues/grocery-store/checking-out.json";
 import { groceryStoreMedia } from "../dialogues/grocery-store/media";
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
 
@@ -67,8 +68,8 @@ function buildCourseDialogue(draft) {
 
 const groceryStoreCourse = {
    id: "grocery-store",
-   heroImage: makingAShoppingList.metadata.scene,
-   image: makingAShoppingList.metadata.scene,
+   heroImage: choosingFood.metadata.scene,
+   image: choosingFood.metadata.scene,
    title: "Đi siêu thị",
    description:
       "Học cách lập danh sách mua sắm và giao tiếp trong những tình huống quen thuộc tại siêu thị.",
@@ -77,6 +78,7 @@ const groceryStoreCourse = {
       buildCourseDialogue(makingAShoppingList),
       buildCourseDialogue(findingItems),
       buildCourseDialogue(choosingFood),
+      buildCourseDialogue(checkingOut),
    ],
 };
 

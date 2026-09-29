@@ -13,12 +13,10 @@ function getExpectedAnswers(task) {
 }
 
 function getInputWidth(expectedAnswer) {
-	const characterWidth = Math.min(
-		Math.max(expectedAnswer.trim().length + 2, 4),
-		14,
-	);
+	const answerLength = String(expectedAnswer ?? "").trim().length;
+	const characterWidth = Math.max(answerLength + 2, 8);
 
-	return `${characterWidth}ch`;
+	return `clamp(80px, ${characterWidth}ch, 280px)`;
 }
 
 function FillBlankTask({
@@ -144,8 +142,8 @@ function FillBlankTask({
 							{task.instruction || "Điền từ đúng vào câu bên dưới."}
 						</p>
 
-						<div className="mt-6 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-							<p className="text-lg leading-10">
+						<div className="mt-6 min-w-0 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+							<p className="min-w-0 max-w-full whitespace-normal break-words text-lg leading-10">
 								{isMultiBlank ? (
 									task.parts.map((part, index) => (
 										<Fragment key={index}>
@@ -166,6 +164,7 @@ function FillBlankTask({
 													placeholder="..."
 													style={{
 														width: getInputWidth(expectedAnswers[index]),
+														maxWidth: "100%",
 														borderBottomColor: getInputBorderColor(index),
 													}}
 													className="mx-1 inline-block max-w-full border-b-2 bg-transparent px-2 py-1 text-center outline-none transition-colors"
@@ -186,6 +185,7 @@ function FillBlankTask({
 											placeholder="..."
 											style={{
 												width: getInputWidth(expectedAnswers[0]),
+												maxWidth: "100%",
 												borderBottomColor: getInputBorderColor(0),
 											}}
 											className="mx-2 max-w-full border-b-2 bg-transparent px-2 py-1 text-center outline-none transition-colors"

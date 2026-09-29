@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import {
 	BookOpen,
 	GraduationCap,
@@ -10,7 +10,6 @@ import {
 	Volume2,
 	Pencil,
 	Trash2,
-	Lightbulb,
 	Sprout,
 	X,
 	Check,
@@ -38,28 +37,6 @@ const reviewModes = [
 	{ value: "quiz", Icon: GraduationCap },
 	{ value: "write", Icon: Pencil },
 ];
-const motivationalQuotes = {
-	vi: [
-		"Một từ hôm nay, một câu chuyện ngày mai.",
-		"Từng từ một, bạn đang xây cả một ngôn ngữ.",
-		"Đừng chỉ lưu từ. Hãy biến chúng thành lời nói.",
-		"Học ít thôi, nhưng nhớ thật lâu.",
-		"Mỗi từ mới là một bước gần hơn đến sự tự tin.",
-		"Từ vựng nhỏ, tiến bộ lớn.",
-		"Mỗi ngày một từ, mỗi ngày thêm tự tin.",
-		"Những từ bạn nhớ hôm nay sẽ thành lời nói ngày mai.",
-	],
-	en: [
-		"One word today, one story tomorrow.",
-		"Word by word, you are building a whole language.",
-		"Do not just save words. Turn them into speech.",
-		"Learn a little, remember it for longer.",
-		"Every new word is one step closer to confidence.",
-		"Small words, big progress.",
-		"One word a day, a little more confidence every day.",
-		"The words you remember today become tomorrow's voice.",
-	],
-};
 const statusIcons = {
 	new: Sparkles,
 	learning: GraduationCap,
@@ -137,7 +114,6 @@ function StatusFilter({ value, onChange, t }) {
 
 export default function WordlistPage() {
 	const t = useTranslations("Notebook");
-	const locale = useLocale();
 	const { user, loading: authLoading } = useAuth();
 	const [result, setResult] = useState(null);
 	const [retry, setRetry] = useState(0);
@@ -147,17 +123,8 @@ export default function WordlistPage() {
 	const [deleting, setDeleting] = useState(null);
 	const [audioError, setAudioError] = useState(false);
 	const [page, setPage] = useState(1);
-	const [motivationalQuote, setMotivationalQuote] = useState("");
-	const quoteChosenRef = useRef(false);
 	const userId = user?._id;
 	const requestKey = `${userId || "guest"}:${retry}`;
-	useEffect(() => {
-		if (quoteChosenRef.current) return;
-
-		const quotes = motivationalQuotes[locale] || motivationalQuotes.en;
-		quoteChosenRef.current = true;
-		setMotivationalQuote(quotes[Math.floor(Math.random() * quotes.length)]);
-	}, [locale]);
 	useEffect(() => {
 		if (authLoading || !userId) return;
 		const controller = new AbortController();
@@ -516,17 +483,6 @@ export default function WordlistPage() {
 							</fieldset>
 							{queue.length > 0 && !canQuiz && <small className={styles.reviewHint}>{t("quizHelp")}</small>}
 						</div>
-						<section className={styles.dailyTip} data-ready={Boolean(motivationalQuote)}>
-							<div className={styles.dailyTipHeading}>
-								<Lightbulb size={19} strokeWidth={1.8} aria-hidden="true" />
-								<h2>{t("dailyTip")}</h2>
-							</div>
-							<blockquote>“{motivationalQuote || "\u00a0"}”</blockquote>
-							<div className={styles.dailyTipPlant} aria-hidden="true">
-								<Sprout size={62} strokeWidth={1.35} />
-								<span />
-							</div>
-						</section>
 					</aside>
 				</div>
 			</div>

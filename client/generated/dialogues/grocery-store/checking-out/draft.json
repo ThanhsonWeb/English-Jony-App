@@ -1,0 +1,777 @@
+{
+  "metadata": {
+    "courseId": "grocery-store",
+    "dialogueId": "checking-out",
+    "title": "Thanh toán tại quầy",
+    "level": "a1",
+    "situation": "Ben và Emma mang đồ đến quầy thanh toán. Lee tính tiền và Ben hỏi về tổng số tiền và cách thanh toán.",
+    "scene": "/dialogue/grocery-store/checking-out/bg.png",
+    "thumbnail": "/dialogue/grocery-store/thumbnails/checking-out.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Lee",
+      "text": "Hi. Did you find everything you needed?",
+      "translation": "Chào bạn. Hai bạn đã tìm được mọi thứ mình cần chưa?",
+      "practicePriority": "simple",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Emma",
+      "text": "Yes, we did. Thanks.",
+      "translation": "Rồi, chúng tôi tìm được rồi. Cảm ơn.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/emma-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Ben",
+      "text": "How much is it altogether?",
+      "translation": "Tổng cộng là bao nhiêu tiền?",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-01.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Lee",
+      "text": "It's eighteen dollars and fifty cents.",
+      "translation": "Tổng cộng là mười tám đô la năm mươi xu.",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Ben",
+      "text": "Okay. Can I pay by card?",
+      "translation": "Được. Tôi có thể thanh toán bằng thẻ không?",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Lee",
+      "text": "Yes. We take cash and cards.",
+      "translation": "Có. Chúng tôi nhận tiền mặt và thẻ.",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Ben",
+      "text": "Can I pay with my phone too?",
+      "translation": "Tôi cũng có thể thanh toán bằng điện thoại không?",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Lee",
+      "text": "Yes, you can.",
+      "translation": "Có, bạn có thể.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Emma",
+      "text": "Do we need a bag?",
+      "translation": "Chúng ta có cần túi không?",
+      "practicePriority": "simple",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/emma-02.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Ben",
+      "text": "Yes. One bag is enough.",
+      "translation": "Có. Một túi là đủ.",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-04.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Lee",
+      "text": "The bag is ten cents. Is that okay?",
+      "translation": "Túi có giá mười xu. Như vậy có được không?",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-05.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Ben",
+      "text": "Yes, that's fine. Thank you.",
+      "translation": "Vâng, được thôi. Cảm ơn.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-05.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Lee",
+      "text": "You're welcome. Have a nice day.",
+      "translation": "Không có gì. Chúc bạn một ngày tốt lành.",
+      "practicePriority": "important",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "find everything you needed",
+      "pronunciation": "/faɪnd ˈevriθɪŋ juː ˈniːdɪd/",
+      "meaning": "tìm được mọi thứ bạn cần",
+      "example": "Did you find everything you needed?"
+    },
+    {
+      "word": "How much is it altogether",
+      "pronunciation": "/haʊ mʌtʃ ɪz ɪt ˌɔːltəˈɡeðər/",
+      "meaning": "tổng cộng là bao nhiêu tiền",
+      "example": "How much is it altogether?"
+    },
+    {
+      "word": "pay by card",
+      "pronunciation": "/peɪ baɪ kɑːrd/",
+      "meaning": "thanh toán bằng thẻ",
+      "example": "Can I pay by card?"
+    },
+    {
+      "word": "cash and cards",
+      "pronunciation": "/kæʃ ænd kɑːrdz/",
+      "meaning": "tiền mặt và thẻ",
+      "example": "We take cash and cards."
+    },
+    {
+      "word": "pay with my phone",
+      "pronunciation": "/peɪ wɪð maɪ foʊn/",
+      "meaning": "thanh toán bằng điện thoại",
+      "example": "Can I pay with my phone?"
+    },
+    {
+      "word": "One bag is enough",
+      "pronunciation": "/wʌn bæɡ ɪz ɪˈnʌf/",
+      "meaning": "một túi là đủ",
+      "example": "One bag is enough."
+    },
+    {
+      "word": "Is that okay",
+      "pronunciation": "/ɪz ðæt oʊˈkeɪ/",
+      "meaning": "như vậy có được không",
+      "example": "The bag is ten cents. Is that okay?"
+    },
+    {
+      "word": "Have a nice day",
+      "pronunciation": "/hæv ə naɪs deɪ/",
+      "meaning": "chúc bạn một ngày tốt lành",
+      "example": "Have a nice day."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "parts": [
+        "Hi. Did you find ",
+        "?"
+      ],
+      "answers": [
+        "everything you needed"
+      ],
+      "speaker": "Lee",
+      "transcript": "Hi. Did you find everything you needed?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "multipleChoice",
+      "question": "Câu hỏi của Lee cho thấy Ben và Emma đang ở bước nào?",
+      "options": [
+        "Đang chọn táo.",
+        "Đang tìm nước cam.",
+        "Đang viết danh sách mua sắm.",
+        "Đang thanh toán tại quầy."
+      ],
+      "answer": "Đang thanh toán tại quầy.",
+      "speaker": "Lee",
+      "transcript": "Hi. Did you find everything you needed?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "parts": [
+        "",
+        ". Thanks."
+      ],
+      "answers": [
+        "Yes, we did"
+      ],
+      "speaker": "Emma",
+      "transcript": "Yes, we did. Thanks.",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/emma-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "",
+        " is it altogether?"
+      ],
+      "answers": [
+        "How much"
+      ],
+      "speaker": "Ben",
+      "transcript": "How much is it altogether?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "How much is it ",
+        "?"
+      ],
+      "answers": [
+        "altogether"
+      ],
+      "speaker": "Ben",
+      "transcript": "How much is it altogether?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Ben cần biết thông tin gì trước khi thanh toán?",
+      "options": [
+        "Tổng số tiền.",
+        "Giờ cửa hàng đóng cửa.",
+        "Vị trí quầy trái cây.",
+        "Giá của một quả táo."
+      ],
+      "answer": "Tổng số tiền.",
+      "speaker": "Ben",
+      "transcript": "How much is it altogether?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-01.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": [
+        "It's ",
+        " and fifty cents."
+      ],
+      "answers": [
+        "eighteen dollars"
+      ],
+      "speaker": "Lee",
+      "transcript": "It's eighteen dollars and fifty cents.",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": [
+        "It's eighteen dollars and ",
+        "."
+      ],
+      "answers": [
+        "fifty cents"
+      ],
+      "speaker": "Lee",
+      "transcript": "It's eighteen dollars and fifty cents.",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "parts": [
+        "Okay. ",
+        " by card?"
+      ],
+      "answers": [
+        "Can I pay"
+      ],
+      "speaker": "Ben",
+      "transcript": "Okay. Can I pay by card?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "parts": [
+        "Okay. Can I pay ",
+        "?"
+      ],
+      "answers": [
+        "by card"
+      ],
+      "speaker": "Ben",
+      "transcript": "Okay. Can I pay by card?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-02.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "multipleChoice",
+      "question": "Ben muốn dùng cách thanh toán nào trước tiên?",
+      "options": [
+        "Tiền mặt.",
+        "Thẻ.",
+        "Điện thoại.",
+        "Phiếu giảm giá."
+      ],
+      "answer": "Thẻ.",
+      "speaker": "Ben",
+      "transcript": "Okay. Can I pay by card?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-02.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": [
+        "Yes. ",
+        " cash and cards."
+      ],
+      "answers": [
+        "We take"
+      ],
+      "speaker": "Lee",
+      "transcript": "Yes. We take cash and cards.",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": [
+        "Yes. We take ",
+        "."
+      ],
+      "answers": [
+        "cash and cards"
+      ],
+      "speaker": "Lee",
+      "transcript": "Yes. We take cash and cards.",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": [
+        "",
+        " pay with my phone too?"
+      ],
+      "answers": [
+        "Can I"
+      ],
+      "speaker": "Ben",
+      "transcript": "Can I pay with my phone too?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-03.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": [
+        "Can I pay with ",
+        "?"
+      ],
+      "answers": [
+        "my phone too"
+      ],
+      "speaker": "Ben",
+      "transcript": "Can I pay with my phone too?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-03.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "parts": [
+        "Yes, ",
+        "."
+      ],
+      "answers": [
+        "you can"
+      ],
+      "speaker": "Lee",
+      "transcript": "Yes, you can.",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": [
+        "Do we need ",
+        "?"
+      ],
+      "answers": [
+        "a bag"
+      ],
+      "speaker": "Emma",
+      "transcript": "Do we need a bag?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/emma-02.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Emma đang nghĩ đến điều gì trước khi rời quầy?",
+      "options": [
+        "Mua thêm táo.",
+        "Đổi chai nước cam.",
+        "Có cần túi hay không.",
+        "Tìm một quầy khác."
+      ],
+      "answer": "Có cần túi hay không.",
+      "speaker": "Emma",
+      "transcript": "Do we need a bag?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/emma-02.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "parts": [
+        "Yes. ",
+        " is enough."
+      ],
+      "answers": [
+        "One bag"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes. One bag is enough.",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-04.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "parts": [
+        "Yes. One bag ",
+        "."
+      ],
+      "answers": [
+        "is enough"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes. One bag is enough.",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-04.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "parts": [
+        "The bag is ",
+        ". Is that okay?"
+      ],
+      "answers": [
+        "ten cents"
+      ],
+      "speaker": "Lee",
+      "transcript": "The bag is ten cents. Is that okay?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "parts": [
+        "The bag is ten cents. ",
+        "?"
+      ],
+      "answers": [
+        "Is that okay"
+      ],
+      "speaker": "Lee",
+      "transcript": "The bag is ten cents. Is that okay?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 11,
+      "type": "multipleChoice",
+      "question": "Lee cần Ben xác nhận điều gì?",
+      "options": [
+        "Ben đồng ý với phí của chiếc túi.",
+        "Ben muốn mua thêm đồ.",
+        "Ben muốn đổi sang tiền mặt.",
+        "Ben cần thêm hai chiếc túi."
+      ],
+      "answer": "Ben đồng ý với phí của chiếc túi.",
+      "speaker": "Lee",
+      "transcript": "The bag is ten cents. Is that okay?",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-05.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "parts": [
+        "Yes, ",
+        ". Thank you."
+      ],
+      "answers": [
+        "that's fine"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes, that's fine. Thank you.",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-05.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "parts": [
+        "",
+        ". Have a nice day."
+      ],
+      "answers": [
+        "You're welcome"
+      ],
+      "speaker": "Lee",
+      "transcript": "You're welcome. Have a nice day.",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-06.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "parts": [
+        "You're welcome. ",
+        " day."
+      ],
+      "answers": [
+        "Have a nice"
+      ],
+      "speaker": "Lee",
+      "transcript": "You're welcome. Have a nice day.",
+      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-06.mp3"
+    },
+    {
+      "id": 27,
+      "type": "dialogueCloze",
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Lee",
+          "parts": [
+            "Hi. Did you ",
+            {
+              "id": "1",
+              "blank": "find everything you needed"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Emma",
+          "parts": [
+            "",
+            {
+              "id": "2",
+              "blank": "Yes, we did"
+            },
+            ". Thanks."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Ben",
+          "parts": [
+            "",
+            {
+              "id": "3",
+              "blank": "How much"
+            },
+            " is it altogether?"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Lee",
+          "parts": [
+            "It's ",
+            {
+              "id": "4",
+              "blank": "eighteen dollars and fifty cents"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Ben",
+          "parts": [
+            "Okay. Can I ",
+            {
+              "id": "5",
+              "blank": "pay by card"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Lee",
+          "parts": [
+            "Yes. We take ",
+            {
+              "id": "6",
+              "blank": "cash and cards"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Ben",
+          "parts": [
+            "Can I ",
+            {
+              "id": "7",
+              "blank": "pay with my phone"
+            },
+            " too?"
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Lee",
+          "parts": [
+            "Yes, ",
+            {
+              "id": "8",
+              "blank": "you can"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Emma",
+          "parts": [
+            "Do we need ",
+            {
+              "id": "9",
+              "blank": "a bag"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Ben",
+          "parts": [
+            "Yes. ",
+            {
+              "id": "10",
+              "blank": "One bag is enough"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Lee",
+          "parts": [
+            "The bag is ten cents. ",
+            {
+              "id": "11",
+              "blank": "Is that okay"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Ben",
+          "parts": [
+            "Yes, ",
+            {
+              "id": "12",
+              "blank": "that's fine"
+            },
+            ". Thank you."
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Lee",
+          "parts": [
+            "You're welcome. ",
+            {
+              "id": "13",
+              "blank": "Have a nice day"
+            },
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Hỏi giá với “How much...?”",
+      "explanation": "Dùng “How much...?” để hỏi giá hoặc tổng số tiền.",
+      "example": "How much is it altogether?"
+    },
+    {
+      "title": "Hỏi xin phép với “Can I...?”",
+      "explanation": "Dùng “Can I + động từ...?” để hỏi xem bạn có thể làm điều gì đó hay không.",
+      "example": "Can I pay by card?"
+    }
+  ]
+}

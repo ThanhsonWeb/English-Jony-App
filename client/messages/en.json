@@ -42,7 +42,6 @@
 	  "caughtUpBody": "Add new words or come back when your next review is due.",
 	  "reviewPanelTitle": "Review now",
 	  "reviewPanelSubtitle": "Turn knowledge into skill ✨",
-	  "dailyTip": "A tip for today",
 	  "mode": "Review mode",
 	  "flashcard": "Flashcard",
 	  "flashcardDescription": "Flip cards to remember words and meanings.",
@@ -156,6 +155,8 @@
 		"completedCount": "{completed}/{total} completed",
 		"explore": "Explore dialogues",
 		"categoryNavLabel": "Dialogue categories",
+		"previousCategories": "Previous categories",
+		"nextCategories": "More categories",
 		"categories": {
 			"all": "All",
 			"office": "Office",

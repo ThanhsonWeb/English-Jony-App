@@ -24,4 +24,12 @@ export const groceryStoreMedia = {
 			Emma: "/dialogue/grocery-store/shared/emma.png",
 		},
 	},
+	"checking-out": {
+		scene: "/dialogue/grocery-store/checking-out/bg.png",
+		characters: {
+			Ben: "/dialogue/grocery-store/shared/ben.png",
+			Emma: "/dialogue/grocery-store/shared/emma.png",
+			Lee: "/dialogue/grocery-store/finding-items/shared/Lee.png",
+		},
+	},
 };

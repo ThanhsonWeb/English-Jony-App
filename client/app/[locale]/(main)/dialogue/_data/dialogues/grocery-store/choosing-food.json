@@ -253,14 +253,14 @@
       "id": 6,
       "dialogueLineId": 3,
       "type": "multipleChoice",
-      "question": "Ben đang muốn quyết định điều gì?",
+      "question": "Ben muốn biết điều gì qua câu hỏi này?",
       "options": [
-        "Họ nên đi đến quầy nào.",
-        "Họ nên mua bao nhiêu quả táo.",
-        "Họ nên chọn táo đỏ hay xanh.",
-        "Họ nên chọn chai nước cam nào."
+        "Anh ấy muốn biết nên chọn chai nước cam nào.",
+        "Anh ấy muốn biết nước cam ở đâu.",
+        "Anh ấy muốn hỏi giá chai nước cam.",
+        "Anh ấy muốn mua cả hai chai nước cam."
       ],
-      "answer": "Họ nên chọn chai nước cam nào.",
+      "answer": "Anh ấy muốn biết nên chọn chai nước cam nào.",
       "speaker": "Ben",
       "transcript": "Which one should we get?",
       "scene": "/dialogue/grocery-store/choosing-food/bg.png",

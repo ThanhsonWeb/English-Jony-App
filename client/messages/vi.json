@@ -42,7 +42,6 @@
 	  "caughtUpBody": "Thêm từ mới hoặc quay lại khi đến lịch ôn tiếp theo.",
 	  "reviewPanelTitle": "Ôn tập ngay",
 	  "reviewPanelSubtitle": "Biến kiến thức thành kỹ năng ✨",
-	  "dailyTip": "Mẹo nhỏ hôm nay",
 	  "mode": "Chế độ ôn tập",
 	  "flashcard": "Flashcard",
 	  "flashcardDescription": "Xem từ và nghĩa, lật thẻ để ghi nhớ.",
@@ -156,6 +155,8 @@
 		"completedCount": "{completed}/{total} hoàn thành",
 		"explore": "Khám phá hội thoại",
 		"categoryNavLabel": "Danh mục hội thoại",
+		"previousCategories": "Xem chủ đề trước",
+		"nextCategories": "Xem thêm chủ đề",
 		"categories": {
 			"all": "Tất cả",
 			"office": "Văn phòng",

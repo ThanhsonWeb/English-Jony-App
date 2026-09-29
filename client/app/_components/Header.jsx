@@ -69,14 +69,14 @@ function Header() {
 
 
 	return (
-		<header className="sticky top-0 z-50 border-b border-app bg-surface/90 px-4 py-1 backdrop-blur-md sm:px-8 lg:px-4 xl:px-8">
-			<div className="mx-auto flex max-w-8xl items-center justify-between gap-2">
+		<header className="sticky top-0 z-50 w-full border-b border-app bg-surface/95 px-4 py-1 backdrop-blur-xl sm:px-6 lg:px-4 xl:px-8">
+			<div className="mx-auto grid max-w-8xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
 				<Logo />
-				<div className="hidden shrink-0 lg:block">
+				<div className="hidden justify-center lg:flex">
 					<Navigation />
 				</div>
 
-				<div className="flex shrink-0 items-center gap-1 sm:gap-2 xl:gap-4">
+				<div className="col-start-2 row-start-1 flex shrink-0 items-center justify-end gap-1 sm:gap-2 xl:gap-3 lg:col-start-3">
 					<LanguageSwitcher />
 					<ThemeSelector />
 					{loading ? (

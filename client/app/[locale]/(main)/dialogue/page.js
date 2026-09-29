@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -8,6 +8,8 @@ import {
 	BookOpen,
 	BriefcaseBusiness,
 	ChevronDown,
+	ChevronLeft,
+	ChevronRight,
 	CircleCheck,
 	Clock3,
 	GraduationCap,
@@ -75,12 +77,13 @@ const categoryIcons = {
 const courseIdsByCategory = {
 	office: ["office-introduction"],
 	travel: ["at-a-hotel", "asking-for-directions", "weekend-camping"],
-	food: ["coffee-shop"],
+	food: ["coffee-shop", "grocery-store"],
 	life: ["at-a-hotel", "weekend-camping"],
 	daily: [
 		"at-a-hotel",
 		"asking-for-directions",
 		"coffee-shop",
+		"grocery-store",
 		"office-introduction",
 		"weekend-camping",
 	],
@@ -109,7 +112,51 @@ export default function DialoguePage() {
 	const [search, setSearch] = useState("");
 	const [selectedLevel, setSelectedLevel] = useState("all");
 	const [selectedCategory, setSelectedCategory] = useState("all");
+	const categoryNavRef = useRef(null);
+	const [categoryScroll, setCategoryScroll] = useState({ left: false, right: false });
 	const [progressByLesson, setProgressByLesson] = useState({});
+
+	useEffect(() => {
+		const nav = categoryNavRef.current;
+		if (!nav) return;
+
+		const updateScrollButtons = () => {
+			const fitsWithoutButtons = nav.scrollWidth <= nav.parentElement.clientWidth + 1;
+			const left = !fitsWithoutButtons && nav.scrollLeft > 1;
+			const right = !fitsWithoutButtons && nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 1;
+			setCategoryScroll((previous) =>
+				previous.left === left && previous.right === right
+					? previous
+					: { left, right },
+			);
+		};
+
+		const keepSelectedVisible = () => {
+			if (window.innerWidth >= 1280) return;
+			const selected = nav.querySelector('[aria-pressed="true"]');
+			if (!selected) return;
+			const navRect = nav.getBoundingClientRect();
+			const selectedRect = selected.getBoundingClientRect();
+			if (selectedRect.left < navRect.left + 8) {
+				nav.scrollBy({ left: selectedRect.left - navRect.left - 8 });
+			} else if (selectedRect.right > navRect.right - 8) {
+				nav.scrollBy({ left: selectedRect.right - navRect.right + 8 });
+			}
+		};
+
+		const resizeObserver = new ResizeObserver(updateScrollButtons);
+		resizeObserver.observe(nav);
+		nav.addEventListener("scroll", updateScrollButtons, { passive: true });
+		window.addEventListener("resize", keepSelectedVisible);
+		keepSelectedVisible();
+		updateScrollButtons();
+
+		return () => {
+			resizeObserver.disconnect();
+			nav.removeEventListener("scroll", updateScrollButtons);
+			window.removeEventListener("resize", keepSelectedVisible);
+		};
+	}, [selectedCategory]);
 
 	useEffect(() => {
 		let shouldIgnoreResult = false;
@@ -251,7 +298,7 @@ export default function DialoguePage() {
 			<div className="mx-auto max-w-[1548px]">
 				{/* ==================== HERO SECTION ==================== */}
 				<section className="bg-hero">
-					<div className="grid items-center gap-5 px-5 py-6 sm:px-8 sm:py-7 md:grid-cols-[minmax(0,1fr)_minmax(250px,400px)] md:gap-8">
+					<div className="grid items-center gap-5 px-5 py-6 sm:px-8 sm:py-7 md:grid-cols-[minmax(0,1fr)_minmax(220px,320px)] md:gap-5 md:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(280px,400px)] lg:gap-8 lg:px-8">
 						<div className="min-w-0">
 							<h1 className="text-3xl font-bold tracking-tight text-main sm:text-4xl">
 								{t.rich("title", {
@@ -279,9 +326,9 @@ export default function DialoguePage() {
 
 				{currentCourseMatchesSearch && (
 					<section className="mt-5">
-						<div className="overflow-hidden rounded-xl border border-app bg-gradient-to-br from-surface via-surface to-primary/5 p-4 shadow-sm sm:p-5">
-							<div className="flex flex-col gap-5 md:flex-row md:items-center lg:gap-6">
-								<div className="relative aspect-[16/9] w-full shrink-0 overflow-hidden rounded-lg border border-app md:w-56 lg:w-64">
+						<div className="overflow-hidden rounded-xl border border-app bg-gradient-to-br from-surface via-surface to-primary/5 p-4 shadow-sm sm:p-5 md:p-3 lg:p-4 xl:p-5">
+							<div className="flex flex-col gap-5 md:flex-row md:items-center md:gap-3 lg:gap-4 xl:gap-6">
+								<div className="relative aspect-[16/9] w-full shrink-0 overflow-hidden rounded-lg border border-app md:w-48 lg:w-56 xl:w-64">
 									<Image
 										src={getCourseImage(currentCourse.id)}
 										alt={currentCourse.title}
@@ -343,7 +390,7 @@ export default function DialoguePage() {
 
 								<Link
 									href={`/dialogue/${currentCourse.id}`}
-									className="inline-flex min-h-11 shrink-0 self-stretch items-center justify-center gap-3 rounded-lg bg-primary px-6 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:self-center"
+									className="inline-flex min-h-11 shrink-0 self-stretch items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-primary px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:self-center lg:gap-3 lg:px-5 xl:px-6"
 								>
 									{t("continue")}
 									<ArrowRight className="h-5 w-5" />
@@ -355,11 +402,23 @@ export default function DialoguePage() {
 				{/* ==================== OTHER COURSES / DISCOVERY ==================== */}
 
 				<section className="mt-6 pb-10">
-					<div className="grid items-start gap-5 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-6 xl:grid-cols-[272px_minmax(0,1fr)]">
-						<div className="min-w-0 lg:sticky lg:top-[140px] lg:self-start lg:h-fit">
+					<div className="grid min-w-0 items-start gap-5 xl:grid-cols-[272px_minmax(0,1fr)] xl:gap-6">
+						<div className="min-w-0 xl:sticky xl:top-[140px] xl:self-start xl:h-fit">
+						<div className="flex min-w-0 items-center gap-1 xl:block">
+							{categoryScroll.left && (
+								<button
+									type="button"
+									aria-label={t("previousCategories")}
+									onClick={() => categoryNavRef.current?.scrollBy({ left: -220, behavior: "smooth" })}
+									className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-app bg-surface text-secondary hover:bg-hover hover:text-main focus-visible:outline-2 focus-visible:outline-primary xl:hidden"
+								>
+									<ChevronLeft className="h-5 w-5" />
+								</button>
+							)}
 						<nav
+							ref={categoryNavRef}
 							aria-label={t("categoryNavLabel")}
-							className="-mx-4 flex gap-1 overflow-x-auto px-4 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:border-r lg:border-app lg:pr-4 lg:pb-0"
+							className="flex min-w-0 flex-1 flex-nowrap gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain pb-2 touch-pan-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden xl:flex-col xl:overflow-visible xl:border-r xl:border-app xl:pr-4 xl:pb-0"
 						>
 							{dialogueCategories.map((category) => {
 								const isActive = selectedCategory === category;
@@ -375,7 +434,7 @@ export default function DialoguePage() {
 										type="button"
 										aria-pressed={isActive}
 										onClick={() => setSelectedCategory(category)}
-										className={`relative flex h-11 shrink-0 items-center gap-3 rounded-xl px-4 text-left text-sm font-medium transition lg:w-full ${
+										className={`relative flex h-11 shrink-0 items-center gap-3 rounded-xl px-4 text-left text-sm font-medium transition xl:w-full ${
 											isActive
 												? "bg-primary/15 text-brand-text before:absolute before:inset-y-0 before:left-0 before:w-1 before:rounded-full before:bg-primary before:shadow-[0_0_12px_var(--sj-primary)]"
 												: "text-secondary hover:bg-hover hover:text-main"
@@ -390,6 +449,17 @@ export default function DialoguePage() {
 								);
 							})}
 						</nav>
+							{categoryScroll.right && (
+								<button
+									type="button"
+									aria-label={t("nextCategories")}
+									onClick={() => categoryNavRef.current?.scrollBy({ left: 220, behavior: "smooth" })}
+									className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-app bg-surface text-secondary hover:bg-hover hover:text-main focus-visible:outline-2 focus-visible:outline-primary xl:hidden"
+								>
+									<ChevronRight className="h-5 w-5" />
+								</button>
+							)}
+						</div>
 						</div>
 						<div className="min-w-0">
 							<div className="mb-3 flex flex-wrap items-center justify-between gap-3">

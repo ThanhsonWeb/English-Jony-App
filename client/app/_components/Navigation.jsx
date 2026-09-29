@@ -24,6 +24,13 @@ const navLinks = [
 	{ key: "rank", href: "/rank", icon: Trophy },
 ];
 
+const navItemBase =
+	"inline-flex items-center whitespace-nowrap border font-medium transition-colors duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40";
+const navItemActive =
+	"border-primary/25 bg-primary-soft text-brand-text shadow-sm shadow-primary/10 ring-1 ring-primary/10";
+const navItemInactive =
+	"border-transparent bg-transparent text-secondary hover:border-app hover:bg-hover hover:text-main";
+
 function Navigation() {
 	const t = useTranslations("Navigation");
 	const pathname = usePathname();
@@ -34,7 +41,7 @@ function Navigation() {
 	return (
 		<nav className="relative">
 			{/* Desktop Navigation */}
-			<ul className="hidden items-center gap-1 lg:flex">
+			<ul className="hidden items-center gap-2 lg:flex">
 				{navLinks.map((link) => {
 					const Icon = link.icon;
 					const isActive =
@@ -46,13 +53,13 @@ function Navigation() {
 							<Link
 								href={link.href}
 								aria-current={isActive ? "page" : undefined}
-								className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-xl border px-2 py-2 text-lg font-medium transition-[color,background-color,border-color,box-shadow,transform] duration-200 ease-out xl:gap-2 xl:px-4 ${
+								className={`${navItemBase} gap-2 rounded-full px-3 py-2 text-base lg:px-3 xl:px-4 ${
 									isActive
-										? "border-primary/25 bg-active text-brand-text shadow-[0_4px_14px_var(--sj-shadow-color)]"
-										: "border-transparent text-secondary hover:border-app hover:bg-hover hover:text-main"
+										? navItemActive
+										: navItemInactive
 								}`}
 							>
-								<Icon className="h-5 w-5 shrink-0" />
+								<Icon className="h-[18px] w-[18px] shrink-0" />
 								<span>{t(link.key)}</span>
 							</Link>
 						</li>
@@ -84,10 +91,10 @@ function Navigation() {
 								href={link.href}
 								onClick={() => setOpenPathname(null)}
 								aria-current={isActive ? "page" : undefined}
-								className={`inline-flex items-center gap-3 rounded-xl border px-4 py-3 text-lg font-medium transition-[color,background-color,border-color,box-shadow] duration-200 ease-out ${
+								className={`${navItemBase} w-full gap-3 rounded-2xl px-4 py-3 text-lg ${
 									isActive
-										? "border-primary/25 bg-active font-semibold text-brand-text shadow-[0_4px_14px_var(--sj-shadow-color)]"
-										: "border-transparent text-secondary hover:border-app hover:bg-hover hover:text-main"
+										? `${navItemActive} font-semibold`
+										: navItemInactive
 								}`}
 							>
 								<Icon className="w-5 h-5" />
