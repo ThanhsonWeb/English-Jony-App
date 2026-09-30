@@ -20,6 +20,72 @@ function isPresent(value) {
 	return typeof value === "string" ? value.trim().length > 0 : value != null;
 }
 
+function validateLocalizedPair(value, label, errors) {
+	for (const locale of ["vi", "en"]) {
+		if (typeof value?.[locale] !== "string" || !value[locale].trim()) {
+			errors.push(`Missing localized ${label}.${locale}`);
+		}
+	}
+}
+
+function validateLocalization(data, errors) {
+	const metadata = data?.metadata;
+	if (!Number.isInteger(metadata?.localizationVersion) || metadata.localizationVersion < 1) {
+		errors.push("Missing metadata.localizationVersion (expected 1 or higher).");
+	}
+	for (const field of ["courseTitle", "courseDescription", "title", "description"]) {
+		validateLocalizedPair(metadata?.localized?.[field], field, errors);
+	}
+	if (typeof metadata?.title === "string" && metadata.localized?.title?.vi !== metadata.title) {
+		errors.push("Localized title.vi must match metadata.title.");
+	}
+	if (typeof metadata?.situation === "string" && metadata.localized?.description?.vi !== metadata.situation) {
+		errors.push("Localized description.vi must match metadata.situation.");
+	}
+	for (const [index, task] of (Array.isArray(data?.tasks) ? data.tasks : []).entries()) {
+		const label = `Task ${task.id ?? index + 1}`;
+		for (const field of ["title", "instruction"]) {
+			validateLocalizedPair(task.localized?.[field], `${label} ${field}`, errors);
+			if (typeof task[field] === "string" && task.localized?.[field]?.vi !== task[field]) {
+				errors.push(`${label}: localized ${field}.vi must match ${field}.`);
+			}
+		}
+		if (task.type === "multipleChoice") {
+			validateLocalizedPair(task.localized?.question, `${label} question`, errors);
+			if (task.localized?.question?.vi !== task.question) {
+				errors.push(`${label}: localized question.vi must match question.`);
+			}
+			if (!Array.isArray(task.localized?.options) || task.localized.options.length !== task.options?.length) {
+				errors.push(`${label}: localized options must match the number of options.`);
+			}
+			for (const [optionIndex, option] of (Array.isArray(task.options) ? task.options : []).entries()) {
+				const localizedOption = task.localized?.options?.[optionIndex];
+				validateLocalizedPair(localizedOption, `${label} options[${optionIndex}]`, errors);
+				if (localizedOption?.vi !== option) {
+					errors.push(`${label}: localized options[${optionIndex}].vi must match options[${optionIndex}].`);
+				}
+			}
+		}
+		if (typeof task.explanation === "string" && task.explanation.trim()) {
+			validateLocalizedPair(task.localized?.explanation, `${label} explanation`, errors);
+			if (task.localized?.explanation?.vi !== task.explanation) {
+				errors.push(`${label}: localized explanation.vi must match explanation.`);
+			}
+		}
+		for (const field of ["completionMessage", "resultMessage"]) {
+			if (field in task) validateLocalizedPair(task.localized?.[field], `${label} ${field}`, errors);
+		}
+	}
+	for (const [index, note] of (Array.isArray(data?.grammarNotes) ? data.grammarNotes : []).entries()) {
+		for (const field of ["title", "explanation"]) {
+			validateLocalizedPair(note.localized?.[field], `Grammar note ${index + 1} ${field}`, errors);
+			if (typeof note[field] === "string" && note.localized?.[field]?.vi !== note[field]) {
+				errors.push(`Grammar note ${index + 1}: localized ${field}.vi must match ${field}.`);
+			}
+		}
+	}
+}
+
 function normalizeText(value) {
 	return String(value || "")
 		.toLowerCase()
@@ -287,6 +353,9 @@ export function validateDialogue(data, options = {}) {
 
 	if (!data?.metadata) {
 		errors.push("Missing metadata.");
+	}
+	if (options.requireLocalization || Number(data?.metadata?.localizationVersion) >= 1) {
+		validateLocalization(data, errors);
 	}
 
 	// ------------------------------------------------------------
@@ -1012,7 +1081,9 @@ async function runCli() {
 		return;
 	}
 
-	const result = validateDialogue(data);
+	const result = validateDialogue(data, {
+		requireLocalization: process.argv.includes("--require-localization"),
+	});
 
 	if (result.valid) {
 		console.log("✅ Dialogue validation passed!");

@@ -75,21 +75,25 @@ const englishMetadata = {
 
 export function withDialogueLocalization(course) {
 	const translation = englishMetadata[course.id];
-	if (!translation) throw new Error(`Missing English course metadata: ${course.id}`);
+	const nativeCourse = course.dialogues.find((dialogue) => dialogue.metadata?.localized?.courseTitle)?.metadata?.localized;
+	if (!translation && !course.localized && !nativeCourse) {
+		throw new Error(`Missing English course metadata: ${course.id}`);
+	}
 	return {
 		...course,
 		localized: {
-			title: { vi: course.title, en: translation.title },
-			description: { vi: course.description, en: translation.description },
+			title: course.localized?.title ?? (translation ? { vi: course.title, en: translation.title } : nativeCourse?.courseTitle),
+			description: course.localized?.description ?? (translation ? { vi: course.description, en: translation.description } : nativeCourse?.courseDescription),
 		},
 		dialogues: course.dialogues.map((dialogue) => {
-			const english = translation.dialogues[dialogue.id];
-			if (!english) throw new Error(`Missing English dialogue metadata: ${course.id}/${dialogue.id}`);
+			const native = dialogue.localized ?? dialogue.metadata?.localized;
+			const english = translation?.dialogues[dialogue.id];
+			if (!native?.title && !english) throw new Error(`Missing English dialogue metadata: ${course.id}/${dialogue.id}`);
 			return {
 				...dialogue,
 				localized: {
-					title: { vi: dialogue.title, en: english[0] },
-					description: { vi: dialogue.description, en: english[1] },
+					title: native?.title ?? { vi: dialogue.title, en: english[0] },
+					description: native?.description ?? { vi: dialogue.description, en: english[1] },
 				},
 			};
 		}),

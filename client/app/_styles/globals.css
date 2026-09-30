@@ -55,8 +55,6 @@ html[data-theme="dark"] {
 	--sj-success-soft: #123229;
 	--sj-shadow: #020617;
 	--sj-shadow-color: #00000040;
-	--sj-dialogue-subtitle-bg: rgba(0, 0, 0, 0.7);
-	--sj-dialogue-task-subtitle-bg: rgba(2, 6, 23, 0.75);
 	color-scheme: dark;
 }
 
@@ -87,8 +85,6 @@ html[data-theme="cream"] {
 	--sj-success-soft: #e8f7ef;
 	--sj-shadow: #253c30;
 	--sj-shadow-color: #253c301a;
-	--sj-dialogue-subtitle-bg: rgba(255, 255, 255, 0.7);
-	--sj-dialogue-task-subtitle-bg: rgba(255, 255, 255, 0.75);
 	color-scheme: light;
 }
 
@@ -110,8 +106,6 @@ html[data-theme="cream"] {
 	--sj-success-soft: #eaf0df;
 	--sj-shadow: #493a22;
 	--sj-shadow-color: #493a221c;
-	--sj-dialogue-subtitle-bg: rgba(255, 250, 240, 0.7);
-	--sj-dialogue-task-subtitle-bg: rgba(255, 250, 240, 0.75);
 }
 
 html[data-theme="black"] {
@@ -134,8 +128,6 @@ html[data-theme="black"] {
 	--sj-active: #303740;
 	--sj-shadow: #000000;
 	--sj-shadow-color: #00000066;
-	--sj-dialogue-subtitle-bg: rgba(23, 26, 31, 0.7);
-	--sj-dialogue-task-subtitle-bg: rgba(17, 19, 23, 0.75);
 	color-scheme: dark;
 }
 
@@ -151,13 +143,15 @@ body {
 	color: var(--sj-text);
 }
 
-.dialogue-subtitle-surface {
-	background-color: var(--sj-dialogue-subtitle-bg);
+.dialogue-subtitle-speaker {
+	color: #4ade80 !important;
 }
 
-.dialogue-task-subtitle-surface {
-	background-color: var(--sj-dialogue-task-subtitle-bg);
+.dialogue-subtitle-text,
+.dialogue-subtitle-translation {
+	color: #fff !important;
 }
+
 
 /* Legacy slate aliases let existing screens share the tokens without changing layout. */
 html:is([data-theme="light"], [data-theme="cream"], [data-theme="black"]) :where(
@@ -768,3 +762,13 @@ html[data-theme="black"] {
 	--sj-banner-shadow: 0 -10px 35px #35425908;
 }
 .banner-decoration-shadow { box-shadow: var(--sj-banner-shadow); }
+
+html:is([data-theme="light"], [data-theme="cream"], [data-theme="black"]) .dialogue-subtitle-text,
+html:is([data-theme="light"], [data-theme="cream"], [data-theme="black"]) .dialogue-subtitle-translation {
+	color: #fff !important;
+}
+
+html:is([data-theme="light"], [data-theme="cream"]) .dialogue-word-popup {
+	background-color: rgb(2 6 23 / 95%) !important;
+	border-color: rgb(71 85 105 / 80%) !important;
+}

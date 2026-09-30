@@ -121,7 +121,7 @@ function MultipleChoiceTask({
 						{result === "correct" && (
 							<div className="mt-5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5">
 								<p className="font-semibold text-emerald-400">✓ {t("correct")}</p>
-								{task.explanation && locale === "vi" && (
+								{task.explanation && (locale === "vi" || task.localized?.explanation?.en) && (
 									<p className="mt-2 leading-relaxed text-slate-300">
 										{task.explanation}
 									</p>

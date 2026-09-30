@@ -238,18 +238,6 @@ export default function DialoguePlayer({
 		return characterCount > 1 && characterIndex === characterCount - 1;
 	}
 
-	function getSpeakerColor(speaker) {
-		const characterIndex = characters.findIndex(([name]) => name === speaker);
-		const colors = [
-			"text-violet-400",
-			"text-emerald-400",
-			"text-sky-400",
-			"text-amber-400",
-		];
-
-		return colors[Math.max(characterIndex, 0) % colors.length];
-	}
-
 	function clearStartTimeout() {
 		if (!startTimeoutRef.current) return;
 
@@ -595,7 +583,7 @@ export default function DialoguePlayer({
 						})}
 
 						{/* Subtitle + controls */}
-						<div className="dialogue-subtitle-surface player-overlay absolute inset-x-0 bottom-0 z-20 backdrop-blur-[2px]">
+						<div className="player-overlay absolute inset-x-0 bottom-0 z-20 bg-black/55 backdrop-blur-md">
 							{/* Subtitle - only visible while playing */}
 							{hasStarted && showSubtitles && !dialogueFinished && (
 								<div
@@ -607,9 +595,7 @@ export default function DialoguePlayer({
 								>
 									{/* Speaker */}
 									<p
-										className={`text-sm font-bold ${getSpeakerColor(
-											activeLine?.speaker,
-										)}`}
+										className="dialogue-subtitle-speaker text-sm font-bold"
 									>
 										{activeLine?.speaker}
 									</p>
@@ -622,7 +608,7 @@ export default function DialoguePlayer({
 												: "justify-start"
 										}`}
 									>
-										<p className="max-w-2xl text-base leading-relaxed text-white sm:text-xl">
+										<p className="dialogue-subtitle-text max-w-2xl text-base leading-relaxed text-white sm:text-xl">
 											{activeLine?.text &&
 												renderSubtitleTokens(
 													activeLine.text,
@@ -636,7 +622,7 @@ export default function DialoguePlayer({
 
 									{/* Translation */}
 									{showTranslation && activeLine?.translation && (
-										<p className=" px-4 mt-2 text-md text-slate-300">
+										<p className="dialogue-subtitle-translation px-4 mt-2 text-md">
 											{activeLine.translation}
 										</p>
 									)}
@@ -893,8 +879,8 @@ export default function DialoguePlayer({
 							aria-label={t("meaningOf", { word: selectedLookup.result.text })}
 							className={
 								selectedLookup.isMobile
-									? "fixed inset-x-3 bottom-3 z-[100] rounded-2xl border border-slate-700/80 bg-slate-950/95 px-3.5 py-3 text-left text-sm text-slate-200 shadow-2xl backdrop-blur-md"
-									: `fixed z-[100] w-64 rounded-xl border border-slate-700/80 bg-slate-950/95 px-3.5 py-3 text-left text-sm text-slate-200 shadow-2xl backdrop-blur-md ${
+									? "dialogue-word-popup theme-dark-overlay fixed inset-x-3 bottom-3 z-[100] rounded-2xl border border-slate-700/80 bg-slate-950/95 px-3.5 py-3 text-left text-sm text-slate-200 shadow-2xl backdrop-blur-md"
+									: `dialogue-word-popup theme-dark-overlay fixed z-[100] w-64 rounded-xl border border-slate-700/80 bg-slate-950/95 px-3.5 py-3 text-left text-sm text-slate-200 shadow-2xl backdrop-blur-md ${
 											selectedLookup.position.opensAbove
 												? "-translate-y-full"
 												: ""
@@ -936,7 +922,7 @@ export default function DialoguePlayer({
 								</p>
 							)}
 
-							<p className="mt-2 leading-relaxed text-slate-100">
+							<p className="mt-2 leading-relaxed text-slate-200">
 								{selectedLookup.result.displayMeaning}
 							</p>
 						</div>,

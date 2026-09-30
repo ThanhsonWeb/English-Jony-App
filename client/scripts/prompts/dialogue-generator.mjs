@@ -45,6 +45,8 @@ export function buildDialoguePrompt(lessonConfig) {
 		courseId,
 		dialogueId,
 		title,
+		courseTitle,
+		courseDescription,
 		characters,
 		level,
 		situation,
@@ -171,11 +173,25 @@ COURSE
 Course ID: ${courseId}
 Dialogue ID: ${dialogueId}
 Vietnamese title: ${title}
+Course title hint: ${courseTitle || courseId}
+Course description hint: ${courseDescription || situation}
 Characters: ${characters.join(", ")}
 Configured level: ${level}
 Normalized CEFR level: ${normalizedLevel.toUpperCase()}
 Situation: ${situation}
 ${formatPreviousDialogueSection(previousDialogue)}
+
+LOCALIZATION (REQUIRED FOR EVERY NEW DRAFT)
+
+- Set metadata.localizationVersion to 1.
+- Include metadata.localized.courseTitle, courseDescription, title, and description, each with non-empty vi and en strings.
+- metadata.localized.title.vi must equal metadata.title exactly; metadata.localized.description.vi must equal metadata.situation exactly.
+- Translate course and dialogue titles/descriptions naturally into English. Do not leave a locale empty.
+- Every task needs localized.title and localized.instruction with vi and en strings. If a task also has a plain title or instruction, its localized vi text must match exactly.
+- Every Multiple Choice task also needs localized.question and localized.options. Keep question and options as Vietnamese strings for answer checking; localized.question.vi and each localized.options[i].vi must match them exactly. English options must keep the same order and meaning. Do not translate the English dialogue sentence or answer key.
+- If a task has an explanation, completionMessage, or resultMessage, localize it too. Localize grammar note titles and explanations; their vi text must match the plain fields exactly.
+- Keep dialogue.text and task transcripts in English. Keep dialogue.translation and vocabulary meanings in Vietnamese for learning.
+- Generic buttons and statuses such as Continue, Check, Correct, and Try again belong to shared UI translation files; do not add them to this JSON.
 
 ==================================================
 DIALOGUE RULES
@@ -457,6 +473,13 @@ Use this structure:
 		"courseId": "${courseId}",
 		"dialogueId": "${dialogueId}",
 		"title": "${title}",
+		"localizationVersion": 1,
+		"localized": {
+			"courseTitle": { "vi": "", "en": "" },
+			"courseDescription": { "vi": "", "en": "" },
+			"title": { "vi": "${title}", "en": "" },
+			"description": { "vi": "${situation}", "en": "" }
+		},
 		"level": "${normalizedLevel}",
 		${a1MetadataFields}
 		"situation": "${situation}",
@@ -490,6 +513,10 @@ Use this structure:
 			"id": 1,
 			"dialogueLineId": 1,
 			"type": "fillBlank",
+			"localized": {
+				"title": { "vi": "", "en": "" },
+				"instruction": { "vi": "", "en": "" }
+			},
 			"parts": ["", ""],
 			"answers": [""],
 			"speaker": "",
@@ -503,6 +530,17 @@ Use this structure:
 			"dialogueLineId": 1,
 			"type": "multipleChoice",
 			"question": "",
+			"localized": {
+				"title": { "vi": "", "en": "" },
+				"instruction": { "vi": "", "en": "" },
+				"question": { "vi": "", "en": "" },
+				"options": [
+					{ "vi": "", "en": "" },
+					{ "vi": "", "en": "" },
+					{ "vi": "", "en": "" },
+					{ "vi": "", "en": "" }
+				]
+			},
 			${a1McCategoryField}
 			${normalizedLevel === "a1" ? '"mcTarget": "",' : ""}
 			"options": ["", "", "", ""],
@@ -516,6 +554,10 @@ Use this structure:
 		{
 			"id": 3,
 			"type": "dialogueCloze",
+			"localized": {
+				"title": { "vi": "", "en": "" },
+				"instruction": { "vi": "", "en": "" }
+			},
 			"lines": [
 				{
 					"dialogueLineId": 1,
@@ -537,6 +579,10 @@ Use this structure:
 		{
 			"title": "",
 			"explanation": "",
+			"localized": {
+				"title": { "vi": "", "en": "" },
+				"explanation": { "vi": "", "en": "" }
+			},
 			"example": ""
 		}
 	]

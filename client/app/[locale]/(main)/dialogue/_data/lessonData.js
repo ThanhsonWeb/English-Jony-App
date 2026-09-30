@@ -8,9 +8,9 @@ import weekendCampingCourse from "./courses/weekend-camping";
 import { withDialogueLocalization } from "@/app/_lib/dialogue/localization";
 
 export const lessonData = {
-   [atAHotelCourse.id]: withDialogueLocalization(atAHotelCourse),
-   [officeIntroductionCourse.id]: withDialogueLocalization(officeIntroductionCourse),
-   [weekendCampingCourse.id]: withDialogueLocalization(weekendCampingCourse),
+   // [atAHotelCourse.id]: withDialogueLocalization(atAHotelCourse),
+   // [officeIntroductionCourse.id]: withDialogueLocalization(officeIntroductionCourse),
+   // [weekendCampingCourse.id]: withDialogueLocalization(weekendCampingCourse),
    [askingForDirectionsCourse.id]: withDialogueLocalization(askingForDirectionsCourse),
    [coffeeShopCourse.id]: withDialogueLocalization(coffeeShopCourse),
    [groceryStoreCourse.id]: withDialogueLocalization(groceryStoreCourse),

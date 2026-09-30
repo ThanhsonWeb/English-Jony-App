@@ -121,6 +121,12 @@ export function buildGeneratedDialogue(draft, characterImages, media = {}) {
 		thumbnail: draft.metadata.thumbnail,
 		title: draft.metadata.title,
 		description: draft.metadata.situation,
+		...(draft.metadata.localized ? {
+			localized: {
+				title: draft.metadata.localized.title,
+				description: draft.metadata.localized.description,
+			},
+		} : {}),
 		scene: draft.metadata.scene,
 		characters: characterImages,
 		tasks: buildGeneratedDialogueTasks(

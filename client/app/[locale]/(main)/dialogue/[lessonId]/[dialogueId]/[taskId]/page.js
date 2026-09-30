@@ -58,15 +58,19 @@ export default function DialogueTaskPage() {
 	);
 	const taskWithTranslation = {
 		...task,
-		title: task.title || t(`${task.type}Title`),
-		instruction: task.instruction || (t.has(`${task.type}Instruction`) ? t(`${task.type}Instruction`) : undefined),
-		...(locale === "en" ? {
-			title: t(`${task.type}Title`),
-			...(t.has(`${task.type}Instruction`) ? { instruction: t(`${task.type}Instruction`) } : {}),
-			...(task.type === "multipleChoice" ? {
-				question: englishMcQuestions[lessonId]?.[dialogueId]?.[mcIndex] || t("mcFallbackQuestion"),
-				localizedOptions: englishMcOptions[lessonId]?.[dialogueId]?.[task.id],
-			} : {}),
+		title: task.localized?.title?.[locale] ??
+			(locale === "en" ? t(`${task.type}Title`) : task.title || t(`${task.type}Title`)),
+		instruction: task.localized?.instruction?.[locale] ??
+			(locale === "en" ? undefined : task.instruction) ??
+			(t.has(`${task.type}Instruction`) ? t(`${task.type}Instruction`) : undefined),
+		completionMessage: task.localized?.completionMessage?.[locale] ?? task.completionMessage,
+		resultMessage: task.localized?.resultMessage?.[locale] ?? task.resultMessage,
+		...(task.type === "multipleChoice" ? {
+			question: task.localized?.question?.[locale] ??
+				(locale === "en" ? englishMcQuestions[lessonId]?.[dialogueId]?.[mcIndex] || t("mcFallbackQuestion") : task.question),
+			localizedOptions: task.localized?.options?.map((option) => option[locale]) ??
+				(locale === "en" ? englishMcOptions[lessonId]?.[dialogueId]?.[task.id] : undefined),
+			explanation: task.localized?.explanation?.[locale] ?? task.explanation,
 		} : {}),
 		scene: task.scene || dialogue.scene,
 		translation: task.translation || matchingDialogueLine?.translation,

@@ -270,7 +270,8 @@ function createCourseSource(courseId, dialogueId, draft, config) {
 
 async function updateCourseFile({ courseId, dialogueId, draft, config }) {
 	const coursePath = path.join(COURSE_DIRECTORY, `${courseId}.js`);
-	const source = (await exists(coursePath))
+	const existingCourse = await exists(coursePath);
+	let source = existingCourse
 		? updateExistingCourseSource(
 				await readFile(coursePath, "utf8"),
 				courseId,
@@ -278,6 +279,14 @@ async function updateCourseFile({ courseId, dialogueId, draft, config }) {
 				config,
 			)
 		: createCourseSource(courseId, dialogueId, draft, config);
+	if (!existingCourse) {
+		const levelLine = `\tlevel: ${toIdentifier(courseId)}Config.level,`;
+		const localized = {
+			title: draft.metadata.localized.courseTitle,
+			description: draft.metadata.localized.courseDescription,
+		};
+		source = source.replace(levelLine, `\tlocalized: ${JSON.stringify(localized)},\n${levelLine}`);
+	}
 	await writeFile(coursePath, source, "utf8");
 	return coursePath;
 }
@@ -294,12 +303,19 @@ async function registerCourse(courseId) {
 		const index = lastImport.index + lastImport[0].length;
 		source = `${source.slice(0, index)}\n${importLine}${source.slice(index)}`;
 	}
+	const localizationImport = 'import { withDialogueLocalization } from "@/app/_lib/dialogue/localization";';
+	if (!source.includes(localizationImport)) {
+		const imports = [...source.matchAll(/^import .+;$/gm)];
+		const lastImport = imports.at(-1);
+		const index = lastImport.index + lastImport[0].length;
+		source = `${source.slice(0, index)}\n${localizationImport}${source.slice(index)}`;
+	}
 
-	if (!source.includes(`[${courseIdentifier}.id]: ${courseIdentifier},`)) {
-		source = source.replace(
-			/\n};\s*$/,
-			`\n   [${courseIdentifier}.id]: ${courseIdentifier},\n};\n`,
-		);
+	if (!source.includes(`[${courseIdentifier}.id]: withDialogueLocalization(${courseIdentifier}),`)) {
+		const bareEntry = `[${courseIdentifier}.id]: ${courseIdentifier},`;
+		source = source.includes(bareEntry)
+			? source.replace(bareEntry, `[${courseIdentifier}.id]: withDialogueLocalization(${courseIdentifier}),`)
+			: source.replace(/\n};\s*$/, `\n   [${courseIdentifier}.id]: withDialogueLocalization(${courseIdentifier}),\n};\n`);
 	}
 
 	await writeFile(LESSON_DATA_PATH, source, "utf8");
@@ -406,7 +422,7 @@ async function main() {
 	if (!(await exists(configPath))) fail(`Course config not found: ${configPath}`);
 
 	logStep(verbose, "[1/7] Validating draft");
-	const draftValidation = runNode(VALIDATOR_PATH, [draftPath], verbose);
+	const draftValidation = runNode(VALIDATOR_PATH, [draftPath, "--require-localization"], verbose);
 	const draft = await loadJson(draftPath);
 	validateDraftIdentity(draft, courseId, dialogueId);
 	const config = await loadCourseConfig(configPath);
@@ -442,7 +458,7 @@ async function main() {
 	}
 
 	logStep(verbose, "[5/7] Validating promoted dialogue");
-	runNode(VALIDATOR_PATH, [productionPath], verbose);
+	runNode(VALIDATOR_PATH, [productionPath, "--require-localization"], verbose);
 
 	logStep(verbose, "[6/7] Running focused lint and tests");
 	const eslintPath = path.join(

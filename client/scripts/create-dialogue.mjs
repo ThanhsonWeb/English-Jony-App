@@ -148,6 +148,8 @@ try {
 		courseId,
 		dialogueId,
 		title,
+		courseTitle: course.title,
+		courseDescription: course.description,
 		characters,
 		level,
 		situation,
