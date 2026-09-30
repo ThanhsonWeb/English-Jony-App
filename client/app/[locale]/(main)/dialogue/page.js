@@ -32,6 +32,7 @@ const courseImages = {
 		"/dialogue/asking-for-directions/thumbnails/asking-for-direction.png",
 	"at-a-hotel": "/dialogue/at-a-hotel/thumbnails/at-a-hotel.png",
 	"grocery-store": "/dialogue/grocery-store/thumbnails/grocery-store.png",
+	"restaurant": "/dialogue/restaurant/thumbnails/restaurant.png",
 };
 
 function getCourseImage(courseId) {
@@ -114,7 +115,10 @@ export default function DialoguePage() {
 	const [selectedLevel, setSelectedLevel] = useState("all");
 	const [selectedCategory, setSelectedCategory] = useState("all");
 	const categoryNavRef = useRef(null);
-	const [categoryScroll, setCategoryScroll] = useState({ left: false, right: false });
+	const [categoryScroll, setCategoryScroll] = useState({
+		left: false,
+		right: false,
+	});
 	const [progressByLesson, setProgressByLesson] = useState({});
 
 	useEffect(() => {
@@ -122,9 +126,12 @@ export default function DialoguePage() {
 		if (!nav) return;
 
 		const updateScrollButtons = () => {
-			const fitsWithoutButtons = nav.scrollWidth <= nav.parentElement.clientWidth + 1;
+			const fitsWithoutButtons =
+				nav.scrollWidth <= nav.parentElement.clientWidth + 1;
 			const left = !fitsWithoutButtons && nav.scrollLeft > 1;
-			const right = !fitsWithoutButtons && nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 1;
+			const right =
+				!fitsWithoutButtons &&
+				nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 1;
 			setCategoryScroll((previous) =>
 				previous.left === left && previous.right === right
 					? previous
@@ -303,7 +310,9 @@ export default function DialoguePage() {
 						<div className="min-w-0">
 							<h1 className="text-3xl font-bold tracking-tight text-main sm:text-4xl">
 								{t.rich("title", {
-									accent: (text) => <span className="text-brand-text">{text}</span>,
+									accent: (text) => (
+										<span className="text-brand-text">{text}</span>
+									),
 								})}
 							</h1>
 							<p className="mt-1.5 max-w-2xl text-sm leading-6 text-secondary sm:text-base">
@@ -378,7 +387,7 @@ export default function DialoguePage() {
 										<div className="mt-3 flex max-w-xl items-center gap-3">
 											<div className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-muted">
 												<div
-												className="h-full rounded-full bg-primary transition-all duration-500"
+													className="h-full rounded-full bg-primary transition-all duration-500"
 													style={{ width: `${currentStats.progressPercent}%` }}
 												/>
 											</div>
@@ -405,62 +414,80 @@ export default function DialoguePage() {
 				<section className="mt-6 pb-10">
 					<div className="grid min-w-0 items-start gap-5 xl:grid-cols-[272px_minmax(0,1fr)] xl:gap-6">
 						<div className="min-w-0 xl:sticky xl:top-[140px] xl:self-start xl:h-fit">
-						<div className="flex min-w-0 items-center gap-1 xl:block">
-							{categoryScroll.left && (
-								<button
-									type="button"
-									aria-label={t("previousCategories")}
-									onClick={() => categoryNavRef.current?.scrollBy({ left: -220, behavior: "smooth" })}
-									className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-app bg-surface text-secondary hover:bg-hover hover:text-main focus-visible:outline-2 focus-visible:outline-primary xl:hidden"
-								>
-									<ChevronLeft className="h-5 w-5" />
-								</button>
-							)}
-						<nav
-							ref={categoryNavRef}
-							aria-label={t("categoryNavLabel")}
-							className="flex min-w-0 flex-1 flex-nowrap gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain pb-2 touch-pan-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden xl:flex-col xl:overflow-visible xl:border-r xl:border-app xl:pr-4 xl:pb-0"
-						>
-							{dialogueCategories.map((category) => {
-								const isActive = selectedCategory === category;
-								const Icon = categoryIcons[category];
-								const count = category === "all"
-									? courses.length
-									: courses.filter((course) =>
-										courseIdsByCategory[category].includes(course.id),
-									).length;
-								return (
+							<div className="flex min-w-0 items-center gap-1 xl:block">
+								{categoryScroll.left && (
 									<button
-										key={category}
 										type="button"
-										aria-pressed={isActive}
-										onClick={() => setSelectedCategory(category)}
-										className={`relative flex h-11 shrink-0 items-center gap-3 rounded-xl px-4 text-left text-sm font-medium transition xl:w-full ${
-											isActive
-												? "bg-primary/15 text-brand-text before:absolute before:inset-y-0 before:left-0 before:w-1 before:rounded-full before:bg-primary before:shadow-[0_0_12px_var(--sj-primary)]"
-												: "text-secondary hover:bg-hover hover:text-main"
-										}`}
+										aria-label={t("previousCategories")}
+										onClick={() =>
+											categoryNavRef.current?.scrollBy({
+												left: -220,
+												behavior: "smooth",
+											})
+										}
+										className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-app bg-surface text-secondary hover:bg-hover hover:text-main focus-visible:outline-2 focus-visible:outline-primary xl:hidden"
 									>
-										<Icon className={`h-5 w-5 shrink-0 ${isActive ? "text-primary" : ""}`} strokeWidth={1.8} />
-										<span className="whitespace-nowrap">{t(`categories.${category}`)}</span>
-										<span className={`ml-auto hidden min-w-8 rounded-full px-2 py-1 text-center text-xs xl:inline-block ${isActive ? "bg-primary/15 text-brand-text" : "bg-surface-muted text-secondary"}`}>
-											{count}
-										</span>
+										<ChevronLeft className="h-5 w-5" />
 									</button>
-								);
-							})}
-						</nav>
-							{categoryScroll.right && (
-								<button
-									type="button"
-									aria-label={t("nextCategories")}
-									onClick={() => categoryNavRef.current?.scrollBy({ left: 220, behavior: "smooth" })}
-									className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-app bg-surface text-secondary hover:bg-hover hover:text-main focus-visible:outline-2 focus-visible:outline-primary xl:hidden"
+								)}
+								<nav
+									ref={categoryNavRef}
+									aria-label={t("categoryNavLabel")}
+									className="flex min-w-0 flex-1 flex-nowrap gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain pb-2 touch-pan-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden xl:flex-col xl:overflow-visible xl:border-r xl:border-app xl:pr-4 xl:pb-0"
 								>
-									<ChevronRight className="h-5 w-5" />
-								</button>
-							)}
-						</div>
+									{dialogueCategories.map((category) => {
+										const isActive = selectedCategory === category;
+										const Icon = categoryIcons[category];
+										const count =
+											category === "all"
+												? courses.length
+												: courses.filter((course) =>
+														courseIdsByCategory[category].includes(course.id),
+													).length;
+										return (
+											<button
+												key={category}
+												type="button"
+												aria-pressed={isActive}
+												onClick={() => setSelectedCategory(category)}
+												className={`relative flex h-11 shrink-0 items-center gap-3 rounded-xl px-4 text-left text-sm font-medium transition xl:w-full ${
+													isActive
+														? "bg-primary/15 text-brand-text before:absolute before:inset-y-0 before:left-0 before:w-1 before:rounded-full before:bg-primary before:shadow-[0_0_12px_var(--sj-primary)]"
+														: "text-secondary hover:bg-hover hover:text-main"
+												}`}
+											>
+												<Icon
+													className={`h-5 w-5 shrink-0 ${isActive ? "text-primary" : ""}`}
+													strokeWidth={1.8}
+												/>
+												<span className="whitespace-nowrap">
+													{t(`categories.${category}`)}
+												</span>
+												<span
+													className={`ml-auto hidden min-w-8 rounded-full px-2 py-1 text-center text-xs xl:inline-block ${isActive ? "bg-primary/15 text-brand-text" : "bg-surface-muted text-secondary"}`}
+												>
+													{count}
+												</span>
+											</button>
+										);
+									})}
+								</nav>
+								{categoryScroll.right && (
+									<button
+										type="button"
+										aria-label={t("nextCategories")}
+										onClick={() =>
+											categoryNavRef.current?.scrollBy({
+												left: 220,
+												behavior: "smooth",
+											})
+										}
+										className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-app bg-surface text-secondary hover:bg-hover hover:text-main focus-visible:outline-2 focus-visible:outline-primary xl:hidden"
+									>
+										<ChevronRight className="h-5 w-5" />
+									</button>
+								)}
+							</div>
 						</div>
 						<div className="min-w-0">
 							<div className="mb-3 flex flex-wrap items-center justify-between gap-3">
@@ -490,107 +517,107 @@ export default function DialoguePage() {
 								</div>
 							</div>
 							{visibleCourses.length > 0 ? (
-						<div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-							{visibleCourses.map((course) => {
-								const stats = courseStats[course.id];
-								const statusLabel = stats.isCompleted
-									? t("completed")
-									: stats.isStarted
-										? t("learning")
-										: t("notStarted");
-								const actionLabel = stats.isCompleted
-									? t("review")
-									: stats.isStarted
-										? t("continue")
-										: t("start");
-								const statusClassName = stats.isCompleted
-									? "border-emerald-500/30 bg-emerald-600 text-white"
-									: stats.isStarted
-										? "border-white/20 bg-primary text-white"
-										: "border-white/15 bg-black/70 text-white";
+								<div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+									{visibleCourses.map((course) => {
+										const stats = courseStats[course.id];
+										const statusLabel = stats.isCompleted
+											? t("completed")
+											: stats.isStarted
+												? t("learning")
+												: t("notStarted");
+										const actionLabel = stats.isCompleted
+											? t("review")
+											: stats.isStarted
+												? t("continue")
+												: t("start");
+										const statusClassName = stats.isCompleted
+											? "border-emerald-500/30 bg-emerald-600 text-white"
+											: stats.isStarted
+												? "border-white/20 bg-primary text-white"
+												: "border-white/15 bg-black/70 text-white";
 
-								return (
-									<Link
-										key={course.id}
-										href={`/dialogue/${course.id}`}
-										className="group flex h-full flex-col overflow-hidden rounded-[14px] border border-app bg-surface shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-									>
-										{/* Thumbnail */}
-										<div className="relative aspect-[2.1/1] overflow-hidden bg-slate-900">
-											<Image
-												src={getCourseImage(course.id)}
-												alt={course.title}
-												fill
-											className="object-cover transition duration-300 group-hover:scale-[1.03]"
-												sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-											/>
-
-											<div className="absolute inset-0 bg-gradient-to-t from-[#0b1424]/30 via-transparent to-transparent" />
-
-											{/* Dialogue count */}
-											<span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-black/70 px-2.5 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
-												<BookOpen className="h-3.5 w-3.5" />
-												{t("dialogues", { count: course.dialogues.length })}
-											</span>
-
-											{/* Level badge */}
-											<span className="absolute right-3 top-3 rounded-md border border-primary/20 bg-[#062435]/90 px-2.5 py-1 text-[11px] font-semibold text-cyan-300 backdrop-blur-sm">
-												{getCefrLevelLabel(course.level)}
-											</span>
-
-											<span
-												className={`absolute left-3 top-3 rounded-md border px-2.5 py-1 text-[11px] font-semibold shadow-sm ${statusClassName}`}
+										return (
+											<Link
+												key={course.id}
+												href={`/dialogue/${course.id}`}
+												className="group flex h-full flex-col overflow-hidden rounded-[14px] border border-app bg-surface shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
 											>
-												{statusLabel}
-											</span>
-										</div>
-
-										{/* Content */}
-										<div className="flex min-h-[178px] flex-1 flex-col p-4 sm:p-[18px]">
-											<h3 className="line-clamp-1 text-lg font-bold text-main">
-												{getLocalizedCourseValue(course, "title")}
-											</h3>
-
-											<p className="mt-1.5 min-h-10 line-clamp-2 text-sm leading-5 text-secondary">
-												{getLocalizedCourseValue(course, "description")}
-											</p>
-
-											<div className="mt-auto flex items-center gap-3 pt-3">
-												<div className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-muted">
-													<div
-														className="h-full rounded-full bg-primary transition-all duration-500"
-														style={{ width: `${stats.progressPercent}%` }}
+												{/* Thumbnail */}
+												<div className="relative aspect-[2.1/1] overflow-hidden bg-slate-900">
+													<Image
+														src={getCourseImage(course.id)}
+														alt={course.title}
+														fill
+														className="object-cover transition duration-300 group-hover:scale-[1.03]"
+														sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
 													/>
-												</div>
-												<span className="shrink-0 text-xs font-semibold text-secondary">
-													{stats.completedTaskCount}/{stats.totalTaskCount}
-												</span>
-											</div>
 
-											<span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-brand-text">
-												{actionLabel}
-												<ArrowRight className="h-4 w-4" />
-											</span>
-										</div>
-									</Link>
-								);
-							})}
-						</div>
+													<div className="absolute inset-0 bg-gradient-to-t from-[#0b1424]/30 via-transparent to-transparent" />
+
+													{/* Dialogue count */}
+													<span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-black/70 px-2.5 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
+														<BookOpen className="h-3.5 w-3.5" />
+														{t("dialogues", { count: course.dialogues.length })}
+													</span>
+
+													{/* Level badge */}
+													<span className="absolute right-3 top-3 rounded-md border border-primary/20 bg-[#062435]/90 px-2.5 py-1 text-[11px] font-semibold text-cyan-300 backdrop-blur-sm">
+														{getCefrLevelLabel(course.level)}
+													</span>
+
+													<span
+														className={`absolute left-3 top-3 rounded-md border px-2.5 py-1 text-[11px] font-semibold shadow-sm ${statusClassName}`}
+													>
+														{statusLabel}
+													</span>
+												</div>
+
+												{/* Content */}
+												<div className="flex min-h-[178px] flex-1 flex-col p-4 sm:p-[18px]">
+													<h3 className="line-clamp-1 text-lg font-bold text-main">
+														{getLocalizedCourseValue(course, "title")}
+													</h3>
+
+													<p className="mt-1.5 min-h-10 line-clamp-2 text-sm leading-5 text-secondary">
+														{getLocalizedCourseValue(course, "description")}
+													</p>
+
+													<div className="mt-auto flex items-center gap-3 pt-3">
+														<div className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-muted">
+															<div
+																className="h-full rounded-full bg-primary transition-all duration-500"
+																style={{ width: `${stats.progressPercent}%` }}
+															/>
+														</div>
+														<span className="shrink-0 text-xs font-semibold text-secondary">
+															{stats.completedTaskCount}/{stats.totalTaskCount}
+														</span>
+													</div>
+
+													<span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-brand-text">
+														{actionLabel}
+														<ArrowRight className="h-4 w-4" />
+													</span>
+												</div>
+											</Link>
+										);
+									})}
+								</div>
 							) : (
-							<div className="mt-2 rounded-2xl border border-dashed border-app bg-surface/40 px-6 py-14 text-center">
-								<p className="text-lg font-semibold text-main">
-									{normalizedSearch ||
-									selectedLevel === "all" ||
-									selectedCategory !== "all"
-										? t("noResults")
-										: t("noLevelResults")}
-								</p>
-								{normalizedSearch && (
-									<p className="mt-2 text-sm text-secondary">
-										{t("tryAnotherSearch")}
+								<div className="mt-2 rounded-2xl border border-dashed border-app bg-surface/40 px-6 py-14 text-center">
+									<p className="text-lg font-semibold text-main">
+										{normalizedSearch ||
+										selectedLevel === "all" ||
+										selectedCategory !== "all"
+											? t("noResults")
+											: t("noLevelResults")}
 									</p>
-								)}
-							</div>
+									{normalizedSearch && (
+										<p className="mt-2 text-sm text-secondary">
+											{t("tryAnotherSearch")}
+										</p>
+									)}
+								</div>
 							)}
 						</div>
 					</div>

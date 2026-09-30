@@ -3,6 +3,7 @@ import restaurantConfig from "@/scripts/config/courses/restaurant.mjs";
 import gettingATable from "../dialogues/restaurant/getting-a-table.json";
 import readingTheMenu from "../dialogues/restaurant/reading-the-menu.json";
 import orderingFood from "../dialogues/restaurant/ordering-food.json";
+import duringTheMeal from "../dialogues/restaurant/during-the-meal.json";
 import { restaurantMedia } from "../dialogues/restaurant/media";
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
 
@@ -68,6 +69,7 @@ const restaurantCourse = {
 		buildCourseDialogue(gettingATable),
 		buildCourseDialogue(readingTheMenu),
 		buildCourseDialogue(orderingFood),
+		buildCourseDialogue(duringTheMeal),
 	],
 };
 

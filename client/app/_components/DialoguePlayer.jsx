@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Languages, ArrowLeft } from "lucide-react";
 import { lookupWord } from "@/app/_lib/dictionary/lookupWord";
 import { resolveMeaning } from "@/app/_lib/dictionary/resolveMeaning";
+import useDialogueShortcuts from "@/app/_hooks/useDialogueShortcuts";
 
 import {
 	Play,
@@ -450,6 +451,8 @@ export default function DialoguePlayer({
 		});
 	}
 
+	useDialogueShortcuts({ onReplay: handlePlayPause });
+
 	function handlePlaybackRateChange(newRate) {
 		setPlaybackRate(newRate);
 		playbackRateRef.current = newRate;
@@ -649,6 +652,7 @@ export default function DialoguePlayer({
 										type="button"
 										onClick={handlePlayPause}
 										aria-label={isPlaying ? "Tạm dừng" : "Phát"}
+										title="Ctrl: Phát / tạm dừng"
 										className="relative z-30 flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-[#111827] text-slate-100 shadow-md transition hover:border-violet-500/50 hover:bg-[#1a2235] hover:text-violet-300 active:scale-95 cursor-pointer "
 									>
 										{isPlaying ? (

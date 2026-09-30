@@ -1,0 +1,734 @@
+{
+  "metadata": {
+    "courseId": "restaurant",
+    "dialogueId": "during-the-meal",
+    "title": "Trong bữa ăn",
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Ben và Emma đang dùng bữa. Họ nói về món ăn và hỏi Alex một vài điều đơn giản.",
+    "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+    "thumbnail": "/dialogue/restaurant/thumbnails/during-the-meal.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Emma",
+      "text": "The tomato soup is really good. It is warm, but not spicy.",
+      "translation": "Món súp cà chua rất ngon. Nó ấm nhưng không cay.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Emma",
+      "text": "I like the bread too.",
+      "translation": "Mình cũng thích bánh mì.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-02.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Ben",
+      "text": "My chicken pasta is good too. The chicken is very soft.",
+      "translation": "Món mì Ý gà của mình cũng ngon. Thịt gà rất mềm.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-01.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Ben",
+      "text": "I think this is my favorite dish here.",
+      "translation": "Mình nghĩ đây là món mình thích nhất ở đây.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Emma",
+      "text": "The soup is lighter, so it is perfect for me.",
+      "translation": "Món súp nhẹ hơn nên rất hợp với mình.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Alex",
+      "text": "How is everything? Is the food okay?",
+      "translation": "Mọi thứ thế nào? Đồ ăn ổn chứ?",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-01.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Ben",
+      "text": "Everything is great, thank you.",
+      "translation": "Mọi thứ đều rất tuyệt, cảm ơn bạn.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Emma",
+      "text": "Can I have some more water, please?",
+      "translation": "Tôi có thể xin thêm một ít nước được không?",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Alex",
+      "text": "Of course. Do you need anything else?",
+      "translation": "Tất nhiên. Bạn có cần thêm gì nữa không?",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-02.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Emma",
+      "text": "No, thank you. That is all.",
+      "translation": "Không, cảm ơn bạn. Chỉ vậy thôi.",
+      "practicePriority": "important",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Alex",
+      "text": "Great. Enjoy your meal.",
+      "translation": "Tuyệt. Chúc hai bạn ngon miệng.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-03.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "tomato soup",
+      "pronunciation": "/təˈmeɪtoʊ suːp/",
+      "meaning": "súp cà chua",
+      "example": "The tomato soup is good."
+    },
+    {
+      "word": "not spicy",
+      "pronunciation": "/nɑːt ˈspaɪsi/",
+      "meaning": "không cay",
+      "example": "The soup is not spicy."
+    },
+    {
+      "word": "chicken pasta",
+      "pronunciation": "/ˈtʃɪkɪn ˈpɑːstə/",
+      "meaning": "mì Ý gà",
+      "example": "I like the chicken pasta."
+    },
+    {
+      "word": "favorite dish",
+      "pronunciation": "/ˈfeɪvərɪt dɪʃ/",
+      "meaning": "món ăn yêu thích",
+      "example": "This is my favorite dish."
+    },
+    {
+      "word": "lighter",
+      "pronunciation": "/ˈlaɪtər/",
+      "meaning": "nhẹ hơn",
+      "example": "I want something lighter."
+    },
+    {
+      "word": "How is everything?",
+      "pronunciation": "/haʊ ɪz ˈevriθɪŋ/",
+      "meaning": "Mọi thứ thế nào?",
+      "example": "How is everything today?"
+    },
+    {
+      "word": "some more water",
+      "pronunciation": "/sʌm mɔːr ˈwɔːtər/",
+      "meaning": "thêm một ít nước",
+      "example": "Can I have some more water?"
+    },
+    {
+      "word": "anything else",
+      "pronunciation": "/ˈeniθɪŋ els/",
+      "meaning": "thêm gì nữa",
+      "example": "Do you need anything else?"
+    },
+    {
+      "word": "That is all",
+      "pronunciation": "/ðæt ɪz ɔːl/",
+      "meaning": "Chỉ vậy thôi",
+      "example": "No, thank you. That is all."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "parts": [
+        "The ",
+        " is really good. It is warm, but not spicy."
+      ],
+      "answers": [
+        "tomato soup"
+      ],
+      "speaker": "Emma",
+      "transcript": "The tomato soup is really good. It is warm, but not spicy.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "parts": [
+        "The tomato soup is really good. It is warm, but not ",
+        "."
+      ],
+      "answers": [
+        "spicy"
+      ],
+      "speaker": "Emma",
+      "transcript": "The tomato soup is really good. It is warm, but not spicy.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 1,
+      "type": "multipleChoice",
+      "question": "Emma cảm thấy thế nào về món súp?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Cô ấy không muốn ăn.",
+        "Cô ấy thấy món súp quá lạnh.",
+        "Cô ấy thấy món súp quá cay.",
+        "Cô ấy thích món súp."
+      ],
+      "answer": "Cô ấy thích món súp.",
+      "speaker": "Emma",
+      "transcript": "The tomato soup is really good. It is warm, but not spicy.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "parts": [
+        "I like the ",
+        " too."
+      ],
+      "answers": [
+        "bread"
+      ],
+      "speaker": "Emma",
+      "transcript": "I like the bread too.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-02.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "My ",
+        " is good too. The chicken is very soft."
+      ],
+      "answers": [
+        "chicken pasta"
+      ],
+      "speaker": "Ben",
+      "transcript": "My chicken pasta is good too. The chicken is very soft.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "parts": [
+        "My chicken pasta is good too. The chicken is very ",
+        "."
+      ],
+      "answers": [
+        "soft"
+      ],
+      "speaker": "Ben",
+      "transcript": "My chicken pasta is good too. The chicken is very soft.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-01.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": [
+        "I think this is my ",
+        " dish here."
+      ],
+      "answers": [
+        "favorite"
+      ],
+      "speaker": "Ben",
+      "transcript": "I think this is my favorite dish here.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "parts": [
+        "I ",
+        " this is my favorite dish here."
+      ],
+      "answers": [
+        "think"
+      ],
+      "speaker": "Ben",
+      "transcript": "I think this is my favorite dish here.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "multipleChoice",
+      "question": "Ben nói gì về món mì Ý gà?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Đây có thể là món anh ấy thích nhất ở nhà hàng.",
+        "Anh ấy không thích món này.",
+        "Anh ấy muốn đổi sang món súp.",
+        "Anh ấy thấy món này quá cay."
+      ],
+      "answer": "Đây có thể là món anh ấy thích nhất ở nhà hàng.",
+      "speaker": "Ben",
+      "transcript": "I think this is my favorite dish here.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "parts": [
+        "The soup is ",
+        ", so it is perfect for me."
+      ],
+      "answers": [
+        "lighter"
+      ],
+      "speaker": "Emma",
+      "transcript": "The soup is lighter, so it is perfect for me.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "parts": [
+        "The soup is lighter, so it is ",
+        " for me."
+      ],
+      "answers": [
+        "perfect"
+      ],
+      "speaker": "Emma",
+      "transcript": "The soup is lighter, so it is perfect for me.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": [
+        "How is everything? Is the ",
+        " okay?"
+      ],
+      "answers": [
+        "food"
+      ],
+      "speaker": "Alex",
+      "transcript": "How is everything? Is the food okay?",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-01.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "parts": [
+        "How is everything? Is the food ",
+        "?"
+      ],
+      "answers": [
+        "okay"
+      ],
+      "speaker": "Alex",
+      "transcript": "How is everything? Is the food okay?",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-01.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Alex dùng \"How is everything?\" để làm gì?",
+      "mcCategory": "usage",
+      "mcTarget": "How is everything",
+      "options": [
+        "Hỏi khách muốn thanh toán chưa.",
+        "Hỏi khách thấy bữa ăn thế nào.",
+        "Hỏi khách muốn đổi bàn không.",
+        "Hỏi khách đã đặt bàn chưa."
+      ],
+      "answer": "Hỏi khách thấy bữa ăn thế nào.",
+      "speaker": "Alex",
+      "transcript": "How is everything? Is the food okay?",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-01.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": [
+        "Everything is ",
+        ", thank you."
+      ],
+      "answers": [
+        "great"
+      ],
+      "speaker": "Ben",
+      "transcript": "Everything is great, thank you.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-03.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "parts": [
+        "Everything is great, ",
+        "."
+      ],
+      "answers": [
+        "thank you"
+      ],
+      "speaker": "Ben",
+      "transcript": "Everything is great, thank you.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-03.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "parts": [
+        "Can I have some ",
+        ", please?"
+      ],
+      "answers": [
+        "more water"
+      ],
+      "speaker": "Emma",
+      "transcript": "Can I have some more water, please?",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "parts": [
+        "Can I have some more water, ",
+        "?"
+      ],
+      "answers": [
+        "please"
+      ],
+      "speaker": "Emma",
+      "transcript": "Can I have some more water, please?",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-04.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 8,
+      "type": "multipleChoice",
+      "question": "Trong câu này, \"Can I have\" giúp Emma làm gì?",
+      "mcCategory": "grammar",
+      "mcTarget": "Can I have",
+      "options": [
+        "Nói rằng cô ấy đã có nước.",
+        "Hỏi nước ở đâu.",
+        "Xin thêm nước một cách lịch sự.",
+        "Nói rằng cô ấy không muốn nước."
+      ],
+      "answer": "Xin thêm nước một cách lịch sự.",
+      "speaker": "Emma",
+      "transcript": "Can I have some more water, please?",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-04.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": [
+        "Of course. Do you ",
+        " anything else?"
+      ],
+      "answers": [
+        "need"
+      ],
+      "speaker": "Alex",
+      "transcript": "Of course. Do you need anything else?",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-02.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "parts": [
+        "Of course. Do you need ",
+        "?"
+      ],
+      "answers": [
+        "anything else"
+      ],
+      "speaker": "Alex",
+      "transcript": "Of course. Do you need anything else?",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-02.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "parts": [
+        "No, ",
+        ". That is all."
+      ],
+      "answers": [
+        "thank you"
+      ],
+      "speaker": "Emma",
+      "transcript": "No, thank you. That is all.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "parts": [
+        "No, thank you. That is ",
+        "."
+      ],
+      "answers": [
+        "all"
+      ],
+      "speaker": "Emma",
+      "transcript": "No, thank you. That is all.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-05.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Emma có cần thêm gì nữa không?",
+      "mcCategory": "comprehension",
+      "options": [
+        "Không, cô ấy không cần thêm gì.",
+        "Có, cô ấy muốn thêm súp.",
+        "Có, cô ấy muốn đổi món.",
+        "Có, cô ấy muốn thêm bánh mì."
+      ],
+      "answer": "Không, cô ấy không cần thêm gì.",
+      "speaker": "Emma",
+      "transcript": "No, thank you. That is all.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-05.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "parts": [
+        "Great. ",
+        " your meal."
+      ],
+      "answers": [
+        "Enjoy"
+      ],
+      "speaker": "Alex",
+      "transcript": "Great. Enjoy your meal.",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-03.mp3"
+    },
+    {
+      "id": 26,
+      "type": "dialogueCloze",
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Emma",
+          "parts": [
+            "The ",
+            {
+              "id": "1",
+              "blank": "tomato soup"
+            },
+            " is really good. It is warm, but not spicy."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Emma",
+          "parts": [
+            "I like the ",
+            {
+              "id": "2",
+              "blank": "bread"
+            },
+            " too."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Ben",
+          "parts": [
+            "My chicken pasta is good too. The chicken is very ",
+            {
+              "id": "3",
+              "blank": "soft"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Ben",
+          "parts": [
+            "I think this is my ",
+            {
+              "id": "4",
+              "blank": "favorite dish"
+            },
+            " here."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Emma",
+          "parts": [
+            "The soup is ",
+            {
+              "id": "5",
+              "blank": "lighter"
+            },
+            ", so it is perfect for me."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Alex",
+          "parts": [
+            "How is everything? Is the ",
+            {
+              "id": "6",
+              "blank": "food"
+            },
+            " okay?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Ben",
+          "parts": [
+            "Everything is ",
+            {
+              "id": "7",
+              "blank": "great"
+            },
+            ", thank you."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Emma",
+          "parts": [
+            "Can I have some ",
+            {
+              "id": "8",
+              "blank": "more water"
+            },
+            ", please?"
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Alex",
+          "parts": [
+            "Of course. Do you need ",
+            {
+              "id": "9",
+              "blank": "anything else"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Emma",
+          "parts": [
+            "No, thank you. That is ",
+            {
+              "id": "10",
+              "blank": "all"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Alex",
+          "parts": [
+            "Great. ",
+            {
+              "id": "11",
+              "blank": "Enjoy"
+            },
+            " your meal."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Yêu cầu lịch sự với “Can I have...?”",
+      "explanation": "Dùng “Can I have + thứ mình muốn?” để yêu cầu một món hoặc đồ uống một cách lịch sự.",
+      "example": "Can I have some more water, please?"
+    },
+    {
+      "title": "Hỏi thêm nhu cầu với “Do you need...?”",
+      "explanation": "Dùng “Do you need + danh từ?” để hỏi ai đó có cần thêm thứ gì không.",
+      "example": "Do you need anything else?"
+    }
+  ]
+}

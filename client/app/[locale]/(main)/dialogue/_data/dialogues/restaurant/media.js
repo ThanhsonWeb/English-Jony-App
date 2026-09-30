@@ -22,4 +22,12 @@ export const restaurantMedia = {
 			Emma: "/dialogue/restaurant/shared/emma.png",
 		},
 	},
+	"during-the-meal": {
+		scene: "/dialogue/restaurant/during-the-meal/bg.png",
+		characters: {
+			Emma: "/dialogue/restaurant/shared/emma.png",
+			Ben: "/dialogue/restaurant/shared/ben.png",
+			Alex: "/dialogue/restaurant/shared/Alex.png",
+		},
+	},
 };
