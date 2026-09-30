@@ -107,6 +107,7 @@ function LeaderboardRow({ user, t, format }) {
 		<tr className={`${styles.leaderboardRow} ${user.isCurrentUser ? styles.currentUser : ""}`} aria-current={user.isCurrentUser ? "true" : undefined}>
 			<td className={styles.rankNumber}>{user.rank ?? "—"}</td>
 			<th scope="row"><div className={styles.rowUser}><RankAvatar user={user} /><span className={styles.userName}>{user.name}</span>{user.isCurrentUser && <span className={styles.youBadge}>{t("you")}</span>}</div></th>
+			<td className={styles.rowLevel}>Lv. {user.level}</td>
 			<td className={styles.rowStreak}><span className={styles.streak}><Flame size={19} aria-hidden="true" />{t("days", { count: user.streakDays })}</span></td>
 			<td className={styles.rowKn}>{format(user.periodXp)} KN</td>
 		</tr>
@@ -204,7 +205,7 @@ export default function RankDashboard() {
 						{currentUser ? <>
 							<progress className={styles.levelProgress} value={currentUser.progressPercent} max={100} aria-label={t("levelProgress")} />
 							<div className={styles.levelLabels}>
-								{currentUser.nextLevelXp === null ? <span>{t("maxLevel")}</span> : <><span>{format(currentUser.currentLevelXp)} / {format(currentUser.nextLevelXp)} KN</span><span>Lv. {currentUser.level + 1}</span></>}
+								{currentUser.nextLevelTotalXp === null ? <span>{t("maxLevel")}</span> : <span>{format(currentUser.currentLevelXp)} / {format(currentUser.nextLevelXp)} KN</span>}
 							</div>
 						</> : <div className={styles.levelProgress} aria-hidden="true" />}
 					</RankSummaryCard>
@@ -225,7 +226,7 @@ export default function RankDashboard() {
 				<section aria-label={t("leaderboard")} className={styles.leaderboardPanel}>
 					<table className={styles.leaderboard}>
 						<caption className="sr-only">{t("leaderboard")} — {activePeriod}</caption>
-						<thead><tr><th scope="col">#</th><th scope="col">{t("user")}</th><th scope="col">{t("streak")}</th><th scope="col">{t(period === "week" ? "weekKn" : "monthKn")}</th></tr></thead>
+						<thead><tr><th scope="col">#</th><th scope="col">{t("user")}</th><th scope="col">{t("level")}</th><th scope="col">{t("streak")}</th><th scope="col">{t(period === "week" ? "weekKn" : "monthKn")}</th></tr></thead>
 						<tbody>{rows.map(user => <LeaderboardRow key={user.id} user={user} t={t} format={format} />)}</tbody>
 					</table>
 				</section>

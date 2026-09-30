@@ -1,10 +1,12 @@
 "use client";
 
 import { CircleCheck, X } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 function GuestProgressReminder({ isOpen, onDismiss }) {
+	const t = useTranslations("DialogueFeature");
 	useEffect(() => {
 		if (!isOpen) return;
 
@@ -28,7 +30,7 @@ function GuestProgressReminder({ isOpen, onDismiss }) {
 			<button
 				type="button"
 				onClick={onDismiss}
-				aria-label="Đóng lời nhắc đăng nhập"
+				aria-label={t("guestClose")}
 				className="absolute right-2.5 top-2.5 flex h-8 w-8 items-center justify-center rounded-full text-slate-400 transition hover:bg-white/10 hover:text-white"
 			>
 				<X size={17} />
@@ -40,13 +42,13 @@ function GuestProgressReminder({ isOpen, onDismiss }) {
 				</div>
 				<div>
 					<h2 id="guest-progress-title" className="font-bold leading-6">
-						Lưu tiến độ học tập
+						{t("guestTitle")}
 					</h2>
 					<p
 						id="guest-progress-description"
 						className="mt-1 text-sm leading-5 text-slate-300"
 					>
-						Đăng nhập để tiếp tục học từ nơi bạn đã dừng lại.
+						{t("guestDescription")}
 					</p>
 				</div>
 			</div>
@@ -57,14 +59,14 @@ function GuestProgressReminder({ isOpen, onDismiss }) {
 					onClick={onDismiss}
 					className="flex min-h-11 flex-1 items-center justify-center rounded-xl bg-violet-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-400 sm:flex-none"
 				>
-					Đăng nhập
+					{t("signIn")}
 				</Link>
 				<button
 					type="button"
 					onClick={onDismiss}
 					className="min-h-11 flex-1 rounded-xl border border-slate-700 px-4 py-2.5 text-sm font-semibold text-slate-300 transition hover:bg-white/5 hover:text-white sm:flex-none"
 				>
-					Để sau
+					{t("guestLater")}
 				</button>
 			</div>
 		</aside>

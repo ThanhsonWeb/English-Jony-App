@@ -1,7 +1,11 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { getLocalizedDialogueValue } from "@/app/_lib/dialogue/localization";
+import { englishMcOptions, englishMcQuestions } from "@/app/_lib/dialogue/mcQuestions";
 
 import { lessonData } from "../../../_data/lessonData";
 
@@ -20,6 +24,8 @@ const GUEST_REMINDER_DISMISSED_KEY =
 export default function DialogueTaskPage() {
 	const { lessonId, dialogueId, taskId } = useParams();
 	const router = useRouter();
+	const locale = useLocale();
+	const t = useTranslations("DialogueFeature");
 	const { user, loading: authLoading } = useAuth();
 	const [guestReminderRequested, setGuestReminderRequested] = useState(false);
 	const dismissGuestReminder = useCallback(() => {
@@ -34,12 +40,13 @@ export default function DialogueTaskPage() {
 	const task = dialogue?.tasks.find((item) => item.id === taskId);
 
 	if (!dialogue || !task) {
-		return <div className="p-8 text-white">Không tìm thấy bài học.</div>;
+		return <div className="p-8 text-white">{t("taskNotFound")}</div>;
 	}
 
 	const totalTasks = dialogue.tasks.length;
 
 	const taskIndex = dialogue.tasks.findIndex((item) => item.id === taskId);
+	const mcIndex = dialogue.tasks.slice(0, taskIndex + 1).filter((item) => item.type === "multipleChoice").length - 1;
 
 	const previousTask = dialogue.tasks[taskIndex - 1];
 	const nextTask = dialogue.tasks[taskIndex + 1];
@@ -51,6 +58,16 @@ export default function DialogueTaskPage() {
 	);
 	const taskWithTranslation = {
 		...task,
+		title: task.title || t(`${task.type}Title`),
+		instruction: task.instruction || (t.has(`${task.type}Instruction`) ? t(`${task.type}Instruction`) : undefined),
+		...(locale === "en" ? {
+			title: t(`${task.type}Title`),
+			...(t.has(`${task.type}Instruction`) ? { instruction: t(`${task.type}Instruction`) } : {}),
+			...(task.type === "multipleChoice" ? {
+				question: englishMcQuestions[lessonId]?.[dialogueId]?.[mcIndex] || t("mcFallbackQuestion"),
+				localizedOptions: englishMcOptions[lessonId]?.[dialogueId]?.[task.id],
+			} : {}),
+		} : {}),
 		scene: task.scene || dialogue.scene,
 		translation: task.translation || matchingDialogueLine?.translation,
 	};
@@ -129,10 +146,7 @@ export default function DialogueTaskPage() {
 
 		default:
 			taskContent = (
-				<p>
-					<div className="p-8 text-white">Loại bài học không được hỗ trợ.</div>
-					<h1 className="text-amber-50" >shortcut : </h1>
-				</p>
+				<p className="p-8 text-white">{t("unsupportedTask")}</p>
 			);
 	}
 
@@ -140,8 +154,8 @@ export default function DialogueTaskPage() {
 		<>
 			<DialogueExerciseHeader
 				lessonId={lessonId}
-				lessonTitle={lesson.title}
-				dialogueTitle={dialogue.title}
+				lessonTitle={getLocalizedDialogueValue(lesson, "title", locale)}
+				dialogueTitle={getLocalizedDialogueValue(dialogue, "title", locale)}
 			/>
 			{taskContent}
 			<GuestProgressReminder

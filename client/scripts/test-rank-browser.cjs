@@ -16,8 +16,8 @@ async function run() {
 			const requests = [];
 			const person = (rank, self = false) => ({
 				id: self ? "self" : `user-${rank}`, rank, name: self ? "Current Learner" : `Learner ${rank}`,
-				avatar: "", periodXp: rank === null ? 0 : 1200 - rank * 10, lifetimeXp: 9876, isCurrentUser: self,
-				level: 5, currentLevelXp: 8876, nextLevelXp: null, progressPercent: 100,
+				avatar: "", periodXp: rank === null ? 0 : 1200 - rank * 10, lifetimeXp: 27500, isCurrentUser: self,
+				level: 20, currentLevelXp: 0, nextLevelXp: null, nextLevelTotalXp: null, xpToNextLevel: null, progressPercent: 100,
 				streakDays: self ? 2 : 0, completedWeekdays: [false, false, true, true, false, false, false],
 			});
 			await page.route("**/api/v1/**", async route => {
@@ -28,7 +28,7 @@ async function run() {
 				if (selectedMode === "slow") await new Promise(resolve => setTimeout(resolve, 700));
 				if (selectedMode === "error" || selectedMode === "auth") return route.fulfill({ status: selectedMode === "auth" ? 401 : 500, json: { status: "fail" } });
 				const currentUser = person(selectedMode === "empty" ? null : selectedMode === "podium" ? 1 : 42, true);
-				if (selectedMode === "podium") Object.assign(currentUser, { lifetimeXp: 175, level: 2, currentLevelXp: 75, nextLevelXp: 150, progressPercent: 50 });
+				if (selectedMode === "podium") Object.assign(currentUser, { lifetimeXp: 1422, level: 5, currentLevelXp: 22, nextLevelXp: 600, nextLevelTotalXp: 2000, xpToNextLevel: 578, progressPercent: 22 / 600 * 100 });
 				const leaderboard = selectedMode === "empty" ? [] : Array.from({ length: selectedMode === "podium" ? 1 : 10 }, (_, i) => person(i + 1));
 				if (selectedMode === "podium") leaderboard[0] = currentUser;
 				await route.fulfill({ json: { status: "success", data: { leaderboard, currentUser } } });
@@ -42,8 +42,8 @@ async function run() {
 			assert.match(await page.locator('tr[aria-current="true"]').innerText(), /780 KN/);
 			assert.match(await page.locator('tr[aria-current="true"]').innerText(), /2 days/);
 			assert.equal(await page.getByRole("list", { name: "Study days this week" }).getByRole("listitem", { name: /: Studied$/ }).count(), 2);
-			assert.equal(await page.getByText("9,876 KN", { exact: true }).count(), 1);
-			assert.equal(await page.getByText("Lv. 5", { exact: true }).count(), 1);
+			assert.equal(await page.getByText("27,500 KN", { exact: true }).count(), 1);
+			assert.equal(await page.getByText("Lv. 20", { exact: true }).count(), 1);
 			assert.equal(await page.getByRole("progressbar").getAttribute("value"), "100");
 			assert.equal(await page.getByText("Max level", { exact: true }).count(), 1);
 			await page.getByRole("button", { name: "Week", exact: true }).click();
@@ -75,9 +75,10 @@ async function run() {
 			await page.getByRole("button", { name: "Try again" }).click();
 			await page.getByRole("article", { name: "Rank 1: Current Learner" }).waitFor();
 			assert.equal(await page.locator("article").count(), 1);
-			assert.equal(await page.getByText("Lv. 2", { exact: true }).count(), 1);
-			assert.equal(await page.getByText("75 / 150 KN", { exact: true }).count(), 1);
-			assert.equal(await page.getByRole("progressbar").getAttribute("value"), "50");
+			assert.equal(await page.getByText("Lv. 5", { exact: true }).count(), 1);
+			assert.equal(await page.getByText("22 / 600 KN", { exact: true }).count(), 1);
+			assert.equal(await page.getByText("578 KN to Lv. 6", { exact: true }).count(), 1);
+			assert.equal(await page.getByRole("progressbar").getAttribute("value"), String(22 / 600 * 100));
 			assert.equal(await page.locator('tr[aria-current="true"]').count(), 1);
 			mode = "slow";
 			await page.getByRole("button", { name: "Week", exact: true }).click();

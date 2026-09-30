@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import {
 	ArrowLeft,
@@ -12,10 +12,14 @@ import {
 	Headphones,
 } from "lucide-react";
 import { lessonData } from "../_data/lessonData";
+import { getLocalizedDialogueValue } from "@/app/_lib/dialogue/localization";
+import { useLocale, useTranslations } from "next-intl";
 
 import Image from "next/image";
 
 export default function DialogueLessonPage() {
+	const locale = useLocale();
+	const t = useTranslations("DialogueFeature");
 	const { lessonId } = useParams();
 	const lesson = lessonData[lessonId];
 	const [openDialogueId, setOpenDialogueId] = useState(null);
@@ -101,7 +105,7 @@ export default function DialogueLessonPage() {
 
 	if (!lesson) {
 		return (
-			<div className="p-8 text-white">Không tìm thấy chủ đề hội thoại.</div>
+			<div className="p-8 text-white">{t("courseNotFound")}</div>
 		);
 	}
 
@@ -113,7 +117,7 @@ export default function DialogueLessonPage() {
 					<div className="absolute inset-y-0 right-0 hidden w-[58%] md:block">
 						<Image
 							src={lesson.heroImage}
-							alt={lesson.title}
+							alt={getLocalizedDialogueValue(lesson, "title", locale)}
 							fill
 							priority
 							className="object-cover object-center"
@@ -131,38 +135,38 @@ export default function DialogueLessonPage() {
 					<div className="relative z-10 flex min-h-[290px] max-w-2xl flex-col justify-center p-6 sm:p-8">
 						<div className="flex flex-wrap items-center gap-3">
 							<h1 className="text-2xl font-bold text-white sm:text-3xl">
-								{lesson.title} 
+								{getLocalizedDialogueValue(lesson, "title", locale)}
 							</h1>
 
 							<span className="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400">
-								{lesson.level}
+								{t.has(`level.${lesson.level}`) ? t(`level.${lesson.level}`) : lesson.level}
 							</span>
 						</div>
 
 						<p className="mt-3 max-w-xl leading-relaxed text-slate-400">
-							{lesson.description}
+							{getLocalizedDialogueValue(lesson, "description", locale)}
 						</p>
 
 						<div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-400">
 							<span className="flex items-center gap-2">
 								<BookOpen size={16} />
-								{lesson.dialogues.length} hội thoại
+								{t("dialoguesCount", { count: lesson.dialogues.length })}
 							</span>
 
 							<span className="flex items-center gap-2">
-								<Clock3 size={16} />~{estimatedDurationMinutes} phút
+								<Clock3 size={16} />{t("minutes", { count: estimatedDurationMinutes })}
 							</span>
 
 							<span className="flex items-center gap-2">
 								<CheckCircle2 size={16} />
-								{totalCompletedTaskCount}/{totalTaskCount} bài hoàn thành
+								{t("tasksCompleted", { completed: totalCompletedTaskCount, total: totalTaskCount })}
 							</span>
 						</div>
 
 						{/* Progress */}
 						<div className="mt-6 max-w-xl">
 							<div className="mb-2 flex items-center justify-between text-xs">
-								<span className="text-slate-500">Tiến độ khóa học</span>
+								<span className="text-slate-500">{t("courseProgress")}</span>
 								<span className="font-semibold text-emerald-400">
 									{progressPercent}%
 								</span>
@@ -180,7 +184,7 @@ export default function DialogueLessonPage() {
 			<div className="mx-auto max-w-5xl">
 				{/* Dialogues */}
 				<section className="mt-10">
-					<h2 className="text-xl font-semibold">Các hội thoại</h2>
+					<h2 className="text-xl font-semibold">{t("dialoguesHeading")}</h2>
 
 					<div className="mt-4 space-y-3">
 						{lesson.dialogues.map((dialogue, index) => {
@@ -220,7 +224,7 @@ export default function DialogueLessonPage() {
 											<span className="relative h-16 w-24 shrink-0 overflow-hidden rounded-xl border border-slate-700 sm:h-20 sm:w-32">
 												<Image
 													src={thumbnail}
-													alt={dialogue.title}
+													alt={getLocalizedDialogueValue(dialogue, "title", locale)}
 													fill
 													className="object-cover"
 													sizes="(max-width: 640px) 96px, 128px"
@@ -236,11 +240,11 @@ export default function DialogueLessonPage() {
 										{/* Information */}
 										<span className="min-w-0 flex-1">
 											<span className="block truncate font-semibold text-white">
-												{dialogue.title}
+												{getLocalizedDialogueValue(dialogue, "title", locale)}
 											</span>
 
 											<span className="mt-1 hidden truncate text-sm text-slate-500 sm:block">
-												{dialogue.description}
+												{getLocalizedDialogueValue(dialogue, "description", locale)}
 											</span>
 										</span>
 
@@ -255,10 +259,10 @@ export default function DialogueLessonPage() {
 											}`}
 										>
 											{isCompleted
-												? "Hoàn thành"
+												? t("completed")
 												: isInProgress
-													? "Tiếp tục"
-													: "Chưa bắt đầu"}
+													? t("continue")
+													: t("notStarted")}
 										</span>
 
 										<ChevronDown
@@ -277,7 +281,7 @@ export default function DialogueLessonPage() {
 													className="inline-flex items-center gap-2 rounded-xl border border-violet-500/40 bg-violet-500/10 px-4 py-2.5 text-sm font-semibold text-violet-300 transition hover:bg-violet-500/20 hover:text-white"
 												>
 													<Headphones size={17} />
-													Nghe hội thoại
+													{t("listenDialogue")}
 												</Link>
 											)}
 											{dialogue.tasks.length > 0 ? (
@@ -298,14 +302,14 @@ export default function DialogueLessonPage() {
 																			: "border-slate-700 bg-slate-950/40 text-slate-400 hover:border-slate-600 hover:text-white"
 																}`}
 															>
-																{isCompleted ? "✓ " : ""}Bài {task.id}
+																{isCompleted ? "✓ " : ""}{t("exerciseNumber", { number: task.id })}
 															</Link>
 														);
 													})}
 												</div>
 											) : (
 												<p className="text-sm text-slate-500">
-													Nội dung hội thoại đang được cập nhật.
+													{t("contentUpdating")}
 												</p>
 											)}
 										</div>

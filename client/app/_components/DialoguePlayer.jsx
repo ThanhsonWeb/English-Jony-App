@@ -2,12 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Languages, ArrowLeft } from "lucide-react";
 import { lookupWord } from "@/app/_lib/dictionary/lookupWord";
 import { resolveMeaning } from "@/app/_lib/dictionary/resolveMeaning";
 import useDialogueShortcuts from "@/app/_hooks/useDialogueShortcuts";
+import { useTranslations } from "next-intl";
 
 import {
 	Play,
@@ -138,10 +139,10 @@ export default function DialoguePlayer({
 	nextTask,
 	onComplete,
 }) {
+	const t = useTranslations("DialogueFeature");
 	const [currentLine, setCurrentLine] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [showTranslation, setShowTranslation] = useState(false);
-	const [translation, setTranslation] = useState("");
 	const [isTranscriptOpen, setIsTranscriptOpen] = useState(false);
 	const [hasWatched, setHasWatched] = useState(false);
 	const [hasStarted, setHasStarted] = useState(false);
@@ -506,8 +507,6 @@ export default function DialoguePlayer({
 			return;
 		}
 
-		// later call your translation API here
-		setTranslation("Đừng lo. Mọi người ở đây rất thân thiện.");
 		setShowTranslation(true);
 	};
 
@@ -521,7 +520,7 @@ export default function DialoguePlayer({
 							className="-ml-2 mb-3 inline-flex items-center gap-2 rounded-lg px-2 py-1 font-medium text-secondary transition hover:bg-hover hover:text-main"
 						>
 							<ArrowLeft size={18} />
-							Quay lại
+							{t("back")}
 					</Link>
 
 					<h1 className=" text-2xl font-bold sm:text-3xl">{task.title} 🎧</h1>
@@ -651,8 +650,8 @@ export default function DialoguePlayer({
 									<button
 										type="button"
 										onClick={handlePlayPause}
-										aria-label={isPlaying ? "Tạm dừng" : "Phát"}
-										title="Ctrl: Phát / tạm dừng"
+										aria-label={isPlaying ? t("pause") : t("play")}
+										title={`Ctrl: ${t("play")} / ${t("pause")}`}
 										className="relative z-30 flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-[#111827] text-slate-100 shadow-md transition hover:border-violet-500/50 hover:bg-[#1a2235] hover:text-violet-300 active:scale-95 cursor-pointer "
 									>
 										{isPlaying ? (
@@ -665,8 +664,8 @@ export default function DialoguePlayer({
 									<button
 										type="button"
 										onClick={handleTranslate}
-										aria-label="Dịch câu"
-										title="Dịch câu"
+										aria-label={t("translateSentence")}
+										title={t("translateSentence")}
 										className={`flex h-9 w-9 items-center justify-center rounded-full transition ${
 											showTranslation
 												? "bg-violet-500/15 text-violet-400"
@@ -680,9 +679,9 @@ export default function DialoguePlayer({
 										<button
 											type="button"
 											onClick={() => setShowSpeedMenu((current) => !current)}
-											aria-label={`Chọn tốc độ phát, hiện tại ${playbackRate}x`}
+											aria-label={t("choosePlaybackSpeed", { rate: playbackRate })}
 											aria-expanded={showSpeedMenu}
-											title="Tốc độ phát"
+											title={t("playbackSpeed")}
 											className="flex h-9 min-w-14 cursor-pointer items-center justify-center gap-1 rounded-full px-2 text-xs font-semibold text-slate-400 transition hover:bg-white/10 hover:text-white"
 										>
 											{playbackRate}x
@@ -716,7 +715,7 @@ export default function DialoguePlayer({
 
 									<div
 										className="hidden h-8 w-52 items-center rounded-lg bg-player-control p-1 sm:flex"
-										aria-label="Tốc độ phát"
+										aria-label={t("playbackSpeed")}
 									>
 										{PLAYBACK_RATES.map((rate) => (
 											<button
@@ -740,8 +739,8 @@ export default function DialoguePlayer({
 									<button
 										type="button"
 										onClick={() => setShowSubtitles((current) => !current)}
-										aria-label={showSubtitles ? "Tắt phụ đề" : "Bật phụ đề"}
-										title={showSubtitles ? "Tắt phụ đề" : "Bật phụ đề"}
+										aria-label={showSubtitles ? t("hideSubtitles") : t("showSubtitles")}
+										title={showSubtitles ? t("hideSubtitles") : t("showSubtitles")}
 										className={`flex h-11 w-11 items-center justify-center rounded-full transition ${
 											showSubtitles
 												? "bg-violet-500/15 text-violet-400"
@@ -847,7 +846,7 @@ export default function DialoguePlayer({
 						{hasWatched && "✓"}
 					</div>
 
-					<span>Tôi đã xem xong đoạn hội thoại</span>
+					<span>{t("watchedDialogue")}</span>
 				</button>
 
 				{/* Next */}
@@ -861,7 +860,7 @@ export default function DialoguePlayer({
 							}
 							className="rounded-xl border border-violet-500/30 bg-violet-500/10 px-6 py-3 font-semibold text-violet-300 transition hover:border-violet-400/50 hover:bg-violet-500/20 hover:text-white active:scale-[0.98]"
 						>
-							{nextTask ? "Tiếp tục →" : "Hoàn thành hội thoại ✓"}
+							{nextTask ? t("continueArrow") : t("completeDialogue")}
 						</Link>
 					</div>
 				)}
@@ -891,7 +890,7 @@ export default function DialoguePlayer({
 						<div
 							ref={dictionaryPopupRef}
 							role="dialog"
-							aria-label={`Nghĩa của ${selectedLookup.result.text}`}
+							aria-label={t("meaningOf", { word: selectedLookup.result.text })}
 							className={
 								selectedLookup.isMobile
 									? "fixed inset-x-3 bottom-3 z-[100] rounded-2xl border border-slate-700/80 bg-slate-950/95 px-3.5 py-3 text-left text-sm text-slate-200 shadow-2xl backdrop-blur-md"
@@ -918,7 +917,7 @@ export default function DialoguePlayer({
 									<button
 										type="button"
 										onClick={handlePronounceLookup}
-										aria-label={`Phát âm ${selectedLookup.result.text}`}
+										aria-label={t("pronounceWord", { word: selectedLookup.result.text })}
 										className="inline-flex h-7 w-7 items-center justify-center rounded-full text-cyan-300 transition hover:bg-cyan-400/15 hover:text-cyan-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
 									>
 										<Volume2 size={15} />

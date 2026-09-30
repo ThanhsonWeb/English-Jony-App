@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import {
 	ArrowRight,
 	BookOpen,
@@ -21,6 +21,7 @@ import {
 	Utensils,
 } from "lucide-react";
 import { lessonData } from "./_data/lessonData";
+import { getLocalizedDialogueValue } from "@/app/_lib/dialogue/localization";
 import { useLocale, useTranslations } from "next-intl";
 const courseImages = {
 	"coffee-shop": "/dialogue/coffee-shop/thumbnails/coffee-shop.png",
@@ -106,10 +107,7 @@ export default function DialoguePage() {
 	const levelLabels = Object.fromEntries(
 		levelOptions.map((option) => [option.value, option.label]),
 	);
-	const getLocalizedCourseValue = (course, field) => {
-		const key = `courses.${course.id}.${field}`;
-		return t.has(key) ? t(key) : course[field];
-	};
+	const getLocalizedCourseValue = (course, field) => getLocalizedDialogueValue(course, field, locale);
 	const courses = useMemo(() => Object.values(lessonData), []);
 	const [search, setSearch] = useState("");
 	const [selectedLevel, setSelectedLevel] = useState("all");
@@ -517,7 +515,7 @@ export default function DialoguePage() {
 								</div>
 							</div>
 							{visibleCourses.length > 0 ? (
-								<div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+								<div className="grid gap-5 xl:gap-[22px] sm:grid-cols-2 xl:grid-cols-3">
 									{visibleCourses.map((course) => {
 										const stats = courseStats[course.id];
 										const statusLabel = stats.isCompleted
@@ -525,28 +523,23 @@ export default function DialoguePage() {
 											: stats.isStarted
 												? t("learning")
 												: t("notStarted");
-										const actionLabel = stats.isCompleted
-											? t("review")
-											: stats.isStarted
-												? t("continue")
-												: t("start");
 										const statusClassName = stats.isCompleted
 											? "border-emerald-500/30 bg-emerald-600 text-white"
 											: stats.isStarted
-												? "border-white/20 bg-primary text-white"
+												? "border-transparent bg-primary text-white"
 												: "border-white/15 bg-black/70 text-white";
 
 										return (
 											<Link
 												key={course.id}
 												href={`/dialogue/${course.id}`}
-												className="group flex h-full flex-col overflow-hidden rounded-[14px] border border-app bg-surface shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+													className="group flex h-full flex-col rounded-[18px] border border-transparent bg-surface p-3 transition duration-200 hover:-translate-y-0.5 hover:border-primary/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
 											>
 												{/* Thumbnail */}
-												<div className="relative aspect-[2.1/1] overflow-hidden bg-slate-900">
+													<div className="relative aspect-[2.1/1] overflow-hidden rounded-[14px] bg-slate-900">
 													<Image
 														src={getCourseImage(course.id)}
-														alt={course.title}
+													alt={getLocalizedCourseValue(course, "title")}
 														fill
 														className="object-cover transition duration-300 group-hover:scale-[1.03]"
 														sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -555,49 +548,33 @@ export default function DialoguePage() {
 													<div className="absolute inset-0 bg-gradient-to-t from-[#0b1424]/30 via-transparent to-transparent" />
 
 													{/* Dialogue count */}
-													<span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-md bg-black/70 px-2.5 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
+													<span className="absolute bottom-2 right-2 inline-flex items-center gap-1.5 rounded-md bg-black/70 px-2.5 py-1.5 text-[11px] font-semibold text-white backdrop-blur-sm">
 														<BookOpen className="h-3.5 w-3.5" />
 														{t("dialogues", { count: course.dialogues.length })}
 													</span>
 
-													{/* Level badge */}
-													<span className="absolute right-3 top-3 rounded-md border border-primary/20 bg-[#062435]/90 px-2.5 py-1 text-[11px] font-semibold text-cyan-300 backdrop-blur-sm">
-														{getCefrLevelLabel(course.level)}
-													</span>
-
 													<span
-														className={`absolute left-3 top-3 rounded-md border px-2.5 py-1 text-[11px] font-semibold shadow-sm ${statusClassName}`}
+														className={`absolute left-2 top-2 rounded-md border px-2.5 py-1 text-[10px] font-semibold shadow-sm ${statusClassName}`}
 													>
 														{statusLabel}
 													</span>
 												</div>
 
 												{/* Content */}
-												<div className="flex min-h-[178px] flex-1 flex-col p-4 sm:p-[18px]">
-													<h3 className="line-clamp-1 text-lg font-bold text-main">
-														{getLocalizedCourseValue(course, "title")}
-													</h3>
-
-													<p className="mt-1.5 min-h-10 line-clamp-2 text-sm leading-5 text-secondary">
-														{getLocalizedCourseValue(course, "description")}
-													</p>
-
-													<div className="mt-auto flex items-center gap-3 pt-3">
-														<div className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-muted">
-															<div
-																className="h-full rounded-full bg-primary transition-all duration-500"
-																style={{ width: `${stats.progressPercent}%` }}
-															/>
-														</div>
-														<span className="shrink-0 text-xs font-semibold text-secondary">
-															{stats.completedTaskCount}/{stats.totalTaskCount}
+													<div className="flex flex-1 flex-col px-1 pb-1 pt-3 sm:pt-4">
+													<div className="flex min-w-0 items-center gap-2">
+														<h3 className="min-w-0 flex-1 line-clamp-1 text-base font-bold text-main">
+															{getLocalizedCourseValue(course, "title")}
+														</h3>
+														<span className="shrink-0 rounded-md border border-primary/20 bg-primary/10 px-2 py-0.5 text-[11px] font-semibold text-brand-text">
+															{getCefrLevelLabel(course.level)}
 														</span>
 													</div>
 
-													<span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-brand-text">
-														{actionLabel}
-														<ArrowRight className="h-4 w-4" />
-													</span>
+													<p className="mt-1.5 min-h-10 line-clamp-2 text-[13px] leading-5 text-secondary">
+														{getLocalizedCourseValue(course, "description")}
+													</p>
+
 												</div>
 											</Link>
 										);

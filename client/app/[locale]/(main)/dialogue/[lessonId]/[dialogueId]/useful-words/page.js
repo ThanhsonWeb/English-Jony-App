@@ -1,7 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { getLocalizedDialogueValue } from "@/app/_lib/dialogue/localization";
 
 import DialogueUsefulWords from "@/app/_components/DialogueUsefulWords";
 import { lessonData } from "../../../_data/lessonData";
@@ -9,6 +12,8 @@ import { lessonData } from "../../../_data/lessonData";
 export default function DialogueUsefulWordsPage() {
 	const { lessonId, dialogueId } = useParams();
 	const router = useRouter();
+	const locale = useLocale();
+	const t = useTranslations("DialogueFeature");
 	const lesson = lessonData[lessonId];
 	const dialogue = lesson?.dialogues.find((item) => item.id === dialogueId);
 	const usefulWords = dialogue?.usefulWords || [];
@@ -20,13 +25,13 @@ export default function DialogueUsefulWordsPage() {
 	}, [dialogue, lessonId, router, usefulWords.length]);
 
 	if (!dialogue) {
-		return <div className="p-8 text-white">Không tìm thấy hội thoại.</div>;
+		return <div className="p-8 text-white">{t("dialogueNotFound")}</div>;
 	}
 
 	if (usefulWords.length === 0) {
 		return (
 			<div className="flex min-h-[calc(100vh-80px)] items-center justify-center text-slate-400">
-				Đang tiếp tục...
+				{t("redirecting")}
 			</div>
 		);
 	}
@@ -36,7 +41,7 @@ export default function DialogueUsefulWordsPage() {
 			words={usefulWords}
 			lessonId={lessonId}
 			dialogueId={dialogueId}
-			dialogueTitle={dialogue.title}
+			dialogueTitle={getLocalizedDialogueValue(dialogue, "title", locale)}
 		/>
 	);
 }

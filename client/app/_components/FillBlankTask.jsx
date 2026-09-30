@@ -1,5 +1,4 @@
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Fragment, useEffect, useRef, useState } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
 import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
@@ -7,6 +6,7 @@ import GrammarNote from "./GrammarNote";
 import TaskAudioScene from "./TaskAudioScene";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 import { fillBlankAnswersMatch } from "../_utils/fillBlankAnswer";
+import { useTranslations } from "next-intl";
 
 function getExpectedAnswers(task) {
 	return Array.isArray(task.answers) ? task.answers : [task.answer];
@@ -29,6 +29,7 @@ function FillBlankTask({
 	onComplete,
 	totalTasks,
 }) {
+	const t = useTranslations("DialogueFeature");
 	const isMultiBlank = Array.isArray(task.parts) && Array.isArray(task.answers);
 	const expectedAnswers = getExpectedAnswers(task);
 	const [answerValues, setAnswerValues] = useState(() =>
@@ -116,14 +117,6 @@ function FillBlankTask({
 	return (
 		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
 			<div className="mx-auto max-w-6xl">
-				{/* <Link
-					href={`/dialogue/${lessonId}`}
-					className="inline-flex items-center gap-2 text-slate-400 hover:text-white"
-				>
-					<ArrowLeft size={18} />
-					Quay lại
-				</Link> */}
-
 				<h1 className="mt-2 text-2xl font-bold">{task.title} ✍️</h1>
 
 				<div className="mt-8 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
@@ -139,7 +132,7 @@ function FillBlankTask({
 							totalTasks={totalTasks}
 						/>
 						<p className="mt-2 text-slate-400">
-							{task.instruction || "Điền từ đúng vào câu bên dưới."}
+							{task.instruction || t("fillBlankFallback")}
 						</p>
 
 						<div className="mt-6 min-w-0 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
@@ -160,7 +153,7 @@ function FillBlankTask({
 													onKeyDown={(event) =>
 														handleInputKeyDown(event, index)
 													}
-													aria-label={`Chỗ trống ${index + 1}`}
+													aria-label={t("blankNumber", { number: index + 1 })}
 													placeholder="..."
 													style={{
 														width: getInputWidth(expectedAnswers[index]),
@@ -218,17 +211,17 @@ function FillBlankTask({
 
 						{result === "correct" && (
 							<div className="mt-5 rounded-xl border border-green-500/30 bg-green-500/10 p-4 text-green-400">
-								✅ Chính xác!
+								✅ {t("correct")}
 							</div>
 						)}
 
 						{result === "wrong" && (
 							<div className="mt-5 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-red-400">
-								❌ Chưa đúng. Thử lại nhé.
+								❌ {t("wrongTryAgain")}
 							</div>
 						)}
 
-						<DialogueShortcutHint showBlankAdvance />
+						<DialogueShortcutHint />
 						<div className="mt-4 flex items-start justify-between gap-4">
 							{result && <GrammarNote grammar={task.grammar} />}
 							<div className="ml-auto shrink-0">
@@ -242,7 +235,7 @@ function FillBlankTask({
 									}
 									className="rounded-xl bg-green-600 px-6 py-3 font-semibold"
 								>
-									{nextTask ? "Tiếp tục →" : "Hoàn thành hội thoại ✓"}
+									{nextTask ? t("continueArrow") : t("completeDialogue")}
 									</Link>
 								) : (
 									<button
@@ -252,7 +245,7 @@ function FillBlankTask({
 									disabled={answerValues.some((answer) => !answer.trim())}
 									className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-40"
 								>
-									Kiểm tra
+									{t("check")}
 									</button>
 								)}
 							</div>

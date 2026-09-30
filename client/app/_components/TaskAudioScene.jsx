@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { Captions, ChevronDown, Languages, Pause, Play } from "lucide-react";
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
+	const t = useTranslations("DialogueFeature");
 	const audioRef = useRef(null);
 
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -173,7 +175,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 					{hasScene && (
 						<Image
 							src={task.scene}
-							alt={`Khung cảnh của ${task.character?.name || "nhân vật"}`}
+							alt={t("sceneAlt", { character: task.character?.name || t("sceneCharacter") })}
 							fill
 							priority
 							className="object-cover"
@@ -262,7 +264,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 						<button
 							type="button"
 							onClick={toggleAudio}
-							aria-label={isPlaying ? "Tạm dừng" : "Phát âm thanh"}
+							aria-label={isPlaying ? t("pause") : t("play")}
 							className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-950 transition hover:bg-slate-200"
 						>
 							{isPlaying ? (
@@ -275,8 +277,8 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 						<button
 							type="button"
 							onClick={handleTranslate}
-							aria-label="Dịch câu"
-							title="Dịch câu"
+							aria-label={t("translateSentence")}
+							title={t("translateSentence")}
 							className={`flex h-9 w-9 items-center justify-center rounded-full transition ${
 								showTranslation
 									? "bg-violet-500/15 text-violet-400"
@@ -290,9 +292,9 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 							<button
 								type="button"
 								onClick={() => setShowSpeedMenu((current) => !current)}
-								aria-label={`Chọn tốc độ phát, hiện tại ${playbackRate}x`}
+								aria-label={t("choosePlaybackSpeed", { rate: playbackRate })}
 								aria-expanded={showSpeedMenu}
-								title="Tốc độ phát"
+								title={t("playbackSpeed")}
 								className="flex h-9 min-w-14 items-center justify-center gap-1 rounded-full px-2 text-xs font-semibold text-slate-400 transition hover:bg-white/10 hover:text-white"
 							>
 								{playbackRate}x
@@ -328,7 +330,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 					<button
 						type="button"
 						onClick={handleCaptionsClick}
-						aria-label="Bật hoặc tắt phụ đề"
+						aria-label={t("toggleSubtitles")}
 						aria-pressed={showCaptions}
 						className={`flex h-9 w-11 items-center justify-center rounded-md transition ${
 							showCaptions

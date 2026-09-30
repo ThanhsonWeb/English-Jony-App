@@ -1,21 +1,56 @@
 const assert = require("node:assert/strict");
 const { test } = require("node:test");
-const { getLearnerLevel } = require("../utils/learnerLevel");
+const { getLearnerLevel, LEVEL_STARTS } = require("../utils/learnerLevel");
 
-test("level boundaries and progress use lifetime XP", () => {
-	for (const [xp, level, currentLevelXp, nextLevelXp, progressPercent] of [
-		[0, 1, 0, 100, 0], [99, 1, 99, 100, 99],
-		[100, 2, 0, 150, 0], [175, 2, 75, 150, 50], [249, 2, 149, 150, 149 / 150 * 100],
-		[250, 3, 0, 250, 0], [499, 3, 249, 250, 99.6],
-		[500, 4, 0, 500, 0], [999, 4, 499, 500, 99.8],
-		[1000, 5, 0, null, 100], [5000, 5, 4000, null, 100],
-		[Number.MAX_SAFE_INTEGER, 5, Number.MAX_SAFE_INTEGER - 1000, null, 100],
-	]) {
-		assert.deepEqual(getLearnerLevel(xp), { level, currentLevelXp, nextLevelXp, progressPercent }, `XP ${xp}`);
+const expectedStarts = [
+	0, 200, 500, 900, 1400, 2000, 2700, 3500, 4400, 5500,
+	6800, 8300, 10000, 11900, 14000, 16300, 18800, 21500, 24400, 27500,
+];
+
+test("levels 1 through 20 start at the configured lifetime KN thresholds", () => {
+	assert.deepEqual(LEVEL_STARTS, expectedStarts);
+	for (const [index, start] of expectedStarts.entries()) {
+		const nextStart = expectedStarts[index + 1] ?? null;
+		assert.deepEqual(getLearnerLevel(start), {
+			level: index + 1,
+			currentLevelXp: 0,
+			nextLevelXp: nextStart === null ? null : nextStart - start,
+			nextLevelTotalXp: nextStart,
+			xpToNextLevel: nextStart === null ? null : nextStart - start,
+			progressPercent: nextStart === null ? 100 : 0,
+		}, `KN ${start}`);
+		if (start > 0) assert.equal(getLearnerLevel(start - 1).level, index);
 	}
 });
 
-test("missing legacy XP defaults to level one; invalid totals are rejected", () => {
+test("progress counts only KN earned within the current level", () => {
+	assert.deepEqual(getLearnerLevel(1422), {
+		level: 5,
+		currentLevelXp: 22,
+		nextLevelXp: 600,
+		nextLevelTotalXp: 2000,
+		xpToNextLevel: 578,
+		progressPercent: 22 / 600 * 100,
+	});
+	assert.deepEqual(getLearnerLevel(1999), {
+		level: 5,
+		currentLevelXp: 599,
+		nextLevelXp: 600,
+		nextLevelTotalXp: 2000,
+		xpToNextLevel: 1,
+		progressPercent: 599 / 600 * 100,
+	});
+	assert.deepEqual(getLearnerLevel(27600), {
+		level: 20,
+		currentLevelXp: 100,
+		nextLevelXp: null,
+		nextLevelTotalXp: null,
+		xpToNextLevel: null,
+		progressPercent: 100,
+	});
+});
+
+test("missing legacy KN defaults to level one; invalid totals are rejected", () => {
 	assert.deepEqual(getLearnerLevel(), getLearnerLevel(0));
 	for (const xp of [-1, 0.5, NaN, Infinity, "100", null, Number.MAX_SAFE_INTEGER + 1]) {
 		assert.throws(() => getLearnerLevel(xp), TypeError);

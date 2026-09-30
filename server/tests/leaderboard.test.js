@@ -11,7 +11,7 @@ const leaderboardRoutes = require("../routes/leaderboardRoutes");
 const StudyActivity = require("../models/studyActivityModel");
 
 const NOW = new Date("2026-09-18T12:00:00Z");
-const PUBLIC_KEYS = ["avatar", "completedWeekdays", "currentLevelXp", "id", "isCurrentUser", "level", "lifetimeXp", "name", "nextLevelXp", "periodXp", "progressPercent", "rank", "streakDays"];
+const PUBLIC_KEYS = ["avatar", "completedWeekdays", "currentLevelXp", "id", "isCurrentUser", "level", "lifetimeXp", "name", "nextLevelTotalXp", "nextLevelXp", "periodXp", "progressPercent", "rank", "streakDays", "xpToNextLevel"];
 let replicaSet;
 let server;
 let baseUrl;
@@ -118,20 +118,24 @@ test("streaks use only qualified days for leaderboard and unranked current user"
 });
 
 test("level follows lifetime XP for ranked, outside-top and unranked users across periods", async () => {
-	await User.updateOne({ _id: user._id }, { $set: { totalXp: 175 } });
-	const leader = await learner("Leader", 1000);
+	await User.updateOne({ _id: user._id }, { $set: { totalXp: 1422 } });
+	const leader = await learner("Leader", 27500);
 	await event(leader, 90);
 	await event(user, 10);
 	const result = await ranking({ limit: 1 });
-	assert.equal(result.leaderboard[0].level, 5);
+	assert.equal(result.leaderboard[0].level, 20);
 	assert.equal(result.leaderboard[0].nextLevelXp, null);
+	assert.equal(result.leaderboard[0].nextLevelTotalXp, null);
+	assert.equal(result.leaderboard[0].xpToNextLevel, null);
 	assert.equal(result.leaderboard[0].progressPercent, 100);
 	for (const options of [{ limit: 1 }, { period: "week" }, { timeframe: "previous" }]) {
 		const { currentUser } = await ranking(options);
-		assert.equal(currentUser.level, 2);
-		assert.equal(currentUser.currentLevelXp, 75);
-		assert.equal(currentUser.nextLevelXp, 150);
-		assert.equal(currentUser.progressPercent, 50);
+		assert.equal(currentUser.level, 5);
+		assert.equal(currentUser.currentLevelXp, 22);
+		assert.equal(currentUser.nextLevelXp, 600);
+		assert.equal(currentUser.nextLevelTotalXp, 2000);
+		assert.equal(currentUser.xpToNextLevel, 578);
+		assert.equal(currentUser.progressPercent, 22 / 600 * 100);
 	}
 	await User.collection.updateOne({ _id: user._id }, { $unset: { totalXp: "" } });
 	assert.equal((await ranking()).currentUser.level, 1);

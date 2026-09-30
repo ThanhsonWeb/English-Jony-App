@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import Navigation from "./Navigation";
 import AuthButtons from "./AuthButtons";
 import { useAuth } from "../_contexts/AuthContext";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/navigation";
 import { useEffect, useRef, useState } from "react";
 import { User, LogOut } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
@@ -11,7 +11,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
 import { resolveAvatarUrl } from "../_lib/resolveAvatarUrl";
 
-function UserAvatar({ user }) {
+function UserAvatar({ user, avatarAlt }) {
 	const [failedPhotoUrls, setFailedPhotoUrls] = useState([]);
 	const photoUrl = resolveAvatarUrl(user, failedPhotoUrls);
 	const initial = user?.name?.trim().charAt(0).toUpperCase() || "U";
@@ -20,7 +20,7 @@ function UserAvatar({ user }) {
 		return (
 			<img
 				src={photoUrl}
-				alt={user.name || "Ảnh đại diện"}
+				alt={user.name || avatarAlt}
 				referrerPolicy="no-referrer"
 				onError={() => setFailedPhotoUrls((urls) => [...urls, photoUrl])}
 				className="h-10 w-10 shrink-0 rounded-full border border-app object-cover md:h-12 md:w-12"
@@ -96,7 +96,7 @@ function Header() {
 										🌟 {t("vip")}
 									</p>
 								</div>
-								<UserAvatar user={user} />
+								<UserAvatar user={user} avatarAlt={t("avatar")} />
 							</button>
 
 							{/* DropdownList */}

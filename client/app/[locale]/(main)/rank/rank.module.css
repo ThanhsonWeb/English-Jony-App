@@ -59,7 +59,7 @@
 .levelProgress::-webkit-progress-bar { background: var(--sj-surface-muted); border-radius: 20px; }
 .levelProgress::-webkit-progress-value { background: linear-gradient(90deg, var(--sj-primary), var(--sj-brand-text)); border-radius: 20px; }
 .levelProgress::-moz-progress-bar { background: var(--sj-primary); border-radius: 20px; }
-.levelLabels { display: flex; justify-content: space-between; gap: 6px; margin-top: 6px; font-size: 10px; }
+.levelLabels { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; margin-top: 6px; font-size: 11px; }
 .streakCard { min-height: 138px; padding: 13px 17px 11px; background: linear-gradient(125deg, color-mix(in srgb, var(--rank-fire) 14%, var(--sj-surface)), var(--rank-panel) 70%); border-color: color-mix(in srgb, var(--rank-fire) 25%, var(--sj-border)); }
 .streakCard h2 { color: var(--rank-gold); font-weight: 500; }
 .streakIcon { color: var(--rank-fire); background: color-mix(in srgb, var(--rank-fire) 16%, transparent); }
@@ -117,8 +117,9 @@
 .leaderboard th, .leaderboard td { padding: 5px 16px; text-align: left; height: 45px; border-block: 1px solid var(--sj-border); background: var(--rank-panel); }
 .leaderboard thead th { color: var(--sj-text-secondary); font-size: 12px; font-weight: 400; height: 40px; }
 .leaderboard th:first-child, .leaderboard td:first-child { width: 8%; text-align: center; border-left: 1px solid var(--sj-border); border-radius: 13px 0 0 13px; }
-.leaderboard th:nth-child(2) { width: 57%; }
-.leaderboard th:nth-child(3) { width: 17%; }
+.leaderboard th:nth-child(2) { width: 45%; }
+.leaderboard th:nth-child(3) { width: 12%; }
+.leaderboard th:nth-child(4) { width: 17%; }
 .leaderboard th:last-child, .leaderboard td:last-child { width: 18%; text-align: right; padding-right: 8%; border-right: 1px solid var(--sj-border); border-radius: 0 13px 13px 0; }
 .leaderboard tbody th { font-weight: 500; }
 .leaderboardRow > * { transition: background .18s; }
@@ -126,6 +127,7 @@
 .rankNumber { color: var(--sj-text-secondary); font-size: 15px; }
 .rowUser { display: flex; align-items: center; gap: 18px; min-width: 0; }
 .userName { overflow-wrap: anywhere; }
+.rowLevel { color: color-mix(in srgb, var(--sj-brand-text) 78%, var(--sj-text-secondary)); white-space: nowrap; font-size: 12px; font-variant-numeric: tabular-nums; }
 .rowKn { font-weight: 600; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .youBadge { flex-shrink: 0; padding: 3px 12px; border: 1px solid color-mix(in srgb, var(--sj-primary) 65%, transparent); border-radius: 20px; background: var(--sj-primary-soft); color: var(--sj-brand-text); font-size: 12px; }
 .leaderboard .currentUser > * { background: color-mix(in srgb, var(--sj-primary) 12%, var(--rank-panel)); border-color: var(--sj-primary); }
@@ -162,9 +164,10 @@
 	.winner .avatarLarge { height: 68px; width: 68px; }
 	.topCard h3 { font-size: 13px; }
 	.topStats { gap: 4px; font-size: 11px; flex-direction: column; }
-	.leaderboard th:nth-child(2) { width: 47%; }
-	.leaderboard th:nth-child(3) { width: 20%; }
-	.leaderboard th:last-child, .leaderboard td:last-child { width: 25%; padding-right: 12px; }
+	.leaderboard th:nth-child(2) { width: 42%; }
+	.leaderboard th:nth-child(3) { width: 12%; }
+	.leaderboard th:nth-child(4) { width: 18%; }
+	.leaderboard th:last-child, .leaderboard td:last-child { width: 20%; padding-right: 12px; }
 	.leaderboard th, .leaderboard td { padding-inline: 10px; }
 	.rowUser { gap: 8px; flex-wrap: wrap; }
 	.youBadge { padding-inline: 8px; }
@@ -201,18 +204,20 @@
 	.leaderboardPanel { padding: 6px; }
 	.leaderboard, .leaderboard tbody { display: block; }
 	.leaderboard thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-	.leaderboard tr { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 8px 6px; padding: 12px 10px; margin-bottom: 8px; border: 1px solid var(--sj-border); border-radius: 13px; background: var(--rank-panel); }
+	.leaderboard tr { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto auto; gap: 8px 6px; padding: 12px 10px; margin-bottom: 8px; border: 1px solid var(--sj-border); border-radius: 13px; background: var(--rank-panel); }
 	.leaderboard .currentUser { border-color: var(--sj-primary); background: color-mix(in srgb, var(--sj-primary) 12%, var(--rank-panel)); }
 	.leaderboard tr > * { width: auto; height: auto; padding: 0; border: 0; border-radius: 0; background: transparent; }
 	.leaderboard tr > :first-child { width: auto; grid-column: 1; grid-row: 1 / 3; align-self: center; padding: 0; border: 0; }
-	.leaderboard tr > :nth-child(2) { width: auto; grid-column: 2 / 4; grid-row: 1; }
-	.leaderboard tr > :nth-child(3) { width: auto; grid-column: 2; padding-left: 45px; font-size: 11px; }
-	.leaderboard tr > :last-child { width: auto; grid-column: 3; padding: 0; border: 0; font-size: 12px; align-self: center; }
+	.leaderboard tr > :nth-child(2) { width: auto; grid-column: 2 / 5; grid-row: 1; }
+	.leaderboard tr > :nth-child(3) { width: auto; grid-column: 2; grid-row: 2; font-size: 11px; }
+	.leaderboard tr > :nth-child(4) { width: auto; grid-column: 3; grid-row: 2; font-size: 11px; }
+	.leaderboard tr > :last-child { width: auto; grid-column: 4; grid-row: 2; padding: 0; border: 0; font-size: 12px; align-self: center; }
 	.leaderboard .currentUser > * { background: transparent; }
 	.rowUser { gap: 8px; flex-wrap: nowrap; }
 	.userName { font-size: 12px; }
 	.youBadge { font-size: 10px; padding: 2px 7px; }
 	.rowStreak svg { width: 15px; }
+	.rowLevel { font-size: 10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

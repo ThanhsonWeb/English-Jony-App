@@ -1,11 +1,12 @@
 import { ArrowLeft, CheckCircle2, Circle } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useRef, useState } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
 import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
 import GrammarNote from "./GrammarNote";
 import TaskAudioScene from "./TaskAudioScene";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
+import { useLocale, useTranslations } from "next-intl";
 
 function MultipleChoiceTask({
 	task,
@@ -17,6 +18,8 @@ function MultipleChoiceTask({
 	onComplete,
 	totalTasks,
 }) {
+	const t = useTranslations("DialogueFeature");
+	const locale = useLocale();
 	const [selected, setSelected] = useState("");
 	const [result, setResult] = useState(null);
 	const actionRef = useRef(null);
@@ -60,10 +63,11 @@ function MultipleChoiceTask({
 						<h2 className="mt-2 text-lg font-semibold leading-relaxed text-white">
 							{task.question}
 						</h2>
+						{locale === "en" && !task.localizedOptions && <p className="mt-2 text-sm text-slate-400">{t("vietnameseChoices")}</p>}
 
 						{task.context && (
 							<div className="mt-4 rounded-xl border border-slate-800 bg-slate-900/60 px-5 py-4">
-								<p className="text-sm text-slate-400">Trong đoạn hội thoại:</p>
+								<p className="text-sm text-slate-400">{t("inDialogue")}</p>
 								<p className="mt-2 text-lg font-medium text-white">
 									“{task.context}”
 								</p>
@@ -103,7 +107,7 @@ function MultipleChoiceTask({
 												className="mt-0.5 shrink-0 text-slate-500"
 											/>
 										)}
-										<span className="leading-relaxed">{option}</span>
+										<span className="leading-relaxed">{task.localizedOptions?.[optionIndex] || option}</span>
 										{optionIndex < 4 && (
                             <kbd className="ml-auto hidden h-6 min-w-6 shrink-0 items-center justify-center rounded border border-slate-700 bg-slate-900/70 px-1.5 font-mono text-xs text-slate-500 sm:flex">
 												{optionIndex + 1}
@@ -116,8 +120,8 @@ function MultipleChoiceTask({
 
 						{result === "correct" && (
 							<div className="mt-5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5">
-								<p className="font-semibold text-emerald-400">✓ Chính xác!</p>
-								{task.explanation && (
+								<p className="font-semibold text-emerald-400">✓ {t("correct")}</p>
+								{task.explanation && locale === "vi" && (
 									<p className="mt-2 leading-relaxed text-slate-300">
 										{task.explanation}
 									</p>
@@ -127,9 +131,9 @@ function MultipleChoiceTask({
 
 						{result === "wrong" && (
 							<div className="mt-5 rounded-xl border border-red-500/30 bg-red-500/10 p-5">
-								<p className="font-semibold text-red-400">Chưa đúng.</p>
+								<p className="font-semibold text-red-400">{t("wrong")}</p>
 								<p className="mt-1 text-sm text-slate-300">
-									Hãy nghe lại đoạn hội thoại và thử lại nhé.
+									{t("listenAndTryAgain")}
 								</p>
 							</div>
 						)}
@@ -148,7 +152,7 @@ function MultipleChoiceTask({
 									}
 									className="rounded-xl bg-emerald-600 px-6 py-3 font-semibold transition hover:bg-emerald-500"
 								>
-									{nextTask ? "Tiếp tục →" : "Hoàn thành hội thoại ✓"}
+									{nextTask ? t("continueArrow") : t("completeDialogue")}
 									</Link>
 								) : (
 									<button
@@ -158,7 +162,7 @@ function MultipleChoiceTask({
 									disabled={!selected}
 									className="rounded-xl bg-violet-600 px-6 py-3 font-semibold transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-40"
 								>
-									Kiểm tra
+									{t("check")}
 									</button>
 								)}
 							</div>

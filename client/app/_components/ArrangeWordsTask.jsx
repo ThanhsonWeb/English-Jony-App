@@ -1,11 +1,11 @@
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useRef, useState } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
 import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
 import GrammarNote from "./GrammarNote";
 import TaskAudioScene from "./TaskAudioScene";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
+import { useTranslations } from "next-intl";
 
 function getAnswerText(answer) {
 	return Array.isArray(answer) ? answer.join(" ") : String(answer || "");
@@ -65,6 +65,7 @@ function ArrangeWordsTask({
 	onComplete,
 	totalTasks,
 }) {
+	const t = useTranslations("DialogueFeature");
 	const [availableWords, setAvailableWords] = useState(() =>
 		mixWordsForInitialRender(task.words || []),
 	);
@@ -115,14 +116,6 @@ function ArrangeWordsTask({
 	return (
 		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
 			<div className="mx-auto max-w-6xl">
-				{/* <Link
-					href={`/dialogue/${lessonId}`}
-					className="inline-flex items-center gap-2 text-slate-400 hover:text-white"
-				>
-					<ArrowLeft size={18} />
-					Quay lại
-				</Link> */}
-
 				<h1 className="mt-2 text-2xl font-bold">{task.title} 🧩</h1>
 
 				<div
@@ -144,12 +137,12 @@ function ArrangeWordsTask({
 							totalTasks={totalTasks}
 						/>
 						<p className="mt-2 text-slate-400">
-							{task.instruction || "Chọn các từ theo đúng thứ tự."}
+							{task.instruction || t("arrangeWordsFallback")}
 						</p>
 
 						<div className="mt-6 min-h-24 rounded-2xl border border-dashed border-slate-700 bg-slate-900/40 p-4">
 							{selectedWords.length === 0 ? (
-								<p className="text-sm text-slate-500">Chọn từ bên dưới...</p>
+								<p className="text-sm text-slate-500">{t("chooseWordsPrompt")}</p>
 							) : (
 								<div className="flex flex-wrap gap-2">
 									{selectedWords.map((word, index) => (
@@ -181,13 +174,13 @@ function ArrangeWordsTask({
 
 						{result === "correct" && (
 							<div className="mt-6 rounded-xl border border-green-500/30 bg-green-500/10 p-4 text-green-400">
-								✅ Chính xác! {answerText}
+								✅ {t("correct")} {answerText}
 							</div>
 						)}
 
 						{result === "wrong" && (
 							<div className="mt-6 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-red-400">
-								❌ Chưa đúng. Thử lại nhé.
+								❌ {t("wrongTryAgain")}
 							</div>
 						)}
 
@@ -199,7 +192,7 @@ function ArrangeWordsTask({
 									onClick={resetAnswer}
 									className="py-2 text-sm text-slate-400 hover:text-white"
 								>
-									Làm lại
+									{t("tryAgain")}
 								</button>
 								{result && <GrammarNote grammar={task.grammar} />}
 							</div>
@@ -215,7 +208,7 @@ function ArrangeWordsTask({
 									}
 									className="rounded-xl bg-green-600 px-6 py-3 font-semibold hover:bg-green-500"
 								>
-									{nextTask ? "Tiếp tục →" : "Hoàn thành hội thoại ✓"}
+									{nextTask ? t("continueArrow") : t("completeDialogue")}
 								</Link>
 							) : (
 								<button
@@ -225,7 +218,7 @@ function ArrangeWordsTask({
 									disabled={selectedWords.length === 0}
 									className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-40"
 								>
-									Kiểm tra
+									{t("check")}
 								</button>
 							)}
 							</div>

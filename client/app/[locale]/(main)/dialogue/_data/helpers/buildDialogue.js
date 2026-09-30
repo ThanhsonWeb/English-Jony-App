@@ -66,14 +66,6 @@ export function buildGeneratedDialogueTasks(draft, characterImages) {
 			const sharedFields = {
 				...task,
 				id: String(task.id),
-				title:
-					task.type === "multipleChoice"
-						? "Hiểu tình huống"
-						: "Điền từ còn thiếu",
-				instruction:
-					task.type === "multipleChoice"
-						? "Nghe và chọn đáp án đúng."
-						: "Nghe và điền từ còn thiếu.",
 				scene: dialogueLine?.scene ?? task.scene ?? draft.metadata.scene,
 				character: dialogueLine
 					? {

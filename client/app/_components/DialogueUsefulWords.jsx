@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useRef, useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import {
 	AlertCircle,
 	ArrowRight,
@@ -23,6 +23,7 @@ export default function DialogueUsefulWords({
 	dialogueTitle,
 }) {
 	const router = useRouter();
+	const t = useTranslations("DialogueFeature");
 	const { user, loading: authLoading } = useAuth();
 	const isSubmittingRef = useRef(false);
 	const words = useMemo(() => {
@@ -65,7 +66,7 @@ export default function DialogueUsefulWords({
 				});
 
 				if (!wordsResponse.ok) {
-					throw new Error("Không thể tải Sổ tay.");
+					throw new Error(t("notebookLoadError"));
 				}
 
 				const wordsData = await wordsResponse.json();
@@ -79,7 +80,7 @@ export default function DialogueUsefulWords({
 				);
 			} catch (loadError) {
 				if (!cancelled) {
-					setError(loadError.message || "Không thể tải Sổ tay.");
+					setError(loadError.message || t("notebookLoadError"));
 				}
 			} finally {
 				if (!cancelled) setLibraryLoading(false);
@@ -91,7 +92,7 @@ export default function DialogueUsefulWords({
 		return () => {
 			cancelled = true;
 		};
-	}, [authLoading, user]);
+	}, [authLoading, user, t]);
 
 	const selectableWords = words.filter(
 		(item) => !savedWords.has(normalizeWord(item.word)),
@@ -147,7 +148,7 @@ export default function DialogueUsefulWords({
 						}),
 					});
 
-					if (!response.ok) throw new Error(`Không thể lưu “${item.word}”.`);
+						if (!response.ok) throw new Error(t("wordSaveError", { word: item.word }));
 					return normalizeWord(item.word);
 				}),
 			);
@@ -161,7 +162,7 @@ export default function DialogueUsefulWords({
 
 			if (failedCount > 0) {
 				setError(
-					`Đã lưu ${savedKeys.length} từ, nhưng ${failedCount} từ chưa lưu được. Bạn có thể thử lại.`,
+					t("partialSaveError", { saved: savedKeys.length, failed: failedCount }),
 				);
 			} else {
 				setSavedCount(savedKeys.length);
@@ -182,17 +183,17 @@ export default function DialogueUsefulWords({
 							<Check size={32} />
 						</div>
 						<h1 className="mt-5 text-2xl font-bold sm:text-3xl">
-							Đã lưu {savedCount} từ vào Sổ tay 🎉
+							{t("savedWords", { count: savedCount })}
 						</h1>
 						<p className="mt-3 text-slate-400">
-							Bạn có thể ôn lại những từ này bất cứ lúc nào.
+							{t("reviewWordsLater")}
 						</p>
 						<button
 							type="button"
 							onClick={() => router.push(lessonHref)}
 							className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-3.5 font-semibold text-white transition hover:brightness-110"
 						>
-							Tiếp tục <ArrowRight size={18} />
+							{t("continue")} <ArrowRight size={18} />
 						</button>
 					</div>
 				</section>
@@ -209,26 +210,26 @@ export default function DialogueUsefulWords({
 					</div>
 					<p className="mt-5 text-sm font-semibold text-blue-400">{dialogueTitle}</p>
 					<h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-						Từ vựng trong bài
+						{t("usefulWordsTitle")}
 					</h1>
 					<p className="mx-auto mt-3 max-w-xl leading-7 text-slate-400">
-						Chọn những từ bạn muốn lưu trực tiếp vào Sổ tay chung để ôn tập sau.
+						{t("usefulWordsDescription")}
 					</p>
 				</header>
 
 				{!authLoading && !user && (
 					<div className="mt-7 rounded-2xl border border-blue-500/20 bg-blue-500/5 p-4 sm:flex sm:items-center sm:justify-between sm:gap-4">
 						<div>
-							<p className="font-semibold text-white">Đăng nhập để lưu từ</p>
+							<p className="font-semibold text-white">{t("signInToSaveWords")}</p>
 							<p className="mt-1 text-sm text-slate-400">
-								Bạn vẫn có thể xem các từ và bỏ qua bước này.
+								{t("canSkipWords")}
 							</p>
 						</div>
 						<Link
 							href="/login"
 							className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-blue-300 sm:mt-0"
 						>
-							<LogIn size={16} /> Đăng nhập
+							<LogIn size={16} /> {t("signIn")}
 						</Link>
 					</div>
 				)}
@@ -283,7 +284,7 @@ export default function DialogueUsefulWords({
 										)}
 										{isSaved && (
 											<span className="ml-auto text-sm font-semibold text-emerald-300">
-												✓ Đã lưu
+											✓ {t("saved")}
 											</span>
 										)}
 									</span>
@@ -303,13 +304,13 @@ export default function DialogueUsefulWords({
 
 				{(authLoading || libraryLoading) && user && (
 					<div className="mt-5 flex items-center justify-center gap-2 text-sm text-slate-400">
-						<LoaderCircle className="h-4 w-4 animate-spin" /> Đang kiểm tra Sổ tay...
+						<LoaderCircle className="h-4 w-4 animate-spin" /> {t("checkingNotebook")}
 					</div>
 				)}
 
 				{allWordsSaved && (
 					<p className="mt-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4 text-center text-sm text-emerald-300">
-						✓ Tất cả từ trong bài đã có trong Sổ tay của bạn.
+						✓ {t("allWordsSaved")}
 					</p>
 				)}
 
@@ -326,12 +327,12 @@ export default function DialogueUsefulWords({
 					>
 						{isSaving ? (
 							<>
-								<LoaderCircle className="h-5 w-5 animate-spin" /> Đang lưu...
+								<LoaderCircle className="h-5 w-5 animate-spin" /> {t("saving")}
 							</>
 						) : selectedUnsavedWords.length > 0 && user ? (
-							`Lưu ${selectedUnsavedWords.length} từ vào Sổ tay`
+							t("saveWords", { count: selectedUnsavedWords.length })
 						) : (
-							"Tiếp tục mà không lưu"
+							t("continueWithoutSaving")
 						)}
 					</button>
 					<button
@@ -340,7 +341,7 @@ export default function DialogueUsefulWords({
 						disabled={isSaving}
 						className="mt-2 w-full px-6 py-2.5 text-sm font-semibold text-slate-400 transition hover:text-white disabled:opacity-40"
 					>
-						Bỏ qua
+						{t("skip")}
 					</button>
 				</div>
 			</div>

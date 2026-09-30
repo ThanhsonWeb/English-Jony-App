@@ -1,8 +1,9 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useRef } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
 import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
+import { useTranslations } from "next-intl";
 
 function DialogueReviewTask({
 	task,
@@ -14,6 +15,7 @@ function DialogueReviewTask({
 	totalTasks,
 	onComplete,
 }) {
+	const t = useTranslations("DialogueFeature");
 	const actionRef = useRef(null);
 
 	useDialogueShortcuts({
@@ -34,7 +36,7 @@ function DialogueReviewTask({
 					totalTasks={totalTasks}
 				/>
 				<p className="mt-2 text-slate-400">
-					Đọc lại toàn bộ đoạn hội thoại trước khi tiếp tục.
+					{t("reviewBeforeContinue")}
 				</p>
 
 				<div className="mt-8 space-y-4">
@@ -70,7 +72,7 @@ function DialogueReviewTask({
 						onClick={onComplete}
 						className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500"
 					>
-						{nextTask ? "Tiếp tục →" : "Hoàn thành hội thoại ✓"}
+						{nextTask ? t("continueArrow") : t("completeDialogue")}
 					</Link>
 				</div>
 			</div>

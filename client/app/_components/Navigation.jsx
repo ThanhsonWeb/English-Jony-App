@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import AuthButtons from "./AuthButtons";
 import { useAuth } from "../_contexts/AuthContext";
 import { useTranslations } from "next-intl";
@@ -17,7 +16,6 @@ import {
 } from "lucide-react";
 
 const navLinks = [
-	// { name: "Luyện viết", href: "/writing", icon: PenLine },
 	{ key: "dialogue", href: "/dialogue", icon: Headphones },
 	// { key: "vocabulary", href: "/vocabulary", icon: Languages },
 	{ key: "wordlist", href: "/wordlist", icon: BookOpen },

@@ -66,13 +66,16 @@ materialized rankings/caching can be considered later if volume requires it.
 Every leaderboard entry and `currentUser` also includes level fields, calculated
 by `utils/learnerLevel.js` from `User.totalXp` alone. Period filters do not affect level.
 
-- Level starts: 1 at 0 XP, 2 at 100, 3 at 250, 4 at 500, 5 at 1000.
+- Level starts: thresholds for levels 1–20 are defined in `utils/learnerLevel.js`.
 - `currentLevelXp`: lifetime XP minus the current level's starting threshold.
-- `nextLevelXp`: XP required to complete this level, or `null` at level 5.
-- `progressPercent`: progress within the level (0–100); level 5 is always 100.
+- `nextLevelXp`: XP required to complete this level, or `null` at level 20.
+- `nextLevelTotalXp`: lifetime XP target for the next level, or `null` at level 20.
+- `xpToNextLevel`: XP remaining until the next level, or `null` at level 20.
+- `progressPercent`: progress within the level (0–100); level 20 is always 100.
 
-For example, 175 lifetime XP returns `level: 2`, `currentLevelXp: 75`,
-`nextLevelXp: 150`, `progressPercent: 50`. At 1000 XP it returns level 5,
+For example, 1422 lifetime XP returns `level: 5`, `currentLevelXp: 22`,
+`nextLevelXp: 600`, `nextLevelTotalXp: 2000`, `xpToNextLevel: 578`,
+and `progressPercent: 22 / 600 * 100`. At 27500 XP it returns level 20,
 0 current-level XP, no next level, and 100% progress. Further XP is retained.
 No separate level field is stored in MongoDB and no migration is needed.
 

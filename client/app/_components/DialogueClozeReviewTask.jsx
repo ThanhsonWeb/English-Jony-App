@@ -1,8 +1,9 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useMemo, useRef, useState } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
 import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
+import { useTranslations } from "next-intl";
 
 function shuffleItems(items) {
 	const shuffled = [...items];
@@ -53,6 +54,7 @@ function DialogueClozeReviewTask({
 	totalTasks,
 	onComplete,
 }) {
+	const t = useTranslations("DialogueFeature");
 	const expectedAnswers = useMemo(
 		() =>
 			task.lines.flatMap((line) =>
@@ -253,10 +255,10 @@ function DialogueClozeReviewTask({
 				<div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
 					<div>
 						<h1 className="text-2xl font-bold">
-							{task.title || "Hoàn thành hội thoại"} 📖
+							{task.title || t("dialogueClozeTitle")} 📖
 						</h1>
 						<p className="mt-2 text-sm text-secondary sm:text-base">
-							{task.instruction || "Điền từ còn thiếu vào đoạn hội thoại."}
+							{task.instruction || t("dialogueClozeInstruction")}
 						</p>
 					</div>
 					<div className="w-full shrink-0 sm:w-64">
@@ -274,7 +276,7 @@ function DialogueClozeReviewTask({
 				<div
 					className="mt-5 inline-flex rounded-xl border border-app bg-surface p-1"
 					role="group"
-					aria-label="Chế độ trả lời"
+					aria-label={t("answerMode")}
 				>
 					<button
 						type="button"
@@ -286,7 +288,7 @@ function DialogueClozeReviewTask({
 								: "text-secondary hover:bg-surface-muted hover:text-main"
 						}`}
 					>
-						Chọn từ
+						{t("chooseWords")}
 					</button>
 					<button
 						type="button"
@@ -298,7 +300,7 @@ function DialogueClozeReviewTask({
 								: "text-secondary hover:bg-surface-muted hover:text-main"
 						}`}
 					>
-						Tự gõ
+						{t("typeAnswer")}
 					</button>
 				</div>
 
@@ -312,9 +314,9 @@ function DialogueClozeReviewTask({
 					{mode === "select" && (
 						<aside className="rounded-2xl border border-app bg-surface p-4 lg:sticky lg:top-4">
 							<div className="flex items-center justify-between gap-3">
-								<h2 className="text-sm font-semibold text-main">Ngân hàng từ</h2>
+								<h2 className="text-sm font-semibold text-main">{t("wordBank")}</h2>
 								<span className="text-xs text-secondary">
-									Còn {remainingWords.length}
+									{t("wordsRemaining", { count: remainingWords.length })}
 								</span>
 							</div>
 							<div className="mt-3 grid max-h-52 grid-cols-2 gap-2 overflow-y-auto pr-1 lg:max-h-[calc(65vh-4.75rem)] lg:grid-cols-1">
@@ -331,7 +333,7 @@ function DialogueClozeReviewTask({
 								))}
 								{remainingWords.length === 0 && (
 									<p className="col-span-full py-4 text-center text-sm text-secondary">
-										Đã dùng hết các từ.
+										{t("noWordsRemaining")}
 									</p>
 								)}
 							</div>
@@ -340,7 +342,7 @@ function DialogueClozeReviewTask({
 
 					<section
 						className="max-h-[65vh] overflow-y-auto rounded-2xl border border-app bg-surface/70 p-4 sm:p-6"
-						aria-label="Hội thoại ôn tập"
+					aria-label={t("reviewDialogue")}
 					>
 						<div className="space-y-5">
 							{task.lines.map((line, lineIndex) => (
@@ -383,7 +385,7 @@ function DialogueClozeReviewTask({
 														disabled={blankResults[blankIndex] === "correct"}
 														autoComplete="off"
 														spellCheck="false"
-														aria-label={`Ô trống ${blankIndex + 1}`}
+																aria-label={t("blankNumber", { number: blankIndex + 1 })}
 														style={{ width }}
 														className={`mx-1 inline-block min-h-9 border-0 border-b-2 bg-transparent px-1 text-center font-semibold outline-none transition ${
 															blankResults[blankIndex] === "correct"
@@ -408,7 +410,7 @@ function DialogueClozeReviewTask({
 														type="button"
 														onClick={() => selectBlank(blankIndex)}
 														disabled={blankResults[blankIndex] === "correct"}
-														aria-label={`Ô trống ${blankIndex + 1}`}
+																aria-label={t("blankNumber", { number: blankIndex + 1 })}
 														aria-pressed={selectedBlankIndex === blankIndex}
 														className="min-h-8 flex-1 cursor-pointer px-2 outline-none"
 													>
@@ -422,7 +424,7 @@ function DialogueClozeReviewTask({
 																	clearSelectedAnswer(blankIndex, event)
 																}
 																className="min-h-8 px-1.5 text-secondary opacity-70 transition hover:text-main group-hover:opacity-100"
-																aria-label={`Xóa từ ở ô ${blankIndex + 1}`}
+																aria-label={t("clearBlank", { number: blankIndex + 1 })}
 															>
 																×
 															</button>
@@ -439,9 +441,9 @@ function DialogueClozeReviewTask({
 					{mode === "type" && (
 						<aside className="rounded-2xl border border-app bg-surface p-4 lg:sticky lg:top-4">
 							<div className="flex items-center justify-between gap-3">
-								<h2 className="text-sm font-semibold text-main">Từ gợi ý</h2>
+								<h2 className="text-sm font-semibold text-main">{t("suggestedWords")}</h2>
 								<span className="text-xs text-secondary">
-									{wordBank.length} từ
+									{t("wordCount", { count: wordBank.length })}
 								</span>
 							</div>
 							<div className="mt-3 grid max-h-52 grid-cols-2 gap-2 overflow-y-auto pr-1 lg:max-h-[calc(65vh-4.75rem)] lg:grid-cols-1">
@@ -461,11 +463,11 @@ function DialogueClozeReviewTask({
 				<div className="mt-4 min-h-6 text-sm" aria-live="polite">
 					{isComplete ? (
 						<p className="font-medium text-emerald-400">
-							✓ Chính xác! Bạn đã hoàn thành toàn bộ hội thoại.
+							✓ {t("clozeCorrect")}
 						</p>
 					) : blankResults.includes("wrong") ? (
 						<p className="font-medium text-red-400">
-							✕ Vẫn còn từ chưa đúng. Hãy sửa các ô màu đỏ.
+							✕ {t("clozeWrong")}
 						</p>
 					) : null}
 				</div>
@@ -482,7 +484,7 @@ function DialogueClozeReviewTask({
 							}
 							className="rounded-xl bg-emerald-600 px-6 py-3 font-semibold text-white transition hover:bg-emerald-500"
 						>
-							{nextTask ? "Tiếp tục →" : "Hoàn thành hội thoại ✓"}
+							{nextTask ? t("continueArrow") : t("completeDialogue")}
 						</Link>
 					) : (
 						<button
@@ -492,7 +494,7 @@ function DialogueClozeReviewTask({
 							disabled={!allFilled}
 							className="rounded-xl bg-primary px-6 py-3 font-semibold text-white transition hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-40"
 						>
-							Kiểm tra
+							{t("check")}
 						</button>
 					)}
 				</div>
