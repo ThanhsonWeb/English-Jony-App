@@ -1,6 +1,9 @@
 import walkInTheParkConfig from "@/scripts/config/courses/walk-in-the-park.mjs";
 
 import meetingAtThePark from "../dialogues/walk-in-the-park/meeting-at-the-park.json";
+import talkingAboutWork from "../dialogues/walk-in-the-park/talking-about-work.json";
+import talkingAboutThemselves from "../dialogues/walk-in-the-park/talking-about-themselves.json";
+import weekendPlans from "../dialogues/walk-in-the-park/weekend-plans.json";
 import { walkInTheParkMedia } from "../dialogues/walk-in-the-park/media";
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
 
@@ -63,7 +66,12 @@ const walkInTheParkCourse = {
 	description: "Ben và Emma gặp nhau ở công viên vào một buổi chiều. Họ chào nhau và quyết định đi dạo cùng nhau.",
 	localized: {"title":{"vi":"Đi dạo trong công viên","en":"A Walk in the Park"},"description":{"vi":"Ben và Emma gặp nhau ở công viên vào một buổi chiều. Họ chào nhau và quyết định đi dạo cùng nhau.","en":"Ben and Emma meet at the park one afternoon. They greet each other and decide to take a walk together."}},
 	level: walkInTheParkConfig.level,
-	dialogues: [buildCourseDialogue(meetingAtThePark)],
+	dialogues: [
+		buildCourseDialogue(meetingAtThePark),
+		buildCourseDialogue(talkingAboutWork),
+		buildCourseDialogue(talkingAboutThemselves),
+		buildCourseDialogue(weekendPlans),
+	],
 };
 
 export default walkInTheParkCourse;

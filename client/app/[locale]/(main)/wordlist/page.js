@@ -10,7 +10,6 @@ import {
 	Volume2,
 	Pencil,
 	Trash2,
-	Sprout,
 	X,
 	Check,
 	ChevronDown,
@@ -122,7 +121,27 @@ export default function WordlistPage() {
 	const [editor, setEditor] = useState(null);
 	const [deleting, setDeleting] = useState(null);
 	const [audioError, setAudioError] = useState(false);
+	const [practiceOpen, setPracticeOpen] = useState(false);
+	const practiceRef = useRef(null);
 	const [page, setPage] = useState(1);
+	useEffect(() => {
+		if (!practiceOpen) return undefined;
+		function closeOnPointerDown(event) {
+			if (!practiceRef.current?.contains(event.target)) setPracticeOpen(false);
+		}
+		function closeOnEscape(event) {
+			if (event.key === "Escape") {
+				setPracticeOpen(false);
+				practiceRef.current?.querySelector("button")?.focus();
+			}
+		}
+		document.addEventListener("pointerdown", closeOnPointerDown);
+		window.addEventListener("keydown", closeOnEscape);
+		return () => {
+			document.removeEventListener("pointerdown", closeOnPointerDown);
+			window.removeEventListener("keydown", closeOnEscape);
+		};
+	}, [practiceOpen]);
 	const userId = user?._id;
 	const requestKey = `${userId || "guest"}:${retry}`;
 	useEffect(() => {
@@ -259,6 +278,47 @@ export default function WordlistPage() {
 							>
 								<Plus size={18} /> {t("addWord")}
 							</button>
+							<div ref={practiceRef} className={styles.practiceControl}>
+								<button
+									type="button"
+									className={styles.practiceTrigger}
+									aria-expanded={practiceOpen}
+									aria-controls="wordlist-practice-menu"
+									onClick={() => setPracticeOpen((open) => !open)}
+								>
+									<Sparkles size={18} aria-hidden="true" />
+									{t("practice")}
+									<ChevronDown size={17} aria-hidden="true" className={practiceOpen ? styles.chevronOpen : ""} />
+								</button>
+								{practiceOpen && (
+									<div id="wordlist-practice-menu" className={styles.practiceMenu} role="group" aria-label={t("practice")}>
+										{reviewModes.map(({ value, Icon }) => {
+											const available = queue.length > 0 && (value !== "quiz" || canQuiz);
+											const href = `/wordlist/review/${value}${counts.review > 0 ? "?reviewMode=due" : ""}`;
+											const contents = (
+												<>
+													<span className={styles.reviewModeIcon} aria-hidden="true"><Icon size={21} strokeWidth={1.9} /></span>
+													<span className={styles.reviewModeCopy}>
+														<strong>{t(value)}</strong>
+														<span>{t(`${value}Description`)}</span>
+													</span>
+													<ChevronRight className={styles.reviewModeArrow} size={18} aria-hidden="true" />
+												</>
+											);
+											return available ? (
+												<Link key={value} href={href} className={styles.reviewMode} data-mode={value} onClick={() => setPracticeOpen(false)}>
+													{contents}
+												</Link>
+											) : (
+												<div key={value} className={`${styles.reviewMode} ${styles.reviewModeDisabled}`} data-mode={value} aria-disabled="true">
+													{contents}
+												</div>
+											);
+										})}
+										{queue.length > 0 && !canQuiz && <small className={styles.reviewHint}>{t("quizHelp")}</small>}
+									</div>
+								)}
+							</div>
 						</div>
 						{audioError && <p role="alert">{t("audioError")}</p>}
 						{loading ? (
@@ -426,64 +486,6 @@ export default function WordlistPage() {
 							</>
 						)}
 					</div>
-					<aside className={styles.sideColumn}>
-						<div className={styles.reviewCard}>
-							<div className={styles.reviewHeader}>
-								<Sprout className={styles.reviewHeaderIcon} size={36} strokeWidth={1.8} aria-hidden="true" />
-								<div>
-									<h2>{t("reviewPanelTitle")}</h2>
-									<p>{t("reviewPanelSubtitle")}</p>
-								</div>
-							</div>
-							<fieldset className={styles.reviewModes}>
-								<legend>{t("mode")}</legend>
-								{reviewModes.map(({ value, Icon }) => {
-									const available = queue.length > 0 && (value !== "quiz" || canQuiz);
-									const href = `/wordlist/review/${value}${counts.review > 0 ? "?reviewMode=due" : ""}`;
-									const modeContents = (
-										<>
-											<span className={styles.reviewModeIcon} aria-hidden="true">
-												<Icon size={23} strokeWidth={1.9} />
-											</span>
-											<span className={styles.reviewModeCopy}>
-												<strong>{t(value)}</strong>
-												<span>{t(`${value}Description`)}</span>
-											</span>
-											<span className={styles.reviewModeArrow} aria-hidden="true">
-												<ChevronRight size={18} />
-											</span>
-										</>
-									);
-
-									if (!available) {
-										return (
-											<div
-												key={value}
-												className={`${styles.reviewMode} ${styles.reviewModeDisabled}`}
-												data-mode={value}
-												aria-disabled="true"
-											>
-												{modeContents}
-											</div>
-										);
-									}
-
-									return (
-										<Link
-											key={value}
-											href={href}
-											className={styles.reviewMode}
-											data-mode={value}
-											aria-label={`${t(value)}. ${t(`${value}Description`)}`}
-										>
-											{modeContents}
-										</Link>
-									);
-								})}
-							</fieldset>
-							{queue.length > 0 && !canQuiz && <small className={styles.reviewHint}>{t("quizHelp")}</small>}
-						</div>
-					</aside>
 				</div>
 			</div>
 			{editor && (

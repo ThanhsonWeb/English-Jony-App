@@ -12,6 +12,7 @@
 		"audit:dictionary": "node scripts/audit-local-dictionary.mjs",
 		"generate:dialogue-audio": "node --env-file=.env.local scripts/generate-dialogue-audio.mjs",
 		"dialogue:build": "node --env-file=.env.local scripts/build-dialogue.mjs",
+		"dialogue:thumbnails:prepare": "node scripts/prepare-dialogue-thumbnails.mjs",
 		"create:dialogue": "node scripts/create-dialogue.mjs"
 	},
 	"dependencies": {

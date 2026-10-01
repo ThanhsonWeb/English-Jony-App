@@ -1,0 +1,1027 @@
+{
+	"metadata": {
+		"courseId": "walk-in-the-park",
+		"dialogueId": "weekend-plans",
+		"title": "Kế hoạch cuối tuần",
+		"localizationVersion": 1,
+		"localized": {
+			"courseTitle": {
+				"vi": "Đi dạo trong công viên",
+				"en": "Walk in the Park"
+			},
+			"courseDescription": {
+				"vi": "Cuối buổi đi dạo, Ben và Emma nói về những việc họ thường làm vào cuối tuần và kế hoạch sắp tới.",
+				"en": "Near the end of their walk, Ben and Emma talk about what they usually do on weekends and their upcoming plans."
+			},
+			"title": {
+				"vi": "Kế hoạch cuối tuần",
+				"en": "Weekend Plans"
+			},
+			"description": {
+				"vi": "Cuối buổi đi dạo, Ben và Emma nói về những việc họ thường làm vào cuối tuần và kế hoạch sắp tới.",
+				"en": "Near the end of their walk, Ben and Emma talk about what they usually do on weekends and their upcoming plans."
+			}
+		},
+		"level": "a1",
+		"a1ContentRulesVersion": 2,
+		"teachesContractions": [],
+		"situation": "Cuối buổi đi dạo, Ben và Emma nói về những việc họ thường làm vào cuối tuần và kế hoạch sắp tới.",
+		"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+		"thumbnail": "/dialogue/walk-in-the-park/thumbnails/weekend-plans.png"
+	},
+	"dialogue": [
+		{
+			"id": 1,
+			"speaker": "Emma",
+			"text": "It is getting late. Do you have plans this weekend?",
+			"translation": "Trời đang muộn rồi. Cuối tuần này bạn có kế hoạch gì không?",
+			"practicePriority": "important",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-01.mp3"
+		},
+		{
+			"id": 2,
+			"speaker": "Ben",
+			"text": "On Saturday, I want to go to the gym in the morning.",
+			"translation": "Vào thứ Bảy, mình muốn đi tập gym vào buổi sáng.",
+			"practicePriority": "veryImportant",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-01.mp3"
+		},
+		{
+			"id": 3,
+			"speaker": "Ben",
+			"text": "After that, I want to meet some friends.",
+			"translation": "Sau đó, mình muốn gặp vài người bạn.",
+			"practicePriority": "important",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-02.mp3"
+		},
+		{
+			"id": 4,
+			"speaker": "Emma",
+			"text": "That sounds nice. I usually have a quiet Saturday.",
+			"translation": "Nghe hay đấy. Thứ Bảy mình thường khá yên tĩnh.",
+			"practicePriority": "important",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-02.mp3"
+		},
+		{
+			"id": 5,
+			"speaker": "Emma",
+			"text": "I read books and have coffee at home.",
+			"translation": "Mình đọc sách và uống cà phê ở nhà.",
+			"practicePriority": "important",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-03.mp3"
+		},
+		{
+			"id": 6,
+			"speaker": "Ben",
+			"text": "What about Sunday?",
+			"translation": "Còn Chủ nhật thì sao?",
+			"practicePriority": "simple",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-03.mp3"
+		},
+		{
+			"id": 7,
+			"speaker": "Emma",
+			"text": "I want to visit my parents on Sunday.",
+			"translation": "Mình muốn thăm bố mẹ vào Chủ nhật.",
+			"practicePriority": "veryImportant",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-04.mp3"
+		},
+		{
+			"id": 8,
+			"speaker": "Ben",
+			"text": "That sounds good. I am free on Sunday afternoon.",
+			"translation": "Nghe hay đấy. Mình rảnh vào chiều Chủ nhật.",
+			"practicePriority": "important",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-04.mp3"
+		},
+		{
+			"id": 9,
+			"speaker": "Ben",
+			"text": "Maybe we can have coffee sometime.",
+			"translation": "Có lẽ lúc nào đó chúng ta có thể đi uống cà phê.",
+			"practicePriority": "veryImportant",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-05.mp3"
+		},
+		{
+			"id": 10,
+			"speaker": "Emma",
+			"text": "Yes, that sounds nice.",
+			"translation": "Ừ, nghe hay đấy.",
+			"practicePriority": "simple",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-05.mp3"
+		},
+		{
+			"id": 11,
+			"speaker": "Emma",
+			"text": "We can talk about it later.",
+			"translation": "Chúng ta có thể nói về chuyện đó sau.",
+			"practicePriority": "important",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-06.mp3"
+		}
+	],
+	"usefulWords": [
+		{
+			"word": "this weekend",
+			"pronunciation": "/ðɪs ˈwiːkˌend/",
+			"meaning": "cuối tuần này",
+			"example": "I am free this weekend."
+		},
+		{
+			"word": "on Saturday",
+			"pronunciation": "/ɑːn ˈsætərdeɪ/",
+			"meaning": "vào thứ Bảy",
+			"example": "I go shopping on Saturday."
+		},
+		{
+			"word": "in the morning",
+			"pronunciation": "/ɪn ðə ˈmɔːrnɪŋ/",
+			"meaning": "vào buổi sáng",
+			"example": "I exercise in the morning."
+		},
+		{
+			"word": "after that",
+			"pronunciation": "/ˈæftər ðæt/",
+			"meaning": "sau đó",
+			"example": "I eat lunch. After that, I go home."
+		},
+		{
+			"word": "visit my parents",
+			"pronunciation": "/ˈvɪzɪt maɪ ˈperənts/",
+			"meaning": "thăm bố mẹ",
+			"example": "I visit my parents on Sunday."
+		},
+		{
+			"word": "free",
+			"pronunciation": "/friː/",
+			"meaning": "rảnh",
+			"example": "I am free this afternoon."
+		},
+		{
+			"word": "sometime",
+			"pronunciation": "/ˈsʌmtaɪm/",
+			"meaning": "lúc nào đó",
+			"example": "We can have coffee sometime."
+		}
+	],
+	"tasks": [
+		{
+			"id": 1,
+			"dialogueLineId": 1,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing words."
+				}
+			},
+			"parts": ["It is getting late. Do you have plans ", "?"],
+			"answers": ["this weekend"],
+			"speaker": "Emma",
+			"transcript": "It is getting late. Do you have plans this weekend?",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-01.mp3"
+		},
+		{
+			"id": 2,
+			"dialogueLineId": 1,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["It is getting late. Do you have ", " this weekend?"],
+			"answers": ["plans"],
+			"speaker": "Emma",
+			"transcript": "It is getting late. Do you have plans this weekend?",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-01.mp3"
+		},
+		{
+			"id": 3,
+			"dialogueLineId": 2,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing words."
+				}
+			},
+			"parts": ["", ", I want to go to the gym in the morning."],
+			"answers": ["On Saturday"],
+			"speaker": "Ben",
+			"transcript": "On Saturday, I want to go to the gym in the morning.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-01.mp3"
+		},
+		{
+			"id": 4,
+			"dialogueLineId": 2,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["On Saturday, I want to go to the ", " in the morning."],
+			"answers": ["gym"],
+			"speaker": "Ben",
+			"transcript": "On Saturday, I want to go to the gym in the morning.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-01.mp3"
+		},
+		{
+			"id": 5,
+			"dialogueLineId": 2,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing words."
+				}
+			},
+			"parts": ["On Saturday, I want to go to the gym in ", "."],
+			"answers": ["the morning"],
+			"speaker": "Ben",
+			"transcript": "On Saturday, I want to go to the gym in the morning.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-01.mp3"
+		},
+		{
+			"id": 6,
+			"dialogueLineId": 2,
+			"type": "multipleChoice",
+			"question": "Ben muốn làm gì vào sáng thứ Bảy?",
+			"localized": {
+				"title": {
+					"vi": "Chọn đáp án đúng",
+					"en": "Choose the Correct Answer"
+				},
+				"instruction": {
+					"vi": "Chọn đáp án đúng dựa trên hội thoại.",
+					"en": "Choose the correct answer based on the dialogue."
+				},
+				"question": {
+					"vi": "Ben muốn làm gì vào sáng thứ Bảy?",
+					"en": "What does Ben want to do on Saturday morning?"
+				},
+				"options": [
+					{
+						"vi": "Đi tập gym.",
+						"en": "Go to the gym."
+					},
+					{
+						"vi": "Đi thăm bố mẹ.",
+						"en": "Visit his parents."
+					},
+					{
+						"vi": "Đọc sách.",
+						"en": "Read books."
+					},
+					{
+						"vi": "Đi làm.",
+						"en": "Go to work."
+					}
+				]
+			},
+			"mcCategory": "comprehension",
+			"options": ["Đi tập gym.", "Đi thăm bố mẹ.", "Đọc sách.", "Đi làm."],
+			"answer": "Đi tập gym.",
+			"speaker": "Ben",
+			"transcript": "On Saturday, I want to go to the gym in the morning.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-01.mp3"
+		},
+		{
+			"id": 7,
+			"dialogueLineId": 3,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing words."
+				}
+			},
+			"parts": ["", ", I want to meet some friends."],
+			"answers": ["After that"],
+			"speaker": "Ben",
+			"transcript": "After that, I want to meet some friends.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-02.mp3"
+		},
+		{
+			"id": 8,
+			"dialogueLineId": 3,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["After that, I want to meet some ", "."],
+			"answers": ["friends"],
+			"speaker": "Ben",
+			"transcript": "After that, I want to meet some friends.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-02.mp3"
+		},
+		{
+			"id": 9,
+			"dialogueLineId": 4,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["That sounds nice. I ", " have a quiet Saturday."],
+			"answers": ["usually"],
+			"speaker": "Emma",
+			"transcript": "That sounds nice. I usually have a quiet Saturday.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-02.mp3"
+		},
+		{
+			"id": 10,
+			"dialogueLineId": 4,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["That sounds nice. I usually have a quiet ", "."],
+			"answers": ["Saturday"],
+			"speaker": "Emma",
+			"transcript": "That sounds nice. I usually have a quiet Saturday.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-02.mp3"
+		},
+		{
+			"id": 11,
+			"dialogueLineId": 5,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["I read ", " and have coffee at home."],
+			"answers": ["books"],
+			"speaker": "Emma",
+			"transcript": "I read books and have coffee at home.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-03.mp3"
+		},
+		{
+			"id": 12,
+			"dialogueLineId": 5,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["I read books and have ", " at home."],
+			"answers": ["coffee"],
+			"speaker": "Emma",
+			"transcript": "I read books and have coffee at home.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-03.mp3"
+		},
+		{
+			"id": 13,
+			"dialogueLineId": 5,
+			"type": "multipleChoice",
+			"question": "Emma thường làm gì vào thứ Bảy?",
+			"localized": {
+				"title": {
+					"vi": "Chọn đáp án đúng",
+					"en": "Choose the Correct Answer"
+				},
+				"instruction": {
+					"vi": "Chọn đáp án đúng dựa trên hội thoại.",
+					"en": "Choose the correct answer based on the dialogue."
+				},
+				"question": {
+					"vi": "Emma thường làm gì vào thứ Bảy?",
+					"en": "What does Emma usually do on Saturday?"
+				},
+				"options": [
+					{
+						"vi": "Đi tập gym.",
+						"en": "Go to the gym."
+					},
+					{
+						"vi": "Đọc sách và uống cà phê ở nhà.",
+						"en": "Read books and have coffee at home."
+					},
+					{
+						"vi": "Đi mua sắm.",
+						"en": "Go shopping."
+					},
+					{
+						"vi": "Đi làm cả ngày.",
+						"en": "Work all day."
+					}
+				]
+			},
+			"mcCategory": "comprehension",
+			"options": [
+				"Đi tập gym.",
+				"Đọc sách và uống cà phê ở nhà.",
+				"Đi mua sắm.",
+				"Đi làm cả ngày."
+			],
+			"answer": "Đọc sách và uống cà phê ở nhà.",
+			"speaker": "Emma",
+			"transcript": "I read books and have coffee at home.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-03.mp3"
+		},
+		{
+			"id": 14,
+			"dialogueLineId": 6,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["What about ", "?"],
+			"answers": ["Sunday"],
+			"speaker": "Ben",
+			"transcript": "What about Sunday?",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-03.mp3"
+		},
+		{
+			"id": 15,
+			"dialogueLineId": 7,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["I want to ", " my parents on Sunday."],
+			"answers": ["visit"],
+			"speaker": "Emma",
+			"transcript": "I want to visit my parents on Sunday.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-04.mp3"
+		},
+		{
+			"id": 16,
+			"dialogueLineId": 7,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["I want to visit my ", " on Sunday."],
+			"answers": ["parents"],
+			"speaker": "Emma",
+			"transcript": "I want to visit my parents on Sunday.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-04.mp3"
+		},
+		{
+			"id": 17,
+			"dialogueLineId": 7,
+			"type": "multipleChoice",
+			"question": "Trong câu này, \"want to\" được dùng để nói về điều gì?",
+			"localized": {
+				"title": {
+					"vi": "Chọn đáp án đúng",
+					"en": "Choose the Correct Answer"
+				},
+				"instruction": {
+					"vi": "Chọn đáp án phù hợp với cách dùng trong hội thoại.",
+					"en": "Choose the answer that matches how the phrase is used."
+				},
+				"question": {
+					"vi": "Trong câu này, \"want to\" được dùng để nói về điều gì?",
+					"en": "What does \"want to\" show in this sentence?"
+				},
+				"options": [
+					{
+						"vi": "Một việc Emma muốn làm.",
+						"en": "Something Emma wants to do."
+					},
+					{
+						"vi": "Một việc Emma đang làm ngay bây giờ.",
+						"en": "Something Emma is doing right now."
+					},
+					{
+						"vi": "Một việc Emma không thích.",
+						"en": "Something Emma does not like."
+					},
+					{
+						"vi": "Một việc Emma làm mỗi ngày.",
+						"en": "Something Emma does every day."
+					}
+				]
+			},
+			"mcCategory": "grammar",
+			"mcTarget": "want to",
+			"options": [
+				"Một việc Emma muốn làm.",
+				"Một việc Emma đang làm ngay bây giờ.",
+				"Một việc Emma không thích.",
+				"Một việc Emma làm mỗi ngày."
+			],
+			"answer": "Một việc Emma muốn làm.",
+			"speaker": "Emma",
+			"transcript": "I want to visit my parents on Sunday.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-04.mp3"
+		},
+		{
+			"id": 18,
+			"dialogueLineId": 8,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["That sounds good. I am ", " on Sunday afternoon."],
+			"answers": ["free"],
+			"speaker": "Ben",
+			"transcript": "That sounds good. I am free on Sunday afternoon.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-04.mp3"
+		},
+		{
+			"id": 19,
+			"dialogueLineId": 8,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing words."
+				}
+			},
+			"parts": ["That sounds good. I am free on ", "."],
+			"answers": ["Sunday afternoon"],
+			"speaker": "Ben",
+			"transcript": "That sounds good. I am free on Sunday afternoon.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-04.mp3"
+		},
+		{
+			"id": 20,
+			"dialogueLineId": 9,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["Maybe we can have ", " sometime."],
+			"answers": ["coffee"],
+			"speaker": "Ben",
+			"transcript": "Maybe we can have coffee sometime.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-05.mp3"
+		},
+		{
+			"id": 21,
+			"dialogueLineId": 9,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["Maybe we can have coffee ", "."],
+			"answers": ["sometime"],
+			"speaker": "Ben",
+			"transcript": "Maybe we can have coffee sometime.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-05.mp3"
+		},
+		{
+			"id": 22,
+			"dialogueLineId": 9,
+			"type": "multipleChoice",
+			"question": "Ben dùng \"Maybe we can...\" để làm gì?",
+			"localized": {
+				"title": {
+					"vi": "Chọn đáp án đúng",
+					"en": "Choose the Correct Answer"
+				},
+				"instruction": {
+					"vi": "Chọn đáp án phù hợp với cách dùng trong hội thoại.",
+					"en": "Choose the answer that matches how the phrase is used."
+				},
+				"question": {
+					"vi": "Ben dùng \"Maybe we can...\" để làm gì?",
+					"en": "Why does Ben use \"Maybe we can...\"?"
+				},
+				"options": [
+					{
+						"vi": "Để nói rằng anh ấy không thích cà phê.",
+						"en": "To say he does not like coffee."
+					},
+					{
+						"vi": "Để hỏi Emma đang ở đâu.",
+						"en": "To ask where Emma is."
+					},
+					{
+						"vi": "Để nói về công việc.",
+						"en": "To talk about work."
+					},
+					{
+						"vi": "Để đưa ra một gợi ý nhẹ nhàng.",
+						"en": "To make a gentle suggestion."
+					}
+				]
+			},
+			"mcCategory": "usage",
+			"mcTarget": "Maybe we can",
+			"options": [
+				"Để nói rằng anh ấy không thích cà phê.",
+				"Để hỏi Emma đang ở đâu.",
+				"Để nói về công việc.",
+				"Để đưa ra một gợi ý nhẹ nhàng."
+			],
+			"answer": "Để đưa ra một gợi ý nhẹ nhàng.",
+			"speaker": "Ben",
+			"transcript": "Maybe we can have coffee sometime.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-05.mp3"
+		},
+		{
+			"id": 23,
+			"dialogueLineId": 10,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing words."
+				}
+			},
+			"parts": ["Yes, that ", "."],
+			"answers": ["sounds nice"],
+			"speaker": "Emma",
+			"transcript": "Yes, that sounds nice.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-05.mp3"
+		},
+		{
+			"id": 24,
+			"dialogueLineId": 11,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["We can ", " about it later."],
+			"answers": ["talk"],
+			"speaker": "Emma",
+			"transcript": "We can talk about it later.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-06.mp3"
+		},
+		{
+			"id": 25,
+			"dialogueLineId": 11,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền từ còn thiếu",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["We can talk about it ", "."],
+			"answers": ["later"],
+			"speaker": "Emma",
+			"transcript": "We can talk about it later.",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-06.mp3"
+		},
+		{
+			"id": 26,
+			"type": "dialogueCloze",
+			"localized": {
+				"title": {
+					"vi": "Hoàn thành hội thoại",
+					"en": "Complete the Dialogue"
+				},
+				"instruction": {
+					"vi": "Điền các từ còn thiếu để hoàn thành toàn bộ hội thoại.",
+					"en": "Fill in the missing words to complete the full dialogue."
+				}
+			},
+			"lines": [
+				{
+					"dialogueLineId": 1,
+					"speaker": "Emma",
+					"parts": [
+						"It is getting late. Do you have plans ",
+						{
+							"id": "1",
+							"blank": "this weekend"
+						},
+						"?"
+					]
+				},
+				{
+					"dialogueLineId": 2,
+					"speaker": "Ben",
+					"parts": [
+						"",
+						{
+							"id": "2",
+							"blank": "On Saturday"
+						},
+						", I want to go to the ",
+						{
+							"id": "3",
+							"blank": "gym"
+						},
+						" in the morning."
+					]
+				},
+				{
+					"dialogueLineId": 3,
+					"speaker": "Ben",
+					"parts": [
+						"",
+						{
+							"id": "4",
+							"blank": "After that"
+						},
+						", I want to meet some ",
+						{
+							"id": "5",
+							"blank": "friends"
+						},
+						"."
+					]
+				},
+				{
+					"dialogueLineId": 4,
+					"speaker": "Emma",
+					"parts": [
+						"That sounds nice. I ",
+						{
+							"id": "6",
+							"blank": "usually"
+						},
+						" have a quiet Saturday."
+					]
+				},
+				{
+					"dialogueLineId": 5,
+					"speaker": "Emma",
+					"parts": [
+						"I read ",
+						{
+							"id": "7",
+							"blank": "books"
+						},
+						" and have ",
+						{
+							"id": "8",
+							"blank": "coffee"
+						},
+						" at home."
+					]
+				},
+				{
+					"dialogueLineId": 6,
+					"speaker": "Ben",
+					"parts": [
+						"What about ",
+						{
+							"id": "9",
+							"blank": "Sunday"
+						},
+						"?"
+					]
+				},
+				{
+					"dialogueLineId": 7,
+					"speaker": "Emma",
+					"parts": [
+						"I want to ",
+						{
+							"id": "10",
+							"blank": "visit"
+						},
+						" my ",
+						{
+							"id": "11",
+							"blank": "parents"
+						},
+						" on Sunday."
+					]
+				},
+				{
+					"dialogueLineId": 8,
+					"speaker": "Ben",
+					"parts": [
+						"That sounds good. I am ",
+						{
+							"id": "12",
+							"blank": "free"
+						},
+						" on Sunday afternoon."
+					]
+				},
+				{
+					"dialogueLineId": 9,
+					"speaker": "Ben",
+					"parts": [
+						"Maybe we can have ",
+						{
+							"id": "13",
+							"blank": "coffee"
+						},
+						" ",
+						{
+							"id": "14",
+							"blank": "sometime"
+						},
+						"."
+					]
+				},
+				{
+					"dialogueLineId": 10,
+					"speaker": "Emma",
+					"parts": [
+						"Yes, that ",
+						{
+							"id": "15",
+							"blank": "sounds nice"
+						},
+						"."
+					]
+				},
+				{
+					"dialogueLineId": 11,
+					"speaker": "Emma",
+					"parts": [
+						"We can ",
+						{
+							"id": "16",
+							"blank": "talk"
+						},
+						" about it ",
+						{
+							"id": "17",
+							"blank": "later"
+						},
+						"."
+					]
+				}
+			]
+		}
+	],
+	"grammarNotes": [
+		{
+			"title": "Nói về kế hoạch với \"want to\"",
+			"explanation": "Dùng \"want to + động từ\" để nói về điều bạn muốn làm.",
+			"localized": {
+				"title": {
+					"vi": "Nói về kế hoạch với \"want to\"",
+					"en": "Talking About Plans with \"want to\""
+				},
+				"explanation": {
+					"vi": "Dùng \"want to + động từ\" để nói về điều bạn muốn làm.",
+					"en": "Use \"want to + verb\" to talk about something you want to do."
+				}
+			},
+			"example": "I want to visit my parents on Sunday."
+		},
+		{
+			"title": "Gợi ý nhẹ nhàng với \"Maybe we can...\"",
+			"explanation": "Dùng \"Maybe we can...\" để đưa ra một gợi ý nhẹ nhàng về việc có thể làm cùng nhau.",
+			"localized": {
+				"title": {
+					"vi": "Gợi ý nhẹ nhàng với \"Maybe we can...\"",
+					"en": "Making a Gentle Suggestion with \"Maybe we can...\""
+				},
+				"explanation": {
+					"vi": "Dùng \"Maybe we can...\" để đưa ra một gợi ý nhẹ nhàng về việc có thể làm cùng nhau.",
+					"en": "Use \"Maybe we can...\" to make a gentle suggestion about something you can do together."
+				}
+			},
+			"example": "Maybe we can have coffee sometime."
+		}
+	]
+}

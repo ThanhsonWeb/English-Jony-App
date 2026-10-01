@@ -192,8 +192,9 @@ try {
 	console.log("\nNext:");
 	console.log("1. Send this prompt to the AI.");
 	console.log("2. Save its JSON response.");
-	console.log("3. Run validation.");
-	console.log("4. Review before publishing.");
+	console.log("3. Review and validate all final dialogue JSON files.");
+	console.log(`4. Prepare the ChatGPT thumbnail manifest: npm run dialogue:thumbnails:prepare -- ${courseId}`);
+	console.log("5. Codex stops here and shares the manifest; ChatGPT generates the images separately.");
 } catch (error) {
 	console.error("\n❌ Dialogue creation failed:");
 	console.error(error.message);

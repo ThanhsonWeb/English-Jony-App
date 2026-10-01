@@ -1,0 +1,1262 @@
+{
+  "metadata": {
+    "courseId": "walk-in-the-park",
+    "dialogueId": "talking-about-themselves",
+    "title": "Tìm hiểu về nhau",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Đi dạo trong công viên",
+        "en": "Walk in the Park"
+      },
+      "courseDescription": {
+        "vi": "Ben và Emma chia sẻ thêm về bản thân, nơi họ sống, những điều họ thích và cuộc sống hằng ngày.",
+        "en": "Ben and Emma learn more about each other by talking about where they live, what they like, and their daily lives."
+      },
+      "title": {
+        "vi": "Tìm hiểu về nhau",
+        "en": "Getting to Know Each Other"
+      },
+      "description": {
+        "vi": "Ben và Emma chia sẻ thêm về bản thân, nơi họ sống, những điều họ thích và cuộc sống hằng ngày.",
+        "en": "Ben and Emma share more about themselves, where they live, what they like, and their daily lives."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Ben và Emma chia sẻ thêm về bản thân, nơi họ sống, những điều họ thích và cuộc sống hằng ngày.",
+    "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+    "thumbnail": "/dialogue/walk-in-the-park/thumbnails/talking-about-themselves.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Ben",
+      "text": "That sounds like a nice job.",
+      "translation": "Nghe có vẻ là một công việc tốt.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Emma",
+      "text": "Thanks. Do you live near here?",
+      "translation": "Cảm ơn. Bạn có sống gần đây không?",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Ben",
+      "text": "Yes. I live in an apartment near the park.",
+      "translation": "Có. Mình sống trong một căn hộ gần công viên.",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Emma",
+      "text": "I live near my school. It is easy to get to work.",
+      "translation": "Mình sống gần trường. Đi làm rất thuận tiện.",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Emma",
+      "text": "What do you like to do after work?",
+      "translation": "Bạn thích làm gì sau giờ làm?",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Ben",
+      "text": "I like cooking and watching movies at home.",
+      "translation": "Mình thích nấu ăn và xem phim ở nhà.",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Ben",
+      "text": "What about you?",
+      "translation": "Còn bạn thì sao?",
+      "practicePriority": "simple",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Emma",
+      "text": "I usually read books or listen to music.",
+      "translation": "Mình thường đọc sách hoặc nghe nhạc.",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Emma",
+      "text": "What do you usually do on weekends?",
+      "translation": "Bạn thường làm gì vào cuối tuần?",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Ben",
+      "text": "I usually go to the gym or meet my friends.",
+      "translation": "Mình thường đi tập gym hoặc gặp bạn bè.",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Emma",
+      "text": "Nice. I like walking in the park and having coffee with friends.",
+      "translation": "Hay đấy. Mình thích đi dạo trong công viên và uống cà phê với bạn bè.",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Ben",
+      "text": "We like some of the same things.",
+      "translation": "Chúng ta thích một vài điều giống nhau.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "live near",
+      "pronunciation": "/lɪv nɪr/",
+      "meaning": "sống gần",
+      "example": "I live near the park."
+    },
+    {
+      "word": "apartment",
+      "pronunciation": "/əˈpɑːrtmənt/",
+      "meaning": "căn hộ",
+      "example": "She lives in an apartment."
+    },
+    {
+      "word": "after work",
+      "pronunciation": "/ˌæftər ˈwɝːk/",
+      "meaning": "sau giờ làm",
+      "example": "I go home after work."
+    },
+    {
+      "word": "cooking",
+      "pronunciation": "/ˈkʊkɪŋ/",
+      "meaning": "nấu ăn",
+      "example": "I like cooking at home."
+    },
+    {
+      "word": "watching movies",
+      "pronunciation": "/ˈwɑːtʃɪŋ ˈmuːviz/",
+      "meaning": "xem phim",
+      "example": "We like watching movies."
+    },
+    {
+      "word": "usually",
+      "pronunciation": "/ˈjuːʒuəli/",
+      "meaning": "thường",
+      "example": "I usually get up at seven."
+    },
+    {
+      "word": "listen to music",
+      "pronunciation": "/ˈlɪsən tə ˈmjuːzɪk/",
+      "meaning": "nghe nhạc",
+      "example": "I listen to music at home."
+    },
+    {
+      "word": "on weekends",
+      "pronunciation": "/ɑːn ˈwiːkˌendz/",
+      "meaning": "vào cuối tuần",
+      "example": "I see my friends on weekends."
+    },
+    {
+      "word": "go to the gym",
+      "pronunciation": "/ɡoʊ tə ðə dʒɪm/",
+      "meaning": "đi tập gym",
+      "example": "I go to the gym after work."
+    },
+    {
+      "word": "meet my friends",
+      "pronunciation": "/miːt maɪ frendz/",
+      "meaning": "gặp bạn bè của tôi",
+      "example": "I meet my friends on Sunday."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "That sounds like a ",
+        "."
+      ],
+      "answers": [
+        "nice job"
+      ],
+      "speaker": "Ben",
+      "transcript": "That sounds like a nice job.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Thanks. Do you ",
+        " near here?"
+      ],
+      "answers": [
+        "live"
+      ],
+      "speaker": "Emma",
+      "transcript": "Thanks. Do you live near here?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Thanks. Do you live ",
+        " here?"
+      ],
+      "answers": [
+        "near"
+      ],
+      "speaker": "Emma",
+      "transcript": "Thanks. Do you live near here?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes. I ",
+        " in an apartment near the park."
+      ],
+      "answers": [
+        "live"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes. I live in an apartment near the park.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-02.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes. I live in an ",
+        " near the park."
+      ],
+      "answers": [
+        "apartment"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes. I live in an apartment near the park.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes. I live in an apartment near the ",
+        "."
+      ],
+      "answers": [
+        "park"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes. I live in an apartment near the park.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Ben sống ở đâu?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng dựa trên hội thoại.",
+          "en": "Choose the correct answer based on the dialogue."
+        },
+        "question": {
+          "vi": "Ben sống ở đâu?",
+          "en": "Where does Ben live?"
+        },
+        "options": [
+          {
+            "vi": "Trong một ngôi nhà ở trung tâm thành phố.",
+            "en": "In a house in the city center."
+          },
+          {
+            "vi": "Gần trường của Emma.",
+            "en": "Near Emma's school."
+          },
+          {
+            "vi": "Tại công ty của mình.",
+            "en": "At his company."
+          },
+          {
+            "vi": "Trong một căn hộ gần công viên.",
+            "en": "In an apartment near the park."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Trong một ngôi nhà ở trung tâm thành phố.",
+        "Gần trường của Emma.",
+        "Tại công ty của mình.",
+        "Trong một căn hộ gần công viên."
+      ],
+      "answer": "Trong một căn hộ gần công viên.",
+      "speaker": "Ben",
+      "transcript": "Yes. I live in an apartment near the park.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I live near my ",
+        ". It is easy to get to work."
+      ],
+      "answers": [
+        "school"
+      ],
+      "speaker": "Emma",
+      "transcript": "I live near my school. It is easy to get to work.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I live near my school. It is easy to get to ",
+        "."
+      ],
+      "answers": [
+        "work"
+      ],
+      "speaker": "Emma",
+      "transcript": "I live near my school. It is easy to get to work.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "What do you ",
+        " to do after work?"
+      ],
+      "answers": [
+        "like"
+      ],
+      "speaker": "Emma",
+      "transcript": "What do you like to do after work?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "What do you like to do ",
+        "?"
+      ],
+      "answers": [
+        "after work"
+      ],
+      "speaker": "Emma",
+      "transcript": "What do you like to do after work?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 5,
+      "type": "multipleChoice",
+      "question": "Emma dùng câu hỏi này để hỏi Ben điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng dựa trên cách dùng trong hội thoại.",
+          "en": "Choose the correct answer based on how the question is used."
+        },
+        "question": {
+          "vi": "Emma dùng câu hỏi này để hỏi Ben điều gì?",
+          "en": "What is Emma asking Ben about?"
+        },
+        "options": [
+          {
+            "vi": "Những việc Ben thích làm sau giờ làm.",
+            "en": "What Ben likes to do after work."
+          },
+          {
+            "vi": "Ben làm việc ở công ty nào.",
+            "en": "Which company Ben works for."
+          },
+          {
+            "vi": "Ben sống với ai.",
+            "en": "Who Ben lives with."
+          },
+          {
+            "vi": "Ben đến công viên bằng cách nào.",
+            "en": "How Ben gets to the park."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "What do you like to do",
+      "options": [
+        "Những việc Ben thích làm sau giờ làm.",
+        "Ben làm việc ở công ty nào.",
+        "Ben sống với ai.",
+        "Ben đến công viên bằng cách nào."
+      ],
+      "answer": "Những việc Ben thích làm sau giờ làm.",
+      "speaker": "Emma",
+      "transcript": "What do you like to do after work?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I like ",
+        " and watching movies at home."
+      ],
+      "answers": [
+        "cooking"
+      ],
+      "speaker": "Ben",
+      "transcript": "I like cooking and watching movies at home.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I like cooking and watching ",
+        " at home."
+      ],
+      "answers": [
+        "movies"
+      ],
+      "speaker": "Ben",
+      "transcript": "I like cooking and watching movies at home.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-03.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "What ",
+        " you?"
+      ],
+      "answers": [
+        "about"
+      ],
+      "speaker": "Ben",
+      "transcript": "What about you?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I usually read ",
+        " or listen to music."
+      ],
+      "answers": [
+        "books"
+      ],
+      "speaker": "Emma",
+      "transcript": "I usually read books or listen to music.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I usually read books or listen to ",
+        "."
+      ],
+      "answers": [
+        "music"
+      ],
+      "speaker": "Emma",
+      "transcript": "I usually read books or listen to music.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 8,
+      "type": "multipleChoice",
+      "question": "Emma thường làm gì khi có thời gian rảnh?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng dựa trên hội thoại.",
+          "en": "Choose the correct answer based on the dialogue."
+        },
+        "question": {
+          "vi": "Emma thường làm gì khi có thời gian rảnh?",
+          "en": "What does Emma usually do in her free time?"
+        },
+        "options": [
+          {
+            "vi": "Cô ấy chơi trò chơi điện tử.",
+            "en": "She plays video games."
+          },
+          {
+            "vi": "Cô ấy đọc sách hoặc nghe nhạc.",
+            "en": "She reads books or listens to music."
+          },
+          {
+            "vi": "Cô ấy tập gym mỗi ngày.",
+            "en": "She goes to the gym every day."
+          },
+          {
+            "vi": "Cô ấy xem TV ở trường.",
+            "en": "She watches TV at school."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Cô ấy chơi trò chơi điện tử.",
+        "Cô ấy đọc sách hoặc nghe nhạc.",
+        "Cô ấy tập gym mỗi ngày.",
+        "Cô ấy xem TV ở trường."
+      ],
+      "answer": "Cô ấy đọc sách hoặc nghe nhạc.",
+      "speaker": "Emma",
+      "transcript": "I usually read books or listen to music.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-04.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "What do you ",
+        " do on weekends?"
+      ],
+      "answers": [
+        "usually"
+      ],
+      "speaker": "Emma",
+      "transcript": "What do you usually do on weekends?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-05.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "What do you usually do on ",
+        "?"
+      ],
+      "answers": [
+        "weekends"
+      ],
+      "speaker": "Emma",
+      "transcript": "What do you usually do on weekends?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Từ \"usually\" cho biết Emma đang hỏi về điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp với cách dùng của từ trong câu.",
+          "en": "Choose the answer that matches how the word is used."
+        },
+        "question": {
+          "vi": "Từ \"usually\" cho biết Emma đang hỏi về điều gì?",
+          "en": "What does \"usually\" show in Emma's question?"
+        },
+        "options": [
+          {
+            "vi": "Một việc Ben không bao giờ làm.",
+            "en": "Something Ben never does."
+          },
+          {
+            "vi": "Một việc Ben đang làm ngay bây giờ.",
+            "en": "Something Ben is doing right now."
+          },
+          {
+            "vi": "Một việc Ben thường làm.",
+            "en": "Something Ben does regularly."
+          },
+          {
+            "vi": "Một việc Ben sẽ làm vào ngày mai.",
+            "en": "Something Ben will do tomorrow."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "usually",
+      "options": [
+        "Một việc Ben không bao giờ làm.",
+        "Một việc Ben đang làm ngay bây giờ.",
+        "Một việc Ben thường làm.",
+        "Một việc Ben sẽ làm vào ngày mai."
+      ],
+      "answer": "Một việc Ben thường làm.",
+      "speaker": "Emma",
+      "transcript": "What do you usually do on weekends?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I usually go to the ",
+        " or meet my friends."
+      ],
+      "answers": [
+        "gym"
+      ],
+      "speaker": "Ben",
+      "transcript": "I usually go to the gym or meet my friends.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I usually go to the gym or meet my ",
+        "."
+      ],
+      "answers": [
+        "friends"
+      ],
+      "speaker": "Ben",
+      "transcript": "I usually go to the gym or meet my friends.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-05.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Ben thường làm gì vào cuối tuần?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng dựa trên hội thoại.",
+          "en": "Choose the correct answer based on the dialogue."
+        },
+        "question": {
+          "vi": "Ben thường làm gì vào cuối tuần?",
+          "en": "What does Ben usually do on weekends?"
+        },
+        "options": [
+          {
+            "vi": "Đi tập gym hoặc gặp bạn bè.",
+            "en": "Go to the gym or meet his friends."
+          },
+          {
+            "vi": "Đi làm ở trường.",
+            "en": "Go to work at a school."
+          },
+          {
+            "vi": "Ở nhà cả ngày.",
+            "en": "Stay home all day."
+          },
+          {
+            "vi": "Đi mua sắm với đồng nghiệp.",
+            "en": "Go shopping with his coworkers."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Đi tập gym hoặc gặp bạn bè.",
+        "Đi làm ở trường.",
+        "Ở nhà cả ngày.",
+        "Đi mua sắm với đồng nghiệp."
+      ],
+      "answer": "Đi tập gym hoặc gặp bạn bè.",
+      "speaker": "Ben",
+      "transcript": "I usually go to the gym or meet my friends.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-05.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Nice. I like ",
+        " in the park and having coffee with friends."
+      ],
+      "answers": [
+        "walking"
+      ],
+      "speaker": "Emma",
+      "transcript": "Nice. I like walking in the park and having coffee with friends.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-06.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Nice. I like walking in the park and having ",
+        " with friends."
+      ],
+      "answers": [
+        "coffee"
+      ],
+      "speaker": "Emma",
+      "transcript": "Nice. I like walking in the park and having coffee with friends.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-06.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "We like some of the ",
+        " things."
+      ],
+      "answers": [
+        "same"
+      ],
+      "speaker": "Ben",
+      "transcript": "We like some of the same things.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-06.mp3"
+    },
+    {
+      "id": 28,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Hoàn thành hội thoại",
+          "en": "Complete the Dialogue"
+        },
+        "instruction": {
+          "vi": "Điền các từ còn thiếu để hoàn thành toàn bộ hội thoại.",
+          "en": "Fill in the missing words to complete the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Ben",
+          "parts": [
+            "That sounds like a ",
+            {
+              "id": "1",
+              "blank": "nice job"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Emma",
+          "parts": [
+            "Thanks. Do you ",
+            {
+              "id": "2",
+              "blank": "live"
+            },
+            " near ",
+            {
+              "id": "3",
+              "blank": "here"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Ben",
+          "parts": [
+            "Yes. I live in an ",
+            {
+              "id": "4",
+              "blank": "apartment"
+            },
+            " near the ",
+            {
+              "id": "5",
+              "blank": "park"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Emma",
+          "parts": [
+            "I live near my ",
+            {
+              "id": "6",
+              "blank": "school"
+            },
+            ". It is easy to get to ",
+            {
+              "id": "7",
+              "blank": "work"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Emma",
+          "parts": [
+            "What do you like to do ",
+            {
+              "id": "8",
+              "blank": "after work"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Ben",
+          "parts": [
+            "I like ",
+            {
+              "id": "9",
+              "blank": "cooking"
+            },
+            " and watching ",
+            {
+              "id": "10",
+              "blank": "movies"
+            },
+            " at home."
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Ben",
+          "parts": [
+            "What ",
+            {
+              "id": "11",
+              "blank": "about"
+            },
+            " you?"
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Emma",
+          "parts": [
+            "I usually ",
+            {
+              "id": "12",
+              "blank": "read books"
+            },
+            " or listen to ",
+            {
+              "id": "13",
+              "blank": "music"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Emma",
+          "parts": [
+            "What do you ",
+            {
+              "id": "14",
+              "blank": "usually"
+            },
+            " do on ",
+            {
+              "id": "15",
+              "blank": "weekends"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Ben",
+          "parts": [
+            "I usually go to the ",
+            {
+              "id": "16",
+              "blank": "gym"
+            },
+            " or meet my ",
+            {
+              "id": "17",
+              "blank": "friends"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Emma",
+          "parts": [
+            "Nice. I like walking in the ",
+            {
+              "id": "18",
+              "blank": "park"
+            },
+            " and having ",
+            {
+              "id": "19",
+              "blank": "coffee"
+            },
+            " with friends."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Ben",
+          "parts": [
+            "We like some of the ",
+            {
+              "id": "20",
+              "blank": "same"
+            },
+            " things."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Nói về sở thích với \"like + V-ing\"",
+      "explanation": "Dùng \"like\" cùng động từ thêm -ing để nói về hoạt động bạn thích làm.",
+      "localized": {
+        "title": {
+          "vi": "Nói về sở thích với \"like + V-ing\"",
+          "en": "Talking About Likes with \"like + V-ing\""
+        },
+        "explanation": {
+          "vi": "Dùng \"like\" cùng động từ thêm -ing để nói về hoạt động bạn thích làm.",
+          "en": "Use \"like\" followed by a verb ending in -ing to talk about activities you enjoy."
+        }
+      },
+      "example": "I like cooking and watching movies."
+    },
+    {
+      "title": "Nói về thói quen với \"usually\"",
+      "explanation": "Dùng \"usually\" để nói về một việc bạn thường làm. Trong câu khẳng định đơn giản, \"usually\" thường đứng trước động từ chính.",
+      "localized": {
+        "title": {
+          "vi": "Nói về thói quen với \"usually\"",
+          "en": "Talking About Habits with \"usually\""
+        },
+        "explanation": {
+          "vi": "Dùng \"usually\" để nói về một việc bạn thường làm. Trong câu khẳng định đơn giản, \"usually\" thường đứng trước động từ chính.",
+          "en": "Use \"usually\" to talk about something you do regularly. In a simple affirmative sentence, it usually comes before the main verb."
+        }
+      },
+      "example": "I usually read books after work."
+    }
+  ]
+}

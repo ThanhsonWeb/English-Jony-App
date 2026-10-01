@@ -1,0 +1,1297 @@
+{
+  "metadata": {
+    "courseId": "walk-in-the-park",
+    "dialogueId": "talking-about-work",
+    "title": "Nói về công việc",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Đi dạo trong công viên",
+        "en": "Walk in the Park"
+      },
+      "courseDescription": {
+        "vi": "Ben và Emma đi dạo trong công viên và trò chuyện để hiểu thêm về nhau.",
+        "en": "Ben and Emma walk in the park and talk to learn more about each other."
+      },
+      "title": {
+        "vi": "Nói về công việc",
+        "en": "Talking About Work"
+      },
+      "description": {
+        "vi": "Trong lúc đi dạo, Ben và Emma nói về công việc của mình. Emma là giáo viên, còn Ben làm việc tại một công ty.",
+        "en": "While walking, Ben and Emma talk about their jobs. Emma is a teacher, and Ben works at a company."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Trong lúc đi dạo, Ben và Emma nói về công việc của mình. Emma là giáo viên, còn Ben làm việc tại một công ty.",
+    "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+    "thumbnail": "/dialogue/walk-in-the-park/thumbnails/talking-about-work.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Ben",
+      "text": "It is nice to walk here after work.",
+      "translation": "Đi dạo ở đây sau giờ làm thật dễ chịu.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Ben",
+      "text": "Where do you work, Emma?",
+      "translation": "Emma, bạn làm việc ở đâu?",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-02.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Emma",
+      "text": "I work at a school close to home.",
+      "translation": "Mình làm việc ở một trường học gần nhà.",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-01.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Ben",
+      "text": "Are you a teacher there?",
+      "translation": "Bạn là giáo viên ở đó à?",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-03.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Emma",
+      "text": "Yes, I am. I teach English to children.",
+      "translation": "Đúng vậy. Mình dạy tiếng Anh cho trẻ em.",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Emma",
+      "text": "Where do you work, Ben?",
+      "translation": "Còn bạn làm việc ở đâu, Ben?",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Ben",
+      "text": "I work at a company in the city.",
+      "translation": "Mình làm việc ở một công ty trong thành phố.",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Ben",
+      "text": "I use a computer every day.",
+      "translation": "Mình dùng máy tính mỗi ngày.",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-05.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Emma",
+      "text": "Do you like your job?",
+      "translation": "Bạn có thích công việc của mình không?",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Ben",
+      "text": "Yes, I do. My coworkers are very nice.",
+      "translation": "Có. Đồng nghiệp của mình rất tốt.",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-06.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Ben",
+      "text": "Do you like your job too?",
+      "translation": "Bạn cũng thích công việc của mình chứ?",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-07.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Emma",
+      "text": "Yes, I do. I like helping my students.",
+      "translation": "Có. Mình thích giúp đỡ học sinh của mình.",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-05.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "after work",
+      "pronunciation": "/ˌæftər ˈwɝːk/",
+      "meaning": "sau giờ làm",
+      "example": "I go home after work."
+    },
+    {
+      "word": "school",
+      "pronunciation": "/skuːl/",
+      "meaning": "trường học",
+      "example": "My school is near my home."
+    },
+    {
+      "word": "teacher",
+      "pronunciation": "/ˈtiːtʃər/",
+      "meaning": "giáo viên",
+      "example": "My sister is a teacher."
+    },
+    {
+      "word": "teach",
+      "pronunciation": "/tiːtʃ/",
+      "meaning": "dạy",
+      "example": "I teach English."
+    },
+    {
+      "word": "children",
+      "pronunciation": "/ˈtʃɪldrən/",
+      "meaning": "trẻ em",
+      "example": "The children are at school."
+    },
+    {
+      "word": "company",
+      "pronunciation": "/ˈkʌmpəni/",
+      "meaning": "công ty",
+      "example": "He works at a company."
+    },
+    {
+      "word": "coworkers",
+      "pronunciation": "/ˈkoʊˌwɝːkərz/",
+      "meaning": "đồng nghiệp",
+      "example": "My coworkers are friendly."
+    },
+    {
+      "word": "students",
+      "pronunciation": "/ˈstuːdənts/",
+      "meaning": "học sinh",
+      "example": "The students like their teacher."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "It is nice to walk here ",
+        "."
+      ],
+      "answers": [
+        "after work"
+      ],
+      "speaker": "Ben",
+      "transcript": "It is nice to walk here after work.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "",
+        " do you work, Emma?"
+      ],
+      "answers": [
+        "Where"
+      ],
+      "speaker": "Ben",
+      "transcript": "Where do you work, Emma?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-02.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Where do you ",
+        ", Emma?"
+      ],
+      "answers": [
+        "work"
+      ],
+      "speaker": "Ben",
+      "transcript": "Where do you work, Emma?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-02.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I work at a ",
+        " close to home."
+      ],
+      "answers": [
+        "school"
+      ],
+      "speaker": "Emma",
+      "transcript": "I work at a school close to home.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I work at a school ",
+        " home."
+      ],
+      "answers": [
+        "close to"
+      ],
+      "speaker": "Emma",
+      "transcript": "I work at a school close to home.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Emma làm việc ở đâu?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng dựa trên hội thoại.",
+          "en": "Choose the correct answer based on the dialogue."
+        },
+        "question": {
+          "vi": "Emma làm việc ở đâu?",
+          "en": "Where does Emma work?"
+        },
+        "options": [
+          {
+            "vi": "Ở một công ty.",
+            "en": "At a company."
+          },
+          {
+            "vi": "Ở một bệnh viện.",
+            "en": "At a hospital."
+          },
+          {
+            "vi": "Ở một quán cà phê.",
+            "en": "At a cafe."
+          },
+          {
+            "vi": "Ở một trường học.",
+            "en": "At a school."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Ở một công ty.",
+        "Ở một bệnh viện.",
+        "Ở một quán cà phê.",
+        "Ở một trường học."
+      ],
+      "answer": "Ở một trường học.",
+      "speaker": "Emma",
+      "transcript": "I work at a school close to home.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-01.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Are you a ",
+        " there?"
+      ],
+      "answers": [
+        "teacher"
+      ],
+      "speaker": "Ben",
+      "transcript": "Are you a teacher there?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-03.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Are you a teacher ",
+        "?"
+      ],
+      "answers": [
+        "there"
+      ],
+      "speaker": "Ben",
+      "transcript": "Are you a teacher there?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-03.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "multipleChoice",
+      "question": "Ben dùng \"Are you\" trong câu này để làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng dựa trên cách dùng trong hội thoại.",
+          "en": "Choose the correct answer based on how the phrase is used."
+        },
+        "question": {
+          "vi": "Ben dùng \"Are you\" trong câu này để làm gì?",
+          "en": "Why does Ben use \"Are you\" in this sentence?"
+        },
+        "options": [
+          {
+            "vi": "Để hỏi xem Emma có phải là giáo viên không.",
+            "en": "To ask if Emma is a teacher."
+          },
+          {
+            "vi": "Để nói rằng Ben là giáo viên.",
+            "en": "To say that Ben is a teacher."
+          },
+          {
+            "vi": "Để hỏi Emma đang ở đâu.",
+            "en": "To ask where Emma is."
+          },
+          {
+            "vi": "Để nói về thời tiết.",
+            "en": "To talk about the weather."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "Are you",
+      "options": [
+        "Để hỏi xem Emma có phải là giáo viên không.",
+        "Để nói rằng Ben là giáo viên.",
+        "Để hỏi Emma đang ở đâu.",
+        "Để nói về thời tiết."
+      ],
+      "answer": "Để hỏi xem Emma có phải là giáo viên không.",
+      "speaker": "Ben",
+      "transcript": "Are you a teacher there?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-03.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes, I am. I ",
+        " English to children."
+      ],
+      "answers": [
+        "teach"
+      ],
+      "speaker": "Emma",
+      "transcript": "Yes, I am. I teach English to children.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-02.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes, I am. I teach ",
+        " to children."
+      ],
+      "answers": [
+        "English"
+      ],
+      "speaker": "Emma",
+      "transcript": "Yes, I am. I teach English to children.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-02.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes, I am. I teach English to ",
+        "."
+      ],
+      "answers": [
+        "children"
+      ],
+      "speaker": "Emma",
+      "transcript": "Yes, I am. I teach English to children.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-02.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "",
+        " do you work, Ben?"
+      ],
+      "answers": [
+        "Where"
+      ],
+      "speaker": "Emma",
+      "transcript": "Where do you work, Ben?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Where do you ",
+        ", Ben?"
+      ],
+      "answers": [
+        "work"
+      ],
+      "speaker": "Emma",
+      "transcript": "Where do you work, Ben?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-03.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I work at a ",
+        " in the city."
+      ],
+      "answers": [
+        "company"
+      ],
+      "speaker": "Ben",
+      "transcript": "I work at a company in the city.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I work at a company in the ",
+        "."
+      ],
+      "answers": [
+        "city"
+      ],
+      "speaker": "Ben",
+      "transcript": "I work at a company in the city.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "question": "Ben làm việc ở đâu?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng dựa trên hội thoại.",
+          "en": "Choose the correct answer based on the dialogue."
+        },
+        "question": {
+          "vi": "Ben làm việc ở đâu?",
+          "en": "Where does Ben work?"
+        },
+        "options": [
+          {
+            "vi": "Ở một trường học.",
+            "en": "At a school."
+          },
+          {
+            "vi": "Ở một công ty.",
+            "en": "At a company."
+          },
+          {
+            "vi": "Ở một công viên.",
+            "en": "At a park."
+          },
+          {
+            "vi": "Ở một cửa hàng.",
+            "en": "At a store."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Ở một trường học.",
+        "Ở một công ty.",
+        "Ở một công viên.",
+        "Ở một cửa hàng."
+      ],
+      "answer": "Ở một công ty.",
+      "speaker": "Ben",
+      "transcript": "I work at a company in the city.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I use a ",
+        " every day."
+      ],
+      "answers": [
+        "computer"
+      ],
+      "speaker": "Ben",
+      "transcript": "I use a computer every day.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-05.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I use a computer ",
+        "."
+      ],
+      "answers": [
+        "every day"
+      ],
+      "speaker": "Ben",
+      "transcript": "I use a computer every day.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-05.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Do you ",
+        " your job?"
+      ],
+      "answers": [
+        "like"
+      ],
+      "speaker": "Emma",
+      "transcript": "Do you like your job?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-04.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Do you like your ",
+        "?"
+      ],
+      "answers": [
+        "job"
+      ],
+      "speaker": "Emma",
+      "transcript": "Do you like your job?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-04.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes, I do. My ",
+        " are very nice."
+      ],
+      "answers": [
+        "coworkers"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes, I do. My coworkers are very nice.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-06.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes, I do. My coworkers are ",
+        "."
+      ],
+      "answers": [
+        "very nice"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes, I do. My coworkers are very nice.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-06.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Ben nói gì về đồng nghiệp của mình?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng dựa trên hội thoại.",
+          "en": "Choose the correct answer based on the dialogue."
+        },
+        "question": {
+          "vi": "Ben nói gì về đồng nghiệp của mình?",
+          "en": "What does Ben say about his coworkers?"
+        },
+        "options": [
+          {
+            "vi": "Họ rất bận.",
+            "en": "They are very busy."
+          },
+          {
+            "vi": "Họ là người mới.",
+            "en": "They are new."
+          },
+          {
+            "vi": "Họ rất tốt.",
+            "en": "They are very nice."
+          },
+          {
+            "vi": "Họ rất nghiêm khắc.",
+            "en": "They are very strict."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Họ rất bận.",
+        "Họ là người mới.",
+        "Họ rất tốt.",
+        "Họ rất nghiêm khắc."
+      ],
+      "answer": "Họ rất tốt.",
+      "speaker": "Ben",
+      "transcript": "Yes, I do. My coworkers are very nice.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-06.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Do you ",
+        " your job too?"
+      ],
+      "answers": [
+        "like"
+      ],
+      "speaker": "Ben",
+      "transcript": "Do you like your job too?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-07.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Do you like your job ",
+        "?"
+      ],
+      "answers": [
+        "too"
+      ],
+      "speaker": "Ben",
+      "transcript": "Do you like your job too?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-07.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 11,
+      "type": "multipleChoice",
+      "question": "Ben muốn hỏi lại Emma cùng câu hỏi về công việc. Từ nào làm câu hỏi tự nhiên hơn ở cuối câu?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn từ phù hợp với tình huống.",
+          "en": "Choose the word that fits the situation."
+        },
+        "question": {
+          "vi": "Ben muốn hỏi lại Emma cùng câu hỏi về công việc. Từ nào làm câu hỏi tự nhiên hơn ở cuối câu?",
+          "en": "Ben wants to ask Emma the same question about work. Which word fits naturally at the end?"
+        },
+        "options": [
+          {
+            "vi": "too",
+            "en": "too"
+          },
+          {
+            "vi": "now",
+            "en": "now"
+          },
+          {
+            "vi": "there",
+            "en": "there"
+          },
+          {
+            "vi": "today",
+            "en": "today"
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "too",
+      "options": [
+        "too",
+        "now",
+        "there",
+        "today"
+      ],
+      "answer": "too",
+      "speaker": "Ben",
+      "transcript": "Do you like your job too?",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-07.mp3"
+    },
+    {
+      "id": 28,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes, I do. I like ",
+        " my students."
+      ],
+      "answers": [
+        "helping"
+      ],
+      "speaker": "Emma",
+      "transcript": "Yes, I do. I like helping my students.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-05.mp3"
+    },
+    {
+      "id": 29,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes, I do. I like helping my ",
+        "."
+      ],
+      "answers": [
+        "students"
+      ],
+      "speaker": "Emma",
+      "transcript": "Yes, I do. I like helping my students.",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-05.mp3"
+    },
+    {
+      "id": 30,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Hoàn thành hội thoại",
+          "en": "Complete the Dialogue"
+        },
+        "instruction": {
+          "vi": "Điền các từ còn thiếu để hoàn thành toàn bộ hội thoại.",
+          "en": "Fill in the missing words to complete the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Ben",
+          "parts": [
+            "It is nice to walk here ",
+            {
+              "id": "1",
+              "blank": "after work"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Ben",
+          "parts": [
+            "",
+            {
+              "id": "2",
+              "blank": "Where"
+            },
+            " do you ",
+            {
+              "id": "3",
+              "blank": "work"
+            },
+            ", Emma?"
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Emma",
+          "parts": [
+            "I work at a ",
+            {
+              "id": "4",
+              "blank": "school"
+            },
+            " ",
+            {
+              "id": "5",
+              "blank": "close to"
+            },
+            " home."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Ben",
+          "parts": [
+            "Are you a ",
+            {
+              "id": "6",
+              "blank": "teacher"
+            },
+            " there?"
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Emma",
+          "parts": [
+            "Yes, I am. I ",
+            {
+              "id": "7",
+              "blank": "teach"
+            },
+            " English to ",
+            {
+              "id": "8",
+              "blank": "children"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Emma",
+          "parts": [
+            "",
+            {
+              "id": "9",
+              "blank": "Where"
+            },
+            " do you work, Ben?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Ben",
+          "parts": [
+            "I work at a ",
+            {
+              "id": "10",
+              "blank": "company"
+            },
+            " in the ",
+            {
+              "id": "11",
+              "blank": "city"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Ben",
+          "parts": [
+            "I use a ",
+            {
+              "id": "12",
+              "blank": "computer"
+            },
+            " ",
+            {
+              "id": "13",
+              "blank": "every day"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Emma",
+          "parts": [
+            "Do you ",
+            {
+              "id": "14",
+              "blank": "like"
+            },
+            " your ",
+            {
+              "id": "15",
+              "blank": "job"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Ben",
+          "parts": [
+            "Yes, I do. My ",
+            {
+              "id": "16",
+              "blank": "coworkers"
+            },
+            " are very nice."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Ben",
+          "parts": [
+            "Do you like your job ",
+            {
+              "id": "17",
+              "blank": "too"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Emma",
+          "parts": [
+            "Yes, I do. I like ",
+            {
+              "id": "18",
+              "blank": "helping"
+            },
+            " my ",
+            {
+              "id": "19",
+              "blank": "students"
+            },
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Hỏi nơi làm việc với \"Where do you work?\"",
+      "explanation": "Dùng \"Where do you work?\" để hỏi một người làm việc ở đâu.",
+      "localized": {
+        "title": {
+          "vi": "Hỏi nơi làm việc với \"Where do you work?\"",
+          "en": "Asking About Workplaces with \"Where do you work?\""
+        },
+        "explanation": {
+          "vi": "Dùng \"Where do you work?\" để hỏi một người làm việc ở đâu.",
+          "en": "Use \"Where do you work?\" to ask where someone works."
+        }
+      },
+      "example": "Where do you work? — I work at a school."
+    },
+    {
+      "title": "Hỏi sở thích với \"Do you like...?\"",
+      "explanation": "Dùng \"Do you like...?\" để hỏi một người có thích điều gì đó hay không.",
+      "localized": {
+        "title": {
+          "vi": "Hỏi sở thích với \"Do you like...?\"",
+          "en": "Asking About Likes with \"Do you like...?\""
+        },
+        "explanation": {
+          "vi": "Dùng \"Do you like...?\" để hỏi một người có thích điều gì đó hay không.",
+          "en": "Use \"Do you like...?\" to ask whether someone likes something."
+        }
+      },
+      "example": "Do you like your job? — Yes, I do."
+    }
+  ]
+}
