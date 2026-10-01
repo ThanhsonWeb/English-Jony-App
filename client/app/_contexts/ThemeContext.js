@@ -81,6 +81,7 @@ export function ThemeProvider({ children }) {
 		() => ({
 			theme,
 			saveFailed: saveError?.id === userId,
+			saveErrorCode: saveError?.id === userId ? saveError.code : null,
 			setTheme(nextTheme) {
 				if (!VALID_THEMES.has(nextTheme)) return;
 				setSaveError(null);
@@ -102,13 +103,29 @@ export function ThemeProvider({ children }) {
 							credentials: "include",
 							body: JSON.stringify({ theme: nextTheme, expectedUserId: userId }),
 						});
-						if (!response.ok) throw new Error("Could not save theme");
+						if (!response.ok) {
+							const error = new Error("Could not save theme");
+							error.status = response.status;
+							throw error;
+						}
 						if (activeAccount.current.generation === account.generation &&
 							latestSelection.current === selection) setSaveError(null);
-					}).catch(() => {
+					}).catch((error) => {
 						if (activeAccount.current.generation === account.generation &&
 							latestSelection.current === selection) {
-							setSaveError(account);
+							if (error.status === 401) {
+								try {
+									window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+									temporaryTheme = null;
+								} catch {
+									temporaryTheme = nextTheme;
+								}
+								window.dispatchEvent(new Event(THEME_CHANGE_EVENT));
+								setUser(null);
+								setSaveError({ id: null, code: "sessionExpired" });
+							} else {
+								setSaveError({ ...account, code: "saveFailed" });
+							}
 						}
 					});
 					return;

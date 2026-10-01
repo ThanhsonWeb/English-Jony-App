@@ -232,7 +232,8 @@
 		"black": "Đen tối",
 		"system": "Theo hệ thống",
 		"choose": "Chọn giao diện",
-		"saveFailed": "Chưa lưu được giao diện. Hãy thử lại."
+		"saveFailed": "Chưa lưu được giao diện. Hãy thử lại.",
+		"sessionExpired": "Phiên đăng nhập đã hết hạn. Đăng nhập lại để lưu giao diện vào tài khoản."
 	},
 	"Header": {
 		"avatar": "Ảnh đại diện",

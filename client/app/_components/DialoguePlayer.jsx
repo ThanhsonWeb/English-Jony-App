@@ -792,9 +792,7 @@ export default function DialoguePlayer({
 									}`}
 								>
 									<p
-										className={`text-sm font-semibold ${getSpeakerColor(
-											line.speaker,
-										)}`}
+										className="dialogue-subtitle-speaker text-sm font-semibold"
 									>
 										{line.speaker}
 									</p>

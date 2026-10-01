@@ -6,6 +6,7 @@ import officeIntroductionCourse from "./courses/office-introduction";
 import restaurantCourse from "./courses/restaurant";
 import weekendCampingCourse from "./courses/weekend-camping";
 import { withDialogueLocalization } from "@/app/_lib/dialogue/localization";
+import walkInTheParkCourse from "./courses/walk-in-the-park";
 
 export const lessonData = {
    // [atAHotelCourse.id]: withDialogueLocalization(atAHotelCourse),
@@ -15,4 +16,5 @@ export const lessonData = {
    [coffeeShopCourse.id]: withDialogueLocalization(coffeeShopCourse),
    [groceryStoreCourse.id]: withDialogueLocalization(groceryStoreCourse),
    [restaurantCourse.id]: withDialogueLocalization(restaurantCourse),
+   [walkInTheParkCourse.id]: withDialogueLocalization(walkInTheParkCourse),
 };

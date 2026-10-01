@@ -32,8 +32,19 @@ export default function DialogueLessonPage() {
 				cache: "no-store",
 			});
 
+			if (res.status === 401) {
+				setProgress((current) => ({
+					...current,
+					[lessonId]: {},
+				}));
+				return;
+			}
+
 			if (!res.ok) {
-				throw new Error("Failed to load dialogue progress");
+				console.warn("Failed to load dialogue progress", {
+					status: res.status,
+				});
+				return;
 			}
 
 			const data = await res.json();
@@ -48,7 +59,7 @@ export default function DialogueLessonPage() {
 				[lessonId]: lessonProgress,
 			});
 		} catch (error) {
-			console.error("Load dialogue progress error:", error);
+			console.warn("Load dialogue progress error:", error);
 		}
 	}, [lessonId]);
 

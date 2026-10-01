@@ -34,7 +34,7 @@ const themeOptions = [
 ];
 
 export default function ThemeSelector() {
-	const { theme, setTheme, saveFailed } = useTheme();
+	const { theme, setTheme, saveFailed, saveErrorCode } = useTheme();
 	const t = useTranslations("Theme");
 	const containerRef = useRef(null);
 	const [isOpen, setIsOpen] = useState(false);
@@ -79,7 +79,7 @@ export default function ThemeSelector() {
 
 			{saveFailed && !isOpen && (
 				<p role="status" className="absolute right-0 top-full z-[60] mt-2 w-52 rounded-lg border border-red-500/30 bg-elevated p-2 text-xs text-red-500 shadow-lg">
-					{t("saveFailed")}
+					{t(saveErrorCode || "saveFailed")}
 				</p>
 			)}
 			{isOpen && (

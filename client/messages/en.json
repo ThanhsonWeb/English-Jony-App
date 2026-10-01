@@ -232,7 +232,8 @@
 		"black": "Near black",
 		"system": "System",
 		"choose": "Choose theme",
-		"saveFailed": "Could not save your theme. Please try again."
+		"saveFailed": "Could not save your theme. Please try again.",
+		"sessionExpired": "Your session expired. Sign in to save this theme to your account."
 	},
 	"Header": {
 		"avatar": "User avatar",

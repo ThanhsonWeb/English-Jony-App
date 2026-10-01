@@ -1,0 +1,1085 @@
+{
+  "metadata": {
+    "courseId": "walk-in-the-park",
+    "dialogueId": "meeting-at-the-park",
+    "title": "Gặp nhau ở công viên",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Đi dạo trong công viên",
+        "en": "A Walk in the Park"
+      },
+      "courseDescription": {
+        "vi": "Ben và Emma gặp nhau ở công viên vào một buổi chiều. Họ chào nhau và quyết định đi dạo cùng nhau.",
+        "en": "Ben and Emma meet at the park one afternoon. They greet each other and decide to take a walk together."
+      },
+      "title": {
+        "vi": "Gặp nhau ở công viên",
+        "en": "Meeting at the Park"
+      },
+      "description": {
+        "vi": "Ben và Emma gặp nhau ở công viên vào một buổi chiều. Họ chào nhau và quyết định đi dạo cùng nhau.",
+        "en": "Ben and Emma meet at the park one afternoon. They greet each other and decide to take a walk together."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Ben và Emma gặp nhau ở công viên vào một buổi chiều. Họ chào nhau và quyết định đi dạo cùng nhau.",
+    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+    "thumbnail": "/dialogue/walk-in-the-park/thumbnails/meeting-at-the-park.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Ben",
+      "text": "Hi, Emma! Nice to see you here.",
+      "translation": "Chào Emma! Rất vui được gặp bạn ở đây.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Ben",
+      "text": "The park is really nice this afternoon.",
+      "translation": "Công viên chiều nay thật đẹp.",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-02.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Emma",
+      "text": "Hi, Ben! Yes, it is. The weather is good too.",
+      "translation": "Chào Ben! Đúng vậy. Thời tiết cũng đẹp nữa.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-01.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Emma",
+      "text": "Are you here for a walk?",
+      "translation": "Bạn đến đây để đi dạo à?",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Ben",
+      "text": "Yes. I want to walk for a while.",
+      "translation": "Ừ. Mình muốn đi dạo một lúc.",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Emma",
+      "text": "Me too. Do you want to walk together?",
+      "translation": "Mình cũng vậy. Bạn có muốn đi dạo cùng nhau không?",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Ben",
+      "text": "Sure. That sounds nice.",
+      "translation": "Được chứ. Nghe hay đấy.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Ben",
+      "text": "We can walk near the lake. It is quiet there.",
+      "translation": "Chúng ta có thể đi dạo gần hồ. Ở đó khá yên tĩnh.",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-05.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Emma",
+      "text": "Good idea. I like that part of the park.",
+      "translation": "Ý hay đấy. Mình thích khu đó của công viên.",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Emma",
+      "text": "Are you ready to go?",
+      "translation": "Bạn sẵn sàng đi chưa?",
+      "practicePriority": "important",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Ben",
+      "text": "Yes. We can start now.",
+      "translation": "Ừ. Chúng ta có thể bắt đầu ngay bây giờ.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "this afternoon",
+      "pronunciation": "/ðɪs ˌæftərˈnuːn/",
+      "meaning": "chiều nay",
+      "example": "The weather is nice this afternoon."
+    },
+    {
+      "word": "for a walk",
+      "pronunciation": "/fər ə wɔːk/",
+      "meaning": "để đi dạo",
+      "example": "I am here for a walk."
+    },
+    {
+      "word": "for a while",
+      "pronunciation": "/fər ə waɪl/",
+      "meaning": "một lúc",
+      "example": "I want to sit here for a while."
+    },
+    {
+      "word": "walk together",
+      "pronunciation": "/wɔːk təˈɡeðər/",
+      "meaning": "đi dạo cùng nhau",
+      "example": "We can walk together."
+    },
+    {
+      "word": "sounds nice",
+      "pronunciation": "/saʊndz naɪs/",
+      "meaning": "nghe hay đấy",
+      "example": "That sounds nice."
+    },
+    {
+      "word": "near the lake",
+      "pronunciation": "/nɪr ðə leɪk/",
+      "meaning": "gần hồ",
+      "example": "We can sit near the lake."
+    },
+    {
+      "word": "Good idea",
+      "pronunciation": "/ɡʊd aɪˈdiːə/",
+      "meaning": "Ý hay đấy",
+      "example": "Good idea. We can go together."
+    },
+    {
+      "word": "ready to go",
+      "pronunciation": "/ˈredi tə ɡoʊ/",
+      "meaning": "sẵn sàng đi",
+      "example": "Are you ready to go?"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Hi, Emma! Nice to see you ",
+        "."
+      ],
+      "answers": [
+        "here"
+      ],
+      "speaker": "Ben",
+      "transcript": "Hi, Emma! Nice to see you here.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "The ",
+        " is really nice this afternoon."
+      ],
+      "answers": [
+        "park"
+      ],
+      "speaker": "Ben",
+      "transcript": "The park is really nice this afternoon.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-02.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "The park is really nice ",
+        "."
+      ],
+      "answers": [
+        "this afternoon"
+      ],
+      "speaker": "Ben",
+      "transcript": "The park is really nice this afternoon.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-02.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "multipleChoice",
+      "question": "Ben nói gì về công viên chiều nay?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp nhất với đoạn hội thoại.",
+          "en": "Choose the answer that best matches the dialogue."
+        },
+        "question": {
+          "vi": "Ben nói gì về công viên chiều nay?",
+          "en": "What does Ben say about the park this afternoon?"
+        },
+        "options": [
+          {
+            "vi": "Công viên rất đông.",
+            "en": "The park is very crowded."
+          },
+          {
+            "vi": "Công viên khá lạnh.",
+            "en": "The park is quite cold."
+          },
+          {
+            "vi": "Công viên sắp đóng cửa.",
+            "en": "The park is about to close."
+          },
+          {
+            "vi": "Công viên rất đẹp.",
+            "en": "The park is really nice."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Công viên rất đông.",
+        "Công viên khá lạnh.",
+        "Công viên sắp đóng cửa.",
+        "Công viên rất đẹp."
+      ],
+      "answer": "Công viên rất đẹp.",
+      "speaker": "Ben",
+      "transcript": "The park is really nice this afternoon.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-02.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Hi, Ben! Yes, it is. The ",
+        " is good too."
+      ],
+      "answers": [
+        "weather"
+      ],
+      "speaker": "Emma",
+      "transcript": "Hi, Ben! Yes, it is. The weather is good too.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Are you ",
+        " for a walk?"
+      ],
+      "answers": [
+        "here"
+      ],
+      "speaker": "Emma",
+      "transcript": "Are you here for a walk?",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Are you here for ",
+        "?"
+      ],
+      "answers": [
+        "a walk"
+      ],
+      "speaker": "Emma",
+      "transcript": "Are you here for a walk?",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Yes. I ",
+        " to walk for a while."
+      ],
+      "answers": [
+        "want"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes. I want to walk for a while.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-03.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Yes. I want to walk for ",
+        "."
+      ],
+      "answers": [
+        "a while"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes. I want to walk for a while.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-03.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Me too. Do you ",
+        " to walk together?"
+      ],
+      "answers": [
+        "want"
+      ],
+      "speaker": "Emma",
+      "transcript": "Me too. Do you want to walk together?",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Me too. Do you want to ",
+        "?"
+      ],
+      "answers": [
+        "walk together"
+      ],
+      "speaker": "Emma",
+      "transcript": "Me too. Do you want to walk together?",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Trong câu này, \"Do you want to\" giúp Emma làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp nhất với đoạn hội thoại.",
+          "en": "Choose the answer that best matches the dialogue."
+        },
+        "question": {
+          "vi": "Trong câu này, \"Do you want to\" giúp Emma làm gì?",
+          "en": "In this sentence, what does \"Do you want to\" help Emma do?"
+        },
+        "options": [
+          {
+            "vi": "Hỏi Ben có muốn cùng làm một việc không.",
+            "en": "Ask whether Ben wants to do something together."
+          },
+          {
+            "vi": "Hỏi Ben đã đi bộ bao lâu.",
+            "en": "Ask how long Ben has been walking."
+          },
+          {
+            "vi": "Nói Ben phải rời công viên.",
+            "en": "Tell Ben that he must leave the park."
+          },
+          {
+            "vi": "Hỏi Ben công viên ở đâu.",
+            "en": "Ask Ben where the park is."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "Do you want to",
+      "options": [
+        "Hỏi Ben có muốn cùng làm một việc không.",
+        "Hỏi Ben đã đi bộ bao lâu.",
+        "Nói Ben phải rời công viên.",
+        "Hỏi Ben công viên ở đâu."
+      ],
+      "answer": "Hỏi Ben có muốn cùng làm một việc không.",
+      "speaker": "Emma",
+      "transcript": "Me too. Do you want to walk together?",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Sure. That ",
+        " nice."
+      ],
+      "answers": [
+        "sounds"
+      ],
+      "speaker": "Ben",
+      "transcript": "Sure. That sounds nice.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-04.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "question": "Ben dùng \"That sounds nice\" để thể hiện điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp nhất với đoạn hội thoại.",
+          "en": "Choose the answer that best matches the dialogue."
+        },
+        "question": {
+          "vi": "Ben dùng \"That sounds nice\" để thể hiện điều gì?",
+          "en": "What does Ben show by saying \"That sounds nice\"?"
+        },
+        "options": [
+          {
+            "vi": "Anh ấy không nghe rõ Emma.",
+            "en": "He cannot hear Emma clearly."
+          },
+          {
+            "vi": "Anh ấy thích lời đề nghị của Emma.",
+            "en": "He likes Emma's suggestion."
+          },
+          {
+            "vi": "Anh ấy muốn về nhà.",
+            "en": "He wants to go home."
+          },
+          {
+            "vi": "Anh ấy không thích công viên.",
+            "en": "He does not like the park."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "That sounds nice",
+      "options": [
+        "Anh ấy không nghe rõ Emma.",
+        "Anh ấy thích lời đề nghị của Emma.",
+        "Anh ấy muốn về nhà.",
+        "Anh ấy không thích công viên."
+      ],
+      "answer": "Anh ấy thích lời đề nghị của Emma.",
+      "speaker": "Ben",
+      "transcript": "Sure. That sounds nice.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-04.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "We can walk near the ",
+        ". It is quiet there."
+      ],
+      "answers": [
+        "lake"
+      ],
+      "speaker": "Ben",
+      "transcript": "We can walk near the lake. It is quiet there.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-05.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "We can walk near the lake. It is ",
+        " there."
+      ],
+      "answers": [
+        "quiet"
+      ],
+      "speaker": "Ben",
+      "transcript": "We can walk near the lake. It is quiet there.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-05.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "multipleChoice",
+      "question": "Ben đề nghị họ đi dạo ở đâu?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp nhất với đoạn hội thoại.",
+          "en": "Choose the answer that best matches the dialogue."
+        },
+        "question": {
+          "vi": "Ben đề nghị họ đi dạo ở đâu?",
+          "en": "Where does Ben suggest they walk?"
+        },
+        "options": [
+          {
+            "vi": "Gần cổng công viên.",
+            "en": "Near the park gate."
+          },
+          {
+            "vi": "Gần quán cà phê.",
+            "en": "Near the cafe."
+          },
+          {
+            "vi": "Gần hồ.",
+            "en": "Near the lake."
+          },
+          {
+            "vi": "Gần bãi đỗ xe.",
+            "en": "Near the parking area."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Gần cổng công viên.",
+        "Gần quán cà phê.",
+        "Gần hồ.",
+        "Gần bãi đỗ xe."
+      ],
+      "answer": "Gần hồ.",
+      "speaker": "Ben",
+      "transcript": "We can walk near the lake. It is quiet there.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-05.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "",
+        ". I like that part of the park."
+      ],
+      "answers": [
+        "Good idea"
+      ],
+      "speaker": "Emma",
+      "transcript": "Good idea. I like that part of the park.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-04.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Good idea. I like that ",
+        " of the park."
+      ],
+      "answers": [
+        "part"
+      ],
+      "speaker": "Emma",
+      "transcript": "Good idea. I like that part of the park.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-04.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Are you ",
+        " to go?"
+      ],
+      "answers": [
+        "ready"
+      ],
+      "speaker": "Emma",
+      "transcript": "Are you ready to go?",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Are you ready to ",
+        "?"
+      ],
+      "answers": [
+        "go"
+      ],
+      "speaker": "Emma",
+      "transcript": "Are you ready to go?",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Emma muốn biết điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp nhất với đoạn hội thoại.",
+          "en": "Choose the answer that best matches the dialogue."
+        },
+        "question": {
+          "vi": "Emma muốn biết điều gì?",
+          "en": "What does Emma want to know?"
+        },
+        "options": [
+          {
+            "vi": "Ben đã sẵn sàng bắt đầu đi chưa.",
+            "en": "Whether Ben is ready to start walking."
+          },
+          {
+            "vi": "Ben có muốn ăn gì không.",
+            "en": "Whether Ben wants something to eat."
+          },
+          {
+            "vi": "Ben có biết đường về nhà không.",
+            "en": "Whether Ben knows the way home."
+          },
+          {
+            "vi": "Ben có mang nước không.",
+            "en": "Whether Ben brought water."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Ben đã sẵn sàng bắt đầu đi chưa.",
+        "Ben có muốn ăn gì không.",
+        "Ben có biết đường về nhà không.",
+        "Ben có mang nước không."
+      ],
+      "answer": "Ben đã sẵn sàng bắt đầu đi chưa.",
+      "speaker": "Emma",
+      "transcript": "Are you ready to go?",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Yes. We can ",
+        " now."
+      ],
+      "answers": [
+        "start"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes. We can start now.",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-06.mp3"
+    },
+    {
+      "id": 24,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Hoàn thành hội thoại",
+          "en": "Complete the Dialogue"
+        },
+        "instruction": {
+          "vi": "Điền các từ hoặc cụm từ còn thiếu để hoàn thành toàn bộ hội thoại.",
+          "en": "Fill in the missing words or phrases to complete the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Ben",
+          "parts": [
+            "Hi, Emma! Nice to ",
+            {
+              "id": "1",
+              "blank": "see you"
+            },
+            " here."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Ben",
+          "parts": [
+            "The park is really nice ",
+            {
+              "id": "2",
+              "blank": "this afternoon"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Emma",
+          "parts": [
+            "Hi, Ben! Yes, it is. The ",
+            {
+              "id": "3",
+              "blank": "weather"
+            },
+            " is good too."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Emma",
+          "parts": [
+            "Are you here for ",
+            {
+              "id": "4",
+              "blank": "a walk"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Ben",
+          "parts": [
+            "Yes. I want to walk for ",
+            {
+              "id": "5",
+              "blank": "a while"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Emma",
+          "parts": [
+            "Me too. Do you want to ",
+            {
+              "id": "6",
+              "blank": "walk together"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Ben",
+          "parts": [
+            "Sure. That ",
+            {
+              "id": "7",
+              "blank": "sounds nice"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Ben",
+          "parts": [
+            "We can walk near the lake. It is ",
+            {
+              "id": "8",
+              "blank": "quiet"
+            },
+            " there."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Emma",
+          "parts": [
+            "",
+            {
+              "id": "9",
+              "blank": "Good idea"
+            },
+            ". I like that part of the park."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Emma",
+          "parts": [
+            "Are you ",
+            {
+              "id": "10",
+              "blank": "ready"
+            },
+            " to go?"
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Ben",
+          "parts": [
+            "Yes. We can ",
+            {
+              "id": "11",
+              "blank": "start"
+            },
+            " now."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Hỏi mong muốn với “Do you want to...?”",
+      "explanation": "Dùng “Do you want to + động từ...?” để hỏi ai đó có muốn làm một việc gì không.",
+      "localized": {
+        "title": {
+          "vi": "Hỏi mong muốn với “Do you want to...?”",
+          "en": "Asking with “Do you want to...?”"
+        },
+        "explanation": {
+          "vi": "Dùng “Do you want to + động từ...?” để hỏi ai đó có muốn làm một việc gì không.",
+          "en": "Use “Do you want to + verb...?” to ask whether someone wants to do something."
+        }
+      },
+      "example": "Do you want to walk together?"
+    },
+    {
+      "title": "Nói về khả năng hoặc gợi ý với “can”",
+      "explanation": "Dùng “can” để nói một việc có thể làm hoặc đưa ra một gợi ý đơn giản.",
+      "localized": {
+        "title": {
+          "vi": "Nói về khả năng hoặc gợi ý với “can”",
+          "en": "Using “can” for Possibility or Suggestions"
+        },
+        "explanation": {
+          "vi": "Dùng “can” để nói một việc có thể làm hoặc đưa ra một gợi ý đơn giản.",
+          "en": "Use “can” to say something is possible or to make a simple suggestion."
+        }
+      },
+      "example": "We can walk near the lake."
+    }
+  ]
+}
