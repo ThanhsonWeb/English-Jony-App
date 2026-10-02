@@ -5,6 +5,11 @@ import path from "node:path";
 
 import { courseConfigs } from "./config/courses/index.mjs";
 import { buildDialoguePrompt } from "./prompts/dialogue-generator.mjs";
+import {
+	getDialogueDataJsonPath,
+	getGeneratedCourseDirectory,
+	getGeneratedDialogueDraftPath,
+} from "./lib/dialogue-content-paths.mjs";
 
 const rl = readline.createInterface({
 	input,
@@ -38,7 +43,7 @@ async function chooseFromList(items, getLabel, question) {
 	return items[selectedIndex];
 }
 
-async function loadPreviousDialogue(courseId, dialogues, dialogueId) {
+async function loadPreviousDialogue(courseId, contentType, dialogues, dialogueId) {
 	const currentIndex = dialogues.findIndex(
 		(dialogue) => dialogue.dialogueId === dialogueId,
 	);
@@ -46,23 +51,8 @@ async function loadPreviousDialogue(courseId, dialogues, dialogueId) {
 
 	const previousDialogueId = dialogues[currentIndex - 1].dialogueId;
 	const candidates = [
-		path.resolve(
-			"app",
-			"[locale]",
-			"(main)",
-			"dialogue",
-			"_data",
-			"dialogues",
-			courseId,
-			`${previousDialogueId}.json`,
-		),
-		path.resolve(
-			"generated",
-			"dialogues",
-			courseId,
-			previousDialogueId,
-			"draft.json",
-		),
+		getDialogueDataJsonPath(process.cwd(), contentType, courseId, previousDialogueId),
+		getGeneratedDialogueDraftPath(process.cwd(), contentType, courseId, previousDialogueId),
 	];
 
 	for (const candidate of candidates) {
@@ -124,12 +114,13 @@ try {
 		"Chọn hội thoại: ",
 	);
 
-	const { courseId, characters, level: courseLevel } = course;
+	const { courseId, characters, level: courseLevel, contentType } = course;
 
 	const { dialogueId, title, situation, thumbnail, scene, scenes } =
 		selectedDialogue;
 	const previousDialogueContext = await loadPreviousDialogue(
 		courseId,
+		contentType,
 		course.dialogues,
 		dialogueId,
 	);
@@ -146,6 +137,7 @@ try {
 
 	const lessonConfig = {
 		courseId,
+		contentType: contentType || "dialogue",
 		dialogueId,
 		title,
 		courseTitle: course.title,
@@ -166,10 +158,7 @@ try {
 	const prompt = buildDialoguePrompt(lessonConfig);
 
 	const outputDirectory = path.join(
-		process.cwd(),
-		"generated",
-		"dialogues",
-		courseId,
+		getGeneratedCourseDirectory(process.cwd(), contentType, courseId),
 		dialogueId,
 	);
 

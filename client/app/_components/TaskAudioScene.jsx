@@ -4,23 +4,36 @@ import Image from "next/image";
 import { Captions, ChevronDown, Languages, Pause, Play } from "lucide-react";
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import useDialoguePlaybackRate from "@/app/_hooks/useDialoguePlaybackRate";
+import { useAuth } from "@/app/_contexts/AuthContext";
+import {
+	PLAYBACK_RATES,
+	saveDialoguePlaybackRate,
+} from "@/app/_lib/dialogue/playbackRate.mjs";
 
 const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 	const t = useTranslations("DialogueFeature");
+	const { user } = useAuth();
+	const userId = user?._id || user?.id || null;
 	const audioRef = useRef(null);
 
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [showCaptions, setShowCaptions] = useState(false);
 	const [isBlinking, setIsBlinking] = useState(false);
 	const [showCharacter, setShowCharacter] = useState(false);
-	const [playbackRate, setPlaybackRate] = useState(1);
+	const playbackRate = useDialoguePlaybackRate();
 	const [showSpeedMenu, setShowSpeedMenu] = useState(false);
 	const [showTranslation, setShowTranslation] = useState(false);
 	const [isAudioFinished, setIsAudioFinished] = useState(false);
 	const [hasAudioStarted, setHasAudioStarted] = useState(false);
 	const [showFinishedCaptionBackground, setShowFinishedCaptionBackground] =
 		useState(false);
-	const playbackRateRef = useRef(1);
+	const playbackRateRef = useRef(playbackRate);
+
+	useEffect(() => {
+		playbackRateRef.current = playbackRate;
+		if (audioRef.current) audioRef.current.playbackRate = playbackRate;
+	}, [playbackRate]);
 
 	const characterImage = task.character?.image;
 	const hasScene = Boolean(task.scene);
@@ -130,7 +143,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 	useImperativeHandle(ref, () => ({ replay: replayAudio }));
 
 	function handlePlaybackRateChange(newRate) {
-		setPlaybackRate(newRate);
+		saveDialoguePlaybackRate(newRate, window.localStorage, userId);
 		playbackRateRef.current = newRate;
 		setShowSpeedMenu(false);
 
@@ -243,6 +256,9 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 						ref={audioRef}
 						src={task.audioUrl}
 						preload="metadata"
+						onLoadedMetadata={(event) => {
+							event.currentTarget.playbackRate = playbackRateRef.current;
+						}}
 						onPlay={() => {
 							setIsPlaying(true);
 							setHasAudioStarted(true);
@@ -308,7 +324,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 
 							{showSpeedMenu && (
 								<div className="absolute bottom-full left-1/2 z-30 mb-2 w-20 -translate-x-1/2 overflow-hidden rounded-lg border border-slate-700 bg-slate-900 py-1 shadow-xl">
-									{[0.5, 0.75, 1, 1.25, 1.5].map((rate) => (
+									{PLAYBACK_RATES.map((rate) => (
 										<button
 											key={rate}
 											type="button"

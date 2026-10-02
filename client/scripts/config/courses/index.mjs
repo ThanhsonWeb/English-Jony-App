@@ -5,6 +5,7 @@ import atAHotel from "./at-a-hotel.mjs";
 import groceryStore from "./grocery-store.mjs";
 import restaurant from "./restaurant.mjs";
 import walkInThePark from "./walk-in-the-park.mjs";
+import tenMinutesADay from "./ten-minutes-a-day.mjs";
 export const courseConfigs = [
 	weekendCamping,
 	askingForDirections,
@@ -13,4 +14,5 @@ export const courseConfigs = [
 	groceryStore,
 	restaurant,
 	walkInThePark,
+	tenMinutesADay,
 ];

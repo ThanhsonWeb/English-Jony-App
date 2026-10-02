@@ -430,6 +430,68 @@
 			"save": "Save changes"
 		}
 	},
+	"WordlistReview": {
+		"common": {
+			"back": "Back to wordlist",
+			"practice": "Practice",
+			"completionTitle": "Review complete!",
+			"restart": "Study again",
+			"continue": "Continue",
+			"check": "Check",
+			"correct": "Correct!",
+			"incorrect": "Not quite. Correct answer: {answer}",
+			"correctStat": "Correct",
+			"wrongStat": "Incorrect",
+			"accuracy": "Accuracy",
+			"openError": "Unable to open this review",
+			"loadError": "Unable to load your words. Please try again.",
+			"signInError": "Please sign in to review your words.",
+			"emptyTitle": "You’re all caught up!",
+			"emptyMessage": "There are no words in this list to review right now.",
+			"mistakesTitle": "Review missed words",
+			"mistakesDescription": "Try the words you missed again",
+			"savingTitle": "Saving progress",
+			"savingMessage": "{count, plural, one {# word is} other {# words are}} still being saved. You can return to your wordlist.",
+			"savingNotice": "Saving progress{count, plural, =1 {} other { ({count})}}…",
+			"saveFailed": "Progress could not be confirmed for {count} words. Check your connection and review them again later."
+		},
+		"flashcard": {
+			"title": "Flashcards",
+			"description": "Recall the meaning before flipping the card",
+			"reveal": "Tap to flip the card",
+			"flipBack": "Flip back to the front",
+			"recallQuestion": "How well did you remember this word?",
+			"chooseLevel": "Choose a level",
+			"forgot": "Forgot",
+			"hard": "Still unsure",
+			"remembered": "Remembered",
+			"easy": "Very sure",
+			"completion": "{count, plural, one {You reviewed # word in Flashcards.} other {You reviewed # words in Flashcards.}}",
+			"note": "🌱 Difficult words will return sooner, while words you remember well will be reviewed later.",
+			"loadError": "Unable to load vocabulary. Please try again.",
+			"emptyMessage": "There are no words due for review. Come back when the next review is ready."
+		},
+		"quiz": {
+			"title": "Quiz",
+			"description": "Choose the correct Vietnamese meaning",
+			"englishWord": "English word",
+			"completionTitle": "Complete!",
+			"completion": "{count, plural, one {You completed # Quiz question.} other {You completed # Quiz questions.}}",
+			"notEnoughTitle": "Not enough words to create questions",
+			"notEnoughMessage": "You need at least 4 different Vietnamese meanings in your wordlist to use Quiz mode.",
+			"choiceLoadError": "Unable to load words for the answer choices.",
+			"continueHint": "Press Enter to continue",
+			"chooseHint": "Press 1–4 to choose · Enter to check"
+		},
+		"writing": {
+			"title": "Writing",
+			"description": "Type the English word that matches the meaning below",
+			"vietnameseMeaning": "Vietnamese meaning",
+			"answerLabel": "Enter the matching English word",
+			"placeholder": "Enter the English word...",
+			"completion": "{count, plural, one {You completed # word in Writing mode.} other {You completed # words in Writing mode.}}"
+		}
+	},
 	"MiniDictionary": {
 		"title": "Quick dictionary",
 		"toggle": "Open quick dictionary",

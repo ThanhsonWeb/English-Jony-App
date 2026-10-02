@@ -54,9 +54,3 @@ export function createReviewSaveController(sendReview) {
 export function isReviewCompletionReady(finished, pending) {
 	return finished && pending === 0;
 }
-
-export function getReviewSaveNoticeText({ pending, failed }) {
-	if (failed > 0) return `Không xác nhận được tiến độ của ${failed} từ. Vui lòng kiểm tra kết nối và ôn lại sau.`;
-	if (pending > 0) return `Đang lưu tiến độ${pending > 1 ? ` (${pending})` : ""}…`;
-	return "";
-}

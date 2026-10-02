@@ -2,7 +2,6 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import {
 	createReviewSaveController,
-	getReviewSaveNoticeText,
 	isReviewCompletionReady,
 } from "../app/_lib/reviewSaveController.mjs";
 
@@ -69,7 +68,6 @@ for (const mode of ["flashcard", "quiz", "writing"]) {
 		first.reject(new Error("offline"));
 		await settle();
 		assert.deepEqual(controller.getSnapshot(), { pending: 0, failed: 1 });
-		assert.match(getReviewSaveNoticeText(controller.getSnapshot()), /Không xác nhận được tiến độ của 1 từ/);
 		if (mode === "flashcard") {
 			assert.equal(controller.submitAnswer(1, "word-2", answer), true);
 		} else {

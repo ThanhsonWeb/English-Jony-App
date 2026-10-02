@@ -38,23 +38,24 @@ test("localized course and dialogue fields respond to a locale switch", () => {
 });
 
 test("every generated Multiple Choice question has an English version", () => {
-	const base = join(root, "app/[locale]/(main)/dialogue/_data/dialogues");
-	for (const course of readdirSync(base)) {
-		const questions = englishMcQuestions[course];
-		if (!questions) continue;
-		for (const file of readdirSync(join(base, course)).filter((name) => name.endsWith(".json"))) {
-			const dialogue = readJson(`app/[locale]/(main)/dialogue/_data/dialogues/${course}/${file}`);
-			const mcTasks = (dialogue.tasks || []).filter((task) => task.type === "multipleChoice");
-			assert.equal(questions[file.slice(0, -5)]?.length, mcTasks.length, `${course}/${file}`);
-			assert.ok(questions[file.slice(0, -5)].every((question) => !/[À-ỹ]/u.test(question)));
-			for (const task of mcTasks) {
-				const options = englishMcOptions[course]?.[file.slice(0, -5)]?.[task.id];
-				if (options) assert.equal(options.length, task.options.length, `${course}/${file} task ${task.id}`);
+	for (const storageDirectory of ["dialogues", "stories"]) {
+		const base = join(root, `app/[locale]/(main)/dialogue/_data/${storageDirectory}`);
+		for (const course of readdirSync(base)) {
+			const questions = englishMcQuestions[course];
+			if (!questions) continue;
+			for (const file of readdirSync(join(base, course)).filter((name) => name.endsWith(".json"))) {
+				const dialogue = readJson(`app/[locale]/(main)/dialogue/_data/${storageDirectory}/${course}/${file}`);
+				const mcTasks = (dialogue.tasks || []).filter((task) => task.type === "multipleChoice");
+				assert.equal(questions[file.slice(0, -5)]?.length, mcTasks.length, `${course}/${file}`);
+				assert.ok(questions[file.slice(0, -5)].every((question) => !/[àáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]/iu.test(question)));
+				for (const task of mcTasks) {
+					const options = englishMcOptions[course]?.[file.slice(0, -5)]?.[task.id];
+					if (options) assert.equal(options.length, task.options.length, `${course}/${file} task ${task.id}`);
+				}
 			}
 		}
 	}
 });
-
 test("legacy office and camping Multiple Choice questions have English coverage", () => {
 	const office = readFileSync(join(root, "app/[locale]/(main)/dialogue/_data/courses/office-introduction.js"), "utf8");
 	const officeIds = ["meeting-tom", "meet-coworkers", "talk-about-work", "lunch-break"];

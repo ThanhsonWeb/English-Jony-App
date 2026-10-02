@@ -1,0 +1,1111 @@
+{
+  "metadata": {
+    "courseId": "ten-minutes-a-day",
+    "dialogueId": "the-old-book",
+    "title": "Cuốn sách cũ",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Mười phút mỗi ngày",
+        "en": "Ten Minutes a Day"
+      },
+      "courseDescription": {
+        "vi": "Mr. Daniel tặng Leo và Ryan cùng một cuốn sách tiếng Anh và đề nghị họ đọc mười phút mỗi ngày.",
+        "en": "Mr. Daniel gives Leo and Ryan the same English book and asks them to read for ten minutes every day."
+      },
+      "title": {
+        "vi": "Cuốn sách cũ",
+        "en": "The Old Book"
+      },
+      "description": {
+        "vi": "Mr. Daniel gives Leo and Ryan the same English book and asks them to read for ten minutes every day.",
+        "en": "Mr. Daniel gives Leo and Ryan the same English book and asks them to read for ten minutes every day."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Mr. Daniel gives Leo and Ryan the same English book and asks them to read for ten minutes every day.",
+    "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+    "thumbnail": "/dialogue/ten-minutes-a-day/thumbnails/the-old-book.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Mr. Daniel",
+      "text": "I have a book for each of you.",
+      "translation": "Thầy có một cuốn sách cho mỗi em.",
+      "practicePriority": "important",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Ryan",
+      "text": "An English book? It looks old.",
+      "translation": "Một cuốn sách tiếng Anh à? Nó trông cũ quá.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Leo",
+      "text": "What should we do with it?",
+      "translation": "Chúng em nên làm gì với nó ạ?",
+      "practicePriority": "important",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/leo-01.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Mr. Daniel",
+      "text": "Read it for ten minutes every day.",
+      "translation": "Hãy đọc nó trong mười phút mỗi ngày.",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Ryan",
+      "text": "Only ten minutes?",
+      "translation": "Chỉ mười phút thôi ạ?",
+      "practicePriority": "simple",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Mr. Daniel",
+      "text": "Yes. Ten minutes is enough to start.",
+      "translation": "Đúng vậy. Mười phút là đủ để bắt đầu.",
+      "practicePriority": "important",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Leo",
+      "text": "I can do that after dinner.",
+      "translation": "Em có thể làm vậy sau bữa tối.",
+      "practicePriority": "important",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/leo-02.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Ryan",
+      "text": "I get bored when I read.",
+      "translation": "Em thấy chán khi đọc sách.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-03.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Mr. Daniel",
+      "text": "Do not worry about reading a lot. Just read a little every day.",
+      "translation": "Đừng lo về việc phải đọc nhiều. Chỉ cần đọc một chút mỗi ngày.",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Ryan",
+      "text": "What if I miss a day?",
+      "translation": "Nếu em bỏ lỡ một ngày thì sao ạ?",
+      "practicePriority": "important",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-04.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Mr. Daniel",
+      "text": "Start again the next day. The important thing is to continue.",
+      "translation": "Hãy bắt đầu lại vào ngày hôm sau. Điều quan trọng là tiếp tục.",
+      "practicePriority": "veryImportant",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-05.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "each",
+      "pronunciation": "/iːtʃ/",
+      "meaning": "mỗi",
+      "example": "Each student has a book."
+    },
+    {
+      "word": "every day",
+      "pronunciation": "/ˈev.ri deɪ/",
+      "meaning": "mỗi ngày",
+      "example": "I study English every day."
+    },
+    {
+      "word": "enough",
+      "pronunciation": "/ɪˈnʌf/",
+      "meaning": "đủ",
+      "example": "Ten minutes is enough."
+    },
+    {
+      "word": "after dinner",
+      "pronunciation": "/ˈɑːf.tər ˈdɪn.ər/",
+      "meaning": "sau bữa tối",
+      "example": "I read after dinner."
+    },
+    {
+      "word": "get bored",
+      "pronunciation": "/ɡet bɔːrd/",
+      "meaning": "cảm thấy chán",
+      "example": "I get bored on long trips."
+    },
+    {
+      "word": "a little",
+      "pronunciation": "/ə ˈlɪt.əl/",
+      "meaning": "một chút",
+      "example": "I read a little every night."
+    },
+    {
+      "word": "start again",
+      "pronunciation": "/stɑːrt əˈɡen/",
+      "meaning": "bắt đầu lại",
+      "example": "You can start again tomorrow."
+    },
+    {
+      "word": "continue",
+      "pronunciation": "/kənˈtɪn.juː/",
+      "meaning": "tiếp tục",
+      "example": "Please continue your work."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I have a ",
+        " for each of you."
+      ],
+      "answers": [
+        "book"
+      ],
+      "speaker": "Mr. Daniel",
+      "transcript": "I have a book for each of you.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I have a book for ",
+        " of you."
+      ],
+      "answers": [
+        "each"
+      ],
+      "speaker": "Mr. Daniel",
+      "transcript": "I have a book for each of you.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 1,
+      "type": "multipleChoice",
+      "question": "Mr. Daniel đang đưa cho Leo và Ryan thứ gì?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Nghe và chọn đáp án đúng.",
+          "en": "Listen and choose the correct answer."
+        },
+        "question": {
+          "vi": "Mr. Daniel đang đưa cho Leo và Ryan thứ gì?",
+          "en": "What is Mr. Daniel giving Leo and Ryan?"
+        },
+        "options": [
+          {
+            "vi": "Một bài kiểm tra.",
+            "en": "A test."
+          },
+          {
+            "vi": "Một chiếc điện thoại.",
+            "en": "A phone."
+          },
+          {
+            "vi": "Một tờ giấy.",
+            "en": "A piece of paper."
+          },
+          {
+            "vi": "Một cuốn sách cho mỗi người.",
+            "en": "A book for each of them."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Một bài kiểm tra.",
+        "Một chiếc điện thoại.",
+        "Một tờ giấy.",
+        "Một cuốn sách cho mỗi người."
+      ],
+      "answer": "Một cuốn sách cho mỗi người.",
+      "speaker": "Mr. Daniel",
+      "transcript": "I have a book for each of you.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "An English book? It looks ",
+        "."
+      ],
+      "answers": [
+        "old"
+      ],
+      "speaker": "Ryan",
+      "transcript": "An English book? It looks old.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "What ",
+        " we do with it?"
+      ],
+      "answers": [
+        "should"
+      ],
+      "speaker": "Leo",
+      "transcript": "What should we do with it?",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/leo-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "What should we do ",
+        "?"
+      ],
+      "answers": [
+        "with it"
+      ],
+      "speaker": "Leo",
+      "transcript": "What should we do with it?",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/leo-01.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Read it for ",
+        " every day."
+      ],
+      "answers": [
+        "ten minutes"
+      ],
+      "speaker": "Mr. Daniel",
+      "transcript": "Read it for ten minutes every day.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Read it for ten minutes ",
+        "."
+      ],
+      "answers": [
+        "every day"
+      ],
+      "speaker": "Mr. Daniel",
+      "transcript": "Read it for ten minutes every day.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "multipleChoice",
+      "question": "Cụm “for ten minutes” cho biết điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu cách dùng",
+          "en": "Understand the Pattern"
+        },
+        "instruction": {
+          "vi": "Chọn ý nghĩa đúng của cụm từ trong câu.",
+          "en": "Choose what the phrase shows in this sentence."
+        },
+        "question": {
+          "vi": "Cụm “for ten minutes” cho biết điều gì?",
+          "en": "What does “for ten minutes” show?"
+        },
+        "options": [
+          {
+            "vi": "Khoảng thời gian đọc.",
+            "en": "How long they should read."
+          },
+          {
+            "vi": "Nơi họ nên đọc.",
+            "en": "Where they should read."
+          },
+          {
+            "vi": "Cuốn sách họ nên chọn.",
+            "en": "Which book they should choose."
+          },
+          {
+            "vi": "Người họ nên đọc cùng.",
+            "en": "Who they should read with."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "for ten minutes",
+      "options": [
+        "Khoảng thời gian đọc.",
+        "Nơi họ nên đọc.",
+        "Cuốn sách họ nên chọn.",
+        "Người họ nên đọc cùng."
+      ],
+      "answer": "Khoảng thời gian đọc.",
+      "speaker": "Mr. Daniel",
+      "transcript": "Read it for ten minutes every day.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Only ",
+        "?"
+      ],
+      "answers": [
+        "ten minutes"
+      ],
+      "speaker": "Ryan",
+      "transcript": "Only ten minutes?",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-02.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes. Ten minutes is ",
+        " to start."
+      ],
+      "answers": [
+        "enough"
+      ],
+      "speaker": "Mr. Daniel",
+      "transcript": "Yes. Ten minutes is enough to start.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes. Ten minutes is enough ",
+        "."
+      ],
+      "answers": [
+        "to start"
+      ],
+      "speaker": "Mr. Daniel",
+      "transcript": "Yes. Ten minutes is enough to start.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Mr. Daniel nghĩ gì về việc đọc mười phút?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Nghe và chọn đáp án đúng.",
+          "en": "Listen and choose the correct answer."
+        },
+        "question": {
+          "vi": "Mr. Daniel nghĩ gì về việc đọc mười phút?",
+          "en": "What does Mr. Daniel think about reading for ten minutes?"
+        },
+        "options": [
+          {
+            "vi": "Quá lâu cho người mới.",
+            "en": "It is too long for a beginner."
+          },
+          {
+            "vi": "Đủ để bắt đầu.",
+            "en": "It is enough to start."
+          },
+          {
+            "vi": "Chỉ nên làm vào cuối tuần.",
+            "en": "It should only be done on weekends."
+          },
+          {
+            "vi": "Không có ích.",
+            "en": "It is not useful."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Quá lâu cho người mới.",
+        "Đủ để bắt đầu.",
+        "Chỉ nên làm vào cuối tuần.",
+        "Không có ích."
+      ],
+      "answer": "Đủ để bắt đầu.",
+      "speaker": "Mr. Daniel",
+      "transcript": "Yes. Ten minutes is enough to start.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I ",
+        " do that after dinner."
+      ],
+      "answers": [
+        "can"
+      ],
+      "speaker": "Leo",
+      "transcript": "I can do that after dinner.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/leo-02.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I can do that ",
+        "."
+      ],
+      "answers": [
+        "after dinner"
+      ],
+      "speaker": "Leo",
+      "transcript": "I can do that after dinner.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/leo-02.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I ",
+        " when I read."
+      ],
+      "answers": [
+        "get bored"
+      ],
+      "speaker": "Ryan",
+      "transcript": "I get bored when I read.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-03.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Do not ",
+        " about reading a lot. Just read a little every day."
+      ],
+      "answers": [
+        "worry"
+      ],
+      "speaker": "Mr. Daniel",
+      "transcript": "Do not worry about reading a lot. Just read a little every day.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Do not worry about reading a lot. Just read ",
+        " every day."
+      ],
+      "answers": [
+        "a little"
+      ],
+      "speaker": "Mr. Daniel",
+      "transcript": "Do not worry about reading a lot. Just read a little every day.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-04.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Mr. Daniel dùng “Do not worry” để làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu cách dùng",
+          "en": "Understand the Expression"
+        },
+        "instruction": {
+          "vi": "Chọn cách dùng phù hợp trong tình huống.",
+          "en": "Choose how the expression is used in this situation."
+        },
+        "question": {
+          "vi": "Mr. Daniel dùng “Do not worry” để làm gì?",
+          "en": "Why does Mr. Daniel say “Do not worry”?"
+        },
+        "options": [
+          {
+            "vi": "Yêu cầu Ryan đọc nhanh hơn.",
+            "en": "To ask Ryan to read faster."
+          },
+          {
+            "vi": "Nói Ryan đã làm sai.",
+            "en": "To say Ryan did something wrong."
+          },
+          {
+            "vi": "Trấn an Ryan.",
+            "en": "To reassure Ryan."
+          },
+          {
+            "vi": "Kết thúc cuộc trò chuyện.",
+            "en": "To end the conversation."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "Do not worry",
+      "options": [
+        "Yêu cầu Ryan đọc nhanh hơn.",
+        "Nói Ryan đã làm sai.",
+        "Trấn an Ryan.",
+        "Kết thúc cuộc trò chuyện."
+      ],
+      "answer": "Trấn an Ryan.",
+      "speaker": "Mr. Daniel",
+      "transcript": "Do not worry about reading a lot. Just read a little every day.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-04.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "",
+        " I miss a day?"
+      ],
+      "answers": [
+        "What if"
+      ],
+      "speaker": "Ryan",
+      "transcript": "What if I miss a day?",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-04.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "What if I ",
+        " a day?"
+      ],
+      "answers": [
+        "miss"
+      ],
+      "speaker": "Ryan",
+      "transcript": "What if I miss a day?",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-04.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "",
+        " the next day. The important thing is to continue."
+      ],
+      "answers": [
+        "Start again"
+      ],
+      "speaker": "Mr. Daniel",
+      "transcript": "Start again the next day. The important thing is to continue.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Start again the next day. The important thing is to ",
+        "."
+      ],
+      "answers": [
+        "continue"
+      ],
+      "speaker": "Mr. Daniel",
+      "transcript": "Start again the next day. The important thing is to continue.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-05.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 11,
+      "type": "multipleChoice",
+      "question": "Nếu bỏ lỡ một ngày, Mr. Daniel khuyên Ryan làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Nghe và chọn đáp án đúng.",
+          "en": "Listen and choose the correct answer."
+        },
+        "question": {
+          "vi": "Nếu bỏ lỡ một ngày, Mr. Daniel khuyên Ryan làm gì?",
+          "en": "What does Mr. Daniel tell Ryan to do if he misses a day?"
+        },
+        "options": [
+          {
+            "vi": "Bắt đầu lại vào ngày hôm sau.",
+            "en": "Start again the next day."
+          },
+          {
+            "vi": "Đọc cả ngày để bù lại.",
+            "en": "Read all day to make up for it."
+          },
+          {
+            "vi": "Đổi sang một cuốn sách khác.",
+            "en": "Change to a different book."
+          },
+          {
+            "vi": "Ngừng đọc hoàn toàn.",
+            "en": "Stop reading completely."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Bắt đầu lại vào ngày hôm sau.",
+        "Đọc cả ngày để bù lại.",
+        "Đổi sang một cuốn sách khác.",
+        "Ngừng đọc hoàn toàn."
+      ],
+      "answer": "Bắt đầu lại vào ngày hôm sau.",
+      "speaker": "Mr. Daniel",
+      "transcript": "Start again the next day. The important thing is to continue.",
+      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-05.mp3"
+    },
+    {
+      "id": 25,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Hoàn thành hội thoại",
+          "en": "Complete the Dialogue"
+        },
+        "instruction": {
+          "vi": "Điền các từ còn thiếu để hoàn thành toàn bộ hội thoại.",
+          "en": "Fill in the missing words to complete the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Mr. Daniel",
+          "parts": [
+            "I have a ",
+            {
+              "id": "1",
+              "blank": "book"
+            },
+            " for each of you."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Ryan",
+          "parts": [
+            "An English book? It looks ",
+            {
+              "id": "2",
+              "blank": "old"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Leo",
+          "parts": [
+            "What ",
+            {
+              "id": "3",
+              "blank": "should"
+            },
+            " we do with it?"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Mr. Daniel",
+          "parts": [
+            "Read it for ",
+            {
+              "id": "4",
+              "blank": "ten minutes"
+            },
+            " every day."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Ryan",
+          "parts": [
+            "",
+            {
+              "id": "5",
+              "blank": "Only"
+            },
+            " ten minutes?"
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Mr. Daniel",
+          "parts": [
+            "Yes. Ten minutes is ",
+            {
+              "id": "6",
+              "blank": "enough"
+            },
+            " to start."
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Leo",
+          "parts": [
+            "I can do that ",
+            {
+              "id": "7",
+              "blank": "after dinner"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Ryan",
+          "parts": [
+            "I ",
+            {
+              "id": "8",
+              "blank": "get bored"
+            },
+            " when I read."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Mr. Daniel",
+          "parts": [
+            "Do not worry about reading a lot. Just read ",
+            {
+              "id": "9",
+              "blank": "a little"
+            },
+            " every day."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Ryan",
+          "parts": [
+            "What if I ",
+            {
+              "id": "10",
+              "blank": "miss"
+            },
+            " a day?"
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Mr. Daniel",
+          "parts": [
+            "Start again the next day. The important thing is to ",
+            {
+              "id": "11",
+              "blank": "continue"
+            },
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "for + khoảng thời gian",
+      "explanation": "Dùng “for” trước một khoảng thời gian để nói một việc kéo dài bao lâu.",
+      "localized": {
+        "title": {
+          "vi": "for + khoảng thời gian",
+          "en": "for + a period of time"
+        },
+        "explanation": {
+          "vi": "Dùng “for” trước một khoảng thời gian để nói một việc kéo dài bao lâu.",
+          "en": "Use “for” before a period of time to say how long something lasts."
+        }
+      },
+      "example": "Read for ten minutes."
+    },
+    {
+      "title": "What if...?",
+      "explanation": "Dùng “What if...?” để hỏi điều gì sẽ xảy ra trong một tình huống có thể xảy ra.",
+      "localized": {
+        "title": {
+          "vi": "What if...?",
+          "en": "What if...?"
+        },
+        "explanation": {
+          "vi": "Dùng “What if...?” để hỏi điều gì sẽ xảy ra trong một tình huống có thể xảy ra.",
+          "en": "Use “What if...?” to ask about a possible situation."
+        }
+      },
+      "example": "What if I miss a day?"
+    }
+  ]
+}

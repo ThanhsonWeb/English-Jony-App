@@ -430,6 +430,68 @@
 			"save": "Lưu thay đổi"
 		}
 	},
+	"WordlistReview": {
+		"common": {
+			"back": "Quay lại danh sách từ",
+			"practice": "Luyện tập",
+			"completionTitle": "Hoàn thành buổi ôn!",
+			"restart": "Học lại",
+			"continue": "Tiếp tục",
+			"check": "Kiểm tra",
+			"correct": "Chính xác!",
+			"incorrect": "Chưa đúng. Đáp án đúng: {answer}",
+			"correctStat": "Đúng",
+			"wrongStat": "Sai",
+			"accuracy": "Chính xác",
+			"openError": "Không thể mở bài ôn",
+			"loadError": "Không thể tải danh sách từ. Vui lòng thử lại.",
+			"signInError": "Vui lòng đăng nhập để ôn tập.",
+			"emptyTitle": "Bạn đã ôn hết rồi!",
+			"emptyMessage": "Hiện tại không có từ nào trong danh sách này cần ôn.",
+			"mistakesTitle": "Ôn từ đã sai",
+			"mistakesDescription": "Thử lại những từ bạn đã bỏ lỡ",
+			"savingTitle": "Đang lưu tiến độ",
+			"savingMessage": "Còn {count} từ đang được lưu. Bạn có thể quay lại danh sách từ.",
+			"savingNotice": "Đang lưu tiến độ{count, plural, =1 {} other { ({count})}}…",
+			"saveFailed": "Không xác nhận được tiến độ của {count} từ. Vui lòng kiểm tra kết nối và ôn lại sau."
+		},
+		"flashcard": {
+			"title": "Flashcard",
+			"description": "Nhớ lại nghĩa trước khi lật thẻ",
+			"reveal": "Nhấn để lật thẻ",
+			"flipBack": "Lật lại mặt trước",
+			"recallQuestion": "Bạn nhớ từ này thế nào?",
+			"chooseLevel": "Chọn mức độ",
+			"forgot": "Quên rồi",
+			"hard": "Còn mơ hồ",
+			"remembered": "Nhớ được",
+			"easy": "Rất chắc",
+			"completion": "Bạn vừa ôn xong {count} từ trong chế độ Flashcard.",
+			"note": "🌱 Từ khó sẽ quay lại sớm hơn, còn từ bạn nhớ tốt sẽ được giãn thời gian ôn.",
+			"loadError": "Không thể tải từ vựng. Vui lòng thử lại.",
+			"emptyMessage": "Hiện tại không còn từ nào cần ôn. Hãy quay lại khi đến lượt ôn tiếp theo nhé."
+		},
+		"quiz": {
+			"title": "Trắc nghiệm",
+			"description": "Chọn nghĩa tiếng Việt đúng của từ",
+			"englishWord": "Từ tiếng Anh",
+			"completionTitle": "Hoàn thành!",
+			"completion": "Bạn đã hoàn thành {count} câu hỏi Trắc nghiệm.",
+			"notEnoughTitle": "Chưa đủ từ để tạo câu hỏi",
+			"notEnoughMessage": "Bạn cần ít nhất 4 nghĩa tiếng Việt khác nhau trong sổ tay để dùng chế độ Trắc nghiệm.",
+			"choiceLoadError": "Không thể tải từ để tạo đáp án.",
+			"continueHint": "Enter để tiếp tục",
+			"chooseHint": "Phím 1–4 để chọn · Enter để kiểm tra"
+		},
+		"writing": {
+			"title": "Viết từ",
+			"description": "Gõ từ tiếng Anh phù hợp với nghĩa bên dưới",
+			"vietnameseMeaning": "Nghĩa tiếng Việt",
+			"answerLabel": "Nhập từ tiếng Anh tương ứng",
+			"placeholder": "Nhập từ tiếng Anh...",
+			"completion": "Bạn đã hoàn thành {count} từ trong chế độ Viết từ."
+		}
+	},
 	"MiniDictionary": {
 		"title": "Từ điển nhanh",
 		"toggle": "Mở từ điển nhanh",

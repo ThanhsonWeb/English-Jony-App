@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { fetchVocabulary, selectReviewWords } from "@/app/_lib/vocabulary.mjs";
 import { isReviewCompletionReady } from "@/app/_lib/reviewSaveController.mjs";
 import { createMistakeReviewSession } from "@/app/_lib/mistakeReviewSession.mjs";
+import { createReviewQuestionState, reviewQuestionReducer } from "@/app/_lib/reviewQuestionState.mjs";
 import { submitQuizletReviewAnswer } from "@/app/_lib/quizletReviewAction.mjs";
 import { useBackgroundReviewSave } from "@/app/_lib/useBackgroundReviewSave.mjs";
 import {
@@ -76,6 +78,7 @@ function buildQuestions(reviewWords, vocabularyPool) {
 }
 
 export default function QuizReviewPage() {
+	const t = useTranslations("WordlistReview");
 	const { topicId } = useParams();
 	const searchParams = useSearchParams();
 	const dueOnly = searchParams.get("reviewMode") === "due";
@@ -85,9 +88,10 @@ export default function QuizReviewPage() {
 	const formRef = useRef(null);
 	const sessionRef = useRef(null);
 	const [questions, setQuestions] = useState([]);
-	const [sessionState, setSessionState] = useState(null);
-	const [selectedChoice, setSelectedChoice] = useState("");
-	const [lastFeedback, setLastFeedback] = useState(null);
+	const [questionState, dispatchQuestionState] = useReducer(reviewQuestionReducer, null, createReviewQuestionState);
+	const sessionState = questionState.sessionState;
+	const selectedChoice = questionState.selectedAnswer;
+	const lastFeedback = questionState.feedback;
 	const [results, setResults] = useState({ correct: 0, wrong: 0 });
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState("");
@@ -119,7 +123,7 @@ export default function QuizReviewPage() {
 					});
 
 					if (!allWordsResponse.ok) {
-						throw new Error("Không thể tải từ để tạo đáp án.");
+						throw new Error("choiceLoadError");
 					}
 
 					const allWordsData = await allWordsResponse.json();
@@ -138,12 +142,12 @@ export default function QuizReviewPage() {
 				} else {
 					const nextQuestions = buildQuestions(reviewWords, vocabularyPool);
 					sessionRef.current = createMistakeReviewSession(nextQuestions.length);
-					setSessionState(sessionRef.current.getSnapshot());
+					dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
 					setQuestions(nextQuestions);
 				}
 			} catch (fetchError) {
 				if (!cancelled) {
-					setError(fetchError.message === "unauthorized" ? "Vui lòng đăng nhập để ôn tập." : "Không thể tải danh sách từ. Vui lòng thử lại.");
+					setError(fetchError.message === "unauthorized" ? "signInError" : fetchError.message === "choiceLoadError" ? "choiceLoadError" : "loadError");
 				}
 			} finally {
 				if (!cancelled) setLoading(false);
@@ -171,8 +175,6 @@ export default function QuizReviewPage() {
 			practice: practiceMode, correct: isCorrect,
 		});
 		if (!step.accepted) return;
-		setSessionState(step.state);
-
 		if (step.firstAttempt) {
 			setResults((previous) => ({
 				...previous,
@@ -180,21 +182,16 @@ export default function QuizReviewPage() {
 					previous[isCorrect ? "correct" : "wrong"] + 1,
 			}));
 		}
-		if (!isCorrect) {
-			setLastFeedback({ ...step.feedback, example: currentQuestion.word.example });
-			return;
-		}
-		setLastFeedback({ ...step.feedback, example: currentQuestion.word.example });
-		setSelectedChoice("");
+		dispatchQuestionState({ type: "feedback", value: { ...step.feedback, example: currentQuestion.word.example } });
+		dispatchQuestionState({ type: "session-changed", sessionState: step.state });
+		if (!isCorrect) return;
 		if (step.state.finished) setSessionFinished(true);
 	}
 
 	function continueAfterWrong() {
 		const nextSession = sessionRef.current?.continueAfterWrong();
 		if (!nextSession?.accepted) return;
-		setSessionState(nextSession.state);
-		setSelectedChoice("");
-		setLastFeedback(null);
+		dispatchQuestionState({ type: "session-changed", sessionState: nextSession.state });
 		if (nextSession.state.finished) setSessionFinished(true);
 	}
 
@@ -212,10 +209,9 @@ export default function QuizReviewPage() {
 
 		resetAnswers();
 		sessionRef.current = createMistakeReviewSession(nextQuestions.length);
-		setSessionState(sessionRef.current.getSnapshot());
+		dispatchQuestionState({ type: "reset" });
+		dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
 		setQuestions(nextQuestions);
-		setSelectedChoice("");
-		setLastFeedback(null);
 		setResults({ correct: 0, wrong: 0 });
 		setSessionFinished(false);
 		setPracticeMode(true);
@@ -237,7 +233,7 @@ export default function QuizReviewPage() {
 				const choice = currentQuestion.choices[Number(event.key) - 1];
 				if (choice) {
 					event.preventDefault();
-					setSelectedChoice(choice);
+					dispatchQuestionState({ type: "selected-answer", value: choice });
 				}
 			}
 
@@ -257,8 +253,8 @@ export default function QuizReviewPage() {
 		return (
 			<ReviewStatus
 				icon={<XCircle className="h-12 w-12 text-red-400" />}
-				title="Không thể mở bài ôn"
-				message={error}
+				title={t("common.openError")}
+				message={error === "choiceLoadError" ? t("quiz.choiceLoadError") : t(`common.${error}`)}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);
@@ -268,8 +264,8 @@ export default function QuizReviewPage() {
 		return (
 			<ReviewStatus
 				icon={<Brain className="h-12 w-12 text-cyan-400" />}
-				title="Chưa đủ từ để tạo câu hỏi"
-				message="Bạn cần ít nhất 4 nghĩa tiếng Việt khác nhau trong sổ tay để dùng chế độ Trắc nghiệm."
+				title={t("quiz.notEnoughTitle")}
+				message={t("quiz.notEnoughMessage")}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);
@@ -285,12 +281,12 @@ export default function QuizReviewPage() {
 
 		return <>
 			<ReviewCompletion
-				title="Hoàn thành!"
-				message={`Bạn đã hoàn thành ${total} câu hỏi Trắc nghiệm.`}
+				title={t("quiz.completionTitle")}
+				message={t("quiz.completion", { count: total })}
 				stats={[
-					{ label: "Đúng", value: results.correct, tone: "emerald" },
-					{ label: "Sai", value: results.wrong, tone: "red" },
-					{ label: "Chính xác", value: `${accuracy}%`, tone: "blue" },
+					{ label: t("common.correctStat"), value: results.correct, tone: "emerald" },
+					{ label: t("common.wrongStat"), value: results.wrong, tone: "red" },
+					{ label: t("common.accuracy"), value: `${accuracy}%`, tone: "blue" },
 				]}
 				onRestart={restartQuiz}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
@@ -303,8 +299,8 @@ export default function QuizReviewPage() {
 		return (
 			<ReviewStatus
 				icon={<CheckCircle2 className="h-14 w-14 text-emerald-400" />}
-				title="Bạn đã ôn hết rồi!"
-				message="Hiện tại không có từ nào trong danh sách này cần ôn."
+				title={t("common.emptyTitle")}
+				message={t("common.emptyMessage")}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);
@@ -313,8 +309,8 @@ export default function QuizReviewPage() {
 	return (
 		<>
 		<ReviewShell
-			title={sessionState?.phase === "mistakes" ? "Ôn từ đã sai" : "Trắc nghiệm"}
-			description={sessionState?.phase === "mistakes" ? "Thử lại những từ bạn đã bỏ lỡ" : "Chọn nghĩa tiếng Việt đúng của từ"}
+			title={sessionState?.phase === "mistakes" ? t("common.mistakesTitle") : t("quiz.title")}
+			description={sessionState?.phase === "mistakes" ? t("common.mistakesDescription") : t("quiz.description")}
 			icon={<Brain size={21} />}
 			practiceMode={practiceMode}
 			current={sessionState?.current ?? 1}
@@ -323,17 +319,16 @@ export default function QuizReviewPage() {
 		>
 
 			<form ref={formRef} onSubmit={handleSubmit}>
-				<div className="quiz-review-card relative overflow-hidden rounded-[28px] border border-blue-500/25 bg-gradient-to-br from-[#101c38] via-[#0b152b] to-[#070e1e] p-5 shadow-[0_28px_80px_-42px_rgba(37,99,235,0.65)] sm:p-8">
-					<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.13),transparent_50%)]" />
+				<div className="quiz-review-card relative overflow-hidden rounded-[28px] border border-primary/30 bg-gradient-to-br from-surface via-surface-muted to-surface p-5 sm:p-8">
 						<div className="relative">
-							<p className="text-center text-sm font-semibold text-blue-300">
-								Từ tiếng Anh
+							<p className="text-center text-sm font-semibold text-brand-text">
+								{t("quiz.englishWord")}
 							</p>
 							<h2 className="mt-4 break-words text-center text-4xl font-bold tracking-tight sm:text-5xl">
 								{currentQuestion.word.english}
 							</h2>
 							{currentQuestion.word.pronunciation && (
-								<p className="mt-3 text-center font-mono text-sm text-blue-300 sm:text-base">
+								<p className="mt-3 text-center font-mono text-sm text-brand-text sm:text-base">
 									{currentQuestion.word.pronunciation}
 								</p>
 							)}
@@ -346,15 +341,15 @@ export default function QuizReviewPage() {
 										index={index}
 										selectedChoice={selectedChoice}
 										correctAnswer={currentQuestion.correctAnswer}
-										reveal={waitingForContinue}
-										onSelect={setSelectedChoice}
+									reveal={questionState.revealed}
+									onSelect={(choice) => dispatchQuestionState({ type: "selected-answer", value: choice })}
 									/>
 								))}
 							</div>
 
 							{lastFeedback && (
 								<p aria-live="polite" className={`mt-5 rounded-xl px-3 py-2 text-sm ${lastFeedback.type === "correct" ? "bg-emerald-500/10 text-emerald-300" : "bg-red-500/10 text-red-300"}`}>
-									{lastFeedback.type === "correct" ? "Chính xác!" : <>Chưa đúng. Đáp án đúng: <strong>{lastFeedback.answer}</strong></>}
+									{lastFeedback.type === "correct" ? t("common.correct") : <>{t("common.incorrect", { answer: lastFeedback.answer })}</>}
 									{lastFeedback.example && <span className="mt-1 block text-slate-300">“{lastFeedback.example}”</span>}
 								</p>
 							)}
@@ -362,12 +357,12 @@ export default function QuizReviewPage() {
 							<button
 								type="submit"
 								disabled={!waitingForContinue && !selectedChoice}
-								className="mt-6 w-full rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-4 text-lg font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:brightness-110 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40"
+								className="mt-6 w-full rounded-xl bg-primary px-6 py-4 text-lg font-semibold text-white transition hover:bg-primary-hover active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40"
 							>
-								{waitingForContinue ? "Tiếp tục" : "Kiểm tra"}
+								{waitingForContinue ? t("common.continue") : t("common.check")}
 							</button>
 							<p className="mt-3 text-center text-xs text-slate-600">
-								{waitingForContinue ? "Enter để tiếp tục" : "Phím 1–4 để chọn · Enter để kiểm tra"}
+								{waitingForContinue ? t("quiz.continueHint") : t("quiz.chooseHint")}
 							</p>
 						</div>
 				</div>
@@ -389,14 +384,14 @@ function ChoiceButton({
 	const isSelected = normalizeText(choice) === normalizeText(selectedChoice);
 	const isCorrect = normalizeText(choice) === normalizeText(correctAnswer);
 	let stateClass =
-		"border-slate-700 bg-slate-950/45 text-slate-200 hover:border-blue-500/50 hover:bg-blue-500/5";
+		"border-app bg-surface text-main hover:border-primary/50 hover:bg-primary-soft";
 
 	if (reveal && isCorrect) {
 		stateClass = "border-emerald-500 bg-emerald-500/15 text-emerald-100";
 	} else if (reveal && isSelected) {
 		stateClass = "border-red-500 bg-red-500/15 text-red-100";
 	} else if (isSelected) {
-		stateClass = "border-blue-400 bg-blue-500/15 text-white ring-2 ring-blue-500/15";
+		stateClass = "border-primary bg-primary-soft text-main ring-2 ring-primary/20";
 	}
 
 	return (

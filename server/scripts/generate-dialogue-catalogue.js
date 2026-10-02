@@ -11,9 +11,14 @@ async function main() {
 	async function load(filename) {
 		if (cache.has(filename)) return cache.get(filename);
 		const source = await fs.readFile(filename, "utf8");
-		const module = filename.endsWith(".json")
-			? new vm.SyntheticModule(["default"], function () { this.setExport("default", JSON.parse(source)); }, { context, identifier: filename })
-			: new vm.SourceTextModule(source, { context, identifier: filename });
+		let module;
+		try {
+			module = filename.endsWith(".json")
+				? new vm.SyntheticModule(["default"], function () { this.setExport("default", JSON.parse(source)); }, { context, identifier: filename })
+				: new vm.SourceTextModule(source, { context, identifier: filename });
+		} catch (error) {
+			throw new Error(`Could not parse dialogue data module ${filename}: ${error.message}`, { cause: error });
+		}
 		cache.set(filename, module);
 		await module.link(async (specifier, parent) => {
 			const resolved = specifier.startsWith("@/") ? path.resolve(client, specifier.slice(2)) : path.resolve(path.dirname(parent.identifier), specifier);
@@ -27,6 +32,10 @@ async function main() {
 	const catalogue = [];
 	const seen = new Set();
 	for (const lesson of Object.values(entry.namespace.lessonData)) {
+		const contentType = lesson.contentType || "dialogue";
+		if (contentType !== "dialogue" && contentType !== "story") {
+			throw new Error(`Unsupported lesson contentType "${contentType}" for ${lesson.id}`);
+		}
 		for (const dialogue of lesson.dialogues) {
 			for (const task of dialogue.tasks) {
 				const ids = [lesson.id, dialogue.id, String(task.id)];

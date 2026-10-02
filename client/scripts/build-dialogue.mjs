@@ -2,6 +2,12 @@ import { execFileSync } from "node:child_process";
 import { access, copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import {
+	getContentStorageDirectory,
+	getDialogueDataCourseDirectory,
+	getDialogueDataJsonPath,
+	getGeneratedDialogueDraftPath,
+} from "./lib/dialogue-content-paths.mjs";
 
 const ROOT = process.cwd();
 const DIALOGUE_DATA_ROOT = path.join(
@@ -178,18 +184,17 @@ function getSpeakerNames(draft, config) {
 
 function extractCharacterMappings(mediaSource) {
 	const mappings = new Map();
-	const pattern = /^\s*([A-Za-z][A-Za-z0-9]*):\s*"([^"]+)",?\s*$/gm;
+	const pattern = /^\s*"?([^":]+)"?:\s*"([^"]+)",?\s*$/gm;
 	for (const match of mediaSource.matchAll(pattern)) {
-		if (!mappings.has(match[1])) mappings.set(match[1], match[2]);
+		const speaker = match[1].trim();
+		if (!mappings.has(speaker)) mappings.set(speaker, match[2]);
 	}
 	return mappings;
 }
 
-async function updateMediaFile({ courseId, dialogueId, draft, speakers }) {
+async function updateMediaFile({ contentType, courseId, dialogueId, draft, speakers }) {
 	const mediaPath = path.join(
-		DIALOGUE_DATA_ROOT,
-		"dialogues",
-		courseId,
+		getDialogueDataCourseDirectory(ROOT, contentType, courseId),
 		"media.js",
 	);
 	const exportName = `${toIdentifier(courseId)}Media`;
@@ -204,7 +209,7 @@ async function updateMediaFile({ courseId, dialogueId, draft, speakers }) {
 	const knownCharacters = extractCharacterMappings(source);
 	const characterLines = speakers.map((speaker) => {
 		const fallback = `/dialogue/${courseId}/${dialogueId}/shared/${speaker.toLowerCase()}.png`;
-		return `\t\t\t${speaker}: "${knownCharacters.get(speaker) || fallback}",`;
+		return `\t\t\t${JSON.stringify(speaker)}: "${knownCharacters.get(speaker) || fallback}",`;
 	});
 	const entry = [
 		`\t"${dialogueId}": {`,
@@ -225,16 +230,21 @@ async function updateMediaFile({ courseId, dialogueId, draft, speakers }) {
 	return mediaPath;
 }
 
-function updateExistingCourseSource(source, courseId, dialogueId, config) {
+function updateExistingCourseSource(source, contentType, courseId, dialogueId, config) {
 	const identifier = toIdentifier(dialogueId);
-	const importLine = `import ${identifier} from "../dialogues/${courseId}/${dialogueId}.json";`;
+	const storageDirectory = getContentStorageDirectory(contentType);
+	if (contentType === "story" && !/contentType:\s*["']story["']/.test(source)) {
+		source = source.replace(/(id:\s*["'][^"']+["'],)/, '$1\n\tcontentType: "story",');
+	}
+	const importLine = `import ${identifier} from "../${storageDirectory}/${courseId}/${dialogueId}.json";`;
 
-	if (!source.includes(`../dialogues/${courseId}/${dialogueId}.json`)) {
+	if (!source.includes(`../${storageDirectory}/${courseId}/${dialogueId}.json`)) {
 		const mediaImport = source.match(
-			/^import \{ [^\n]+Media \} from "\.\.\/dialogues\/[^\n]+\/media";$/m,
+			/^import \{ [^\n]+Media \} from "\.\.\/(?:dialogues|stories)\/[^\n]+\/media";$/m,
 		);
 		if (!mediaImport) fail("Course file is missing its media import.");
-		source = source.replace(mediaImport[0], `${importLine}\n${mediaImport[0]}`);
+		const mediaLine = `import { ${toIdentifier(courseId)}Media } from "../${storageDirectory}/${courseId}/media";`;
+		source = source.replace(mediaImport[0], `${importLine}\n${mediaLine}`);
 	}
 
 	if (!source.includes("function buildCourseDialogue(draft)")) {
@@ -246,7 +256,7 @@ function updateExistingCourseSource(source, courseId, dialogueId, config) {
 	if (arrayMatch[1].includes(`buildCourseDialogue(${identifier})`)) return source;
 
 	const importsByDialogue = new Map();
-	const importPattern = /^import\s+(\w+)\s+from\s+"\.\.\/dialogues\/[^/]+\/([^"/]+)\.json";$/gm;
+	const importPattern = /^import\s+(\w+)\s+from\s+"\.\.\/(?:dialogues|stories)\/[^/]+\/([^"/]+)\.json";$/gm;
 	for (const match of source.matchAll(importPattern)) {
 		importsByDialogue.set(match[2], match[1]);
 	}
@@ -261,24 +271,26 @@ function updateExistingCourseSource(source, courseId, dialogueId, config) {
 	return source.replace(arrayMatch[0], `dialogues: [\n${calls}\n\t],`);
 }
 
-function createCourseSource(courseId, dialogueId, draft, config) {
+function createCourseSource(contentType, courseId, dialogueId, draft, config) {
 	const courseIdentifier = toIdentifier(courseId);
 	const dialogueIdentifier = toIdentifier(dialogueId);
 	const displayName = toTitle(courseId);
-	return `import ${courseIdentifier}Config from "@/scripts/config/courses/${courseId}.mjs";\n\nimport ${dialogueIdentifier} from "../dialogues/${courseId}/${dialogueId}.json";\nimport { ${courseIdentifier}Media } from "../dialogues/${courseId}/media";\nimport { buildGeneratedDialogue } from "../helpers/buildDialogue";\n\nfunction buildCourseDialogue(draft) {\n\tif (\n\t\t${courseIdentifier}Config?.courseId !== "${courseId}" ||\n\t\t!Array.isArray(${courseIdentifier}Config.dialogues) ||\n\t\t!Array.isArray(${courseIdentifier}Config.characters)\n\t) {\n\t\tthrow new Error("${displayName} course config is missing or invalid.");\n\t}\n\n\tconst dialogueId = draft?.metadata?.dialogueId;\n\tif (!dialogueId) {\n\t\tthrow new Error("${displayName} dialogue is missing metadata.dialogueId.");\n\t}\n\n\tconst config = ${courseIdentifier}Config.dialogues.find(\n\t\t(item) => item.dialogueId === dialogueId,\n\t);\n\tif (!config) {\n\t\tthrow new Error(\`Missing ${displayName} config for dialogue "\${dialogueId}".\`);\n\t}\n\n\tconst media = ${courseIdentifier}Media[dialogueId];\n\tif (!media) {\n\t\tthrow new Error(\`Missing ${displayName} media for dialogue "\${dialogueId}".\`);\n\t}\n\n\tconst speakers = new Set(draft.dialogue.map((line) => line.speaker));\n\tfor (const speaker of speakers) {\n\t\tif (!${courseIdentifier}Config.characters.includes(speaker)) {\n\t\t\tthrow new Error(\n\t\t\t\t\`Unknown ${displayName} character "\${speaker}" in dialogue "\${dialogueId}".\`,\n\t\t\t);\n\t\t}\n\n\t\tif (!media.characters[speaker]) {\n\t\t\tthrow new Error(\n\t\t\t\t\`Missing ${displayName} image for character "\${speaker}" in dialogue "\${dialogueId}".\`,\n\t\t\t);\n\t\t}\n\t}\n\n\tconst dialogue = buildGeneratedDialogue(draft, media.characters, media);\n\n\treturn {\n\t\t...dialogue,\n\t\ttitle: config.title?.trim() ?? dialogue.title,\n\t\tdescription: config.situation ?? dialogue.description,\n\t\tthumbnail: config.thumbnail ?? dialogue.thumbnail,\n\t};\n}\n\nconst ${courseIdentifier}Course = {\n\tid: "${courseId}",\n\theroImage: ${dialogueIdentifier}.metadata.scene,\n\timage: ${dialogueIdentifier}.metadata.scene,\n\ttitle: "${displayName}",\n\tdescription: ${JSON.stringify(draft.metadata.situation || config.dialogues[0].situation || "")},\n\tlevel: ${courseIdentifier}Config.level,\n\tdialogues: [buildCourseDialogue(${dialogueIdentifier})],\n};\n\nexport default ${courseIdentifier}Course;\n`;
+	const storageDirectory = getContentStorageDirectory(contentType);
+	return `import ${courseIdentifier}Config from "@/scripts/config/courses/${courseId}.mjs";\n\nimport ${dialogueIdentifier} from "../${storageDirectory}/${courseId}/${dialogueId}.json";\nimport { ${courseIdentifier}Media } from "../${storageDirectory}/${courseId}/media";\nimport { buildGeneratedDialogue } from "../helpers/buildDialogue";\n\nfunction buildCourseDialogue(draft) {\n\tif (\n\t\t${courseIdentifier}Config?.courseId !== "${courseId}" ||\n\t\t!Array.isArray(${courseIdentifier}Config.dialogues) ||\n\t\t!Array.isArray(${courseIdentifier}Config.characters)\n\t) {\n\t\tthrow new Error("${displayName} course config is missing or invalid.");\n\t}\n\n\tconst dialogueId = draft?.metadata?.dialogueId;\n\tif (!dialogueId) {\n\t\tthrow new Error("${displayName} dialogue is missing metadata.dialogueId.");\n\t}\n\n\tconst config = ${courseIdentifier}Config.dialogues.find(\n\t\t(item) => item.dialogueId === dialogueId,\n\t);\n\tif (!config) {\n\t\tthrow new Error(\`Missing ${displayName} config for dialogue "\${dialogueId}".\`);\n\t}\n\n\tconst media = ${courseIdentifier}Media[dialogueId];\n\tif (!media) {\n\t\tthrow new Error(\`Missing ${displayName} media for dialogue "\${dialogueId}".\`);\n\t}\n\n\tconst speakers = new Set(draft.dialogue.map((line) => line.speaker));\n\tfor (const speaker of speakers) {\n\t\tif (!${courseIdentifier}Config.characters.includes(speaker)) {\n\t\t\tthrow new Error(\n\t\t\t\t\`Unknown ${displayName} character "\${speaker}" in dialogue "\${dialogueId}".\`,\n\t\t\t);\n\t\t}\n\n\t\tif (!media.characters[speaker]) {\n\t\t\tthrow new Error(\n\t\t\t\t\`Missing ${displayName} image for character "\${speaker}" in dialogue "\${dialogueId}".\`,\n\t\t\t);\n\t\t}\n\t}\n\n\tconst dialogue = buildGeneratedDialogue(draft, media.characters, media);\n\n\treturn {\n\t\t...dialogue,\n\t\ttitle: config.title?.trim() ?? dialogue.title,\n\t\tdescription: config.situation ?? dialogue.description,\n\t\tthumbnail: config.thumbnail ?? dialogue.thumbnail,\n\t};\n}\n\nconst ${courseIdentifier}Course = {\n\tid: "${courseId}",\n\tcontentType: "${contentType || "dialogue"}",\n\theroImage: ${dialogueIdentifier}.metadata.scene,\n\timage: ${dialogueIdentifier}.metadata.scene,\n\ttitle: "${displayName}",\n\tdescription: ${JSON.stringify(draft.metadata.situation || config.dialogues[0].situation || "")},\n\tlevel: ${courseIdentifier}Config.level,\n\tdialogues: [buildCourseDialogue(${dialogueIdentifier})],\n};\n\nexport default ${courseIdentifier}Course;\n`;
 }
 
-async function updateCourseFile({ courseId, dialogueId, draft, config }) {
+async function updateCourseFile({ contentType, courseId, dialogueId, draft, config }) {
 	const coursePath = path.join(COURSE_DIRECTORY, `${courseId}.js`);
 	const existingCourse = await exists(coursePath);
 	let source = existingCourse
 		? updateExistingCourseSource(
 				await readFile(coursePath, "utf8"),
+				contentType,
 				courseId,
 				dialogueId,
 				config,
 			)
-		: createCourseSource(courseId, dialogueId, draft, config);
+		: createCourseSource(contentType, courseId, dialogueId, draft, config);
 	if (!existingCourse) {
 		const levelLine = `\tlevel: ${toIdentifier(courseId)}Config.level,`;
 		const localized = {
@@ -396,14 +408,6 @@ async function main() {
 	assertSlug(dialogueId, "dialogueId");
 	if (!verbose) console.log(`Building ${courseId}/${dialogueId}...`);
 
-	const draftPath = path.join(
-		ROOT,
-		"generated",
-		"dialogues",
-		courseId,
-		dialogueId,
-		"draft.json",
-	);
 	const configPath = path.join(
 		ROOT,
 		"scripts",
@@ -411,21 +415,28 @@ async function main() {
 		"courses",
 		`${courseId}.mjs`,
 	);
-	const productionPath = path.join(
-		DIALOGUE_DATA_ROOT,
-		"dialogues",
+	if (!(await exists(configPath))) fail(`Course config not found: ${configPath}`);
+	const config = await loadCourseConfig(configPath);
+	const contentType = config.contentType || "dialogue";
+	const draftPath = getGeneratedDialogueDraftPath(
+		ROOT,
+		contentType,
 		courseId,
-		`${dialogueId}.json`,
+		dialogueId,
+	);
+	const productionPath = getDialogueDataJsonPath(
+		ROOT,
+		contentType,
+		courseId,
+		dialogueId,
 	);
 
 	if (!(await exists(draftPath))) fail(`Draft not found: ${draftPath}`);
-	if (!(await exists(configPath))) fail(`Course config not found: ${configPath}`);
 
 	logStep(verbose, "[1/7] Validating draft");
 	const draftValidation = runNode(VALIDATOR_PATH, [draftPath, "--require-localization"], verbose);
 	const draft = await loadJson(draftPath);
 	validateDraftIdentity(draft, courseId, dialogueId);
-	const config = await loadCourseConfig(configPath);
 	findConfigDialogue(config, dialogueId);
 	const speakers = getSpeakerNames(draft, config);
 	if (!verbose) console.log(`✅ Draft valid — ${formatMcSummary(draftValidation)}`);
@@ -436,12 +447,14 @@ async function main() {
 
 	logStep(verbose, "[3/7] Updating course and media registration");
 	const mediaPath = await updateMediaFile({
+		contentType,
 		courseId,
 		dialogueId,
 		draft,
 		speakers,
 	});
 	const coursePath = await updateCourseFile({
+		contentType,
 		courseId,
 		dialogueId,
 		draft,
@@ -473,11 +486,14 @@ async function main() {
 		path.relative(ROOT, mediaPath),
 		path.relative(ROOT, LESSON_DATA_PATH),
 		path.relative(ROOT, COURSE_CONFIG_INDEX_PATH),
+		path.join("scripts", "lib", "dialogue-content-paths.mjs"),
+		path.join("scripts", "dialogue-content-paths.test.mjs"),
 	], verbose);
 	const testOutput = runNode("--test", [
 		path.join(ROOT, "scripts", "dialogue-a1-content-rules.test.mjs"),
 		path.join(ROOT, "scripts", "dialogue-mc-report.test.mjs"),
 		path.join(ROOT, "scripts", "dialogue-practice-rule.test.mjs"),
+		path.join(ROOT, "scripts", "dialogue-content-paths.test.mjs"),
 	], verbose);
 	if (!verbose) console.log(`✅ Tests — ${getPassedTestCount(testOutput)} passed`);
 

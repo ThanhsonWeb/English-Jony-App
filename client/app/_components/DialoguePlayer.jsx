@@ -9,6 +9,12 @@ import { lookupWord } from "@/app/_lib/dictionary/lookupWord";
 import { resolveMeaning } from "@/app/_lib/dictionary/resolveMeaning";
 import useDialogueShortcuts from "@/app/_hooks/useDialogueShortcuts";
 import { useTranslations } from "next-intl";
+import useDialoguePlaybackRate from "@/app/_hooks/useDialoguePlaybackRate";
+import { useAuth } from "@/app/_contexts/AuthContext";
+import {
+	PLAYBACK_RATES,
+	saveDialoguePlaybackRate,
+} from "@/app/_lib/dialogue/playbackRate.mjs";
 
 import {
 	Play,
@@ -21,7 +27,6 @@ import {
 
 const CHARACTER_ENTRY_DELAY = 700;
 const DIALOGUE_LINE_DELAY = 300;
-const PLAYBACK_RATES = [0.5, 0.75, 1, 1.25, 1.5];
 const preloadedDialogueAssets = new Map();
 
 function preloadDialogueAsset(src) {
@@ -140,6 +145,8 @@ export default function DialoguePlayer({
 	onComplete,
 }) {
 	const t = useTranslations("DialogueFeature");
+	const { user } = useAuth();
+	const userId = user?._id || user?.id || null;
 	const [currentLine, setCurrentLine] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [showTranslation, setShowTranslation] = useState(false);
@@ -147,17 +154,22 @@ export default function DialoguePlayer({
 	const [hasWatched, setHasWatched] = useState(false);
 	const [hasStarted, setHasStarted] = useState(false);
 	const [dialogueFinished, setDialogueFinished] = useState(false);
-	const [playbackRate, setPlaybackRate] = useState(1);
+	const playbackRate = useDialoguePlaybackRate();
 	const [showSpeedMenu, setShowSpeedMenu] = useState(false);
 	const [showSubtitles, setShowSubtitles] = useState(true);
 	const [selectedLookup, setSelectedLookup] = useState(null);
 
 	const audioRef = useRef(null);
-	const playbackRateRef = useRef(1);
+	const playbackRateRef = useRef(playbackRate);
 	const startTimeoutRef = useRef(null);
 	const lineTimeoutRef = useRef(null);
 	const pendingLineRef = useRef(null);
 	const dictionaryPopupRef = useRef(null);
+
+	useEffect(() => {
+		playbackRateRef.current = playbackRate;
+		if (audioRef.current) audioRef.current.playbackRate = playbackRate;
+	}, [playbackRate]);
 
 	const activeLine = task.dialogue[currentLine];
 	const characters = Object.entries(task.characters || {});
@@ -443,7 +455,7 @@ export default function DialoguePlayer({
 	useDialogueShortcuts({ onReplay: handlePlayPause });
 
 	function handlePlaybackRateChange(newRate) {
-		setPlaybackRate(newRate);
+		saveDialoguePlaybackRate(newRate, window.localStorage, userId);
 		playbackRateRef.current = newRate;
 		setShowSpeedMenu(false);
 

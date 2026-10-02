@@ -3,10 +3,14 @@ import { access, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import { courseConfigs } from "./config/courses/index.mjs";
+import {
+	getDialogueDataJsonPath,
+	getGeneratedCourseDirectory,
+	getGeneratedDialogueDraftPath,
+} from "./lib/dialogue-content-paths.mjs";
 
 const root = process.cwd();
 const publicRoot = path.join(root, "public", "dialogue");
-const generatedRoot = path.join(root, "generated", "dialogues");
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 async function exists(filePath) {
@@ -51,10 +55,10 @@ function relativePublicFile(file) {
 	return file ? `public/dialogue/${file}` : "No separate character image found; use the topic's existing artwork if available.";
 }
 
-async function loadFinalDialogue(courseId, dialogueId) {
+async function loadFinalDialogue(contentType, courseId, dialogueId) {
 	const candidates = [
-		path.join(generatedRoot, courseId, dialogueId, "draft.json"),
-		path.join(root, "app", "[locale]", "(main)", "dialogue", "_data", "dialogues", courseId, `${dialogueId}.json`),
+		getGeneratedDialogueDraftPath(root, contentType, courseId, dialogueId),
+		getDialogueDataJsonPath(root, contentType, courseId, dialogueId),
 	];
 	for (const candidate of candidates) {
 		if (!(await exists(candidate))) continue;
@@ -79,6 +83,7 @@ async function main() {
 	const course = courseConfigs.find((config) => config.courseId === courseId);
 	if (!course) throw new Error(`Course config not found: ${courseId}`);
 	if (!course.dialogues?.length) throw new Error(`No dialogues configured for ${courseId}`);
+	const generatedCourseDirectory = getGeneratedCourseDirectory(root, course.contentType, courseId);
 
 	const allFiles = (await readdir(publicRoot, { recursive: true }))
 		.filter((file) => file.toLowerCase().endsWith(".png"))
@@ -98,7 +103,7 @@ async function main() {
 		if (config.thumbnail !== targetUrl) {
 			throw new Error(`Config thumbnail for ${dialogueId} must be ${targetUrl}`);
 		}
-		const draft = await loadFinalDialogue(courseId, dialogueId);
+		const draft = await loadFinalDialogue(course.contentType, courseId, dialogueId);
 		const speakers = [...new Set(draft.dialogue.map((line) => line.speaker))];
 		const references = speakers.map((speaker) => ({
 			speaker,
@@ -123,12 +128,12 @@ async function main() {
 			...draft.dialogue.map((line) => `  - ${line.speaker}: ${line.text}`),
 		].join("\n");
 		manifestSections.push(section);
-		const promptPath = path.join(generatedRoot, courseId, dialogueId, "thumbnail-prompt.txt");
+		const promptPath = path.join(generatedCourseDirectory, dialogueId, "thumbnail-prompt.txt");
 		await mkdir(path.dirname(promptPath), { recursive: true });
 		await writeFile(promptPath, `${section}\n`, "utf8");
 		console.log(`Prepared: ${dialogueId} → ${path.relative(root, promptPath)}`);
 	}
-	const manifestPath = path.join(generatedRoot, courseId, "thumbnail-manifest.md");
+	const manifestPath = path.join(generatedCourseDirectory, "thumbnail-manifest.md");
 	const manifest = [
 		`# StudyJony thumbnail manifest: ${courseId}`,
 		"",

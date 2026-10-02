@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { fetchVocabulary, selectReviewWords } from "@/app/_lib/vocabulary.mjs";
 import { isReviewCompletionReady } from "@/app/_lib/reviewSaveController.mjs";
 import { createMistakeReviewSession } from "@/app/_lib/mistakeReviewSession.mjs";
+import { createReviewQuestionState, reviewQuestionReducer } from "@/app/_lib/reviewQuestionState.mjs";
 import { submitQuizletReviewAnswer } from "@/app/_lib/quizletReviewAction.mjs";
 import { useBackgroundReviewSave } from "@/app/_lib/useBackgroundReviewSave.mjs";
 import {
@@ -27,6 +29,7 @@ function normalizeAnswer(value) {
 }
 
 export default function WriteReviewPage() {
+	const t = useTranslations("WordlistReview");
 	const { topicId } = useParams();
 	const searchParams = useSearchParams();
 	const dueOnly = searchParams.get("reviewMode") === "due";
@@ -34,9 +37,10 @@ export default function WriteReviewPage() {
 	const inputRef = useRef(null);
 	const sessionRef = useRef(null);
 	const [words, setWords] = useState([]);
-	const [sessionState, setSessionState] = useState(null);
-	const [answer, setAnswer] = useState("");
-	const [lastFeedback, setLastFeedback] = useState(null);
+	const [questionState, dispatchQuestionState] = useReducer(reviewQuestionReducer, null, createReviewQuestionState);
+	const sessionState = questionState.sessionState;
+	const answer = questionState.answer;
+	const lastFeedback = questionState.feedback;
 	const [results, setResults] = useState({ correct: 0, wrong: 0 });
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState("");
@@ -59,12 +63,12 @@ export default function WriteReviewPage() {
 
 				if (!cancelled) {
 					sessionRef.current = createMistakeReviewSession(reviewWords.length);
-					setSessionState(sessionRef.current.getSnapshot());
+					dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
 					setWords(reviewWords);
 				}
 			} catch (fetchError) {
 				if (!cancelled) {
-					setError(fetchError.message === "unauthorized" ? "Vui lòng đăng nhập để ôn tập." : "Không thể tải danh sách từ. Vui lòng thử lại.");
+					setError(fetchError.message === "unauthorized" ? "signInError" : "loadError");
 				}
 			} finally {
 				if (!cancelled) setLoading(false);
@@ -96,8 +100,6 @@ export default function WriteReviewPage() {
 			practice: practiceMode, correct: isCorrect,
 		});
 		if (!step.accepted) return;
-		setSessionState(step.state);
-
 		if (step.firstAttempt) {
 			setResults((previous) => ({
 				...previous,
@@ -106,20 +108,19 @@ export default function WriteReviewPage() {
 			}));
 		}
 		if (!isCorrect) {
-			setLastFeedback({ ...step.feedback, example: currentWord.example, pronunciation: currentWord.pronunciation });
+			dispatchQuestionState({ type: "feedback", value: { ...step.feedback, example: currentWord.example, pronunciation: currentWord.pronunciation } });
+			dispatchQuestionState({ type: "session-changed", sessionState: step.state });
 			return;
 		}
-		setLastFeedback({ ...step.feedback, example: currentWord.example });
-		setAnswer("");
+		dispatchQuestionState({ type: "feedback", value: { ...step.feedback, example: currentWord.example } });
+		dispatchQuestionState({ type: "session-changed", sessionState: step.state });
 		if (step.state.finished) setSessionFinished(true);
 	}
 
 	function continueAfterWrong() {
 		const nextSession = sessionRef.current?.continueAfterWrong();
 		if (!nextSession?.accepted) return;
-		setSessionState(nextSession.state);
-		setAnswer("");
-		setLastFeedback(null);
+		dispatchQuestionState({ type: "session-changed", sessionState: nextSession.state });
 		if (nextSession.state.finished) setSessionFinished(true);
 	}
 
@@ -132,10 +133,9 @@ export default function WriteReviewPage() {
 	function restartReview() {
 		resetAnswers();
 		sessionRef.current = createMistakeReviewSession(words.length);
-		setSessionState(sessionRef.current.getSnapshot());
+		dispatchQuestionState({ type: "reset" });
+		dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
 		setPracticeMode(true);
-		setAnswer("");
-		setLastFeedback(null);
 		setResults({ correct: 0, wrong: 0 });
 		setSessionFinished(false);
 	}
@@ -146,8 +146,8 @@ export default function WriteReviewPage() {
 		return (
 			<ReviewStatus
 				icon={<XCircle className="h-12 w-12 text-red-400" />}
-				title="Không thể mở bài ôn"
-				message={error}
+				title={t("common.openError")}
+				message={t(`common.${error}`)}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);
@@ -163,11 +163,11 @@ export default function WriteReviewPage() {
 
 		return <>
 			<ReviewCompletion
-				message={`Bạn đã hoàn thành ${total} từ trong chế độ Viết từ.`}
+				message={t("writing.completion", { count: total })}
 				stats={[
-					{ label: "Đúng", value: results.correct, tone: "emerald" },
-					{ label: "Sai", value: results.wrong, tone: "red" },
-					{ label: "Chính xác", value: `${accuracy}%`, tone: "blue" },
+					{ label: t("common.correctStat"), value: results.correct, tone: "emerald" },
+					{ label: t("common.wrongStat"), value: results.wrong, tone: "red" },
+					{ label: t("common.accuracy"), value: `${accuracy}%`, tone: "blue" },
 				]}
 				onRestart={restartReview}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
@@ -180,8 +180,8 @@ export default function WriteReviewPage() {
 		return (
 			<ReviewStatus
 				icon={<CheckCircle2 className="h-14 w-14 text-emerald-400" />}
-				title="Bạn đã ôn hết rồi!"
-				message="Hiện tại không có từ nào trong danh sách này cần ôn."
+				title={t("common.emptyTitle")}
+				message={t("common.emptyMessage")}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);
@@ -190,8 +190,8 @@ export default function WriteReviewPage() {
 	return (
 		<>
 		<ReviewShell
-			title={sessionState?.phase === "mistakes" ? "Ôn từ đã sai" : "Viết từ"}
-			description={sessionState?.phase === "mistakes" ? "Thử lại những từ bạn đã bỏ lỡ" : "Gõ từ tiếng Anh phù hợp với nghĩa bên dưới"}
+			title={sessionState?.phase === "mistakes" ? t("common.mistakesTitle") : t("writing.title")}
+			description={sessionState?.phase === "mistakes" ? t("common.mistakesDescription") : t("writing.description")}
 			icon={<PenLine size={21} />}
 			practiceMode={practiceMode}
 			current={sessionState?.current ?? 1}
@@ -200,45 +200,44 @@ export default function WriteReviewPage() {
 		>
 
 			<form onSubmit={handleSubmit}>
-				<div className="relative overflow-hidden rounded-[28px] border border-blue-500/25 bg-gradient-to-br from-[#101c38] via-[#0b152b] to-[#070e1e] p-6 shadow-[0_28px_80px_-42px_rgba(37,99,235,0.65)] sm:p-10">
-					<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.13),transparent_52%)]" />
+				<div className="relative overflow-hidden rounded-[28px] border border-primary/30 bg-gradient-to-br from-surface via-surface-muted to-surface p-6 sm:p-10">
 						<div className="relative">
 							{lastFeedback && (
 								<p aria-live="polite" className={`mb-5 rounded-xl px-3 py-2 text-sm ${lastFeedback.type === "correct" ? "bg-emerald-500/10 text-emerald-300" : "bg-red-500/10 text-red-300"}`}>
-									{lastFeedback.type === "correct" ? "Chính xác!" : <>Chưa đúng. Đáp án đúng: <strong>{lastFeedback.answer}</strong></>}
+									{lastFeedback.type === "correct" ? t("common.correct") : t("common.incorrect", { answer: lastFeedback.answer })}
 									{lastFeedback.type === "wrong" && lastFeedback.pronunciation && <span className="mt-1 block font-mono text-slate-300">{lastFeedback.pronunciation}</span>}
 									{lastFeedback.example && <span className="mt-1 block text-slate-300">“{lastFeedback.example}”</span>}
 								</p>
 							)}
-							<p className="text-sm font-semibold text-blue-300">
-								Nghĩa tiếng Việt
+							<p className="text-sm font-semibold text-brand-text">
+								{t("writing.vietnameseMeaning")}
 							</p>
 							<h2 className="mt-4 max-w-2xl break-words text-4xl font-bold leading-tight tracking-tight sm:text-6xl">
 								{currentWord.vietnamese}
 							</h2>
 
 							<label htmlFor="write-answer" className="mt-9 block text-sm font-medium text-slate-400">
-								Nhập từ tiếng Anh tương ứng
+								{t("writing.answerLabel")}
 							</label>
 							<input
 								ref={inputRef}
 								id="write-answer"
 								type="text"
 								value={answer}
-								onChange={(event) => setAnswer(event.target.value)}
+								onChange={(event) => dispatchQuestionState({ type: "answer", value: event.target.value })}
 								disabled={waitingForContinue}
 								autoComplete="off"
 								spellCheck="false"
-								placeholder="Nhập từ tiếng Anh..."
-								className={`mt-2 w-full rounded-2xl border bg-slate-950/60 px-5 py-4 text-xl font-semibold text-white outline-none transition placeholder:font-normal placeholder:text-slate-600 focus:ring-4 sm:px-6 sm:py-5 sm:text-2xl ${waitingForContinue ? "border-red-500/60" : "border-slate-700 focus:border-blue-500 focus:ring-blue-500/15"}`}
+								placeholder={t("writing.placeholder")}
+								className={`mt-2 w-full rounded-2xl border bg-input px-5 py-4 text-xl font-semibold text-main outline-none transition placeholder:font-normal placeholder:text-muted focus:ring-4 sm:px-6 sm:py-5 sm:text-2xl ${waitingForContinue ? "border-red-500/60" : "border-app focus:border-primary focus:ring-primary/15"}`}
 							/>
 
 							<button
 								type="submit"
 								disabled={!waitingForContinue && !answer.trim()}
-								className="mt-6 w-full rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-4 text-lg font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:brightness-110 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40"
+								className="mt-6 w-full rounded-xl bg-primary px-6 py-4 text-lg font-semibold text-white transition hover:bg-primary-hover active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40"
 							>
-								{waitingForContinue ? "Tiếp tục" : "Kiểm tra"}
+								{waitingForContinue ? t("common.continue") : t("common.check")}
 							</button>
 						</div>
 				</div>

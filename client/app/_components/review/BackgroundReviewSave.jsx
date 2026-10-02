@@ -1,12 +1,17 @@
 "use client";
 
-import { getReviewSaveNoticeText } from "@/app/_lib/reviewSaveController.mjs";
 import { ReviewStatus } from "./ReviewLayout";
+import { useTranslations } from "next-intl";
 
 export { useBackgroundReviewSave } from "@/app/_lib/useBackgroundReviewSave.mjs";
 
 export function ReviewSaveNotice({ pending, failed }) {
-	const message = getReviewSaveNoticeText({ pending, failed });
+	const t = useTranslations("WordlistReview.common");
+	const message = failed > 0
+		? t("saveFailed", { count: failed })
+		: pending > 0
+			? t("savingNotice", { count: pending })
+			: "";
 	if (!message) return null;
 
 	return (
@@ -17,10 +22,12 @@ export function ReviewSaveNotice({ pending, failed }) {
 }
 
 export function ReviewPendingCompletion({ pending, failed, onBack }) {
+	const t = useTranslations("WordlistReview.common");
+
 	return <>
 		<ReviewStatus
-			title="Đang lưu tiến độ"
-			message={`Còn ${pending} từ đang được lưu. Bạn có thể quay lại danh sách từ.`}
+			title={t("savingTitle")}
+			message={t("savingMessage", { count: pending })}
 			onBack={onBack}
 		/>
 		<ReviewSaveNotice pending={pending} failed={failed} />
