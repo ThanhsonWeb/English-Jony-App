@@ -7,7 +7,7 @@ import fixingOrder from "../dialogues/coffee-shop/fixing-an-order.json";
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
 import { coffeeShopMedia } from "../dialogues/coffee-shop/media";
 
-import coffeeShopConfig from "@/scripts/config/courses/coffee-shop.mjs";
+import coffeeShopConfig from "@/scripts/config/dialogues/coffee-shop.mjs";
 
 function buildCourseDialogue(draft) {
 	if (

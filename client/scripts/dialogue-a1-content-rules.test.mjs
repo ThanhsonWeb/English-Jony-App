@@ -3,7 +3,7 @@ import fs from "node:fs";
 import test from "node:test";
 
 import { buildDialoguePrompt } from "./prompts/dialogue-generator.mjs";
-import coffeeShop from "./config/courses/coffee-shop.mjs";
+import coffeeShop from "./config/dialogues/coffee-shop.mjs";
 import { validateDialogue } from "./validate-dialogue.mjs";
 
 const sourcePath = new URL(

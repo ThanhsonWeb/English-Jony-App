@@ -2,7 +2,7 @@ import { execFileSync } from "node:child_process";
 import { access, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-import { courseConfigs } from "./config/courses/index.mjs";
+import { courseConfigs } from "./config/index.mjs";
 import {
 	getDialogueDataJsonPath,
 	getGeneratedCourseDirectory,

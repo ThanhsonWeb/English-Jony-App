@@ -4,7 +4,7 @@ import test from "node:test";
 
 import { validateDialogue } from "./validate-dialogue.mjs";
 import { buildDialoguePrompt } from "./prompts/dialogue-generator.mjs";
-import coffeeShop from "./config/courses/coffee-shop.mjs";
+import coffeeShop from "./config/dialogues/coffee-shop.mjs";
 
 const sourcePath = new URL(
 	"../app/[locale]/(main)/dialogue/_data/dialogues/coffee-shop/ordering-a-coffee.json",
@@ -32,11 +32,11 @@ test("generator prompt keeps MC separate from Fill Blank and translation", () =>
 	});
 
 	for (const expectedRule of [
-		"Multiple Choice is a separate understanding check",
+		"Multiple Choice is a separate learning check",
 		"situation comprehension",
 		"speaker intent",
 		"sequence, decisions, and reactions",
-		"Usually use 0-2 grammar-in-context questions",
+		"include at least 1 grammar-in-context question (usually 1-2)",
 		"must test something different from every Fill Blank task",
 		"Include exactly four options",
 		"distribute correct-answer positions roughly across A, B, C, and D",

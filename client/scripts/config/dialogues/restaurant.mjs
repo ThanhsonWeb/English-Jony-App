@@ -1,5 +1,6 @@
 const restaurant = {
 	courseId: "restaurant",
+	contentType: "dialogue",
 
 	level: "beginner",
 

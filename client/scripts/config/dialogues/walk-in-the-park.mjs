@@ -1,5 +1,6 @@
 const walkInThePark = {
 	courseId: "walk-in-the-park",
+	contentType: "dialogue",
 
 	level: "beginner",
 

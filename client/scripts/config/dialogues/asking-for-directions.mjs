@@ -1,5 +1,6 @@
 const askingForDirections = {
 	courseId: "asking-for-directions",
+	contentType: "dialogue",
 
 	level: "beginner",
 

@@ -1,4 +1,4 @@
-import walkInTheParkConfig from "@/scripts/config/courses/walk-in-the-park.mjs";
+import walkInTheParkConfig from "@/scripts/config/dialogues/walk-in-the-park.mjs";
 
 import meetingAtThePark from "../dialogues/walk-in-the-park/meeting-at-the-park.json";
 import talkingAboutWork from "../dialogues/walk-in-the-park/talking-about-work.json";

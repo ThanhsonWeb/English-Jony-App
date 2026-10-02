@@ -1,5 +1,6 @@
 const groceryStore = {
 	courseId: "grocery-store",
+	contentType: "dialogue",
 
 	level: "beginner",
 

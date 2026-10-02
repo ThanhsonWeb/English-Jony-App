@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import path from "node:path";
 import {
 	getContentStorageDirectory,
+	getCourseConfigPath,
 	getDialogueDataJsonPath,
 	getGeneratedDialogueDraftPath,
 } from "./lib/dialogue-content-paths.mjs";
@@ -35,4 +36,15 @@ test("story content uses separate generated and lesson-data directories", () => 
 
 test("rejects unknown content types instead of writing to a wrong folder", () => {
 	assert.throws(() => getContentStorageDirectory("course"), /Unsupported dialogue contentType/);
+});
+
+test("keeps configs separated by the course content type", () => {
+	assert.equal(
+		getCourseConfigPath(root, "dialogue", "coffee-shop"),
+		path.join(root, "scripts", "config", "dialogues", "coffee-shop.mjs"),
+	);
+	assert.equal(
+		getCourseConfigPath(root, "story", "ten-minutes-a-day"),
+		path.join(root, "scripts", "config", "stories", "ten-minutes-a-day.mjs"),
+	);
 });

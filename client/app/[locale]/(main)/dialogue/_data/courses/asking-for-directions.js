@@ -6,7 +6,7 @@ import goingToTheSupermarket from "../dialogues/asking-for-directions/going-to-t
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
 import { askingForDirectionsMedia } from "../dialogues/asking-for-directions/media";
 
-import askingForDirectionsConfig from "@/scripts/config/courses/asking-for-direction.mjs";
+import askingForDirectionsConfig from "@/scripts/config/dialogues/asking-for-directions.mjs";
 
 function buildCourseDialogue(draft) {
   const media = askingForDirectionsMedia[draft.metadata.dialogueId];

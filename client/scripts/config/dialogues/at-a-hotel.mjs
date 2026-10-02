@@ -1,5 +1,6 @@
 const atAHotel = {
 	courseId: "at-a-hotel",
+	contentType: "dialogue",
 
 	level: "beginner",
 	characters: ["Ben", "Maya", "Daniel"],

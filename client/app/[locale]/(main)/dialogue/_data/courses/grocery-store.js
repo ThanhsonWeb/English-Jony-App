@@ -1,4 +1,4 @@
-import groceryStoreConfig from "@/scripts/config/courses/grocery-store.mjs";
+import groceryStoreConfig from "@/scripts/config/dialogues/grocery-store.mjs";
 
 import makingAShoppingList from "../dialogues/grocery-store/making-a-shopping-list.json";
 import findingItems from "../dialogues/grocery-store/finding-items.json";

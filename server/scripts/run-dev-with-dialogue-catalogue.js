@@ -14,7 +14,8 @@ const clientRoot = path.join(workspaceRoot, "client");
 const generator = path.join(__dirname, "generate-dialogue-catalogue.js");
 const watchRoots = [
 	path.join(clientRoot, "app/[locale]/(main)/dialogue/_data"),
-	path.join(clientRoot, "scripts/config/courses"),
+	path.join(clientRoot, "scripts/config/dialogues"),
+	path.join(clientRoot, "scripts/config/stories"),
 ];
 const watchedExtensions = new Set([".js", ".json", ".mjs"]);
 

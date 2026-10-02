@@ -1,5 +1,6 @@
 const weekendCamping = {
 	courseId: "weekend-camping",
+	contentType: "dialogue",
 	level: "beginner",
 	characters: ["Leo", "Mia"],
 	dialogues: [

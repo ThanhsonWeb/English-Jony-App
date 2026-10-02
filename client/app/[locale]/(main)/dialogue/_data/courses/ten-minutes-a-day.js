@@ -1,4 +1,4 @@
-import tenMinutesADayConfig from "@/scripts/config/courses/ten-minutes-a-day.mjs";
+import tenMinutesADayConfig from "@/scripts/config/stories/ten-minutes-a-day.mjs";
 
 import theOldBook from "../stories/ten-minutes-a-day/the-old-book.json";
 import { tenMinutesADayMedia } from "../stories/ten-minutes-a-day/media";

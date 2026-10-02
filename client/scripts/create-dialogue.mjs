@@ -3,7 +3,7 @@ import { stdin as input, stdout as output } from "node:process";
 import fs from "node:fs/promises";
 import path from "node:path";
 
-import { courseConfigs } from "./config/courses/index.mjs";
+import { courseConfigs } from "./config/index.mjs";
 import { buildDialoguePrompt } from "./prompts/dialogue-generator.mjs";
 import {
 	getDialogueDataJsonPath,

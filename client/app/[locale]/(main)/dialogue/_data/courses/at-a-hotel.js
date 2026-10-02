@@ -1,4 +1,4 @@
-import atAHotelConfig from "@/scripts/config/courses/at-a-hotel.mjs";
+import atAHotelConfig from "@/scripts/config/dialogues/at-a-hotel.mjs";
 
 import checkingIn from "../dialogues/at-a-hotel/checking-in.json";
 import askingForExtraTowels from "../dialogues/at-a-hotel/asking-for-extra-towels.json";

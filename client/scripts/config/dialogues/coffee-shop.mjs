@@ -1,5 +1,6 @@
 const coffeeShop = {
 	courseId: "coffee-shop",
+	contentType: "dialogue",
 
 	level: "beginner",
 

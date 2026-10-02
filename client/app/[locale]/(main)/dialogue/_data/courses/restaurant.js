@@ -1,4 +1,4 @@
-import restaurantConfig from "@/scripts/config/courses/restaurant.mjs";
+import restaurantConfig from "@/scripts/config/dialogues/restaurant.mjs";
 
 import gettingATable from "../dialogues/restaurant/getting-a-table.json";
 import readingTheMenu from "../dialogues/restaurant/reading-the-menu.json";
