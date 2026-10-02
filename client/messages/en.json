@@ -1,4 +1,36 @@
 {
+	"Home": {
+		"eyebrow": "Learn English in real life",
+		"heroTitle": "Learn English through situations you <accent>actually experience</accent>",
+		"heroDescription": "Listen to conversations, learn words in context, and review in a way that works for you.",
+		"heroAlt": "Two friends practicing English together at a cafe, with a laptop and a sleeping cat",
+		"startLearning": "Start learning",
+		"exploreDialogues": "Explore dialogues",
+		"featuresLabel": "Ways to learn with StudyJony",
+		"features": {
+			"dialogues": { "title": "Real-life Dialogues", "description": "Listen and practice with real situations like work, travel, shopping, dining, and more." },
+			"vocabulary": { "title": "Vocabulary in Context", "description": "Learn new words in context with meanings, pronunciation, and real examples." },
+			"review": { "title": "Smart Review", "description": "Review with Flashcards, Quiz, Writing, and spaced repetition (SRS) to remember longer." }
+		},
+		"coffeeMeaning": "a warm, familiar drink",
+		"howEyebrow": "A simple learning flow",
+		"howTitle": "How StudyJony works",
+		"howDescription": "Just 4 steps to turn English into a real-life skill.",
+		"steps": {
+			"choose": { "title": "Choose a dialogue", "description": "Pick a topic you're interested in." },
+			"listen": { "title": "Listen & understand", "description": "Practice listening and get the main idea." },
+			"save": { "title": "Save useful words", "description": "Add new words to your wordlist." },
+			"review": { "title": "Review", "description": "Review when it's due with SRS." }
+		},
+		"newWord": "new word",
+		"savedToNotebook": "saved to your wordlist",
+		"topicsEyebrow": "Many real-life topics",
+		"topicsTitle": "Dialogues for every situation",
+		"topicsDescription": "From getting around town to everyday conversations.",
+		"viewAll": "View all",
+		"closingTitle": "A little conversation. A little progress. Every day.",
+		"closingDescription": "Your next real-life conversation starts here."
+	},
 	"DialogueFeature": {
 		"courseNotFound": "Dialogue course not found.",
 		"level": { "beginner": "Beginner", "intermediate": "Intermediate", "advanced": "Advanced" },

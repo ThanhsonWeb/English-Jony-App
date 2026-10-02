@@ -1,4 +1,36 @@
 {
+	"Home": {
+		"eyebrow": "Học tiếng Anh thực tế mỗi ngày",
+		"heroTitle": "Học tiếng Anh qua những tình huống bạn <accent>thực sự gặp</accent>",
+		"heroDescription": "Nghe hội thoại, học từ trong ngữ cảnh và ôn lại theo cách phù hợp với bạn.",
+		"heroAlt": "Hai người bạn luyện tiếng Anh ở quán cà phê cùng máy tính và một chú mèo đang ngủ",
+		"startLearning": "Bắt đầu học",
+		"exploreDialogues": "Khám phá hội thoại",
+		"featuresLabel": "Các cách học cùng StudyJony",
+		"features": {
+			"dialogues": { "title": "Hội thoại thực tế", "description": "Nghe và luyện tập qua những tình huống thường gặp trong công việc, du lịch, mua sắm, ăn uống..." },
+			"vocabulary": { "title": "Từ vựng theo ngữ cảnh", "description": "Học từ mới trong ngữ cảnh, xem nghĩa, phát âm và ví dụ thực tế." },
+			"review": { "title": "Ôn tập thông minh", "description": "Ôn lại với Flashcard, Quiz, Viết từ và hệ thống lặp lại ngắt quãng (SRS) để nhớ lâu hơn." }
+		},
+		"coffeeMeaning": "cà phê",
+		"howEyebrow": "Một vòng học đơn giản",
+		"howTitle": "Cách StudyJony hoạt động",
+		"howDescription": "Chỉ 4 bước để biến tiếng Anh thành kỹ năng thực tế.",
+		"steps": {
+			"choose": { "title": "Chọn hội thoại", "description": "Chọn chủ đề bạn quan tâm." },
+			"listen": { "title": "Nghe & hiểu", "description": "Luyện nghe và nắm nội dung." },
+			"save": { "title": "Lưu từ hữu ích", "description": "Thêm từ mới vào sổ tay." },
+			"review": { "title": "Ôn lại", "description": "Ôn tập khi đến hạn với SRS." }
+		},
+		"newWord": "từ mới",
+		"savedToNotebook": "đã lưu vào sổ tay",
+		"topicsEyebrow": "Nhiều chủ đề thực tế",
+		"topicsTitle": "Hội thoại cho mọi tình huống",
+		"topicsDescription": "Từ hỏi đường đến những cuộc trò chuyện đời thường.",
+		"viewAll": "Xem tất cả",
+		"closingTitle": "Mỗi cuộc hội thoại là một bước tiến nhỏ mỗi ngày.",
+		"closingDescription": "Bắt đầu cuộc trò chuyện thực tế tiếp theo của bạn tại đây."
+	},
 	"DialogueFeature": {
 		"courseNotFound": "Không tìm thấy chủ đề hội thoại.",
 		"level": { "beginner": "Sơ cấp", "intermediate": "Trung cấp", "advanced": "Nâng cao" },
