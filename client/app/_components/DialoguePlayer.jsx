@@ -511,8 +511,8 @@ export default function DialoguePlayer({
 	};
 
 	return (
-		<div className="min-h-screen px-4 pb-8 pt-4 text-white sm:px-8">
-			<div className="mx-auto max-w-4xl ">
+		<div className="min-h-screen px-4 pb-8 pt-4 text-white md:px-8">
+			<div className="md:mx-auto md:max-w-4xl">
 				{/* Header */}
 				<div>
 					<Link
@@ -529,9 +529,9 @@ export default function DialoguePlayer({
 				</div>
 
 				{/* Player */}
-				<div className="mt-8 overflow-hidden rounded-2xl border border-slate-800 bg-[#0b1020] shadow-xl">
+				<div className="mt-5 overflow-hidden rounded-2xl border border-slate-800 bg-[#0b1020] shadow-xl md:mt-8">
 					{/* Scene */}
-					<div className="relative h-[390px] bg-cover bg-center sm:h-[460px]">
+					<div className="relative h-[360px] bg-cover bg-center md:h-[460px]">
 						{activeScene && (
 							<div
 								key={activeScene}
@@ -599,7 +599,7 @@ export default function DialoguePlayer({
 							{/* Subtitle - only visible while playing */}
 							{hasStarted && showSubtitles && !dialogueFinished && (
 								<div
-									className={`px-8 pb-3 pt-3 sm:px-12 lg:px-16 ${
+									className={`px-4 py-2 md:px-12 md:pb-3 md:pt-3 lg:px-16 ${
 										isRightSideSpeaker(activeLine?.speaker)
 											? "text-right"
 											: "text-left"
@@ -607,20 +607,20 @@ export default function DialoguePlayer({
 								>
 									{/* Speaker */}
 									<p
-										className="dialogue-subtitle-speaker text-sm font-bold"
+										className="dialogue-subtitle-speaker text-base font-bold md:text-sm"
 									>
 										{activeLine?.speaker}
 									</p>
 
 									{/* Sentence + translate */}
 									<div
-										className={`px-4 mt-1 flex items-start gap-2 ${
+										className={`mt-0.5 flex items-start gap-2 md:mt-1 md:px-4 ${
 											isRightSideSpeaker(activeLine?.speaker)
 												? "justify-end"
 												: "justify-start"
 										}`}
 									>
-										<p className="dialogue-subtitle-text max-w-2xl text-base leading-relaxed text-white sm:text-xl">
+										<p className="dialogue-subtitle-text text-[18px] leading-[1.45] text-white md:max-w-2xl md:text-xl md:leading-relaxed">
 											{activeLine?.text &&
 												renderSubtitleTokens(
 													activeLine.text,
@@ -634,7 +634,7 @@ export default function DialoguePlayer({
 
 									{/* Translation */}
 									{showTranslation && activeLine?.translation && (
-										<p className="dialogue-subtitle-translation px-4 mt-2 text-md">
+										<p className="dialogue-subtitle-translation mt-1 text-base leading-normal opacity-80 md:mt-2 md:px-4 md:opacity-100">
 											{activeLine.translation}
 										</p>
 									)}
@@ -642,7 +642,7 @@ export default function DialoguePlayer({
 							)}
 
 							{/* Controls */}
-							<div className="flex items-center justify-between border-t border-white/10 bg-player-toolbar px-4 py-2 sm:px-5">
+							<div className="flex items-center justify-between border-t border-white/10 bg-player-toolbar px-3 py-1.5 md:px-5 md:py-2">
 								<div className="flex items-center gap-2">
 									{/* Play */}
 									<button
@@ -650,7 +650,7 @@ export default function DialoguePlayer({
 										onClick={handlePlayPause}
 										aria-label={isPlaying ? t("pause") : t("play")}
 										title={`Ctrl: ${t("play")} / ${t("pause")}`}
-										className="relative z-30 flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 bg-[#111827] text-slate-100 shadow-md transition hover:border-violet-500/50 hover:bg-[#1a2235] hover:text-violet-300 active:scale-95 cursor-pointer "
+										className="relative z-30 flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-[#111827] text-slate-100 shadow-md transition hover:border-violet-500/50 hover:bg-[#1a2235] hover:text-violet-300 active:scale-95 cursor-pointer md:h-12 md:w-12"
 									>
 										{isPlaying ? (
 											<Pause size={18} fill="currentColor" />
@@ -739,7 +739,7 @@ export default function DialoguePlayer({
 										onClick={() => setShowSubtitles((current) => !current)}
 										aria-label={showSubtitles ? t("hideSubtitles") : t("showSubtitles")}
 										title={showSubtitles ? t("hideSubtitles") : t("showSubtitles")}
-										className={`flex h-11 w-11 items-center justify-center rounded-full transition ${
+										className={`flex h-10 w-10 items-center justify-center rounded-full transition md:h-11 md:w-11 ${
 											showSubtitles
 												? "bg-violet-500/15 text-violet-400"
 												: "text-slate-400 hover:bg-white/10 hover:text-white"

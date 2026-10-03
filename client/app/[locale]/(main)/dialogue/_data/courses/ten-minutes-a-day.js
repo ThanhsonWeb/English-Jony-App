@@ -1,6 +1,9 @@
 import tenMinutesADayConfig from "@/scripts/config/stories/ten-minutes-a-day.mjs";
 
 import theOldBook from "../stories/ten-minutes-a-day/the-old-book.json";
+import onlyTenMinutes from "../stories/ten-minutes-a-day/only-ten-minutes.json";
+import thePresentation from "../stories/ten-minutes-a-day/the-presentation.json";
+import theRealTreasure from "../stories/ten-minutes-a-day/the-real-treasure.json";
 import { tenMinutesADayMedia } from "../stories/ten-minutes-a-day/media";
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
 
@@ -64,7 +67,12 @@ const tenMinutesADayCourse = {
 	description: "Mr. Daniel gives Leo and Ryan the same English book and asks them to read for ten minutes every day.",
 	localized: {"title":{"vi":"Mười phút mỗi ngày","en":"Ten Minutes a Day"},"description":{"vi":"Mr. Daniel tặng Leo và Ryan cùng một cuốn sách tiếng Anh và đề nghị họ đọc mười phút mỗi ngày.","en":"Mr. Daniel gives Leo and Ryan the same English book and asks them to read for ten minutes every day."}},
 	level: tenMinutesADayConfig.level,
-	dialogues: [buildCourseDialogue(theOldBook)],
+	dialogues: [
+		buildCourseDialogue(theOldBook),
+		buildCourseDialogue(onlyTenMinutes),
+		buildCourseDialogue(thePresentation),
+		buildCourseDialogue(theRealTreasure),
+	],
 };
 
 export default tenMinutesADayCourse;

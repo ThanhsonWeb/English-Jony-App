@@ -1,0 +1,1122 @@
+{
+  "metadata": {
+    "courseId": "ten-minutes-a-day",
+    "dialogueId": "only-ten-minutes",
+    "title": "Chỉ mười phút",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Mười phút mỗi ngày",
+        "en": "Ten Minutes a Day"
+      },
+      "courseDescription": {
+        "vi": "Ryan thấy chán và ngừng đọc, còn Leo tiếp tục đọc mười phút mỗi ngày.",
+        "en": "Ryan gets bored and stops reading, while Leo continues for ten minutes every day."
+      },
+      "title": {
+        "vi": "Chỉ mười phút",
+        "en": "Only Ten Minutes"
+      },
+      "description": {
+        "vi": "Ryan thấy chán và ngừng đọc, còn Leo tiếp tục đọc mười phút mỗi ngày.",
+        "en": "Ryan gets bored and stops reading, while Leo continues for ten minutes every day."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Ryan thấy chán và ngừng đọc, còn Leo tiếp tục đọc mười phút mỗi ngày.",
+    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+    "thumbnail": "/stories/ten-minutes-a-day/thumbnails/only-ten-minutes.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Ryan",
+      "text": "I tried the book last night. I got bored, so I stopped.",
+      "translation": "Tối qua tớ đã thử đọc cuốn sách. Tớ thấy chán nên đã dừng lại.",
+      "practicePriority": "important",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Leo",
+      "text": "I read for ten minutes after dinner.",
+      "translation": "Tớ đọc trong mười phút sau bữa tối.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Ryan",
+      "text": "Every day?",
+      "translation": "Mỗi ngày à?",
+      "practicePriority": "simple",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Leo",
+      "text": "Yes. Ten minutes is not very long.",
+      "translation": "Ừ. Mười phút không lâu lắm.",
+      "practicePriority": "important",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Ryan",
+      "text": "I want to read more, but I get tired.",
+      "translation": "Tớ muốn đọc nhiều hơn, nhưng tớ thấy mệt.",
+      "practicePriority": "important",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Leo",
+      "text": "You do not need to read a lot. Just read for ten minutes.",
+      "translation": "Cậu không cần đọc nhiều. Chỉ cần đọc trong mười phút thôi.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Ryan",
+      "text": "What do you do when you get bored?",
+      "translation": "Cậu làm gì khi cảm thấy chán?",
+      "practicePriority": "important",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Leo",
+      "text": "I read one more page. Then I stop.",
+      "translation": "Tớ đọc thêm một trang nữa. Sau đó tớ dừng lại.",
+      "practicePriority": "important",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Ryan",
+      "text": "That sounds easy.",
+      "translation": "Nghe có vẻ dễ đấy.",
+      "practicePriority": "simple",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Leo",
+      "text": "Try it tonight. Set a timer for ten minutes.",
+      "translation": "Tối nay thử nhé. Hãy đặt hẹn giờ trong mười phút.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Ryan",
+      "text": "Okay. I will try again tonight.",
+      "translation": "Được rồi. Tối nay tớ sẽ thử lại.",
+      "practicePriority": "important",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "get bored",
+      "pronunciation": "/ɡet bɔːrd/",
+      "meaning": "cảm thấy chán",
+      "example": "I get bored when the movie is too long."
+    },
+    {
+      "word": "after dinner",
+      "pronunciation": "/ˈæftər ˈdɪnər/",
+      "meaning": "sau bữa tối",
+      "example": "I study English after dinner."
+    },
+    {
+      "word": "every day",
+      "pronunciation": "/ˈevri deɪ/",
+      "meaning": "mỗi ngày",
+      "example": "She walks every day."
+    },
+    {
+      "word": "get tired",
+      "pronunciation": "/ɡet ˈtaɪərd/",
+      "meaning": "cảm thấy mệt",
+      "example": "I get tired after work."
+    },
+    {
+      "word": "a lot",
+      "pronunciation": "/ə lɑːt/",
+      "meaning": "nhiều",
+      "example": "You do not need to study a lot today."
+    },
+    {
+      "word": "one more page",
+      "pronunciation": "/wʌn mɔːr peɪdʒ/",
+      "meaning": "thêm một trang nữa",
+      "example": "I want to read one more page."
+    },
+    {
+      "word": "set a timer",
+      "pronunciation": "/set ə ˈtaɪmər/",
+      "meaning": "đặt hẹn giờ",
+      "example": "Set a timer for five minutes."
+    },
+    {
+      "word": "try again",
+      "pronunciation": "/traɪ əˈɡen/",
+      "meaning": "thử lại",
+      "example": "Do not worry. Try again tomorrow."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "I tried the book last night. I ",
+        ", so I stopped."
+      ],
+      "answers": [
+        "got bored"
+      ],
+      "speaker": "Ryan",
+      "transcript": "I tried the book last night. I got bored, so I stopped.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "I tried the book last night. I got bored, so I ",
+        "."
+      ],
+      "answers": [
+        "stopped"
+      ],
+      "speaker": "Ryan",
+      "transcript": "I tried the book last night. I got bored, so I stopped.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 1,
+      "type": "multipleChoice",
+      "question": "Điều gì xảy ra khi Ryan đọc sách tối qua?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the correct answer"
+        },
+        "instruction": {
+          "vi": "Chọn câu trả lời đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Điều gì xảy ra khi Ryan đọc sách tối qua?",
+          "en": "What happened when Ryan read the book last night?"
+        },
+        "options": [
+          {
+            "vi": "Cậu ấy đọc hết cả cuốn sách.",
+            "en": "He finished the whole book."
+          },
+          {
+            "vi": "Cậu ấy đọc trong ba mươi phút.",
+            "en": "He read for thirty minutes."
+          },
+          {
+            "vi": "Cậu ấy làm mất cuốn sách.",
+            "en": "He lost the book."
+          },
+          {
+            "vi": "Cậu ấy thấy chán và dừng lại.",
+            "en": "He got bored and stopped."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Cậu ấy đọc hết cả cuốn sách.",
+        "Cậu ấy đọc trong ba mươi phút.",
+        "Cậu ấy làm mất cuốn sách.",
+        "Cậu ấy thấy chán và dừng lại."
+      ],
+      "answer": "Cậu ấy thấy chán và dừng lại.",
+      "speaker": "Ryan",
+      "transcript": "I tried the book last night. I got bored, so I stopped.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "I ",
+        " for ten minutes after dinner."
+      ],
+      "answers": [
+        "read"
+      ],
+      "speaker": "Leo",
+      "transcript": "I read for ten minutes after dinner.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "I read for ten minutes ",
+        "."
+      ],
+      "answers": [
+        "after dinner"
+      ],
+      "speaker": "Leo",
+      "transcript": "I read for ten minutes after dinner.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 2,
+      "type": "multipleChoice",
+      "question": "Cụm “for ten minutes” cho biết điều gì trong câu của Leo?",
+      "localized": {
+        "title": {
+          "vi": "Ngữ pháp trong ngữ cảnh",
+          "en": "Grammar in context"
+        },
+        "instruction": {
+          "vi": "Chọn câu trả lời đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Cụm “for ten minutes” cho biết điều gì trong câu của Leo?",
+          "en": "What does “for ten minutes” tell us in Leo's sentence?"
+        },
+        "options": [
+          {
+            "vi": "Thời điểm Leo đi ngủ.",
+            "en": "The time Leo goes to bed."
+          },
+          {
+            "vi": "Khoảng thời gian Leo đọc.",
+            "en": "How long Leo reads."
+          },
+          {
+            "vi": "Nơi Leo đọc sách.",
+            "en": "Where Leo reads."
+          },
+          {
+            "vi": "Người đọc cùng Leo.",
+            "en": "Who reads with Leo."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "for ten minutes",
+      "options": [
+        "Thời điểm Leo đi ngủ.",
+        "Khoảng thời gian Leo đọc.",
+        "Nơi Leo đọc sách.",
+        "Người đọc cùng Leo."
+      ],
+      "answer": "Khoảng thời gian Leo đọc.",
+      "speaker": "Leo",
+      "transcript": "I read for ten minutes after dinner.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-01.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "",
+        "?"
+      ],
+      "answers": [
+        "Every day"
+      ],
+      "speaker": "Ryan",
+      "transcript": "Every day?",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Yes. ",
+        " is not very long."
+      ],
+      "answers": [
+        "Ten minutes"
+      ],
+      "speaker": "Leo",
+      "transcript": "Yes. Ten minutes is not very long.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Yes. Ten minutes is not ",
+        "."
+      ],
+      "answers": [
+        "very long"
+      ],
+      "speaker": "Leo",
+      "transcript": "Yes. Ten minutes is not very long.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "I want to ",
+        ", but I get tired."
+      ],
+      "answers": [
+        "read more"
+      ],
+      "speaker": "Ryan",
+      "transcript": "I want to read more, but I get tired.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "I want to read more, but I ",
+        "."
+      ],
+      "answers": [
+        "get tired"
+      ],
+      "speaker": "Ryan",
+      "transcript": "I want to read more, but I get tired.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "You do not ",
+        " read a lot. Just read for ten minutes."
+      ],
+      "answers": [
+        "need to"
+      ],
+      "speaker": "Leo",
+      "transcript": "You do not need to read a lot. Just read for ten minutes.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "You do not need to read ",
+        ". Just read for ten minutes."
+      ],
+      "answers": [
+        "a lot"
+      ],
+      "speaker": "Leo",
+      "transcript": "You do not need to read a lot. Just read for ten minutes.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Leo khuyên Ryan làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu hội thoại",
+          "en": "Understand the dialogue"
+        },
+        "instruction": {
+          "vi": "Chọn câu trả lời đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Leo khuyên Ryan làm gì?",
+          "en": "What does Leo advise Ryan to do?"
+        },
+        "options": [
+          {
+            "vi": "Đọc thật nhiều trong một lần.",
+            "en": "Read a lot at one time."
+          },
+          {
+            "vi": "Ngừng đọc sách.",
+            "en": "Stop reading."
+          },
+          {
+            "vi": "Chỉ đọc trong mười phút.",
+            "en": "Just read for ten minutes."
+          },
+          {
+            "vi": "Chỉ đọc vào cuối tuần.",
+            "en": "Only read on weekends."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Đọc thật nhiều trong một lần.",
+        "Ngừng đọc sách.",
+        "Chỉ đọc trong mười phút.",
+        "Chỉ đọc vào cuối tuần."
+      ],
+      "answer": "Chỉ đọc trong mười phút.",
+      "speaker": "Leo",
+      "transcript": "You do not need to read a lot. Just read for ten minutes.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-03.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "What do you do ",
+        " you get bored?"
+      ],
+      "answers": [
+        "when"
+      ],
+      "speaker": "Ryan",
+      "transcript": "What do you do when you get bored?",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "What do you do when you ",
+        "?"
+      ],
+      "answers": [
+        "get bored"
+      ],
+      "speaker": "Ryan",
+      "transcript": "What do you do when you get bored?",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "I read ",
+        " page. Then I stop."
+      ],
+      "answers": [
+        "one more"
+      ],
+      "speaker": "Leo",
+      "transcript": "I read one more page. Then I stop.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "I read one more page. Then I ",
+        "."
+      ],
+      "answers": [
+        "stop"
+      ],
+      "speaker": "Leo",
+      "transcript": "I read one more page. Then I stop.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-04.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "That sounds ",
+        "."
+      ],
+      "answers": [
+        "easy"
+      ],
+      "speaker": "Ryan",
+      "transcript": "That sounds easy.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-05.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Try it ",
+        ". Set a timer for ten minutes."
+      ],
+      "answers": [
+        "tonight"
+      ],
+      "speaker": "Leo",
+      "transcript": "Try it tonight. Set a timer for ten minutes.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Try it tonight. Set a ",
+        " for ten minutes."
+      ],
+      "answers": [
+        "timer"
+      ],
+      "speaker": "Leo",
+      "transcript": "Try it tonight. Set a timer for ten minutes.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Leo đề nghị Ryan làm gì tối nay?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu hội thoại",
+          "en": "Understand the dialogue"
+        },
+        "instruction": {
+          "vi": "Chọn câu trả lời đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Leo đề nghị Ryan làm gì tối nay?",
+          "en": "What does Leo suggest Ryan do tonight?"
+        },
+        "options": [
+          {
+            "vi": "Đặt hẹn giờ trong mười phút.",
+            "en": "Set a timer for ten minutes."
+          },
+          {
+            "vi": "Đọc cả cuốn sách.",
+            "en": "Read the whole book."
+          },
+          {
+            "vi": "Không đọc gì cả.",
+            "en": "Read nothing."
+          },
+          {
+            "vi": "Đợi đến cuối tuần.",
+            "en": "Wait until the weekend."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Đặt hẹn giờ trong mười phút.",
+        "Đọc cả cuốn sách.",
+        "Không đọc gì cả.",
+        "Đợi đến cuối tuần."
+      ],
+      "answer": "Đặt hẹn giờ trong mười phút.",
+      "speaker": "Leo",
+      "transcript": "Try it tonight. Set a timer for ten minutes.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Okay. ",
+        " try again tonight."
+      ],
+      "answers": [
+        "I will"
+      ],
+      "speaker": "Ryan",
+      "transcript": "Okay. I will try again tonight.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-06.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Okay. I will try again ",
+        "."
+      ],
+      "answers": [
+        "tonight"
+      ],
+      "speaker": "Ryan",
+      "transcript": "Okay. I will try again tonight.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-06.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 11,
+      "type": "multipleChoice",
+      "question": "Ryan nói “try again” để thể hiện điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Cách dùng trong tình huống",
+          "en": "Usage in context"
+        },
+        "instruction": {
+          "vi": "Chọn câu trả lời đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Ryan nói “try again” để thể hiện điều gì?",
+          "en": "What does Ryan mean when he says “try again”?"
+        },
+        "options": [
+          {
+            "vi": "Cậu ấy không muốn đọc nữa.",
+            "en": "He does not want to read anymore."
+          },
+          {
+            "vi": "Cậu ấy sẽ thử lại sau khi đã dừng trước đó.",
+            "en": "He will try again after stopping before."
+          },
+          {
+            "vi": "Cậu ấy đã đọc xong cả cuốn sách.",
+            "en": "He has finished the whole book."
+          },
+          {
+            "vi": "Cậu ấy muốn đổi sang một cuốn sách khác.",
+            "en": "He wants to change to another book."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "try again",
+      "options": [
+        "Cậu ấy không muốn đọc nữa.",
+        "Cậu ấy sẽ thử lại sau khi đã dừng trước đó.",
+        "Cậu ấy đã đọc xong cả cuốn sách.",
+        "Cậu ấy muốn đổi sang một cuốn sách khác."
+      ],
+      "answer": "Cậu ấy sẽ thử lại sau khi đã dừng trước đó.",
+      "speaker": "Ryan",
+      "transcript": "Okay. I will try again tonight.",
+      "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-06.mp3"
+    },
+    {
+      "id": 26,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Hoàn thành hội thoại",
+          "en": "Complete the dialogue"
+        },
+        "instruction": {
+          "vi": "Điền các từ còn thiếu để hoàn thành toàn bộ hội thoại.",
+          "en": "Fill in the missing words to complete the whole dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Ryan",
+          "parts": [
+            "I tried the book last night. I ",
+            {
+              "id": "1",
+              "blank": "got bored"
+            },
+            ", so I stopped."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Leo",
+          "parts": [
+            "I read for ",
+            {
+              "id": "2",
+              "blank": "ten minutes"
+            },
+            " after dinner."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Ryan",
+          "parts": [
+            "",
+            {
+              "id": "3",
+              "blank": "Every day"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Leo",
+          "parts": [
+            "Yes. Ten minutes is not ",
+            {
+              "id": "4",
+              "blank": "very long"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Ryan",
+          "parts": [
+            "I want to read more, but I ",
+            {
+              "id": "5",
+              "blank": "get tired"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Leo",
+          "parts": [
+            "You do not need to read ",
+            {
+              "id": "6",
+              "blank": "a lot"
+            },
+            ". Just read for ten minutes."
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Ryan",
+          "parts": [
+            "What do you do when you ",
+            {
+              "id": "7",
+              "blank": "get bored"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Leo",
+          "parts": [
+            "I read ",
+            {
+              "id": "8",
+              "blank": "one more"
+            },
+            " page. Then I stop."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Ryan",
+          "parts": [
+            "That sounds ",
+            {
+              "id": "9",
+              "blank": "easy"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Leo",
+          "parts": [
+            "Try it tonight. Set a ",
+            {
+              "id": "10",
+              "blank": "timer"
+            },
+            " for ten minutes."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Ryan",
+          "parts": [
+            "Okay. I will ",
+            {
+              "id": "11",
+              "blank": "try again"
+            },
+            " tonight."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "do not need to + động từ",
+      "explanation": "Dùng “do not need to + động từ” khi muốn nói rằng một việc nào đó không cần thiết phải làm.",
+      "localized": {
+        "title": {
+          "vi": "do not need to + động từ",
+          "en": "do not need to + verb"
+        },
+        "explanation": {
+          "vi": "Dùng “do not need to + động từ” khi muốn nói rằng một việc nào đó không cần thiết phải làm.",
+          "en": "Use “do not need to + verb” to say that something is not necessary."
+        }
+      },
+      "example": "You do not need to read a lot."
+    }
+  ]
+}

@@ -1,0 +1,980 @@
+{
+	"metadata": {
+		"courseId": "ten-minutes-a-day",
+		"dialogueId": "the-real-treasure",
+		"title": "Kho báu thật sự",
+		"localizationVersion": 1,
+		"localized": {
+			"courseTitle": {
+				"vi": "Mười phút mỗi ngày",
+				"en": "Ten Minutes a Day"
+			},
+			"courseDescription": {
+				"vi": "Ryan nhận ra rằng thói quen hằng ngày của Leo, chứ không phải bản thân cuốn sách, mới là kho báu thật sự.",
+				"en": "Ryan realizes that Leo's daily habit, not the book itself, was the real treasure."
+			},
+			"title": {
+				"vi": "Kho báu thật sự",
+				"en": "The Real Treasure"
+			},
+			"description": {
+				"vi": "Ryan realizes that Leo's daily habit, not the book itself, was the real treasure.",
+				"en": "Ryan realizes that Leo's daily habit, not the book itself, was the real treasure."
+			}
+		},
+		"level": "a1",
+		"a1ContentRulesVersion": 2,
+		"teachesContractions": [],
+		"situation": "Ryan realizes that Leo's daily habit, not the book itself, was the real treasure.",
+		"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+		"thumbnail": "/stories/ten-minutes-a-day/thumbnails/the-real-treasure.png"
+	},
+	"dialogue": [
+		{
+			"id": 1,
+			"speaker": "Mr. Daniel",
+			"text": "Your presentation was very good. What did you learn from this?",
+			"translation": "Bài thuyết trình của hai em rất tốt. Hai em đã học được gì từ việc này?",
+			"practicePriority": "simple",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-01.mp3"
+		},
+		{
+			"id": 2,
+			"speaker": "Ryan",
+			"text": "At first, I thought the old book was special.",
+			"translation": "Lúc đầu, em nghĩ cuốn sách cũ rất đặc biệt.",
+			"practicePriority": "important",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-01.mp3"
+		},
+		{
+			"id": 3,
+			"speaker": "Leo",
+			"text": "The book helped me, but the habit was more important.",
+			"translation": "Cuốn sách đã giúp em, nhưng thói quen còn quan trọng hơn.",
+			"practicePriority": "important",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/leo-01.mp3"
+		},
+		{
+			"id": 4,
+			"speaker": "Ryan",
+			"text": "Yes. I understand that now.",
+			"translation": "Đúng vậy. Bây giờ em đã hiểu điều đó.",
+			"practicePriority": "simple",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-02.mp3"
+		},
+		{
+			"id": 5,
+			"speaker": "Ryan",
+			"text": "The real treasure was not the book. It was the ten-minute habit.",
+			"translation": "Kho báu thật sự không phải là cuốn sách. Đó là thói quen mười phút.",
+			"practicePriority": "veryImportant",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-03.mp3"
+		},
+		{
+			"id": 6,
+			"speaker": "Mr. Daniel",
+			"text": "Why was that habit important?",
+			"translation": "Tại sao thói quen đó lại quan trọng?",
+			"practicePriority": "simple",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-02.mp3"
+		},
+		{
+			"id": 7,
+			"speaker": "Ryan",
+			"text": "Because it helped me read every day.",
+			"translation": "Bởi vì nó giúp em đọc sách mỗi ngày.",
+			"practicePriority": "important",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-04.mp3"
+		},
+		{
+			"id": 8,
+			"speaker": "Leo",
+			"text": "And small steps made reading easier.",
+			"translation": "Và những bước nhỏ khiến việc đọc trở nên dễ dàng hơn.",
+			"practicePriority": "important",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/leo-02.mp3"
+		},
+		{
+			"id": 9,
+			"speaker": "Ryan",
+			"text": "Now I can use the same idea for English too.",
+			"translation": "Bây giờ em cũng có thể dùng cách tương tự cho tiếng Anh.",
+			"practicePriority": "important",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-05.mp3"
+		},
+		{
+			"id": 10,
+			"speaker": "Mr. Daniel",
+			"text": "That is a good lesson. Start small and keep going.",
+			"translation": "Đó là một bài học hay. Hãy bắt đầu từ việc nhỏ và tiếp tục.",
+			"practicePriority": "veryImportant",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-03.mp3"
+		},
+		{
+			"id": 11,
+			"speaker": "Ryan",
+			"text": "I will. Ten minutes a day can change a lot.",
+			"translation": "Em sẽ làm vậy. Mười phút mỗi ngày có thể thay đổi rất nhiều.",
+			"practicePriority": "simple",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-06.mp3"
+		}
+	],
+	"usefulWords": [
+		{
+			"word": "learn",
+			"pronunciation": "/lɝːn/",
+			"meaning": "học, học được",
+			"example": "We learn something new every day."
+		},
+		{
+			"word": "special",
+			"pronunciation": "/ˈspeʃ.əl/",
+			"meaning": "đặc biệt",
+			"example": "This book is special to me."
+		},
+		{
+			"word": "habit",
+			"pronunciation": "/ˈhæb.ɪt/",
+			"meaning": "thói quen",
+			"example": "Reading every day is a good habit."
+		},
+		{
+			"word": "important",
+			"pronunciation": "/ɪmˈpɔːr.tənt/",
+			"meaning": "quan trọng",
+			"example": "Sleep is important."
+		},
+		{
+			"word": "real treasure",
+			"pronunciation": "/riːl ˈtreʒ.ɚ/",
+			"meaning": "kho báu thật sự",
+			"example": "Good friends are a real treasure."
+		},
+		{
+			"word": "small steps",
+			"pronunciation": "/smɔːl steps/",
+			"meaning": "những bước nhỏ",
+			"example": "Small steps can help you learn."
+		},
+		{
+			"word": "keep going",
+			"pronunciation": "/kiːp ˈɡoʊ.ɪŋ/",
+			"meaning": "tiếp tục",
+			"example": "Start small and keep going."
+		}
+	],
+	"tasks": [
+		{
+			"id": 1,
+			"dialogueLineId": 1,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": [
+				"Your presentation was very good. What did you ",
+				" from this?"
+			],
+			"answers": ["learn"],
+			"speaker": "Mr. Daniel",
+			"transcript": "Your presentation was very good. What did you learn from this?",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-01.mp3"
+		},
+		{
+			"id": 2,
+			"dialogueLineId": 2,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền cụm từ còn thiếu.",
+					"en": "Listen and fill in the missing phrase."
+				}
+			},
+			"parts": ["", ", I thought the old book was special."],
+			"answers": ["At first"],
+			"speaker": "Ryan",
+			"transcript": "At first, I thought the old book was special.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-01.mp3"
+		},
+		{
+			"id": 3,
+			"dialogueLineId": 2,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["At first, I thought the old book was ", "."],
+			"answers": ["special"],
+			"speaker": "Ryan",
+			"transcript": "At first, I thought the old book was special.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-01.mp3"
+		},
+		{
+			"id": 4,
+			"dialogueLineId": 2,
+			"type": "multipleChoice",
+			"question": "Lúc đầu Ryan nghĩ điều gì?",
+			"localized": {
+				"title": {
+					"vi": "Chọn đáp án đúng",
+					"en": "Choose the Correct Answer"
+				},
+				"instruction": {
+					"vi": "Đọc câu hỏi và chọn một đáp án.",
+					"en": "Read the question and choose one answer."
+				},
+				"question": {
+					"vi": "Lúc đầu Ryan nghĩ điều gì?",
+					"en": "What did Ryan think at first?"
+				},
+				"options": [
+					{
+						"vi": "Cuốn sách quá khó",
+						"en": "The book was too difficult"
+					},
+					{
+						"vi": "Leo không thích đọc",
+						"en": "Leo did not like reading"
+					},
+					{
+						"vi": "Thầy Daniel đã viết cuốn sách",
+						"en": "Mr. Daniel wrote the book"
+					},
+					{
+						"vi": "Cuốn sách cũ rất đặc biệt",
+						"en": "The old book was special"
+					}
+				]
+			},
+			"mcCategory": "comprehension",
+			"options": [
+				"Cuốn sách quá khó",
+				"Leo không thích đọc",
+				"Thầy Daniel đã viết cuốn sách",
+				"Cuốn sách cũ rất đặc biệt"
+			],
+			"answer": "Cuốn sách cũ rất đặc biệt",
+			"speaker": "Ryan",
+			"transcript": "At first, I thought the old book was special.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-01.mp3"
+		},
+		{
+			"id": 5,
+			"dialogueLineId": 3,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["The book ", " me, but the habit was more important."],
+			"answers": ["helped"],
+			"speaker": "Leo",
+			"transcript": "The book helped me, but the habit was more important.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/leo-01.mp3"
+		},
+		{
+			"id": 6,
+			"dialogueLineId": 3,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["The book helped me, but the ", " was more important."],
+			"answers": ["habit"],
+			"speaker": "Leo",
+			"transcript": "The book helped me, but the habit was more important.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/leo-01.mp3"
+		},
+		{
+			"id": 7,
+			"dialogueLineId": 4,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["Yes. I ", " that now."],
+			"answers": ["understand"],
+			"speaker": "Ryan",
+			"transcript": "Yes. I understand that now.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-02.mp3"
+		},
+		{
+			"id": 8,
+			"dialogueLineId": 5,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền cụm từ còn thiếu.",
+					"en": "Listen and fill in the missing phrase."
+				}
+			},
+			"parts": ["The ", " was not the book. It was the ten-minute habit."],
+			"answers": ["real treasure"],
+			"speaker": "Ryan",
+			"transcript": "The real treasure was not the book. It was the ten-minute habit.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-03.mp3"
+		},
+		{
+			"id": 9,
+			"dialogueLineId": 5,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": [
+				"The real treasure was not the book. It was the ten-minute ",
+				"."
+			],
+			"answers": ["habit"],
+			"speaker": "Ryan",
+			"transcript": "The real treasure was not the book. It was the ten-minute habit.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-03.mp3"
+		},
+		{
+			"id": 10,
+			"dialogueLineId": 5,
+			"type": "multipleChoice",
+			"question": "Ryan nhận ra \"kho báu thật sự\" là gì?",
+			"localized": {
+				"title": {
+					"vi": "Chọn đáp án đúng",
+					"en": "Choose the Correct Answer"
+				},
+				"instruction": {
+					"vi": "Đọc câu hỏi và chọn một đáp án.",
+					"en": "Read the question and choose one answer."
+				},
+				"question": {
+					"vi": "Ryan nhận ra \"kho báu thật sự\" là gì?",
+					"en": "What does Ryan realize the \"real treasure\" is?"
+				},
+				"options": [
+					{
+						"vi": "Thói quen mười phút",
+						"en": "The ten-minute habit"
+					},
+					{
+						"vi": "Cuốn sách cũ",
+						"en": "The old book"
+					},
+					{
+						"vi": "Bài thuyết trình",
+						"en": "The presentation"
+					},
+					{
+						"vi": "Lớp học tiếng Anh",
+						"en": "The English class"
+					}
+				]
+			},
+			"mcCategory": "comprehension",
+			"options": [
+				"Thói quen mười phút",
+				"Cuốn sách cũ",
+				"Bài thuyết trình",
+				"Lớp học tiếng Anh"
+			],
+			"answer": "Thói quen mười phút",
+			"speaker": "Ryan",
+			"transcript": "The real treasure was not the book. It was the ten-minute habit.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-03.mp3"
+		},
+		{
+			"id": 11,
+			"dialogueLineId": 6,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["Why was that habit ", "?"],
+			"answers": ["important"],
+			"speaker": "Mr. Daniel",
+			"transcript": "Why was that habit important?",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-02.mp3"
+		},
+		{
+			"id": 12,
+			"dialogueLineId": 7,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["", " it helped me read every day."],
+			"answers": ["Because"],
+			"speaker": "Ryan",
+			"transcript": "Because it helped me read every day.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-04.mp3"
+		},
+		{
+			"id": 13,
+			"dialogueLineId": 7,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền cụm từ còn thiếu.",
+					"en": "Listen and fill in the missing phrase."
+				}
+			},
+			"parts": ["Because it helped me read ", "."],
+			"answers": ["every day"],
+			"speaker": "Ryan",
+			"transcript": "Because it helped me read every day.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-04.mp3"
+		},
+		{
+			"id": 14,
+			"dialogueLineId": 7,
+			"type": "multipleChoice",
+			"question": "Ryan dùng \"Because\" để làm gì trong câu này?",
+			"localized": {
+				"title": {
+					"vi": "Chọn đáp án đúng",
+					"en": "Choose the Correct Answer"
+				},
+				"instruction": {
+					"vi": "Chọn cách dùng phù hợp với câu.",
+					"en": "Choose how the word is used in this sentence."
+				},
+				"question": {
+					"vi": "Ryan dùng \"Because\" để làm gì trong câu này?",
+					"en": "Why does Ryan use \"Because\" in this sentence?"
+				},
+				"options": [
+					{
+						"vi": "Để nói về thời gian",
+						"en": "To talk about time"
+					},
+					{
+						"vi": "Để đưa ra lý do",
+						"en": "To give a reason"
+					},
+					{
+						"vi": "Để hỏi một câu hỏi",
+						"en": "To ask a question"
+					},
+					{
+						"vi": "Để nói lời cảm ơn",
+						"en": "To say thank you"
+					}
+				]
+			},
+			"mcCategory": "grammar",
+			"mcTarget": "Because",
+			"options": [
+				"Để nói về thời gian",
+				"Để đưa ra lý do",
+				"Để hỏi một câu hỏi",
+				"Để nói lời cảm ơn"
+			],
+			"answer": "Để đưa ra lý do",
+			"speaker": "Ryan",
+			"transcript": "Because it helped me read every day.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-04.mp3"
+		},
+		{
+			"id": 15,
+			"dialogueLineId": 8,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền cụm từ còn thiếu.",
+					"en": "Listen and fill in the missing phrase."
+				}
+			},
+			"parts": ["And ", " made reading easier."],
+			"answers": ["small steps"],
+			"speaker": "Leo",
+			"transcript": "And small steps made reading easier.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/leo-02.mp3"
+		},
+		{
+			"id": 16,
+			"dialogueLineId": 8,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["And small steps made reading ", "."],
+			"answers": ["easier"],
+			"speaker": "Leo",
+			"transcript": "And small steps made reading easier.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/leo-02.mp3"
+		},
+		{
+			"id": 17,
+			"dialogueLineId": 9,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền cụm từ còn thiếu.",
+					"en": "Listen and fill in the missing phrase."
+				}
+			},
+			"parts": ["Now I can use the ", " for English too."],
+			"answers": ["same idea"],
+			"speaker": "Ryan",
+			"transcript": "Now I can use the same idea for English too.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-05.mp3"
+		},
+		{
+			"id": 18,
+			"dialogueLineId": 9,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền từ còn thiếu.",
+					"en": "Listen and fill in the missing word."
+				}
+			},
+			"parts": ["Now I can use the same idea for ", " too."],
+			"answers": ["English"],
+			"speaker": "Ryan",
+			"transcript": "Now I can use the same idea for English too.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-05.mp3"
+		},
+		{
+			"id": 19,
+			"dialogueLineId": 9,
+			"type": "multipleChoice",
+			"question": "Ryan nói \"the same idea\" để chỉ cách nào?",
+			"localized": {
+				"title": {
+					"vi": "Chọn đáp án đúng",
+					"en": "Choose the Correct Answer"
+				},
+				"instruction": {
+					"vi": "Chọn cách hiểu phù hợp với tình huống.",
+					"en": "Choose the meaning that fits the situation."
+				},
+				"question": {
+					"vi": "Ryan nói \"the same idea\" để chỉ cách nào?",
+					"en": "What does Ryan mean by \"the same idea\"?"
+				},
+				"options": [
+					{
+						"vi": "Mua thêm sách mới",
+						"en": "Buying more new books"
+					},
+					{
+						"vi": "Làm một bài thuyết trình khác",
+						"en": "Giving another presentation"
+					},
+					{
+						"vi": "Bắt đầu nhỏ và luyện tập mỗi ngày",
+						"en": "Starting small and practicing every day"
+					},
+					{
+						"vi": "Chỉ học khi có bài kiểm tra",
+						"en": "Studying only before a test"
+					}
+				]
+			},
+			"mcCategory": "usage",
+			"mcTarget": "the same idea",
+			"options": [
+				"Mua thêm sách mới",
+				"Làm một bài thuyết trình khác",
+				"Bắt đầu nhỏ và luyện tập mỗi ngày",
+				"Chỉ học khi có bài kiểm tra"
+			],
+			"answer": "Bắt đầu nhỏ và luyện tập mỗi ngày",
+			"speaker": "Ryan",
+			"transcript": "Now I can use the same idea for English too.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-05.mp3"
+		},
+		{
+			"id": 20,
+			"dialogueLineId": 10,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền cụm từ còn thiếu.",
+					"en": "Listen and fill in the missing phrase."
+				}
+			},
+			"parts": ["That is a ", ". Start small and keep going."],
+			"answers": ["good lesson"],
+			"speaker": "Mr. Daniel",
+			"transcript": "That is a good lesson. Start small and keep going.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-03.mp3"
+		},
+		{
+			"id": 21,
+			"dialogueLineId": 10,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền cụm từ còn thiếu.",
+					"en": "Listen and fill in the missing phrase."
+				}
+			},
+			"parts": ["That is a good lesson. Start small and ", "."],
+			"answers": ["keep going"],
+			"speaker": "Mr. Daniel",
+			"transcript": "That is a good lesson. Start small and keep going.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-03.mp3"
+		},
+		{
+			"id": 22,
+			"dialogueLineId": 10,
+			"type": "multipleChoice",
+			"question": "Lời khuyên của Mr. Daniel là gì?",
+			"localized": {
+				"title": {
+					"vi": "Chọn đáp án đúng",
+					"en": "Choose the Correct Answer"
+				},
+				"instruction": {
+					"vi": "Đọc câu hỏi và chọn một đáp án.",
+					"en": "Read the question and choose one answer."
+				},
+				"question": {
+					"vi": "Lời khuyên của Mr. Daniel là gì?",
+					"en": "What advice does Mr. Daniel give?"
+				},
+				"options": [
+					{
+						"vi": "Bắt đầu từ việc nhỏ và tiếp tục",
+						"en": "Start small and keep going"
+					},
+					{
+						"vi": "Đọc cả cuốn sách trong một ngày",
+						"en": "Read the whole book in one day"
+					},
+					{
+						"vi": "Dừng lại khi thấy khó",
+						"en": "Stop when it feels difficult"
+					},
+					{
+						"vi": "Chỉ học vào cuối tuần",
+						"en": "Study only on weekends"
+					}
+				]
+			},
+			"mcCategory": "comprehension",
+			"options": [
+				"Bắt đầu từ việc nhỏ và tiếp tục",
+				"Đọc cả cuốn sách trong một ngày",
+				"Dừng lại khi thấy khó",
+				"Chỉ học vào cuối tuần"
+			],
+			"answer": "Bắt đầu từ việc nhỏ và tiếp tục",
+			"speaker": "Mr. Daniel",
+			"transcript": "That is a good lesson. Start small and keep going.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-03.mp3"
+		},
+		{
+			"id": 23,
+			"dialogueLineId": 11,
+			"type": "fillBlank",
+			"localized": {
+				"title": {
+					"vi": "Điền vào chỗ trống",
+					"en": "Fill in the Blank"
+				},
+				"instruction": {
+					"vi": "Nghe và điền cụm từ còn thiếu.",
+					"en": "Listen and fill in the missing phrase."
+				}
+			},
+			"parts": ["I will. ", " a day can change a lot."],
+			"answers": ["Ten minutes"],
+			"speaker": "Ryan",
+			"transcript": "I will. Ten minutes a day can change a lot.",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-06.mp3"
+		},
+		{
+			"id": 24,
+			"type": "dialogueCloze",
+			"localized": {
+				"title": {
+					"vi": "Hoàn thành hội thoại",
+					"en": "Complete the Dialogue"
+				},
+				"instruction": {
+					"vi": "Điền các từ hoặc cụm từ còn thiếu để hoàn thành toàn bộ hội thoại.",
+					"en": "Fill in the missing words or phrases to complete the full dialogue."
+				}
+			},
+			"lines": [
+				{
+					"dialogueLineId": 1,
+					"speaker": "Mr. Daniel",
+					"parts": [
+						"Your presentation was very good. What did you ",
+						{
+							"id": "1",
+							"blank": "learn"
+						},
+						" from this?"
+					]
+				},
+				{
+					"dialogueLineId": 2,
+					"speaker": "Ryan",
+					"parts": [
+						"At first, I thought the old book was ",
+						{
+							"id": "2",
+							"blank": "special"
+						},
+						"."
+					]
+				},
+				{
+					"dialogueLineId": 3,
+					"speaker": "Leo",
+					"parts": [
+						"The book helped me, but the ",
+						{
+							"id": "3",
+							"blank": "habit"
+						},
+						" was more important."
+					]
+				},
+				{
+					"dialogueLineId": 4,
+					"speaker": "Ryan",
+					"parts": [
+						"Yes. I ",
+						{
+							"id": "4",
+							"blank": "understand"
+						},
+						" that now."
+					]
+				},
+				{
+					"dialogueLineId": 5,
+					"speaker": "Ryan",
+					"parts": [
+						"The ",
+						{
+							"id": "5",
+							"blank": "real treasure"
+						},
+						" was not the book. It was the ten-minute habit."
+					]
+				},
+				{
+					"dialogueLineId": 6,
+					"speaker": "Mr. Daniel",
+					"parts": [
+						"Why was that habit ",
+						{
+							"id": "6",
+							"blank": "important"
+						},
+						"?"
+					]
+				},
+				{
+					"dialogueLineId": 7,
+					"speaker": "Ryan",
+					"parts": [
+						"Because it helped me read ",
+						{
+							"id": "7",
+							"blank": "every day"
+						},
+						"."
+					]
+				},
+				{
+					"dialogueLineId": 8,
+					"speaker": "Leo",
+					"parts": [
+						"And ",
+						{
+							"id": "8",
+							"blank": "small steps"
+						},
+						" made reading easier."
+					]
+				},
+				{
+					"dialogueLineId": 9,
+					"speaker": "Ryan",
+					"parts": [
+						"Now I can use the same idea for ",
+						{
+							"id": "9",
+							"blank": "English"
+						},
+						" too."
+					]
+				},
+				{
+					"dialogueLineId": 10,
+					"speaker": "Mr. Daniel",
+					"parts": [
+						"That is a good lesson. Start small and ",
+						{
+							"id": "10",
+							"blank": "keep going"
+						},
+						"."
+					]
+				},
+				{
+					"dialogueLineId": 11,
+					"speaker": "Ryan",
+					"parts": [
+						"I will. ",
+						{
+							"id": "11",
+							"blank": "Ten minutes"
+						},
+						" a day can change a lot."
+					]
+				}
+			]
+		}
+	],
+	"grammarNotes": [
+		{
+			"title": "\"Because\" để đưa ra lý do",
+			"explanation": "Dùng \"because\" khi muốn nói lý do tại sao một việc xảy ra.",
+			"localized": {
+				"title": {
+					"vi": "\"Because\" để đưa ra lý do",
+					"en": "\"Because\" for giving a reason"
+				},
+				"explanation": {
+					"vi": "Dùng \"because\" khi muốn nói lý do tại sao một việc xảy ra.",
+					"en": "Use \"because\" when you want to give the reason why something happens."
+				}
+			},
+			"example": "Because it helped me read every day."
+		}
+	]
+}
