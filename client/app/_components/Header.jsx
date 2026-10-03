@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import Navigation from "./Navigation";
 import AuthButtons from "./AuthButtons";
 import { useAuth } from "../_contexts/AuthContext";
-import { useRouter } from "@/i18n/navigation";
+import { usePathname, useRouter } from "@/i18n/navigation";
 import { useEffect, useRef, useState } from "react";
 import { User, LogOut } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
@@ -40,6 +40,8 @@ function Header() {
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const dropdownRef = useRef(null);
 	const router = useRouter();
+	const pathname = usePathname();
+	const isWordlist = pathname.replace(/^\/(en|vi)(?=\/|$)/, "") === "/wordlist";
 
 	const { user, setUser, loading } = useAuth();
 	// handleClickOutside
@@ -69,9 +71,9 @@ function Header() {
 
 
 	return (
-		<header className="sticky top-0 z-50 w-full border-b border-app bg-surface/95 px-4 py-1 backdrop-blur-xl sm:px-6 lg:px-4 xl:px-8">
+		<header className={`sticky top-0 z-50 w-full border-b border-app bg-surface/95 px-4 py-1 backdrop-blur-xl sm:px-6 lg:px-4 xl:px-8${isWordlist ? " max-md:min-h-[60px] max-md:px-3" : ""}`}>
 			<div className="mx-auto grid max-w-8xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
-				<Logo />
+				<Logo wordlistMobile={isWordlist} />
 				<div className="hidden justify-center lg:flex">
 					<Navigation />
 				</div>

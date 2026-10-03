@@ -1,6 +1,7 @@
 import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
+import { courseConfigs } from "./config/index.mjs";
+import { getDialogueDataJsonPath } from "./lib/dialogue-content-paths.mjs";
 
 const ELEVENLABS_BASE_URL = "https://api.elevenlabs.io/v1/text-to-speech";
 const OUTPUT_FORMAT = "mp3_44100_128";
@@ -55,24 +56,24 @@ async function loadDraft(jsonPath) {
 	};
 }
 
-async function loadLessonData() {
-	const lessonDataPath = path.resolve(
-		"app",
-		"[locale]",
-		"(main)",
-		"dialogue",
-		"_data",
-		"lessonData.js",
-	);
-	const source = await readFile(lessonDataPath, "utf8");
-	const sourceUrl = `data:text/javascript;base64,${Buffer.from(source).toString("base64")}`;
-	const lessonModule = await import(sourceUrl);
-
-	if (!lessonModule.lessonData) {
-		fail(`Lesson data export is missing in ${lessonDataPath}`);
+async function loadRegisteredDialogue(lessonId, dialogueId) {
+	const course = courseConfigs.find((item) => item.courseId === lessonId);
+	if (!course) fail(`Lesson not found: "${lessonId}"`);
+	if (!course.dialogues?.some((item) => item.dialogueId === dialogueId)) {
+		fail(`Dialogue not found: "${dialogueId}"`);
 	}
 
-	return lessonModule.lessonData;
+	const jsonPath = getDialogueDataJsonPath(
+		process.cwd(),
+		course.contentType,
+		lessonId,
+		dialogueId,
+	);
+	try {
+		return JSON.parse(await readFile(jsonPath, "utf8"));
+	} catch (error) {
+		fail(`Could not read dialogue JSON at ${jsonPath}: ${error.message}`);
+	}
 }
 
 function getVoiceId(speaker) {
@@ -85,6 +86,8 @@ function getVoiceId(speaker) {
 		Ben: "oF10V53nXu6mNLtJLgko",
 		Emma: "Cy8NxOxWnzsargZaVHUo",
 		Alex: "oflxQzyUUjpgLlEYlSq2",
+		Ryan: "oflxQzyUUjpgLlEYlSq2",
+		"Mr. Daniel": "oF10V53nXu6mNLtJLgko",
 		Lee: "meo5QemHRPp1cJE08w1a",
 		Maya: "ur0MtycxCulNrunXsdLx",
 	};
@@ -124,6 +127,8 @@ function buildPlan(lessonId, dialogueId, dialogue) {
 					"Ben",
 					"Emma",
 					"Alex",
+					"Ryan",
+					"Mr. Daniel",
 					"Lee",
 					"Maya",
 				].includes(speaker)
@@ -133,7 +138,8 @@ function buildPlan(lessonId, dialogueId, dialogue) {
 
 			const appearance = (appearances.get(speaker) ?? 0) + 1;
 			appearances.set(speaker, appearance);
-			const filename = `${speaker.toLowerCase()}-${String(appearance).padStart(2, "0")}.mp3`;
+			const speakerSlug = speaker.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+			const filename = `${speakerSlug}-${String(appearance).padStart(2, "0")}.mp3`;
 			const publicUrl = `/dialogue/${lessonId}/${dialogueId}/audio/${filename}`;
 
 			if (!line.audioUrl) {
@@ -238,13 +244,7 @@ async function main() {
 	if (options.jsonPath) {
 		({ lessonId, dialogueId, dialogue } = await loadDraft(options.jsonPath));
 	} else {
-		const lessonData = await loadLessonData();
-		const lesson = lessonData[lessonId];
-
-		if (!lesson) fail(`Lesson not found: "${lessonId}"`);
-
-		dialogue = lesson.dialogues?.find((item) => item.id === dialogueId);
-		if (!dialogue) fail(`Dialogue not found: "${dialogueId}"`);
+		dialogue = await loadRegisteredDialogue(lessonId, dialogueId);
 	}
 
 	const plan = buildPlan(lessonId, dialogueId, dialogue);

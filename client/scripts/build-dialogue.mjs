@@ -138,6 +138,7 @@ function loadCourseConfig(courseId) {
 
 	if (
 		!config ||
+		!config.contentType ||
 		!Array.isArray(config.dialogues) ||
 		!Array.isArray(config.characters)
 	) {
@@ -331,36 +332,11 @@ async function registerCourse(courseId) {
 	await writeFile(LESSON_DATA_PATH, source, "utf8");
 }
 
-async function registerCourseConfig(courseId, contentType) {
-	const identifier = toIdentifier(courseId);
-	const storageDirectory = getContentStorageDirectory(contentType);
-	const groupName = storageDirectory === "stories" ? "storyCourseConfigs" : "dialogueCourseConfigs";
-	let source = await readFile(COURSE_CONFIG_INDEX_PATH, "utf8");
-	const importLine = `import ${identifier} from "./${storageDirectory}/${courseId}.mjs";`;
-	if (!source.includes(importLine)) {
-		const exportIndex = source.indexOf(`export const ${groupName}`);
-		if (exportIndex === -1) fail(`Course config index is missing ${groupName}.`);
-		source = `${source.slice(0, exportIndex)}${importLine}\n${source.slice(exportIndex)}`;
-	}
-	const groupPattern = new RegExp(`(export const ${groupName} = \\[)([\\s\\S]*?)(\\n\\];)`);
-	const groupMatch = source.match(groupPattern);
-	if (!groupMatch) fail(`Could not find ${groupName} in course config index.`);
-	if (!new RegExp(`^[\\t ]*${identifier},$`, "m").test(groupMatch[2])) {
-		const entries = groupMatch[2].trimEnd();
-		const separator = entries ? `${entries}\n` : "\n";
-		source = source.replace(
-			groupMatch[0],
-			`${groupMatch[1]}${separator}\t${identifier},${groupMatch[3]}`,
-		);
-	}
-	await writeFile(COURSE_CONFIG_INDEX_PATH, source, "utf8");
-}
-
 function publicFilePath(publicUrl) {
 	return path.join(ROOT, "public", ...publicUrl.replace(/^\/+/, "").split("/"));
 }
 
-async function inspectMedia({ courseId, dialogueId, draft, config, mediaPath }) {
+async function inspectMedia({ courseId, dialogueId, draft, config, mediaPath, skipAudio }) {
 	const mediaSource = await readFile(mediaPath, "utf8");
 	const moduleUrl = `data:text/javascript;base64,${Buffer.from(mediaSource).toString("base64")}`;
 	const media = (await import(moduleUrl))[`${toIdentifier(courseId)}Media`]?.[
@@ -392,11 +368,11 @@ async function inspectMedia({ courseId, dialogueId, draft, config, mediaPath }) 
 	for (const url of audioUrls) {
 		if (!url || !(await exists(publicFilePath(url)))) missingAudio.push(url);
 	}
-	if (missingAudio.length > 0) {
+	if (missingAudio.length > 0 && !skipAudio) {
 		fail(`Required audio is missing: ${missingAudio.join(", ")}`);
 	}
 
-	return { existing, missing, audioCount: audioUrls.size };
+	return { existing, missing, audioCount: audioUrls.size, missingAudio };
 }
 
 async function main() {
@@ -404,20 +380,22 @@ async function main() {
 	if (
 		!courseId ||
 		!dialogueId ||
-		extra.some((option) => option !== "--verbose") ||
-		extra.length > 1
+		extra.some((option) => !["--verbose", "--skip-audio"].includes(option)) ||
+		extra.length > 2
 	) {
-		fail("Usage: npm run dialogue:build -- <courseId> <dialogueId> [--verbose]");
+		fail("Usage: npm run dialogue:build -- <courseId> <dialogueId> [--verbose] [--skip-audio]");
 	}
 	const verbose =
 		extra.includes("--verbose") ||
 		process.env.npm_config_loglevel === "verbose";
+	const skipAudio = extra.includes("--skip-audio") ||
+		process.env.npm_config_skip_audio === "true";
 	assertSlug(courseId, "courseId");
 	assertSlug(dialogueId, "dialogueId");
 	if (!verbose) console.log(`Building ${courseId}/${dialogueId}...`);
 
 	const config = loadCourseConfig(courseId);
-	const contentType = config.contentType || "dialogue";
+	const contentType = config.contentType;
 	const draftPath = getGeneratedDialogueDraftPath(
 		ROOT,
 		contentType,
@@ -461,13 +439,16 @@ async function main() {
 		config,
 	});
 	await registerCourse(courseId);
-	await registerCourseConfig(courseId, contentType);
 	if (!verbose) console.log("✅ Promoted to course data");
 
 	logStep(verbose, "[4/7] Generating referenced dialogue audio");
-	const audioResult = runAudioGenerator(draftPath, verbose);
+	const audioResult = skipAudio
+		? { generated: 0, existing: 0 }
+		: runAudioGenerator(draftPath, verbose);
 	if (!verbose) {
-		console.log(`✅ Audio — ${audioResult.generated} generated, ${audioResult.existing} skipped`);
+		console.log(skipAudio
+			? "⚠ Audio generation skipped"
+			: `✅ Audio — ${audioResult.generated} generated, ${audioResult.existing} skipped`);
 	}
 
 	logStep(verbose, "[5/7] Validating promoted dialogue");
@@ -504,11 +485,12 @@ async function main() {
 		draft,
 		config,
 		mediaPath,
+		skipAudio,
 	});
 
 	if (verbose) {
 		console.log(`\nDialogue build complete ✅ ${courseId}/${dialogueId}`);
-		console.log(`\nAudio (required): ${audioResult.generated} generated, ${audioResult.existing} already present (${assets.audioCount} total)`);
+		console.log(`\nAudio: ${audioResult.generated} generated, ${audioResult.existing} already present (${assets.missingAudio.length} missing of ${assets.audioCount} total)`);
 		console.log("\nMissing assets (optional visuals):");
 		for (const asset of assets.missing) console.log(`- ${asset}`);
 		if (assets.missing.length === 0) console.log("- None");
@@ -518,6 +500,7 @@ async function main() {
 		console.log("\nNext step:");
 		console.log("Generate the missing visual assets, save them to the listed paths, then test the dialogue in the UI.");
 	} else {
+		if (assets.missingAudio.length > 0) console.log(`⚠ Audio pending: ${assets.missingAudio.length} files`);
 		if (assets.missing.length > 0) {
 			console.log("\n⚠ Missing assets:");
 			for (const asset of assets.missing) console.log(`- ${asset}`);
