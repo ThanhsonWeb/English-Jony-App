@@ -3,6 +3,7 @@ import {
 	normalizeLevel,
 	structureRules,
 } from "./dialogue-rules.mjs";
+import { getPublicAssetPath } from "../lib/dialogue-content-paths.mjs";
 
 function formatRules(rules) {
 	return rules.map((rule) => `- ${rule}`).join("\n");
@@ -43,6 +44,7 @@ ${JSON.stringify(previousDialogue, null, 2)}
 export function buildDialoguePrompt(lessonConfig) {
 	const {
 		courseId,
+		contentType,
 		dialogueId,
 		title,
 		courseTitle,
@@ -131,7 +133,10 @@ ${teachesContractions.length ? `- This lesson explicitly teaches: ${teachesContr
 	const defaultScene =
 		configuredScene ||
 		scenes?.[characters[0]] ||
-		`/dialogue/${courseId}/${dialogueId}/bg.png`;
+		getPublicAssetPath(contentType, courseId, dialogueId, "bg.png");
+	const thumbnailPath =
+		thumbnail || getPublicAssetPath(contentType, courseId, "thumbnails", `${dialogueId}.png`);
+	const audioPath = getPublicAssetPath(contentType, courseId, dialogueId, "audio");
 
 	const hasSpeakerScenes =
 		scenes && characters.some((character) => Boolean(scenes[character]));
@@ -449,10 +454,10 @@ Default/fallback scene:
 "${defaultScene}"
 
 Thumbnail:
-"${thumbnail}"
+"${thumbnailPath}"
 
 Audio format:
-"/dialogue/${courseId}/${dialogueId}/audio/{speaker}-{number}.mp3"
+"${audioPath}/{speaker}-{number}.mp3"
 
 ==================================================
 OUTPUT

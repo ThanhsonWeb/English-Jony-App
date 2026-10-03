@@ -7,6 +7,7 @@ import {
 	getDialogueDataCourseDirectory,
 	getDialogueDataJsonPath,
 	getGeneratedDialogueDraftPath,
+	getPublicAssetPath,
 } from "./lib/dialogue-content-paths.mjs";
 
 const ROOT = process.cwd();
@@ -207,7 +208,13 @@ async function updateMediaFile({ contentType, courseId, dialogueId, draft, speak
 
 	const knownCharacters = extractCharacterMappings(source);
 	const characterLines = speakers.map((speaker) => {
-		const fallback = `/dialogue/${courseId}/${dialogueId}/shared/${speaker.toLowerCase()}.png`;
+		const fallback = getPublicAssetPath(
+			contentType,
+			courseId,
+			dialogueId,
+			"shared",
+			`${speaker.toLowerCase()}.png`,
+		);
 		return `\t\t\t${JSON.stringify(speaker)}: "${knownCharacters.get(speaker) || fallback}",`;
 	});
 	const entry = [

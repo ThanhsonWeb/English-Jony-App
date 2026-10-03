@@ -142,7 +142,9 @@
 	  "reviewNow": "Start reviewing",
 	  "viewDueWords": "View words to review",
 	  "addWord": "Add new word",
+	  "exploreDialogues": "Explore dialogues",
 	  "practice": "Practice",
+	  "loginToStart": "Sign in to get started",
 	  "allWords": "All words",
 	  "total": "Total words",
 	  "learning": "Learning",
@@ -207,8 +209,12 @@
 	  "page": "Page {current} / {total}"
 	},
 	"Navigation": {
+		"mobileLabel": "Mobile navigation",
+		"home": "Home",
 		"dialogue": "Dialogues",
 		"vocabulary": "Vocabulary",
+		"progress": "Progress",
+		"profile": "Profile",
 		"wordlist": "Wordlist",
 		"rank": "Rankings"
 	},

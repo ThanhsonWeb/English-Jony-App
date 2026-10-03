@@ -6,6 +6,8 @@ import {
 	getCourseConfigPath,
 	getDialogueDataJsonPath,
 	getGeneratedDialogueDraftPath,
+	getPublicAssetDirectory,
+	getPublicAssetPath,
 } from "./lib/dialogue-content-paths.mjs";
 
 const root = path.join("C:/", "studyjony", "client");
@@ -36,6 +38,20 @@ test("story content uses separate generated and lesson-data directories", () => 
 
 test("rejects unknown content types instead of writing to a wrong folder", () => {
 	assert.throws(() => getContentStorageDirectory("course"), /Unsupported dialogue contentType/);
+	assert.throws(() => getPublicAssetPath("course", "course-id", "scene.png"), /Unsupported dialogue contentType/);
+});
+
+test("public assets follow each course content type", () => {
+	assert.equal(getPublicAssetDirectory("dialogue"), "dialogue");
+	assert.equal(getPublicAssetDirectory("story"), "stories");
+	assert.equal(
+		getPublicAssetPath("dialogue", "coffee-shop", "ordering-a-coffee", "audio", "maria-01.mp3"),
+		"/dialogue/coffee-shop/ordering-a-coffee/audio/maria-01.mp3",
+	);
+	assert.equal(
+		getPublicAssetPath("story", "ten-minutes-a-day", "the-old-book", "bg.png"),
+		"/stories/ten-minutes-a-day/the-old-book/bg.png",
+	);
 });
 
 test("keeps configs separated by the course content type", () => {

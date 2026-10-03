@@ -327,7 +327,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/ten-minutes-a-day/the-old-book/bg.png"
+"/stories/ten-minutes-a-day/the-old-book/bg.png"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -337,13 +337,13 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/ten-minutes-a-day/the-old-book/bg.png"
+"/stories/ten-minutes-a-day/the-old-book/bg.png"
 
 Thumbnail:
-"/dialogue/ten-minutes-a-day/thumbnails/the-old-book.png"
+"/stories/ten-minutes-a-day/thumbnails/the-old-book.png"
 
 Audio format:
-"/dialogue/ten-minutes-a-day/the-old-book/audio/{speaker}-{number}.mp3"
+"/stories/ten-minutes-a-day/the-old-book/audio/{speaker}-{number}.mp3"
 
 ==================================================
 OUTPUT
@@ -376,8 +376,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Mr. Daniel gives Leo and Ryan the same English book and asks them to read for ten minutes every day.",
-		"scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-		"thumbnail": "/dialogue/ten-minutes-a-day/thumbnails/the-old-book.png"
+		"scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+		"thumbnail": "/stories/ten-minutes-a-day/thumbnails/the-old-book.png"
 	},
 
 	"dialogue": [

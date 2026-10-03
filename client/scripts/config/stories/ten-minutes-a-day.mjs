@@ -14,7 +14,7 @@ const tenMinutesADay = {
       dialogueId: "the-old-book",
       title: "Cuốn sách cũ",
       thumbnail:
-        "/dialogue/ten-minutes-a-day/thumbnails/the-old-book.png",
+        "/stories/ten-minutes-a-day/thumbnails/the-old-book.png",
       situation:
         "Mr. Daniel gives Leo and Ryan the same English book and asks them to read for ten minutes every day.",
     },
@@ -22,7 +22,7 @@ const tenMinutesADay = {
       dialogueId: "only-ten-minutes",
       title: "Chỉ mười phút",
       thumbnail:
-        "/dialogue/ten-minutes-a-day/thumbnails/only-ten-minutes.png",
+        "/stories/ten-minutes-a-day/thumbnails/only-ten-minutes.png",
       situation:
         "Ryan gets bored and stops reading, while Leo continues for ten minutes every day.",
     },
@@ -30,7 +30,7 @@ const tenMinutesADay = {
       dialogueId: "the-presentation",
       title: "Buổi thuyết trình",
       thumbnail:
-        "/dialogue/ten-minutes-a-day/thumbnails/the-presentation.png",
+        "/stories/ten-minutes-a-day/thumbnails/the-presentation.png",
       situation:
         "A few months later, Leo and Ryan must give a short English presentation.",
     },
@@ -38,7 +38,7 @@ const tenMinutesADay = {
       dialogueId: "the-real-treasure",
       title: "Kho báu thật sự",
       thumbnail:
-        "/dialogue/ten-minutes-a-day/thumbnails/the-real-treasure.png",
+        "/stories/ten-minutes-a-day/thumbnails/the-real-treasure.png",
       situation:
         "Ryan realizes that Leo's daily habit, not the book itself, was the real treasure.",
     },

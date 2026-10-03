@@ -1,7 +1,10 @@
 import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { courseConfigs } from "./config/index.mjs";
-import { getDialogueDataJsonPath } from "./lib/dialogue-content-paths.mjs";
+import {
+	getDialogueDataJsonPath,
+	getPublicAssetPath,
+} from "./lib/dialogue-content-paths.mjs";
 
 const ELEVENLABS_BASE_URL = "https://api.elevenlabs.io/v1/text-to-speech";
 const OUTPUT_FORMAT = "mp3_44100_128";
@@ -100,7 +103,7 @@ function getVoiceId(speaker) {
 	return voiceId;
 }
 
-function buildPlan(lessonId, dialogueId, dialogue) {
+function buildPlan(lessonId, dialogueId, dialogue, contentType = "dialogue") {
 	if (!Array.isArray(dialogue.dialogue) || dialogue.dialogue.length === 0) {
 		fail(`Dialogue lines are missing for "${dialogueId}"`);
 	}
@@ -140,7 +143,13 @@ function buildPlan(lessonId, dialogueId, dialogue) {
 			appearances.set(speaker, appearance);
 			const speakerSlug = speaker.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 			const filename = `${speakerSlug}-${String(appearance).padStart(2, "0")}.mp3`;
-			const publicUrl = `/dialogue/${lessonId}/${dialogueId}/audio/${filename}`;
+			const publicUrl = getPublicAssetPath(
+				contentType,
+				lessonId,
+				dialogueId,
+				"audio",
+				filename,
+			);
 
 			if (!line.audioUrl) {
 				fail(`audioUrl is missing on dialogue line ${index + 1}`);
@@ -240,14 +249,20 @@ async function main() {
 	let lessonId = options.lessonId;
 	let dialogueId = options.dialogueId;
 	let dialogue;
+	let contentType =
+		courseConfigs.find((item) => item.courseId === lessonId)?.contentType ||
+		"dialogue";
 
 	if (options.jsonPath) {
 		({ lessonId, dialogueId, dialogue } = await loadDraft(options.jsonPath));
+		contentType =
+			courseConfigs.find((item) => item.courseId === lessonId)?.contentType ||
+			"dialogue";
 	} else {
 		dialogue = await loadRegisteredDialogue(lessonId, dialogueId);
 	}
 
-	const plan = buildPlan(lessonId, dialogueId, dialogue);
+	const plan = buildPlan(lessonId, dialogueId, dialogue, contentType);
 	if (plan.length === 0) {
 		fail(`No supported dialogue lines found for "${dialogueId}"`);
 	}

@@ -26,8 +26,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Mr. Daniel gives Leo and Ryan the same English book and asks them to read for ten minutes every day.",
-    "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-    "thumbnail": "/dialogue/ten-minutes-a-day/thumbnails/the-old-book.png"
+    "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+    "thumbnail": "/stories/ten-minutes-a-day/thumbnails/the-old-book.png"
   },
   "dialogue": [
     {
@@ -36,8 +36,8 @@
       "text": "I have a book for each of you.",
       "translation": "Thầy có một cuốn sách cho mỗi em.",
       "practicePriority": "important",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-01.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-01.mp3"
     },
     {
       "id": 2,
@@ -45,8 +45,8 @@
       "text": "An English book? It looks old.",
       "translation": "Một cuốn sách tiếng Anh à? Nó trông cũ quá.",
       "practicePriority": "simple",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-01.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-01.mp3"
     },
     {
       "id": 3,
@@ -54,8 +54,8 @@
       "text": "What should we do with it?",
       "translation": "Chúng em nên làm gì với nó ạ?",
       "practicePriority": "important",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/leo-01.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/leo-01.mp3"
     },
     {
       "id": 4,
@@ -63,8 +63,8 @@
       "text": "Read it for ten minutes every day.",
       "translation": "Hãy đọc nó trong mười phút mỗi ngày.",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-02.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-02.mp3"
     },
     {
       "id": 5,
@@ -72,8 +72,8 @@
       "text": "Only ten minutes?",
       "translation": "Chỉ mười phút thôi ạ?",
       "practicePriority": "simple",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-02.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-02.mp3"
     },
     {
       "id": 6,
@@ -81,8 +81,8 @@
       "text": "Yes. Ten minutes is enough to start.",
       "translation": "Đúng vậy. Mười phút là đủ để bắt đầu.",
       "practicePriority": "important",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-03.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-03.mp3"
     },
     {
       "id": 7,
@@ -90,8 +90,8 @@
       "text": "I can do that after dinner.",
       "translation": "Em có thể làm vậy sau bữa tối.",
       "practicePriority": "important",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/leo-02.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/leo-02.mp3"
     },
     {
       "id": 8,
@@ -99,8 +99,8 @@
       "text": "I get bored when I read.",
       "translation": "Em thấy chán khi đọc sách.",
       "practicePriority": "simple",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-03.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-03.mp3"
     },
     {
       "id": 9,
@@ -108,8 +108,8 @@
       "text": "Do not worry about reading a lot. Just read a little every day.",
       "translation": "Đừng lo về việc phải đọc nhiều. Chỉ cần đọc một chút mỗi ngày.",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-04.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-04.mp3"
     },
     {
       "id": 10,
@@ -117,8 +117,8 @@
       "text": "What if I miss a day?",
       "translation": "Nếu em bỏ lỡ một ngày thì sao ạ?",
       "practicePriority": "important",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-04.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-04.mp3"
     },
     {
       "id": 11,
@@ -126,8 +126,8 @@
       "text": "Start again the next day. The important thing is to continue.",
       "translation": "Hãy bắt đầu lại vào ngày hôm sau. Điều quan trọng là tiếp tục.",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-05.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-05.mp3"
     }
   ],
   "usefulWords": [
@@ -204,8 +204,8 @@
       ],
       "speaker": "Mr. Daniel",
       "transcript": "I have a book for each of you.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-01.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-01.mp3"
     },
     {
       "id": 2,
@@ -230,8 +230,8 @@
       ],
       "speaker": "Mr. Daniel",
       "transcript": "I have a book for each of you.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-01.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-01.mp3"
     },
     {
       "id": 3,
@@ -280,8 +280,8 @@
       "answer": "Một cuốn sách cho mỗi người.",
       "speaker": "Mr. Daniel",
       "transcript": "I have a book for each of you.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-01.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-01.mp3"
     },
     {
       "id": 4,
@@ -306,8 +306,8 @@
       ],
       "speaker": "Ryan",
       "transcript": "An English book? It looks old.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-01.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-01.mp3"
     },
     {
       "id": 5,
@@ -332,8 +332,8 @@
       ],
       "speaker": "Leo",
       "transcript": "What should we do with it?",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/leo-01.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/leo-01.mp3"
     },
     {
       "id": 6,
@@ -358,8 +358,8 @@
       ],
       "speaker": "Leo",
       "transcript": "What should we do with it?",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/leo-01.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/leo-01.mp3"
     },
     {
       "id": 7,
@@ -384,8 +384,8 @@
       ],
       "speaker": "Mr. Daniel",
       "transcript": "Read it for ten minutes every day.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-02.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-02.mp3"
     },
     {
       "id": 8,
@@ -410,8 +410,8 @@
       ],
       "speaker": "Mr. Daniel",
       "transcript": "Read it for ten minutes every day.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-02.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-02.mp3"
     },
     {
       "id": 9,
@@ -461,8 +461,8 @@
       "answer": "Khoảng thời gian đọc.",
       "speaker": "Mr. Daniel",
       "transcript": "Read it for ten minutes every day.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-02.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-02.mp3"
     },
     {
       "id": 10,
@@ -487,8 +487,8 @@
       ],
       "speaker": "Ryan",
       "transcript": "Only ten minutes?",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-02.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-02.mp3"
     },
     {
       "id": 11,
@@ -513,8 +513,8 @@
       ],
       "speaker": "Mr. Daniel",
       "transcript": "Yes. Ten minutes is enough to start.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-03.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-03.mp3"
     },
     {
       "id": 12,
@@ -539,8 +539,8 @@
       ],
       "speaker": "Mr. Daniel",
       "transcript": "Yes. Ten minutes is enough to start.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-03.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-03.mp3"
     },
     {
       "id": 13,
@@ -589,8 +589,8 @@
       "answer": "Đủ để bắt đầu.",
       "speaker": "Mr. Daniel",
       "transcript": "Yes. Ten minutes is enough to start.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-03.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-03.mp3"
     },
     {
       "id": 14,
@@ -615,8 +615,8 @@
       ],
       "speaker": "Leo",
       "transcript": "I can do that after dinner.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/leo-02.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/leo-02.mp3"
     },
     {
       "id": 15,
@@ -641,8 +641,8 @@
       ],
       "speaker": "Leo",
       "transcript": "I can do that after dinner.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/leo-02.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/leo-02.mp3"
     },
     {
       "id": 16,
@@ -667,8 +667,8 @@
       ],
       "speaker": "Ryan",
       "transcript": "I get bored when I read.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-03.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-03.mp3"
     },
     {
       "id": 17,
@@ -693,8 +693,8 @@
       ],
       "speaker": "Mr. Daniel",
       "transcript": "Do not worry about reading a lot. Just read a little every day.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-04.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-04.mp3"
     },
     {
       "id": 18,
@@ -719,8 +719,8 @@
       ],
       "speaker": "Mr. Daniel",
       "transcript": "Do not worry about reading a lot. Just read a little every day.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-04.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-04.mp3"
     },
     {
       "id": 19,
@@ -770,8 +770,8 @@
       "answer": "Trấn an Ryan.",
       "speaker": "Mr. Daniel",
       "transcript": "Do not worry about reading a lot. Just read a little every day.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-04.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-04.mp3"
     },
     {
       "id": 20,
@@ -796,8 +796,8 @@
       ],
       "speaker": "Ryan",
       "transcript": "What if I miss a day?",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-04.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-04.mp3"
     },
     {
       "id": 21,
@@ -822,8 +822,8 @@
       ],
       "speaker": "Ryan",
       "transcript": "What if I miss a day?",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/ryan-04.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-04.mp3"
     },
     {
       "id": 22,
@@ -848,8 +848,8 @@
       ],
       "speaker": "Mr. Daniel",
       "transcript": "Start again the next day. The important thing is to continue.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-05.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-05.mp3"
     },
     {
       "id": 23,
@@ -874,8 +874,8 @@
       ],
       "speaker": "Mr. Daniel",
       "transcript": "Start again the next day. The important thing is to continue.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-05.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-05.mp3"
     },
     {
       "id": 24,
@@ -924,8 +924,8 @@
       "answer": "Bắt đầu lại vào ngày hôm sau.",
       "speaker": "Mr. Daniel",
       "transcript": "Start again the next day. The important thing is to continue.",
-      "scene": "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
-      "audioUrl": "/dialogue/ten-minutes-a-day/the-old-book/audio/mr-daniel-05.mp3"
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-05.mp3"
     },
     {
       "id": 25,

@@ -7,10 +7,11 @@ import {
 	getDialogueDataJsonPath,
 	getGeneratedCourseDirectory,
 	getGeneratedDialogueDraftPath,
+	getPublicAssetDirectory,
+	getPublicAssetPath,
 } from "./lib/dialogue-content-paths.mjs";
 
 const root = process.cwd();
-const publicRoot = path.join(root, "public", "dialogue");
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 async function exists(filePath) {
@@ -51,8 +52,9 @@ function importantLines(draft) {
 	return (matches.length ? matches : draft.dialogue).slice(0, 5);
 }
 
-function relativePublicFile(file) {
-	return file ? `public/dialogue/${file}` : "No separate character image found; use the topic's existing artwork if available.";
+function relativePublicFile(contentType, file) {
+	const directory = getPublicAssetDirectory(contentType);
+	return file ? `public/${directory}/${file}` : "No separate character image found; use the topic's existing artwork if available.";
 }
 
 async function loadFinalDialogue(contentType, courseId, dialogueId) {
@@ -83,14 +85,27 @@ async function main() {
 	const course = courseConfigs.find((config) => config.courseId === courseId);
 	if (!course) throw new Error(`Course config not found: ${courseId}`);
 	if (!course.dialogues?.length) throw new Error(`No dialogues configured for ${courseId}`);
+	const publicDirectory = getPublicAssetDirectory(course.contentType);
+	const publicRoot = path.join(root, "public", publicDirectory);
 	const generatedCourseDirectory = getGeneratedCourseDirectory(root, course.contentType, courseId);
 
 	const allFiles = (await readdir(publicRoot, { recursive: true }))
 		.filter((file) => file.toLowerCase().endsWith(".png"))
 		.map((file) => file.replaceAll("\\", "/"));
 	const styleReference = allFiles.find((file) => file.startsWith(`${courseId}/thumbnails/`))
+		|| allFiles.find((file) => file.startsWith(`${courseId}/`) && file.includes("/thumbnails/"))
 		|| "restaurant/thumbnails/getting-a-table.png";
-	if (!(await exists(path.join(publicRoot, styleReference)))) {
+	const styleReferenceDirectory =
+		styleReference === "restaurant/thumbnails/getting-a-table.png"
+			? "dialogue"
+			: publicDirectory;
+	const styleReferencePath = path.join(
+		root,
+		"public",
+		styleReferenceDirectory,
+		styleReference,
+	);
+	if (!(await exists(styleReferencePath))) {
 		throw new Error("No StudyJony thumbnail style reference was found.");
 	}
 	const styleInstructions = "Create one separate 16:9 landscape PNG for each dialogue. Match StudyJony's polished, warm, storybook/anime-inspired illustration style: expressive consistent character faces, detailed setting, natural poses, clear story moment, and cinematic but friendly lighting. Keep the characters, rendering, color treatment, and framing consistent across this topic as one series. No title text, captions, badge, UI, watermark, or multi-panel collage.";
@@ -99,7 +114,12 @@ async function main() {
 	for (const config of course.dialogues) {
 		const dialogueId = config.dialogueId;
 		if (!slugPattern.test(dialogueId || "")) throw new Error(`Invalid dialogue slug: ${dialogueId}`);
-		const targetUrl = `/dialogue/${courseId}/thumbnails/${dialogueId}.png`;
+		const targetUrl = getPublicAssetPath(
+			course.contentType,
+			courseId,
+			"thumbnails",
+			`${dialogueId}.png`,
+		);
 		if (config.thumbnail !== targetUrl) {
 			throw new Error(`Config thumbnail for ${dialogueId} must be ${targetUrl}`);
 		}
@@ -122,7 +142,7 @@ async function main() {
 			...importantLines(draft).map((line) => `  - ${line.speaker}: “${line.text}”`),
 			`- Recommended background: Show the setting in “${context}”${background ? `, matching the existing scene reference \`${background}\`` : ""}.`,
 			`- Recommended time of day: ${recommendedTime(draft)}`,
-			`- Character references: ${references.map(({ speaker, file }) => `${speaker} — ${relativePublicFile(file)}`).join("; ")}`,
+			`- Character references: ${references.map(({ speaker, file }) => `${speaker} — ${relativePublicFile(course.contentType, file)}`).join("; ")}`,
 			`- Style: ${styleInstructions}`,
 			"- Full dialogue context:",
 			...draft.dialogue.map((line) => `  - ${line.speaker}: ${line.text}`),
@@ -139,7 +159,7 @@ async function main() {
 		"",
 		"Give this file to ChatGPT to generate the images. Generate each dialogue as its own PNG; do not combine them into one image. Save each file at the listed output path. Attach the referenced artwork if available.",
 		"",
-		`Series style reference: \`public/dialogue/${styleReference}\``,
+		`Series style reference: \`public/${styleReferenceDirectory}/${styleReference}\``,
 		"",
 		styleInstructions,
 		"",

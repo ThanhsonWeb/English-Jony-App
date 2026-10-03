@@ -1,10 +1,10 @@
 export const tenMinutesADayMedia = {
 	"the-old-book": {
-		scene: "/dialogue/ten-minutes-a-day/the-old-book/bg.png",
+		scene: "/stories/ten-minutes-a-day/the-old-book/bg.png",
 		characters: {
-			"Mr. Daniel": "/dialogue/ten-minutes-a-day/the-old-book/shared/mr. daniel.png",
-			Ryan: "/dialogue/ten-minutes-a-day/the-old-book/shared/ryan.png",
-			Leo: "/dialogue/ten-minutes-a-day/the-old-book/shared/leo.png",
+			"Mr. Daniel": "/stories/ten-minutes-a-day/the-old-book/shared/mr. daniel.png",
+			Ryan: "/stories/ten-minutes-a-day/the-old-book/shared/ryan.png",
+			Leo: "/stories/ten-minutes-a-day/the-old-book/shared/leo.png",
 		},
 	},
 };

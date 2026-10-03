@@ -142,7 +142,9 @@
 	  "reviewNow": "Bắt đầu ôn tập",
 	  "viewDueWords": "Xem từ cần ôn",
 	  "addWord": "Thêm từ mới",
+	  "exploreDialogues": "Khám phá hội thoại",
 	  "practice": "Luyện tập",
+	  "loginToStart": "Đăng nhập để bắt đầu",
 	  "allWords": "Tất cả từ",
 	  "total": "Tổng số từ",
 	  "learning": "Đang học",
@@ -207,8 +209,12 @@
 	  "page": "Trang {current} / {total}"
 	},
 	"Navigation": {
+		"mobileLabel": "Điều hướng chính",
+		"home": "Trang chủ",
 		"dialogue": "Hội thoại",
 		"vocabulary": "Từ vựng",
+		"progress": "Tiến độ",
+		"profile": "Hồ sơ",
 		"wordlist": "Sổ tay",
 		"rank": "Xếp hạng"
 	},

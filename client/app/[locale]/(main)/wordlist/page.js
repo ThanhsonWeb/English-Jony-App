@@ -4,10 +4,6 @@ import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import {
 	BookOpen,
-	House,
-	Headphones,
-	UserRound,
-	ChartNoAxesColumnIncreasing,
 	GraduationCap,
 	CalendarDays,
 	Plus,
@@ -22,6 +18,8 @@ import {
 	Clock3,
 	Filter,
 	Sparkles,
+	LogIn,
+	MessageCircle,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { useAuth } from "@/app/_contexts/AuthContext";
@@ -175,6 +173,7 @@ export default function WordlistPage() {
 				: words.filter((word) => getWordStatus(word, now) === status).length,
 		]),
 	);
+	const totalWords = counts.all;
 	const activeFilter = !loading && filter === "review" && counts.review === 0
 		? counts.new > 0 ? "new" : "all"
 		: filter;
@@ -251,6 +250,7 @@ export default function WordlistPage() {
 				</header>
 				<div className={styles.content}>
 					<div className={styles.mainColumn}>
+						{totalWords > 0 && (
 						<div className={styles.toolbar}>
 							<div className={styles.search}>
 								<Search size={21} />
@@ -334,6 +334,7 @@ export default function WordlistPage() {
 								)}
 							</div>
 						</div>
+						)}
 						{audioError && <p role="alert">{t("audioError")}</p>}
 						{loading ? (
 							<div className={styles.empty} role="status">
@@ -341,19 +342,19 @@ export default function WordlistPage() {
 							</div>
 						) : !user || error === "unauthorized" ? (
 							<>
-							<div className={`${styles.empty} ${styles.authDesktopEmpty}`}>
-								<BookOpen size={32} />
-								<p>{t("unauthorized")}</p>
-								<Link className={styles.primary} href="/login">
-									{t("login")}
-								</Link>
-							</div>
+			<div className={`${styles.empty} ${styles.firstWordEmpty} ${styles.authDesktopEmpty}`}>
+				<Image src="/wordlist-hero-2.png" alt="" width={300} height={200} className={styles.emptyImage} />
+				<h2>{t("emptyTitle")}</h2>
+				<p>{t("emptyBody")}</p>
+				<Link className={styles.primary} href="/dialogue"><MessageCircle size={18} />{t("exploreDialogues")}</Link>
+				<Link className={styles.secondary} href="/login"><LogIn size={18} />{t("loginToStart")}</Link>
+			</div>
 							<div className={`${styles.empty} ${styles.firstWordEmpty} ${styles.mobileAuthEmpty}`}>
 								<Image src="/wordlist-hero-2.png" alt="" width={300} height={200} className={styles.emptyImage} />
 								<h2>{locale === "en" ? "Your notebook is ready for its first word!" : t("emptyTitle")}</h2>
 								<p>{locale === "en" ? "Add a new word or explore words while watching dialogues." : t("emptyBody")}</p>
-								<Link className={styles.primary} href="/login"><Plus size={18} />{locale === "en" ? "Add your first word" : t("addWord")}</Link>
-								<Link className={styles.secondary} href="/dialogue"><Sparkles size={20} />{locale === "en" ? "Start practicing" : t("practice")}<ChevronRight size={19} /></Link>
+								<Link className={styles.primary} href="/dialogue"><MessageCircle size={18} />{t("exploreDialogues")}</Link>
+								<Link className={styles.secondary} href="/login"><LogIn size={20} />{t("loginToStart")}</Link>
 							</div>
 							</>
 						) : error ? (
@@ -368,7 +369,6 @@ export default function WordlistPage() {
 							</div>
 						) : !words.length ? (
 							<div className={`${styles.empty} ${styles.firstWordEmpty}`}>
-								<BookOpen size={38} className={styles.desktopEmptyIcon} />
 								<Image src="/wordlist-hero-2.png" alt="" width={300} height={200} className={styles.emptyImage} />
 								<h2><span className={styles.desktopEmptyCopy}>{t("emptyTitle")}</span><span className={styles.mobileEmptyCopy}>{locale === "en" ? "Your notebook is ready for its first word!" : t("emptyTitle")}</span></h2>
 								<p><span className={styles.desktopEmptyCopy}>{t("emptyBody")}</span><span className={styles.mobileEmptyCopy}>{locale === "en" ? "Add a new word or explore words while watching dialogues." : t("emptyBody")}</span></p>
@@ -379,7 +379,7 @@ export default function WordlistPage() {
 									<Plus size={18} />
 									<span className={styles.desktopEmptyCopy}>{t("addWord")}</span><span className={styles.mobileEmptyCopy}>{locale === "en" ? "Add your first word" : t("addWord")}</span>
 								</button>
-								<Link className={styles.secondary} href="/dialogue"><Sparkles size={20} />{locale === "en" ? "Start practicing" : t("practice")}<ChevronRight size={19} /></Link>
+				<Link className={styles.secondary} href="/dialogue"><Sparkles size={20} />{t("practice")}<ChevronRight size={19} /></Link>
 							</div>
 						) : !filtered.length ? (
 							<div className={styles.empty}>
@@ -513,13 +513,6 @@ export default function WordlistPage() {
 					</div>
 				</div>
 			</div>
-			<nav className={styles.mobileNav} aria-label="Mobile navigation">
-				<Link href="/"><House size={21} /><span>Home</span></Link>
-				<Link href="/wordlist" aria-current="page"><BookOpen size={21} /><span>Vocabulary</span></Link>
-				<Link href="/dialogue"><Headphones size={21} /><span>Dialogues</span></Link>
-				<Link href="/rank"><ChartNoAxesColumnIncreasing size={21} /><span>Progress</span></Link>
-				<Link href="/profile"><UserRound size={21} /><span>Profile</span></Link>
-			</nav>
 			{editor && (
 				<WordDialog
 					word={editor.word}
