@@ -2,14 +2,15 @@
 
 import { useAuth } from "@/app/_contexts/AuthContext";
 import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import { useState, useEffect } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { getAuthErrorMessage } from "@/app/_lib/authErrorMessage";
 import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
 import AuthOverlay from "@/app/_components/AuthOverlay";
 
 function SignUpForm() {
+	const t = useTranslations("Auth");
 	const { setUser } = useAuth();
 	const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 	const locale = useLocale();
@@ -36,11 +37,11 @@ function SignUpForm() {
 			const data = await res.json();
 
 			if (data.status === "fail") {
-				setError(data.message);
+				setError(getAuthErrorMessage(data, t, "signupFailed"));
 				return;
 			}
 			if (!res.ok) {
-				setError(data.message);
+				setError(getAuthErrorMessage(data, t, "signupFailed"));
 				return;
 			}
 
@@ -48,6 +49,7 @@ function SignUpForm() {
 			setUser(data.data.user);
 			router.push("/wordlist");
 		} catch (error) {
+			setError(t("signupFailed"));
 			console.log(error);
 		}
 	};
@@ -65,15 +67,15 @@ function SignUpForm() {
 		script.defer = true;
 
 		script.onerror = () => {
-			setError("Unable to load Google Sign-In. Please try again later.");
+			setError(t("googleLoadFailed"));
 		};
 
 		document.body.appendChild(script);
-	}, [googleClientId]);
+	}, [googleClientId, t]);
 
 	async function openGoogleSignIn() {
 		if (!window.google) {
-			setError("Google Sign-In is still loading. Please try again.");
+			setError(t("googleLoading"));
 			return;
 		}
 
@@ -86,7 +88,7 @@ function SignUpForm() {
 			const data = await response.json();
 
 			if (!response.ok) {
-				setError(data.message || "Unable to start Google Sign-In.");
+				setError(t("googleStartFailed"));
 				return;
 			}
 
@@ -99,7 +101,7 @@ function SignUpForm() {
 			});
 			codeClient.requestCode();
 		} catch (error) {
-			setError("Unable to start Google Sign-In. Please try again.");
+			setError(t("googleStartFailed"));
 		}
 	}
 
@@ -110,6 +112,7 @@ function SignUpForm() {
 					{/* Close Button */}
 					<Link
 						href="/"
+						aria-label={t("close")}
 						className="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl"
 					>
 						&times;
@@ -121,17 +124,17 @@ function SignUpForm() {
 							height={48}
 							width={48}
 							quality={75}
-							alt="Logo"
+							alt={t("logoAlt")}
 							className="rounded-xl border border-slate-800 w-12 h-12 mb-2"
 						/>
-						<h1 className="text-3xl font-bold">Đăng ký</h1>
+						<h1 className="text-3xl font-bold">{t("signup")}</h1>
 						<p className="text-slate-400 text-sm">
-							Đã có tài khoản?
+							{t("hasAccount")}{" "}
 							<Link
 								href="/login"
 								className="text-blue-400 hover:underline font-semibold"
 							>
-								Đăng nhập
+								{t("login")}
 							</Link>
 						</p>
 					</div>
@@ -139,61 +142,70 @@ function SignUpForm() {
 					<GoogleSignInButton
 						onClick={openGoogleSignIn}
 						disabled={!googleClientId}
-						text="Đăng ký với Google"
+						text={t("googleSignup")}
 					/>
 
 					{/* Divider (Optional) */}
 					<div className="flex items-center gap-4 my-6 text-slate-500 text-xs">
 						<div className="flex-1 h-px bg-slate-800"></div>
-						HOẶC
+						{t("or")}
 						<div className="flex-1 h-px bg-slate-800"></div>
 					</div>
 
 					{/* Form */}
 					<form onSubmit={handleSubmit} className="flex flex-col gap-4">
 						{(error || !googleClientId) && (
-							<div className="rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+							<div role="alert" className="rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-400">
 								{error ||
-									"Google Sign-In is not configured. Add NEXT_PUBLIC_GOOGLE_CLIENT_ID and redeploy the app."}
+									t("googleUnavailable")}
 							</div>
 						)}
 
 						<div className="flex flex-col gap-1.5">
-							<label className="text-sm font-medium text-slate-300">
-								Tên người dùng
+							<label htmlFor="signup-name" className="text-sm font-medium text-slate-300">
+								{t("name")}
 							</label>
 
 							<input
+								id="signup-name"
+								name="name"
+								autoComplete="name"
 								type="text"
 								value={name}
 								onChange={(e) => setName(e.target.value)}
-								placeholder="nhập tên của bạn ..."
+								placeholder={t("namePlaceholder")}
 								className="w-full rounded-xl border border-slate-700/80 bg-slate-950/60 px-3 py-2.5 text-slate-100 placeholder:text-slate-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/10"
 								required
 							/>
 						</div>
 
 						<div className="flex flex-col gap-1.5">
-							<label className="text-sm font-medium text-slate-300">
-								Email
+							<label htmlFor="signup-email" className="text-sm font-medium text-slate-300">
+								{t("email")}
 							</label>
 
 							<input
+								id="signup-email"
+								name="email"
+								autoComplete="email"
 								type="email"
 								value={email}
 								onChange={(e) => setEmail(e.target.value)}
-								placeholder="name@example.com"
+								placeholder={t("emailPlaceholder")}
 								className="w-full rounded-xl border border-slate-700/80 bg-slate-950/60 px-4 py-3.5 text-slate-100 placeholder:text-slate-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/10"
 								required
 							/>
 						</div>
 
 						<div className="flex flex-col gap-1.5">
-							<label className="text-sm font-medium text-slate-300">
-								Mật khẩu
+							<label htmlFor="signup-password" className="text-sm font-medium text-slate-300">
+								{t("password")}
 							</label>
 
 							<input
+								id="signup-password"
+								name="password"
+								autoComplete="new-password"
 								type="password"
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
@@ -204,11 +216,14 @@ function SignUpForm() {
 						</div>
 
 						<div className="flex flex-col gap-1.5">
-							<label className="text-sm font-medium text-slate-300">
-								Xác nhận mật khẩu
+							<label htmlFor="signup-password-confirm" className="text-sm font-medium text-slate-300">
+								{t("passwordConfirm")}
 							</label>
 
 							<input
+								id="signup-password-confirm"
+								name="passwordConfirm"
+								autoComplete="new-password"
 								type="password"
 								value={passwordConfirm}
 								onChange={(e) => setPasswordConfirm(e.target.value)}
@@ -222,7 +237,7 @@ function SignUpForm() {
 							type="submit"
 							className="mt-2 rounded-xl bg-blue-600 px-4 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-500 active:scale-[0.98] cursor-pointer"
 						>
-							Đăng ký
+							{t("signup")}
 						</button>
 					</form>
 				</div>

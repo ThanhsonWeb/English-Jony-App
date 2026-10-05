@@ -17,6 +17,7 @@ import {
 	X,
 } from "lucide-react";
 import Word from "@/app/_components/Word.jsx";
+import MobileDialogOverlay from "@/app/_components/MobileDialogOverlay";
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import Loading from "@/app/_components/loading";
@@ -376,7 +377,7 @@ export default function WordPage() {
 								onClick={() => handleViewModeChange("list")}
 								aria-label={t("listView")}
 								title={t("listView")}
-								className={`rounded-lg p-2 transition-colors ${
+								className={`rounded-lg p-2 transition-colors max-md:inline-flex max-md:h-11 max-md:w-11 max-md:items-center max-md:justify-center ${
 									viewMode === "list"
 										? "bg-emerald-500 text-emerald-950"
 										: "text-slate-500 hover:bg-slate-800 hover:text-slate-200"
@@ -390,7 +391,7 @@ export default function WordPage() {
 								onClick={() => handleViewModeChange("card")}
 								aria-label={t("cardView")}
 								title={t("cardView")}
-								className={`rounded-lg p-2 transition-colors ${
+								className={`rounded-lg p-2 transition-colors max-md:inline-flex max-md:h-11 max-md:w-11 max-md:items-center max-md:justify-center ${
 									viewMode === "card"
 										? "bg-emerald-500 text-emerald-950"
 										: "text-slate-500 hover:bg-slate-800 hover:text-slate-200"
@@ -411,7 +412,7 @@ export default function WordPage() {
 
 						{/* Form Modal */}
 						{isOpen && (
-							<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-4 backdrop-blur-md">
+							<MobileDialogOverlay labelledBy="topic-add-word-title" className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-4 backdrop-blur-md">
 								<form
 									onSubmit={handleSubmit}
 									className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-3xl border border-violet-500/35 bg-[#0b1022] "
@@ -435,7 +436,7 @@ export default function WordPage() {
 											<BookPlus className="h-6 w-6" />
 										</div>
 										<div className="mt-4 text-center">
-											<h2 className="text-xl font-bold text-white sm:text-2xl">
+											<h2 id="topic-add-word-title" className="text-xl font-bold text-white sm:text-2xl">
 											{t("form.addTitle")}
 											</h2>
 											<p className="mt-1 text-sm text-slate-400">
@@ -535,7 +536,7 @@ export default function WordPage() {
 										</button>
 									</div>
 								</form>
-							</div>
+							</MobileDialogOverlay>
 						)}
 					</div>
 				</div>

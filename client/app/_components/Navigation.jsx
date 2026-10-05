@@ -76,7 +76,7 @@ function Navigation() {
 
 			{/* Mobile Dropdown Menu */}
 			{isOpen && (
-				<div className="fixed inset-x-0 top-[73px] z-50 flex flex-col gap-5 border-b border-app bg-surface p-6 shadow-2xl lg:hidden">
+				<div className="fixed inset-x-0 top-[73px] z-50 flex max-h-[calc(100dvh-73px-env(safe-area-inset-bottom))] flex-col gap-5 overflow-y-auto overscroll-y-contain border-b border-app bg-surface p-6 shadow-2xl lg:hidden [&>*]:shrink-0">
 					{navLinks.map((link) => {
 						const Icon = link.icon;
 						const isActive =

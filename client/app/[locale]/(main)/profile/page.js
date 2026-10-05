@@ -3,6 +3,7 @@
 import StudyHeatmap from "@/app/_components/StudyHeatmap";
 import LanguageSwitcher from "@/app/_components/LanguageSwitcher";
 import ThemeSelector from "@/app/_components/ThemeSelector";
+import MobileDialogOverlay from "@/app/_components/MobileDialogOverlay";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { resolveAvatarUrl } from "@/app/_lib/resolveAvatarUrl";
 import { useRef, useState } from "react";
@@ -164,21 +165,22 @@ function Page() {
 					</button>
 				</div>
 
-				<div className="mt-5 sm:mt-0">
+				<div className="mt-5 sm:mt-0 max-md:min-w-0 max-md:max-w-full">
 					<div className="flex items-center gap-3">
-						<h1 className="text-3xl font-bold">{user?.name}</h1>
+						<h1 className="text-3xl font-bold max-md:min-w-0 max-md:[overflow-wrap:anywhere]">{user?.name}</h1>
 						<button
+							aria-label={t("updateName")}
 							onClick={() => {
 								setNewName(user?.name || "");
 								setIsEditingName(true);
 							}}
-							className="text-slate-400 hover:text-white cursor-pointer"
+							className="text-slate-400 hover:text-white cursor-pointer max-md:shrink-0"
 						>
 							<Pencil size={18} />
 						</button>
 					</div>
 					{isEditingName && (
-						<div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+						<MobileDialogOverlay labelledBy="profile-name-title" className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
 							<div className="relative w-full max-w-lg rounded-3xl border border-slate-800 bg-slate-900 p-8 shadow-2xl">
 						<button
 							onClick={() => setIsEditingName(false)}
@@ -188,7 +190,7 @@ function Page() {
 									✕
 								</button>
 
-								<h2 className="mb-6 text-center text-2xl font-bold text-white">
+								<h2 id="profile-name-title" className="mb-6 text-center text-2xl font-bold text-white">
 									{t("updateName")}
 								</h2>
 
@@ -207,12 +209,12 @@ function Page() {
 									{t("save")}
 								</button>
 							</div>
-						</div>
+						</MobileDialogOverlay>
 					)}
 
 					<div className="mt-4 flex items-center gap-2 text-slate-300">
-						<Mail size={18} />
-						<span>{user?.email}</span>
+						<Mail size={18} className="max-md:shrink-0" />
+						<span className="max-md:min-w-0 max-md:[overflow-wrap:anywhere]">{user?.email}</span>
 					</div>
 
 					<div className="mt-2 flex items-center gap-2 text-slate-300">
@@ -236,7 +238,7 @@ function Page() {
 
 			{/* Settings */}
 			<div className="mt-4 space-y-4">
-				<div className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+				<div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 sm:flex-nowrap sm:gap-0">
 					<div className="flex items-center gap-4">
 						<Languages className="text-primary" />
 						<span className="font-medium">{t("language")}</span>
@@ -245,7 +247,7 @@ function Page() {
 					<LanguageSwitcher variant="settings" />
 				</div>
 
-				<div className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+				<div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 sm:flex-nowrap sm:gap-0">
 					<div className="flex items-center gap-4">
 						<Volume2 className="text-blue-400" />
 						<span className="font-medium">{t("sound")}</span>
@@ -254,7 +256,7 @@ function Page() {
 					<input type="range" className="w-32" />
 				</div>
 
-				<div className="flex items-center justify-between rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
+				<div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 sm:flex-nowrap sm:gap-0">
 					<div className="flex items-center gap-4">
 						<Moon className="text-primary" />
 						<span className="font-medium">{t("darkMode")}</span>

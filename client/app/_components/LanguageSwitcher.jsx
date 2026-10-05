@@ -91,7 +91,7 @@ export default function LanguageSwitcher({ variant = "compact" }) {
 	}
 
 	return (
-		<div ref={containerRef} className="relative shrink-0">
+		<div ref={containerRef} className={`relative shrink-0${isSettingsVariant ? " max-sm:ml-auto" : ""}`}>
 			<button
 				type="button"
 				onClick={() => setIsOpen((open) => !open)}

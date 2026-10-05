@@ -1,15 +1,23 @@
 import { Link } from "@/i18n/navigation";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
 import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 import { useTranslations } from "next-intl";
+import styles from "./DialogueClozeReviewTask.module.css";
 
-function shuffleItems(items) {
+function shuffleItems(items, seed) {
 	const shuffled = [...items];
+	// A stable exercise seed gives server and browser the same shuffled order.
+	let state = 2166136261;
+	for (const character of seed) {
+		state = Math.imul(state ^ character.charCodeAt(0), 16777619) >>> 0;
+	}
 
 	for (let index = shuffled.length - 1; index > 0; index -= 1) {
-		const randomIndex = Math.floor(Math.random() * (index + 1));
+		state = (Math.imul(state, 1664525) + 1013904223) >>> 0;
+		const randomIndex = Math.floor((state / 4294967296) * (index + 1));
 		[shuffled[index], shuffled[randomIndex]] = [
 			shuffled[randomIndex],
 			shuffled[index],
@@ -70,6 +78,7 @@ function DialogueClozeReviewTask({
 				id: `word-${index}`,
 				word,
 			})),
+			`${lessonId}/${dialogueId}/${task.id}/${JSON.stringify(expectedAnswers)}`,
 		),
 	);
 	const [mode, setMode] = useState("select");
@@ -83,6 +92,12 @@ function DialogueClozeReviewTask({
 		Array(expectedAnswers.length).fill(null),
 	);
 	const [selectedBlankIndex, setSelectedBlankIndex] = useState(0);
+	const [dockCollapsed, setDockCollapsed] = useState(false);
+	const wordBankId = useId();
+	const pageRef = useRef(null);
+	const dockRef = useRef(null);
+	const blankRefs = useRef([]);
+	const revealBlankRef = useRef(false);
 	const actionRef = useRef(null);
 
 	const isComplete =
@@ -95,6 +110,38 @@ function DialogueClozeReviewTask({
 	useDialogueShortcuts({
 		onEnter: () => actionRef.current?.click(),
 	});
+
+	useEffect(() => {
+		if (mode !== "select") return;
+		const page = pageRef.current;
+		const dock = dockRef.current;
+		const observer = new ResizeObserver(() => {
+			page.style.setProperty("--cloze-dock-height", `${dock.getBoundingClientRect().height}px`);
+		});
+		observer.observe(dock);
+		return () => {
+			observer.disconnect();
+			page.style.removeProperty("--cloze-dock-height");
+		};
+	}, [mode]);
+
+	useEffect(() => {
+		if (!revealBlankRef.current) return;
+		const frame = requestAnimationFrame(() => {
+			revealBlankRef.current = false;
+			if (mode !== "select" || !window.matchMedia("(max-width: 767px)").matches) return;
+			const blank = blankRefs.current[selectedBlankIndex];
+			if (!blank || !dockRef.current) return;
+			const top = (document.querySelector("header.sticky")?.getBoundingClientRect().bottom || 0) + 8;
+			const bottom = dockRef.current.getBoundingClientRect().top - 8;
+			const sentence = blank.closest("[data-cloze-line]");
+			const sentenceRect = sentence.getBoundingClientRect();
+			const rect = sentenceRect.height <= bottom - top ? sentenceRect : blank.getBoundingClientRect();
+			if (rect.top < top) window.scrollBy(0, rect.top - top);
+			else if (rect.bottom > bottom) window.scrollBy(0, rect.bottom - bottom);
+		});
+		return () => cancelAnimationFrame(frame);
+	}, [selectedBlankIndex, mode, answers, blankResults, dockCollapsed]);
 
 	function resetBlankResult(index) {
 		setBlankResults((previous) => {
@@ -124,6 +171,7 @@ function DialogueClozeReviewTask({
 
 	function selectBlank(index) {
 		if (blankResults[index] !== "correct") {
+			revealBlankRef.current = true;
 			setSelectedBlankIndex(index);
 		}
 	}
@@ -140,6 +188,7 @@ function DialogueClozeReviewTask({
 				: firstEmptyIndex;
 
 		if (targetIndex === -1 || targetIndex === null) return;
+		revealBlankRef.current = true;
 
 		setAssignments((previous) => {
 			const updated = [...previous];
@@ -175,6 +224,7 @@ function DialogueClozeReviewTask({
 	function clearSelectedAnswer(index, event) {
 		event.stopPropagation();
 		if (blankResults[index] === "correct") return;
+		revealBlankRef.current = true;
 
 		setAnswers((previous) => {
 			const updated = [...previous];
@@ -206,6 +256,7 @@ function DialogueClozeReviewTask({
 			return;
 		}
 
+		revealBlankRef.current = true;
 		setSelectedBlankIndex(
 			nextResults.findIndex((result) => result === "wrong"),
 		);
@@ -227,6 +278,7 @@ function DialogueClozeReviewTask({
 				}),
 			);
 		}
+		if (nextMode === "select") revealBlankRef.current = true;
 		setMode(nextMode);
 		if (nextMode === "select" && selectedBlankIndex === null && !isComplete) {
 			const firstEditableIndex = blankResults.findIndex(
@@ -250,7 +302,7 @@ function DialogueClozeReviewTask({
 	}
 
 	return (
-		<div className="min-h-screen px-4 py-8 text-main sm:px-8">
+		<div ref={pageRef} className={`min-h-screen px-4 py-8 text-main sm:px-8 ${mode === "select" ? styles.chooseWords : ""}`}>
 			<div className="mx-auto max-w-6xl">
 				<div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
 					<div>
@@ -312,14 +364,27 @@ function DialogueClozeReviewTask({
 					}`}
 				>
 					{mode === "select" && (
-						<aside className="rounded-2xl border border-app bg-surface p-4 lg:sticky lg:top-4">
+						<aside ref={dockRef} className={`rounded-2xl border border-app bg-surface p-4 lg:sticky lg:top-4 ${styles.dock}`}>
 							<div className="flex items-center justify-between gap-3">
 								<h2 className="text-sm font-semibold text-main">{t("wordBank")}</h2>
 								<span className="text-xs text-secondary">
 									{t("wordsRemaining", { count: remainingWords.length })}
 								</span>
+								<button
+									type="button"
+									aria-controls={wordBankId}
+									aria-expanded={!dockCollapsed}
+									aria-label={t(dockCollapsed ? "expandWordBank" : "collapseWordBank")}
+									onClick={() => {
+										revealBlankRef.current = true;
+										setDockCollapsed((collapsed) => !collapsed);
+									}}
+									className={`${styles.toggle} rounded-lg text-secondary hover:bg-surface-muted hover:text-main`}
+								>
+									{dockCollapsed ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+								</button>
 							</div>
-							<div className="mt-3 grid max-h-52 grid-cols-2 gap-2 overflow-y-auto pr-1 lg:max-h-[calc(65vh-4.75rem)] lg:grid-cols-1">
+							<div id={wordBankId} className={`mt-3 grid max-h-52 grid-cols-2 gap-2 overflow-y-auto pr-1 lg:max-h-[calc(65vh-4.75rem)] lg:grid-cols-1 ${styles.words} ${dockCollapsed ? styles.collapsed : ""}`}>
 								{remainingWords.map((item) => (
 									<button
 										key={item.id}
@@ -341,12 +406,12 @@ function DialogueClozeReviewTask({
 					)}
 
 					<section
-						className="max-h-[65vh] overflow-y-auto rounded-2xl border border-app bg-surface/70 p-4 sm:p-6"
+						className={`max-h-[65vh] overflow-y-auto rounded-2xl border border-app bg-surface/70 p-4 sm:p-6 ${mode === "select" ? styles.dialogue : ""}`}
 					aria-label={t("reviewDialogue")}
 					>
 						<div className="space-y-5">
 							{task.lines.map((line, lineIndex) => (
-								<div key={`${line.speaker}-${lineIndex}`}>
+								<div key={`${line.speaker}-${lineIndex}`} data-cloze-line>
 									<p className="text-sm font-semibold text-primary">
 										{line.speaker}
 									</p>
@@ -401,12 +466,13 @@ function DialogueClozeReviewTask({
 											return (
 												<span
 													key={`blank-${lineIndex}-${partIndex}`}
-													style={{ minWidth: width }}
-													className={`group mx-1 inline-flex min-h-9 cursor-pointer items-center justify-center rounded-lg border font-semibold outline-none transition ${getBlankClass(
+													style={{ "--cloze-blank-width": width }}
+													className={`${styles.blank} group mx-1 inline-flex min-h-9 cursor-pointer items-center justify-center rounded-lg border font-semibold outline-none transition ${getBlankClass(
 														blankIndex,
 													)}`}
 												>
 													<button
+														ref={(element) => { blankRefs.current[blankIndex] = element; }}
 														type="button"
 														onClick={() => selectBlank(blankIndex)}
 														disabled={blankResults[blankIndex] === "correct"}

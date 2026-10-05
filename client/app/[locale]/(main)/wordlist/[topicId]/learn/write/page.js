@@ -83,6 +83,7 @@ export default function WriteReviewPage() {
 	}, [topicId, dueOnly]);
 
 	useEffect(() => {
+		if (navigator.maxTouchPoints > 0 || window.matchMedia("(max-width: 767px), (any-pointer: coarse)").matches) return;
 		if (!loading && !sessionFinished && !waitingForContinue) {
 			inputRef.current?.focus();
 		}

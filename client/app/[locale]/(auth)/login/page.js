@@ -2,14 +2,16 @@
 
 import { useAuth } from "@/app/_contexts/AuthContext";
 import Image from "next/image";
-import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
+import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { getAuthErrorMessage } from "@/app/_lib/authErrorMessage";
 import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
 import AuthOverlay from "@/app/_components/AuthOverlay";
 
 function LoginPage() {
+	const t = useTranslations("Auth");
 	const { setUser } = useAuth();
 	const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 	const locale = useLocale();
@@ -17,9 +19,9 @@ function LoginPage() {
 	const authError = searchParams.get("error");
 	const callbackError =
 		authError === "google_session_failed"
-			? "Google Sign-In finished, but no valid session was found. Please try again."
+			? t("googleSessionFailed")
 			: authError === "google_oauth_failed"
-				? "Google Sign-In was not completed. Please try again."
+				? t("googleOAuthFailed")
 				: "";
 
 	const [email, setEmail] = useState("");
@@ -44,15 +46,15 @@ function LoginPage() {
 		script.defer = true;
 
 		script.onerror = () => {
-			setError("Unable to load Google Sign-In. Please try again later.");
+			setError(t("googleLoadFailed"));
 		};
 
 		document.body.appendChild(script);
-	}, [googleClientId]);
+	}, [googleClientId, t]);
 
 	async function openGoogleSignIn() {
 		if (!window.google) {
-			setError("Google Sign-In is still loading. Please try again.");
+			setError(t("googleLoading"));
 			return;
 		}
 
@@ -65,7 +67,7 @@ function LoginPage() {
 			const data = await response.json();
 
 			if (!response.ok) {
-				setError(data.message || "Unable to start Google Sign-In.");
+				setError(t("googleStartFailed"));
 				return;
 			}
 
@@ -78,7 +80,7 @@ function LoginPage() {
 			});
 			codeClient.requestCode();
 		} catch (error) {
-			setError("Unable to start Google Sign-In. Please try again.");
+			setError(t("googleStartFailed"));
 		}
 	}
 
@@ -99,7 +101,7 @@ function LoginPage() {
 			const data = await res.json();
 			// prod mode
 			if (data.status === "fail") {
-				setError(data.message);
+				setError(getAuthErrorMessage(data, t, "loginFailed"));
 				return;
 			}
 
@@ -110,6 +112,7 @@ function LoginPage() {
 			}
 			// console.log(data);
 		} catch (error) {
+			setError(t("loginFailed"));
 			console.log(error);
 		} finally {
 			setIsLoading(false);
@@ -125,6 +128,7 @@ function LoginPage() {
 					{/* Close Button */}
 					<Link
 						href="/"
+						aria-label={t("close")}
 						className="absolute right-4 top-4 text-2xl text-slate-500 transition hover:text-white"
 					>
 						&times;
@@ -138,14 +142,14 @@ function LoginPage() {
 							width={56}
 							quality={75}
 							priority
-							alt="English-Jony logo"
+							alt={t("logoAlt")}
 							className="h-14 w-14 rounded-2xl border border-slate-800"
 						/>
 
-						<h1 className="mt-4 text-2xl font-bold text-white">Đăng nhập</h1>
+						<h1 className="mt-4 text-2xl font-bold text-white">{t("login")}</h1>
 
 						<p className="mt-1 text-sm text-slate-400">
-							Tiếp tục hành trình học tập của bạn 🚀
+							{t("loginSubtitle")} 🚀
 						</p>
 					</div>
 
@@ -153,34 +157,37 @@ function LoginPage() {
 					<GoogleSignInButton
 						onClick={openGoogleSignIn}
 						disabled={!googleClientId}
-						text="Đăng nhập với Google"
+						text={t("googleLogin")}
 					/>
 
 					{/* Divider */}
 					<div className="my-6 flex items-center gap-4">
 						<div className="h-px flex-1 bg-slate-800" />
-						<span className="text-xs font-medium text-slate-500">HOẶC</span>
+						<span className="text-xs font-medium text-slate-500">{t("or")}</span>
 						<div className="h-px flex-1 bg-slate-800" />
 					</div>
 
 					{/* Error */}
 					{(error || callbackError || !googleClientId) && (
-						<div className="mb-4 rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-400">
+						<div role="alert" className="mb-4 rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-400">
 							{error ||
 								callbackError ||
-								"Google Sign-In is not configured. Add NEXT_PUBLIC_GOOGLE_CLIENT_ID and redeploy the app."}
+								t("googleUnavailable")}
 						</div>
 					)}
 
 					{/* Email */}
 					<div className="mb-4 flex flex-col gap-1.5">
-						<label className="text-sm font-medium text-slate-300">Email</label>
+						<label htmlFor="login-email" className="text-sm font-medium text-slate-300">{t("email")}</label>
 
 						<input
+							id="login-email"
+							name="email"
+							autoComplete="username"
 							type="email"
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
-							placeholder="name@example.com"
+							placeholder={t("emailPlaceholder")}
 							className="w-full rounded-xl border border-slate-700/80 bg-slate-950/60 px-4 py-3.5 text-slate-100 placeholder:text-slate-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/10"
 							required
 						/>
@@ -188,12 +195,15 @@ function LoginPage() {
 
 					{/* Password */}
 					<div className="flex flex-col gap-1.5">
-						<label className="text-sm font-medium text-slate-300">
-							Mật khẩu
+						<label htmlFor="login-password" className="text-sm font-medium text-slate-300">
+							{t("password")}
 						</label>
 
 						<div className="relative">
 							<input
+								id="login-password"
+								name="password"
+								autoComplete="current-password"
 								type={showPassword ? "text" : "password"}
 								value={password}
 								onChange={(e) => setPassword(e.target.value)}
@@ -204,7 +214,7 @@ function LoginPage() {
 							<button
 								type="button"
 								onClick={() => setShowPassword((visible) => !visible)}
-								aria-label={showPassword ? "Ẩn mật khẩu" : "Hiện mật khẩu"}
+								aria-label={t(showPassword ? "hidePassword" : "showPassword")}
 								aria-pressed={showPassword}
 								className="absolute inset-y-0 right-3 flex cursor-pointer items-center text-slate-400 transition hover:text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
 							>
@@ -239,17 +249,17 @@ function LoginPage() {
 						disabled={loading}
 						className="mt-6 rounded-xl bg-blue-600 px-4 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-500 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
 					>
-						{loading ? "Đang đăng nhập..." : "Đăng nhập"}
+						{t(loading ? "loggingIn" : "login")}
 					</button>
 
 					{/* Signup */}
 					<p className="mt-5 text-center text-sm text-slate-400">
-						Chưa có tài khoản?{" "}
+						{t("noAccount")}{" "}
 						<Link
 							href="/signup"
 							className="font-semibold text-blue-400 hover:text-blue-300 hover:underline"
 						>
-							Đăng ký
+							{t("signup")}
 						</Link>
 					</p>
 				</form>

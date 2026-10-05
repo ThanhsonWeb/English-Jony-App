@@ -1,0 +1,57 @@
+.toggle {
+	display: none;
+}
+
+.blank {
+	min-width: var(--cloze-blank-width);
+}
+
+@media (max-width: 767px) {
+	.chooseWords {
+		padding-bottom: calc(var(--cloze-dock-height, 154px) + 92px + env(safe-area-inset-bottom));
+	}
+
+	.dock {
+		position: fixed;
+		z-index: 40;
+		left: 16px;
+		right: 16px;
+		bottom: calc(76px + env(safe-area-inset-bottom));
+		padding: 8px 12px;
+	}
+
+	.toggle {
+		display: inline-flex;
+		width: 44px;
+		height: 44px;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+	}
+
+	.words {
+		margin-top: 8px;
+		max-height: min(88px, 22dvh);
+		overscroll-behavior-y: contain;
+	}
+
+	.collapsed {
+		display: none;
+	}
+
+	.dialogue {
+		max-height: none;
+		overflow-y: visible;
+	}
+
+	.dialogue .blank {
+		min-width: min(var(--cloze-blank-width), calc(100% - 8px));
+		max-width: calc(100% - 8px);
+	}
+
+	.dialogue .blank > button {
+		min-width: 0;
+		overflow-wrap: anywhere;
+	}
+}

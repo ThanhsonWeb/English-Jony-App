@@ -10,6 +10,7 @@ import { resolveMeaning } from "@/app/_lib/dictionary/resolveMeaning";
 import useDialogueShortcuts from "@/app/_hooks/useDialogueShortcuts";
 import { useTranslations } from "next-intl";
 import useDialoguePlaybackRate from "@/app/_hooks/useDialoguePlaybackRate";
+import styles from "./DialoguePlayer.module.css";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import {
 	PLAYBACK_RATES,
@@ -664,7 +665,7 @@ export default function DialoguePlayer({
 										onClick={handleTranslate}
 										aria-label={t("translateSentence")}
 										title={t("translateSentence")}
-										className={`flex h-9 w-9 items-center justify-center rounded-full transition ${
+										className={`${styles.touchTarget} flex h-9 w-9 items-center justify-center rounded-full transition ${
 											showTranslation
 												? "bg-violet-500/15 text-violet-400"
 												: "text-slate-400 hover:bg-white/10 hover:text-white"
@@ -680,7 +681,7 @@ export default function DialoguePlayer({
 											aria-label={t("choosePlaybackSpeed", { rate: playbackRate })}
 											aria-expanded={showSpeedMenu}
 											title={t("playbackSpeed")}
-											className="flex h-9 min-w-14 cursor-pointer items-center justify-center gap-1 rounded-full px-2 text-xs font-semibold text-slate-400 transition hover:bg-white/10 hover:text-white"
+											className={`${styles.touchTarget} flex h-9 min-w-14 cursor-pointer items-center justify-center gap-1 rounded-full px-2 text-xs font-semibold text-slate-400 transition hover:bg-white/10 hover:text-white`}
 										>
 											{playbackRate}x
 											<ChevronDown
@@ -698,7 +699,7 @@ export default function DialoguePlayer({
 														key={rate}
 														type="button"
 														onClick={() => handlePlaybackRateChange(rate)}
-														className={`block w-full cursor-pointer px-3 py-2 text-center text-xs font-semibold transition hover:bg-white/10 ${
+														className={`block min-h-11 w-full cursor-pointer px-3 py-2 text-center text-xs font-semibold transition hover:bg-white/10 ${
 															playbackRate === rate
 																? "bg-player-selected text-player-selected-text"
 																: "text-slate-400"

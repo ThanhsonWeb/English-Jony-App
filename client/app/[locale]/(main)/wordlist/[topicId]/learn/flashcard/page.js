@@ -137,7 +137,7 @@ function Page() {
 						aria-pressed={showAnswer}
 						aria-label={t(showAnswer ? "flashcard.flipBack" : "flashcard.reveal")}
 						onClick={() => dispatchQuestionState({ type: "reveal", value: !showAnswer })}
-		className={`${styles.card} ${showAnswer ? styles.flipped : ""} relative w-full select-none overflow-hidden rounded-[28px] border border-primary/30 bg-gradient-to-br from-surface via-surface-muted to-surface text-center shadow-md shadow-primary/10 transition-colors hover:border-primary/50 hover:shadow-lg hover:shadow-primary/15`}
+		className={`${styles.card} ${showAnswer ? styles.flipped : ""} relative w-full select-none rounded-[28px] border border-primary/30 bg-gradient-to-br from-surface via-surface-muted to-surface text-center shadow-md shadow-primary/10 transition-colors hover:border-primary/50 hover:shadow-lg hover:shadow-primary/15`}
 					>
 			<span className={`${styles.flipper} ${showAnswer ? styles.flipperFlipped : ""}`} data-visible-face={showAnswer ? "back" : "front"}>
 			<span className={`${styles.face} ${styles.front} px-5 py-8 sm:px-10 sm:py-10`} aria-hidden={showAnswer}>

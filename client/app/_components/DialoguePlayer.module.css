@@ -1,0 +1,12 @@
+@media (max-width: 639px) {
+	.touchTarget {
+		position: relative;
+	}
+
+	/* Extend the hit area by 4px without changing the visible control or toolbar. */
+	.touchTarget::after {
+		content: "";
+		position: absolute;
+		inset: -4px;
+	}
+}
