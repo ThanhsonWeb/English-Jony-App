@@ -35,6 +35,7 @@ const courseImages = {
 	"grocery-store": "/dialogue/grocery-store/thumbnails/grocery-store.png",
 	"restaurant": "/dialogue/restaurant/thumbnails/restaurant.png",
 	"walk-in-the-park": "/dialogue/walk-in-the-park/thumbnails/walk-in-the-park.png",
+	"ten-minutes-a-day": "/stories/ten-minutes-a-day/thumbnails/ten-minutes-a-day.png",
 };
 
 function getCourseImage(courseId) {

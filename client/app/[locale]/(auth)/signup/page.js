@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useLocale } from "next-intl";
 import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
+import AuthOverlay from "@/app/_components/AuthOverlay";
 
 function SignUpForm() {
 	const { setUser } = useAuth();
@@ -104,7 +105,7 @@ function SignUpForm() {
 
 	return (
 		<div className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-slate-950 px-4 overflow-hidden">
-			<div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+			<AuthOverlay>
 				<div className="relative z-10 flex flex-col bg-slate-900/60 backdrop-blur-md text-slate-100 w-full max-w-md p-8 rounded-2xl border border-slate-800/80 shadow-2xl">
 					{/* Close Button */}
 					<Link
@@ -225,7 +226,7 @@ function SignUpForm() {
 						</button>
 					</form>
 				</div>
-			</div>
+			</AuthOverlay>
 		</div>
 	);
 }

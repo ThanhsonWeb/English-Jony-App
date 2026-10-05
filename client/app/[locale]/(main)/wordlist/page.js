@@ -281,7 +281,7 @@ export default function WordlistPage() {
 								{statuses.map((status) => (
 									<button key={status} type="button" aria-pressed={activeFilter === status}
 										onClick={() => { setFilter(status); setPage(1); }}>
-										{locale === "en" ? { all: "All", new: "Mới", learning: "Đang học", review: "Cần ôn", mastered: "Đã nhớ" }[status] : t(status)}
+										{t(status)}
 									</button>
 								))}
 							</div>

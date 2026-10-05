@@ -314,7 +314,7 @@ export default function DialogueUsefulWords({
 					</p>
 				)}
 
-				<div className="sticky bottom-0 mt-8 border-t border-slate-800 bg-[#030616]/95 py-4 backdrop-blur-md">
+				<div className="sticky bottom-[calc(76px+env(safe-area-inset-bottom))] mt-8 border-t border-slate-800 bg-[#030616]/95 py-4 backdrop-blur-md md:bottom-0">
 					<button
 						type="button"
 						onClick={saveSelectedWords}

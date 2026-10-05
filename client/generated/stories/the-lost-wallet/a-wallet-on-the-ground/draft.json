@@ -1,0 +1,1038 @@
+{
+  "metadata": {
+    "courseId": "the-lost-wallet",
+    "dialogueId": "a-wallet-on-the-ground",
+    "title": "Chiếc ví trên mặt đất",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Chiếc ví bị mất",
+        "en": "The Lost Wallet"
+      },
+      "courseDescription": {
+        "vi": "Alex tìm thấy một chiếc ví gần trạm xe buýt và quyết định tìm chủ nhân của nó.",
+        "en": "Alex finds a wallet near a bus stop and decides to look for its owner."
+      },
+      "title": {
+        "vi": "Chiếc ví trên mặt đất",
+        "en": "A Wallet on the Ground"
+      },
+      "description": {
+        "vi": "Alex tìm thấy một chiếc ví gần trạm xe buýt và quyết định tìm chủ nhân của nó.",
+        "en": "Alex finds a wallet near a bus stop and decides to look for its owner."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Alex tìm thấy một chiếc ví gần trạm xe buýt và quyết định tìm chủ nhân của nó.",
+    "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+    "thumbnail": "/stories/the-lost-wallet/thumbnails/a-wallet-on-the-ground.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Alex",
+      "text": "Mia, look. There is a wallet here.",
+      "translation": "Mia, nhìn này. Có một chiếc ví ở đây.",
+      "practicePriority": "important",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Mia",
+      "text": "Oh, yes. Is anyone near it?",
+      "translation": "Ồ, đúng rồi. Có ai ở gần nó không?",
+      "practicePriority": "simple",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Alex",
+      "text": "No, I don't see anyone.",
+      "translation": "Không, mình không thấy ai cả.",
+      "practicePriority": "important",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Mia",
+      "text": "Maybe the owner is at the bus stop.",
+      "translation": "Có lẽ chủ nhân đang ở trạm xe buýt.",
+      "practicePriority": "important",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Alex",
+      "text": "There is an ID card inside.",
+      "translation": "Có một thẻ ID ở bên trong.",
+      "practicePriority": "important",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Mia",
+      "text": "Good. Does it have a name?",
+      "translation": "Tốt. Trên đó có tên không?",
+      "practicePriority": "simple",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Alex",
+      "text": "Yes. Her name is Mrs. Green.",
+      "translation": "Có. Tên của bà ấy là Mrs. Green.",
+      "practicePriority": "simple",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Mia",
+      "text": "We can look for her and return the wallet.",
+      "translation": "Chúng ta có thể tìm bà ấy và trả lại chiếc ví.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Alex",
+      "text": "Yes. I don't want to leave it here.",
+      "translation": "Ừ. Mình không muốn để nó lại đây.",
+      "practicePriority": "important",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Mia",
+      "text": "Good. We can ask at the shops near the bus stop.",
+      "translation": "Được. Chúng ta có thể hỏi ở các cửa hàng gần trạm xe buýt.",
+      "practicePriority": "important",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-05.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "wallet",
+      "pronunciation": "/ˈwɑː.lɪt/",
+      "meaning": "chiếc ví",
+      "example": "My wallet is in my bag."
+    },
+    {
+      "word": "owner",
+      "pronunciation": "/ˈoʊ.nɚ/",
+      "meaning": "chủ nhân",
+      "example": "We need to find the owner."
+    },
+    {
+      "word": "bus stop",
+      "pronunciation": "/ˈbʌs ˌstɑːp/",
+      "meaning": "trạm xe buýt",
+      "example": "I am at the bus stop."
+    },
+    {
+      "word": "ID card",
+      "pronunciation": "/ˌaɪˈdiː ˌkɑːrd/",
+      "meaning": "thẻ ID; thẻ căn cước",
+      "example": "Her name is on the ID card."
+    },
+    {
+      "word": "look for",
+      "pronunciation": "/ˈlʊk fɔːr/",
+      "meaning": "tìm kiếm",
+      "example": "I am looking for my phone."
+    },
+    {
+      "word": "return",
+      "pronunciation": "/rɪˈtɝːn/",
+      "meaning": "trả lại",
+      "example": "Please return the book."
+    },
+    {
+      "word": "leave",
+      "pronunciation": "/liːv/",
+      "meaning": "để lại; rời đi",
+      "example": "Do not leave your bag here."
+    },
+    {
+      "word": "ask",
+      "pronunciation": "/æsk/",
+      "meaning": "hỏi",
+      "example": "We can ask the teacher."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Mia, look. There is a ",
+        " here."
+      ],
+      "answers": [
+        "wallet"
+      ],
+      "speaker": "Alex",
+      "transcript": "Mia, look. There is a wallet here.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Mia, look. There is a wallet ",
+        "."
+      ],
+      "answers": [
+        "here"
+      ],
+      "speaker": "Alex",
+      "transcript": "Mia, look. There is a wallet here.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 1,
+      "type": "multipleChoice",
+      "question": "Alex dùng “There is” để làm gì trong câu này?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp nhất với hội thoại.",
+          "en": "Choose the best answer based on the dialogue."
+        },
+        "question": {
+          "vi": "Alex dùng “There is” để làm gì trong câu này?",
+          "en": "What does Alex use “There is” to do in this sentence?"
+        },
+        "options": [
+          {
+            "vi": "Hỏi Mia đang ở đâu.",
+            "en": "Ask where Mia is."
+          },
+          {
+            "vi": "Nói chiếc ví thuộc về ai.",
+            "en": "Say who the wallet belongs to."
+          },
+          {
+            "vi": "Nói rằng có một chiếc ví ở đây.",
+            "en": "Say that there is a wallet here."
+          },
+          {
+            "vi": "Nói rằng anh ấy muốn đi xe buýt.",
+            "en": "Say that he wants to take the bus."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "There is",
+      "options": [
+        "Hỏi Mia đang ở đâu.",
+        "Nói chiếc ví thuộc về ai.",
+        "Nói rằng có một chiếc ví ở đây.",
+        "Nói rằng anh ấy muốn đi xe buýt."
+      ],
+      "answer": "Nói rằng có một chiếc ví ở đây.",
+      "speaker": "Alex",
+      "transcript": "Mia, look. There is a wallet here.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Oh, yes. Is ",
+        " near it?"
+      ],
+      "answers": [
+        "anyone"
+      ],
+      "speaker": "Mia",
+      "transcript": "Oh, yes. Is anyone near it?",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 2,
+      "type": "multipleChoice",
+      "question": "Mia muốn biết điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp nhất với hội thoại.",
+          "en": "Choose the best answer based on the dialogue."
+        },
+        "question": {
+          "vi": "Mia muốn biết điều gì?",
+          "en": "What does Mia want to know?"
+        },
+        "options": [
+          {
+            "vi": "Có ai ở gần chiếc ví không?",
+            "en": "Whether anyone is near the wallet."
+          },
+          {
+            "vi": "Chiếc ví có màu gì?",
+            "en": "What color the wallet is."
+          },
+          {
+            "vi": "Xe buýt đến lúc mấy giờ?",
+            "en": "What time the bus arrives."
+          },
+          {
+            "vi": "Alex có tiền không?",
+            "en": "Whether Alex has money."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Có ai ở gần chiếc ví không?",
+        "Chiếc ví có màu gì?",
+        "Xe buýt đến lúc mấy giờ?",
+        "Alex có tiền không?"
+      ],
+      "answer": "Có ai ở gần chiếc ví không?",
+      "speaker": "Mia",
+      "transcript": "Oh, yes. Is anyone near it?",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "No, I ",
+        " anyone."
+      ],
+      "answers": [
+        "don't see"
+      ],
+      "speaker": "Alex",
+      "transcript": "No, I don't see anyone.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "No, I don't see ",
+        "."
+      ],
+      "answers": [
+        "anyone"
+      ],
+      "speaker": "Alex",
+      "transcript": "No, I don't see anyone.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Maybe the ",
+        " is at the bus stop."
+      ],
+      "answers": [
+        "owner"
+      ],
+      "speaker": "Mia",
+      "transcript": "Maybe the owner is at the bus stop.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Maybe the owner is at the ",
+        "."
+      ],
+      "answers": [
+        "bus stop"
+      ],
+      "speaker": "Mia",
+      "transcript": "Maybe the owner is at the bus stop.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "There is an ",
+        " inside."
+      ],
+      "answers": [
+        "ID card"
+      ],
+      "speaker": "Alex",
+      "transcript": "There is an ID card inside.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "There is an ID card ",
+        "."
+      ],
+      "answers": [
+        "inside"
+      ],
+      "speaker": "Alex",
+      "transcript": "There is an ID card inside.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Good. Does it have a ",
+        "?"
+      ],
+      "answers": [
+        "name"
+      ],
+      "speaker": "Mia",
+      "transcript": "Good. Does it have a name?",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Yes. ",
+        " is Mrs. Green."
+      ],
+      "answers": [
+        "Her name"
+      ],
+      "speaker": "Alex",
+      "transcript": "Yes. Her name is Mrs. Green.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-04.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "question": "Tên nào được tìm thấy trên thẻ ID?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp nhất với hội thoại.",
+          "en": "Choose the best answer based on the dialogue."
+        },
+        "question": {
+          "vi": "Tên nào được tìm thấy trên thẻ ID?",
+          "en": "Which name is found on the ID card?"
+        },
+        "options": [
+          {
+            "vi": "Alex",
+            "en": "Alex"
+          },
+          {
+            "vi": "Mia",
+            "en": "Mia"
+          },
+          {
+            "vi": "Mr. Green",
+            "en": "Mr. Green"
+          },
+          {
+            "vi": "Mrs. Green",
+            "en": "Mrs. Green"
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Alex",
+        "Mia",
+        "Mr. Green",
+        "Mrs. Green"
+      ],
+      "answer": "Mrs. Green",
+      "speaker": "Alex",
+      "transcript": "Yes. Her name is Mrs. Green.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-04.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "We can ",
+        " her and return the wallet."
+      ],
+      "answers": [
+        "look for"
+      ],
+      "speaker": "Mia",
+      "transcript": "We can look for her and return the wallet.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "We can look for her and ",
+        " the wallet."
+      ],
+      "answers": [
+        "return"
+      ],
+      "speaker": "Mia",
+      "transcript": "We can look for her and return the wallet.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "multipleChoice",
+      "question": "Mia và Alex quyết định làm gì với chiếc ví?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp nhất với hội thoại.",
+          "en": "Choose the best answer based on the dialogue."
+        },
+        "question": {
+          "vi": "Mia và Alex quyết định làm gì với chiếc ví?",
+          "en": "What do Mia and Alex decide to do with the wallet?"
+        },
+        "options": [
+          {
+            "vi": "Để chiếc ví lại đó.",
+            "en": "Leave the wallet there."
+          },
+          {
+            "vi": "Tìm Mrs. Green và trả lại chiếc ví.",
+            "en": "Find Mrs. Green and return the wallet."
+          },
+          {
+            "vi": "Giữ chiếc ví.",
+            "en": "Keep the wallet."
+          },
+          {
+            "vi": "Đưa chiếc ví lên xe buýt.",
+            "en": "Take the wallet onto the bus."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Để chiếc ví lại đó.",
+        "Tìm Mrs. Green và trả lại chiếc ví.",
+        "Giữ chiếc ví.",
+        "Đưa chiếc ví lên xe buýt."
+      ],
+      "answer": "Tìm Mrs. Green và trả lại chiếc ví.",
+      "speaker": "Mia",
+      "transcript": "We can look for her and return the wallet.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Yes. I ",
+        " to leave it here."
+      ],
+      "answers": [
+        "don't want"
+      ],
+      "speaker": "Alex",
+      "transcript": "Yes. I don't want to leave it here.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-05.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Yes. I don't want to ",
+        " it here."
+      ],
+      "answers": [
+        "leave"
+      ],
+      "speaker": "Alex",
+      "transcript": "Yes. I don't want to leave it here.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/alex-05.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Good. We can ask at the ",
+        " near the bus stop."
+      ],
+      "answers": [
+        "shops"
+      ],
+      "speaker": "Mia",
+      "transcript": "Good. We can ask at the shops near the bus stop.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền vào chỗ trống",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Điền từ hoặc cụm từ còn thiếu.",
+          "en": "Fill in the missing word or phrase."
+        }
+      },
+      "parts": [
+        "Good. We can ask at the shops near the ",
+        "."
+      ],
+      "answers": [
+        "bus stop"
+      ],
+      "speaker": "Mia",
+      "transcript": "Good. We can ask at the shops near the bus stop.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Mia dùng “ask” vì họ muốn làm gì ở các cửa hàng?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp nhất với hội thoại.",
+          "en": "Choose the best answer based on the dialogue."
+        },
+        "question": {
+          "vi": "Mia dùng “ask” vì họ muốn làm gì ở các cửa hàng?",
+          "en": "Why does Mia use “ask” when talking about the shops?"
+        },
+        "options": [
+          {
+            "vi": "Hỏi mọi người để tìm chủ chiếc ví.",
+            "en": "Ask people to help find the wallet's owner."
+          },
+          {
+            "vi": "Mua một chiếc ví mới.",
+            "en": "Buy a new wallet."
+          },
+          {
+            "vi": "Chờ xe buýt trong cửa hàng.",
+            "en": "Wait for the bus inside a shop."
+          },
+          {
+            "vi": "Tìm một chiếc thẻ ID mới.",
+            "en": "Find a new ID card."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "ask",
+      "options": [
+        "Hỏi mọi người để tìm chủ chiếc ví.",
+        "Mua một chiếc ví mới.",
+        "Chờ xe buýt trong cửa hàng.",
+        "Tìm một chiếc thẻ ID mới."
+      ],
+      "answer": "Hỏi mọi người để tìm chủ chiếc ví.",
+      "speaker": "Mia",
+      "transcript": "Good. We can ask at the shops near the bus stop.",
+      "scene": "/stories/the-lost-wallet/a-wallet-on-the-ground/bg.png",
+      "audioUrl": "/stories/the-lost-wallet/a-wallet-on-the-ground/audio/mia-05.mp3"
+    },
+    {
+      "id": 23,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Hoàn thành hội thoại",
+          "en": "Complete the Dialogue"
+        },
+        "instruction": {
+          "vi": "Điền các từ còn thiếu để hoàn thành toàn bộ hội thoại.",
+          "en": "Fill in the missing words to complete the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Alex",
+          "parts": [
+            "Mia, look. There is a ",
+            {
+              "id": "1",
+              "blank": "wallet"
+            },
+            " here."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Mia",
+          "parts": [
+            "Oh, yes. Is ",
+            {
+              "id": "2",
+              "blank": "anyone"
+            },
+            " near it?"
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Alex",
+          "parts": [
+            "No, I don't ",
+            {
+              "id": "3",
+              "blank": "see anyone"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Mia",
+          "parts": [
+            "Maybe the owner is at the ",
+            {
+              "id": "4",
+              "blank": "bus stop"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Alex",
+          "parts": [
+            "There is an ",
+            {
+              "id": "5",
+              "blank": "ID card"
+            },
+            " inside."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Mia",
+          "parts": [
+            "Good. Does it have a ",
+            {
+              "id": "6",
+              "blank": "name"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Alex",
+          "parts": [
+            "Yes. Her name is ",
+            {
+              "id": "7",
+              "blank": "Mrs. Green"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Mia",
+          "parts": [
+            "We can look for her and ",
+            {
+              "id": "8",
+              "blank": "return"
+            },
+            " the wallet."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Alex",
+          "parts": [
+            "Yes. I don't want to ",
+            {
+              "id": "9",
+              "blank": "leave"
+            },
+            " it here."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Mia",
+          "parts": [
+            "Good. We can ask at the ",
+            {
+              "id": "10",
+              "blank": "shops"
+            },
+            " near the bus stop."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "There is + danh từ số ít",
+      "explanation": "Dùng “There is” để nói rằng có một người hoặc vật ở một nơi nào đó.",
+      "localized": {
+        "title": {
+          "vi": "There is + danh từ số ít",
+          "en": "There is + singular noun"
+        },
+        "explanation": {
+          "vi": "Dùng “There is” để nói rằng có một người hoặc vật ở một nơi nào đó.",
+          "en": "Use “There is” to say that one person or thing is in a place."
+        }
+      },
+      "example": "There is a wallet here."
+    },
+    {
+      "title": "can + động từ nguyên mẫu",
+      "explanation": "Dùng “can + động từ” để nói điều ai đó có thể làm hoặc để đưa ra một gợi ý đơn giản.",
+      "localized": {
+        "title": {
+          "vi": "can + động từ nguyên mẫu",
+          "en": "can + base verb"
+        },
+        "explanation": {
+          "vi": "Dùng “can + động từ” để nói điều ai đó có thể làm hoặc để đưa ra một gợi ý đơn giản.",
+          "en": "Use “can + verb” to say what someone can do or to make a simple suggestion."
+        }
+      },
+      "example": "We can look for her."
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useLocale } from "next-intl";
 import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
+import AuthOverlay from "@/app/_components/AuthOverlay";
 
 function LoginPage() {
 	const { setUser } = useAuth();
@@ -116,7 +117,7 @@ function LoginPage() {
 	}
 	return (
 		<div className="relative min-h-[calc(100vh-80px)] flex items-center justify-center bg-slate-950 px-4 overflow-hidden">
-			<div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+			<AuthOverlay>
 				<form
 					onSubmit={handleSubmit}
 					className="relative z-10 flex w-full max-w-md flex-col rounded-3xl border border-slate-800/80 bg-slate-900/80 p-6 text-slate-100 shadow-2xl backdrop-blur-xl sm:p-8"
@@ -252,7 +253,7 @@ function LoginPage() {
 						</Link>
 					</p>
 				</form>
-			</div>
+			</AuthOverlay>
 		</div>
 	);
 }

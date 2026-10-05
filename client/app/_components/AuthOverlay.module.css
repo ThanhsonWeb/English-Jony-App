@@ -1,0 +1,17 @@
+.overlay {
+	position: fixed;
+	inset: 0 0 auto;
+	z-index: 50;
+	height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow-y: auto;
+	overscroll-behavior-y: contain;
+	padding: calc(16px + env(safe-area-inset-top)) 16px calc(16px + env(safe-area-inset-bottom));
+}
+
+.overlay > * {
+	flex-shrink: 0;
+	margin-block: auto;
+}
