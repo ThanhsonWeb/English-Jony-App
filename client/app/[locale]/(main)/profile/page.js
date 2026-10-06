@@ -8,7 +8,7 @@ import { useAuth } from "@/app/_contexts/AuthContext";
 import { resolveAvatarUrl } from "@/app/_lib/resolveAvatarUrl";
 import { useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import profileName from "../../../../../shared/profileName.cjs";
+import { validateProfileName } from "@/app/_lib/profileName.mjs";
 import {
 	Mail,
 	CalendarDays,
@@ -16,7 +16,6 @@ import {
 	Camera,
 	LoaderCircle,
 	Languages,
-	Volume2,
 	Moon,
 	LogOut,
 } from "lucide-react";
@@ -117,7 +116,7 @@ function Page() {
 		if (nameSavingRef.current) return;
 		const session = captureSession();
 		if (!session.userId) return;
-		const validation = profileName.validateProfileName(newName);
+		const validation = validateProfileName(newName);
 		setNameError("");
 		if (validation) { setNameError(t(validation)); return; }
 		nameSavingRef.current = true;
@@ -278,15 +277,6 @@ function Page() {
 					</div>
 
 					<LanguageSwitcher variant="settings" />
-				</div>
-
-				<div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 sm:flex-nowrap sm:gap-0">
-					<div className="flex items-center gap-4">
-						<Volume2 className="text-blue-400" />
-						<span className="font-medium">{t("sound")}</span>
-					</div>
-
-					<input type="range" className="w-32" />
 				</div>
 
 				<div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-5 sm:flex-nowrap sm:gap-0">

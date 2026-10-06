@@ -1,65 +1,60 @@
 "use client";
-import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { createAuthSessionGuard } from "@/app/_lib/authSessionGuard.mjs";
+import { createSessionRestore } from "@/app/_lib/sessionRestore.mjs";
 
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
     const [user, setStoredUser] = useState(null);
     const [loading, setLoading] = useState(true); 
-    const requestId = useRef(0);
     const [sessionGuard] = useState(createAuthSessionGuard);
+    const [sessionRestore] = useState(() => createSessionRestore({
+        guard: sessionGuard,
+        async loadUser(signal) {
+            const res = await fetch("/api/v1/users/me", { credentials: "include", signal });
+            if (!res.ok) return null;
+            const data = await res.json();
+            if (data?.status !== undefined && data.status !== "success") return null;
+            return data?.data?.user || null;
+        },
+        onUser: setStoredUser,
+        onLoading: setLoading,
+    }));
 
     const setUser = useCallback((nextUser) => {
-        requestId.current += 1;
+        sessionRestore.invalidate();
         const resolved = typeof nextUser === "function"
             ? sessionGuard.update(nextUser(sessionGuard.getUser()))
             : sessionGuard.start(nextUser);
         setStoredUser(resolved);
         setLoading(false);
-    }, [sessionGuard]);
+    }, [sessionGuard, sessionRestore]);
 
     const updateUserForSession = useCallback((nextUser, session) => {
         if (!sessionGuard.updateForSession(nextUser, session)) return false;
-        requestId.current += 1;
+        sessionRestore.invalidate();
         setStoredUser(nextUser);
         setLoading(false);
         return true;
-    }, [sessionGuard]);
+    }, [sessionGuard, sessionRestore]);
 
+    const restoreSession = useCallback((kind) => sessionRestore.restore(kind), [sessionRestore]);
+    // Keep the existing getMe user/null contract for callers.
     const getMe = useCallback(async () => {
-        const currentRequest = ++requestId.current;
-        const session = sessionGuard.capture();
-        setLoading(true);
-        try {
-            const res = await fetch("/api/v1/users/me", {
-                credentials: "include", // Sends the cookie automatically
-            });
+        const result = await restoreSession();
+        return result.status === "success" ? result.user : null;
+    }, [restoreSession]);
 
-            if (res.ok) {
-                const data = await res.json();
-                if (currentRequest !== requestId.current || !sessionGuard.isCurrent(session)) return null;
-                setStoredUser(sessionGuard.update(data.data.user));
-                return data.data.user;
-            } else {
-                if (currentRequest === requestId.current && sessionGuard.isCurrent(session)) setStoredUser(sessionGuard.update(null));
-                return null;
-            }
-        } catch (error) {
-            if (currentRequest === requestId.current && sessionGuard.isCurrent(session)) setStoredUser(sessionGuard.update(null));
-            return null;
-        } finally {
-            if (currentRequest === requestId.current) setLoading(false);
-        }
-    }, [sessionGuard]);
-
-    // ✅ ADD THIS: Runs exactly ONCE when the app first loads
+    // Concurrent initial/callback reads share the same confirmed session.
     useEffect(() => {
-        queueMicrotask(getMe);
-    }, [getMe]);
+        let mounted = true;
+        queueMicrotask(() => { if (mounted) getMe(); });
+        return () => { mounted = false; sessionRestore.invalidate(); };
+    }, [getMe, sessionRestore]);
 
     return (
-        <AuthContext.Provider value={{ user, setUser, loading, getMe,
+        <AuthContext.Provider value={{ user, setUser, loading, getMe, restoreSession,
             captureSession: sessionGuard.capture, isCurrentSession: sessionGuard.isCurrent, updateUserForSession }}>
             {children}
         </AuthContext.Provider>

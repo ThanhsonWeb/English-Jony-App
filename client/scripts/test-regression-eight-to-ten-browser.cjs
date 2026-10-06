@@ -46,7 +46,7 @@ async function setup(browser, width, locale, theme, { guest = false, topics = []
 		return route.fulfill({ json: { data: { progress: [], activities: [], vocabularies: [] } } });
 	});
 	async function goto(path) {
-		await page.goto(baseURL + prefix + path, { timeout: 60000 });
+		await page.goto(baseURL + prefix + path, { timeout: 60000, waitUntil: "domcontentloaded" });
 		await page.waitForFunction(theme => document.documentElement.dataset.theme === theme, theme);
 	}
 	async function finish() {
@@ -198,7 +198,7 @@ async function dictionaryCase(browser, width, locale, theme, withTopic) {
 		pending.resolve(); await release.promise;
 		const newVocab = { _id: "000000000000000000000012", ...payload, reviewCount: 0, lastReviewedAt: null };
 		c.storedWords.push(newVocab);
-		await route.fulfill({ json: { data: { newVocab } } }); return true;
+		await route.fulfill({ json: { status: "success", data: { newVocab } } }); return true;
 	});
 	await c.goto("/wordlist");
 	await p.locator("header.sticky button.group").waitFor();
@@ -234,6 +234,8 @@ async function dictionaryCase(browser, width, locale, theme, withTopic) {
 	await panel.getByRole("button", { name: t.saved, exact: true }).waitFor();
 	assert.equal(await panel.getByRole("button", { name: t.saved, exact: true }).isDisabled(), true);
 	await panel.getByRole("button", { name: t.close, exact: true }).click();
+	await panel.waitFor({ state: "hidden" });
+	await p.getByText(withTopic ? "book" : "apple", { exact: true }).first().waitFor();
 	await c.goto(withTopic ? `/wordlist/${topicId}` : "/wordlist");
 	await p.getByText(withTopic ? "book" : "apple", { exact: true }).first().waitFor();
 	await open(); await lookup(withTopic ? "BOOK" : "APPLE");

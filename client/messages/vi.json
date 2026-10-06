@@ -34,7 +34,8 @@
 		"passwordLength": "Mật khẩu phải có ít nhất 8 ký tự.",
 		"passwordMismatch": "Mật khẩu xác nhận không trùng khớp.",
 		"loginFailed": "Không thể đăng nhập. Vui lòng thử lại.",
-		"signupFailed": "Không thể tạo tài khoản. Hãy kiểm tra thông tin và thử lại."
+		"signupFailed": "Không thể tạo tài khoản. Hãy kiểm tra thông tin và thử lại.",
+		"finishingGoogleLogin": "Đang hoàn tất đăng nhập..."
 	},
 	"Home": {
 		"eyebrow": "Học tiếng Anh thực tế mỗi ngày",
@@ -250,7 +251,8 @@
 	  "quizHelp": "Trắc nghiệm cần ít nhất 4 nghĩa khác nhau.",
 	  "previous": "Trước",
 	  "next": "Sau",
-	  "page": "Trang {current} / {total}"
+	  "page": "Trang {current} / {total}",
+		"noDueWords": "Chưa có từ nào đến hạn ôn tập."
 	},
 	"Navigation": {
 		"mobileLabel": "Điều hướng chính",
@@ -390,7 +392,6 @@
 		"activitySummary": "{days} ngày hoạt động · {count} lượt học từ vựng trong 6 tháng",
 		"language": "Ngôn ngữ hiển thị",
 		"languageValue": "🇻🇳 Tiếng Việt",
-		"sound": "Hiệu ứng âm thanh",
 		"darkMode": "Giao diện",
 		"less": "Ít",
 		"more": "Nhiều"
@@ -491,7 +492,18 @@
 			"addError": "Không thể thêm từ này. Vui lòng thử lại.",
 			"editTitle": "Chỉnh sửa từ vựng",
 			"save": "Lưu thay đổi"
-		}
+		},
+		"emptyTitle": "Chưa có từ nào",
+		"emptyBody": "Thêm từ đầu tiên để bắt đầu học.",
+		"noResultsTitle": "Không tìm thấy từ phù hợp",
+		"noResultsBody": "Thử chọn bộ lọc khác hoặc thay đổi từ khóa tìm kiếm.",
+		"pagination": "{count} từ · Trang {current}/{total}",
+		"previous": "Trước",
+		"next": "Sau",
+		"audioLabel": "Phát âm {word}",
+		"actionsLabel": "Mở thao tác cho {word}",
+		"editLabel": "Chỉnh sửa {word}",
+		"deleteLabel": "Xóa {word}"
 	},
 	"WordlistReview": {
 		"common": {
@@ -573,5 +585,19 @@
 		"saveError": "Không thể thêm từ vào Sổ tay.",
 		"signInToSave": "Đăng nhập để thêm vào Sổ tay",
 		"createList": "Tạo danh sách để lưu từ"
+	},
+	"ErrorPages": {
+		"errorTitle": "Đã xảy ra lỗi",
+		"errorBody": "Không thể tải nội dung. Vui lòng thử lại.",
+		"retry": "Thử lại",
+		"rootErrorTitle": "Đã xảy ra lỗi!",
+		"rootErrorBody": "Có lỗi xảy ra. Hãy thử lại nhé! 🔄",
+		"rootRetry": "🔄 Thử lại",
+		"notFoundTitle": "Không tìm thấy trang",
+		"notFoundBody": "Trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển.",
+		"home": "Về trang chủ",
+		"rootNotFoundTitle": "Ối! Không tìm thấy trang",
+		"rootNotFoundBody": "Có vẻ như trang bạn đang tìm kiếm không tồn tại hoặc đã bị di chuyển. 🔍",
+		"rootHome": "🏠 Về trang chủ"
 	}
 }

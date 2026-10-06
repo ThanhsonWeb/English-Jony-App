@@ -2,7 +2,6 @@ const User = require("../models/userModel");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 const { isValidAvatar, uploadAvatar } = require("../services/avatarUpload");
-const { validateProfileName } = require("../../shared/profileName.cjs");
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
 	const users = await User.find();
@@ -41,12 +40,10 @@ exports.updateTheme = catchAsync(async (req, res, next) => {
 });
 
 exports.updateMe = catchAsync(async (req, res, next) => {
-	const code = validateProfileName(req.body?.name);
-	if (code) return res.status(400).json({ status: "fail", code, message: "Name must contain 3 to 20 characters." });
 	const updatedUser = await User.findByIdAndUpdate(
 		req.user.id,
 		{
-			name: req.body.name.trim(),
+			name: req.body.name,
 		},
 		{
 			new: true,

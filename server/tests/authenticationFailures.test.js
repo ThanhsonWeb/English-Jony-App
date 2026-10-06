@@ -72,6 +72,45 @@ for (const locale of ["vi", "en"]) test(`${locale}: Google-only account still lo
 	assert.equal(me.status, 200); assert.equal((await me.json()).data.user._id, google.id);
 	assert.equal(await User.countDocuments(), 2);
 });
+for (const locale of ["vi", "en"]) test(`${locale}: cancelled/invalid Google callbacks fail safely without issuing a JWT`, async t => {
+	const exchange = t.mock.method(OAuth2Client.prototype, "getToken", async () => { throw new Error("must not exchange cancelled authorization"); });
+	t.mock.method(console, "error", () => {});
+	for (const query of ["state=test-state&error=access_denied", "state=wrong-state&code=test-code", "state=test-state"]) {
+		const response = await fetch(`${url}/auth/google/callback?${query}`, { redirect: "manual", headers: { Cookie: `google_oauth_state=test-state; google_oauth_locale=${locale}` } });
+		assert.equal(response.status, 303);
+		assert.equal(response.headers.get("location"), `http://studyjony.test/${locale === "en" ? "en/" : ""}oauth/google/callback?error=google_oauth_failed`);
+		assert.doesNotMatch(response.headers.get("set-cookie"), /(?:^|, )jwt=/);
+	}
+	assert.equal(exchange.mock.callCount(), 0); assert.equal(await User.countDocuments(), 2);
+});
+for (const locale of ["vi", "en"]) test(`${locale}: Google login replaces an expired/previous account session and survives refresh`, async t => {
+	t.mock.method(OAuth2Client.prototype, "getToken", async () => ({ tokens: { id_token: "test-id-token" } }));
+	t.mock.method(OAuth2Client.prototype, "verifyIdToken", async () => ({ getPayload: () => ({ email: google.email, name: google.name, sub: google.googleId }) }));
+	for (const expiresIn of [-1, "1h"]) {
+		const previous = jwt.sign({ id: normal.id }, secret, { expiresIn });
+		const response = await fetch(`${url}/auth/google/callback?state=test-state&code=test-code`, { redirect: "manual", headers: { Cookie: `jwt=${previous}; google_oauth_state=test-state; google_oauth_locale=${locale}` } });
+		assert.equal(response.status, 303);
+		const token = cookieToken(response);
+		for (let refresh = 0; refresh < 2; refresh++) {
+			const me = await request("/users/me", { token, cookie: true });
+			assert.equal(me.status, 200); assert.equal((await me.json()).data.user._id, google.id);
+		}
+	}
+	assert.equal(await User.countDocuments(), 2);
+});
+test("Google token exchange/verification failures redirect safely without a new session", async t => {
+	t.mock.method(console, "error", () => {});
+	const exchange = t.mock.method(OAuth2Client.prototype, "getToken", async () => { throw new Error("private token-exchange failure"); });
+	const fail = async () => {
+		const response = await fetch(`${url}/auth/google/callback?state=test-state&code=test-code`, { redirect: "manual", headers: { Cookie: "google_oauth_state=test-state; google_oauth_locale=en" } });
+		assert.equal(response.status, 303); assert.match(response.headers.get("location"), /error=google_oauth_failed$/);
+		assert.doesNotMatch(response.headers.get("set-cookie"), /(?:^|, )jwt=/);
+	};
+	await fail(); exchange.mock.restore();
+	t.mock.method(OAuth2Client.prototype, "getToken", async () => ({ tokens: { id_token: "test-token" } }));
+	t.mock.method(OAuth2Client.prototype, "verifyIdToken", async () => { throw new Error("private verification failure"); });
+	await fail(); assert.equal(await User.countDocuments(), 2);
+});
 for (const environment of ["development", "production"]) test(`${environment}: expired, malformed, tampered and invalid JWT claims are controlled 401 for cookies and Bearer headers`, async () => {
 	process.env.NODE_ENV = environment;
 	const tokens = [

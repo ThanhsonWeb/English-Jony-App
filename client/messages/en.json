@@ -34,7 +34,8 @@
 		"passwordLength": "Your password must be at least 8 characters.",
 		"passwordMismatch": "The passwords do not match.",
 		"loginFailed": "Could not sign in. Please try again.",
-		"signupFailed": "Could not create your account. Check your details and try again."
+		"signupFailed": "Could not create your account. Check your details and try again.",
+		"finishingGoogleLogin": "Finishing sign-in..."
 	},
 	"Home": {
 		"eyebrow": "Learn English in real life",
@@ -250,7 +251,8 @@
 	  "quizHelp": "Quiz needs at least 4 different meanings.",
 	  "previous": "Previous",
 	  "next": "Next",
-	  "page": "Page {current} / {total}"
+	  "page": "Page {current} / {total}",
+		"noDueWords": "No words are due for review yet."
 	},
 	"Navigation": {
 		"mobileLabel": "Mobile navigation",
@@ -390,7 +392,6 @@
 		"activitySummary": "{days} active days · {count} vocabulary activities in 6 months",
 		"language": "Display language",
 		"languageValue": "🇺🇸 English",
-		"sound": "Sound effects",
 		"darkMode": "Theme",
 		"less": "Less",
 		"more": "More"
@@ -491,7 +492,18 @@
 			"addError": "Could not add this word. Please try again.",
 			"editTitle": "Edit vocabulary",
 			"save": "Save changes"
-		}
+		},
+		"emptyTitle": "No words yet",
+		"emptyBody": "Add your first word to start learning.",
+		"noResultsTitle": "No matching words",
+		"noResultsBody": "Try a different filter or search term.",
+		"pagination": "{count} words · Page {current}/{total}",
+		"previous": "Previous",
+		"next": "Next",
+		"audioLabel": "Pronounce {word}",
+		"actionsLabel": "Open actions for {word}",
+		"editLabel": "Edit {word}",
+		"deleteLabel": "Delete {word}"
 	},
 	"WordlistReview": {
 		"common": {
@@ -573,5 +585,19 @@
 		"saveError": "The word could not be added to your wordlist.",
 		"signInToSave": "Sign in to add to your wordlist",
 		"createList": "Create a list to save words"
+	},
+	"ErrorPages": {
+		"errorTitle": "Something went wrong",
+		"errorBody": "Could not load this content. Please try again.",
+		"retry": "Try again",
+		"rootErrorTitle": "Something went wrong!",
+		"rootErrorBody": "Something went wrong. Please try again! 🔄",
+		"rootRetry": "🔄 Try again",
+		"notFoundTitle": "Page not found",
+		"notFoundBody": "The page you are looking for does not exist or has moved.",
+		"home": "Back to home",
+		"rootNotFoundTitle": "Oops! Page not found",
+		"rootNotFoundBody": "The page you are looking for does not exist or has moved. 🔍",
+		"rootHome": "🏠 Back to home"
 	}
 }

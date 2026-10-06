@@ -134,7 +134,7 @@ export default function WordPage() {
 
 	//   Get all words
 	useEffect(() => {
-		if (authLoading || !userId) return;
+		if (authLoading) return;
 		let controller;
 		async function fetchData() {
 			controller?.abort();
@@ -599,11 +599,11 @@ export default function WordPage() {
 							<div className="mb-4 text-4xl">📚</div>
 
 							<h3 className="text-xl font-semibold text-white">
-								Chưa có từ nào
+								{t("emptyTitle")}
 							</h3>
 
 							<p className="mt-2 text-md text-slate-400">
-								Thêm từ đầu tiên để bắt đầu học.
+								{t("emptyBody")}
 							</p>
 						</div>
 					) : filteredWords.length === 0 ? (
@@ -611,11 +611,11 @@ export default function WordPage() {
 							<div className="mb-4 text-4xl">🔎</div>
 
 							<h3 className="text-xl font-semibold text-white">
-								Không tìm thấy từ phù hợp
+								{t("noResultsTitle")}
 							</h3>
 
 							<p className="mt-2 text-md text-slate-400">
-								Thử chọn bộ lọc khác hoặc thay đổi từ khóa tìm kiếm.
+								{t("noResultsBody")}
 							</p>
 						</div>
 					) : (
@@ -640,7 +640,7 @@ export default function WordPage() {
 					{/* Pagination */}
 					<div className="mt-5 flex items-center justify-between border-t border-slate-800/60 px-1 pt-4 text-xs text-slate-400 md:px-2">
 						<span>
-							{filteredWords.length} từ · Trang {currentPage}/{totalPages}
+							{t("pagination", { count: filteredWords.length, current: currentPage, total: totalPages })}
 						</span>
 
 						<div className="flex gap-2">
@@ -649,7 +649,7 @@ export default function WordPage() {
 								disabled={currentPage === 1}
 								className="px-3 py-2 rounded-lg border border-slate-700 bg-slate-900 text-slate-300 transition-all hover:bg-slate-800 hover:text-white hover:border-slate-600 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-slate-900 disabled:hover:text-slate-300"
 							>
-								Trước
+								{t("previous")}
 							</button>
 
 							<button
@@ -657,7 +657,7 @@ export default function WordPage() {
 								disabled={currentPage === totalPages}
 								className="rounded-lg border border-emerald-500/25 bg-emerald-500/10 px-3 py-2 text-emerald-300 transition hover:border-emerald-400 hover:bg-emerald-500 hover:text-emerald-950 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-emerald-500/25 disabled:hover:bg-emerald-500/10 disabled:hover:text-emerald-300"
 							>
-								Sau
+								{t("next")}
 							</button>
 						</div>
 					</div>

@@ -391,7 +391,7 @@ export default function MiniDictionary() {
 
 			if (!response.ok) throw new Error(t("saveError"));
 			const data = await response.json();
-			if (!data?.data?.newVocab?._id) throw new Error(t("saveError"));
+			if (data?.status !== "success" || !data?.data?.newVocab?._id) throw new Error(t("saveError"));
 			if (!isCurrentSession(session)) return;
 			notifyVocabularySaved(session.userId, data.data.newVocab);
 

@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import {
 	BookOpen,
 	GraduationCap,
@@ -33,6 +34,7 @@ import { WordDialog, DeleteDialog } from "./_components/WordDialogs";
 import styles from "./wordlist.module.css";
 import { splitExample } from "@/app/_lib/exampleHighlight.mjs";
 import { subscribeVocabularySaved } from "@/app/_lib/vocabularyEvents.mjs";
+import { resolveWordlistFilter } from "@/app/_lib/wordlistFilter.mjs";
 
 const statuses = ["all", "new", "learning", "review", "mastered"];
 const reviewModes = [
@@ -122,7 +124,13 @@ export default function WordlistPage() {
 	const [result, setResult] = useState(null);
 	const [retry, setRetry] = useState(0);
 	const [search, setSearch] = useState("");
-	const [filter, setFilter] = useState("review");
+	const searchParams = useSearchParams();
+	function setFilter(status) {
+		const params = new URLSearchParams(searchParams.toString());
+		params.set("status", status);
+		window.history.replaceState(null, "", `?${params}${window.location.hash}`);
+		setPage(1);
+	}
 	const [editor, setEditor] = useState(null);
 	const [deleting, setDeleting] = useState(null);
 	const [audioError, setAudioError] = useState(false);
@@ -156,14 +164,14 @@ export default function WordlistPage() {
 			controller?.abort();
 			const request = new AbortController();
 			controller = request;
-		fetchVocabulary(undefined, request.signal)
-			.then((words) => {
-				if (!request.signal.aborted) setResult({ key: requestKey, words });
-			})
-			.catch((error) => {
-				if (!request.signal.aborted)
-					setResult({ key: requestKey, error: error.message });
-			});
+			fetchVocabulary(undefined, request.signal)
+				.then((words) => {
+					if (!request.signal.aborted) setResult({ key: requestKey, words });
+				})
+				.catch((error) => {
+					if (!request.signal.aborted)
+						setResult({ key: requestKey, error: error.message });
+				});
 		}
 		const unsubscribe = subscribeVocabularySaved(userId, undefined, loadWords);
 		loadWords();
@@ -182,9 +190,7 @@ export default function WordlistPage() {
 		]),
 	);
 	const totalWords = counts.all;
-	const activeFilter = !loading && filter === "review" && counts.review === 0
-		? counts.new > 0 ? "new" : "all"
-		: filter;
+	const activeFilter = resolveWordlistFilter(searchParams.get("status"), counts, loading);
 	const queue = selectReviewWords(words, { global: true, now });
 	const canQuiz =
 		new Set(words.map((word) => word.vietnamese.trim().toLowerCase())).size >=
@@ -199,7 +205,7 @@ export default function WordlistPage() {
 	);
 	const pages = Math.max(1, Math.ceil(filtered.length / 20));
 	const currentPage = Math.min(page, pages);
-	if (page > pages) setPage(pages);
+	if (!loading && !error && user && page > pages) setPage(pages);
 	const visible = filtered.slice((currentPage - 1) * 20, currentPage * 20);
 	async function saveWord(body) {
 		const word = editor.word;
@@ -259,7 +265,7 @@ export default function WordlistPage() {
 				</header>
 				<div className={styles.content}>
 					<div className={styles.mainColumn}>
-						{totalWords > 0 && (
+						{(totalWords > 0 || (!loading && user && !error && activeFilter === "review")) && (
 						<div className={styles.toolbar}>
 							<div className={styles.search}>
 								<Search size={21} />
@@ -376,7 +382,7 @@ export default function WordlistPage() {
 									{t("retry")}
 								</button>
 							</div>
-						) : !words.length ? (
+						) : !words.length && activeFilter !== "review" ? (
 							<div className={`${styles.empty} ${styles.firstWordEmpty}`}>
 								<Image src="/wordlist-hero-2.png" alt="" width={300} height={200} className={styles.emptyImage} />
 								<h2><span className={styles.desktopEmptyCopy}>{t("emptyTitle")}</span><span className={styles.mobileEmptyCopy}>{locale === "en" ? "Your notebook is ready for its first word!" : t("emptyTitle")}</span></h2>
@@ -392,7 +398,7 @@ export default function WordlistPage() {
 							</div>
 						) : !filtered.length ? (
 							<div className={styles.empty}>
-								<p>{t("noResults")}</p>
+								<p>{t(activeFilter === "review" && !query ? "noDueWords" : "noResults")}</p>
 								<button
 									className={styles.secondary}
 									onClick={() => {

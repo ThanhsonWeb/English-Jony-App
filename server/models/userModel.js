@@ -2,14 +2,13 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
-const { MIN_NAME_LENGTH, MAX_NAME_LENGTH } = require("../../shared/profileName.cjs");
 const userSchema = new mongoose.Schema(
 	{
 		name: {
 			type: String,
 			trim: true,
-			minLength: [MIN_NAME_LENGTH, "name must have at least 3 characters"],
-			maxLength: [MAX_NAME_LENGTH, "maximum 20 characters"],
+			minLength: [3, "name must have at least 3 characters"],
+			maxLength: [20, "maximum 20 characters"],
 		},
 
 		email: {

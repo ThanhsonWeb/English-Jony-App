@@ -48,9 +48,11 @@ function Topic({ topic, onDelete, onFix, words }) {
 		setIsSaving(true);
 		setSaveError("");
 		try {
-			// The save callback must resolve with success and reject failed requests.
+			// Accept an explicit acknowledgement or the saved topic, never an error body.
 			const saved = await onFix(topic._id, editName, editDesc);
-			if (!saved) throw new Error("Topic save was not confirmed");
+			const confirmed = saved === true || saved?._id === topic._id ||
+				(saved?.status === "success" && saved?.data?.updatedTopic?._id === topic._id);
+			if (!confirmed) throw new Error("Topic save was not confirmed");
 			setIsEditing(false);
 		} catch {
 			setSaveError(t("form.saveError"));

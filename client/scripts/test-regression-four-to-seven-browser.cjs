@@ -38,7 +38,7 @@ async function setup(browser, width, locale, theme) {
 	const messages = require(`../messages/${locale}.json`);
 	const prefix = locale === "en" ? "/en" : "";
 	async function goto(route) {
-		await page.goto(baseURL + prefix + route, { timeout: 60000 });
+		await page.goto(baseURL + prefix + route, { timeout: 60000, waitUntil: "domcontentloaded" });
 		await page.locator("header.sticky button.group").waitFor();
 		await page.waitForFunction(theme => document.documentElement.dataset.theme === theme, theme);
 	}
@@ -206,7 +206,7 @@ async function dictionaryCase(browser, width, locale, theme) {
 	const browser = await chromium.launch({ channel: "chrome", headless: true });
 	let checks = 0;
 	try {
-		for (const width of [320, 375, 430, 768, 1280]) for (const locale of ["vi", "en"]) for (const theme of ["light", "dark"]) {
+		for (const width of process.env.STUDYJONY_TEST_WIDTHS?.split(",").map(Number) || [320, 375, 430, 768, 1280]) for (const locale of ["vi", "en"]) for (const theme of ["light", "dark"]) {
 			for (const fixture of fixtures) for (const type of ["fillBlank", "multipleChoice", "dialogueCloze"]) { await progressCase(browser, width, locale, theme, fixture, type); checks += 1; }
 			for (const mutation of ["name", "avatar"]) for (const loginB of [false, true]) { await profileCase(browser, width, locale, theme, mutation, loginB); checks += 1; }
 			await dictionaryCase(browser, width, locale, theme); checks += 1;

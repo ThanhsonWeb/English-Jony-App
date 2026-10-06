@@ -60,7 +60,7 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 							<button
 								type="button"
 								onClick={playPronunciation}
-								aria-label={`Phát âm ${word.english}`}
+								aria-label={t("audioLabel", { word: word.english })}
 								className="shrink-0 rounded p-1 text-blue-400 transition hover:bg-blue-500/10 hover:text-blue-300"
 							>
 								<Volume2 className="h-3.5 w-3.5" />
@@ -94,7 +94,7 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 								<button
 									type="button"
 									onClick={() => setIsMenuOpen((open) => !open)}
-									aria-label={`Mở thao tác cho ${word.english}`}
+									aria-label={t("actionsLabel", { word: word.english })}
 									className="rounded p-1 text-slate-500 transition hover:bg-slate-700/60 hover:text-white"
 								>
 									<MoreVertical className="h-4 w-4" />
@@ -151,7 +151,7 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 						<button
 							type="button"
 							onClick={playPronunciation}
-							aria-label={`Phát âm ${word.english}`}
+							aria-label={t("audioLabel", { word: word.english })}
 							className="rounded-full p-1.5 text-emerald-400 transition hover:bg-emerald-500/10 hover:text-emerald-300"
 						>
 							<Volume2 className="h-3.5 w-3.5" />
@@ -212,7 +212,7 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 				<div className="flex justify-end gap-1 border-t border-slate-800/70 pt-4 md:col-span-1 md:border-0 md:pt-0">
 					<button
 						onClick={() => setIsEditing((cur) => !cur)}
-						aria-label={`Chỉnh sửa ${word.english}`}
+						aria-label={t("editLabel", { word: word.english })}
 						className="cursor-pointer rounded-lg p-2 text-slate-500 transition hover:bg-emerald-500/10 hover:text-emerald-300"
 					>
 						<Edit2 className="w-4 h-4" />
@@ -220,7 +220,7 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 
 					<button
 						onClick={() => onDelete(word._id)}
-						aria-label={`Xóa ${word.english}`}
+						aria-label={t("deleteLabel", { word: word.english })}
 						className="cursor-pointer rounded-lg p-2 text-slate-500 transition hover:bg-red-500/10 hover:text-red-400"
 					>
 						<Trash2 className="w-4 h-4" />

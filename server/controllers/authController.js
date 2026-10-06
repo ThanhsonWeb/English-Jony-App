@@ -8,6 +8,7 @@ const crypto = require("crypto");
 const { OAuth2Client } = require("google-auth-library");
 const googleDisplayName = require("../utils/googleDisplayName");
 const mongoose = require("mongoose");
+const { validateProfileName } = require("../utils/profileName");
 
 const GOOGLE_OAUTH_STATE_COOKIE = "google_oauth_state";
 const GOOGLE_OAUTH_LOCALE_COOKIE = "google_oauth_locale";
@@ -265,6 +266,11 @@ const filterOjb = (obj, ...allowedFields) => {
 };
 exports.updateMe = catchAsync(async (req, res, next) => {
 	const filteredBody = filterOjb(req.body, "name", "email");
+	if (Object.hasOwn(filteredBody, "name")) {
+		const code = validateProfileName(filteredBody.name);
+		if (code) return res.status(400).json({ status: "fail", code, message: "Name must contain 3 to 20 characters." });
+		filteredBody.name = filteredBody.name.trim();
+	}
 
 	const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
 		new: true,
