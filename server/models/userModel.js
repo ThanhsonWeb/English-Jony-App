@@ -73,6 +73,7 @@ const userSchema = new mongoose.Schema(
 		},
 
 		passwordChangedAt: Date,
+		passwordSessionVersion: String,
 		passwordResetToken: String,
 		passwordResetExpires: Date,
 		googleId: String,
@@ -86,15 +87,23 @@ userSchema.methods.correctPassword = async function (candidatePass, userPass) {
 	return await bcrypt.compare(candidatePass, userPass);
 };
 
-userSchema.methods.changedPasswordAfter = function (jwtTimeStamp) {
+userSchema.methods.changedPasswordAfter = function (
+	jwtTimeStamp,
+	tokenPasswordChangedAt,
+	tokenPasswordSessionVersion,
+) {
+	// A random version also distinguishes overlapping saves at the same millisecond.
+	if (this.passwordSessionVersion && tokenPasswordSessionVersion !== this.passwordSessionVersion) {
+		return true;
+	}
 	if (this.passwordChangedAt) {
-		// convert to timestamp
-		const changedTimeStamp = parseInt(
-			this.passwordChangedAt.getTime() / 1000,
-			10,
-		);
-		console.log(jwtTimeStamp);
-		return jwtTimeStamp < changedTimeStamp;
+		const changedAt = this.passwordChangedAt.getTime();
+		// New sessions carry the exact saved timestamp, avoiding JWT's second precision.
+		if (tokenPasswordChangedAt !== undefined) {
+			return tokenPasswordChangedAt !== changedAt;
+		}
+		// Legacy tokens cannot distinguish changes within their issuance second.
+		return !Number.isFinite(jwtTimeStamp) || jwtTimeStamp <= Math.floor(changedAt / 1000);
 	}
 
 	return false;
@@ -115,6 +124,12 @@ userSchema.pre("save", async function () {
 	if (!this.isModified("password")) return;
 	// Hash passwords with bcryptjs.
 	this.password = await bcrypt.hash(this.password, 12);
+	if (!this.isNew) {
+		this.passwordSessionVersion = crypto.randomBytes(16).toString("hex");
+		this.passwordChangedAt = new Date(
+			Math.max(Date.now(), (this.passwordChangedAt?.getTime() || 0) + 1),
+		);
+	}
 	// Remove passwordConfirm before saving.
 	this.passwordConfirm = undefined;
 });

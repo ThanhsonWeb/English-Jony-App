@@ -35,6 +35,7 @@ function scheduleVocabularyReview(word, rating, now) {
 
 	word.learningLevel = level;
 	word.reviewCount = level === 0 ? 0 : count + 1;
+	word.lastReviewedAt = new Date(now.getTime());
 	if (level === 0) word.status = false;
 	word.nextReview = new Date(now.getTime() + days * 24 * 60 * 60 * 1000);
 }

@@ -1,13 +1,31 @@
+function hasBeenReviewed(word) {
+	if ((word.reviewCount || 0) > 0) return true;
+	if (word.lastReviewedAt !== undefined) {
+		return (
+			word.lastReviewedAt !== null &&
+			Number.isFinite(new Date(word.lastReviewedAt).getTime())
+		);
+	}
+	// Older Again reviews lack lastReviewedAt, but schedule at least one hour
+	// after creation. New words' default nextReview is their creation time.
+	if (!word.createdAt || !word.nextReview || word.learningLevel !== 0 || word.status === true) {
+		return false;
+	}
+	return (
+		new Date(word.nextReview).getTime() - new Date(word.createdAt).getTime() >= 60 * 60 * 1000
+	);
+}
+
 export function isReviewDue(word, now = new Date()) {
 	return (
-		(word.reviewCount || 0) > 0 &&
+		hasBeenReviewed(word) &&
 		Boolean(word.nextReview) &&
 		new Date(word.nextReview) <= now
 	);
 }
 
 export function getWordStatus(word, now = new Date()) {
-	if ((word.reviewCount || 0) === 0) return "new";
+	if (!hasBeenReviewed(word)) return "new";
 	if (isReviewDue(word, now)) return "review";
 	if (word.status === true) return "mastered";
 	return "learning";

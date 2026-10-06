@@ -23,6 +23,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import Loading from "@/app/_components/loading";
 import { useTranslations } from "next-intl";
 import { getWordStatus, isReviewDue as reviewDue } from "@/app/_lib/vocabulary.mjs";
+import { createLatestDictionaryLookup, lookupDictionaryWord } from "@/app/_lib/latestDictionaryLookup.mjs";
 
 export default function WordPage() {
 	const t = useTranslations("WordlistDetail");
@@ -38,6 +39,28 @@ export default function WordPage() {
 	const [vietnamese, setVietnamese] = useState("");
 	const [example, setExample] = useState("");
 	const [pronunciation, setPronunciation] = useState("");
+	const [isLookingUp, setIsLookingUp] = useState(false);
+	const [lookupError, setLookupError] = useState(false);
+	const [dictionaryLookup] = useState(() => createLatestDictionaryLookup({
+		lookup: lookupDictionaryWord,
+		onResult(data) {
+			setVietnamese(data.vietnamese || "");
+			setExample(data.example || "");
+			setPronunciation(data.pronunciation || "");
+		},
+		onError: setLookupError,
+		onLoading: setIsLookingUp,
+	}));
+	useEffect(() => () => dictionaryLookup.cancel(false), [dictionaryLookup]);
+	function clearLookupFields() {
+		setVietnamese("");
+		setExample("");
+		setPronunciation("");
+	}
+	function closeAddWord() {
+		dictionaryLookup.cancel();
+		setIsOpen(false);
+	}
 	// Searching
 	const searchParams = useSearchParams();
 	const router = useRouter();
@@ -48,7 +71,7 @@ export default function WordPage() {
 	const isReviewDue = (word) => reviewDue(word, now);
 	const getWordPriority = (word) => {
 		if (isReviewDue(word)) return 2;
-		if ((word.reviewCount || 0) === 0) return 1;
+		if (getWordStatus(word, now) === "new") return 1;
 		return 0;
 	};
 
@@ -82,7 +105,7 @@ export default function WordPage() {
 		1,
 		Math.ceil(filteredWords.length / wordsPerPage),
 	);
-	const newWordCount = words.filter((word) => (word.reviewCount || 0) === 0).length;
+	const newWordCount = words.filter((word) => getWordStatus(word, now) === "new").length;
 	const reviewWordCount = words.filter(isReviewDue).length;
 	const learningWordCount = words.length - newWordCount - reviewWordCount;
 
@@ -137,6 +160,10 @@ export default function WordPage() {
 	// create suggestions locally
 	function handleEnglishChange(e) {
 		const value = e.target.value;
+		if (value !== english) {
+			dictionaryLookup.cancel();
+			clearLookupFields();
+		}
 
 		setEnglish(value);
 
@@ -154,37 +181,16 @@ export default function WordPage() {
 		setSuggestions(matches);
 	}
 
-	//  Get translation
-	async function handleTranslateWord(word) {
-		try {
-			const res = await fetch(
-				`/api/v1/dictionary/${encodeURIComponent(word)}`,
-				{
-					credentials: "include",
-				},
-			);
-
-			if (!res.ok) return;
-
-			const data = await res.json();
-
-			setVietnamese(data.data.vietnamese || "");
-			setExample(data.data.example || "");
-			setPronunciation(data.data.pronunciation || "");
-		} catch (err) {
-			console.error(err);
-		}
-	}
-
 	async function handleSelectWord(word) {
 		setEnglish(word);
 		setSuggestions([]);
-
-		await handleTranslateWord(word);
+		clearLookupFields();
+		await dictionaryLookup.run(word);
 	}
 
 	async function handleSubmit(e) {
 		e.preventDefault();
+		if (isLookingUp) return;
 		try {
 			const res = await fetch(`/api/v1/vocab`, {
 				method: "POST",
@@ -207,7 +213,7 @@ export default function WordPage() {
 				setEnglish("");
 				setVietnamese("");
 				setExample("");
-				setIsOpen(false);
+				closeAddWord();
 			}
 		} catch (err) {
 			console.error(err);
@@ -403,7 +409,7 @@ export default function WordPage() {
 
 						<div className="flex-1 sm:flex-none">
 							<button
-								onClick={() => setIsOpen(!isOpen)}
+								onClick={() => isOpen ? closeAddWord() : setIsOpen(true)}
 								className="min-h-11 flex-1 cursor-pointer whitespace-nowrap rounded-xl border border-emerald-500/25 bg-emerald-500/10 px-4 text-sm font-semibold text-emerald-300 transition hover:border-emerald-400/50 hover:bg-emerald-500/15 hover:text-emerald-200 active:scale-[0.98] sm:flex-none"
 							>
 								{t("addNew")}
@@ -424,7 +430,7 @@ export default function WordPage() {
 
 									<button
 										type="button"
-										onClick={() => setIsOpen(false)}
+										onClick={closeAddWord}
 									aria-label={t("form.close")}
 										className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/70 text-slate-500 transition hover:border-violet-400/50 hover:bg-violet-500/10 hover:text-white active:scale-95"
 									>
@@ -479,6 +485,8 @@ export default function WordPage() {
 											)}
 										</div>
 
+										{isLookingUp && <p role="status" className="mt-3 text-sm text-slate-400">{t("form.lookupLoading")}</p>}
+										{lookupError && <p role="alert" className="mt-3 text-sm text-red-400">{t("form.lookupError")}</p>}
 										{/* nhập nghĩa */}
 										<div className="mt-4 flex flex-col gap-2">
 											<label className="text-sm font-medium text-slate-300">
@@ -520,7 +528,7 @@ export default function WordPage() {
 									<div className="flex gap-3 border-t border-violet-500/15 bg-[#090e1d]/80 px-6 py-4 sm:px-8">
 										<button
 											type="button"
-											onClick={() => setIsOpen(false)}
+											onClick={closeAddWord}
 											className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-600 hover:bg-slate-800 hover:text-white active:scale-[0.98]"
 										>
 											<X className="h-4 w-4 text-violet-400" />
@@ -529,6 +537,7 @@ export default function WordPage() {
 
 										<button
 											type="submit"
+											disabled={isLookingUp}
 											className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-500 px-3 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_-12px_rgba(139,92,246,0.9)] transition hover:from-blue-500 hover:to-violet-400 active:scale-[0.98]"
 										>
 											<Sparkles className="h-4 w-4" />

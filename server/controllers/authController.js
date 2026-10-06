@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const sendEmail = require("../utils/email");
 const crypto = require("crypto");
 const { OAuth2Client } = require("google-auth-library");
+const googleDisplayName = require("../utils/googleDisplayName");
 
 const GOOGLE_OAUTH_STATE_COOKIE = "google_oauth_state";
 const GOOGLE_OAUTH_LOCALE_COOKIE = "google_oauth_locale";
@@ -19,8 +20,15 @@ const getGoogleClient = () =>
 		process.env.GOOGLE_REDIRECT_URI,
 	);
 
-const signToken = (id) => {
-	return jwt.sign({ id }, process.env.JWT_SECRET, {
+const signToken = (user) => {
+	const payload = { id: user._id };
+	if (user.passwordChangedAt) {
+		payload.passwordChangedAt = user.passwordChangedAt.getTime();
+	}
+	if (user.passwordSessionVersion) {
+		payload.passwordSessionVersion = user.passwordSessionVersion;
+	}
+	return jwt.sign(payload, process.env.JWT_SECRET, {
 		expiresIn: process.env.JWT_EXPIRES_IN,
 	});
 };
@@ -34,7 +42,7 @@ const getAuthCookieOptions = () => ({
 });
 
 const setAuthCookie = (user, res) => {
-	const token = signToken(user._id);
+	const token = signToken(user);
 	const tokenExpiresAt = new Date(jwt.decode(token).exp * 1000);
 
 	res.cookie("jwt", token, {
@@ -122,7 +130,11 @@ exports.protect = catchAsync(async (req, res, next) => {
 		);
 
 	// 4️⃣ Check if password changed after JWT was issued
-	if (currentUser.changedPasswordAfter(decoded.iat)) {
+	if (currentUser.changedPasswordAfter(
+		decoded.iat,
+		decoded.passwordChangedAt,
+		decoded.passwordSessionVersion,
+	)) {
 		return next(
 			new AppError("User recently changed password. Please log in again.", 401),
 		);
@@ -346,7 +358,7 @@ exports.googleOAuthCallback = async (req, res) => {
 		if (!user) {
 			stage = "user_creation";
 			user = await User.create({
-				name,
+				name: googleDisplayName(name),
 				email,
 				googleId: sub,
 				photo: picture,

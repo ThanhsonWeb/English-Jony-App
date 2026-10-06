@@ -1,4 +1,4 @@
-import { Link } from "@/i18n/navigation";
+import { DialogueProgressLink as Link } from "./DialogueProgressSave";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import DialogueShortcutHint from "./DialogueShortcutHint";

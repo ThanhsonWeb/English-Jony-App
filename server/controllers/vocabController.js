@@ -1,4 +1,6 @@
 const Vocab = require("../models/vocabModel");
+const Topic = require("../models/topicModel");
+const mongoose = require("mongoose");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 
@@ -31,9 +33,23 @@ exports.getVocab = catchAsync(async (req, res, next) => {
 	});
 });
 exports.updateVocab = catchAsync(async (req, res, next) => {
+	const updates = {};
+	for (const field of [
+		"english", "vietnamese", "pronunciation", "example", "status", "topic",
+	]) {
+		if (Object.hasOwn(req.body, field)) updates[field] = req.body[field];
+	}
+	if (Object.hasOwn(updates, "topic") && updates.topic !== null) {
+		if (
+			!mongoose.isObjectIdOrHexString(updates.topic) ||
+			!(await Topic.exists({ _id: updates.topic, user: req.user.id }))
+		) {
+			return next(new AppError("Topic must belong to the authenticated user", 400));
+		}
+	}
 	const updatedVocab = await Vocab.findOneAndUpdate(
 		{ _id: req.params.id, user: req.user.id },
-		req.body,
+		{ $set: updates },
 		{
 			new: true,
 			runValidators: true,

@@ -1,5 +1,5 @@
 import { ArrowLeft, CheckCircle2, Circle } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { DialogueProgressLink as Link } from "./DialogueProgressSave";
 import { useRef, useState } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
 import { DialogueTaskNavigation } from "./DialogueExerciseHeader";

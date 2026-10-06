@@ -1,4 +1,4 @@
-import { Link } from "@/i18n/navigation";
+import { DialogueProgressLink as Link } from "./DialogueProgressSave";
 import { useRef } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
 import { DialogueTaskNavigation } from "./DialogueExerciseHeader";

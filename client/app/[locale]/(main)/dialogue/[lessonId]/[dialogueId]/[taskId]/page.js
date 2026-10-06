@@ -2,7 +2,6 @@
 
 import { useCallback, useState } from "react";
 import { useParams } from "next/navigation";
-import { useRouter } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { getLocalizedDialogueValue } from "@/app/_lib/dialogue/localization";
 import { englishMcOptions, englishMcQuestions } from "@/app/_lib/dialogue/mcQuestions";
@@ -17,16 +16,17 @@ import DialogueClozeReviewTask from "@/app/_components/DialogueClozeReviewTask";
 import DialogueReviewTask from "@/app/_components/DialogueReviewTask";
 import DialogueExerciseHeader from "@/app/_components/DialogueExerciseHeader";
 import { useAuth } from "@/app/_contexts/AuthContext";
+import { DialogueProgressProvider, DialogueProgressNotice, useDialogueProgressSave } from "@/app/_components/DialogueProgressSave";
 
 const GUEST_REMINDER_DISMISSED_KEY =
 	"studyjony-guest-progress-reminder-dismissed";
 
 export default function DialogueTaskPage() {
 	const { lessonId, dialogueId, taskId } = useParams();
-	const router = useRouter();
 	const locale = useLocale();
 	const t = useTranslations("DialogueFeature");
 	const { user, loading: authLoading } = useAuth();
+	const progressSave = useDialogueProgressSave(`/api/v1/dialogue-progress/${lessonId}/${dialogueId}/tasks/${taskId}`);
 	const [guestReminderRequested, setGuestReminderRequested] = useState(false);
 	const dismissGuestReminder = useCallback(() => {
 		sessionStorage.setItem(GUEST_REMINDER_DISMISSED_KEY, "true");
@@ -87,32 +87,7 @@ export default function DialogueTaskPage() {
 
 	const onComplete = async () => {
 		maybeShowGuestReminder();
-
-		try {
-			const res = await fetch(
-				`/api/v1/dialogue-progress/${lessonId}/${dialogueId}/tasks/${taskId}`,
-				{
-					method: "PATCH",
-					credentials: "include",
-				},
-			);
-
-			if (!res.ok) {
-				throw new Error("Failed to save dialogue progress");
-			}
-
-			const data = await res.json();
-			const savedProgress = data.data?.progress;
-
-			window.dispatchEvent(
-				new CustomEvent("dialogue-progress-updated", {
-					detail: savedProgress,
-				}),
-			);
-			router.refresh();
-		} catch (error) {
-			console.error(error);
-		}
+		return progressSave.save();
 	};
 
 	const props = {
@@ -155,17 +130,18 @@ export default function DialogueTaskPage() {
 	}
 
 	return (
-		<>
+		<DialogueProgressProvider key={`${lessonId}/${dialogueId}/${taskId}`} value={progressSave}>
 			<DialogueExerciseHeader
 				lessonId={lessonId}
 				lessonTitle={getLocalizedDialogueValue(lesson, "title", locale)}
 				dialogueTitle={getLocalizedDialogueValue(dialogue, "title", locale)}
 			/>
+			<DialogueProgressNotice />
 			{taskContent}
 			<GuestProgressReminder
 				isOpen={guestReminderRequested && !authLoading && !user}
 				onDismiss={dismissGuestReminder}
 			/>
-		</>
+		</DialogueProgressProvider>
 	);
 }

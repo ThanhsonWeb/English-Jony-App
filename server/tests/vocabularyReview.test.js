@@ -75,6 +75,7 @@ test("all review modes use the same schedule for correct and incorrect outcomes"
 		assert.equal(outcome.correct, correct, JSON.stringify(input));
 		assert.equal(reviewWord.learningLevel, level, JSON.stringify(input));
 		assert.equal(reviewWord.reviewCount, count, JSON.stringify(input));
+		assert.deepEqual(reviewWord.lastReviewedAt, NOW, JSON.stringify(input));
 		assert.equal(reviewWord.nextReview.toISOString(), nextReview, JSON.stringify(input));
 		assert.equal(reviewWord.status, correct, JSON.stringify(input));
 	}
@@ -111,6 +112,98 @@ test("incorrect and Again award zero but qualify for study, without consuming th
 	assert.equal(await XPEvent.countDocuments(), 0);
 	assert.equal((await StudyActivity.findOne()).hasQualifiedStudy, true);
 	assert.equal((await review(writing)).xp.awarded, 5);
+});
+
+for (const [mode, correct, incorrect] of [
+	["flashcard", flashcard, { mode: "flashcard", rating: "again" }],
+	["quiz", quiz, { mode: "quiz", answer: "wrong" }],
+	["writing", writing, { mode: "writing", answer: "wrong" }],
+]) {
+	test(`${mode}: new → first review → forgotten → one-hour retry → Due → correct recovery`, async () => {
+		const { getWordStatus, isReviewDue, selectReviewWords } = await import("../../client/app/_lib/vocabulary.mjs");
+		const createdAt = new Date(NOW.getTime() - 60000);
+		await Vocab.updateOne({ _id: word.id }, { createdAt, nextReview: createdAt });
+		let saved = await Vocab.findById(word.id).lean();
+		assert.equal(getWordStatus(saved, NOW), "new");
+		assert.equal(isReviewDue(saved, NOW), false);
+		assert.equal(selectReviewWords([saved], { global: true, dueOnly: true, now: NOW }).length, 0);
+		assert.equal(selectReviewWords([saved], { global: true, now: NOW }).length, 1);
+		await review(correct);
+		saved = await Vocab.findById(word.id).lean();
+		assert.equal(saved.reviewCount, 1);
+		assert.deepEqual(saved.lastReviewedAt, NOW);
+		assert.equal(getWordStatus(saved, NOW), "learning");
+		const forgottenAt = new Date(NOW.getTime() + 30 * 60000);
+		const forgotten = await review(incorrect, word, forgottenAt);
+		assert.equal(forgotten.correct, false);
+		assert.equal(forgotten.xp.awarded, 0);
+		saved = JSON.parse(JSON.stringify(await Vocab.findById(word.id).lean()));
+		assert.equal(saved.reviewCount, 0); // Reset the success streak, not the review history.
+		assert.equal(saved.learningLevel, 0);
+		assert.equal(saved.status, false);
+		assert.equal(saved.lastReviewedAt, forgottenAt.toISOString());
+		const retryAt = new Date(forgottenAt.getTime() + 60 * 60000);
+		assert.equal(saved.nextReview, retryAt.toISOString());
+		const justBeforeRetry = new Date(retryAt.getTime() - 1);
+		assert.equal(getWordStatus(saved, justBeforeRetry), "learning");
+		assert.equal(isReviewDue(saved, justBeforeRetry), false);
+		assert.equal(selectReviewWords([saved], { global: true, dueOnly: true, now: justBeforeRetry }).length, 0);
+		assert.equal(selectReviewWords([saved], { global: true, now: justBeforeRetry }).length, 1);
+		assert.equal(getWordStatus(saved, retryAt), "review");
+		assert.equal(isReviewDue(saved, retryAt), true);
+		assert.equal(selectReviewWords([saved], { dueOnly: true, now: retryAt }).length, 1);
+		assert.equal(selectReviewWords([saved], { global: true, dueOnly: true, now: retryAt }).length, 1);
+		const recovered = await review(correct, word, retryAt);
+		assert.equal(recovered.correct, true);
+		assert.equal(recovered.updatedVocab.reviewCount, 1);
+		assert.deepEqual(recovered.updatedVocab.lastReviewedAt, retryAt);
+		assert.equal(getWordStatus(recovered.updatedVocab, retryAt), "learning");
+		assert.equal(isReviewDue(recovered.updatedVocab, retryAt), false);
+		const days = mode === "flashcard" ? 1 : 3;
+		assert.equal(recovered.updatedVocab.nextReview.getTime(), retryAt.getTime() + days * 86400000);
+	});
+}
+
+test("a first-ever incorrect answer records review history and becomes Due after one hour", async () => {
+	const { getWordStatus, isReviewDue } = await import("../../client/app/_lib/vocabulary.mjs");
+	await review({ mode: "flashcard", rating: "again" });
+	const saved = await Vocab.findById(word.id).lean();
+	assert.equal(saved.reviewCount, 0);
+	assert.deepEqual(saved.lastReviewedAt, NOW);
+	assert.equal(getWordStatus(saved, NOW), "learning");
+	assert.equal(isReviewDue(saved, new Date(NOW.getTime() + 3600000)), true);
+});
+
+test("new words explicitly record no review history, even when their initial schedule is customized", async () => {
+	const { getWordStatus, isReviewDue } = await import("../../client/app/_lib/vocabulary.mjs");
+	const fresh = await Vocab.create({
+		user: user.id, english: "fresh", vietnamese: "moi",
+		createdAt: new Date(NOW.getTime() - 86400000), nextReview: NOW,
+	});
+	const saved = await Vocab.findById(fresh.id).lean();
+	assert.equal(saved.lastReviewedAt, null);
+	assert.equal(getWordStatus(saved, NOW), "new");
+	assert.equal(isReviewDue(saved, NOW), false);
+});
+
+test("legacy database records retain retry detection without mistaking untouched words for Due", async () => {
+	const { getWordStatus, isReviewDue } = await import("../../client/app/_lib/vocabulary.mjs");
+	const createdAt = new Date(NOW.getTime() - 3600000);
+	for (const [english, nextReview, expected] of [
+		["legacy forgotten", NOW, "review"],
+		["legacy untouched", createdAt, "new"],
+	]) {
+		// Bypass new-document middleware to reproduce records written before this fix.
+		const inserted = await Vocab.collection.insertOne({
+			user: user._id, english, vietnamese: "tu cu", reviewCount: 0, learningLevel: 0, status: false, createdAt, nextReview,
+		});
+		const response = await fetch(`${url}/${inserted.insertedId}`, { headers: { Authorization: `Bearer ${token}` } });
+		assert.equal(response.status, 200);
+		const saved = (await response.json()).data.vocab;
+		assert.equal(saved.lastReviewedAt, undefined);
+		assert.equal(getWordStatus(saved, NOW), expected);
+		assert.equal(isReviewDue(saved, NOW), expected === "review");
+	}
 });
 test("practice reviews preserve progress and still qualify for study and daily-limited XP", async () => {
 	const before = await Vocab.findById(word._id).lean();
@@ -158,6 +251,7 @@ test("failure rolls back progress, qualification and XP", async t => {
 	const stub = t.mock.method(User, "findOneAndUpdate", () => { throw new Error("write failure"); });
 	try { await assert.rejects(review(writing), /write failure/); } finally { stub.mock.restore(); }
 	assert.equal((await Vocab.findById(word._id)).reviewCount, 0);
+	assert.equal((await Vocab.findById(word._id)).lastReviewedAt, null);
 	assert.equal(await StudyActivity.countDocuments(), 0);
 	assert.equal(await XPEvent.countDocuments(), 0);
 });
@@ -174,6 +268,8 @@ test("HTTP requires ownership and valid review input; generic GET/PATCH never ea
 	assert.equal((await request(`/${word.id}/review`, "POST", { mode: "flashcard", rating: "fake" })).status, 400);
 	assert.equal((await request(`/${word.id}`, "GET")).status, 200);
 	assert.equal((await request(`/${word.id}`, "PATCH", { learningLevel: 3, reviewCount: 10, amount: 999 })).status, 200);
+	assert.equal((await Vocab.findById(word.id)).learningLevel, 0);
+	assert.equal((await Vocab.findById(word.id)).reviewCount, 0);
 	assert.equal(await XPEvent.countDocuments(), 0);
 	assert.equal(await StudyActivity.countDocuments(), 0);
 	const response = await request(`/${word.id}/review`, "POST", { ...writing, amount: 999, earnedAt: "2020-01-01" });

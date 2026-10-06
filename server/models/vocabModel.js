@@ -60,6 +60,7 @@ const vocabSchema = new mongoose.Schema({
 		type: Number,
 		default: 0,
 	},
+	lastReviewedAt: Date,
 	status: {
 		type: Boolean,
 		default: false,
@@ -68,6 +69,11 @@ const vocabSchema = new mongoose.Schema({
 		type: Date,
 		default: Date.now,
 	},
+});
+
+vocabSchema.pre("save", function () {
+	// Explicitly mark new words as never reviewed; leave legacy records distinguishable.
+	if (this.isNew && this.lastReviewedAt === undefined) this.lastReviewedAt = null;
 });
 
 const Vocab = mongoose.model("Vocab", vocabSchema);

@@ -54,10 +54,11 @@ async function compressAvatar(file) {
 function Page() {
 	const t = useTranslations("Profile");
 	const locale = useLocale();
-	const { user, setUser } = useAuth();
+	const { user, captureSession, isCurrentSession, updateUserForSession } = useAuth();
 	const [isEditingName, setIsEditingName] = useState(false);
 	const [newName, setNewName] = useState(user?.name || "");
 	const avatarInputRef = useRef(null);
+	const avatarRequestId = useRef(0);
 	const [isUploadingAvatar, setIsUploadingAvatar] = useState(false);
 	const [avatarError, setAvatarError] = useState("");
 	const [failedAvatarUrls, setFailedAvatarUrls] = useState([]);
@@ -67,6 +68,8 @@ function Page() {
 		const file = event.target.files?.[0];
 		event.target.value = "";
 		if (!file) return;
+		const session = captureSession();
+		if (!session.userId) return;
 		setAvatarError("");
 		if (!AVATAR_TYPES.includes(file.type)) {
 			setAvatarError(t("avatarTypeError"));
@@ -78,8 +81,10 @@ function Page() {
 		}
 
 		setIsUploadingAvatar(true);
+		const requestId = ++avatarRequestId.current;
 		try {
 			const image = await compressAvatar(file);
+			if (!isCurrentSession(session)) return;
 			if (image.size > MAX_UPLOAD_BYTES) throw new Error("Avatar exceeds upload limit");
 			const response = await fetch("/api/v1/users/avatar", {
 				method: "PATCH",
@@ -94,16 +99,19 @@ function Page() {
 			}
 			const data = await response.json();
 			if (!data?.data?.user?.avatar) throw new Error("Avatar URL is missing");
-			setUser(data.data.user);
+			updateUserForSession(data.data.user, session);
 		} catch (error) {
+			if (!isCurrentSession(session)) return;
 			const key = ["avatarServerUnavailable", "avatarStorageUnavailable"].includes(error.message)
 				? error.message : "avatarUploadError";
 			setAvatarError(t(key));
 		} finally {
-			setIsUploadingAvatar(false);
+			if (requestId === avatarRequestId.current) setIsUploadingAvatar(false);
 		}
 	}
 	async function handleUpdateName() {
+		const session = captureSession();
+		if (!session.userId) return;
 		try {
 			const res = await fetch("/api/v1/users/updateMe", {
 				method: "PATCH",
@@ -120,7 +128,7 @@ function Page() {
 
 			const data = await res.json();
 
-			setUser(data.data.user);
+			if (!updateUserForSession(data.data.user, session)) return;
 			setIsEditingName(false);
 		} catch (error) {
 			console.log(error);
