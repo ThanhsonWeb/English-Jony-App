@@ -4,7 +4,7 @@ import { useAuth } from "@/app/_contexts/AuthContext";
 import Image from "next/image";
 import { Link, useRouter } from "@/i18n/navigation";
 import { useSearchParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { loginWithPassword } from "@/app/_lib/passwordLogin.mjs";
 import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
@@ -12,17 +12,27 @@ import AuthOverlay from "@/app/_components/AuthOverlay";
 
 function LoginPage() {
 	const t = useTranslations("Auth");
-	const { setUser } = useAuth();
+	const { beginCredentialAttempt, isCurrentCredentialAttempt, commitCredentialAttempt,
+		cancelCredentialAttempt, discardCredentialAttempt, invalidateCredentialAttempts,
+		captureSession, isCurrentSession } = useAuth();
+	const attemptRef = useRef(null);
+	const mountedRef = useRef(false);
+	useEffect(() => {
+		mountedRef.current = true;
+		return () => { mountedRef.current = false; cancelCredentialAttempt(attemptRef.current); };
+	}, [cancelCredentialAttempt]);
 	const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 	const locale = useLocale();
 	const searchParams = useSearchParams();
 	const authError = searchParams.get("error");
 	const callbackError =
-		authError === "google_session_failed"
-			? t("googleSessionFailed")
-			: authError === "google_oauth_failed"
-				? t("googleOAuthFailed")
-				: "";
+		authError === "google_account_conflict"
+			? t("googleAccountConflict")
+			: authError === "google_session_failed"
+				? t("googleSessionFailed")
+				: authError === "google_oauth_failed"
+					? t("googleOAuthFailed")
+					: "";
 
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -53,6 +63,8 @@ function LoginPage() {
 	}, [googleClientId, t]);
 
 	async function openGoogleSignIn() {
+		invalidateCredentialAttempts();
+		const session = captureSession();
 		if (!window.google) {
 			setError(t("googleLoading"));
 			return;
@@ -65,6 +77,7 @@ function LoginPage() {
 				{ credentials: "include" },
 			);
 			const data = await response.json();
+			if (!mountedRef.current || !isCurrentSession(session)) return;
 
 			if (!response.ok) {
 				setError(t("googleStartFailed"));
@@ -80,26 +93,38 @@ function LoginPage() {
 			});
 			codeClient.requestCode();
 		} catch (error) {
-			setError(t("googleStartFailed"));
+			if (mountedRef.current && isCurrentSession(session)) setError(t("googleStartFailed"));
 		}
 	}
 
 	async function handleSubmit(e) {
 		e.preventDefault();
+		const attempt = beginCredentialAttempt();
+		attemptRef.current = attempt;
+		let succeeded = false;
 		try {
 			setIsLoading(true);
 			setError("");
-			const result = await loginWithPassword({ email, password }, t);
+			const result = await loginWithPassword({ email, password }, t, attempt);
+			if (!isCurrentCredentialAttempt(attempt)) return;
 			if (result.error) {
 				setError(result.error);
 				return;
 			}
-			setUser(result.user);
+			if (!commitCredentialAttempt(attempt, result)) {
+				setError(t("loginFailed"));
+				return;
+			}
+			succeeded = true;
 			router.push("/wordlist");
 		} catch (error) {
-			setError(t("loginFailed"));
+			if (isCurrentCredentialAttempt(attempt)) setError(t("loginFailed"));
 		} finally {
-			setIsLoading(false);
+			if (!succeeded) {
+				cancelCredentialAttempt(attempt);
+				discardCredentialAttempt(attempt.id);
+				if (mountedRef.current && attemptRef.current === attempt) setIsLoading(false);
+			}
 		}
 	}
 	return (
@@ -112,6 +137,7 @@ function LoginPage() {
 					{/* Close Button */}
 					<Link
 						href="/"
+						onClick={() => cancelCredentialAttempt(attemptRef.current)}
 						aria-label={t("close")}
 						className="absolute right-4 top-4 text-2xl text-slate-500 transition hover:text-white"
 					>

@@ -24,7 +24,9 @@ export default function GoogleOAuthCallbackPage() {
 		}
 		async function finishLogin() {
 			if (oauthError) {
-				navigate("/login?error=google_oauth_failed");
+				const error = oauthError === "google_account_conflict"
+					? "google_account_conflict" : "google_oauth_failed";
+				navigate(`/login?error=${error}`);
 				return;
 			}
 

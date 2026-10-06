@@ -43,7 +43,7 @@ function Header() {
 	const pathname = usePathname();
 	const isWordlist = pathname.replace(/^\/(en|vi)(?=\/|$)/, "") === "/wordlist";
 
-	const { user, setUser, loading } = useAuth();
+	const { user, logout, loading } = useAuth();
 	// handleClickOutside
 	useEffect(() => {
 		function handleClickOutside(event) {
@@ -60,13 +60,7 @@ function Header() {
 	}, []);
 
 	async function handleLogout() {
-		const res = await fetch("/api/v1/auth/logout", {
-			method: "POST",
-			credentials: "include",
-		});
-		if (!res.ok) return;
-		setUser(null);
-		router.push("/");
+		if (await logout()) router.push("/");
 	}
 
 

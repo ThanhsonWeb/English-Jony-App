@@ -26,6 +26,7 @@
 		"googleStartFailed": "Không thể bắt đầu đăng nhập Google. Vui lòng thử lại.",
 		"googleSessionFailed": "Đăng nhập Google đã hoàn tất nhưng chưa có phiên đăng nhập hợp lệ. Vui lòng thử lại.",
 		"googleOAuthFailed": "Đăng nhập Google chưa hoàn tất. Vui lòng thử lại.",
+		"googleAccountConflict": "Không thể kết nối Google với tài khoản này một cách an toàn. Các tài khoản chưa được liên kết. Nếu đây là tài khoản của bạn, hãy dùng cách đăng nhập hiện có. Nếu không, hãy liên hệ StudyJony để được hỗ trợ xác minh chủ sở hữu.",
 		"credentialsRequired": "Vui lòng nhập đầy đủ email và mật khẩu!",
 		"invalidCredentials": "Email hoặc mật khẩu không chính xác!",
 		"emailInUse": "Email này đã được sử dụng. Vui lòng chọn email khác.",

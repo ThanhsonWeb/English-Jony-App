@@ -5,13 +5,21 @@ import Image from "next/image";
 import { Link, useRouter } from "@/i18n/navigation";
 import { useState, useEffect, useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { getAuthErrorMessage } from "@/app/_lib/authErrorMessage";
+import { submitCredential } from "@/app/_lib/credentialSubmission.mjs";
 import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
 import AuthOverlay from "@/app/_components/AuthOverlay";
 
 function SignUpForm() {
 	const t = useTranslations("Auth");
-	const { setUser } = useAuth();
+	const { beginCredentialAttempt, isCurrentCredentialAttempt, commitCredentialAttempt,
+		cancelCredentialAttempt, discardCredentialAttempt, invalidateCredentialAttempts,
+		captureSession, isCurrentSession } = useAuth();
+	const attemptRef = useRef(null);
+	const mountedRef = useRef(false);
+	useEffect(() => {
+		mountedRef.current = true;
+		return () => { mountedRef.current = false; cancelCredentialAttempt(attemptRef.current); };
+	}, [cancelCredentialAttempt]);
 	const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 	const locale = useLocale();
 
@@ -28,42 +36,33 @@ function SignUpForm() {
 		e.preventDefault();
 		if (submittingRef.current) return;
 		submittingRef.current = true;
+		const attempt = beginCredentialAttempt();
+		attemptRef.current = attempt;
 		setIsSubmitting(true);
 		setError("");
 		let succeeded = false;
 		try {
-			const res = await fetch("/api/v1/auth/signup", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				// 🍪 "Send my authentication cookie along with this request."
-				credentials: "include",
-				body: JSON.stringify({ name, email, password, passwordConfirm }),
-			});
-			const data = await res.json();
-
-			if (data.status === "fail") {
-				setError(getAuthErrorMessage(data, t, "signupFailed"));
+			const result = await submitCredential("signup", { name, email, password, passwordConfirm }, t, attempt);
+			if (!isCurrentCredentialAttempt(attempt)) return;
+			if (result.error) {
+				setError(result.error);
 				return;
 			}
-			if (!res.ok) {
-				setError(getAuthErrorMessage(data, t, "signupFailed"));
+			if (!commitCredentialAttempt(attempt, result)) {
+				setError(t("signupFailed"));
 				return;
 			}
-
-			console.log(data);
-			setUser(data.data.user);
 			succeeded = true;
 			router.push("/wordlist");
 		} catch (error) {
-			setError(t("signupFailed"));
-			console.log(error);
+			if (isCurrentCredentialAttempt(attempt)) setError(t("signupFailed"));
 		} finally {
 			// Keep the successful form locked until navigation removes it.
 			if (!succeeded) {
+				cancelCredentialAttempt(attempt);
+				discardCredentialAttempt(attempt.id);
 				submittingRef.current = false;
-				setIsSubmitting(false);
+				if (mountedRef.current && attemptRef.current === attempt) setIsSubmitting(false);
 			}
 		}
 	};
@@ -88,6 +87,8 @@ function SignUpForm() {
 	}, [googleClientId, t]);
 
 	async function openGoogleSignIn() {
+		invalidateCredentialAttempts();
+		const session = captureSession();
 		if (!window.google) {
 			setError(t("googleLoading"));
 			return;
@@ -100,6 +101,7 @@ function SignUpForm() {
 				{ credentials: "include" },
 			);
 			const data = await response.json();
+			if (!mountedRef.current || !isCurrentSession(session)) return;
 
 			if (!response.ok) {
 				setError(t("googleStartFailed"));
@@ -115,7 +117,7 @@ function SignUpForm() {
 			});
 			codeClient.requestCode();
 		} catch (error) {
-			setError(t("googleStartFailed"));
+			if (mountedRef.current && isCurrentSession(session)) setError(t("googleStartFailed"));
 		}
 	}
 
@@ -126,6 +128,7 @@ function SignUpForm() {
 					{/* Close Button */}
 					<Link
 						href="/"
+						onClick={() => cancelCredentialAttempt(attemptRef.current)}
 						aria-label={t("close")}
 						className="absolute top-4 right-4 text-slate-400 hover:text-white text-2xl"
 					>

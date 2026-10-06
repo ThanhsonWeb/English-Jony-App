@@ -9,6 +9,9 @@ const { OAuth2Client } = require("google-auth-library");
 const googleDisplayName = require("../utils/googleDisplayName");
 const mongoose = require("mongoose");
 const { validateProfileName } = require("../utils/profileName");
+const validator = require("validator");
+const passwordResetOrigin = require("../utils/passwordResetOrigin");
+const credentialCookies = require("../utils/credentialCookies");
 
 const GOOGLE_OAUTH_STATE_COOKIE = "google_oauth_state";
 const GOOGLE_OAUTH_LOCALE_COOKIE = "google_oauth_locale";
@@ -22,8 +25,9 @@ const getGoogleClient = () =>
 		process.env.GOOGLE_REDIRECT_URI,
 	);
 
-const signToken = (user) => {
+const signToken = (user, attemptId) => {
 	const payload = { id: user._id };
+	if (attemptId) payload.credentialAttempt = attemptId;
 	if (user.passwordChangedAt) {
 		payload.passwordChangedAt = user.passwordChangedAt.getTime();
 	}
@@ -43,26 +47,33 @@ const getAuthCookieOptions = () => ({
 	path: "/",
 });
 
-const setAuthCookie = (user, res) => {
-	const token = signToken(user);
+const setAuthCookie = (user, res, attemptId) => {
+	const token = signToken(user, attemptId);
 	const tokenExpiresAt = new Date(jwt.decode(token).exp * 1000);
 
-	res.cookie("jwt", token, {
+	res.cookie(attemptId ? credentialCookies.cookieName(attemptId) : "jwt", token, {
 		...getAuthCookieOptions(),
 		expires: tokenExpiresAt,
+	});
+	// Credential responses never write the shared selection or legacy cookie.
+	if (!attemptId) res.cookie(credentialCookies.selectionCookie, "legacy", {
+		...getAuthCookieOptions(), httpOnly: false, expires: tokenExpiresAt,
+	});
+	if (!attemptId) res.cookie(credentialCookies.intentCookie, crypto.randomBytes(16).toString("hex"), {
+		...getAuthCookieOptions(), httpOnly: false, expires: tokenExpiresAt,
 	});
 
 	return token;
 };
 
-const createSendToken = (user, statusCode, res) => {
-	setAuthCookie(user, res);
+const createSendToken = (user, statusCode, res, attemptId) => {
+	setAuthCookie(user, res, attemptId);
 	// Remove password from output
 	user.password = undefined;
 
 	res.status(statusCode).json({
 		status: "success",
-		data: { user },
+		data: { user, ...(attemptId ? { credentialAttempt: attemptId } : {}) },
 	});
 };
 
@@ -76,7 +87,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 		passwordConfirm,
 	});
 
-	createSendToken(newUser, 201, res);
+	createSendToken(newUser, 201, res, req.credentialAttempt);
 });
 
 exports.login = catchAsync(async (req, res, next) => {
@@ -93,13 +104,33 @@ exports.login = catchAsync(async (req, res, next) => {
 		return next(new AppError("Email hoặc mật khẩu không chính xác!", 401));
 	}
 
-	createSendToken(user, 200, res);
+	createSendToken(user, 200, res, req.credentialAttempt);
 });
 exports.logout = catchAsync(async (req, res) => {
 	res.clearCookie("jwt", getAuthCookieOptions());
+	for (const name of credentialCookies.attemptCookies(req.cookies)) {
+		res.clearCookie(name, getAuthCookieOptions());
+	}
 
 	res.status(200).json({ status: "success" });
 });
+
+exports.discardCredentialAttempt = (req, res) => {
+	if (req.cookies?.[credentialCookies.selectionCookie] !== req.credentialAttempt) {
+		res.clearCookie(credentialCookies.cookieName(req.credentialAttempt), getAuthCookieOptions());
+	}
+	res.status(204).end();
+};
+
+const cleanupCredentialCookies = (req, res) => {
+	const selected = req.cookies?.[credentialCookies.selectionCookie];
+	const pending = req.cookies?.[credentialCookies.intentCookie];
+	for (const name of credentialCookies.attemptCookies(req.cookies)) {
+		if (name !== credentialCookies.cookieName(selected) && name !== credentialCookies.cookieName(pending)) {
+			res.clearCookie(name, getAuthCookieOptions());
+		}
+	}
+};
 
 exports.protect = catchAsync(async (req, res, next) => {
 	let token;
@@ -113,8 +144,16 @@ exports.protect = catchAsync(async (req, res, next) => {
 	}
 
 	// 2. Check for Cookie (New way)
-	if (!token && req.cookies && req.cookies.jwt) {
-		token = req.cookies.jwt;
+	let selectedAttempt;
+	if (req.get("X-StudyJony-Credential-Cleanup") === "1") cleanupCredentialCookies(req, res);
+	if (!token && req.cookies) {
+		const selected = req.cookies[credentialCookies.selectionCookie];
+		if (credentialCookies.validAttemptId(selected)) {
+			selectedAttempt = selected;
+			token = req.cookies[credentialCookies.cookieName(selected)];
+		} else if (selected === undefined || selected === "legacy") {
+			token = req.cookies.jwt;
+		}
 	}
 
 	if (!token) {
@@ -134,6 +173,9 @@ exports.protect = catchAsync(async (req, res, next) => {
 		throw error;
 	}
 	if (!decoded || typeof decoded.id !== "string" || !mongoose.isObjectIdOrHexString(decoded.id)) {
+		return next(new AppError("Invalid or expired session. Please log in again.", 401));
+	}
+	if (selectedAttempt && decoded.credentialAttempt !== selectedAttempt) {
 		return next(new AppError("Invalid or expired session. Please log in again.", 401));
 	}
 
@@ -176,11 +218,13 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 	const user = await User.findOne({ email: req.body.email });
 	if (!user) return next(new AppError("please provide your email ", 401));
 
+	// Validate configuration before creating or replacing a reset token.
+	const frontendOrigin = passwordResetOrigin();
 	// resetToken
 	const resetToken = user.createPasswordResetToken(); // token not hash yet
 	await user.save({ validateBeforeSave: false }); // hashed and expiration
 	// sendEmail
-	const resetURL = `${req.protocol}://${req.get("host")}/api/v1/users/resetPassword/${resetToken}`; // token not hash yet
+	const resetURL = `${frontendOrigin}/api/v1/users/resetPassword/${resetToken}`;
 
 	try {
 		await sendEmail({
@@ -213,8 +257,6 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 		.createHash("sha256")
 		.update(req.params.token)
 		.digest("hex");
-
-	console.log(hashedToken);
 
 	const user = await User.findOne({
 		passwordResetToken: hashedToken,
@@ -266,6 +308,18 @@ const filterOjb = (obj, ...allowedFields) => {
 };
 exports.updateMe = catchAsync(async (req, res, next) => {
 	const filteredBody = filterOjb(req.body, "name", "email");
+	// Email is an authentication identifier. Profile edits cannot verify a new owner.
+	if (Object.hasOwn(filteredBody, "email")) {
+		if (typeof filteredBody.email !== "string" ||
+			filteredBody.email.trim().toLowerCase() !== req.user.email) {
+			return res.status(400).json({
+				status: "fail",
+				code: "emailChangeRequiresVerification",
+				message: "Email changes require a verified account recovery process.",
+			});
+		}
+		delete filteredBody.email;
+	}
 	if (Object.hasOwn(filteredBody, "name")) {
 		const code = validateProfileName(filteredBody.name);
 		if (code) return res.status(400).json({ status: "fail", code, message: "Name must contain 3 to 20 characters." });
@@ -337,6 +391,7 @@ exports.googleOAuthCallback = async (req, res) => {
 	const returnedState =
 		typeof req.query.state === "string" ? req.query.state : "";
 	let stage = "state_validation";
+	let callbackError = "google_oauth_failed";
 
 	try {
 		const stateMatches =
@@ -371,18 +426,43 @@ exports.googleOAuthCallback = async (req, res) => {
 			idToken: tokens.id_token,
 			audience: process.env.GOOGLE_CLIENT_ID,
 		});
-		const { email, name, sub, picture } = ticket.getPayload();
+		const payload = ticket.getPayload();
+		if (typeof payload?.sub !== "string" || !payload.sub.trim() ||
+			payload.sub !== payload.sub.trim() || payload.sub.length > 255 ||
+			payload.email_verified !== true || typeof payload.email !== "string" ||
+			!validator.isEmail(payload.email.trim())) {
+			throw new Error("Invalid Google identity claims");
+		}
+		const { name, sub, picture } = payload;
+		const email = payload.email.trim().toLowerCase();
 
 		stage = "user_lookup";
-		let user = await User.findOne({ email });
+		// A verified subject identifies the account; email never authorizes linking.
+		// Fail closed for ambiguous legacy records without modifying their data.
+		const matches = await User.find({ googleId: sub }).limit(2);
+		if (matches.length > 1) {
+			callbackError = "google_account_conflict";
+			throw new Error("Google identity requires account reconciliation");
+		}
+		let user = matches[0];
 		if (!user) {
+			if (await User.exists({ email })) {
+				callbackError = "google_account_conflict";
+				throw new Error("Email collision requires explicit account linking");
+			}
 			stage = "user_creation";
-			user = await User.create({
-				name: googleDisplayName(name),
-				email,
-				googleId: sub,
-				photo: picture,
-			});
+			try {
+				user = await User.create({
+					name: googleDisplayName(name),
+					email,
+					googleId: sub,
+					photo: picture,
+				});
+			} catch (error) {
+				// Signup/another callback may have claimed the email after the lookup.
+				if (error.code === 11000) callbackError = "google_account_conflict";
+				throw error;
+			}
 		}
 
 		stage = "auth_cookie";
@@ -401,7 +481,7 @@ exports.googleOAuthCallback = async (req, res) => {
 		clearGoogleOAuthCookies(res);
 		return res.redirect(
 			303,
-			getGoogleCallbackUrl(locale, "google_oauth_failed"),
+			getGoogleCallbackUrl(locale, callbackError),
 		);
 	}
 };

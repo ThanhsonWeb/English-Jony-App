@@ -169,13 +169,15 @@ test("overlapping document saves with the same timestamp still revoke the earlie
 for (const changedPassword of [false, true]) {
 	test(`Google callback sessions retain password-change protection (changed password: ${changedPassword})`, async t => {
 		if (changedPassword) {
-			const initial = await signup();
+			// An already-bound dual-method account; Google must not auto-link a password-only account.
+			await User.create({ name: "Learner", email, googleId: "isolated-google-user", password, passwordConfirm: password });
+			const initial = sessionToken(await request("/auth/login", "POST", { email, password }));
 			assert.equal((await update(initial, password, "replacement-password")).status, 200);
 		} else {
 			await User.create({ name: "Learner", email, googleId: "isolated-google-user" });
 		}
 		t.mock.method(OAuth2Client.prototype, "getToken", async () => ({ tokens: { id_token: "isolated-id-token" } }));
-		t.mock.method(OAuth2Client.prototype, "verifyIdToken", async () => ({ getPayload: () => ({ email, name: "Learner", sub: "isolated-google-user" }) }));
+		t.mock.method(OAuth2Client.prototype, "verifyIdToken", async () => ({ getPayload: () => ({ email, email_verified: true, name: "Learner", sub: "isolated-google-user" }) }));
 		const response = await fetch(`${url}/auth/google/callback?state=isolated-state&code=isolated-code`, {
 			redirect: "manual", headers: { Cookie: "google_oauth_state=isolated-state; google_oauth_locale=en" },
 		});
@@ -220,7 +222,7 @@ for (const [name, expected] of [
 		for (const locale of ["vi", "en"]) {
 			const providerEmail = `${locale}@provider.example.com`;
 			t.mock.method(OAuth2Client.prototype, "getToken", async () => ({ tokens: { id_token: "isolated-token" } }));
-			t.mock.method(OAuth2Client.prototype, "verifyIdToken", async () => ({ getPayload: () => ({ email: providerEmail, name, sub: `provider-${locale}` }) }));
+			t.mock.method(OAuth2Client.prototype, "verifyIdToken", async () => ({ getPayload: () => ({ email: providerEmail, email_verified: true, name, sub: `provider-${locale}` }) }));
 			const response = await fetch(`${url}/auth/google/callback?state=test-state&code=test-code`, {
 				redirect: "manual", headers: { Cookie: `google_oauth_state=test-state; google_oauth_locale=${locale}` },
 			});
@@ -236,7 +238,7 @@ for (const [name, expected] of [
 test("existing Google accounts keep their chosen name when the provider returns a different long name", async t => {
 	const user = await User.create({ name: "Chosen name", email, googleId: "existing-google" });
 	t.mock.method(OAuth2Client.prototype, "getToken", async () => ({ tokens: { id_token: "isolated-token" } }));
-	t.mock.method(OAuth2Client.prototype, "verifyIdToken", async () => ({ getPayload: () => ({ email, name: "Different Provider Name That Is Far Too Long", sub: user.googleId }) }));
+	t.mock.method(OAuth2Client.prototype, "verifyIdToken", async () => ({ getPayload: () => ({ email, email_verified: true, name: "Different Provider Name That Is Far Too Long", sub: user.googleId }) }));
 	const response = await fetch(`${url}/auth/google/callback?state=test-state&code=test-code`, {
 		redirect: "manual", headers: { Cookie: "google_oauth_state=test-state" },
 	});

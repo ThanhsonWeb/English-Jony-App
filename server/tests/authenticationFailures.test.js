@@ -64,7 +64,7 @@ test("no missing/empty hash ever reaches bcrypt, including Google-only password 
 });
 for (const locale of ["vi", "en"]) test(`${locale}: Google-only account still logs in through OAuth and restores its session`, async t => {
 	t.mock.method(OAuth2Client.prototype, "getToken", async () => ({ tokens: { id_token: "test-id-token" } }));
-	t.mock.method(OAuth2Client.prototype, "verifyIdToken", async () => ({ getPayload: () => ({ email: google.email, name: google.name, sub: google.googleId }) }));
+	t.mock.method(OAuth2Client.prototype, "verifyIdToken", async () => ({ getPayload: () => ({ email: google.email, email_verified: true, name: google.name, sub: google.googleId }) }));
 	const response = await fetch(`${url}/auth/google/callback?state=test-state&code=test-code`, { redirect: "manual", headers: { Cookie: `google_oauth_state=test-state; google_oauth_locale=${locale}` } });
 	assert.equal(response.status, 303);
 	assert.equal(response.headers.get("location"), `http://studyjony.test/${locale === "en" ? "en/" : ""}oauth/google/callback`);
@@ -85,7 +85,7 @@ for (const locale of ["vi", "en"]) test(`${locale}: cancelled/invalid Google cal
 });
 for (const locale of ["vi", "en"]) test(`${locale}: Google login replaces an expired/previous account session and survives refresh`, async t => {
 	t.mock.method(OAuth2Client.prototype, "getToken", async () => ({ tokens: { id_token: "test-id-token" } }));
-	t.mock.method(OAuth2Client.prototype, "verifyIdToken", async () => ({ getPayload: () => ({ email: google.email, name: google.name, sub: google.googleId }) }));
+	t.mock.method(OAuth2Client.prototype, "verifyIdToken", async () => ({ getPayload: () => ({ email: google.email, email_verified: true, name: google.name, sub: google.googleId }) }));
 	for (const expiresIn of [-1, "1h"]) {
 		const previous = jwt.sign({ id: normal.id }, secret, { expiresIn });
 		const response = await fetch(`${url}/auth/google/callback?state=test-state&code=test-code`, { redirect: "manual", headers: { Cookie: `jwt=${previous}; google_oauth_state=test-state; google_oauth_locale=${locale}` } });

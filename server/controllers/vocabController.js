@@ -56,9 +56,6 @@ exports.updateVocab = catchAsync(async (req, res, next) => {
 		},
 	);
 
-	console.log("BODY:", req.body);
-	console.log("UPDATED VOCAB:", updatedVocab);
-
 	if (!updatedVocab) {
 		return res.status(404).json({
 			status: "fail",

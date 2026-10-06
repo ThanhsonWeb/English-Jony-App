@@ -19,10 +19,6 @@ const avatarLimiter = rateLimit({
 	limit: 10,
 	keyGenerator: (req) => String(req.user.id),
 });
-router.use((req, res, next) => {
-	console.log(req.method, req.originalUrl);
-	next();
-});
 // routes
 
 router.get("/me", protect, getMe);

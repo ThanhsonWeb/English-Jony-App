@@ -4,18 +4,21 @@ import { readFileSync } from "node:fs";
 import { loginWithPassword } from "../app/_lib/passwordLogin.mjs";
 const credentials = { email: "learner@example.com", password: "password-123" };
 const internal = "private server details: database password and stack";
+const attempt = { id: "a".repeat(32), signal: new AbortController().signal };
 for (const locale of ["vi", "en"]) {
 	const messages = JSON.parse(readFileSync(new URL(`../messages/${locale}.json`, import.meta.url))).Auth;
 	const translate = key => messages[key];
 	test(`${locale}: valid password login preserves credentials/cookie contract`, async t => {
 		const user = { _id: "A", name: "Learner" };
 		t.mock.method(globalThis, "fetch", async (url, options) => {
-			assert.equal(url, "/api/v1/auth/login");
+			assert.equal(url, "/api/v1/auth/credentials/login");
+			assert.equal(options.headers["X-StudyJony-Auth-Attempt"], attempt.id);
+			assert.equal(options.signal, attempt.signal);
 			assert.equal(options.method, "POST"); assert.equal(options.credentials, "include");
 			assert.deepEqual(JSON.parse(options.body), credentials);
-			return { ok: true, status: 200, json: async () => ({ status: "success", data: { user } }) };
+			return { ok: true, status: 200, json: async () => ({ status: "success", data: { user, credentialAttempt: attempt.id } }) };
 		});
-		assert.deepEqual(await loginWithPassword(credentials, translate), { user });
+		assert.deepEqual(await loginWithPassword(credentials, translate, attempt), { user });
 	});
 	for (const [name, status, data, expected] of [
 		["401 credentials", 401, { status: "fail", message: "Email hoặc mật khẩu không chính xác!" }, "invalidCredentials"],
@@ -35,7 +38,7 @@ for (const locale of ["vi", "en"]) {
 		["invalid user id", 200, { status: "success", data: { user: { _id: {} } } }, "loginFailed"],
 	]) test(`${locale}: ${name} is a safe translated failure`, async t => {
 		t.mock.method(globalThis, "fetch", async () => ({ ok: status < 400, status, json: async () => data }));
-		assert.deepEqual(await loginWithPassword(credentials, translate), { error: messages[expected] });
+		assert.deepEqual(await loginWithPassword(credentials, translate, attempt), { error: messages[expected] });
 	});
 	for (const network of [false, true]) test(`${locale}: ${network ? "network" : "malformed JSON"} failure can be retried successfully`, async t => {
 		let attempts = 0;
@@ -44,9 +47,9 @@ for (const locale of ["vi", "en"]) {
 				if (network) throw new Error(internal);
 				return { ok: true, status: 200, json: async () => { throw new SyntaxError(internal); } };
 			}
-			return { ok: true, status: 200, json: async () => ({ status: "success", data: { user: { _id: "A" } } }) };
+			return { ok: true, status: 200, json: async () => ({ status: "success", data: { user: { _id: "A" }, credentialAttempt: attempt.id } }) };
 		});
-		assert.deepEqual(await loginWithPassword(credentials, translate), { error: messages.loginFailed });
-		assert.deepEqual(await loginWithPassword(credentials, translate), { user: { _id: "A" } });
+		assert.deepEqual(await loginWithPassword(credentials, translate, attempt), { error: messages.loginFailed });
+		assert.deepEqual(await loginWithPassword(credentials, translate, attempt), { user: { _id: "A" } });
 	});
 }

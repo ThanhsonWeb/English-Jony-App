@@ -26,6 +26,7 @@
 		"googleStartFailed": "Could not start Google sign-in. Please try again.",
 		"googleSessionFailed": "Google sign-in finished, but no valid session was found. Please try again.",
 		"googleOAuthFailed": "Google sign-in was not completed. Please try again.",
+		"googleAccountConflict": "Google sign-in cannot safely connect to this account. No accounts were linked. If this is your account, use your existing sign-in method. Otherwise, contact StudyJony for help verifying ownership.",
 		"credentialsRequired": "Please enter your email and password.",
 		"invalidCredentials": "Incorrect email or password.",
 		"emailInUse": "This email is already in use. Please choose another email.",
