@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams } from "next/navigation";
 import {
 	Search,
@@ -41,6 +41,9 @@ export default function WordPage() {
 	const [pronunciation, setPronunciation] = useState("");
 	const [isLookingUp, setIsLookingUp] = useState(false);
 	const [lookupError, setLookupError] = useState(false);
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [submitError, setSubmitError] = useState("");
+	const submittingRef = useRef(false);
 	const [dictionaryLookup] = useState(() => createLatestDictionaryLookup({
 		lookup: lookupDictionaryWord,
 		onResult(data) {
@@ -190,7 +193,10 @@ export default function WordPage() {
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		if (isLookingUp) return;
+		if (isLookingUp || submittingRef.current) return;
+		submittingRef.current = true;
+		setIsSubmitting(true);
+		setSubmitError("");
 		try {
 			const res = await fetch(`/api/v1/vocab`, {
 				method: "POST",
@@ -206,17 +212,23 @@ export default function WordPage() {
 					topic: topicId, // Crucial: link the word to the topic!
 				}),
 			});
+			const data = await res.json();
 			if (res.ok) {
-				const data = await res.json();
 				console.log(data);
 				setWords((prev) => [...prev, data.data.newVocab]); // ✅ 2. Update UI instantly
 				setEnglish("");
 				setVietnamese("");
 				setExample("");
 				closeAddWord();
+			} else {
+				setSubmitError(data.message || t("form.addError"));
 			}
 		} catch (err) {
+			setSubmitError(t("form.addError"));
 			console.error(err);
+		} finally {
+			submittingRef.current = false;
+			setIsSubmitting(false);
 		}
 	}
 
@@ -487,6 +499,7 @@ export default function WordPage() {
 
 										{isLookingUp && <p role="status" className="mt-3 text-sm text-slate-400">{t("form.lookupLoading")}</p>}
 										{lookupError && <p role="alert" className="mt-3 text-sm text-red-400">{t("form.lookupError")}</p>}
+										{submitError && <p role="alert" className="mt-3 text-sm text-red-400">{submitError}</p>}
 										{/* nhập nghĩa */}
 										<div className="mt-4 flex flex-col gap-2">
 											<label className="text-sm font-medium text-slate-300">
@@ -537,11 +550,12 @@ export default function WordPage() {
 
 										<button
 											type="submit"
-											disabled={isLookingUp}
-											className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-500 px-3 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_-12px_rgba(139,92,246,0.9)] transition hover:from-blue-500 hover:to-violet-400 active:scale-[0.98]"
+											disabled={isLookingUp || isSubmitting}
+											aria-busy={isSubmitting}
+											className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-500 px-3 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_-12px_rgba(139,92,246,0.9)] transition hover:from-blue-500 hover:to-violet-400 active:scale-[0.98] disabled:cursor-wait disabled:opacity-60"
 										>
 											<Sparkles className="h-4 w-4" />
-										{t("form.add")}
+											{t(isSubmitting ? "form.adding" : "form.add")}
 										</button>
 									</div>
 								</form>

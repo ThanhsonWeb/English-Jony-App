@@ -2,6 +2,7 @@
 	"Auth": {
 		"login": "Sign in",
 		"signup": "Sign up",
+		"signingUp": "Creating account…",
 		"loginSubtitle": "Continue your learning journey",
 		"googleLogin": "Sign in with Google",
 		"googleSignup": "Sign up with Google",
@@ -380,6 +381,8 @@
 		"activity": "Activity overview (last 6 months)",
 		"activityCount": "{count} activities in 6 months",
 		"activityTooltip": "{count} activities",
+		"qualifiedActivityTooltip": "Study activity completed",
+		"activitySummary": "{days} active days · {count} vocabulary activities in 6 months",
 		"language": "Display language",
 		"languageValue": "🇺🇸 English",
 		"sound": "Sound effects",
@@ -477,6 +480,8 @@
 			"examplePlaceholder": "Enter an example sentence (optional)",
 			"cancel": "Cancel",
 			"add": "Add word",
+			"adding": "Adding…",
+			"addError": "Could not add this word. Please try again.",
 			"editTitle": "Edit vocabulary",
 			"save": "Save changes"
 		}

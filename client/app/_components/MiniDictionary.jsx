@@ -85,7 +85,7 @@ export default function MiniDictionary() {
 	const audioRef = useRef(null);
 	const speechRef = useRef(null);
 	const requestIdRef = useRef(0);
-	const libraryUserRef = useRef(null);
+	const savingRef = useRef(false);
 	const suggestionsOpenRef = useRef(false);
 	const skipAutocompleteRef = useRef(false);
 	const [isOpen, setIsOpen] = useState(false);
@@ -94,6 +94,7 @@ export default function MiniDictionary() {
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState("");
 	const [topics, setTopics] = useState([]);
+	const [libraryUserId, setLibraryUserId] = useState(null);
 	const [savedWords, setSavedWords] = useState(() => new Set());
 	const [isLibraryLoading, setIsLibraryLoading] = useState(false);
 	const [isSaving, setIsSaving] = useState(false);
@@ -201,12 +202,13 @@ export default function MiniDictionary() {
 		if (!isOpen || authLoading || !user) return undefined;
 
 		const userId = user._id || user.id;
-		if (libraryUserRef.current === userId) return undefined;
+		if (libraryUserId === userId) return undefined;
 
 		let cancelled = false;
-		setIsLibraryLoading(true);
 
 		async function loadLibrary() {
+			if (cancelled) return;
+			setIsLibraryLoading(true);
 			try {
 				const [topicsResponse, wordsResponse] = await Promise.all([
 					fetch("/api/v1/topics", { credentials: "include" }),
@@ -229,17 +231,17 @@ export default function MiniDictionary() {
 						),
 					),
 				);
-				libraryUserRef.current = userId;
+				setLibraryUserId(userId);
 			} finally {
 				if (!cancelled) setIsLibraryLoading(false);
 			}
 		}
 
-		loadLibrary();
+		queueMicrotask(loadLibrary);
 		return () => {
 			cancelled = true;
 		};
-	}, [authLoading, isOpen, user]);
+	}, [authLoading, isOpen, user, libraryUserId]);
 
 	function closePanel() {
 		audioRef.current?.pause();
@@ -365,8 +367,9 @@ export default function MiniDictionary() {
 	}
 
 	async function saveWord() {
-		if (!user || !result || !topics[0] || isSaving) return;
+		if (!user || !result || authLoading || isLibraryLoading || libraryUserId !== (user._id || user.id) || savingRef.current || savedWords.has(normalizeWord(result.english))) return;
 
+		savingRef.current = true;
 		setIsSaving(true);
 		setSaveError("");
 
@@ -380,7 +383,7 @@ export default function MiniDictionary() {
 					vietnamese: result.vietnamese,
 					pronunciation: result.pronunciation || "",
 					example: result.example || "",
-					topic: topics[0]._id,
+					...(topics[0] ? { topic: topics[0]._id } : {}),
 				}),
 			});
 
@@ -392,6 +395,7 @@ export default function MiniDictionary() {
 		} catch (wordError) {
 			setSaveError(wordError.message || t("saveError"));
 		} finally {
+			savingRef.current = false;
 			setIsSaving(false);
 		}
 	}
@@ -577,18 +581,11 @@ export default function MiniDictionary() {
 										>
 											{t("signInToSave")}
 										</Link>
-									) : user && !isLibraryLoading && topics.length === 0 ? (
-										<Link
-											href="/wordlist"
-											className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
-										>
-											{t("createList")}
-										</Link>
 									) : user ? (
 										<button
 											type="button"
 											onClick={saveWord}
-											disabled={isSaved || isSaving || isLibraryLoading}
+											disabled={isSaved || isSaving || isLibraryLoading || libraryUserId !== (user._id || user.id)}
 											className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-primary px-3.5 text-sm font-semibold text-white transition hover:bg-primary-hover disabled:cursor-default disabled:opacity-60"
 										>
 											{isSaving ? (

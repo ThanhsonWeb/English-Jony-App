@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { buildStudyHeatmapDays } from "@/app/_lib/studyHeatmap.mjs";
 
 const levelClass = {
 	0: "bg-app dark:bg-slate-900",
@@ -11,24 +12,8 @@ const levelClass = {
 	4: "bg-emerald-400",
 };
 
-function formatDate(date) {
-	const year = date.getFullYear();
-	const month = String(date.getMonth() + 1).padStart(2, "0");
-	const day = String(date.getDate()).padStart(2, "0");
-
-	return `${year}-${month}-${day}`;
-}
-
 function formatDisplayDate(dateString, locale) {
 	return new Date(`${dateString}T00:00:00`).toLocaleDateString(locale);
-}
-
-function getLevel(count) {
-	if (count === 0) return 0;
-	if (count <= 2) return 1;
-	if (count <= 5) return 2;
-	if (count <= 9) return 3;
-	return 4;
 }
 
 function StudyHeatmap() {
@@ -39,18 +24,19 @@ function StudyHeatmap() {
 	const monthLabelsByWeek = new Map(
 		days
 			.map((day, index) => {
-				const date = new Date(`${day.date}T00:00:00`);
+				const date = new Date(`${day.date}T00:00:00Z`);
 
-				if (date.getDate() !== 1) return null;
+				if (date.getUTCDate() !== 1) return null;
 
 				return [
 					Math.floor(index / 7),
-					new Intl.DateTimeFormat(locale, { month: "short" }).format(date),
+					new Intl.DateTimeFormat(locale, { month: "short", timeZone: "UTC" }).format(date),
 				];
 			})
 			.filter(Boolean),
 	);
 	const totalActivities = days.reduce((total, day) => total + day.count, 0);
+	const activeDays = days.filter(day => day.level > 0).length;
 
 	useEffect(() => {
 		async function fetchActivities() {
@@ -62,38 +48,7 @@ function StudyHeatmap() {
 
 			const data = await res.json();
 
-			const activityMap = new Map(
-				data.data.activities.map((activity) => [activity.date, activity.count]),
-			);
-
-			const today = new Date();
-			today.setHours(0, 0, 0, 0);
-
-			const startDate = new Date(today);
-			// Show the current month and the five previous calendar months.
-			startDate.setMonth(today.getMonth() - 5, 1);
-
-			// Start from Sunday, like GitHub
-			startDate.setDate(startDate.getDate() - startDate.getDay());
-
-			const totalDays =
-				Math.floor((today - startDate) / (1000 * 60 * 60 * 24)) + 1;
-
-			const heatmapDays = Array.from({ length: totalDays }, (_, index) => {
-				const date = new Date(startDate);
-				date.setDate(startDate.getDate() + index);
-
-				const dateString = formatDate(date);
-				const count = activityMap.get(dateString) || 0;
-
-				return {
-					date: dateString,
-					count,
-					level: getLevel(count),
-				};
-			});
-
-			setDays(heatmapDays);
+			setDays(buildStudyHeatmapDays(data.data.activities));
 		}
 
 		fetchActivities();
@@ -145,7 +100,7 @@ function StudyHeatmap() {
 								{days.map((day) => (
 									<div
 										key={day.date}
-									title={`${formatDisplayDate(day.date, locale)}\n${t("activityTooltip", { count: day.count })}`}
+										title={`${formatDisplayDate(day.date, locale)}\n${day.count === 0 && day.hasQualifiedStudy ? t("qualifiedActivityTooltip") : t("activityTooltip", { count: day.count })}`}
 										className={`h-3 w-3 rounded-sm sm:h-4 sm:w-4 lg:h-5 lg:w-5 ${levelClass[day.level]}`}
 									/>
 								))}
@@ -156,7 +111,7 @@ function StudyHeatmap() {
 
 				{/* Footer */}
 				<div className="mt-5 flex flex-col gap-3 border-t border-slate-800 pt-4 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-					<span>{t("activityCount", { count: totalActivities })}</span>
+					<span>{t("activitySummary", { days: activeDays, count: totalActivities })}</span>
 
 					<div className="flex items-center gap-2">
 						<span>{t("less")}</span>

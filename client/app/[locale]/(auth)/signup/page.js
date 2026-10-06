@@ -3,7 +3,7 @@
 import { useAuth } from "@/app/_contexts/AuthContext";
 import Image from "next/image";
 import { Link, useRouter } from "@/i18n/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { getAuthErrorMessage } from "@/app/_lib/authErrorMessage";
 import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
@@ -20,10 +20,17 @@ function SignUpForm() {
 	const [password, setPassword] = useState("");
 	const [passwordConfirm, setPasswordConfirm] = useState("");
 	const [error, setError] = useState("");
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const submittingRef = useRef(false);
 	const router = useRouter();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		if (submittingRef.current) return;
+		submittingRef.current = true;
+		setIsSubmitting(true);
+		setError("");
+		let succeeded = false;
 		try {
 			const res = await fetch("/api/v1/auth/signup", {
 				method: "POST",
@@ -47,10 +54,17 @@ function SignUpForm() {
 
 			console.log(data);
 			setUser(data.data.user);
+			succeeded = true;
 			router.push("/wordlist");
 		} catch (error) {
 			setError(t("signupFailed"));
 			console.log(error);
+		} finally {
+			// Keep the successful form locked until navigation removes it.
+			if (!succeeded) {
+				submittingRef.current = false;
+				setIsSubmitting(false);
+			}
 		}
 	};
 
@@ -235,9 +249,11 @@ function SignUpForm() {
 
 						<button
 							type="submit"
-							className="mt-2 rounded-xl bg-blue-600 px-4 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-500 active:scale-[0.98] cursor-pointer"
+							disabled={isSubmitting}
+							aria-busy={isSubmitting}
+							className="mt-2 rounded-xl bg-blue-600 px-4 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-500 active:scale-[0.98] cursor-pointer disabled:cursor-wait disabled:opacity-60"
 						>
-							{t("signup")}
+							{t(isSubmitting ? "signingUp" : "signup")}
 						</button>
 					</form>
 				</div>
