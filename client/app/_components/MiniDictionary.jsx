@@ -15,6 +15,7 @@ import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { Link } from "@/i18n/navigation";
+import { notifyVocabularySaved } from "@/app/_lib/vocabularyEvents.mjs";
 
 const normalizeWord = (value = "") => value.trim().toLocaleLowerCase("en");
 const MAX_SUGGESTIONS = 6;
@@ -77,7 +78,7 @@ function HighlightedSuggestion({ word, query }) {
 
 export default function MiniDictionary() {
 	const t = useTranslations("MiniDictionary");
-	const { user, loading: authLoading } = useAuth();
+	const { user, loading: authLoading, captureSession, isCurrentSession } = useAuth();
 	const containerRef = useRef(null);
 	const searchAreaRef = useRef(null);
 	const suggestionsListRef = useRef(null);
@@ -370,6 +371,7 @@ export default function MiniDictionary() {
 		if (!user || !result || authLoading || isLibraryLoading || libraryUserId !== (user._id || user.id) || savingRef.current || savedWords.has(normalizeWord(result.english))) return;
 
 		savingRef.current = true;
+		const session = captureSession();
 		setIsSaving(true);
 		setSaveError("");
 
@@ -388,12 +390,16 @@ export default function MiniDictionary() {
 			});
 
 			if (!response.ok) throw new Error(t("saveError"));
+			const data = await response.json();
+			if (!data?.data?.newVocab?._id) throw new Error(t("saveError"));
+			if (!isCurrentSession(session)) return;
+			notifyVocabularySaved(session.userId, data.data.newVocab);
 
 			setSavedWords((current) =>
 				new Set([...current, normalizeWord(result.english)]),
 			);
-		} catch (wordError) {
-			setSaveError(wordError.message || t("saveError"));
+		} catch {
+			if (isCurrentSession(session)) setSaveError(t("saveError"));
 		} finally {
 			savingRef.current = false;
 			setIsSaving(false);

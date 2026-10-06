@@ -376,6 +376,11 @@
 		"avatarServerUnavailable": "Avatar upload is unavailable. Restart the server and try again.",
 		"avatarStorageUnavailable": "Avatar storage is not configured yet.",
 		"updateName": "Update your name",
+		"nameRequired": "Enter a name.",
+		"nameTooShort": "Your name must have at least 3 characters.",
+		"nameTooLong": "Your name must have no more than 20 characters.",
+		"nameSaveError": "Could not save your name. Your changes are still here. Please try again.",
+		"savingName": "Saving…",
 		"save": "Save",
 		"close": "Close",
 		"activity": "Activity overview (last 6 months)",
@@ -441,7 +446,9 @@
 			"create": "Create list",
 			"editTitle": "Edit list",
 			"editSubtitle": "Change the list name or notes.",
-			"save": "Save changes"
+			"save": "Save changes",
+			"saving": "Saving…",
+			"saveError": "Could not save your list. Your changes are still here. Please try again."
 		}
 	},
 	"WordlistDetail": {

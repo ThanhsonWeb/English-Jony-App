@@ -376,6 +376,11 @@
 		"avatarServerUnavailable": "Chưa thể tải ảnh lên. Hãy khởi động lại server rồi thử lại.",
 		"avatarStorageUnavailable": "Chưa cấu hình nơi lưu ảnh đại diện.",
 		"updateName": "Cập nhật tên của bạn",
+		"nameRequired": "Vui lòng nhập tên.",
+		"nameTooShort": "Tên phải có ít nhất 3 ký tự.",
+		"nameTooLong": "Tên không được dài hơn 20 ký tự.",
+		"nameSaveError": "Không thể lưu tên. Nội dung bạn sửa vẫn được giữ lại. Vui lòng thử lại.",
+		"savingName": "Đang lưu…",
 		"save": "Lưu",
 		"close": "Đóng",
 		"activity": "Tổng quan hoạt động (6 tháng gần đây)",
@@ -441,7 +446,9 @@
 			"create": "Tạo danh sách",
 			"editTitle": "Chỉnh sửa danh sách",
 			"editSubtitle": "Thay đổi tên hoặc ghi chú của danh sách.",
-			"save": "Lưu thay đổi"
+			"save": "Lưu thay đổi",
+			"saving": "Đang lưu…",
+			"saveError": "Không thể lưu danh sách. Nội dung bạn sửa vẫn được giữ lại. Vui lòng thử lại."
 		}
 	},
 	"WordlistDetail": {

@@ -6,7 +6,7 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { getAuthErrorMessage } from "@/app/_lib/authErrorMessage";
+import { loginWithPassword } from "@/app/_lib/passwordLogin.mjs";
 import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
 import AuthOverlay from "@/app/_components/AuthOverlay";
 
@@ -88,32 +88,16 @@ function LoginPage() {
 		e.preventDefault();
 		try {
 			setIsLoading(true);
-			const res = await fetch("/api/v1/auth/login", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				// 🍪 "Send my authentication cookie along with this request."
-				credentials: "include",
-				body: JSON.stringify({ email, password }),
-			});
-
-			const data = await res.json();
-			// prod mode
-			if (data.status === "fail") {
-				setError(getAuthErrorMessage(data, t, "loginFailed"));
+			setError("");
+			const result = await loginWithPassword({ email, password }, t);
+			if (result.error) {
+				setError(result.error);
 				return;
 			}
-
-			if (data.status === "success") {
-				setUser(data.data.user);
-				router.push("/wordlist");
-				return;
-			}
-			// console.log(data);
+			setUser(result.user);
+			router.push("/wordlist");
 		} catch (error) {
 			setError(t("loginFailed"));
-			console.log(error);
 		} finally {
 			setIsLoading(false);
 		}

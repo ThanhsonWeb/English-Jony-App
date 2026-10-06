@@ -32,6 +32,7 @@ import {
 import { WordDialog, DeleteDialog } from "./_components/WordDialogs";
 import styles from "./wordlist.module.css";
 import { splitExample } from "@/app/_lib/exampleHighlight.mjs";
+import { subscribeVocabularySaved } from "@/app/_lib/vocabularyEvents.mjs";
 
 const statuses = ["all", "new", "learning", "review", "mastered"];
 const reviewModes = [
@@ -150,16 +151,23 @@ export default function WordlistPage() {
 	const requestKey = `${userId || "guest"}:${retry}`;
 	useEffect(() => {
 		if (authLoading || !userId) return;
-		const controller = new AbortController();
-		fetchVocabulary(undefined, controller.signal)
+		let controller;
+		function loadWords() {
+			controller?.abort();
+			const request = new AbortController();
+			controller = request;
+		fetchVocabulary(undefined, request.signal)
 			.then((words) => {
-				if (!controller.signal.aborted) setResult({ key: requestKey, words });
+				if (!request.signal.aborted) setResult({ key: requestKey, words });
 			})
 			.catch((error) => {
-				if (!controller.signal.aborted)
+				if (!request.signal.aborted)
 					setResult({ key: requestKey, error: error.message });
 			});
-		return () => controller.abort();
+		}
+		const unsubscribe = subscribeVocabularySaved(userId, undefined, loadWords);
+		loadWords();
+		return () => { unsubscribe(); controller?.abort(); };
 	}, [authLoading, userId, requestKey]);
 	const loading = authLoading || (user && result?.key !== requestKey);
 	const error = !loading && user && result?.error;
@@ -191,6 +199,7 @@ export default function WordlistPage() {
 	);
 	const pages = Math.max(1, Math.ceil(filtered.length / 20));
 	const currentPage = Math.min(page, pages);
+	if (page > pages) setPage(pages);
 	const visible = filtered.slice((currentPage - 1) * 20, currentPage * 20);
 	async function saveWord(body) {
 		const word = editor.word;

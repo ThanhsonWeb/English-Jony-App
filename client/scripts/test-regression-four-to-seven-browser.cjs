@@ -99,11 +99,11 @@ async function profileCase(browser, width, locale, theme, mutation, loginB) {
 	c.handle(async (route, path) => {
 		if (!path.endsWith(mutation === "name" ? "/users/updateMe" : "/users/avatar")) return false;
 		if (++mutationRequests > 1) {
-			await route.fulfill({ json: { data: { user: { _id: "B", name: mutation === "name" ? "Updated B" : "Account B", email: "b@example.com", theme, ...(mutation === "avatar" ? { avatar: "https://avatar.test/test-b.png" } : {}) } } } });
+			await route.fulfill({ json: { status: "success", data: { user: { _id: "B", name: mutation === "name" ? "Updated B" : "Account B", email: "b@example.com", theme, ...(mutation === "avatar" ? { avatar: "https://avatar.test/test-b.png" } : {}) } } } });
 			return true;
 		}
 		started.resolve(); await release.promise;
-		await route.fulfill({ json: { data: { user: { _id: "A", name: "Changed Account A", email: "a@example.com", theme, ...(mutation === "avatar" ? { avatar: "https://avatar.test/test-a.png" } : {}) } } } });
+		await route.fulfill({ json: { status: "success", data: { user: { _id: "A", name: "Changed Account A", email: "a@example.com", theme, ...(mutation === "avatar" ? { avatar: "https://avatar.test/test-a.png" } : {}) } } } });
 		return true;
 	});
 	await c.goto("/profile");

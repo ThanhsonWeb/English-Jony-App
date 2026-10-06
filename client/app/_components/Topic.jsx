@@ -21,6 +21,9 @@ function Topic({ topic, onDelete, onFix, words }) {
 
 	const [editName, setEditName] = useState(topic.name);
 	const [editDesc, setEditDesc] = useState(topic.description || "");
+	const [isSaving, setIsSaving] = useState(false);
+	const [saveError, setSaveError] = useState("");
+	const savingRef = useRef(false);
 
 	const formatDate = (dateString) => {
 		if (!dateString) return "";
@@ -38,12 +41,23 @@ function Topic({ topic, onDelete, onFix, words }) {
 			(word) => word.nextReview && new Date(word.nextReview) <= new Date(),
 		) || [];
 
-	const handleEditSubmit = (e) => {
+	const handleEditSubmit = async (e) => {
 		e.preventDefault();
-
-		onFix(topic._id, editName, editDesc);
-
-		setIsEditing(false);
+		if (savingRef.current) return;
+		savingRef.current = true;
+		setIsSaving(true);
+		setSaveError("");
+		try {
+			// The save callback must resolve with success and reject failed requests.
+			const saved = await onFix(topic._id, editName, editDesc);
+			if (!saved) throw new Error("Topic save was not confirmed");
+			setIsEditing(false);
+		} catch {
+			setSaveError(t("form.saveError"));
+		} finally {
+			savingRef.current = false;
+			setIsSaving(false);
+		}
 	};
 
 	// Close dropdown when clicking outside
@@ -234,6 +248,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 						onClick={(e) => {
 							e.stopPropagation();
 							setIsMenuOpen(false);
+							setSaveError("");
 							setIsEditing(true);
 						}}
 						className="
@@ -306,6 +321,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 							<input
 								type="text"
 								value={editName}
+								disabled={isSaving}
 								onChange={(e) => setEditName(e.target.value)}
 								className="
 									rounded-xl border border-slate-700
@@ -327,6 +343,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 
 							<textarea
 								value={editDesc}
+								disabled={isSaving}
 								onChange={(e) => setEditDesc(e.target.value)}
 								rows={3}
 								className="
@@ -342,10 +359,12 @@ function Topic({ topic, onDelete, onFix, words }) {
 						</div>
 
 						{/* Actions */}
+						{saveError && <p role="alert" className="mt-4 text-sm text-red-400">{saveError}</p>}
 						<div className="mt-6 flex gap-3">
 							<button
 								type="button"
 								onClick={() => setIsEditing(false)}
+								disabled={isSaving}
 								className="
 									flex-1 rounded-xl
 									border border-slate-700
@@ -359,6 +378,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 
 							<button
 								type="submit"
+								disabled={isSaving}
 								className="
 									flex-1 rounded-xl
 									bg-blue-600 py-3
@@ -366,7 +386,7 @@ function Topic({ topic, onDelete, onFix, words }) {
 									transition hover:bg-blue-500
 								"
 							>
-								{t("form.save")}
+								{t(isSaving ? "form.saving" : "form.save")}
 							</button>
 						</div>
 					</form>

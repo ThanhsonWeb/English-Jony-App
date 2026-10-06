@@ -7,6 +7,7 @@ const sendEmail = require("../utils/email");
 const crypto = require("crypto");
 const { OAuth2Client } = require("google-auth-library");
 const googleDisplayName = require("../utils/googleDisplayName");
+const mongoose = require("mongoose");
 
 const GOOGLE_OAUTH_STATE_COOKIE = "google_oauth_state";
 const GOOGLE_OAUTH_LOCALE_COOKIE = "google_oauth_locale";
@@ -120,7 +121,20 @@ exports.protect = catchAsync(async (req, res, next) => {
 	}
 
 	// Verify token
-	const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+	// Configuration/database errors stay internal errors; only token failures are 401.
+	if (!process.env.JWT_SECRET) throw new Error("JWT verification is not configured");
+	let decoded;
+	try {
+		decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+	} catch (error) {
+		if (error instanceof jwt.JsonWebTokenError) {
+			return next(new AppError("Invalid or expired session. Please log in again.", 401));
+		}
+		throw error;
+	}
+	if (!decoded || typeof decoded.id !== "string" || !mongoose.isObjectIdOrHexString(decoded.id)) {
+		return next(new AppError("Invalid or expired session. Please log in again.", 401));
+	}
 
 	// check if user still exist
 	const currentUser = await User.findById(decoded.id);

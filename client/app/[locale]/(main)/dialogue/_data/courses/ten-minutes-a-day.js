@@ -61,6 +61,7 @@ function buildCourseDialogue(draft) {
 const tenMinutesADayCourse = {
 	id: "ten-minutes-a-day",
 	contentType: "story",
+	category: tenMinutesADayConfig.category,
 	heroImage: theOldBook.metadata.scene,
 	image: theOldBook.metadata.scene,
 	title: "Ten Minutes A Day",

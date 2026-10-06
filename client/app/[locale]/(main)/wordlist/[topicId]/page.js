@@ -22,11 +22,15 @@ import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import Loading from "@/app/_components/loading";
 import { useTranslations } from "next-intl";
-import { getWordStatus, isReviewDue as reviewDue } from "@/app/_lib/vocabulary.mjs";
+import { fetchVocabulary, getWordStatus, isReviewDue as reviewDue } from "@/app/_lib/vocabulary.mjs";
+import { subscribeVocabularySaved } from "@/app/_lib/vocabularyEvents.mjs";
+import { useAuth } from "@/app/_contexts/AuthContext";
 import { createLatestDictionaryLookup, lookupDictionaryWord } from "@/app/_lib/latestDictionaryLookup.mjs";
 
 export default function WordPage() {
 	const t = useTranslations("WordlistDetail");
+	const { user, loading: authLoading } = useAuth();
+	const userId = user?._id || user?.id;
 	// state
 	const [viewMode, setViewMode] = useState("list");
 	const [wordList, setWordList] = useState([]);
@@ -99,15 +103,17 @@ export default function WordPage() {
 		});
 
 	// pagination
-	const [currentPage, setCurrentPage] = useState(1);
+	const [page, setCurrentPage] = useState(1);
 	const wordsPerPage = 5;
-	const indexOfLastWord = currentPage * wordsPerPage;
-	const indexOfFirstWord = indexOfLastWord - wordsPerPage;
-	const currentWords = filteredWords.slice(indexOfFirstWord, indexOfLastWord);
 	const totalPages = Math.max(
 		1,
 		Math.ceil(filteredWords.length / wordsPerPage),
 	);
+	const currentPage = Math.min(page, totalPages);
+	if (page > totalPages) setCurrentPage(totalPages);
+	const indexOfLastWord = currentPage * wordsPerPage;
+	const indexOfFirstWord = indexOfLastWord - wordsPerPage;
+	const currentWords = filteredWords.slice(indexOfFirstWord, indexOfLastWord);
 	const newWordCount = words.filter((word) => getWordStatus(word, now) === "new").length;
 	const reviewWordCount = words.filter(isReviewDue).length;
 	const learningWordCount = words.length - newWordCount - reviewWordCount;
@@ -128,23 +134,26 @@ export default function WordPage() {
 
 	//   Get all words
 	useEffect(() => {
+		if (authLoading || !userId) return;
+		let controller;
 		async function fetchData() {
+			controller?.abort();
+			const request = new AbortController();
+			controller = request;
 			try {
-				const res = await fetch(`/api/v1/vocab?topic=${topicId}`, {
-					method: "GET",
-					credentials: "include",
-				});
-				const data = await res.json();
-				setWords(data.data.vocabularies);
+				const vocabulary = await fetchVocabulary(topicId, request.signal);
+				if (!request.signal.aborted) setWords(vocabulary);
 			} catch (err) {
-				console.error(err);
+				if (!request.signal.aborted) console.error(err);
 			} finally {
-				setLoading(false);
+				if (!request.signal.aborted) setLoading(false);
 			}
 		}
 
+		const unsubscribe = subscribeVocabularySaved(userId, topicId, fetchData);
 		fetchData();
-	}, [topicId]);
+		return () => { unsubscribe(); controller?.abort(); };
+	}, [topicId, userId, authLoading]);
 	// load english_words.json once
 	useEffect(() => {
 		async function loadWordList() {

@@ -8,6 +8,7 @@ import { useAuth } from "@/app/_contexts/AuthContext";
 import { resolveAvatarUrl } from "@/app/_lib/resolveAvatarUrl";
 import { useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import profileName from "../../../../../shared/profileName.cjs";
 import {
 	Mail,
 	CalendarDays,
@@ -57,6 +58,9 @@ function Page() {
 	const { user, captureSession, isCurrentSession, updateUserForSession } = useAuth();
 	const [isEditingName, setIsEditingName] = useState(false);
 	const [newName, setNewName] = useState(user?.name || "");
+	const [nameError, setNameError] = useState("");
+	const [isSavingName, setIsSavingName] = useState(false);
+	const nameSavingRef = useRef(false);
 	const avatarInputRef = useRef(null);
 	const avatarRequestId = useRef(0);
 	const [isUploadingAvatar, setIsUploadingAvatar] = useState(false);
@@ -110,8 +114,14 @@ function Page() {
 		}
 	}
 	async function handleUpdateName() {
+		if (nameSavingRef.current) return;
 		const session = captureSession();
 		if (!session.userId) return;
+		const validation = profileName.validateProfileName(newName);
+		setNameError("");
+		if (validation) { setNameError(t(validation)); return; }
+		nameSavingRef.current = true;
+		setIsSavingName(true);
 		try {
 			const res = await fetch("/api/v1/users/updateMe", {
 				method: "PATCH",
@@ -120,18 +130,26 @@ function Page() {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify({
-					name: newName,
+					name: newName.trim(),
 				}),
 			});
 
-			if (!res.ok) return;
-
-			const data = await res.json();
+			const data = await res.json().catch(() => null);
+			if (!isCurrentSession(session)) return;
+			if (!res.ok || data?.status !== "success" || !data?.data?.user) {
+				const key = res.status === 400 && ["nameRequired", "nameTooShort", "nameTooLong"].includes(data?.code)
+					? data.code : "nameSaveError";
+				setNameError(t(key));
+				return;
+			}
 
 			if (!updateUserForSession(data.data.user, session)) return;
 			setIsEditingName(false);
-		} catch (error) {
-			console.log(error);
+		} catch {
+			if (isCurrentSession(session)) setNameError(t("nameSaveError"));
+		} finally {
+			nameSavingRef.current = false;
+			setIsSavingName(false);
 		}
 	}
 
@@ -180,6 +198,7 @@ function Page() {
 							aria-label={t("updateName")}
 							onClick={() => {
 								setNewName(user?.name || "");
+								setNameError("");
 								setIsEditingName(true);
 							}}
 							className="text-slate-400 hover:text-white cursor-pointer max-md:shrink-0"
@@ -204,17 +223,23 @@ function Page() {
 
 								<input
 									type="text"
+									aria-label={t("editName")}
+									aria-invalid={Boolean(nameError)}
+									aria-describedby={nameError ? "profile-name-error" : undefined}
+									disabled={isSavingName}
 									value={newName}
 									onChange={(e) => setNewName(e.target.value)}
 									className="w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-4 text-slate-100 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10"
 								/>
 
+								{nameError && <p id="profile-name-error" role="alert" className="mt-3 text-sm text-red-400">{nameError}</p>}
 								<button
 									type="button"
 									onClick={handleUpdateName}
-									className="mx-auto mt-8 block rounded-2xl bg-blue-900 px-16 py-3 font-semibold text-white transition hover:bg-blue-800"
+									disabled={isSavingName}
+									className="mx-auto mt-8 block max-w-full rounded-2xl bg-blue-900 px-16 py-3 font-semibold text-white transition hover:bg-blue-800 disabled:opacity-60"
 								>
-									{t("save")}
+									{t(isSavingName ? "savingName" : "save")}
 								</button>
 							</div>
 						</MobileDialogOverlay>

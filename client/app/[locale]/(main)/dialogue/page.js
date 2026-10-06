@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { lessonData } from "./_data/lessonData";
 import { getLocalizedDialogueValue } from "@/app/_lib/dialogue/localization";
+import { matchesCourseCategory } from "@/app/_lib/dialogue/catalogueCategories.mjs";
 import { useLocale, useTranslations } from "next-intl";
 const courseImages = {
 	"coffee-shop": "/dialogue/coffee-shop/thumbnails/coffee-shop.png",
@@ -76,23 +77,6 @@ const categoryIcons = {
 	life: House,
 	daily: MessageCircleMore,
 	story: BookOpen,
-};
-
-const courseIdsByCategory = {
-	office: ["office-introduction"],
-	travel: ["at-a-hotel", "asking-for-directions", "weekend-camping"],
-	food: ["coffee-shop", "grocery-store", "restaurant"],
-	life: ["at-a-hotel", "weekend-camping"],
-	daily: [
-		"at-a-hotel",
-		"asking-for-directions",
-		"coffee-shop",
-		"grocery-store",
-		"restaurant",
-		"office-introduction",
-		"weekend-camping",
-	],
-	story: ["weekend-camping"],
 };
 
 function getCefrLevelLabel(level) {
@@ -289,8 +273,7 @@ export default function DialoguePage() {
 		);
 	};
 	const courseMatchesCategory = (course) =>
-		selectedCategory === "all" ||
-		courseIdsByCategory[selectedCategory]?.includes(course.id);
+		matchesCourseCategory(course, selectedCategory);
 	const courseMatchesFilters = (course) =>
 		courseMatchesSearch(course) && courseMatchesLevel(course);
 	const currentCourseMatchesSearch = Boolean(
@@ -442,7 +425,7 @@ export default function DialoguePage() {
 											category === "all"
 												? courses.length
 												: courses.filter((course) =>
-														courseIdsByCategory[category].includes(course.id),
+														matchesCourseCategory(course, category),
 													).length;
 										return (
 											<button
