@@ -11,11 +11,14 @@ let baseUrl;
 const originalSecret = process.env.JWT_SECRET;
 const originalExpiry = process.env.JWT_EXPIRES_IN;
 const originalNodeEnv = process.env.NODE_ENV;
+const originalFrontend = process.env.FRONTEND_URL;
+const trustedOrigin = "http://studyjony.test";
 
 before(async () => {
 	process.env.JWT_SECRET = "isolated-user-theme-test-secret";
 	process.env.JWT_EXPIRES_IN = "1h";
 	process.env.NODE_ENV = "development";
+	process.env.FRONTEND_URL = trustedOrigin;
 	replicaSet = await MongoMemoryReplSet.create({ binary: { version: "7.0.14" }, replSet: { count: 1 } });
 	await mongoose.connect(replicaSet.getUri(), { dbName: "user_theme_test" });
 	await User.create([
@@ -38,12 +41,14 @@ after(async () => {
 	else process.env.JWT_EXPIRES_IN = originalExpiry;
 	if (originalNodeEnv === undefined) delete process.env.NODE_ENV;
 	else process.env.NODE_ENV = originalNodeEnv;
+	if (originalFrontend === undefined) delete process.env.FRONTEND_URL;
+	else process.env.FRONTEND_URL = originalFrontend;
 });
 
 async function login(email) {
 	const response = await fetch(`${baseUrl}/auth/login`, {
 		method: "POST",
-		headers: { "Content-Type": "application/json" },
+		headers: { "Content-Type": "application/json", Origin: trustedOrigin },
 		body: JSON.stringify({ email, password: "password123" }),
 	});
 	assert.equal(response.status, 200);
@@ -53,7 +58,7 @@ async function login(email) {
 async function saveTheme(cookie, userId, theme) {
 	return fetch(`${baseUrl}/users/theme`, {
 		method: "PATCH",
-		headers: { "Content-Type": "application/json", Cookie: cookie },
+		headers: { "Content-Type": "application/json", Cookie: cookie, Origin: trustedOrigin },
 		body: JSON.stringify({ theme, expectedUserId: userId }),
 	});
 }
@@ -70,7 +75,7 @@ test("A dark, logout, B light, then A again restores each saved theme", async ()
 	assert.equal((await saveTheme(firstA.cookie, firstA.user._id, "dark")).status, 200);
 	assert.equal((await getMe(firstA.cookie)).theme, "dark");
 
-	const logout = await fetch(`${baseUrl}/auth/logout`, { method: "POST", headers: { Cookie: firstA.cookie } });
+	const logout = await fetch(`${baseUrl}/auth/logout`, { method: "POST", headers: { Cookie: firstA.cookie, Origin: trustedOrigin } });
 	assert.equal(logout.status, 200);
 	assert.match(logout.headers.get("set-cookie"), /jwt=;/);
 

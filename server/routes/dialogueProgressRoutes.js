@@ -7,10 +7,11 @@ const {
 } = require("../controllers/dialogueProgressController.js");
 
 const { protect } = require("../controllers/authController.js");
+const learningRateLimit = require("../middleware/learningRateLimit");
 
 const router = express.Router();
 
-router.use(protect);
+router.use(learningRateLimit.peer, protect, learningRateLimit.user);
 
 router.get("/latest", getLatestProgress);
 router.get("/:lessonId", getLessonProgress);

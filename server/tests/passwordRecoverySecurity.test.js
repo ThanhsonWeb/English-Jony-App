@@ -62,7 +62,7 @@ function request(path, method = "GET", body, headers = {}) {
 	return new Promise((resolve, reject) => {
 		const req = http.request({
 			hostname: "127.0.0.1", port: server.address().port, path: `/api/v1${path}`, method,
-			headers: { "Content-Type": "application/json", ...headers },
+			headers: { "Content-Type": "application/json", Origin: trustedOrigin, ...headers },
 		}, res => {
 			let text = "";
 			res.on("data", chunk => { text += chunk; });
@@ -154,7 +154,8 @@ test("missing or invalid production origin fails before replacing any reset cred
 		if (configured === undefined) delete process.env.FRONTEND_URL; else process.env.FRONTEND_URL = configured;
 		const response = await forgot({ Host: "reset.attacker.test", "X-Forwarded-Proto": "https" });
 		assert.equal(response.status, 500);
-		assert.equal(response.body.message, "Password recovery is temporarily unavailable. Please try again later.");
+		assert.equal(response.body.message, "Request origin validation is unavailable. Please try again later.");
+		assert.throws(passwordResetOrigin, error => error.statusCode === 500);
 		const saved = await User.findById(user.id);
 		assert.ok(saved.passwordResetToken === oldHash, "Invalid config must preserve existing reset credentials");
 		assert.equal(saved.passwordResetExpires.getTime(), oldExpiry);

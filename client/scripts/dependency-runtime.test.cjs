@@ -28,7 +28,8 @@ test("compiled API rewrite and actual Next proxy preserve method, query, JSON, c
 	const received = [];
 	const upstream = http.createServer(async (req, res) => {
 		let body = ""; for await (const chunk of req) body += chunk;
-		received.push({ method: req.method, url: req.url, cookie: req.headers.cookie, body });
+		received.push({ method: req.method, url: req.url, cookie: req.headers.cookie,
+			origin: req.headers.origin, referer: req.headers.referer, body });
 		res.setHeader("Content-Type", "application/json");
 		res.setHeader("Set-Cookie", "jwt=synthetic-response; HttpOnly; Path=/");
 		res.statusCode = req.url.startsWith("/api/v1/users/me") ? 401 : 200;
@@ -47,10 +48,13 @@ test("compiled API rewrite and actual Next proxy preserve method, query, JSON, c
 	});
 	const origin = `http://127.0.0.1:${frontend.address().port}`;
 	const body = JSON.stringify({ email: "local@example.test", password: "synthetic-password" });
-	const login = await fetch(origin + "/api/v1/auth/login?locale=en", { method: "POST", headers: { "Content-Type": "application/json", Cookie: "jwt=synthetic-request" }, body });
+	const login = await fetch(origin + "/api/v1/auth/login?locale=en", { method: "POST", headers: {
+		"Content-Type": "application/json", Cookie: "jwt=synthetic-request", Origin: origin, Referer: `${origin}/en/login`,
+	}, body });
 	assert.equal(login.status, 200); assert.equal((await login.json()).status, "success");
 	assert.match(login.headers.get("set-cookie"), /jwt=synthetic-response; HttpOnly/);
-	assert.deepEqual(received[0], { method: "POST", url: "/api/v1/auth/login?locale=en", cookie: "jwt=synthetic-request", body });
+	assert.deepEqual(received[0], { method: "POST", url: "/api/v1/auth/login?locale=en", cookie: "jwt=synthetic-request",
+		origin, referer: `${origin}/en/login`, body });
 	const me = await fetch(origin + "/api/v1/users/me?scope=global&page=2");
 	assert.equal(me.status, 401); assert.equal((await me.json()).status, "fail");
 	assert.equal(received[1].url, "/api/v1/users/me?scope=global&page=2");

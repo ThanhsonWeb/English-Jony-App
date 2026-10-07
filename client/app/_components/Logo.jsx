@@ -11,7 +11,7 @@ function Logo({ wordlistMobile = false }) {
 				quality={75}
 				priority
 				alt="English-Jony logo"
-				className={`h-10 w-10 rounded-xl sm:h-12 sm:w-12${wordlistMobile ? " max-md:h-[50px] max-md:w-[57px] max-md:object-contain" : ""}`}
+				className={`h-12 w-12 rounded-xl sm:h-12 sm:w-12${wordlistMobile ? " max-md:h-[50px] max-md:w-[57px] max-md:object-contain" : ""}`}
 			/>
 			<span className="hidden whitespace-nowrap text-lg uppercase tracking-wide text-main sm:inline sm:text-xl xl:text-2xl">
 				<span>StudyJony</span>

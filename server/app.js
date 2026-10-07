@@ -16,6 +16,7 @@ const hpp = require("hpp");
 const compression = require("compression");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const csrfProtection = require("./middleware/csrfProtection");
 // test CI/CD deployment
 
 const app = express();
@@ -32,9 +33,11 @@ const apiLimiter = rateLimit({
 });
 // Global Middleware
 app.use(helmet());
+// Check all API mutations before CORS, body parsing or route side effects.
+app.use("/api/v1", csrfProtection);
 app.use(
 	cors({
-		origin: process.env.FRONTEND_URL,
+		origin: process.env.FRONTEND_URL?.replace(/\/+$/, ""),
 		// origin: "http://localhost:3000",
 		credentials: true,
 	}),

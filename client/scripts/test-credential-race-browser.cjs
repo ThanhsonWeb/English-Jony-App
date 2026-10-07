@@ -223,7 +223,9 @@ async function run(width, locale, theme, scenario) {
 		]);
 		OAuth2Client.prototype.getToken = async () => ({ tokens: { id_token: "mock-google-token" } });
 		OAuth2Client.prototype.verifyIdToken = async () => ({ getPayload: () => ({ email: B.email, name: B.name, sub: B.googleId, email_verified: true }) });
-		const app = express(); app.use(express.json(), cookieParser());
+		const app = express();
+		app.use("/api/v1", require("../../server/middleware/csrfProtection"));
+		app.use(express.json(), cookieParser());
 		app.use("/api/v1/auth", require("../../server/routes/authRoutes"));
 		app.use("/api/v1/users", require("../../server/routes/userRoutes"));
 		app.use((error, req, res, next) => res.status(error.statusCode || 500).json({ status: "fail", message: error.statusCode === 401 ? error.message : "Request failed" }));

@@ -4,6 +4,10 @@ const mongoose = require("mongoose");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 
+const isOwnedTopic = async (topic, userId) => topic === null || (
+	mongoose.isObjectIdOrHexString(topic) && await Topic.exists({ _id: topic, user: userId })
+);
+
 exports.getAllVocab = catchAsync(async (req, res, next) => {
 	const filter = {
 		user: req.user.id,
@@ -39,13 +43,8 @@ exports.updateVocab = catchAsync(async (req, res, next) => {
 	]) {
 		if (Object.hasOwn(req.body, field)) updates[field] = req.body[field];
 	}
-	if (Object.hasOwn(updates, "topic") && updates.topic !== null) {
-		if (
-			!mongoose.isObjectIdOrHexString(updates.topic) ||
-			!(await Topic.exists({ _id: updates.topic, user: req.user.id }))
-		) {
-			return next(new AppError("Topic must belong to the authenticated user", 400));
-		}
+	if (Object.hasOwn(updates, "topic") && !(await isOwnedTopic(updates.topic, req.user.id))) {
+		return next(new AppError("Topic must belong to the authenticated user", 400));
 	}
 	const updatedVocab = await Vocab.findOneAndUpdate(
 		{ _id: req.params.id, user: req.user.id },
@@ -70,8 +69,16 @@ exports.updateVocab = catchAsync(async (req, res, next) => {
 });
 
 exports.createNewVocab = catchAsync(async (req, res, next) => {
+	const fields = {};
+	for (const field of ["english", "vietnamese", "pronunciation", "example", "topic"]) {
+		if (Object.hasOwn(req.body, field)) fields[field] = req.body[field];
+	}
+	if (Object.hasOwn(fields, "topic") && !(await isOwnedTopic(fields.topic, req.user.id))) {
+		return next(new AppError("Topic must belong to the authenticated user", 400));
+	}
+	// Review history, timestamps and provenance use server/model defaults only.
 	const newVocab = await Vocab.create({
-		...req.body,
+		...fields,
 		user: req.user.id,
 	});
 

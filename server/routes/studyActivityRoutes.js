@@ -1,10 +1,11 @@
 const express = require("express");
 const authController = require("../controllers/authController");
 const studyActivityController = require("../controllers/studyActivityController");
+const learningRateLimit = require("../middleware/learningRateLimit");
 
 const router = express.Router();
 
-router.use(authController.protect);
+router.use(learningRateLimit.peer, authController.protect, learningRateLimit.user);
 
 router
 	.route("/")
