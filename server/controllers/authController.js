@@ -14,6 +14,9 @@ const credentialCookies = require("../utils/credentialCookies");
 const sessionRevocation = require("../utils/sessionRevocation");
 const { claimRecovery, recoveryResponse } = require("../middleware/recoveryRateLimit");
 const deliverPasswordRecovery = require("../utils/passwordRecovery");
+const { assertPasswordByteLimit } = require("../utils/passwordPolicy");
+const { CLIENT_USER_FIELDS, AUTH_USER_FIELDS, clientUser } = require("../utils/clientUser");
+const privateResponse = require("../middleware/privateResponse");
 
 const GOOGLE_OAUTH_STATE_COOKIE = "google_oauth_state";
 const GOOGLE_OAUTH_LOCALE_COOKIE = "google_oauth_locale";
@@ -74,12 +77,9 @@ const setAuthCookie = (user, res, attemptId) => {
 
 const createSendToken = (user, statusCode, res, attemptId) => {
 	setAuthCookie(user, res, attemptId);
-	// Remove password from output
-	user.password = undefined;
-
 	res.status(statusCode).json({
 		status: "success",
-		data: { user, ...(attemptId ? { credentialAttempt: attemptId } : {}) },
+		data: { user: clientUser(user), ...(attemptId ? { credentialAttempt: attemptId } : {}) },
 	});
 };
 
@@ -103,6 +103,7 @@ const revokeCookieSession = async token => {
 // request Handlers
 exports.signup = catchAsync(async (req, res, next) => {
 	const { name, email, password, passwordConfirm } = req.body;
+	assertPasswordByteLimit(password);
 	let newUser;
 	try {
 		newUser = await User.create({ name, email, password, passwordConfirm });
@@ -125,7 +126,7 @@ exports.login = catchAsync(async (req, res, next) => {
 		return next(new AppError("Vui lòng nhập đầy đủ email và mật khẩu!", 400));
 
 	// Find user and include password field
-	const user = await User.findOne({ email }).select("+password");
+	const user = await User.findOne({ email }).select(`${AUTH_USER_FIELDS} +password`);
 
 	if (!user || !(await user.correctPassword(password, user.password))) {
 		return next(new AppError("Email hoặc mật khẩu không chính xác!", 401));
@@ -195,6 +196,7 @@ const cleanupCredentialCookies = async (req, res) => {
 };
 
 exports.protect = catchAsync(async (req, res, next) => {
+	privateResponse(req, res, () => {});
 	let token;
 
 	// 1. Check for Bearer token (Old way)
@@ -245,7 +247,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 	}
 
 	// check if user still exist
-	const currentUser = await User.findById(decoded.id);
+	const currentUser = await User.findById(decoded.id, AUTH_USER_FIELDS);
 	if (!currentUser)
 		return next(
 			new AppError(" User belong to this token is no longer exist ", 401),
@@ -283,15 +285,16 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 	const frontendOrigin = passwordResetOrigin();
 	const email = typeof req.body.email === "string" ? req.body.email.trim().toLowerCase() : "";
 	const eligible = validator.isEmail(email) && await claimRecovery(email);
-	res.status(200).json(recoveryResponse);
 	// Account lookup and SMTP are outside the public response path, so neither
 	// their results nor their latency can disclose whether an account exists.
 	if (eligible) void deliverPasswordRecovery(email, frontendOrigin).catch(() => {
 		console.warn({ event: "password_recovery_processing_failed" });
 	});
+	return res.status(200).json(recoveryResponse);
 });
 
 exports.resetPassword = catchAsync(async (req, res, next) => {
+	assertPasswordByteLimit(req.body.password);
 	const hashedToken = crypto
 		.createHash("sha256")
 		.update(req.params.token)
@@ -300,7 +303,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 	const user = await User.findOne({
 		passwordResetToken: hashedToken,
 		passwordResetExpires: { $gt: Date.now() },
-	});
+	}).select(`${AUTH_USER_FIELDS} passwordResetToken passwordResetExpires`);
 	if (!user) return next(new AppError("Token is invalid or expired", 400));
 
 	//modify and save new pass to mongo
@@ -327,7 +330,7 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 exports.updatePassword = catchAsync(async (req, res, next) => {
 	// 1. Get current user (+password)
 	const user = await User.findOne({ email: req.user.email }).select(
-		"+password",
+		`${AUTH_USER_FIELDS} +password`,
 	);
 
 	// check passwordCurrent
@@ -340,6 +343,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 		return next(new AppError("Your current password is wrong", 401));
 
 	// modify new pass and save
+	assertPasswordByteLimit(req.body.password);
 	user.password = req.body.password;
 	user.passwordConfirm = req.body.passwordConfirm;
 
@@ -378,11 +382,11 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 	const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
 		new: true,
 		runValidators: true,
-	});
+	}).select(CLIENT_USER_FIELDS);
 	res.status(200).json({
 		status: "success",
 		data: {
-			user: updatedUser,
+			user: clientUser(updatedUser),
 		},
 	});
 });
@@ -488,7 +492,7 @@ exports.googleOAuthCallback = async (req, res) => {
 		stage = "user_lookup";
 		// A verified subject identifies the account; email never authorizes linking.
 		// Fail closed for ambiguous legacy records without modifying their data.
-		const matches = await User.find({ googleId: sub }).limit(2);
+		const matches = await User.find({ googleId: sub }).select(AUTH_USER_FIELDS).limit(2);
 		if (matches.length > 1) {
 			callbackError = "google_account_conflict";
 			throw new Error("Google identity requires account reconciliation");

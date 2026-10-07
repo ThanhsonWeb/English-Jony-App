@@ -33,6 +33,7 @@
 		"validEmail": "Vui lòng nhập địa chỉ email hợp lệ.",
 		"nameLength": "Tên của bạn phải có từ 3 đến 20 ký tự.",
 		"passwordLength": "Mật khẩu phải có ít nhất 8 ký tự.",
+		"passwordTooLong": "Mật khẩu tối đa 72 byte UTF-8. Chữ có dấu và emoji dùng nhiều hơn một byte.",
 		"passwordMismatch": "Mật khẩu xác nhận không trùng khớp.",
 		"loginFailed": "Không thể đăng nhập. Vui lòng thử lại.",
 		"signupFailed": "Không thể tạo tài khoản. Hãy kiểm tra thông tin và thử lại.",

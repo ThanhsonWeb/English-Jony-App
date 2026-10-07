@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcrypt");
 const crypto = require("crypto");
+const { passwordFitsBcrypt, PASSWORD_TOO_LONG } = require("../utils/passwordPolicy");
 const userSchema = new mongoose.Schema(
 	{
 		name: {
@@ -25,6 +26,10 @@ const userSchema = new mongoose.Schema(
 				return !this.googleId;
 			},
 			minLength: [8, "Password must be at least 8 characters"],
+			validate: {
+				validator: function (value) { return !this.isModified("password") || passwordFitsBcrypt(value); },
+				message: PASSWORD_TOO_LONG,
+			},
 			select: false,
 		},
 

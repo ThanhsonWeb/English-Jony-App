@@ -10,6 +10,7 @@ const {
 const { requireCredentialAttempt } = require("../utils/credentialCookies");
 
 const router = express.Router();
+router.use(require("../middleware/privateResponse"));
 // routes
 router.get("/google/state", createGoogleOAuthState);
 router.get("/google/callback", googleOAuthCallback);

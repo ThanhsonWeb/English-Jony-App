@@ -2,13 +2,14 @@ const User = require("../models/userModel");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 const { isValidAvatar, uploadAvatar } = require("../services/avatarUpload");
+const { CLIENT_USER_FIELDS, clientUser } = require("../utils/clientUser");
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
-	const users = await User.find();
+	const users = await User.find().select(CLIENT_USER_FIELDS);
 
 	res.status(200).json({
 		status: " success",
-		data: { users },
+		data: { users: users.map(clientUser) },
 	});
 });
 
@@ -17,7 +18,7 @@ exports.getMe = catchAsync(async (req, res, next) => {
 	res.status(200).json({
 		status: "success",
 		data: {
-			user: req.user,
+			user: clientUser(req.user),
 		},
 	});
 });
@@ -35,7 +36,7 @@ exports.updateTheme = catchAsync(async (req, res, next) => {
 		req.user.id,
 		{ theme },
 		{ returnDocument: "after", runValidators: true },
-	);
+	).select(CLIENT_USER_FIELDS);
 	res.status(200).json({ status: "success", data: { theme: user.theme } });
 });
 
@@ -49,12 +50,12 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 			new: true,
 			runValidators: true,
 		},
-	);
+	).select(CLIENT_USER_FIELDS);
 
 	res.status(200).json({
 		status: "success",
 		data: {
-			user: updatedUser,
+			user: clientUser(updatedUser),
 		},
 	});
 });
@@ -79,6 +80,6 @@ exports.updateAvatar = catchAsync(async (req, res, next) => {
 	const user = await User.findByIdAndUpdate(req.user.id, { avatar }, {
 		returnDocument: "after",
 		runValidators: true,
-	});
-	res.status(200).json({ status: "success", data: { user } });
+	}).select(CLIENT_USER_FIELDS);
+	res.status(200).json({ status: "success", data: { user: clientUser(user) } });
 });

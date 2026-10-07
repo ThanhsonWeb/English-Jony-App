@@ -188,4 +188,3 @@ Those source/data/generator files were not changed. The full client suite is not
 - Dictionary maps, cache, budget and slots are **per Node process**. With N PM2 workers, aggregate admitted work can be N × 600 jobs/10 minutes and N × 8 active jobs; same-word calls on different workers can duplicate work. A shared cache/admission store and provider-side billing/quota limits need deployment planning. Existing learning/attempt in-memory user limits have the same per-worker limitation.
 - No new environment variables are required. F17 proxy topology and F24 cookie topology remain unresolved by this batch.
 - Real provider credential discovery, latency/cancellation, provider quotas/billing, PM2 worker count, production MongoDB indexes and deployed frontend/backend routing were not tested. No production/live verification was performed.
-

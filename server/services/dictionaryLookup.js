@@ -11,7 +11,12 @@ const dictionaryPolicy = Object.freeze({
 function normalizeDictionaryWord(value, policy = dictionaryPolicy) {
 	if (typeof value !== "string" || value.length > policy.maxWordLength * 2) throw new AppError("Invalid dictionary word", 400);
 	const word = value.normalize("NFKC").trim().toLowerCase().replace(/[’‘]/g, "'").replace(/\s+/g, " ");
-	if (!word || word.length > policy.maxWordLength || word.split(" ").length > policy.maxWords || !/^[\p{Script=Latin}\p{M}]+(?:[' -][\p{Script=Latin}\p{M}]+)*$/u.test(word)) {
+	const words = word.split(" ");
+	// Allow trailing-dot abbreviations and dotted initials, not arbitrary domains.
+	const validWords = words.every(part =>
+		/^[\p{Script=Latin}\p{M}]+(?:['-][\p{Script=Latin}\p{M}]+)*$/u.test(part) ||
+		/^(?:[\p{Script=Latin}\p{M}]+\.|(?:\p{Script=Latin}\p{M}*\.)+\p{Script=Latin}\p{M}*\.?)$/u.test(part));
+	if (!word || word.length > policy.maxWordLength || words.length > policy.maxWords || !validWords) {
 		throw new AppError("Use an English word or short phrase", 400);
 	}
 	return word;

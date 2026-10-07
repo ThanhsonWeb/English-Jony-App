@@ -15,8 +15,33 @@ test("valid English words/short phrases normalize; malformed and oversized input
 	const d = fixture(t, { lookup: async word => { calls++; return result(word); } });
 	assert.equal(normalizeDictionaryWord("  TAKE   off "), "take off");
 	for (const word of ["well-known", "don't", "café", "déjà vu"]) assert.equal((await d.lookup(word)).english, word);
-	for (const word of [null, {}, [], "", "a".repeat(65), "x ".repeat(100), "http://evil.test", "<script>", "x/y", "$where", "🙂", "one two three four five six seven eight nine"]) await assert.rejects(d.lookup(word), { statusCode: 400 });
+	for (const word of [null, {}, [], "", "a".repeat(65), "x ".repeat(100), "http://evil.test", "<script>", "x/y", "$where", "🙂", "one two three four five six seven eight nine",
+		"https://u.s.", "www.evil.test", "evil.test", "u.s./path", "mr.<script>", "javascript:alert(1)", "u.s.?x=1", "mr.\u0000",
+		".", ".mr", "mr..", "e..g.", "e.g..", "mr .", "m.r.-", "u.s.1"]) await assert.rejects(d.lookup(word), { statusCode: 400 });
 	assert.equal(calls, 4);
+});
+
+for (const word of ["mr.", "u.s.", "e.g."]) test(`${word}: normalized concurrent lookups and cache hits share one provider job`, async t => {
+	let calls = 0;
+	const d = fixture(t, { policy: { providerJobs: 1 }, lookup: async key => { calls++; await delay(5); return result(key); } });
+	const values = await Promise.all([d.lookup(word), d.lookup(word.toUpperCase()), d.lookup(`  ${word.toUpperCase()}  `)]);
+	for (const value of values) assert.deepEqual(value, result(word).data);
+	assert.deepEqual(await d.lookup(` ${word.toUpperCase()} `), values[0]);
+	assert.equal(calls, 1); assert.equal(d.stats().providerJobs, 1);
+});
+
+test("dotted abbreviations retain normalized length, raw length and word-count limits", async t => {
+	let calls = 0;
+	const d = fixture(t, { lookup: async word => { calls++; return result(word); } });
+	const longest = "a".repeat(63) + ".", eightWords = Array(8).fill("mr.").join(" ");
+	assert.equal((await d.lookup(longest)).english, longest);
+	assert.equal((await d.lookup(eightWords)).english, eightWords);
+	assert.equal(normalizeDictionaryWord("  Mr.   Smith "), "mr. smith");
+	assert.equal(normalizeDictionaryWord("U.S"), "u.s");
+	for (const word of ["a".repeat(64) + ".", Array(9).fill("mr.").join(" "), " ".repeat(126) + "mr."]) {
+		await assert.rejects(d.lookup(word), { statusCode: 400 });
+	}
+	assert.equal(calls, 2);
 });
 
 test("three simultaneous normalized same-word misses share one operation; repeats use cache", async t => {
@@ -111,13 +136,21 @@ test("public controller coalesces real provider adapter calls, aborts losers, bo
 	const server = await new Promise(resolve => { const listener = app.listen(0, "127.0.0.1", () => resolve(listener)); });
 	t.after(() => new Promise(resolve => server.close(resolve)));
 	const base = `http://127.0.0.1:${server.address().port}/dictionary`;
-	const responses = await Promise.all(["apple", "APPLE", " apple "].map(async word => {
-		const response = await fetch(`${base}/${encodeURIComponent(word)}`); assert.equal(response.status, 200); return response.json();
-	}));
-	assert.equal(translations, 1); assert.equal(dictionaryCalls, 2); assert.equal(aborted, 1);
-	assert.equal(responses[0].data.pronunciation, "/apple/"); assert.deepEqual(responses[0], responses[1]);
-	assert.equal((await fetch(`${base}/apple`)).status, 200); assert.equal(translations, 1);
-	assert.equal((await fetch(`${base}/${"a".repeat(65)}`)).status, 400); assert.equal(translations, 1);
+	for (const word of ["apple", "mr.", "u.s.", "e.g."]) {
+		const before = translations;
+		const responses = await Promise.all([word, word.toUpperCase(), ` ${word} `].map(async input => {
+			const response = await fetch(`${base}/${encodeURIComponent(input)}`); assert.equal(response.status, 200); return response.json();
+		}));
+		assert.equal(responses[0].data.english, word);
+		assert.equal(responses[0].data.pronunciation, "/apple/"); assert.deepEqual(responses[0], responses[1]); assert.deepEqual(responses[0], responses[2]);
+		assert.equal(translations, before + 1);
+		assert.equal((await fetch(`${base}/${encodeURIComponent(word.toUpperCase())}`)).status, 200); assert.equal(translations, before + 1);
+	}
+	assert.equal(translations, 4); assert.equal(dictionaryCalls, 8); assert.equal(aborted, 4);
+	for (const word of ["a".repeat(65), "mr..", "e..g.", "https://u.s.", "u.s./path", "mr.<script>"]) {
+		assert.equal((await fetch(`${base}/${encodeURIComponent(word)}`)).status, 400);
+	}
+	assert.equal(translations, 4); assert.equal(dictionaryCalls, 8);
 });
 
 test("actual dictionary HTTP adapters abort on timeout and return a controlled retryable error", async t => {

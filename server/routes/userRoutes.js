@@ -15,6 +15,7 @@ const {
 
 // /api/v1/users
 const router = express.Router();
+router.use(require("../middleware/privateResponse"));
 const avatarLimiter = rateLimit({
 	windowMs: 60 * 60 * 1000,
 	limit: 10,

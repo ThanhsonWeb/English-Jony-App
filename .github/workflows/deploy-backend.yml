@@ -6,31 +6,74 @@ on:
       - main
     paths:
       - "server/**"
+      - ".github/workflows/deploy-backend.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: studyjony-backend-production
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      VPS_HOST: ${{ secrets.VPS_HOST }}
+      VPS_PORT: ${{ secrets.VPS_PORT }}
+      VPS_USER: ${{ secrets.VPS_USER }}
+      DEPLOY_HEALTH_URL: ${{ vars.VPS_HEALTH_URL }}
 
     steps:
-      - name: Setup SSH
+      - name: Check out the triggering revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Validate configuration and pinned SSH identity
+        shell: bash
+        env:
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
+          VPS_HOST_KEY_SHA256: ${{ secrets.VPS_HOST_KEY_SHA256 }}
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+          set -euo pipefail
+          : "${VPS_SSH_KEY:?Missing SSH private key}"
+          : "${VPS_KNOWN_HOSTS:?Missing independently verified known_hosts entry}"
+          : "${VPS_HOST_KEY_SHA256:?Missing independently verified SHA256 host fingerprint}"
+          : "${DEPLOY_HEALTH_URL:?Missing verified loopback health URL}"
+          node -e 'const host = process.env.VPS_HOST || ""; if (!require("node:net").isIP(host) && !/^[A-Za-z0-9][A-Za-z0-9.-]*$/.test(host)) process.exit(1);'
+          [[ "$VPS_USER" =~ ^[A-Za-z_][A-Za-z0-9_-]*$ ]]
+          [[ "$VPS_PORT" =~ ^[1-9][0-9]{0,4}$ ]]
+          (( 10#$VPS_PORT >= 1 && 10#$VPS_PORT <= 65535 ))
+          node server/scripts/check-deployment.js --health-url
+          umask 077
+          mkdir -p "$HOME/.ssh"
+          printf '%s\n' "$VPS_SSH_KEY" > "$HOME/.ssh/id_ed25519"
+          printf '%s\n' "$VPS_KNOWN_HOSTS" > "$HOME/.ssh/known_hosts"
+          ssh-keygen -y -P '' -f "$HOME/.ssh/id_ed25519" > /dev/null
+          host_lookup="$VPS_HOST"
+          if (( 10#$VPS_PORT != 22 )); then host_lookup="[$VPS_HOST]:$VPS_PORT"; fi
+          ssh-keygen -F "$host_lookup" -f "$HOME/.ssh/known_hosts" > "$RUNNER_TEMP/matched-host-key"
+          fingerprints=$(ssh-keygen -lf "$RUNNER_TEMP/matched-host-key" -E sha256 | awk '{print $2}')
+          [[ "$fingerprints" == "$VPS_HOST_KEY_SHA256" ]]
 
       - name: Deploy backend
+        shell: bash
         run: |
-          ssh -i ~/.ssh/id_ed25519 \
-            -p ${{ secrets.VPS_PORT }} \
-            ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
+          set -euo pipefail
+          [[ "$GITHUB_SHA" =~ ^[a-f0-9]{40}$ ]]
+          ssh -i "$HOME/.ssh/id_ed25519" \
+            -o BatchMode=yes -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes -o UpdateHostKeys=no \
+            -o UserKnownHostsFile="$HOME/.ssh/known_hosts" \
+            -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 \
+            -p "$VPS_PORT" "$VPS_USER@$VPS_HOST" \
+            "bash -s -- '$GITHUB_SHA' '$DEPLOY_HEALTH_URL'" < server/scripts/deploy-backend.sh
 
-            cd /var/www/English-Jony-App
-            git pull origin main
-
-            cd server
-            npm install
-
-            pm2 restart studyjony-api --update-env
-            pm2 save
-          EOF
+      - name: Remove runner SSH material
+        if: always()
+        shell: bash
+        run: |
+          rm -f "$HOME/.ssh/id_ed25519" "$HOME/.ssh/known_hosts" "$RUNNER_TEMP/matched-host-key"

@@ -33,6 +33,7 @@
 		"validEmail": "Please enter a valid email address.",
 		"nameLength": "Your name must be between 3 and 20 characters.",
 		"passwordLength": "Your password must be at least 8 characters.",
+		"passwordTooLong": "Your password must be at most 72 UTF-8 bytes. Accented letters and emoji use more than one byte.",
 		"passwordMismatch": "The passwords do not match.",
 		"loginFailed": "Could not sign in. Please try again.",
 		"signupFailed": "Could not create your account. Check your details and try again.",

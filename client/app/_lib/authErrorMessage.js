@@ -2,6 +2,7 @@
 export function getAuthErrorMessage(data, t, fallback) {
 	const message = data.message || "";
 	if (data.code === "signupUnavailable") return t("signupUnavailable");
+	if (data.code === "passwordTooLong") return t("passwordTooLong");
 	if (data.error?.code === 11000 || message.includes("đã được sử dụng")) return t("emailInUse");
 	const rules = [
 		["Vui lòng nhập đầy đủ email và mật khẩu", "credentialsRequired"],
@@ -11,6 +12,7 @@ export function getAuthErrorMessage(data, t, fallback) {
 		["please provide a valid email", "validEmail"],
 		["user must have an email", "validEmail"],
 		["Password must be at least 8 characters", "passwordLength"],
+		["Password must be at most 72 UTF-8 bytes", "passwordTooLong"],
 		["Passwords are not the same", "passwordMismatch"],
 	];
 	const keys = new Set(rules.filter(([text]) => message.includes(text)).map(([, key]) => key));

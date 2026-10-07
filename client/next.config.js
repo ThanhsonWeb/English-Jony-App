@@ -3,8 +3,12 @@
 const createNextIntlPlugin = require("next-intl/plugin");
 
 const withNextIntl = createNextIntlPlugin("./i18n/request.js");
+const { securityHeaders } = require("./security-headers.cjs");
 
 const nextConfig = {
+	async headers() {
+		return [{ source: "/:path*", locale: false, headers: securityHeaders() }];
+	},
 	async rewrites() {
 		return [
 			{
