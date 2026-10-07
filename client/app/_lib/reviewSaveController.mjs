@@ -10,9 +10,10 @@ export function createReviewSaveController(sendReview) {
 	}
 
 	function save(wordId, input) {
+		const eventInput = { ...input, reviewId: crypto.randomUUID() };
 		update({ pending: snapshot.pending + 1 });
 		try {
-			void Promise.resolve(sendReview(wordId, input))
+			void Promise.resolve(sendReview(wordId, eventInput))
 				.catch(() => update({ failed: snapshot.failed + 1 }))
 				.finally(() => update({ pending: snapshot.pending - 1 }));
 		} catch {

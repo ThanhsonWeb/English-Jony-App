@@ -1,53 +1,23 @@
 const { Translate } = require("@google-cloud/translate").v2;
-
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
+const { createDictionaryLookup } = require("../services/dictionaryLookup");
 
-const translate = new Translate();
-
-const dictionaryCache = new Map();
-const dictionaryEnrichmentRequests = new Map();
-
-const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
-
-// Fast lookup shown to the user.
+// Native HTTP timeout plus no automatic paid-request retries.
+const translate = new Translate({ timeout: 3000, autoRetry: false, maxRetries: 0 });
 const FAST_DICTIONARY_TIMEOUT_MS = 900;
-
-// Background lookup can wait longer because the user is not blocked.
 const BACKGROUND_DICTIONARY_TIMEOUT_MS = 5000;
 
-/**
- * ----------------------------------------
- * CACHE
- * ----------------------------------------
- */
-
-function getCachedResult(word) {
-	const cached = dictionaryCache.get(word);
-
-	if (!cached) return null;
-
-	if (Date.now() - cached.createdAt >= CACHE_TTL_MS) {
-		dictionaryCache.delete(word);
-		return null;
+async function readProviderJson(response) {
+	const chunks = [];
+	let size = 0;
+	for await (const chunk of response.body) {
+		size += chunk.length;
+		if (size > 64 * 1024) throw new Error("Dictionary response too large");
+		chunks.push(chunk);
 	}
-
-	return cached;
+	return JSON.parse(Buffer.concat(chunks).toString("utf8"));
 }
-
-function saveToCache(word, data, dictionaryComplete = false) {
-	dictionaryCache.set(word, {
-		createdAt: Date.now(),
-		dictionaryComplete,
-		data,
-	});
-}
-
-/**
- * ----------------------------------------
- * DICTIONARY PROVIDERS
- * ----------------------------------------
- */
 
 async function fetchDictionaryApi(word, signal) {
 	const response = await fetch(
@@ -59,7 +29,7 @@ async function fetchDictionaryApi(word, signal) {
 
 	if (!response.ok) return null;
 
-	const data = await response.json();
+	const data = await readProviderJson(response);
 
 	return data?.[0] || null;
 }
@@ -74,7 +44,7 @@ async function fetchFreeDictionaryApi(word, signal) {
 
 	if (!response.ok) return null;
 
-	const data = await response.json();
+	const data = await readProviderJson(response);
 
 	const entry = data.entries?.[0];
 
@@ -112,68 +82,23 @@ async function fetchFreeDictionaryApi(word, signal) {
 	};
 }
 
-/**
- * ----------------------------------------
- * TIMEOUT
- * ----------------------------------------
- */
-
-async function fetchWithTimeout(fetcher, timeoutMs) {
-	const controller = new AbortController();
-
-	const timeout = setTimeout(() => {
-		controller.abort();
-	}, timeoutMs);
-
-	try {
-		return await fetcher(controller.signal);
-	} finally {
-		clearTimeout(timeout);
-	}
-}
-
-/**
- * ----------------------------------------
- * FETCH DICTIONARY
- *
- * Both providers run at the SAME TIME.
- * First valid result wins.
- * ----------------------------------------
- */
 
 async function fetchDictionaryEntry(word, timeoutMs) {
-	const makeValidResult = (promise) =>
-		promise.then((result) => {
-			if (!result) {
-				throw new Error("No dictionary result");
-			}
-
-			return result;
-		});
-
-	const primaryPromise = makeValidResult(
-		fetchWithTimeout((signal) => fetchDictionaryApi(word, signal), timeoutMs),
-	);
-
-	const fallbackPromise = makeValidResult(
-		fetchWithTimeout(
-			(signal) => fetchFreeDictionaryApi(word, signal),
-			timeoutMs,
-		),
-	);
-
-	try {
-		return await Promise.any([primaryPromise, fallbackPromise]);
-	} catch {
-		return null;
+	const controller = new AbortController();
+	const timeout = setTimeout(() => controller.abort(), timeoutMs);
+	const valid = async fetcher => {
+		const result = await fetcher(word, controller.signal);
+		if (!result) throw new Error("No dictionary result");
+		return result;
+	};
+	const requests = [valid(fetchDictionaryApi), valid(fetchFreeDictionaryApi)];
+	try { return await Promise.any(requests); }
+	catch { return null; }
+	finally {
+		clearTimeout(timeout); controller.abort();
+		await Promise.allSettled(requests);
 	}
 }
-
-/**
- * ----------------------------------------
- * NORMALIZE DICTIONARY DATA
- * ----------------------------------------
- */
 
 function getDictionaryFields(entry) {
 	if (!entry) {
@@ -237,195 +162,41 @@ async function translateExample(example) {
 	}
 }
 
-/**
- * ----------------------------------------
- * BACKGROUND ENRICHMENT
- *
- * Does NOT block the user's request.
- * ----------------------------------------
- */
 
-function enrichCachedResult(word) {
-	if (dictionaryEnrichmentRequests.has(word)) {
-		return;
-	}
-
-	const request = (async () => {
-		try {
-			const cached = dictionaryCache.get(word);
-
-			if (!cached) return;
-
-			let dictionaryFields = {
-				pronunciation: "",
-				audioUrl: "",
-				partOfSpeech: "",
-				example: "",
-			};
-
-			/*
-			 * If dictionary data is missing,
-			 * retry in background with a longer timeout.
-			 */
-			if (!cached.dictionaryComplete) {
-				const entry = await fetchDictionaryEntry(
-					word,
-					BACKGROUND_DICTIONARY_TIMEOUT_MS,
-				);
-
-				if (entry) {
-					dictionaryFields = getDictionaryFields(entry);
-
-					cached.data = {
-						...cached.data,
-						...dictionaryFields,
-					};
-
-					cached.dictionaryComplete = true;
-				}
-			} else {
-				dictionaryFields = {
-					pronunciation: cached.data.pronunciation || "",
-					audioUrl: cached.data.audioUrl || "",
-					partOfSpeech: cached.data.partOfSpeech || "",
-					example: cached.data.example || "",
-				};
-			}
-
-			/*
-			 * Translate the example separately.
-			 */
-			const example = dictionaryFields.example || cached.data.example || "";
-
-			if (example && !cached.data.exampleVietnamese) {
-				const exampleVietnamese = await translateExample(example);
-
-				if (exampleVietnamese) {
-					cached.data.exampleVietnamese = exampleVietnamese;
-				}
-			}
-
-			/*
-			 * Keep original cache creation time.
-			 *
-			 * We don't want background enrichment to
-			 * accidentally restart the 24-hour TTL.
-			 */
-		} catch {
-			// Background enrichment failure should never
-			// break the user's lookup request.
-		}
-	})().finally(() => {
-		dictionaryEnrichmentRequests.delete(word);
-	});
-
-	dictionaryEnrichmentRequests.set(word, request);
+const limited = (value, max) => typeof value === "string" ? value.slice(0, max) : "";
+function boundFields(fields) {
+	return {
+		pronunciation: limited(fields.pronunciation, 200), audioUrl: limited(fields.audioUrl, 1000),
+		partOfSpeech: limited(fields.partOfSpeech, 100), example: limited(fields.example, 2000),
+	};
 }
 
-/**
- * ----------------------------------------
- * LOOKUP WORD
- * ----------------------------------------
- */
-
-exports.lookupWord = catchAsync(async (req, res, next) => {
-	const word = req.params.word?.trim().toLowerCase();
-
-	if (!word) {
-		return next(new AppError("Please provide a word", 400));
-	}
-
-	const cachedResult = getCachedResult(word);
-
-	if (cachedResult) {
-		res.status(200).json({
-			status: "success",
-			data: cachedResult.data,
-		});
-
-		/*
-		 * Complete missing information in background.
-		 */
-		if (
-			!cachedResult.dictionaryComplete ||
-			(cachedResult.data.example && !cachedResult.data.exampleVietnamese)
-		) {
-			enrichCachedResult(word);
+const dictionary = createDictionaryLookup({
+	async lookup(word) {
+		const [vietnamese, entry] = await Promise.all([translateWord(word), fetchDictionaryEntry(word, FAST_DICTIONARY_TIMEOUT_MS)]);
+		const fields = boundFields(getDictionaryFields(entry));
+		if (!vietnamese && !fields.pronunciation && !fields.example && !fields.partOfSpeech) throw new AppError("Dictionary is temporarily unavailable", 503);
+		return { dictionaryComplete: Boolean(entry), data: {
+			english: word, vietnamese: limited(vietnamese, 1000), ...fields, exampleVietnamese: "",
+		} };
+	},
+	async enrich(word, cached) {
+		let data = { ...cached.data }, dictionaryComplete = cached.dictionaryComplete;
+		if (!dictionaryComplete) {
+			const entry = await fetchDictionaryEntry(word, BACKGROUND_DICTIONARY_TIMEOUT_MS);
+			if (entry) { data = { ...data, ...boundFields(getDictionaryFields(entry)) }; dictionaryComplete = true; }
 		}
+		if (data.example && !data.exampleVietnamese) data.exampleVietnamese = limited(await translateExample(data.example), 2000);
+		return { data, dictionaryComplete };
+	},
+});
 
-		return;
+exports.lookupWord = catchAsync(async (req, res) => {
+	try {
+		const data = await dictionary.lookup(req.params.word);
+		res.status(200).json({ status: "success", data });
+	} catch (error) {
+		if (error.statusCode === 503) res.set("Retry-After", "5");
+		throw error;
 	}
-
-	/**
-	 * 2. FIRST LOOKUP
-	 *
-	 * Translation and dictionary lookup happen together.
-	 *
-	 * Dictionary gets only ~900ms before we stop waiting.
-	 */
-	const start = Date.now();
-
-	const translationPromise = (async () => {
-		const time = Date.now();
-
-		const result = await translateWord(word);
-
-		return result;
-	})();
-
-	const dictionaryPromise = (async () => {
-		const time = Date.now();
-
-		const result = await fetchDictionaryEntry(word, FAST_DICTIONARY_TIMEOUT_MS);
-
-		return result;
-	})();
-
-	const [translationResult, dictionaryResult] = await Promise.allSettled([
-		translationPromise,
-		dictionaryPromise,
-	]);
-
-	const vietnamese =
-		translationResult.status === "fulfilled" ? translationResult.value : "";
-
-	const dictionaryEntry =
-		dictionaryResult.status === "fulfilled" ? dictionaryResult.value : null;
-
-	const dictionaryFields = getDictionaryFields(dictionaryEntry);
-
-	/**
-	 * IMPORTANT:
-	 *
-	 * Do NOT translate the example here.
-	 *
-	 * That would create another network request
-	 * before responding to the user.
-	 */
-	const data = {
-		english: word,
-		vietnamese,
-
-		...dictionaryFields,
-
-		exampleVietnamese: "",
-	};
-
-	/**
-	 * Save even partial results.
-	 */
-	saveToCache(word, data, Boolean(dictionaryEntry));
-
-	/**
-	 * 3. RESPOND NOW ⚡
-	 */
-	res.status(200).json({
-		status: "success",
-		data,
-	});
-
-	/**
-	 * 4. FINISH EXTRA DATA IN BACKGROUND
-	 */
-	enrichCachedResult(word);
 });

@@ -8,6 +8,14 @@ const AppError = require("../utils/appError.js");
 const StudyActivity = require("../models/studyActivityModel");
 const { markQualifiedStudy } = require("../services/studyStreak");
 const { isKnownDialogueTask } = require("../utils/dialogueCatalogue");
+const DialogueAttempt = require("../models/dialogueAttemptModel");
+const { startDialogueAttempt, claimDialogueAttempt } = require("../services/dialogueAttempt");
+
+exports.startTask = catchAsync(async (req, res) => {
+	const { lessonId, dialogueId, taskId } = req.params;
+	const attempt = await startDialogueAttempt(req.user._id, [lessonId, dialogueId, taskId]);
+	res.status(200).json({ status: "success", data: attempt });
+});
 
 // GET /api/v1/dialogue-progress/:lessonId
 exports.getLessonProgress = catchAsync(async (req, res, next) => {
@@ -46,19 +54,21 @@ exports.completeTask = catchAsync(async (req, res, next) => {
 	const filter = { user: req.user._id, lessonId, dialogueId };
 	const awardKey = `dialogue:${[lessonId, dialogueId, taskId].map(encodeURIComponent).join(":")}`;
 	const studiedAt = new Date();
-	await Promise.all([DialogueProgress.init(), XPEvent.init(), StudyActivity.init()]);
+	await Promise.all([DialogueProgress.init(), XPEvent.init(), StudyActivity.init(), DialogueAttempt.init()]);
 
 	let result;
 	for (let attempt = 0; attempt < 3; attempt += 1) {
 		try {
 			result = await mongoose.connection.transaction(async (session) => {
+				const claim = await claimDialogueAttempt(req.user._id, [lessonId, dialogueId, taskId], req.body || {}, session, studiedAt);
 				const previous = await DialogueProgress.findOne(filter).session(session).lean();
 				const alreadyCompleted = previous?.completedTaskIds.includes(taskId) ?? false;
 				const progress = await DialogueProgress.findOneAndUpdate(filter,
 					{ $addToSet: { completedTaskIds: taskId } },
 					{ returnDocument: "after", upsert: true, runValidators: true, session });
 
-				await markQualifiedStudy(req.user._id, { session, now: studiedAt });
+				// A lost-response retry is not new activity, including after midnight.
+				if (claim.fresh) await markQualifiedStudy(req.user._id, { session, now: studiedAt });
 				if (alreadyCompleted) {
 					// Old completions with no XP event are replays, not new rewards.
 					const user = await User.findById(req.user._id).select("totalXp").session(session).lean();
@@ -77,6 +87,9 @@ exports.completeTask = catchAsync(async (req, res, next) => {
 			}, { readPreference: "primary", readConcern: { level: "snapshot" }, writeConcern: { w: "majority" } });
 			break;
 		} catch (error) {
+			if (["studyAttemptExpired", "studyAttemptNotReady"].includes(error.code)) {
+				return res.status(409).json({ status: "fail", code: error.code, message: error.message, retryAfterMs: error.retryAfterMs });
+			}
 			// A racing first upsert can hit a unique index instead of a transient
 			// write conflict. Restart the entire transaction to read the winner.
 			const progressCollision = error.keyPattern?.user && error.keyPattern?.lessonId && error.keyPattern?.dialogueId;

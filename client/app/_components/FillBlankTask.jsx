@@ -80,7 +80,7 @@ function FillBlankTask({
 		);
 
 		setResult(isCorrect ? "correct" : "wrong");
-		if (isCorrect) onComplete?.();
+		if (isCorrect) onComplete?.({ answers: answerValues });
 	}
 
 	function getInputBorderColor(index) {

@@ -1,3 +1,4 @@
+const { randomUUID } = require("node:crypto");
 const assert = require("node:assert/strict");
 const { test, before, after, beforeEach } = require("node:test");
 const mongoose = require("mongoose");
@@ -257,6 +258,7 @@ test("failure rolls back progress, qualification and XP", async t => {
 });
 test("HTTP requires ownership and valid review input; generic GET/PATCH never earn XP", async () => {
 	async function request(path, method, body, auth = token) {
+		if (path.endsWith("/review") && body) body = { ...body, reviewId: randomUUID() };
 		return fetch(url + path, { method, headers: { "Content-Type": "application/json", ...(auth ? { Authorization: `Bearer ${auth}` } : {}) }, ...(body ? { body: JSON.stringify(body) } : {}) });
 	}
 	assert.equal((await request(`/${word.id}/review`, "POST", writing, null)).status, 401);

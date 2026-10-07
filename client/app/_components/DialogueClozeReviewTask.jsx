@@ -251,7 +251,7 @@ function DialogueClozeReviewTask({
 		setBlankResults(nextResults);
 
 		if (allCorrect) {
-			onComplete?.();
+			onComplete?.({ answers });
 			setSelectedBlankIndex(null);
 			return;
 		}

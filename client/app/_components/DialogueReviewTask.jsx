@@ -69,7 +69,7 @@ function DialogueReviewTask({
 								? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
 									: completionHref || `/dialogue/${lessonId}`
 						}
-						onClick={onComplete}
+						onClick={() => onComplete?.({ acknowledged: true })}
 						className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500"
 					>
 						{nextTask ? t("continueArrow") : t("completeDialogue")}

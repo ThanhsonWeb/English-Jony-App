@@ -104,7 +104,7 @@ function ArrangeWordsTask({
 			normalizeAnswer(selectedWords) === normalizeAnswer(task.answer);
 
 		setResult(isCorrect ? "correct" : "wrong");
-		if (isCorrect) onComplete?.();
+		if (isCorrect) onComplete?.({ answers: [selectedWords.join(" ")] });
 	}
 
 	function resetAnswer() {

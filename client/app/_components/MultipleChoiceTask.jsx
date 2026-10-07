@@ -39,7 +39,7 @@ function MultipleChoiceTask({
 		const isCorrect = selected === task.answer;
 
 		setResult(isCorrect ? "correct" : "wrong");
-		if (isCorrect) onComplete?.();
+		if (isCorrect) onComplete?.({ optionIndex: task.options.indexOf(selected) });
 	}
 
 	return (

@@ -4,6 +4,7 @@ const learningRateLimitPolicy = Object.freeze({
 	windowMs: 10 * 60 * 1000,
 	readUser: 3000,
 	writeUser: 600,
+	attemptUser: 180,
 	readPeer: 60000,
 	writePeer: 12000,
 });
@@ -36,6 +37,7 @@ function createLearningRateLimits(policy = learningRateLimitPolicy) {
 	return {
 		peer: (req, res, next) => (isRead(req) ? readPeer : writePeer)(req, res, next),
 		user: (req, res, next) => (isRead(req) ? readUser : writeUser)(req, res, next),
+		attempt: create("attemptUser", userKey),
 	};
 }
 

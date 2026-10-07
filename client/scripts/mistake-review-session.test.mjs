@@ -38,7 +38,8 @@ for (const mode of ["quiz", "writing"]) {
 		assert.equal(session.answer(true).state.finished, true);
 		assert.equal(session.getSnapshot().mistakesRemaining, 0);
 		assert.deepEqual(calls.map(({ wordId }) => wordId), ["word-0", "word-1", "word-2"]);
-		assert.deepEqual(calls[0].input, firstWrong);
+		assert.deepEqual(calls[0].input, { ...firstWrong, reviewId: calls[0].input.reviewId });
+		assert.equal(new Set(calls.map(call => call.input.reviewId)).size, 3);
 	});
 
 	test(`${mode}: a repeat mistake returns in the next round without another save`, () => {

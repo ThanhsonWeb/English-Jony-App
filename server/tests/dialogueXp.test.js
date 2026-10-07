@@ -1,3 +1,4 @@
+const { completionFor } = require("./helpers/learningAttempt");
 const assert = require("node:assert/strict");
 const { before, after, beforeEach, test } = require("node:test");
 const express = require("express");
@@ -56,6 +57,9 @@ beforeEach(async () => {
 });
 
 async function complete(taskId = "1", { lessonId = "asking-for-directions", dialogueId = "finding-a-cafe", authToken = token, body = {} } = {}) {
+	if (authToken && require("../utils/dialogueCatalogue").isKnownDialogueTask(lessonId, dialogueId, taskId)) {
+		body = { ...await completionFor(jwt.decode(authToken).id, [lessonId, dialogueId, taskId]), ...body };
+	}
 	const response = await fetch(`${baseUrl}/${encodeURIComponent(lessonId)}/${encodeURIComponent(dialogueId)}/tasks/${encodeURIComponent(taskId)}`, {
 		method: "PATCH",
 		headers: { "Content-Type": "application/json", ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}) },
@@ -218,8 +222,9 @@ test("legacy increments and visits never qualify; zero-XP replay does and preser
 			method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
 			body: JSON.stringify({ hasQualifiedStudy: true }),
 		});
-		assert.equal(response.status, 200);
+		assert.equal(response.status, 405);
 	}
+	await StudyActivity.create({ user: user.id, date: vietnamDay(), count: 2 });
 	const legacy = await StudyActivity.findOne().lean();
 	assert.equal(legacy.count, 2);
 	assert.equal(legacy.hasQualifiedStudy, false);

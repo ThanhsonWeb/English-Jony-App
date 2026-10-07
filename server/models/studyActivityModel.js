@@ -13,7 +13,7 @@ const studyActivitySchema = new mongoose.Schema(
 		},
 		count: {
 			type: Number,
-			default: 1,
+			default: 0,
 		},
 		hasQualifiedStudy: { type: Boolean, default: false },
 		firstStudyAt: Date,

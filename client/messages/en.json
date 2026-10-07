@@ -581,6 +581,7 @@
 		"enterWord": "Please enter an English word.",
 		"notFound": "This word could not be found.",
 		"lookupError": "The word cannot be looked up right now.",
+		"invalidWord": "Enter an English word or short phrase (up to 64 characters).",
 		"play": "Play the pronunciation of {word}",
 		"save": "Add to wordlist",
 		"saved": "Added to wordlist",

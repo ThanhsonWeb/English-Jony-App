@@ -85,9 +85,9 @@ export default function DialogueTaskPage() {
 		setGuestReminderRequested(true);
 	}
 
-	const onComplete = async () => {
+	const onComplete = async (completion) => {
 		maybeShowGuestReminder();
-		return progressSave.save();
+		return progressSave.save(completion);
 	};
 
 	const props = {

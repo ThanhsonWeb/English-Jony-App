@@ -107,3 +107,16 @@ test("peer keys ignore forwarded identity, normalize mapped IPv4 and aggregate I
 	assert.equal(key("2001:db8:abcd:1200::1"), key("2001:db8:abcd:1200::2"));
 	assert.equal(peerKey({}), "unknown-peer");
 });
+
+test("attempt issuance has a separate generous per-user quota shared by all task IDs", async t => {
+	const policy = { ...learningRateLimitPolicy, attemptUser: 2 };
+	const limits = createLearningRateLimits(policy), app = express();
+	app.use((req, res, next) => { req.user = { _id: req.get("X-Test-User") }; next(); }, limits.attempt);
+	app.post("/tasks/:id/attempt", (req, res) => res.json({ status: "success" }));
+	const server = await new Promise(resolve => { const listener = app.listen(0, "127.0.0.1", () => resolve(listener)); });
+	t.after(() => new Promise(resolve => server.close(resolve)));
+	const request = (id, user = "A") => fetch(`http://127.0.0.1:${server.address().port}/tasks/${id}/attempt`, { method: "POST", headers: { "X-Test-User": user, "X-Forwarded-For": `198.51.100.${id}` } });
+	assert.equal((await request(1)).status, 200); assert.equal((await request(2)).status, 200);
+	assert.equal((await request(3)).status, 429); assert.equal((await request(3, "B")).status, 200);
+	assert.equal(learningRateLimitPolicy.attemptUser, 180);
+});

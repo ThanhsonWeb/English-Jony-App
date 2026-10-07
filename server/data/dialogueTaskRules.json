@@ -1,0 +1,7063 @@
+[
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"find"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"10"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"next to"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"12"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"bakery"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Look for"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"15"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"door"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"can see"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"18"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"across the street"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"2"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"meet"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"21"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"at"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"for"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"See you soon"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"25"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"find",
+			"inside",
+			"outside",
+			"straight ahead",
+			"left",
+			"traffic lights",
+			"near",
+			"next to",
+			"bakery",
+			"Look for",
+			"blue door",
+			"across the street",
+			"meet",
+			"at the door",
+			"for",
+			"See you soon"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"inside"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"outside"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"5"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"straight ahead"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"7"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"traffic lights"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-a-cafe",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"near"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Excuse"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"near"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"11"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"next to"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"13"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Is"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"next to"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"across from"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"17"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"across from"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"far"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"bus stop"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"20"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"on foot"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"22"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"two",
+			"on foot"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"25"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"Excuse me",
+			"straight",
+			"left",
+			"near",
+			"next to",
+			"bus stop",
+			"across from",
+			"far",
+			"on foot",
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"3"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"straight"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"5"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Go",
+			"straight along"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"left"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"bank"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-bus-stop",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"turn left",
+			"at"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"going",
+			"today"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"do",
+			"need"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Which platform",
+			"need"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"three",
+			"leaves",
+			"ten"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"13"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"leaves",
+			"ten minutes"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"How long",
+			"take"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"16"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"17"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"change",
+			"trains"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Do",
+			"need",
+			"to"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"take",
+			"ten"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"change trains"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"train",
+			"goes"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"22"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"for",
+			"again"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"24"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"25"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"Lake Town",
+			"number ten train",
+			"buy a ticket",
+			"ticket machine",
+			"platform",
+			"leaves",
+			"How long",
+			"twenty",
+			"change trains",
+			"goes straight",
+			"help",
+			"good trip"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"3"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"buy",
+			"ticket"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Where",
+			"can"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Where can I buy",
+			"a ticket"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"use",
+			"ticket machine"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"8"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"finding-the-train-station",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Which",
+			"platform"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"helped",
+			"yesterday"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"10"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"traffic",
+			"lights"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"12"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"turn right",
+			"traffic lights"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Right"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"at",
+			"traffic",
+			"lights"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"on",
+			"corner"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"across",
+			"from",
+			"bakery"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"18"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"far"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"2"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"from",
+			"here"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Is it far",
+			"from"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ten",
+			"on",
+			"foot"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"23"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ten",
+			"on foot"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"25"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"helped",
+			"remember",
+			"way around",
+			"supermarket",
+			"go past",
+			"turn right",
+			"traffic lights",
+			"across from",
+			"far",
+			"on foot"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"way",
+			"around"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"4"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"know",
+			"where"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"6"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Do you",
+			"where"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"along",
+			"past"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions",
+			"going-to-the-supermarket",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"street",
+			"bank"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Wi-Fi"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"password"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"what's the"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"12"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"coffee123"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"say that again"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"please"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"coffee one two three"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"connect"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"How do I"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"19"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Is there"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Choose"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"enter the password"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"22"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"connected"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Enjoy your coffee"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"25"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"Wi-Fi",
+			"free",
+			"Wi-Fi name",
+			"Coffee House Guest",
+			"password",
+			"coffee123",
+			"say that again",
+			"coffee one two three",
+			"connect",
+			"enter the password",
+			"connected",
+			"Enjoy your coffee"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"3"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"free"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Yes, there is"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Wi-Fi name"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"What's the"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"8"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"asking-about-the-wifi",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Coffee House Guest"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"a little hungry"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"10"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"looks good"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"chocolate muffin"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"very sweet"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Is it"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"15"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"a little sweet"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"soft"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"I'll get"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"the muffin"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"get a snack"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"20"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Good choice"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"share"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"if you want"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"24"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"25"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"a little hungry",
+			"feel like eating",
+			"Something small",
+			"muffins",
+			"looks good",
+			"very sweet",
+			"a little sweet",
+			"I'll get",
+			"Good choice",
+			"share"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"feel like eating"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"What do you"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"5"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Something small"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"big meal"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"8"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"choosing-a-snack",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"muffins",
+			"cookies"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Excuse me"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"get"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"got"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"large cappuccino"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"13"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"You're right"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"your order"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Could you"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"check my order"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"18"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Of course"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"wrong drink"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"small latte"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"No problem"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"right drink"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"24"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"25"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"wrong drink",
+			"order",
+			"small latte",
+			"get",
+			"large cappuccino",
+			"You're right",
+			"check my order",
+			"Of course",
+			"Thank you",
+			"right drink"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"3"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"I'm sorry"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"order"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ordered"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"small latte"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"8"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"fixing-an-order",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"what drink"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"drinks",
+			"menu"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"10"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"milk"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"good"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sweet"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sugar"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"add"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"16"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"small"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"I'll get"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"19"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"coffee"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"iced"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"order"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ready to"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"23"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"drinks",
+			"What kind of",
+			"strong",
+			"try a latte",
+			"a lot of milk",
+			"That sounds good",
+			"add some sugar",
+			"I'll get",
+			"iced coffee",
+			"ready to order"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"What kind of"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"4"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"strong"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"coffee"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"7"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"try"
+		]
+	},
+	{
+		"ids": [
+			"coffee-shop",
+			"ordering-a-coffee",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"a latte"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"everything you needed"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"by card"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"11"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"We take"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"cash and cards"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Can I"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"my phone too"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"you can"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"a bag"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"18"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"One bag"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"2"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"is enough"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ten cents"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Is that okay"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"23"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"that's fine"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"You're welcome"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Have a nice"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"27"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"find everything you needed",
+			"Yes, we did",
+			"How much",
+			"eighteen dollars and fifty cents",
+			"pay by card",
+			"cash and cards",
+			"pay with my phone",
+			"you can",
+			"a bag",
+			"One bag is enough",
+			"Is that okay",
+			"that's fine",
+			"Have a nice day"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Yes, we did"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"How much"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"altogether"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"6"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"eighteen dollars"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"fifty cents"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"checking-out",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Can I pay"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"found the bread"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"cheaper"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"What about"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Red or green"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"13"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"red ones"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"look fresh"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"How many"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"should we get"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"18"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"four"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"orange juice"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ripe"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"everything"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Let's go"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"checkout"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"24"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"25"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"orange juice",
+			"two sizes",
+			"Which one should we get",
+			"small one",
+			"don't need much",
+			"cheaper",
+			"Red or green",
+			"look fresh",
+			"How many",
+			"four",
+			"ripe",
+			"everything",
+			"checkout"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"two sizes"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Which one"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"should we get"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"6"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Let's get"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"don't need much"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"choosing-food",
+			"9"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"start"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"eggs"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"look for"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"the fruit"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"13"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"over there"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"where is"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"the bread"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"don't"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Let's ask someone"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Where can we find"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"2"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"the bread"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"21"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"aisle four"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"next to the cakes"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"24"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"the orange juice"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"26"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"Where should we start",
+			"Let's start with",
+			"Do you know where",
+			"dairy section",
+			"near the eggs",
+			"eggs",
+			"look for",
+			"over there",
+			"where is the bread",
+			"Let's ask someone",
+			"Where can we find",
+			"aisle four",
+			"next to the cakes",
+			"the orange juice"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Let's start"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"the milk"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Good idea"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Do you know where"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"7"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"dairy section"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"finding-items",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"near the eggs"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"need"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"10"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"don't"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"one loaf"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"13"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"fruit"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"bananas"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"apples"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"anything"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"to drink"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"19"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"this week"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Let's get"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"orange juice"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"everything"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"23"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"24"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"food",
+			"What do we need",
+			"milk",
+			"eggs",
+			"bread",
+			"one loaf",
+			"fruit",
+			"bananas",
+			"apples",
+			"to drink",
+			"orange juice",
+			"our list"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"What"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"do we need"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"5"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"milk"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"eggs"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"bread"
+		]
+	},
+	{
+		"ids": [
+			"grocery-store",
+			"making-a-shopping-list",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"at home"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tomato soup"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"lighter"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"perfect"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"food"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"okay"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"great"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"thank you"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"more water"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"please"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"19"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"spicy"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"need"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"anything else"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"thank you"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"all"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"24"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Enjoy"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"26"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"tomato soup",
+			"bread",
+			"soft",
+			"favorite dish",
+			"lighter",
+			"food",
+			"great",
+			"more water",
+			"anything else",
+			"all",
+			"Enjoy"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"3"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"bread"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"chicken pasta"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"soft"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"favorite"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"think"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"during-the-meal",
+			"9"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"evening"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"fine"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"window"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"quiet"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"window"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"quiet"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sounds good"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"17"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"would like"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"table"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"How many"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"20"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ready"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"welcome"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"meal"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"25"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"How many",
+			"for two",
+			"reservation",
+			"do not",
+			"window",
+			"quiet",
+			"quiet area",
+			"sounds good",
+			"would like",
+			"ready",
+			"Thank you",
+			"your meal"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"table"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"two"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"5"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"have"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"reservation"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"8"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"getting-a-table",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"not"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ready"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"10"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"would like"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tomato soup"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"13"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"bread"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"too"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"16"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"drink"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"like"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"juice"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"order"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"water"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"orange juice"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"22"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"right"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"25"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"ready",
+			"would like",
+			"water",
+			"else",
+			"tomato soup",
+			"bread",
+			"drink",
+			"Orange juice",
+			"orange juice",
+			"right",
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"3"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"would like"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"chicken pasta"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"glass"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"water"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"anything"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"ordering-food",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"else"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"menu"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"pasta"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"lighter"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"What about"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tomato soup"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sounds good"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"spicy"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"17"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"think"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"many dishes"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tomato soup"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"think"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"chicken pasta"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"know"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"24"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ready"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"26"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"menu",
+			"dishes",
+			"try",
+			"chicken pasta",
+			"lighter",
+			"What about",
+			"spicy",
+			"think",
+			"tomato soup",
+			"chicken pasta",
+			"know",
+			"ready"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"menu"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"try"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"6"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"chicken"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"looks good"
+		]
+	},
+	{
+		"ids": [
+			"restaurant",
+			"reading-the-menu",
+			"9"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"got bored"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"read more"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"get tired"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"need to"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"a lot"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"when"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"get bored"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"one more"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"stop"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"easy"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"stopped"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tonight"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"timer"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"22"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"I will"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tonight"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"25"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"26"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"got bored",
+			"ten minutes",
+			"Every day",
+			"very long",
+			"get tired",
+			"a lot",
+			"get bored",
+			"one more",
+			"easy",
+			"timer",
+			"try again"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"3"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"read"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"after dinner"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"6"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Every day"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Ten minutes"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"only-ten-minutes",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"very long"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"book"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ten minutes"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"enough"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"to start"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"13"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"can"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"after dinner"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"get bored"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"worry"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"a little"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"19"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"each"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"What if"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"miss"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Start again"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"continue"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"24"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"25"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"book",
+			"old",
+			"should",
+			"ten minutes",
+			"Only",
+			"enough",
+			"after dinner",
+			"get bored",
+			"a little",
+			"miss",
+			"continue"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"3"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"old"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"should"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"with it"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ten minutes"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"every day"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-old-book",
+			"9"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"presentation"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"same habit"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"At first"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"bored"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"13"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"easy"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tried again"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"every night"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"17"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"happened"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"every day"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Our topic"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"enjoy"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"21"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Small habits"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help us"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"need"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"keep going"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"clear"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"27"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"28"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"presentation",
+			"ten minutes",
+			"reading",
+			"started",
+			"habit",
+			"bored",
+			"easy",
+			"every night",
+			"happened",
+			"every day",
+			"help us",
+			"keep going",
+			"clear"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ten minutes"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"4"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"months"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"did not"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"started"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"after dinner"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-presentation",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"told me"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"learn"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"10"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"important"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Because"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"every day"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"small steps"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"easier"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"same idea"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"English"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"19"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"At first"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"good lesson"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"keep going"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"22"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Ten minutes"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"24"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"learn",
+			"special",
+			"habit",
+			"understand",
+			"real treasure",
+			"important",
+			"every day",
+			"small steps",
+			"English",
+			"keep going",
+			"Ten minutes"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"special"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"4"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"helped"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"habit"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"understand"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"real treasure"
+		]
+	},
+	{
+		"ids": [
+			"ten-minutes-a-day",
+			"the-real-treasure",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"habit"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"here"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"walk together"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"12"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sounds"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"lake"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"quiet"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"17"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Good idea"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"part"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"park"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ready"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"go"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"22"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"start"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"24"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"see you",
+			"this afternoon",
+			"weather",
+			"a walk",
+			"a while",
+			"walk together",
+			"sounds nice",
+			"quiet",
+			"Good idea",
+			"ready",
+			"start"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"this afternoon"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"4"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"weather"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"here"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"a walk"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"meeting-at-the-park",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"a while"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"nice job"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"like"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"after work"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"12"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"cooking"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"movies"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"about"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"books"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"music"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"18"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"usually"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"live"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"weekends"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"21"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"gym"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"friends"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"24"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"walking"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"coffee"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"same"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"28"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"nice job",
+			"live",
+			"here",
+			"apartment",
+			"park",
+			"school",
+			"work",
+			"after work",
+			"cooking",
+			"movies",
+			"about",
+			"read books",
+			"music",
+			"usually",
+			"weekends",
+			"gym",
+			"friends",
+			"park",
+			"coffee",
+			"same"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"near"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"live"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"apartment"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"park"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"7"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"school"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-themselves",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"work"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"after work"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"teach"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"English"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"children"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Where"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"work"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"company"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"city"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"17"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"computer"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"every day"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Where"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"like"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"job"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"coworkers"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"very nice"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"24"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"like"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"too"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"27"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"28"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"helping"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"29"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"students"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"work"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"30"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"after work",
+			"Where",
+			"work",
+			"school",
+			"close to",
+			"teacher",
+			"teach",
+			"children",
+			"Where",
+			"company",
+			"city",
+			"computer",
+			"every day",
+			"like",
+			"job",
+			"coworkers",
+			"too",
+			"helping",
+			"students"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"school"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"close to"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"6"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"teacher"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"there"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"talking-about-work",
+			"9"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"this weekend"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Saturday"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"books"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"coffee"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"13"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Sunday"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"visit"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"parents"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"17"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"free"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Sunday afternoon"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"plans"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"coffee"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sometime"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"22"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sounds nice"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"talk"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"later"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"26"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"this weekend",
+			"On Saturday",
+			"gym",
+			"After that",
+			"friends",
+			"usually",
+			"books",
+			"coffee",
+			"Sunday",
+			"visit",
+			"parents",
+			"free",
+			"coffee",
+			"sometime",
+			"sounds nice",
+			"talk",
+			"later"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"On Saturday"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"gym"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"the morning"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"6"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"After that"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"friends"
+		]
+	},
+	{
+		"ids": [
+			"walk-in-the-park",
+			"weekend-plans",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"usually"
+		]
+	}
+]

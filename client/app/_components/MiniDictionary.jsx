@@ -277,7 +277,7 @@ export default function MiniDictionary() {
 			const data = await response.json().catch(() => null);
 
 			if (requestId !== requestIdRef.current) return;
-			if (!response.ok) throw new Error(data?.message || t("lookupError"));
+			if (!response.ok) throw new Error(t(response.status === 400 ? "invalidWord" : "lookupError"));
 
 			const nextResult = data?.data;
 			if (!nextResult?.vietnamese && !nextResult?.pronunciation) {

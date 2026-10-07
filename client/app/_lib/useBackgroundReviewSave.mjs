@@ -12,11 +12,6 @@ async function sendReview(wordId, input) {
 		body: JSON.stringify(input),
 	});
 	if (!response.ok) throw new Error("Review save failed");
-	if (!input.practice) {
-		void fetch("/api/v1/study-activities", {
-			method: "POST", credentials: "include", keepalive: true,
-		}).catch(() => {});
-	}
 }
 
 export function useBackgroundReviewSave() {

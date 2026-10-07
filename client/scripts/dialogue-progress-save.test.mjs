@@ -65,5 +65,6 @@ for (const locale of ["vi", "en"]) {
 			assert.ok(messages.DialogueFeature[key]?.trim(), key);
 		}
 		for (const key of ["lookupLoading", "lookupError"]) assert.ok(messages.WordlistDetail.form[key]?.trim(), key);
+		for (const key of ["invalidWord", "lookupError"]) assert.ok(messages.MiniDictionary[key]?.trim(), key);
 	});
 }

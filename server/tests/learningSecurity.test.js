@@ -1,3 +1,4 @@
+const { completionFor, idsFromPath } = require("./helpers/learningAttempt");
 const assert = require("node:assert/strict");
 const { test, before, after, beforeEach } = require("node:test");
 const mongoose = require("mongoose");
@@ -52,6 +53,7 @@ beforeEach(async () => {
 });
 async function request(path, method = "GET", { token = tokenA, body, headers = {} } = {}) {
 	const values = { Origin: frontend, ...(token ? { Cookie: `jwt=${token}` } : {}), "Content-Type": "application/json", ...headers };
+	if (method === "PATCH" && token && idsFromPath(path) && require("../utils/dialogueCatalogue").isKnownDialogueTask(...idsFromPath(path))) body = { ...await completionFor(jwt.decode(token).id, idsFromPath(path)), ...body };
 	const response = await fetch(url + path, { method, headers: values, ...(body ? { body: JSON.stringify(body) } : {}) });
 	return { status: response.status, headers: response.headers, body: await response.json() };
 }
@@ -63,9 +65,9 @@ test("normal Dialogue/Story reads, writes, replay and activity preserve XP, stre
 	assert.equal((await request(dialogue, "PATCH")).body.data.xp.awarded, 10);
 	assert.equal((await request(story, "PATCH")).body.data.xp.awarded, 10);
 	assert.equal((await request(story, "PATCH")).body.data.xp.awarded, 0);
-	assert.equal((await request("/study-activities", "POST")).status, 200);
+	assert.equal((await request("/study-activities", "POST")).status, 405);
 	const activities = (await request("/study-activities")).body.data.activities;
-	assert.equal(activities.length, 1); assert.equal(activities[0].count, 1); assert.equal(activities[0].hasQualifiedStudy, true);
+	assert.equal(activities.length, 1); assert.equal(activities[0].count, 0); assert.equal(activities[0].hasQualifiedStudy, true);
 	const { buildStudyHeatmapDays } = await import("../../client/app/_lib/studyHeatmap.mjs");
 	assert.equal(buildStudyHeatmapDays(activities).filter(day => day.level > 0).length, 1);
 	assert.equal((await getStudyStreaks([userA._id])).get(userA.id).streakDays, 1);

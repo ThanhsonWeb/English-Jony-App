@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useMemo, useSyncExternalStore } f
 import { Link, useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useAuth } from "@/app/_contexts/AuthContext";
-import { createDialogueProgressSaveController, saveDialogueProgress } from "@/app/_lib/dialogueProgressSave.mjs";
+import { createDialogueProgressSaveController, createDialogueAttemptClient } from "@/app/_lib/dialogueProgressSave.mjs";
 
 const ProgressContext = createContext(null);
 export const DialogueProgressProvider = ProgressContext.Provider;
@@ -14,23 +14,30 @@ export function useDialogueProgressSave(path) {
 	const router = useRouter();
 	const { loading, captureSession, isCurrentSession } = useAuth();
 	const { generation, userId } = captureSession();
-	const controller = useMemo(() => createDialogueProgressSaveController(
-		signal => saveDialogueProgress(path, signal),
-		{
-			isCurrent: () => isCurrentSession({ generation, userId }),
-			onSaved(progress) {
-				window.dispatchEvent(new CustomEvent("dialogue-progress-updated", { detail: progress }));
-				router.refresh();
+	const controller = useMemo(() => {
+		const attempt = createDialogueAttemptClient(path);
+		const save = createDialogueProgressSaveController(
+			(signal, input) => attempt.save(signal, input),
+			{
+				isCurrent: () => isCurrentSession({ generation, userId }),
+				onSaved(progress) {
+					window.dispatchEvent(new CustomEvent("dialogue-progress-updated", { detail: progress }));
+					router.refresh();
+				},
 			},
-		},
-	), [path, generation, userId, isCurrentSession, router]);
+		);
+		return { ...save, prepare: attempt.prepare, cancel() { save.cancel(); attempt.cancel(); } };
+	}, [path, generation, userId, isCurrentSession, router]);
 	const snapshot = useSyncExternalStore(controller.subscribe, controller.getSnapshot, controller.getSnapshot);
-	useEffect(() => () => controller.cancel(), [controller]);
+	useEffect(() => {
+		if (!loading && userId) void controller.prepare().catch(() => {});
+		return () => controller.cancel();
+	}, [controller, loading, userId]);
 	return {
 		...snapshot,
 		loading,
 		getStatus: () => controller.getSnapshot().status,
-		save: () => loading ? Promise.resolve(false) : userId ? controller.save() : Promise.resolve(true),
+		save: input => loading ? Promise.resolve(false) : userId ? controller.save(input) : Promise.resolve(true),
 	};
 }
 
@@ -43,7 +50,7 @@ export function DialogueProgressNotice() {
 		<div className="mx-auto mt-4 w-full max-w-6xl px-4 sm:px-8">
 			<div role={failed ? "alert" : "status"} className={`flex flex-wrap items-center justify-between gap-3 rounded-xl border p-4 text-sm ${failed ? "border-red-500/30 bg-red-500/10 text-red-400" : "border-app bg-surface text-secondary"}`}>
 				<p>{t(failed ? "progressSaveFailed" : "progressSaving")}</p>
-				{failed && <button type="button" onClick={progress.save} className="min-h-11 rounded-xl bg-primary px-4 py-2 font-semibold text-white hover:bg-primary-hover">{t("retryProgressSave")}</button>}
+				{failed && <button type="button" onClick={() => progress.save()} className="min-h-11 rounded-xl bg-primary px-4 py-2 font-semibold text-white hover:bg-primary-hover">{t("retryProgressSave")}</button>}
 			</div>
 		</div>
 	);

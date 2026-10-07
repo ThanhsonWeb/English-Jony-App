@@ -1,3 +1,5 @@
+const { randomUUID } = require("node:crypto");
+const { completionFor, idsFromPath } = require("./helpers/learningAttempt");
 const assert = require("node:assert/strict");
 const { test, before, after, beforeEach } = require("node:test");
 const mongoose = require("mongoose");
@@ -69,6 +71,7 @@ test("every current mutation route rejects untrusted Origin before auth, parsing
 		["POST", "/topics"], ["PATCH", `/topics/${topic.id}`], ["DELETE", `/topics/${topic.id}`],
 		["POST", "/vocab"], ["PATCH", `/vocab/${word.id}`], ["DELETE", `/vocab/${word.id}`], ["POST", `/vocab/${word.id}/review`],
 		["POST", "/study-activities"], ["PATCH", "/dialogue-progress/asking-for-directions/finding-a-cafe/tasks/1"],
+		["POST", "/dialogue-progress/asking-for-directions/finding-a-cafe/tasks/1/attempt"],
 		["PUT", "/future-mutation"],
 	];
 	const before = await Promise.all([User.find().lean(), Topic.find().lean(), Vocab.find().lean()]);
@@ -98,12 +101,12 @@ test("trusted frontend Origin supports global/owned-topic CRUD and preserves F07
 	assert.equal((await request(`/topics/${topic.id}`, "DELETE")).status, 204);
 });
 test("trusted frontend requests still record activity, review/SRS XP and Dialogue/Story progress", async () => {
-	assert.equal((await request("/study-activities", "POST")).status, 200);
-	const review = await request(`/vocab/${word.id}/review`, "POST", { mode: "writing", answer: "water" });
+	assert.equal((await request("/study-activities", "POST")).status, 405);
+	const review = await request(`/vocab/${word.id}/review`, "POST", { mode: "writing", answer: "water", reviewId: randomUUID() });
 	assert.equal(review.status, 200); assert.equal(review.body.data.updatedVocab.reviewCount, 1); assert.equal(review.body.data.xp.awarded, 5);
 	for (const path of ["/dialogue-progress/asking-for-directions/finding-a-cafe/tasks/1", "/dialogue-progress/ten-minutes-a-day/the-old-book/tasks/1"]) {
-		assert.equal((await request(path, "PATCH")).body.data.xp.awarded, 10);
-		assert.equal((await request(path, "PATCH")).body.data.xp.awarded, 0);
+		assert.equal((await request(path, "PATCH", await completionFor(owner.id, idsFromPath(path)))).body.data.xp.awarded, 10);
+		assert.equal((await request(path, "PATCH", await completionFor(owner.id, idsFromPath(path)))).body.data.xp.awarded, 0);
 	}
 	assert.equal(await XPEvent.countDocuments(), 3);
 });
@@ -113,8 +116,8 @@ test("missing Origin needs a trusted Referer for cookie-based mutations", async 
 	for (const referer of ["https://attacker.test/page", "null", "not-a-url", `${frontend}@attacker.test/page`]) {
 		denied(await request("/study-activities", "POST", undefined, { Origin: undefined, Referer: referer }));
 	}
-	assert.equal((await request("/study-activities", "POST", undefined, { Origin: undefined, Referer: `${frontend}/en/wordlist?status=review` })).status, 200);
-	assert.equal((await StudyActivity.findOne()).count, 1);
+	assert.equal((await request("/study-activities", "POST", undefined, { Origin: undefined, Referer: `${frontend}/en/wordlist?status=review` })).status, 405);
+	assert.equal(await StudyActivity.countDocuments(), 0);
 });
 test("explicit null/empty/malformed/untrusted Origin never falls back to trusted Referer or Bearer", async () => {
 	for (const origin of ["null", "", "https://attacker.test", `${frontend}/`, `${frontend}/path`, `${frontend}?query`, `${frontend}#hash`,
@@ -149,14 +152,14 @@ test("valid, expired and missing sessions retain their expected authentication s
 test("configured trailing slashes normalize; missing/invalid production configuration fails closed", async () => {
 	for (const configured of [`${frontend}/`, `${frontend}////`]) {
 		process.env.FRONTEND_URL = configured;
-		assert.equal((await request("/study-activities", "POST")).status, 200);
+		assert.equal((await request("/study-activities", "POST")).status, 405);
 	}
 	for (const configured of [undefined, "", "not-a-url", "http://studyjony.test", `${frontend}/path`, `${frontend}/path/..`, `${frontend}?`, `${frontend}#`, "https://name:password@studyjony.test", "https://studyjony.test\\evil", `${frontend}\n`]) {
 		if (configured === undefined) delete process.env.FRONTEND_URL; else process.env.FRONTEND_URL = configured;
 		const response = await request("/study-activities", "POST");
 		assert.equal(response.status, 500); assert.equal(response.body.message, "Request origin validation is unavailable. Please try again later.");
 	}
-	assert.equal((await StudyActivity.findOne()).count, 2);
+	assert.equal(await StudyActivity.countDocuments(), 0);
 });
 test("safe GET/HEAD/OPTIONS stay outside the mutation guard, including session restoration and guest dictionary", async () => {
 	for (const path of ["/users/me", "/vocab", "/topics"]) assert.equal((await request(path, "GET", undefined, { Origin: "https://attacker.test" })).status, 200);

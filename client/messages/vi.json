@@ -581,6 +581,7 @@
 		"enterWord": "Hãy nhập một từ tiếng Anh.",
 		"notFound": "Không tìm thấy từ này.",
 		"lookupError": "Không thể tra từ lúc này.",
+		"invalidWord": "Vui lòng nhập một từ hoặc cụm từ tiếng Anh ngắn (tối đa 64 ký tự).",
 		"play": "Nghe cách phát âm {word}",
 		"save": "Thêm vào sổ tay",
 		"saved": "Đã thêm vào sổ tay",

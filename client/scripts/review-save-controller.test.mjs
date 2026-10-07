@@ -107,7 +107,8 @@ for (const mode of ["quiz", "writing"]) {
 		assert.deepEqual(controller.submitRetryAnswer(0, "word-1", right, true), {
 			accepted: false, advance: false, firstAttempt: false,
 		});
-		assert.deepEqual(calls, [{ wordId: "word-1", input: wrong }]);
+		assert.deepEqual(calls, [{ wordId: "word-1", input: { ...wrong, reviewId: calls[0].input.reviewId } }]);
+		assert.match(calls[0].input.reviewId, /^[a-f0-9-]{36}$/);
 		assert.equal(controller.getSnapshot().pending, 1);
 		firstSave.resolve();
 		await settle();

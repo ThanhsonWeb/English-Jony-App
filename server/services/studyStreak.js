@@ -34,7 +34,7 @@ function calculateStreak(days, now = new Date()) {
 
 async function markQualifiedStudy(userId, { session, now = new Date() } = {}) {
 	// Qualification never increments the legacy count. A new streak-only day
-	// starts at zero; legacy activity writes can continue incrementing it.
+	// starts at zero; committed non-practice reviews increment it separately.
 	await StudyActivity.updateOne({ user: userId, date: vietnamDay(now) }, {
 		$set: { hasQualifiedStudy: true },
 		$min: { firstStudyAt: now },

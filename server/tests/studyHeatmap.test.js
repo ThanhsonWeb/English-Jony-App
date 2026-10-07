@@ -1,3 +1,5 @@
+const { randomUUID } = require("node:crypto");
+const { completionFor, idsFromPath } = require("./helpers/learningAttempt");
 const assert = require("node:assert/strict");
 const { before, after, beforeEach, test } = require("node:test");
 const mongoose = require("mongoose");
@@ -40,6 +42,8 @@ beforeEach(async () => {
 	token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
 });
 async function request(path, method = "GET", body) {
+	if (method === "PATCH" && idsFromPath(path)) body = { ...await completionFor(user.id, idsFromPath(path)), ...body };
+	if (path.endsWith("/review") && method === "POST") body = { ...body, reviewId: randomUUID() };
 	const response = await fetch(url + path, { method, headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }, ...(body ? { body: JSON.stringify(body) } : {}) });
 	assert.ok(response.ok, await response.clone().text());
 	return (await response.json()).data;
@@ -64,8 +68,6 @@ for (const source of ["vocabulary", "dialogue", "story", "mixed", "none"]) test(
 	if (["vocabulary", "mixed"].includes(source)) {
 		const word = await Vocab.create({ english: "apple", vietnamese: "quả táo", user: user.id });
 		await request(`/vocab/${word.id}/review`, "POST", { mode: "flashcard", rating: "easy" });
-		// The existing vocabulary client records its legacy activity separately.
-		await request("/study-activities", "POST");
 	}
 	if (["dialogue", "mixed"].includes(source)) await request("/dialogue-progress/asking-for-directions/finding-a-cafe/tasks/1", "PATCH");
 	if (["story", "mixed"].includes(source)) await request("/dialogue-progress/ten-minutes-a-day/the-old-book/tasks/1", "PATCH");
@@ -83,7 +85,7 @@ for (const source of ["vocabulary", "dialogue", "story", "mixed", "none"]) test(
 	assert.equal((await User.findById(user.id)).totalXp, expectedXp);
 });
 test("legacy vocabulary counts remain visible without promoting them to qualified streak activity", async () => {
-	await request("/study-activities", "POST");
+	await StudyActivity.create({ user: user.id, date: vietnamDay(), count: 1 });
 	const activities = (await request("/study-activities")).activities;
 	assert.equal(heatmap(activities).at(-1).level, 1);
 	assert.equal(activities[0].hasQualifiedStudy, false);
