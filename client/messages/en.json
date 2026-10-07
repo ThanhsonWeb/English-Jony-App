@@ -36,6 +36,7 @@
 		"passwordMismatch": "The passwords do not match.",
 		"loginFailed": "Could not sign in. Please try again.",
 		"signupFailed": "Could not create your account. Check your details and try again.",
+		"signupUnavailable": "Unable to create an account with these details. Try signing in or use account recovery.",
 		"finishingGoogleLogin": "Finishing sign-in..."
 	},
 	"Home": {

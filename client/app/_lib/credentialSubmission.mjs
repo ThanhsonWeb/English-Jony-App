@@ -15,6 +15,7 @@ export async function submitCredential(kind, credentials, t, attempt) {
 		if (response.ok && data?.status === "success" && data?.data?.credentialAttempt === attempt.id &&
 			user && !Array.isArray(user) && typeof userId === "string" && userId.trim()) return { user };
 		return { error: response.status >= 500 ? t(fallback) : getAuthErrorMessage({
+			code: data?.code,
 			message: typeof data?.message === "string" ? data.message : "", error: data?.error,
 		}, t, fallback) };
 	} catch {

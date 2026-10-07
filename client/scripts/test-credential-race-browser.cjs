@@ -138,6 +138,50 @@ async function setup(width, locale, theme) {
 async function run(width, locale, theme, scenario) {
 	const c = await setup(width, locale, theme), { page, prefix } = c;
 	try {
+		if (scenario === "logout-revocation") {
+			await c.login(A);
+			const cookies = await c.context.cookies(baseURL);
+			const selected = cookies.find(cookie => cookie.name === "sj_auth_session").value;
+			const copied = cookies.find(cookie => cookie.name === `sj_auth_${selected}`).value;
+			// A separate device/session for the same account must remain signed in.
+			const otherLogin = await fetch(`http://127.0.0.1:${backend.address().port}/api/v1/auth/login`, {
+				method: "POST", headers: { "Content-Type": "application/json", Origin: baseURL },
+				body: JSON.stringify({ email: A.email, password }),
+			});
+			assert.equal(otherLogin.status, 200);
+			const other = otherLogin.headers.getSetCookie().find(cookie => cookie.startsWith("jwt=")).split(";", 1)[0].slice(4);
+			const tab = await c.context.newPage(); await tab.goto(baseURL + prefix + "/wordlist");
+			await tab.getByText(A.name, { exact: true }).first().waitFor({ state: "attached" });
+			await page.getByRole("banner").locator("button").filter({ hasText: A.name }).click();
+			const response = page.waitForResponse(value => new URL(value.url()).pathname === "/api/v1/auth/logout");
+			await page.getByRole("button", { name: c.messages.Header.logout, exact: true }).click();
+			assert.equal((await response).status(), 200);
+			await page.waitForURL(url => url.pathname === (prefix || "/"));
+			const check = token => fetch(`http://127.0.0.1:${backend.address().port}/api/v1/users/me`, {
+				headers: { Authorization: `Bearer ${token}` },
+			});
+			assert.equal((await check(copied)).status, 401, "A copied browser JWT is revoked after logout");
+			assert.equal((await check(other)).status, 200, "An independent session survives");
+			assert.equal(await tab.evaluate(async () => (await fetch("/api/v1/users/me")).status), 401);
+			assert.equal((await c.context.cookies(baseURL)).some(cookie => cookie.name === `sj_auth_${selected}`), false);
+			await tab.close(); await c.finish(null); return;
+		}
+		if (scenario === "duplicate-signup") {
+			await c.navigate("/signup");
+			await page.locator("#signup-name").fill("Test learner");
+			await page.locator("#signup-email").fill(A.email);
+			await page.locator("#signup-password").fill(password);
+			await page.locator("#signup-password-confirm").fill(password);
+			await page.locator("form").evaluate(form => { form.requestSubmit(); form.requestSubmit(); form.requestSubmit(); });
+			await page.getByRole("alert").filter({ hasText: c.messages.Auth.signupUnavailable }).waitFor();
+			assert.equal(c.posts(), 1); assert.equal(await page.locator("button[type=submit]").isDisabled(), false);
+			assert.equal(await page.locator("#signup-email").inputValue(), A.email);
+			const email = `retry-${++sequence}@example.test`;
+			await page.locator("#signup-email").fill(email); await page.locator("form").evaluate(form => form.requestSubmit());
+			await page.waitForURL(url => url.pathname === prefix + "/wordlist");
+			assert.equal(await User.countDocuments({ email }), 1);
+			await c.finish(await User.findOne({ email })); return;
+		}
 		if (scenario === "logout") { await c.login(B); await c.navigate("/login"); }
 		if (scenario === "retry") {
 			await page.locator("#login-email").fill(A.email);
@@ -232,8 +276,8 @@ async function run(width, locale, theme, scenario) {
 		backend = await new Promise(resolve => { const listener = app.listen(0, "127.0.0.1", () => resolve(listener)); });
 		browser = await chromium.launch({ channel: "chrome", headless: true });
 		let checks = 0;
-		const scenarios = process.env.STUDYJONY_F06_SCENARIOS?.split(",") || ["B", "logout", "Google", "navigation", "rapid", "failed-old", "signup", "normal-signup", "retry", "cross-tab"];
-		assert.ok(scenarios.every(value => ["B", "logout", "Google", "navigation", "rapid", "failed-old", "signup", "normal-signup", "retry", "cross-tab"].includes(value)));
+		const scenarios = process.env.STUDYJONY_F06_SCENARIOS?.split(",") || ["B", "logout", "Google", "navigation", "rapid", "failed-old", "signup", "normal-signup", "retry", "cross-tab", "logout-revocation", "duplicate-signup"];
+		assert.ok(scenarios.every(value => ["B", "logout", "Google", "navigation", "rapid", "failed-old", "signup", "normal-signup", "retry", "cross-tab", "logout-revocation", "duplicate-signup"].includes(value)));
 		for (const width of [320, 375, 430, 1280]) for (const locale of ["vi", "en"]) for (const theme of ["light", "dark"]) {
 			for (const scenario of scenarios) {
 				await run(width, locale, theme, scenario); checks++;

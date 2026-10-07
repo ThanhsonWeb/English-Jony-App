@@ -77,7 +77,7 @@ test("A dark, logout, B light, then A again restores each saved theme", async ()
 
 	const logout = await fetch(`${baseUrl}/auth/logout`, { method: "POST", headers: { Cookie: firstA.cookie, Origin: trustedOrigin } });
 	assert.equal(logout.status, 200);
-	assert.match(logout.headers.get("set-cookie"), /jwt=;/);
+	assert.equal(logout.headers.get("set-cookie"), null, "Revoked legacy cookies must not clear a newer Google session");
 
 	const firstB = await login("theme-b@example.com");
 	assert.equal(firstB.user.theme, "system");

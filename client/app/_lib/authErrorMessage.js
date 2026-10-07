@@ -1,6 +1,7 @@
 // Auth API messages are not locale-aware; translate known validation failures.
 export function getAuthErrorMessage(data, t, fallback) {
 	const message = data.message || "";
+	if (data.code === "signupUnavailable") return t("signupUnavailable");
 	if (data.error?.code === 11000 || message.includes("đã được sử dụng")) return t("emailInUse");
 	const rules = [
 		["Vui lòng nhập đầy đủ email và mật khẩu", "credentialsRequired"],

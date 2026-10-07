@@ -206,7 +206,7 @@ test("a failed newer attempt still prevents an older successful response from au
 test("legacy API password sessions remain compatible and production candidate cookies retain secure attributes", async () => {
 	const c = client();
 	const legacy = await c.request("/auth/login", "POST", { email: B.email, password });
-	assert.equal(legacy.status, 200); assert.equal(c.jar.get(cookies.selectionCookie), "legacy"); await c.assertMe(B);
+	assert.equal(legacy.status, 200); assert.equal(cookies.validAttemptId(c.jar.get(cookies.selectionCookie)), true); await c.assertMe(B);
 	process.env.NODE_ENV = "production";
 	const a = c.attempts.begin(), response = await c.submit(a, A);
 	const headers = response.headers.getSetCookie();
@@ -237,7 +237,7 @@ for (const change of ["update", "reset"]) test(`password ${change} still revokes
 	assert.equal((await c.request(path, "PATCH", {
 		passwordCurrent: password, password: "changed-password", passwordConfirm: "changed-password",
 	})).status, 200);
-	assert.equal(c.jar.get(cookies.selectionCookie), "legacy"); await c.assertMe(A);
+	assert.equal(cookies.validAttemptId(c.jar.get(cookies.selectionCookie)), true); await c.assertMe(A);
 	const oldId = [...c.jar.keys()].find(key => key.startsWith("sj_auth_") && key !== cookies.selectionCookie).slice("sj_auth_".length);
 	c.jar.set(cookies.selectionCookie, oldId); await c.assertMe(null);
 });

@@ -82,7 +82,7 @@ test("signup, login and session restore keep working; profile saves do not revok
 	await assertSession(sessionToken(login), 200);
 	const logout = await request("/auth/logout", "POST", undefined, token, true);
 	assert.equal(logout.status, 200);
-	assert.match(logout.headers.get("set-cookie"), /jwt=;/);
+	await assertSession(token, 401);
 	assert.equal((await request("/users/me")).status, 401);
 });
 

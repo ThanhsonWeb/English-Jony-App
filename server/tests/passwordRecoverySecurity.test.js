@@ -9,9 +9,10 @@ const nodemailer = require("nodemailer");
 const { MongoMemoryServer } = require("mongodb-memory-server");
 const User = require("../models/userModel");
 const Vocab = require("../models/vocabModel");
+const RecoveryCooldown = require("../models/recoveryCooldownModel");
 const passwordResetOrigin = require("../utils/passwordResetOrigin");
 
-let db, server, user, session, appErrors;
+let db, server, user, session, appErrors, captured;
 const trustedOrigin = "https://learn.studyjony.test";
 const password = "original-test-password";
 const originalEnv = Object.fromEntries(
@@ -27,7 +28,7 @@ before(async () => {
 	await mongoose.connect(db.getUri(), { dbName: "password_recovery_security_test" });
 	await User.init();
 	const app = require("../app");
-	// Observe the existing F20 after-response failure without changing app middleware.
+	// Observe unexpected after-response failures without changing app middleware.
 	app.use((error, req, res, next) => {
 		appErrors.push({ code: error.code, headersSent: res.headersSent });
 		if (!res.headersSent) res.status(500).end();
@@ -50,7 +51,7 @@ beforeEach(async () => {
 	process.env.NODE_ENV = "production";
 	process.env.FRONTEND_URL = trustedOrigin;
 	appErrors = [];
-	await Promise.all([User.deleteMany({}), Vocab.deleteMany({})]);
+	await Promise.all([User.deleteMany({}), Vocab.deleteMany({}), RecoveryCooldown.deleteMany({})]);
 	user = await User.create({
 		name: "Test Learner", email: "recovery@example.test", password, passwordConfirm: password,
 	});
@@ -82,10 +83,22 @@ function capture(t, failMail = false) {
 	for (const method of ["log", "info", "warn", "error", "debug", "dir", "table", "trace"]) {
 		t.mock.method(console, method, (...args) => { logs.push(format(...args)); });
 	}
-	return { mails, logs };
+	captured = { mails, logs, failMail };
+	return captured;
 }
 
-const forgot = headers => request("/users/forgotPassword", "POST", { email: user.email }, headers);
+async function forgot(headers) {
+	const response = await request("/users/forgotPassword", "POST", { email: user.email }, headers);
+	// Recovery deliberately responds before delivery; wait for the isolated mock.
+	if (response.status === 200) {
+		for (let i = 0; i < 100; i++) {
+			if (captured.mails.length && (!captured.failMail || !(await User.findById(user.id)).passwordResetToken)) return response;
+			await new Promise(resolve => setTimeout(resolve, 10));
+		}
+		assert.fail("Mock recovery delivery did not finish");
+	}
+	return response;
+}
 function emailedUrl(mails) {
 	assert.equal(mails.length, 1);
 	const value = mails[0].text.match(/https?:\/\/\S+/)?.[0];
@@ -136,7 +149,7 @@ for (const [name, headers] of forgedHeaders) test(`${name} cannot influence the 
 	assert.ok(saved.passwordResetToken === hash, "Only the SHA-256 hash is stored");
 	assert.ok(saved.passwordResetToken !== token);
 	assertNoPrivateLogs(logs, [token, hash, link.href, user.email, user.id]);
-	assert.deepEqual(appErrors, [{ code: "ERR_HTTP_HEADERS_SENT", headersSent: true }], "Known F20 remains isolated from this fix");
+	assert.deepEqual(appErrors, [], "Uniform recovery ends the response without middleware fallthrough");
 });
 
 test("missing or invalid production origin fails before replacing any reset credential or sending mail", async t => {
@@ -219,14 +232,14 @@ test("reset expiry is still exactly 20 minutes and an expired token does not cha
 test("mail failure cleans up the new credential and logs no tokens, addresses or transport details", async t => {
 	const { mails, logs } = capture(t, true);
 	const response = await forgot();
-	assert.equal(response.status, 500);
-	assert.equal(response.body.message, "There was an error sending the email. Try again later.");
+	assert.equal(response.status, 200);
+	assert.match(response.body.message, /^If recovery is available/);
 	const attemptedLink = emailedUrl(mails);
 	const saved = await User.findById(user.id);
 	assert.equal(saved.passwordResetToken, undefined);
 	assert.equal(saved.passwordResetExpires, undefined);
 	assertNoPrivateLogs(logs, [user.email, user.id, "Mock mail transport failure", attemptedLink.href, attemptedLink.pathname.split("/").at(-1)]);
-	assert.deepEqual(logs, []);
+	assert.deepEqual(logs, ["{ event: 'password_recovery_delivery_failed' }"]);
 });
 
 test("vocabulary create/update and rejected updates never log private learning text or document dumps", async t => {

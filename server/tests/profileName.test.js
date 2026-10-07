@@ -32,7 +32,7 @@ after(async () => {
 	for (const [key, value] of Object.entries(previous)) { if (value === undefined) delete process.env[key]; else process.env[key] = value; }
 });
 function patch(path, user, body) {
-	return fetch(url + path, { method: "PATCH", headers: { "Content-Type": "application/json", Cookie: `jwt=${jwt.sign({ id: user.id }, secret)}` }, body: JSON.stringify(body) });
+	return fetch(url + path, { method: "PATCH", headers: { "Content-Type": "application/json", Cookie: `jwt=${jwt.sign({ id: user.id }, secret, { expiresIn: "1h" })}` }, body: JSON.stringify(body) });
 }
 test("frontend and API name rules match Mongoose's trimmed 3–20 character limits", async () => {
 	const clientRules = await import("../../client/app/_lib/profileName.mjs");
@@ -64,7 +64,7 @@ for (const [index, type] of ["password", "Google"].entries()) {
 			const stored = await User.findById(user.id).select("+password");
 			assert.equal(stored.password, original.password); assert.equal(stored.googleId, original.googleId);
 			assert.equal(stored.passwordSessionVersion, original.passwordSessionVersion);
-			assert.equal((await fetch(url + "/users/me", { headers: { Cookie: `jwt=${jwt.sign({ id: user.id }, secret)}` } })).status, 200);
+			assert.equal((await fetch(url + "/users/me", { headers: { Cookie: `jwt=${jwt.sign({ id: user.id }, secret, { expiresIn: "1h" })}` } })).status, 200);
 		}
 	});
 }

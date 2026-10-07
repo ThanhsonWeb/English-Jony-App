@@ -3,7 +3,6 @@ const AppError = require("../utils/appError");
 const catchAsync = require("../utils/catchAsync");
 const { promisify } = require("util");
 const jwt = require("jsonwebtoken");
-const sendEmail = require("../utils/email");
 const crypto = require("crypto");
 const { OAuth2Client } = require("google-auth-library");
 const googleDisplayName = require("../utils/googleDisplayName");
@@ -12,6 +11,9 @@ const { validateProfileName } = require("../utils/profileName");
 const validator = require("validator");
 const passwordResetOrigin = require("../utils/passwordResetOrigin");
 const credentialCookies = require("../utils/credentialCookies");
+const sessionRevocation = require("../utils/sessionRevocation");
+const { claimRecovery, recoveryResponse } = require("../middleware/recoveryRateLimit");
+const deliverPasswordRecovery = require("../utils/passwordRecovery");
 
 const GOOGLE_OAUTH_STATE_COOKIE = "google_oauth_state";
 const GOOGLE_OAUTH_LOCALE_COOKIE = "google_oauth_locale";
@@ -26,7 +28,7 @@ const getGoogleClient = () =>
 	);
 
 const signToken = (user, attemptId) => {
-	const payload = { id: user._id };
+	const payload = { id: user._id, jti: crypto.randomBytes(32).toString("hex") };
 	if (attemptId) payload.credentialAttempt = attemptId;
 	if (user.passwordChangedAt) {
 		payload.passwordChangedAt = user.passwordChangedAt.getTime();
@@ -48,15 +50,19 @@ const getAuthCookieOptions = () => ({
 });
 
 const setAuthCookie = (user, res, attemptId) => {
-	const token = signToken(user, attemptId);
+	// Google/reset/legacy API sessions also need an exact logout identity. Reuse
+	// F06's isolated-cookie format; keep jwt for existing cookie/Bearer API clients.
+	const sessionId = attemptId || crypto.randomBytes(16).toString("hex");
+	const token = signToken(user, sessionId);
 	const tokenExpiresAt = new Date(jwt.decode(token).exp * 1000);
-
-	res.cookie(attemptId ? credentialCookies.cookieName(attemptId) : "jwt", token, {
+	const options = {
 		...getAuthCookieOptions(),
 		expires: tokenExpiresAt,
-	});
+	};
+	if (!attemptId) res.cookie("jwt", token, options);
+	res.cookie(credentialCookies.cookieName(sessionId), token, options);
 	// Credential responses never write the shared selection or legacy cookie.
-	if (!attemptId) res.cookie(credentialCookies.selectionCookie, "legacy", {
+	if (!attemptId) res.cookie(credentialCookies.selectionCookie, sessionId, {
 		...getAuthCookieOptions(), httpOnly: false, expires: tokenExpiresAt,
 	});
 	if (!attemptId) res.cookie(credentialCookies.intentCookie, crypto.randomBytes(16).toString("hex"), {
@@ -77,15 +83,36 @@ const createSendToken = (user, statusCode, res, attemptId) => {
 	});
 };
 
+const verifySessionForRevocation = async token => {
+	if (!process.env.JWT_SECRET) throw new Error("JWT verification is not configured");
+	try {
+		const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+		return Number.isFinite(decoded.exp) ? decoded : null;
+	} catch (error) {
+		if (error instanceof jwt.JsonWebTokenError) return null;
+		throw error;
+	}
+};
+
+const revokeCookieSession = async token => {
+	if (!token) return;
+	const decoded = await verifySessionForRevocation(token);
+	if (decoded) await sessionRevocation.revoke(token, decoded);
+};
+
 // request Handlers
 exports.signup = catchAsync(async (req, res, next) => {
 	const { name, email, password, passwordConfirm } = req.body;
-	const newUser = await User.create({
-		name,
-		email,
-		password,
-		passwordConfirm,
-	});
+	let newUser;
+	try {
+		newUser = await User.create({ name, email, password, passwordConfirm });
+	} catch (error) {
+		if (error.code === 11000 && (error.keyPattern?.email || error.keyValue?.email)) {
+			return res.status(400).json({ status: "fail", code: "signupUnavailable",
+				message: "Unable to create an account with these details. Try signing in or use account recovery." });
+		}
+		throw error;
+	}
 
 	createSendToken(newUser, 201, res, req.credentialAttempt);
 });
@@ -106,27 +133,62 @@ exports.login = catchAsync(async (req, res, next) => {
 
 	createSendToken(user, 200, res, req.credentialAttempt);
 });
-exports.logout = catchAsync(async (req, res) => {
-	res.clearCookie("jwt", getAuthCookieOptions());
-	for (const name of credentialCookies.attemptCookies(req.cookies)) {
-		res.clearCookie(name, getAuthCookieOptions());
+exports.logout = catchAsync(async (req, res, next) => {
+	// The client captures this selector before invalidating local auth state.
+	// It is not a credential: only a verified JWT can be revoked.
+	const hint = req.get("X-StudyJony-Logout-Session");
+	if (hint !== undefined && hint !== "none" && hint !== "legacy" && !credentialCookies.validAttemptId(hint)) {
+		return next(new AppError("Invalid logout request.", 400));
 	}
-
+	const selected = hint ?? req.cookies?.[credentialCookies.selectionCookie];
+	const candidates = [];
+	if (req.headers.authorization?.startsWith("Bearer ")) candidates.push({ token: req.headers.authorization.slice(7) });
+	else if (credentialCookies.validAttemptId(selected)) candidates.push({
+		name: credentialCookies.cookieName(selected), token: req.cookies?.[credentialCookies.cookieName(selected)],
+	});
+	else if (selected === "legacy" || selected === undefined) candidates.push({ token: req.cookies?.jwt });
+	else if (hint === undefined && selected === "none") {
+		// Compatibility with the previous frontend, which cleared its selector first.
+		candidates.push({ token: req.cookies?.jwt });
+		for (const name of credentialCookies.attemptCookies(req.cookies)) candidates.push({ name, token: req.cookies[name] });
+	}
+	for (const { token, name } of candidates) {
+		if (!token) {
+			if (hint && hint !== "none") return next(new AppError("Session changed before logout. Please try again.", 409));
+			continue;
+		}
+		const decoded = await verifySessionForRevocation(token);
+		if (!decoded) { if (name) res.clearCookie(name, getAuthCookieOptions()); continue; }
+		if (hint === "legacy" && credentialCookies.validAttemptId(req.cookies?.[credentialCookies.selectionCookie]) &&
+			decoded.credentialAttempt === req.cookies[credentialCookies.selectionCookie]) {
+			// A pre-upgrade legacy logout must not revoke a newer isolated session
+			// whose compatibility jwt cookie was installed before request dispatch.
+			return next(new AppError("Session changed before logout. Please try again.", 409));
+		}
+		if (Number.isFinite(decoded.exp)) await sessionRevocation.revoke(token, decoded);
+		if (name) res.clearCookie(name, getAuthCookieOptions());
+	}
+	// Do not clear the shared legacy cookie here: a delayed logout response could
+	// otherwise erase a newer Google session. Its old JWT is now server-revoked.
 	res.status(200).json({ status: "success" });
 });
 
-exports.discardCredentialAttempt = (req, res) => {
+exports.discardCredentialAttempt = catchAsync(async (req, res) => {
 	if (req.cookies?.[credentialCookies.selectionCookie] !== req.credentialAttempt) {
+		// Older clients discard their selected cookie immediately before logout.
+		// Revoke before clearing so their copied JWT cannot survive that sequence.
+		await revokeCookieSession(req.cookies?.[credentialCookies.cookieName(req.credentialAttempt)]);
 		res.clearCookie(credentialCookies.cookieName(req.credentialAttempt), getAuthCookieOptions());
 	}
 	res.status(204).end();
-};
+});
 
-const cleanupCredentialCookies = (req, res) => {
+const cleanupCredentialCookies = async (req, res) => {
 	const selected = req.cookies?.[credentialCookies.selectionCookie];
 	const pending = req.cookies?.[credentialCookies.intentCookie];
 	for (const name of credentialCookies.attemptCookies(req.cookies)) {
 		if (name !== credentialCookies.cookieName(selected) && name !== credentialCookies.cookieName(pending)) {
+			await revokeCookieSession(req.cookies[name]);
 			res.clearCookie(name, getAuthCookieOptions());
 		}
 	}
@@ -145,7 +207,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 
 	// 2. Check for Cookie (New way)
 	let selectedAttempt;
-	if (req.get("X-StudyJony-Credential-Cleanup") === "1") cleanupCredentialCookies(req, res);
+	if (req.get("X-StudyJony-Credential-Cleanup") === "1") await cleanupCredentialCookies(req, res);
 	if (!token && req.cookies) {
 		const selected = req.cookies[credentialCookies.selectionCookie];
 		if (credentialCookies.validAttemptId(selected)) {
@@ -172,10 +234,13 @@ exports.protect = catchAsync(async (req, res, next) => {
 		}
 		throw error;
 	}
-	if (!decoded || typeof decoded.id !== "string" || !mongoose.isObjectIdOrHexString(decoded.id)) {
+	if (!decoded || !Number.isFinite(decoded.exp) || typeof decoded.id !== "string" || !mongoose.isObjectIdOrHexString(decoded.id)) {
 		return next(new AppError("Invalid or expired session. Please log in again.", 401));
 	}
 	if (selectedAttempt && decoded.credentialAttempt !== selectedAttempt) {
+		return next(new AppError("Invalid or expired session. Please log in again.", 401));
+	}
+	if (await sessionRevocation.isRevoked(token)) {
 		return next(new AppError("Invalid or expired session. Please log in again.", 401));
 	}
 
@@ -214,42 +279,16 @@ exports.restrictTo = (...roles) => {
 };
 
 exports.forgotPassword = catchAsync(async (req, res, next) => {
-	// Find user By email they provided
-	const user = await User.findOne({ email: req.body.email });
-	if (!user) return next(new AppError("please provide your email ", 401));
-
-	// Validate configuration before creating or replacing a reset token.
+	// Configuration failures are independent of account existence and fail closed.
 	const frontendOrigin = passwordResetOrigin();
-	// resetToken
-	const resetToken = user.createPasswordResetToken(); // token not hash yet
-	await user.save({ validateBeforeSave: false }); // hashed and expiration
-	// sendEmail
-	const resetURL = `${frontendOrigin}/api/v1/users/resetPassword/${resetToken}`;
-
-	try {
-		await sendEmail({
-			email: user.email,
-			subject: "Your password reset link (valid for 20 minutes)",
-			message: `Forgot your password? Submit a PATCH request with your new password to: ${resetURL}\nIf you didn't request this, ignore this email.`,
-		});
-	} catch (error) {
-		user.passwordResetToken = undefined;
-		user.passwordResetExpires = undefined;
-		await user.save({ validateBeforeSave: false });
-		return next(
-			new AppError(
-				"There was an error sending the email. Try again later.",
-				500,
-			),
-		);
-	}
-
-	res.status(200).json({
-		status: "success",
-		message: "Token sent to email!",
+	const email = typeof req.body.email === "string" ? req.body.email.trim().toLowerCase() : "";
+	const eligible = validator.isEmail(email) && await claimRecovery(email);
+	res.status(200).json(recoveryResponse);
+	// Account lookup and SMTP are outside the public response path, so neither
+	// their results nor their latency can disclose whether an account exists.
+	if (eligible) void deliverPasswordRecovery(email, frontendOrigin).catch(() => {
+		console.warn({ event: "password_recovery_processing_failed" });
 	});
-
-	next();
 });
 
 exports.resetPassword = catchAsync(async (req, res, next) => {
@@ -265,12 +304,22 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 	if (!user) return next(new AppError("Token is invalid or expired", 400));
 
 	//modify and save new pass to mongo
+	// Mongoose merges $where into the save filter. Validation/bcrypt hooks run
+	// normally; token consumption and the password/version write are atomic.
+	user.$where = { passwordResetToken: hashedToken,
+		$expr: { $gt: ["$passwordResetExpires", "$$NOW"] } };
 	user.password = req.body.password;
 	user.passwordConfirm = req.body.passwordConfirm;
 	user.passwordResetExpires = undefined;
 	user.passwordResetToken = undefined;
 
-	await user.save();
+	try { await user.save(); }
+	catch (error) {
+		if (error instanceof mongoose.Error.DocumentNotFoundError) {
+			return next(new AppError("Token is invalid or expired", 400));
+		}
+		throw error;
+	}
 
 	createSendToken(user, 200, res);
 });

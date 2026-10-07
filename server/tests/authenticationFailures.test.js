@@ -129,18 +129,18 @@ for (const environment of ["development", "production"]) test(`${environment}: e
 	}
 	assert.equal((await request("/users/me")).status, 401);
 });
-test("valid JWT restores the user; logout clears its cookie and the next unauthenticated request is 401", async () => {
+test("valid JWT restores the user; logout revokes the credential and the next request is 401", async () => {
 	const response = await login(normal.email), token = cookieToken(response);
 	for (const cookie of [false, true]) {
 		const me = await request("/users/me", { token, cookie });
 		assert.equal(me.status, 200); assert.equal((await me.json()).data.user._id, normal.id);
 	}
 	const logout = await request("/auth/logout", { method: "POST", token, cookie: true });
-	assert.equal(logout.status, 200); assert.match(logout.headers.get("set-cookie"), /jwt=;/);
+	assert.equal(logout.status, 200); assert.equal((await request("/users/me", { token })).status, 401);
 	assert.equal((await request("/users/me")).status, 401);
 });
 test("database failures, unexpected verifier failures and missing JWT configuration stay 500", async t => {
-	const token = jwt.sign({ id: normal.id }, secret);
+	const token = jwt.sign({ id: normal.id }, secret, { expiresIn: "1h" });
 	const database = t.mock.method(User, "findById", async () => { throw new Error("Simulated internal database failure"); });
 	assert.equal((await request("/users/me", { token })).status, 500); database.mock.restore();
 	const verifier = t.mock.method(jwt, "verify", () => { throw new Error("Simulated internal verifier failure"); });

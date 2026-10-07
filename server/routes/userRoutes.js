@@ -3,6 +3,7 @@ const rateLimit = require("express-rate-limit");
 const path = require("node:path");
 const { getAllUsers, getMe, updateAvatar, updateTheme } = require("../controllers/userController");
 const { localAvatarDirectory } = require("../services/avatarUpload");
+const { recoveryIpLimiter } = require("../middleware/recoveryRateLimit");
 const {
 	protect,
 	restrictTo,
@@ -34,7 +35,7 @@ router.get("/avatar-files/:filename", (req, res, next) => {
 	});
 });
 router.route("/").get(protect, restrictTo("admin"), getAllUsers);
-router.post("/forgotPassword", forgotPassword);
+router.post("/forgotPassword", recoveryIpLimiter, forgotPassword);
 router.patch("/resetPassword/:token", resetPassword);
 router.patch("/updatePassword", protect, updatePassword);
 router.patch("/updateMe", protect, updateMe);

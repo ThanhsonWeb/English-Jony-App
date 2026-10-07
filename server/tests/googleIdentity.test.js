@@ -105,7 +105,7 @@ for (const locale of ["vi", "en"]) test(`${locale}: normal Google signup/login r
 	await assertMe(tokenFrom(second), user.id); assert.equal(await User.countDocuments(), 1);
 	assert.equal((await login()).status, 401, "A password cannot access the Google-owned identity");
 	const logout = await request("/auth/logout", { method: "POST", token: tokenFrom(second) });
-	assert.equal(logout.status, 200); assert.match(logout.headers.get("set-cookie"), /jwt=;/);
+	assert.equal(logout.status, 200); await assertMe(tokenFrom(second), user.id, 401);
 	await assertMe(undefined, undefined, 401);
 });
 

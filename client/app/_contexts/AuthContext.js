@@ -3,7 +3,8 @@ import { createContext, useCallback, useContext, useEffect, useState } from "rea
 import { createAuthSessionGuard } from "@/app/_lib/authSessionGuard.mjs";
 import { createSessionRestore } from "@/app/_lib/sessionRestore.mjs";
 import { createCredentialAttempt, selectCredentialSession, discardCredentialAttempt,
-    registerCredentialIntent, isCurrentCredentialIntent, invalidateCredentialIntent } from "@/app/_lib/credentialAttempt.mjs";
+    registerCredentialIntent, isCurrentCredentialIntent, invalidateCredentialIntent,
+    captureCredentialSession } from "@/app/_lib/credentialAttempt.mjs";
 
 const AuthContext = createContext();
 
@@ -73,10 +74,14 @@ export function AuthProvider({ children }) {
         sessionGuard.start(sessionGuard.getUser());
     }, [credentialAttempts, sessionRestore, sessionGuard]);
     const logout = useCallback(async () => {
+        const selected = captureCredentialSession();
+        // Keep the HttpOnly credential available for server-side revocation.
+        selectCredentialSession("none", { discardPrevious: false });
         // Lock out pending credentials before the network request can yield.
         setUser(null);
         const session = sessionGuard.capture();
-        const response = await fetch("/api/v1/auth/logout", { method: "POST", credentials: "include" });
+        const response = await fetch("/api/v1/auth/logout", { method: "POST", credentials: "include",
+            headers: { "X-StudyJony-Logout-Session": selected } });
         return response.ok && sessionGuard.isCurrent(session);
     }, [setUser, sessionGuard]);
     // Keep the existing getMe user/null contract for callers.

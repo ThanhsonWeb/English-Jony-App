@@ -5,6 +5,7 @@ import { createAuthSessionGuard } from "../app/_lib/authSessionGuard.mjs";
 import { createCredentialAttempt } from "../app/_lib/credentialAttempt.mjs";
 import { createSessionRestore } from "../app/_lib/sessionRestore.mjs";
 import { submitCredential } from "../app/_lib/credentialSubmission.mjs";
+import { getAuthErrorMessage } from "../app/_lib/authErrorMessage.js";
 
 const A = { _id: "A", name: "Account A" }, B = { _id: "B", name: "Account B" };
 function deferred() { let resolve; const promise = new Promise(done => { resolve = done; }); return { promise, resolve }; }
@@ -91,6 +92,17 @@ for (const action of ["new login", "logout", "Google", "newer failed login"]) te
 for (const locale of ["vi", "en"]) {
 	const messages = JSON.parse(readFileSync(new URL(`../messages/${locale}.json`, import.meta.url))).Auth;
 	const t = key => messages[key];
+	test(`${locale}: generic signup rejection is localized without email disclosure`, () => {
+		assert.equal(getAuthErrorMessage({ code: "signupUnavailable", message: "private backend details" }, t, "signupFailed"), t("signupUnavailable"));
+		assert.ok(t("signupUnavailable"));
+		assert.doesNotMatch(t("signupUnavailable"), /already in use|đã được sử dụng/);
+	});
+	test(`${locale}: credential signup carries the generic rejection code into its user feedback`, async context => {
+		const attempt = setup().controller.begin();
+		context.mock.method(globalThis, "fetch", async () => ({ ok: false, status: 400,
+			json: async () => ({ status: "fail", code: "signupUnavailable", message: "private details" }) }));
+		assert.deepEqual(await submitCredential("signup", {}, t, attempt), { error: t("signupUnavailable") });
+	});
 	for (const kind of ["login", "signup"]) test(`${locale}: ${kind} uses the isolated route, signal and response identity`, async context => {
 		const attempt = setup().controller.begin();
 		context.mock.method(globalThis, "fetch", async (url, options) => {

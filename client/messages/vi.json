@@ -36,6 +36,7 @@
 		"passwordMismatch": "Mật khẩu xác nhận không trùng khớp.",
 		"loginFailed": "Không thể đăng nhập. Vui lòng thử lại.",
 		"signupFailed": "Không thể tạo tài khoản. Hãy kiểm tra thông tin và thử lại.",
+		"signupUnavailable": "Không thể tạo tài khoản với thông tin này. Hãy thử đăng nhập hoặc khôi phục tài khoản.",
 		"finishingGoogleLogin": "Đang hoàn tất đăng nhập..."
 	},
 	"Home": {

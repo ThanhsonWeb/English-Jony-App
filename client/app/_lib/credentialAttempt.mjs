@@ -47,13 +47,14 @@ function writePublicCookie(name, value) {
 export const registerCredentialIntent = id => writePublicCookie(intentCookie, id);
 export const isCurrentCredentialIntent = id => readCookie(intentCookie) === id;
 export const invalidateCredentialIntent = () => registerCredentialIntent(crypto.randomUUID().replaceAll("-", ""));
+export const captureCredentialSession = () => readCookie(selectionCookie) || "legacy";
 
-export function selectCredentialSession(id) {
+export function selectCredentialSession(id, { discardPrevious = true } = {}) {
 	if (id !== "none" && !/^[a-f0-9]{32}$/.test(id)) return false;
 	const previous = readCookie(selectionCookie);
 	// This public selector carries no credential. JWTs remain HttpOnly.
 	const selected = writePublicCookie(selectionCookie, id);
-	if (selected && previous !== id && /^[a-f0-9]{32}$/.test(previous || "")) discardCredentialAttempt(previous);
+	if (discardPrevious && selected && previous !== id && /^[a-f0-9]{32}$/.test(previous || "")) discardCredentialAttempt(previous);
 	return selected;
 }
 
