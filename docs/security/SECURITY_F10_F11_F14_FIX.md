@@ -93,8 +93,8 @@ Tests:
 - `server/tests/passwordSessions.test.js`, `server/tests/authenticationFailures.test.js`, `server/tests/googleIdentity.test.js`, `server/tests/userTheme.test.js` — expect server revocation instead of unsafe shared-cookie clearing.
 - `server/tests/credentialSessions.test.js` — isolated authoritative cookie expectations for new non-credential sessions; retain F06 scenarios.
 - `server/tests/profileName.test.js` — expiring fixture JWTs matching the real issuer.
-- `client/scripts/credential-attempt.test.mjs` — VI/EN generic signup rejection and code propagation.
-- `client/scripts/test-credential-race-browser.cjs` — real-cookie copied-JWT/logout/independent-device/multiple-tab and duplicate-signup retry cases added to the existing harness.
+- `client/scripts/tests/unit/credential-attempt.test.mjs` — VI/EN generic signup rejection and code propagation.
+- `client/scripts/tests/browser/test-credential-race-browser.cjs` — real-cookie copied-JWT/logout/independent-device/multiple-tab and duplicate-signup retry cases added to the existing harness.
 - `SECURITY_F10_F11_F14_FIX.md` — this report.
 
 ## Tests and results
@@ -115,8 +115,8 @@ Browser tests used local Next, headless Chromium, mocked Google/API responses as
 The full client suite's three unchanged dictionary failures are:
 
 1. `client/app/_lib/dictionary/resolveMeaning.test.mjs` — “runtime lookup uses v3 words, preserves phrases and keeps lemma metadata”.
-2. `client/scripts/build-dictionary-v3.test.mjs` — “the build is read-only and reproduces dictionary-v3.json”.
-3. `client/scripts/extract-dictionary-v2.test.mjs` — “source files stay unchanged and the generated JSON is reproducible”.
+2. `client/scripts/tests/integration/build-dictionary-v3.test.mjs` — “the build is read-only and reproduces dictionary-v3.json”.
+3. `client/scripts/tests/integration/extract-dictionary-v2.test.mjs` — “source files stay unchanged and the generated JSON is reproducible”.
 
 Dictionary data/generator files were unchanged. These failures were not fixed in this security batch; the full client suite is **not** reported as clean. Non-blocking existing Node VM-module and Mongoose deprecation warnings also remain.
 

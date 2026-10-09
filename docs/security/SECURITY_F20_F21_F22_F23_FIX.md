@@ -106,7 +106,7 @@ No deployment was performed. A future authorized HTTPS/Vercel verification shoul
 | F22 projection/serialization | `server/utils/clientUser.js`, `server/controllers/userController.js` |
 | F22 private caching | `server/middleware/privateResponse.js`, `server/routes/authRoutes.js`, `server/routes/userRoutes.js` |
 | F23 frontend headers | `client/security-headers.cjs`, `client/next.config.js` |
-| Focused tests | `server/tests/productionErrors.test.js`, `server/tests/privateResponsesPassword.test.js`, `client/scripts/security-headers.test.mjs`, `client/scripts/test-security-headers-browser.cjs` |
+| Focused tests | `server/tests/productionErrors.test.js`, `server/tests/privateResponsesPassword.test.js`, `client/scripts/tests/integration/security-headers.test.mjs`, `client/scripts/tests/browser/test-security-headers-browser.cjs` |
 | Reviewable evidence/policies | `SECURITY_F20_F21_F22_F23_FIX.md` |
 
 Production code imports no test harnesses. No generated catalogue, lesson content, exercise flow, SRS/reward service, theme layout, dependencies, proxy/cookie settings or F17/F18/F24 files were changed. Temporary command logs are kept outside the repository.

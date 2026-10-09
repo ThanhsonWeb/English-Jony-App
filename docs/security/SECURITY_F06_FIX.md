@@ -79,10 +79,10 @@ Obsolete attempt cookies are discarded by `POST /api/v1/auth/credentials/discard
 | `server/controllers/authController.js` | Issue isolated attempt cookies, enforce selection/binding in `protect`, preserve legacy/Google/password flows and clean obsolete cookies. |
 | `server/routes/authRoutes.js` | Add the isolated credential/discard routes. |
 | `server/utils/credentialCookies.js` | Validate attempt IDs and define candidate cookie names. |
-| `client/scripts/credential-attempt.test.mjs` | Focused generation, cancellation, selection, error and navigation tests. |
-| `client/scripts/password-login.test.mjs` | Verify isolated route/header/signal/echo while retaining all localized error/retry coverage. |
+| `client/scripts/tests/unit/credential-attempt.test.mjs` | Focused generation, cancellation, selection, error and navigation tests. |
+| `client/scripts/tests/unit/password-login.test.mjs` | Verify isolated route/header/signal/echo while retaining all localized error/retry coverage. |
 | `server/tests/credentialSessions.test.js` | Real signed-cookie/disposable DB races, ownership, logout, expiry and password-change/reset compatibility. |
-| `client/scripts/test-credential-race-browser.cjs` | Real local browser cookie timing with a disposable backend and mocked Google verification. |
+| `client/scripts/tests/browser/test-credential-race-browser.cjs` | Real local browser cookie timing with a disposable backend and mocked Google verification. |
 | `SECURITY_F06_FIX.md` | This report. |
 
 The previously completed Google callback, session-restore primitive, session guard, profile mutation code, F03 helper/tests, F19 logging changes, translations, models and package/lockfiles were not changed. The pre-edit snapshot confirms earlier changed files remain identical except the deliberately edited login page/authentication controller. Next dev's generated AGENTS addition and the OAuth test's temporary fixture were removed after verification.
@@ -114,7 +114,7 @@ New tests apply even obsolete response cookies to a cookie jar before checking a
 
 ```powershell
 # From client
-node --test scripts/credential-attempt.test.mjs scripts/auth-session-guard.test.mjs scripts/session-restore.test.mjs scripts/password-login.test.mjs scripts/vocabulary-events.test.mjs scripts/vocabulary-selection.test.mjs scripts/wordlist-filter.test.mjs scripts/wordlist-review-localization.test.mjs scripts/learner-ui-localization.test.mjs
+node --test scripts/tests/unit/credential-attempt.test.mjs scripts/tests/unit/auth-session-guard.test.mjs scripts/tests/unit/session-restore.test.mjs scripts/tests/unit/password-login.test.mjs scripts/tests/unit/vocabulary-events.test.mjs scripts/tests/unit/vocabulary-selection.test.mjs scripts/tests/unit/wordlist-filter.test.mjs scripts/tests/integration/wordlist-review-localization.test.mjs scripts/tests/integration/learner-ui-localization.test.mjs
 ```
 
 Includes rapid attempts, stale errors, guarded cookie selection/navigation, cancellation mocks ignoring AbortSignal, separate-document auth guards, profile/account-generation preservation, OAuth restoration, malformed responses, VI/EN errors and retry.
@@ -124,8 +124,8 @@ Includes rapid attempts, stale errors, guarded cookie selection/navigation, canc
 All 34 discovered test files under `scripts` and `app/_lib` were run. The same three dictionary failures recorded before this batch remain:
 
 1. `app/_lib/dictionary/resolveMeaning.test.mjs`: existing v3 lookup expectation for `this`.
-2. `scripts/build-dictionary-v3.test.mjs`: generated v3 artifact reproducibility.
-3. `scripts/extract-dictionary-v2.test.mjs`: generated v2 artifact reproducibility.
+2. `scripts/tests/integration/build-dictionary-v3.test.mjs`: generated v3 artifact reproducibility.
+3. `scripts/tests/integration/extract-dictionary-v2.test.mjs`: generated v2 artifact reproducibility.
 
 The prior dependency report documents their reproduction against the pre-upgrade Git HEAD. Dictionary/content files were not changed. The full client suite is **not** reported as entirely green.
 
@@ -143,7 +143,7 @@ Matrix: **320, 375, 430 and 1280px × VI/EN × light/dark**.
 
 ```powershell
 $env:STUDYJONY_TEST_URL='http://localhost:3016'
-node scripts/test-credential-race-browser.cjs
+node scripts/tests/browser/test-credential-race-browser.cjs
 ```
 
 Playwright was loaded from the existing local cache; no dependency was installed. The final run executes all ten scenarios across the complete matrix.
@@ -157,7 +157,7 @@ Playwright was loaded from the existing local cache; no dependency was installed
 ### Build/static/dependency checks
 
 - Production `npm run build`: **passed**, Next **16.3.8**, including the existing 613-task catalogue prebuild check.
-- Post-build `scripts/dependency-runtime.test.cjs`: **2/2 passed**, locked Next/native image versions, real image encoding and compiled Next API-proxy behavior.
+- Post-build `scripts/tests/integration/dependency-runtime.test.cjs`: **2/2 passed**, locked Next/native image versions, real image encoding and compiled Next API-proxy behavior.
 - Focused ESLint: **zero errors**, one existing Header `<img>` warning.
 - JavaScript syntax and `git diff --check` passed.
 - Local Next dev logged existing Google Fonts download/fallback warnings under restricted networking; the production build succeeded.

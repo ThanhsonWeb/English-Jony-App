@@ -477,6 +477,7 @@ Use this structure:
 	"metadata": {
 		"courseId": "${courseId}",
 		"dialogueId": "${dialogueId}",
+		"contextualGlossaryVersion": 1,
 		"title": "${title}",
 		"localizationVersion": 1,
 		"localized": {

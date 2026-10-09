@@ -15,12 +15,56 @@
 		"type": "phrase",
 		"meaning": "chúc bạn có kỳ nghỉ vui vẻ"
 	},
+	"excuse me": {
+		"type": "phrase",
+		"meaning": "xin lỗi"
+	},
+	"how are you": {
+		"type": "phrase",
+		"meaning": "bạn khỏe không?",
+		"match": "clause"
+	},
+	"i see": {
+		"type": "phrase",
+		"meaning": "tôi hiểu rồi",
+		"match": "clause"
+	},
+	"can i help you": {
+		"type": "phrase",
+		"meaning": "tôi có thể giúp gì cho bạn?"
+	},
+	"how can i help you": {
+		"type": "phrase",
+		"meaning": "tôi có thể giúp gì cho bạn?"
+	},
+	"that's right": {
+		"type": "phrase",
+		"meaning": "đúng vậy",
+		"match": "clause"
+	},
+	"turn right": {
+		"type": "phrase",
+		"meaning": "rẽ phải"
+	},
+	"take a break": {
+		"type": "phrase",
+		"meaning": "nghỉ một chút"
+	},
+	"take the bus": {
+		"type": "phrase",
+		"meaning": "đi xe buýt"
+	},
+	"book a room": {
+		"type": "phrase",
+		"meaning": "đặt phòng"
+	},
 	"of course": {
 		"type": "phrase",
-		"meaning": "tất nhiên rồi ^^"
+		"meaning": "tất nhiên rồi"
 	},
   "you're welcome": {
 		"type": "phrase",
-		"meaning": "không có gì ^^"
+		"meaning": "không có gì",
+		"match": "clause"
 	}
 }

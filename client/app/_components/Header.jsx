@@ -63,11 +63,18 @@ function Header() {
 		if (await logout()) router.push("/");
 	}
 
-
 	return (
-		<header className={`sticky top-0 z-50 w-full border-b border-app bg-surface/95 px-4 py-1 backdrop-blur-xl sm:px-6 lg:px-4 xl:px-8${isWordlist ? " max-md:min-h-[60px] max-md:px-3" : ""}`}>
+		<header
+			className={`sticky top-0 z-50 w-full border-b border-app bg-surface/95 px-4 py-1 backdrop-blur-xl sm:px-6 lg:px-4 xl:px-8${isWordlist ? " max-md:min-h-[60px] max-md:px-3" : ""}`}
+		>
 			<div className="mx-auto grid max-w-8xl grid-cols-[minmax(0,1fr)_auto] items-center gap-2 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
-				<Logo wordlistMobile={isWordlist} />
+				{/* Mobile menu */}
+				<div className="flex items-center gap-3">
+					<div className="lg:hidden">
+						<Navigation />
+					</div>
+					<Logo wordlistMobile={isWordlist} />
+				</div>
 				<div className="hidden justify-center lg:flex">
 					<Navigation />
 				</div>
@@ -139,10 +146,6 @@ function Header() {
 							<AuthButtons />
 						</div>
 					)}
-					{/* Mobile menu */}
-					<div className="lg:hidden">
-						<Navigation />
-					</div>
 				</div>
 			</div>
 		</header>

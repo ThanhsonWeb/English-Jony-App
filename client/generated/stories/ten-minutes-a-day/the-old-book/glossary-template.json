@@ -1,0 +1,546 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "ten-minutes-a-day",
+  "dialogueId": "the-old-book",
+  "characters": {
+    "Mr. Daniel": {
+      "meaning": "Mr. Daniel",
+      "role": ""
+    },
+    "Ryan": {
+      "meaning": "Ryan",
+      "role": ""
+    },
+    "Leo": {
+      "meaning": "Leo",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "",
+      "pos": []
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "",
+      "pos": []
+    },
+    "word-book": {
+      "word": "book",
+      "meaning": "",
+      "pos": []
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "",
+      "pos": []
+    },
+    "word-each": {
+      "word": "each",
+      "meaning": "",
+      "pos": []
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-an": {
+      "word": "an",
+      "meaning": "",
+      "pos": []
+    },
+    "word-english": {
+      "word": "english",
+      "meaning": "",
+      "pos": []
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "",
+      "pos": []
+    },
+    "word-looks": {
+      "word": "looks",
+      "meaning": "",
+      "pos": []
+    },
+    "word-old": {
+      "word": "old",
+      "meaning": "",
+      "pos": []
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "",
+      "pos": []
+    },
+    "word-should": {
+      "word": "should",
+      "meaning": "",
+      "pos": []
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "",
+      "pos": []
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "",
+      "pos": []
+    },
+    "word-with": {
+      "word": "with",
+      "meaning": "",
+      "pos": []
+    },
+    "word-read": {
+      "word": "read",
+      "meaning": "",
+      "pos": []
+    },
+    "word-ten": {
+      "word": "ten",
+      "meaning": "",
+      "pos": []
+    },
+    "word-minutes": {
+      "word": "minutes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-every": {
+      "word": "every",
+      "meaning": "",
+      "pos": []
+    },
+    "word-day": {
+      "word": "day",
+      "meaning": "",
+      "pos": []
+    },
+    "word-only": {
+      "word": "only",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-enough": {
+      "word": "enough",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-start": {
+      "word": "start",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "",
+      "pos": []
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "",
+      "pos": []
+    },
+    "word-after": {
+      "word": "after",
+      "meaning": "",
+      "pos": []
+    },
+    "word-dinner": {
+      "word": "dinner",
+      "meaning": "",
+      "pos": []
+    },
+    "word-get": {
+      "word": "get",
+      "meaning": "",
+      "pos": []
+    },
+    "word-bored": {
+      "word": "bored",
+      "meaning": "",
+      "pos": []
+    },
+    "word-when": {
+      "word": "when",
+      "meaning": "",
+      "pos": []
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "",
+      "pos": []
+    },
+    "word-worry": {
+      "word": "worry",
+      "meaning": "",
+      "pos": []
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "",
+      "pos": []
+    },
+    "word-reading": {
+      "word": "reading",
+      "meaning": "",
+      "pos": []
+    },
+    "word-lot": {
+      "word": "lot",
+      "meaning": "",
+      "pos": []
+    },
+    "word-just": {
+      "word": "just",
+      "meaning": "",
+      "pos": []
+    },
+    "word-little": {
+      "word": "little",
+      "meaning": "",
+      "pos": []
+    },
+    "word-if": {
+      "word": "if",
+      "meaning": "",
+      "pos": []
+    },
+    "word-miss": {
+      "word": "miss",
+      "meaning": "",
+      "pos": []
+    },
+    "word-again": {
+      "word": "again",
+      "meaning": "",
+      "pos": []
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "",
+      "pos": []
+    },
+    "word-next": {
+      "word": "next",
+      "meaning": "",
+      "pos": []
+    },
+    "word-important": {
+      "word": "important",
+      "meaning": "",
+      "pos": []
+    },
+    "word-thing": {
+      "word": "thing",
+      "meaning": "",
+      "pos": []
+    },
+    "word-continue": {
+      "word": "continue",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Mr. Daniel",
+      "text": "I have a book for each of you.",
+      "translation": "Thầy có một cuốn sách cho mỗi em.",
+      "tokens": [
+        "I",
+        "have",
+        "a",
+        "book",
+        "for",
+        "each",
+        "of",
+        "you"
+      ],
+      "words": [
+        "word-i",
+        "word-have",
+        "word-a",
+        "word-book",
+        "word-for",
+        "word-each",
+        "word-of",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Ryan",
+      "text": "An English book? It looks old.",
+      "translation": "Một cuốn sách tiếng Anh à? Nó trông cũ quá.",
+      "tokens": [
+        "An",
+        "English",
+        "book",
+        "It",
+        "looks",
+        "old"
+      ],
+      "words": [
+        "word-an",
+        "word-english",
+        "word-book",
+        "word-it",
+        "word-looks",
+        "word-old"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Leo",
+      "text": "What should we do with it?",
+      "translation": "Chúng em nên làm gì với nó ạ?",
+      "tokens": [
+        "What",
+        "should",
+        "we",
+        "do",
+        "with",
+        "it"
+      ],
+      "words": [
+        "word-what",
+        "word-should",
+        "word-we",
+        "word-do",
+        "word-with",
+        "word-it"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Mr. Daniel",
+      "text": "Read it for ten minutes every day.",
+      "translation": "Hãy đọc nó trong mười phút mỗi ngày.",
+      "tokens": [
+        "Read",
+        "it",
+        "for",
+        "ten",
+        "minutes",
+        "every",
+        "day"
+      ],
+      "words": [
+        "word-read",
+        "word-it",
+        "word-for",
+        "word-ten",
+        "word-minutes",
+        "word-every",
+        "word-day"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Ryan",
+      "text": "Only ten minutes?",
+      "translation": "Chỉ mười phút thôi ạ?",
+      "tokens": [
+        "Only",
+        "ten",
+        "minutes"
+      ],
+      "words": [
+        "word-only",
+        "word-ten",
+        "word-minutes"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Mr. Daniel",
+      "text": "Yes. Ten minutes is enough to start.",
+      "translation": "Đúng vậy. Mười phút là đủ để bắt đầu.",
+      "tokens": [
+        "Yes",
+        "Ten",
+        "minutes",
+        "is",
+        "enough",
+        "to",
+        "start"
+      ],
+      "words": [
+        "word-yes",
+        "word-ten",
+        "word-minutes",
+        "word-is",
+        "word-enough",
+        "word-to",
+        "word-start"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Leo",
+      "text": "I can do that after dinner.",
+      "translation": "Em có thể làm vậy sau bữa tối.",
+      "tokens": [
+        "I",
+        "can",
+        "do",
+        "that",
+        "after",
+        "dinner"
+      ],
+      "words": [
+        "word-i",
+        "word-can",
+        "word-do",
+        "word-that",
+        "word-after",
+        "word-dinner"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Ryan",
+      "text": "I get bored when I read.",
+      "translation": "Em thấy chán khi đọc sách.",
+      "tokens": [
+        "I",
+        "get",
+        "bored",
+        "when",
+        "I",
+        "read"
+      ],
+      "words": [
+        "word-i",
+        "word-get",
+        "word-bored",
+        "word-when",
+        "word-i",
+        "word-read"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Mr. Daniel",
+      "text": "Do not worry about reading a lot. Just read a little every day.",
+      "translation": "Đừng lo về việc phải đọc nhiều. Chỉ cần đọc một chút mỗi ngày.",
+      "tokens": [
+        "Do",
+        "not",
+        "worry",
+        "about",
+        "reading",
+        "a",
+        "lot",
+        "Just",
+        "read",
+        "a",
+        "little",
+        "every",
+        "day"
+      ],
+      "words": [
+        "word-do",
+        "word-not",
+        "word-worry",
+        "word-about",
+        "word-reading",
+        "word-a",
+        "word-lot",
+        "word-just",
+        "word-read",
+        "word-a",
+        "word-little",
+        "word-every",
+        "word-day"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Ryan",
+      "text": "What if I miss a day?",
+      "translation": "Nếu em bỏ lỡ một ngày thì sao ạ?",
+      "tokens": [
+        "What",
+        "if",
+        "I",
+        "miss",
+        "a",
+        "day"
+      ],
+      "words": [
+        "word-what",
+        "word-if",
+        "word-i",
+        "word-miss",
+        "word-a",
+        "word-day"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Mr. Daniel",
+      "text": "Start again the next day. The important thing is to continue.",
+      "translation": "Hãy bắt đầu lại vào ngày hôm sau. Điều quan trọng là tiếp tục.",
+      "tokens": [
+        "Start",
+        "again",
+        "the",
+        "next",
+        "day",
+        "The",
+        "important",
+        "thing",
+        "is",
+        "to",
+        "continue"
+      ],
+      "words": [
+        "word-start",
+        "word-again",
+        "word-the",
+        "word-next",
+        "word-day",
+        "word-the",
+        "word-important",
+        "word-thing",
+        "word-is",
+        "word-to",
+        "word-continue"
+      ],
+      "phrases": []
+    }
+  }
+}

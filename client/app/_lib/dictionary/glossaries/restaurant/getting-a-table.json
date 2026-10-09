@@ -1,0 +1,862 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "restaurant",
+  "dialogueId": "getting-a-table",
+  "characters": {
+    "Alex": {
+      "meaning": "Alex",
+      "role": "nhân viên phục vụ",
+      "note": "Alex — tên riêng của nhân viên phục vụ"
+    },
+    "Ben": {
+      "meaning": "Ben",
+      "role": "khách, đi cùng Emma",
+      "note": "Ben — tên riêng của một khách đến nhà hàng"
+    },
+    "Emma": {
+      "meaning": "Emma",
+      "role": "khách, đi cùng Ben",
+      "note": "Emma — tên riêng của một khách đến nhà hàng"
+    }
+  },
+  "entries": {
+    "greeting-good": {
+      "meaning": "tốt",
+      "pos": [
+        "adj"
+      ],
+      "note": "Trong “Good evening”, cả cụm dùng để chào buổi tối.",
+      "word": "good"
+    },
+    "evening": {
+      "meaning": "buổi tối",
+      "pos": [
+        "n"
+      ],
+      "word": "evening"
+    },
+    "how-quantity": {
+      "meaning": "bao nhiêu",
+      "pos": [
+        "adv"
+      ],
+      "note": "dùng cùng “many” để hỏi số lượng: bao nhiêu",
+      "word": "how"
+    },
+    "many": {
+      "meaning": "nhiều",
+      "pos": [
+        "det"
+      ],
+      "note": "nhiều; trong “how many” dùng để hỏi bao nhiêu",
+      "word": "many"
+    },
+    "people": {
+      "meaning": "người",
+      "pos": [
+        "n"
+      ],
+      "note": "người (số nhiều); ở đây hỏi có bao nhiêu khách",
+      "word": "people"
+    },
+    "a": {
+      "meaning": "mạo từ không xác định",
+      "pos": [
+        "det"
+      ],
+      "note": "Đứng trước danh từ số ít chưa xác định; thường không dịch riêng.",
+      "word": "a"
+    },
+    "table": {
+      "meaning": "bàn ăn",
+      "pos": [
+        "n"
+      ],
+      "note": "bàn ăn tại nhà hàng",
+      "word": "table"
+    },
+    "for-two": {
+      "meaning": "cho",
+      "pos": [
+        "prep"
+      ],
+      "note": "cho / dành cho (hai người)",
+      "word": "for"
+    },
+    "two": {
+      "meaning": "hai",
+      "pos": [
+        "num"
+      ],
+      "note": "hai người",
+      "word": "two"
+    },
+    "please": {
+      "meaning": "vui lòng",
+      "pos": [
+        "adv"
+      ],
+      "note": "vui lòng / làm ơn; làm cho lời đề nghị lịch sự",
+      "word": "please"
+    },
+    "do-question": {
+      "meaning": "trợ động từ",
+      "pos": [
+        "aux"
+      ],
+      "note": "trợ động từ mở đầu câu hỏi có/không; không dịch riêng",
+      "word": "do"
+    },
+    "you-customers": {
+      "meaning": "hai bạn",
+      "pos": [
+        "pron"
+      ],
+      "note": "hai bạn (Ben và Emma)",
+      "word": "you"
+    },
+    "have-booked": {
+      "meaning": "có",
+      "pos": [
+        "v"
+      ],
+      "note": "có (đặt bàn trước)",
+      "word": "have"
+    },
+    "reservation": {
+      "meaning": "việc đặt bàn trước",
+      "pos": [
+        "n"
+      ],
+      "note": "việc đặt bàn trước tại nhà hàng",
+      "word": "reservation",
+      "pron": ["/ˌrezərˈveɪʃən/"]
+    },
+    "no": {
+      "meaning": "không",
+      "pos": [
+        "interj"
+      ],
+      "note": "không / chưa (trả lời rằng chưa đặt bàn)",
+      "word": "no"
+    },
+    "we-customers": {
+      "meaning": "chúng tôi",
+      "pos": [
+        "pron"
+      ],
+      "note": "chúng tôi (Ben và Emma)",
+      "word": "we"
+    },
+    "do-short-answer": {
+      "meaning": "trợ động từ",
+      "pos": [
+        "aux"
+      ],
+      "note": "thay cho “have a reservation” trong câu trả lời ngắn; không dịch là “làm”",
+      "word": "do"
+    },
+    "not": {
+      "meaning": "chưa",
+      "pos": [
+        "adv"
+      ],
+      "note": "không / chưa; phủ định việc đã đặt bàn",
+      "word": "not"
+    },
+    "that-situation": {
+      "meaning": "điều đó",
+      "pos": [
+        "pron"
+      ],
+      "note": "việc hai khách chưa đặt bàn trước",
+      "word": "that"
+    },
+    "is-fine": {
+      "meaning": "động từ nối",
+      "pos": [
+        "v"
+      ],
+      "note": "động từ be nối “that” với “fine”; không dịch riêng trong “không sao”",
+      "word": "is"
+    },
+    "fine": {
+      "meaning": "ổn",
+      "pos": [
+        "adj"
+      ],
+      "note": "không sao / chấp nhận được",
+      "word": "fine"
+    },
+    "we-staff": {
+      "meaning": "chúng tôi",
+      "pos": [
+        "pron"
+      ],
+      "note": "chúng tôi (nhà hàng / nhân viên nhà hàng)",
+      "word": "we"
+    },
+    "have-available": {
+      "meaning": "có sẵn",
+      "pos": [
+        "v"
+      ],
+      "note": "có sẵn (một bàn)",
+      "word": "have"
+    },
+    "near": {
+      "meaning": "gần",
+      "pos": [
+        "prep"
+      ],
+      "word": "near"
+    },
+    "the-window": {
+      "meaning": "mạo từ xác định",
+      "pos": [
+        "det"
+      ],
+      "note": "mạo từ xác định: chỉ cửa sổ đang nói đến; thường không dịch riêng",
+      "word": "the"
+    },
+    "window": {
+      "meaning": "cửa sổ",
+      "pos": [
+        "n"
+      ],
+      "word": "window"
+    },
+    "is-question": {
+      "meaning": "động từ be",
+      "pos": [
+        "v"
+      ],
+      "note": "động từ be mở đầu câu hỏi: có yên tĩnh không?",
+      "word": "is"
+    },
+    "it-place": {
+      "meaning": "chỗ đó",
+      "pos": [
+        "pron"
+      ],
+      "note": "chỗ đó (gần cửa sổ)",
+      "word": "it"
+    },
+    "quiet": {
+      "meaning": "yên tĩnh",
+      "pos": [
+        "adj"
+      ],
+      "word": "quiet"
+    },
+    "yes": {
+      "meaning": "có",
+      "pos": [
+        "interj"
+      ],
+      "note": "có / đúng vậy (chỗ đó yên tĩnh)",
+      "word": "yes"
+    },
+    "is-short-answer": {
+      "meaning": "trợ động từ",
+      "pos": [
+        "aux"
+      ],
+      "note": "thay cho “is quiet” trong câu trả lời ngắn: có yên tĩnh",
+      "word": "is"
+    },
+    "it-area": {
+      "meaning": "đó",
+      "pos": [
+        "pron"
+      ],
+      "note": "đó (khu vực gần cửa sổ)",
+      "word": "it"
+    },
+    "is-area": {
+      "meaning": "là",
+      "pos": [
+        "v"
+      ],
+      "note": "là (một khu vực yên tĩnh)",
+      "word": "is"
+    },
+    "area": {
+      "meaning": "khu vực",
+      "pos": [
+        "n"
+      ],
+      "note": "khu vực / chỗ ngồi",
+      "word": "area"
+    },
+    "that-suggestion": {
+      "meaning": "điều đó",
+      "pos": [
+        "pron"
+      ],
+      "note": "ý kiến chọn bàn gần cửa sổ",
+      "word": "that"
+    },
+    "sounds": {
+      "meaning": "nghe có vẻ",
+      "pos": [
+        "v"
+      ],
+      "word": "sounds"
+    },
+    "good-agreement": {
+      "meaning": "ổn",
+      "pos": [
+        "adj"
+      ],
+      "note": "ổn / hay (đồng ý với đề nghị)",
+      "word": "good"
+    },
+    "would-request": {
+      "meaning": "trợ động từ",
+      "pos": [
+        "aux"
+      ],
+      "note": "đi với “like” để nói “muốn” một cách lịch sự",
+      "word": "would"
+    },
+    "like-request": {
+      "meaning": "muốn",
+      "pos": [
+        "v"
+      ],
+      "note": "muốn (trong “would like”); không phải “thích”",
+      "word": "like"
+    },
+    "that-table": {
+      "meaning": "đó",
+      "pos": [
+        "det"
+      ],
+      "note": "đó (chỉ bàn gần cửa sổ)",
+      "word": "that"
+    },
+    "great": {
+      "meaning": "tuyệt",
+      "pos": [
+        "interj"
+      ],
+      "note": "tuyệt / tốt lắm",
+      "word": "great"
+    },
+    "the-table": {
+      "meaning": "mạo từ xác định",
+      "pos": [
+        "det"
+      ],
+      "note": "mạo từ xác định: chỉ chiếc bàn đã chọn; thường không dịch riêng",
+      "word": "the"
+    },
+    "is-ready": {
+      "meaning": "động từ nối",
+      "pos": [
+        "v"
+      ],
+      "note": "động từ be nối “bàn” với “sẵn sàng”; thường không dịch riêng",
+      "word": "is"
+    },
+    "ready": {
+      "meaning": "sẵn sàng",
+      "pos": [
+        "adj"
+      ],
+      "note": "sẵn sàng (có thể vào ngồi)",
+      "word": "ready"
+    },
+    "thank": {
+      "meaning": "cảm ơn",
+      "pos": [
+        "v"
+      ],
+      "word": "thank"
+    },
+    "you-server": {
+      "meaning": "bạn",
+      "pos": [
+        "pron"
+      ],
+      "note": "bạn (Alex, nhân viên phục vụ)",
+      "word": "you"
+    },
+    "are-welcome": {
+      "meaning": "động từ nối",
+      "pos": [
+        "v"
+      ],
+      "note": "động từ be trong lời đáp cảm ơn “You are welcome”; không dịch riêng",
+      "word": "are"
+    },
+    "welcome-response": {
+      "meaning": "không có gì",
+      "pos": [
+        "adj"
+      ],
+      "note": "không có gì (đáp lại lời cảm ơn); không phải lời chào mừng",
+      "word": "welcome"
+    },
+    "enjoy-wish": {
+      "meaning": "thưởng thức",
+      "pos": [
+        "v"
+      ],
+      "note": "Nghĩa riêng là thưởng thức; “Enjoy your meal” là lời chúc ngon miệng.",
+      "word": "enjoy"
+    },
+    "your-customers": {
+      "meaning": "của hai bạn",
+      "pos": [
+        "det"
+      ],
+      "note": "của hai bạn (Ben và Emma)",
+      "word": "your"
+    },
+    "meal": {
+      "meaning": "bữa ăn",
+      "pos": [
+        "n"
+      ],
+      "word": "meal"
+    },
+    "good-evening": {
+      "meaning": "chào buổi tối",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "how-many": {
+      "meaning": "bao nhiêu",
+      "pos": [
+        "phrase"
+      ],
+      "note": "bao nhiêu (người)"
+    },
+    "table-for-two": {
+      "meaning": "bàn cho hai người",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/ˈteɪbəl fər tuː/"
+      ]
+    },
+    "have-a-reservation": {
+      "meaning": "có đặt bàn trước",
+      "pos": [
+        "phrase"
+      ],
+      "note": "đặt bàn trước / có đặt bàn trước"
+    },
+    "do-not-booked": {
+      "meaning": "chưa đặt bàn",
+      "pos": [
+        "phrase"
+      ],
+      "note": "chưa đặt bàn; “do” thay cho việc đặt bàn đã nhắc ở câu trước"
+    },
+    "that-is-fine": {
+      "meaning": "không sao",
+      "pos": [
+        "phrase"
+      ],
+      "note": "không sao (về việc hai khách chưa đặt bàn)"
+    },
+    "near-the-window": {
+      "meaning": "gần cửa sổ",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/nɪr ðə ˈwɪndoʊ/"
+      ]
+    },
+    "sounds-good": {
+      "meaning": "nghe ổn đấy",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/ðæt saʊndz ɡʊd/"
+      ],
+      "note": "nghe ổn đấy (đồng ý chọn bàn được đề nghị)"
+    },
+    "would-like": {
+      "meaning": "muốn",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/wʊd laɪk/"
+      ],
+      "note": "muốn (cách đề nghị lịch sự)"
+    },
+    "thank-you": {
+      "meaning": "cảm ơn bạn",
+      "pos": [
+        "phrase"
+      ],
+      "note": "cảm ơn bạn (Alex)"
+    },
+    "you-are-welcome": {
+      "meaning": "không có gì",
+      "pos": [
+        "phrase"
+      ],
+      "note": "không có gì (đáp lại lời cảm ơn)"
+    },
+    "enjoy-your-meal": {
+      "meaning": "chúc ngon miệng",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/ɪnˈdʒɔɪ jʊr miːl/"
+      ],
+      "note": "chúc hai bạn ngon miệng"
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Alex",
+      "text": "Good evening. How many people?",
+      "translation": "Chào buổi tối. Có bao nhiêu người?",
+      "words": [
+        "greeting-good",
+        "evening",
+        "how-quantity",
+        "many",
+        "people"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "entry": "good-evening",
+          "text": "Good evening"
+        },
+        {
+          "start": 2,
+          "end": 3,
+          "entry": "how-many",
+          "text": "How many"
+        }
+      ],
+      "tokens": [
+        "Good",
+        "evening",
+        "How",
+        "many",
+        "people"
+      ]
+    },
+    "2": {
+      "speaker": "Ben",
+      "text": "A table for two, please.",
+      "translation": "Cho chúng tôi một bàn cho hai người.",
+      "words": [
+        "a",
+        "table",
+        "for-two",
+        "two",
+        "please"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 3,
+          "entry": "table-for-two",
+          "text": "table for two"
+        }
+      ],
+      "tokens": [
+        "A",
+        "table",
+        "for",
+        "two",
+        "please"
+      ]
+    },
+    "3": {
+      "speaker": "Alex",
+      "text": "Do you have a reservation?",
+      "translation": "Hai bạn có đặt bàn trước không?",
+      "words": [
+        "do-question",
+        "you-customers",
+        "have-booked",
+        "a",
+        "reservation"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 4,
+          "entry": "have-a-reservation",
+          "text": "have a reservation"
+        }
+      ],
+      "tokens": [
+        "Do",
+        "you",
+        "have",
+        "a",
+        "reservation"
+      ]
+    },
+    "4": {
+      "speaker": "Emma",
+      "text": "No, we do not.",
+      "translation": "Không, chúng tôi chưa đặt.",
+      "words": [
+        "no",
+        "we-customers",
+        "do-short-answer",
+        "not"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "entry": "do-not-booked",
+          "text": "do not"
+        }
+      ],
+      "tokens": [
+        "No",
+        "we",
+        "do",
+        "not"
+      ]
+    },
+    "5": {
+      "speaker": "Alex",
+      "text": "That is fine. We have a table near the window.",
+      "translation": "Không sao. Chúng tôi có một bàn gần cửa sổ.",
+      "words": [
+        "that-situation",
+        "is-fine",
+        "fine",
+        "we-staff",
+        "have-available",
+        "a",
+        "table",
+        "near",
+        "the-window",
+        "window"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 2,
+          "entry": "that-is-fine",
+          "text": "That is fine"
+        },
+        {
+          "start": 7,
+          "end": 9,
+          "entry": "near-the-window",
+          "text": "near the window"
+        }
+      ],
+      "tokens": [
+        "That",
+        "is",
+        "fine",
+        "We",
+        "have",
+        "a",
+        "table",
+        "near",
+        "the",
+        "window"
+      ]
+    },
+    "6": {
+      "speaker": "Ben",
+      "text": "Is it quiet near the window?",
+      "translation": "Chỗ gần cửa sổ có yên tĩnh không?",
+      "words": [
+        "is-question",
+        "it-place",
+        "quiet",
+        "near",
+        "the-window",
+        "window"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 5,
+          "entry": "near-the-window",
+          "text": "near the window"
+        }
+      ],
+      "tokens": [
+        "Is",
+        "it",
+        "quiet",
+        "near",
+        "the",
+        "window"
+      ]
+    },
+    "7": {
+      "speaker": "Alex",
+      "text": "Yes, it is. It is a quiet area.",
+      "translation": "Có. Đó là một khu vực yên tĩnh.",
+      "words": [
+        "yes",
+        "it-place",
+        "is-short-answer",
+        "it-area",
+        "is-area",
+        "a",
+        "quiet",
+        "area"
+      ],
+      "phrases": [],
+      "tokens": [
+        "Yes",
+        "it",
+        "is",
+        "It",
+        "is",
+        "a",
+        "quiet",
+        "area"
+      ]
+    },
+    "8": {
+      "speaker": "Emma",
+      "text": "That sounds good.",
+      "translation": "Nghe ổn đấy.",
+      "words": [
+        "that-suggestion",
+        "sounds",
+        "good-agreement"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 2,
+          "entry": "sounds-good",
+          "text": "That sounds good"
+        }
+      ],
+      "tokens": [
+        "That",
+        "sounds",
+        "good"
+      ]
+    },
+    "9": {
+      "speaker": "Ben",
+      "text": "We would like that table, please.",
+      "translation": "Chúng tôi muốn chọn bàn đó.",
+      "words": [
+        "we-customers",
+        "would-request",
+        "like-request",
+        "that-table",
+        "table",
+        "please"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "entry": "would-like",
+          "text": "would like"
+        }
+      ],
+      "tokens": [
+        "We",
+        "would",
+        "like",
+        "that",
+        "table",
+        "please"
+      ]
+    },
+    "10": {
+      "speaker": "Alex",
+      "text": "Great. The table is ready.",
+      "translation": "Tuyệt. Bàn đã sẵn sàng.",
+      "words": [
+        "great",
+        "the-table",
+        "table",
+        "is-ready",
+        "ready"
+      ],
+      "phrases": [],
+      "tokens": [
+        "Great",
+        "The",
+        "table",
+        "is",
+        "ready"
+      ]
+    },
+    "11": {
+      "speaker": "Emma",
+      "text": "Thank you.",
+      "translation": "Cảm ơn bạn.",
+      "words": [
+        "thank",
+        "you-server"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "entry": "thank-you",
+          "text": "Thank you"
+        }
+      ],
+      "tokens": [
+        "Thank",
+        "you"
+      ]
+    },
+    "12": {
+      "speaker": "Alex",
+      "text": "You are welcome. Enjoy your meal.",
+      "translation": "Không có gì. Chúc hai bạn ngon miệng.",
+      "words": [
+        "you-customers",
+        "are-welcome",
+        "welcome-response",
+        "enjoy-wish",
+        "your-customers",
+        "meal"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 2,
+          "entry": "you-are-welcome",
+          "text": "You are welcome"
+        },
+        {
+          "start": 3,
+          "end": 5,
+          "entry": "enjoy-your-meal",
+          "text": "Enjoy your meal"
+        }
+      ],
+      "tokens": [
+        "You",
+        "are",
+        "welcome",
+        "Enjoy",
+        "your",
+        "meal"
+      ]
+    }
+  }
+}

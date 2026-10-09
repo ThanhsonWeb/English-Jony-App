@@ -151,7 +151,7 @@ If PM2 runs multiple workers or multiple API instances, plan a supported shared 
 | `server/routes/studyActivityRoutes.js` | Same shared guards around existing authentication |
 | `server/tests/learningRateLimit.test.js` | Eight isolated limiter/key/burst/recovery tests |
 | `server/tests/learningSecurity.test.js` | Six full-app/disposable-replica-set security/progress/XP/streak tests |
-| `client/scripts/test-learning-security-browser.cjs` | Real learning UI + local full Express app; normal/replay/429/Retry/expiry coverage |
+| `client/scripts/tests/browser/test-learning-security-browser.cjs` | Real learning UI + local full Express app; normal/replay/429/Retry/expiry coverage |
 | `SECURITY_F05_F17_FIX.md` | This report and deployment verification checklist |
 
 Hashes of all previously dirty files were checked against the starting snapshot and preserved, including F09 app/middleware/tests, F07/F08 controllers, previous browser harnesses/reports and the existing Logo edit. No authentication, cookie, infrastructure, dependency or lesson-content files were changed.

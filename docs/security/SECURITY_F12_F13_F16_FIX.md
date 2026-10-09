@@ -143,11 +143,11 @@ Public GET access and the existing general API limiter remain. Existing local di
 - `server/tests/learningSecurity.test.js`
 - `server/tests/studyHeatmap.test.js`
 - `server/tests/vocabularyReview.test.js`
-- `client/scripts/dialogue-attempt-client.test.mjs` — new
-- `client/scripts/dialogue-progress-save.test.mjs`
-- `client/scripts/review-save-controller.test.mjs`
-- `client/scripts/mistake-review-session.test.mjs`
-- `client/scripts/test-learning-security-browser.cjs`
+- `client/scripts/tests/unit/dialogue-attempt-client.test.mjs` — new
+- `client/scripts/tests/unit/dialogue-progress-save.test.mjs`
+- `client/scripts/tests/unit/review-save-controller.test.mjs`
+- `client/scripts/tests/unit/mistake-review-session.test.mjs`
+- `client/scripts/tests/browser/test-learning-security-browser.cjs`
 - `SECURITY_F12_F13_F16_FIX.md`
 
 The existing ID-only task catalogue was regenerated but has no content diff. Authentication/session controllers, AuthContext, app proxy settings, listener binding, cookies, package manifests and lockfiles have no changes.
@@ -173,8 +173,8 @@ Core browser coverage uses the actual local Express app and disposable replica s
 Three unchanged client failures, also documented in the preceding remediation report:
 
 1. `client/app/_lib/dictionary/resolveMeaning.test.mjs`: runtime v3 lookup/lemma data.
-2. `client/scripts/build-dictionary-v3.test.mjs`: committed generated dictionary reproducibility.
-3. `client/scripts/extract-dictionary-v2.test.mjs`: generated dictionary reproducibility.
+2. `client/scripts/tests/integration/build-dictionary-v3.test.mjs`: committed generated dictionary reproducibility.
+3. `client/scripts/tests/integration/extract-dictionary-v2.test.mjs`: generated dictionary reproducibility.
 
 Those source/data/generator files were not changed. The full client suite is not clean. Existing Node module/VM and Mongoose deprecation warnings are separate from focused lint.
 

@@ -65,7 +65,7 @@ Any future trusted provenance import needs to derive metadata and word membershi
 | `server/controllers/topicController.js` | PATCH text allowlist, controlled owner-scoped missing result, DELETE ownership check before cleanup. |
 | `server/controllers/vocabController.js` | Creation allowlist; shared local owned-topic validation for POST/PATCH. |
 | `server/tests/topicVocabularySecurity.test.js` | 18 focused API/database security and scheduling tests. |
-| `client/scripts/test-topic-vocabulary-security-browser.cjs` | Real UI saves against loopback Express/disposable MongoDB; dictionary provider response mocked. |
+| `client/scripts/tests/browser/test-topic-vocabulary-security-browser.cjs` | Real UI saves against loopback Express/disposable MongoDB; dictionary provider response mocked. |
 | `SECURITY_F07_F08_FIX.md` | This report. |
 
 Auth/session/OAuth code, models, frontend application code/styles, locales, progress/review services and package/lockfiles remain unchanged. Next dev's generated AGENTS addition is removed after verification.

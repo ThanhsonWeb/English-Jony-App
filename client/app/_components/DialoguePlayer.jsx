@@ -5,8 +5,11 @@ import { createPortal } from "react-dom";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Languages, ArrowLeft } from "lucide-react";
-import { lookupWord } from "@/app/_lib/dictionary/lookupWord";
-import { resolveMeaning } from "@/app/_lib/dictionary/resolveMeaning";
+import {
+	SUBTITLE_WORD_PATTERN,
+	SUBTITLE_WORD_TOKEN_PATTERN,
+} from "@/app/_lib/dictionary/findPreferredLookup";
+import { findLessonLookup } from "@/app/_lib/dictionary/findLessonLookup";
 import useDialogueShortcuts from "@/app/_hooks/useDialogueShortcuts";
 import { useTranslations } from "next-intl";
 import useDialoguePlaybackRate from "@/app/_hooks/useDialoguePlaybackRate";
@@ -40,37 +43,6 @@ function preloadDialogueAsset(src) {
 		void image.decode().catch(() => {});
 	}
 }
-const SUBTITLE_WORD_PATTERN = /([A-Za-z]+(?:['’\-][A-Za-z]+)*)/g;
-const SUBTITLE_WORD_TOKEN_PATTERN = /^[A-Za-z]+(?:['’\-][A-Za-z]+)*$/;
-
-function findPreferredLookup(text, clickedWordIndex) {
-	const words = Array.from(
-		text.matchAll(SUBTITLE_WORD_PATTERN),
-		(match) => match[0],
-	);
-
-	for (let length = words.length; length >= 2; length -= 1) {
-		for (let start = 0; start + length <= words.length; start += 1) {
-			const end = start + length - 1;
-			if (clickedWordIndex < start || clickedWordIndex > end) continue;
-
-			const result = lookupWord(words.slice(start, end + 1).join(" "));
-			if (result?.source === "phrase") {
-				return { result, startWordIndex: start, endWordIndex: end };
-			}
-		}
-	}
-
-	const result = lookupWord(words[clickedWordIndex]);
-	return result
-		? {
-				result,
-				startWordIndex: clickedWordIndex,
-				endWordIndex: clickedWordIndex,
-			}
-		: null;
-}
-
 function renderSubtitleTokens(text, onWordClick, activeWordRange) {
 	let wordIndex = -1;
 	const segments = text.split(SUBTITLE_WORD_PATTERN).map((token, index) => ({
@@ -308,7 +280,12 @@ export default function DialoguePlayer({
 	}, [selectedLookup]);
 
 	function handleSubtitleWordClick(wordIndex, event) {
-		const lookup = findPreferredLookup(activeLine?.text || "", wordIndex);
+		const lookup = findLessonLookup({
+			lessonId,
+			dialogueId,
+			line: activeLine,
+			clickedWordIndex: wordIndex,
+		});
 		if (!lookup) {
 			setSelectedLookup(null);
 			return;
@@ -326,18 +303,11 @@ export default function DialoguePlayer({
 			),
 			window.innerWidth - popupWidth - viewportPadding,
 		);
-		const result = resolveMeaning({
-			result: lookup.result,
-			transcript: activeLine?.text,
-			clickedWord: lookup.result.text,
-			matchedPhrase:
-				lookup.result.source === "phrase" ? lookup.result.text : "",
-		});
-
 		setSelectedLookup({
 			lineIndex: currentLine,
 			...lookup,
-			result,
+			phraseLookup: lookup.wordLookup ? lookup : null,
+			result: lookup.result,
 			isMobile,
 			position: {
 				left,
@@ -936,6 +906,20 @@ export default function DialoguePlayer({
 							<p className="mt-2 leading-relaxed text-slate-200">
 								{selectedLookup.result.displayMeaning}
 							</p>
+							{selectedLookup.phraseLookup && (
+								<button
+									type="button"
+									data-dictionary-switch="true"
+									aria-label={t("meaningOf", { word: selectedLookup.result.source === "phrase"
+										? selectedLookup.phraseLookup.wordLookup.result.text : selectedLookup.phraseLookup.result.text })}
+									onClick={() => setSelectedLookup(current => ({ ...current,
+										...(current.result.source === "phrase" ? current.phraseLookup.wordLookup : current.phraseLookup) }))}
+									className="mt-2 text-cyan-300 underline underline-offset-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
+								>
+									{selectedLookup.result.source === "phrase"
+										? selectedLookup.phraseLookup.wordLookup.result.text : selectedLookup.phraseLookup.result.text}
+								</button>
+							)}
 						</div>,
 						document.body,
 					)}

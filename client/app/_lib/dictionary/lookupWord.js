@@ -6,8 +6,14 @@ function normalize(text = "") {
   return text
     .toLowerCase()
     .trim()
+    .replace(/[‘’]/g, "'")
+    .replace(/\s+/g, " ")
     .replace(/[.,!?;:"()]/g, "");
 }
+
+export const maxPhraseWords = Math.max(
+  ...Object.keys(phrases).map((phrase) => phrase.split(" ").length),
+);
 
 export function lookupWord(text) {
   const key = normalize(text);

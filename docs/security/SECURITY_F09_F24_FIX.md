@@ -100,10 +100,10 @@ Plan explicit expiry/retirement of parent-domain cookies without letting a delay
 | `server/tests/csrfProtection.test.js` | Full-app, disposable-DB mutation, session, CRUD, scheduling, progress and OAuth coverage |
 | `server/tests/passwordRecoverySecurity.test.js` | Send legitimate test Origin; preserve separate recovery-origin validation assertions behind the new earlier guard |
 | `server/tests/userTheme.test.js` | Supply trusted frontend config/Origin for existing full-app theme/account tests |
-| `client/scripts/test-csrf-browser.cjs` | New local browser/full-app tests with actual HttpOnly auth cookies |
-| `client/scripts/test-credential-race-browser.cjs` | Run the existing real-cookie F06 browser harness through the new guard |
-| `client/scripts/test-topic-vocabulary-security-browser.cjs` | Run the existing F07/F08/Wordlist browser harness through the new guard |
-| `client/scripts/dependency-runtime.test.cjs` | Verify Next API proxy forwards Origin/Referer with cookies/method/body/response headers |
+| `client/scripts/tests/browser/test-csrf-browser.cjs` | New local browser/full-app tests with actual HttpOnly auth cookies |
+| `client/scripts/tests/browser/test-credential-race-browser.cjs` | Run the existing real-cookie F06 browser harness through the new guard |
+| `client/scripts/tests/browser/test-topic-vocabulary-security-browser.cjs` | Run the existing F07/F08/Wordlist browser harness through the new guard |
+| `client/scripts/tests/integration/dependency-runtime.test.cjs` | Verify Next API proxy forwards Origin/Referer with cookies/method/body/response headers |
 | `SECURITY_F09_F24_FIX.md` | This report |
 
 Previously dirty Logo, Topic/Vocabulary controller, F07/F08 test and report files were preserved; only the existing F07/F08 browser harness was deliberately updated for guard integration. Frontend application UI, auth controllers, cookie helpers, models, dependencies and lockfiles were not changed for this batch.

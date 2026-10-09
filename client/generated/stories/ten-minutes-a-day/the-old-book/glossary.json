@@ -1,0 +1,890 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "ten-minutes-a-day",
+  "dialogueId": "the-old-book",
+  "characters": {
+    "Mr. Daniel": {
+      "meaning": "Mr. Daniel",
+      "role": "thầy giáo"
+    },
+    "Leo": {
+      "meaning": "Leo",
+      "role": "học sinh"
+    },
+    "Ryan": {
+      "meaning": "Ryan",
+      "role": "học sinh"
+    }
+  },
+  "entries": {
+    "word-i": {
+      "word": "i",
+      "meaning": "em",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "có",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "mạo từ không xác định",
+      "pos": [
+        "det"
+      ],
+      "note": "Đứng trước danh từ số ít chưa xác định."
+    },
+    "word-book": {
+      "word": "book",
+      "meaning": "cuốn sách",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "cho",
+      "pos": [
+        "prep"
+      ]
+    },
+    "word-each": {
+      "word": "each",
+      "meaning": "mỗi",
+      "pos": [
+        "det"
+      ],
+      "pron": [
+        "/iːtʃ/"
+      ]
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "giới từ",
+      "pos": [
+        "prep"
+      ],
+      "note": "Nối each với you trong each of you; không dịch riêng."
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "các em",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-an": {
+      "word": "an",
+      "meaning": "mạo từ không xác định",
+      "pos": [
+        "det"
+      ],
+      "note": "Đứng trước danh từ số ít chưa xác định."
+    },
+    "word-english": {
+      "word": "english",
+      "meaning": "tiếng Anh",
+      "pos": [
+        "adj"
+      ],
+      "note": "Bổ nghĩa cho book: cuốn sách tiếng Anh."
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "nó",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-looks": {
+      "word": "looks",
+      "meaning": "trông có vẻ",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-old": {
+      "word": "old",
+      "meaning": "cũ",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "gì",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-should": {
+      "word": "should",
+      "meaning": "nên",
+      "pos": [
+        "aux"
+      ]
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "chúng em",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "làm",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-with": {
+      "word": "with",
+      "meaning": "với",
+      "pos": [
+        "prep"
+      ]
+    },
+    "word-read": {
+      "word": "read",
+      "meaning": "đọc",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-ten": {
+      "word": "ten",
+      "meaning": "mười",
+      "pos": [
+        "num"
+      ]
+    },
+    "word-minutes": {
+      "word": "minutes",
+      "meaning": "phút",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-every": {
+      "word": "every",
+      "meaning": "mỗi",
+      "pos": [
+        "det"
+      ]
+    },
+    "word-day": {
+      "word": "day",
+      "meaning": "ngày",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-only": {
+      "word": "only",
+      "meaning": "chỉ",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "đúng vậy",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "là",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-enough": {
+      "word": "enough",
+      "meaning": "đủ",
+      "pos": [
+        "adj"
+      ],
+      "pron": [
+        "/ɪˈnʌf/"
+      ]
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "để",
+      "pos": [
+        "prep"
+      ]
+    },
+    "word-start": {
+      "word": "start",
+      "meaning": "bắt đầu",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "aux"
+      ]
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "vậy",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-after": {
+      "word": "after",
+      "meaning": "sau",
+      "pos": [
+        "prep"
+      ]
+    },
+    "word-dinner": {
+      "word": "dinner",
+      "meaning": "bữa tối",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-get": {
+      "word": "get",
+      "meaning": "cảm thấy",
+      "pos": [
+        "v"
+      ],
+      "note": "Đi cùng bored; cả cụm là cảm thấy chán."
+    },
+    "word-bored": {
+      "word": "bored",
+      "meaning": "chán",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-when": {
+      "word": "when",
+      "meaning": "khi",
+      "pos": [
+        "conj"
+      ]
+    },
+    "word-worry": {
+      "word": "worry",
+      "meaning": "lo lắng",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "về",
+      "pos": [
+        "prep"
+      ]
+    },
+    "word-reading": {
+      "word": "reading",
+      "meaning": "đọc",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-lot": {
+      "word": "lot",
+      "meaning": "nhiều",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-just": {
+      "word": "just",
+      "meaning": "chỉ cần",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-little": {
+      "word": "little",
+      "meaning": "ít",
+      "pos": [
+        "det"
+      ]
+    },
+    "word-if": {
+      "word": "if",
+      "meaning": "nếu",
+      "pos": [
+        "conj"
+      ]
+    },
+    "word-miss": {
+      "word": "miss",
+      "meaning": "bỏ lỡ",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-again": {
+      "word": "again",
+      "meaning": "lại",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "mạo từ xác định",
+      "pos": [
+        "det"
+      ],
+      "note": "Xác định danh từ; thường không dịch riêng."
+    },
+    "word-next": {
+      "word": "next",
+      "meaning": "tiếp theo",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-important": {
+      "word": "important",
+      "meaning": "quan trọng",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-thing": {
+      "word": "thing",
+      "meaning": "điều",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-continue": {
+      "word": "continue",
+      "meaning": "tiếp tục",
+      "pos": [
+        "v"
+      ],
+      "pron": [
+        "/kənˈtɪn.juː/"
+      ]
+    },
+    "i-teacher": {
+      "word": "i",
+      "meaning": "thầy",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mr. Daniel đang nói với hai học sinh."
+    },
+    "for-duration": {
+      "word": "for",
+      "meaning": "trong",
+      "pos": [
+        "prep"
+      ],
+      "note": "Chỉ khoảng thời gian đọc sách."
+    },
+    "do-imperative": {
+      "word": "do",
+      "meaning": "trợ động từ",
+      "pos": [
+        "aux"
+      ],
+      "note": "Đi với not để tạo lời khuyên phủ định."
+    },
+    "not-imperative": {
+      "word": "not",
+      "meaning": "đừng",
+      "pos": [
+        "adv"
+      ]
+    },
+    "to-infinitive": {
+      "word": "to",
+      "meaning": "dấu hiệu nguyên mẫu",
+      "pos": [
+        "part"
+      ],
+      "note": "Đứng trước continue; không dịch riêng."
+    },
+    "a-quantity": {
+      "word": "a",
+      "meaning": "một",
+      "pos": [
+        "det"
+      ],
+      "note": "Trong a little và a lot, cả cụm chỉ lượng."
+    },
+    "each-of-you": {
+      "meaning": "mỗi em",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "english-book": {
+      "meaning": "cuốn sách tiếng Anh",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "ten-minutes": {
+      "meaning": "mười phút",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "every-day": {
+      "meaning": "mỗi ngày",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/ˈev.ri deɪ/"
+      ]
+    },
+    "after-dinner": {
+      "meaning": "sau bữa tối",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/ˈɑːf.tər ˈdɪn.ər/"
+      ]
+    },
+    "get-bored": {
+      "meaning": "cảm thấy chán",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/ɡet bɔːrd/"
+      ]
+    },
+    "do-not": {
+      "meaning": "đừng",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "a-lot": {
+      "meaning": "nhiều",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "a-little": {
+      "meaning": "một chút",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/ə ˈlɪt.əl/"
+      ]
+    },
+    "what-if": {
+      "meaning": "nếu ... thì sao",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "start-again": {
+      "meaning": "bắt đầu lại",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/stɑːrt əˈɡen/"
+      ]
+    },
+    "the-next-day": {
+      "meaning": "ngày hôm sau",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Mr. Daniel",
+      "text": "I have a book for each of you.",
+      "translation": "Thầy có một cuốn sách cho mỗi em.",
+      "tokens": [
+        "I",
+        "have",
+        "a",
+        "book",
+        "for",
+        "each",
+        "of",
+        "you"
+      ],
+      "words": [
+        "i-teacher",
+        "word-have",
+        "word-a",
+        "word-book",
+        "word-for",
+        "word-each",
+        "word-of",
+        "word-you"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "each of you",
+          "entry": "each-of-you"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Ryan",
+      "text": "An English book? It looks old.",
+      "translation": "Một cuốn sách tiếng Anh à? Nó trông cũ quá.",
+      "tokens": [
+        "An",
+        "English",
+        "book",
+        "It",
+        "looks",
+        "old"
+      ],
+      "words": [
+        "word-an",
+        "word-english",
+        "word-book",
+        "word-it",
+        "word-looks",
+        "word-old"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "text": "English book",
+          "entry": "english-book"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Leo",
+      "text": "What should we do with it?",
+      "translation": "Chúng em nên làm gì với nó ạ?",
+      "tokens": [
+        "What",
+        "should",
+        "we",
+        "do",
+        "with",
+        "it"
+      ],
+      "words": [
+        "word-what",
+        "word-should",
+        "word-we",
+        "word-do",
+        "word-with",
+        "word-it"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Mr. Daniel",
+      "text": "Read it for ten minutes every day.",
+      "translation": "Hãy đọc nó trong mười phút mỗi ngày.",
+      "tokens": [
+        "Read",
+        "it",
+        "for",
+        "ten",
+        "minutes",
+        "every",
+        "day"
+      ],
+      "words": [
+        "word-read",
+        "word-it",
+        "for-duration",
+        "word-ten",
+        "word-minutes",
+        "word-every",
+        "word-day"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "ten minutes",
+          "entry": "ten-minutes"
+        },
+        {
+          "start": 5,
+          "end": 6,
+          "text": "every day",
+          "entry": "every-day"
+        }
+      ]
+    },
+    "5": {
+      "speaker": "Ryan",
+      "text": "Only ten minutes?",
+      "translation": "Chỉ mười phút thôi ạ?",
+      "tokens": [
+        "Only",
+        "ten",
+        "minutes"
+      ],
+      "words": [
+        "word-only",
+        "word-ten",
+        "word-minutes"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "text": "ten minutes",
+          "entry": "ten-minutes"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Mr. Daniel",
+      "text": "Yes. Ten minutes is enough to start.",
+      "translation": "Đúng vậy. Mười phút là đủ để bắt đầu.",
+      "tokens": [
+        "Yes",
+        "Ten",
+        "minutes",
+        "is",
+        "enough",
+        "to",
+        "start"
+      ],
+      "words": [
+        "word-yes",
+        "word-ten",
+        "word-minutes",
+        "word-is",
+        "word-enough",
+        "word-to",
+        "word-start"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "text": "Ten minutes",
+          "entry": "ten-minutes"
+        }
+      ]
+    },
+    "7": {
+      "speaker": "Leo",
+      "text": "I can do that after dinner.",
+      "translation": "Em có thể làm vậy sau bữa tối.",
+      "tokens": [
+        "I",
+        "can",
+        "do",
+        "that",
+        "after",
+        "dinner"
+      ],
+      "words": [
+        "word-i",
+        "word-can",
+        "word-do",
+        "word-that",
+        "word-after",
+        "word-dinner"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "after dinner",
+          "entry": "after-dinner"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Ryan",
+      "text": "I get bored when I read.",
+      "translation": "Em thấy chán khi đọc sách.",
+      "tokens": [
+        "I",
+        "get",
+        "bored",
+        "when",
+        "I",
+        "read"
+      ],
+      "words": [
+        "word-i",
+        "word-get",
+        "word-bored",
+        "word-when",
+        "word-i",
+        "word-read"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "text": "get bored",
+          "entry": "get-bored"
+        }
+      ]
+    },
+    "9": {
+      "speaker": "Mr. Daniel",
+      "text": "Do not worry about reading a lot. Just read a little every day.",
+      "translation": "Đừng lo về việc phải đọc nhiều. Chỉ cần đọc một chút mỗi ngày.",
+      "tokens": [
+        "Do",
+        "not",
+        "worry",
+        "about",
+        "reading",
+        "a",
+        "lot",
+        "Just",
+        "read",
+        "a",
+        "little",
+        "every",
+        "day"
+      ],
+      "words": [
+        "do-imperative",
+        "not-imperative",
+        "word-worry",
+        "word-about",
+        "word-reading",
+        "a-quantity",
+        "word-lot",
+        "word-just",
+        "word-read",
+        "a-quantity",
+        "word-little",
+        "word-every",
+        "word-day"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Do not",
+          "entry": "do-not"
+        },
+        {
+          "start": 5,
+          "end": 6,
+          "text": "a lot",
+          "entry": "a-lot"
+        },
+        {
+          "start": 9,
+          "end": 10,
+          "text": "a little",
+          "entry": "a-little"
+        },
+        {
+          "start": 11,
+          "end": 12,
+          "text": "every day",
+          "entry": "every-day"
+        }
+      ]
+    },
+    "10": {
+      "speaker": "Ryan",
+      "text": "What if I miss a day?",
+      "translation": "Nếu em bỏ lỡ một ngày thì sao ạ?",
+      "tokens": [
+        "What",
+        "if",
+        "I",
+        "miss",
+        "a",
+        "day"
+      ],
+      "words": [
+        "word-what",
+        "word-if",
+        "word-i",
+        "word-miss",
+        "word-a",
+        "word-day"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "What if",
+          "entry": "what-if"
+        }
+      ]
+    },
+    "11": {
+      "speaker": "Mr. Daniel",
+      "text": "Start again the next day. The important thing is to continue.",
+      "translation": "Hãy bắt đầu lại vào ngày hôm sau. Điều quan trọng là tiếp tục.",
+      "tokens": [
+        "Start",
+        "again",
+        "the",
+        "next",
+        "day",
+        "The",
+        "important",
+        "thing",
+        "is",
+        "to",
+        "continue"
+      ],
+      "words": [
+        "word-start",
+        "word-again",
+        "word-the",
+        "word-next",
+        "word-day",
+        "word-the",
+        "word-important",
+        "word-thing",
+        "word-is",
+        "to-infinitive",
+        "word-continue"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Start again",
+          "entry": "start-again"
+        },
+        {
+          "start": 2,
+          "end": 4,
+          "text": "the next day",
+          "entry": "the-next-day"
+        }
+      ]
+    }
+  }
+}

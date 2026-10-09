@@ -1,0 +1,3730 @@
+{
+  "status": "Ready for human review; not approved for production integration.",
+  "corpus": {
+    "files": [
+      "dialogues/asking-for-directions/finding-a-cafe.json",
+      "dialogues/asking-for-directions/finding-the-bus-stop.json",
+      "dialogues/asking-for-directions/finding-the-train-station.json",
+      "dialogues/asking-for-directions/going-to-the-supermarket.json",
+      "dialogues/coffee-shop/asking-about-the-wifi.json",
+      "dialogues/coffee-shop/choosing-a-snack.json",
+      "dialogues/coffee-shop/fixing-an-order.json",
+      "dialogues/coffee-shop/ordering-a-coffee.json",
+      "dialogues/grocery-store/checking-out.json",
+      "dialogues/grocery-store/choosing-food.json",
+      "dialogues/grocery-store/finding-items.json",
+      "dialogues/grocery-store/making-a-shopping-list.json",
+      "dialogues/restaurant/during-the-meal.json",
+      "dialogues/restaurant/getting-a-table.json",
+      "dialogues/restaurant/ordering-food.json",
+      "dialogues/restaurant/reading-the-menu.json",
+      "dialogues/walk-in-the-park/meeting-at-the-park.json",
+      "dialogues/walk-in-the-park/talking-about-themselves.json",
+      "dialogues/walk-in-the-park/talking-about-work.json",
+      "dialogues/walk-in-the-park/weekend-plans.json",
+      "stories/ten-minutes-a-day/only-ten-minutes.json",
+      "stories/ten-minutes-a-day/the-old-book.json",
+      "stories/ten-minutes-a-day/the-presentation.json",
+      "stories/ten-minutes-a-day/the-real-treasure.json"
+    ],
+    "fileCount": 24,
+    "occurrences": 1862,
+    "tokenizer": "Live SUBTITLE_WORD_PATTERN; contractions and hyphenated words count as one; digits excluded.",
+    "fingerprint": "bff3c4f27d04e44f8cde8024086f9c8dd8f83816d718c46e66cb3fa7894bd885"
+  },
+  "baseline": {
+    "hit": 1202,
+    "total": 1862,
+    "coveragePercent": 64.5542,
+    "missingOccurrences": 660,
+    "uniqueMissing": 129,
+    "historicalBaselinePercent": 64.55,
+    "historicalBaselineReproduced": true
+  },
+  "candidate": {
+    "hit": 1856,
+    "total": 1862,
+    "coveragePercent": 99.6778,
+    "missingOccurrences": 6,
+    "uniqueMissing": 3,
+    "words": 5464,
+    "lemmas": 176,
+    "phrases": 16,
+    "methods": {
+      "preserved-v3": 4939,
+      "sqlite-ranked": 453,
+      "proposed-editorial": 72
+    }
+  },
+  "improvementPercentagePoints": 35.1235,
+  "newlyCoveredOccurrences": 654,
+  "regressions": [],
+  "byFile": [
+    {
+      "file": "dialogues/asking-for-directions/finding-a-cafe.json",
+      "occurrences": 76,
+      "baselineHit": 45,
+      "candidateHit": 75
+    },
+    {
+      "file": "dialogues/asking-for-directions/finding-the-bus-stop.json",
+      "occurrences": 62,
+      "baselineHit": 35,
+      "candidateHit": 62
+    },
+    {
+      "file": "dialogues/asking-for-directions/finding-the-train-station.json",
+      "occurrences": 80,
+      "baselineHit": 59,
+      "candidateHit": 79
+    },
+    {
+      "file": "dialogues/asking-for-directions/going-to-the-supermarket.json",
+      "occurrences": 75,
+      "baselineHit": 47,
+      "candidateHit": 75
+    },
+    {
+      "file": "dialogues/coffee-shop/asking-about-the-wifi.json",
+      "occurrences": 61,
+      "baselineHit": 34,
+      "candidateHit": 61
+    },
+    {
+      "file": "dialogues/coffee-shop/choosing-a-snack.json",
+      "occurrences": 68,
+      "baselineHit": 38,
+      "candidateHit": 68
+    },
+    {
+      "file": "dialogues/coffee-shop/fixing-an-order.json",
+      "occurrences": 64,
+      "baselineHit": 38,
+      "candidateHit": 64
+    },
+    {
+      "file": "dialogues/coffee-shop/ordering-a-coffee.json",
+      "occurrences": 71,
+      "baselineHit": 52,
+      "candidateHit": 71
+    },
+    {
+      "file": "dialogues/grocery-store/checking-out.json",
+      "occurrences": 73,
+      "baselineHit": 45,
+      "candidateHit": 73
+    },
+    {
+      "file": "dialogues/grocery-store/choosing-food.json",
+      "occurrences": 79,
+      "baselineHit": 44,
+      "candidateHit": 79
+    },
+    {
+      "file": "dialogues/grocery-store/finding-items.json",
+      "occurrences": 90,
+      "baselineHit": 46,
+      "candidateHit": 90
+    },
+    {
+      "file": "dialogues/grocery-store/making-a-shopping-list.json",
+      "occurrences": 59,
+      "baselineHit": 33,
+      "candidateHit": 59
+    },
+    {
+      "file": "dialogues/restaurant/during-the-meal.json",
+      "occurrences": 82,
+      "baselineHit": 45,
+      "candidateHit": 82
+    },
+    {
+      "file": "dialogues/restaurant/getting-a-table.json",
+      "occurrences": 65,
+      "baselineHit": 45,
+      "candidateHit": 65
+    },
+    {
+      "file": "dialogues/restaurant/ordering-food.json",
+      "occurrences": 68,
+      "baselineHit": 40,
+      "candidateHit": 68
+    },
+    {
+      "file": "dialogues/restaurant/reading-the-menu.json",
+      "occurrences": 81,
+      "baselineHit": 49,
+      "candidateHit": 81
+    },
+    {
+      "file": "dialogues/walk-in-the-park/meeting-at-the-park.json",
+      "occurrences": 79,
+      "baselineHit": 56,
+      "candidateHit": 78
+    },
+    {
+      "file": "dialogues/walk-in-the-park/talking-about-themselves.json",
+      "occurrences": 96,
+      "baselineHit": 63,
+      "candidateHit": 96
+    },
+    {
+      "file": "dialogues/walk-in-the-park/talking-about-work.json",
+      "occurrences": 80,
+      "baselineHit": 60,
+      "candidateHit": 79
+    },
+    {
+      "file": "dialogues/walk-in-the-park/weekend-plans.json",
+      "occurrences": 83,
+      "baselineHit": 61,
+      "candidateHit": 83
+    },
+    {
+      "file": "stories/ten-minutes-a-day/only-ten-minutes.json",
+      "occurrences": 84,
+      "baselineHit": 67,
+      "candidateHit": 84
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-old-book.json",
+      "occurrences": 79,
+      "baselineHit": 60,
+      "candidateHit": 79
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-presentation.json",
+      "occurrences": 112,
+      "baselineHit": 78,
+      "candidateHit": 111
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-real-treasure.json",
+      "occurrences": 95,
+      "baselineHit": 62,
+      "candidateHit": 94
+    }
+  ],
+  "missingWords": {
+    "baseline": [
+      {
+        "word": "the",
+        "occurrences": 92,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/asking-for-directions/finding-the-bus-stop.json",
+          "dialogues/asking-for-directions/finding-the-train-station.json",
+          "dialogues/asking-for-directions/going-to-the-supermarket.json",
+          "dialogues/coffee-shop/asking-about-the-wifi.json",
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/coffee-shop/fixing-an-order.json",
+          "dialogues/grocery-store/checking-out.json",
+          "dialogues/grocery-store/choosing-food.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/restaurant/getting-a-table.json",
+          "dialogues/restaurant/ordering-food.json",
+          "dialogues/restaurant/reading-the-menu.json",
+          "dialogues/walk-in-the-park/meeting-at-the-park.json",
+          "dialogues/walk-in-the-park/talking-about-themselves.json",
+          "dialogues/walk-in-the-park/talking-about-work.json",
+          "dialogues/walk-in-the-park/weekend-plans.json",
+          "stories/ten-minutes-a-day/only-ten-minutes.json",
+          "stories/ten-minutes-a-day/the-old-book.json",
+          "stories/ten-minutes-a-day/the-presentation.json",
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "you",
+        "occurrences": 58,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/asking-for-directions/finding-the-bus-stop.json",
+          "dialogues/asking-for-directions/finding-the-train-station.json",
+          "dialogues/asking-for-directions/going-to-the-supermarket.json",
+          "dialogues/coffee-shop/asking-about-the-wifi.json",
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/coffee-shop/fixing-an-order.json",
+          "dialogues/coffee-shop/ordering-a-coffee.json",
+          "dialogues/grocery-store/checking-out.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/restaurant/getting-a-table.json",
+          "dialogues/restaurant/ordering-food.json",
+          "dialogues/restaurant/reading-the-menu.json",
+          "dialogues/walk-in-the-park/meeting-at-the-park.json",
+          "dialogues/walk-in-the-park/talking-about-themselves.json",
+          "dialogues/walk-in-the-park/talking-about-work.json",
+          "dialogues/walk-in-the-park/weekend-plans.json",
+          "stories/ten-minutes-a-day/only-ten-minutes.json",
+          "stories/ten-minutes-a-day/the-old-book.json",
+          "stories/ten-minutes-a-day/the-presentation.json",
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "is",
+        "occurrences": 53,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/asking-for-directions/finding-the-bus-stop.json",
+          "dialogues/asking-for-directions/going-to-the-supermarket.json",
+          "dialogues/coffee-shop/asking-about-the-wifi.json",
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/coffee-shop/fixing-an-order.json",
+          "dialogues/coffee-shop/ordering-a-coffee.json",
+          "dialogues/grocery-store/checking-out.json",
+          "dialogues/grocery-store/choosing-food.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/restaurant/getting-a-table.json",
+          "dialogues/restaurant/ordering-food.json",
+          "dialogues/restaurant/reading-the-menu.json",
+          "dialogues/walk-in-the-park/meeting-at-the-park.json",
+          "dialogues/walk-in-the-park/talking-about-themselves.json",
+          "dialogues/walk-in-the-park/talking-about-work.json",
+          "dialogues/walk-in-the-park/weekend-plans.json",
+          "stories/ten-minutes-a-day/only-ten-minutes.json",
+          "stories/ten-minutes-a-day/the-old-book.json",
+          "stories/ten-minutes-a-day/the-presentation.json",
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "to",
+        "occurrences": 38,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/asking-for-directions/finding-the-bus-stop.json",
+          "dialogues/asking-for-directions/finding-the-train-station.json",
+          "dialogues/coffee-shop/ordering-a-coffee.json",
+          "dialogues/grocery-store/choosing-food.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/grocery-store/making-a-shopping-list.json",
+          "dialogues/restaurant/ordering-food.json",
+          "dialogues/restaurant/reading-the-menu.json",
+          "dialogues/walk-in-the-park/meeting-at-the-park.json",
+          "dialogues/walk-in-the-park/talking-about-themselves.json",
+          "dialogues/walk-in-the-park/talking-about-work.json",
+          "dialogues/walk-in-the-park/weekend-plans.json",
+          "stories/ten-minutes-a-day/only-ten-minutes.json",
+          "stories/ten-minutes-a-day/the-old-book.json",
+          "stories/ten-minutes-a-day/the-presentation.json"
+        ]
+      },
+      {
+        "word": "we",
+        "occurrences": 36,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/grocery-store/checking-out.json",
+          "dialogues/grocery-store/choosing-food.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/grocery-store/making-a-shopping-list.json",
+          "dialogues/restaurant/getting-a-table.json",
+          "dialogues/restaurant/reading-the-menu.json",
+          "dialogues/walk-in-the-park/meeting-at-the-park.json",
+          "dialogues/walk-in-the-park/talking-about-themselves.json",
+          "dialogues/walk-in-the-park/weekend-plans.json",
+          "stories/ten-minutes-a-day/the-old-book.json"
+        ]
+      },
+      {
+        "word": "and",
+        "occurrences": 26,
+        "files": [
+          "dialogues/asking-for-directions/going-to-the-supermarket.json",
+          "dialogues/coffee-shop/asking-about-the-wifi.json",
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/coffee-shop/fixing-an-order.json",
+          "dialogues/coffee-shop/ordering-a-coffee.json",
+          "dialogues/grocery-store/checking-out.json",
+          "dialogues/grocery-store/choosing-food.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/grocery-store/making-a-shopping-list.json",
+          "dialogues/restaurant/ordering-food.json",
+          "dialogues/walk-in-the-park/talking-about-themselves.json",
+          "dialogues/walk-in-the-park/weekend-plans.json",
+          "stories/ten-minutes-a-day/the-presentation.json",
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "what",
+        "occurrences": 20,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/coffee-shop/fixing-an-order.json",
+          "dialogues/coffee-shop/ordering-a-coffee.json",
+          "dialogues/grocery-store/choosing-food.json",
+          "dialogues/grocery-store/making-a-shopping-list.json",
+          "dialogues/restaurant/ordering-food.json",
+          "dialogues/restaurant/reading-the-menu.json",
+          "dialogues/walk-in-the-park/talking-about-themselves.json",
+          "dialogues/walk-in-the-park/weekend-plans.json",
+          "stories/ten-minutes-a-day/only-ten-minutes.json",
+          "stories/ten-minutes-a-day/the-old-book.json",
+          "stories/ten-minutes-a-day/the-presentation.json",
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "for",
+        "occurrences": 18,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/asking-for-directions/finding-the-bus-stop.json",
+          "dialogues/asking-for-directions/finding-the-train-station.json",
+          "dialogues/coffee-shop/fixing-an-order.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/grocery-store/making-a-shopping-list.json",
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/restaurant/getting-a-table.json",
+          "dialogues/walk-in-the-park/meeting-at-the-park.json",
+          "stories/ten-minutes-a-day/only-ten-minutes.json",
+          "stories/ten-minutes-a-day/the-old-book.json",
+          "stories/ten-minutes-a-day/the-presentation.json",
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "it's",
+        "occurrences": 12,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/asking-for-directions/finding-the-bus-stop.json",
+          "dialogues/asking-for-directions/going-to-the-supermarket.json",
+          "dialogues/coffee-shop/asking-about-the-wifi.json",
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/grocery-store/checking-out.json",
+          "dialogues/grocery-store/finding-items.json"
+        ]
+      },
+      {
+        "word": "your",
+        "occurrences": 11,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/asking-for-directions/finding-the-bus-stop.json",
+          "dialogues/asking-for-directions/finding-the-train-station.json",
+          "dialogues/coffee-shop/asking-about-the-wifi.json",
+          "dialogues/coffee-shop/fixing-an-order.json",
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/restaurant/getting-a-table.json",
+          "dialogues/walk-in-the-park/talking-about-work.json",
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "my",
+        "occurrences": 10,
+        "files": [
+          "dialogues/asking-for-directions/going-to-the-supermarket.json",
+          "dialogues/coffee-shop/fixing-an-order.json",
+          "dialogues/grocery-store/checking-out.json",
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/walk-in-the-park/talking-about-themselves.json",
+          "dialogues/walk-in-the-park/talking-about-work.json",
+          "dialogues/walk-in-the-park/weekend-plans.json"
+        ]
+      },
+      {
+        "word": "sounds",
+        "occurrences": 10,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/coffee-shop/ordering-a-coffee.json",
+          "dialogues/restaurant/getting-a-table.json",
+          "dialogues/restaurant/reading-the-menu.json",
+          "dialogues/walk-in-the-park/meeting-at-the-park.json",
+          "dialogues/walk-in-the-park/talking-about-themselves.json",
+          "dialogues/walk-in-the-park/weekend-plans.json",
+          "stories/ten-minutes-a-day/only-ten-minutes.json"
+        ]
+      },
+      {
+        "word": "where",
+        "occurrences": 10,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/asking-for-directions/finding-the-bus-stop.json",
+          "dialogues/asking-for-directions/finding-the-train-station.json",
+          "dialogues/asking-for-directions/going-to-the-supermarket.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/walk-in-the-park/talking-about-work.json"
+        ]
+      },
+      {
+        "word": "let's",
+        "occurrences": 8,
+        "files": [
+          "dialogues/grocery-store/choosing-food.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/grocery-store/making-a-shopping-list.json"
+        ]
+      },
+      {
+        "word": "was",
+        "occurrences": 8,
+        "files": [
+          "stories/ten-minutes-a-day/the-presentation.json",
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "i'm",
+        "occurrences": 7,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/asking-for-directions/finding-the-train-station.json",
+          "dialogues/asking-for-directions/going-to-the-supermarket.json",
+          "dialogues/coffee-shop/asking-about-the-wifi.json",
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/coffee-shop/fixing-an-order.json"
+        ]
+      },
+      {
+        "word": "bread",
+        "occurrences": 6,
+        "files": [
+          "dialogues/grocery-store/choosing-food.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/grocery-store/making-a-shopping-list.json",
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/restaurant/ordering-food.json"
+        ]
+      },
+      {
+        "word": "did",
+        "occurrences": 6,
+        "files": [
+          "dialogues/coffee-shop/fixing-an-order.json",
+          "dialogues/grocery-store/checking-out.json",
+          "stories/ten-minutes-a-day/the-presentation.json",
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "of",
+        "occurrences": 6,
+        "files": [
+          "dialogues/coffee-shop/ordering-a-coffee.json",
+          "dialogues/restaurant/ordering-food.json",
+          "dialogues/walk-in-the-park/meeting-at-the-park.json",
+          "dialogues/walk-in-the-park/talking-about-themselves.json",
+          "stories/ten-minutes-a-day/the-old-book.json"
+        ]
+      },
+      {
+        "word": "pasta",
+        "occurrences": 6,
+        "files": [
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/restaurant/ordering-food.json",
+          "dialogues/restaurant/reading-the-menu.json"
+        ]
+      },
+      {
+        "word": "soup",
+        "occurrences": 6,
+        "files": [
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/restaurant/ordering-food.json",
+          "dialogues/restaurant/reading-the-menu.json"
+        ]
+      },
+      {
+        "word": "don't",
+        "occurrences": 5,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/coffee-shop/ordering-a-coffee.json",
+          "dialogues/grocery-store/choosing-food.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/grocery-store/making-a-shopping-list.json"
+        ]
+      },
+      {
+        "word": "everything",
+        "occurrences": 5,
+        "files": [
+          "dialogues/grocery-store/checking-out.json",
+          "dialogues/grocery-store/choosing-food.json",
+          "dialogues/grocery-store/making-a-shopping-list.json",
+          "dialogues/restaurant/during-the-meal.json"
+        ]
+      },
+      {
+        "word": "from",
+        "occurrences": 5,
+        "files": [
+          "dialogues/asking-for-directions/finding-the-bus-stop.json",
+          "dialogues/asking-for-directions/going-to-the-supermarket.json",
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "how",
+        "occurrences": 5,
+        "files": [
+          "dialogues/asking-for-directions/finding-the-bus-stop.json",
+          "dialogues/asking-for-directions/finding-the-train-station.json",
+          "dialogues/coffee-shop/asking-about-the-wifi.json",
+          "dialogues/grocery-store/checking-out.json",
+          "dialogues/restaurant/during-the-meal.json"
+        ]
+      },
+      {
+        "word": "juice",
+        "occurrences": 5,
+        "files": [
+          "dialogues/grocery-store/choosing-food.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/grocery-store/making-a-shopping-list.json",
+          "dialogues/restaurant/ordering-food.json"
+        ]
+      },
+      {
+        "word": "should",
+        "occurrences": 5,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/grocery-store/choosing-food.json",
+          "dialogues/grocery-store/finding-items.json",
+          "stories/ten-minutes-a-day/the-old-book.json"
+        ]
+      },
+      {
+        "word": "tomato",
+        "occurrences": 5,
+        "files": [
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/restaurant/ordering-food.json",
+          "dialogues/restaurant/reading-the-menu.json"
+        ]
+      },
+      {
+        "word": "wi-fi",
+        "occurrences": 5,
+        "files": [
+          "dialogues/coffee-shop/asking-about-the-wifi.json"
+        ]
+      },
+      {
+        "word": "with",
+        "occurrences": 5,
+        "files": [
+          "dialogues/grocery-store/checking-out.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/walk-in-the-park/talking-about-themselves.json",
+          "stories/ten-minutes-a-day/the-old-book.json",
+          "stories/ten-minutes-a-day/the-presentation.json"
+        ]
+      },
+      {
+        "word": "would",
+        "occurrences": 5,
+        "files": [
+          "dialogues/restaurant/getting-a-table.json",
+          "dialogues/restaurant/ordering-food.json"
+        ]
+      },
+      {
+        "word": "bored",
+        "occurrences": 4,
+        "files": [
+          "stories/ten-minutes-a-day/only-ten-minutes.json",
+          "stories/ten-minutes-a-day/the-old-book.json",
+          "stories/ten-minutes-a-day/the-presentation.json"
+        ]
+      },
+      {
+        "word": "emma",
+        "occurrences": 4,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/asking-for-directions/finding-the-train-station.json",
+          "dialogues/walk-in-the-park/meeting-at-the-park.json",
+          "dialogues/walk-in-the-park/talking-about-work.json"
+        ]
+      },
+      {
+        "word": "got",
+        "occurrences": 4,
+        "files": [
+          "dialogues/coffee-shop/asking-about-the-wifi.json",
+          "dialogues/coffee-shop/fixing-an-order.json",
+          "stories/ten-minutes-a-day/only-ten-minutes.json",
+          "stories/ten-minutes-a-day/the-presentation.json"
+        ]
+      },
+      {
+        "word": "habit",
+        "occurrences": 4,
+        "files": [
+          "stories/ten-minutes-a-day/the-presentation.json",
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "i'll",
+        "occurrences": 4,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/coffee-shop/fixing-an-order.json",
+          "dialogues/coffee-shop/ordering-a-coffee.json"
+        ]
+      },
+      {
+        "word": "latte",
+        "occurrences": 4,
+        "files": [
+          "dialogues/coffee-shop/fixing-an-order.json",
+          "dialogues/coffee-shop/ordering-a-coffee.json"
+        ]
+      },
+      {
+        "word": "supermarket",
+        "occurrences": 4,
+        "files": [
+          "dialogues/asking-for-directions/finding-the-bus-stop.json",
+          "dialogues/asking-for-directions/going-to-the-supermarket.json"
+        ]
+      },
+      {
+        "word": "that's",
+        "occurrences": 4,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/coffee-shop/fixing-an-order.json",
+          "dialogues/grocery-store/checking-out.json",
+          "dialogues/grocery-store/making-a-shopping-list.json"
+        ]
+      },
+      {
+        "word": "anything",
+        "occurrences": 3,
+        "files": [
+          "dialogues/grocery-store/making-a-shopping-list.json",
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/restaurant/ordering-food.json"
+        ]
+      },
+      {
+        "word": "apples",
+        "occurrences": 3,
+        "files": [
+          "dialogues/grocery-store/choosing-food.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/grocery-store/making-a-shopping-list.json"
+        ]
+      },
+      {
+        "word": "bananas",
+        "occurrences": 3,
+        "files": [
+          "dialogues/grocery-store/choosing-food.json",
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/grocery-store/making-a-shopping-list.json"
+        ]
+      },
+      {
+        "word": "cafe",
+        "occurrences": 3,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json"
+        ]
+      },
+      {
+        "word": "eggs",
+        "occurrences": 3,
+        "files": [
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/grocery-store/making-a-shopping-list.json"
+        ]
+      },
+      {
+        "word": "friends",
+        "occurrences": 3,
+        "files": [
+          "dialogues/walk-in-the-park/talking-about-themselves.json",
+          "dialogues/walk-in-the-park/weekend-plans.json"
+        ]
+      },
+      {
+        "word": "helped",
+        "occurrences": 3,
+        "files": [
+          "dialogues/asking-for-directions/going-to-the-supermarket.json",
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "lights",
+        "occurrences": 3,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/asking-for-directions/going-to-the-supermarket.json"
+        ]
+      },
+      {
+        "word": "looks",
+        "occurrences": 3,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/restaurant/reading-the-menu.json",
+          "stories/ten-minutes-a-day/the-old-book.json"
+        ]
+      },
+      {
+        "word": "meal",
+        "occurrences": 3,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/restaurant/getting-a-table.json"
+        ]
+      },
+      {
+        "word": "menu",
+        "occurrences": 3,
+        "files": [
+          "dialogues/coffee-shop/ordering-a-coffee.json",
+          "dialogues/restaurant/reading-the-menu.json"
+        ]
+      },
+      {
+        "word": "our",
+        "occurrences": 3,
+        "files": [
+          "dialogues/grocery-store/finding-items.json",
+          "dialogues/grocery-store/making-a-shopping-list.json",
+          "stories/ten-minutes-a-day/the-presentation.json"
+        ]
+      },
+      {
+        "word": "bakery",
+        "occurrences": 2,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/asking-for-directions/going-to-the-supermarket.json"
+        ]
+      },
+      {
+        "word": "books",
+        "occurrences": 2,
+        "files": [
+          "dialogues/walk-in-the-park/talking-about-themselves.json",
+          "dialogues/walk-in-the-park/weekend-plans.json"
+        ]
+      },
+      {
+        "word": "cents",
+        "occurrences": 2,
+        "files": [
+          "dialogues/grocery-store/checking-out.json"
+        ]
+      },
+      {
+        "word": "else",
+        "occurrences": 2,
+        "files": [
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/restaurant/ordering-food.json"
+        ]
+      },
+      {
+        "word": "gym",
+        "occurrences": 2,
+        "files": [
+          "dialogues/walk-in-the-park/talking-about-themselves.json",
+          "dialogues/walk-in-the-park/weekend-plans.json"
+        ]
+      },
+      {
+        "word": "if",
+        "occurrences": 2,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "stories/ten-minutes-a-day/the-old-book.json"
+        ]
+      },
+      {
+        "word": "leo",
+        "occurrences": 2,
+        "files": [
+          "stories/ten-minutes-a-day/the-presentation.json"
+        ]
+      },
+      {
+        "word": "lighter",
+        "occurrences": 2,
+        "files": [
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/restaurant/reading-the-menu.json"
+        ]
+      },
+      {
+        "word": "muffin",
+        "occurrences": 2,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json"
+        ]
+      },
+      {
+        "word": "password",
+        "occurrences": 2,
+        "files": [
+          "dialogues/coffee-shop/asking-about-the-wifi.json"
+        ]
+      },
+      {
+        "word": "presentation",
+        "occurrences": 2,
+        "files": [
+          "stories/ten-minutes-a-day/the-presentation.json",
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "something",
+        "occurrences": 2,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/restaurant/reading-the-menu.json"
+        ]
+      },
+      {
+        "word": "spicy",
+        "occurrences": 2,
+        "files": [
+          "dialogues/restaurant/during-the-meal.json",
+          "dialogues/restaurant/reading-the-menu.json"
+        ]
+      },
+      {
+        "word": "they",
+        "occurrences": 2,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json",
+          "dialogues/grocery-store/choosing-food.json"
+        ]
+      },
+      {
+        "word": "what's",
+        "occurrences": 2,
+        "files": [
+          "dialogues/coffee-shop/asking-about-the-wifi.json"
+        ]
+      },
+      {
+        "word": "when",
+        "occurrences": 2,
+        "files": [
+          "stories/ten-minutes-a-day/only-ten-minutes.json",
+          "stories/ten-minutes-a-day/the-old-book.json"
+        ]
+      },
+      {
+        "word": "which",
+        "occurrences": 2,
+        "files": [
+          "dialogues/asking-for-directions/finding-the-train-station.json",
+          "dialogues/grocery-store/choosing-food.json"
+        ]
+      },
+      {
+        "word": "aisle",
+        "occurrences": 1,
+        "files": [
+          "dialogues/grocery-store/finding-items.json"
+        ]
+      },
+      {
+        "word": "altogether",
+        "occurrences": 1,
+        "files": [
+          "dialogues/grocery-store/checking-out.json"
+        ]
+      },
+      {
+        "word": "because",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "cakes",
+        "occurrences": 1,
+        "files": [
+          "dialogues/grocery-store/finding-items.json"
+        ]
+      },
+      {
+        "word": "can't",
+        "occurrences": 1,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json"
+        ]
+      },
+      {
+        "word": "cappuccino",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/fixing-an-order.json"
+        ]
+      },
+      {
+        "word": "cheaper",
+        "occurrences": 1,
+        "files": [
+          "dialogues/grocery-store/choosing-food.json"
+        ]
+      },
+      {
+        "word": "checkout",
+        "occurrences": 1,
+        "files": [
+          "dialogues/grocery-store/choosing-food.json"
+        ]
+      },
+      {
+        "word": "children",
+        "occurrences": 1,
+        "files": [
+          "dialogues/walk-in-the-park/talking-about-work.json"
+        ]
+      },
+      {
+        "word": "chocolate",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json"
+        ]
+      },
+      {
+        "word": "connect",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/asking-about-the-wifi.json"
+        ]
+      },
+      {
+        "word": "cookie",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json"
+        ]
+      },
+      {
+        "word": "cookies",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json"
+        ]
+      },
+      {
+        "word": "cooking",
+        "occurrences": 1,
+        "files": [
+          "dialogues/walk-in-the-park/talking-about-themselves.json"
+        ]
+      },
+      {
+        "word": "could",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/fixing-an-order.json"
+        ]
+      },
+      {
+        "word": "coworkers",
+        "occurrences": 1,
+        "files": [
+          "dialogues/walk-in-the-park/talking-about-work.json"
+        ]
+      },
+      {
+        "word": "dairy",
+        "occurrences": 1,
+        "files": [
+          "dialogues/grocery-store/finding-items.json"
+        ]
+      },
+      {
+        "word": "dish",
+        "occurrences": 1,
+        "files": [
+          "dialogues/restaurant/during-the-meal.json"
+        ]
+      },
+      {
+        "word": "dishes",
+        "occurrences": 1,
+        "files": [
+          "dialogues/restaurant/reading-the-menu.json"
+        ]
+      },
+      {
+        "word": "does",
+        "occurrences": 1,
+        "files": [
+          "dialogues/asking-for-directions/finding-the-train-station.json"
+        ]
+      },
+      {
+        "word": "dollars",
+        "occurrences": 1,
+        "files": [
+          "dialogues/grocery-store/checking-out.json"
+        ]
+      },
+      {
+        "word": "drinks",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/ordering-a-coffee.json"
+        ]
+      },
+      {
+        "word": "easier",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "eighteen",
+        "occurrences": 1,
+        "files": [
+          "dialogues/grocery-store/checking-out.json"
+        ]
+      },
+      {
+        "word": "fifty",
+        "occurrences": 1,
+        "files": [
+          "dialogues/grocery-store/checking-out.json"
+        ]
+      },
+      {
+        "word": "goes",
+        "occurrences": 1,
+        "files": [
+          "dialogues/asking-for-directions/finding-the-train-station.json"
+        ]
+      },
+      {
+        "word": "habits",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/the-presentation.json"
+        ]
+      },
+      {
+        "word": "happened",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/the-presentation.json"
+        ]
+      },
+      {
+        "word": "has",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/ordering-a-coffee.json"
+        ]
+      },
+      {
+        "word": "having",
+        "occurrences": 1,
+        "files": [
+          "dialogues/walk-in-the-park/talking-about-themselves.json"
+        ]
+      },
+      {
+        "word": "hungry",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json"
+        ]
+      },
+      {
+        "word": "iced",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/ordering-a-coffee.json"
+        ]
+      },
+      {
+        "word": "leaves",
+        "occurrences": 1,
+        "files": [
+          "dialogues/asking-for-directions/finding-the-train-station.json"
+        ]
+      },
+      {
+        "word": "lesson",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "loaf",
+        "occurrences": 1,
+        "files": [
+          "dialogues/grocery-store/making-a-shopping-list.json"
+        ]
+      },
+      {
+        "word": "months",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/the-presentation.json"
+        ]
+      },
+      {
+        "word": "movies",
+        "occurrences": 1,
+        "files": [
+          "dialogues/walk-in-the-park/talking-about-themselves.json"
+        ]
+      },
+      {
+        "word": "muffins",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json"
+        ]
+      },
+      {
+        "word": "nearest",
+        "occurrences": 1,
+        "files": [
+          "dialogues/asking-for-directions/finding-the-bus-stop.json"
+        ]
+      },
+      {
+        "word": "ones",
+        "occurrences": 1,
+        "files": [
+          "dialogues/grocery-store/choosing-food.json"
+        ]
+      },
+      {
+        "word": "parents",
+        "occurrences": 1,
+        "files": [
+          "dialogues/walk-in-the-park/weekend-plans.json"
+        ]
+      },
+      {
+        "word": "plans",
+        "occurrences": 1,
+        "files": [
+          "dialogues/walk-in-the-park/weekend-plans.json"
+        ]
+      },
+      {
+        "word": "reservation",
+        "occurrences": 1,
+        "files": [
+          "dialogues/restaurant/getting-a-table.json"
+        ]
+      },
+      {
+        "word": "ripe",
+        "occurrences": 1,
+        "files": [
+          "dialogues/grocery-store/choosing-food.json"
+        ]
+      },
+      {
+        "word": "ryan",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/the-presentation.json"
+        ]
+      },
+      {
+        "word": "sandwiches",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json"
+        ]
+      },
+      {
+        "word": "sizes",
+        "occurrences": 1,
+        "files": [
+          "dialogues/grocery-store/choosing-food.json"
+        ]
+      },
+      {
+        "word": "snack",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/choosing-a-snack.json"
+        ]
+      },
+      {
+        "word": "sometime",
+        "occurrences": 1,
+        "files": [
+          "dialogues/walk-in-the-park/weekend-plans.json"
+        ]
+      },
+      {
+        "word": "started",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/the-presentation.json"
+        ]
+      },
+      {
+        "word": "students",
+        "occurrences": 1,
+        "files": [
+          "dialogues/walk-in-the-park/talking-about-work.json"
+        ]
+      },
+      {
+        "word": "takes",
+        "occurrences": 1,
+        "files": [
+          "dialogues/asking-for-directions/finding-the-train-station.json"
+        ]
+      },
+      {
+        "word": "ten-minute",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "timer",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/only-ten-minutes.json"
+        ]
+      },
+      {
+        "word": "told",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/the-presentation.json"
+        ]
+      },
+      {
+        "word": "topic",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/the-presentation.json"
+        ]
+      },
+      {
+        "word": "trains",
+        "occurrences": 1,
+        "files": [
+          "dialogues/asking-for-directions/finding-the-train-station.json"
+        ]
+      },
+      {
+        "word": "treasure",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      },
+      {
+        "word": "we're",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/ordering-a-coffee.json"
+        ]
+      },
+      {
+        "word": "weekends",
+        "occurrences": 1,
+        "files": [
+          "dialogues/walk-in-the-park/talking-about-themselves.json"
+        ]
+      },
+      {
+        "word": "you're",
+        "occurrences": 1,
+        "files": [
+          "dialogues/coffee-shop/fixing-an-order.json"
+        ]
+      }
+    ],
+    "candidate": [
+      {
+        "word": "emma",
+        "occurrences": 4,
+        "files": [
+          "dialogues/asking-for-directions/finding-a-cafe.json",
+          "dialogues/asking-for-directions/finding-the-train-station.json",
+          "dialogues/walk-in-the-park/meeting-at-the-park.json",
+          "dialogues/walk-in-the-park/talking-about-work.json"
+        ]
+      },
+      {
+        "word": "ryan",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/the-presentation.json"
+        ]
+      },
+      {
+        "word": "ten-minute",
+        "occurrences": 1,
+        "files": [
+          "stories/ten-minutes-a-day/the-real-treasure.json"
+        ]
+      }
+    ]
+  },
+  "exampleCount": 96,
+  "examples": [
+    {
+      "file": "dialogues/asking-for-directions/finding-a-cafe.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "Hi, Ben! I'm inside. Where are you?",
+      "sentenceTranslation": "Chào Ben! Tôi đang ở trong quán. Bạn đang ở đâu?",
+      "word": "Where",
+      "wordIndex": 4,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "where",
+      "current": null,
+      "proposed": "đâu",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/finding-a-cafe.json",
+      "line": 8,
+      "lineId": 8,
+      "sentence": "Oh, I can see it now! It's across the street.",
+      "sentenceTranslation": "Ồ, giờ tôi thấy quán rồi! Quán ở bên kia đường.",
+      "word": "Oh",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "oh",
+      "proposedLookupText": "oh",
+      "current": "tiểu bang Ohio",
+      "proposed": "ồ / à",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "Reaction depends on the sentence and tone.",
+        "Proposed edit; not human-approved."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/finding-a-cafe.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "Hi, Emma! I can't find the cafe.",
+      "sentenceTranslation": "Chào Emma! Tôi không tìm thấy quán cà phê.",
+      "word": "Emma",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": null,
+      "current": null,
+      "proposed": null,
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "missing",
+      "flags": [
+        "Possible character name: a dictionary gloss may be inappropriate even if this click is covered.",
+        "Missing; no translation invented."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/finding-a-cafe.json",
+      "line": 3,
+      "lineId": 3,
+      "sentence": "I'm outside the bank on Green Street.",
+      "sentenceTranslation": "Tôi đang ở bên ngoài ngân hàng trên phố Green.",
+      "word": "outside",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": "outside",
+      "proposedLookupText": "outside",
+      "current": "bên ngoài, phía ngoài",
+      "proposed": "bên ngoài, phía ngoài",
+      "currentAlternatives": [
+        "ở ngoài, bên ngoài",
+        "bên ngoài, mặt ngoài",
+        "từ bên ngoài, ngoại lai"
+      ],
+      "proposedAlternatives": [
+        "ở ngoài, bên ngoài",
+        "bên ngoài, mặt ngoài",
+        "từ bên ngoài, ngoại lai"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/finding-the-bus-stop.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "Excuse me. Where is the nearest bus stop?",
+      "sentenceTranslation": "Xin lỗi, cho tôi hỏi. Trạm xe buýt gần nhất ở đâu?",
+      "word": "Where",
+      "wordIndex": 2,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "where",
+      "current": null,
+      "proposed": "đâu",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/finding-the-bus-stop.json",
+      "line": 8,
+      "lineId": 8,
+      "sentence": "How far is it from here?",
+      "sentenceTranslation": "Từ đây đến đó bao xa?",
+      "word": "How",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "how",
+      "current": null,
+      "proposed": "như thế nào / bằng cách nào",
+      "currentAlternatives": [],
+      "proposedAlternatives": [
+        "bao nhiêu (khi hỏi mức độ)"
+      ],
+      "method": "proposed-editorial",
+      "flags": [
+        "The generic SQLite ranker wrongly promotes là; questions require context.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/finding-the-bus-stop.json",
+      "line": 7,
+      "lineId": 7,
+      "sentence": "No, it's across from the bank.",
+      "sentenceTranslation": "Không, nó ở đối diện ngân hàng.",
+      "word": "from",
+      "wordIndex": 3,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "from",
+      "current": null,
+      "proposed": "từ",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/finding-the-bus-stop.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "Go straight along this street.",
+      "sentenceTranslation": "Đi thẳng dọc theo con đường này.",
+      "word": "Go",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "go",
+      "proposedLookupText": "go",
+      "current": "đi; di chuyển",
+      "proposed": "đi; di chuyển",
+      "currentAlternatives": [
+        "rời đi; ra đi"
+      ],
+      "proposedAlternatives": [
+        "rời đi; ra đi"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/finding-the-train-station.json",
+      "line": 6,
+      "lineId": 6,
+      "sentence": "Platform three. Your train leaves in ten minutes.",
+      "sentenceTranslation": "Sân ga số ba. Tàu của bạn sẽ khởi hành sau mười phút nữa.",
+      "word": "leaves",
+      "wordIndex": 4,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "leaves",
+      "current": null,
+      "proposed": "trổ lá",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/finding-the-train-station.json",
+      "line": 7,
+      "lineId": 7,
+      "sentence": "How long does the trip take?",
+      "sentenceTranslation": "Chuyến đi mất bao lâu?",
+      "word": "How",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "how",
+      "current": null,
+      "proposed": "như thế nào / bằng cách nào",
+      "currentAlternatives": [],
+      "proposedAlternatives": [
+        "bao nhiêu (khi hỏi mức độ)"
+      ],
+      "method": "proposed-editorial",
+      "flags": [
+        "The generic SQLite ranker wrongly promotes là; questions require context.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/finding-the-train-station.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "Hi, Emma! I'm going to Lake Town today.",
+      "sentenceTranslation": "Chào Emma! Hôm nay tôi định đến Lake Town.",
+      "word": "Emma",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": null,
+      "current": null,
+      "proposed": null,
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "missing",
+      "flags": [
+        "Possible character name: a dictionary gloss may be inappropriate even if this click is covered.",
+        "Missing; no translation invented."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/finding-the-train-station.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "Hi, Ben! You can take the number ten train.",
+      "sentenceTranslation": "Chào Ben! Bạn có thể đi tàu số mười.",
+      "word": "Ben",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": "ben",
+      "proposedLookupText": "ben",
+      "current": "núi; đồi cao",
+      "proposed": "núi; đồi cao",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "preserved-v3",
+      "flags": [
+        "Possible character name: a dictionary gloss may be inappropriate even if this click is covered.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/going-to-the-supermarket.json",
+      "line": 8,
+      "lineId": 8,
+      "sentence": "Yes. The supermarket is on the corner, across from the bakery.",
+      "sentenceTranslation": "Đúng rồi. Siêu thị ở góc phố, đối diện tiệm bánh.",
+      "word": "from",
+      "wordIndex": 8,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "from",
+      "current": null,
+      "proposed": "từ",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/going-to-the-supermarket.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "Oh, hi! I remember you.",
+      "sentenceTranslation": "Ồ, chào bạn! Tôi nhớ bạn rồi.",
+      "word": "Oh",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "oh",
+      "proposedLookupText": "oh",
+      "current": "tiểu bang Ohio",
+      "proposed": "ồ / à",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "Reaction depends on the sentence and tone.",
+        "Proposed edit; not human-approved."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/going-to-the-supermarket.json",
+      "line": 5,
+      "lineId": 5,
+      "sentence": "Yes. Walk along this street and go past the bank.",
+      "sentenceTranslation": "Có. Bạn đi dọc con phố này rồi đi qua ngân hàng.",
+      "word": "and",
+      "wordIndex": 5,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "and",
+      "current": null,
+      "proposed": "và",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "The generic SQLite ranker wrongly promotes là; preserve the common conjunction meaning.",
+        "Proposed edit; not human-approved."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/asking-for-directions/going-to-the-supermarket.json",
+      "line": 4,
+      "lineId": 4,
+      "sentence": "Do you know where the supermarket is?",
+      "sentenceTranslation": "Bạn có biết siêu thị ở đâu không?",
+      "word": "Do",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "do",
+      "proposedLookupText": "do",
+      "current": "làm, thực hiện",
+      "proposed": "làm, thực hiện",
+      "currentAlternatives": [],
+      "proposedAlternatives": [
+        "trợ động từ (thường không dịch riêng)"
+      ],
+      "method": "proposed-editorial",
+      "flags": [
+        "Retain the correct v3 main verb meaning and add the missing auxiliary explanation.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/asking-about-the-wifi.json",
+      "line": 9,
+      "lineId": 9,
+      "sentence": "Thanks. How do I connect?",
+      "sentenceTranslation": "Cảm ơn. Tôi kết nối như thế nào?",
+      "word": "connect",
+      "wordIndex": 4,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "connect",
+      "current": null,
+      "proposed": "nối",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/asking-about-the-wifi.json",
+      "line": 7,
+      "lineId": 7,
+      "sentence": "Can you say that again, please?",
+      "sentenceTranslation": "Bạn có thể nói lại được không?",
+      "word": "please",
+      "wordIndex": 5,
+      "lemma": null,
+      "currentLookupText": "please",
+      "proposedLookupText": "please",
+      "current": "làm vui lòng; làm hài lòng",
+      "proposed": "làm ơn / vui lòng",
+      "currentAlternatives": [
+        "xin; làm ơn; xin vui lòng",
+        "muốn; quyết định"
+      ],
+      "proposedAlternatives": [
+        "làm hài lòng"
+      ],
+      "method": "proposed-editorial",
+      "flags": [
+        "Request marker is common in this content; verb sense remains useful.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/asking-about-the-wifi.json",
+      "line": 5,
+      "lineId": 5,
+      "sentence": "And what's the password?",
+      "sentenceTranslation": "Còn mật khẩu là gì?",
+      "word": "And",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "and",
+      "current": null,
+      "proposed": "và",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "The generic SQLite ranker wrongly promotes là; preserve the common conjunction meaning.",
+        "Proposed edit; not human-approved."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/asking-about-the-wifi.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "Is there Wi-Fi here?",
+      "sentenceTranslation": "Ở đây có Wi-Fi không?",
+      "word": "there",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": "there",
+      "proposedLookupText": "there",
+      "current": "ở đó; tại đó",
+      "proposed": "ở đó; tại đó",
+      "currentAlternatives": [
+        "nơi đó; chỗ đó",
+        "đến đó; về phía đó",
+        "về việc đó; ở điểm đó"
+      ],
+      "proposedAlternatives": [
+        "nơi đó; chỗ đó",
+        "đến đó; về phía đó",
+        "về việc đó; ở điểm đó"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/choosing-a-snack.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "I'm a little hungry. Should we get a snack?",
+      "sentenceTranslation": "Mình hơi đói. Chúng ta gọi món ăn nhẹ nhé?",
+      "word": "hungry",
+      "wordIndex": 3,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "hungry",
+      "current": null,
+      "proposed": "đói",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/choosing-a-snack.json",
+      "line": 3,
+      "lineId": 3,
+      "sentence": "Something small. I don't want a big meal.",
+      "sentenceTranslation": "Món gì đó nhỏ thôi. Mình không muốn ăn một bữa lớn.",
+      "word": "Something",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "something",
+      "current": null,
+      "proposed": "một thứ gì đó / một điều gì đó",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "Correct the automatic điều này selection, which loses indefiniteness.",
+        "Proposed edit; not human-approved."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/choosing-a-snack.json",
+      "line": 5,
+      "lineId": 5,
+      "sentence": "The chocolate muffin looks good.",
+      "sentenceTranslation": "Bánh muffin sô-cô-la trông ngon đấy.",
+      "word": "chocolate",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "chocolate",
+      "current": null,
+      "proposed": "sôcôla",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/choosing-a-snack.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "Sure. What do you feel like eating?",
+      "sentenceTranslation": "Được chứ. Bạn muốn ăn gì?",
+      "word": "do",
+      "wordIndex": 2,
+      "lemma": null,
+      "currentLookupText": "do",
+      "proposedLookupText": "do",
+      "current": "làm, thực hiện",
+      "proposed": "làm, thực hiện",
+      "currentAlternatives": [],
+      "proposedAlternatives": [
+        "trợ động từ (thường không dịch riêng)"
+      ],
+      "method": "proposed-editorial",
+      "flags": [
+        "Retain the correct v3 main verb meaning and add the missing auxiliary explanation.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/fixing-an-order.json",
+      "line": 3,
+      "lineId": 3,
+      "sentence": "I ordered a small latte.",
+      "sentenceTranslation": "Tôi đã gọi một ly latte nhỏ.",
+      "word": "latte",
+      "wordIndex": 4,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "latte",
+      "current": null,
+      "proposed": "maté hoặc matcha",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/fixing-an-order.json",
+      "line": 7,
+      "lineId": 7,
+      "sentence": "Could you check my order, please?",
+      "sentenceTranslation": "Bạn có thể kiểm tra lại món tôi đã gọi được không?",
+      "word": "please",
+      "wordIndex": 5,
+      "lemma": null,
+      "currentLookupText": "please",
+      "proposedLookupText": "please",
+      "current": "làm vui lòng; làm hài lòng",
+      "proposed": "làm ơn / vui lòng",
+      "currentAlternatives": [
+        "xin; làm ơn; xin vui lòng",
+        "muốn; quyết định"
+      ],
+      "proposedAlternatives": [
+        "làm hài lòng"
+      ],
+      "method": "proposed-editorial",
+      "flags": [
+        "Request marker is common in this content; verb sense remains useful.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/fixing-an-order.json",
+      "line": 5,
+      "lineId": 5,
+      "sentence": "I got a large cappuccino.",
+      "sentenceTranslation": "Tôi nhận được một ly cappuccino lớn.",
+      "word": "cappuccino",
+      "wordIndex": 4,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "cappuccino",
+      "current": null,
+      "proposed": "cà phê sữa",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/fixing-an-order.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "Excuse me. I think this is the wrong drink.",
+      "sentenceTranslation": "Xin lỗi. Tôi nghĩ đây là đồ uống không đúng.",
+      "word": "Excuse",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "Excuse me",
+      "proposedLookupText": "Excuse me",
+      "current": "xin lỗi",
+      "proposed": "xin lỗi",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "preserved-phrase",
+      "flags": [
+        "Existing phrase override retained; sentence fit still needs review.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/ordering-a-coffee.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "There are so many drinks on this menu.",
+      "sentenceTranslation": "Có nhiều đồ uống quá trên thực đơn này.",
+      "word": "drinks",
+      "wordIndex": 4,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "drinks",
+      "current": null,
+      "proposed": "liên quan đến rượu",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/ordering-a-coffee.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "What kind of coffee do you like?",
+      "sentenceTranslation": "Bạn thích loại cà phê nào?",
+      "word": "What",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "what",
+      "current": null,
+      "proposed": "gì / cái gì",
+      "currentAlternatives": [],
+      "proposedAlternatives": [
+        "nào"
+      ],
+      "method": "proposed-editorial",
+      "flags": [
+        "Question word; avoid nào as the only beginner gloss.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/ordering-a-coffee.json",
+      "line": 4,
+      "lineId": 4,
+      "sentence": "Then you can try a latte.",
+      "sentenceTranslation": "Vậy bạn có thể thử latte.",
+      "word": "latte",
+      "wordIndex": 5,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "latte",
+      "current": null,
+      "proposed": "maté hoặc matcha",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/coffee-shop/ordering-a-coffee.json",
+      "line": 3,
+      "lineId": 3,
+      "sentence": "I like coffee, but I don't like it very strong.",
+      "sentenceTranslation": "Mình thích cà phê, nhưng mình không thích cà phê quá đậm.",
+      "word": "I",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "i",
+      "proposedLookupText": "i",
+      "current": "tôi",
+      "proposed": "tôi",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "preserved-v3",
+      "flags": [
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/checking-out.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "Hi. Did you find everything you needed?",
+      "sentenceTranslation": "Chào bạn. Hai bạn đã tìm được mọi thứ mình cần chưa?",
+      "word": "everything",
+      "wordIndex": 4,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "everything",
+      "current": null,
+      "proposed": "mọi vật",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/checking-out.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "Yes, we did. Thanks.",
+      "sentenceTranslation": "Rồi, chúng tôi tìm được rồi. Cảm ơn.",
+      "word": "we",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "we",
+      "current": null,
+      "proposed": "chúng tôi / chúng ta",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "Whether the listener is included cannot be decided by dictionary ranking.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/checking-out.json",
+      "line": 3,
+      "lineId": 3,
+      "sentence": "How much is it altogether?",
+      "sentenceTranslation": "Tổng cộng là bao nhiêu tiền?",
+      "word": "altogether",
+      "wordIndex": 4,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "altogether",
+      "current": null,
+      "proposed": "toàn bộ",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/checking-out.json",
+      "line": 5,
+      "lineId": 5,
+      "sentence": "Okay. Can I pay by card?",
+      "sentenceTranslation": "Được. Tôi có thể thanh toán bằng thẻ không?",
+      "word": "Okay",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "okay",
+      "proposedLookupText": "okay",
+      "current": "ổn, tốt, tàm tạm",
+      "proposed": "ổn, tốt, tàm tạm",
+      "currentAlternatives": [
+        "ổn, được, tạm ổn",
+        "đồng ý, phê duyệt, chấp thuận",
+        "sự đồng ý, sự chấp thuận"
+      ],
+      "proposedAlternatives": [
+        "ổn, được, tạm ổn",
+        "đồng ý, phê duyệt, chấp thuận",
+        "sự đồng ý, sự chấp thuận"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/choosing-food.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "We found the bread. Now we just need the orange juice.",
+      "sentenceTranslation": "Chúng ta đã tìm thấy bánh mì rồi. Bây giờ chỉ còn cần nước cam thôi.",
+      "word": "bread",
+      "wordIndex": 3,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "bread",
+      "current": null,
+      "proposed": "bánh mì",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/choosing-food.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "Here it is. There are two sizes.",
+      "sentenceTranslation": "Nó ở đây này. Có hai kích cỡ.",
+      "word": "is",
+      "wordIndex": 2,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "is",
+      "current": null,
+      "proposed": "là / ở / đang",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "A form of be; auxiliary usage may not need a separate translation.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/choosing-food.json",
+      "line": 10,
+      "lineId": 10,
+      "sentence": "And these bananas are ripe.",
+      "sentenceTranslation": "Và những quả chuối này đã chín.",
+      "word": "ripe",
+      "wordIndex": 4,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "ripe",
+      "current": null,
+      "proposed": "chín",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/choosing-food.json",
+      "line": 3,
+      "lineId": 3,
+      "sentence": "Which one should we get?",
+      "sentenceTranslation": "Chúng ta nên lấy loại nào?",
+      "word": "one",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": "one",
+      "proposedLookupText": "one",
+      "current": "một",
+      "proposed": "một",
+      "currentAlternatives": [
+        "số một",
+        "cùng một; giống hệt"
+      ],
+      "proposedAlternatives": [
+        "số một",
+        "cùng một; giống hệt"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/finding-items.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "Okay, we have our list. Where should we start?",
+      "sentenceTranslation": "Được rồi, chúng ta có danh sách rồi. Bắt đầu từ đâu nhỉ?",
+      "word": "our",
+      "wordIndex": 3,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "our",
+      "current": null,
+      "proposed": "của chúng ta",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/finding-items.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "Let's start with the milk.",
+      "sentenceTranslation": "Bắt đầu với sữa nhé.",
+      "word": "Let's",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "let's",
+      "current": null,
+      "proposed": "hãy cùng / chúng ta hãy",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "Let us; suggestion marker.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context.",
+        "No source pronunciation; none invented."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/finding-items.json",
+      "line": 8,
+      "lineId": 8,
+      "sentence": "Perfect. But where is the bread?",
+      "sentenceTranslation": "Tuyệt. Nhưng bánh mì ở đâu nhỉ?",
+      "word": "bread",
+      "wordIndex": 5,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "bread",
+      "current": null,
+      "proposed": "bánh mì",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/finding-items.json",
+      "line": 3,
+      "lineId": 3,
+      "sentence": "Good idea. Do you know where the milk is?",
+      "sentenceTranslation": "Ý hay đấy. Bạn có biết sữa ở đâu không?",
+      "word": "Good",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "good",
+      "proposedLookupText": "good",
+      "current": "tốt; hay",
+      "proposed": "tốt; hay",
+      "currentAlternatives": [
+        "hoàn toàn; hẳn",
+        "tốt; giỏi",
+        "lợi ích; điều tốt"
+      ],
+      "proposedAlternatives": [
+        "hoàn toàn; hẳn",
+        "tốt; giỏi",
+        "lợi ích; điều tốt"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/making-a-shopping-list.json",
+      "line": 5,
+      "lineId": 5,
+      "sentence": "No, we don't. Let's buy one loaf.",
+      "sentenceTranslation": "Không, hết rồi. Hãy mua một ổ nhé.",
+      "word": "loaf",
+      "wordIndex": 6,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "loaf",
+      "current": null,
+      "proposed": "chơi rong",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/making-a-shopping-list.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "We need some food for this week.",
+      "sentenceTranslation": "Chúng ta cần một ít đồ ăn cho tuần này.",
+      "word": "We",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "we",
+      "current": null,
+      "proposed": "chúng tôi / chúng ta",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "Whether the listener is included cannot be decided by dictionary ranking.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/making-a-shopping-list.json",
+      "line": 9,
+      "lineId": 9,
+      "sentence": "Yes. Let's get some orange juice.",
+      "sentenceTranslation": "Có. Hãy mua một ít nước cam.",
+      "word": "juice",
+      "wordIndex": 5,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "juice",
+      "current": null,
+      "proposed": "phần tinh hoa",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/grocery-store/making-a-shopping-list.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "Okay. What do we need?",
+      "sentenceTranslation": "Được rồi. Chúng ta cần gì?",
+      "word": "Okay",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "okay",
+      "proposedLookupText": "okay",
+      "current": "ổn, tốt, tàm tạm",
+      "proposed": "ổn, tốt, tàm tạm",
+      "currentAlternatives": [
+        "ổn, được, tạm ổn",
+        "đồng ý, phê duyệt, chấp thuận",
+        "sự đồng ý, sự chấp thuận"
+      ],
+      "proposedAlternatives": [
+        "ổn, được, tạm ổn",
+        "đồng ý, phê duyệt, chấp thuận",
+        "sự đồng ý, sự chấp thuận"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/during-the-meal.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "The tomato soup is really good. It is warm, but not spicy.",
+      "sentenceTranslation": "Món súp cà chua rất ngon. Nó ấm nhưng không cay.",
+      "word": "soup",
+      "wordIndex": 2,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "soup",
+      "current": null,
+      "proposed": "xúp",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/during-the-meal.json",
+      "line": 3,
+      "lineId": 3,
+      "sentence": "My chicken pasta is good too. The chicken is very soft.",
+      "sentenceTranslation": "Món mì Ý gà của mình cũng ngon. Thịt gà rất mềm.",
+      "word": "chicken",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": "chicken",
+      "proposedLookupText": "chicken",
+      "current": "nhát gan; nhút nhát",
+      "proposed": "con gà / thịt gà",
+      "currentAlternatives": [
+        "gà"
+      ],
+      "proposedAlternatives": [
+        "nhát gan (thân mật)"
+      ],
+      "method": "proposed-editorial",
+      "flags": [
+        "Correct the v3 adjective-first default while preserving the useful figurative alternative.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/during-the-meal.json",
+      "line": 4,
+      "lineId": 4,
+      "sentence": "I think this is my favorite dish here.",
+      "sentenceTranslation": "Mình nghĩ đây là món mình thích nhất ở đây.",
+      "word": "dish",
+      "wordIndex": 6,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "dish",
+      "current": null,
+      "proposed": "vật hình đĩa",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/during-the-meal.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "I like the bread too.",
+      "sentenceTranslation": "Mình cũng thích bánh mì.",
+      "word": "I",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "i",
+      "proposedLookupText": "i",
+      "current": "tôi",
+      "proposed": "tôi",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "preserved-v3",
+      "flags": [
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/getting-a-table.json",
+      "line": 12,
+      "lineId": 12,
+      "sentence": "You are welcome. Enjoy your meal.",
+      "sentenceTranslation": "Không có gì. Chúc hai bạn ngon miệng.",
+      "word": "meal",
+      "wordIndex": 5,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "meal",
+      "current": null,
+      "proposed": "ăn",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/getting-a-table.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "A table for two, please.",
+      "sentenceTranslation": "Cho chúng tôi một bàn cho hai người.",
+      "word": "for",
+      "wordIndex": 2,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "for",
+      "current": null,
+      "proposed": "cho",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "Recipient, reason, or duration; the existing resolver still applies.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/getting-a-table.json",
+      "line": 8,
+      "lineId": 8,
+      "sentence": "That sounds good.",
+      "sentenceTranslation": "Nghe ổn đấy.",
+      "word": "sounds",
+      "wordIndex": 1,
+      "lemma": "sound",
+      "currentLookupText": null,
+      "proposedLookupText": "sounds",
+      "current": null,
+      "proposed": "lành lặn; tốt; vững chắc",
+      "currentAlternatives": [],
+      "proposedAlternatives": [
+        "kêu; vang lên; phát ra tiếng",
+        "âm thanh; âm",
+        "sáng suốt; đúng đắn"
+      ],
+      "method": "lemma",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Inflected form shares the base meanings; tense, POS, and sentence fit need human review."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/getting-a-table.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "Good evening. How many people?",
+      "sentenceTranslation": "Chào buổi tối. Có bao nhiêu người?",
+      "word": "Good",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "good",
+      "proposedLookupText": "good",
+      "current": "tốt; hay",
+      "proposed": "tốt; hay",
+      "currentAlternatives": [
+        "hoàn toàn; hẳn",
+        "tốt; giỏi",
+        "lợi ích; điều tốt"
+      ],
+      "proposedAlternatives": [
+        "hoàn toàn; hẳn",
+        "tốt; giỏi",
+        "lợi ích; điều tốt"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/ordering-food.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "Yes, please. I would like the chicken pasta.",
+      "sentenceTranslation": "Vâng. Tôi muốn món mì Ý gà.",
+      "word": "pasta",
+      "wordIndex": 7,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "pasta",
+      "current": null,
+      "proposed": "mì ống",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/ordering-food.json",
+      "line": 9,
+      "lineId": 9,
+      "sentence": "Okay. One chicken pasta, one tomato soup, water, and orange juice.",
+      "sentenceTranslation": "Được. Một mì Ý gà, một súp cà chua, nước lọc và nước cam.",
+      "word": "chicken",
+      "wordIndex": 2,
+      "lemma": null,
+      "currentLookupText": "chicken",
+      "proposedLookupText": "chicken",
+      "current": "nhát gan; nhút nhát",
+      "proposed": "con gà / thịt gà",
+      "currentAlternatives": [
+        "gà"
+      ],
+      "proposedAlternatives": [
+        "nhát gan (thân mật)"
+      ],
+      "method": "proposed-editorial",
+      "flags": [
+        "Correct the v3 adjective-first default while preserving the useful figurative alternative.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/ordering-food.json",
+      "line": 4,
+      "lineId": 4,
+      "sentence": "Sure. Would you like anything else?",
+      "sentenceTranslation": "Được. Bạn có muốn thêm gì nữa không?",
+      "word": "else",
+      "wordIndex": 5,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "else",
+      "current": null,
+      "proposed": "khác",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/ordering-food.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "Are you ready to order?",
+      "sentenceTranslation": "Hai bạn đã sẵn sàng gọi món chưa?",
+      "word": "Are",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "are",
+      "proposedLookupText": "are",
+      "current": "là",
+      "proposed": "là",
+      "currentAlternatives": [
+        "ở",
+        "đang"
+      ],
+      "proposedAlternatives": [
+        "ở",
+        "đang"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/reading-the-menu.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "This table is nice. We can look at the menu now.",
+      "sentenceTranslation": "Bàn này đẹp đấy. Bây giờ chúng ta có thể xem thực đơn.",
+      "word": "menu",
+      "wordIndex": 9,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "menu",
+      "current": null,
+      "proposed": "thực đơn",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/reading-the-menu.json",
+      "line": 5,
+      "lineId": 5,
+      "sentence": "I like pasta too, but I want something lighter.",
+      "sentenceTranslation": "Mình cũng thích mì Ý, nhưng mình muốn món gì đó nhẹ hơn.",
+      "word": "something",
+      "wordIndex": 7,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "something",
+      "current": null,
+      "proposed": "một thứ gì đó / một điều gì đó",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "Correct the automatic điều này selection, which loses indefiniteness.",
+        "Proposed edit; not human-approved."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/reading-the-menu.json",
+      "line": 4,
+      "lineId": 4,
+      "sentence": "The chicken pasta looks good.",
+      "sentenceTranslation": "Món mì Ý gà trông ngon đấy.",
+      "word": "pasta",
+      "wordIndex": 2,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "pasta",
+      "current": null,
+      "proposed": "mì ống",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/restaurant/reading-the-menu.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "There are so many dishes on this menu.",
+      "sentenceTranslation": "Có rất nhiều món trong thực đơn này.",
+      "word": "There",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "there",
+      "proposedLookupText": "there",
+      "current": "ở đó; tại đó",
+      "proposed": "ở đó; tại đó",
+      "currentAlternatives": [
+        "nơi đó; chỗ đó",
+        "đến đó; về phía đó",
+        "về việc đó; ở điểm đó"
+      ],
+      "proposedAlternatives": [
+        "nơi đó; chỗ đó",
+        "đến đó; về phía đó",
+        "về việc đó; ở điểm đó"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/meeting-at-the-park.json",
+      "line": 7,
+      "lineId": 7,
+      "sentence": "Sure. That sounds nice.",
+      "sentenceTranslation": "Được chứ. Nghe hay đấy.",
+      "word": "sounds",
+      "wordIndex": 2,
+      "lemma": "sound",
+      "currentLookupText": null,
+      "proposedLookupText": "sounds",
+      "current": null,
+      "proposed": "lành lặn; tốt; vững chắc",
+      "currentAlternatives": [],
+      "proposedAlternatives": [
+        "kêu; vang lên; phát ra tiếng",
+        "âm thanh; âm",
+        "sáng suốt; đúng đắn"
+      ],
+      "method": "lemma",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Inflected form shares the base meanings; tense, POS, and sentence fit need human review."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/meeting-at-the-park.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "Hi, Emma! Nice to see you here.",
+      "sentenceTranslation": "Chào Emma! Rất vui được gặp bạn ở đây.",
+      "word": "to",
+      "wordIndex": 3,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "to",
+      "current": null,
+      "proposed": "để",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "Destination or infinitive marker; the existing resolver still applies.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/meeting-at-the-park.json",
+      "line": 3,
+      "lineId": 3,
+      "sentence": "Hi, Ben! Yes, it is. The weather is good too.",
+      "sentenceTranslation": "Chào Ben! Đúng vậy. Thời tiết cũng đẹp nữa.",
+      "word": "Ben",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": "ben",
+      "proposedLookupText": "ben",
+      "current": "núi; đồi cao",
+      "proposed": "núi; đồi cao",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "preserved-v3",
+      "flags": [
+        "Possible character name: a dictionary gloss may be inappropriate even if this click is covered.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/meeting-at-the-park.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "The park is really nice this afternoon.",
+      "sentenceTranslation": "Công viên chiều nay thật đẹp.",
+      "word": "park",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": "park",
+      "proposedLookupText": "park",
+      "current": "đỗ",
+      "proposed": "đỗ",
+      "currentAlternatives": [
+        "công viên",
+        "để tạm, gửi tạm",
+        "khu bảo tồn thiên nhiên"
+      ],
+      "proposedAlternatives": [
+        "công viên",
+        "để tạm, gửi tạm",
+        "khu bảo tồn thiên nhiên"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/talking-about-themselves.json",
+      "line": 6,
+      "lineId": 6,
+      "sentence": "I like cooking and watching movies at home.",
+      "sentenceTranslation": "Mình thích nấu ăn và xem phim ở nhà.",
+      "word": "cooking",
+      "wordIndex": 2,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "cooking",
+      "current": null,
+      "proposed": "nấu ăn",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/talking-about-themselves.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "Thanks. Do you live near here?",
+      "sentenceTranslation": "Cảm ơn. Bạn có sống gần đây không?",
+      "word": "you",
+      "wordIndex": 2,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "you",
+      "current": null,
+      "proposed": "bạn / các bạn",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "Use a polite everyday pronoun; Vietnamese address depends on the relationship.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/talking-about-themselves.json",
+      "line": 8,
+      "lineId": 8,
+      "sentence": "I usually read books or listen to music.",
+      "sentenceTranslation": "Mình thường đọc sách hoặc nghe nhạc.",
+      "word": "books",
+      "wordIndex": 3,
+      "lemma": "book",
+      "currentLookupText": null,
+      "proposedLookupText": "books",
+      "current": null,
+      "proposed": "sách; quyển sách",
+      "currentAlternatives": [],
+      "proposedAlternatives": [
+        "đặt trước; đặt chỗ",
+        "thuê; đặt",
+        "tập; quyển"
+      ],
+      "method": "lemma",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Inflected form shares the base meanings; tense, POS, and sentence fit need human review."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/talking-about-themselves.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "That sounds like a nice job.",
+      "sentenceTranslation": "Nghe có vẻ là một công việc tốt.",
+      "word": "That",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "that",
+      "proposedLookupText": "that",
+      "current": "đó; cái đó",
+      "proposed": "đó; cái đó",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/talking-about-work.json",
+      "line": 5,
+      "lineId": 5,
+      "sentence": "Yes, I am. I teach English to children.",
+      "sentenceTranslation": "Đúng vậy. Mình dạy tiếng Anh cho trẻ em.",
+      "word": "children",
+      "wordIndex": 7,
+      "lemma": "child",
+      "currentLookupText": null,
+      "proposedLookupText": "children",
+      "current": null,
+      "proposed": "đứa trẻ, đứa bé",
+      "currentAlternatives": [],
+      "proposedAlternatives": [
+        "con",
+        "người trẻ con, người ấu trĩ"
+      ],
+      "method": "lemma",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Inflected form shares the base meanings; tense, POS, and sentence fit need human review."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/talking-about-work.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "It is nice to walk here after work.",
+      "sentenceTranslation": "Đi dạo ở đây sau giờ làm thật dễ chịu.",
+      "word": "is",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "is",
+      "current": null,
+      "proposed": "là / ở / đang",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "A form of be; auxiliary usage may not need a separate translation.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/talking-about-work.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "Where do you work, Emma?",
+      "sentenceTranslation": "Emma, bạn làm việc ở đâu?",
+      "word": "Emma",
+      "wordIndex": 4,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": null,
+      "current": null,
+      "proposed": null,
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "missing",
+      "flags": [
+        "Possible character name: a dictionary gloss may be inappropriate even if this click is covered.",
+        "Missing; no translation invented."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/talking-about-work.json",
+      "line": 3,
+      "lineId": 3,
+      "sentence": "I work at a school close to home.",
+      "sentenceTranslation": "Mình làm việc ở một trường học gần nhà.",
+      "word": "work",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": "work",
+      "proposedLookupText": "work",
+      "current": "làm việc; làm lụng",
+      "proposed": "làm việc; làm lụng",
+      "currentAlternatives": [
+        "công việc, việc làm",
+        "có việc làm; đi làm"
+      ],
+      "proposedAlternatives": [
+        "công việc, việc làm",
+        "có việc làm; đi làm"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/weekend-plans.json",
+      "line": 9,
+      "lineId": 9,
+      "sentence": "Maybe we can have coffee sometime.",
+      "sentenceTranslation": "Có lẽ lúc nào đó chúng ta có thể đi uống cà phê.",
+      "word": "sometime",
+      "wordIndex": 5,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "sometime",
+      "current": null,
+      "proposed": "trước kia",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/weekend-plans.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "It is getting late. Do you have plans this weekend?",
+      "sentenceTranslation": "Trời đang muộn rồi. Cuối tuần này bạn có kế hoạch gì không?",
+      "word": "you",
+      "wordIndex": 5,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "you",
+      "current": null,
+      "proposed": "bạn / các bạn",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "Use a polite everyday pronoun; Vietnamese address depends on the relationship.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/weekend-plans.json",
+      "line": 3,
+      "lineId": 3,
+      "sentence": "After that, I want to meet some friends.",
+      "sentenceTranslation": "Sau đó, mình muốn gặp vài người bạn.",
+      "word": "friends",
+      "wordIndex": 7,
+      "lemma": "friend",
+      "currentLookupText": null,
+      "proposedLookupText": "friends",
+      "current": null,
+      "proposed": "bạn, người bạn thân",
+      "currentAlternatives": [],
+      "proposedAlternatives": [
+        "đồng minh, người hỗ trợ",
+        "người quen"
+      ],
+      "method": "lemma",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Inflected form shares the base meanings; tense, POS, and sentence fit need human review."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "dialogues/walk-in-the-park/weekend-plans.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "On Saturday, I want to go to the gym in the morning.",
+      "sentenceTranslation": "Vào thứ Bảy, mình muốn đi tập gym vào buổi sáng.",
+      "word": "On",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "on",
+      "proposedLookupText": "on",
+      "current": "vào",
+      "proposed": "vào",
+      "currentAlternatives": [
+        "vào (ngày)",
+        "về (chủ đề)"
+      ],
+      "proposedAlternatives": [
+        "vào (ngày)",
+        "về (chủ đề)"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/only-ten-minutes.json",
+      "line": 7,
+      "lineId": 7,
+      "sentence": "What do you do when you get bored?",
+      "sentenceTranslation": "Cậu làm gì khi cảm thấy chán?",
+      "word": "when",
+      "wordIndex": 4,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "when",
+      "current": null,
+      "proposed": "ngày tháng",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/only-ten-minutes.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "I tried the book last night. I got bored, so I stopped.",
+      "sentenceTranslation": "Tối qua tớ đã thử đọc cuốn sách. Tớ thấy chán nên đã dừng lại.",
+      "word": "the",
+      "wordIndex": 2,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "the",
+      "current": null,
+      "proposed": "mạo từ xác định (thường không dịch riêng)",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "No single Vietnamese word consistently translates the definite article.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/only-ten-minutes.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "I read for ten minutes after dinner.",
+      "sentenceTranslation": "Tớ đọc trong mười phút sau bữa tối.",
+      "word": "for",
+      "wordIndex": 2,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "for",
+      "current": null,
+      "proposed": "trong",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "Recipient, reason, or duration; the existing resolver still applies.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/only-ten-minutes.json",
+      "line": 3,
+      "lineId": 3,
+      "sentence": "Every day?",
+      "sentenceTranslation": "Mỗi ngày à?",
+      "word": "Every",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "every",
+      "proposedLookupText": "every",
+      "current": "mỗi, mọi",
+      "proposed": "mỗi, mọi",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "preserved-v3",
+      "flags": [
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-old-book.json",
+      "line": 8,
+      "lineId": 8,
+      "sentence": "I get bored when I read.",
+      "sentenceTranslation": "Em thấy chán khi đọc sách.",
+      "word": "when",
+      "wordIndex": 3,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "when",
+      "current": null,
+      "proposed": "ngày tháng",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-old-book.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "I have a book for each of you.",
+      "sentenceTranslation": "Thầy có một cuốn sách cho mỗi em.",
+      "word": "of",
+      "wordIndex": 6,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "of",
+      "current": null,
+      "proposed": "của / thuộc về",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "Common preposition; quantity and partitive uses need context.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-old-book.json",
+      "line": 10,
+      "lineId": 10,
+      "sentence": "What if I miss a day?",
+      "sentenceTranslation": "Nếu em bỏ lỡ một ngày thì sao ạ?",
+      "word": "if",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "if",
+      "current": null,
+      "proposed": "nếu",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-old-book.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "An English book? It looks old.",
+      "sentenceTranslation": "Một cuốn sách tiếng Anh à? Nó trông cũ quá.",
+      "word": "An",
+      "wordIndex": 0,
+      "lemma": null,
+      "currentLookupText": "an",
+      "proposedLookupText": "an",
+      "current": "một",
+      "proposed": "một",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-presentation.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "Today, Leo and Ryan will give a short presentation.",
+      "sentenceTranslation": "Hôm nay, Leo và Ryan sẽ thực hiện một bài thuyết trình ngắn.",
+      "word": "Leo",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "leo",
+      "current": null,
+      "proposed": "cung sư t",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Possible character name: a dictionary gloss may be inappropriate even if this click is covered."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-presentation.json",
+      "line": 3,
+      "lineId": 3,
+      "sentence": "A few months ago, I did not like reading very much.",
+      "sentenceTranslation": "Vài tháng trước, em không thích đọc sách lắm.",
+      "word": "did",
+      "wordIndex": 5,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "did",
+      "current": null,
+      "proposed": "đã làm",
+      "currentAlternatives": [],
+      "proposedAlternatives": [
+        "trợ động từ quá khứ (thường không dịch riêng)"
+      ],
+      "method": "proposed-editorial",
+      "flags": [
+        "Past form of do; question and negative uses need context.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-presentation.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "Good morning. Our topic is reading for ten minutes a day.",
+      "sentenceTranslation": "Chào buổi sáng. Chủ đề của chúng em là đọc sách mười phút mỗi ngày.",
+      "word": "Our",
+      "wordIndex": 2,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "our",
+      "current": null,
+      "proposed": "của chúng ta",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-presentation.json",
+      "line": 4,
+      "lineId": 4,
+      "sentence": "I started with only ten minutes after dinner.",
+      "sentenceTranslation": "Em bắt đầu chỉ với mười phút sau bữa tối.",
+      "word": "only",
+      "wordIndex": 3,
+      "lemma": null,
+      "currentLookupText": "only",
+      "proposedLookupText": "only",
+      "current": "chỉ; mỗi",
+      "proposed": "chỉ; mỗi",
+      "currentAlternatives": [
+        "duy nhất; độc nhất"
+      ],
+      "proposedAlternatives": [
+        "duy nhất; độc nhất"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-real-treasure.json",
+      "line": 1,
+      "lineId": 1,
+      "sentence": "Your presentation was very good. What did you learn from this?",
+      "sentenceTranslation": "Bài thuyết trình của hai em rất tốt. Hai em đã học được gì từ việc này?",
+      "word": "presentation",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "presentation",
+      "current": null,
+      "proposed": "quà biếu",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "sqlite-ranked",
+      "flags": [
+        "Automatically ranked SQLite senses; learner usefulness and accuracy are unverified.",
+        "Multiple source senses; primary meaning may not fit this sentence."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-real-treasure.json",
+      "line": 2,
+      "lineId": 2,
+      "sentence": "At first, I thought the old book was special.",
+      "sentenceTranslation": "Lúc đầu, em nghĩ cuốn sách cũ rất đặc biệt.",
+      "word": "the",
+      "wordIndex": 4,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": "the",
+      "current": null,
+      "proposed": "mạo từ xác định (thường không dịch riêng)",
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "proposed-editorial",
+      "flags": [
+        "No single Vietnamese word consistently translates the definite article.",
+        "Proposed edit; not human-approved.",
+        "Meaning depends on sentence context."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-real-treasure.json",
+      "line": 5,
+      "lineId": 5,
+      "sentence": "The real treasure was not the book. It was the ten-minute habit.",
+      "sentenceTranslation": "Kho báu thật sự không phải là cuốn sách. Đó là thói quen mười phút.",
+      "word": "ten-minute",
+      "wordIndex": 10,
+      "lemma": null,
+      "currentLookupText": null,
+      "proposedLookupText": null,
+      "current": null,
+      "proposed": null,
+      "currentAlternatives": [],
+      "proposedAlternatives": [],
+      "method": "missing",
+      "flags": [
+        "Missing; no translation invented."
+      ],
+      "humanDecision": "PENDING"
+    },
+    {
+      "file": "stories/ten-minutes-a-day/the-real-treasure.json",
+      "line": 3,
+      "lineId": 3,
+      "sentence": "The book helped me, but the habit was more important.",
+      "sentenceTranslation": "Cuốn sách đã giúp em, nhưng thói quen còn quan trọng hơn.",
+      "word": "book",
+      "wordIndex": 1,
+      "lemma": null,
+      "currentLookupText": "book",
+      "proposedLookupText": "book",
+      "current": "sách; quyển sách",
+      "proposed": "sách; quyển sách",
+      "currentAlternatives": [
+        "đặt trước; đặt chỗ",
+        "thuê; đặt",
+        "tập; quyển"
+      ],
+      "proposedAlternatives": [
+        "đặt trước; đặt chỗ",
+        "thuê; đặt",
+        "tập; quyển"
+      ],
+      "method": "preserved-v3",
+      "flags": [
+        "Meaning depends on sentence context.",
+        "Unchanged availability is not evidence of correctness."
+      ],
+      "humanDecision": "PENDING"
+    }
+  ],
+  "candidateSHA256": "bef3299a2114378d21c1d83b3d43144a11dc89dc2eb79b304480fc21584d58be",
+  "humanReviewedExamples": 0,
+  "performance": {
+    "environment": {
+      "node": "v22.14.0",
+      "platform": "win32",
+      "arch": "x64"
+    },
+    "method": "30 JSON-parse samples after 5 warmups; 20 complete corpus popup passes after 3 warmups; local Node only; no browser/bundler/network timing.",
+    "baseline": {
+      "files": [
+        "app/_lib/dictionary/dictionary-v3.json",
+        "app/_lib/dictionary/lemma-map.json",
+        "app/_lib/dictionary/phrases.json"
+      ],
+      "bytes": 1260424,
+      "gzipBytes": 207698,
+      "parse": {
+        "medianMs": 6.165900000000022,
+        "p95Ms": 9.316000000000031
+      },
+      "heap": {
+        "retainedHeapBytes": 3265936,
+        "objects": 3
+      },
+      "popupCorpusPass": {
+        "medianMs": 11.196800000000053,
+        "p95Ms": 12.097800000000007
+      },
+      "medianMicrosecondsPerClick": 6.013319011815281
+    },
+    "candidate": {
+      "files": [
+        "prototypes/dictionary/dictionary-candidate.json"
+      ],
+      "bytes": 721335,
+      "gzipBytes": 171194,
+      "parse": {
+        "medianMs": 4.405399999999986,
+        "p95Ms": 7.349799999999959
+      },
+      "heap": {
+        "retainedHeapBytes": 2655040,
+        "objects": 1
+      },
+      "popupCorpusPass": {
+        "medianMs": 11.279099999999971,
+        "p95Ms": 12.684799999999996
+      },
+      "medianMicrosecondsPerClick": 6.057518796992466
+    },
+    "baselineV3OnlyBytes": 1252896
+  }
+}

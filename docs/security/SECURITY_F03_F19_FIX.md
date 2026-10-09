@@ -89,7 +89,7 @@ Includes the new 11 tests plus all existing 183 tests: F02 Google identity/colli
 Command, from `client`:
 
 ```powershell
-node --test scripts/auth-session-guard.test.mjs scripts/session-restore.test.mjs scripts/password-login.test.mjs scripts/vocabulary-events.test.mjs scripts/vocabulary-selection.test.mjs scripts/wordlist-filter.test.mjs scripts/wordlist-review-localization.test.mjs scripts/learner-ui-localization.test.mjs scripts/dependency-runtime.test.cjs
+node --test scripts/tests/unit/auth-session-guard.test.mjs scripts/tests/unit/session-restore.test.mjs scripts/tests/unit/password-login.test.mjs scripts/tests/unit/vocabulary-events.test.mjs scripts/tests/unit/vocabulary-selection.test.mjs scripts/tests/unit/wordlist-filter.test.mjs scripts/tests/integration/wordlist-review-localization.test.mjs scripts/tests/integration/learner-ui-localization.test.mjs scripts/tests/integration/dependency-runtime.test.cjs
 ```
 
 Includes account-generation protections, logout/account switching, OAuth/session-restore race handling, login errors, vocabulary synchronization/filter semantics, VI/EN localization, locked Next/native image versions and actual local Next API-proxy behavior. The proxy test uses the existing compiled route manifest and a mock backend; it is not a new production build or deployed end-to-end recovery test.

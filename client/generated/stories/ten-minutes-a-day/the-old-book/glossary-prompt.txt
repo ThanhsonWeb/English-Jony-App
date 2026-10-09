@@ -1,0 +1,220 @@
+StudyJony contextual glossary authoring — story: ten-minutes-a-day/the-old-book
+
+Codex must author meanings offline after the English draft and Vietnamese translations are final.
+Read every line and its translation. Save a separate glossary.json beside draft.json.
+Use the existing schemaVersion 1 glossary and the prepared glossary-template.json.
+Keep lessonId=ten-minutes-a-day, dialogueId=the-old-book, source line IDs, exact text,
+translation, speaker, tokens, and zero-based word positions unchanged.
+
+Review EVERY word occurrence, not only usefulWords. Write short, natural Vietnamese
+meanings, usually 1–5 words. Never blindly copy a dictionary's first sense.
+Reuse shared entries only when the English word, Vietnamese sense and POS agree;
+split references for repeated words with different senses or grammatical roles.
+Each word entry has word (lowercase English token), meaning and pos (array).
+Optional pron is an IPA array: use trustworthy surface-form IPA, never a lemma's
+IPA for an inflected word or one word's IPA for a whole phrase. Omit unknown IPA.
+Keep useful grammar explanations in optional note fields, hidden in the popup.
+Use a short grammar label when there is no direct Vietnamese translation.
+Identify names as proper names. Do not translate character names as ordinary words.
+
+Preserve individual word entries even inside expressions. Add useful phrase entries
+with pos:["phrase"] and inclusive spans {start,end,text,entry}. Phrase text must
+exactly match the source span, contain at least two words, and never cross punctuation.
+Review usefulWords as candidates; do not force every adjacent word into a phrase.
+Each line has words (entry IDs in token order) and phrases (span array).
+Each character has meaning (name), role and optional note.
+
+Use the English sentence AND its existing Vietnamese translation to select senses.
+Check natural Vietnamese, phrase boundaries, individual meanings, POS and IPA.
+Flag uncertain senses in optional notes for human review; validation is not proof
+of translation accuracy. Never modify an approved glossary automatically.
+No runtime translation API, build-time translation API or dictionary-based meaning generator.
+
+After authoring, run:
+npm run glossary:check -- ten-minutes-a-day the-old-book
+Then the existing dialogue:build command validates again before any promotion.
+
+Final source (all lines and useful expressions):
+{
+  "metadata": {
+    "courseId": "ten-minutes-a-day",
+    "dialogueId": "the-old-book",
+    "title": "Cuốn sách cũ",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Mười phút mỗi ngày",
+        "en": "Ten Minutes a Day"
+      },
+      "courseDescription": {
+        "vi": "Mr. Daniel tặng Leo và Ryan cùng một cuốn sách tiếng Anh và đề nghị họ đọc mười phút mỗi ngày.",
+        "en": "Mr. Daniel gives Leo and Ryan the same English book and asks them to read for ten minutes every day."
+      },
+      "title": {
+        "vi": "Cuốn sách cũ",
+        "en": "The Old Book"
+      },
+      "description": {
+        "vi": "Mr. Daniel gives Leo and Ryan the same English book and asks them to read for ten minutes every day.",
+        "en": "Mr. Daniel gives Leo and Ryan the same English book and asks them to read for ten minutes every day."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Mr. Daniel gives Leo and Ryan the same English book and asks them to read for ten minutes every day.",
+    "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+    "thumbnail": "/stories/ten-minutes-a-day/thumbnails/the-old-book.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Mr. Daniel",
+      "text": "I have a book for each of you.",
+      "translation": "Thầy có một cuốn sách cho mỗi em.",
+      "practicePriority": "important",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Ryan",
+      "text": "An English book? It looks old.",
+      "translation": "Một cuốn sách tiếng Anh à? Nó trông cũ quá.",
+      "practicePriority": "simple",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Leo",
+      "text": "What should we do with it?",
+      "translation": "Chúng em nên làm gì với nó ạ?",
+      "practicePriority": "important",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/leo-01.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Mr. Daniel",
+      "text": "Read it for ten minutes every day.",
+      "translation": "Hãy đọc nó trong mười phút mỗi ngày.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Ryan",
+      "text": "Only ten minutes?",
+      "translation": "Chỉ mười phút thôi ạ?",
+      "practicePriority": "simple",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Mr. Daniel",
+      "text": "Yes. Ten minutes is enough to start.",
+      "translation": "Đúng vậy. Mười phút là đủ để bắt đầu.",
+      "practicePriority": "important",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Leo",
+      "text": "I can do that after dinner.",
+      "translation": "Em có thể làm vậy sau bữa tối.",
+      "practicePriority": "important",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/leo-02.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Ryan",
+      "text": "I get bored when I read.",
+      "translation": "Em thấy chán khi đọc sách.",
+      "practicePriority": "simple",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-03.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Mr. Daniel",
+      "text": "Do not worry about reading a lot. Just read a little every day.",
+      "translation": "Đừng lo về việc phải đọc nhiều. Chỉ cần đọc một chút mỗi ngày.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Ryan",
+      "text": "What if I miss a day?",
+      "translation": "Nếu em bỏ lỡ một ngày thì sao ạ?",
+      "practicePriority": "important",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-04.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Mr. Daniel",
+      "text": "Start again the next day. The important thing is to continue.",
+      "translation": "Hãy bắt đầu lại vào ngày hôm sau. Điều quan trọng là tiếp tục.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-05.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "each",
+      "pronunciation": "/iːtʃ/",
+      "meaning": "mỗi",
+      "example": "Each student has a book."
+    },
+    {
+      "word": "every day",
+      "pronunciation": "/ˈev.ri deɪ/",
+      "meaning": "mỗi ngày",
+      "example": "I study English every day."
+    },
+    {
+      "word": "enough",
+      "pronunciation": "/ɪˈnʌf/",
+      "meaning": "đủ",
+      "example": "Ten minutes is enough."
+    },
+    {
+      "word": "after dinner",
+      "pronunciation": "/ˈɑːf.tər ˈdɪn.ər/",
+      "meaning": "sau bữa tối",
+      "example": "I read after dinner."
+    },
+    {
+      "word": "get bored",
+      "pronunciation": "/ɡet bɔːrd/",
+      "meaning": "cảm thấy chán",
+      "example": "I get bored on long trips."
+    },
+    {
+      "word": "a little",
+      "pronunciation": "/ə ˈlɪt.əl/",
+      "meaning": "một chút",
+      "example": "I read a little every night."
+    },
+    {
+      "word": "start again",
+      "pronunciation": "/stɑːrt əˈɡen/",
+      "meaning": "bắt đầu lại",
+      "example": "You can start again tomorrow."
+    },
+    {
+      "word": "continue",
+      "pronunciation": "/kənˈtɪn.juː/",
+      "meaning": "tiếp tục",
+      "example": "Please continue your work."
+    }
+  ]
+}

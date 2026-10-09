@@ -54,5 +54,9 @@ test("runtime lookup uses v3 words, preserves phrases and keeps lemma metadata",
 		assert.equal(result?.source, "word", word);
 		assert.equal(resolveMeaning({ result, clickedWord: word }).displayMeaning, result.primaryMeaning, word);
 	}
-	for (const word of "this that these those alright".split(" ")) assert.equal(lookupWord(word), null, word);
+	for (const word of "this that these those alright".split(" ")) {
+		const result = lookupWord(word);
+		assert.equal(result?.source, "word", word);
+		assert.equal(resolveMeaning({ result, clickedWord: word }).displayMeaning, result.primaryMeaning, word);
+	}
 });

@@ -135,8 +135,8 @@ These chains are excluded by both `npm audit --omit=dev` results and are not lea
 ### Existing client failures kept outside scope
 
 1. `app/_lib/dictionary/resolveMeaning.test.mjs`: runtime v3 lookup assertion expects `this` to be absent, while current dictionary data includes it.
-2. `scripts/build-dictionary-v3.test.mjs`: generated dictionary-v3 JSON differs from the checked-in artifact.
-3. `scripts/extract-dictionary-v2.test.mjs`: generated dictionary-v2 JSON differs from the checked-in artifact.
+2. `scripts/tests/integration/build-dictionary-v3.test.mjs`: generated dictionary-v3 JSON differs from the checked-in artifact.
+3. `scripts/tests/integration/extract-dictionary-v2.test.mjs`: generated dictionary-v2 JSON differs from the checked-in artifact.
 
 All three reproduced in the isolated pre-upgrade Git HEAD archive. Dictionary/content files were not changed.
 
@@ -157,8 +157,8 @@ An older standalone `test-wordlist-browser.cjs` attempt timed out on its initial
 1. `client/package.json`, `client/package-lock.json`.
 2. `server/package.json`, `server/package-lock.json`.
 3. `server/tests/dependencyCompatibility.test.js`.
-4. `client/scripts/dependency-runtime.test.cjs`.
-5. `client/scripts/test-dependency-media-browser.cjs`.
+4. `client/scripts/tests/integration/dependency-runtime.test.cjs`.
+5. `client/scripts/tests/browser/test-dependency-media-browser.cjs`.
 6. `SECURITY_DEPENDENCY_REMEDIATION.md`.
 7. **150 already-tracked server/node_modules files have content changes/removals** from npm in `.package-lock.json`, `@grpc/grpc-js`, `brace-expansion`, `compression`, `ip-address`, `morgan`, `nodemailer`, `proxy-addr`, and `qs`. Git status lists **212 vendor entries**, including 62 additional installation/line-ending-only changes with no content diff. No vendor files were hand-edited. New ignored distribution files are local install artifacts; deploy by installing from the lockfile, not by treating the tracked vendor directory as a complete bundle. No node_modules cleanup/untracking or F18 infrastructure refactor was performed.
 

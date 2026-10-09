@@ -5,6 +5,7 @@ import path from "node:path";
 
 import { courseConfigs } from "./config/index.mjs";
 import { buildDialoguePrompt } from "./prompts/dialogue-generator.mjs";
+import { buildGlossaryPrompt } from "./prompts/contextual-glossary.mjs";
 import {
 	getDialogueDataJsonPath,
 	getGeneratedCourseDirectory,
@@ -169,6 +170,7 @@ try {
 	const promptPath = path.join(outputDirectory, "generation-prompt.txt");
 
 	await fs.writeFile(promptPath, prompt, "utf8");
+	await fs.writeFile(path.join(outputDirectory, "glossary-prompt.txt"), buildGlossaryPrompt(lessonConfig), "utf8");
 
 	console.log("\n✅ Dialogue request created.");
 	console.log(`🎯 Level: ${level}`);
@@ -181,7 +183,7 @@ try {
 	console.log("\nNext:");
 	console.log("1. Send this prompt to the AI.");
 	console.log("2. Save its JSON response.");
-	console.log("3. Review and validate all final dialogue JSON files.");
+	console.log(`3. Review the final JSON; run npm run glossary:prepare -- ${courseId} ${dialogueId}, then let Codex author glossary.json and run glossary:check.`);
 	console.log(`4. Prepare the ChatGPT thumbnail manifest: npm run dialogue:thumbnails:prepare -- ${courseId}`);
 	console.log("5. Codex stops here and shares the manifest; ChatGPT generates the images separately.");
 } catch (error) {

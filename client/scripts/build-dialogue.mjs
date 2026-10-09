@@ -2,6 +2,7 @@ import { execFileSync } from "node:child_process";
 import { access, copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { courseConfigs } from "./config/index.mjs";
+import { planGlossary, publishGlossary } from "./lib/contextual-glossary.mjs";
 import {
 	getContentStorageDirectory,
 	getDialogueDataCourseDirectory,
@@ -425,10 +426,18 @@ async function main() {
 	findConfigDialogue(config, dialogueId);
 	const speakers = getSpeakerNames(draft, config);
 	if (!verbose) console.log(`✅ Draft valid — ${formatMcSummary(draftValidation)}`);
+	if (draft.metadata.contextualGlossaryVersion !== undefined && draft.metadata.contextualGlossaryVersion !== 1) {
+		fail("Unsupported metadata.contextualGlossaryVersion");
+	}
+	// All glossary checks precede production, registration and audio writes.
+	const glossaryPlan = await planGlossary(ROOT, config, draft,
+		draft.metadata.contextualGlossaryVersion === 1 || !(await exists(productionPath)));
+	console.log(glossaryPlan.glossary ? "✅ Contextual glossary validated" : "Existing lesson: production dictionary fallback retained");
 
 	logStep(verbose, "[2/7] Promoting dialogue JSON");
 	await mkdir(path.dirname(productionPath), { recursive: true });
 	await copyFile(draftPath, productionPath);
+	await publishGlossary(ROOT, glossaryPlan);
 
 	logStep(verbose, "[3/7] Updating course and media registration");
 	const mediaPath = await updateMediaFile({
@@ -475,13 +484,16 @@ async function main() {
 		path.relative(ROOT, LESSON_DATA_PATH),
 		path.relative(ROOT, COURSE_CONFIG_INDEX_PATH),
 		path.join("scripts", "lib", "dialogue-content-paths.mjs"),
-		path.join("scripts", "dialogue-content-paths.test.mjs"),
+		path.join("scripts", "tests", "unit", "dialogue-content-paths.test.mjs"),
+		path.join("scripts", "lib", "contextual-glossary.mjs"),
+		path.join("app", "_lib", "dictionary", "validateLessonGlossary.js"),
 	], verbose);
 	const testOutput = runNode("--test", [
-		path.join(ROOT, "scripts", "dialogue-a1-content-rules.test.mjs"),
-		path.join(ROOT, "scripts", "dialogue-mc-report.test.mjs"),
-		path.join(ROOT, "scripts", "dialogue-practice-rule.test.mjs"),
-		path.join(ROOT, "scripts", "dialogue-content-paths.test.mjs"),
+		path.join(ROOT, "scripts", "tests", "integration", "dialogue-a1-content-rules.test.mjs"),
+		path.join(ROOT, "scripts", "tests", "integration", "dialogue-mc-report.test.mjs"),
+		path.join(ROOT, "scripts", "tests", "integration", "dialogue-practice-rule.test.mjs"),
+		path.join(ROOT, "scripts", "tests", "unit", "dialogue-content-paths.test.mjs"),
+		path.join(ROOT, "scripts", "tests", "integration", "contextual-glossary-workflow.test.mjs"),
 	], verbose);
 	if (!verbose) console.log(`✅ Tests — ${getPassedTestCount(testOutput)} passed`);
 
