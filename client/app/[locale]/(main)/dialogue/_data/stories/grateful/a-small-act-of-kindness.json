@@ -1,0 +1,1259 @@
+{
+  "metadata": {
+    "courseId": "grateful",
+    "dialogueId": "a-small-act-of-kindness",
+    "contextualGlossaryVersion": 1,
+    "title": "Một việc tốt nhỏ",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Biết ơn",
+        "en": "Being Grateful"
+      },
+      "courseDescription": {
+        "vi": "Câu chuyện về Lily và cách cô bé học được ý nghĩa của lòng biết ơn qua những việc tốt nhỏ trong cuộc sống.",
+        "en": "A story about Lily learning the meaning of gratitude through small acts of kindness in everyday life."
+      },
+      "title": {
+        "vi": "Một việc tốt nhỏ",
+        "en": "A Small Act of Kindness"
+      },
+      "description": {
+        "vi": "At school, Lily realizes she forgot her lunch. Sam shares his food with her, and she begins to notice the small ways people help her.",
+        "en": "At school, Lily realizes she forgot her lunch. Sam shares his food with her, and she begins to notice the small ways people help her."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "At school, Lily realizes she forgot her lunch. Sam shares his food with her, and she begins to notice the small ways people help her.",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "thumbnail": "/stories/grateful/thumbnails/a-small-act-of-kindness.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Sam",
+      "text": "Lily, it's lunchtime. Why are you sad?",
+      "translation": "Chị Lily, đến giờ ăn trưa rồi. Sao chị buồn vậy?",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Lily",
+      "text": "I forgot my lunch at home. I'm so hungry!",
+      "translation": "Chị để quên bữa trưa ở nhà rồi. Chị đói quá!",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Sam",
+      "text": "Did you eat the toast Mom gave you?",
+      "translation": "Chị đã ăn bánh mì nướng mẹ cho chưa?",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Lily",
+      "text": "Yes, I ate it this morning. I have no food now.",
+      "translation": "Rồi, chị ăn sáng nay rồi. Giờ chị không còn đồ ăn nữa.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Sam",
+      "text": "I have two sandwiches. You can have one.",
+      "translation": "Em có hai chiếc bánh sandwich. Chị có thể lấy một chiếc.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Lily",
+      "text": "Really? Is that okay?",
+      "translation": "Thật sao? Như vậy có được không?",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Sam",
+      "text": "Of course. We can share my lunch.",
+      "translation": "Tất nhiên rồi. Chúng ta có thể chia sẻ bữa trưa của em.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Lily",
+      "text": "Thank you, Sam. You're very kind!",
+      "translation": "Cảm ơn em, Sam. Em thật tốt bụng!",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Sam",
+      "text": "You're welcome. Mom made these sandwiches.",
+      "translation": "Không có gì đâu chị. Mẹ làm những chiếc bánh sandwich này đấy.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Lily",
+      "text": "Mom made breakfast for me, too. She helped me find my bag.",
+      "translation": "Mẹ cũng làm bữa sáng cho chị nữa. Mẹ còn giúp chị tìm cặp sách.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Lily",
+      "text": "But I did not say thank you to her.",
+      "translation": "Nhưng chị đã không nói cảm ơn mẹ.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Sam",
+      "text": "You can tell her after school.",
+      "translation": "Chị có thể nói với mẹ sau giờ học mà.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-06.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Lily",
+      "text": "Yes. I want to thank Mom when we get home.",
+      "translation": "Ừ. Chị muốn cảm ơn mẹ khi chúng ta về nhà.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-07.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "lunchtime",
+      "pronunciation": "/ˈlʌntʃ.taɪm/",
+      "meaning": "giờ ăn trưa",
+      "example": "It's lunchtime at school."
+    },
+    {
+      "word": "forgot",
+      "pronunciation": "/fərˈɡɑːt/",
+      "meaning": "đã quên",
+      "example": "I forgot my book at home."
+    },
+    {
+      "word": "hungry",
+      "pronunciation": "/ˈhʌŋ.ɡri/",
+      "meaning": "đói bụng",
+      "example": "I'm hungry. I want some food."
+    },
+    {
+      "word": "sandwiches",
+      "pronunciation": "/ˈsæn.wɪ.tʃɪz/",
+      "meaning": "những chiếc bánh sandwich",
+      "example": "I have two sandwiches."
+    },
+    {
+      "word": "Of course",
+      "pronunciation": "/əv ˈkɔːrs/",
+      "meaning": "tất nhiên rồi",
+      "example": "Of course, you can sit here."
+    },
+    {
+      "word": "share",
+      "pronunciation": "/ʃer/",
+      "meaning": "chia sẻ",
+      "example": "We can share my food."
+    },
+    {
+      "word": "thank you",
+      "pronunciation": "/θæŋk juː/",
+      "meaning": "cảm ơn",
+      "example": "Thank you for your help."
+    },
+    {
+      "word": "kind",
+      "pronunciation": "/kaɪnd/",
+      "meaning": "tốt bụng, tử tế",
+      "example": "My mom is very kind."
+    },
+    {
+      "word": "You're welcome",
+      "pronunciation": "/jʊr ˈwel.kəm/",
+      "meaning": "không có gì (đáp lại lời cảm ơn)",
+      "example": "You're welcome, Lily!"
+    },
+    {
+      "word": "after school",
+      "pronunciation": "/ˈæf.tər skuːl/",
+      "meaning": "sau giờ học",
+      "example": "I go home after school."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu nói của Sam.",
+          "en": "Listen and complete Sam's sentence."
+        }
+      },
+      "parts": [
+        "Lily, it's ",
+        ". Why are you sad?"
+      ],
+      "answers": [
+        "lunchtime"
+      ],
+      "speaker": "Sam",
+      "transcript": "Lily, it's lunchtime. Why are you sad?",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu Lily nói về bữa trưa.",
+          "en": "Listen and complete what Lily says about her lunch."
+        }
+      },
+      "parts": [
+        "I ",
+        " my lunch at home. I'm so hungry!"
+      ],
+      "answers": [
+        "forgot"
+      ],
+      "speaker": "Lily",
+      "transcript": "I forgot my lunch at home. I'm so hungry!",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập câu quan trọng",
+          "en": "Practice an important sentence"
+        },
+        "instruction": {
+          "vi": "Hoàn thành cách Lily nói về cảm giác của mình.",
+          "en": "Complete how Lily describes how she feels."
+        }
+      },
+      "parts": [
+        "I forgot my lunch at home. I'm so ",
+        "!"
+      ],
+      "answers": [
+        "hungry"
+      ],
+      "speaker": "Lily",
+      "transcript": "I forgot my lunch at home. I'm so hungry!",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu hỏi của Sam.",
+          "en": "Listen and complete Sam's question."
+        }
+      },
+      "parts": [
+        "Did you eat the ",
+        " Mom gave you?"
+      ],
+      "answers": [
+        "toast"
+      ],
+      "speaker": "Sam",
+      "transcript": "Did you eat the toast Mom gave you?",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-02.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu trả lời của Lily.",
+          "en": "Listen and complete Lily's answer."
+        }
+      },
+      "parts": [
+        "Yes, I ate it this ",
+        ". I have no food now."
+      ],
+      "answers": [
+        "morning"
+      ],
+      "speaker": "Lily",
+      "transcript": "Yes, I ate it this morning. I have no food now.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập câu quan trọng",
+          "en": "Practice an important sentence"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu Lily nói về đồ ăn của mình.",
+          "en": "Complete what Lily says about her food."
+        }
+      },
+      "parts": [
+        "Yes, I ate it this morning. I have no ",
+        " now."
+      ],
+      "answers": [
+        "food"
+      ],
+      "speaker": "Lily",
+      "transcript": "Yes, I ate it this morning. I have no food now.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu Sam nói về đồ ăn.",
+          "en": "Listen and complete what Sam says about his food."
+        }
+      },
+      "parts": [
+        "I have two ",
+        ". You can have one."
+      ],
+      "answers": [
+        "sandwiches"
+      ],
+      "speaker": "Sam",
+      "transcript": "I have two sandwiches. You can have one.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-03.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập lời đề nghị",
+          "en": "Practice making an offer"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời Sam đề nghị với Lily.",
+          "en": "Complete Sam's offer to Lily."
+        }
+      },
+      "parts": [
+        "I have two sandwiches. You can ",
+        "."
+      ],
+      "answers": [
+        "have one"
+      ],
+      "speaker": "Sam",
+      "transcript": "I have two sandwiches. You can have one.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-03.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "multipleChoice",
+      "question": "Sam nói 'You can have one' để làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu cách dùng câu",
+          "en": "Understand language in context"
+        },
+        "instruction": {
+          "vi": "Chọn mục đích của Sam khi dùng 'can'.",
+          "en": "Choose why Sam uses 'can' here."
+        },
+        "question": {
+          "vi": "Sam nói 'You can have one' để làm gì?",
+          "en": "Why does Sam say 'You can have one'?"
+        },
+        "options": [
+          {
+            "vi": "Nhắc Lily phải mang cơm từ nhà.",
+            "en": "To remind Lily to bring lunch from home."
+          },
+          {
+            "vi": "Hỏi Lily có một chiếc bánh không.",
+            "en": "To ask whether Lily has a sandwich."
+          },
+          {
+            "vi": "Nói rằng Sam chỉ có một chiếc bánh.",
+            "en": "To say Sam only has one sandwich."
+          },
+          {
+            "vi": "Cho Lily biết cô bé có thể lấy một chiếc bánh.",
+            "en": "To tell Lily she is allowed to have a sandwich."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "can",
+      "options": [
+        "Nhắc Lily phải mang cơm từ nhà.",
+        "Hỏi Lily có một chiếc bánh không.",
+        "Nói rằng Sam chỉ có một chiếc bánh.",
+        "Cho Lily biết cô bé có thể lấy một chiếc bánh."
+      ],
+      "answer": "Cho Lily biết cô bé có thể lấy một chiếc bánh.",
+      "speaker": "Sam",
+      "transcript": "I have two sandwiches. You can have one.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-03.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu Lily hỏi Sam.",
+          "en": "Listen and complete Lily's question to Sam."
+        }
+      },
+      "parts": [
+        "Really? Is that ",
+        "?"
+      ],
+      "answers": [
+        "okay"
+      ],
+      "speaker": "Lily",
+      "transcript": "Really? Is that okay?",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Vì sao Lily hỏi 'Is that okay?'?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu tình huống",
+          "en": "Understand the situation"
+        },
+        "instruction": {
+          "vi": "Chọn lý do Lily hỏi lại Sam.",
+          "en": "Choose why Lily asks Sam again."
+        },
+        "question": {
+          "vi": "Vì sao Lily hỏi 'Is that okay?'?",
+          "en": "Why does Lily ask 'Is that okay?'"
+        },
+        "options": [
+          {
+            "vi": "Cô bé muốn chắc Sam thật sự đồng ý chia đồ ăn.",
+            "en": "She wants to make sure Sam really agrees to share his food."
+          },
+          {
+            "vi": "Cô bé muốn biết Sam đã ăn trưa chưa.",
+            "en": "She wants to know if Sam has eaten lunch."
+          },
+          {
+            "vi": "Cô bé muốn hỏi bánh sandwich có ngon không.",
+            "en": "She wants to ask if the sandwich tastes good."
+          },
+          {
+            "vi": "Cô bé muốn biết Sam có thêm đồ ăn ở nhà không.",
+            "en": "She wants to know if Sam has more food at home."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Cô bé muốn chắc Sam thật sự đồng ý chia đồ ăn.",
+        "Cô bé muốn biết Sam đã ăn trưa chưa.",
+        "Cô bé muốn hỏi bánh sandwich có ngon không.",
+        "Cô bé muốn biết Sam có thêm đồ ăn ở nhà không."
+      ],
+      "answer": "Cô bé muốn chắc Sam thật sự đồng ý chia đồ ăn.",
+      "speaker": "Lily",
+      "transcript": "Really? Is that okay?",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu trả lời của Sam.",
+          "en": "Listen and complete Sam's answer."
+        }
+      },
+      "parts": [
+        "",
+        ". We can share my lunch."
+      ],
+      "answers": [
+        "Of course"
+      ],
+      "speaker": "Sam",
+      "transcript": "Of course. We can share my lunch.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-04.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập cụm từ hữu ích",
+          "en": "Practice a useful phrase"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu nói về việc chia sẻ đồ ăn.",
+          "en": "Complete the sentence about sharing food."
+        }
+      },
+      "parts": [
+        "Of course. We can ",
+        " my lunch."
+      ],
+      "answers": [
+        "share"
+      ],
+      "speaker": "Sam",
+      "transcript": "Of course. We can share my lunch.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-04.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập câu quan trọng",
+          "en": "Practice a key sentence"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời cảm ơn của Lily.",
+          "en": "Complete Lily's words of thanks."
+        }
+      },
+      "parts": [
+        "",
+        ", Sam. You're very kind!"
+      ],
+      "answers": [
+        "Thank you"
+      ],
+      "speaker": "Lily",
+      "transcript": "Thank you, Sam. You're very kind!",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-04.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập lời khen",
+          "en": "Practice a kind compliment"
+        },
+        "instruction": {
+          "vi": "Hoàn thành cách Lily khen Sam.",
+          "en": "Complete Lily's compliment to Sam."
+        }
+      },
+      "parts": [
+        "Thank you, Sam. You're very ",
+        "!"
+      ],
+      "answers": [
+        "kind"
+      ],
+      "speaker": "Lily",
+      "transcript": "Thank you, Sam. You're very kind!",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "multipleChoice",
+      "question": "Vì sao Lily cảm thấy biết ơn Sam?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu câu chuyện",
+          "en": "Understand the story"
+        },
+        "instruction": {
+          "vi": "Chọn điều Sam đã làm để giúp Lily.",
+          "en": "Choose what Sam did to help Lily."
+        },
+        "question": {
+          "vi": "Vì sao Lily cảm thấy biết ơn Sam?",
+          "en": "Why does Lily feel grateful to Sam?"
+        },
+        "options": [
+          {
+            "vi": "Sam tìm được hộp cơm Lily để quên.",
+            "en": "Sam found Lily's forgotten lunch box."
+          },
+          {
+            "vi": "Sam sẵn lòng chia sẻ bữa trưa với Lily.",
+            "en": "Sam is willing to share his lunch with Lily."
+          },
+          {
+            "vi": "Sam gọi Mom mang cơm đến trường.",
+            "en": "Sam called Mom to bring lunch to school."
+          },
+          {
+            "vi": "Sam giúp Lily mua đồ ăn ở trường.",
+            "en": "Sam helped Lily buy food at school."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Sam tìm được hộp cơm Lily để quên.",
+        "Sam sẵn lòng chia sẻ bữa trưa với Lily.",
+        "Sam gọi Mom mang cơm đến trường.",
+        "Sam giúp Lily mua đồ ăn ở trường."
+      ],
+      "answer": "Sam sẵn lòng chia sẻ bữa trưa với Lily.",
+      "speaker": "Lily",
+      "transcript": "Thank you, Sam. You're very kind!",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu nói của Sam.",
+          "en": "Listen and complete Sam's sentence."
+        }
+      },
+      "parts": [
+        "You're welcome. Mom ",
+        " these sandwiches."
+      ],
+      "answers": [
+        "made"
+      ],
+      "speaker": "Sam",
+      "transcript": "You're welcome. Mom made these sandwiches.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-05.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập câu quan trọng",
+          "en": "Practice an important sentence"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu Sam nói về đồ ăn Mom đã làm.",
+          "en": "Complete what Sam says about the food Mom made."
+        }
+      },
+      "parts": [
+        "You're welcome. Mom made these ",
+        "."
+      ],
+      "answers": [
+        "sandwiches"
+      ],
+      "speaker": "Sam",
+      "transcript": "You're welcome. Mom made these sandwiches.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-05.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Khi Lily cảm ơn, Sam nên đáp lại thế nào cho tự nhiên?",
+      "localized": {
+        "title": {
+          "vi": "Giao tiếp lịch sự",
+          "en": "Polite communication"
+        },
+        "instruction": {
+          "vi": "Chọn cách đáp lại lời cảm ơn phù hợp nhất.",
+          "en": "Choose the most natural response to someone's thanks."
+        },
+        "question": {
+          "vi": "Khi Lily cảm ơn, Sam nên đáp lại thế nào cho tự nhiên?",
+          "en": "How should Sam naturally respond when Lily thanks him?"
+        },
+        "options": [
+          {
+            "vi": "Em cũng đang đói.",
+            "en": "I'm hungry, too."
+          },
+          {
+            "vi": "Chị có muốn ăn thêm không?",
+            "en": "Would you like some more?"
+          },
+          {
+            "vi": "Không có gì đâu.",
+            "en": "You're welcome."
+          },
+          {
+            "vi": "Để ngày mai nhé.",
+            "en": "Maybe tomorrow."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "You're welcome",
+      "options": [
+        "Em cũng đang đói.",
+        "Chị có muốn ăn thêm không?",
+        "Không có gì đâu.",
+        "Để ngày mai nhé."
+      ],
+      "answer": "Không có gì đâu.",
+      "speaker": "Sam",
+      "transcript": "You're welcome. Mom made these sandwiches.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-05.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành điều Lily nhớ về Mom.",
+          "en": "Listen and complete what Lily remembers about Mom."
+        }
+      },
+      "parts": [
+        "Mom made ",
+        " for me, too. She helped me find my bag."
+      ],
+      "answers": [
+        "breakfast"
+      ],
+      "speaker": "Lily",
+      "transcript": "Mom made breakfast for me, too. She helped me find my bag.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập câu quan trọng",
+          "en": "Practice an important sentence"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu nói về sự giúp đỡ của Mom.",
+          "en": "Complete the sentence about Mom's help."
+        }
+      },
+      "parts": [
+        "Mom made breakfast for me, too. She helped me find my ",
+        "."
+      ],
+      "answers": [
+        "bag"
+      ],
+      "speaker": "Lily",
+      "transcript": "Mom made breakfast for me, too. She helped me find my bag.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập câu quan trọng",
+          "en": "Practice a key sentence"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu Lily nói về điều mình đã không làm.",
+          "en": "Complete what Lily says about something she did not do."
+        }
+      },
+      "parts": [
+        "But I ",
+        " say thank you to her."
+      ],
+      "answers": [
+        "did not"
+      ],
+      "speaker": "Lily",
+      "transcript": "But I did not say thank you to her.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-06.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Ghi nhớ lời cảm ơn",
+          "en": "Remember to say thank you"
+        },
+        "instruction": {
+          "vi": "Hoàn thành cụm từ quan trọng về lòng biết ơn.",
+          "en": "Complete the important phrase about gratitude."
+        }
+      },
+      "parts": [
+        "But I did not say ",
+        " to her."
+      ],
+      "answers": [
+        "thank you"
+      ],
+      "speaker": "Lily",
+      "transcript": "But I did not say thank you to her.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-06.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành lời khuyên của Sam.",
+          "en": "Listen and complete Sam's suggestion."
+        }
+      },
+      "parts": [
+        "You can tell her ",
+        "."
+      ],
+      "answers": [
+        "after school"
+      ],
+      "speaker": "Sam",
+      "transcript": "You can tell her after school.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-06.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 12,
+      "type": "multipleChoice",
+      "question": "Sam muốn Lily làm gì tiếp theo?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu lời khuyên",
+          "en": "Understand the suggestion"
+        },
+        "instruction": {
+          "vi": "Chọn điều Sam khuyên Lily nên làm.",
+          "en": "Choose what Sam suggests Lily should do."
+        },
+        "question": {
+          "vi": "Sam muốn Lily làm gì tiếp theo?",
+          "en": "What does Sam suggest Lily should do next?"
+        },
+        "options": [
+          {
+            "vi": "Nói lời cảm ơn với mẹ sau giờ học.",
+            "en": "Thank Mom after school."
+          },
+          {
+            "vi": "Nhờ mẹ chuẩn bị thêm bánh sandwich.",
+            "en": "Ask Mom to make more sandwiches."
+          },
+          {
+            "vi": "Ở lại trường để ăn thêm.",
+            "en": "Stay at school to eat more."
+          },
+          {
+            "vi": "Gọi mẹ đến trường ngay.",
+            "en": "Call Mom to come to school immediately."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Nói lời cảm ơn với mẹ sau giờ học.",
+        "Nhờ mẹ chuẩn bị thêm bánh sandwich.",
+        "Ở lại trường để ăn thêm.",
+        "Gọi mẹ đến trường ngay."
+      ],
+      "answer": "Nói lời cảm ơn với mẹ sau giờ học.",
+      "speaker": "Sam",
+      "transcript": "You can tell her after school.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-06.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành quyết định của Lily.",
+          "en": "Listen and complete Lily's decision."
+        }
+      },
+      "parts": [
+        "Yes. I ",
+        " thank Mom when we get home."
+      ],
+      "answers": [
+        "want to"
+      ],
+      "speaker": "Lily",
+      "transcript": "Yes. I want to thank Mom when we get home.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-07.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập câu quan trọng",
+          "en": "Practice an important sentence"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu Lily nói về kế hoạch cảm ơn Mom.",
+          "en": "Complete what Lily says about her plan to thank Mom."
+        }
+      },
+      "parts": [
+        "Yes. I want to thank Mom when we get ",
+        "."
+      ],
+      "answers": [
+        "home"
+      ],
+      "speaker": "Lily",
+      "transcript": "Yes. I want to thank Mom when we get home.",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-07.mp3"
+    },
+    {
+      "id": 28,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập toàn bộ hội thoại",
+          "en": "Review the full dialogue"
+        },
+        "instruction": {
+          "vi": "Điền các từ và cụm từ còn thiếu để hoàn thành toàn bộ cuộc trò chuyện.",
+          "en": "Fill in the missing words and phrases to complete the entire conversation."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Sam",
+          "parts": [
+            "Lily, it's ",
+            {
+              "id": "1",
+              "blank": "lunchtime"
+            },
+            ". Why are you sad?"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Lily",
+          "parts": [
+            "I ",
+            {
+              "id": "2",
+              "blank": "forgot"
+            },
+            " my lunch at home. I'm so hungry!"
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Sam",
+          "parts": [
+            "Did you eat the ",
+            {
+              "id": "3",
+              "blank": "toast"
+            },
+            " Mom gave you?"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Lily",
+          "parts": [
+            "Yes, I ate it this morning. I have no ",
+            {
+              "id": "4",
+              "blank": "food"
+            },
+            " now."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Sam",
+          "parts": [
+            "I have two ",
+            {
+              "id": "5",
+              "blank": "sandwiches"
+            },
+            ". You can have one."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Lily",
+          "parts": [
+            "Really? Is that ",
+            {
+              "id": "6",
+              "blank": "okay"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Sam",
+          "parts": [
+            "Of course. We can ",
+            {
+              "id": "7",
+              "blank": "share"
+            },
+            " my lunch."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Lily",
+          "parts": [
+            "",
+            {
+              "id": "8",
+              "blank": "Thank you"
+            },
+            ", Sam. You're very kind!"
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Sam",
+          "parts": [
+            "",
+            {
+              "id": "9",
+              "blank": "You're welcome"
+            },
+            ". Mom made these sandwiches."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Lily",
+          "parts": [
+            "Mom made ",
+            {
+              "id": "10",
+              "blank": "breakfast"
+            },
+            " for me, too. She helped me find my bag."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Lily",
+          "parts": [
+            "But I did not say ",
+            {
+              "id": "11",
+              "blank": "thank you"
+            },
+            " to her."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Sam",
+          "parts": [
+            "You can tell her ",
+            {
+              "id": "12",
+              "blank": "after school"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Lily",
+          "parts": [
+            "Yes. I want to thank Mom when we get ",
+            {
+              "id": "13",
+              "blank": "home"
+            },
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Can + động từ",
+      "explanation": "Dùng 'can + động từ nguyên mẫu' để nói rằng ai đó có thể làm một việc. Trong câu 'You can have one', Sam cho Lily biết cô bé có thể lấy một chiếc bánh.",
+      "localized": {
+        "title": {
+          "vi": "Can + động từ",
+          "en": "Can + verb"
+        },
+        "explanation": {
+          "vi": "Dùng 'can + động từ nguyên mẫu' để nói rằng ai đó có thể làm một việc. Trong câu 'You can have one', Sam cho Lily biết cô bé có thể lấy một chiếc bánh.",
+          "en": "Use 'can + base verb' to say that someone is able or allowed to do something. In 'You can have one', Sam tells Lily she is allowed to take a sandwich."
+        }
+      },
+      "example": "You can have one."
+    },
+    {
+      "title": "Did not + động từ",
+      "explanation": "Dùng 'did not + động từ nguyên mẫu' để nói rằng ai đó đã không làm một việc trong quá khứ. Sau 'did not', động từ giữ nguyên dạng. Ví dụ: 'I did not say thank you'.",
+      "localized": {
+        "title": {
+          "vi": "Did not + động từ",
+          "en": "Did not + verb"
+        },
+        "explanation": {
+          "vi": "Dùng 'did not + động từ nguyên mẫu' để nói rằng ai đó đã không làm một việc trong quá khứ. Sau 'did not', động từ giữ nguyên dạng. Ví dụ: 'I did not say thank you'.",
+          "en": "Use 'did not + base verb' to say that someone did not do something in the past. The verb after 'did not' stays in its base form. For example: 'I did not say thank you'."
+        }
+      },
+      "example": "But I did not say thank you to her."
+    },
+    {
+      "title": "Want to + động từ",
+      "explanation": "Dùng 'want to + động từ nguyên mẫu' để nói về điều mình muốn làm. Ví dụ: 'I want to thank Mom' nghĩa là 'Tôi muốn cảm ơn mẹ'.",
+      "localized": {
+        "title": {
+          "vi": "Want to + động từ",
+          "en": "Want to + verb"
+        },
+        "explanation": {
+          "vi": "Dùng 'want to + động từ nguyên mẫu' để nói về điều mình muốn làm. Ví dụ: 'I want to thank Mom' nghĩa là 'Tôi muốn cảm ơn mẹ'.",
+          "en": "Use 'want to + base verb' to talk about something you want to do. For example, 'I want to thank Mom' expresses the desire to thank Mom."
+        }
+      },
+      "example": "I want to thank Mom when we get home."
+    }
+  ]
+}

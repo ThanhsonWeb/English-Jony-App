@@ -1,0 +1,1207 @@
+{
+  "metadata": {
+    "courseId": "grateful",
+    "dialogueId": "a-busy-morning",
+    "contextualGlossaryVersion": 1,
+    "title": "Một buổi sáng bận rộn",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Biết ơn",
+        "en": "Being Grateful"
+      },
+      "courseDescription": {
+        "vi": "Lily sắp muộn học. Mẹ chuẩn bị bữa sáng và giúp Lily tìm cặp sách, nhưng cô bé rời đi mà không nói lời cảm ơn.",
+        "en": "Lily is late for school. Mom prepares her breakfast and helps her find her bag, but Lily leaves without saying thank you."
+      },
+      "title": {
+        "vi": "Một buổi sáng bận rộn",
+        "en": "A Busy Morning"
+      },
+      "description": {
+        "vi": "Lily is late for school. Mom prepares her breakfast and helps her find her bag, but Lily leaves without saying thank you.",
+        "en": "Lily is late for school. Mom prepares her breakfast and helps her find her bag, but Lily leaves without saying thank you."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Lily is late for school. Mom prepares her breakfast and helps her find her bag, but Lily leaves without saying thank you.",
+    "scene": "/stories/grateful/a-busy-morning/bg.png",
+    "thumbnail": "/stories/grateful/thumbnails/a-busy-morning.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Mom",
+      "text": "Lily, it's seven thirty. Time for school!",
+      "translation": "Lily, bảy giờ rưỡi rồi. Đến giờ đi học rồi con!",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Lily",
+      "text": "Oh no! I'm late for school!",
+      "translation": "Ôi không! Con muộn học rồi!",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Mom",
+      "text": "Your breakfast is ready. I made eggs for you.",
+      "translation": "Bữa sáng của con xong rồi. Mẹ đã làm trứng cho con.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Lily",
+      "text": "I can't eat now. Where is my school bag?",
+      "translation": "Giờ con không ăn được. Cặp sách của con đâu rồi mẹ?",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Mom",
+      "text": "It's next to the front door.",
+      "translation": "Nó ở cạnh cửa trước đấy con.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Sam",
+      "text": "Your shoes are there, too.",
+      "translation": "Giày của chị cũng ở đó nữa.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/sam-01.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Lily",
+      "text": "Okay, I see my bag. Can I take some food?",
+      "translation": "Được rồi, chị thấy cặp rồi. Mẹ ơi, con mang theo ít đồ ăn được không?",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Mom",
+      "text": "Yes, you can take some toast with you.",
+      "translation": "Được chứ, con có thể mang theo ít bánh mì nướng.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Lily",
+      "text": "Great! I need to go now.",
+      "translation": "Tuyệt! Giờ con phải đi đây.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Mom",
+      "text": "Have a good day, Lily!",
+      "translation": "Chúc con một ngày tốt lành, Lily!",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Lily",
+      "text": "Bye, Mom! See you later, Sam!",
+      "translation": "Tạm biệt mẹ! Gặp lại em sau nhé, Sam!",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-05.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Sam",
+      "text": "Mom, Lily did not say thank you.",
+      "translation": "Mẹ ơi, chị Lily không nói cảm ơn mẹ.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/sam-02.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Mom",
+      "text": "I know. We can talk to her later.",
+      "translation": "Mẹ biết. Chúng ta có thể nói chuyện với chị sau.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "late",
+      "pronunciation": "/leɪt/",
+      "meaning": "muộn, trễ",
+      "example": "I'm late for school."
+    },
+    {
+      "word": "breakfast",
+      "pronunciation": "/ˈbrek.fəst/",
+      "meaning": "bữa sáng",
+      "example": "My breakfast is ready."
+    },
+    {
+      "word": "school bag",
+      "pronunciation": "/ˈskuːl bæɡ/",
+      "meaning": "cặp sách, cặp đi học",
+      "example": "My school bag is blue."
+    },
+    {
+      "word": "next to",
+      "pronunciation": "/ˈnekst tuː/",
+      "meaning": "bên cạnh",
+      "example": "My bag is next to the door."
+    },
+    {
+      "word": "Can I",
+      "pronunciation": "/kæn aɪ/",
+      "meaning": "Tôi có thể... không? (dùng để xin phép)",
+      "example": "Can I sit here?"
+    },
+    {
+      "word": "with you",
+      "pronunciation": "/wɪð juː/",
+      "meaning": "cùng bạn, theo bạn",
+      "example": "Take your bag with you."
+    },
+    {
+      "word": "need to",
+      "pronunciation": "/niːd tuː/",
+      "meaning": "cần phải làm gì",
+      "example": "I need to study now."
+    },
+    {
+      "word": "Have a good day",
+      "pronunciation": "/hæv ə ɡʊd deɪ/",
+      "meaning": "Chúc một ngày tốt lành",
+      "example": "Have a good day at school!"
+    },
+    {
+      "word": "thank you",
+      "pronunciation": "/θæŋk juː/",
+      "meaning": "cảm ơn",
+      "example": "Thank you for your help, Mom."
+    },
+    {
+      "word": "See you later",
+      "pronunciation": "/siː juː ˈleɪ.tər/",
+      "meaning": "Hẹn gặp lại sau",
+      "example": "Bye, Sam! See you later!"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu nói của Mom.",
+          "en": "Listen and complete Mom's sentence."
+        }
+      },
+      "parts": [
+        "Lily, it's ",
+        ". Time for school!"
+      ],
+      "answers": [
+        "seven thirty"
+      ],
+      "speaker": "Mom",
+      "transcript": "Lily, it's seven thirty. Time for school!",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu nói của Lily.",
+          "en": "Listen and complete Lily's sentence."
+        }
+      },
+      "parts": [
+        "",
+        "! I'm late for school!"
+      ],
+      "answers": [
+        "Oh no"
+      ],
+      "speaker": "Lily",
+      "transcript": "Oh no! I'm late for school!",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập câu quan trọng",
+          "en": "Practice an important sentence"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu Lily nói khi sắp muộn học.",
+          "en": "Complete what Lily says when she is late for school."
+        }
+      },
+      "parts": [
+        "Oh no! I'm ",
+        " for school!"
+      ],
+      "answers": [
+        "late"
+      ],
+      "speaker": "Lily",
+      "transcript": "Oh no! I'm late for school!",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "multipleChoice",
+      "question": "Lily đang lo về điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu tình huống",
+          "en": "Understand the situation"
+        },
+        "instruction": {
+          "vi": "Chọn điều khiến Lily lo lắng.",
+          "en": "Choose what Lily is worried about."
+        },
+        "question": {
+          "vi": "Lily đang lo về điều gì?",
+          "en": "What is Lily worried about?"
+        },
+        "options": [
+          {
+            "vi": "Không tìm thấy cặp sách.",
+            "en": "She cannot find her school bag."
+          },
+          {
+            "vi": "Chưa ăn bữa sáng.",
+            "en": "She has not eaten breakfast."
+          },
+          {
+            "vi": "Không muốn đi học.",
+            "en": "She does not want to go to school."
+          },
+          {
+            "vi": "Đến trường muộn.",
+            "en": "Being late for school."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Không tìm thấy cặp sách.",
+        "Chưa ăn bữa sáng.",
+        "Không muốn đi học.",
+        "Đến trường muộn."
+      ],
+      "answer": "Đến trường muộn.",
+      "speaker": "Lily",
+      "transcript": "Oh no! I'm late for school!",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu nói của Mom.",
+          "en": "Listen and complete Mom's sentence."
+        }
+      },
+      "parts": [
+        "Your ",
+        " is ready. I made eggs for you."
+      ],
+      "answers": [
+        "breakfast"
+      ],
+      "speaker": "Mom",
+      "transcript": "Your breakfast is ready. I made eggs for you.",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập câu quan trọng",
+          "en": "Practice an important sentence"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu Mom nói về bữa sáng.",
+          "en": "Complete what Mom says about breakfast."
+        }
+      },
+      "parts": [
+        "Your breakfast is ready. I ",
+        " for you."
+      ],
+      "answers": [
+        "made eggs"
+      ],
+      "speaker": "Mom",
+      "transcript": "Your breakfast is ready. I made eggs for you.",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu nói của Lily.",
+          "en": "Listen and complete Lily's sentence."
+        }
+      },
+      "parts": [
+        "I ",
+        " eat now. Where is my school bag?"
+      ],
+      "answers": [
+        "can't"
+      ],
+      "speaker": "Lily",
+      "transcript": "I can't eat now. Where is my school bag?",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập câu hỏi",
+          "en": "Practice a question"
+        },
+        "instruction": {
+          "vi": "Hoàn thành cách hỏi vị trí đồ vật.",
+          "en": "Complete the question about where something is."
+        }
+      },
+      "parts": [
+        "I can't eat now. ",
+        " my school bag?"
+      ],
+      "answers": [
+        "Where is"
+      ],
+      "speaker": "Lily",
+      "transcript": "I can't eat now. Where is my school bag?",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "multipleChoice",
+      "question": "Lily hỏi về cặp sách để làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu mục đích",
+          "en": "Understand the purpose"
+        },
+        "instruction": {
+          "vi": "Chọn lý do phù hợp với tình huống.",
+          "en": "Choose the reason that fits the situation."
+        },
+        "question": {
+          "vi": "Lily hỏi về cặp sách để làm gì?",
+          "en": "Why does Lily ask about her school bag?"
+        },
+        "options": [
+          {
+            "vi": "Để nhanh chóng đi học.",
+            "en": "To leave for school quickly."
+          },
+          {
+            "vi": "Để cho Sam mượn.",
+            "en": "To lend it to Sam."
+          },
+          {
+            "vi": "Để cất đồ ăn vào cặp.",
+            "en": "To put food in the bag."
+          },
+          {
+            "vi": "Để đổi sang một chiếc cặp mới.",
+            "en": "To get a new school bag."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Để nhanh chóng đi học.",
+        "Để cho Sam mượn.",
+        "Để cất đồ ăn vào cặp.",
+        "Để đổi sang một chiếc cặp mới."
+      ],
+      "answer": "Để nhanh chóng đi học.",
+      "speaker": "Lily",
+      "transcript": "I can't eat now. Where is my school bag?",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu chỉ vị trí.",
+          "en": "Complete the sentence about location."
+        }
+      },
+      "parts": [
+        "It's ",
+        " the front door."
+      ],
+      "answers": [
+        "next to"
+      ],
+      "speaker": "Mom",
+      "transcript": "It's next to the front door.",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập câu quan trọng",
+          "en": "Practice an important sentence"
+        },
+        "instruction": {
+          "vi": "Nghe lại và hoàn thành câu của Mom.",
+          "en": "Listen again and complete Mom's sentence."
+        }
+      },
+      "parts": [
+        "It's next to the ",
+        "."
+      ],
+      "answers": [
+        "front door"
+      ],
+      "speaker": "Mom",
+      "transcript": "It's next to the front door.",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu nói của Sam.",
+          "en": "Listen and complete Sam's sentence."
+        }
+      },
+      "parts": [
+        "Your ",
+        " are there, too."
+      ],
+      "answers": [
+        "shoes"
+      ],
+      "speaker": "Sam",
+      "transcript": "Your shoes are there, too.",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/sam-01.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu nói của Lily.",
+          "en": "Listen and complete Lily's sentence."
+        }
+      },
+      "parts": [
+        "Okay, I ",
+        " my bag. Can I take some food?"
+      ],
+      "answers": [
+        "see"
+      ],
+      "speaker": "Lily",
+      "transcript": "Okay, I see my bag. Can I take some food?",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập cách xin phép",
+          "en": "Practice asking permission"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu Lily dùng để xin phép Mom.",
+          "en": "Complete the question Lily uses to ask Mom for permission."
+        }
+      },
+      "parts": [
+        "Okay, I see my bag. ",
+        " take some food?"
+      ],
+      "answers": [
+        "Can I"
+      ],
+      "speaker": "Lily",
+      "transcript": "Okay, I see my bag. Can I take some food?",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-03.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu nói của Mom.",
+          "en": "Listen and complete Mom's sentence."
+        }
+      },
+      "parts": [
+        "Yes, you can take some ",
+        " with you."
+      ],
+      "answers": [
+        "toast"
+      ],
+      "speaker": "Mom",
+      "transcript": "Yes, you can take some toast with you.",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập cụm từ",
+          "en": "Practice a useful phrase"
+        },
+        "instruction": {
+          "vi": "Hoàn thành cụm từ diễn tả việc mang theo thứ gì đó.",
+          "en": "Complete the phrase about taking something along."
+        }
+      },
+      "parts": [
+        "Yes, you can take some toast ",
+        "."
+      ],
+      "answers": [
+        "with you"
+      ],
+      "speaker": "Mom",
+      "transcript": "Yes, you can take some toast with you.",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "multipleChoice",
+      "question": "Trong câu của Mom, 'can' cho biết điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu cách dùng từ",
+          "en": "Understand language in context"
+        },
+        "instruction": {
+          "vi": "Chọn cách hiểu đúng của 'can' trong tình huống này.",
+          "en": "Choose what 'can' means in this situation."
+        },
+        "question": {
+          "vi": "Trong câu của Mom, 'can' cho biết điều gì?",
+          "en": "What does 'can' tell us in Mom's sentence?"
+        },
+        "options": [
+          {
+            "vi": "Lily phải ngồi ăn ngay.",
+            "en": "Lily must sit down and eat now."
+          },
+          {
+            "vi": "Lily đã ăn xong bữa sáng.",
+            "en": "Lily has finished breakfast."
+          },
+          {
+            "vi": "Lily có thể mang bánh mì theo.",
+            "en": "Lily is allowed to take some toast with her."
+          },
+          {
+            "vi": "Lily không được mang đồ ăn.",
+            "en": "Lily is not allowed to take food."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "can",
+      "options": [
+        "Lily phải ngồi ăn ngay.",
+        "Lily đã ăn xong bữa sáng.",
+        "Lily có thể mang bánh mì theo.",
+        "Lily không được mang đồ ăn."
+      ],
+      "answer": "Lily có thể mang bánh mì theo.",
+      "speaker": "Mom",
+      "transcript": "Yes, you can take some toast with you.",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu Lily nói trước khi đi học.",
+          "en": "Complete what Lily says before leaving for school."
+        }
+      },
+      "parts": [
+        "Great! I ",
+        " go now."
+      ],
+      "answers": [
+        "need to"
+      ],
+      "speaker": "Lily",
+      "transcript": "Great! I need to go now.",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-04.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập lời chúc",
+          "en": "Practice a friendly wish"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời chúc của Mom dành cho Lily.",
+          "en": "Complete Mom's friendly wish to Lily."
+        }
+      },
+      "parts": [
+        "Have a ",
+        ", Lily!"
+      ],
+      "answers": [
+        "good day"
+      ],
+      "speaker": "Mom",
+      "transcript": "Have a good day, Lily!",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-05.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Sau lời chúc của Mom, Lily nên nói gì cho lịch sự?",
+      "localized": {
+        "title": {
+          "vi": "Ứng xử phù hợp",
+          "en": "Choose a polite response"
+        },
+        "instruction": {
+          "vi": "Chọn cách đáp lại tự nhiên và lịch sự nhất.",
+          "en": "Choose the most natural and polite response."
+        },
+        "question": {
+          "vi": "Sau lời chúc của Mom, Lily nên nói gì cho lịch sự?",
+          "en": "What should Lily say politely after Mom's wish?"
+        },
+        "options": [
+          {
+            "vi": "Hỏi lại xem cặp sách ở đâu.",
+            "en": "Ask where her school bag is again."
+          },
+          {
+            "vi": "Cảm ơn Mom rồi chào tạm biệt.",
+            "en": "Thank Mom and say goodbye."
+          },
+          {
+            "vi": "Nói Mom phải chuẩn bị nhanh hơn.",
+            "en": "Tell Mom to get things ready faster."
+          },
+          {
+            "vi": "Bỏ đi mà không nói gì.",
+            "en": "Leave without saying anything."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "Have a good day",
+      "options": [
+        "Hỏi lại xem cặp sách ở đâu.",
+        "Cảm ơn Mom rồi chào tạm biệt.",
+        "Nói Mom phải chuẩn bị nhanh hơn.",
+        "Bỏ đi mà không nói gì."
+      ],
+      "answer": "Cảm ơn Mom rồi chào tạm biệt.",
+      "speaker": "Mom",
+      "transcript": "Have a good day, Lily!",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập lời tạm biệt",
+          "en": "Practice saying goodbye"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành lời tạm biệt của Lily.",
+          "en": "Listen and complete Lily's goodbye."
+        }
+      },
+      "parts": [
+        "Bye, Mom! ",
+        " later, Sam!"
+      ],
+      "answers": [
+        "See you"
+      ],
+      "speaker": "Lily",
+      "transcript": "Bye, Mom! See you later, Sam!",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập câu quan trọng",
+          "en": "Practice a key sentence"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu Sam nói với Mom.",
+          "en": "Complete what Sam says to Mom."
+        }
+      },
+      "parts": [
+        "Mom, Lily ",
+        " say thank you."
+      ],
+      "answers": [
+        "did not"
+      ],
+      "speaker": "Sam",
+      "transcript": "Mom, Lily did not say thank you.",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/sam-02.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Ghi nhớ lời cảm ơn",
+          "en": "Remember to say thank you"
+        },
+        "instruction": {
+          "vi": "Hoàn thành cụm từ quan trọng trong câu của Sam.",
+          "en": "Complete the important phrase in Sam's sentence."
+        }
+      },
+      "parts": [
+        "Mom, Lily did not say ",
+        "."
+      ],
+      "answers": [
+        "thank you"
+      ],
+      "speaker": "Sam",
+      "transcript": "Mom, Lily did not say thank you.",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/sam-02.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 12,
+      "type": "multipleChoice",
+      "question": "Sam nhận ra điều gì sau khi Lily đi?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu câu chuyện",
+          "en": "Understand the story"
+        },
+        "instruction": {
+          "vi": "Chọn điều Sam nhận ra về cách cư xử của Lily.",
+          "en": "Choose what Sam notices about Lily's behavior."
+        },
+        "question": {
+          "vi": "Sam nhận ra điều gì sau khi Lily đi?",
+          "en": "What does Sam notice after Lily leaves?"
+        },
+        "options": [
+          {
+            "vi": "Lily quên cảm ơn Mom dù Mom đã giúp cô bé.",
+            "en": "Lily did not thank Mom even though Mom helped her."
+          },
+          {
+            "vi": "Lily quên mang cặp sách đến trường.",
+            "en": "Lily forgot to take her school bag."
+          },
+          {
+            "vi": "Lily không nghe thấy lời chúc của Mom.",
+            "en": "Lily did not hear Mom's good wishes."
+          },
+          {
+            "vi": "Lily đã cảm ơn Mom trước khi đi.",
+            "en": "Lily thanked Mom before leaving."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Lily quên cảm ơn Mom dù Mom đã giúp cô bé.",
+        "Lily quên mang cặp sách đến trường.",
+        "Lily không nghe thấy lời chúc của Mom.",
+        "Lily đã cảm ơn Mom trước khi đi."
+      ],
+      "answer": "Lily quên cảm ơn Mom dù Mom đã giúp cô bé.",
+      "speaker": "Sam",
+      "transcript": "Mom, Lily did not say thank you.",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/sam-02.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và hoàn thành câu trả lời của Mom.",
+          "en": "Listen and complete Mom's reply."
+        }
+      },
+      "parts": [
+        "I know. We can talk to her ",
+        "."
+      ],
+      "answers": [
+        "later"
+      ],
+      "speaker": "Mom",
+      "transcript": "I know. We can talk to her later.",
+      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-06.mp3"
+    },
+    {
+      "id": 26,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập toàn bộ hội thoại",
+          "en": "Review the full dialogue"
+        },
+        "instruction": {
+          "vi": "Điền các từ và cụm từ còn thiếu để hoàn thành toàn bộ cuộc trò chuyện.",
+          "en": "Fill in the missing words and phrases to complete the entire conversation."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Mom",
+          "parts": [
+            "Lily, it's ",
+            {
+              "id": "1",
+              "blank": "seven thirty"
+            },
+            ". Time for school!"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Lily",
+          "parts": [
+            "Oh no! I'm ",
+            {
+              "id": "2",
+              "blank": "late"
+            },
+            " for school!"
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Mom",
+          "parts": [
+            "Your ",
+            {
+              "id": "3",
+              "blank": "breakfast"
+            },
+            " is ready. I made eggs for you."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Lily",
+          "parts": [
+            "I can't eat now. Where is my ",
+            {
+              "id": "4",
+              "blank": "school bag"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Mom",
+          "parts": [
+            "It's ",
+            {
+              "id": "5",
+              "blank": "next to"
+            },
+            " the front door."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Sam",
+          "parts": [
+            "Your ",
+            {
+              "id": "6",
+              "blank": "shoes"
+            },
+            " are there, too."
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Lily",
+          "parts": [
+            "Okay, I see my bag. ",
+            {
+              "id": "7",
+              "blank": "Can I"
+            },
+            " take some food?"
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Mom",
+          "parts": [
+            "Yes, you can take some ",
+            {
+              "id": "8",
+              "blank": "toast"
+            },
+            " with you."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Lily",
+          "parts": [
+            "Great! I ",
+            {
+              "id": "9",
+              "blank": "need to"
+            },
+            " go now."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Mom",
+          "parts": [
+            "Have a ",
+            {
+              "id": "10",
+              "blank": "good day"
+            },
+            ", Lily!"
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Lily",
+          "parts": [
+            "Bye, Mom! ",
+            {
+              "id": "11",
+              "blank": "See you"
+            },
+            " later, Sam!"
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Sam",
+          "parts": [
+            "Mom, Lily did not say ",
+            {
+              "id": "12",
+              "blank": "thank you"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Mom",
+          "parts": [
+            "I know. We can talk to her ",
+            {
+              "id": "13",
+              "blank": "later"
+            },
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Can I + động từ...?",
+      "explanation": "Dùng 'Can I + động từ nguyên mẫu...?' để xin phép ai đó làm một việc. Đây là cách hỏi đơn giản, tự nhiên và lịch sự trong giao tiếp hằng ngày.",
+      "localized": {
+        "title": {
+          "vi": "Can I + động từ...?",
+          "en": "Can I + verb...?"
+        },
+        "explanation": {
+          "vi": "Dùng 'Can I + động từ nguyên mẫu...?' để xin phép ai đó làm một việc. Đây là cách hỏi đơn giản, tự nhiên và lịch sự trong giao tiếp hằng ngày.",
+          "en": "Use 'Can I + base verb...?' to ask for permission. It is a simple, natural, and polite way to ask to do something."
+        }
+      },
+      "example": "Can I take some food?"
+    },
+    {
+      "title": "Need to + động từ",
+      "explanation": "Dùng 'need to + động từ nguyên mẫu' để nói về điều mình cần làm. Ví dụ, 'I need to go now' có nghĩa là 'Bây giờ tôi cần phải đi'.",
+      "localized": {
+        "title": {
+          "vi": "Need to + động từ",
+          "en": "Need to + verb"
+        },
+        "explanation": {
+          "vi": "Dùng 'need to + động từ nguyên mẫu' để nói về điều mình cần làm. Ví dụ, 'I need to go now' có nghĩa là 'Bây giờ tôi cần phải đi'.",
+          "en": "Use 'need to + base verb' to talk about something you need to do. For example, 'I need to go now' means that you must leave now."
+        }
+      },
+      "example": "I need to go now."
+    },
+    {
+      "title": "Did not + động từ",
+      "explanation": "Dùng 'did not + động từ nguyên mẫu' để nói rằng ai đó đã không làm một việc trong quá khứ. Sau 'did not', động từ giữ nguyên dạng, không thêm '-ed'.",
+      "localized": {
+        "title": {
+          "vi": "Did not + động từ",
+          "en": "Did not + verb"
+        },
+        "explanation": {
+          "vi": "Dùng 'did not + động từ nguyên mẫu' để nói rằng ai đó đã không làm một việc trong quá khứ. Sau 'did not', động từ giữ nguyên dạng, không thêm '-ed'.",
+          "en": "Use 'did not + base verb' to say that someone did not do something in the past. The verb after 'did not' stays in its base form."
+        }
+      },
+      "example": "Lily did not say thank you."
+    }
+  ]
+}

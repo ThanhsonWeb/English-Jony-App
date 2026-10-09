@@ -1,0 +1,1093 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "grateful",
+  "dialogueId": "a-busy-morning",
+  "characters": {
+    "Mom": {
+      "meaning": "Mom",
+      "role": "mẹ của Lily và Sam"
+    },
+    "Lily": {
+      "meaning": "Lily",
+      "role": "học sinh"
+    },
+    "Sam": {
+      "meaning": "Sam",
+      "role": "em của Lily"
+    }
+  },
+  "entries": {
+    "word-seven": {
+      "word": "seven",
+      "meaning": "bảy",
+      "pos": [
+        "num"
+      ]
+    },
+    "word-thirty": {
+      "word": "thirty",
+      "meaning": "ba mươi",
+      "pos": [
+        "num"
+      ]
+    },
+    "word-time": {
+      "word": "time",
+      "meaning": "giờ",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "cho",
+      "pos": [
+        "prep"
+      ],
+      "note": "Trong câu này, for nối time với school."
+    },
+    "word-school": {
+      "word": "school",
+      "meaning": "trường học",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-oh": {
+      "word": "oh",
+      "meaning": "ôi",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "không",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-late": {
+      "word": "late",
+      "meaning": "muộn",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-breakfast": {
+      "word": "breakfast",
+      "meaning": "bữa sáng",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-ready": {
+      "word": "ready",
+      "meaning": "sẵn sàng",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-made": {
+      "word": "made",
+      "meaning": "làm",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-eggs": {
+      "word": "eggs",
+      "meaning": "trứng",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-eat": {
+      "word": "eat",
+      "meaning": "ăn",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "bây giờ",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-where": {
+      "word": "where",
+      "meaning": "đâu",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-bag": {
+      "word": "bag",
+      "meaning": "cặp sách",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-next": {
+      "word": "next",
+      "meaning": "kế tiếp",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "mạo từ xác định",
+      "pos": [
+        "det"
+      ],
+      "note": "Chỉ cánh cửa đã xác định."
+    },
+    "word-front": {
+      "word": "front",
+      "meaning": "phía trước",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-door": {
+      "word": "door",
+      "meaning": "cửa",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-shoes": {
+      "word": "shoes",
+      "meaning": "giày",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "ở",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-there": {
+      "word": "there",
+      "meaning": "đó",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "nữa",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "được rồi",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-see": {
+      "word": "see",
+      "meaning": "thấy",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "aux"
+      ]
+    },
+    "word-take": {
+      "word": "take",
+      "meaning": "mang",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-some": {
+      "word": "some",
+      "meaning": "một ít",
+      "pos": [
+        "det"
+      ]
+    },
+    "word-food": {
+      "word": "food",
+      "meaning": "đồ ăn",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "được",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-toast": {
+      "word": "toast",
+      "meaning": "bánh mì nướng",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-with": {
+      "word": "with",
+      "meaning": "cùng",
+      "pos": [
+        "prep"
+      ]
+    },
+    "word-great": {
+      "word": "great",
+      "meaning": "tuyệt",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "cần",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-go": {
+      "word": "go",
+      "meaning": "đi",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "có",
+      "pos": [
+        "v"
+      ],
+      "note": "Trong lời chúc Have a good day, cả cụm có nghĩa là chúc một ngày tốt lành."
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "mạo từ không xác định",
+      "pos": [
+        "det"
+      ],
+      "note": "Mạo từ đứng trước danh từ số ít."
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "tốt",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-day": {
+      "word": "day",
+      "meaning": "ngày",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-bye": {
+      "word": "bye",
+      "meaning": "tạm biệt",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-later": {
+      "word": "later",
+      "meaning": "sau",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-did": {
+      "word": "did",
+      "meaning": "trợ động từ",
+      "pos": [
+        "aux"
+      ],
+      "note": "Dùng để tạo câu phủ định ở quá khứ; không dịch riêng."
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "không",
+      "pos": [
+        "adv"
+      ],
+      "note": "Kết hợp với did để tạo câu phủ định."
+    },
+    "word-say": {
+      "word": "say",
+      "meaning": "nói",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "cảm ơn",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "biết",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "chúng ta",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-talk": {
+      "word": "talk",
+      "meaning": "nói chuyện",
+      "pos": [
+        "v"
+      ]
+    },
+    "school-bag": {
+      "meaning": "cặp sách",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/ˈskuːl bæɡ/"
+      ]
+    },
+    "seven-thirty": {
+      "meaning": "bảy giờ rưỡi",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "time-for-school": {
+      "meaning": "đến giờ đi học",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "late-for-school": {
+      "meaning": "đi học muộn",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "breakfast-ready": {
+      "meaning": "bữa sáng đã xong",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "next-to": {
+      "meaning": "bên cạnh",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/ˈnekst tuː/"
+      ]
+    },
+    "can-i": {
+      "meaning": "con có thể... không?",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/kæn aɪ/"
+      ]
+    },
+    "take-some-food": {
+      "meaning": "mang theo ít đồ ăn",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "with-you": {
+      "meaning": "theo con",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/wɪð juː/"
+      ]
+    },
+    "need-to": {
+      "meaning": "cần phải",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/niːd tuː/"
+      ]
+    },
+    "have-good-day": {
+      "meaning": "chúc một ngày tốt lành",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/hæv ə ɡʊd deɪ/"
+      ]
+    },
+    "see-you-later": {
+      "meaning": "hẹn gặp lại sau",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/siː juː ˈleɪ.tər/"
+      ]
+    },
+    "thank-you": {
+      "meaning": "cảm ơn",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/θæŋk juː/"
+      ]
+    },
+    "talk-to-her": {
+      "meaning": "nói chuyện với con",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "word-lily-name": {
+      "word": "lily",
+      "meaning": "tên riêng",
+      "pos": [
+        "name"
+      ],
+      "note": "Tên riêng: Lily."
+    },
+    "word-its-time": {
+      "word": "it's",
+      "meaning": "là",
+      "pos": [
+        "aux"
+      ]
+    },
+    "word-im": {
+      "word": "i'm",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Dạng rút gọn của I am; Lily xưng con với mẹ."
+    },
+    "word-your-breakfast": {
+      "word": "your",
+      "meaning": "của con",
+      "pos": [
+        "det"
+      ]
+    },
+    "word-is-ready": {
+      "word": "is",
+      "meaning": "đã",
+      "pos": [
+        "aux"
+      ],
+      "note": "Động từ be trong câu nói bữa sáng đã sẵn sàng."
+    },
+    "word-i-mom": {
+      "word": "i",
+      "meaning": "mẹ",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mom xưng mẹ."
+    },
+    "word-you-mom": {
+      "word": "you",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-i-lily": {
+      "word": "i",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Lily xưng con với mẹ."
+    },
+    "word-cant": {
+      "word": "can't",
+      "meaning": "không thể",
+      "pos": [
+        "aux"
+      ]
+    },
+    "word-is-question": {
+      "word": "is",
+      "meaning": "trợ động từ",
+      "pos": [
+        "aux"
+      ],
+      "note": "Trợ động từ be đảo lên trước chủ ngữ trong câu hỏi."
+    },
+    "word-my-lily": {
+      "word": "my",
+      "meaning": "của con",
+      "pos": [
+        "det"
+      ]
+    },
+    "word-its-location": {
+      "word": "it's",
+      "meaning": "ở",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-to-place": {
+      "word": "to",
+      "meaning": "bên",
+      "pos": [
+        "prep"
+      ],
+      "note": "Trong cụm next to, cả cụm có nghĩa là bên cạnh."
+    },
+    "word-your-sam": {
+      "word": "your",
+      "meaning": "của chị",
+      "pos": [
+        "det"
+      ],
+      "note": "Sam gọi Lily là chị."
+    },
+    "word-to-infinitive": {
+      "word": "to",
+      "meaning": "dấu hiệu nguyên mẫu",
+      "pos": [
+        "part"
+      ],
+      "note": "Đứng trước động từ go; thường không dịch riêng."
+    },
+    "word-mom-name": {
+      "word": "mom",
+      "meaning": "mẹ",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-see-verb": {
+      "word": "see",
+      "meaning": "gặp",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-you-sam": {
+      "word": "you",
+      "meaning": "em",
+      "pos": [
+        "pron"
+      ],
+      "note": "Sam là em của Lily trong câu chuyện."
+    },
+    "word-sam-name": {
+      "word": "sam",
+      "meaning": "tên riêng",
+      "pos": [
+        "name"
+      ],
+      "note": "Tên riêng: Sam."
+    },
+    "word-i-mom-know": {
+      "word": "i",
+      "meaning": "mẹ",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mom xưng mẹ."
+    },
+    "word-to-talk": {
+      "word": "to",
+      "meaning": "với",
+      "pos": [
+        "prep"
+      ],
+      "note": "Giới từ đi sau talk."
+    },
+    "word-her-lily": {
+      "word": "her",
+      "meaning": "chị",
+      "pos": [
+        "pron"
+      ],
+      "note": "Theo bản dịch hiện tại, her chỉ Lily (chị của Sam)."
+    },
+    "for-you": {
+      "meaning": "cho con",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "word-you-lily": {
+      "word": "you",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-i-lily-sister": {
+      "word": "i",
+      "meaning": "chị",
+      "pos": [
+        "pron"
+      ],
+      "note": "Bản dịch câu này dùng chị. Nên xác nhận cách xưng hô: Lily đang nói với mẹ."
+    },
+    "word-my-lily-sister": {
+      "word": "my",
+      "meaning": "của chị",
+      "pos": [
+        "det"
+      ],
+      "note": "Bản dịch câu này dùng chị; nên xác nhận cách xưng hô với mẹ."
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Mom",
+      "text": "Lily, it's seven thirty. Time for school!",
+      "translation": "Lily, bảy giờ rưỡi rồi. Đến giờ đi học rồi con!",
+      "tokens": [
+        "Lily",
+        "it's",
+        "seven",
+        "thirty",
+        "Time",
+        "for",
+        "school"
+      ],
+      "words": [
+        "word-lily-name",
+        "word-its-time",
+        "word-seven",
+        "word-thirty",
+        "word-time",
+        "word-for",
+        "word-school"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "seven thirty",
+          "entry": "seven-thirty"
+        },
+        {
+          "start": 4,
+          "end": 6,
+          "text": "Time for school",
+          "entry": "time-for-school"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Lily",
+      "text": "Oh no! I'm late for school!",
+      "translation": "Ôi không! Con muộn học rồi!",
+      "tokens": [
+        "Oh",
+        "no",
+        "I'm",
+        "late",
+        "for",
+        "school"
+      ],
+      "words": [
+        "word-oh",
+        "word-no",
+        "word-im",
+        "word-late",
+        "word-for",
+        "word-school"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 5,
+          "text": "late for school",
+          "entry": "late-for-school"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Mom",
+      "text": "Your breakfast is ready. I made eggs for you.",
+      "translation": "Bữa sáng của con xong rồi. Mẹ đã làm trứng cho con.",
+      "tokens": [
+        "Your",
+        "breakfast",
+        "is",
+        "ready",
+        "I",
+        "made",
+        "eggs",
+        "for",
+        "you"
+      ],
+      "words": [
+        "word-your-breakfast",
+        "word-breakfast",
+        "word-is-ready",
+        "word-ready",
+        "word-i-mom",
+        "word-made",
+        "word-eggs",
+        "word-for",
+        "word-you-mom"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 3,
+          "text": "breakfast is ready",
+          "entry": "breakfast-ready"
+        },
+        {
+          "start": 7,
+          "end": 8,
+          "text": "for you",
+          "entry": "for-you"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Lily",
+      "text": "I can't eat now. Where is my school bag?",
+      "translation": "Giờ con không ăn được. Cặp sách của con đâu rồi mẹ?",
+      "tokens": [
+        "I",
+        "can't",
+        "eat",
+        "now",
+        "Where",
+        "is",
+        "my",
+        "school",
+        "bag"
+      ],
+      "words": [
+        "word-i-lily",
+        "word-cant",
+        "word-eat",
+        "word-now",
+        "word-where",
+        "word-is-question",
+        "word-my-lily",
+        "word-school",
+        "word-bag"
+      ],
+      "phrases": [
+        {
+          "start": 7,
+          "end": 8,
+          "text": "school bag",
+          "entry": "school-bag"
+        }
+      ]
+    },
+    "5": {
+      "speaker": "Mom",
+      "text": "It's next to the front door.",
+      "translation": "Nó ở cạnh cửa trước đấy con.",
+      "tokens": [
+        "It's",
+        "next",
+        "to",
+        "the",
+        "front",
+        "door"
+      ],
+      "words": [
+        "word-its-location",
+        "word-next",
+        "word-to-place",
+        "word-the",
+        "word-front",
+        "word-door"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "text": "next to",
+          "entry": "next-to"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Sam",
+      "text": "Your shoes are there, too.",
+      "translation": "Giày của chị cũng ở đó nữa.",
+      "tokens": [
+        "Your",
+        "shoes",
+        "are",
+        "there",
+        "too"
+      ],
+      "words": [
+        "word-your-sam",
+        "word-shoes",
+        "word-are",
+        "word-there",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Lily",
+      "text": "Okay, I see my bag. Can I take some food?",
+      "translation": "Được rồi, chị thấy cặp rồi. Mẹ ơi, con mang theo ít đồ ăn được không?",
+      "tokens": [
+        "Okay",
+        "I",
+        "see",
+        "my",
+        "bag",
+        "Can",
+        "I",
+        "take",
+        "some",
+        "food"
+      ],
+      "words": [
+        "word-okay",
+        "word-i-lily-sister",
+        "word-see",
+        "word-my-lily-sister",
+        "word-bag",
+        "word-can",
+        "word-i-lily",
+        "word-take",
+        "word-some",
+        "word-food"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "Can I",
+          "entry": "can-i"
+        },
+        {
+          "start": 7,
+          "end": 9,
+          "text": "take some food",
+          "entry": "take-some-food"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Mom",
+      "text": "Yes, you can take some toast with you.",
+      "translation": "Được chứ, con có thể mang theo ít bánh mì nướng.",
+      "tokens": [
+        "Yes",
+        "you",
+        "can",
+        "take",
+        "some",
+        "toast",
+        "with",
+        "you"
+      ],
+      "words": [
+        "word-yes",
+        "word-you-lily",
+        "word-can",
+        "word-take",
+        "word-some",
+        "word-toast",
+        "word-with",
+        "word-you-lily"
+      ],
+      "phrases": [
+        {
+          "start": 6,
+          "end": 7,
+          "text": "with you",
+          "entry": "with-you"
+        }
+      ]
+    },
+    "9": {
+      "speaker": "Lily",
+      "text": "Great! I need to go now.",
+      "translation": "Tuyệt! Giờ con phải đi đây.",
+      "tokens": [
+        "Great",
+        "I",
+        "need",
+        "to",
+        "go",
+        "now"
+      ],
+      "words": [
+        "word-great",
+        "word-i-lily",
+        "word-need",
+        "word-to-infinitive",
+        "word-go",
+        "word-now"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "need to",
+          "entry": "need-to"
+        }
+      ]
+    },
+    "10": {
+      "speaker": "Mom",
+      "text": "Have a good day, Lily!",
+      "translation": "Chúc con một ngày tốt lành, Lily!",
+      "tokens": [
+        "Have",
+        "a",
+        "good",
+        "day",
+        "Lily"
+      ],
+      "words": [
+        "word-have",
+        "word-a",
+        "word-good",
+        "word-day",
+        "word-lily-name"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "Have a good day",
+          "entry": "have-good-day"
+        }
+      ]
+    },
+    "11": {
+      "speaker": "Lily",
+      "text": "Bye, Mom! See you later, Sam!",
+      "translation": "Tạm biệt mẹ! Gặp lại em sau nhé, Sam!",
+      "tokens": [
+        "Bye",
+        "Mom",
+        "See",
+        "you",
+        "later",
+        "Sam"
+      ],
+      "words": [
+        "word-bye",
+        "word-mom-name",
+        "word-see-verb",
+        "word-you-sam",
+        "word-later",
+        "word-sam-name"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 4,
+          "text": "See you later",
+          "entry": "see-you-later"
+        }
+      ]
+    },
+    "12": {
+      "speaker": "Sam",
+      "text": "Mom, Lily did not say thank you.",
+      "translation": "Mẹ ơi, chị Lily không nói cảm ơn mẹ.",
+      "tokens": [
+        "Mom",
+        "Lily",
+        "did",
+        "not",
+        "say",
+        "thank",
+        "you"
+      ],
+      "words": [
+        "word-mom-name",
+        "word-lily-name",
+        "word-did",
+        "word-not",
+        "word-say",
+        "word-thank",
+        "word-you-mom"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "thank you",
+          "entry": "thank-you"
+        }
+      ]
+    },
+    "13": {
+      "speaker": "Mom",
+      "text": "I know. We can talk to her later.",
+      "translation": "Mẹ biết. Chúng ta có thể nói chuyện với chị sau.",
+      "tokens": [
+        "I",
+        "know",
+        "We",
+        "can",
+        "talk",
+        "to",
+        "her",
+        "later"
+      ],
+      "words": [
+        "word-i-mom-know",
+        "word-know",
+        "word-we",
+        "word-can",
+        "word-talk",
+        "word-to-talk",
+        "word-her-lily",
+        "word-later"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "talk to her",
+          "entry": "talk-to-her"
+        }
+      ]
+    }
+  }
+}

@@ -81,6 +81,9 @@ async function loadRegisteredDialogue(lessonId, dialogueId) {
 
 function getVoiceId(speaker) {
 	const voiceIds = {
+		Mom: "xHKaiky3urvwNvwRMmgo",
+		Lily: "ur0MtycxCulNrunXsdLx",
+		Sam: "oF10V53nXu6mNLtJLgko",
 		Maria: "xHKaiky3urvwNvwRMmgo",
 		Tom: "s3TPKV1kjDlVtZbl4Ksh",
 		Anna: "Cy8NxOxWnzsargZaVHUo",
@@ -122,6 +125,9 @@ function buildPlan(lessonId, dialogueId, dialogue, contentType = "dialogue") {
 			const speaker = line.speaker.trim();
 			if (
 				![
+					"Mom",
+					"Lily",
+					"Sam",
 					"Maria",
 					"Tom",
 					"Anna",

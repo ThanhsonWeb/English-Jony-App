@@ -122,6 +122,15 @@ export default function DialogueLessonPage() {
 
 	return (
 		<div className="min-h-screen px-4 pb-20 pt-2 text-white sm:px-8">
+			<div className="mx-auto mt-4 max-w-6xl">
+				<Link
+					href="/dialogue"
+					className="inline-flex items-center gap-2 rounded-lg px-2 py-1 text-base font-medium text-secondary transition hover:text-main focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+				>
+					<ArrowLeft size={20} aria-hidden="true" />
+					{t("back")}
+				</Link>
+			</div>
 				{/* Hero */}
 				<div className="relative mx-auto mt-4 min-h-[290px] max-w-6xl overflow-hidden rounded-sm border border-app bg-hero">
 					{/* Hero image */}

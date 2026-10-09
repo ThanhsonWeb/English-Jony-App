@@ -1,0 +1,647 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "grateful",
+  "dialogueId": "a-busy-morning",
+  "characters": {
+    "Mom": {
+      "meaning": "Mom",
+      "role": ""
+    },
+    "Lily": {
+      "meaning": "Lily",
+      "role": ""
+    },
+    "Sam": {
+      "meaning": "Sam",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-lily": {
+      "word": "lily",
+      "meaning": "",
+      "pos": []
+    },
+    "word-it's": {
+      "word": "it's",
+      "meaning": "",
+      "pos": []
+    },
+    "word-seven": {
+      "word": "seven",
+      "meaning": "",
+      "pos": []
+    },
+    "word-thirty": {
+      "word": "thirty",
+      "meaning": "",
+      "pos": []
+    },
+    "word-time": {
+      "word": "time",
+      "meaning": "",
+      "pos": []
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "",
+      "pos": []
+    },
+    "word-school": {
+      "word": "school",
+      "meaning": "",
+      "pos": []
+    },
+    "word-oh": {
+      "word": "oh",
+      "meaning": "",
+      "pos": []
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "",
+      "pos": []
+    },
+    "word-late": {
+      "word": "late",
+      "meaning": "",
+      "pos": []
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "",
+      "pos": []
+    },
+    "word-breakfast": {
+      "word": "breakfast",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-ready": {
+      "word": "ready",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-made": {
+      "word": "made",
+      "meaning": "",
+      "pos": []
+    },
+    "word-eggs": {
+      "word": "eggs",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can't": {
+      "word": "can't",
+      "meaning": "",
+      "pos": []
+    },
+    "word-eat": {
+      "word": "eat",
+      "meaning": "",
+      "pos": []
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "",
+      "pos": []
+    },
+    "word-where": {
+      "word": "where",
+      "meaning": "",
+      "pos": []
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "",
+      "pos": []
+    },
+    "word-bag": {
+      "word": "bag",
+      "meaning": "",
+      "pos": []
+    },
+    "word-next": {
+      "word": "next",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "",
+      "pos": []
+    },
+    "word-front": {
+      "word": "front",
+      "meaning": "",
+      "pos": []
+    },
+    "word-door": {
+      "word": "door",
+      "meaning": "",
+      "pos": []
+    },
+    "word-shoes": {
+      "word": "shoes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "",
+      "pos": []
+    },
+    "word-there": {
+      "word": "there",
+      "meaning": "",
+      "pos": []
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "",
+      "pos": []
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "",
+      "pos": []
+    },
+    "word-see": {
+      "word": "see",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "",
+      "pos": []
+    },
+    "word-take": {
+      "word": "take",
+      "meaning": "",
+      "pos": []
+    },
+    "word-some": {
+      "word": "some",
+      "meaning": "",
+      "pos": []
+    },
+    "word-food": {
+      "word": "food",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-toast": {
+      "word": "toast",
+      "meaning": "",
+      "pos": []
+    },
+    "word-with": {
+      "word": "with",
+      "meaning": "",
+      "pos": []
+    },
+    "word-great": {
+      "word": "great",
+      "meaning": "",
+      "pos": []
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "",
+      "pos": []
+    },
+    "word-go": {
+      "word": "go",
+      "meaning": "",
+      "pos": []
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "",
+      "pos": []
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "",
+      "pos": []
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "",
+      "pos": []
+    },
+    "word-day": {
+      "word": "day",
+      "meaning": "",
+      "pos": []
+    },
+    "word-bye": {
+      "word": "bye",
+      "meaning": "",
+      "pos": []
+    },
+    "word-mom": {
+      "word": "mom",
+      "meaning": "",
+      "pos": []
+    },
+    "word-later": {
+      "word": "later",
+      "meaning": "",
+      "pos": []
+    },
+    "word-sam": {
+      "word": "sam",
+      "meaning": "",
+      "pos": []
+    },
+    "word-did": {
+      "word": "did",
+      "meaning": "",
+      "pos": []
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "",
+      "pos": []
+    },
+    "word-say": {
+      "word": "say",
+      "meaning": "",
+      "pos": []
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "",
+      "pos": []
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "",
+      "pos": []
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "",
+      "pos": []
+    },
+    "word-talk": {
+      "word": "talk",
+      "meaning": "",
+      "pos": []
+    },
+    "word-her": {
+      "word": "her",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Mom",
+      "text": "Lily, it's seven thirty. Time for school!",
+      "translation": "Lily, bảy giờ rưỡi rồi. Đến giờ đi học rồi con!",
+      "tokens": [
+        "Lily",
+        "it's",
+        "seven",
+        "thirty",
+        "Time",
+        "for",
+        "school"
+      ],
+      "words": [
+        "word-lily",
+        "word-it's",
+        "word-seven",
+        "word-thirty",
+        "word-time",
+        "word-for",
+        "word-school"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Lily",
+      "text": "Oh no! I'm late for school!",
+      "translation": "Ôi không! Con muộn học rồi!",
+      "tokens": [
+        "Oh",
+        "no",
+        "I'm",
+        "late",
+        "for",
+        "school"
+      ],
+      "words": [
+        "word-oh",
+        "word-no",
+        "word-i'm",
+        "word-late",
+        "word-for",
+        "word-school"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Mom",
+      "text": "Your breakfast is ready. I made eggs for you.",
+      "translation": "Bữa sáng của con xong rồi. Mẹ đã làm trứng cho con.",
+      "tokens": [
+        "Your",
+        "breakfast",
+        "is",
+        "ready",
+        "I",
+        "made",
+        "eggs",
+        "for",
+        "you"
+      ],
+      "words": [
+        "word-your",
+        "word-breakfast",
+        "word-is",
+        "word-ready",
+        "word-i",
+        "word-made",
+        "word-eggs",
+        "word-for",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Lily",
+      "text": "I can't eat now. Where is my school bag?",
+      "translation": "Giờ con không ăn được. Cặp sách của con đâu rồi mẹ?",
+      "tokens": [
+        "I",
+        "can't",
+        "eat",
+        "now",
+        "Where",
+        "is",
+        "my",
+        "school",
+        "bag"
+      ],
+      "words": [
+        "word-i",
+        "word-can't",
+        "word-eat",
+        "word-now",
+        "word-where",
+        "word-is",
+        "word-my",
+        "word-school",
+        "word-bag"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Mom",
+      "text": "It's next to the front door.",
+      "translation": "Nó ở cạnh cửa trước đấy con.",
+      "tokens": [
+        "It's",
+        "next",
+        "to",
+        "the",
+        "front",
+        "door"
+      ],
+      "words": [
+        "word-it's",
+        "word-next",
+        "word-to",
+        "word-the",
+        "word-front",
+        "word-door"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Sam",
+      "text": "Your shoes are there, too.",
+      "translation": "Giày của chị cũng ở đó nữa.",
+      "tokens": [
+        "Your",
+        "shoes",
+        "are",
+        "there",
+        "too"
+      ],
+      "words": [
+        "word-your",
+        "word-shoes",
+        "word-are",
+        "word-there",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Lily",
+      "text": "Okay, I see my bag. Can I take some food?",
+      "translation": "Được rồi, chị thấy cặp rồi. Mẹ ơi, con mang theo ít đồ ăn được không?",
+      "tokens": [
+        "Okay",
+        "I",
+        "see",
+        "my",
+        "bag",
+        "Can",
+        "I",
+        "take",
+        "some",
+        "food"
+      ],
+      "words": [
+        "word-okay",
+        "word-i",
+        "word-see",
+        "word-my",
+        "word-bag",
+        "word-can",
+        "word-i",
+        "word-take",
+        "word-some",
+        "word-food"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Mom",
+      "text": "Yes, you can take some toast with you.",
+      "translation": "Được chứ, con có thể mang theo ít bánh mì nướng.",
+      "tokens": [
+        "Yes",
+        "you",
+        "can",
+        "take",
+        "some",
+        "toast",
+        "with",
+        "you"
+      ],
+      "words": [
+        "word-yes",
+        "word-you",
+        "word-can",
+        "word-take",
+        "word-some",
+        "word-toast",
+        "word-with",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Lily",
+      "text": "Great! I need to go now.",
+      "translation": "Tuyệt! Giờ con phải đi đây.",
+      "tokens": [
+        "Great",
+        "I",
+        "need",
+        "to",
+        "go",
+        "now"
+      ],
+      "words": [
+        "word-great",
+        "word-i",
+        "word-need",
+        "word-to",
+        "word-go",
+        "word-now"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Mom",
+      "text": "Have a good day, Lily!",
+      "translation": "Chúc con một ngày tốt lành, Lily!",
+      "tokens": [
+        "Have",
+        "a",
+        "good",
+        "day",
+        "Lily"
+      ],
+      "words": [
+        "word-have",
+        "word-a",
+        "word-good",
+        "word-day",
+        "word-lily"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Lily",
+      "text": "Bye, Mom! See you later, Sam!",
+      "translation": "Tạm biệt mẹ! Gặp lại em sau nhé, Sam!",
+      "tokens": [
+        "Bye",
+        "Mom",
+        "See",
+        "you",
+        "later",
+        "Sam"
+      ],
+      "words": [
+        "word-bye",
+        "word-mom",
+        "word-see",
+        "word-you",
+        "word-later",
+        "word-sam"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Sam",
+      "text": "Mom, Lily did not say thank you.",
+      "translation": "Mẹ ơi, chị Lily không nói cảm ơn mẹ.",
+      "tokens": [
+        "Mom",
+        "Lily",
+        "did",
+        "not",
+        "say",
+        "thank",
+        "you"
+      ],
+      "words": [
+        "word-mom",
+        "word-lily",
+        "word-did",
+        "word-not",
+        "word-say",
+        "word-thank",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Mom",
+      "text": "I know. We can talk to her later.",
+      "translation": "Mẹ biết. Chúng ta có thể nói chuyện với chị sau.",
+      "tokens": [
+        "I",
+        "know",
+        "We",
+        "can",
+        "talk",
+        "to",
+        "her",
+        "later"
+      ],
+      "words": [
+        "word-i",
+        "word-know",
+        "word-we",
+        "word-can",
+        "word-talk",
+        "word-to",
+        "word-her",
+        "word-later"
+      ],
+      "phrases": []
+    }
+  }
+}

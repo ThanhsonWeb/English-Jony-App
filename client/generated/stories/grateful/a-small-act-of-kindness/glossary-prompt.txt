@@ -1,0 +1,251 @@
+StudyJony contextual glossary authoring — story: grateful/a-small-act-of-kindness
+
+Codex must author meanings offline after the English draft and Vietnamese translations are final.
+Read every line and its translation. Save a separate glossary.json beside draft.json.
+Use the existing schemaVersion 1 glossary and the prepared glossary-template.json.
+Keep lessonId=grateful, dialogueId=a-small-act-of-kindness, source line IDs, exact text,
+translation, speaker, tokens, and zero-based word positions unchanged.
+
+Review EVERY word occurrence, not only usefulWords. Write short, natural Vietnamese
+meanings, usually 1–5 words. Never blindly copy a dictionary's first sense.
+Reuse shared entries only when the English word, Vietnamese sense and POS agree;
+split references for repeated words with different senses or grammatical roles.
+Each word entry has word (lowercase English token), meaning and pos (array).
+Optional pron is an IPA array: use trustworthy surface-form IPA, never a lemma's
+IPA for an inflected word or one word's IPA for a whole phrase. Omit unknown IPA.
+Keep useful grammar explanations in optional note fields, hidden in the popup.
+Use a short grammar label when there is no direct Vietnamese translation.
+Identify names as proper names. Do not translate character names as ordinary words.
+
+Preserve individual word entries even inside expressions. Add useful phrase entries
+with pos:["phrase"] and inclusive spans {start,end,text,entry}. Phrase text must
+exactly match the source span, contain at least two words, and never cross punctuation.
+Review usefulWords as candidates; do not force every adjacent word into a phrase.
+Each line has words (entry IDs in token order) and phrases (span array).
+Each character has meaning (name), role and optional note.
+
+Use the English sentence AND its existing Vietnamese translation to select senses.
+Check natural Vietnamese, phrase boundaries, individual meanings, POS and IPA.
+Flag uncertain senses in optional notes for human review; validation is not proof
+of translation accuracy. Never modify an approved glossary automatically.
+No runtime translation API, build-time translation API or dictionary-based meaning generator.
+
+After authoring, run:
+npm run glossary:check -- grateful a-small-act-of-kindness
+Then the existing dialogue:build command validates again before any promotion.
+
+Final source (all lines and useful expressions):
+{
+  "metadata": {
+    "courseId": "grateful",
+    "dialogueId": "a-small-act-of-kindness",
+    "contextualGlossaryVersion": 1,
+    "title": "Một việc tốt nhỏ",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Biết ơn",
+        "en": "Being Grateful"
+      },
+      "courseDescription": {
+        "vi": "Câu chuyện về Lily và cách cô bé học được ý nghĩa của lòng biết ơn qua những việc tốt nhỏ trong cuộc sống.",
+        "en": "A story about Lily learning the meaning of gratitude through small acts of kindness in everyday life."
+      },
+      "title": {
+        "vi": "Một việc tốt nhỏ",
+        "en": "A Small Act of Kindness"
+      },
+      "description": {
+        "vi": "At school, Lily realizes she forgot her lunch. Sam shares his food with her, and she begins to notice the small ways people help her.",
+        "en": "At school, Lily realizes she forgot her lunch. Sam shares his food with her, and she begins to notice the small ways people help her."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "At school, Lily realizes she forgot her lunch. Sam shares his food with her, and she begins to notice the small ways people help her.",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "thumbnail": "/stories/grateful/thumbnails/a-small-act-of-kindness.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Sam",
+      "text": "Lily, it's lunchtime. Why are you sad?",
+      "translation": "Chị Lily, đến giờ ăn trưa rồi. Sao chị buồn vậy?",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Lily",
+      "text": "I forgot my lunch at home. I'm so hungry!",
+      "translation": "Chị để quên bữa trưa ở nhà rồi. Chị đói quá!",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Sam",
+      "text": "Did you eat the toast Mom gave you?",
+      "translation": "Chị đã ăn bánh mì nướng mẹ cho chưa?",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Lily",
+      "text": "Yes, I ate it this morning. I have no food now.",
+      "translation": "Rồi, chị ăn sáng nay rồi. Giờ chị không còn đồ ăn nữa.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Sam",
+      "text": "I have two sandwiches. You can have one.",
+      "translation": "Em có hai chiếc bánh sandwich. Chị có thể lấy một chiếc.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Lily",
+      "text": "Really? Is that okay?",
+      "translation": "Thật sao? Như vậy có được không?",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Sam",
+      "text": "Of course. We can share my lunch.",
+      "translation": "Tất nhiên rồi. Chúng ta có thể chia sẻ bữa trưa của em.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Lily",
+      "text": "Thank you, Sam. You're very kind!",
+      "translation": "Cảm ơn em, Sam. Em thật tốt bụng!",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Sam",
+      "text": "You're welcome. Mom made these sandwiches.",
+      "translation": "Không có gì đâu chị. Mẹ làm những chiếc bánh sandwich này đấy.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Lily",
+      "text": "Mom made breakfast for me, too. She helped me find my bag.",
+      "translation": "Mẹ cũng làm bữa sáng cho chị nữa. Mẹ còn giúp chị tìm cặp sách.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Lily",
+      "text": "But I did not say thank you to her.",
+      "translation": "Nhưng chị đã không nói cảm ơn mẹ.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Sam",
+      "text": "You can tell her after school.",
+      "translation": "Chị có thể nói với mẹ sau giờ học mà.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-06.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Lily",
+      "text": "Yes. I want to thank Mom when we get home.",
+      "translation": "Ừ. Chị muốn cảm ơn mẹ khi chúng ta về nhà.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-07.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "lunchtime",
+      "pronunciation": "/ˈlʌntʃ.taɪm/",
+      "meaning": "giờ ăn trưa",
+      "example": "It's lunchtime at school."
+    },
+    {
+      "word": "forgot",
+      "pronunciation": "/fərˈɡɑːt/",
+      "meaning": "đã quên",
+      "example": "I forgot my book at home."
+    },
+    {
+      "word": "hungry",
+      "pronunciation": "/ˈhʌŋ.ɡri/",
+      "meaning": "đói bụng",
+      "example": "I'm hungry. I want some food."
+    },
+    {
+      "word": "sandwiches",
+      "pronunciation": "/ˈsæn.wɪ.tʃɪz/",
+      "meaning": "những chiếc bánh sandwich",
+      "example": "I have two sandwiches."
+    },
+    {
+      "word": "Of course",
+      "pronunciation": "/əv ˈkɔːrs/",
+      "meaning": "tất nhiên rồi",
+      "example": "Of course, you can sit here."
+    },
+    {
+      "word": "share",
+      "pronunciation": "/ʃer/",
+      "meaning": "chia sẻ",
+      "example": "We can share my food."
+    },
+    {
+      "word": "thank you",
+      "pronunciation": "/θæŋk juː/",
+      "meaning": "cảm ơn",
+      "example": "Thank you for your help."
+    },
+    {
+      "word": "kind",
+      "pronunciation": "/kaɪnd/",
+      "meaning": "tốt bụng, tử tế",
+      "example": "My mom is very kind."
+    },
+    {
+      "word": "You're welcome",
+      "pronunciation": "/jʊr ˈwel.kəm/",
+      "meaning": "không có gì (đáp lại lời cảm ơn)",
+      "example": "You're welcome, Lily!"
+    },
+    {
+      "word": "after school",
+      "pronunciation": "/ˈæf.tər skuːl/",
+      "meaning": "sau giờ học",
+      "example": "I go home after school."
+    }
+  ]
+}
