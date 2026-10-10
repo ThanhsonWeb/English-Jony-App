@@ -11,7 +11,14 @@ const { isKnownDialogueTask } = require("../utils/dialogueCatalogue");
 const DialogueAttempt = require("../models/dialogueAttemptModel");
 const { startDialogueAttempt, claimDialogueAttempt } = require("../services/dialogueAttempt");
 
+// A queued completion must never follow a cookie switch into another account.
+function checkProgressAccount(req) {
+	const expectedUser = req.get("X-StudyJony-Progress-User");
+	if (expectedUser && expectedUser !== String(req.user._id)) throw new AppError("Progress belongs to another account. Sign in to that account to retry.", 403);
+}
+
 exports.startTask = catchAsync(async (req, res) => {
+	checkProgressAccount(req);
 	const { lessonId, dialogueId, taskId } = req.params;
 	const attempt = await startDialogueAttempt(req.user._id, [lessonId, dialogueId, taskId]);
 	res.status(200).json({ status: "success", data: attempt });
@@ -47,6 +54,7 @@ exports.getLatestProgress = catchAsync(async (req, res, next) => {
 
 // PATCH /api/v1/dialogue-progress/:lessonId/:dialogueId/tasks/:taskId
 exports.completeTask = catchAsync(async (req, res, next) => {
+	checkProgressAccount(req);
 	const { lessonId, dialogueId, taskId } = req.params;
 	if (!isKnownDialogueTask(lessonId, dialogueId, taskId)) {
 		throw new AppError("Dialogue task not found", 404);

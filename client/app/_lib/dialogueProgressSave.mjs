@@ -45,14 +45,14 @@ export function createDialogueProgressSaveController(saveProgress, { isCurrent =
 	};
 }
 
-export async function saveDialogueProgress(path, signal, completion) {
-	const response = await fetch(path, { method: "PATCH", credentials: "include", signal,
-		headers: { "Content-Type": "application/json" }, body: JSON.stringify(completion) });
+export async function saveDialogueProgress(path, signal, completion, userId) {
+	const response = await fetch(path, { method: "PATCH", credentials: "include", signal, keepalive: true,
+		headers: { "Content-Type": "application/json", ...(userId ? { "X-StudyJony-Progress-User": userId } : {}) }, body: JSON.stringify(completion) });
 	if (response.status === 409) {
 		const data = await response.json();
-		throw Object.assign(new Error("Progress was not saved"), { code: data.code, retryAfterMs: data.retryAfterMs });
+		throw Object.assign(new Error("Progress was not saved"), { status: 409, code: data.code, retryAfterMs: data.retryAfterMs });
 	}
-	if (!response.ok) throw new Error("Progress was not saved");
+	if (!response.ok) throw Object.assign(new Error("Progress was not saved"), { status: response.status });
 	const data = await response.json();
 	if (!data.data?.progress) throw new Error("Progress confirmation is missing");
 	return data.data.progress;
@@ -67,31 +67,40 @@ function wait(ms, signal) {
 	});
 }
 
-export function createDialogueAttemptClient(path) {
-	let attempt, pending, request, generation = 0;
+export function createDialogueAttemptClient(path, { initialAttempt, onAttempt = () => {}, userId } = {}) {
+	let attempt = initialAttempt, pending, request, generation = 0;
 	function prepare() {
 		if (attempt && attempt.expiresAt > Date.now() + 1000) return Promise.resolve(attempt);
 		if (pending) return pending;
 		const id = ++generation;
 		request = new AbortController();
-		pending = fetch(`${path}/attempt`, { method: "POST", credentials: "include", signal: request.signal })
+		const currentRequest = request;
+		const timeout = setTimeout(() => currentRequest.abort(), 15000);
+		pending = fetch(`${path}/attempt`, { method: "POST", credentials: "include", signal: request.signal,
+			headers: userId ? { "X-StudyJony-Progress-User": userId } : {} })
 			.then(async response => {
-				if (!response.ok) throw new Error("Study attempt could not start");
+				if (!response.ok) throw Object.assign(new Error("Study attempt could not start"), { status: response.status });
 				const { data } = await response.json();
 				if (id !== generation || !/^[a-f0-9]{64}$/.test(data?.attemptId) || !Number.isFinite(Date.parse(data.expiresAt)) || !Number.isFinite(data.readyAfterMs) || data.readyAfterMs < 0 || data.readyAfterMs > 2000) throw new Error("Invalid study attempt");
 				attempt = { ...data, expiresAt: Date.parse(data.expiresAt), readyAt: Date.now() + data.readyAfterMs + 10 };
+				onAttempt(attempt);
 				return attempt;
-			}).finally(() => { if (id === generation) pending = null; });
+			}).finally(() => { clearTimeout(timeout); if (id === generation) pending = null; });
 		return pending;
 	}
 	return {
 		prepare,
+		getAttempt: () => attempt,
 		cancel() { generation += 1; request?.abort(); pending = null; attempt = null; },
 		async save(signal, input) {
+			const stop = () => request?.abort();
+			signal.addEventListener("abort", stop, { once: true });
+			try {
 			for (let retry = 0; retry < 2; retry++) {
+				if (signal.aborted) throw new Error("Save was cancelled");
 				const current = await prepare();
 				await wait(Math.max(0, current.readyAt - Date.now()), signal);
-				try { return await saveDialogueProgress(path, signal, { ...input, attemptId: current.attemptId }); }
+				try { return await saveDialogueProgress(path, signal, { ...input, attemptId: current.attemptId }, userId); }
 				catch (error) {
 					if (signal.aborted || retry === 1) throw error;
 					if (error.code === "studyAttemptExpired") attempt = null;
@@ -99,6 +108,7 @@ export function createDialogueAttemptClient(path) {
 					else throw error;
 				}
 			}
+			} finally { signal.removeEventListener("abort", stop); }
 		},
 	};
 }

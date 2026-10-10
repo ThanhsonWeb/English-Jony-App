@@ -1,0 +1,654 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "grateful",
+  "dialogueId": "helping-in-return",
+  "characters": {
+    "Mom": {
+      "meaning": "Mom",
+      "role": ""
+    },
+    "Lily": {
+      "meaning": "Lily",
+      "role": ""
+    },
+    "Sam": {
+      "meaning": "Sam",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-it": {
+      "word": "it",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-almost": {
+      "word": "almost",
+      "meaning": "",
+      "pos": []
+    },
+    "word-dinner": {
+      "word": "dinner",
+      "meaning": "",
+      "pos": []
+    },
+    "word-time": {
+      "word": "time",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "",
+      "pos": []
+    },
+    "word-some": {
+      "word": "some",
+      "meaning": "",
+      "pos": []
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-mom": {
+      "word": "mom",
+      "meaning": "",
+      "pos": []
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "",
+      "pos": []
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "",
+      "pos": []
+    },
+    "word-wash": {
+      "word": "wash",
+      "meaning": "",
+      "pos": []
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "",
+      "pos": []
+    },
+    "word-vegetables": {
+      "word": "vegetables",
+      "meaning": "",
+      "pos": []
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "",
+      "pos": []
+    },
+    "word-our": {
+      "word": "our",
+      "meaning": "",
+      "pos": []
+    },
+    "word-soup": {
+      "word": "soup",
+      "meaning": "",
+      "pos": []
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "",
+      "pos": []
+    },
+    "word-course": {
+      "word": "course",
+      "meaning": "",
+      "pos": []
+    },
+    "word-helped": {
+      "word": "helped",
+      "meaning": "",
+      "pos": []
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "",
+      "pos": []
+    },
+    "word-this": {
+      "word": "this",
+      "meaning": "",
+      "pos": []
+    },
+    "word-morning": {
+      "word": "morning",
+      "meaning": "",
+      "pos": []
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "",
+      "pos": []
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "",
+      "pos": []
+    },
+    "word-lily": {
+      "word": "lily",
+      "meaning": "",
+      "pos": []
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "",
+      "pos": []
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "",
+      "pos": []
+    },
+    "word-big": {
+      "word": "big",
+      "meaning": "",
+      "pos": []
+    },
+    "word-with": {
+      "word": "with",
+      "meaning": "",
+      "pos": []
+    },
+    "word-smells": {
+      "word": "smells",
+      "meaning": "",
+      "pos": []
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-sam": {
+      "word": "sam",
+      "meaning": "",
+      "pos": []
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "",
+      "pos": []
+    },
+    "word-all": {
+      "word": "all",
+      "meaning": "",
+      "pos": []
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "",
+      "pos": []
+    },
+    "word-schoolwork": {
+      "word": "schoolwork",
+      "meaning": "",
+      "pos": []
+    },
+    "word-sometimes": {
+      "word": "sometimes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "",
+      "pos": []
+    },
+    "word-tomorrow": {
+      "word": "tomorrow",
+      "meaning": "",
+      "pos": []
+    },
+    "word-really": {
+      "word": "really",
+      "meaning": "",
+      "pos": []
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "",
+      "pos": []
+    },
+    "word-makes": {
+      "word": "makes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-happy": {
+      "word": "happy",
+      "meaning": "",
+      "pos": []
+    },
+    "word-shared": {
+      "word": "shared",
+      "meaning": "",
+      "pos": []
+    },
+    "word-lunch": {
+      "word": "lunch",
+      "meaning": "",
+      "pos": []
+    },
+    "word-today": {
+      "word": "today",
+      "meaning": "",
+      "pos": []
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "",
+      "pos": []
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "",
+      "pos": []
+    },
+    "word-so": {
+      "word": "so",
+      "meaning": "",
+      "pos": []
+    },
+    "word-both": {
+      "word": "both",
+      "meaning": "",
+      "pos": []
+    },
+    "word-very": {
+      "word": "very",
+      "meaning": "",
+      "pos": []
+    },
+    "word-kind": {
+      "word": "kind",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Mom",
+      "text": "It is almost dinner time. I need some help.",
+      "translation": "Sắp đến giờ ăn tối rồi. Mẹ cần người giúp một chút.",
+      "tokens": [
+        "It",
+        "is",
+        "almost",
+        "dinner",
+        "time",
+        "I",
+        "need",
+        "some",
+        "help"
+      ],
+      "words": [
+        "word-it",
+        "word-is",
+        "word-almost",
+        "word-dinner",
+        "word-time",
+        "word-i",
+        "word-need",
+        "word-some",
+        "word-help"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Lily",
+      "text": "I can help you, Mom. What can I do?",
+      "translation": "Con có thể giúp mẹ. Con làm gì được ạ?",
+      "tokens": [
+        "I",
+        "can",
+        "help",
+        "you",
+        "Mom",
+        "What",
+        "can",
+        "I",
+        "do"
+      ],
+      "words": [
+        "word-i",
+        "word-can",
+        "word-help",
+        "word-you",
+        "word-mom",
+        "word-what",
+        "word-can",
+        "word-i",
+        "word-do"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Mom",
+      "text": "Can you wash the vegetables for our soup?",
+      "translation": "Con rửa rau để nấu súp nhé?",
+      "tokens": [
+        "Can",
+        "you",
+        "wash",
+        "the",
+        "vegetables",
+        "for",
+        "our",
+        "soup"
+      ],
+      "words": [
+        "word-can",
+        "word-you",
+        "word-wash",
+        "word-the",
+        "word-vegetables",
+        "word-for",
+        "word-our",
+        "word-soup"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Lily",
+      "text": "Of course. You helped me this morning. I want to help you, too.",
+      "translation": "Dạ được ạ. Sáng nay mẹ đã giúp con. Con cũng muốn giúp mẹ.",
+      "tokens": [
+        "Of",
+        "course",
+        "You",
+        "helped",
+        "me",
+        "this",
+        "morning",
+        "I",
+        "want",
+        "to",
+        "help",
+        "you",
+        "too"
+      ],
+      "words": [
+        "word-of",
+        "word-course",
+        "word-you",
+        "word-helped",
+        "word-me",
+        "word-this",
+        "word-morning",
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-help",
+        "word-you",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Mom",
+      "text": "Thank you, Lily. You are a big help with dinner.",
+      "translation": "Cảm ơn con, Lily. Con giúp mẹ rất nhiều khi chuẩn bị bữa tối.",
+      "tokens": [
+        "Thank",
+        "you",
+        "Lily",
+        "You",
+        "are",
+        "a",
+        "big",
+        "help",
+        "with",
+        "dinner"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-lily",
+        "word-you",
+        "word-are",
+        "word-a",
+        "word-big",
+        "word-help",
+        "word-with",
+        "word-dinner"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Sam",
+      "text": "The soup smells good. Can I help, too?",
+      "translation": "Món súp thơm quá. Em cũng giúp được không?",
+      "tokens": [
+        "The",
+        "soup",
+        "smells",
+        "good",
+        "Can",
+        "I",
+        "help",
+        "too"
+      ],
+      "words": [
+        "word-the",
+        "word-soup",
+        "word-smells",
+        "word-good",
+        "word-can",
+        "word-i",
+        "word-help",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Lily",
+      "text": "Yes, Sam. We can all help Mom.",
+      "translation": "Ừ, Sam. Chúng ta đều có thể giúp mẹ.",
+      "tokens": [
+        "Yes",
+        "Sam",
+        "We",
+        "can",
+        "all",
+        "help",
+        "Mom"
+      ],
+      "words": [
+        "word-yes",
+        "word-sam",
+        "word-we",
+        "word-can",
+        "word-all",
+        "word-help",
+        "word-mom"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Sam",
+      "text": "I need help with my schoolwork sometimes.",
+      "translation": "Đôi khi em cần người giúp làm bài ở trường.",
+      "tokens": [
+        "I",
+        "need",
+        "help",
+        "with",
+        "my",
+        "schoolwork",
+        "sometimes"
+      ],
+      "words": [
+        "word-i",
+        "word-need",
+        "word-help",
+        "word-with",
+        "word-my",
+        "word-schoolwork",
+        "word-sometimes"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Lily",
+      "text": "I can help you with your schoolwork tomorrow.",
+      "translation": "Ngày mai chị có thể giúp em học bài.",
+      "tokens": [
+        "I",
+        "can",
+        "help",
+        "you",
+        "with",
+        "your",
+        "schoolwork",
+        "tomorrow"
+      ],
+      "words": [
+        "word-i",
+        "word-can",
+        "word-help",
+        "word-you",
+        "word-with",
+        "word-your",
+        "word-schoolwork",
+        "word-tomorrow"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Sam",
+      "text": "Really? Thank you, Lily. That makes me happy.",
+      "translation": "Thật sao? Cảm ơn chị, Lily. Em vui quá.",
+      "tokens": [
+        "Really",
+        "Thank",
+        "you",
+        "Lily",
+        "That",
+        "makes",
+        "me",
+        "happy"
+      ],
+      "words": [
+        "word-really",
+        "word-thank",
+        "word-you",
+        "word-lily",
+        "word-that",
+        "word-makes",
+        "word-me",
+        "word-happy"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Lily",
+      "text": "You shared your lunch with me today. Now I can help you.",
+      "translation": "Hôm nay em đã chia sẻ bữa trưa với chị. Giờ chị có thể giúp em.",
+      "tokens": [
+        "You",
+        "shared",
+        "your",
+        "lunch",
+        "with",
+        "me",
+        "today",
+        "Now",
+        "I",
+        "can",
+        "help",
+        "you"
+      ],
+      "words": [
+        "word-you",
+        "word-shared",
+        "word-your",
+        "word-lunch",
+        "word-with",
+        "word-me",
+        "word-today",
+        "word-now",
+        "word-i",
+        "word-can",
+        "word-help",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Mom",
+      "text": "I am so happy. You are both very kind.",
+      "translation": "Mẹ vui quá. Hai con đều rất tốt bụng.",
+      "tokens": [
+        "I",
+        "am",
+        "so",
+        "happy",
+        "You",
+        "are",
+        "both",
+        "very",
+        "kind"
+      ],
+      "words": [
+        "word-i",
+        "word-am",
+        "word-so",
+        "word-happy",
+        "word-you",
+        "word-are",
+        "word-both",
+        "word-very",
+        "word-kind"
+      ],
+      "phrases": []
+    }
+  }
+}

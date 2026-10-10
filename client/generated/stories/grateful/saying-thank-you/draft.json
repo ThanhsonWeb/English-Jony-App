@@ -1,0 +1,943 @@
+
+{
+  "metadata": {
+    "courseId": "grateful",
+    "dialogueId": "saying-thank-you",
+    "contextualGlossaryVersion": 1,
+    "title": "Nói lời cảm ơn",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Lòng biết ơn",
+        "en": "Gratitude"
+      },
+      "courseDescription": {
+        "vi": "Lily học cách cảm ơn và trân trọng những người giúp đỡ mình.",
+        "en": "Lily learns to thank and appreciate the people who help her."
+      },
+      "title": {
+        "vi": "Nói lời cảm ơn",
+        "en": "Saying Thank You"
+      },
+      "description": {
+        "vi": "Lily cảm ơn Sam vì đã chia sẻ bữa trưa. Khi về nhà, cô bé cũng cảm ơn mẹ vì đã giúp mình vào buổi sáng.",
+        "en": "Lily thanks Sam for sharing his lunch. When she gets home, she also thanks Mom for helping her that morning."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Lily cảm ơn Sam vì đã chia sẻ bữa trưa. Khi về nhà, cô bé cũng cảm ơn mẹ vì đã giúp mình vào buổi sáng.",
+    "scene": "/stories/grateful/saying-thank-you/bg.png",
+    "thumbnail": "/stories/grateful/thumbnails/saying-thank-you.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Sam",
+      "text": "School is over. Are you ready to go home?",
+      "translation": "Tan học rồi. Chị sẵn sàng về nhà chưa?",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/sam-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Lily",
+      "text": "Yes. Thank you again for sharing your lunch with me.",
+      "translation": "Ừ. Cảm ơn em lần nữa vì đã chia sẻ bữa trưa với chị.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Sam",
+      "text": "You're welcome. I am glad you had enough to eat.",
+      "translation": "Không có gì đâu chị. Em vui vì chị đã ăn no.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/sam-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Mom",
+      "text": "Welcome home! How was school?",
+      "translation": "Hai con về rồi! Hôm nay ở trường thế nào?",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-01.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Lily",
+      "text": "It was good. Sam shared his lunch with me.",
+      "translation": "Dạ vui ạ. Sam đã chia sẻ bữa trưa với con.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Mom",
+      "text": "That was kind of Sam.",
+      "translation": "Sam thật tốt bụng.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-02.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Lily",
+      "text": "Mom, thank you for breakfast and for helping me find my bag.",
+      "translation": "Mẹ ơi, con cảm ơn mẹ vì bữa sáng và vì đã giúp con tìm cặp sách.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Mom",
+      "text": "You're welcome. I am happy to help.",
+      "translation": "Không có gì đâu con. Mẹ rất vui khi được giúp con.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-03.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Lily",
+      "text": "I want to say thank you when someone helps me.",
+      "translation": "Con muốn nói lời cảm ơn khi có ai đó giúp con.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Mom",
+      "text": "That is kind of you. We can help each other.",
+      "translation": "Con thật tốt bụng. Chúng ta có thể giúp đỡ lẫn nhau.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-04.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "thank you",
+      "pronunciation": "/ˈθæŋk juː/",
+      "meaning": "cảm ơn",
+      "example": "Thank you for your help."
+    },
+    {
+      "word": "sharing",
+      "pronunciation": "/ˈʃerɪŋ/",
+      "meaning": "chia sẻ",
+      "example": "Thank you for sharing your food."
+    },
+    {
+      "word": "you're welcome",
+      "pronunciation": "/jʊr ˈwelkəm/",
+      "meaning": "không có gì",
+      "example": "You're welcome, Lily."
+    },
+    {
+      "word": "glad",
+      "pronunciation": "/ɡlæd/",
+      "meaning": "vui, mừng",
+      "example": "I am glad you are here."
+    },
+    {
+      "word": "helping",
+      "pronunciation": "/ˈhelpɪŋ/",
+      "meaning": "giúp đỡ",
+      "example": "Thank you for helping me."
+    },
+    {
+      "word": "kind",
+      "pronunciation": "/kaɪnd/",
+      "meaning": "tốt bụng",
+      "example": "Sam is very kind."
+    },
+    {
+      "word": "each other",
+      "pronunciation": "/iːtʃ ˈʌðər/",
+      "meaning": "lẫn nhau",
+      "example": "We help each other."
+    },
+    {
+      "word": "bag",
+      "pronunciation": "/bæɡ/",
+      "meaning": "cặp, túi",
+      "example": "My school bag is blue."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu của Sam.",
+          "en": "Complete Sam's sentence."
+        }
+      },
+      "parts": [
+        "School is over. Are you ",
+        " to go home?"
+      ],
+      "answers": ["ready"],
+      "speaker": "Sam",
+      "transcript": "School is over. Are you ready to go home?",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/sam-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Nói lời cảm ơn",
+          "en": "Saying Thank You"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời cảm ơn của Lily.",
+          "en": "Complete Lily's thank-you message."
+        }
+      },
+      "parts": [
+        "Yes. ",
+        " again for sharing your lunch with me."
+      ],
+      "answers": ["Thank you"],
+      "speaker": "Lily",
+      "transcript": "Yes. Thank you again for sharing your lunch with me.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu của Lily.",
+          "en": "Complete Lily's sentence."
+        }
+      },
+      "parts": [
+        "Yes. Thank you again for ",
+        " your lunch with me."
+      ],
+      "answers": ["sharing"],
+      "speaker": "Lily",
+      "transcript": "Yes. Thank you again for sharing your lunch with me.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "multipleChoice",
+      "localized": {
+        "title": {
+          "vi": "Cách dùng từ",
+          "en": "Word Usage"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Vì sao Lily dùng từ “again” khi cảm ơn Sam?",
+          "en": "Why does Lily use “again” when thanking Sam?"
+        },
+        "options": [
+          {
+            "vi": "Vì Sam muốn thêm đồ ăn.",
+            "en": "Because Sam wants more food."
+          },
+          {
+            "vi": "Vì Lily muốn Sam nói lại điều gì đó.",
+            "en": "Because Lily wants Sam to repeat something."
+          },
+          {
+            "vi": "Vì Lily chưa từng cảm ơn Sam.",
+            "en": "Because Lily has never thanked Sam."
+          },
+          {
+            "vi": "Vì Lily đã cảm ơn Sam trước đó.",
+            "en": "Because Lily has already thanked Sam."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "again",
+      "question": "Vì sao Lily dùng từ “again” khi cảm ơn Sam?",
+      "options": [
+        "Vì Sam muốn thêm đồ ăn.",
+        "Vì Lily muốn Sam nói lại điều gì đó.",
+        "Vì Lily chưa từng cảm ơn Sam.",
+        "Vì Lily đã cảm ơn Sam trước đó."
+      ],
+      "answer": "Vì Lily đã cảm ơn Sam trước đó.",
+      "speaker": "Lily",
+      "transcript": "Yes. Thank you again for sharing your lunch with me.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Đáp lại lời cảm ơn",
+          "en": "Responding to Thanks"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu trả lời của Sam.",
+          "en": "Complete Sam's response."
+        }
+      },
+      "parts": [
+        "",
+        ". I am glad you had enough to eat."
+      ],
+      "answers": ["You're welcome"],
+      "speaker": "Sam",
+      "transcript": "You're welcome. I am glad you had enough to eat.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/sam-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "localized": {
+        "title": {
+          "vi": "Hiểu hội thoại",
+          "en": "Understand the Conversation"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Sam cảm thấy thế nào sau khi chia sẻ bữa trưa với Lily?",
+          "en": "How does Sam feel after sharing his lunch with Lily?"
+        },
+        "options": [
+          {
+            "vi": "Vui vì Lily đã ăn đủ no.",
+            "en": "Happy because Lily had enough to eat."
+          },
+          {
+            "vi": "Lo vì Lily không ăn gì.",
+            "en": "Worried because Lily did not eat anything."
+          },
+          {
+            "vi": "Buồn vì Lily không thích đồ ăn.",
+            "en": "Sad because Lily did not like the food."
+          },
+          {
+            "vi": "Giận vì Lily không cảm ơn.",
+            "en": "Angry because Lily did not say thank you."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "question": "Sam cảm thấy thế nào sau khi chia sẻ bữa trưa với Lily?",
+      "options": [
+        "Vui vì Lily đã ăn đủ no.",
+        "Lo vì Lily không ăn gì.",
+        "Buồn vì Lily không thích đồ ăn.",
+        "Giận vì Lily không cảm ơn."
+      ],
+      "answer": "Vui vì Lily đã ăn đủ no.",
+      "speaker": "Sam",
+      "transcript": "You're welcome. I am glad you had enough to eat.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/sam-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu hỏi của mẹ.",
+          "en": "Complete Mom's question."
+        }
+      },
+      "parts": [
+        "Welcome home! How was ",
+        "?"
+      ],
+      "answers": ["school"],
+      "speaker": "Mom",
+      "transcript": "Welcome home! How was school?",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-01.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu của Lily.",
+          "en": "Complete Lily's sentence."
+        }
+      },
+      "parts": [
+        "It was good. Sam ",
+        " his lunch with me."
+      ],
+      "answers": ["shared"],
+      "speaker": "Lily",
+      "transcript": "It was good. Sam shared his lunch with me.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu của Lily.",
+          "en": "Complete Lily's sentence."
+        }
+      },
+      "parts": [
+        "It was good. Sam shared his ",
+        " with me."
+      ],
+      "answers": ["lunch"],
+      "speaker": "Lily",
+      "transcript": "It was good. Sam shared his lunch with me.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "multipleChoice",
+      "localized": {
+        "title": {
+          "vi": "Hiểu hội thoại",
+          "en": "Understand the Conversation"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Lily kể điều gì với mẹ về bữa trưa?",
+          "en": "What does Lily tell Mom about lunch?"
+        },
+        "options": [
+          {
+            "vi": "Lily đã ăn trưa một mình.",
+            "en": "Lily ate lunch alone."
+          },
+          {
+            "vi": "Sam đã chia sẻ bữa trưa với Lily.",
+            "en": "Sam shared his lunch with Lily."
+          },
+          {
+            "vi": "Lily mua đồ ăn ở cửa hàng.",
+            "en": "Lily bought food at a shop."
+          },
+          {
+            "vi": "Lily không ăn trưa.",
+            "en": "Lily did not eat lunch."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "question": "Lily kể điều gì với mẹ về bữa trưa?",
+      "options": [
+        "Lily đã ăn trưa một mình.",
+        "Sam đã chia sẻ bữa trưa với Lily.",
+        "Lily mua đồ ăn ở cửa hàng.",
+        "Lily không ăn trưa."
+      ],
+      "answer": "Sam đã chia sẻ bữa trưa với Lily.",
+      "speaker": "Lily",
+      "transcript": "It was good. Sam shared his lunch with me.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-02.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành nhận xét của mẹ.",
+          "en": "Complete Mom's comment."
+        }
+      },
+      "parts": [
+        "That was ",
+        " of Sam."
+      ],
+      "answers": ["kind"],
+      "speaker": "Mom",
+      "transcript": "That was kind of Sam.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-02.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Nói lời cảm ơn",
+          "en": "Saying Thank You"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời cảm ơn của Lily.",
+          "en": "Complete Lily's thank-you message."
+        }
+      },
+      "parts": [
+        "Mom, ",
+        " for breakfast and for helping me find my bag."
+      ],
+      "answers": ["thank you"],
+      "speaker": "Lily",
+      "transcript": "Mom, thank you for breakfast and for helping me find my bag.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu của Lily.",
+          "en": "Complete Lily's sentence."
+        }
+      },
+      "parts": [
+        "Mom, thank you for breakfast and for ",
+        " me find my bag."
+      ],
+      "answers": ["helping"],
+      "speaker": "Lily",
+      "transcript": "Mom, thank you for breakfast and for helping me find my bag.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "localized": {
+        "title": {
+          "vi": "Ngữ pháp trong ngữ cảnh",
+          "en": "Grammar in Context"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Trong lời cảm ơn của Lily, “for breakfast” dùng để làm gì?",
+          "en": "In Lily's thank-you message, what does “for breakfast” express?"
+        },
+        "options": [
+          {
+            "vi": "Hỏi mẹ muốn ăn gì vào bữa sáng.",
+            "en": "Ask Mom what she wants for breakfast."
+          },
+          {
+            "vi": "Nói nơi Lily ăn sáng.",
+            "en": "Say where Lily eats breakfast."
+          },
+          {
+            "vi": "Nói lý do Lily cảm ơn mẹ.",
+            "en": "Explain why Lily is thanking Mom."
+          },
+          {
+            "vi": "Hẹn giờ ăn sáng ngày mai.",
+            "en": "Arrange tomorrow's breakfast time."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "for breakfast",
+      "question": "Trong lời cảm ơn của Lily, “for breakfast” dùng để làm gì?",
+      "options": [
+        "Hỏi mẹ muốn ăn gì vào bữa sáng.",
+        "Nói nơi Lily ăn sáng.",
+        "Nói lý do Lily cảm ơn mẹ.",
+        "Hẹn giờ ăn sáng ngày mai."
+      ],
+      "answer": "Nói lý do Lily cảm ơn mẹ.",
+      "speaker": "Lily",
+      "transcript": "Mom, thank you for breakfast and for helping me find my bag.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-03.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Đáp lại lời cảm ơn",
+          "en": "Responding to Thanks"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu trả lời của mẹ.",
+          "en": "Complete Mom's response."
+        }
+      },
+      "parts": [
+        "",
+        ". I am happy to help."
+      ],
+      "answers": ["You're welcome"],
+      "speaker": "Mom",
+      "transcript": "You're welcome. I am happy to help.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-03.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu của mẹ.",
+          "en": "Complete Mom's sentence."
+        }
+      },
+      "parts": [
+        "You're welcome. I am ",
+        " to help."
+      ],
+      "answers": ["happy"],
+      "speaker": "Mom",
+      "transcript": "You're welcome. I am happy to help.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-03.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Nói lời cảm ơn",
+          "en": "Saying Thank You"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu của Lily.",
+          "en": "Complete Lily's sentence."
+        }
+      },
+      "parts": [
+        "I want to say ",
+        " when someone helps me."
+      ],
+      "answers": ["thank you"],
+      "speaker": "Lily",
+      "transcript": "I want to say thank you when someone helps me.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu của Lily.",
+          "en": "Complete Lily's sentence."
+        }
+      },
+      "parts": [
+        "I want to say thank you when someone ",
+        " me."
+      ],
+      "answers": ["helps"],
+      "speaker": "Lily",
+      "transcript": "I want to say thank you when someone helps me.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-04.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền cụm từ còn thiếu",
+          "en": "Fill in the Missing Phrase"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu của mẹ.",
+          "en": "Complete Mom's sentence."
+        }
+      },
+      "parts": [
+        "That is kind of you. We can help ",
+        "."
+      ],
+      "answers": ["each other"],
+      "speaker": "Mom",
+      "transcript": "That is kind of you. We can help each other.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-04.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "localized": {
+        "title": {
+          "vi": "Hiểu hội thoại",
+          "en": "Understand the Conversation"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Điều mẹ muốn Lily ghi nhớ là gì?",
+          "en": "What does Mom want Lily to remember?"
+        },
+        "options": [
+          {
+            "vi": "Mọi người có thể giúp đỡ nhau.",
+            "en": "People can help each other."
+          },
+          {
+            "vi": "Chỉ người lớn mới cần giúp đỡ.",
+            "en": "Only adults need help."
+          },
+          {
+            "vi": "Lily không cần cảm ơn ai.",
+            "en": "Lily does not need to thank anyone."
+          },
+          {
+            "vi": "Sam phải tự làm mọi việc.",
+            "en": "Sam must do everything by himself."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "question": "Điều mẹ muốn Lily ghi nhớ là gì?",
+      "options": [
+        "Mọi người có thể giúp đỡ nhau.",
+        "Chỉ người lớn mới cần giúp đỡ.",
+        "Lily không cần cảm ơn ai.",
+        "Sam phải tự làm mọi việc."
+      ],
+      "answer": "Mọi người có thể giúp đỡ nhau.",
+      "speaker": "Mom",
+      "transcript": "That is kind of you. We can help each other.",
+      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-04.mp3"
+    },
+    {
+      "id": 21,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập toàn bộ hội thoại",
+          "en": "Full Dialogue Review"
+        },
+        "instruction": {
+          "vi": "Điền các từ còn thiếu để hoàn thành hội thoại.",
+          "en": "Fill in the missing words to complete the dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Sam",
+          "parts": [
+            "School is over. Are you ",
+            {
+              "id": "1",
+              "blank": "ready"
+            },
+            " to go home?"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Lily",
+          "parts": [
+            "Yes. ",
+            {
+              "id": "2",
+              "blank": "Thank you"
+            },
+            " again for sharing your lunch with me."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Sam",
+          "parts": [
+            "",
+            {
+              "id": "3",
+              "blank": "You're welcome"
+            },
+            ". I am glad you had enough to eat."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Mom",
+          "parts": [
+            "Welcome home! How was ",
+            {
+              "id": "4",
+              "blank": "school"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Lily",
+          "parts": [
+            "It was good. Sam ",
+            {
+              "id": "5",
+              "blank": "shared"
+            },
+            " his lunch with me."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Mom",
+          "parts": [
+            "That was ",
+            {
+              "id": "6",
+              "blank": "kind"
+            },
+            " of Sam."
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Lily",
+          "parts": [
+            "Mom, thank you for breakfast and for ",
+            {
+              "id": "7",
+              "blank": "helping"
+            },
+            " me find my bag."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Mom",
+          "parts": [
+            "You're welcome. I am ",
+            {
+              "id": "8",
+              "blank": "happy"
+            },
+            " to help."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Lily",
+          "parts": [
+            "I want to say ",
+            {
+              "id": "9",
+              "blank": "thank you"
+            },
+            " when someone helps me."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Mom",
+          "parts": [
+            "That is kind of you. We can help ",
+            {
+              "id": "10",
+              "blank": "each other"
+            },
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Cảm ơn ai vì một việc đã làm",
+      "explanation": "Dùng “Thank you for” + động từ thêm -ing để cảm ơn ai vì một hành động.",
+      "localized": {
+        "title": {
+          "vi": "Cảm ơn ai vì một việc đã làm",
+          "en": "Thanking Someone for an Action"
+        },
+        "explanation": {
+          "vi": "Dùng “Thank you for” + động từ thêm -ing để cảm ơn ai vì một hành động.",
+          "en": "Use “Thank you for” + a verb ending in -ing to thank someone for an action."
+        }
+      },
+      "example": "Thank you for helping me."
+    }
+  ]
+}

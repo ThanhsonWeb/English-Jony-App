@@ -53,13 +53,17 @@ async function setup(browser, width, locale, theme) {
 async function progressCase(browser, width, locale, theme, fixture, type) {
 	const c = await setup(browser, width, locale, theme), p = c.page, t = c.messages.DialogueFeature;
 	const task = fixture.data.tasks.find(task => task.type === type);
-	const started = deferred(), first = deferred(), retry = deferred();
+	const started = deferred(), first = deferred(), retry = deferred(), retryStarted = deferred();
 	let requests = 0;
 	c.handle(async (route, path) => {
+		if (path.endsWith("/attempt")) {
+			await route.fulfill({ json: { data: { attemptId: "a".repeat(64), expiresAt: new Date(Date.now() + 600000).toISOString(), readyAfterMs: 0 } } });
+			return true;
+		}
 		if (route.request().method() !== "PATCH" || !path.includes("/dialogue-progress/")) return false;
 		const number = ++requests;
-		if (number === 1) { started.resolve(); await first.promise; await route.fulfill({ status: 500, json: { message: "Test save failure" } }); }
-		else { await retry.promise; await route.fulfill({ json: { data: { progress: { lessonId: fixture.course, dialogueId: fixture.dialogue, completedTaskIds: [String(task.id)] }, xp: { awarded: 10 } } } }); }
+		if (number === 1) { started.resolve(); await first.promise; await route.fulfill({ status: 403, json: { message: "Test permanent save failure" } }); }
+		else { retryStarted.resolve(); await retry.promise; await route.fulfill({ json: { data: { progress: { lessonId: fixture.course, dialogueId: fixture.dialogue, completedTaskIds: [String(task.id)] }, xp: { awarded: 10 } } } }); }
 		return true;
 	});
 	await c.goto(`/dialogue/${fixture.course}/${fixture.dialogue}/${task.id}`);
@@ -74,20 +78,25 @@ async function progressCase(browser, width, locale, theme, fixture, type) {
 	}
 	await p.getByRole("button", { name: t.check, exact: true }).click();
 	await started.promise;
-	await p.getByRole("status").filter({ hasText: t.progressSaving }).waitFor();
+	assert.equal(await p.locator("div.mx-auto.mt-4.w-full.max-w-6xl").count(), 0, "Saving reserves no banner space");
 	const continuation = fixture.data.tasks.at(-1).id === task.id ? t.completeDialogue : t.continueArrow;
-	assert.equal(await p.getByRole("button", { name: t.progressSaving, exact: true }).isDisabled(), true);
+	await p.getByRole("link", { name: continuation, exact: true }).waitFor();
 	first.resolve();
 	await p.getByRole("alert").filter({ hasText: t.progressSaveFailed }).waitFor();
-	const retryButton = p.getByRole("button", { name: `${t.progressNotSaved} ${t.retryProgressSave}`, exact: true });
+	await p.getByRole("link", { name: continuation, exact: true }).waitFor();
+	const retryButton = p.getByRole("alert").getByRole("button", { name: t.retryProgressSave, exact: true });
 	await retryButton.evaluate(button => { button.click(); button.click(); button.click(); });
-	await p.getByRole("status").filter({ hasText: t.progressSaving }).waitFor();
+	await p.getByRole("alert").filter({ hasText: t.progressSaveFailed }).waitFor({ state: "hidden" });
+	assert.equal(await p.getByText(t.progressSaving, { exact: true }).count(), 0);
+	await retryStarted.promise;
 	assert.equal(requests, 2);
-	retry.resolve();
 	await p.getByRole("link", { name: continuation, exact: true }).waitFor();
 	await p.getByRole("link", { name: continuation, exact: true }).click();
 	const index = fixture.data.tasks.indexOf(task), next = fixture.data.tasks[index + 1];
 	await p.waitForURL(url => url.pathname === `${c.prefix}/dialogue/${fixture.course}/${fixture.dialogue}/${next ? next.id : "useful-words"}`);
+	retry.resolve();
+	await p.waitForFunction(() => Object.keys(localStorage).filter(key => key.startsWith("studyjony-progress-v1:")).every(key => JSON.parse(localStorage.getItem(key)).status === "saved"));
+	assert.equal(await p.locator("div.mx-auto.mt-4.w-full.max-w-6xl").count(), 0);
 	assert.equal(requests, 2);
 	await c.finish();
 }
@@ -208,9 +217,11 @@ async function dictionaryCase(browser, width, locale, theme) {
 	try {
 		for (const width of process.env.STUDYJONY_TEST_WIDTHS?.split(",").map(Number) || [320, 375, 430, 768, 1280]) for (const locale of ["vi", "en"]) for (const theme of ["light", "dark"]) {
 			for (const fixture of fixtures) for (const type of ["fillBlank", "multipleChoice", "dialogueCloze"]) { await progressCase(browser, width, locale, theme, fixture, type); checks += 1; }
-			for (const mutation of ["name", "avatar"]) for (const loginB of [false, true]) { await profileCase(browser, width, locale, theme, mutation, loginB); checks += 1; }
-			await dictionaryCase(browser, width, locale, theme); checks += 1;
-			console.log(`PASS ${width}px ${locale} ${theme}: Dialogue/Story retry+navigation, profile logout/account switch, dictionary races`);
+			if (process.env.STUDYJONY_TEST_GROUP !== "progress") {
+				for (const mutation of ["name", "avatar"]) for (const loginB of [false, true]) { await profileCase(browser, width, locale, theme, mutation, loginB); checks += 1; }
+				await dictionaryCase(browser, width, locale, theme); checks += 1;
+			}
+			console.log(`PASS ${width}px ${locale} ${theme}: Dialogue/Story retry+navigation${process.env.STUDYJONY_TEST_GROUP === "progress" ? "" : ", profile logout/account switch, dictionary races"}`);
 		}
 		console.log(`PASS ${checks} browser cases`);
 	} finally { await browser.close(); }

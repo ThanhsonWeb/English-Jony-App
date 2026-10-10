@@ -61,7 +61,7 @@ test("HTTP/network/confirmation failures do not report saved progress", async t 
 for (const locale of ["vi", "en"]) {
 	test(`${locale}: progress and dictionary persistence states have translated UI messages`, () => {
 		const messages = JSON.parse(readFileSync(new URL(`../../../messages/${locale}.json`, import.meta.url)));
-		for (const key of ["progressSaving", "progressNotSaved", "progressSaveFailed", "retryProgressSave", "leaveUnsavedProgress"]) {
+		for (const key of ["progressSaving", "progressNotSaved", "progressSaveFailed", "retryProgressSave", "leaveUnsavedProgress", "progressStorageUnavailable", "progressRecoveryFailed"]) {
 			assert.ok(messages.DialogueFeature[key]?.trim(), key);
 		}
 		for (const key of ["lookupLoading", "lookupError"]) assert.ok(messages.WordlistDetail.form[key]?.trim(), key);

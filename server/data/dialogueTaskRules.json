@@ -2920,6 +2920,532 @@
 	},
 	{
 		"ids": [
+			"grateful",
+			"helping-in-return",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"smells"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"12"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"all"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"schoolwork"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tomorrow"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"17"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"happy"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"20"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"shared"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"23"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"kind"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"25"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"help",
+			"do",
+			"vegetables",
+			"helped",
+			"Thank you",
+			"smells",
+			"all",
+			"schoolwork",
+			"tomorrow",
+			"happy",
+			"shared",
+			"kind"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"do"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"wash"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"vegetables"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"helped"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"8"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"helping-in-return",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ready"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"10"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"kind"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"thank you"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"helping"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"You're welcome"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"happy"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"thank you"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"helps"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"each other"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"20"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"21"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"ready",
+			"Thank you",
+			"You're welcome",
+			"school",
+			"shared",
+			"kind",
+			"helping",
+			"happy",
+			"thank you",
+			"each other"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sharing"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"4"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"You're welcome"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"6"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"school"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"shared"
+		]
+	},
+	{
+		"ids": [
+			"grateful",
+			"saying-thank-you",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"lunch"
+		]
+	},
+	{
+		"ids": [
 			"grocery-store",
 			"checking-out",
 			"1"

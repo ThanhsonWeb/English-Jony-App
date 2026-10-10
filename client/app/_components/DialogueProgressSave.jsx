@@ -1,56 +1,107 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useSyncExternalStore } from "react";
+import { createContext, useContext, useEffect, useMemo, useRef, useSyncExternalStore } from "react";
 import { Link, useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useAuth } from "@/app/_contexts/AuthContext";
-import { createDialogueProgressSaveController, createDialogueAttemptClient } from "@/app/_lib/dialogueProgressSave.mjs";
+import { createDialogueProgressQueue, emptyProgressQueue, progressQueuePrefix } from "@/app/_lib/dialogueProgressQueue.mjs";
 
 const ProgressContext = createContext(null);
+const BackgroundContext = createContext(null);
+const noSubscribe = () => () => {};
+const emptySnapshot = () => emptyProgressQueue;
 export const DialogueProgressProvider = ProgressContext.Provider;
 export const useDialogueProgress = () => useContext(ProgressContext);
 
-export function useDialogueProgressSave(path) {
-	const router = useRouter();
+// Lives above exercise routes so navigation does not cancel completed work.
+export function DialogueBackgroundProgressProvider({ children }) {
 	const { loading, captureSession, isCurrentSession } = useAuth();
 	const { generation, userId } = captureSession();
-	const controller = useMemo(() => {
-		const attempt = createDialogueAttemptClient(path);
-		const save = createDialogueProgressSaveController(
-			(signal, input) => attempt.save(signal, input),
-			{
-				isCurrent: () => isCurrentSession({ generation, userId }),
-				onSaved(progress) {
-					window.dispatchEvent(new CustomEvent("dialogue-progress-updated", { detail: progress }));
-					router.refresh();
-				},
-			},
-		);
-		return { ...save, prepare: attempt.prepare, cancel() { save.cancel(); attempt.cancel(); } };
-	}, [path, generation, userId, isCurrentSession, router]);
-	const snapshot = useSyncExternalStore(controller.subscribe, controller.getSnapshot, controller.getSnapshot);
+	const queue = useMemo(() => userId ? createDialogueProgressQueue({
+		userId,
+		storage: () => window.localStorage,
+		locks: () => navigator.locks,
+		isCurrent: () => isCurrentSession({ generation, userId }),
+		onSaved: progress => window.dispatchEvent(new CustomEvent("dialogue-progress-updated", { detail: progress })),
+	}) : null, [generation, userId, isCurrentSession]);
+	const snapshot = useSyncExternalStore(queue?.subscribe || noSubscribe, queue?.getSnapshot || emptySnapshot, emptySnapshot);
 	useEffect(() => {
-		if (!loading && userId) void controller.prepare().catch(() => {});
-		return () => controller.cancel();
-	}, [controller, loading, userId]);
+		if (loading || !queue) return;
+		queue.start();
+		const retry = () => queue.retry();
+		const sync = event => { if (event.key === null || event.key?.startsWith(progressQueuePrefix(userId))) queue.sync(); };
+		const visible = () => { if (document.visibilityState === "visible") queue.retry(); };
+		window.addEventListener("online", retry);
+		window.addEventListener("pageshow", retry);
+		window.addEventListener("storage", sync);
+		document.addEventListener("visibilitychange", visible);
+		return () => {
+			window.removeEventListener("online", retry);
+			window.removeEventListener("pageshow", retry);
+			window.removeEventListener("storage", sync);
+			document.removeEventListener("visibilitychange", visible);
+			queue.stop();
+		};
+	}, [queue, loading, userId]);
+	useEffect(() => {
+		if (!snapshot.pendingCount) return;
+		const warn = event => { event.preventDefault(); event.returnValue = ""; };
+		window.addEventListener("beforeunload", warn);
+		return () => window.removeEventListener("beforeunload", warn);
+	}, [snapshot.pendingCount]);
+	return <BackgroundContext.Provider value={{ queue, snapshot, loading, userId }}>{children}</BackgroundContext.Provider>;
+}
+
+export function useDialogueProgressSave(path) {
+	const { queue, snapshot, loading, userId } = useContext(BackgroundContext);
+	// Retain a checked answer if authentication is still being restored.
+	const submissionRef = useRef({ path });
+	useEffect(() => {
+		if (submissionRef.current.path !== path) submissionRef.current = { path };
+		const submission = submissionRef.current;
+		if (loading || !queue) return;
+		queue.beginTask(path);
+		void queue.prepare(path).catch(() => {});
+		if (submission.input && !submission.queue && (!submission.owner || submission.owner === userId)) {
+			submission.queue = queue; submission.owner = userId;
+			queue.enqueue(path, submission.input);
+		}
+	}, [queue, loading, path, userId]);
 	return {
-		...snapshot,
+		status: queue?.getTask(path)?.status || "idle",
 		loading,
-		getStatus: () => controller.getSnapshot().status,
-		save: input => loading ? Promise.resolve(false) : userId ? controller.save(input) : Promise.resolve(true),
+		canNavigate: !loading && snapshot.canLeave,
+		canLeave: snapshot.canLeave,
+		pendingCount: snapshot.pendingCount,
+		async save(input) {
+			if (submissionRef.current.path !== path) submissionRef.current = { path };
+			const submission = submissionRef.current;
+			if (input !== undefined && !submission.input) { submission.input = input; submission.owner = userId; }
+			if (loading) return false;
+			if (!userId) return true;
+			if (submission.owner && submission.owner !== userId) return false;
+			if (!submission.queue && submission.input) {
+				submission.queue = queue; submission.owner = userId;
+				if (queue.enqueue(path, submission.input)) return true;
+			} else if (input === undefined) queue.retry();
+			if (queue.getTask(path)?.status === "saved") return true;
+			if (queue.getTask(path) && queue.getSnapshot().canLeave) return true;
+			return queue.waitForTask(path);
+		},
 	};
 }
 
 export function DialogueProgressNotice() {
-	const progress = useDialogueProgress();
+	const progress = useContext(BackgroundContext);
 	const t = useTranslations("DialogueFeature");
-	if (!progress || !["saving", "error"].includes(progress.status)) return null;
-	const failed = progress.status === "error";
+	if (!progress || !progress.snapshot.requiresAttention) return null;
+	const { snapshot, queue } = progress;
+	const failed = snapshot.status === "error";
 	return (
 		<div className="mx-auto mt-4 w-full max-w-6xl px-4 sm:px-8">
-			<div role={failed ? "alert" : "status"} className={`flex flex-wrap items-center justify-between gap-3 rounded-xl border p-4 text-sm ${failed ? "border-red-500/30 bg-red-500/10 text-red-400" : "border-app bg-surface text-secondary"}`}>
-				<p>{t(failed ? "progressSaveFailed" : "progressSaving")}</p>
-				{failed && <button type="button" onClick={() => progress.save()} className="min-h-11 rounded-xl bg-primary px-4 py-2 font-semibold text-white hover:bg-primary-hover">{t("retryProgressSave")}</button>}
+			<div role={failed ? "alert" : "status"} className={`flex flex-wrap items-center justify-between gap-3 rounded-xl border px-4 py-2 text-sm ${failed ? "border-red-500/30 bg-red-500/10 text-red-400" : "border-app bg-surface text-secondary"}`}>
+				<p>{t(snapshot.storageError ? "progressRecoveryFailed" : !snapshot.canLeave ? "progressStorageUnavailable" : "progressSaveFailed")}</p>
+				{failed && <button type="button" onClick={() => queue.retry()} className="min-h-11 rounded-xl bg-primary px-4 py-2 font-semibold text-white hover:bg-primary-hover">{t("retryProgressSave")}</button>}
 			</div>
 		</div>
 	);
@@ -60,23 +111,20 @@ export function DialogueProgressLink({ ref, href, onClick, requireSave = true, c
 	const progress = useDialogueProgress();
 	const router = useRouter();
 	const t = useTranslations("DialogueFeature");
+	const navigating = useRef(false);
 	if (!progress) return <Link ref={ref} href={href} onClick={onClick} {...props}>{children}</Link>;
-	if (requireSave && progress.status === "error") {
-		return <button ref={ref} type="button" {...props} title={t("progressSaveFailed")} onClick={() => {
-			if (progress.getStatus() === "error") progress.save();
-		}}>
-			<span className="block text-xs font-normal">{t("progressNotSaved")}</span>
-			<span className="block">{t("retryProgressSave")}</span>
+	if (progress.loading || !progress.canNavigate) {
+		return <button ref={ref} type="button" disabled={progress.loading || progress.status !== "error"} aria-busy={progress.status === "saving"} {...props} onClick={() => progress.save()}>
+			{requireSave ? t(progress.status === "error" ? "retryProgressSave" : "progressNotSaved") : children}
 		</button>;
 	}
-	if (progress.loading || ["saving", "error"].includes(progress.status)) {
-		return <button ref={ref} type="button" disabled aria-busy={progress.status === "saving"} {...props}>{requireSave && progress.status === "saving" ? t("progressSaving") : children}</button>;
-	}
 	return <Link ref={ref} href={href} {...props} onClick={async event => {
-		if (["saving", "error"].includes(progress.getStatus())) { event.preventDefault(); return; }
-		if (!requireSave || (!onClick && progress.getStatus() === "saved")) return;
+		if (!requireSave || !onClick) return;
 		event.preventDefault();
-		const saved = await (onClick ? onClick() : progress.save());
-		if (saved) router.push(href);
+		if (navigating.current) return;
+		navigating.current = true;
+		const accepted = await onClick();
+		if (accepted) router.push(href);
+		else navigating.current = false;
 	}}>{children}</Link>;
 }

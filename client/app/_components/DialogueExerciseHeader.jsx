@@ -74,7 +74,7 @@ export default function DialogueExerciseHeader({
 							id="exit-dialogue-description"
 							className="mt-3 whitespace-pre-line text-sm leading-6 text-secondary"
 						>
-							{t(progress && ["saving", "error"].includes(progress.status) ? "leaveUnsavedProgress" : "leaveConfirmation")}
+							{t(progress && !progress.canLeave ? "progressStorageUnavailable" : progress?.pendingCount ? "leaveUnsavedProgress" : "leaveConfirmation")}
 						</p>
 
 						<div className="mt-6 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
@@ -89,7 +89,8 @@ export default function DialogueExerciseHeader({
 							<button
 								type="button"
 								onClick={() => router.push(`/dialogue/${lessonId}`)}
-								className="min-h-11 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-hover"
+								disabled={progress && !progress.canLeave}
+								className="min-h-11 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-hover disabled:opacity-50"
 							>
 								{t("exit")}
 							</button>

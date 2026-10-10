@@ -1,0 +1,22 @@
+## Saying Thank You
+- Dialogue slug: `saying-thank-you`
+- Output PNG: `/stories/grateful/thumbnails/saying-thank-you.png`
+- Characters: Sam, Lily, Mom
+- Scene/context: Lily thanks Sam for sharing his lunch. When she gets home, she also thanks Mom for helping her that morning.
+- Important visual details from the real dialogue:
+  - Lily: “Mom, thank you for breakfast and for helping me find my bag.”
+- Recommended background: Show the setting in “Lily thanks Sam for sharing his lunch. When she gets home, she also thanks Mom for helping her that morning.”, matching the existing scene reference `/stories/grateful/saying-thank-you/bg.png`.
+- Recommended time of day: Morning
+- Character references: Sam — public/stories/grateful/saying-thank-you/shared/sam.png; Lily — public/stories/grateful/saying-thank-you/shared/lily.png; Mom — public/stories/grateful/saying-thank-you/shared/mom.png
+- Style: Create one separate 16:9 landscape PNG for each dialogue. Match StudyJony's polished, warm, storybook/anime-inspired illustration style: expressive consistent character faces, detailed setting, natural poses, clear story moment, and cinematic but friendly lighting. Keep the characters, rendering, color treatment, and framing consistent across this topic as one series. No title text, captions, badge, UI, watermark, or multi-panel collage.
+- Full dialogue context:
+  - Sam: School is over. Are you ready to go home?
+  - Lily: Yes. Thank you again for sharing your lunch with me.
+  - Sam: You're welcome. I am glad you had enough to eat.
+  - Mom: Welcome home! How was school?
+  - Lily: It was good. Sam shared his lunch with me.
+  - Mom: That was kind of Sam.
+  - Lily: Mom, thank you for breakfast and for helping me find my bag.
+  - Mom: You're welcome. I am happy to help.
+  - Lily: I want to say thank you when someone helps me.
+  - Mom: That is kind of you. We can help each other.

@@ -47,12 +47,24 @@ beforeEach(async () => {
 	word = await Vocab.create({ user: user.id, english: "apple", vietnamese: "quả táo" });
 	token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
 });
-async function request(path, method = "GET", body, auth = token) {
-	const response = await fetch(url + path, { method, headers: { Authorization: `Bearer ${auth}`, "Content-Type": "application/json" }, ...(body ? { body: JSON.stringify(body) } : {}) });
+async function request(path, method = "GET", body, auth = token, headers = {}) {
+	const response = await fetch(url + path, { method, headers: { Authorization: `Bearer ${auth}`, "Content-Type": "application/json", ...headers }, ...(body ? { body: JSON.stringify(body) } : {}) });
 	return { status: response.status, body: await response.json() };
 }
 const pathFor = ids => `/dialogue-progress/${ids[0]}/${ids[1]}/tasks/${ids[2]}`;
 const dialogue = ["asking-for-directions", "finding-a-cafe", "1"];
+
+test("queued progress rejects a changed cookie account before creating an attempt or saving answers", async () => {
+	const wrongAccount = { "X-StudyJony-Progress-User": other.id };
+	assert.equal((await request(pathFor(dialogue) + "/attempt", "POST", undefined, token, wrongAccount)).status, 403);
+	assert.equal(await DialogueAttempt.countDocuments(), 0);
+	const proof = await completionFor(user.id, dialogue);
+	assert.equal((await request(pathFor(dialogue), "PATCH", proof, token, wrongAccount)).status, 403);
+	assert.equal(await DialogueProgress.countDocuments(), 0);
+	assert.equal(await XPEvent.countDocuments(), 0);
+	assert.equal((await request(pathFor(dialogue), "PATCH", proof, token, { "X-StudyJony-Progress-User": user.id })).status, 200);
+	assert.equal(await XPEvent.countDocuments(), 1);
+});
 
 test("direct activity claims and visits cannot create counts, qualification or rewards", async () => {
 	for (const body of [undefined, { count: 100, hasQualifiedStudy: true, amount: 999999 }]) assert.equal((await request("/study-activities", "POST", body)).status, 405);

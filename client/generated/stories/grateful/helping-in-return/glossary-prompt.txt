@@ -1,0 +1,236 @@
+StudyJony contextual glossary authoring — story: grateful/helping-in-return
+
+Codex must author meanings offline after the English draft and Vietnamese translations are final.
+Read every line and its translation. Save a separate glossary.json beside draft.json.
+Use the existing schemaVersion 1 glossary and the prepared glossary-template.json.
+Keep lessonId=grateful, dialogueId=helping-in-return, source line IDs, exact text,
+translation, speaker, tokens, and zero-based word positions unchanged.
+
+Review EVERY word occurrence, not only usefulWords. Write short, natural Vietnamese
+meanings, usually 1–5 words. Never blindly copy a dictionary's first sense.
+Reuse shared entries only when the English word, Vietnamese sense and POS agree;
+split references for repeated words with different senses or grammatical roles.
+Each word entry has word (lowercase English token), meaning and pos (array).
+Optional pron is an IPA array: use trustworthy surface-form IPA, never a lemma's
+IPA for an inflected word or one word's IPA for a whole phrase. Omit unknown IPA.
+Keep useful grammar explanations in optional note fields, hidden in the popup.
+Use a short grammar label when there is no direct Vietnamese translation.
+Identify names as proper names. Do not translate character names as ordinary words.
+
+Preserve individual word entries even inside expressions. Add useful phrase entries
+with pos:["phrase"] and inclusive spans {start,end,text,entry}. Phrase text must
+exactly match the source span, contain at least two words, and never cross punctuation.
+Review usefulWords as candidates; do not force every adjacent word into a phrase.
+Each line has words (entry IDs in token order) and phrases (span array).
+Each character has meaning (name), role and optional note.
+
+Use the English sentence AND its existing Vietnamese translation to select senses.
+Check natural Vietnamese, phrase boundaries, individual meanings, POS and IPA.
+Flag uncertain senses in optional notes for human review; validation is not proof
+of translation accuracy. Never modify an approved glossary automatically.
+No runtime translation API, build-time translation API or dictionary-based meaning generator.
+
+After authoring, run:
+npm run glossary:check -- grateful helping-in-return
+Then the existing dialogue:build command validates again before any promotion.
+
+Final source (all lines and useful expressions):
+{
+  "metadata": {
+    "courseId": "grateful",
+    "dialogueId": "helping-in-return",
+    "contextualGlossaryVersion": 1,
+    "title": "Đáp lại bằng việc tốt",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Lòng biết ơn",
+        "en": "Gratitude"
+      },
+      "courseDescription": {
+        "vi": "Lily học cách trân trọng lòng tốt và thể hiện sự biết ơn qua lời nói và việc làm.",
+        "en": "Lily learns to appreciate kindness and show gratitude through words and actions."
+      },
+      "title": {
+        "vi": "Đáp lại bằng việc tốt",
+        "en": "Helping in Return"
+      },
+      "description": {
+        "vi": "Lily giúp mẹ chuẩn bị bữa tối và đề nghị giúp Sam học bài vào ngày hôm sau. Cô bé học cách thể hiện lòng biết ơn bằng cả lời nói lẫn hành động.",
+        "en": "Lily helps Mom prepare dinner and offers to help Sam with his schoolwork the next day. She learns to show gratitude through both words and actions."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Lily giúp mẹ chuẩn bị bữa tối và đề nghị giúp Sam học bài vào ngày hôm sau. Cô bé học cách thể hiện lòng biết ơn bằng cả lời nói lẫn hành động.",
+    "scene": "/stories/grateful/helping-in-return/bg.png",
+    "thumbnail": "/stories/grateful/thumbnails/helping-in-return.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Mom",
+      "text": "It is almost dinner time. I need some help.",
+      "translation": "Sắp đến giờ ăn tối rồi. Mẹ cần người giúp một chút.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/mom-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Lily",
+      "text": "I can help you, Mom. What can I do?",
+      "translation": "Con có thể giúp mẹ. Con làm gì được ạ?",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Mom",
+      "text": "Can you wash the vegetables for our soup?",
+      "translation": "Con rửa rau để nấu súp nhé?",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/mom-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Lily",
+      "text": "Of course. You helped me this morning. I want to help you, too.",
+      "translation": "Dạ được ạ. Sáng nay mẹ đã giúp con. Con cũng muốn giúp mẹ.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Mom",
+      "text": "Thank you, Lily. You are a big help with dinner.",
+      "translation": "Cảm ơn con, Lily. Con giúp mẹ rất nhiều khi chuẩn bị bữa tối.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/mom-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Sam",
+      "text": "The soup smells good. Can I help, too?",
+      "translation": "Món súp thơm quá. Em cũng giúp được không?",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/sam-01.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Lily",
+      "text": "Yes, Sam. We can all help Mom.",
+      "translation": "Ừ, Sam. Chúng ta đều có thể giúp mẹ.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Sam",
+      "text": "I need help with my schoolwork sometimes.",
+      "translation": "Đôi khi em cần người giúp làm bài ở trường.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/sam-02.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Lily",
+      "text": "I can help you with your schoolwork tomorrow.",
+      "translation": "Ngày mai chị có thể giúp em học bài.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Sam",
+      "text": "Really? Thank you, Lily. That makes me happy.",
+      "translation": "Thật sao? Cảm ơn chị, Lily. Em vui quá.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/sam-03.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Lily",
+      "text": "You shared your lunch with me today. Now I can help you.",
+      "translation": "Hôm nay em đã chia sẻ bữa trưa với chị. Giờ chị có thể giúp em.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-05.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Mom",
+      "text": "I am so happy. You are both very kind.",
+      "translation": "Mẹ vui quá. Hai con đều rất tốt bụng.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/mom-04.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "help",
+      "pronunciation": "/help/",
+      "meaning": "giúp đỡ",
+      "example": "I can help you."
+    },
+    {
+      "word": "wash",
+      "pronunciation": "/wɑːʃ/",
+      "meaning": "rửa",
+      "example": "I wash the vegetables."
+    },
+    {
+      "word": "vegetables",
+      "pronunciation": "/ˈvedʒtəbəlz/",
+      "meaning": "rau củ",
+      "example": "We eat vegetables every day."
+    },
+    {
+      "word": "thank you",
+      "pronunciation": "/ˈθæŋk juː/",
+      "meaning": "cảm ơn",
+      "example": "Thank you for your help."
+    },
+    {
+      "word": "a big help",
+      "pronunciation": "/ə bɪɡ help/",
+      "meaning": "giúp ích rất nhiều",
+      "example": "You are a big help, Sam."
+    },
+    {
+      "word": "schoolwork",
+      "pronunciation": "/ˈskuːlwɝːk/",
+      "meaning": "bài tập ở trường",
+      "example": "I need help with my schoolwork."
+    },
+    {
+      "word": "tomorrow",
+      "pronunciation": "/təˈmɑːroʊ/",
+      "meaning": "ngày mai",
+      "example": "I can help tomorrow."
+    },
+    {
+      "word": "shared",
+      "pronunciation": "/ʃerd/",
+      "meaning": "đã chia sẻ",
+      "example": "Sam shared his lunch with me."
+    },
+    {
+      "word": "kind",
+      "pronunciation": "/kaɪnd/",
+      "meaning": "tốt bụng",
+      "example": "You are very kind."
+    }
+  ]
+}

@@ -1,0 +1,1051 @@
+
+{
+  "metadata": {
+    "courseId": "grateful",
+    "dialogueId": "helping-in-return",
+    "contextualGlossaryVersion": 1,
+    "title": "Đáp lại bằng việc tốt",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Lòng biết ơn",
+        "en": "Gratitude"
+      },
+      "courseDescription": {
+        "vi": "Lily học cách trân trọng lòng tốt và thể hiện sự biết ơn qua lời nói và việc làm.",
+        "en": "Lily learns to appreciate kindness and show gratitude through words and actions."
+      },
+      "title": {
+        "vi": "Đáp lại bằng việc tốt",
+        "en": "Helping in Return"
+      },
+      "description": {
+        "vi": "Lily giúp mẹ chuẩn bị bữa tối và đề nghị giúp Sam học bài vào ngày hôm sau. Cô bé học cách thể hiện lòng biết ơn bằng cả lời nói lẫn hành động.",
+        "en": "Lily helps Mom prepare dinner and offers to help Sam with his schoolwork the next day. She learns to show gratitude through both words and actions."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Lily giúp mẹ chuẩn bị bữa tối và đề nghị giúp Sam học bài vào ngày hôm sau. Cô bé học cách thể hiện lòng biết ơn bằng cả lời nói lẫn hành động.",
+    "scene": "/stories/grateful/helping-in-return/bg.png",
+    "thumbnail": "/stories/grateful/thumbnails/helping-in-return.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Mom",
+      "text": "It is almost dinner time. I need some help.",
+      "translation": "Sắp đến giờ ăn tối rồi. Mẹ cần người giúp một chút.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/mom-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Lily",
+      "text": "I can help you, Mom. What can I do?",
+      "translation": "Con có thể giúp mẹ. Con làm gì được ạ?",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Mom",
+      "text": "Can you wash the vegetables for our soup?",
+      "translation": "Con rửa rau để nấu súp nhé?",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/mom-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Lily",
+      "text": "Of course. You helped me this morning. I want to help you, too.",
+      "translation": "Dạ được ạ. Sáng nay mẹ đã giúp con. Con cũng muốn giúp mẹ.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Mom",
+      "text": "Thank you, Lily. You are a big help with dinner.",
+      "translation": "Cảm ơn con, Lily. Con giúp mẹ rất nhiều khi chuẩn bị bữa tối.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/mom-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Sam",
+      "text": "The soup smells good. Can I help, too?",
+      "translation": "Món súp thơm quá. Em cũng giúp được không?",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/sam-01.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Lily",
+      "text": "Yes, Sam. We can all help Mom.",
+      "translation": "Ừ, Sam. Chúng ta đều có thể giúp mẹ.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Sam",
+      "text": "I need help with my schoolwork sometimes.",
+      "translation": "Đôi khi em cần người giúp làm bài ở trường.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/sam-02.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Lily",
+      "text": "I can help you with your schoolwork tomorrow.",
+      "translation": "Ngày mai chị có thể giúp em học bài.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Sam",
+      "text": "Really? Thank you, Lily. That makes me happy.",
+      "translation": "Thật sao? Cảm ơn chị, Lily. Em vui quá.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/sam-03.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Lily",
+      "text": "You shared your lunch with me today. Now I can help you.",
+      "translation": "Hôm nay em đã chia sẻ bữa trưa với chị. Giờ chị có thể giúp em.",
+      "practicePriority": "important",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-05.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Mom",
+      "text": "I am so happy. You are both very kind.",
+      "translation": "Mẹ vui quá. Hai con đều rất tốt bụng.",
+      "practicePriority": "simple",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/mom-04.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "help",
+      "pronunciation": "/help/",
+      "meaning": "giúp đỡ",
+      "example": "I can help you."
+    },
+    {
+      "word": "wash",
+      "pronunciation": "/wɑːʃ/",
+      "meaning": "rửa",
+      "example": "I wash the vegetables."
+    },
+    {
+      "word": "vegetables",
+      "pronunciation": "/ˈvedʒtəbəlz/",
+      "meaning": "rau củ",
+      "example": "We eat vegetables every day."
+    },
+    {
+      "word": "thank you",
+      "pronunciation": "/ˈθæŋk juː/",
+      "meaning": "cảm ơn",
+      "example": "Thank you for your help."
+    },
+    {
+      "word": "a big help",
+      "pronunciation": "/ə bɪɡ help/",
+      "meaning": "giúp ích rất nhiều",
+      "example": "You are a big help, Sam."
+    },
+    {
+      "word": "schoolwork",
+      "pronunciation": "/ˈskuːlwɝːk/",
+      "meaning": "bài tập ở trường",
+      "example": "I need help with my schoolwork."
+    },
+    {
+      "word": "tomorrow",
+      "pronunciation": "/təˈmɑːroʊ/",
+      "meaning": "ngày mai",
+      "example": "I can help tomorrow."
+    },
+    {
+      "word": "shared",
+      "pronunciation": "/ʃerd/",
+      "meaning": "đã chia sẻ",
+      "example": "Sam shared his lunch with me."
+    },
+    {
+      "word": "kind",
+      "pronunciation": "/kaɪnd/",
+      "meaning": "tốt bụng",
+      "example": "You are very kind."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu của mẹ.",
+          "en": "Complete Mom's sentence."
+        }
+      },
+      "parts": [
+        "It is almost dinner time. I need some ",
+        "."
+      ],
+      "answers": ["help"],
+      "speaker": "Mom",
+      "transcript": "It is almost dinner time. I need some help.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/mom-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời đề nghị của Lily.",
+          "en": "Complete Lily's offer."
+        }
+      },
+      "parts": [
+        "I can ",
+        " you, Mom. What can I do?"
+      ],
+      "answers": ["help"],
+      "speaker": "Lily",
+      "transcript": "I can help you, Mom. What can I do?",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu hỏi của Lily.",
+          "en": "Complete Lily's question."
+        }
+      },
+      "parts": [
+        "I can help you, Mom. What can I ",
+        "?"
+      ],
+      "answers": ["do"],
+      "speaker": "Lily",
+      "transcript": "I can help you, Mom. What can I do?",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu nhờ giúp của mẹ.",
+          "en": "Complete Mom's request."
+        }
+      },
+      "parts": [
+        "Can you ",
+        " the vegetables for our soup?"
+      ],
+      "answers": ["wash"],
+      "speaker": "Mom",
+      "transcript": "Can you wash the vegetables for our soup?",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/mom-02.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu của mẹ.",
+          "en": "Complete Mom's sentence."
+        }
+      },
+      "parts": [
+        "Can you wash the ",
+        " for our soup?"
+      ],
+      "answers": ["vegetables"],
+      "speaker": "Mom",
+      "transcript": "Can you wash the vegetables for our soup?",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/mom-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Nhắc lại việc mẹ đã làm.",
+          "en": "Recall what Mom did."
+        }
+      },
+      "parts": [
+        "Of course. You ",
+        " me this morning. I want to help you, too."
+      ],
+      "answers": ["helped"],
+      "speaker": "Lily",
+      "transcript": "Of course. You helped me this morning. I want to help you, too.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời nói của Lily.",
+          "en": "Complete Lily's response."
+        }
+      },
+      "parts": [
+        "Of course. You helped me this morning. I ",
+        " to help you, too."
+      ],
+      "answers": ["want"],
+      "speaker": "Lily",
+      "transcript": "Of course. You helped me this morning. I want to help you, too.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "multipleChoice",
+      "question": "Vì sao Lily muốn giúp mẹ chuẩn bị bữa tối?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu hội thoại",
+          "en": "Understand the Conversation"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Vì sao Lily muốn giúp mẹ chuẩn bị bữa tối?",
+          "en": "Why does Lily want to help Mom prepare dinner?"
+        },
+        "options": [
+          {
+            "vi": "Vì Lily muốn thử món súp đầu tiên.",
+            "en": "Because Lily wants to taste the soup first."
+          },
+          {
+            "vi": "Vì mẹ hứa sẽ làm món Lily thích.",
+            "en": "Because Mom promised to make Lily's favorite dish."
+          },
+          {
+            "vi": "Vì Sam bảo Lily phải nấu bữa tối.",
+            "en": "Because Sam told Lily to cook dinner."
+          },
+          {
+            "vi": "Vì mẹ đã giúp Lily vào buổi sáng.",
+            "en": "Because Mom helped Lily in the morning."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì Lily muốn thử món súp đầu tiên.",
+        "Vì mẹ hứa sẽ làm món Lily thích.",
+        "Vì Sam bảo Lily phải nấu bữa tối.",
+        "Vì mẹ đã giúp Lily vào buổi sáng."
+      ],
+      "answer": "Vì mẹ đã giúp Lily vào buổi sáng.",
+      "speaker": "Lily",
+      "transcript": "Of course. You helped me this morning. I want to help you, too.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời cảm ơn của mẹ.",
+          "en": "Complete Mom's thank-you."
+        }
+      },
+      "parts": [
+        "",
+        ", Lily. You are a big help with dinner."
+      ],
+      "answers": ["Thank you"],
+      "speaker": "Mom",
+      "transcript": "Thank you, Lily. You are a big help with dinner.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/mom-03.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời khen của mẹ.",
+          "en": "Complete Mom's compliment."
+        }
+      },
+      "parts": [
+        "Thank you, Lily. You are a big ",
+        " with dinner."
+      ],
+      "answers": ["help"],
+      "speaker": "Mom",
+      "transcript": "Thank you, Lily. You are a big help with dinner.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/mom-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành nhận xét của Sam.",
+          "en": "Complete Sam's comment."
+        }
+      },
+      "parts": [
+        "The soup ",
+        " good. Can I help, too?"
+      ],
+      "answers": ["smells"],
+      "speaker": "Sam",
+      "transcript": "The soup smells good. Can I help, too?",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/sam-01.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Khi Sam hỏi “Can I help, too?”, cậu bé muốn làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Cách dùng từ",
+          "en": "Word Usage"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Khi Sam hỏi “Can I help, too?”, cậu bé muốn làm gì?",
+          "en": "When Sam asks “Can I help, too?”, what does he want to do?"
+        },
+        "options": [
+          {
+            "vi": "Muốn mẹ nấu ăn một mình.",
+            "en": "Let Mom cook alone."
+          },
+          {
+            "vi": "Cũng muốn tham gia giúp chuẩn bị bữa tối.",
+            "en": "Join in and help prepare dinner, too."
+          },
+          {
+            "vi": "Muốn ăn súp trước giờ ăn.",
+            "en": "Eat the soup before dinner."
+          },
+          {
+            "vi": "Muốn Lily ngừng giúp mẹ.",
+            "en": "Ask Lily to stop helping Mom."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "too",
+      "options": [
+        "Muốn mẹ nấu ăn một mình.",
+        "Cũng muốn tham gia giúp chuẩn bị bữa tối.",
+        "Muốn ăn súp trước giờ ăn.",
+        "Muốn Lily ngừng giúp mẹ."
+      ],
+      "answer": "Cũng muốn tham gia giúp chuẩn bị bữa tối.",
+      "speaker": "Sam",
+      "transcript": "The soup smells good. Can I help, too?",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/sam-01.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời rủ của Lily.",
+          "en": "Complete Lily's invitation."
+        }
+      },
+      "parts": [
+        "Yes, Sam. We can ",
+        " help Mom."
+      ],
+      "answers": ["all"],
+      "speaker": "Lily",
+      "transcript": "Yes, Sam. We can all help Mom.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu của Sam.",
+          "en": "Complete Sam's sentence."
+        }
+      },
+      "parts": [
+        "I need help with my ",
+        " sometimes."
+      ],
+      "answers": ["schoolwork"],
+      "speaker": "Sam",
+      "transcript": "I need help with my schoolwork sometimes.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/sam-02.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời đề nghị của Lily.",
+          "en": "Complete Lily's offer."
+        }
+      },
+      "parts": [
+        "I can ",
+        " you with your schoolwork tomorrow."
+      ],
+      "answers": ["help"],
+      "speaker": "Lily",
+      "transcript": "I can help you with your schoolwork tomorrow.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành kế hoạch của Lily.",
+          "en": "Complete Lily's plan."
+        }
+      },
+      "parts": [
+        "I can help you with your schoolwork ",
+        "."
+      ],
+      "answers": ["tomorrow"],
+      "speaker": "Lily",
+      "transcript": "I can help you with your schoolwork tomorrow.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Trong “I can help you”, từ “can” cho biết điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Ngữ pháp trong ngữ cảnh",
+          "en": "Grammar in Context"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Trong “I can help you”, từ “can” cho biết điều gì?",
+          "en": "In “I can help you”, what does “can” show?"
+        },
+        "options": [
+          {
+            "vi": "Lily đã giúp Sam từ hôm qua.",
+            "en": "Lily helped Sam yesterday."
+          },
+          {
+            "vi": "Lily bắt buộc phải làm bài thay Sam.",
+            "en": "Lily must do Sam's schoolwork for him."
+          },
+          {
+            "vi": "Lily có thể giúp Sam học bài.",
+            "en": "Lily is able to help Sam study."
+          },
+          {
+            "vi": "Lily không muốn giúp Sam.",
+            "en": "Lily does not want to help Sam."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "can",
+      "options": [
+        "Lily đã giúp Sam từ hôm qua.",
+        "Lily bắt buộc phải làm bài thay Sam.",
+        "Lily có thể giúp Sam học bài.",
+        "Lily không muốn giúp Sam."
+      ],
+      "answer": "Lily có thể giúp Sam học bài.",
+      "speaker": "Lily",
+      "transcript": "I can help you with your schoolwork tomorrow.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời cảm ơn của Sam.",
+          "en": "Complete Sam's thank-you."
+        }
+      },
+      "parts": [
+        "Really? ",
+        ", Lily. That makes me happy."
+      ],
+      "answers": ["Thank you"],
+      "speaker": "Sam",
+      "transcript": "Really? Thank you, Lily. That makes me happy.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/sam-03.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời nói về cảm xúc của Sam.",
+          "en": "Complete Sam's feeling."
+        }
+      },
+      "parts": [
+        "Really? Thank you, Lily. That makes me ",
+        "."
+      ],
+      "answers": ["happy"],
+      "speaker": "Sam",
+      "transcript": "Really? Thank you, Lily. That makes me happy.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/sam-03.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Vì sao Sam hỏi “Really?” khi Lily đề nghị giúp học bài?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu hội thoại",
+          "en": "Understand the Conversation"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Vì sao Sam hỏi “Really?” khi Lily đề nghị giúp học bài?",
+          "en": "Why does Sam say “Really?” when Lily offers to help him study?"
+        },
+        "options": [
+          {
+            "vi": "Vì Sam ngạc nhiên khi Lily muốn giúp mình.",
+            "en": "Because Sam is surprised that Lily wants to help him."
+          },
+          {
+            "vi": "Vì Sam muốn biết súp đã chín chưa.",
+            "en": "Because Sam wants to know whether the soup is ready."
+          },
+          {
+            "vi": "Vì Sam chưa biết mẹ cần giúp gì.",
+            "en": "Because Sam does not know what Mom needs help with."
+          },
+          {
+            "vi": "Vì Sam quên mình đã ăn trưa.",
+            "en": "Because Sam forgets that he ate lunch."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì Sam ngạc nhiên khi Lily muốn giúp mình.",
+        "Vì Sam muốn biết súp đã chín chưa.",
+        "Vì Sam chưa biết mẹ cần giúp gì.",
+        "Vì Sam quên mình đã ăn trưa."
+      ],
+      "answer": "Vì Sam ngạc nhiên khi Lily muốn giúp mình.",
+      "speaker": "Sam",
+      "transcript": "Really? Thank you, Lily. That makes me happy.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/sam-03.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Nhắc lại việc Sam đã làm.",
+          "en": "Recall what Sam did."
+        }
+      },
+      "parts": [
+        "You ",
+        " your lunch with me today. Now I can help you."
+      ],
+      "answers": ["shared"],
+      "speaker": "Lily",
+      "transcript": "You shared your lunch with me today. Now I can help you.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời nói của Lily.",
+          "en": "Complete Lily's response."
+        }
+      },
+      "parts": [
+        "You shared your lunch with me today. Now I can ",
+        " you."
+      ],
+      "answers": ["help"],
+      "speaker": "Lily",
+      "transcript": "You shared your lunch with me today. Now I can help you.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 11,
+      "type": "multipleChoice",
+      "question": "Vì sao Lily muốn giúp Sam?",
+      "localized": {
+        "title": {
+          "vi": "Hiểu hội thoại",
+          "en": "Understand the Conversation"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Vì sao Lily muốn giúp Sam?",
+          "en": "Why does Lily want to help Sam?"
+        },
+        "options": [
+          {
+            "vi": "Vì Lily muốn Sam cho thêm đồ ăn.",
+            "en": "Because Lily wants Sam to give her more food."
+          },
+          {
+            "vi": "Vì Sam đã chia sẻ bữa trưa với Lily.",
+            "en": "Because Sam shared his lunch with Lily."
+          },
+          {
+            "vi": "Vì Sam đã làm bài tập cho Lily.",
+            "en": "Because Sam did Lily's schoolwork for her."
+          },
+          {
+            "vi": "Vì mẹ không muốn giúp Sam.",
+            "en": "Because Mom does not want to help Sam."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì Lily muốn Sam cho thêm đồ ăn.",
+        "Vì Sam đã chia sẻ bữa trưa với Lily.",
+        "Vì Sam đã làm bài tập cho Lily.",
+        "Vì mẹ không muốn giúp Sam."
+      ],
+      "answer": "Vì Sam đã chia sẻ bữa trưa với Lily.",
+      "speaker": "Lily",
+      "transcript": "You shared your lunch with me today. Now I can help you.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/lily-05.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Missing Word"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời khen của mẹ.",
+          "en": "Complete Mom's compliment."
+        }
+      },
+      "parts": [
+        "I am so happy. You are both very ",
+        "."
+      ],
+      "answers": ["kind"],
+      "speaker": "Mom",
+      "transcript": "I am so happy. You are both very kind.",
+      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "audioUrl": "/stories/grateful/helping-in-return/audio/mom-04.mp3"
+    },
+    {
+      "id": 25,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập toàn bộ hội thoại",
+          "en": "Full Dialogue Review"
+        },
+        "instruction": {
+          "vi": "Điền các từ còn thiếu để hoàn thành hội thoại.",
+          "en": "Fill in the missing words to complete the dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Mom",
+          "parts": [
+            "It is almost dinner time. I need some ",
+            {"id": "1", "blank": "help"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Lily",
+          "parts": [
+            "I can help you, Mom. What can I ",
+            {"id": "2", "blank": "do"},
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Mom",
+          "parts": [
+            "Can you wash the ",
+            {"id": "3", "blank": "vegetables"},
+            " for our soup?"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Lily",
+          "parts": [
+            "Of course. You ",
+            {"id": "4", "blank": "helped"},
+            " me this morning. I want to help you, too."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Mom",
+          "parts": [
+            "",
+            {"id": "5", "blank": "Thank you"},
+            ", Lily. You are a big help with dinner."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Sam",
+          "parts": [
+            "The soup ",
+            {"id": "6", "blank": "smells"},
+            " good. Can I help, too?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Lily",
+          "parts": [
+            "Yes, Sam. We can ",
+            {"id": "7", "blank": "all"},
+            " help Mom."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Sam",
+          "parts": [
+            "I need help with my ",
+            {"id": "8", "blank": "schoolwork"},
+            " sometimes."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Lily",
+          "parts": [
+            "I can help you with your schoolwork ",
+            {"id": "9", "blank": "tomorrow"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Sam",
+          "parts": [
+            "Really? Thank you, Lily. That makes me ",
+            {"id": "10", "blank": "happy"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Lily",
+          "parts": [
+            "You ",
+            {"id": "11", "blank": "shared"},
+            " your lunch with me today. Now I can help you."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Mom",
+          "parts": [
+            "I am so happy. You are both very ",
+            {"id": "12", "blank": "kind"},
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Đề nghị giúp đỡ với “can”",
+      "explanation": "Dùng “I can” + động từ để nói mình có thể giúp hoặc làm điều gì đó.",
+      "localized": {
+        "title": {
+          "vi": "Đề nghị giúp đỡ với “can”",
+          "en": "Offering Help with “Can”"
+        },
+        "explanation": {
+          "vi": "Dùng “I can” + động từ để nói mình có thể giúp hoặc làm điều gì đó.",
+          "en": "Use “I can” + a verb to say you are able to help or do something."
+        }
+      },
+      "example": "I can help you tomorrow."
+    }
+  ]
+}

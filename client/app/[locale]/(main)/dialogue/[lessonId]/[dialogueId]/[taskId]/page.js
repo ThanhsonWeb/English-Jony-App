@@ -16,7 +16,7 @@ import DialogueClozeReviewTask from "@/app/_components/DialogueClozeReviewTask";
 import DialogueReviewTask from "@/app/_components/DialogueReviewTask";
 import DialogueExerciseHeader from "@/app/_components/DialogueExerciseHeader";
 import { useAuth } from "@/app/_contexts/AuthContext";
-import { DialogueProgressProvider, DialogueProgressNotice, useDialogueProgressSave } from "@/app/_components/DialogueProgressSave";
+import { DialogueProgressProvider, useDialogueProgressSave } from "@/app/_components/DialogueProgressSave";
 
 const GUEST_REMINDER_DISMISSED_KEY =
 	"studyjony-guest-progress-reminder-dismissed";
@@ -136,7 +136,6 @@ export default function DialogueTaskPage() {
 				lessonTitle={getLocalizedDialogueValue(lesson, "title", locale)}
 				dialogueTitle={getLocalizedDialogueValue(dialogue, "title", locale)}
 			/>
-			<DialogueProgressNotice />
 			{taskContent}
 			<GuestProgressReminder
 				isOpen={guestReminderRequested && !authLoading && !user}

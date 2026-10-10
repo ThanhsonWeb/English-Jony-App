@@ -1,6 +1,7 @@
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { DialogueBackgroundProgressProvider } from "@/app/_components/DialogueProgressSave";
 
 export default async function LocaleLayout({ children, params }) {
 	const { locale } = await params;
@@ -9,5 +10,5 @@ export default async function LocaleLayout({ children, params }) {
 		notFound();
 	}
 
-	return <NextIntlClientProvider>{children}</NextIntlClientProvider>;
+	return <NextIntlClientProvider><DialogueBackgroundProgressProvider>{children}</DialogueBackgroundProgressProvider></NextIntlClientProvider>;
 }

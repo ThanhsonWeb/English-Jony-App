@@ -64,7 +64,7 @@ function useDialogueShortcuts({
 				!event.altKey &&
 				!event.metaKey &&
 				!event.shiftKey;
-			if (isPlainEnter && handlersRef.current.onEnter) {
+			if (isPlainEnter && handlersRef.current.onEnter && !isModalOpen) {
 				event.preventDefault();
 				handlersRef.current.onEnter();
 			}

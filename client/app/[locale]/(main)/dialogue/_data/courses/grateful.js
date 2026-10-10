@@ -2,6 +2,8 @@ import gratefulConfig from "@/scripts/config/stories/grateful.mjs";
 
 import aBusyMorning from "../stories/grateful/a-busy-morning.json";
 import aSmallActOfKindness from "../stories/grateful/a-small-act-of-kindness.json";
+import sayingThankYou from "../stories/grateful/saying-thank-you.json";
+import helpingInReturn from "../stories/grateful/helping-in-return.json";
 import { gratefulMedia } from "../stories/grateful/media";
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
 
@@ -68,6 +70,8 @@ const gratefulCourse = {
 	dialogues: [
 		buildCourseDialogue(aBusyMorning),
 		buildCourseDialogue(aSmallActOfKindness),
+		buildCourseDialogue(sayingThankYou),
+		buildCourseDialogue(helpingInReturn),
 	],
 };
 

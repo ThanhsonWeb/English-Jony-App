@@ -1,0 +1,28 @@
+## Helping in Return
+- Dialogue slug: `helping-in-return`
+- Output PNG: `/stories/grateful/thumbnails/helping-in-return.png`
+- Characters: Mom, Lily, Sam
+- Scene/context: Lily helps Mom prepare dinner and offers to help Sam with his schoolwork the next day. She learns to show gratitude through both words and actions.
+- Important visual details from the real dialogue:
+  - Mom: “It is almost dinner time. I need some help.”
+  - Lily: “I can help you, Mom. What can I do?”
+  - Mom: “Can you wash the vegetables for our soup?”
+  - Lily: “Of course. You helped me this morning. I want to help you, too.”
+  - Mom: “Thank you, Lily. You are a big help with dinner.”
+- Recommended background: Show the setting in “Lily helps Mom prepare dinner and offers to help Sam with his schoolwork the next day. She learns to show gratitude through both words and actions.”, matching the existing scene reference `/stories/grateful/helping-in-return/bg.png`.
+- Recommended time of day: Morning
+- Character references: Mom — public/stories/grateful/saying-thank-you/shared/mom.png; Lily — public/stories/grateful/saying-thank-you/shared/lily.png; Sam — public/stories/grateful/saying-thank-you/shared/sam.png
+- Style: Create one separate 16:9 landscape PNG for each dialogue. Match StudyJony's polished, warm, storybook/anime-inspired illustration style: expressive consistent character faces, detailed setting, natural poses, clear story moment, and cinematic but friendly lighting. Keep the characters, rendering, color treatment, and framing consistent across this topic as one series. No title text, captions, badge, UI, watermark, or multi-panel collage.
+- Full dialogue context:
+  - Mom: It is almost dinner time. I need some help.
+  - Lily: I can help you, Mom. What can I do?
+  - Mom: Can you wash the vegetables for our soup?
+  - Lily: Of course. You helped me this morning. I want to help you, too.
+  - Mom: Thank you, Lily. You are a big help with dinner.
+  - Sam: The soup smells good. Can I help, too?
+  - Lily: Yes, Sam. We can all help Mom.
+  - Sam: I need help with my schoolwork sometimes.
+  - Lily: I can help you with your schoolwork tomorrow.
+  - Sam: Really? Thank you, Lily. That makes me happy.
+  - Lily: You shared your lunch with me today. Now I can help you.
+  - Mom: I am so happy. You are both very kind.

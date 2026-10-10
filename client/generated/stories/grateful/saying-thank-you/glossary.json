@@ -1,0 +1,993 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "grateful",
+  "dialogueId": "saying-thank-you",
+  "characters": {
+    "Sam": {
+      "meaning": "Sam",
+      "role": "em trai của Lily"
+    },
+    "Lily": {
+      "meaning": "Lily",
+      "role": "chị gái của Sam"
+    },
+    "Mom": {
+      "meaning": "Mom",
+      "role": "mẹ của Lily và Sam"
+    }
+  },
+  "entries": {
+    "word-school": {
+      "word": "school",
+      "meaning": "trường học",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "là",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-over": {
+      "word": "over",
+      "meaning": "kết thúc",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "là",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "chị",
+      "pos": [
+        "pron"
+      ],
+      "note": "Sam gọi Lily là chị."
+    },
+    "word-ready": {
+      "word": "ready",
+      "meaning": "sẵn sàng",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "dấu hiệu động từ nguyên mẫu",
+      "pos": [
+        "prep"
+      ],
+      "note": "Đứng trước động từ nguyên mẫu."
+    },
+    "word-go": {
+      "word": "go",
+      "meaning": "đi",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-home": {
+      "word": "home",
+      "meaning": "nhà",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "vâng/ừ",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "cảm ơn",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-again": {
+      "word": "again",
+      "meaning": "lần nữa",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "vì",
+      "pos": [
+        "prep"
+      ],
+      "note": "Trong thank you for, for nêu điều được cảm ơn."
+    },
+    "word-sharing": {
+      "word": "sharing",
+      "meaning": "việc chia sẻ",
+      "pos": [
+        "v-ing"
+      ]
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "của em",
+      "pos": [
+        "det"
+      ],
+      "note": "Lily gọi Sam là em."
+    },
+    "word-lunch": {
+      "word": "lunch",
+      "meaning": "bữa trưa",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-with": {
+      "word": "with",
+      "meaning": "với",
+      "pos": [
+        "prep"
+      ]
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "chị",
+      "pos": [
+        "pron"
+      ],
+      "note": "Lily xưng chị với Sam."
+    },
+    "word-you're": {
+      "word": "you're",
+      "meaning": "em là",
+      "pos": [
+        "contraction"
+      ],
+      "note": "Sam đang nói với Lily."
+    },
+    "word-welcome": {
+      "word": "welcome",
+      "meaning": "thành phần trong lời đáp",
+      "pos": [
+        "adj"
+      ],
+      "note": "Trong You are welcome, cụm này đáp lại lời cảm ơn."
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "em",
+      "pos": [
+        "pron"
+      ],
+      "note": "Sam xưng em với Lily."
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "là",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-glad": {
+      "word": "glad",
+      "meaning": "vui",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-had": {
+      "word": "had",
+      "meaning": "đã ăn",
+      "pos": [
+        "v"
+      ],
+      "note": "Trong had enough to eat, had nói về việc ăn."
+    },
+    "word-enough": {
+      "word": "enough",
+      "meaning": "đủ",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-eat": {
+      "word": "eat",
+      "meaning": "ăn",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-how": {
+      "word": "how",
+      "meaning": "thế nào",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-was": {
+      "word": "was",
+      "meaning": "đã/là",
+      "pos": [
+        "v"
+      ],
+      "note": "Dạng quá khứ của be."
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "buổi học",
+      "pos": [
+        "pron"
+      ],
+      "note": "It thay cho buổi học vừa được hỏi đến."
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "vui/tốt",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-sam": {
+      "word": "sam",
+      "meaning": "Sam",
+      "pos": [
+        "name"
+      ]
+    },
+    "word-shared": {
+      "word": "shared",
+      "meaning": "đã chia sẻ",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-his": {
+      "word": "his",
+      "meaning": "của em",
+      "pos": [
+        "det"
+      ],
+      "note": "His chỉ Sam."
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "điều đó",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-kind": {
+      "word": "kind",
+      "meaning": "tốt bụng",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "thành phần trong cụm kind of",
+      "pos": [
+        "prep"
+      ],
+      "note": "Trong kind of someone, cụm này diễn tả lời khen."
+    },
+    "word-mom": {
+      "word": "mom",
+      "meaning": "Mom",
+      "pos": [
+        "name"
+      ]
+    },
+    "word-breakfast": {
+      "word": "breakfast",
+      "meaning": "bữa sáng",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-and": {
+      "word": "and",
+      "meaning": "và",
+      "pos": [
+        "conj"
+      ]
+    },
+    "word-helping": {
+      "word": "helping",
+      "meaning": "việc giúp đỡ",
+      "pos": [
+        "v-ing"
+      ]
+    },
+    "word-find": {
+      "word": "find",
+      "meaning": "tìm",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "của con",
+      "pos": [
+        "det"
+      ],
+      "note": "Lily đang nói với mẹ."
+    },
+    "word-bag": {
+      "word": "bag",
+      "meaning": "cặp sách",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-happy": {
+      "word": "happy",
+      "meaning": "vui",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "giúp",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "muốn",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-say": {
+      "word": "say",
+      "meaning": "nói",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-when": {
+      "word": "when",
+      "meaning": "khi",
+      "pos": [
+        "conj"
+      ]
+    },
+    "word-someone": {
+      "word": "someone",
+      "meaning": "ai đó",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-helps": {
+      "word": "helps",
+      "meaning": "giúp",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "chúng ta",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "modal"
+      ]
+    },
+    "word-each": {
+      "word": "each",
+      "meaning": "mỗi",
+      "pos": [
+        "det"
+      ]
+    },
+    "word-other": {
+      "word": "other",
+      "meaning": "người khác",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-you-sister": {
+      "word": "you",
+      "meaning": "chị",
+      "pos": [
+        "pron"
+      ],
+      "note": "Sam gọi Lily là chị."
+    },
+    "word-you-em": {
+      "word": "you",
+      "meaning": "em",
+      "pos": [
+        "pron"
+      ],
+      "note": "Lily gọi Sam là em."
+    },
+    "word-you-child": {
+      "word": "you",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mom gọi Lily là con."
+    },
+    "word-you-thanks": {
+      "word": "you",
+      "meaning": "thành phần trong lời cảm ơn",
+      "pos": [
+        "pron"
+      ],
+      "note": "Trong thank you, you là một phần của cụm cảm ơn."
+    },
+    "word-me-child": {
+      "word": "me",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Lily xưng con với mẹ."
+    },
+    "word-i-mom": {
+      "word": "i",
+      "meaning": "mẹ",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mom xưng mẹ với Lily."
+    },
+    "word-i-child": {
+      "word": "i",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Lily xưng con với mẹ."
+    },
+    "word-youre-child": {
+      "word": "you're",
+      "meaning": "con là",
+      "pos": [
+        "contraction"
+      ],
+      "note": "Mom đang nói với Lily."
+    },
+    "word-welcome-home": {
+      "word": "welcome",
+      "meaning": "về rồi",
+      "pos": [
+        "adj"
+      ],
+      "note": "Trong Welcome home, đây là lời chào khi ai đó về nhà."
+    },
+    "phrase-1-0-2": {
+      "word": "School is over",
+      "meaning": "tan học xong",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-1-5-8": {
+      "word": "ready to go home",
+      "meaning": "sẵn sàng về nhà",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-2-1-3": {
+      "word": "Thank you again",
+      "meaning": "cảm ơn lần nữa",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-2-5-7": {
+      "word": "sharing your lunch",
+      "meaning": "chia sẻ bữa trưa",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-3-0-1": {
+      "word": "You're welcome",
+      "meaning": "không có gì đâu",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-3-7-9": {
+      "word": "enough to eat",
+      "meaning": "ăn đủ no",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-4-0-1": {
+      "word": "Welcome home",
+      "meaning": "con về rồi",
+      "pos": [
+        "phrase"
+      ],
+      "note": "Lời chào khi người thân về nhà."
+    },
+    "phrase-5-4-6": {
+      "word": "shared his lunch",
+      "meaning": "đã chia sẻ bữa trưa",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-6-2-4": {
+      "word": "kind of Sam",
+      "meaning": "thật tốt bụng",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-7-1-4": {
+      "word": "thank you for breakfast",
+      "meaning": "cảm ơn mẹ vì bữa sáng",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-7-7-11": {
+      "word": "helping me find my bag",
+      "meaning": "giúp con tìm cặp sách",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-8-0-1": {
+      "word": "You're welcome",
+      "meaning": "không có gì đâu",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-9-3-5": {
+      "word": "say thank you",
+      "meaning": "nói lời cảm ơn",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-9-7-9": {
+      "word": "someone helps me",
+      "meaning": "có ai đó giúp con",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-10-2-4": {
+      "word": "kind of you",
+      "meaning": "thật tốt bụng",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-10-7-9": {
+      "word": "help each other",
+      "meaning": "giúp đỡ lẫn nhau",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-10-8-9": {
+      "word": "each other",
+      "meaning": "lẫn nhau",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Sam",
+      "text": "School is over. Are you ready to go home?",
+      "translation": "Tan học rồi. Chị sẵn sàng về nhà chưa?",
+      "tokens": [
+        "School",
+        "is",
+        "over",
+        "Are",
+        "you",
+        "ready",
+        "to",
+        "go",
+        "home"
+      ],
+      "words": [
+        "word-school",
+        "word-is",
+        "word-over",
+        "word-are",
+        "word-you-sister",
+        "word-ready",
+        "word-to",
+        "word-go",
+        "word-home"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "School is over",
+          "entry": "phrase-1-0-2"
+        },
+        {
+          "start": 5,
+          "end": 8,
+          "text": "ready to go home",
+          "entry": "phrase-1-5-8"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Lily",
+      "text": "Yes. Thank you again for sharing your lunch with me.",
+      "translation": "Ừ. Cảm ơn em lần nữa vì đã chia sẻ bữa trưa với chị.",
+      "tokens": [
+        "Yes",
+        "Thank",
+        "you",
+        "again",
+        "for",
+        "sharing",
+        "your",
+        "lunch",
+        "with",
+        "me"
+      ],
+      "words": [
+        "word-yes",
+        "word-thank",
+        "word-you-em",
+        "word-again",
+        "word-for",
+        "word-sharing",
+        "word-your",
+        "word-lunch",
+        "word-with",
+        "word-me"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 3,
+          "text": "Thank you again",
+          "entry": "phrase-2-1-3"
+        },
+        {
+          "start": 5,
+          "end": 7,
+          "text": "sharing your lunch",
+          "entry": "phrase-2-5-7"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Sam",
+      "text": "You're welcome. I am glad you had enough to eat.",
+      "translation": "Không có gì đâu chị. Em vui vì chị đã ăn no.",
+      "tokens": [
+        "You're",
+        "welcome",
+        "I",
+        "am",
+        "glad",
+        "you",
+        "had",
+        "enough",
+        "to",
+        "eat"
+      ],
+      "words": [
+        "word-you're",
+        "word-welcome",
+        "word-i",
+        "word-am",
+        "word-glad",
+        "word-you-sister",
+        "word-had",
+        "word-enough",
+        "word-to",
+        "word-eat"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "You're welcome",
+          "entry": "phrase-3-0-1"
+        },
+        {
+          "start": 7,
+          "end": 9,
+          "text": "enough to eat",
+          "entry": "phrase-3-7-9"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Mom",
+      "text": "Welcome home! How was school?",
+      "translation": "Hai con về rồi! Hôm nay ở trường thế nào?",
+      "tokens": [
+        "Welcome",
+        "home",
+        "How",
+        "was",
+        "school"
+      ],
+      "words": [
+        "word-welcome-home",
+        "word-home",
+        "word-how",
+        "word-was",
+        "word-school"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Welcome home",
+          "entry": "phrase-4-0-1"
+        }
+      ]
+    },
+    "5": {
+      "speaker": "Lily",
+      "text": "It was good. Sam shared his lunch with me.",
+      "translation": "Dạ vui ạ. Sam đã chia sẻ bữa trưa với con.",
+      "tokens": [
+        "It",
+        "was",
+        "good",
+        "Sam",
+        "shared",
+        "his",
+        "lunch",
+        "with",
+        "me"
+      ],
+      "words": [
+        "word-it",
+        "word-was",
+        "word-good",
+        "word-sam",
+        "word-shared",
+        "word-his",
+        "word-lunch",
+        "word-with",
+        "word-me-child"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "shared his lunch",
+          "entry": "phrase-5-4-6"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Mom",
+      "text": "That was kind of Sam.",
+      "translation": "Sam thật tốt bụng.",
+      "tokens": [
+        "That",
+        "was",
+        "kind",
+        "of",
+        "Sam"
+      ],
+      "words": [
+        "word-that",
+        "word-was",
+        "word-kind",
+        "word-of",
+        "word-sam"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 4,
+          "text": "kind of Sam",
+          "entry": "phrase-6-2-4"
+        }
+      ]
+    },
+    "7": {
+      "speaker": "Lily",
+      "text": "Mom, thank you for breakfast and for helping me find my bag.",
+      "translation": "Mẹ ơi, con cảm ơn mẹ vì bữa sáng và vì đã giúp con tìm cặp sách.",
+      "tokens": [
+        "Mom",
+        "thank",
+        "you",
+        "for",
+        "breakfast",
+        "and",
+        "for",
+        "helping",
+        "me",
+        "find",
+        "my",
+        "bag"
+      ],
+      "words": [
+        "word-mom",
+        "word-thank",
+        "word-you-thanks",
+        "word-for",
+        "word-breakfast",
+        "word-and",
+        "word-for",
+        "word-helping",
+        "word-me-child",
+        "word-find",
+        "word-my",
+        "word-bag"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 4,
+          "text": "thank you for breakfast",
+          "entry": "phrase-7-1-4"
+        },
+        {
+          "start": 7,
+          "end": 11,
+          "text": "helping me find my bag",
+          "entry": "phrase-7-7-11"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Mom",
+      "text": "You're welcome. I am happy to help.",
+      "translation": "Không có gì đâu con. Mẹ rất vui khi được giúp con.",
+      "tokens": [
+        "You're",
+        "welcome",
+        "I",
+        "am",
+        "happy",
+        "to",
+        "help"
+      ],
+      "words": [
+        "word-youre-child",
+        "word-welcome",
+        "word-i-mom",
+        "word-am",
+        "word-happy",
+        "word-to",
+        "word-help"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "You're welcome",
+          "entry": "phrase-8-0-1"
+        }
+      ]
+    },
+    "9": {
+      "speaker": "Lily",
+      "text": "I want to say thank you when someone helps me.",
+      "translation": "Con muốn nói lời cảm ơn khi có ai đó giúp con.",
+      "tokens": [
+        "I",
+        "want",
+        "to",
+        "say",
+        "thank",
+        "you",
+        "when",
+        "someone",
+        "helps",
+        "me"
+      ],
+      "words": [
+        "word-i-child",
+        "word-want",
+        "word-to",
+        "word-say",
+        "word-thank",
+        "word-you-thanks",
+        "word-when",
+        "word-someone",
+        "word-helps",
+        "word-me-child"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 5,
+          "text": "say thank you",
+          "entry": "phrase-9-3-5"
+        },
+        {
+          "start": 7,
+          "end": 9,
+          "text": "someone helps me",
+          "entry": "phrase-9-7-9"
+        }
+      ]
+    },
+    "10": {
+      "speaker": "Mom",
+      "text": "That is kind of you. We can help each other.",
+      "translation": "Con thật tốt bụng. Chúng ta có thể giúp đỡ lẫn nhau.",
+      "tokens": [
+        "That",
+        "is",
+        "kind",
+        "of",
+        "you",
+        "We",
+        "can",
+        "help",
+        "each",
+        "other"
+      ],
+      "words": [
+        "word-that",
+        "word-is",
+        "word-kind",
+        "word-of",
+        "word-you-child",
+        "word-we",
+        "word-can",
+        "word-help",
+        "word-each",
+        "word-other"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 4,
+          "text": "kind of you",
+          "entry": "phrase-10-2-4"
+        },
+        {
+          "start": 7,
+          "end": 9,
+          "text": "help each other",
+          "entry": "phrase-10-7-9"
+        },
+        {
+          "start": 8,
+          "end": 9,
+          "text": "each other",
+          "entry": "phrase-10-8-9"
+        }
+      ]
+    }
+  }
+}

@@ -2,6 +2,8 @@
 import glossary0 from "./glossaries/restaurant/getting-a-table.json" with { type: "json" };
 import glossary1 from "./glossaries/stories/grateful/a-busy-morning.json" with { type: "json" };
 import glossary2 from "./glossaries/stories/grateful/a-small-act-of-kindness.json" with { type: "json" };
-import glossary3 from "./glossaries/stories/ten-minutes-a-day/the-old-book.json" with { type: "json" };
+import glossary3 from "./glossaries/stories/grateful/helping-in-return.json" with { type: "json" };
+import glossary4 from "./glossaries/stories/grateful/saying-thank-you.json" with { type: "json" };
+import glossary5 from "./glossaries/stories/ten-minutes-a-day/the-old-book.json" with { type: "json" };
 
-export const lessonGlossaries = [glossary0, glossary1, glossary2, glossary3];
+export const lessonGlossaries = [glossary0, glossary1, glossary2, glossary3, glossary4, glossary5];

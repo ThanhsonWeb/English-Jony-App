@@ -1,0 +1,26 @@
+## A Small Act of Kindness
+- Dialogue slug: `a-small-act-of-kindness`
+- Output PNG: `/stories/grateful/thumbnails/a-small-act-of-kindness.png`
+- Characters: Sam, Lily
+- Scene/context: At school, Lily realizes she forgot her lunch. Sam shares his food with her, and she begins to notice the small ways people help her.
+- Important visual details from the real dialogue:
+  - Lily: “Yes, I ate it this morning. I have no food now.”
+  - Lily: “Mom made breakfast for me, too. She helped me find my bag.”
+- Recommended background: Show the setting in “At school, Lily realizes she forgot her lunch. Sam shares his food with her, and she begins to notice the small ways people help her.”, matching the existing scene reference `/stories/grateful/a-small-act-of-kindness/bg.png`.
+- Recommended time of day: Morning
+- Character references: Sam — public/stories/grateful/a-small-act-of-kindness/shared/sam.png; Lily — public/stories/grateful/a-small-act-of-kindness/shared/lily.png
+- Style: Create one separate 16:9 landscape PNG for each dialogue. Match StudyJony's polished, warm, storybook/anime-inspired illustration style: expressive consistent character faces, detailed setting, natural poses, clear story moment, and cinematic but friendly lighting. Keep the characters, rendering, color treatment, and framing consistent across this topic as one series. No title text, captions, badge, UI, watermark, or multi-panel collage.
+- Full dialogue context:
+  - Sam: Lily, it's lunchtime. Why are you sad?
+  - Lily: I forgot my lunch at home. I'm so hungry!
+  - Sam: Did you eat the toast Mom gave you?
+  - Lily: Yes, I ate it this morning. I have no food now.
+  - Sam: I have two sandwiches. You can have one.
+  - Lily: Really? Is that okay?
+  - Sam: Of course. We can share my lunch.
+  - Lily: Thank you, Sam. You're very kind!
+  - Sam: You're welcome. Mom made these sandwiches.
+  - Lily: Mom made breakfast for me, too. She helped me find my bag.
+  - Lily: But I did not say thank you to her.
+  - Sam: You can tell her after school.
+  - Lily: Yes. I want to thank Mom when we get home.

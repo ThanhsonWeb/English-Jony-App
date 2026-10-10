@@ -1,0 +1,27 @@
+## A Busy Morning
+- Dialogue slug: `a-busy-morning`
+- Output PNG: `/stories/grateful/thumbnails/a-busy-morning.png`
+- Characters: Mom, Lily, Sam
+- Scene/context: Lily is late for school. Mom prepares her breakfast and helps her find her bag, but Lily leaves without saying thank you.
+- Important visual details from the real dialogue:
+  - Lily: “I can't eat now. Where is my school bag?”
+  - Mom: “It's next to the front door.”
+  - Lily: “Okay, I see my bag. Can I take some food?”
+- Recommended background: Show the setting in “Lily is late for school. Mom prepares her breakfast and helps her find her bag, but Lily leaves without saying thank you.”, matching the existing scene reference `/stories/grateful/a-busy-morning/bg.png`.
+- Recommended time of day: Morning
+- Character references: Mom — public/stories/grateful/a-busy-morning/shared/mom.png; Lily — public/stories/grateful/a-busy-morning/shared/lily.png; Sam — public/stories/grateful/a-busy-morning/shared/sam.png
+- Style: Create one separate 16:9 landscape PNG for each dialogue. Match StudyJony's polished, warm, storybook/anime-inspired illustration style: expressive consistent character faces, detailed setting, natural poses, clear story moment, and cinematic but friendly lighting. Keep the characters, rendering, color treatment, and framing consistent across this topic as one series. No title text, captions, badge, UI, watermark, or multi-panel collage.
+- Full dialogue context:
+  - Mom: Lily, it's seven thirty. Time for school!
+  - Lily: Oh no! I'm late for school!
+  - Mom: Your breakfast is ready. I made eggs for you.
+  - Lily: I can't eat now. Where is my school bag?
+  - Mom: It's next to the front door.
+  - Sam: Your shoes are there, too.
+  - Lily: Okay, I see my bag. Can I take some food?
+  - Mom: Yes, you can take some toast with you.
+  - Lily: Great! I need to go now.
+  - Mom: Have a good day, Lily!
+  - Lily: Bye, Mom! See you later, Sam!
+  - Sam: Mom, Lily did not say thank you.
+  - Mom: I know. We can talk to her later.
