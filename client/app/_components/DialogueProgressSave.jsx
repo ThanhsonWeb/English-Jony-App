@@ -5,6 +5,7 @@ import { Link, useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { createDialogueProgressQueue, emptyProgressQueue, progressQueuePrefix } from "@/app/_lib/dialogueProgressQueue.mjs";
+import { cacheStudyProgress } from "@/app/_lib/cacheStudyProgress.mjs";
 
 const ProgressContext = createContext(null);
 const BackgroundContext = createContext(null);
@@ -22,7 +23,11 @@ export function DialogueBackgroundProgressProvider({ children }) {
 		storage: () => window.localStorage,
 		locks: () => navigator.locks,
 		isCurrent: () => isCurrentSession({ generation, userId }),
-		onSaved: progress => window.dispatchEvent(new CustomEvent("dialogue-progress-updated", { detail: progress })),
+		onSaved: progress => {
+			if (!isCurrentSession({ generation, userId })) return;
+			cacheStudyProgress(userId, progress);
+			window.dispatchEvent(new CustomEvent("dialogue-progress-updated", { detail: progress }));
+		},
 	}) : null, [generation, userId, isCurrentSession]);
 	const snapshot = useSyncExternalStore(queue?.subscribe || noSubscribe, queue?.getSnapshot || emptySnapshot, emptySnapshot);
 	useEffect(() => {

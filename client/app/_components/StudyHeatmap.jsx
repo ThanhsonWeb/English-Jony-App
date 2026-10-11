@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { buildStudyHeatmapDays } from "@/app/_lib/studyHeatmap.mjs";
+import { useAuth } from "@/app/_contexts/AuthContext";
+import { useStudyActivitiesResource } from "@/app/_lib/useStudyResources";
 
 const levelClass = {
 	0: "bg-app dark:bg-slate-900",
@@ -19,7 +20,9 @@ function formatDisplayDate(dateString, locale) {
 function StudyHeatmap() {
 	const t = useTranslations("Profile");
 	const locale = useLocale();
-	const [days, setDays] = useState([]);
+	const { user, loading: authLoading } = useAuth();
+	const { data: activities = [] } = useStudyActivitiesResource(user?._id || user?.id, !authLoading);
+	const days = buildStudyHeatmapDays(activities);
 	const totalWeeks = Math.ceil(days.length / 7);
 	const monthLabelsByWeek = new Map(
 		days
@@ -37,22 +40,6 @@ function StudyHeatmap() {
 	);
 	const totalActivities = days.reduce((total, day) => total + day.count, 0);
 	const activeDays = days.filter(day => day.level > 0).length;
-
-	useEffect(() => {
-		async function fetchActivities() {
-			const res = await fetch("/api/v1/study-activities", {
-				credentials: "include",
-			});
-
-			if (!res.ok) return;
-
-			const data = await res.json();
-
-			setDays(buildStudyHeatmapDays(data.data.activities));
-		}
-
-		fetchActivities();
-	}, []);
 
 	return (
 		<div className="mt-10">

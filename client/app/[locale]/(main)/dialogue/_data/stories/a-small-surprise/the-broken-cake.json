@@ -1,0 +1,1348 @@
+{
+  "metadata": {
+    "courseId": "a-small-surprise",
+    "dialogueId": "the-broken-cake",
+    "contextualGlossaryVersion": 1,
+    "title": "Chiếc bánh bị hỏng",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Một bất ngờ nhỏ",
+        "en": "A Small Surprise"
+      },
+      "courseDescription": {
+        "vi": "Noah và mẹ chuẩn bị một bất ngờ cho sinh nhật của bố.",
+        "en": "Noah and Mom prepare a birthday surprise for Dad."
+      },
+      "title": {
+        "vi": "Chiếc bánh bị hỏng",
+        "en": "The Broken Cake"
+      },
+      "description": {
+        "vi": "While preparing the birthday surprise, Noah accidentally breaks the cake. He feels sad and worries that Dad's birthday is ruined. Mom comforts him.",
+        "en": "While preparing the birthday surprise, Noah accidentally breaks the cake. He feels sad and worries that Dad's birthday is ruined. Mom comforts him."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "While preparing the birthday surprise, Noah accidentally breaks the cake. He feels sad and worries that Dad's birthday is ruined. Mom comforts him.",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "thumbnail": "/stories/a-small-surprise/thumbnails/the-broken-cake.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Noah",
+      "text": "Mom, I dropped the cake!",
+      "translation": "Mẹ ơi, con làm rơi chiếc bánh rồi!",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Mom",
+      "text": "Oh no! Are you okay?",
+      "translation": "Ôi không! Con có sao không?",
+      "practicePriority": "simple",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Noah",
+      "text": "Yes, but the cake is broken.",
+      "translation": "Con không sao, nhưng chiếc bánh bị hỏng rồi.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Noah",
+      "text": "It was a surprise for Dad.",
+      "translation": "Đó là món quà bất ngờ dành cho bố mà.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-03.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Mom",
+      "text": "I know, Noah. It was an accident.",
+      "translation": "Mẹ biết, Noah. Con chỉ vô tình thôi.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Noah",
+      "text": "I'm sorry. I feel so sad.",
+      "translation": "Con xin lỗi. Con buồn quá.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-04.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Mom",
+      "text": "It's okay. We can make another cake.",
+      "translation": "Không sao đâu. Mẹ con mình có thể làm một chiếc bánh khác.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Noah",
+      "text": "Really? But his birthday is tomorrow!",
+      "translation": "Thật ạ? Nhưng mai là sinh nhật bố rồi!",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-05.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Mom",
+      "text": "We still have time. Dad is at work.",
+      "translation": "Mình vẫn còn thời gian. Bố đang ở chỗ làm.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Noah",
+      "text": "Do we have enough chocolate?",
+      "translation": "Nhà mình có đủ sô-cô-la không mẹ?",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-06.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Mom",
+      "text": "Yes, we have some left.",
+      "translation": "Có chứ, mình vẫn còn một ít.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-05.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Noah",
+      "text": "Can we make it together again?",
+      "translation": "Mẹ con mình có thể cùng làm lại được không ạ?",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-07.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Mom",
+      "text": "Of course! We can make a small one.",
+      "translation": "Tất nhiên rồi! Mình có thể làm một chiếc bánh nhỏ.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-06.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Noah",
+      "text": "Thank you, Mom. I feel much better now!",
+      "translation": "Con cảm ơn mẹ. Bây giờ con thấy đỡ buồn hơn nhiều rồi!",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-08.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "dropped",
+      "pronunciation": "/drɑːpt/",
+      "meaning": "đã làm rơi",
+      "example": "I dropped my book."
+    },
+    {
+      "word": "broken",
+      "pronunciation": "/ˈbroʊ.kən/",
+      "meaning": "bị hỏng; bị vỡ",
+      "example": "My cup is broken."
+    },
+    {
+      "word": "a surprise",
+      "pronunciation": "/ə sərˈpraɪz/",
+      "meaning": "một điều bất ngờ",
+      "example": "This is a surprise for Mom."
+    },
+    {
+      "word": "an accident",
+      "pronunciation": "/ən ˈæk.sɪ.dənt/",
+      "meaning": "một việc vô tình; một tai nạn",
+      "example": "It was an accident."
+    },
+    {
+      "word": "I'm sorry",
+      "pronunciation": "/aɪm ˈsɑː.ri/",
+      "meaning": "Con/mình xin lỗi",
+      "example": "I am sorry, Dad."
+    },
+    {
+      "word": "It's okay",
+      "pronunciation": "/ɪts oʊˈkeɪ/",
+      "meaning": "Không sao đâu",
+      "example": "It is okay. We can try again."
+    },
+    {
+      "word": "another cake",
+      "pronunciation": "/əˈnʌð.ɚ keɪk/",
+      "meaning": "một chiếc bánh khác",
+      "example": "We can make another cake."
+    },
+    {
+      "word": "enough",
+      "pronunciation": "/ɪˈnʌf/",
+      "meaning": "đủ",
+      "example": "Do we have enough milk?"
+    },
+    {
+      "word": "feel much better",
+      "pronunciation": "/fiːl mʌtʃ ˈbɛt.ɚ/",
+      "meaning": "cảm thấy khá hơn nhiều",
+      "example": "I feel much better today."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Mom, I ",
+        " the cake!"
+      ],
+      "answers": [
+        "dropped"
+      ],
+      "speaker": "Noah",
+      "transcript": "Mom, I dropped the cake!",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Mom, I dropped ",
+        "!"
+      ],
+      "answers": [
+        "the cake"
+      ],
+      "speaker": "Noah",
+      "transcript": "Mom, I dropped the cake!",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Oh no! Are you ",
+        "?"
+      ],
+      "answers": [
+        "okay"
+      ],
+      "speaker": "Mom",
+      "transcript": "Oh no! Are you okay?",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Yes, but the cake is ",
+        "."
+      ],
+      "answers": [
+        "broken"
+      ],
+      "speaker": "Noah",
+      "transcript": "Yes, but the cake is broken.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-02.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Yes, ",
+        " the cake is broken."
+      ],
+      "answers": [
+        "but"
+      ],
+      "speaker": "Noah",
+      "transcript": "Yes, but the cake is broken.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Vì sao Noah buồn?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Vì sao Noah buồn?",
+          "en": "Why is Noah upset?"
+        },
+        "options": [
+          {
+            "vi": "Bố đã về nhà sớm.",
+            "en": "Dad came home early."
+          },
+          {
+            "vi": "Chiếc bánh bị hỏng.",
+            "en": "The cake is broken."
+          },
+          {
+            "vi": "Mẹ không thích sô-cô-la.",
+            "en": "Mom does not like chocolate."
+          },
+          {
+            "vi": "Noah quên mua sữa.",
+            "en": "Noah forgot to buy milk."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Bố đã về nhà sớm.",
+        "Chiếc bánh bị hỏng.",
+        "Mẹ không thích sô-cô-la.",
+        "Noah quên mua sữa."
+      ],
+      "answer": "Chiếc bánh bị hỏng.",
+      "speaker": "Noah",
+      "transcript": "Yes, but the cake is broken.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "It was a ",
+        " for Dad."
+      ],
+      "answers": [
+        "surprise"
+      ],
+      "speaker": "Noah",
+      "transcript": "It was a surprise for Dad.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-03.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "It was a surprise ",
+        "."
+      ],
+      "answers": [
+        "for Dad"
+      ],
+      "speaker": "Noah",
+      "transcript": "It was a surprise for Dad.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-03.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "",
+        ", Noah. It was an accident."
+      ],
+      "answers": [
+        "I know"
+      ],
+      "speaker": "Mom",
+      "transcript": "I know, Noah. It was an accident.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "I know, Noah. It was ",
+        "."
+      ],
+      "answers": [
+        "an accident"
+      ],
+      "speaker": "Mom",
+      "transcript": "I know, Noah. It was an accident.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-02.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "",
+        ". I feel so sad."
+      ],
+      "answers": [
+        "I'm sorry"
+      ],
+      "speaker": "Noah",
+      "transcript": "I'm sorry. I feel so sad.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-04.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "I'm sorry. I feel ",
+        "."
+      ],
+      "answers": [
+        "so sad"
+      ],
+      "speaker": "Noah",
+      "transcript": "I'm sorry. I feel so sad.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-04.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "",
+        ". We can make another cake."
+      ],
+      "answers": [
+        "It's okay"
+      ],
+      "speaker": "Mom",
+      "transcript": "It's okay. We can make another cake.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "It's okay. We can make ",
+        "."
+      ],
+      "answers": [
+        "another cake"
+      ],
+      "speaker": "Mom",
+      "transcript": "It's okay. We can make another cake.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-03.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "question": "Mẹ đề nghị làm gì sau khi bánh bị hỏng?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Mẹ đề nghị làm gì sau khi bánh bị hỏng?",
+          "en": "What does Mom suggest after the cake breaks?"
+        },
+        "options": [
+          {
+            "vi": "Cất bánh đi và không làm nữa.",
+            "en": "Put the cake away and stop."
+          },
+          {
+            "vi": "Đợi bố về rồi hỏi ý kiến.",
+            "en": "Wait for Dad and ask him."
+          },
+          {
+            "vi": "Chỉ làm thiệp sinh nhật.",
+            "en": "Make only a birthday card."
+          },
+          {
+            "vi": "Làm một chiếc bánh khác.",
+            "en": "Make another cake."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Cất bánh đi và không làm nữa.",
+        "Đợi bố về rồi hỏi ý kiến.",
+        "Chỉ làm thiệp sinh nhật.",
+        "Làm một chiếc bánh khác."
+      ],
+      "answer": "Làm một chiếc bánh khác.",
+      "speaker": "Mom",
+      "transcript": "It's okay. We can make another cake.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-03.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Really? But his ",
+        " is tomorrow!"
+      ],
+      "answers": [
+        "birthday"
+      ],
+      "speaker": "Noah",
+      "transcript": "Really? But his birthday is tomorrow!",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-05.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Really? But his birthday is ",
+        "!"
+      ],
+      "answers": [
+        "tomorrow"
+      ],
+      "speaker": "Noah",
+      "transcript": "Really? But his birthday is tomorrow!",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-05.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "We still have ",
+        ". Dad is at work."
+      ],
+      "answers": [
+        "time"
+      ],
+      "speaker": "Mom",
+      "transcript": "We still have time. Dad is at work.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-04.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "We still have time. Dad is ",
+        "."
+      ],
+      "answers": [
+        "at work"
+      ],
+      "speaker": "Mom",
+      "transcript": "We still have time. Dad is at work.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-04.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Vì sao mẹ nói vẫn còn thời gian?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Vì sao mẹ nói vẫn còn thời gian?",
+          "en": "Why does Mom say they still have time?"
+        },
+        "options": [
+          {
+            "vi": "Vì bố vẫn đang ở chỗ làm.",
+            "en": "Because Dad is still at work."
+          },
+          {
+            "vi": "Vì bố đã thấy chiếc bánh.",
+            "en": "Because Dad has already seen the cake."
+          },
+          {
+            "vi": "Vì hôm qua là sinh nhật bố.",
+            "en": "Because Dad’s birthday was yesterday."
+          },
+          {
+            "vi": "Vì mẹ muốn nghỉ làm bánh.",
+            "en": "Because Mom wants to stop baking."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì bố vẫn đang ở chỗ làm.",
+        "Vì bố đã thấy chiếc bánh.",
+        "Vì hôm qua là sinh nhật bố.",
+        "Vì mẹ muốn nghỉ làm bánh."
+      ],
+      "answer": "Vì bố vẫn đang ở chỗ làm.",
+      "speaker": "Mom",
+      "transcript": "We still have time. Dad is at work.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-04.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Do we have ",
+        " chocolate?"
+      ],
+      "answers": [
+        "enough"
+      ],
+      "speaker": "Noah",
+      "transcript": "Do we have enough chocolate?",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-06.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Do we have enough ",
+        "?"
+      ],
+      "answers": [
+        "chocolate"
+      ],
+      "speaker": "Noah",
+      "transcript": "Do we have enough chocolate?",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-06.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Yes, we have ",
+        "."
+      ],
+      "answers": [
+        "some left"
+      ],
+      "speaker": "Mom",
+      "transcript": "Yes, we have some left.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-05.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Can we make it ",
+        " again?"
+      ],
+      "answers": [
+        "together"
+      ],
+      "speaker": "Noah",
+      "transcript": "Can we make it together again?",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-07.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Can we make it together ",
+        "?"
+      ],
+      "answers": [
+        "again"
+      ],
+      "speaker": "Noah",
+      "transcript": "Can we make it together again?",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-07.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 12,
+      "type": "multipleChoice",
+      "question": "Noah dùng “Can we” để làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Noah dùng “Can we” để làm gì?",
+          "en": "Why does Noah say “Can we”?"
+        },
+        "options": [
+          {
+            "vi": "Để kể việc đã xảy ra.",
+            "en": "To describe what happened before."
+          },
+          {
+            "vi": "Để nói rằng mẹ phải làm bánh.",
+            "en": "To say Mom must make the cake."
+          },
+          {
+            "vi": "Để hỏi liệu hai mẹ con có thể cùng làm bánh nữa không.",
+            "en": "To ask if they can make the cake together again."
+          },
+          {
+            "vi": "Để nói mình không muốn làm bánh nữa.",
+            "en": "To say he does not want to bake anymore."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "Can we",
+      "options": [
+        "Để kể việc đã xảy ra.",
+        "Để nói rằng mẹ phải làm bánh.",
+        "Để hỏi liệu hai mẹ con có thể cùng làm bánh nữa không.",
+        "Để nói mình không muốn làm bánh nữa."
+      ],
+      "answer": "Để hỏi liệu hai mẹ con có thể cùng làm bánh nữa không.",
+      "speaker": "Noah",
+      "transcript": "Can we make it together again?",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-07.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "",
+        "! We can make a small one."
+      ],
+      "answers": [
+        "Of course"
+      ],
+      "speaker": "Mom",
+      "transcript": "Of course! We can make a small one.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-06.mp3"
+    },
+    {
+      "id": 28,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Of course! We can make a ",
+        "."
+      ],
+      "answers": [
+        "small one"
+      ],
+      "speaker": "Mom",
+      "transcript": "Of course! We can make a small one.",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-06.mp3"
+    },
+    {
+      "id": 29,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Thank you, Mom. I ",
+        " much better now!"
+      ],
+      "answers": [
+        "feel"
+      ],
+      "speaker": "Noah",
+      "transcript": "Thank you, Mom. I feel much better now!",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-08.mp3"
+    },
+    {
+      "id": 30,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Thank you, Mom. I feel ",
+        " now!"
+      ],
+      "answers": [
+        "much better"
+      ],
+      "speaker": "Noah",
+      "transcript": "Thank you, Mom. I feel much better now!",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-08.mp3"
+    },
+    {
+      "id": 31,
+      "dialogueLineId": 14,
+      "type": "multipleChoice",
+      "question": "Khi được mẹ an ủi, Noah nên nói gì để cảm ơn?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Khi được mẹ an ủi, Noah nên nói gì để cảm ơn?",
+          "en": "What should Noah say to thank Mom for comforting him?"
+        },
+        "options": [
+          {
+            "vi": "Thank you, Mom.",
+            "en": "Thank you, Mom."
+          },
+          {
+            "vi": "I'm sorry, Mom.",
+            "en": "I'm sorry, Mom."
+          },
+          {
+            "vi": "Are you okay, Mom?",
+            "en": "Are you okay, Mom?"
+          },
+          {
+            "vi": "Please don't go, Mom.",
+            "en": "Please don't go, Mom."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "Thank you",
+      "options": [
+        "Thank you, Mom.",
+        "I'm sorry, Mom.",
+        "Are you okay, Mom?",
+        "Please don't go, Mom."
+      ],
+      "answer": "Thank you, Mom.",
+      "speaker": "Noah",
+      "transcript": "Thank you, Mom. I feel much better now!",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-08.mp3"
+    },
+    {
+      "id": 32,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập cả hội thoại",
+          "en": "Review the full dialogue"
+        },
+        "instruction": {
+          "vi": "Điền các từ còn thiếu để hoàn thành hội thoại.",
+          "en": "Fill in the missing words to complete the dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Noah",
+          "parts": [
+            "Mom, I ",
+            {
+              "id": "1",
+              "blank": "dropped"
+            },
+            " the cake!"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Mom",
+          "parts": [
+            "Oh no! Are you ",
+            {
+              "id": "2",
+              "blank": "okay"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Noah",
+          "parts": [
+            "Yes, but the cake is ",
+            {
+              "id": "3",
+              "blank": "broken"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Noah",
+          "parts": [
+            "It was a ",
+            {
+              "id": "4",
+              "blank": "surprise"
+            },
+            " for Dad."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Mom",
+          "parts": [
+            "I know, Noah. It was an ",
+            {
+              "id": "5",
+              "blank": "accident"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Noah",
+          "parts": [
+            "I'm sorry. I feel so ",
+            {
+              "id": "6",
+              "blank": "sad"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Mom",
+          "parts": [
+            "It's okay. We can make ",
+            {
+              "id": "7",
+              "blank": "another"
+            },
+            " cake."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Noah",
+          "parts": [
+            "Really? But his birthday is ",
+            {
+              "id": "8",
+              "blank": "tomorrow"
+            },
+            "!"
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Mom",
+          "parts": [
+            "We still have ",
+            {
+              "id": "9",
+              "blank": "time"
+            },
+            ". Dad is at work."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Noah",
+          "parts": [
+            "Do we have enough ",
+            {
+              "id": "10",
+              "blank": "chocolate"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Mom",
+          "parts": [
+            "Yes, we have some ",
+            {
+              "id": "11",
+              "blank": "left"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Noah",
+          "parts": [
+            "Can we make it ",
+            {
+              "id": "12",
+              "blank": "together"
+            },
+            " again?"
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Mom",
+          "parts": [
+            "Of course! We can make a ",
+            {
+              "id": "13",
+              "blank": "small"
+            },
+            " one."
+          ]
+        },
+        {
+          "dialogueLineId": 14,
+          "speaker": "Noah",
+          "parts": [
+            "Thank you, Mom. I feel much ",
+            {
+              "id": "14",
+              "blank": "better"
+            },
+            " now!"
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Dùng “Can we ...?” để hỏi cùng làm việc gì đó",
+      "explanation": "Dùng “Can we ...?” khi muốn hỏi một cách lịch sự xem mình và người khác có thể cùng làm một việc không.",
+      "localized": {
+        "title": {
+          "vi": "Dùng “Can we ...?” để hỏi cùng làm việc gì đó",
+          "en": "Using “Can we ...?” to suggest doing something together"
+        },
+        "explanation": {
+          "vi": "Dùng “Can we ...?” khi muốn hỏi một cách lịch sự xem mình và người khác có thể cùng làm một việc không.",
+          "en": "Use “Can we ...?” to ask politely whether you and another person can do something together."
+        }
+      },
+      "example": "Can we make a cake together?"
+    }
+  ]
+}

@@ -8,6 +8,7 @@ import weekendCamping from "./dialogues/weekend-camping.mjs";
 import tenMinutesADay from "./stories/ten-minutes-a-day.mjs";
 import theLostWallet from "./stories/the-lost-wallet.mjs";
 import grateful from "./stories/grateful.mjs";
+import aSmallSurprise from "./stories/a-small-surprise.mjs";
 
 export const dialogueCourseConfigs = [
 	weekendCamping,
@@ -19,6 +20,6 @@ export const dialogueCourseConfigs = [
 	walkInThePark,
 ];
 
-export const storyCourseConfigs = [tenMinutesADay, theLostWallet, grateful];
+export const storyCourseConfigs = [tenMinutesADay, theLostWallet, grateful, aSmallSurprise];
 
 export const courseConfigs = [...dialogueCourseConfigs, ...storyCourseConfigs];

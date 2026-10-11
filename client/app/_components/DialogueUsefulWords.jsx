@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState, useEffect } from "react";
+import { useMemo, useRef, useState } from "react";
 import { Link, useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import {
@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 
 import { useAuth } from "@/app/_contexts/AuthContext";
+import { cacheVocabularyChange } from "@/app/_lib/vocabulary.mjs";
+import { useVocabularyResource } from "@/app/_lib/useStudyResources";
 
 const normalizeWord = (value = "") => value.trim().toLocaleLowerCase("en");
 
@@ -24,7 +26,8 @@ export default function DialogueUsefulWords({
 }) {
 	const router = useRouter();
 	const t = useTranslations("DialogueFeature");
-	const { user, loading: authLoading } = useAuth();
+	const { user, loading: authLoading, captureSession, isCurrentSession } = useAuth();
+	const userId = user?._id || user?.id;
 	const isSubmittingRef = useRef(false);
 	const words = useMemo(() => {
 		const uniqueWords = new Map();
@@ -39,60 +42,13 @@ export default function DialogueUsefulWords({
 	const [selectedWords, setSelectedWords] = useState(
 		() => new Set(words.map((item) => normalizeWord(item.word))),
 	);
-	const [savedWords, setSavedWords] = useState(() => new Set());
-	const [libraryLoading, setLibraryLoading] = useState(true);
+	const { data: libraryWords = [], loading: libraryLoading, error: libraryError } = useVocabularyResource(userId, undefined, !authLoading);
+	const savedWords = useMemo(() => new Set(libraryWords.map(item => normalizeWord(item.english))), [libraryWords]);
 	const [isSaving, setIsSaving] = useState(false);
-	const [error, setError] = useState("");
+	const [saveError, setError] = useState("");
+	const error = saveError || (libraryError ? libraryError.message || t("notebookLoadError") : "");
 	const [savedCount, setSavedCount] = useState(null);
 	const lessonHref = `/dialogue/${lessonId}`;
-
-	useEffect(() => {
-		let cancelled = false;
-
-		async function loadLibrary() {
-			if (authLoading) return;
-
-			if (!user) {
-				setLibraryLoading(false);
-				return;
-			}
-
-			setLibraryLoading(true);
-			setError("");
-
-			try {
-				const wordsResponse = await fetch("/api/v1/vocab", {
-					credentials: "include",
-				});
-
-				if (!wordsResponse.ok) {
-					throw new Error(t("notebookLoadError"));
-				}
-
-				const wordsData = await wordsResponse.json();
-
-				if (cancelled) return;
-
-				const loadedWords = wordsData.data?.vocabularies || [];
-
-				setSavedWords(
-					new Set(loadedWords.map((item) => normalizeWord(item.english))),
-				);
-			} catch (loadError) {
-				if (!cancelled) {
-					setError(loadError.message || t("notebookLoadError"));
-				}
-			} finally {
-				if (!cancelled) setLibraryLoading(false);
-			}
-		}
-
-		loadLibrary();
-
-		return () => {
-			cancelled = true;
-		};
-	}, [authLoading, user, t]);
 
 	const selectableWords = words.filter(
 		(item) => !savedWords.has(normalizeWord(item.word)),
@@ -124,6 +80,7 @@ export default function DialogueUsefulWords({
 		}
 
 		isSubmittingRef.current = true;
+		const session = captureSession();
 		setIsSaving(true);
 		setError("");
 
@@ -149,16 +106,21 @@ export default function DialogueUsefulWords({
 					});
 
 						if (!response.ok) throw new Error(t("wordSaveError", { word: item.word }));
-					return normalizeWord(item.word);
+					const payload = await response.json();
+					return { key: normalizeWord(item.word), word: payload.data?.newVocab };
 				}),
 			);
 
-			const savedKeys = results
+			if (!isCurrentSession(session)) return;
+			const savedItems = results
 				.filter((result) => result.status === "fulfilled")
 				.map((result) => result.value);
+			const savedKeys = savedItems.map(item => item.key);
 			const failedCount = results.length - savedKeys.length;
 
-			setSavedWords((current) => new Set([...current, ...savedKeys]));
+			for (const item of savedItems) {
+				if (item.word?._id) cacheVocabularyChange(userId, { word: item.word });
+			}
 
 			if (failedCount > 0) {
 				setError(

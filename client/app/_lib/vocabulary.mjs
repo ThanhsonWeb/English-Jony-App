@@ -1,3 +1,33 @@
+import { resourceCache } from "./resourceCache.mjs";
+
+export const vocabularyKey = topicId => topicId ? `vocab:topic:${topicId}` : "vocab:all";
+
+export function loadVocabulary(userId, topicId) {
+	return resourceCache.load(userId, vocabularyKey(topicId), () => fetchVocabulary(topicId),
+		{ persist: true, staleTime: 30_000 });
+}
+
+// Apply a server-confirmed mutation to every affected cached list.
+export function cacheVocabularyChange(userId, { word, id, topicId, remove = false }, cache = resourceCache) {
+	if (!userId) return;
+	const targetId = id || word?._id;
+	if (!targetId || (!remove && !word?._id)) { cache.invalidatePrefix(userId, "vocab:"); return; }
+	const resolvedTopic = word && Object.hasOwn(word, "topic") ? word.topic?._id || word.topic : topicId;
+	const affectedKeys = new Set([vocabularyKey(), ...cache.keys(userId, "vocab:topic:"),
+		topicId && vocabularyKey(topicId), resolvedTopic && vocabularyKey(resolvedTopic)].filter(Boolean));
+	for (const key of affectedKeys) {
+		const current = cache.read(userId, key, true).data;
+		if (!Array.isArray(current)) { cache.invalidate(userId, key); continue; }
+		const exists = current.some(item => item._id === targetId);
+		const belongsHere = key === vocabularyKey() || (resolvedTopic && key === vocabularyKey(resolvedTopic));
+		if (!exists && (remove || !belongsHere)) continue;
+		const next = remove || !belongsHere ? current.filter(item => item._id !== targetId)
+			: exists ? current.map(item => item._id === targetId ? word : item)
+			: [word, ...current];
+		cache.write(userId, key, next, { persist: true });
+	}
+}
+
 function hasBeenReviewed(word) {
 	if ((word.reviewCount || 0) > 0) return true;
 	if (word.lastReviewedAt !== undefined) {

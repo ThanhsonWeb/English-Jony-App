@@ -1,0 +1,624 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "a-small-surprise",
+  "dialogueId": "a-special-day",
+  "characters": {
+    "Noah": {
+      "meaning": "Noah",
+      "role": ""
+    },
+    "Mom": {
+      "meaning": "Mom",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-mom": {
+      "word": "mom",
+      "meaning": "",
+      "pos": []
+    },
+    "word-tomorrow": {
+      "word": "tomorrow",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-dad's": {
+      "word": "dad's",
+      "meaning": "",
+      "pos": []
+    },
+    "word-birthday": {
+      "word": "birthday",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "",
+      "pos": []
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "",
+      "pos": []
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "",
+      "pos": []
+    },
+    "word-gift": {
+      "word": "gift",
+      "meaning": "",
+      "pos": []
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "",
+      "pos": []
+    },
+    "word-him": {
+      "word": "him",
+      "meaning": "",
+      "pos": []
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yet": {
+      "word": "yet",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-give": {
+      "word": "give",
+      "meaning": "",
+      "pos": []
+    },
+    "word-something": {
+      "word": "something",
+      "meaning": "",
+      "pos": []
+    },
+    "word-special": {
+      "word": "special",
+      "meaning": "",
+      "pos": []
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "",
+      "pos": []
+    },
+    "word-only": {
+      "word": "only",
+      "meaning": "",
+      "pos": []
+    },
+    "word-five": {
+      "word": "five",
+      "meaning": "",
+      "pos": []
+    },
+    "word-dollars": {
+      "word": "dollars",
+      "meaning": "",
+      "pos": []
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "",
+      "pos": []
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "",
+      "pos": []
+    },
+    "word-make": {
+      "word": "make",
+      "meaning": "",
+      "pos": []
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "",
+      "pos": []
+    },
+    "word-dad": {
+      "word": "dad",
+      "meaning": "",
+      "pos": []
+    },
+    "word-loves": {
+      "word": "loves",
+      "meaning": "",
+      "pos": []
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "",
+      "pos": []
+    },
+    "word-drawings": {
+      "word": "drawings",
+      "meaning": "",
+      "pos": []
+    },
+    "word-card": {
+      "word": "card",
+      "meaning": "",
+      "pos": []
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "",
+      "pos": []
+    },
+    "word-idea": {
+      "word": "idea",
+      "meaning": "",
+      "pos": []
+    },
+    "word-write": {
+      "word": "write",
+      "meaning": "",
+      "pos": []
+    },
+    "word-nice": {
+      "word": "nice",
+      "meaning": "",
+      "pos": []
+    },
+    "word-message": {
+      "word": "message",
+      "meaning": "",
+      "pos": []
+    },
+    "word-inside": {
+      "word": "inside",
+      "meaning": "",
+      "pos": []
+    },
+    "word-happy": {
+      "word": "happy",
+      "meaning": "",
+      "pos": []
+    },
+    "word-love": {
+      "word": "love",
+      "meaning": "",
+      "pos": []
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "",
+      "pos": []
+    },
+    "word-be": {
+      "word": "be",
+      "meaning": "",
+      "pos": []
+    },
+    "word-he": {
+      "word": "he",
+      "meaning": "",
+      "pos": []
+    },
+    "word-cards": {
+      "word": "cards",
+      "meaning": "",
+      "pos": []
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "",
+      "pos": []
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "",
+      "pos": []
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "",
+      "pos": []
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "",
+      "pos": []
+    },
+    "word-course": {
+      "word": "course",
+      "meaning": "",
+      "pos": []
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "",
+      "pos": []
+    },
+    "word-together": {
+      "word": "together",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Noah",
+      "text": "Mom, tomorrow is Dad's birthday!",
+      "translation": "Mẹ ơi, ngày mai là sinh nhật của bố!",
+      "tokens": [
+        "Mom",
+        "tomorrow",
+        "is",
+        "Dad's",
+        "birthday"
+      ],
+      "words": [
+        "word-mom",
+        "word-tomorrow",
+        "word-is",
+        "word-dad's",
+        "word-birthday"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Mom",
+      "text": "Yes, it is. Do you have a gift for him?",
+      "translation": "Đúng rồi. Con có quà cho bố chưa?",
+      "tokens": [
+        "Yes",
+        "it",
+        "is",
+        "Do",
+        "you",
+        "have",
+        "a",
+        "gift",
+        "for",
+        "him"
+      ],
+      "words": [
+        "word-yes",
+        "word-it",
+        "word-is",
+        "word-do",
+        "word-you",
+        "word-have",
+        "word-a",
+        "word-gift",
+        "word-for",
+        "word-him"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Noah",
+      "text": "Not yet. I want to give him something special.",
+      "translation": "Chưa ạ. Con muốn tặng bố một món quà thật đặc biệt.",
+      "tokens": [
+        "Not",
+        "yet",
+        "I",
+        "want",
+        "to",
+        "give",
+        "him",
+        "something",
+        "special"
+      ],
+      "words": [
+        "word-not",
+        "word-yet",
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-give",
+        "word-him",
+        "word-something",
+        "word-special"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Noah",
+      "text": "But I only have five dollars.",
+      "translation": "Nhưng con chỉ có năm đô la thôi.",
+      "tokens": [
+        "But",
+        "I",
+        "only",
+        "have",
+        "five",
+        "dollars"
+      ],
+      "words": [
+        "word-but",
+        "word-i",
+        "word-only",
+        "word-have",
+        "word-five",
+        "word-dollars"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Mom",
+      "text": "That is okay. You can make a gift.",
+      "translation": "Không sao đâu. Con có thể tự làm một món quà mà.",
+      "tokens": [
+        "That",
+        "is",
+        "okay",
+        "You",
+        "can",
+        "make",
+        "a",
+        "gift"
+      ],
+      "words": [
+        "word-that",
+        "word-is",
+        "word-okay",
+        "word-you",
+        "word-can",
+        "word-make",
+        "word-a",
+        "word-gift"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Noah",
+      "text": "What can I make?",
+      "translation": "Con có thể làm gì ạ?",
+      "tokens": [
+        "What",
+        "can",
+        "I",
+        "make"
+      ],
+      "words": [
+        "word-what",
+        "word-can",
+        "word-i",
+        "word-make"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Mom",
+      "text": "Dad loves your drawings. You can make him a card.",
+      "translation": "Bố rất thích những bức tranh con vẽ. Con có thể làm một tấm thiệp cho bố.",
+      "tokens": [
+        "Dad",
+        "loves",
+        "your",
+        "drawings",
+        "You",
+        "can",
+        "make",
+        "him",
+        "a",
+        "card"
+      ],
+      "words": [
+        "word-dad",
+        "word-loves",
+        "word-your",
+        "word-drawings",
+        "word-you",
+        "word-can",
+        "word-make",
+        "word-him",
+        "word-a",
+        "word-card"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Noah",
+      "text": "A birthday card? That is a good idea!",
+      "translation": "Thiệp sinh nhật ạ? Ý hay quá mẹ!",
+      "tokens": [
+        "A",
+        "birthday",
+        "card",
+        "That",
+        "is",
+        "a",
+        "good",
+        "idea"
+      ],
+      "words": [
+        "word-a",
+        "word-birthday",
+        "word-card",
+        "word-that",
+        "word-is",
+        "word-a",
+        "word-good",
+        "word-idea"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Mom",
+      "text": "You can write a nice message inside.",
+      "translation": "Con có thể viết một lời nhắn thật hay bên trong.",
+      "tokens": [
+        "You",
+        "can",
+        "write",
+        "a",
+        "nice",
+        "message",
+        "inside"
+      ],
+      "words": [
+        "word-you",
+        "word-can",
+        "word-write",
+        "word-a",
+        "word-nice",
+        "word-message",
+        "word-inside"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Noah",
+      "text": "I can write, 'Happy birthday, Dad! I love you!'",
+      "translation": "Con có thể viết: 'Chúc mừng sinh nhật bố! Con yêu bố!'",
+      "tokens": [
+        "I",
+        "can",
+        "write",
+        "Happy",
+        "birthday",
+        "Dad",
+        "I",
+        "love",
+        "you"
+      ],
+      "words": [
+        "word-i",
+        "word-can",
+        "word-write",
+        "word-happy",
+        "word-birthday",
+        "word-dad",
+        "word-i",
+        "word-love",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Mom",
+      "text": "Dad will be happy. He loves your cards.",
+      "translation": "Bố sẽ vui lắm. Bố rất thích những tấm thiệp của con.",
+      "tokens": [
+        "Dad",
+        "will",
+        "be",
+        "happy",
+        "He",
+        "loves",
+        "your",
+        "cards"
+      ],
+      "words": [
+        "word-dad",
+        "word-will",
+        "word-be",
+        "word-happy",
+        "word-he",
+        "word-loves",
+        "word-your",
+        "word-cards"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Noah",
+      "text": "Thank you, Mom. Can you help me make it?",
+      "translation": "Con cảm ơn mẹ. Mẹ giúp con làm thiệp được không ạ?",
+      "tokens": [
+        "Thank",
+        "you",
+        "Mom",
+        "Can",
+        "you",
+        "help",
+        "me",
+        "make",
+        "it"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-mom",
+        "word-can",
+        "word-you",
+        "word-help",
+        "word-me",
+        "word-make",
+        "word-it"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Mom",
+      "text": "Of course! We can make it together.",
+      "translation": "Tất nhiên rồi! Mẹ con mình có thể cùng nhau làm.",
+      "tokens": [
+        "Of",
+        "course",
+        "We",
+        "can",
+        "make",
+        "it",
+        "together"
+      ],
+      "words": [
+        "word-of",
+        "word-course",
+        "word-we",
+        "word-can",
+        "word-make",
+        "word-it",
+        "word-together"
+      ],
+      "phrases": []
+    }
+  }
+}

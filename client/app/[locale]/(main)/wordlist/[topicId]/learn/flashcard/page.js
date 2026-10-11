@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect, useReducer, useState } from "react";
+import { useLayoutEffect, useReducer, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import styles from "./flashcard.module.css";
-import { fetchVocabulary, selectReviewWords } from "@/app/_lib/vocabulary.mjs";
+import { loadVocabulary, selectReviewWords, vocabularyKey } from "@/app/_lib/vocabulary.mjs";
+import { resourceCache } from "@/app/_lib/resourceCache.mjs";
+import { useAuth } from "@/app/_contexts/AuthContext";
 import { isReviewCompletionReady } from "@/app/_lib/reviewSaveController.mjs";
 import { getFlashcardFaceContent } from "@/app/_lib/flashcardFace.mjs";
 import { createReviewQuestionState, reviewQuestionReducer } from "@/app/_lib/reviewQuestionState.mjs";
@@ -21,11 +23,15 @@ import {
 function Page() {
 	const t = useTranslations("WordlistReview");
 	const { topicId } = useParams();
+	const { user, loading: authLoading } = useAuth();
+	const userId = user?._id || user?.id;
 	const searchParams = useSearchParams();
 	const dueOnly = searchParams.get("reviewMode") === "due";
+	const reviewKey = `${userId}:${topicId}:${dueOnly}`;
 	const router = useRouter();
 	const [practiceMode, setPracticeMode] = useState(false);
 	const [loading, setLoading] = useState(true);
+	const [loadedUserId, setLoadedUserId] = useState(null);
 	const [error, setError] = useState("");
 	const [words, setWords] = useState([]);
 	const [questionState, dispatchQuestionState] = useReducer(
@@ -48,24 +54,35 @@ function Page() {
 	const backContent = currentWord ? getFlashcardFaceContent(currentWord, "back") : null;
 	const { submitAnswer, resetAnswers, pending, failed } = useBackgroundReviewSave();
 	// get all word of that topic
-	useEffect(() => {
+	useLayoutEffect(() => {
+		if (authLoading) return;
+		if (!userId) return;
 		const controller = new AbortController();
+		const cached = resourceCache.read(userId, vocabularyKey(topicId), true).data;
+		if (Array.isArray(cached)) {
+			queueMicrotask(() => {
+				if (controller.signal.aborted) return;
+				setWords(selectReviewWords(cached, { global: !topicId, dueOnly }));
+				setLoadedUserId(reviewKey);
+				setLoading(false);
+			});
+		}
 		async function fetchWords() {
 			try {
-				const vocabulary = await fetchVocabulary(topicId, controller.signal);
-				if (!controller.signal.aborted) {
+				const vocabulary = await loadVocabulary(userId, topicId);
+				if (!controller.signal.aborted && !Array.isArray(cached)) {
 					setWords(selectReviewWords(vocabulary, { global: !topicId, dueOnly }));
 				}
 			} catch {
-				if (!controller.signal.aborted) setError("loadError");
+				if (!controller.signal.aborted && !Array.isArray(cached)) setError("loadError");
 			} finally {
-				if (!controller.signal.aborted) setLoading(false);
+				if (!controller.signal.aborted) { setLoadedUserId(reviewKey); setLoading(false); }
 			}
 		}
 
 		fetchWords();
 		return () => controller.abort();
-	}, [topicId, dueOnly]);
+	}, [topicId, dueOnly, userId, authLoading, reviewKey]);
 
 	function handleAnswer(level) {
 		if (!currentWord) return;
@@ -77,8 +94,8 @@ function Page() {
 		else dispatchQuestionState({ type: "question-changed", index: currentIndex + 1 });
 	}
 
-	if (loading) return <Loading />;
-	if (error) return <ReviewStatus title={t("common.openError")} message={t(`flashcard.${error}`)} onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")} />;
+	if (authLoading || (userId && (loading || loadedUserId !== reviewKey))) return <Loading />;
+	if (error || !userId) return <ReviewStatus title={t("common.openError")} message={t(`flashcard.${error || "loadError"}`)} onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")} />;
 	if (sessionFinished && !isReviewCompletionReady(sessionFinished, pending)) {
 		return <ReviewPendingCompletion pending={pending} failed={failed} onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")} />;
 	}

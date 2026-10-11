@@ -1,0 +1,905 @@
+
+{
+  "metadata": {
+    "courseId": "a-small-surprise",
+    "dialogueId": "the-best-gift",
+    "contextualGlossaryVersion": 1,
+    "title": "Món quà tuyệt vời nhất",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Một bất ngờ nhỏ",
+        "en": "A Small Surprise"
+      },
+      "courseDescription": {
+        "vi": "Noah và mẹ chuẩn bị một bất ngờ cho sinh nhật của bố.",
+        "en": "Noah and Mom prepare a birthday surprise for Dad."
+      },
+      "title": {
+        "vi": "Món quà tuyệt vời nhất",
+        "en": "The Best Gift"
+      },
+      "description": {
+        "vi": "On his birthday, Dad discovers the broken cake and Noah's surprise. Instead of feeling disappointed, Dad hugs Noah and tells him that love and effort are more important than expensive gifts.",
+        "en": "On his birthday, Dad discovers the broken cake and Noah's surprise. Instead of feeling disappointed, Dad hugs Noah and tells him that love and effort are more important than expensive gifts."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "On his birthday, Dad discovers the broken cake and Noah's surprise. Instead of feeling disappointed, Dad hugs Noah and tells him that love and effort are more important than expensive gifts.",
+    "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+    "thumbnail": "/stories/a-small-surprise/thumbnails/the-best-gift.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Mom",
+      "text": "Happy birthday! We have a surprise for you.",
+      "translation": "Chúc mừng sinh nhật anh! Mẹ con em có một điều bất ngờ dành cho anh.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/mom-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Dad",
+      "text": "Thank you! Is that chocolate cake?",
+      "translation": "Cảm ơn hai mẹ con! Đó là bánh sô-cô-la à?",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Noah",
+      "text": "Yes, Dad. Mom and I made it.",
+      "translation": "Vâng ạ, bố. Mẹ và con đã cùng làm đấy.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-01.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Dad",
+      "text": "It looks wonderful!",
+      "translation": "Trông tuyệt quá!",
+      "practicePriority": "simple",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Noah",
+      "text": "But I need to tell you something.",
+      "translation": "Nhưng con có chuyện muốn nói với bố.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Dad",
+      "text": "What is it, Noah?",
+      "translation": "Chuyện gì vậy, Noah?",
+      "practicePriority": "simple",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Noah",
+      "text": "I dropped the first cake yesterday.",
+      "translation": "Hôm qua con đã làm rơi chiếc bánh đầu tiên.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Noah",
+      "text": "It broke. I felt so sad.",
+      "translation": "Chiếc bánh bị hỏng. Con đã buồn lắm.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Dad",
+      "text": "Oh, Noah. Are you okay?",
+      "translation": "Ôi, Noah. Con có sao không?",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Noah",
+      "text": "Yes, but I'm sorry. I wanted a perfect cake for you.",
+      "translation": "Dạ con không sao, nhưng con xin lỗi. Con đã muốn làm một chiếc bánh thật đẹp cho bố.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Mom",
+      "text": "It was an accident. We made this one together.",
+      "translation": "Chỉ là vô tình thôi. Mẹ con em đã cùng làm chiếc bánh này.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/mom-02.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Dad",
+      "text": "Thank you both. I know you worked hard.",
+      "translation": "Cảm ơn hai mẹ con. Bố biết hai mẹ con đã rất cố gắng.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-05.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Noah",
+      "text": "But it's smaller than the first cake.",
+      "translation": "Nhưng nó nhỏ hơn chiếc bánh đầu tiên.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-06.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Dad",
+      "text": "That is okay. I do not need a big cake.",
+      "translation": "Không sao đâu. Bố không cần một chiếc bánh lớn.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-06.mp3"
+    },
+    {
+      "id": 15,
+      "speaker": "Dad",
+      "text": "I do not need expensive gifts, either.",
+      "translation": "Bố cũng không cần những món quà đắt tiền.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-07.mp3"
+    },
+    {
+      "id": 16,
+      "speaker": "Dad",
+      "text": "Your love is the best gift for me.",
+      "translation": "Tình yêu thương của con là món quà tuyệt vời nhất đối với bố.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-08.mp3"
+    },
+    {
+      "id": 17,
+      "speaker": "Noah",
+      "text": "Really? So you are not sad?",
+      "translation": "Thật ạ? Vậy bố không buồn chứ ạ?",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-07.mp3"
+    },
+    {
+      "id": 18,
+      "speaker": "Dad",
+      "text": "No, I'm happy! Come here for a hug, Noah.",
+      "translation": "Không, bố vui lắm! Lại đây để bố ôm nào, Noah.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-09.mp3"
+    },
+    {
+      "id": 19,
+      "speaker": "Mom",
+      "text": "Noah made you a birthday card, too!",
+      "translation": "Noah còn làm thiệp sinh nhật cho anh nữa!",
+      "practicePriority": "simple",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/mom-03.mp3"
+    },
+    {
+      "id": 20,
+      "speaker": "Noah",
+      "text": "Happy birthday, Dad! I love you.",
+      "translation": "Chúc mừng sinh nhật bố! Con yêu bố.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-08.mp3"
+    },
+    {
+      "id": 21,
+      "speaker": "Dad",
+      "text": "I love you both. This is the best birthday!",
+      "translation": "Bố yêu cả hai mẹ con. Đây là sinh nhật tuyệt vời nhất!",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-10.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "Happy birthday",
+      "pronunciation": "/ˌhæp.i ˈbɝːθ.deɪ/",
+      "meaning": "Chúc mừng sinh nhật",
+      "example": "Happy birthday, Mom!"
+    },
+    {
+      "word": "a surprise",
+      "pronunciation": "/ə sərˈpraɪz/",
+      "meaning": "một điều bất ngờ",
+      "example": "I have a surprise for you."
+    },
+    {
+      "word": "dropped",
+      "pronunciation": "/drɑːpt/",
+      "meaning": "đã làm rơi",
+      "example": "I dropped my book."
+    },
+    {
+      "word": "an accident",
+      "pronunciation": "/ən ˈæk.sɪ.dənt/",
+      "meaning": "một sự cố ngoài ý muốn",
+      "example": "It was an accident."
+    },
+    {
+      "word": "worked hard",
+      "pronunciation": "/wɝːkt hɑːrd/",
+      "meaning": "đã rất cố gắng",
+      "example": "You worked hard today."
+    },
+    {
+      "word": "expensive gifts",
+      "pronunciation": "/ɪkˈspen.sɪv ɡɪfts/",
+      "meaning": "những món quà đắt tiền",
+      "example": "I do not need expensive gifts."
+    },
+    {
+      "word": "the best gift",
+      "pronunciation": "/ðə best ɡɪft/",
+      "meaning": "món quà tuyệt vời nhất",
+      "example": "Your love is the best gift."
+    },
+    {
+      "word": "a hug",
+      "pronunciation": "/ə hʌɡ/",
+      "meaning": "một cái ôm",
+      "example": "I want a hug."
+    },
+    {
+      "word": "birthday card",
+      "pronunciation": "/ˈbɝːθ.deɪ kɑːrd/",
+      "meaning": "thiệp sinh nhật",
+      "example": "I made a birthday card."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1, "dialogueLineId": 1, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["", "! We have a surprise for you."],
+      "answers": ["Happy birthday"],
+      "speaker": "Mom", "transcript": "Happy birthday! We have a surprise for you.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/mom-01.mp3"
+    },
+    {
+      "id": 2, "dialogueLineId": 1, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["Happy birthday! We have a ", " for you."],
+      "answers": ["surprise"],
+      "speaker": "Mom", "transcript": "Happy birthday! We have a surprise for you.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/mom-01.mp3"
+    },
+    {
+      "id": 3, "dialogueLineId": 2, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["", "! Is that chocolate cake?"],
+      "answers": ["Thank you"],
+      "speaker": "Dad", "transcript": "Thank you! Is that chocolate cake?",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-01.mp3"
+    },
+    {
+      "id": 4, "dialogueLineId": 2, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["Thank you! Is that ", " cake?"],
+      "answers": ["chocolate"],
+      "speaker": "Dad", "transcript": "Thank you! Is that chocolate cake?",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-01.mp3"
+    },
+    {
+      "id": 5, "dialogueLineId": 3, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["Yes, Dad. ", " and I made it."],
+      "answers": ["Mom"],
+      "speaker": "Noah", "transcript": "Yes, Dad. Mom and I made it.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-01.mp3"
+    },
+    {
+      "id": 6, "dialogueLineId": 3, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["Yes, Dad. Mom and I ", " it."],
+      "answers": ["made"],
+      "speaker": "Noah", "transcript": "Yes, Dad. Mom and I made it.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-01.mp3"
+    },
+    {
+      "id": 7, "dialogueLineId": 4, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["It looks ", "!"],
+      "answers": ["wonderful"],
+      "speaker": "Dad", "transcript": "It looks wonderful!",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-02.mp3"
+    },
+    {
+      "id": 8, "dialogueLineId": 5, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["But I need to ", " you something."],
+      "answers": ["tell"],
+      "speaker": "Noah", "transcript": "But I need to tell you something.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-02.mp3"
+    },
+    {
+      "id": 9, "dialogueLineId": 5, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["But I need to tell you ", "."],
+      "answers": ["something"],
+      "speaker": "Noah", "transcript": "But I need to tell you something.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-02.mp3"
+    },
+    {
+      "id": 10, "dialogueLineId": 6, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["", " is it, Noah?"],
+      "answers": ["What"],
+      "speaker": "Dad", "transcript": "What is it, Noah?",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-03.mp3"
+    },
+    {
+      "id": 11, "dialogueLineId": 7, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["I ", " the first cake yesterday."],
+      "answers": ["dropped"],
+      "speaker": "Noah", "transcript": "I dropped the first cake yesterday.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-03.mp3"
+    },
+    {
+      "id": 12, "dialogueLineId": 7, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["I dropped the first cake ", "."],
+      "answers": ["yesterday"],
+      "speaker": "Noah", "transcript": "I dropped the first cake yesterday.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-03.mp3"
+    },
+    {
+      "id": 13, "dialogueLineId": 7, "type": "multipleChoice",
+      "question": "Vì sao Noah nói với bố về chiếc bánh đầu tiên?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {"vi": "Vì sao Noah nói với bố về chiếc bánh đầu tiên?", "en": "Why does Noah tell Dad about the first cake?"},
+        "options": [
+          {"vi": "Vì Noah muốn bố mua bánh mới.", "en": "Because Noah wants Dad to buy a new cake."},
+          {"vi": "Vì Noah không thích bánh sô-cô-la.", "en": "Because Noah does not like chocolate cake."},
+          {"vi": "Vì Noah muốn bố tự làm bánh.", "en": "Because Noah wants Dad to bake a cake."},
+          {"vi": "Vì Noah muốn thành thật về việc mình làm rơi bánh.", "en": "Because Noah wants to be honest about dropping the cake."}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": ["Vì Noah muốn bố mua bánh mới.", "Vì Noah không thích bánh sô-cô-la.", "Vì Noah muốn bố tự làm bánh.", "Vì Noah muốn thành thật về việc mình làm rơi bánh."],
+      "answer": "Vì Noah muốn thành thật về việc mình làm rơi bánh.",
+      "speaker": "Noah", "transcript": "I dropped the first cake yesterday.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-03.mp3"
+    },
+    {
+      "id": 14, "dialogueLineId": 8, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["It ", ". I felt so sad."],
+      "answers": ["broke"],
+      "speaker": "Noah", "transcript": "It broke. I felt so sad.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-04.mp3"
+    },
+    {
+      "id": 15, "dialogueLineId": 8, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["It broke. I felt so ", "."],
+      "answers": ["sad"],
+      "speaker": "Noah", "transcript": "It broke. I felt so sad.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-04.mp3"
+    },
+    {
+      "id": 16, "dialogueLineId": 9, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["Oh, Noah. ", " okay?"],
+      "answers": ["Are you"],
+      "speaker": "Dad", "transcript": "Oh, Noah. Are you okay?",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-04.mp3"
+    },
+    {
+      "id": 17, "dialogueLineId": 9, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["Oh, Noah. Are you ", "?"],
+      "answers": ["okay"],
+      "speaker": "Dad", "transcript": "Oh, Noah. Are you okay?",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-04.mp3"
+    },
+    {
+      "id": 18, "dialogueLineId": 10, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["Yes, but ", ". I wanted a perfect cake for you."],
+      "answers": ["I'm sorry"],
+      "speaker": "Noah", "transcript": "Yes, but I'm sorry. I wanted a perfect cake for you.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-05.mp3"
+    },
+    {
+      "id": 19, "dialogueLineId": 10, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["Yes, but I'm sorry. I wanted a ", " cake for you."],
+      "answers": ["perfect"],
+      "speaker": "Noah", "transcript": "Yes, but I'm sorry. I wanted a perfect cake for you.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-05.mp3"
+    },
+    {
+      "id": 20, "dialogueLineId": 11, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["It was an ", ". We made this one together."],
+      "answers": ["accident"],
+      "speaker": "Mom", "transcript": "It was an accident. We made this one together.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/mom-02.mp3"
+    },
+    {
+      "id": 21, "dialogueLineId": 11, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["It was an accident. We made this one ", "."],
+      "answers": ["together"],
+      "speaker": "Mom", "transcript": "It was an accident. We made this one together.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/mom-02.mp3"
+    },
+    {
+      "id": 22, "dialogueLineId": 11, "type": "multipleChoice",
+      "question": "Mẹ và Noah đã làm gì sau khi bánh bị hỏng?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {"vi": "Mẹ và Noah đã làm gì sau khi bánh bị hỏng?", "en": "What did Mom and Noah do after the cake broke?"},
+        "options": [
+          {"vi": "Họ cùng làm một chiếc bánh mới.", "en": "They made a new cake together."},
+          {"vi": "Họ bỏ kế hoạch sinh nhật.", "en": "They canceled the birthday plan."},
+          {"vi": "Họ nhờ bố làm bánh.", "en": "They asked Dad to bake a cake."},
+          {"vi": "Họ mua một chiếc bánh lớn.", "en": "They bought a large cake."}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": ["Họ cùng làm một chiếc bánh mới.", "Họ bỏ kế hoạch sinh nhật.", "Họ nhờ bố làm bánh.", "Họ mua một chiếc bánh lớn."],
+      "answer": "Họ cùng làm một chiếc bánh mới.",
+      "speaker": "Mom", "transcript": "It was an accident. We made this one together.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/mom-02.mp3"
+    },
+    {
+      "id": 23, "dialogueLineId": 12, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["", " both. I know you worked hard."],
+      "answers": ["Thank you"],
+      "speaker": "Dad", "transcript": "Thank you both. I know you worked hard.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-05.mp3"
+    },
+    {
+      "id": 24, "dialogueLineId": 12, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["Thank you both. I know you ", "."],
+      "answers": ["worked hard"],
+      "speaker": "Dad", "transcript": "Thank you both. I know you worked hard.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-05.mp3"
+    },
+    {
+      "id": 25, "dialogueLineId": 13, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["But it's ", " than the first cake."],
+      "answers": ["smaller"],
+      "speaker": "Noah", "transcript": "But it's smaller than the first cake.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-06.mp3"
+    },
+    {
+      "id": 26, "dialogueLineId": 13, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["But it's smaller than the ", " cake."],
+      "answers": ["first"],
+      "speaker": "Noah", "transcript": "But it's smaller than the first cake.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-06.mp3"
+    },
+    {
+      "id": 27, "dialogueLineId": 14, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["That is okay. I ", " need a big cake."],
+      "answers": ["do not"],
+      "speaker": "Dad", "transcript": "That is okay. I do not need a big cake.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-06.mp3"
+    },
+    {
+      "id": 28, "dialogueLineId": 14, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["That is okay. I do not need a ", " cake."],
+      "answers": ["big"],
+      "speaker": "Dad", "transcript": "That is okay. I do not need a big cake.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-06.mp3"
+    },
+    {
+      "id": 29, "dialogueLineId": 15, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["I do not need ", " gifts, either."],
+      "answers": ["expensive"],
+      "speaker": "Dad", "transcript": "I do not need expensive gifts, either.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-07.mp3"
+    },
+    {
+      "id": 30, "dialogueLineId": 15, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["I do not need expensive ", ", either."],
+      "answers": ["gifts"],
+      "speaker": "Dad", "transcript": "I do not need expensive gifts, either.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-07.mp3"
+    },
+    {
+      "id": 31, "dialogueLineId": 15, "type": "multipleChoice",
+      "question": "Vì sao bố dùng “do not” trước “need” trong câu này?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {"vi": "Vì sao bố dùng “do not” trước “need” trong câu này?", "en": "Why does Dad use “do not” before “need” in this sentence?"},
+        "options": [
+          {"vi": "Để đặt câu hỏi về món quà.", "en": "To ask a question about the gift."},
+          {"vi": "Để nói về một việc trong quá khứ.", "en": "To talk about something in the past."},
+          {"vi": "Để tạo câu phủ định ở hiện tại.", "en": "To make a negative sentence in the present."},
+          {"vi": "Để tạo câu khẳng định ở hiện tại.", "en": "To make a positive sentence in the present."}
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "do not",
+      "options": ["Để đặt câu hỏi về món quà.", "Để nói về một việc trong quá khứ.", "Để tạo câu phủ định ở hiện tại.", "Để tạo câu khẳng định ở hiện tại."],
+      "answer": "Để tạo câu phủ định ở hiện tại.",
+      "speaker": "Dad", "transcript": "I do not need expensive gifts, either.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-07.mp3"
+    },
+    {
+      "id": 32, "dialogueLineId": 16, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["Your ", " is the best gift for me."],
+      "answers": ["love"],
+      "speaker": "Dad", "transcript": "Your love is the best gift for me.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-08.mp3"
+    },
+    {
+      "id": 33, "dialogueLineId": 16, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["Your love is the ", " for me."],
+      "answers": ["best gift"],
+      "speaker": "Dad", "transcript": "Your love is the best gift for me.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-08.mp3"
+    },
+    {
+      "id": 34, "dialogueLineId": 17, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["", "? So you are not sad?"],
+      "answers": ["Really"],
+      "speaker": "Noah", "transcript": "Really? So you are not sad?",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-07.mp3"
+    },
+    {
+      "id": 35, "dialogueLineId": 17, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["Really? So you are not ", "?"],
+      "answers": ["sad"],
+      "speaker": "Noah", "transcript": "Really? So you are not sad?",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-07.mp3"
+    },
+    {
+      "id": 36, "dialogueLineId": 17, "type": "multipleChoice",
+      "question": "Tại sao Noah vẫn hỏi bố có buồn không?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {"vi": "Tại sao Noah vẫn hỏi bố có buồn không?", "en": "Why does Noah still ask if Dad is sad?"},
+        "options": [
+          {"vi": "Vì Noah muốn đi chơi.", "en": "Because Noah wants to go out."},
+          {"vi": "Vì Noah lo bố thất vọng về chiếc bánh.", "en": "Because Noah worries Dad is disappointed about the cake."},
+          {"vi": "Vì Noah không nhớ ngày sinh nhật.", "en": "Because Noah forgot the birthday."},
+          {"vi": "Vì Noah muốn ăn hết bánh.", "en": "Because Noah wants to eat all the cake."}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": ["Vì Noah muốn đi chơi.", "Vì Noah lo bố thất vọng về chiếc bánh.", "Vì Noah không nhớ ngày sinh nhật.", "Vì Noah muốn ăn hết bánh."],
+      "answer": "Vì Noah lo bố thất vọng về chiếc bánh.",
+      "speaker": "Noah", "transcript": "Really? So you are not sad?",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-07.mp3"
+    },
+    {
+      "id": 37, "dialogueLineId": 18, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["No, I'm ", "! Come here for a hug, Noah."],
+      "answers": ["happy"],
+      "speaker": "Dad", "transcript": "No, I'm happy! Come here for a hug, Noah.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-09.mp3"
+    },
+    {
+      "id": 38, "dialogueLineId": 18, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["No, I'm happy! Come here for a ", ", Noah."],
+      "answers": ["hug"],
+      "speaker": "Dad", "transcript": "No, I'm happy! Come here for a hug, Noah.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-09.mp3"
+    },
+    {
+      "id": 39, "dialogueLineId": 19, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["Noah made you a ", ", too!"],
+      "answers": ["birthday card"],
+      "speaker": "Mom", "transcript": "Noah made you a birthday card, too!",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/mom-03.mp3"
+    },
+    {
+      "id": 40, "dialogueLineId": 20, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["", ", Dad! I love you."],
+      "answers": ["Happy birthday"],
+      "speaker": "Noah", "transcript": "Happy birthday, Dad! I love you.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-08.mp3"
+    },
+    {
+      "id": 41, "dialogueLineId": 20, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["Happy birthday, Dad! I ", " you."],
+      "answers": ["love"],
+      "speaker": "Noah", "transcript": "Happy birthday, Dad! I love you.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-08.mp3"
+    },
+    {
+      "id": 42, "dialogueLineId": 20, "type": "multipleChoice",
+      "question": "Noah muốn thể hiện tình yêu với bố. Cách nói nào phù hợp?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {"vi": "Noah muốn thể hiện tình yêu với bố. Cách nói nào phù hợp?", "en": "How can Noah naturally tell Dad he loves him?"},
+        "options": [
+          {"vi": "I love you.", "en": "I love you."},
+          {"vi": "I need a cake.", "en": "I need a cake."},
+          {"vi": "I am at work.", "en": "I am at work."},
+          {"vi": "I dropped it.", "en": "I dropped it."}
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "I love you",
+      "options": ["I love you.", "I need a cake.", "I am at work.", "I dropped it."],
+      "answer": "I love you.",
+      "speaker": "Noah", "transcript": "Happy birthday, Dad! I love you.",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-08.mp3"
+    },
+    {
+      "id": 43, "dialogueLineId": 21, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["I love you ", ". This is the best birthday!"],
+      "answers": ["both"],
+      "speaker": "Dad", "transcript": "I love you both. This is the best birthday!",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-10.mp3"
+    },
+    {
+      "id": 44, "dialogueLineId": 21, "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and complete the sentence."}
+      },
+      "parts": ["I love you both. This is the ", " birthday!"],
+      "answers": ["best"],
+      "speaker": "Dad", "transcript": "I love you both. This is the best birthday!",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-10.mp3"
+    },
+    {
+      "id": 45, "type": "dialogueCloze",
+      "localized": {
+        "title": {"vi": "Ôn tập cả hội thoại", "en": "Review the full dialogue"},
+        "instruction": {"vi": "Điền các từ còn thiếu để hoàn thành hội thoại.", "en": "Fill in the missing words to complete the dialogue."}
+      },
+      "lines": [
+        {"dialogueLineId": 1, "speaker": "Mom", "parts": ["Happy birthday! We have a ", {"id": "1", "blank": "surprise"}, " for you."]},
+        {"dialogueLineId": 2, "speaker": "Dad", "parts": ["Thank you! Is that ", {"id": "2", "blank": "chocolate"}, " cake?"]},
+        {"dialogueLineId": 3, "speaker": "Noah", "parts": ["Yes, Dad. Mom and I ", {"id": "3", "blank": "made"}, " it."]},
+        {"dialogueLineId": 4, "speaker": "Dad", "parts": ["It looks ", {"id": "4", "blank": "wonderful"}, "!"]},
+        {"dialogueLineId": 5, "speaker": "Noah", "parts": ["But I need to tell you ", {"id": "5", "blank": "something"}, "."]},
+        {"dialogueLineId": 6, "speaker": "Dad", "parts": ["", {"id": "6", "blank": "What"}, " is it, Noah?"]},
+        {"dialogueLineId": 7, "speaker": "Noah", "parts": ["I dropped the first cake ", {"id": "7", "blank": "yesterday"}, "."]},
+        {"dialogueLineId": 8, "speaker": "Noah", "parts": ["It broke. I felt so ", {"id": "8", "blank": "sad"}, "."]},
+        {"dialogueLineId": 9, "speaker": "Dad", "parts": ["Oh, Noah. Are you ", {"id": "9", "blank": "okay"}, "?"]},
+        {"dialogueLineId": 10, "speaker": "Noah", "parts": ["Yes, but I'm sorry. I wanted a ", {"id": "10", "blank": "perfect"}, " cake for you."]},
+        {"dialogueLineId": 11, "speaker": "Mom", "parts": ["It was an accident. We made this one ", {"id": "11", "blank": "together"}, "."]},
+        {"dialogueLineId": 12, "speaker": "Dad", "parts": ["Thank you both. I know you ", {"id": "12", "blank": "worked hard"}, "."]},
+        {"dialogueLineId": 13, "speaker": "Noah", "parts": ["But it's smaller than the ", {"id": "13", "blank": "first"}, " cake."]},
+        {"dialogueLineId": 14, "speaker": "Dad", "parts": ["That is okay. I do not need a ", {"id": "14", "blank": "big"}, " cake."]},
+        {"dialogueLineId": 15, "speaker": "Dad", "parts": ["I do not need expensive ", {"id": "15", "blank": "gifts"}, ", either."]},
+        {"dialogueLineId": 16, "speaker": "Dad", "parts": ["Your love is the ", {"id": "16", "blank": "best gift"}, " for me."]},
+        {"dialogueLineId": 17, "speaker": "Noah", "parts": ["Really? So you are not ", {"id": "17", "blank": "sad"}, "?"]},
+        {"dialogueLineId": 18, "speaker": "Dad", "parts": ["No, I'm happy! Come here for a ", {"id": "18", "blank": "hug"}, ", Noah."]},
+        {"dialogueLineId": 19, "speaker": "Mom", "parts": ["Noah made you a ", {"id": "19", "blank": "birthday card"}, ", too!"]},
+        {"dialogueLineId": 20, "speaker": "Noah", "parts": ["Happy birthday, Dad! I ", {"id": "20", "blank": "love"}, " you."]},
+        {"dialogueLineId": 21, "speaker": "Dad", "parts": ["I love you both. This is the ", {"id": "21", "blank": "best"}, " birthday!"]}
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Phủ định với “do not”",
+      "explanation": "Dùng “do not” trước động từ nguyên mẫu để nói mình không làm hoặc không cần điều gì. Ví dụ: “I do not need expensive gifts.” nghĩa là “Tôi không cần những món quà đắt tiền.”",
+      "localized": {
+        "title": {
+          "vi": "Phủ định với “do not”",
+          "en": "Negative sentences with “do not”"
+        },
+        "explanation": {
+          "vi": "Dùng “do not” trước động từ nguyên mẫu để nói mình không làm hoặc không cần điều gì. Ví dụ: “I do not need expensive gifts.” nghĩa là “Tôi không cần những món quà đắt tiền.”",
+          "en": "Use “do not” before the base form of a verb to say you do not do or need something. For example: “I do not need expensive gifts.”"
+        }
+      },
+      "example": "I do not need expensive gifts."
+    }
+  ]
+}

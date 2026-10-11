@@ -24,6 +24,8 @@ import { lessonData } from "./_data/lessonData";
 import { getLocalizedDialogueValue } from "@/app/_lib/dialogue/localization";
 import { matchesCourseCategory } from "@/app/_lib/dialogue/catalogueCategories.mjs";
 import { useLocale, useTranslations } from "next-intl";
+import { useAuth } from "@/app/_contexts/AuthContext";
+import { useCatalogueProgressResource } from "@/app/_lib/useStudyResources";
 const courseImages = {
 	"coffee-shop": "/dialogue/coffee-shop/thumbnails/coffee-shop.png",
 	"office-introduction":
@@ -38,6 +40,7 @@ const courseImages = {
 	"walk-in-the-park": "/dialogue/walk-in-the-park/thumbnails/walk-in-the-park.png",
 	"ten-minutes-a-day": "/stories/ten-minutes-a-day/thumbnails/ten-minutes-a-day.png",
 	"grateful": "/stories/grateful/thumbnails/grateful.png",
+	"a-small-surprise": "/stories/a-small-surprise/thumbnails/a-small-surprise.png",
 };
 
 function getCourseImage(courseId) {
@@ -96,6 +99,8 @@ export default function DialoguePage() {
 	);
 	const getLocalizedCourseValue = (course, field) => getLocalizedDialogueValue(course, field, locale);
 	const courses = useMemo(() => Object.values(lessonData), []);
+	const { user, loading: authLoading } = useAuth();
+	const { data: progressByLesson = {} } = useCatalogueProgressResource(user?._id || user?.id, courses, !authLoading);
 	const [search, setSearch] = useState("");
 	const [selectedLevel, setSelectedLevel] = useState("all");
 	const [selectedCategory, setSelectedCategory] = useState("all");
@@ -104,7 +109,6 @@ export default function DialoguePage() {
 		left: false,
 		right: false,
 	});
-	const [progressByLesson, setProgressByLesson] = useState({});
 
 	useEffect(() => {
 		const nav = categoryNavRef.current;
@@ -150,47 +154,6 @@ export default function DialoguePage() {
 			window.removeEventListener("resize", keepSelectedVisible);
 		};
 	}, [selectedCategory]);
-
-	useEffect(() => {
-		let shouldIgnoreResult = false;
-
-		async function loadProgress() {
-			try {
-				const lessonProgressEntries = await Promise.all(
-					courses.map(async (course) => {
-						const response = await fetch(
-							`/api/v1/dialogue-progress/${course.id}`,
-							{
-								credentials: "include",
-								cache: "no-store",
-							},
-						);
-
-						if (!response.ok) return [course.id, []];
-
-						const data = await response.json();
-						return [course.id, data.data.progress || []];
-					}),
-				);
-
-				if (!shouldIgnoreResult) {
-					setProgressByLesson(Object.fromEntries(lessonProgressEntries));
-				}
-			} catch (error) {
-				console.error("Load dialogue progress error:", error);
-			}
-		}
-
-		loadProgress();
-		window.addEventListener("focus", loadProgress);
-		window.addEventListener("dialogue-progress-updated", loadProgress);
-
-		return () => {
-			shouldIgnoreResult = true;
-			window.removeEventListener("focus", loadProgress);
-			window.removeEventListener("dialogue-progress-updated", loadProgress);
-		};
-	}, [courses]);
 
 	const courseStats = useMemo(() => {
 		return Object.fromEntries(

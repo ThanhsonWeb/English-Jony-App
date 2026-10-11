@@ -25,15 +25,15 @@ import {
 import { Link } from "@/i18n/navigation";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import {
-	fetchVocabulary,
 	getWordStatus,
 	selectReviewWords,
 	speakWord,
 } from "@/app/_lib/vocabulary.mjs";
+import { mutateVocabulary } from "@/app/_lib/vocabularyMutation.mjs";
 import { WordDialog, DeleteDialog } from "./_components/WordDialogs";
 import styles from "./wordlist.module.css";
 import { splitExample } from "@/app/_lib/exampleHighlight.mjs";
-import { subscribeVocabularySaved } from "@/app/_lib/vocabularyEvents.mjs";
+import { useVocabularyResource } from "@/app/_lib/useStudyResources";
 import { resolveWordlistFilter } from "@/app/_lib/wordlistFilter.mjs";
 
 const statuses = ["all", "new", "learning", "review", "mastered"];
@@ -121,8 +121,8 @@ export default function WordlistPage() {
 	const t = useTranslations("Notebook");
 	const locale = useLocale();
 	const { user, loading: authLoading } = useAuth();
-	const [result, setResult] = useState(null);
-	const [retry, setRetry] = useState(0);
+	const userId = user?._id || user?.id;
+	const { data: cachedWords, error: loadError, loading: queryLoading, refresh } = useVocabularyResource(userId, undefined, !authLoading);
 	const [search, setSearch] = useState("");
 	const searchParams = useSearchParams();
 	function setFilter(status) {
@@ -155,31 +155,9 @@ export default function WordlistPage() {
 			window.removeEventListener("keydown", closeOnEscape);
 		};
 	}, [practiceOpen]);
-	const userId = user?._id;
-	const requestKey = `${userId || "guest"}:${retry}`;
-	useEffect(() => {
-		if (authLoading || !userId) return;
-		let controller;
-		function loadWords() {
-			controller?.abort();
-			const request = new AbortController();
-			controller = request;
-			fetchVocabulary(undefined, request.signal)
-				.then((words) => {
-					if (!request.signal.aborted) setResult({ key: requestKey, words });
-				})
-				.catch((error) => {
-					if (!request.signal.aborted)
-						setResult({ key: requestKey, error: error.message });
-				});
-		}
-		const unsubscribe = subscribeVocabularySaved(userId, undefined, loadWords);
-		loadWords();
-		return () => { unsubscribe(); controller?.abort(); };
-	}, [authLoading, userId, requestKey]);
-	const loading = authLoading || (user && result?.key !== requestKey);
-	const error = !loading && user && result?.error;
-	const words = !loading && user && !error ? result?.words || [] : [];
+	const loading = authLoading || (Boolean(user) && queryLoading);
+	const error = !loading && Boolean(user && loadError && cachedWords === undefined);
+	const words = user ? cachedWords || [] : [];
 	const now = new Date();
 	const counts = Object.fromEntries(
 		statuses.map((status) => [
@@ -209,32 +187,12 @@ export default function WordlistPage() {
 	const visible = filtered.slice((currentPage - 1) * 20, currentPage * 20);
 	async function saveWord(body) {
 		const word = editor.word;
-		const response = await fetch(`/api/v1/vocab${word ? `/${word._id}` : ""}`, {
-			method: word ? "PATCH" : "POST",
-			credentials: "include",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(body),
-		});
-		if (!response.ok) throw new Error("save");
-		const { data } = await response.json();
-		const saved = word ? data.updatedVocab : data.newVocab;
-		setResult((previous) => ({
-			...previous,
-			words: word
-				? previous.words.map((item) => (item._id === word._id ? saved : item))
-				: [saved, ...previous.words],
-		}));
+		await mutateVocabulary({ userId, id: word?._id, method: word ? "PATCH" : "POST", body,
+			topicId: word?.topic?._id || word?.topic });
 	}
 	async function deleteWord(id) {
-		const response = await fetch(`/api/v1/vocab/${id}`, {
-			method: "DELETE",
-			credentials: "include",
-		});
-		if (!response.ok) throw new Error("delete");
-		setResult((previous) => ({
-			...previous,
-			words: previous.words.filter((word) => word._id !== id),
-		}));
+		const oldWord = words.find(word => word._id === id);
+		await mutateVocabulary({ userId, id, method: "DELETE", topicId: oldWord?.topic?._id || oldWord?.topic });
 	}
 	return (
 		<main className={styles.page}>
@@ -377,7 +335,7 @@ export default function WordlistPage() {
 								<p>{t("loadError")}</p>
 								<button
 									className={styles.secondary}
-									onClick={() => setRetry((value) => value + 1)}
+									onClick={() => void refresh(true).catch(() => {})}
 								>
 									{t("retry")}
 								</button>

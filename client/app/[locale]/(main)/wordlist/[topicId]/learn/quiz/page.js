@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useLayoutEffect, useReducer, useRef, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
-import { fetchVocabulary, selectReviewWords } from "@/app/_lib/vocabulary.mjs";
+import { loadVocabulary, selectReviewWords, vocabularyKey } from "@/app/_lib/vocabulary.mjs";
+import { resourceCache } from "@/app/_lib/resourceCache.mjs";
+import { useAuth } from "@/app/_contexts/AuthContext";
 import { isReviewCompletionReady } from "@/app/_lib/reviewSaveController.mjs";
 import { createMistakeReviewSession } from "@/app/_lib/mistakeReviewSession.mjs";
 import { createReviewQuestionState, reviewQuestionReducer } from "@/app/_lib/reviewQuestionState.mjs";
@@ -80,8 +82,11 @@ function buildQuestions(reviewWords, vocabularyPool) {
 export default function QuizReviewPage() {
 	const t = useTranslations("WordlistReview");
 	const { topicId } = useParams();
+	const { user, loading: authLoading } = useAuth();
+	const userId = user?._id || user?.id;
 	const searchParams = useSearchParams();
 	const dueOnly = searchParams.get("reviewMode") === "due";
+	const reviewKey = `${userId}:${topicId}:${dueOnly}`;
 	const router = useRouter();
 	const reviewWordsRef = useRef([]);
 	const vocabularyPoolRef = useRef([]);
@@ -94,6 +99,7 @@ export default function QuizReviewPage() {
 	const lastFeedback = questionState.feedback;
 	const [results, setResults] = useState({ correct: 0, wrong: 0 });
 	const [loading, setLoading] = useState(true);
+	const [loadedUserId, setLoadedUserId] = useState(null);
 	const [error, setError] = useState("");
 	const reviewSave = useBackgroundReviewSave();
 	const { resetAnswers, pending, failed } = reviewSave;
@@ -105,12 +111,40 @@ export default function QuizReviewPage() {
 	const waitingForContinue = sessionState?.waitingForContinue ?? false;
 	const currentQuestion = questions[currentIndex];
 
-	useEffect(() => {
+	useLayoutEffect(() => {
+		if (authLoading) return;
+		if (!userId) return;
 		let cancelled = false;
+		const cached = resourceCache.read(userId, vocabularyKey(topicId), true).data;
+		const cachedAll = topicId ? resourceCache.read(userId, vocabularyKey(), true).data : cached;
+		const cachedReviewWords = Array.isArray(cached)
+			? selectReviewWords(cached.filter(word => word.english?.trim() && word.vietnamese?.trim()), { global: !topicId, dueOnly }) : [];
+		const needsAll = topicId && cachedReviewWords.length > 0 && getUniqueTranslations(cached).length < 4;
+		const usableCached = Array.isArray(cached) && (!needsAll || Array.isArray(cachedAll));
+		function installQuestions(reviewWords, vocabularyPool) {
+			reviewWordsRef.current = reviewWords;
+			vocabularyPoolRef.current = vocabularyPool;
+			if (reviewWords.length > 0 && getUniqueTranslations(vocabularyPool).length < 4) {
+				setNotEnoughChoices(true);
+			} else {
+				const nextQuestions = buildQuestions(reviewWords, vocabularyPool);
+				sessionRef.current = createMistakeReviewSession(nextQuestions.length);
+				dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
+				setQuestions(nextQuestions);
+			}
+		}
+		if (usableCached) {
+			queueMicrotask(() => {
+				if (cancelled) return;
+				installQuestions(cachedReviewWords, needsAll ? cachedAll.filter(word => word.vietnamese?.trim()) : cached);
+				setLoadedUserId(reviewKey);
+				setLoading(false);
+			});
+		}
 
-		async function loadVocabulary() {
+		async function loadReviewWords() {
 			try {
-				const vocabulary = await fetchVocabulary(topicId);
+				const vocabulary = await loadVocabulary(userId, topicId);
 				const topicWords = vocabulary.filter(
 					(word) => word.english?.trim() && word.vietnamese?.trim(),
 				);
@@ -118,48 +152,29 @@ export default function QuizReviewPage() {
 				let vocabularyPool = topicWords;
 
 				if (topicId && reviewWords.length > 0 && getUniqueTranslations(topicWords).length < 4) {
-					const allWordsResponse = await fetch("/api/v1/vocab", {
-						credentials: "include",
-					});
-
-					if (!allWordsResponse.ok) {
-						throw new Error("choiceLoadError");
-					}
-
-					const allWordsData = await allWordsResponse.json();
-					vocabularyPool = (allWordsData.data?.vocabularies || []).filter(
+					const allWords = await loadVocabulary(userId);
+					vocabularyPool = allWords.filter(
 						(word) => word.vietnamese?.trim(),
 					);
 				}
 
-				if (cancelled) return;
-
-				reviewWordsRef.current = reviewWords;
-				vocabularyPoolRef.current = vocabularyPool;
-
-				if (reviewWords.length > 0 && getUniqueTranslations(vocabularyPool).length < 4) {
-					setNotEnoughChoices(true);
-				} else {
-					const nextQuestions = buildQuestions(reviewWords, vocabularyPool);
-					sessionRef.current = createMistakeReviewSession(nextQuestions.length);
-					dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
-					setQuestions(nextQuestions);
-				}
+				if (cancelled || usableCached) return;
+				installQuestions(reviewWords, vocabularyPool);
 			} catch (fetchError) {
-				if (!cancelled) {
+				if (!cancelled && !usableCached) {
 					setError(fetchError.message === "unauthorized" ? "signInError" : fetchError.message === "choiceLoadError" ? "choiceLoadError" : "loadError");
 				}
 			} finally {
-				if (!cancelled) setLoading(false);
+				if (!cancelled) { setLoadedUserId(reviewKey); setLoading(false); }
 			}
 		}
 
-		loadVocabulary();
+		loadReviewWords();
 
 		return () => {
 			cancelled = true;
 		};
-	}, [topicId, dueOnly]);
+	}, [topicId, dueOnly, userId, authLoading, reviewKey]);
 
 	function checkAnswer() {
 		if (!currentQuestion || !selectedChoice || sessionRef.current?.getSnapshot().waitingForContinue) return;
@@ -247,14 +262,14 @@ export default function QuizReviewPage() {
 		return () => window.removeEventListener("keydown", handleKeyDown);
 	}, [currentQuestion, waitingForContinue]);
 
-	if (loading) return <Loading />;
+	if (authLoading || (userId && (loading || loadedUserId !== reviewKey))) return <Loading />;
 
-	if (error) {
+	if (error || !userId) {
 		return (
 			<ReviewStatus
 				icon={<XCircle className="h-12 w-12 text-red-400" />}
 				title={t("common.openError")}
-				message={error === "choiceLoadError" ? t("quiz.choiceLoadError") : t(`common.${error}`)}
+				message={error === "choiceLoadError" ? t("quiz.choiceLoadError") : t(`common.${error || "signInError"}`)}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);

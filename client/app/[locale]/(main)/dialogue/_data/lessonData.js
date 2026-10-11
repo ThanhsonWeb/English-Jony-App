@@ -10,6 +10,7 @@ import walkInTheParkCourse from "./courses/walk-in-the-park";
 // Story courses share this registry; their course modules import data from _data/stories.
 import tenMinutesADayCourse from "./courses/ten-minutes-a-day";
 import gratefulCourse from "./courses/grateful";
+import aSmallSurpriseCourse from "./courses/a-small-surprise";
 
 export const lessonData = {
    // [atAHotelCourse.id]: withDialogueLocalization(atAHotelCourse),
@@ -22,4 +23,5 @@ export const lessonData = {
    [walkInTheParkCourse.id]: withDialogueLocalization(walkInTheParkCourse),
    [tenMinutesADayCourse.id]: withDialogueLocalization(tenMinutesADayCourse),
    [gratefulCourse.id]: withDialogueLocalization(gratefulCourse),
+   [aSmallSurpriseCourse.id]: withDialogueLocalization(aSmallSurpriseCourse),
 };

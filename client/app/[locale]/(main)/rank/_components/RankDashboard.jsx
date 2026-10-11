@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useId, useState } from "react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { useAuth } from "@/app/_contexts/AuthContext";
+import { useLeaderboardResource } from "@/app/_lib/useStudyResources";
 import { resolveAvatarUrl } from "@/app/_lib/resolveAvatarUrl";
 import { CalendarDays, ChartNoAxesColumnIncreasing, Check, ChevronDown, Crown, Flame, Target } from "lucide-react";
 import styles from "../rank.module.css";
@@ -137,15 +138,14 @@ function RankPeriodSwitch({ period, timeframe, onPeriodChange, onTimeframeChange
 export default function RankDashboard() {
 	const t = useTranslations("Rank");
 	const locale = useLocale();
-	const { user: signedInUser } = useAuth();
+	const { user: signedInUser, loading: authLoading } = useAuth();
 	const [period, setPeriod] = useState("month");
 	const [timeframe, setTimeframe] = useState("current");
-	const [attempt, setAttempt] = useState(0);
-	const [result, setResult] = useState(null);
-	const requestKey = `${period}:${timeframe}:${attempt}`;
-	const loading = result?.key !== requestKey;
-	const data = loading ? null : result.data;
-	const error = loading ? null : result.error;
+	const { data, error: loadError, loading: queryLoading, refresh } = useLeaderboardResource(
+		signedInUser?._id || signedInUser?.id, period, timeframe, !authLoading,
+	);
+	const loading = authLoading || queryLoading;
+	const error = data === undefined && loadError ? (loadError.message === "signIn" ? "signIn" : "loadError") : null;
 	const withCurrentAvatar = profile => profile?.isCurrentUser && signedInUser
 		? { ...profile, avatar: signedInUser.avatar || profile.avatar, photo: signedInUser.photo || profile.photo }
 		: profile;
@@ -155,24 +155,6 @@ export default function RankDashboard() {
 	// Keep a personal row for users outside the top ten and unranked users.
 	if (currentUser && !rows.some(user => user.id === currentUser.id)) rows.push(currentUser);
 
-	useEffect(() => {
-		const controller = new AbortController();
-		async function loadLeaderboard() {
-			try {
-				const query = new URLSearchParams({ period, timeframe, limit: "10" });
-				const response = await fetch(`/api/v1/leaderboard?${query}`, {
-					credentials: "include", cache: "no-store", signal: controller.signal,
-				});
-				if (!response.ok) throw new Error(response.status === 401 ? "signIn" : "loadError");
-				const payload = await response.json();
-				if (!controller.signal.aborted) setResult({ key: requestKey, data: payload.data });
-			} catch (error) {
-				if (!controller.signal.aborted) setResult({ key: requestKey, error: error.message === "signIn" ? "signIn" : "loadError" });
-			}
-		}
-		loadLeaderboard();
-		return () => controller.abort();
-	}, [period, timeframe, requestKey]);
 	const format = value => new Intl.NumberFormat(locale).format(value);
 	const activePeriod = t(period === "month" ? (timeframe === "current" ? "thisMonth" : "lastMonth") : (timeframe === "current" ? "thisWeek" : "lastWeek"));
 
@@ -214,7 +196,7 @@ export default function RankDashboard() {
 				<RankPeriodSwitch period={period} timeframe={timeframe} onPeriodChange={changePeriod} onTimeframeChange={setTimeframe} t={t} />
 				<div aria-live="polite" aria-busy={loading}>
 					{loading && <p className={styles.statusMessage} role="status">{t("loading")}</p>}
-					{error && <div className={styles.statusMessage} role="alert"><p>{t(error)}</p><button type="button" onClick={() => setAttempt(value => value + 1)}>{t("retry")}</button></div>}
+					{error && <div className={styles.statusMessage} role="alert"><p>{t(error)}</p><button type="button" onClick={() => void refresh(true).catch(() => {})}>{t("retry")}</button></div>}
 					{data && leaderboard.length === 0 && <p className={styles.statusMessage}>{t("empty")}</p>}
 					{currentUser && <p className="sr-only">{t("results", { period: activePeriod, rank: currentUser.rank ?? t("unranked") })}</p>}
 				</div>

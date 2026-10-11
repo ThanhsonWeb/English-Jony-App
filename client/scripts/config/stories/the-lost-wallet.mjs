@@ -7,7 +7,12 @@ const theLostWallet = {
 
   category: "story-of-life",
 
-  characters: ["Alex", "Mia", "Mrs. Green"],
+  characters: [
+    "Alex",
+    "Mia",
+    "Stranger",
+    "Elderly Woman",
+  ],
 
   dialogues: [
     {
@@ -16,7 +21,7 @@ const theLostWallet = {
       thumbnail:
         "/stories/the-lost-wallet/thumbnails/a-wallet-on-the-ground.png",
       situation:
-        "Alex finds a wallet near a bus stop and decides to look for its owner.",
+        "Alex finds a wallet near a bus stop. He wants to return it, but he does not know who owns it.",
     },
     {
       dialogueId: "looking-for-the-owner",
@@ -24,7 +29,7 @@ const theLostWallet = {
       thumbnail:
         "/stories/the-lost-wallet/thumbnails/looking-for-the-owner.png",
       situation:
-        "Alex and Mia look inside the wallet for clues that can help them find the owner.",
+        "Alex asks Mia for help. Together, they look for clues inside the wallet and try to find its owner.",
     },
     {
       dialogueId: "the-wrong-person",
@@ -32,7 +37,7 @@ const theLostWallet = {
       thumbnail:
         "/stories/the-lost-wallet/thumbnails/the-wrong-person.png",
       situation:
-        "A stranger says the wallet belongs to him, but Alex notices that something is not right.",
+        "A stranger claims the wallet is his. Alex asks a simple question, but the stranger gives the wrong answer.",
     },
     {
       dialogueId: "doing-the-right-thing",
@@ -40,7 +45,7 @@ const theLostWallet = {
       thumbnail:
         "/stories/the-lost-wallet/thumbnails/doing-the-right-thing.png",
       situation:
-        "Alex and Mia finally find Mrs. Green and return the wallet to her.",
+        "Alex and Mia find an elderly woman who has lost her wallet. She proves it belongs to her, and they return it. She thanks them for their honesty.",
     },
   ],
 };

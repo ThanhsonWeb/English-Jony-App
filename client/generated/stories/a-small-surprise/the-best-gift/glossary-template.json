@@ -1,0 +1,906 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "a-small-surprise",
+  "dialogueId": "the-best-gift",
+  "characters": {
+    "Mom": {
+      "meaning": "Mom",
+      "role": ""
+    },
+    "Dad": {
+      "meaning": "Dad",
+      "role": ""
+    },
+    "Noah": {
+      "meaning": "Noah",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-happy": {
+      "word": "happy",
+      "meaning": "",
+      "pos": []
+    },
+    "word-birthday": {
+      "word": "birthday",
+      "meaning": "",
+      "pos": []
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "",
+      "pos": []
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "",
+      "pos": []
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "",
+      "pos": []
+    },
+    "word-surprise": {
+      "word": "surprise",
+      "meaning": "",
+      "pos": []
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "",
+      "pos": []
+    },
+    "word-chocolate": {
+      "word": "chocolate",
+      "meaning": "",
+      "pos": []
+    },
+    "word-cake": {
+      "word": "cake",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-dad": {
+      "word": "dad",
+      "meaning": "",
+      "pos": []
+    },
+    "word-mom": {
+      "word": "mom",
+      "meaning": "",
+      "pos": []
+    },
+    "word-and": {
+      "word": "and",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-made": {
+      "word": "made",
+      "meaning": "",
+      "pos": []
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "",
+      "pos": []
+    },
+    "word-looks": {
+      "word": "looks",
+      "meaning": "",
+      "pos": []
+    },
+    "word-wonderful": {
+      "word": "wonderful",
+      "meaning": "",
+      "pos": []
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "",
+      "pos": []
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "",
+      "pos": []
+    },
+    "word-something": {
+      "word": "something",
+      "meaning": "",
+      "pos": []
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "",
+      "pos": []
+    },
+    "word-noah": {
+      "word": "noah",
+      "meaning": "",
+      "pos": []
+    },
+    "word-dropped": {
+      "word": "dropped",
+      "meaning": "",
+      "pos": []
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "",
+      "pos": []
+    },
+    "word-first": {
+      "word": "first",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yesterday": {
+      "word": "yesterday",
+      "meaning": "",
+      "pos": []
+    },
+    "word-broke": {
+      "word": "broke",
+      "meaning": "",
+      "pos": []
+    },
+    "word-felt": {
+      "word": "felt",
+      "meaning": "",
+      "pos": []
+    },
+    "word-so": {
+      "word": "so",
+      "meaning": "",
+      "pos": []
+    },
+    "word-sad": {
+      "word": "sad",
+      "meaning": "",
+      "pos": []
+    },
+    "word-oh": {
+      "word": "oh",
+      "meaning": "",
+      "pos": []
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "",
+      "pos": []
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "",
+      "pos": []
+    },
+    "word-sorry": {
+      "word": "sorry",
+      "meaning": "",
+      "pos": []
+    },
+    "word-wanted": {
+      "word": "wanted",
+      "meaning": "",
+      "pos": []
+    },
+    "word-perfect": {
+      "word": "perfect",
+      "meaning": "",
+      "pos": []
+    },
+    "word-was": {
+      "word": "was",
+      "meaning": "",
+      "pos": []
+    },
+    "word-an": {
+      "word": "an",
+      "meaning": "",
+      "pos": []
+    },
+    "word-accident": {
+      "word": "accident",
+      "meaning": "",
+      "pos": []
+    },
+    "word-this": {
+      "word": "this",
+      "meaning": "",
+      "pos": []
+    },
+    "word-one": {
+      "word": "one",
+      "meaning": "",
+      "pos": []
+    },
+    "word-together": {
+      "word": "together",
+      "meaning": "",
+      "pos": []
+    },
+    "word-both": {
+      "word": "both",
+      "meaning": "",
+      "pos": []
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "",
+      "pos": []
+    },
+    "word-worked": {
+      "word": "worked",
+      "meaning": "",
+      "pos": []
+    },
+    "word-hard": {
+      "word": "hard",
+      "meaning": "",
+      "pos": []
+    },
+    "word-it's": {
+      "word": "it's",
+      "meaning": "",
+      "pos": []
+    },
+    "word-smaller": {
+      "word": "smaller",
+      "meaning": "",
+      "pos": []
+    },
+    "word-than": {
+      "word": "than",
+      "meaning": "",
+      "pos": []
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "",
+      "pos": []
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "",
+      "pos": []
+    },
+    "word-big": {
+      "word": "big",
+      "meaning": "",
+      "pos": []
+    },
+    "word-expensive": {
+      "word": "expensive",
+      "meaning": "",
+      "pos": []
+    },
+    "word-gifts": {
+      "word": "gifts",
+      "meaning": "",
+      "pos": []
+    },
+    "word-either": {
+      "word": "either",
+      "meaning": "",
+      "pos": []
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "",
+      "pos": []
+    },
+    "word-love": {
+      "word": "love",
+      "meaning": "",
+      "pos": []
+    },
+    "word-best": {
+      "word": "best",
+      "meaning": "",
+      "pos": []
+    },
+    "word-gift": {
+      "word": "gift",
+      "meaning": "",
+      "pos": []
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "",
+      "pos": []
+    },
+    "word-really": {
+      "word": "really",
+      "meaning": "",
+      "pos": []
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "",
+      "pos": []
+    },
+    "word-come": {
+      "word": "come",
+      "meaning": "",
+      "pos": []
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "",
+      "pos": []
+    },
+    "word-hug": {
+      "word": "hug",
+      "meaning": "",
+      "pos": []
+    },
+    "word-card": {
+      "word": "card",
+      "meaning": "",
+      "pos": []
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Mom",
+      "text": "Happy birthday! We have a surprise for you.",
+      "translation": "Chúc mừng sinh nhật anh! Mẹ con em có một điều bất ngờ dành cho anh.",
+      "tokens": [
+        "Happy",
+        "birthday",
+        "We",
+        "have",
+        "a",
+        "surprise",
+        "for",
+        "you"
+      ],
+      "words": [
+        "word-happy",
+        "word-birthday",
+        "word-we",
+        "word-have",
+        "word-a",
+        "word-surprise",
+        "word-for",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Dad",
+      "text": "Thank you! Is that chocolate cake?",
+      "translation": "Cảm ơn hai mẹ con! Đó là bánh sô-cô-la à?",
+      "tokens": [
+        "Thank",
+        "you",
+        "Is",
+        "that",
+        "chocolate",
+        "cake"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-is",
+        "word-that",
+        "word-chocolate",
+        "word-cake"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Noah",
+      "text": "Yes, Dad. Mom and I made it.",
+      "translation": "Vâng ạ, bố. Mẹ và con đã cùng làm đấy.",
+      "tokens": [
+        "Yes",
+        "Dad",
+        "Mom",
+        "and",
+        "I",
+        "made",
+        "it"
+      ],
+      "words": [
+        "word-yes",
+        "word-dad",
+        "word-mom",
+        "word-and",
+        "word-i",
+        "word-made",
+        "word-it"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Dad",
+      "text": "It looks wonderful!",
+      "translation": "Trông tuyệt quá!",
+      "tokens": [
+        "It",
+        "looks",
+        "wonderful"
+      ],
+      "words": [
+        "word-it",
+        "word-looks",
+        "word-wonderful"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Noah",
+      "text": "But I need to tell you something.",
+      "translation": "Nhưng con có chuyện muốn nói với bố.",
+      "tokens": [
+        "But",
+        "I",
+        "need",
+        "to",
+        "tell",
+        "you",
+        "something"
+      ],
+      "words": [
+        "word-but",
+        "word-i",
+        "word-need",
+        "word-to",
+        "word-tell",
+        "word-you",
+        "word-something"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Dad",
+      "text": "What is it, Noah?",
+      "translation": "Chuyện gì vậy, Noah?",
+      "tokens": [
+        "What",
+        "is",
+        "it",
+        "Noah"
+      ],
+      "words": [
+        "word-what",
+        "word-is",
+        "word-it",
+        "word-noah"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Noah",
+      "text": "I dropped the first cake yesterday.",
+      "translation": "Hôm qua con đã làm rơi chiếc bánh đầu tiên.",
+      "tokens": [
+        "I",
+        "dropped",
+        "the",
+        "first",
+        "cake",
+        "yesterday"
+      ],
+      "words": [
+        "word-i",
+        "word-dropped",
+        "word-the",
+        "word-first",
+        "word-cake",
+        "word-yesterday"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Noah",
+      "text": "It broke. I felt so sad.",
+      "translation": "Chiếc bánh bị hỏng. Con đã buồn lắm.",
+      "tokens": [
+        "It",
+        "broke",
+        "I",
+        "felt",
+        "so",
+        "sad"
+      ],
+      "words": [
+        "word-it",
+        "word-broke",
+        "word-i",
+        "word-felt",
+        "word-so",
+        "word-sad"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Dad",
+      "text": "Oh, Noah. Are you okay?",
+      "translation": "Ôi, Noah. Con có sao không?",
+      "tokens": [
+        "Oh",
+        "Noah",
+        "Are",
+        "you",
+        "okay"
+      ],
+      "words": [
+        "word-oh",
+        "word-noah",
+        "word-are",
+        "word-you",
+        "word-okay"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Noah",
+      "text": "Yes, but I'm sorry. I wanted a perfect cake for you.",
+      "translation": "Dạ con không sao, nhưng con xin lỗi. Con đã muốn làm một chiếc bánh thật đẹp cho bố.",
+      "tokens": [
+        "Yes",
+        "but",
+        "I'm",
+        "sorry",
+        "I",
+        "wanted",
+        "a",
+        "perfect",
+        "cake",
+        "for",
+        "you"
+      ],
+      "words": [
+        "word-yes",
+        "word-but",
+        "word-i'm",
+        "word-sorry",
+        "word-i",
+        "word-wanted",
+        "word-a",
+        "word-perfect",
+        "word-cake",
+        "word-for",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Mom",
+      "text": "It was an accident. We made this one together.",
+      "translation": "Chỉ là vô tình thôi. Mẹ con em đã cùng làm chiếc bánh này.",
+      "tokens": [
+        "It",
+        "was",
+        "an",
+        "accident",
+        "We",
+        "made",
+        "this",
+        "one",
+        "together"
+      ],
+      "words": [
+        "word-it",
+        "word-was",
+        "word-an",
+        "word-accident",
+        "word-we",
+        "word-made",
+        "word-this",
+        "word-one",
+        "word-together"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Dad",
+      "text": "Thank you both. I know you worked hard.",
+      "translation": "Cảm ơn hai mẹ con. Bố biết hai mẹ con đã rất cố gắng.",
+      "tokens": [
+        "Thank",
+        "you",
+        "both",
+        "I",
+        "know",
+        "you",
+        "worked",
+        "hard"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-both",
+        "word-i",
+        "word-know",
+        "word-you",
+        "word-worked",
+        "word-hard"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Noah",
+      "text": "But it's smaller than the first cake.",
+      "translation": "Nhưng nó nhỏ hơn chiếc bánh đầu tiên.",
+      "tokens": [
+        "But",
+        "it's",
+        "smaller",
+        "than",
+        "the",
+        "first",
+        "cake"
+      ],
+      "words": [
+        "word-but",
+        "word-it's",
+        "word-smaller",
+        "word-than",
+        "word-the",
+        "word-first",
+        "word-cake"
+      ],
+      "phrases": []
+    },
+    "14": {
+      "speaker": "Dad",
+      "text": "That is okay. I do not need a big cake.",
+      "translation": "Không sao đâu. Bố không cần một chiếc bánh lớn.",
+      "tokens": [
+        "That",
+        "is",
+        "okay",
+        "I",
+        "do",
+        "not",
+        "need",
+        "a",
+        "big",
+        "cake"
+      ],
+      "words": [
+        "word-that",
+        "word-is",
+        "word-okay",
+        "word-i",
+        "word-do",
+        "word-not",
+        "word-need",
+        "word-a",
+        "word-big",
+        "word-cake"
+      ],
+      "phrases": []
+    },
+    "15": {
+      "speaker": "Dad",
+      "text": "I do not need expensive gifts, either.",
+      "translation": "Bố cũng không cần những món quà đắt tiền.",
+      "tokens": [
+        "I",
+        "do",
+        "not",
+        "need",
+        "expensive",
+        "gifts",
+        "either"
+      ],
+      "words": [
+        "word-i",
+        "word-do",
+        "word-not",
+        "word-need",
+        "word-expensive",
+        "word-gifts",
+        "word-either"
+      ],
+      "phrases": []
+    },
+    "16": {
+      "speaker": "Dad",
+      "text": "Your love is the best gift for me.",
+      "translation": "Tình yêu thương của con là món quà tuyệt vời nhất đối với bố.",
+      "tokens": [
+        "Your",
+        "love",
+        "is",
+        "the",
+        "best",
+        "gift",
+        "for",
+        "me"
+      ],
+      "words": [
+        "word-your",
+        "word-love",
+        "word-is",
+        "word-the",
+        "word-best",
+        "word-gift",
+        "word-for",
+        "word-me"
+      ],
+      "phrases": []
+    },
+    "17": {
+      "speaker": "Noah",
+      "text": "Really? So you are not sad?",
+      "translation": "Thật ạ? Vậy bố không buồn chứ ạ?",
+      "tokens": [
+        "Really",
+        "So",
+        "you",
+        "are",
+        "not",
+        "sad"
+      ],
+      "words": [
+        "word-really",
+        "word-so",
+        "word-you",
+        "word-are",
+        "word-not",
+        "word-sad"
+      ],
+      "phrases": []
+    },
+    "18": {
+      "speaker": "Dad",
+      "text": "No, I'm happy! Come here for a hug, Noah.",
+      "translation": "Không, bố vui lắm! Lại đây để bố ôm nào, Noah.",
+      "tokens": [
+        "No",
+        "I'm",
+        "happy",
+        "Come",
+        "here",
+        "for",
+        "a",
+        "hug",
+        "Noah"
+      ],
+      "words": [
+        "word-no",
+        "word-i'm",
+        "word-happy",
+        "word-come",
+        "word-here",
+        "word-for",
+        "word-a",
+        "word-hug",
+        "word-noah"
+      ],
+      "phrases": []
+    },
+    "19": {
+      "speaker": "Mom",
+      "text": "Noah made you a birthday card, too!",
+      "translation": "Noah còn làm thiệp sinh nhật cho anh nữa!",
+      "tokens": [
+        "Noah",
+        "made",
+        "you",
+        "a",
+        "birthday",
+        "card",
+        "too"
+      ],
+      "words": [
+        "word-noah",
+        "word-made",
+        "word-you",
+        "word-a",
+        "word-birthday",
+        "word-card",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "20": {
+      "speaker": "Noah",
+      "text": "Happy birthday, Dad! I love you.",
+      "translation": "Chúc mừng sinh nhật bố! Con yêu bố.",
+      "tokens": [
+        "Happy",
+        "birthday",
+        "Dad",
+        "I",
+        "love",
+        "you"
+      ],
+      "words": [
+        "word-happy",
+        "word-birthday",
+        "word-dad",
+        "word-i",
+        "word-love",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "21": {
+      "speaker": "Dad",
+      "text": "I love you both. This is the best birthday!",
+      "translation": "Bố yêu cả hai mẹ con. Đây là sinh nhật tuyệt vời nhất!",
+      "tokens": [
+        "I",
+        "love",
+        "you",
+        "both",
+        "This",
+        "is",
+        "the",
+        "best",
+        "birthday"
+      ],
+      "words": [
+        "word-i",
+        "word-love",
+        "word-you",
+        "word-both",
+        "word-this",
+        "word-is",
+        "word-the",
+        "word-best",
+        "word-birthday"
+      ],
+      "phrases": []
+    }
+  }
+}

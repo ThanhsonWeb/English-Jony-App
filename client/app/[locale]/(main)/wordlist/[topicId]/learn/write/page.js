@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useReducer, useRef, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
-import { fetchVocabulary, selectReviewWords } from "@/app/_lib/vocabulary.mjs";
+import { loadVocabulary, selectReviewWords, vocabularyKey } from "@/app/_lib/vocabulary.mjs";
+import { resourceCache } from "@/app/_lib/resourceCache.mjs";
+import { useAuth } from "@/app/_contexts/AuthContext";
 import { isReviewCompletionReady } from "@/app/_lib/reviewSaveController.mjs";
 import { createMistakeReviewSession } from "@/app/_lib/mistakeReviewSession.mjs";
 import { createReviewQuestionState, reviewQuestionReducer } from "@/app/_lib/reviewQuestionState.mjs";
@@ -31,8 +33,11 @@ function normalizeAnswer(value) {
 export default function WriteReviewPage() {
 	const t = useTranslations("WordlistReview");
 	const { topicId } = useParams();
+	const { user, loading: authLoading } = useAuth();
+	const userId = user?._id || user?.id;
 	const searchParams = useSearchParams();
 	const dueOnly = searchParams.get("reviewMode") === "due";
+	const reviewKey = `${userId}:${topicId}:${dueOnly}`;
 	const router = useRouter();
 	const inputRef = useRef(null);
 	const sessionRef = useRef(null);
@@ -43,6 +48,7 @@ export default function WriteReviewPage() {
 	const lastFeedback = questionState.feedback;
 	const [results, setResults] = useState({ correct: 0, wrong: 0 });
 	const [loading, setLoading] = useState(true);
+	const [loadedUserId, setLoadedUserId] = useState(null);
 	const [error, setError] = useState("");
 	const reviewSave = useBackgroundReviewSave();
 	const { resetAnswers, pending, failed } = reviewSave;
@@ -53,25 +59,39 @@ export default function WriteReviewPage() {
 	const waitingForContinue = sessionState?.waitingForContinue ?? false;
 	const currentWord = words[currentIndex];
 
-	useEffect(() => {
+	useLayoutEffect(() => {
+		if (authLoading) return;
+		if (!userId) return;
 		let cancelled = false;
+		const cached = resourceCache.read(userId, vocabularyKey(topicId), true).data;
+		if (Array.isArray(cached)) {
+			queueMicrotask(() => {
+				if (cancelled) return;
+				const reviewWords = selectReviewWords(cached, { global: !topicId, dueOnly });
+				sessionRef.current = createMistakeReviewSession(reviewWords.length);
+				dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
+				setWords(reviewWords);
+				setLoadedUserId(reviewKey);
+				setLoading(false);
+			});
+		}
 
 		async function fetchWords() {
 			try {
-				const vocabulary = await fetchVocabulary(topicId);
+				const vocabulary = await loadVocabulary(userId, topicId);
 				const reviewWords = selectReviewWords(vocabulary, { global: !topicId, dueOnly });
 
-				if (!cancelled) {
+				if (!cancelled && !Array.isArray(cached)) {
 					sessionRef.current = createMistakeReviewSession(reviewWords.length);
 					dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
 					setWords(reviewWords);
 				}
 			} catch (fetchError) {
-				if (!cancelled) {
+				if (!cancelled && !Array.isArray(cached)) {
 					setError(fetchError.message === "unauthorized" ? "signInError" : "loadError");
 				}
 			} finally {
-				if (!cancelled) setLoading(false);
+				if (!cancelled) { setLoadedUserId(reviewKey); setLoading(false); }
 			}
 		}
 
@@ -80,7 +100,7 @@ export default function WriteReviewPage() {
 		return () => {
 			cancelled = true;
 		};
-	}, [topicId, dueOnly]);
+	}, [topicId, dueOnly, userId, authLoading, reviewKey]);
 
 	useEffect(() => {
 		if (navigator.maxTouchPoints > 0 || window.matchMedia("(max-width: 767px), (any-pointer: coarse)").matches) return;
@@ -141,14 +161,14 @@ export default function WriteReviewPage() {
 		setSessionFinished(false);
 	}
 
-	if (loading) return <Loading />;
+	if (authLoading || (userId && (loading || loadedUserId !== reviewKey))) return <Loading />;
 
-	if (error) {
+	if (error || !userId) {
 		return (
 			<ReviewStatus
 				icon={<XCircle className="h-12 w-12 text-red-400" />}
 				title={t("common.openError")}
-				message={t(`common.${error}`)}
+				message={t(`common.${error || "signInError"}`)}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import {
@@ -14,6 +14,8 @@ import {
 import { lessonData } from "../_data/lessonData";
 import { getLocalizedDialogueValue } from "@/app/_lib/dialogue/localization";
 import { useLocale, useTranslations } from "next-intl";
+import { useAuth } from "@/app/_contexts/AuthContext";
+import { useLessonProgressResource } from "@/app/_lib/useStudyResources";
 
 import Image from "next/image";
 
@@ -23,77 +25,9 @@ export default function DialogueLessonPage() {
 	const { lessonId } = useParams();
 	const lesson = lessonData[lessonId];
 	const [openDialogueId, setOpenDialogueId] = useState(null);
-	const [progress, setProgress] = useState({});
-
-	const loadProgress = useCallback(async () => {
-		try {
-			const res = await fetch(`/api/v1/dialogue-progress/${lessonId}`, {
-				credentials: "include",
-				cache: "no-store",
-			});
-
-			if (res.status === 401) {
-				setProgress((current) => ({
-					...current,
-					[lessonId]: {},
-				}));
-				return;
-			}
-
-			if (!res.ok) {
-				console.warn("Failed to load dialogue progress", {
-					status: res.status,
-				});
-				return;
-			}
-
-			const data = await res.json();
-
-			const lessonProgress = {};
-
-			data.data.progress.forEach((item) => {
-				lessonProgress[item.dialogueId] = item.completedTaskIds || [];
-			});
-
-			setProgress({
-				[lessonId]: lessonProgress,
-			});
-		} catch (error) {
-			console.warn("Load dialogue progress error:", error);
-		}
-	}, [lessonId]);
-
-	useEffect(() => {
-		function applySavedProgress(event) {
-			const savedProgress = event.detail;
-
-			if (!savedProgress || savedProgress.lessonId !== lessonId) return;
-
-			setProgress((current) => ({
-				...current,
-				[lessonId]: {
-					...current[lessonId],
-					[savedProgress.dialogueId]: savedProgress.completedTaskIds || [],
-				},
-			}));
-		}
-
-		const loadTimer = lessonId
-			? window.setTimeout(loadProgress, 0)
-			: null;
-
-		window.addEventListener("focus", loadProgress);
-		window.addEventListener("dialogue-progress-updated", applySavedProgress);
-
-		return () => {
-			if (loadTimer !== null) window.clearTimeout(loadTimer);
-			window.removeEventListener("focus", loadProgress);
-			window.removeEventListener(
-				"dialogue-progress-updated",
-				applySavedProgress,
-			);
-		};
-	}, [lessonId, loadProgress]);
+	const { user, loading: authLoading } = useAuth();
+	const { data: progressEntries = [] } = useLessonProgressResource(user?._id || user?.id, lessonId, !authLoading);
+	const progress = { [lessonId]: Object.fromEntries(progressEntries.map(item => [item.dialogueId, item.completedTaskIds || []])) };
 
 	const totalTaskCount =
 		lesson?.dialogues.reduce(

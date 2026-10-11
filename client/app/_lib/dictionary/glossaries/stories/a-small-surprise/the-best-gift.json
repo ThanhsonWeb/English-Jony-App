@@ -1,0 +1,1171 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "a-small-surprise",
+  "dialogueId": "the-best-gift",
+  "characters": {
+    "Mom": {
+      "meaning": "Mẹ",
+      "role": "mẹ của Noah; cùng con chuẩn bị bánh và thiệp sinh nhật cho Dad"
+    },
+    "Dad": {
+      "meaning": "Bố",
+      "role": "bố của Noah; người đón sinh nhật và trân trọng tình cảm gia đình"
+    },
+    "Noah": {
+      "meaning": "Noah",
+      "role": "con trai của Mom và Dad; làm bánh và thiệp mừng sinh nhật bố"
+    }
+  },
+  "entries": {
+    "word-happy": {
+      "word": "happy",
+      "meaning": "chúc mừng (trong lời chúc “Happy birthday!”)",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-birthday": {
+      "word": "birthday",
+      "meaning": "sinh nhật",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "mẹ con em (Mom nói với Dad)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "có",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "một (mạo từ; thường không dịch riêng)",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-surprise": {
+      "word": "surprise",
+      "meaning": "điều bất ngờ dành cho bố",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "dành cho (ai đó)",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "bố (Noah nói với Dad)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "cảm ơn (trong “Thank you”)",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "là (động từ “to be”; có thể không dịch riêng)",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "đó (chỉ chiếc bánh)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-chocolate": {
+      "word": "chocolate",
+      "meaning": "sô-cô-la (hương vị bánh)",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-cake": {
+      "word": "cake",
+      "meaning": "bánh ngọt; chiếc bánh sinh nhật",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "dạ; vâng",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-dad": {
+      "word": "dad",
+      "meaning": "bố",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-mom": {
+      "word": "mom",
+      "meaning": "mẹ",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-and": {
+      "word": "and",
+      "meaning": "và",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "con (Noah tự xưng)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-made": {
+      "word": "made",
+      "meaning": "đã làm (chiếc bánh)",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "nó (chiếc bánh)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-looks": {
+      "word": "looks",
+      "meaning": "trông; trông có vẻ",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-wonderful": {
+      "word": "wonderful",
+      "meaning": "tuyệt vời; rất đẹp",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "nhưng",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "cần",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "để (trong “to tell”; dấu hiệu trước động từ)",
+      "pos": [
+        "particle"
+      ]
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "nói; kể cho (bố) nghe",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-something": {
+      "word": "something",
+      "meaning": "một chuyện; điều gì đó",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "gì (hỏi về chuyện Noah muốn nói)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-noah": {
+      "word": "noah",
+      "meaning": "Noah (tên cậu bé)",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-dropped": {
+      "word": "dropped",
+      "meaning": "đã làm rơi (chiếc bánh)",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "mạo từ xác định (thường không dịch riêng)",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-first": {
+      "word": "first",
+      "meaning": "đầu tiên",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-yesterday": {
+      "word": "yesterday",
+      "meaning": "hôm qua",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-broke": {
+      "word": "broke",
+      "meaning": "bị vỡ; bị hỏng (chiếc bánh)",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-felt": {
+      "word": "felt",
+      "meaning": "đã cảm thấy",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-so": {
+      "word": "so",
+      "meaning": "rất; quá (nhấn mạnh cảm giác buồn)",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-sad": {
+      "word": "sad",
+      "meaning": "buồn",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-oh": {
+      "word": "oh",
+      "meaning": "ôi (bày tỏ sự lo lắng)",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "có ... không (trong “Are you okay?”)",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "ổn; không sao",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "con ... (viết tắt của “I am”, Noah tự xưng)",
+      "pos": [
+        "pronoun",
+        "verb"
+      ]
+    },
+    "word-sorry": {
+      "word": "sorry",
+      "meaning": "xin lỗi (trong “I’m sorry”)",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-wanted": {
+      "word": "wanted",
+      "meaning": "đã muốn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-perfect": {
+      "word": "perfect",
+      "meaning": "hoàn hảo; thật đẹp như mong muốn",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-was": {
+      "word": "was",
+      "meaning": "đã là; đã xảy ra (quá khứ của “is”)",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-an": {
+      "word": "an",
+      "meaning": "một (mạo từ; thường không dịch riêng)",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-accident": {
+      "word": "accident",
+      "meaning": "sự cố ngoài ý muốn; chuyện vô tình",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-this": {
+      "word": "this",
+      "meaning": "này (chỉ chiếc bánh mới)",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-one": {
+      "word": "one",
+      "meaning": "chiếc bánh (thay cho từ “cake”)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-together": {
+      "word": "together",
+      "meaning": "cùng nhau (mẹ và con cùng làm bánh)",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-both": {
+      "word": "both",
+      "meaning": "cả hai (mẹ và Noah)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "biết; hiểu",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-worked": {
+      "word": "worked",
+      "meaning": "đã làm; đã bỏ công sức",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-hard": {
+      "word": "hard",
+      "meaning": "rất cố gắng; chăm chỉ (trong “worked hard”)",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-it's": {
+      "word": "it's",
+      "meaning": "nó ... (viết tắt “it is”; chỉ chiếc bánh)",
+      "pos": [
+        "pronoun",
+        "verb"
+      ]
+    },
+    "word-smaller": {
+      "word": "smaller",
+      "meaning": "nhỏ hơn",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-than": {
+      "word": "than",
+      "meaning": "hơn (dùng khi so sánh)",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "trợ động từ trong “do not” (phủ định)",
+      "pos": [
+        "auxiliary verb"
+      ]
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "không (phủ định)",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-big": {
+      "word": "big",
+      "meaning": "to; lớn",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-expensive": {
+      "word": "expensive",
+      "meaning": "đắt tiền",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-gifts": {
+      "word": "gifts",
+      "meaning": "những món quà",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-either": {
+      "word": "either",
+      "meaning": "cũng không (đứng cuối câu phủ định)",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "của con (Dad nói với Noah)",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-love": {
+      "word": "love",
+      "meaning": "tình yêu thương (của Noah dành cho bố)",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-best": {
+      "word": "best",
+      "meaning": "tuyệt vời nhất; tốt nhất",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-gift": {
+      "word": "gift",
+      "meaning": "món quà",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "bố (Dad tự xưng)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-really": {
+      "word": "really",
+      "meaning": "thật ạ?; thật sao?",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "không (Dad khẳng định mình không buồn)",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-come": {
+      "word": "come",
+      "meaning": "lại; đến (trong “Come here”)",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "đây (trong “Come here” = lại đây)",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-hug": {
+      "word": "hug",
+      "meaning": "cái ôm",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-card": {
+      "word": "card",
+      "meaning": "tấm thiệp (sinh nhật)",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "nữa; cũng",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-happy-feeling": {
+      "word": "happy",
+      "meaning": "vui; hạnh phúc (cảm xúc của Dad)",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-so-then": {
+      "word": "so",
+      "meaning": "vậy; vậy thì (Noah hỏi lại Dad)",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-love-verb": {
+      "word": "love",
+      "meaning": "yêu; yêu thương (người thân)",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-for-hug": {
+      "word": "for",
+      "meaning": "để (trong “for a hug” = để ôm)",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-for-me": {
+      "word": "for",
+      "meaning": "đối với (bố); dành cho (bố)",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-i-dad": {
+      "word": "i",
+      "meaning": "bố (Dad tự xưng)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-you-mom-dad": {
+      "word": "you",
+      "meaning": "anh (Mom nói với Dad)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-you-dad-both": {
+      "word": "you",
+      "meaning": "hai mẹ con (Dad nói với Mom và Noah)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-you-dad-noah": {
+      "word": "you",
+      "meaning": "con (Dad nói với Noah)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-it-situation": {
+      "word": "it",
+      "meaning": "chuyện đó; việc đó (chuyện làm hỏng bánh)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-that-situation": {
+      "word": "that",
+      "meaning": "chuyện đó; điều đó (trong “That is okay”)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-im-dad": {
+      "word": "i'm",
+      "meaning": "bố ... (viết tắt “I am”; Dad tự xưng)",
+      "pos": [
+        "pronoun",
+        "verb"
+      ]
+    },
+    "word-this-day": {
+      "word": "this",
+      "meaning": "đây (chỉ ngày sinh nhật này)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-are-feeling": {
+      "word": "are",
+      "meaning": "có ... không (trong “you are not sad?”)",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-is-question": {
+      "word": "is",
+      "meaning": "có phải ... không (trong câu hỏi về bánh)",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-made-card": {
+      "word": "made",
+      "meaning": "đã làm (tấm thiệp sinh nhật)",
+      "pos": [
+        "verb"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Mom",
+      "text": "Happy birthday! We have a surprise for you.",
+      "translation": "Chúc mừng sinh nhật anh! Mẹ con em có một điều bất ngờ dành cho anh.",
+      "tokens": [
+        "Happy",
+        "birthday",
+        "We",
+        "have",
+        "a",
+        "surprise",
+        "for",
+        "you"
+      ],
+      "words": [
+        "word-happy",
+        "word-birthday",
+        "word-we",
+        "word-have",
+        "word-a",
+        "word-surprise",
+        "word-for",
+        "word-you-mom-dad"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Dad",
+      "text": "Thank you! Is that chocolate cake?",
+      "translation": "Cảm ơn hai mẹ con! Đó là bánh sô-cô-la à?",
+      "tokens": [
+        "Thank",
+        "you",
+        "Is",
+        "that",
+        "chocolate",
+        "cake"
+      ],
+      "words": [
+        "word-thank",
+        "word-you-dad-both",
+        "word-is-question",
+        "word-that",
+        "word-chocolate",
+        "word-cake"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Noah",
+      "text": "Yes, Dad. Mom and I made it.",
+      "translation": "Vâng ạ, bố. Mẹ và con đã cùng làm đấy.",
+      "tokens": [
+        "Yes",
+        "Dad",
+        "Mom",
+        "and",
+        "I",
+        "made",
+        "it"
+      ],
+      "words": [
+        "word-yes",
+        "word-dad",
+        "word-mom",
+        "word-and",
+        "word-i",
+        "word-made",
+        "word-it"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Dad",
+      "text": "It looks wonderful!",
+      "translation": "Trông tuyệt quá!",
+      "tokens": [
+        "It",
+        "looks",
+        "wonderful"
+      ],
+      "words": [
+        "word-it",
+        "word-looks",
+        "word-wonderful"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Noah",
+      "text": "But I need to tell you something.",
+      "translation": "Nhưng con có chuyện muốn nói với bố.",
+      "tokens": [
+        "But",
+        "I",
+        "need",
+        "to",
+        "tell",
+        "you",
+        "something"
+      ],
+      "words": [
+        "word-but",
+        "word-i",
+        "word-need",
+        "word-to",
+        "word-tell",
+        "word-you",
+        "word-something"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Dad",
+      "text": "What is it, Noah?",
+      "translation": "Chuyện gì vậy, Noah?",
+      "tokens": [
+        "What",
+        "is",
+        "it",
+        "Noah"
+      ],
+      "words": [
+        "word-what",
+        "word-is",
+        "word-it-situation",
+        "word-noah"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Noah",
+      "text": "I dropped the first cake yesterday.",
+      "translation": "Hôm qua con đã làm rơi chiếc bánh đầu tiên.",
+      "tokens": [
+        "I",
+        "dropped",
+        "the",
+        "first",
+        "cake",
+        "yesterday"
+      ],
+      "words": [
+        "word-i",
+        "word-dropped",
+        "word-the",
+        "word-first",
+        "word-cake",
+        "word-yesterday"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Noah",
+      "text": "It broke. I felt so sad.",
+      "translation": "Chiếc bánh bị hỏng. Con đã buồn lắm.",
+      "tokens": [
+        "It",
+        "broke",
+        "I",
+        "felt",
+        "so",
+        "sad"
+      ],
+      "words": [
+        "word-it",
+        "word-broke",
+        "word-i",
+        "word-felt",
+        "word-so",
+        "word-sad"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Dad",
+      "text": "Oh, Noah. Are you okay?",
+      "translation": "Ôi, Noah. Con có sao không?",
+      "tokens": [
+        "Oh",
+        "Noah",
+        "Are",
+        "you",
+        "okay"
+      ],
+      "words": [
+        "word-oh",
+        "word-noah",
+        "word-are",
+        "word-you-dad-noah",
+        "word-okay"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Noah",
+      "text": "Yes, but I'm sorry. I wanted a perfect cake for you.",
+      "translation": "Dạ con không sao, nhưng con xin lỗi. Con đã muốn làm một chiếc bánh thật đẹp cho bố.",
+      "tokens": [
+        "Yes",
+        "but",
+        "I'm",
+        "sorry",
+        "I",
+        "wanted",
+        "a",
+        "perfect",
+        "cake",
+        "for",
+        "you"
+      ],
+      "words": [
+        "word-yes",
+        "word-but",
+        "word-i'm",
+        "word-sorry",
+        "word-i",
+        "word-wanted",
+        "word-a",
+        "word-perfect",
+        "word-cake",
+        "word-for",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Mom",
+      "text": "It was an accident. We made this one together.",
+      "translation": "Chỉ là vô tình thôi. Mẹ con em đã cùng làm chiếc bánh này.",
+      "tokens": [
+        "It",
+        "was",
+        "an",
+        "accident",
+        "We",
+        "made",
+        "this",
+        "one",
+        "together"
+      ],
+      "words": [
+        "word-it-situation",
+        "word-was",
+        "word-an",
+        "word-accident",
+        "word-we",
+        "word-made",
+        "word-this",
+        "word-one",
+        "word-together"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Dad",
+      "text": "Thank you both. I know you worked hard.",
+      "translation": "Cảm ơn hai mẹ con. Bố biết hai mẹ con đã rất cố gắng.",
+      "tokens": [
+        "Thank",
+        "you",
+        "both",
+        "I",
+        "know",
+        "you",
+        "worked",
+        "hard"
+      ],
+      "words": [
+        "word-thank",
+        "word-you-dad-both",
+        "word-both",
+        "word-i-dad",
+        "word-know",
+        "word-you-dad-both",
+        "word-worked",
+        "word-hard"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Noah",
+      "text": "But it's smaller than the first cake.",
+      "translation": "Nhưng nó nhỏ hơn chiếc bánh đầu tiên.",
+      "tokens": [
+        "But",
+        "it's",
+        "smaller",
+        "than",
+        "the",
+        "first",
+        "cake"
+      ],
+      "words": [
+        "word-but",
+        "word-it's",
+        "word-smaller",
+        "word-than",
+        "word-the",
+        "word-first",
+        "word-cake"
+      ],
+      "phrases": []
+    },
+    "14": {
+      "speaker": "Dad",
+      "text": "That is okay. I do not need a big cake.",
+      "translation": "Không sao đâu. Bố không cần một chiếc bánh lớn.",
+      "tokens": [
+        "That",
+        "is",
+        "okay",
+        "I",
+        "do",
+        "not",
+        "need",
+        "a",
+        "big",
+        "cake"
+      ],
+      "words": [
+        "word-that-situation",
+        "word-is",
+        "word-okay",
+        "word-i-dad",
+        "word-do",
+        "word-not",
+        "word-need",
+        "word-a",
+        "word-big",
+        "word-cake"
+      ],
+      "phrases": []
+    },
+    "15": {
+      "speaker": "Dad",
+      "text": "I do not need expensive gifts, either.",
+      "translation": "Bố cũng không cần những món quà đắt tiền.",
+      "tokens": [
+        "I",
+        "do",
+        "not",
+        "need",
+        "expensive",
+        "gifts",
+        "either"
+      ],
+      "words": [
+        "word-i-dad",
+        "word-do",
+        "word-not",
+        "word-need",
+        "word-expensive",
+        "word-gifts",
+        "word-either"
+      ],
+      "phrases": []
+    },
+    "16": {
+      "speaker": "Dad",
+      "text": "Your love is the best gift for me.",
+      "translation": "Tình yêu thương của con là món quà tuyệt vời nhất đối với bố.",
+      "tokens": [
+        "Your",
+        "love",
+        "is",
+        "the",
+        "best",
+        "gift",
+        "for",
+        "me"
+      ],
+      "words": [
+        "word-your",
+        "word-love",
+        "word-is",
+        "word-the",
+        "word-best",
+        "word-gift",
+        "word-for-me",
+        "word-me"
+      ],
+      "phrases": []
+    },
+    "17": {
+      "speaker": "Noah",
+      "text": "Really? So you are not sad?",
+      "translation": "Thật ạ? Vậy bố không buồn chứ ạ?",
+      "tokens": [
+        "Really",
+        "So",
+        "you",
+        "are",
+        "not",
+        "sad"
+      ],
+      "words": [
+        "word-really",
+        "word-so-then",
+        "word-you",
+        "word-are-feeling",
+        "word-not",
+        "word-sad"
+      ],
+      "phrases": []
+    },
+    "18": {
+      "speaker": "Dad",
+      "text": "No, I'm happy! Come here for a hug, Noah.",
+      "translation": "Không, bố vui lắm! Lại đây để bố ôm nào, Noah.",
+      "tokens": [
+        "No",
+        "I'm",
+        "happy",
+        "Come",
+        "here",
+        "for",
+        "a",
+        "hug",
+        "Noah"
+      ],
+      "words": [
+        "word-no",
+        "word-im-dad",
+        "word-happy-feeling",
+        "word-come",
+        "word-here",
+        "word-for-hug",
+        "word-a",
+        "word-hug",
+        "word-noah"
+      ],
+      "phrases": []
+    },
+    "19": {
+      "speaker": "Mom",
+      "text": "Noah made you a birthday card, too!",
+      "translation": "Noah còn làm thiệp sinh nhật cho anh nữa!",
+      "tokens": [
+        "Noah",
+        "made",
+        "you",
+        "a",
+        "birthday",
+        "card",
+        "too"
+      ],
+      "words": [
+        "word-noah",
+        "word-made-card",
+        "word-you-mom-dad",
+        "word-a",
+        "word-birthday",
+        "word-card",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "20": {
+      "speaker": "Noah",
+      "text": "Happy birthday, Dad! I love you.",
+      "translation": "Chúc mừng sinh nhật bố! Con yêu bố.",
+      "tokens": [
+        "Happy",
+        "birthday",
+        "Dad",
+        "I",
+        "love",
+        "you"
+      ],
+      "words": [
+        "word-happy",
+        "word-birthday",
+        "word-dad",
+        "word-i",
+        "word-love-verb",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "21": {
+      "speaker": "Dad",
+      "text": "I love you both. This is the best birthday!",
+      "translation": "Bố yêu cả hai mẹ con. Đây là sinh nhật tuyệt vời nhất!",
+      "tokens": [
+        "I",
+        "love",
+        "you",
+        "both",
+        "This",
+        "is",
+        "the",
+        "best",
+        "birthday"
+      ],
+      "words": [
+        "word-i-dad",
+        "word-love-verb",
+        "word-you-dad-both",
+        "word-both",
+        "word-this-day",
+        "word-is",
+        "word-the",
+        "word-best",
+        "word-birthday"
+      ],
+      "phrases": []
+    }
+  }
+}

@@ -1,0 +1,915 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "a-small-surprise",
+  "dialogueId": "a-special-day",
+  "characters": {
+    "Noah": {
+      "meaning": "Noah",
+      "role": "con trai của Mom và Dad"
+    },
+    "Mom": {
+      "meaning": "Mom",
+      "role": "mẹ của Noah"
+    }
+  },
+  "entries": {
+    "word-mom": {
+      "word": "mom",
+      "meaning": "mẹ",
+      "pos": [
+        "name"
+      ]
+    },
+    "word-tomorrow": {
+      "word": "tomorrow",
+      "meaning": "ngày mai",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "là",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-dad's": {
+      "word": "dad's",
+      "meaning": "của bố",
+      "pos": [
+        "name"
+      ],
+      "note": "Dạng sở hữu của Dad."
+    },
+    "word-birthday": {
+      "word": "birthday",
+      "meaning": "sinh nhật",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "đúng rồi",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "điều đó",
+      "pos": [
+        "pron"
+      ],
+      "note": "Ở câu 2, chỉ việc ngày mai là sinh nhật của bố."
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "trợ động từ hỏi",
+      "pos": [
+        "aux"
+      ],
+      "note": "Dùng để tạo câu hỏi ở thì hiện tại đơn."
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mom đang nói với Noah."
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "có",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "một",
+      "pos": [
+        "det"
+      ]
+    },
+    "word-gift": {
+      "word": "gift",
+      "meaning": "món quà",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "cho",
+      "pos": [
+        "prep"
+      ]
+    },
+    "word-him": {
+      "word": "him",
+      "meaning": "bố",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "không",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-yet": {
+      "word": "yet",
+      "meaning": "chưa",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Noah tự xưng là con khi nói với mẹ."
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "muốn",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "dấu hiệu nguyên mẫu",
+      "pos": [
+        "prep"
+      ],
+      "note": "Đứng trước động từ nguyên mẫu trong want to give."
+    },
+    "word-give": {
+      "word": "give",
+      "meaning": "tặng",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-something": {
+      "word": "something",
+      "meaning": "điều gì đó",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-special": {
+      "word": "special",
+      "meaning": "đặc biệt",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "nhưng",
+      "pos": [
+        "conj"
+      ]
+    },
+    "word-only": {
+      "word": "only",
+      "meaning": "chỉ",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-five": {
+      "word": "five",
+      "meaning": "năm",
+      "pos": [
+        "num"
+      ]
+    },
+    "word-dollars": {
+      "word": "dollars",
+      "meaning": "đô la",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "đó",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "không sao",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "aux"
+      ]
+    },
+    "word-make": {
+      "word": "make",
+      "meaning": "làm",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "gì",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-dad": {
+      "word": "dad",
+      "meaning": "bố",
+      "pos": [
+        "name"
+      ]
+    },
+    "word-loves": {
+      "word": "loves",
+      "meaning": "rất thích",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "của con",
+      "pos": [
+        "det"
+      ],
+      "note": "Mom đang nói với Noah."
+    },
+    "word-drawings": {
+      "word": "drawings",
+      "meaning": "những bức tranh vẽ",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-card": {
+      "word": "card",
+      "meaning": "tấm thiệp",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "hay",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-idea": {
+      "word": "idea",
+      "meaning": "ý tưởng",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-write": {
+      "word": "write",
+      "meaning": "viết",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-nice": {
+      "word": "nice",
+      "meaning": "hay",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-message": {
+      "word": "message",
+      "meaning": "lời nhắn",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-inside": {
+      "word": "inside",
+      "meaning": "bên trong",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-happy": {
+      "word": "happy",
+      "meaning": "vui",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-love": {
+      "word": "love",
+      "meaning": "yêu",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "sẽ",
+      "pos": [
+        "aux"
+      ]
+    },
+    "word-be": {
+      "word": "be",
+      "meaning": "ở trạng thái",
+      "pos": [
+        "v"
+      ],
+      "note": "Trong will be happy, diễn tả trạng thái vui trong tương lai."
+    },
+    "word-he": {
+      "word": "he",
+      "meaning": "bố",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-cards": {
+      "word": "cards",
+      "meaning": "những tấm thiệp",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "cảm ơn",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "giúp",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "của",
+      "pos": [
+        "prep"
+      ],
+      "note": "Trong Of course, cả cụm có nghĩa là tất nhiên."
+    },
+    "word-course": {
+      "word": "course",
+      "meaning": "lẽ thường",
+      "pos": [
+        "n"
+      ],
+      "note": "Trong Of course, cả cụm có nghĩa là tất nhiên."
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "mẹ con mình",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-together": {
+      "word": "together",
+      "meaning": "cùng nhau",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-is-confirmation": {
+      "word": "is",
+      "meaning": "đúng vậy",
+      "pos": [
+        "v"
+      ],
+      "note": "Trong Yes, it is, xác nhận điều Noah vừa nói."
+    },
+    "word-happy-greeting": {
+      "word": "happy",
+      "meaning": "chúc mừng",
+      "pos": [
+        "adj"
+      ],
+      "note": "Trong Happy birthday, cả cụm là lời chúc sinh nhật."
+    },
+    "word-you-mom": {
+      "word": "you",
+      "meaning": "mẹ",
+      "pos": [
+        "pron"
+      ],
+      "note": "Noah nói với Mom."
+    },
+    "word-it-card": {
+      "word": "it",
+      "meaning": "tấm thiệp",
+      "pos": [
+        "pron"
+      ],
+      "note": "Chỉ tấm thiệp mà hai mẹ con sẽ làm."
+    },
+    "phrase-dads-birthday": {
+      "word": "dad's birthday",
+      "meaning": "sinh nhật của bố",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-not-yet": {
+      "word": "not yet",
+      "meaning": "chưa ạ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-something-special": {
+      "word": "something special",
+      "meaning": "một điều đặc biệt",
+      "pos": [
+        "phrase"
+      ],
+      "note": "Ở câu này, Noah muốn tặng bố một món quà đặc biệt."
+    },
+    "phrase-five-dollars": {
+      "word": "five dollars",
+      "meaning": "năm đô la",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-that-is-okay": {
+      "word": "that is okay",
+      "meaning": "không sao đâu",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-birthday-card": {
+      "word": "birthday card",
+      "meaning": "thiệp sinh nhật",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-good-idea": {
+      "word": "good idea",
+      "meaning": "ý hay",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-happy-birthday": {
+      "word": "happy birthday",
+      "meaning": "chúc mừng sinh nhật",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-thank-you": {
+      "word": "thank you",
+      "meaning": "cảm ơn",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-of-course": {
+      "word": "of course",
+      "meaning": "tất nhiên rồi",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Noah",
+      "text": "Mom, tomorrow is Dad's birthday!",
+      "translation": "Mẹ ơi, ngày mai là sinh nhật của bố!",
+      "tokens": [
+        "Mom",
+        "tomorrow",
+        "is",
+        "Dad's",
+        "birthday"
+      ],
+      "words": [
+        "word-mom",
+        "word-tomorrow",
+        "word-is",
+        "word-dad's",
+        "word-birthday"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "Dad's birthday",
+          "entry": "phrase-dads-birthday"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Mom",
+      "text": "Yes, it is. Do you have a gift for him?",
+      "translation": "Đúng rồi. Con có quà cho bố chưa?",
+      "tokens": [
+        "Yes",
+        "it",
+        "is",
+        "Do",
+        "you",
+        "have",
+        "a",
+        "gift",
+        "for",
+        "him"
+      ],
+      "words": [
+        "word-yes",
+        "word-it",
+        "word-is-confirmation",
+        "word-do",
+        "word-you",
+        "word-have",
+        "word-a",
+        "word-gift",
+        "word-for",
+        "word-him"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Noah",
+      "text": "Not yet. I want to give him something special.",
+      "translation": "Chưa ạ. Con muốn tặng bố một món quà thật đặc biệt.",
+      "tokens": [
+        "Not",
+        "yet",
+        "I",
+        "want",
+        "to",
+        "give",
+        "him",
+        "something",
+        "special"
+      ],
+      "words": [
+        "word-not",
+        "word-yet",
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-give",
+        "word-him",
+        "word-something",
+        "word-special"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Not yet",
+          "entry": "phrase-not-yet"
+        },
+        {
+          "start": 7,
+          "end": 8,
+          "text": "something special",
+          "entry": "phrase-something-special"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Noah",
+      "text": "But I only have five dollars.",
+      "translation": "Nhưng con chỉ có năm đô la thôi.",
+      "tokens": [
+        "But",
+        "I",
+        "only",
+        "have",
+        "five",
+        "dollars"
+      ],
+      "words": [
+        "word-but",
+        "word-i",
+        "word-only",
+        "word-have",
+        "word-five",
+        "word-dollars"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "five dollars",
+          "entry": "phrase-five-dollars"
+        }
+      ]
+    },
+    "5": {
+      "speaker": "Mom",
+      "text": "That is okay. You can make a gift.",
+      "translation": "Không sao đâu. Con có thể tự làm một món quà mà.",
+      "tokens": [
+        "That",
+        "is",
+        "okay",
+        "You",
+        "can",
+        "make",
+        "a",
+        "gift"
+      ],
+      "words": [
+        "word-that",
+        "word-is",
+        "word-okay",
+        "word-you",
+        "word-can",
+        "word-make",
+        "word-a",
+        "word-gift"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "That is okay",
+          "entry": "phrase-that-is-okay"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Noah",
+      "text": "What can I make?",
+      "translation": "Con có thể làm gì ạ?",
+      "tokens": [
+        "What",
+        "can",
+        "I",
+        "make"
+      ],
+      "words": [
+        "word-what",
+        "word-can",
+        "word-i",
+        "word-make"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Mom",
+      "text": "Dad loves your drawings. You can make him a card.",
+      "translation": "Bố rất thích những bức tranh con vẽ. Con có thể làm một tấm thiệp cho bố.",
+      "tokens": [
+        "Dad",
+        "loves",
+        "your",
+        "drawings",
+        "You",
+        "can",
+        "make",
+        "him",
+        "a",
+        "card"
+      ],
+      "words": [
+        "word-dad",
+        "word-loves",
+        "word-your",
+        "word-drawings",
+        "word-you",
+        "word-can",
+        "word-make",
+        "word-him",
+        "word-a",
+        "word-card"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Noah",
+      "text": "A birthday card? That is a good idea!",
+      "translation": "Thiệp sinh nhật ạ? Ý hay quá mẹ!",
+      "tokens": [
+        "A",
+        "birthday",
+        "card",
+        "That",
+        "is",
+        "a",
+        "good",
+        "idea"
+      ],
+      "words": [
+        "word-a",
+        "word-birthday",
+        "word-card",
+        "word-that",
+        "word-is",
+        "word-a",
+        "word-good",
+        "word-idea"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "text": "birthday card",
+          "entry": "phrase-birthday-card"
+        },
+        {
+          "start": 6,
+          "end": 7,
+          "text": "good idea",
+          "entry": "phrase-good-idea"
+        }
+      ]
+    },
+    "9": {
+      "speaker": "Mom",
+      "text": "You can write a nice message inside.",
+      "translation": "Con có thể viết một lời nhắn thật hay bên trong.",
+      "tokens": [
+        "You",
+        "can",
+        "write",
+        "a",
+        "nice",
+        "message",
+        "inside"
+      ],
+      "words": [
+        "word-you",
+        "word-can",
+        "word-write",
+        "word-a",
+        "word-nice",
+        "word-message",
+        "word-inside"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Noah",
+      "text": "I can write, 'Happy birthday, Dad! I love you!'",
+      "translation": "Con có thể viết: 'Chúc mừng sinh nhật bố! Con yêu bố!'",
+      "tokens": [
+        "I",
+        "can",
+        "write",
+        "Happy",
+        "birthday",
+        "Dad",
+        "I",
+        "love",
+        "you"
+      ],
+      "words": [
+        "word-i",
+        "word-can",
+        "word-write",
+        "word-happy-greeting",
+        "word-birthday",
+        "word-dad",
+        "word-i",
+        "word-love",
+        "word-you-mom"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "Happy birthday",
+          "entry": "phrase-happy-birthday"
+        }
+      ]
+    },
+    "11": {
+      "speaker": "Mom",
+      "text": "Dad will be happy. He loves your cards.",
+      "translation": "Bố sẽ vui lắm. Bố rất thích những tấm thiệp của con.",
+      "tokens": [
+        "Dad",
+        "will",
+        "be",
+        "happy",
+        "He",
+        "loves",
+        "your",
+        "cards"
+      ],
+      "words": [
+        "word-dad",
+        "word-will",
+        "word-be",
+        "word-happy",
+        "word-he",
+        "word-loves",
+        "word-your",
+        "word-cards"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Noah",
+      "text": "Thank you, Mom. Can you help me make it?",
+      "translation": "Con cảm ơn mẹ. Mẹ giúp con làm thiệp được không ạ?",
+      "tokens": [
+        "Thank",
+        "you",
+        "Mom",
+        "Can",
+        "you",
+        "help",
+        "me",
+        "make",
+        "it"
+      ],
+      "words": [
+        "word-thank",
+        "word-you-mom",
+        "word-mom",
+        "word-can",
+        "word-you-mom",
+        "word-help",
+        "word-me",
+        "word-make",
+        "word-it-card"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Thank you",
+          "entry": "phrase-thank-you"
+        }
+      ]
+    },
+    "13": {
+      "speaker": "Mom",
+      "text": "Of course! We can make it together.",
+      "translation": "Tất nhiên rồi! Mẹ con mình có thể cùng nhau làm.",
+      "tokens": [
+        "Of",
+        "course",
+        "We",
+        "can",
+        "make",
+        "it",
+        "together"
+      ],
+      "words": [
+        "word-of",
+        "word-course",
+        "word-we",
+        "word-can",
+        "word-make",
+        "word-it-card",
+        "word-together"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Of course",
+          "entry": "phrase-of-course"
+        }
+      ]
+    }
+  }
+}

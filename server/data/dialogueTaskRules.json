@@ -1,6 +1,1582 @@
 [
 	{
 		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"make"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"chocolate cake"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"make"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"together"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"eggs"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"milk"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"15"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"have eggs"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"need milk"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"buy"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"today"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"cake"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"20"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"go to"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"store"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tell Dad"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"a secret"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"25"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"not tell"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tomorrow"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"28"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"birthday card"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"29"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"today"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"at work"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"30"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"both surprises"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"31"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"32"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"cake",
+			"at work",
+			"surprise",
+			"kind",
+			"chocolate",
+			"together",
+			"eggs",
+			"need",
+			"buy",
+			"store",
+			"secret",
+			"tomorrow",
+			"birthday card",
+			"surprises"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"a surprise"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"kind of"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"like"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"8"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-secret-plan",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"loves"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tomorrow"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"gift"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"11"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"make"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"13"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"drawings"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"card"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"birthday card"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"good idea"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"write"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"message"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"2"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Happy birthday"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"love you"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"cards"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"23"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"make"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"together"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"28"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"29"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"tomorrow",
+			"gift",
+			"something special",
+			"five dollars",
+			"make",
+			"make",
+			"card",
+			"good idea",
+			"message",
+			"Happy birthday",
+			"happy",
+			"help",
+			"together"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"gift"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"for him"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"give"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"something special"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"only"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"five dollars"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"a-special-day",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"make"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Happy birthday"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"What"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"dropped"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"yesterday"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"13"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"broke"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sad"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Are you"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"okay"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"I'm sorry"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"perfect"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"surprise"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"accident"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"together"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"22"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"worked hard"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"smaller"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"first"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"do not"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"28"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"big"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"29"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"expensive"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"30"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"gifts"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"31"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"32"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"love"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"33"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"best gift"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"34"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Really"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"35"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sad"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"36"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"37"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"happy"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"38"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"hug"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"39"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"birthday card"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"chocolate"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"40"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Happy birthday"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"41"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"love"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"42"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"43"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"both"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"44"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"best"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"45"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"surprise",
+			"chocolate",
+			"made",
+			"wonderful",
+			"something",
+			"What",
+			"yesterday",
+			"sad",
+			"okay",
+			"perfect",
+			"together",
+			"worked hard",
+			"first",
+			"big",
+			"gifts",
+			"best gift",
+			"sad",
+			"hug",
+			"birthday card",
+			"love",
+			"best"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Mom"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"made"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"wonderful"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tell"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-best-gift",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"something"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"dropped"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"an accident"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"I'm sorry"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"so sad"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"It's okay"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"another cake"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"15"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"birthday"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tomorrow"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"time"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"at work"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"the cake"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"20"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"enough"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"chocolate"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"some left"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"together"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"again"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"26"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Of course"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"28"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"small one"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"29"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"feel"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"okay"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"30"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"much better"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"31"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"32"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"dropped",
+			"okay",
+			"broken",
+			"surprise",
+			"accident",
+			"sad",
+			"another",
+			"tomorrow",
+			"time",
+			"chocolate",
+			"left",
+			"together",
+			"small",
+			"better"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"broken"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"but"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"6"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"surprise"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"for Dad"
+		]
+	},
+	{
+		"ids": [
+			"a-small-surprise",
+			"the-broken-cake",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"I know"
+		]
+	},
+	{
+		"ids": [
 			"asking-for-directions",
 			"finding-a-cafe",
 			"1"

@@ -1,5 +1,6 @@
 "use client";
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { resourceCache } from "@/app/_lib/resourceCache.mjs";
 import { createAuthSessionGuard } from "@/app/_lib/authSessionGuard.mjs";
 import { createSessionRestore } from "@/app/_lib/sessionRestore.mjs";
 import { createCredentialAttempt, selectCredentialSession, discardCredentialAttempt,
@@ -12,10 +13,22 @@ export function AuthProvider({ children }) {
     const [user, setStoredUser] = useState(null);
     const [loading, setLoading] = useState(true); 
     const [sessionGuard] = useState(createAuthSessionGuard);
+    const [acceptUser] = useState(() => {
+        let confirmedUserId;
+        return (nextUser) => {
+            const nextId = nextUser?._id || nextUser?.id || null;
+            if (confirmedUserId && confirmedUserId !== nextId) resourceCache.clearUser(confirmedUserId);
+            if (!nextId) resourceCache.clearAllPrivate();
+			resourceCache.setActiveUserId(nextId);
+            confirmedUserId = nextId;
+            setStoredUser(nextUser);
+            setLoading(false);
+        };
+    });
     const [credentialAttempts] = useState(() => createCredentialAttempt({
         guard: sessionGuard, selectSession: selectCredentialSession,
         registerIntent: registerCredentialIntent, isCurrentIntent: isCurrentCredentialIntent,
-        onUser(nextUser) { setStoredUser(nextUser); setLoading(false); },
+        onUser: acceptUser,
     }));
     const [sessionRestore] = useState(() => createSessionRestore({
         guard: sessionGuard,
@@ -27,7 +40,7 @@ export function AuthProvider({ children }) {
             if (data?.status !== undefined && data.status !== "success") return null;
             return data?.data?.user || null;
         },
-        onUser: setStoredUser,
+        onUser: acceptUser,
         onLoading: setLoading,
     }));
 
@@ -38,18 +51,17 @@ export function AuthProvider({ children }) {
         const resolved = typeof nextUser === "function"
             ? sessionGuard.update(nextUser(sessionGuard.getUser()))
             : sessionGuard.start(nextUser);
-        setStoredUser(resolved);
+        acceptUser(resolved);
         if (!resolved) selectCredentialSession("none");
-        setLoading(false);
-    }, [sessionGuard, sessionRestore, credentialAttempts]);
+    }, [sessionGuard, sessionRestore, credentialAttempts, acceptUser]);
 
     const updateUserForSession = useCallback((nextUser, session) => {
         if (!sessionGuard.updateForSession(nextUser, session)) return false;
         sessionRestore.invalidate();
-        setStoredUser(nextUser);
-        setLoading(false);
+        acceptUser(nextUser);
+        resourceCache.invalidatePrefix(session.userId, "leaderboard:");
         return true;
-    }, [sessionGuard, sessionRestore]);
+    }, [sessionGuard, sessionRestore, acceptUser]);
 
     const restoreSession = useCallback((kind) => {
         if (kind === "oauth") credentialAttempts.invalidate();

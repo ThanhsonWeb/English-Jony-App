@@ -79,11 +79,11 @@ async function loadRegisteredDialogue(lessonId, dialogueId) {
 	}
 }
 
-function getVoiceId(speaker) {
+function getVoiceId(speaker, courseVoiceIds) {
 	const voiceIds = {
 		Mom: "xHKaiky3urvwNvwRMmgo",
 		Lily: "ur0MtycxCulNrunXsdLx",
-		Sam: "oF10V53nXu6mNLtJLgko",
+		Sam: "HJdgjMBpPzwZ2VRzSTbw",
 		Maria: "xHKaiky3urvwNvwRMmgo",
 		Tom: "s3TPKV1kjDlVtZbl4Ksh",
 		Anna: "Cy8NxOxWnzsargZaVHUo",
@@ -97,7 +97,9 @@ function getVoiceId(speaker) {
 		Lee: "meo5QemHRPp1cJE08w1a",
 		Maya: "ur0MtycxCulNrunXsdLx",
 	};
-	const voiceId = voiceIds[speaker];
+	const voiceId = courseVoiceIds && Object.hasOwn(courseVoiceIds, speaker)
+		? courseVoiceIds[speaker]
+		: voiceIds[speaker];
 
 	if (!voiceId) {
 		fail(`Missing voice ID for speaker "${speaker}"`);
@@ -112,6 +114,7 @@ function buildPlan(lessonId, dialogueId, dialogue, contentType = "dialogue") {
 	}
 
 	const appearances = new Map();
+	const courseVoiceIds = courseConfigs.find(course => course.courseId === lessonId)?.voiceIds;
 
 	return dialogue.dialogue
 		.map((line, index) => {
@@ -140,7 +143,8 @@ function buildPlan(lessonId, dialogueId, dialogue, contentType = "dialogue") {
 					"Mr. Daniel",
 					"Lee",
 					"Maya",
-				].includes(speaker)
+				].includes(speaker) &&
+				!(courseVoiceIds && Object.hasOwn(courseVoiceIds, speaker))
 			) {
 				fail(`Unsupported speaker "${speaker}" on dialogue line ${index + 1}`);
 			}
@@ -184,7 +188,7 @@ function buildPlan(lessonId, dialogueId, dialogue, contentType = "dialogue") {
 			return {
 				speaker,
 				text: line.text.trim(),
-				voiceId: getVoiceId(speaker),
+				voiceId: getVoiceId(speaker, courseVoiceIds),
 				filename,
 				publicUrl,
 				outputPath,

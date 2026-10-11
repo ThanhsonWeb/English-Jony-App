@@ -1,0 +1,254 @@
+StudyJony contextual glossary authoring — story: a-small-surprise/a-secret-plan
+
+Codex must author meanings offline after the English draft and Vietnamese translations are final.
+Read every line and its translation. Save a separate glossary.json beside draft.json.
+Use the existing schemaVersion 1 glossary and the prepared glossary-template.json.
+Keep lessonId=a-small-surprise, dialogueId=a-secret-plan, source line IDs, exact text,
+translation, speaker, tokens, and zero-based word positions unchanged.
+
+Review EVERY word occurrence, not only usefulWords. Write short, natural Vietnamese
+meanings, usually 1–5 words. Never blindly copy a dictionary's first sense.
+Reuse shared entries only when the English word, Vietnamese sense and POS agree;
+split references for repeated words with different senses or grammatical roles.
+Each word entry has word (lowercase English token), meaning and pos (array).
+Optional pron is an IPA array: use trustworthy surface-form IPA, never a lemma's
+IPA for an inflected word or one word's IPA for a whole phrase. Omit unknown IPA.
+Keep useful grammar explanations in optional note fields, hidden in the popup.
+Use a short grammar label when there is no direct Vietnamese translation.
+Identify names as proper names. Do not translate character names as ordinary words.
+
+Preserve individual word entries even inside expressions. Add useful phrase entries
+with pos:["phrase"] and inclusive spans {start,end,text,entry}. Phrase text must
+exactly match the source span, contain at least two words, and never cross punctuation.
+Review usefulWords as candidates; do not force every adjacent word into a phrase.
+Each line has words (entry IDs in token order) and phrases (span array).
+Each character has meaning (name), role and optional note.
+
+Use the English sentence AND its existing Vietnamese translation to select senses.
+Check natural Vietnamese, phrase boundaries, individual meanings, POS and IPA.
+Flag uncertain senses in optional notes for human review; validation is not proof
+of translation accuracy. Never modify an approved glossary automatically.
+No runtime translation API, build-time translation API or dictionary-based meaning generator.
+
+After authoring, run:
+npm run glossary:check -- a-small-surprise a-secret-plan
+Then the existing dialogue:build command validates again before any promotion.
+
+Final source (all lines and useful expressions):
+{
+  "metadata": {
+    "courseId": "a-small-surprise",
+    "dialogueId": "a-secret-plan",
+    "contextualGlossaryVersion": 1,
+    "title": "Kế hoạch bí mật",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Một bất ngờ nhỏ",
+        "en": "A Small Surprise"
+      },
+      "courseDescription": {
+        "vi": "Noah và mẹ quyết định làm bánh sinh nhật cho bố. Họ bí mật chuẩn bị mọi thứ khi bố đi vắng.",
+        "en": "Noah and Mom decide to make a birthday cake for Dad. They prepare everything in secret while Dad is away."
+      },
+      "title": {
+        "vi": "Kế hoạch bí mật",
+        "en": "A Secret Plan"
+      },
+      "description": {
+        "vi": "Noah and Mom decide to make a birthday cake for Dad. They prepare everything in secret while Dad is away.",
+        "en": "Noah and Mom plan a birthday cake for Dad while he is away, and keep it a secret."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Noah and Mom decide to make a birthday cake for Dad. They prepare everything in secret while Dad is away.",
+    "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+    "thumbnail": "/stories/a-small-surprise/thumbnails/a-secret-plan.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Noah",
+      "text": "Mom, can we make a cake for Dad too?",
+      "translation": "Mẹ ơi, mẹ con mình làm thêm một chiếc bánh cho bố được không ạ?",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Mom",
+      "text": "Yes! Dad is at work now.",
+      "translation": "Được chứ! Bố đang ở chỗ làm.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Noah",
+      "text": "Great! I want it to be a surprise.",
+      "translation": "Tuyệt quá! Con muốn đó là một điều bất ngờ.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Mom",
+      "text": "What kind of cake does Dad like?",
+      "translation": "Bố thích loại bánh nào nhỉ?",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Noah",
+      "text": "He loves chocolate cake.",
+      "translation": "Bố rất thích bánh sô-cô-la.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Mom",
+      "text": "We can make it together.",
+      "translation": "Mẹ con mình có thể cùng làm bánh.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Noah",
+      "text": "Do we have eggs and milk?",
+      "translation": "Nhà mình có trứng và sữa không mẹ?",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Mom",
+      "text": "We have eggs, but we need milk.",
+      "translation": "Nhà mình có trứng, nhưng cần mua thêm sữa.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Noah",
+      "text": "Can we buy some milk today?",
+      "translation": "Hôm nay mẹ con mình đi mua sữa được không ạ?",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Mom",
+      "text": "Yes, we can go to the store soon.",
+      "translation": "Được, lát nữa mẹ con mình có thể đến cửa hàng.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Noah",
+      "text": "Please do not tell Dad. It is a secret!",
+      "translation": "Mẹ đừng nói với bố nhé. Đây là bí mật đấy!",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Mom",
+      "text": "I will not tell him. Dad will be happy tomorrow!",
+      "translation": "Mẹ sẽ không nói với bố đâu. Ngày mai bố sẽ rất vui!",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-06.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Noah",
+      "text": "I can make his birthday card today, too!",
+      "translation": "Hôm nay con cũng có thể làm thiệp sinh nhật cho bố nữa!",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-07.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Mom",
+      "text": "He will love both surprises!",
+      "translation": "Bố sẽ thích cả hai điều bất ngờ!",
+      "practicePriority": "simple",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-07.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "make a cake",
+      "pronunciation": "/meɪk ə keɪk/",
+      "meaning": "làm bánh",
+      "example": "We can make a cake for Mom."
+    },
+    {
+      "word": "at work",
+      "pronunciation": "/æt wɝːk/",
+      "meaning": "đang ở chỗ làm",
+      "example": "My dad is at work."
+    },
+    {
+      "word": "a surprise",
+      "pronunciation": "/ə sərˈpraɪz/",
+      "meaning": "một điều bất ngờ",
+      "example": "This gift is a surprise."
+    },
+    {
+      "word": "What kind of",
+      "pronunciation": "/wʌt kaɪnd əv/",
+      "meaning": "loại nào",
+      "example": "What kind of tea do you like?"
+    },
+    {
+      "word": "chocolate cake",
+      "pronunciation": "/ˈtʃɑːklət keɪk/",
+      "meaning": "bánh sô-cô-la",
+      "example": "I like chocolate cake."
+    },
+    {
+      "word": "Do we have",
+      "pronunciation": "/duː wi hæv/",
+      "meaning": "chúng ta có ... không?",
+      "example": "Do we have any bread?"
+    },
+    {
+      "word": "go to the store",
+      "pronunciation": "/ɡoʊ tə ðə stɔːr/",
+      "meaning": "đi đến cửa hàng",
+      "example": "We can go to the store."
+    },
+    {
+      "word": "a secret",
+      "pronunciation": "/ə ˈsiːkrət/",
+      "meaning": "một bí mật",
+      "example": "It is a secret."
+    },
+    {
+      "word": "birthday card",
+      "pronunciation": "/ˈbɝːθdeɪ kɑːrd/",
+      "meaning": "thiệp sinh nhật",
+      "example": "I can make a birthday card."
+    }
+  ]
+}

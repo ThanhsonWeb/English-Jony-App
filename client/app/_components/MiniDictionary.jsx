@@ -11,32 +11,29 @@ import {
 	X,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { Link } from "@/i18n/navigation";
 import { notifyVocabularySaved } from "@/app/_lib/vocabularyEvents.mjs";
+import { useVocabularyResource } from "@/app/_lib/useStudyResources";
+import { resourceCache } from "@/app/_lib/resourceCache.mjs";
 
 const normalizeWord = (value = "") => value.trim().toLocaleLowerCase("en");
 const MAX_SUGGESTIONS = 6;
-let englishWordsPromise;
 
 const subscribeToBrowserFeatures = () => () => {};
 const getSpeechSynthesisSupport = () => "speechSynthesis" in window;
 const getServerSpeechSynthesisSupport = () => false;
 
 function loadEnglishWords() {
-	if (!englishWordsPromise) {
-		englishWordsPromise = fetch("/data/english_words.json")
+	return resourceCache.load("public", "english-words", () => fetch("/data/english_words.json")
 			.then((response) => {
 				if (!response.ok) throw new Error("Unable to load word suggestions");
 				return response.json();
 			})
-			.then((words) => (Array.isArray(words) ? words : []))
-			.catch(() => []);
-	}
-
-	return englishWordsPromise;
+			.then((words) => (Array.isArray(words) ? words : [])), { staleTime: Infinity })
+		.catch(() => []);
 }
 
 function findSuggestions(words, query) {
@@ -96,8 +93,10 @@ export default function MiniDictionary() {
 	const [error, setError] = useState("");
 	const [topics, setTopics] = useState([]);
 	const [libraryUserId, setLibraryUserId] = useState(null);
-	const [savedWords, setSavedWords] = useState(() => new Set());
-	const [isLibraryLoading, setIsLibraryLoading] = useState(false);
+	const { data: libraryWords = [], loading: vocabularyLoading } = useVocabularyResource(user?._id || user?.id, undefined, !authLoading && isOpen);
+	const savedWords = useMemo(() => new Set(libraryWords.map(item => normalizeWord(item.english))), [libraryWords]);
+	const [topicsLoading, setIsLibraryLoading] = useState(false);
+	const isLibraryLoading = topicsLoading || vocabularyLoading;
 	const [isSaving, setIsSaving] = useState(false);
 	const [saveError, setSaveError] = useState("");
 	const [isPronunciationPlaying, setIsPronunciationPlaying] = useState(false);
@@ -211,27 +210,14 @@ export default function MiniDictionary() {
 			if (cancelled) return;
 			setIsLibraryLoading(true);
 			try {
-				const [topicsResponse, wordsResponse] = await Promise.all([
-					fetch("/api/v1/topics", { credentials: "include" }),
-					fetch("/api/v1/vocab", { credentials: "include" }),
-				]);
+				const topicsResponse = await fetch("/api/v1/topics", { credentials: "include" });
 
-				if (!topicsResponse.ok || !wordsResponse.ok) return;
+				if (!topicsResponse.ok) return;
 
-				const [topicsData, wordsData] = await Promise.all([
-					topicsResponse.json(),
-					wordsResponse.json(),
-				]);
+				const topicsData = await topicsResponse.json();
 
 				if (cancelled) return;
 				setTopics(topicsData.data?.topics || []);
-				setSavedWords(
-					new Set(
-						(wordsData.data?.vocabularies || []).map((item) =>
-							normalizeWord(item.english),
-						),
-					),
-				);
 				setLibraryUserId(userId);
 			} finally {
 				if (!cancelled) setIsLibraryLoading(false);
@@ -395,9 +381,6 @@ export default function MiniDictionary() {
 			if (!isCurrentSession(session)) return;
 			notifyVocabularySaved(session.userId, data.data.newVocab);
 
-			setSavedWords((current) =>
-				new Set([...current, normalizeWord(result.english)]),
-			);
 		} catch {
 			if (isCurrentSession(session)) setSaveError(t("saveError"));
 		} finally {

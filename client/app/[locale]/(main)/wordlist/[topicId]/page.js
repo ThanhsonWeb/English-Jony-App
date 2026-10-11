@@ -22,8 +22,10 @@ import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import Loading from "@/app/_components/loading";
 import { useTranslations } from "next-intl";
-import { fetchVocabulary, getWordStatus, isReviewDue as reviewDue } from "@/app/_lib/vocabulary.mjs";
-import { subscribeVocabularySaved } from "@/app/_lib/vocabularyEvents.mjs";
+import { getWordStatus, isReviewDue as reviewDue } from "@/app/_lib/vocabulary.mjs";
+import { mutateVocabulary } from "@/app/_lib/vocabularyMutation.mjs";
+import { useVocabularyResource } from "@/app/_lib/useStudyResources";
+import { useCachedResource } from "@/app/_lib/useCachedResource";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { createLatestDictionaryLookup, lookupDictionaryWord } from "@/app/_lib/latestDictionaryLookup.mjs";
 
@@ -33,12 +35,14 @@ export default function WordPage() {
 	const userId = user?._id || user?.id;
 	// state
 	const [viewMode, setViewMode] = useState("list");
-	const [wordList, setWordList] = useState([]);
 	const [suggestions, setSuggestions] = useState([]);
-	const [loading, setLoading] = useState(true);
 	const [isOpen, setIsOpen] = useState(false);
 	const { topicId } = useParams();
-	const [words, setWords] = useState([]);
+	const { data: cachedWords, loading: queryLoading } = useVocabularyResource(userId, topicId, !authLoading);
+	const words = cachedWords || [];
+	const loading = authLoading || queryLoading;
+	const { data: wordList = [] } = useCachedResource({ userId: "public", key: "english-words", staleTime: Infinity,
+		fetcher: async () => { const response = await fetch("/data/english_words.json"); if (!response.ok) throw new Error("loadError"); return response.json(); } });
 	const [english, setEnglish] = useState("");
 	const [vietnamese, setVietnamese] = useState("");
 	const [example, setExample] = useState("");
@@ -132,43 +136,6 @@ export default function WordPage() {
 		return () => clearTimeout(timer);
 	}, []);
 
-	//   Get all words
-	useEffect(() => {
-		if (authLoading) return;
-		let controller;
-		async function fetchData() {
-			controller?.abort();
-			const request = new AbortController();
-			controller = request;
-			try {
-				const vocabulary = await fetchVocabulary(topicId, request.signal);
-				if (!request.signal.aborted) setWords(vocabulary);
-			} catch (err) {
-				if (!request.signal.aborted) console.error(err);
-			} finally {
-				if (!request.signal.aborted) setLoading(false);
-			}
-		}
-
-		const unsubscribe = subscribeVocabularySaved(userId, topicId, fetchData);
-		fetchData();
-		return () => { unsubscribe(); controller?.abort(); };
-	}, [topicId, userId, authLoading]);
-	// load english_words.json once
-	useEffect(() => {
-		async function loadWordList() {
-			try {
-				const res = await fetch("/data/english_words.json");
-				const data = await res.json();
-
-				setWordList(data);
-			} catch (err) {
-				console.error(err);
-			}
-		}
-
-		loadWordList();
-	}, []);
 	// create suggestions locally
 	function handleEnglishChange(e) {
 		const value = e.target.value;
@@ -207,31 +174,20 @@ export default function WordPage() {
 		setIsSubmitting(true);
 		setSubmitError("");
 		try {
-			const res = await fetch(`/api/v1/vocab`, {
+			await mutateVocabulary({ userId, topicId,
 				method: "POST",
-				credentials: "include",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
+				body: {
 					english,
 					vietnamese,
 					example,
 					pronunciation,
 					topic: topicId, // Crucial: link the word to the topic!
-				}),
+				},
 			});
-			const data = await res.json();
-			if (res.ok) {
-				console.log(data);
-				setWords((prev) => [...prev, data.data.newVocab]); // ✅ 2. Update UI instantly
 				setEnglish("");
 				setVietnamese("");
 				setExample("");
 				closeAddWord();
-			} else {
-				setSubmitError(data.message || t("form.addError"));
-			}
 		} catch (err) {
 			setSubmitError(t("form.addError"));
 			console.error(err);
@@ -243,13 +199,7 @@ export default function WordPage() {
 
 	async function handleDelete(id) {
 		try {
-			const res = await fetch(`/api/v1/vocab/${id}`, {
-				method: "DELETE",
-				credentials: "include",
-			});
-			if (res.ok) {
-				setWords((prev) => prev.filter((word) => word._id !== id));
-			}
+			await mutateVocabulary({ userId, id, topicId, method: "DELETE" });
 		} catch (error) {
 			console.log(error);
 		}
@@ -261,32 +211,14 @@ export default function WordPage() {
 		updatedExample,
 	) {
 		try {
-			const res = await fetch(`/api/v1/vocab/${id}`, {
+			await mutateVocabulary({ userId, id, topicId,
 				method: "PATCH",
-				credentials: "include",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({
+				body: {
 					english: updatedEnglish,
 					vietnamese: updatedVietnamese,
 					example: updatedExample,
-				}),
+				},
 			});
-			if (res.ok) {
-				setWords((prev) =>
-					prev.map((word) =>
-						word._id === id
-							? {
-									...word,
-									english: updatedEnglish,
-									vietnamese: updatedVietnamese,
-									example: updatedExample,
-								}
-							: word,
-					),
-				);
-			}
 		} catch (error) {
 			console.log(error);
 		}

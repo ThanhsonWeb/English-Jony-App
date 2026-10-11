@@ -26,6 +26,12 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 	const [editVietnamese, setEditVietnamese] = useState(word.vietnamese);
 	const [editExample, setEditExample] = useState(word.example || "");
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	function openEditor() {
+		setEditEnglish(word.english);
+		setEditVietnamese(word.vietnamese);
+		setEditExample(word.example || "");
+		setIsEditing(true);
+	}
 
 	const handleEditSubmit = (e) => {
 		e.preventDefault();
@@ -106,7 +112,7 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 											type="button"
 											onClick={() => {
 												setIsMenuOpen(false);
-												setIsEditing(true);
+												openEditor();
 											}}
 											className="flex w-full items-center gap-2 px-3 py-2 text-left text-xs text-slate-300 transition hover:bg-slate-800 hover:text-white"
 										>
@@ -211,7 +217,7 @@ function Word({ word, onDelete, onFix, variant = "list" }) {
 				{/* Actions */}
 				<div className="flex justify-end gap-1 border-t border-slate-800/70 pt-4 md:col-span-1 md:border-0 md:pt-0">
 					<button
-						onClick={() => setIsEditing((cur) => !cur)}
+					onClick={openEditor}
 						aria-label={t("editLabel", { word: word.english })}
 						className="cursor-pointer rounded-lg p-2 text-slate-500 transition hover:bg-emerald-500/10 hover:text-emerald-300"
 					>

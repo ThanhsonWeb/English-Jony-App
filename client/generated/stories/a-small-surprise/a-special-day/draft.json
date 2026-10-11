@@ -1,0 +1,1236 @@
+{
+  "metadata": {
+    "courseId": "a-small-surprise",
+    "dialogueId": "a-special-day",
+    "contextualGlossaryVersion": 1,
+    "title": "Một ngày đặc biệt",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Một bất ngờ nhỏ",
+        "en": "A Small Surprise"
+      },
+      "courseDescription": {
+        "vi": "Noah nhớ ra ngày mai là sinh nhật của bố. Cậu muốn tặng bố một món quà đặc biệt nhưng chỉ có ít tiền. Cậu nhờ mẹ giúp đỡ.",
+        "en": "Noah remembers that tomorrow is Dad's birthday. He wants to give Dad a special gift, but he has little money. He asks Mom for help."
+      },
+      "title": {
+        "vi": "Một ngày đặc biệt",
+        "en": "A Special Day"
+      },
+      "description": {
+        "vi": "Noah remembers that tomorrow is Dad's birthday. He wants to give Dad a special gift, but he has little money. He asks Mom for help.",
+        "en": "Noah remembers that tomorrow is Dad's birthday. He wants to give Dad a special gift, but he has little money. He asks Mom for help."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Noah remembers that tomorrow is Dad's birthday. He wants to give Dad a special gift, but he has little money. He asks Mom for help.",
+    "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+    "thumbnail": "/stories/a-small-surprise/thumbnails/a-special-day.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Noah",
+      "text": "Mom, tomorrow is Dad's birthday!",
+      "translation": "Mẹ ơi, ngày mai là sinh nhật của bố!",
+      "practicePriority": "simple",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Mom",
+      "text": "Yes, it is. Do you have a gift for him?",
+      "translation": "Đúng rồi. Con có quà cho bố chưa?",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Noah",
+      "text": "Not yet. I want to give him something special.",
+      "translation": "Chưa ạ. Con muốn tặng bố một món quà thật đặc biệt.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Noah",
+      "text": "But I only have five dollars.",
+      "translation": "Nhưng con chỉ có năm đô la thôi.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-03.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Mom",
+      "text": "That is okay. You can make a gift.",
+      "translation": "Không sao đâu. Con có thể tự làm một món quà mà.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Noah",
+      "text": "What can I make?",
+      "translation": "Con có thể làm gì ạ?",
+      "practicePriority": "simple",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-04.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Mom",
+      "text": "Dad loves your drawings. You can make him a card.",
+      "translation": "Bố rất thích những bức tranh con vẽ. Con có thể làm một tấm thiệp cho bố.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Noah",
+      "text": "A birthday card? That is a good idea!",
+      "translation": "Thiệp sinh nhật ạ? Ý hay quá mẹ!",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-05.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Mom",
+      "text": "You can write a nice message inside.",
+      "translation": "Con có thể viết một lời nhắn thật hay bên trong.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Noah",
+      "text": "I can write, 'Happy birthday, Dad! I love you!'",
+      "translation": "Con có thể viết: 'Chúc mừng sinh nhật bố! Con yêu bố!'",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-06.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Mom",
+      "text": "Dad will be happy. He loves your cards.",
+      "translation": "Bố sẽ vui lắm. Bố rất thích những tấm thiệp của con.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-05.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Noah",
+      "text": "Thank you, Mom. Can you help me make it?",
+      "translation": "Con cảm ơn mẹ. Mẹ giúp con làm thiệp được không ạ?",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-07.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Mom",
+      "text": "Of course! We can make it together.",
+      "translation": "Tất nhiên rồi! Mẹ con mình có thể cùng nhau làm.",
+      "practicePriority": "important",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "birthday",
+      "pronunciation": "/ˈbɜːrθ.deɪ/",
+      "meaning": "sinh nhật",
+      "example": "Today is my birthday."
+    },
+    {
+      "word": "gift",
+      "pronunciation": "/ɡɪft/",
+      "meaning": "món quà",
+      "example": "I have a gift for you."
+    },
+    {
+      "word": "something special",
+      "pronunciation": "/ˈsʌm.θɪŋ ˈspeʃ.əl/",
+      "meaning": "điều gì đó đặc biệt",
+      "example": "I want something special for Mom."
+    },
+    {
+      "word": "only",
+      "pronunciation": "/ˈoʊn.li/",
+      "meaning": "chỉ, chỉ có",
+      "example": "I only have two dollars."
+    },
+    {
+      "word": "drawings",
+      "pronunciation": "/ˈdrɔː.ɪŋz/",
+      "meaning": "những bức tranh vẽ",
+      "example": "Mom likes my drawings."
+    },
+    {
+      "word": "birthday card",
+      "pronunciation": "/ˈbɜːrθ.deɪ kɑːrd/",
+      "meaning": "thiệp sinh nhật",
+      "example": "This birthday card is for you."
+    },
+    {
+      "word": "good idea",
+      "pronunciation": "/ɡʊd aɪˈdiː.ə/",
+      "meaning": "ý hay, ý kiến hay",
+      "example": "That is a good idea!"
+    },
+    {
+      "word": "message",
+      "pronunciation": "/ˈmes.ɪdʒ/",
+      "meaning": "lời nhắn, tin nhắn",
+      "example": "I have a message for Dad."
+    },
+    {
+      "word": "Of course",
+      "pronunciation": "/əv ˈkɔːrs/",
+      "meaning": "tất nhiên rồi",
+      "example": "Of course! I can help you."
+    },
+    {
+      "word": "together",
+      "pronunciation": "/təˈɡeð.ər/",
+      "meaning": "cùng nhau",
+      "example": "We can study together."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": ["Mom, ", " is Dad's birthday!"],
+      "answers": ["tomorrow"],
+      "speaker": "Noah",
+      "transcript": "Mom, tomorrow is Dad's birthday!",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "multipleChoice",
+      "question": "Noah đang nhớ đến dịp gì?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn câu trả lời đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Noah đang nhớ đến dịp gì?",
+          "en": "What special day does Noah remember?"
+        },
+        "options": [
+          {
+            "vi": "Ngày nghỉ của gia đình.",
+            "en": "A family holiday."
+          },
+          {
+            "vi": "Ngày đầu tiên đi học.",
+            "en": "The first day of school."
+          },
+          {
+            "vi": "Sinh nhật của Mom.",
+            "en": "Mom's birthday."
+          },
+          {
+            "vi": "Sinh nhật của Dad.",
+            "en": "Dad's birthday."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Ngày nghỉ của gia đình.",
+        "Ngày đầu tiên đi học.",
+        "Sinh nhật của Mom.",
+        "Sinh nhật của Dad."
+      ],
+      "answer": "Sinh nhật của Dad.",
+      "speaker": "Noah",
+      "transcript": "Mom, tomorrow is Dad's birthday!",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes, it is. Do you have a ",
+        " for him?"
+      ],
+      "answers": ["gift"],
+      "speaker": "Mom",
+      "transcript": "Yes, it is. Do you have a gift for him?",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes, it is. Do you have a gift ",
+        "?"
+      ],
+      "answers": ["for him"],
+      "speaker": "Mom",
+      "transcript": "Yes, it is. Do you have a gift for him?",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Not yet. I want to ",
+        " him something special."
+      ],
+      "answers": ["give"],
+      "speaker": "Noah",
+      "transcript": "Not yet. I want to give him something special.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Not yet. I want to give him ",
+        "."
+      ],
+      "answers": ["something special"],
+      "speaker": "Noah",
+      "transcript": "Not yet. I want to give him something special.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "But I ",
+        " have five dollars."
+      ],
+      "answers": ["only"],
+      "speaker": "Noah",
+      "transcript": "But I only have five dollars.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-03.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "But I only have ",
+        "."
+      ],
+      "answers": ["five dollars"],
+      "speaker": "Noah",
+      "transcript": "But I only have five dollars.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-03.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "That is okay. You can ",
+        " a gift."
+      ],
+      "answers": ["make"],
+      "speaker": "Mom",
+      "transcript": "That is okay. You can make a gift.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "That is okay. You can make a ",
+        "."
+      ],
+      "answers": ["gift"],
+      "speaker": "Mom",
+      "transcript": "That is okay. You can make a gift.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-02.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "multipleChoice",
+      "question": "Khi nói 'You can make a gift', Mom muốn cho Noah biết điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn câu trả lời đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Khi nói 'You can make a gift', Mom muốn cho Noah biết điều gì?",
+          "en": "What does Mom mean by saying 'You can make a gift'?"
+        },
+        "options": [
+          {
+            "vi": "Noah đã làm xong món quà.",
+            "en": "Noah has already finished the gift."
+          },
+          {
+            "vi": "Noah không được làm quà.",
+            "en": "Noah is not allowed to make a gift."
+          },
+          {
+            "vi": "Noah có thể tự làm một món quà.",
+            "en": "Noah can make a gift himself."
+          },
+          {
+            "vi": "Noah phải mua một món quà đắt tiền.",
+            "en": "Noah must buy an expensive gift."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "can",
+      "options": [
+        "Noah đã làm xong món quà.",
+        "Noah không được làm quà.",
+        "Noah có thể tự làm một món quà.",
+        "Noah phải mua một món quà đắt tiền."
+      ],
+      "answer": "Noah có thể tự làm một món quà.",
+      "speaker": "Mom",
+      "transcript": "That is okay. You can make a gift.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-02.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "What can I ",
+        "?"
+      ],
+      "answers": ["make"],
+      "speaker": "Noah",
+      "transcript": "What can I make?",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-04.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Vì sao Noah hỏi 'What can I make?'",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn câu trả lời đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Vì sao Noah hỏi 'What can I make?'",
+          "en": "Why does Noah ask 'What can I make?'"
+        },
+        "options": [
+          {
+            "vi": "Vì Noah muốn biết nên làm món quà gì.",
+            "en": "Because Noah wants an idea for a gift."
+          },
+          {
+            "vi": "Vì Noah không nhớ ngày sinh nhật.",
+            "en": "Because Noah cannot remember the birthday."
+          },
+          {
+            "vi": "Vì Noah muốn hỏi giá một chiếc bánh.",
+            "en": "Because Noah wants to know the price of a cake."
+          },
+          {
+            "vi": "Vì Noah muốn đi mua đồ chơi.",
+            "en": "Because Noah wants to buy a toy."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì Noah muốn biết nên làm món quà gì.",
+        "Vì Noah không nhớ ngày sinh nhật.",
+        "Vì Noah muốn hỏi giá một chiếc bánh.",
+        "Vì Noah muốn đi mua đồ chơi."
+      ],
+      "answer": "Vì Noah muốn biết nên làm món quà gì.",
+      "speaker": "Noah",
+      "transcript": "What can I make?",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-04.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Dad loves your ",
+        ". You can make him a card."
+      ],
+      "answers": ["drawings"],
+      "speaker": "Mom",
+      "transcript": "Dad loves your drawings. You can make him a card.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-03.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Dad loves your drawings. You can make him a ",
+        "."
+      ],
+      "answers": ["card"],
+      "speaker": "Mom",
+      "transcript": "Dad loves your drawings. You can make him a card.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-03.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "A ",
+        "? That is a good idea!"
+      ],
+      "answers": ["birthday card"],
+      "speaker": "Noah",
+      "transcript": "A birthday card? That is a good idea!",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-05.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "A birthday card? That is a ",
+        "!"
+      ],
+      "answers": ["good idea"],
+      "speaker": "Noah",
+      "transcript": "A birthday card? That is a good idea!",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-05.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "You can ",
+        " a nice message inside."
+      ],
+      "answers": ["write"],
+      "speaker": "Mom",
+      "transcript": "You can write a nice message inside.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-04.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "You can write a nice ",
+        " inside."
+      ],
+      "answers": ["message"],
+      "speaker": "Mom",
+      "transcript": "You can write a nice message inside.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-04.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I can write, '",
+        ", Dad! I love you!'"
+      ],
+      "answers": ["Happy birthday"],
+      "speaker": "Noah",
+      "transcript": "I can write, 'Happy birthday, Dad! I love you!'",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-06.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I can write, 'Happy birthday, Dad! I ",
+        "!'"
+      ],
+      "answers": ["love you"],
+      "speaker": "Noah",
+      "transcript": "I can write, 'Happy birthday, Dad! I love you!'",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-06.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Dad will be happy. He loves your ",
+        "."
+      ],
+      "answers": ["cards"],
+      "speaker": "Mom",
+      "transcript": "Dad will be happy. He loves your cards.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 11,
+      "type": "multipleChoice",
+      "question": "Mom nghĩ Dad sẽ cảm thấy thế nào khi nhận tấm thiệp?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn câu trả lời đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Mom nghĩ Dad sẽ cảm thấy thế nào khi nhận tấm thiệp?",
+          "en": "How does Mom think Dad will feel when he gets the card?"
+        },
+        "options": [
+          {
+            "vi": "Dad sẽ buồn vì món quà nhỏ.",
+            "en": "Dad will be sad because the gift is small."
+          },
+          {
+            "vi": "Dad sẽ vui vì thích những tấm thiệp của Noah.",
+            "en": "Dad will be happy because he loves Noah's cards."
+          },
+          {
+            "vi": "Dad sẽ không muốn đọc tấm thiệp.",
+            "en": "Dad will not want to read the card."
+          },
+          {
+            "vi": "Dad sẽ yêu cầu Noah mua quà khác.",
+            "en": "Dad will ask Noah to buy another gift."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Dad sẽ buồn vì món quà nhỏ.",
+        "Dad sẽ vui vì thích những tấm thiệp của Noah.",
+        "Dad sẽ không muốn đọc tấm thiệp.",
+        "Dad sẽ yêu cầu Noah mua quà khác."
+      ],
+      "answer": "Dad sẽ vui vì thích những tấm thiệp của Noah.",
+      "speaker": "Mom",
+      "transcript": "Dad will be happy. He loves your cards.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-05.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "",
+        ", Mom. Can you help me make it?"
+      ],
+      "answers": ["Thank you"],
+      "speaker": "Noah",
+      "transcript": "Thank you, Mom. Can you help me make it?",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-07.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Thank you, Mom. Can you ",
+        " me make it?"
+      ],
+      "answers": ["help"],
+      "speaker": "Noah",
+      "transcript": "Thank you, Mom. Can you help me make it?",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-07.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Of course! We can ",
+        " it together."
+      ],
+      "answers": ["make"],
+      "speaker": "Mom",
+      "transcript": "Of course! We can make it together.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-06.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the Blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Of course! We can make it ",
+        "."
+      ],
+      "answers": ["together"],
+      "speaker": "Mom",
+      "transcript": "Of course! We can make it together.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-06.mp3"
+    },
+    {
+      "id": 28,
+      "dialogueLineId": 13,
+      "type": "multipleChoice",
+      "question": "Mom nói 'Of course!' để thể hiện điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the Correct Answer"
+        },
+        "instruction": {
+          "vi": "Chọn câu trả lời đúng nhất.",
+          "en": "Choose the best answer."
+        },
+        "question": {
+          "vi": "Mom nói 'Of course!' để thể hiện điều gì?",
+          "en": "What does Mom mean by saying 'Of course!'?"
+        },
+        "options": [
+          {
+            "vi": "Mom vui vẻ đồng ý giúp Noah.",
+            "en": "Mom happily agrees to help Noah."
+          },
+          {
+            "vi": "Mom từ chối giúp Noah.",
+            "en": "Mom refuses to help Noah."
+          },
+          {
+            "vi": "Mom muốn biết giá của tấm thiệp.",
+            "en": "Mom wants to know the price of the card."
+          },
+          {
+            "vi": "Mom bảo Noah đi ngủ.",
+            "en": "Mom tells Noah to go to bed."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "Of course",
+      "options": [
+        "Mom vui vẻ đồng ý giúp Noah.",
+        "Mom từ chối giúp Noah.",
+        "Mom muốn biết giá của tấm thiệp.",
+        "Mom bảo Noah đi ngủ."
+      ],
+      "answer": "Mom vui vẻ đồng ý giúp Noah.",
+      "speaker": "Mom",
+      "transcript": "Of course! We can make it together.",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-06.mp3"
+    },
+    {
+      "id": 29,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Hoàn thành hội thoại",
+          "en": "Complete the Dialogue"
+        },
+        "instruction": {
+          "vi": "Điền các từ còn thiếu để hoàn thành toàn bộ hội thoại.",
+          "en": "Fill in the missing words to complete the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Noah",
+          "parts": [
+            "Mom, ",
+            {
+              "id": "1",
+              "blank": "tomorrow"
+            },
+            " is Dad's birthday!"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Mom",
+          "parts": [
+            "Yes, it is. Do you have a ",
+            {
+              "id": "2",
+              "blank": "gift"
+            },
+            " for him?"
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Noah",
+          "parts": [
+            "Not yet. I want to give him ",
+            {
+              "id": "3",
+              "blank": "something special"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Noah",
+          "parts": [
+            "But I only have ",
+            {
+              "id": "4",
+              "blank": "five dollars"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Mom",
+          "parts": [
+            "That is okay. You can ",
+            {
+              "id": "5",
+              "blank": "make"
+            },
+            " a gift."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Noah",
+          "parts": [
+            "What can I ",
+            {
+              "id": "6",
+              "blank": "make"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Mom",
+          "parts": [
+            "Dad loves your drawings. You can make him a ",
+            {
+              "id": "7",
+              "blank": "card"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Noah",
+          "parts": [
+            "A birthday card? That is a ",
+            {
+              "id": "8",
+              "blank": "good idea"
+            },
+            "!"
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Mom",
+          "parts": [
+            "You can write a nice ",
+            {
+              "id": "9",
+              "blank": "message"
+            },
+            " inside."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Noah",
+          "parts": [
+            "I can write, '",
+            {
+              "id": "10",
+              "blank": "Happy birthday"
+            },
+            ", Dad! I love you!'"
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Mom",
+          "parts": [
+            "Dad will be ",
+            {
+              "id": "11",
+              "blank": "happy"
+            },
+            ". He loves your cards."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Noah",
+          "parts": [
+            "Thank you, Mom. Can you ",
+            {
+              "id": "12",
+              "blank": "help"
+            },
+            " me make it?"
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Mom",
+          "parts": [
+            "Of course! We can make it ",
+            {
+              "id": "13",
+              "blank": "together"
+            },
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Can + động từ: Nói về khả năng hoặc điều có thể làm",
+      "explanation": "Dùng 'can' + động từ nguyên mẫu để nói ai đó có thể làm một việc gì. Ví dụ: 'You can make a gift.' nghĩa là 'Con có thể làm một món quà.' Không thêm 'to' sau 'can'.",
+      "localized": {
+        "title": {
+          "vi": "Can + động từ: Nói về khả năng hoặc điều có thể làm",
+          "en": "Can + Verb: Talking About What Someone Can Do"
+        },
+        "explanation": {
+          "vi": "Dùng 'can' + động từ nguyên mẫu để nói ai đó có thể làm một việc gì. Ví dụ: 'You can make a gift.' nghĩa là 'Con có thể làm một món quà.' Không thêm 'to' sau 'can'.",
+          "en": "Use 'can' + the base form of a verb to talk about what someone is able to do. For example, 'You can make a gift.' Do not add 'to' after 'can'."
+        }
+      },
+      "example": "You can make a gift."
+    },
+    {
+      "title": "Can you ...? — Nhờ ai đó giúp đỡ",
+      "explanation": "Dùng 'Can you' + động từ nguyên mẫu để nhờ ai đó làm một việc. Đây là cách hỏi đơn giản và lịch sự. Ví dụ: 'Can you help me make it?' nghĩa là 'Mẹ giúp con làm nó được không ạ?'",
+      "localized": {
+        "title": {
+          "vi": "Can you ...? — Nhờ ai đó giúp đỡ",
+          "en": "Can you ...? — Asking Someone for Help"
+        },
+        "explanation": {
+          "vi": "Dùng 'Can you' + động từ nguyên mẫu để nhờ ai đó làm một việc. Đây là cách hỏi đơn giản và lịch sự. Ví dụ: 'Can you help me make it?' nghĩa là 'Mẹ giúp con làm nó được không ạ?'",
+          "en": "Use 'Can you' + the base form of a verb to ask someone to do something. It is a simple, polite request. For example, 'Can you help me make it?'"
+        }
+      },
+      "example": "Can you help me make it?"
+    },
+    {
+      "title": "Want to + động từ: Nói điều mình muốn làm",
+      "explanation": "Dùng 'want to' + động từ nguyên mẫu để nói về điều bạn muốn làm. Ví dụ: 'I want to give him something special.' nghĩa là 'Con muốn tặng bố một điều gì đó đặc biệt.'",
+      "localized": {
+        "title": {
+          "vi": "Want to + động từ: Nói điều mình muốn làm",
+          "en": "Want to + Verb: Talking About What You Want to Do"
+        },
+        "explanation": {
+          "vi": "Dùng 'want to' + động từ nguyên mẫu để nói về điều bạn muốn làm. Ví dụ: 'I want to give him something special.' nghĩa là 'Con muốn tặng bố một điều gì đó đặc biệt.'",
+          "en": "Use 'want to' + the base form of a verb to say what you want to do. For example, 'I want to give him something special.'"
+        }
+      },
+      "example": "I want to give him something special."
+    }
+  ]
+}

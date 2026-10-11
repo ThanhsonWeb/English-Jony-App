@@ -5,13 +5,16 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { createMistakeReviewSession } from "../../../app/_lib/mistakeReviewSession.mjs";
 import { submitQuizletReviewAnswer } from "../../../app/_lib/quizletReviewAction.mjs";
 import { useBackgroundReviewSave } from "../../../app/_lib/useBackgroundReviewSave.mjs";
+import { resourceCache } from "../../../app/_lib/resourceCache.mjs";
 
 for (const mode of ["quiz", "writing"]) {
 	test(`${mode} page handler uses the real hook: wrong → reveal → Continue → return → correct`, async (t) => {
 		const posts = [];
+		resourceCache.setActiveUserId("handler-test-user");
+		t.after(() => resourceCache.clearAllPrivate());
 		t.mock.method(globalThis, "fetch", async (url, options) => {
 			if (url.endsWith("/review")) posts.push({ url, input: JSON.parse(options.body) });
-			return { ok: true };
+			return { ok: true, json: async () => ({ data: { updatedVocab: { _id: url.split("/").at(-2), user: "handler-test-user" } } }) };
 		});
 
 		let reviewSave;

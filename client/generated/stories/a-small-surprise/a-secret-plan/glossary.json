@@ -1,0 +1,761 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "a-small-surprise",
+  "dialogueId": "a-secret-plan",
+  "characters": {
+    "Noah": {
+      "meaning": "Noah",
+      "role": "con trai của Mom"
+    },
+    "Mom": {
+      "meaning": "mẹ",
+      "role": "mẹ của Noah"
+    }
+  },
+  "entries": {
+    "word-mom": {
+      "word": "mom",
+      "meaning": "mẹ",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "mẹ con mình",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-make": {
+      "word": "make",
+      "meaning": "làm",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "một",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-cake": {
+      "word": "cake",
+      "meaning": "bánh ngọt",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "cho",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-dad": {
+      "word": "dad",
+      "meaning": "bố",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "cũng; nữa",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "vâng; được chứ",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "là; đang ở",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-at": {
+      "word": "at",
+      "meaning": "ở; tại",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-work": {
+      "word": "work",
+      "meaning": "chỗ làm",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "bây giờ",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-great": {
+      "word": "great",
+      "meaning": "tuyệt quá",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "con; mẹ (tùy người nói)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "muốn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "điều đó; chiếc bánh ấy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "để; đến (trong “go to”)",
+      "pos": [
+        "particle"
+      ]
+    },
+    "word-be": {
+      "word": "be",
+      "meaning": "là; trở nên",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-surprise": {
+      "word": "surprise",
+      "meaning": "điều bất ngờ",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "gì; nào",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-kind": {
+      "word": "kind",
+      "meaning": "loại",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "của (trong cụm “kind of”: loại)",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-does": {
+      "word": "does",
+      "meaning": "trợ động từ dùng trong câu hỏi",
+      "pos": [
+        "auxiliary verb"
+      ]
+    },
+    "word-like": {
+      "word": "like",
+      "meaning": "thích",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-he": {
+      "word": "he",
+      "meaning": "bố; ông ấy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-loves": {
+      "word": "loves",
+      "meaning": "rất thích",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-chocolate": {
+      "word": "chocolate",
+      "meaning": "sô-cô-la",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-together": {
+      "word": "together",
+      "meaning": "cùng nhau",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "trợ động từ dùng trong câu hỏi/phủ định",
+      "pos": [
+        "auxiliary verb"
+      ]
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "có",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-eggs": {
+      "word": "eggs",
+      "meaning": "trứng",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-and": {
+      "word": "and",
+      "meaning": "và",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-milk": {
+      "word": "milk",
+      "meaning": "sữa",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "nhưng",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "cần",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-buy": {
+      "word": "buy",
+      "meaning": "mua",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-some": {
+      "word": "some",
+      "meaning": "một ít",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-today": {
+      "word": "today",
+      "meaning": "hôm nay",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-go": {
+      "word": "go",
+      "meaning": "đi",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "mạo từ xác định (thường không dịch)",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-store": {
+      "word": "store",
+      "meaning": "cửa hàng",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-soon": {
+      "word": "soon",
+      "meaning": "lát nữa; sớm thôi",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-please": {
+      "word": "please",
+      "meaning": "làm ơn; nhé",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "không; đừng",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "nói cho biết",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-secret": {
+      "word": "secret",
+      "meaning": "bí mật",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "sẽ",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-him": {
+      "word": "him",
+      "meaning": "bố; ông ấy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-happy": {
+      "word": "happy",
+      "meaning": "vui",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-tomorrow": {
+      "word": "tomorrow",
+      "meaning": "ngày mai",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-his": {
+      "word": "his",
+      "meaning": "của bố",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-birthday": {
+      "word": "birthday",
+      "meaning": "sinh nhật",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-card": {
+      "word": "card",
+      "meaning": "thiệp",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-love": {
+      "word": "love",
+      "meaning": "rất thích",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-both": {
+      "word": "both",
+      "meaning": "cả hai",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-surprises": {
+      "word": "surprises",
+      "meaning": "những điều bất ngờ",
+      "pos": [
+        "noun"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Noah",
+      "text": "Mom, can we make a cake for Dad too?",
+      "translation": "Mẹ ơi, mẹ con mình làm thêm một chiếc bánh cho bố được không ạ?",
+      "tokens": [
+        "Mom",
+        "can",
+        "we",
+        "make",
+        "a",
+        "cake",
+        "for",
+        "Dad",
+        "too"
+      ],
+      "words": [
+        "word-mom",
+        "word-can",
+        "word-we",
+        "word-make",
+        "word-a",
+        "word-cake",
+        "word-for",
+        "word-dad",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Mom",
+      "text": "Yes! Dad is at work now.",
+      "translation": "Được chứ! Bố đang ở chỗ làm.",
+      "tokens": [
+        "Yes",
+        "Dad",
+        "is",
+        "at",
+        "work",
+        "now"
+      ],
+      "words": [
+        "word-yes",
+        "word-dad",
+        "word-is",
+        "word-at",
+        "word-work",
+        "word-now"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Noah",
+      "text": "Great! I want it to be a surprise.",
+      "translation": "Tuyệt quá! Con muốn đó là một điều bất ngờ.",
+      "tokens": [
+        "Great",
+        "I",
+        "want",
+        "it",
+        "to",
+        "be",
+        "a",
+        "surprise"
+      ],
+      "words": [
+        "word-great",
+        "word-i",
+        "word-want",
+        "word-it",
+        "word-to",
+        "word-be",
+        "word-a",
+        "word-surprise"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Mom",
+      "text": "What kind of cake does Dad like?",
+      "translation": "Bố thích loại bánh nào nhỉ?",
+      "tokens": [
+        "What",
+        "kind",
+        "of",
+        "cake",
+        "does",
+        "Dad",
+        "like"
+      ],
+      "words": [
+        "word-what",
+        "word-kind",
+        "word-of",
+        "word-cake",
+        "word-does",
+        "word-dad",
+        "word-like"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Noah",
+      "text": "He loves chocolate cake.",
+      "translation": "Bố rất thích bánh sô-cô-la.",
+      "tokens": [
+        "He",
+        "loves",
+        "chocolate",
+        "cake"
+      ],
+      "words": [
+        "word-he",
+        "word-loves",
+        "word-chocolate",
+        "word-cake"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Mom",
+      "text": "We can make it together.",
+      "translation": "Mẹ con mình có thể cùng làm bánh.",
+      "tokens": [
+        "We",
+        "can",
+        "make",
+        "it",
+        "together"
+      ],
+      "words": [
+        "word-we",
+        "word-can",
+        "word-make",
+        "word-it",
+        "word-together"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Noah",
+      "text": "Do we have eggs and milk?",
+      "translation": "Nhà mình có trứng và sữa không mẹ?",
+      "tokens": [
+        "Do",
+        "we",
+        "have",
+        "eggs",
+        "and",
+        "milk"
+      ],
+      "words": [
+        "word-do",
+        "word-we",
+        "word-have",
+        "word-eggs",
+        "word-and",
+        "word-milk"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Mom",
+      "text": "We have eggs, but we need milk.",
+      "translation": "Nhà mình có trứng, nhưng cần mua thêm sữa.",
+      "tokens": [
+        "We",
+        "have",
+        "eggs",
+        "but",
+        "we",
+        "need",
+        "milk"
+      ],
+      "words": [
+        "word-we",
+        "word-have",
+        "word-eggs",
+        "word-but",
+        "word-we",
+        "word-need",
+        "word-milk"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Noah",
+      "text": "Can we buy some milk today?",
+      "translation": "Hôm nay mẹ con mình đi mua sữa được không ạ?",
+      "tokens": [
+        "Can",
+        "we",
+        "buy",
+        "some",
+        "milk",
+        "today"
+      ],
+      "words": [
+        "word-can",
+        "word-we",
+        "word-buy",
+        "word-some",
+        "word-milk",
+        "word-today"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Mom",
+      "text": "Yes, we can go to the store soon.",
+      "translation": "Được, lát nữa mẹ con mình có thể đến cửa hàng.",
+      "tokens": [
+        "Yes",
+        "we",
+        "can",
+        "go",
+        "to",
+        "the",
+        "store",
+        "soon"
+      ],
+      "words": [
+        "word-yes",
+        "word-we",
+        "word-can",
+        "word-go",
+        "word-to",
+        "word-the",
+        "word-store",
+        "word-soon"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Noah",
+      "text": "Please do not tell Dad. It is a secret!",
+      "translation": "Mẹ đừng nói với bố nhé. Đây là bí mật đấy!",
+      "tokens": [
+        "Please",
+        "do",
+        "not",
+        "tell",
+        "Dad",
+        "It",
+        "is",
+        "a",
+        "secret"
+      ],
+      "words": [
+        "word-please",
+        "word-do",
+        "word-not",
+        "word-tell",
+        "word-dad",
+        "word-it",
+        "word-is",
+        "word-a",
+        "word-secret"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Mom",
+      "text": "I will not tell him. Dad will be happy tomorrow!",
+      "translation": "Mẹ sẽ không nói với bố đâu. Ngày mai bố sẽ rất vui!",
+      "tokens": [
+        "I",
+        "will",
+        "not",
+        "tell",
+        "him",
+        "Dad",
+        "will",
+        "be",
+        "happy",
+        "tomorrow"
+      ],
+      "words": [
+        "word-i",
+        "word-will",
+        "word-not",
+        "word-tell",
+        "word-him",
+        "word-dad",
+        "word-will",
+        "word-be",
+        "word-happy",
+        "word-tomorrow"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Noah",
+      "text": "I can make his birthday card today, too!",
+      "translation": "Hôm nay con cũng có thể làm thiệp sinh nhật cho bố nữa!",
+      "tokens": [
+        "I",
+        "can",
+        "make",
+        "his",
+        "birthday",
+        "card",
+        "today",
+        "too"
+      ],
+      "words": [
+        "word-i",
+        "word-can",
+        "word-make",
+        "word-his",
+        "word-birthday",
+        "word-card",
+        "word-today",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "14": {
+      "speaker": "Mom",
+      "text": "He will love both surprises!",
+      "translation": "Bố sẽ thích cả hai điều bất ngờ!",
+      "tokens": [
+        "He",
+        "will",
+        "love",
+        "both",
+        "surprises"
+      ],
+      "words": [
+        "word-he",
+        "word-will",
+        "word-love",
+        "word-both",
+        "word-surprises"
+      ],
+      "phrases": []
+    }
+  }
+}
