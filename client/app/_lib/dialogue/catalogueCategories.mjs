@@ -12,7 +12,7 @@ export function matchesCourseCategory(course, category) {
 	const categories = Array.isArray(course.categories)
 		? course.categories : course.category ? [course.category] : [];
 	if (course.contentType === "story") {
-		return category === "story" && (!categories.length || categories.some(value => ["story", "story-of-life"].includes(value)));
+		return category === "story" && (!categories.length || categories.some(value => ["story", "story-of-life", "anime"].includes(value)));
 	}
 	if (categories.length) return categories.includes(category);
 	return legacyDialogueCategories[category]?.includes(course.id) || false;

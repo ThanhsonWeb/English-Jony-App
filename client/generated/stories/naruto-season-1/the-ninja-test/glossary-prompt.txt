@@ -1,0 +1,254 @@
+StudyJony contextual glossary authoring — story: naruto-season-1/the-ninja-test
+
+Codex must author meanings offline after the English draft and Vietnamese translations are final.
+Read every line and its translation. Save a separate glossary.json beside draft.json.
+Use the existing schemaVersion 1 glossary and the prepared glossary-template.json.
+Keep lessonId=naruto-season-1, dialogueId=the-ninja-test, source line IDs, exact text,
+translation, speaker, tokens, and zero-based word positions unchanged.
+
+Review EVERY word occurrence, not only usefulWords. Write short, natural Vietnamese
+meanings, usually 1–5 words. Never blindly copy a dictionary's first sense.
+Reuse shared entries only when the English word, Vietnamese sense and POS agree;
+split references for repeated words with different senses or grammatical roles.
+Each word entry has word (lowercase English token), meaning and pos (array).
+Optional pron is an IPA array: use trustworthy surface-form IPA, never a lemma's
+IPA for an inflected word or one word's IPA for a whole phrase. Omit unknown IPA.
+Keep useful grammar explanations in optional note fields, hidden in the popup.
+Use a short grammar label when there is no direct Vietnamese translation.
+Identify names as proper names. Do not translate character names as ordinary words.
+
+Preserve individual word entries even inside expressions. Add useful phrase entries
+with pos:["phrase"] and inclusive spans {start,end,text,entry}. Phrase text must
+exactly match the source span, contain at least two words, and never cross punctuation.
+Review usefulWords as candidates; do not force every adjacent word into a phrase.
+Each line has words (entry IDs in token order) and phrases (span array).
+Each character has meaning (name), role and optional note.
+
+Use the English sentence AND its existing Vietnamese translation to select senses.
+Check natural Vietnamese, phrase boundaries, individual meanings, POS and IPA.
+Flag uncertain senses in optional notes for human review; validation is not proof
+of translation accuracy. Never modify an approved glossary automatically.
+No runtime translation API, build-time translation API or dictionary-based meaning generator.
+
+After authoring, run:
+npm run glossary:check -- naruto-season-1 the-ninja-test
+Then the existing dialogue:build command validates again before any promotion.
+
+Final source (all lines and useful expressions):
+{
+  "metadata": {
+    "courseId": "naruto-season-1",
+    "dialogueId": "the-ninja-test",
+    "contextualGlossaryVersion": 1,
+    "title": "Bài kiểm tra ninja",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Naruto – Mùa 1",
+        "en": "Naruto – Season 1"
+      },
+      "courseDescription": {
+        "vi": "Theo chân Naruto trên hành trình học làm ninja và theo đuổi ước mơ trở thành Hokage.",
+        "en": "Follow Naruto as he learns to be a ninja and works toward his dream of becoming Hokage."
+      },
+      "title": {
+        "vi": "Bài kiểm tra ninja",
+        "en": "The Ninja Test"
+      },
+      "description": {
+        "vi": "Naruto tries to pass the ninja graduation test, but he cannot make a proper clone. Iruka tells him he has failed.",
+        "en": "Naruto takes his ninja graduation test but cannot make a good clone. Iruka tells him he did not pass."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Naruto tries to pass the ninja graduation test, but he cannot make a proper clone. Iruka tells him he has failed.",
+    "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/the-ninja-test.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Iruka",
+      "text": "Naruto, are you ready for the ninja test?",
+      "translation": "Naruto, em đã sẵn sàng cho bài kiểm tra ninja chưa?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Naruto",
+      "text": "Yes! I worked hard every day.",
+      "translation": "Vâng! Em đã chăm chỉ mỗi ngày.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Iruka",
+      "text": "Good. Please make a clone.",
+      "translation": "Tốt. Em hãy tạo một phân thân nhé.",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Naruto",
+      "text": "I can do it! I want to pass.",
+      "translation": "Em làm được mà! Em muốn vượt qua bài kiểm tra.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Naruto",
+      "text": "Oh no! My clone looks weak.",
+      "translation": "Ôi không! Phân thân của em trông yếu quá.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Iruka",
+      "text": "It is too weak, Naruto.",
+      "translation": "Nó yếu quá, Naruto.",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Naruto",
+      "text": "Can I try again, please?",
+      "translation": "Thầy cho em thử lại được không ạ?",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Iruka",
+      "text": "Yes, you can try one more time.",
+      "translation": "Được, em có thể thử thêm một lần nữa.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Naruto",
+      "text": "I tried again, but the clone is still weak.",
+      "translation": "Em đã thử lại rồi, nhưng phân thân vẫn còn yếu.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Iruka",
+      "text": "I am sorry, Naruto. You did not pass the test.",
+      "translation": "Thầy rất tiếc, Naruto. Em đã không vượt qua bài kiểm tra.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Naruto",
+      "text": "But I worked so hard!",
+      "translation": "Nhưng em đã cố gắng rất nhiều mà!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Iruka",
+      "text": "I know. You need more practice.",
+      "translation": "Thầy biết. Em cần luyện tập thêm.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-06.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Naruto",
+      "text": "I will not give up. I will be Hokage one day!",
+      "translation": "Em sẽ không bỏ cuộc. Một ngày nào đó em sẽ trở thành Hokage!",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-07.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Iruka",
+      "text": "Keep trying, Naruto. You can do better next time.",
+      "translation": "Hãy tiếp tục cố gắng, Naruto. Lần sau em có thể làm tốt hơn.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-07.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "ninja test",
+      "pronunciation": "/ˈnɪndʒə tɛst/",
+      "meaning": "bài kiểm tra ninja",
+      "example": "My ninja test is today."
+    },
+    {
+      "word": "ready",
+      "pronunciation": "/ˈrɛdi/",
+      "meaning": "sẵn sàng",
+      "example": "Are you ready for the test?"
+    },
+    {
+      "word": "worked hard",
+      "pronunciation": "/wɝːkt hɑːrd/",
+      "meaning": "đã chăm chỉ, đã cố gắng",
+      "example": "I worked hard yesterday."
+    },
+    {
+      "word": "clone",
+      "pronunciation": "/kloʊn/",
+      "meaning": "phân thân; bản sao",
+      "example": "The clone looks weak."
+    },
+    {
+      "word": "try again",
+      "pronunciation": "/traɪ əˈɡɛn/",
+      "meaning": "thử lại",
+      "example": "Can I try again?"
+    },
+    {
+      "word": "pass the test",
+      "pronunciation": "/pæs ðə tɛst/",
+      "meaning": "vượt qua bài kiểm tra",
+      "example": "I want to pass the test."
+    },
+    {
+      "word": "more practice",
+      "pronunciation": "/mɔːr ˈpræktɪs/",
+      "meaning": "luyện tập thêm",
+      "example": "I need more practice."
+    },
+    {
+      "word": "give up",
+      "pronunciation": "/ɡɪv ʌp/",
+      "meaning": "bỏ cuộc",
+      "example": "I will not give up."
+    },
+    {
+      "word": "next time",
+      "pronunciation": "/nɛkst taɪm/",
+      "meaning": "lần sau",
+      "example": "I can do better next time."
+    }
+  ]
+}

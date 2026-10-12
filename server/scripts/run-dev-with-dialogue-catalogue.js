@@ -16,6 +16,7 @@ const watchRoots = [
 	path.join(clientRoot, "app/[locale]/(main)/dialogue/_data"),
 	path.join(clientRoot, "scripts/config/dialogues"),
 	path.join(clientRoot, "scripts/config/stories"),
+	path.join(clientRoot, "scripts/config/anime"),
 ];
 const watchedExtensions = new Set([".js", ".json", ".mjs"]);
 

@@ -1,0 +1,825 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "naruto-season-1",
+  "dialogueId": "the-lonely-boy",
+  "characters": {
+    "Iruka": {
+      "meaning": "Iruka",
+      "role": "thầy của Naruto"
+    },
+    "Naruto": {
+      "meaning": "Naruto",
+      "role": "học viên ninja ở Làng Lá"
+    }
+  },
+  "entries": {
+    "word-naruto": {
+      "word": "naruto",
+      "meaning": "Naruto",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-why": {
+      "word": "why",
+      "meaning": "tại sao",
+      "pos": [
+        "question word"
+      ]
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "là, ở",
+      "pos": [
+        "be verb"
+      ]
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "em, thầy, bạn (tùy người nói)",
+      "pos": [
+        "pronoun"
+      ],
+      "note": "Chọn cách xưng hô theo người đang được nói với."
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "ở đây",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-alone": {
+      "word": "alone",
+      "meaning": "một mình",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-people": {
+      "word": "people",
+      "meaning": "mọi người",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "trợ động từ dùng trong câu hỏi hoặc phủ định",
+      "pos": [
+        "auxiliary verb"
+      ]
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "không",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "muốn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-talk": {
+      "word": "talk",
+      "meaning": "nói chuyện",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "em hoặc thầy (tùy người nói)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "em hoặc thầy (tùy người nói)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "thì, đang, ở",
+      "pos": [
+        "be verb"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-see": {
+      "word": "see",
+      "meaning": "nhìn thấy",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "kể, nói",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "về",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "của em",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-dream": {
+      "word": "dream",
+      "meaning": "ước mơ",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-be": {
+      "word": "be",
+      "meaning": "trở thành",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-hokage": {
+      "word": "hokage",
+      "meaning": "Hokage (lãnh đạo Làng Lá)",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-one": {
+      "word": "one",
+      "meaning": "một",
+      "pos": [
+        "number"
+      ]
+    },
+    "word-day": {
+      "word": "day",
+      "meaning": "ngày",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "giúp đỡ",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-everyone": {
+      "word": "everyone",
+      "meaning": "mọi người",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-in": {
+      "word": "in",
+      "meaning": "ở, trong",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-our": {
+      "word": "our",
+      "meaning": "của chúng ta",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-village": {
+      "word": "village",
+      "meaning": "ngôi làng",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "biết",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "của em",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-name": {
+      "word": "name",
+      "meaning": "tên",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "cũng",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "đó",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "là",
+      "pos": [
+        "be verb"
+      ]
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "một",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-big": {
+      "word": "big",
+      "meaning": "lớn",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-work": {
+      "word": "work",
+      "meaning": "làm việc",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-hard": {
+      "word": "hard",
+      "meaning": "chăm chỉ",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-every": {
+      "word": "every",
+      "meaning": "mỗi",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-think": {
+      "word": "think",
+      "meaning": "nghĩ",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "điều đó",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "vâng, có chứ",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "cảm ơn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-iruka": {
+      "word": "iruka",
+      "meaning": "Iruka",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "sẽ",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-to-infinitive": {
+      "word": "to",
+      "meaning": "để (đứng trước động từ nguyên mẫu)",
+      "pos": [
+        "infinitive marker"
+      ]
+    },
+    "word-to-preposition": {
+      "word": "to",
+      "meaning": "với",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-me-naruto": {
+      "word": "me",
+      "meaning": "em",
+      "pos": [
+        "pronoun"
+      ],
+      "note": "D?ch theo vai ng??i n?i trong c?u."
+    },
+    "word-i-iruka": {
+      "word": "i",
+      "meaning": "thầy",
+      "pos": [
+        "pronoun"
+      ],
+      "note": "D?ch theo vai ng??i n?i trong c?u."
+    },
+    "word-me-iruka": {
+      "word": "me",
+      "meaning": "thầy",
+      "pos": [
+        "pronoun"
+      ],
+      "note": "D?ch theo vai ng??i n?i trong c?u."
+    },
+    "word-i-naruto": {
+      "word": "i",
+      "meaning": "em",
+      "pos": [
+        "pronoun"
+      ],
+      "note": "D?ch theo vai ng??i n?i trong c?u."
+    },
+    "phrase-talk-to": {
+      "word": "talk to",
+      "meaning": "nói chuyện với",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-want-to-be": {
+      "word": "want to be",
+      "meaning": "muốn trở thành",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-one-day": {
+      "word": "one day",
+      "meaning": "một ngày nào đó",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-know-my-name": {
+      "word": "know my name",
+      "meaning": "biết tên em",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-work-hard": {
+      "word": "work hard",
+      "meaning": "làm việc chăm chỉ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-do-it": {
+      "word": "do it",
+      "meaning": "làm được điều đó",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Iruka",
+      "text": "Naruto, why are you here alone?",
+      "translation": "Naruto, sao em ở đây một mình?",
+      "tokens": [
+        "Naruto",
+        "why",
+        "are",
+        "you",
+        "here",
+        "alone"
+      ],
+      "words": [
+        "word-naruto",
+        "word-why",
+        "word-are",
+        "word-you",
+        "word-here",
+        "word-alone"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Naruto",
+      "text": "People do not want to talk to me.",
+      "translation": "Mọi người không muốn nói chuyện với em.",
+      "tokens": [
+        "People",
+        "do",
+        "not",
+        "want",
+        "to",
+        "talk",
+        "to",
+        "me"
+      ],
+      "words": [
+        "word-people",
+        "word-do",
+        "word-not",
+        "word-want",
+        "word-to-infinitive",
+        "word-talk",
+        "word-to-preposition",
+        "word-me-naruto"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "talk to",
+          "entry": "phrase-talk-to"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Iruka",
+      "text": "I am here, Naruto. You can talk to me.",
+      "translation": "Thầy ở đây mà, Naruto. Em có thể nói chuyện với thầy.",
+      "tokens": [
+        "I",
+        "am",
+        "here",
+        "Naruto",
+        "You",
+        "can",
+        "talk",
+        "to",
+        "me"
+      ],
+      "words": [
+        "word-i-iruka",
+        "word-am",
+        "word-here",
+        "word-naruto",
+        "word-you",
+        "word-can",
+        "word-talk",
+        "word-to-preposition",
+        "word-me-iruka"
+      ],
+      "phrases": [
+        {
+          "start": 6,
+          "end": 7,
+          "text": "talk to",
+          "entry": "phrase-talk-to"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Naruto",
+      "text": "I want people to see me.",
+      "translation": "Em muốn mọi người chú ý đến em.",
+      "tokens": [
+        "I",
+        "want",
+        "people",
+        "to",
+        "see",
+        "me"
+      ],
+      "words": [
+        "word-i-naruto",
+        "word-want",
+        "word-people",
+        "word-to-infinitive",
+        "word-see",
+        "word-me-naruto"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Iruka",
+      "text": "I see you. Tell me about your dream.",
+      "translation": "Thầy thấy em mà. Kể thầy nghe về ước mơ của em đi.",
+      "tokens": [
+        "I",
+        "see",
+        "you",
+        "Tell",
+        "me",
+        "about",
+        "your",
+        "dream"
+      ],
+      "words": [
+        "word-i-iruka",
+        "word-see",
+        "word-you",
+        "word-tell",
+        "word-me-iruka",
+        "word-about",
+        "word-your",
+        "word-dream"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Naruto",
+      "text": "I want to be Hokage one day!",
+      "translation": "Một ngày nào đó em muốn trở thành Hokage!",
+      "tokens": [
+        "I",
+        "want",
+        "to",
+        "be",
+        "Hokage",
+        "one",
+        "day"
+      ],
+      "words": [
+        "word-i-naruto",
+        "word-want",
+        "word-to-infinitive",
+        "word-be",
+        "word-hokage",
+        "word-one",
+        "word-day"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 3,
+          "text": "want to be",
+          "entry": "phrase-want-to-be"
+        },
+        {
+          "start": 5,
+          "end": 6,
+          "text": "one day",
+          "entry": "phrase-one-day"
+        }
+      ]
+    },
+    "7": {
+      "speaker": "Iruka",
+      "text": "Why do you want to be Hokage?",
+      "translation": "Tại sao em muốn trở thành Hokage?",
+      "tokens": [
+        "Why",
+        "do",
+        "you",
+        "want",
+        "to",
+        "be",
+        "Hokage"
+      ],
+      "words": [
+        "word-why",
+        "word-do",
+        "word-you",
+        "word-want",
+        "word-to-infinitive",
+        "word-be",
+        "word-hokage"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 5,
+          "text": "want to be",
+          "entry": "phrase-want-to-be"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Naruto",
+      "text": "I want to help everyone in our village.",
+      "translation": "Em muốn giúp mọi người trong làng.",
+      "tokens": [
+        "I",
+        "want",
+        "to",
+        "help",
+        "everyone",
+        "in",
+        "our",
+        "village"
+      ],
+      "words": [
+        "word-i-naruto",
+        "word-want",
+        "word-to-infinitive",
+        "word-help",
+        "word-everyone",
+        "word-in",
+        "word-our",
+        "word-village"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Naruto",
+      "text": "I want people to know my name, too.",
+      "translation": "Em cũng muốn mọi người biết đến tên em.",
+      "tokens": [
+        "I",
+        "want",
+        "people",
+        "to",
+        "know",
+        "my",
+        "name",
+        "too"
+      ],
+      "words": [
+        "word-i-naruto",
+        "word-want",
+        "word-people",
+        "word-to-infinitive",
+        "word-know",
+        "word-my",
+        "word-name",
+        "word-too"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "know my name",
+          "entry": "phrase-know-my-name"
+        }
+      ]
+    },
+    "10": {
+      "speaker": "Iruka",
+      "text": "That is a big dream. You can work hard every day.",
+      "translation": "Đó là một ước mơ lớn. Em có thể chăm chỉ mỗi ngày.",
+      "tokens": [
+        "That",
+        "is",
+        "a",
+        "big",
+        "dream",
+        "You",
+        "can",
+        "work",
+        "hard",
+        "every",
+        "day"
+      ],
+      "words": [
+        "word-that",
+        "word-is",
+        "word-a",
+        "word-big",
+        "word-dream",
+        "word-you",
+        "word-can",
+        "word-work",
+        "word-hard",
+        "word-every",
+        "word-day"
+      ],
+      "phrases": [
+        {
+          "start": 7,
+          "end": 8,
+          "text": "work hard",
+          "entry": "phrase-work-hard"
+        }
+      ]
+    },
+    "11": {
+      "speaker": "Naruto",
+      "text": "Do you think I can do it?",
+      "translation": "Thầy có nghĩ em làm được không?",
+      "tokens": [
+        "Do",
+        "you",
+        "think",
+        "I",
+        "can",
+        "do",
+        "it"
+      ],
+      "words": [
+        "word-do",
+        "word-you",
+        "word-think",
+        "word-i-naruto",
+        "word-can",
+        "word-do",
+        "word-it"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "do it",
+          "entry": "phrase-do-it"
+        }
+      ]
+    },
+    "12": {
+      "speaker": "Iruka",
+      "text": "Yes, Naruto. You can do it!",
+      "translation": "Có chứ, Naruto. Em làm được mà!",
+      "tokens": [
+        "Yes",
+        "Naruto",
+        "You",
+        "can",
+        "do",
+        "it"
+      ],
+      "words": [
+        "word-yes",
+        "word-naruto",
+        "word-you",
+        "word-can",
+        "word-do",
+        "word-it"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "do it",
+          "entry": "phrase-do-it"
+        }
+      ]
+    },
+    "13": {
+      "speaker": "Naruto",
+      "text": "Thank you, Iruka. I will work hard!",
+      "translation": "Cảm ơn thầy, Iruka. Em sẽ chăm chỉ!",
+      "tokens": [
+        "Thank",
+        "you",
+        "Iruka",
+        "I",
+        "will",
+        "work",
+        "hard"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-iruka",
+        "word-i-naruto",
+        "word-will",
+        "word-work",
+        "word-hard"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "work hard",
+          "entry": "phrase-work-hard"
+        }
+      ]
+    }
+  }
+}

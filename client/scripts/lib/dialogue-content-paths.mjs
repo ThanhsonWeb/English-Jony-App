@@ -20,8 +20,13 @@ export function getGeneratedCourseDirectory(root, contentType, courseId) {
 	return path.join(root, "generated", getContentStorageDirectory(contentType), courseId);
 }
 
-export function getCourseConfigPath(root, contentType, courseId) {
-	return path.join(root, "scripts", "config", getContentStorageDirectory(contentType), `${courseId}.mjs`);
+export function getCourseConfigDirectory(contentType, category) {
+	const storageDirectory = getContentStorageDirectory(contentType);
+	return contentType === "story" && category === "anime" ? "anime" : storageDirectory;
+}
+
+export function getCourseConfigPath(root, contentType, courseId, category) {
+	return path.join(root, "scripts", "config", getCourseConfigDirectory(contentType, category), `${courseId}.mjs`);
 }
 
 export function getDialogueDataCourseDirectory(root, contentType, courseId) {

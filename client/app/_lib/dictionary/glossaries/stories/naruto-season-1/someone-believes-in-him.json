@@ -1,0 +1,1120 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "naruto-season-1",
+  "dialogueId": "someone-believes-in-him",
+  "characters": {
+    "Naruto": {
+      "meaning": "Naruto",
+      "role": "học viên ninja ở Làng Lá"
+    },
+    "Mizuki": {
+      "meaning": "Mizuki",
+      "role": "thầy ninja lừa Naruto để lấy cuộn giấy cấm"
+    },
+    "Iruka": {
+      "meaning": "Iruka",
+      "role": "thầy của Naruto, người đứng ra bảo vệ cậu"
+    }
+  },
+  "entries": {
+    "word-mizuki": {
+      "word": "mizuki",
+      "meaning": "Mizuki",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "em, thầy, tôi (tùy người nói)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "có",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "(mạo từ xác định, thường không dịch)",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-scroll": {
+      "word": "scroll",
+      "meaning": "cuộn giấy",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-learned": {
+      "word": "learned",
+      "meaning": "đã học",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "một (mạo từ không xác định)",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-new": {
+      "word": "new",
+      "meaning": "mới",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-technique": {
+      "word": "technique",
+      "meaning": "kỹ thuật; chiêu thức",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "tốt",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-give": {
+      "word": "give",
+      "meaning": "đưa; cho",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "em hoặc thầy (tùy người nói)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-stop": {
+      "word": "stop",
+      "meaning": "dừng lại",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-naruto": {
+      "word": "naruto",
+      "meaning": "Naruto",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "đó",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "là",
+      "pos": [
+        "be verb"
+      ]
+    },
+    "word-forbidden": {
+      "word": "forbidden",
+      "meaning": "bị cấm",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "nhưng",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-said": {
+      "word": "said",
+      "meaning": "đã nói",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "nó; điều đó",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-was": {
+      "word": "was",
+      "meaning": "đã là",
+      "pos": [
+        "be verb"
+      ]
+    },
+    "word-secret": {
+      "word": "secret",
+      "meaning": "bí mật; bí mật, kín",
+      "pos": [
+        "noun",
+        "adjective"
+      ]
+    },
+    "word-test": {
+      "word": "test",
+      "meaning": "bài kiểm tra",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-lied": {
+      "word": "lied",
+      "meaning": "đã nói dối",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-only": {
+      "word": "only",
+      "meaning": "chỉ",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "muốn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "em, thầy, cậu, các người (tùy người nói)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "với (trong lied to me)",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-trusted": {
+      "word": "trusted",
+      "meaning": "đã tin tưởng",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-stay": {
+      "word": "stay",
+      "meaning": "đứng; hãy đứng",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-back": {
+      "word": "back",
+      "meaning": "lại; phía sau",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "sẽ",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-protect": {
+      "word": "protect",
+      "meaning": "bảo vệ",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-why": {
+      "word": "why",
+      "meaning": "tại sao",
+      "pos": [
+        "question word"
+      ]
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "trợ động từ dùng trong câu hỏi",
+      "pos": [
+        "auxiliary verb"
+      ]
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "giúp",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-him": {
+      "word": "him",
+      "meaning": "anh ấy; cậu ấy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-because": {
+      "word": "because",
+      "meaning": "bởi vì",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-believe": {
+      "word": "believe",
+      "meaning": "tin; tin tưởng",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-in": {
+      "word": "in",
+      "meaning": "vào",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-he": {
+      "word": "he",
+      "meaning": "anh ấy; cậu ấy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-works": {
+      "word": "works",
+      "meaning": "làm việc; cố gắng",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-hard": {
+      "word": "hard",
+      "meaning": "chăm chỉ",
+      "pos": [
+        "adverb",
+        "adjective"
+      ]
+    },
+    "word-really": {
+      "word": "really",
+      "meaning": "thật sự",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-iruka": {
+      "word": "iruka",
+      "meaning": "Iruka",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "đúng vậy",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-become": {
+      "word": "become",
+      "meaning": "trở thành",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-great": {
+      "word": "great",
+      "meaning": "tuyệt vời; giỏi",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-ninja": {
+      "word": "ninja",
+      "meaning": "ninja",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-cannot": {
+      "word": "cannot",
+      "meaning": "không thể",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-leave": {
+      "word": "leave",
+      "meaning": "để; rời khỏi",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-alone": {
+      "word": "alone",
+      "meaning": "yên; một mình",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "của em; của tôi",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-makes": {
+      "word": "makes",
+      "meaning": "tạo ra",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-many": {
+      "word": "many",
+      "meaning": "nhiều",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-clones": {
+      "word": "clones",
+      "meaning": "các phân thân",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "không",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-there": {
+      "word": "there",
+      "meaning": "có (trong cấu trúc there are)",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "có",
+      "pos": [
+        "be verb"
+      ]
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "quá",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-saved": {
+      "word": "saved",
+      "meaning": "đã cứu",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-passed": {
+      "word": "passed",
+      "meaning": "đã vượt qua",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "là",
+      "pos": [
+        "be verb"
+      ]
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "bây giờ",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-this": {
+      "word": "this",
+      "meaning": "này",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-headband": {
+      "word": "headband",
+      "meaning": "băng trán",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-yours": {
+      "word": "yours",
+      "meaning": "của em; của bạn",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-proud": {
+      "word": "proud",
+      "meaning": "tự hào",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "về",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "cảm ơn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-never": {
+      "word": "never",
+      "meaning": "không bao giờ",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-up": {
+      "word": "up",
+      "meaning": "lên; (tiểu từ trong give up)",
+      "pos": [
+        "particle"
+      ]
+    },
+    "phrase-the-scroll": {
+      "word": "the scroll",
+      "meaning": "cuộn giấy",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-new-technique": {
+      "word": "new technique",
+      "meaning": "kỹ thuật mới",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-secret-test": {
+      "word": "secret test",
+      "meaning": "bài kiểm tra bí mật",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-stay-back": {
+      "word": "stay back",
+      "meaning": "lùi lại; đứng xa ra",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-believe-in": {
+      "word": "believe in",
+      "meaning": "tin tưởng vào",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-many-clones": {
+      "word": "many clones",
+      "meaning": "nhiều phân thân",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-passed-the-test": {
+      "word": "passed the test",
+      "meaning": "đã vượt qua bài kiểm tra",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-proud-of-you": {
+      "word": "proud of you",
+      "meaning": "tự hào về em",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-give-up": {
+      "word": "give up",
+      "meaning": "bỏ cuộc",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Naruto",
+      "text": "Mizuki, I have the scroll. I learned a new technique!",
+      "translation": "Thầy Mizuki, em có cuộn giấy rồi. Em đã học được một kỹ thuật mới!",
+      "tokens": [
+        "Mizuki",
+        "I",
+        "have",
+        "the",
+        "scroll",
+        "I",
+        "learned",
+        "a",
+        "new",
+        "technique"
+      ],
+      "words": [
+        "word-mizuki",
+        "word-i",
+        "word-have",
+        "word-the",
+        "word-scroll",
+        "word-i",
+        "word-learned",
+        "word-a",
+        "word-new",
+        "word-technique"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "the scroll",
+          "entry": "phrase-the-scroll"
+        },
+        {
+          "start": 8,
+          "end": 9,
+          "text": "new technique",
+          "entry": "phrase-new-technique"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Mizuki",
+      "text": "Good. Give me the scroll.",
+      "translation": "Tốt. Đưa cuộn giấy cho thầy.",
+      "tokens": [
+        "Good",
+        "Give",
+        "me",
+        "the",
+        "scroll"
+      ],
+      "words": [
+        "word-good",
+        "word-give",
+        "word-me",
+        "word-the",
+        "word-scroll"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "the scroll",
+          "entry": "phrase-the-scroll"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Iruka",
+      "text": "Stop, Naruto! That scroll is forbidden.",
+      "translation": "Dừng lại, Naruto! Cuộn giấy đó bị cấm.",
+      "tokens": [
+        "Stop",
+        "Naruto",
+        "That",
+        "scroll",
+        "is",
+        "forbidden"
+      ],
+      "words": [
+        "word-stop",
+        "word-naruto",
+        "word-that",
+        "word-scroll",
+        "word-is",
+        "word-forbidden"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Naruto",
+      "text": "But Mizuki said it was a secret test!",
+      "translation": "Nhưng thầy Mizuki nói đó là một bài kiểm tra bí mật!",
+      "tokens": [
+        "But",
+        "Mizuki",
+        "said",
+        "it",
+        "was",
+        "a",
+        "secret",
+        "test"
+      ],
+      "words": [
+        "word-but",
+        "word-mizuki",
+        "word-said",
+        "word-it",
+        "word-was",
+        "word-a",
+        "word-secret",
+        "word-test"
+      ],
+      "phrases": [
+        {
+          "start": 6,
+          "end": 7,
+          "text": "secret test",
+          "entry": "phrase-secret-test"
+        }
+      ]
+    },
+    "5": {
+      "speaker": "Mizuki",
+      "text": "I lied. I only want the scroll.",
+      "translation": "Ta đã nói dối. Ta chỉ muốn cuộn giấy thôi.",
+      "tokens": [
+        "I",
+        "lied",
+        "I",
+        "only",
+        "want",
+        "the",
+        "scroll"
+      ],
+      "words": [
+        "word-i",
+        "word-lied",
+        "word-i",
+        "word-only",
+        "word-want",
+        "word-the",
+        "word-scroll"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "the scroll",
+          "entry": "phrase-the-scroll"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Naruto",
+      "text": "You lied to me? I trusted you!",
+      "translation": "Thầy đã nói dối em sao? Em đã tin thầy mà!",
+      "tokens": [
+        "You",
+        "lied",
+        "to",
+        "me",
+        "I",
+        "trusted",
+        "you"
+      ],
+      "words": [
+        "word-you",
+        "word-lied",
+        "word-to",
+        "word-me",
+        "word-i",
+        "word-trusted",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Iruka",
+      "text": "Stay back, Naruto! I will protect you.",
+      "translation": "Lùi lại, Naruto! Thầy sẽ bảo vệ em.",
+      "tokens": [
+        "Stay",
+        "back",
+        "Naruto",
+        "I",
+        "will",
+        "protect",
+        "you"
+      ],
+      "words": [
+        "word-stay",
+        "word-back",
+        "word-naruto",
+        "word-i",
+        "word-will",
+        "word-protect",
+        "word-you"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Stay back",
+          "entry": "phrase-stay-back"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Mizuki",
+      "text": "Why do you help him?",
+      "translation": "Tại sao cậu lại giúp nó?",
+      "tokens": [
+        "Why",
+        "do",
+        "you",
+        "help",
+        "him"
+      ],
+      "words": [
+        "word-why",
+        "word-do",
+        "word-you",
+        "word-help",
+        "word-him"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Iruka",
+      "text": "Because I believe in Naruto. He works hard.",
+      "translation": "Vì tôi tin Naruto. Em ấy rất chăm chỉ.",
+      "tokens": [
+        "Because",
+        "I",
+        "believe",
+        "in",
+        "Naruto",
+        "He",
+        "works",
+        "hard"
+      ],
+      "words": [
+        "word-because",
+        "word-i",
+        "word-believe",
+        "word-in",
+        "word-naruto",
+        "word-he",
+        "word-works",
+        "word-hard"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "believe in",
+          "entry": "phrase-believe-in"
+        }
+      ]
+    },
+    "10": {
+      "speaker": "Naruto",
+      "text": "You really believe in me, Iruka?",
+      "translation": "Thầy thật sự tin em sao, thầy Iruka?",
+      "tokens": [
+        "You",
+        "really",
+        "believe",
+        "in",
+        "me",
+        "Iruka"
+      ],
+      "words": [
+        "word-you",
+        "word-really",
+        "word-believe",
+        "word-in",
+        "word-me",
+        "word-iruka"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "believe in",
+          "entry": "phrase-believe-in"
+        }
+      ]
+    },
+    "11": {
+      "speaker": "Iruka",
+      "text": "Yes. You can become a great ninja!",
+      "translation": "Đúng vậy. Em có thể trở thành một ninja giỏi!",
+      "tokens": [
+        "Yes",
+        "You",
+        "can",
+        "become",
+        "a",
+        "great",
+        "ninja"
+      ],
+      "words": [
+        "word-yes",
+        "word-you",
+        "word-can",
+        "word-become",
+        "word-a",
+        "word-great",
+        "word-ninja"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Mizuki",
+      "text": "You cannot stop me!",
+      "translation": "Các người không thể ngăn ta đâu!",
+      "tokens": [
+        "You",
+        "cannot",
+        "stop",
+        "me"
+      ],
+      "words": [
+        "word-you",
+        "word-cannot",
+        "word-stop",
+        "word-me"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Naruto",
+      "text": "Leave Iruka alone! My new technique makes many clones!",
+      "translation": "Để thầy Iruka yên! Kỹ thuật mới của tôi tạo ra rất nhiều phân thân!",
+      "tokens": [
+        "Leave",
+        "Iruka",
+        "alone",
+        "My",
+        "new",
+        "technique",
+        "makes",
+        "many",
+        "clones"
+      ],
+      "words": [
+        "word-leave",
+        "word-iruka",
+        "word-alone",
+        "word-my",
+        "word-new",
+        "word-technique",
+        "word-makes",
+        "word-many",
+        "word-clones"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "new technique",
+          "entry": "phrase-new-technique"
+        },
+        {
+          "start": 7,
+          "end": 8,
+          "text": "many clones",
+          "entry": "phrase-many-clones"
+        }
+      ]
+    },
+    "14": {
+      "speaker": "Mizuki",
+      "text": "No! There are too many!",
+      "translation": "Không! Có quá nhiều phân thân!",
+      "tokens": [
+        "No",
+        "There",
+        "are",
+        "too",
+        "many"
+      ],
+      "words": [
+        "word-no",
+        "word-there",
+        "word-are",
+        "word-too",
+        "word-many"
+      ],
+      "phrases": []
+    },
+    "15": {
+      "speaker": "Iruka",
+      "text": "You saved me, Naruto. You passed the test!",
+      "translation": "Em đã cứu thầy, Naruto. Em đã vượt qua bài kiểm tra!",
+      "tokens": [
+        "You",
+        "saved",
+        "me",
+        "Naruto",
+        "You",
+        "passed",
+        "the",
+        "test"
+      ],
+      "words": [
+        "word-you",
+        "word-saved",
+        "word-me",
+        "word-naruto",
+        "word-you",
+        "word-passed",
+        "word-the",
+        "word-test"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 7,
+          "text": "passed the test",
+          "entry": "phrase-passed-the-test"
+        }
+      ]
+    },
+    "16": {
+      "speaker": "Naruto",
+      "text": "Am I really a ninja now?",
+      "translation": "Giờ em thật sự là một ninja rồi sao?",
+      "tokens": [
+        "Am",
+        "I",
+        "really",
+        "a",
+        "ninja",
+        "now"
+      ],
+      "words": [
+        "word-am",
+        "word-i",
+        "word-really",
+        "word-a",
+        "word-ninja",
+        "word-now"
+      ],
+      "phrases": []
+    },
+    "17": {
+      "speaker": "Iruka",
+      "text": "Yes. This headband is yours. I am proud of you.",
+      "translation": "Đúng vậy. Chiếc băng trán này là của em. Thầy tự hào về em.",
+      "tokens": [
+        "Yes",
+        "This",
+        "headband",
+        "is",
+        "yours",
+        "I",
+        "am",
+        "proud",
+        "of",
+        "you"
+      ],
+      "words": [
+        "word-yes",
+        "word-this",
+        "word-headband",
+        "word-is",
+        "word-yours",
+        "word-i",
+        "word-am",
+        "word-proud",
+        "word-of",
+        "word-you"
+      ],
+      "phrases": [
+        {
+          "start": 7,
+          "end": 9,
+          "text": "proud of you",
+          "entry": "phrase-proud-of-you"
+        }
+      ]
+    },
+    "18": {
+      "speaker": "Naruto",
+      "text": "Thank you, Iruka! I will never give up!",
+      "translation": "Cảm ơn thầy Iruka! Em sẽ không bao giờ bỏ cuộc!",
+      "tokens": [
+        "Thank",
+        "you",
+        "Iruka",
+        "I",
+        "will",
+        "never",
+        "give",
+        "up"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-iruka",
+        "word-i",
+        "word-will",
+        "word-never",
+        "word-give",
+        "word-up"
+      ],
+      "phrases": [
+        {
+          "start": 6,
+          "end": 7,
+          "text": "give up",
+          "entry": "phrase-give-up"
+        }
+      ]
+    }
+  }
+}

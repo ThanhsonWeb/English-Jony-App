@@ -1,0 +1,1218 @@
+{
+  "metadata": {
+    "courseId": "naruto-season-1",
+    "dialogueId": "the-lonely-boy",
+    "contextualGlossaryVersion": 1,
+    "title": "Cậu bé cô đơn",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Naruto - Mùa 1",
+        "en": "Naruto - Season 1"
+      },
+      "courseDescription": {
+        "vi": "Theo chân Naruto, một cậu bé ninja ở Làng Lá, trên hành trình tìm kiếm sự công nhận, tình bạn và theo đuổi ước mơ trở thành Hokage.",
+        "en": "Follow Naruto, a young ninja from the Hidden Leaf Village, as he searches for acceptance, friendship, and a chance to become Hokage."
+      },
+      "title": {
+        "vi": "Cậu bé cô đơn",
+        "en": "The Lonely Boy"
+      },
+      "description": {
+        "vi": "Naruto lives alone in the Hidden Leaf Village. He wants people to notice him and dreams of becoming Hokage.",
+        "en": "Naruto lives alone in the Hidden Leaf Village. He wants people to notice him and dreams of becoming Hokage."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Naruto lives alone in the Hidden Leaf Village. He wants people to notice him and dreams of becoming Hokage.",
+    "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/the-lonely-boy.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Iruka",
+      "text": "Naruto, why are you here alone?",
+      "translation": "Naruto, sao em ở đây một mình?",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Naruto",
+      "text": "People do not want to talk to me.",
+      "translation": "Mọi người không muốn nói chuyện với em.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Iruka",
+      "text": "I am here, Naruto. You can talk to me.",
+      "translation": "Thầy ở đây mà, Naruto. Em có thể nói chuyện với thầy.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Naruto",
+      "text": "I want people to see me.",
+      "translation": "Em muốn mọi người chú ý đến em.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Iruka",
+      "text": "I see you. Tell me about your dream.",
+      "translation": "Thầy thấy em mà. Kể thầy nghe về ước mơ của em đi.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Naruto",
+      "text": "I want to be Hokage one day!",
+      "translation": "Một ngày nào đó em muốn trở thành Hokage!",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Iruka",
+      "text": "Why do you want to be Hokage?",
+      "translation": "Tại sao em muốn trở thành Hokage?",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Naruto",
+      "text": "I want to help everyone in our village.",
+      "translation": "Em muốn giúp mọi người trong làng.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Naruto",
+      "text": "I want people to know my name, too.",
+      "translation": "Em cũng muốn mọi người biết đến tên em.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Iruka",
+      "text": "That is a big dream. You can work hard every day.",
+      "translation": "Đó là một ước mơ lớn. Em có thể chăm chỉ mỗi ngày.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Naruto",
+      "text": "Do you think I can do it?",
+      "translation": "Thầy có nghĩ em làm được không?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Iruka",
+      "text": "Yes, Naruto. You can do it!",
+      "translation": "Có chứ, Naruto. Em làm được mà!",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-06.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Naruto",
+      "text": "Thank you, Iruka. I will work hard!",
+      "translation": "Cảm ơn thầy, Iruka. Em sẽ chăm chỉ!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-07.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "alone",
+      "pronunciation": "/əˈloʊn/",
+      "meaning": "một mình",
+      "example": "I am alone at home."
+    },
+    {
+      "word": "talk to",
+      "pronunciation": "/tɔːk tuː/",
+      "meaning": "nói chuyện với ai đó",
+      "example": "Can I talk to you?"
+    },
+    {
+      "word": "dream",
+      "pronunciation": "/driːm/",
+      "meaning": "ước mơ",
+      "example": "My dream is to be a teacher."
+    },
+    {
+      "word": "want to be",
+      "pronunciation": "/wɑːnt tə biː/",
+      "meaning": "muốn trở thành",
+      "example": "I want to be a doctor."
+    },
+    {
+      "word": "one day",
+      "pronunciation": "/wʌn deɪ/",
+      "meaning": "một ngày nào đó",
+      "example": "I want to travel one day."
+    },
+    {
+      "word": "help",
+      "pronunciation": "/help/",
+      "meaning": "giúp đỡ",
+      "example": "I want to help my mom."
+    },
+    {
+      "word": "know my name",
+      "pronunciation": "/noʊ maɪ neɪm/",
+      "meaning": "biết tên tôi",
+      "example": "Do you know my name?"
+    },
+    {
+      "word": "work hard",
+      "pronunciation": "/wɜːrk hɑːrd/",
+      "meaning": "làm việc chăm chỉ, cố gắng hết sức",
+      "example": "I work hard every day."
+    },
+    {
+      "word": "do it",
+      "pronunciation": "/duː ɪt/",
+      "meaning": "làm được điều đó",
+      "example": "You can do it!"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe và điền từ",
+          "en": "Listen and fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe Iruka và điền từ còn thiếu.",
+          "en": "Listen to Iruka and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Naruto, why are you here ",
+        "?"
+      ],
+      "answers": ["alone"],
+      "speaker": "Iruka",
+      "transcript": "Naruto, why are you here alone?",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe và điền từ",
+          "en": "Listen and fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe Naruto và điền từ còn thiếu.",
+          "en": "Listen to Naruto and fill in the missing word."
+        }
+      },
+      "parts": [
+        "People do not ",
+        " to talk to me."
+      ],
+      "answers": ["want"],
+      "speaker": "Naruto",
+      "transcript": "People do not want to talk to me.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập cụm từ",
+          "en": "Practice the phrase"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu nói của Naruto.",
+          "en": "Complete Naruto's sentence."
+        }
+      },
+      "parts": [
+        "People do not want to ",
+        " me."
+      ],
+      "answers": ["talk to"],
+      "speaker": "Naruto",
+      "transcript": "People do not want to talk to me.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "multipleChoice",
+      "question": "Vì sao Naruto cảm thấy cô đơn?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Vì sao Naruto cảm thấy cô đơn?",
+          "en": "Why does Naruto feel lonely?"
+        },
+        "options": [
+          {
+            "vi": "Vì cậu phải luyện tập một mình.",
+            "en": "Because he has to train alone."
+          },
+          {
+            "vi": "Vì cậu không thích ngôi làng.",
+            "en": "Because he does not like the village."
+          },
+          {
+            "vi": "Vì cậu muốn rời khỏi làng.",
+            "en": "Because he wants to leave the village."
+          },
+          {
+            "vi": "Vì mọi người không muốn nói chuyện với cậu.",
+            "en": "Because people do not want to talk to him."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì cậu phải luyện tập một mình.",
+        "Vì cậu không thích ngôi làng.",
+        "Vì cậu muốn rời khỏi làng.",
+        "Vì mọi người không muốn nói chuyện với cậu."
+      ],
+      "answer": "Vì mọi người không muốn nói chuyện với cậu.",
+      "speaker": "Naruto",
+      "transcript": "People do not want to talk to me.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe và điền từ",
+          "en": "Listen and fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe Iruka và điền từ còn thiếu.",
+          "en": "Listen to Iruka and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I am ",
+        ", Naruto. You can talk to me."
+      ],
+      "answers": ["here"],
+      "speaker": "Iruka",
+      "transcript": "I am here, Naruto. You can talk to me.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập cụm từ",
+          "en": "Practice the phrase"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời động viên của Iruka.",
+          "en": "Complete Iruka's encouraging words."
+        }
+      },
+      "parts": [
+        "I am here, Naruto. You can ",
+        " me."
+      ],
+      "answers": ["talk to"],
+      "speaker": "Iruka",
+      "transcript": "I am here, Naruto. You can talk to me.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Khi Naruto buồn, Iruka nói “You can talk to me” để làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Cách dùng trong tình huống",
+          "en": "Using English in context"
+        },
+        "instruction": {
+          "vi": "Chọn cách hiểu phù hợp với tình huống.",
+          "en": "Choose the answer that fits the situation."
+        },
+        "question": {
+          "vi": "Khi Naruto buồn, Iruka nói “You can talk to me” để làm gì?",
+          "en": "Why does Iruka say “You can talk to me” when Naruto is sad?"
+        },
+        "options": [
+          {
+            "vi": "Cho Naruto biết cậu có thể tâm sự với thầy.",
+            "en": "To let Naruto know he can talk to Iruka about his feelings."
+          },
+          {
+            "vi": "Hỏi Naruto đã học xong chưa.",
+            "en": "To ask if Naruto has finished studying."
+          },
+          {
+            "vi": "Đề nghị Naruto đi gặp Hokage.",
+            "en": "To suggest that Naruto meet the Hokage."
+          },
+          {
+            "vi": "Nói rằng Iruka không có thời gian.",
+            "en": "To say that Iruka does not have time."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "You can",
+      "options": [
+        "Cho Naruto biết cậu có thể tâm sự với thầy.",
+        "Hỏi Naruto đã học xong chưa.",
+        "Đề nghị Naruto đi gặp Hokage.",
+        "Nói rằng Iruka không có thời gian."
+      ],
+      "answer": "Cho Naruto biết cậu có thể tâm sự với thầy.",
+      "speaker": "Iruka",
+      "transcript": "I am here, Naruto. You can talk to me.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe và điền từ",
+          "en": "Listen and fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe Naruto và điền từ còn thiếu.",
+          "en": "Listen to Naruto and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I want ",
+        " to see me."
+      ],
+      "answers": ["people"],
+      "speaker": "Naruto",
+      "transcript": "I want people to see me.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập cụm từ",
+          "en": "Practice the phrase"
+        },
+        "instruction": {
+          "vi": "Hoàn thành điều Naruto mong muốn.",
+          "en": "Complete what Naruto wants."
+        }
+      },
+      "parts": [
+        "I want people to ",
+        "."
+      ],
+      "answers": ["see me"],
+      "speaker": "Naruto",
+      "transcript": "I want people to see me.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe và điền từ",
+          "en": "Listen and fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe Iruka và điền từ còn thiếu.",
+          "en": "Listen to Iruka and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I ",
+        " you. Tell me about your dream."
+      ],
+      "answers": ["see"],
+      "speaker": "Iruka",
+      "transcript": "I see you. Tell me about your dream.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập cụm từ",
+          "en": "Practice the phrase"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu hỏi về ước mơ.",
+          "en": "Complete the sentence about a dream."
+        }
+      },
+      "parts": [
+        "I see you. Tell me about ",
+        "."
+      ],
+      "answers": ["your dream"],
+      "speaker": "Iruka",
+      "transcript": "I see you. Tell me about your dream.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe và điền từ",
+          "en": "Listen and fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe Naruto nói về ước mơ của mình.",
+          "en": "Listen to Naruto talk about his dream."
+        }
+      },
+      "parts": [
+        "I want to be ",
+        " one day!"
+      ],
+      "answers": ["Hokage"],
+      "speaker": "Naruto",
+      "transcript": "I want to be Hokage one day!",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập cụm từ",
+          "en": "Practice the phrase"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu nói về ước mơ trong tương lai.",
+          "en": "Complete the sentence about a future dream."
+        }
+      },
+      "parts": [
+        "I want to be Hokage ",
+        "!"
+      ],
+      "answers": ["one day"],
+      "speaker": "Naruto",
+      "transcript": "I want to be Hokage one day!",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Cụm “want to be” giúp Naruto nói về điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Ngữ pháp trong tình huống",
+          "en": "Grammar in context"
+        },
+        "instruction": {
+          "vi": "Chọn cách dùng đúng trong câu nói của Naruto.",
+          "en": "Choose the correct use in Naruto's sentence."
+        },
+        "question": {
+          "vi": "Cụm “want to be” giúp Naruto nói về điều gì?",
+          "en": "What does “want to be” help Naruto express?"
+        },
+        "options": [
+          {
+            "vi": "Việc cậu đã làm hôm qua.",
+            "en": "Something he did yesterday."
+          },
+          {
+            "vi": "Điều cậu muốn trở thành.",
+            "en": "What he wants to become."
+          },
+          {
+            "vi": "Người cậu đang tìm.",
+            "en": "The person he is looking for."
+          },
+          {
+            "vi": "Điều cậu không được phép làm.",
+            "en": "Something he is not allowed to do."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "want to be",
+      "options": [
+        "Việc cậu đã làm hôm qua.",
+        "Điều cậu muốn trở thành.",
+        "Người cậu đang tìm.",
+        "Điều cậu không được phép làm."
+      ],
+      "answer": "Điều cậu muốn trở thành.",
+      "speaker": "Naruto",
+      "transcript": "I want to be Hokage one day!",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-03.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe và điền từ",
+          "en": "Listen and fill in the blank"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu hỏi của Iruka.",
+          "en": "Complete Iruka's question."
+        }
+      },
+      "parts": [
+        "",
+        " do you want to be Hokage?"
+      ],
+      "answers": ["Why"],
+      "speaker": "Iruka",
+      "transcript": "Why do you want to be Hokage?",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe và điền từ",
+          "en": "Listen and fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe Naruto và điền từ còn thiếu.",
+          "en": "Listen to Naruto and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I want to ",
+        " everyone in our village."
+      ],
+      "answers": ["help"],
+      "speaker": "Naruto",
+      "transcript": "I want to help everyone in our village.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập cụm từ",
+          "en": "Practice the phrase"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu nói về ngôi làng.",
+          "en": "Complete the sentence about the village."
+        }
+      },
+      "parts": [
+        "I want to help everyone in ",
+        "."
+      ],
+      "answers": ["our village"],
+      "speaker": "Naruto",
+      "transcript": "I want to help everyone in our village.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe và điền từ",
+          "en": "Listen and fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe Naruto và điền từ còn thiếu.",
+          "en": "Listen to Naruto and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I want ",
+        " to know my name, too."
+      ],
+      "answers": ["people"],
+      "speaker": "Naruto",
+      "transcript": "I want people to know my name, too.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-05.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập cụm từ",
+          "en": "Practice the phrase"
+        },
+        "instruction": {
+          "vi": "Hoàn thành điều Naruto mong muốn.",
+          "en": "Complete what Naruto wants."
+        }
+      },
+      "parts": [
+        "I want people to know ",
+        ", too."
+      ],
+      "answers": ["my name"],
+      "speaker": "Naruto",
+      "transcript": "I want people to know my name, too.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-05.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Ngoài việc giúp ngôi làng, Naruto còn muốn gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Ngoài việc giúp ngôi làng, Naruto còn muốn gì?",
+          "en": "Besides helping the village, what else does Naruto want?"
+        },
+        "options": [
+          {
+            "vi": "Rời khỏi làng.",
+            "en": "To leave the village."
+          },
+          {
+            "vi": "Không phải học nữa.",
+            "en": "To stop studying."
+          },
+          {
+            "vi": "Được mọi người biết đến.",
+            "en": "To be known by everyone."
+          },
+          {
+            "vi": "Trở thành giáo viên ngay.",
+            "en": "To become a teacher right away."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Rời khỏi làng.",
+        "Không phải học nữa.",
+        "Được mọi người biết đến.",
+        "Trở thành giáo viên ngay."
+      ],
+      "answer": "Được mọi người biết đến.",
+      "speaker": "Naruto",
+      "transcript": "I want people to know my name, too.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe và điền từ",
+          "en": "Listen and fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe Iruka và hoàn thành câu nói.",
+          "en": "Listen to Iruka and complete his sentence."
+        }
+      },
+      "parts": [
+        "That is a ",
+        ". You can work hard every day."
+      ],
+      "answers": ["big dream"],
+      "speaker": "Iruka",
+      "transcript": "That is a big dream. You can work hard every day.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập cụm từ",
+          "en": "Practice the phrase"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời khuyên của Iruka.",
+          "en": "Complete Iruka's advice."
+        }
+      },
+      "parts": [
+        "That is a big dream. You can ",
+        " every day."
+      ],
+      "answers": ["work hard"],
+      "speaker": "Iruka",
+      "transcript": "That is a big dream. You can work hard every day.",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe và điền từ",
+          "en": "Listen and fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe Naruto và điền từ còn thiếu.",
+          "en": "Listen to Naruto and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Do you ",
+        " I can do it?"
+      ],
+      "answers": ["think"],
+      "speaker": "Naruto",
+      "transcript": "Do you think I can do it?",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-06.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập cụm từ",
+          "en": "Practice the phrase"
+        },
+        "instruction": {
+          "vi": "Hoàn thành câu hỏi của Naruto.",
+          "en": "Complete Naruto's question."
+        }
+      },
+      "parts": [
+        "Do you think I can ",
+        "?"
+      ],
+      "answers": ["do it"],
+      "speaker": "Naruto",
+      "transcript": "Do you think I can do it?",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-06.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 11,
+      "type": "multipleChoice",
+      "question": "Naruto hỏi Iruka vì cậu muốn biết điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Naruto hỏi Iruka vì cậu muốn biết điều gì?",
+          "en": "What does Naruto want to know when he asks Iruka?"
+        },
+        "options": [
+          {
+            "vi": "Iruka có tin cậu làm được không.",
+            "en": "Whether Iruka believes he can succeed."
+          },
+          {
+            "vi": "Iruka có muốn trở thành Hokage không.",
+            "en": "Whether Iruka wants to become Hokage."
+          },
+          {
+            "vi": "Iruka đã gặp Hokage chưa.",
+            "en": "Whether Iruka has met the Hokage."
+          },
+          {
+            "vi": "Khi nào Iruka rời làng.",
+            "en": "When Iruka will leave the village."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Iruka có tin cậu làm được không.",
+        "Iruka có muốn trở thành Hokage không.",
+        "Iruka đã gặp Hokage chưa.",
+        "Khi nào Iruka rời làng."
+      ],
+      "answer": "Iruka có tin cậu làm được không.",
+      "speaker": "Naruto",
+      "transcript": "Do you think I can do it?",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-06.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe và điền từ",
+          "en": "Listen and fill in the blank"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời động viên của Iruka.",
+          "en": "Complete Iruka's encouragement."
+        }
+      },
+      "parts": [
+        "Yes, Naruto. You can ",
+        "!"
+      ],
+      "answers": ["do it"],
+      "speaker": "Iruka",
+      "transcript": "Yes, Naruto. You can do it!",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-06.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe và điền từ",
+          "en": "Listen and fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe Naruto và hoàn thành lời cảm ơn.",
+          "en": "Listen to Naruto and complete his thanks."
+        }
+      },
+      "parts": [
+        "",
+        ", Iruka. I will work hard!"
+      ],
+      "answers": ["Thank you"],
+      "speaker": "Naruto",
+      "transcript": "Thank you, Iruka. I will work hard!",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-07.mp3"
+    },
+    {
+      "id": 28,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện tập cụm từ",
+          "en": "Practice the phrase"
+        },
+        "instruction": {
+          "vi": "Hoàn thành lời hứa của Naruto.",
+          "en": "Complete Naruto's promise."
+        }
+      },
+      "parts": [
+        "Thank you, Iruka. I will ",
+        "!"
+      ],
+      "answers": ["work hard"],
+      "speaker": "Naruto",
+      "transcript": "Thank you, Iruka. I will work hard!",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-07.mp3"
+    },
+    {
+      "id": 29,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập toàn bộ hội thoại",
+          "en": "Full dialogue review"
+        },
+        "instruction": {
+          "vi": "Điền các từ hoặc cụm từ còn thiếu để hoàn thành câu chuyện của Naruto và Iruka.",
+          "en": "Fill in the missing words or phrases to complete Naruto and Iruka's conversation."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Iruka",
+          "parts": [
+            "Naruto, why are you here ",
+            {
+              "id": "1",
+              "blank": "alone"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Naruto",
+          "parts": [
+            "People do not want to ",
+            {
+              "id": "2",
+              "blank": "talk to"
+            },
+            " me."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Iruka",
+          "parts": [
+            "I am here, Naruto. You can ",
+            {
+              "id": "3",
+              "blank": "talk to"
+            },
+            " me."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Naruto",
+          "parts": [
+            "I want people to ",
+            {
+              "id": "4",
+              "blank": "see me"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Iruka",
+          "parts": [
+            "I see you. Tell me about your ",
+            {
+              "id": "5",
+              "blank": "dream"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Naruto",
+          "parts": [
+            "I want to be ",
+            {
+              "id": "6",
+              "blank": "Hokage"
+            },
+            " one day!"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Iruka",
+          "parts": [
+            "",
+            {
+              "id": "7",
+              "blank": "Why"
+            },
+            " do you want to be Hokage?"
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Naruto",
+          "parts": [
+            "I want to ",
+            {
+              "id": "8",
+              "blank": "help"
+            },
+            " everyone in our village."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Naruto",
+          "parts": [
+            "I want people to know ",
+            {
+              "id": "9",
+              "blank": "my name"
+            },
+            ", too."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Iruka",
+          "parts": [
+            "That is a big dream. You can ",
+            {
+              "id": "10",
+              "blank": "work hard"
+            },
+            " every day."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Naruto",
+          "parts": [
+            "Do you ",
+            {
+              "id": "11",
+              "blank": "think"
+            },
+            " I can do it?"
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Iruka",
+          "parts": [
+            "Yes, Naruto. You can ",
+            {
+              "id": "12",
+              "blank": "do it"
+            },
+            "!"
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Naruto",
+          "parts": [
+            "Thank you, Iruka. I will ",
+            {
+              "id": "13",
+              "blank": "work hard"
+            },
+            "!"
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Muốn trở thành: want to be",
+      "explanation": "Dùng 'want to be + vai trò hoặc nghề nghiệp' để nói bạn muốn trở thành ai. Ví dụ, Naruto muốn trở thành Hokage.",
+      "localized": {
+        "title": {
+          "vi": "Muốn trở thành: want to be",
+          "en": "Expressing dreams: want to be"
+        },
+        "explanation": {
+          "vi": "Dùng 'want to be + vai trò hoặc nghề nghiệp' để nói bạn muốn trở thành ai. Ví dụ, Naruto muốn trở thành Hokage.",
+          "en": "Use 'want to be + role or job' to say what you want to become. For example, Naruto wants to become Hokage."
+        }
+      },
+      "example": "I want to be Hokage one day!"
+    },
+    {
+      "title": "Diễn tả khả năng: can + động từ",
+      "explanation": "Dùng 'can + động từ nguyên mẫu' để nói ai đó có thể làm một việc. Bạn cũng có thể dùng 'You can do it!' để động viên người khác.",
+      "localized": {
+        "title": {
+          "vi": "Diễn tả khả năng: can + động từ",
+          "en": "Expressing ability: can + verb"
+        },
+        "explanation": {
+          "vi": "Dùng 'can + động từ nguyên mẫu' để nói ai đó có thể làm một việc. Bạn cũng có thể dùng 'You can do it!' để động viên người khác.",
+          "en": "Use 'can + base verb' to say someone is able to do something. You can also say 'You can do it!' to encourage someone."
+        }
+      },
+      "example": "You can do it!"
+    }
+  ]
+}

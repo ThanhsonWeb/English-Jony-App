@@ -8,6 +8,7 @@ import {
 	dialogueCourseConfigs,
 	storyCourseConfigs,
 } from "../../../config/index.mjs";
+import { getCourseConfigDirectory } from "../../../lib/dialogue-content-paths.mjs";
 
 const configDirectory = path.resolve(
 	path.dirname(fileURLToPath(import.meta.url)),
@@ -23,7 +24,7 @@ test("shared config index discovers dialogue and story courses from their groups
 	assert.ok(courseConfigs.some((course) => course.courseId === "ten-minutes-a-day"));
 
 	for (const course of courseConfigs) {
-		const directory = course.contentType === "story" ? "stories" : "dialogues";
+		const directory = getCourseConfigDirectory(course.contentType, course.category);
 		await access(path.join(configDirectory, directory, `${course.courseId}.mjs`));
 	}
 });

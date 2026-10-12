@@ -1,0 +1,960 @@
+{
+  "metadata": {
+    "courseId": "naruto-season-1",
+    "dialogueId": "the-ninja-test",
+    "contextualGlossaryVersion": 1,
+    "title": "Bài kiểm tra ninja",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Naruto – Mùa 1",
+        "en": "Naruto – Season 1"
+      },
+      "courseDescription": {
+        "vi": "Theo chân Naruto trên hành trình học làm ninja và theo đuổi ước mơ trở thành Hokage.",
+        "en": "Follow Naruto as he learns to be a ninja and works toward his dream of becoming Hokage."
+      },
+      "title": {
+        "vi": "Bài kiểm tra ninja",
+        "en": "The Ninja Test"
+      },
+      "description": {
+        "vi": "Naruto tries to pass the ninja graduation test, but he cannot make a proper clone. Iruka tells him he has failed.",
+        "en": "Naruto takes his ninja graduation test but cannot make a good clone. Iruka tells him he did not pass."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Naruto tries to pass the ninja graduation test, but he cannot make a proper clone. Iruka tells him he has failed.",
+    "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/the-ninja-test.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Iruka",
+      "text": "Naruto, are you ready for the ninja test?",
+      "translation": "Naruto, em đã sẵn sàng cho bài kiểm tra ninja chưa?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Naruto",
+      "text": "Yes! I worked hard every day.",
+      "translation": "Vâng! Em đã chăm chỉ mỗi ngày.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Iruka",
+      "text": "Good. Please make a clone.",
+      "translation": "Tốt. Em hãy tạo một phân thân nhé.",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Naruto",
+      "text": "I can do it! I want to pass.",
+      "translation": "Em làm được mà! Em muốn vượt qua bài kiểm tra.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Naruto",
+      "text": "Oh no! My clone looks weak.",
+      "translation": "Ôi không! Phân thân của em trông yếu quá.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Iruka",
+      "text": "It is too weak, Naruto.",
+      "translation": "Nó yếu quá, Naruto.",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Naruto",
+      "text": "Can I try again, please?",
+      "translation": "Thầy cho em thử lại được không ạ?",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Iruka",
+      "text": "Yes, you can try one more time.",
+      "translation": "Được, em có thể thử thêm một lần nữa.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Naruto",
+      "text": "I tried again, but the clone is still weak.",
+      "translation": "Em đã thử lại rồi, nhưng phân thân vẫn còn yếu.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Iruka",
+      "text": "I am sorry, Naruto. You did not pass the test.",
+      "translation": "Thầy rất tiếc, Naruto. Em đã không vượt qua bài kiểm tra.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Naruto",
+      "text": "But I worked so hard!",
+      "translation": "Nhưng em đã cố gắng rất nhiều mà!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Iruka",
+      "text": "I know. You need more practice.",
+      "translation": "Thầy biết. Em cần luyện tập thêm.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-06.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Naruto",
+      "text": "I will not give up. I will be Hokage one day!",
+      "translation": "Em sẽ không bỏ cuộc. Một ngày nào đó em sẽ trở thành Hokage!",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-07.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Iruka",
+      "text": "Keep trying, Naruto. You can do better next time.",
+      "translation": "Hãy tiếp tục cố gắng, Naruto. Lần sau em có thể làm tốt hơn.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-07.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "ninja test",
+      "pronunciation": "/ˈnɪndʒə tɛst/",
+      "meaning": "bài kiểm tra ninja",
+      "example": "My ninja test is today."
+    },
+    {
+      "word": "ready",
+      "pronunciation": "/ˈrɛdi/",
+      "meaning": "sẵn sàng",
+      "example": "Are you ready for the test?"
+    },
+    {
+      "word": "worked hard",
+      "pronunciation": "/wɝːkt hɑːrd/",
+      "meaning": "đã chăm chỉ, đã cố gắng",
+      "example": "I worked hard yesterday."
+    },
+    {
+      "word": "clone",
+      "pronunciation": "/kloʊn/",
+      "meaning": "phân thân; bản sao",
+      "example": "The clone looks weak."
+    },
+    {
+      "word": "try again",
+      "pronunciation": "/traɪ əˈɡɛn/",
+      "meaning": "thử lại",
+      "example": "Can I try again?"
+    },
+    {
+      "word": "pass the test",
+      "pronunciation": "/pæs ðə tɛst/",
+      "meaning": "vượt qua bài kiểm tra",
+      "example": "I want to pass the test."
+    },
+    {
+      "word": "more practice",
+      "pronunciation": "/mɔːr ˈpræktɪs/",
+      "meaning": "luyện tập thêm",
+      "example": "I need more practice."
+    },
+    {
+      "word": "give up",
+      "pronunciation": "/ɡɪv ʌp/",
+      "meaning": "bỏ cuộc",
+      "example": "I will not give up."
+    },
+    {
+      "word": "next time",
+      "pronunciation": "/nɛkst taɪm/",
+      "meaning": "lần sau",
+      "example": "I can do better next time."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Naruto, are you ", " for the ninja test?"],
+      "answers": ["ready"],
+      "speaker": "Iruka",
+      "transcript": "Naruto, are you ready for the ninja test?",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Naruto, are you ready for the ", "?"],
+      "answers": ["ninja test"],
+      "speaker": "Iruka",
+      "transcript": "Naruto, are you ready for the ninja test?",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Yes! I ", " every day."],
+      "answers": ["worked hard"],
+      "speaker": "Naruto",
+      "transcript": "Yes! I worked hard every day.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Yes! I worked hard ", "."],
+      "answers": ["every day"],
+      "speaker": "Naruto",
+      "transcript": "Yes! I worked hard every day.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Good. Please make a ", "."],
+      "answers": ["clone"],
+      "speaker": "Iruka",
+      "transcript": "Good. Please make a clone.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I can ", "! I want to pass."],
+      "answers": ["do it"],
+      "speaker": "Naruto",
+      "transcript": "I can do it! I want to pass.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I can do it! I want to ", "."],
+      "answers": ["pass"],
+      "speaker": "Naruto",
+      "transcript": "I can do it! I want to pass.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Oh no! My ", " looks weak."],
+      "answers": ["clone"],
+      "speaker": "Naruto",
+      "transcript": "Oh no! My clone looks weak.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-03.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Oh no! My clone looks ", "."],
+      "answers": ["weak"],
+      "speaker": "Naruto",
+      "transcript": "Oh no! My clone looks weak.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-03.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "multipleChoice",
+      "question": "Vì sao Naruto thất vọng sau lần thử đầu tiên?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Vì sao Naruto thất vọng sau lần thử đầu tiên?",
+          "en": "Why is Naruto disappointed after his first try?"
+        },
+        "options": [
+          {"vi": "Vì thầy Iruka đến muộn", "en": "Because Iruka is late"},
+          {"vi": "Vì cậu quên ngày kiểm tra", "en": "Because he forgot the test day"},
+          {"vi": "Vì cậu không muốn làm ninja", "en": "Because he does not want to be a ninja"},
+          {"vi": "Vì phân thân của cậu quá yếu", "en": "Because his clone is too weak"}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì thầy Iruka đến muộn",
+        "Vì cậu quên ngày kiểm tra",
+        "Vì cậu không muốn làm ninja",
+        "Vì phân thân của cậu quá yếu"
+      ],
+      "answer": "Vì phân thân của cậu quá yếu",
+      "speaker": "Naruto",
+      "transcript": "Oh no! My clone looks weak.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["It is ", ", Naruto."],
+      "answers": ["too weak"],
+      "speaker": "Iruka",
+      "transcript": "It is too weak, Naruto.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["", " try again, please?"],
+      "answers": ["Can I"],
+      "speaker": "Naruto",
+      "transcript": "Can I try again, please?",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-04.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Can I ", ", please?"],
+      "answers": ["try again"],
+      "speaker": "Naruto",
+      "transcript": "Can I try again, please?",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-04.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "question": "Từ “please” giúp lời đề nghị của Naruto như thế nào?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Từ “please” giúp lời đề nghị của Naruto như thế nào?",
+          "en": "How does “please” change Naruto’s request?"
+        },
+        "options": [
+          {"vi": "Lịch sự hơn", "en": "More polite"},
+          {"vi": "Nghe như một mệnh lệnh", "en": "Sound more like an order"},
+          {"vi": "Có nghĩa là cậu đã đậu", "en": "Mean that he passed"},
+          {"vi": "Có nghĩa là cậu không muốn thử nữa", "en": "Mean that he does not want to try again"}
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "please",
+      "options": [
+        "Lịch sự hơn",
+        "Nghe như một mệnh lệnh",
+        "Có nghĩa là cậu đã đậu",
+        "Có nghĩa là cậu không muốn thử nữa"
+      ],
+      "answer": "Lịch sự hơn",
+      "speaker": "Naruto",
+      "transcript": "Can I try again, please?",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-04.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Yes, you can ", " one more time."],
+      "answers": ["try"],
+      "speaker": "Iruka",
+      "transcript": "Yes, you can try one more time.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Yes, you can try ", " time."],
+      "answers": ["one more"],
+      "speaker": "Iruka",
+      "transcript": "Yes, you can try one more time.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I ", ", but the clone is still weak."],
+      "answers": ["tried again"],
+      "speaker": "Naruto",
+      "transcript": "I tried again, but the clone is still weak.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-05.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I tried again, but the clone is ", "."],
+      "answers": ["still weak"],
+      "speaker": "Naruto",
+      "transcript": "I tried again, but the clone is still weak.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-05.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Sau khi Naruto thử lần nữa, kết quả thế nào?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Sau khi Naruto thử lần nữa, kết quả thế nào?",
+          "en": "What happens after Naruto tries again?"
+        },
+        "options": [
+          {"vi": "Cậu tạo được một phân thân mạnh", "en": "He makes a strong clone"},
+          {"vi": "Phân thân vẫn còn yếu", "en": "His clone is still weak"},
+          {"vi": "Thầy Iruka hủy bài kiểm tra", "en": "Iruka cancels the test"},
+          {"vi": "Naruto quyết định không thử nữa", "en": "Naruto decides not to try again"}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Cậu tạo được một phân thân mạnh",
+        "Phân thân vẫn còn yếu",
+        "Thầy Iruka hủy bài kiểm tra",
+        "Naruto quyết định không thử nữa"
+      ],
+      "answer": "Phân thân vẫn còn yếu",
+      "speaker": "Naruto",
+      "transcript": "I tried again, but the clone is still weak.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-05.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I am ", ", Naruto. You did not pass the test."],
+      "answers": ["sorry"],
+      "speaker": "Iruka",
+      "transcript": "I am sorry, Naruto. You did not pass the test.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I am sorry, Naruto. You ", " pass the test."],
+      "answers": ["did not"],
+      "speaker": "Iruka",
+      "transcript": "I am sorry, Naruto. You did not pass the test.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I am sorry, Naruto. You did not ", " the test."],
+      "answers": ["pass"],
+      "speaker": "Iruka",
+      "transcript": "I am sorry, Naruto. You did not pass the test.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Trong câu của Iruka, “did not” cho biết điều gì?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Trong câu của Iruka, “did not” cho biết điều gì?",
+          "en": "What does “did not” tell us in Iruka’s sentence?"
+        },
+        "options": [
+          {"vi": "Bài kiểm tra sẽ bắt đầu ngày mai", "en": "The test will begin tomorrow"},
+          {"vi": "Naruto đang làm bài kiểm tra", "en": "Naruto is taking the test now"},
+          {"vi": "Naruto đã không vượt qua bài kiểm tra", "en": "Naruto did not pass the test"},
+          {"vi": "Iruka không muốn tổ chức kiểm tra", "en": "Iruka does not want to hold the test"}
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "did not",
+      "options": [
+        "Bài kiểm tra sẽ bắt đầu ngày mai",
+        "Naruto đang làm bài kiểm tra",
+        "Naruto đã không vượt qua bài kiểm tra",
+        "Iruka không muốn tổ chức kiểm tra"
+      ],
+      "answer": "Naruto đã không vượt qua bài kiểm tra",
+      "speaker": "Iruka",
+      "transcript": "I am sorry, Naruto. You did not pass the test.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-05.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["But I ", " so hard!"],
+      "answers": ["worked"],
+      "speaker": "Naruto",
+      "transcript": "But I worked so hard!",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-06.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["But I worked ", "!"],
+      "answers": ["so hard"],
+      "speaker": "Naruto",
+      "transcript": "But I worked so hard!",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-06.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I know. You ", " more practice."],
+      "answers": ["need"],
+      "speaker": "Iruka",
+      "transcript": "I know. You need more practice.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-06.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I know. You need more ", "."],
+      "answers": ["practice"],
+      "speaker": "Iruka",
+      "transcript": "I know. You need more practice.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-06.mp3"
+    },
+    {
+      "id": 28,
+      "dialogueLineId": 12,
+      "type": "multipleChoice",
+      "question": "Vì sao Iruka nói Naruto cần luyện tập thêm?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Vì sao Iruka nói Naruto cần luyện tập thêm?",
+          "en": "Why does Iruka say Naruto needs more practice?"
+        },
+        "options": [
+          {"vi": "Vì phân thân của Naruto chưa đủ tốt", "en": "Because Naruto’s clone is not good enough"},
+          {"vi": "Vì Naruto muốn đổi lớp học", "en": "Because Naruto wants to change classes"},
+          {"vi": "Vì ngày mai Naruto có bài kiểm tra viết", "en": "Because Naruto has a written test tomorrow"},
+          {"vi": "Vì Naruto không đến lớp hôm nay", "en": "Because Naruto did not come to class today"}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì phân thân của Naruto chưa đủ tốt",
+        "Vì Naruto muốn đổi lớp học",
+        "Vì ngày mai Naruto có bài kiểm tra viết",
+        "Vì Naruto không đến lớp hôm nay"
+      ],
+      "answer": "Vì phân thân của Naruto chưa đủ tốt",
+      "speaker": "Iruka",
+      "transcript": "I know. You need more practice.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-06.mp3"
+    },
+    {
+      "id": 29,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I will not ", ". I will be Hokage one day!"],
+      "answers": ["give up"],
+      "speaker": "Naruto",
+      "transcript": "I will not give up. I will be Hokage one day!",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-07.mp3"
+    },
+    {
+      "id": 30,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I will not give up. I will be ", " one day!"],
+      "answers": ["Hokage"],
+      "speaker": "Naruto",
+      "transcript": "I will not give up. I will be Hokage one day!",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-07.mp3"
+    },
+    {
+      "id": 31,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I will not give up. I will be Hokage ", "!"],
+      "answers": ["one day"],
+      "speaker": "Naruto",
+      "transcript": "I will not give up. I will be Hokage one day!",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-07.mp3"
+    },
+    {
+      "id": 32,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["", ", Naruto. You can do better next time."],
+      "answers": ["Keep trying"],
+      "speaker": "Iruka",
+      "transcript": "Keep trying, Naruto. You can do better next time.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-07.mp3"
+    },
+    {
+      "id": 33,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu vào câu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Keep trying, Naruto. You can do better ", "."],
+      "answers": ["next time"],
+      "speaker": "Iruka",
+      "transcript": "Keep trying, Naruto. You can do better next time.",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-07.mp3"
+    },
+    {
+      "id": 34,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập toàn bộ hội thoại",
+          "en": "Full dialogue review"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu để hoàn thành hội thoại.",
+          "en": "Fill in the missing words to complete the dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Iruka",
+          "parts": [
+            "Naruto, are you ready for the ",
+            {"id": "1", "blank": "ninja test"},
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Naruto",
+          "parts": [
+            "Yes! I ",
+            {"id": "2", "blank": "worked hard"},
+            " every day."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Iruka",
+          "parts": [
+            "Good. Please make a ",
+            {"id": "3", "blank": "clone"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Naruto",
+          "parts": [
+            "I can do it! I want to ",
+            {"id": "4", "blank": "pass"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Naruto",
+          "parts": [
+            "Oh no! My clone looks ",
+            {"id": "5", "blank": "weak"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Iruka",
+          "parts": [
+            "It is ",
+            {"id": "6", "blank": "too weak"},
+            ", Naruto."
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Naruto",
+          "parts": [
+            "Can I ",
+            {"id": "7", "blank": "try again"},
+            ", please?"
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Iruka",
+          "parts": [
+            "Yes, you can try ",
+            {"id": "8", "blank": "one more"},
+            " time."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Naruto",
+          "parts": [
+            "I tried again, but the clone is ",
+            {"id": "9", "blank": "still weak"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Iruka",
+          "parts": [
+            "I am sorry, Naruto. You ",
+            {"id": "10", "blank": "did not"},
+            " pass the test."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Naruto",
+          "parts": [
+            "But I worked ",
+            {"id": "11", "blank": "so hard"},
+            "!"
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Iruka",
+          "parts": [
+            "I know. You need more ",
+            {"id": "12", "blank": "practice"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Naruto",
+          "parts": [
+            "I will not ",
+            {"id": "13", "blank": "give up"},
+            ". I will be Hokage one day!"
+          ]
+        },
+        {
+          "dialogueLineId": 14,
+          "speaker": "Iruka",
+          "parts": [
+            "Keep trying, Naruto. You can do better ",
+            {"id": "14", "blank": "next time"},
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Did not + động từ – Nói về điều không xảy ra trong quá khứ",
+      "explanation": "Dùng “did not” cùng động từ nguyên mẫu để nói một việc đã không xảy ra. Ví dụ “did not pass” nghĩa là đã không vượt qua.",
+      "localized": {
+        "title": {
+          "vi": "Did not + động từ – Nói về điều không xảy ra trong quá khứ",
+          "en": "Did not + verb – Talking about something that did not happen"
+        },
+        "explanation": {
+          "vi": "Dùng “did not” cùng động từ nguyên mẫu để nói một việc đã không xảy ra. Ví dụ “did not pass” nghĩa là đã không vượt qua.",
+          "en": "Use “did not” with the base form of a verb to say something did not happen in the past. For example, “did not pass” means someone failed to pass."
+        }
+      },
+      "example": "You did not pass the test."
+    }
+  ]
+}

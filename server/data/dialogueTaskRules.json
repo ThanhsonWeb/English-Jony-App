@@ -6192,6 +6192,1558 @@
 	},
 	{
 		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"scroll"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"only"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"lied"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"trusted"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Stay back"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"protect"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"15"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"believe in"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"works hard"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"19"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"new technique"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"really"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"believe in"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"become"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"great ninja"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"stop"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"alone"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"many clones"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"too many"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"28"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"saved"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"29"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"passed"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"scroll"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"30"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"31"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"really"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"32"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ninja"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"33"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"34"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"headband"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"35"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"proud"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"36"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"37"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"give up"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"38"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"scroll",
+			"scroll",
+			"Stop",
+			"said",
+			"lied",
+			"lied",
+			"Stay back",
+			"help",
+			"believe in",
+			"really",
+			"become",
+			"stop",
+			"alone",
+			"too many",
+			"saved",
+			"really",
+			"headband",
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Stop"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"forbidden"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"said"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"secret test"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"8"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"someone-believes-in-him",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"lied"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"know"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"forbidden"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"scroll"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"forbidden"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"safe"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"worry"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"secret test"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"16"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"special"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"technique"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Learn"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"did not"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"pass"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"21"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"become"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ninja"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"scroll"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tonight"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tell"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"27"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"28"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"do not"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"29"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"secret"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"clone"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"30"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"31"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"forest"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"32"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tonight"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"33"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"take"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"34"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"learn"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"35"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"test",
+			"clone",
+			"another way",
+			"help",
+			"scroll",
+			"safe",
+			"secret test",
+			"technique",
+			"pass",
+			"become",
+			"tonight",
+			"tell",
+			"secret",
+			"forest",
+			"learn"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"too weak"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"another way"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"pass"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"7"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Really"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-forbidden-scroll",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"alone"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"see"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"your dream"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Hokage"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"one day"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Why"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"our village"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"people"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"my name"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"20"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"big dream"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"work hard"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"think"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"do it"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"25"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"do it"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"28"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"work hard"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"29"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"alone",
+			"talk to",
+			"talk to",
+			"see me",
+			"dream",
+			"Hokage",
+			"Why",
+			"help",
+			"my name",
+			"work hard",
+			"think",
+			"do it",
+			"work hard"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"talk to"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"4"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"here"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"talk to"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"7"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"people"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-lonely-boy",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"see me"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ready"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"10"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"too weak"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Can I"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"try again"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"try"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"one more"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tried again"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"still weak"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"19"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ninja test"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sorry"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"did not"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"pass"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"23"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"worked"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"so hard"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"need"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"practice"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"28"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"29"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"give up"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"worked hard"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"30"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Hokage"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"31"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"one day"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"32"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Keep trying"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"33"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"next time"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"34"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"ninja test",
+			"worked hard",
+			"clone",
+			"pass",
+			"weak",
+			"too weak",
+			"try again",
+			"one more",
+			"still weak",
+			"did not",
+			"so hard",
+			"practice",
+			"give up",
+			"next time"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"every day"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"clone"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"do it"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"pass"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"clone"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-ninja-test",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"weak"
+		]
+	},
+	{
+		"ids": [
 			"restaurant",
 			"during-the-meal",
 			"1"

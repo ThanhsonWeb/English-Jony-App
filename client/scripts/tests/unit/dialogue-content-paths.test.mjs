@@ -63,4 +63,16 @@ test("keeps configs separated by the course content type", () => {
 		getCourseConfigPath(root, "story", "ten-minutes-a-day"),
 		path.join(root, "scripts", "config", "stories", "ten-minutes-a-day.mjs"),
 	);
+	assert.equal(
+		getCourseConfigPath(root, "story", "naruto-season-1", "anime"),
+		path.join(root, "scripts", "config", "anime", "naruto-season-1.mjs"),
+	);
+	assert.equal(
+		getGeneratedDialogueDraftPath(root, "story", "naruto-season-1", "the-lonely-boy"),
+		path.join(root, "generated", "stories", "naruto-season-1", "the-lonely-boy", "draft.json"),
+	);
+	assert.equal(
+		getPublicAssetPath("story", "naruto-season-1", "the-lonely-boy", "audio", "naruto-01.mp3"),
+		"/stories/naruto-season-1/the-lonely-boy/audio/naruto-01.mp3",
+	);
 });

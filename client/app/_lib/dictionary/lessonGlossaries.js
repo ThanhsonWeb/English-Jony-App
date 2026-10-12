@@ -8,6 +8,10 @@ import glossary5 from "./glossaries/stories/grateful/a-busy-morning.json" with {
 import glossary6 from "./glossaries/stories/grateful/a-small-act-of-kindness.json" with { type: "json" };
 import glossary7 from "./glossaries/stories/grateful/helping-in-return.json" with { type: "json" };
 import glossary8 from "./glossaries/stories/grateful/saying-thank-you.json" with { type: "json" };
-import glossary9 from "./glossaries/stories/ten-minutes-a-day/the-old-book.json" with { type: "json" };
+import glossary9 from "./glossaries/stories/naruto-season-1/someone-believes-in-him.json" with { type: "json" };
+import glossary10 from "./glossaries/stories/naruto-season-1/the-forbidden-scroll.json" with { type: "json" };
+import glossary11 from "./glossaries/stories/naruto-season-1/the-lonely-boy.json" with { type: "json" };
+import glossary12 from "./glossaries/stories/naruto-season-1/the-ninja-test.json" with { type: "json" };
+import glossary13 from "./glossaries/stories/ten-minutes-a-day/the-old-book.json" with { type: "json" };
 
-export const lessonGlossaries = [glossary0, glossary1, glossary2, glossary3, glossary4, glossary5, glossary6, glossary7, glossary8, glossary9];
+export const lessonGlossaries = [glossary0, glossary1, glossary2, glossary3, glossary4, glossary5, glossary6, glossary7, glossary8, glossary9, glossary10, glossary11, glossary12, glossary13];

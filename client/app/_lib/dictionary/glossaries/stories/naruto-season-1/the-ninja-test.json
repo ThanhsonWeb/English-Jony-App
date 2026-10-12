@@ -1,0 +1,885 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "naruto-season-1",
+  "dialogueId": "the-ninja-test",
+  "characters": {
+    "Iruka": {
+      "meaning": "Iruka",
+      "role": "thầy của Naruto"
+    },
+    "Naruto": {
+      "meaning": "Naruto",
+      "role": "học viên ninja ở Làng Lá"
+    }
+  },
+  "entries": {
+    "word-naruto": {
+      "word": "naruto",
+      "meaning": "Naruto",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "là, ở",
+      "pos": [
+        "be verb"
+      ]
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "em, thầy, bạn (tùy người nói)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-ready": {
+      "word": "ready",
+      "meaning": "sẵn sàng",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "cho",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "(mạo từ xác định, thường không dịch)",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-ninja": {
+      "word": "ninja",
+      "meaning": "ninja",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-test": {
+      "word": "test",
+      "meaning": "bài kiểm tra",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "vâng, được",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "em hoặc thầy (tùy người nói)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-worked": {
+      "word": "worked",
+      "meaning": "đã làm việc, đã cố gắng",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-hard": {
+      "word": "hard",
+      "meaning": "chăm chỉ; vất vả",
+      "pos": [
+        "adverb",
+        "adjective"
+      ]
+    },
+    "word-every": {
+      "word": "every",
+      "meaning": "mỗi",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-day": {
+      "word": "day",
+      "meaning": "ngày",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "tốt",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-please": {
+      "word": "please",
+      "meaning": "xin hãy; nhé",
+      "pos": [
+        "polite expression"
+      ]
+    },
+    "word-make": {
+      "word": "make",
+      "meaning": "tạo, làm",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "một (mạo từ không xác định)",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-clone": {
+      "word": "clone",
+      "meaning": "phân thân; bản sao",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "làm",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "nó; điều đó",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "muốn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "(dấu hiệu động từ nguyên mẫu)",
+      "pos": [
+        "infinitive marker"
+      ]
+    },
+    "word-pass": {
+      "word": "pass",
+      "meaning": "vượt qua",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-oh": {
+      "word": "oh",
+      "meaning": "ôi",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "không",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "của em",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-looks": {
+      "word": "looks",
+      "meaning": "trông có vẻ",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-weak": {
+      "word": "weak",
+      "meaning": "yếu",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "là",
+      "pos": [
+        "be verb"
+      ]
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "quá",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-try": {
+      "word": "try",
+      "meaning": "thử, cố gắng",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-again": {
+      "word": "again",
+      "meaning": "lại",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-one": {
+      "word": "one",
+      "meaning": "một",
+      "pos": [
+        "number"
+      ]
+    },
+    "word-more": {
+      "word": "more",
+      "meaning": "thêm",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-time": {
+      "word": "time",
+      "meaning": "lần",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-tried": {
+      "word": "tried",
+      "meaning": "đã thử",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "nhưng",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-still": {
+      "word": "still",
+      "meaning": "vẫn",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "là; rất (trong cụm am sorry)",
+      "pos": [
+        "be verb"
+      ]
+    },
+    "word-sorry": {
+      "word": "sorry",
+      "meaning": "xin lỗi; rất tiếc",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-did": {
+      "word": "did",
+      "meaning": "trợ động từ quá khứ",
+      "pos": [
+        "auxiliary verb"
+      ]
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "không",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-so": {
+      "word": "so",
+      "meaning": "rất",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "biết",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "cần",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-practice": {
+      "word": "practice",
+      "meaning": "luyện tập",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "sẽ",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-give": {
+      "word": "give",
+      "meaning": "cho, tặng",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-up": {
+      "word": "up",
+      "meaning": "lên; (tiểu từ trong give up)",
+      "pos": [
+        "particle"
+      ]
+    },
+    "word-be": {
+      "word": "be",
+      "meaning": "trở thành",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-hokage": {
+      "word": "hokage",
+      "meaning": "Hokage (lãnh đạo Làng Lá)",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-keep": {
+      "word": "keep",
+      "meaning": "tiếp tục",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-trying": {
+      "word": "trying",
+      "meaning": "đang cố gắng",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-better": {
+      "word": "better",
+      "meaning": "tốt hơn",
+      "pos": [
+        "adjective",
+        "adverb"
+      ]
+    },
+    "word-next": {
+      "word": "next",
+      "meaning": "tiếp theo",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "phrase-ninja-test": {
+      "word": "ninja test",
+      "meaning": "bài kiểm tra ninja",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-worked-hard": {
+      "word": "worked hard",
+      "meaning": "đã chăm chỉ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-make-a-clone": {
+      "word": "make a clone",
+      "meaning": "tạo một phân thân",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-try-again": {
+      "word": "try again",
+      "meaning": "thử lại",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-one-more-time": {
+      "word": "one more time",
+      "meaning": "thêm một lần nữa",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-give-up": {
+      "word": "give up",
+      "meaning": "bỏ cuộc",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-more-practice": {
+      "word": "more practice",
+      "meaning": "luyện tập thêm",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-next-time": {
+      "word": "next time",
+      "meaning": "lần sau",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-do-better": {
+      "word": "do better",
+      "meaning": "làm tốt hơn",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Iruka",
+      "text": "Naruto, are you ready for the ninja test?",
+      "translation": "Naruto, em đã sẵn sàng cho bài kiểm tra ninja chưa?",
+      "tokens": [
+        "Naruto",
+        "are",
+        "you",
+        "ready",
+        "for",
+        "the",
+        "ninja",
+        "test"
+      ],
+      "words": [
+        "word-naruto",
+        "word-are",
+        "word-you",
+        "word-ready",
+        "word-for",
+        "word-the",
+        "word-ninja",
+        "word-test"
+      ],
+      "phrases": [
+        {
+          "start": 6,
+          "end": 7,
+          "text": "ninja test",
+          "entry": "phrase-ninja-test"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Naruto",
+      "text": "Yes! I worked hard every day.",
+      "translation": "Vâng! Em đã chăm chỉ mỗi ngày.",
+      "tokens": [
+        "Yes",
+        "I",
+        "worked",
+        "hard",
+        "every",
+        "day"
+      ],
+      "words": [
+        "word-yes",
+        "word-i",
+        "word-worked",
+        "word-hard",
+        "word-every",
+        "word-day"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "worked hard",
+          "entry": "phrase-worked-hard"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Iruka",
+      "text": "Good. Please make a clone.",
+      "translation": "Tốt. Em hãy tạo một phân thân nhé.",
+      "tokens": [
+        "Good",
+        "Please",
+        "make",
+        "a",
+        "clone"
+      ],
+      "words": [
+        "word-good",
+        "word-please",
+        "word-make",
+        "word-a",
+        "word-clone"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 4,
+          "text": "make a clone",
+          "entry": "phrase-make-a-clone"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Naruto",
+      "text": "I can do it! I want to pass.",
+      "translation": "Em làm được mà! Em muốn vượt qua bài kiểm tra.",
+      "tokens": [
+        "I",
+        "can",
+        "do",
+        "it",
+        "I",
+        "want",
+        "to",
+        "pass"
+      ],
+      "words": [
+        "word-i",
+        "word-can",
+        "word-do",
+        "word-it",
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-pass"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Naruto",
+      "text": "Oh no! My clone looks weak.",
+      "translation": "Ôi không! Phân thân của em trông yếu quá.",
+      "tokens": [
+        "Oh",
+        "no",
+        "My",
+        "clone",
+        "looks",
+        "weak"
+      ],
+      "words": [
+        "word-oh",
+        "word-no",
+        "word-my",
+        "word-clone",
+        "word-looks",
+        "word-weak"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Iruka",
+      "text": "It is too weak, Naruto.",
+      "translation": "Nó yếu quá, Naruto.",
+      "tokens": [
+        "It",
+        "is",
+        "too",
+        "weak",
+        "Naruto"
+      ],
+      "words": [
+        "word-it",
+        "word-is",
+        "word-too",
+        "word-weak",
+        "word-naruto"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Naruto",
+      "text": "Can I try again, please?",
+      "translation": "Thầy cho em thử lại được không ạ?",
+      "tokens": [
+        "Can",
+        "I",
+        "try",
+        "again",
+        "please"
+      ],
+      "words": [
+        "word-can",
+        "word-i",
+        "word-try",
+        "word-again",
+        "word-please"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "try again",
+          "entry": "phrase-try-again"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Iruka",
+      "text": "Yes, you can try one more time.",
+      "translation": "Được, em có thể thử thêm một lần nữa.",
+      "tokens": [
+        "Yes",
+        "you",
+        "can",
+        "try",
+        "one",
+        "more",
+        "time"
+      ],
+      "words": [
+        "word-yes",
+        "word-you",
+        "word-can",
+        "word-try",
+        "word-one",
+        "word-more",
+        "word-time"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "one more time",
+          "entry": "phrase-one-more-time"
+        }
+      ]
+    },
+    "9": {
+      "speaker": "Naruto",
+      "text": "I tried again, but the clone is still weak.",
+      "translation": "Em đã thử lại rồi, nhưng phân thân vẫn còn yếu.",
+      "tokens": [
+        "I",
+        "tried",
+        "again",
+        "but",
+        "the",
+        "clone",
+        "is",
+        "still",
+        "weak"
+      ],
+      "words": [
+        "word-i",
+        "word-tried",
+        "word-again",
+        "word-but",
+        "word-the",
+        "word-clone",
+        "word-is",
+        "word-still",
+        "word-weak"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Iruka",
+      "text": "I am sorry, Naruto. You did not pass the test.",
+      "translation": "Thầy rất tiếc, Naruto. Em đã không vượt qua bài kiểm tra.",
+      "tokens": [
+        "I",
+        "am",
+        "sorry",
+        "Naruto",
+        "You",
+        "did",
+        "not",
+        "pass",
+        "the",
+        "test"
+      ],
+      "words": [
+        "word-i",
+        "word-am",
+        "word-sorry",
+        "word-naruto",
+        "word-you",
+        "word-did",
+        "word-not",
+        "word-pass",
+        "word-the",
+        "word-test"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Naruto",
+      "text": "But I worked so hard!",
+      "translation": "Nhưng em đã cố gắng rất nhiều mà!",
+      "tokens": [
+        "But",
+        "I",
+        "worked",
+        "so",
+        "hard"
+      ],
+      "words": [
+        "word-but",
+        "word-i",
+        "word-worked",
+        "word-so",
+        "word-hard"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Iruka",
+      "text": "I know. You need more practice.",
+      "translation": "Thầy biết. Em cần luyện tập thêm.",
+      "tokens": [
+        "I",
+        "know",
+        "You",
+        "need",
+        "more",
+        "practice"
+      ],
+      "words": [
+        "word-i",
+        "word-know",
+        "word-you",
+        "word-need",
+        "word-more",
+        "word-practice"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "more practice",
+          "entry": "phrase-more-practice"
+        }
+      ]
+    },
+    "13": {
+      "speaker": "Naruto",
+      "text": "I will not give up. I will be Hokage one day!",
+      "translation": "Em sẽ không bỏ cuộc. Một ngày nào đó em sẽ trở thành Hokage!",
+      "tokens": [
+        "I",
+        "will",
+        "not",
+        "give",
+        "up",
+        "I",
+        "will",
+        "be",
+        "Hokage",
+        "one",
+        "day"
+      ],
+      "words": [
+        "word-i",
+        "word-will",
+        "word-not",
+        "word-give",
+        "word-up",
+        "word-i",
+        "word-will",
+        "word-be",
+        "word-hokage",
+        "word-one",
+        "word-day"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "give up",
+          "entry": "phrase-give-up"
+        }
+      ]
+    },
+    "14": {
+      "speaker": "Iruka",
+      "text": "Keep trying, Naruto. You can do better next time.",
+      "translation": "Hãy tiếp tục cố gắng, Naruto. Lần sau em có thể làm tốt hơn.",
+      "tokens": [
+        "Keep",
+        "trying",
+        "Naruto",
+        "You",
+        "can",
+        "do",
+        "better",
+        "next",
+        "time"
+      ],
+      "words": [
+        "word-keep",
+        "word-trying",
+        "word-naruto",
+        "word-you",
+        "word-can",
+        "word-do",
+        "word-better",
+        "word-next",
+        "word-time"
+      ],
+      "phrases": [
+        {
+          "start": 7,
+          "end": 8,
+          "text": "next time",
+          "entry": "phrase-next-time"
+        },
+        {
+          "start": 5,
+          "end": 6,
+          "text": "do better",
+          "entry": "phrase-do-better"
+        }
+      ]
+    }
+  }
+}

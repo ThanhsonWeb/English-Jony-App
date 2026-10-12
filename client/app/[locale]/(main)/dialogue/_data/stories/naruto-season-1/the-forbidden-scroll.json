@@ -1,0 +1,1453 @@
+{
+  "metadata": {
+    "courseId": "naruto-season-1",
+    "dialogueId": "the-forbidden-scroll",
+    "contextualGlossaryVersion": 1,
+    "title": "Cuộn giấy cấm",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Naruto – Mùa 1",
+        "en": "Naruto – Season 1"
+      },
+      "courseDescription": {
+        "vi": "Naruto cố gắng trở thành ninja và theo đuổi ước mơ trở thành Hokage.",
+        "en": "Naruto works toward becoming a ninja and dreams of becoming Hokage."
+      },
+      "title": {
+        "vi": "Cuộn giấy cấm",
+        "en": "The Forbidden Scroll"
+      },
+      "description": {
+        "vi": "Mizuki tricks Naruto into taking a forbidden scroll. Naruto believes learning a new technique will help him graduate.",
+        "en": "Mizuki tricks Naruto into taking a forbidden scroll, making Naruto believe that learning a new technique will help him graduate."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Mizuki tricks Naruto into taking a forbidden scroll. Naruto believes learning a new technique will help him graduate.",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/the-forbidden-scroll.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Mizuki",
+      "text": "Naruto, I know you did not pass the test.",
+      "translation": "Naruto, thầy biết em đã không vượt qua bài kiểm tra.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Naruto",
+      "text": "Yes. My clone was too weak.",
+      "translation": "Vâng. Phân thân của em quá yếu.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Mizuki",
+      "text": "I know another way to pass.",
+      "translation": "Thầy biết một cách khác để vượt qua bài kiểm tra.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Naruto",
+      "text": "Really? Can you help me?",
+      "translation": "Thật ạ? Thầy có thể giúp em không?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Mizuki",
+      "text": "There is a forbidden scroll in the village.",
+      "translation": "Trong làng có một cuộn giấy cấm.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Naruto",
+      "text": "A forbidden scroll? Is it safe to take it?",
+      "translation": "Cuộn giấy cấm ạ? Lấy nó có an toàn không?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Mizuki",
+      "text": "Do not worry. It is a secret test.",
+      "translation": "Đừng lo. Đây là một bài kiểm tra bí mật.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Mizuki",
+      "text": "The scroll has a special ninja technique.",
+      "translation": "Cuộn giấy có một kỹ thuật ninja đặc biệt.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-05.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Mizuki",
+      "text": "Learn the technique, and you can pass the test.",
+      "translation": "Học được kỹ thuật đó thì em có thể vượt qua bài kiểm tra.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-06.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Naruto",
+      "text": "Then I can become a ninja!",
+      "translation": "Vậy em có thể trở thành ninja rồi!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-04.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Mizuki",
+      "text": "Yes. Take the scroll tonight.",
+      "translation": "Đúng vậy. Hãy lấy cuộn giấy tối nay.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-07.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Naruto",
+      "text": "Can I tell Iruka?",
+      "translation": "Em có thể nói với thầy Iruka không?",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-05.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Mizuki",
+      "text": "No, do not tell him. Keep it a secret.",
+      "translation": "Không, đừng nói với thầy ấy. Hãy giữ bí mật nhé.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-08.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Mizuki",
+      "text": "Meet me in the forest tonight.",
+      "translation": "Tối nay hãy gặp thầy trong rừng.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-09.mp3"
+    },
+    {
+      "id": 15,
+      "speaker": "Naruto",
+      "text": "Okay! I will take the scroll and learn the technique!",
+      "translation": "Vâng! Em sẽ lấy cuộn giấy và học kỹ thuật đó!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "did not pass",
+      "pronunciation": "/dɪd nɑːt pæs/",
+      "meaning": "đã không vượt qua",
+      "example": "I did not pass the test."
+    },
+    {
+      "word": "another way",
+      "pronunciation": "/əˈnʌðər weɪ/",
+      "meaning": "một cách khác",
+      "example": "There is another way."
+    },
+    {
+      "word": "help me",
+      "pronunciation": "/hɛlp miː/",
+      "meaning": "giúp tôi",
+      "example": "Can you help me?"
+    },
+    {
+      "word": "forbidden scroll",
+      "pronunciation": "/fərˈbɪdən skroʊl/",
+      "meaning": "cuộn giấy cấm",
+      "example": "This is a forbidden scroll."
+    },
+    {
+      "word": "safe",
+      "pronunciation": "/seɪf/",
+      "meaning": "an toàn",
+      "example": "Is it safe here?"
+    },
+    {
+      "word": "Do not worry",
+      "pronunciation": "/duː nɑːt ˈwɝːi/",
+      "meaning": "đừng lo",
+      "example": "Do not worry about me."
+    },
+    {
+      "word": "secret test",
+      "pronunciation": "/ˈsiːkrət tɛst/",
+      "meaning": "bài kiểm tra bí mật",
+      "example": "It is a secret test."
+    },
+    {
+      "word": "technique",
+      "pronunciation": "/tɛkˈniːk/",
+      "meaning": "kỹ thuật, chiêu thức",
+      "example": "I want to learn a new technique."
+    },
+    {
+      "word": "become a ninja",
+      "pronunciation": "/bɪˈkʌm ə ˈnɪndʒə/",
+      "meaning": "trở thành ninja",
+      "example": "I want to become a ninja."
+    },
+    {
+      "word": "Keep it a secret",
+      "pronunciation": "/kiːp ɪt ə ˈsiːkrət/",
+      "meaning": "hãy giữ bí mật",
+      "example": "Please keep it a secret."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Naruto, I ",
+        " you did not pass the test."
+      ],
+      "answers": [
+        "know"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "Naruto, I know you did not pass the test.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Naruto, I know you ",
+        " pass the test."
+      ],
+      "answers": [
+        "did not"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "Naruto, I know you did not pass the test.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes. My ",
+        " was too weak."
+      ],
+      "answers": [
+        "clone"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Yes. My clone was too weak.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes. My clone was ",
+        "."
+      ],
+      "answers": [
+        "too weak"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Yes. My clone was too weak.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I know ",
+        " to pass."
+      ],
+      "answers": [
+        "another way"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "I know another way to pass.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I know another way to ",
+        "."
+      ],
+      "answers": [
+        "pass"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "I know another way to pass.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Mizuki muốn Naruto tin điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Mizuki muốn Naruto tin điều gì?",
+          "en": "What does Mizuki want Naruto to believe?"
+        },
+        "options": [
+          {
+            "vi": "Iruka sẽ cho cậu thi lại ngay.",
+            "en": "Iruka will let him retake the test right away."
+          },
+          {
+            "vi": "Cậu đã tốt nghiệp ninja.",
+            "en": "He has already graduated as a ninja."
+          },
+          {
+            "vi": "Cậu không cần học thêm nữa.",
+            "en": "He does not need to study anymore."
+          },
+          {
+            "vi": "Cậu vẫn còn cách để vượt qua bài kiểm tra.",
+            "en": "He still has a way to pass the test."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Iruka sẽ cho cậu thi lại ngay.",
+        "Cậu đã tốt nghiệp ninja.",
+        "Cậu không cần học thêm nữa.",
+        "Cậu vẫn còn cách để vượt qua bài kiểm tra."
+      ],
+      "answer": "Cậu vẫn còn cách để vượt qua bài kiểm tra.",
+      "speaker": "Mizuki",
+      "transcript": "I know another way to pass.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "",
+        "? Can you help me?"
+      ],
+      "answers": [
+        "Really"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Really? Can you help me?",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Really? Can you ",
+        " me?"
+      ],
+      "answers": [
+        "help"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Really? Can you help me?",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "There is a ",
+        " scroll in the village."
+      ],
+      "answers": [
+        "forbidden"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "There is a forbidden scroll in the village.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "There is a forbidden ",
+        " in the village."
+      ],
+      "answers": [
+        "scroll"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "There is a forbidden scroll in the village.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "A ",
+        " scroll? Is it safe to take it?"
+      ],
+      "answers": [
+        "forbidden"
+      ],
+      "speaker": "Naruto",
+      "transcript": "A forbidden scroll? Is it safe to take it?",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "A forbidden scroll? Is it ",
+        " to take it?"
+      ],
+      "answers": [
+        "safe"
+      ],
+      "speaker": "Naruto",
+      "transcript": "A forbidden scroll? Is it safe to take it?",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Do not ",
+        ". It is a secret test."
+      ],
+      "answers": [
+        "worry"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "Do not worry. It is a secret test.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-04.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Do not worry. It is a ",
+        "."
+      ],
+      "answers": [
+        "secret test"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "Do not worry. It is a secret test.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "question": "Mizuki nói “Do not worry” để làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Mizuki nói “Do not worry” để làm gì?",
+          "en": "Why does Mizuki say “Do not worry”?"
+        },
+        "options": [
+          {
+            "vi": "Bảo Naruto rời khỏi làng.",
+            "en": "To tell Naruto to leave the village."
+          },
+          {
+            "vi": "Trấn an Naruto để cậu bớt lo.",
+            "en": "To reassure Naruto so he worries less."
+          },
+          {
+            "vi": "Nhờ Naruto hỏi Iruka.",
+            "en": "To ask Naruto to speak to Iruka."
+          },
+          {
+            "vi": "Báo tin Naruto đã vượt qua bài thi.",
+            "en": "To say Naruto has passed the test."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "options": [
+        "Bảo Naruto rời khỏi làng.",
+        "Trấn an Naruto để cậu bớt lo.",
+        "Nhờ Naruto hỏi Iruka.",
+        "Báo tin Naruto đã vượt qua bài thi."
+      ],
+      "answer": "Trấn an Naruto để cậu bớt lo.",
+      "speaker": "Mizuki",
+      "transcript": "Do not worry. It is a secret test.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-04.mp3",
+      "mcTarget": "Do not worry"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "The scroll has a ",
+        " ninja technique."
+      ],
+      "answers": [
+        "special"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "The scroll has a special ninja technique.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-05.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "The scroll has a special ninja ",
+        "."
+      ],
+      "answers": [
+        "technique"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "The scroll has a special ninja technique.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-05.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "",
+        " the technique, and you can pass the test."
+      ],
+      "answers": [
+        "Learn"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "Learn the technique, and you can pass the test.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-06.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Learn the technique, and you can ",
+        " the test."
+      ],
+      "answers": [
+        "pass"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "Learn the technique, and you can pass the test.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-06.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Theo Mizuki, Naruto cần làm gì để được đậu?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Theo Mizuki, Naruto cần làm gì để được đậu?",
+          "en": "According to Mizuki, what must Naruto do to pass?"
+        },
+        "options": [
+          {
+            "vi": "Học kỹ thuật trong cuộn giấy.",
+            "en": "Learn the technique from the scroll."
+          },
+          {
+            "vi": "Làm lại bài kiểm tra ngay.",
+            "en": "Retake the test immediately."
+          },
+          {
+            "vi": "Xin Iruka cho thêm điểm.",
+            "en": "Ask Iruka for more points."
+          },
+          {
+            "vi": "Chờ đến năm sau.",
+            "en": "Wait until next year."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Học kỹ thuật trong cuộn giấy.",
+        "Làm lại bài kiểm tra ngay.",
+        "Xin Iruka cho thêm điểm.",
+        "Chờ đến năm sau."
+      ],
+      "answer": "Học kỹ thuật trong cuộn giấy.",
+      "speaker": "Mizuki",
+      "transcript": "Learn the technique, and you can pass the test.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-06.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Then I can ",
+        " a ninja!"
+      ],
+      "answers": [
+        "become"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Then I can become a ninja!",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-04.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Then I can become a ",
+        "!"
+      ],
+      "answers": [
+        "ninja"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Then I can become a ninja!",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-04.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes. Take the ",
+        " tonight."
+      ],
+      "answers": [
+        "scroll"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "Yes. Take the scroll tonight.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-07.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes. Take the scroll ",
+        "."
+      ],
+      "answers": [
+        "tonight"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "Yes. Take the scroll tonight.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-07.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Can I ",
+        " Iruka?"
+      ],
+      "answers": [
+        "tell"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Can I tell Iruka?",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-05.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 12,
+      "type": "multipleChoice",
+      "question": "Naruto dùng “Can I...?” để làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Naruto dùng “Can I...?” để làm gì?",
+          "en": "Why does Naruto use “Can I...”?"
+        },
+        "options": [
+          {
+            "vi": "Nói rằng Iruka đã biết mọi chuyện.",
+            "en": "To say Iruka already knows everything."
+          },
+          {
+            "vi": "Ra lệnh cho Iruka giữ bí mật.",
+            "en": "To order Iruka to keep a secret."
+          },
+          {
+            "vi": "Xin phép được nói với Iruka.",
+            "en": "To ask permission to tell Iruka."
+          },
+          {
+            "vi": "Hứa sẽ gặp Iruka tối nay.",
+            "en": "To promise to meet Iruka tonight."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "options": [
+        "Nói rằng Iruka đã biết mọi chuyện.",
+        "Ra lệnh cho Iruka giữ bí mật.",
+        "Xin phép được nói với Iruka.",
+        "Hứa sẽ gặp Iruka tối nay."
+      ],
+      "answer": "Xin phép được nói với Iruka.",
+      "speaker": "Naruto",
+      "transcript": "Can I tell Iruka?",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-05.mp3",
+      "mcTarget": "Can I"
+    },
+    {
+      "id": 28,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "No, ",
+        " tell him. Keep it a secret."
+      ],
+      "answers": [
+        "do not"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "No, do not tell him. Keep it a secret.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-08.mp3"
+    },
+    {
+      "id": 29,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "No, do not tell him. Keep it a ",
+        "."
+      ],
+      "answers": [
+        "secret"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "No, do not tell him. Keep it a secret.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-08.mp3"
+    },
+    {
+      "id": 30,
+      "dialogueLineId": 13,
+      "type": "multipleChoice",
+      "question": "Lời dặn của Mizuki cho thấy điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Lời dặn của Mizuki cho thấy điều gì?",
+          "en": "What does Mizuki’s instruction show?"
+        },
+        "options": [
+          {
+            "vi": "Mizuki muốn giấu chuyện này với Iruka.",
+            "en": "Mizuki wants to hide this from Iruka."
+          },
+          {
+            "vi": "Mizuki muốn Iruka giúp Naruto.",
+            "en": "Mizuki wants Iruka to help Naruto."
+          },
+          {
+            "vi": "Iruka đã đồng ý với kế hoạch.",
+            "en": "Iruka has agreed to the plan."
+          },
+          {
+            "vi": "Naruto đã kể bí mật cho mọi người.",
+            "en": "Naruto has told everyone the secret."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Mizuki muốn giấu chuyện này với Iruka.",
+        "Mizuki muốn Iruka giúp Naruto.",
+        "Iruka đã đồng ý với kế hoạch.",
+        "Naruto đã kể bí mật cho mọi người."
+      ],
+      "answer": "Mizuki muốn giấu chuyện này với Iruka.",
+      "speaker": "Mizuki",
+      "transcript": "No, do not tell him. Keep it a secret.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-08.mp3"
+    },
+    {
+      "id": 31,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Meet me in the ",
+        " tonight."
+      ],
+      "answers": [
+        "forest"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "Meet me in the forest tonight.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-09.mp3"
+    },
+    {
+      "id": 32,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Meet me in the forest ",
+        "."
+      ],
+      "answers": [
+        "tonight"
+      ],
+      "speaker": "Mizuki",
+      "transcript": "Meet me in the forest tonight.",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-09.mp3"
+    },
+    {
+      "id": 33,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Okay! I will ",
+        " the scroll and learn the technique!"
+      ],
+      "answers": [
+        "take"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Okay! I will take the scroll and learn the technique!",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-06.mp3"
+    },
+    {
+      "id": 34,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Okay! I will take the scroll and ",
+        " the technique!"
+      ],
+      "answers": [
+        "learn"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Okay! I will take the scroll and learn the technique!",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-06.mp3"
+    },
+    {
+      "id": 35,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập toàn bộ hội thoại",
+          "en": "Full dialogue review"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu để hoàn thành hội thoại.",
+          "en": "Fill in the missing words to complete the dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Mizuki",
+          "parts": [
+            "Naruto, I know you did not pass the ",
+            {
+              "id": "1",
+              "blank": "test"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Naruto",
+          "parts": [
+            "Yes. My ",
+            {
+              "id": "2",
+              "blank": "clone"
+            },
+            " was too weak."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Mizuki",
+          "parts": [
+            "I know ",
+            {
+              "id": "3",
+              "blank": "another way"
+            },
+            " to pass."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Naruto",
+          "parts": [
+            "Really? Can you ",
+            {
+              "id": "4",
+              "blank": "help"
+            },
+            " me?"
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Mizuki",
+          "parts": [
+            "There is a forbidden ",
+            {
+              "id": "5",
+              "blank": "scroll"
+            },
+            " in the village."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Naruto",
+          "parts": [
+            "A forbidden scroll? Is it ",
+            {
+              "id": "6",
+              "blank": "safe"
+            },
+            " to take it?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Mizuki",
+          "parts": [
+            "Do not worry. It is a ",
+            {
+              "id": "7",
+              "blank": "secret test"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Mizuki",
+          "parts": [
+            "The scroll has a special ninja ",
+            {
+              "id": "8",
+              "blank": "technique"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Mizuki",
+          "parts": [
+            "Learn the technique, and you can ",
+            {
+              "id": "9",
+              "blank": "pass"
+            },
+            " the test."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Naruto",
+          "parts": [
+            "Then I can ",
+            {
+              "id": "10",
+              "blank": "become"
+            },
+            " a ninja!"
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Mizuki",
+          "parts": [
+            "Yes. Take the scroll ",
+            {
+              "id": "11",
+              "blank": "tonight"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Naruto",
+          "parts": [
+            "Can I ",
+            {
+              "id": "12",
+              "blank": "tell"
+            },
+            " Iruka?"
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Mizuki",
+          "parts": [
+            "No, do not tell him. Keep it a ",
+            {
+              "id": "13",
+              "blank": "secret"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 14,
+          "speaker": "Mizuki",
+          "parts": [
+            "Meet me in the ",
+            {
+              "id": "14",
+              "blank": "forest"
+            },
+            " tonight."
+          ]
+        },
+        {
+          "dialogueLineId": 15,
+          "speaker": "Naruto",
+          "parts": [
+            "Okay! I will take the scroll and ",
+            {
+              "id": "15",
+              "blank": "learn"
+            },
+            " the technique!"
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Can I...? – Xin phép làm điều gì đó",
+      "explanation": "Dùng “Can I...?” để xin phép làm một việc. Ví dụ “Can I tell Iruka?” nghĩa là “Em có thể nói với thầy Iruka không?”.",
+      "localized": {
+        "title": {
+          "vi": "Can I...? – Xin phép làm điều gì đó",
+          "en": "Can I...? – Asking for permission"
+        },
+        "explanation": {
+          "vi": "Dùng “Can I...?” để xin phép làm một việc. Ví dụ “Can I tell Iruka?” nghĩa là “Em có thể nói với thầy Iruka không?”.",
+          "en": "Use “Can I...?” to ask for permission to do something. For example, “Can I tell Iruka?” asks permission to speak to Iruka."
+        }
+      },
+      "example": "Can I tell Iruka?"
+    }
+  ]
+}

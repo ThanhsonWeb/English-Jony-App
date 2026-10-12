@@ -65,7 +65,7 @@ async function catalogueCase(browser, width, locale, theme) {
 	await select("travel", 1); assert.equal(await p.locator(`main a[href="${c.prefix}/dialogue/asking-for-directions"]`).count(), 1);
 	await select("office", 0);
 	await select("all", 6);
-	for (const id of ["weekend-camping", "office-introduction", "at-a-hotel", "the-lost-wallet"]) assert.equal(await p.locator(`main a[href="${c.prefix}/dialogue/${id}"]`).count(), 0);
+	for (const id of ["weekend-camping", "office-introduction", "at-a-hotel"]) assert.equal(await p.locator(`main a[href="${c.prefix}/dialogue/${id}"]`).count(), 0);
 	await select("story", 1);
 	await p.locator(`main a[href="${c.prefix}/dialogue/ten-minutes-a-day"]`).click();
 	await p.waitForURL(url => url.pathname === `${c.prefix}/dialogue/ten-minutes-a-day`);

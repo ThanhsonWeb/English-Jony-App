@@ -1,0 +1,648 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "naruto-season-1",
+  "dialogueId": "the-forbidden-scroll",
+  "characters": {
+    "Mizuki": {
+      "meaning": "Mizuki",
+      "role": ""
+    },
+    "Naruto": {
+      "meaning": "Naruto",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-naruto": {
+      "word": "naruto",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-did": {
+      "word": "did",
+      "meaning": "",
+      "pos": []
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "",
+      "pos": []
+    },
+    "word-pass": {
+      "word": "pass",
+      "meaning": "",
+      "pos": []
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "",
+      "pos": []
+    },
+    "word-test": {
+      "word": "test",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "",
+      "pos": []
+    },
+    "word-clone": {
+      "word": "clone",
+      "meaning": "",
+      "pos": []
+    },
+    "word-was": {
+      "word": "was",
+      "meaning": "",
+      "pos": []
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "",
+      "pos": []
+    },
+    "word-weak": {
+      "word": "weak",
+      "meaning": "",
+      "pos": []
+    },
+    "word-another": {
+      "word": "another",
+      "meaning": "",
+      "pos": []
+    },
+    "word-way": {
+      "word": "way",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-really": {
+      "word": "really",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "",
+      "pos": []
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "",
+      "pos": []
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "",
+      "pos": []
+    },
+    "word-there": {
+      "word": "there",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "",
+      "pos": []
+    },
+    "word-forbidden": {
+      "word": "forbidden",
+      "meaning": "",
+      "pos": []
+    },
+    "word-scroll": {
+      "word": "scroll",
+      "meaning": "",
+      "pos": []
+    },
+    "word-in": {
+      "word": "in",
+      "meaning": "",
+      "pos": []
+    },
+    "word-village": {
+      "word": "village",
+      "meaning": "",
+      "pos": []
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "",
+      "pos": []
+    },
+    "word-safe": {
+      "word": "safe",
+      "meaning": "",
+      "pos": []
+    },
+    "word-take": {
+      "word": "take",
+      "meaning": "",
+      "pos": []
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "",
+      "pos": []
+    },
+    "word-worry": {
+      "word": "worry",
+      "meaning": "",
+      "pos": []
+    },
+    "word-secret": {
+      "word": "secret",
+      "meaning": "",
+      "pos": []
+    },
+    "word-has": {
+      "word": "has",
+      "meaning": "",
+      "pos": []
+    },
+    "word-special": {
+      "word": "special",
+      "meaning": "",
+      "pos": []
+    },
+    "word-ninja": {
+      "word": "ninja",
+      "meaning": "",
+      "pos": []
+    },
+    "word-technique": {
+      "word": "technique",
+      "meaning": "",
+      "pos": []
+    },
+    "word-learn": {
+      "word": "learn",
+      "meaning": "",
+      "pos": []
+    },
+    "word-and": {
+      "word": "and",
+      "meaning": "",
+      "pos": []
+    },
+    "word-then": {
+      "word": "then",
+      "meaning": "",
+      "pos": []
+    },
+    "word-become": {
+      "word": "become",
+      "meaning": "",
+      "pos": []
+    },
+    "word-tonight": {
+      "word": "tonight",
+      "meaning": "",
+      "pos": []
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "",
+      "pos": []
+    },
+    "word-iruka": {
+      "word": "iruka",
+      "meaning": "",
+      "pos": []
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "",
+      "pos": []
+    },
+    "word-him": {
+      "word": "him",
+      "meaning": "",
+      "pos": []
+    },
+    "word-keep": {
+      "word": "keep",
+      "meaning": "",
+      "pos": []
+    },
+    "word-meet": {
+      "word": "meet",
+      "meaning": "",
+      "pos": []
+    },
+    "word-forest": {
+      "word": "forest",
+      "meaning": "",
+      "pos": []
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "",
+      "pos": []
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Mizuki",
+      "text": "Naruto, I know you did not pass the test.",
+      "translation": "Naruto, thầy biết em đã không vượt qua bài kiểm tra.",
+      "tokens": [
+        "Naruto",
+        "I",
+        "know",
+        "you",
+        "did",
+        "not",
+        "pass",
+        "the",
+        "test"
+      ],
+      "words": [
+        "word-naruto",
+        "word-i",
+        "word-know",
+        "word-you",
+        "word-did",
+        "word-not",
+        "word-pass",
+        "word-the",
+        "word-test"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Naruto",
+      "text": "Yes. My clone was too weak.",
+      "translation": "Vâng. Phân thân của em quá yếu.",
+      "tokens": [
+        "Yes",
+        "My",
+        "clone",
+        "was",
+        "too",
+        "weak"
+      ],
+      "words": [
+        "word-yes",
+        "word-my",
+        "word-clone",
+        "word-was",
+        "word-too",
+        "word-weak"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Mizuki",
+      "text": "I know another way to pass.",
+      "translation": "Thầy biết một cách khác để vượt qua bài kiểm tra.",
+      "tokens": [
+        "I",
+        "know",
+        "another",
+        "way",
+        "to",
+        "pass"
+      ],
+      "words": [
+        "word-i",
+        "word-know",
+        "word-another",
+        "word-way",
+        "word-to",
+        "word-pass"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Naruto",
+      "text": "Really? Can you help me?",
+      "translation": "Thật ạ? Thầy có thể giúp em không?",
+      "tokens": [
+        "Really",
+        "Can",
+        "you",
+        "help",
+        "me"
+      ],
+      "words": [
+        "word-really",
+        "word-can",
+        "word-you",
+        "word-help",
+        "word-me"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Mizuki",
+      "text": "There is a forbidden scroll in the village.",
+      "translation": "Trong làng có một cuộn giấy cấm.",
+      "tokens": [
+        "There",
+        "is",
+        "a",
+        "forbidden",
+        "scroll",
+        "in",
+        "the",
+        "village"
+      ],
+      "words": [
+        "word-there",
+        "word-is",
+        "word-a",
+        "word-forbidden",
+        "word-scroll",
+        "word-in",
+        "word-the",
+        "word-village"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Naruto",
+      "text": "A forbidden scroll? Is it safe to take it?",
+      "translation": "Cuộn giấy cấm ạ? Lấy nó có an toàn không?",
+      "tokens": [
+        "A",
+        "forbidden",
+        "scroll",
+        "Is",
+        "it",
+        "safe",
+        "to",
+        "take",
+        "it"
+      ],
+      "words": [
+        "word-a",
+        "word-forbidden",
+        "word-scroll",
+        "word-is",
+        "word-it",
+        "word-safe",
+        "word-to",
+        "word-take",
+        "word-it"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Mizuki",
+      "text": "Do not worry. It is a secret test.",
+      "translation": "Đừng lo. Đây là một bài kiểm tra bí mật.",
+      "tokens": [
+        "Do",
+        "not",
+        "worry",
+        "It",
+        "is",
+        "a",
+        "secret",
+        "test"
+      ],
+      "words": [
+        "word-do",
+        "word-not",
+        "word-worry",
+        "word-it",
+        "word-is",
+        "word-a",
+        "word-secret",
+        "word-test"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Mizuki",
+      "text": "The scroll has a special ninja technique.",
+      "translation": "Cuộn giấy có một kỹ thuật ninja đặc biệt.",
+      "tokens": [
+        "The",
+        "scroll",
+        "has",
+        "a",
+        "special",
+        "ninja",
+        "technique"
+      ],
+      "words": [
+        "word-the",
+        "word-scroll",
+        "word-has",
+        "word-a",
+        "word-special",
+        "word-ninja",
+        "word-technique"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Mizuki",
+      "text": "Learn the technique, and you can pass the test.",
+      "translation": "Học được kỹ thuật đó thì em có thể vượt qua bài kiểm tra.",
+      "tokens": [
+        "Learn",
+        "the",
+        "technique",
+        "and",
+        "you",
+        "can",
+        "pass",
+        "the",
+        "test"
+      ],
+      "words": [
+        "word-learn",
+        "word-the",
+        "word-technique",
+        "word-and",
+        "word-you",
+        "word-can",
+        "word-pass",
+        "word-the",
+        "word-test"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Naruto",
+      "text": "Then I can become a ninja!",
+      "translation": "Vậy em có thể trở thành ninja rồi!",
+      "tokens": [
+        "Then",
+        "I",
+        "can",
+        "become",
+        "a",
+        "ninja"
+      ],
+      "words": [
+        "word-then",
+        "word-i",
+        "word-can",
+        "word-become",
+        "word-a",
+        "word-ninja"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Mizuki",
+      "text": "Yes. Take the scroll tonight.",
+      "translation": "Đúng vậy. Hãy lấy cuộn giấy tối nay.",
+      "tokens": [
+        "Yes",
+        "Take",
+        "the",
+        "scroll",
+        "tonight"
+      ],
+      "words": [
+        "word-yes",
+        "word-take",
+        "word-the",
+        "word-scroll",
+        "word-tonight"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Naruto",
+      "text": "Can I tell Iruka?",
+      "translation": "Em có thể nói với thầy Iruka không?",
+      "tokens": [
+        "Can",
+        "I",
+        "tell",
+        "Iruka"
+      ],
+      "words": [
+        "word-can",
+        "word-i",
+        "word-tell",
+        "word-iruka"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Mizuki",
+      "text": "No, do not tell him. Keep it a secret.",
+      "translation": "Không, đừng nói với thầy ấy. Hãy giữ bí mật nhé.",
+      "tokens": [
+        "No",
+        "do",
+        "not",
+        "tell",
+        "him",
+        "Keep",
+        "it",
+        "a",
+        "secret"
+      ],
+      "words": [
+        "word-no",
+        "word-do",
+        "word-not",
+        "word-tell",
+        "word-him",
+        "word-keep",
+        "word-it",
+        "word-a",
+        "word-secret"
+      ],
+      "phrases": []
+    },
+    "14": {
+      "speaker": "Mizuki",
+      "text": "Meet me in the forest tonight.",
+      "translation": "Tối nay hãy gặp thầy trong rừng.",
+      "tokens": [
+        "Meet",
+        "me",
+        "in",
+        "the",
+        "forest",
+        "tonight"
+      ],
+      "words": [
+        "word-meet",
+        "word-me",
+        "word-in",
+        "word-the",
+        "word-forest",
+        "word-tonight"
+      ],
+      "phrases": []
+    },
+    "15": {
+      "speaker": "Naruto",
+      "text": "Okay! I will take the scroll and learn the technique!",
+      "translation": "Vâng! Em sẽ lấy cuộn giấy và học kỹ thuật đó!",
+      "tokens": [
+        "Okay",
+        "I",
+        "will",
+        "take",
+        "the",
+        "scroll",
+        "and",
+        "learn",
+        "the",
+        "technique"
+      ],
+      "words": [
+        "word-okay",
+        "word-i",
+        "word-will",
+        "word-take",
+        "word-the",
+        "word-scroll",
+        "word-and",
+        "word-learn",
+        "word-the",
+        "word-technique"
+      ],
+      "phrases": []
+    }
+  }
+}

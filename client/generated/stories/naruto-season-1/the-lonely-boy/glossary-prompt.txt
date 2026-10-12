@@ -1,0 +1,245 @@
+StudyJony contextual glossary authoring — story: naruto-season-1/the-lonely-boy
+
+Codex must author meanings offline after the English draft and Vietnamese translations are final.
+Read every line and its translation. Save a separate glossary.json beside draft.json.
+Use the existing schemaVersion 1 glossary and the prepared glossary-template.json.
+Keep lessonId=naruto-season-1, dialogueId=the-lonely-boy, source line IDs, exact text,
+translation, speaker, tokens, and zero-based word positions unchanged.
+
+Review EVERY word occurrence, not only usefulWords. Write short, natural Vietnamese
+meanings, usually 1–5 words. Never blindly copy a dictionary's first sense.
+Reuse shared entries only when the English word, Vietnamese sense and POS agree;
+split references for repeated words with different senses or grammatical roles.
+Each word entry has word (lowercase English token), meaning and pos (array).
+Optional pron is an IPA array: use trustworthy surface-form IPA, never a lemma's
+IPA for an inflected word or one word's IPA for a whole phrase. Omit unknown IPA.
+Keep useful grammar explanations in optional note fields, hidden in the popup.
+Use a short grammar label when there is no direct Vietnamese translation.
+Identify names as proper names. Do not translate character names as ordinary words.
+
+Preserve individual word entries even inside expressions. Add useful phrase entries
+with pos:["phrase"] and inclusive spans {start,end,text,entry}. Phrase text must
+exactly match the source span, contain at least two words, and never cross punctuation.
+Review usefulWords as candidates; do not force every adjacent word into a phrase.
+Each line has words (entry IDs in token order) and phrases (span array).
+Each character has meaning (name), role and optional note.
+
+Use the English sentence AND its existing Vietnamese translation to select senses.
+Check natural Vietnamese, phrase boundaries, individual meanings, POS and IPA.
+Flag uncertain senses in optional notes for human review; validation is not proof
+of translation accuracy. Never modify an approved glossary automatically.
+No runtime translation API, build-time translation API or dictionary-based meaning generator.
+
+After authoring, run:
+npm run glossary:check -- naruto-season-1 the-lonely-boy
+Then the existing dialogue:build command validates again before any promotion.
+
+Final source (all lines and useful expressions):
+{
+  "metadata": {
+    "courseId": "naruto-season-1",
+    "dialogueId": "the-lonely-boy",
+    "contextualGlossaryVersion": 1,
+    "title": "Cậu bé cô đơn",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Naruto - Mùa 1",
+        "en": "Naruto - Season 1"
+      },
+      "courseDescription": {
+        "vi": "Theo chân Naruto, một cậu bé ninja ở Làng Lá, trên hành trình tìm kiếm sự công nhận, tình bạn và theo đuổi ước mơ trở thành Hokage.",
+        "en": "Follow Naruto, a young ninja from the Hidden Leaf Village, as he searches for acceptance, friendship, and a chance to become Hokage."
+      },
+      "title": {
+        "vi": "Cậu bé cô đơn",
+        "en": "The Lonely Boy"
+      },
+      "description": {
+        "vi": "Naruto lives alone in the Hidden Leaf Village. He wants people to notice him and dreams of becoming Hokage.",
+        "en": "Naruto lives alone in the Hidden Leaf Village. He wants people to notice him and dreams of becoming Hokage."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Naruto lives alone in the Hidden Leaf Village. He wants people to notice him and dreams of becoming Hokage.",
+    "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/the-lonely-boy.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Iruka",
+      "text": "Naruto, why are you here alone?",
+      "translation": "Naruto, sao em ở đây một mình?",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Naruto",
+      "text": "People do not want to talk to me.",
+      "translation": "Mọi người không muốn nói chuyện với em.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Iruka",
+      "text": "I am here, Naruto. You can talk to me.",
+      "translation": "Thầy ở đây mà, Naruto. Em có thể nói chuyện với thầy.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Naruto",
+      "text": "I want people to see me.",
+      "translation": "Em muốn mọi người chú ý đến em.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Iruka",
+      "text": "I see you. Tell me about your dream.",
+      "translation": "Thầy thấy em mà. Kể thầy nghe về ước mơ của em đi.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Naruto",
+      "text": "I want to be Hokage one day!",
+      "translation": "Một ngày nào đó em muốn trở thành Hokage!",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Iruka",
+      "text": "Why do you want to be Hokage?",
+      "translation": "Tại sao em muốn trở thành Hokage?",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Naruto",
+      "text": "I want to help everyone in our village.",
+      "translation": "Em muốn giúp mọi người trong làng.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Naruto",
+      "text": "I want people to know my name, too.",
+      "translation": "Em cũng muốn mọi người biết đến tên em.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Iruka",
+      "text": "That is a big dream. You can work hard every day.",
+      "translation": "Đó là một ước mơ lớn. Em có thể chăm chỉ mỗi ngày.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Naruto",
+      "text": "Do you think I can do it?",
+      "translation": "Thầy có nghĩ em làm được không?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Iruka",
+      "text": "Yes, Naruto. You can do it!",
+      "translation": "Có chứ, Naruto. Em làm được mà!",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/iruka-06.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Naruto",
+      "text": "Thank you, Iruka. I will work hard!",
+      "translation": "Cảm ơn thầy, Iruka. Em sẽ chăm chỉ!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-lonely-boy/audio/naruto-07.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "alone",
+      "pronunciation": "/əˈloʊn/",
+      "meaning": "một mình",
+      "example": "I am alone at home."
+    },
+    {
+      "word": "talk to",
+      "pronunciation": "/tɔːk tuː/",
+      "meaning": "nói chuyện với ai đó",
+      "example": "Can I talk to you?"
+    },
+    {
+      "word": "dream",
+      "pronunciation": "/driːm/",
+      "meaning": "ước mơ",
+      "example": "My dream is to be a teacher."
+    },
+    {
+      "word": "want to be",
+      "pronunciation": "/wɑːnt tə biː/",
+      "meaning": "muốn trở thành",
+      "example": "I want to be a doctor."
+    },
+    {
+      "word": "one day",
+      "pronunciation": "/wʌn deɪ/",
+      "meaning": "một ngày nào đó",
+      "example": "I want to travel one day."
+    },
+    {
+      "word": "help",
+      "pronunciation": "/help/",
+      "meaning": "giúp đỡ",
+      "example": "I want to help my mom."
+    },
+    {
+      "word": "know my name",
+      "pronunciation": "/noʊ maɪ neɪm/",
+      "meaning": "biết tên tôi",
+      "example": "Do you know my name?"
+    },
+    {
+      "word": "work hard",
+      "pronunciation": "/wɜːrk hɑːrd/",
+      "meaning": "làm việc chăm chỉ, cố gắng hết sức",
+      "example": "I work hard every day."
+    },
+    {
+      "word": "do it",
+      "pronunciation": "/duː ɪt/",
+      "meaning": "làm được điều đó",
+      "example": "You can do it!"
+    }
+  ]
+}

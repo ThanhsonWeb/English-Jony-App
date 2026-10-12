@@ -1,0 +1,820 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "naruto-season-1",
+  "dialogueId": "someone-believes-in-him",
+  "characters": {
+    "Naruto": {
+      "meaning": "Naruto",
+      "role": ""
+    },
+    "Mizuki": {
+      "meaning": "Mizuki",
+      "role": ""
+    },
+    "Iruka": {
+      "meaning": "Iruka",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-mizuki": {
+      "word": "mizuki",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "",
+      "pos": []
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "",
+      "pos": []
+    },
+    "word-scroll": {
+      "word": "scroll",
+      "meaning": "",
+      "pos": []
+    },
+    "word-learned": {
+      "word": "learned",
+      "meaning": "",
+      "pos": []
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "",
+      "pos": []
+    },
+    "word-new": {
+      "word": "new",
+      "meaning": "",
+      "pos": []
+    },
+    "word-technique": {
+      "word": "technique",
+      "meaning": "",
+      "pos": []
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "",
+      "pos": []
+    },
+    "word-give": {
+      "word": "give",
+      "meaning": "",
+      "pos": []
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "",
+      "pos": []
+    },
+    "word-stop": {
+      "word": "stop",
+      "meaning": "",
+      "pos": []
+    },
+    "word-naruto": {
+      "word": "naruto",
+      "meaning": "",
+      "pos": []
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-forbidden": {
+      "word": "forbidden",
+      "meaning": "",
+      "pos": []
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "",
+      "pos": []
+    },
+    "word-said": {
+      "word": "said",
+      "meaning": "",
+      "pos": []
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "",
+      "pos": []
+    },
+    "word-was": {
+      "word": "was",
+      "meaning": "",
+      "pos": []
+    },
+    "word-secret": {
+      "word": "secret",
+      "meaning": "",
+      "pos": []
+    },
+    "word-test": {
+      "word": "test",
+      "meaning": "",
+      "pos": []
+    },
+    "word-lied": {
+      "word": "lied",
+      "meaning": "",
+      "pos": []
+    },
+    "word-only": {
+      "word": "only",
+      "meaning": "",
+      "pos": []
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-trusted": {
+      "word": "trusted",
+      "meaning": "",
+      "pos": []
+    },
+    "word-stay": {
+      "word": "stay",
+      "meaning": "",
+      "pos": []
+    },
+    "word-back": {
+      "word": "back",
+      "meaning": "",
+      "pos": []
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "",
+      "pos": []
+    },
+    "word-protect": {
+      "word": "protect",
+      "meaning": "",
+      "pos": []
+    },
+    "word-why": {
+      "word": "why",
+      "meaning": "",
+      "pos": []
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "",
+      "pos": []
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "",
+      "pos": []
+    },
+    "word-him": {
+      "word": "him",
+      "meaning": "",
+      "pos": []
+    },
+    "word-because": {
+      "word": "because",
+      "meaning": "",
+      "pos": []
+    },
+    "word-believe": {
+      "word": "believe",
+      "meaning": "",
+      "pos": []
+    },
+    "word-in": {
+      "word": "in",
+      "meaning": "",
+      "pos": []
+    },
+    "word-he": {
+      "word": "he",
+      "meaning": "",
+      "pos": []
+    },
+    "word-works": {
+      "word": "works",
+      "meaning": "",
+      "pos": []
+    },
+    "word-hard": {
+      "word": "hard",
+      "meaning": "",
+      "pos": []
+    },
+    "word-really": {
+      "word": "really",
+      "meaning": "",
+      "pos": []
+    },
+    "word-iruka": {
+      "word": "iruka",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "",
+      "pos": []
+    },
+    "word-become": {
+      "word": "become",
+      "meaning": "",
+      "pos": []
+    },
+    "word-great": {
+      "word": "great",
+      "meaning": "",
+      "pos": []
+    },
+    "word-ninja": {
+      "word": "ninja",
+      "meaning": "",
+      "pos": []
+    },
+    "word-cannot": {
+      "word": "cannot",
+      "meaning": "",
+      "pos": []
+    },
+    "word-leave": {
+      "word": "leave",
+      "meaning": "",
+      "pos": []
+    },
+    "word-alone": {
+      "word": "alone",
+      "meaning": "",
+      "pos": []
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "",
+      "pos": []
+    },
+    "word-makes": {
+      "word": "makes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-many": {
+      "word": "many",
+      "meaning": "",
+      "pos": []
+    },
+    "word-clones": {
+      "word": "clones",
+      "meaning": "",
+      "pos": []
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "",
+      "pos": []
+    },
+    "word-there": {
+      "word": "there",
+      "meaning": "",
+      "pos": []
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "",
+      "pos": []
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "",
+      "pos": []
+    },
+    "word-saved": {
+      "word": "saved",
+      "meaning": "",
+      "pos": []
+    },
+    "word-passed": {
+      "word": "passed",
+      "meaning": "",
+      "pos": []
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "",
+      "pos": []
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "",
+      "pos": []
+    },
+    "word-this": {
+      "word": "this",
+      "meaning": "",
+      "pos": []
+    },
+    "word-headband": {
+      "word": "headband",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yours": {
+      "word": "yours",
+      "meaning": "",
+      "pos": []
+    },
+    "word-proud": {
+      "word": "proud",
+      "meaning": "",
+      "pos": []
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "",
+      "pos": []
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "",
+      "pos": []
+    },
+    "word-never": {
+      "word": "never",
+      "meaning": "",
+      "pos": []
+    },
+    "word-up": {
+      "word": "up",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Naruto",
+      "text": "Mizuki, I have the scroll. I learned a new technique!",
+      "translation": "Thầy Mizuki, em có cuộn giấy rồi. Em đã học được một kỹ thuật mới!",
+      "tokens": [
+        "Mizuki",
+        "I",
+        "have",
+        "the",
+        "scroll",
+        "I",
+        "learned",
+        "a",
+        "new",
+        "technique"
+      ],
+      "words": [
+        "word-mizuki",
+        "word-i",
+        "word-have",
+        "word-the",
+        "word-scroll",
+        "word-i",
+        "word-learned",
+        "word-a",
+        "word-new",
+        "word-technique"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Mizuki",
+      "text": "Good. Give me the scroll.",
+      "translation": "Tốt. Đưa cuộn giấy cho thầy.",
+      "tokens": [
+        "Good",
+        "Give",
+        "me",
+        "the",
+        "scroll"
+      ],
+      "words": [
+        "word-good",
+        "word-give",
+        "word-me",
+        "word-the",
+        "word-scroll"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Iruka",
+      "text": "Stop, Naruto! That scroll is forbidden.",
+      "translation": "Dừng lại, Naruto! Cuộn giấy đó bị cấm.",
+      "tokens": [
+        "Stop",
+        "Naruto",
+        "That",
+        "scroll",
+        "is",
+        "forbidden"
+      ],
+      "words": [
+        "word-stop",
+        "word-naruto",
+        "word-that",
+        "word-scroll",
+        "word-is",
+        "word-forbidden"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Naruto",
+      "text": "But Mizuki said it was a secret test!",
+      "translation": "Nhưng thầy Mizuki nói đó là một bài kiểm tra bí mật!",
+      "tokens": [
+        "But",
+        "Mizuki",
+        "said",
+        "it",
+        "was",
+        "a",
+        "secret",
+        "test"
+      ],
+      "words": [
+        "word-but",
+        "word-mizuki",
+        "word-said",
+        "word-it",
+        "word-was",
+        "word-a",
+        "word-secret",
+        "word-test"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Mizuki",
+      "text": "I lied. I only want the scroll.",
+      "translation": "Ta đã nói dối. Ta chỉ muốn cuộn giấy thôi.",
+      "tokens": [
+        "I",
+        "lied",
+        "I",
+        "only",
+        "want",
+        "the",
+        "scroll"
+      ],
+      "words": [
+        "word-i",
+        "word-lied",
+        "word-i",
+        "word-only",
+        "word-want",
+        "word-the",
+        "word-scroll"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Naruto",
+      "text": "You lied to me? I trusted you!",
+      "translation": "Thầy đã nói dối em sao? Em đã tin thầy mà!",
+      "tokens": [
+        "You",
+        "lied",
+        "to",
+        "me",
+        "I",
+        "trusted",
+        "you"
+      ],
+      "words": [
+        "word-you",
+        "word-lied",
+        "word-to",
+        "word-me",
+        "word-i",
+        "word-trusted",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Iruka",
+      "text": "Stay back, Naruto! I will protect you.",
+      "translation": "Lùi lại, Naruto! Thầy sẽ bảo vệ em.",
+      "tokens": [
+        "Stay",
+        "back",
+        "Naruto",
+        "I",
+        "will",
+        "protect",
+        "you"
+      ],
+      "words": [
+        "word-stay",
+        "word-back",
+        "word-naruto",
+        "word-i",
+        "word-will",
+        "word-protect",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Mizuki",
+      "text": "Why do you help him?",
+      "translation": "Tại sao cậu lại giúp nó?",
+      "tokens": [
+        "Why",
+        "do",
+        "you",
+        "help",
+        "him"
+      ],
+      "words": [
+        "word-why",
+        "word-do",
+        "word-you",
+        "word-help",
+        "word-him"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Iruka",
+      "text": "Because I believe in Naruto. He works hard.",
+      "translation": "Vì tôi tin Naruto. Em ấy rất chăm chỉ.",
+      "tokens": [
+        "Because",
+        "I",
+        "believe",
+        "in",
+        "Naruto",
+        "He",
+        "works",
+        "hard"
+      ],
+      "words": [
+        "word-because",
+        "word-i",
+        "word-believe",
+        "word-in",
+        "word-naruto",
+        "word-he",
+        "word-works",
+        "word-hard"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Naruto",
+      "text": "You really believe in me, Iruka?",
+      "translation": "Thầy thật sự tin em sao, thầy Iruka?",
+      "tokens": [
+        "You",
+        "really",
+        "believe",
+        "in",
+        "me",
+        "Iruka"
+      ],
+      "words": [
+        "word-you",
+        "word-really",
+        "word-believe",
+        "word-in",
+        "word-me",
+        "word-iruka"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Iruka",
+      "text": "Yes. You can become a great ninja!",
+      "translation": "Đúng vậy. Em có thể trở thành một ninja giỏi!",
+      "tokens": [
+        "Yes",
+        "You",
+        "can",
+        "become",
+        "a",
+        "great",
+        "ninja"
+      ],
+      "words": [
+        "word-yes",
+        "word-you",
+        "word-can",
+        "word-become",
+        "word-a",
+        "word-great",
+        "word-ninja"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Mizuki",
+      "text": "You cannot stop me!",
+      "translation": "Các người không thể ngăn ta đâu!",
+      "tokens": [
+        "You",
+        "cannot",
+        "stop",
+        "me"
+      ],
+      "words": [
+        "word-you",
+        "word-cannot",
+        "word-stop",
+        "word-me"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Naruto",
+      "text": "Leave Iruka alone! My new technique makes many clones!",
+      "translation": "Để thầy Iruka yên! Kỹ thuật mới của tôi tạo ra rất nhiều phân thân!",
+      "tokens": [
+        "Leave",
+        "Iruka",
+        "alone",
+        "My",
+        "new",
+        "technique",
+        "makes",
+        "many",
+        "clones"
+      ],
+      "words": [
+        "word-leave",
+        "word-iruka",
+        "word-alone",
+        "word-my",
+        "word-new",
+        "word-technique",
+        "word-makes",
+        "word-many",
+        "word-clones"
+      ],
+      "phrases": []
+    },
+    "14": {
+      "speaker": "Mizuki",
+      "text": "No! There are too many!",
+      "translation": "Không! Có quá nhiều phân thân!",
+      "tokens": [
+        "No",
+        "There",
+        "are",
+        "too",
+        "many"
+      ],
+      "words": [
+        "word-no",
+        "word-there",
+        "word-are",
+        "word-too",
+        "word-many"
+      ],
+      "phrases": []
+    },
+    "15": {
+      "speaker": "Iruka",
+      "text": "You saved me, Naruto. You passed the test!",
+      "translation": "Em đã cứu thầy, Naruto. Em đã vượt qua bài kiểm tra!",
+      "tokens": [
+        "You",
+        "saved",
+        "me",
+        "Naruto",
+        "You",
+        "passed",
+        "the",
+        "test"
+      ],
+      "words": [
+        "word-you",
+        "word-saved",
+        "word-me",
+        "word-naruto",
+        "word-you",
+        "word-passed",
+        "word-the",
+        "word-test"
+      ],
+      "phrases": []
+    },
+    "16": {
+      "speaker": "Naruto",
+      "text": "Am I really a ninja now?",
+      "translation": "Giờ em thật sự là một ninja rồi sao?",
+      "tokens": [
+        "Am",
+        "I",
+        "really",
+        "a",
+        "ninja",
+        "now"
+      ],
+      "words": [
+        "word-am",
+        "word-i",
+        "word-really",
+        "word-a",
+        "word-ninja",
+        "word-now"
+      ],
+      "phrases": []
+    },
+    "17": {
+      "speaker": "Iruka",
+      "text": "Yes. This headband is yours. I am proud of you.",
+      "translation": "Đúng vậy. Chiếc băng trán này là của em. Thầy tự hào về em.",
+      "tokens": [
+        "Yes",
+        "This",
+        "headband",
+        "is",
+        "yours",
+        "I",
+        "am",
+        "proud",
+        "of",
+        "you"
+      ],
+      "words": [
+        "word-yes",
+        "word-this",
+        "word-headband",
+        "word-is",
+        "word-yours",
+        "word-i",
+        "word-am",
+        "word-proud",
+        "word-of",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "18": {
+      "speaker": "Naruto",
+      "text": "Thank you, Iruka! I will never give up!",
+      "translation": "Cảm ơn thầy Iruka! Em sẽ không bao giờ bỏ cuộc!",
+      "tokens": [
+        "Thank",
+        "you",
+        "Iruka",
+        "I",
+        "will",
+        "never",
+        "give",
+        "up"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-iruka",
+        "word-i",
+        "word-will",
+        "word-never",
+        "word-give",
+        "word-up"
+      ],
+      "phrases": []
+    }
+  }
+}

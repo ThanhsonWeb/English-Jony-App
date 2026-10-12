@@ -3,9 +3,10 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { matchesCourseCategory } from "../../../app/_lib/dialogue/catalogueCategories.mjs";
 import tenMinutesConfig from "../../config/stories/ten-minutes-a-day.mjs";
-import futureStoryConfig from "../../config/stories/the-lost-wallet.mjs";
-test("Story of Life matches current and future Story metadata without course-ID lists", () => {
-	for (const config of [tenMinutesConfig, futureStoryConfig]) {
+import narutoSeason1Config from "../../config/anime/naruto-season-1.mjs";
+const futureStoryConfig = { courseId: "future-story", contentType: "story", category: "story-of-life" };
+test("Story category includes Story of Life and Anime metadata", () => {
+	for (const config of [tenMinutesConfig, futureStoryConfig, narutoSeason1Config]) {
 		const course = { ...config, id: config.courseId };
 		assert.equal(matchesCourseCategory(course, "story"), true);
 		for (const category of ["food", "travel", "daily", "life", "office"]) assert.equal(matchesCourseCategory(course, category), false);
@@ -33,7 +34,7 @@ test("filtering the active catalogue never activates unpublished courses", () =>
 	const catalogue = JSON.parse(readFileSync(new URL("../../../../server/data/dialogueTaskCatalogue.json", import.meta.url)));
 	const ids = [...new Set(catalogue.map(([id]) => id))];
 	assert.ok(ids.includes("ten-minutes-a-day"));
-	assert.ok(!ids.includes("weekend-camping")); assert.ok(!ids.includes("the-lost-wallet"));
+	assert.ok(!ids.includes("weekend-camping"));
 	const active = ids.map(id => id === tenMinutesConfig.courseId ? { ...tenMinutesConfig, id } : { id });
 	assert.deepEqual(active.filter(course => matchesCourseCategory(course, "story")).map(course => course.id), ["ten-minutes-a-day"]);
 });

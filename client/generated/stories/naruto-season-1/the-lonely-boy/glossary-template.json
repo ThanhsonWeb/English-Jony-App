@@ -1,0 +1,580 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "naruto-season-1",
+  "dialogueId": "the-lonely-boy",
+  "characters": {
+    "Iruka": {
+      "meaning": "Iruka",
+      "role": ""
+    },
+    "Naruto": {
+      "meaning": "Naruto",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-naruto": {
+      "word": "naruto",
+      "meaning": "",
+      "pos": []
+    },
+    "word-why": {
+      "word": "why",
+      "meaning": "",
+      "pos": []
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "",
+      "pos": []
+    },
+    "word-alone": {
+      "word": "alone",
+      "meaning": "",
+      "pos": []
+    },
+    "word-people": {
+      "word": "people",
+      "meaning": "",
+      "pos": []
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "",
+      "pos": []
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "",
+      "pos": []
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-talk": {
+      "word": "talk",
+      "meaning": "",
+      "pos": []
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "",
+      "pos": []
+    },
+    "word-see": {
+      "word": "see",
+      "meaning": "",
+      "pos": []
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "",
+      "pos": []
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "",
+      "pos": []
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "",
+      "pos": []
+    },
+    "word-dream": {
+      "word": "dream",
+      "meaning": "",
+      "pos": []
+    },
+    "word-be": {
+      "word": "be",
+      "meaning": "",
+      "pos": []
+    },
+    "word-hokage": {
+      "word": "hokage",
+      "meaning": "",
+      "pos": []
+    },
+    "word-one": {
+      "word": "one",
+      "meaning": "",
+      "pos": []
+    },
+    "word-day": {
+      "word": "day",
+      "meaning": "",
+      "pos": []
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "",
+      "pos": []
+    },
+    "word-everyone": {
+      "word": "everyone",
+      "meaning": "",
+      "pos": []
+    },
+    "word-in": {
+      "word": "in",
+      "meaning": "",
+      "pos": []
+    },
+    "word-our": {
+      "word": "our",
+      "meaning": "",
+      "pos": []
+    },
+    "word-village": {
+      "word": "village",
+      "meaning": "",
+      "pos": []
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "",
+      "pos": []
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "",
+      "pos": []
+    },
+    "word-name": {
+      "word": "name",
+      "meaning": "",
+      "pos": []
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "",
+      "pos": []
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "",
+      "pos": []
+    },
+    "word-big": {
+      "word": "big",
+      "meaning": "",
+      "pos": []
+    },
+    "word-work": {
+      "word": "work",
+      "meaning": "",
+      "pos": []
+    },
+    "word-hard": {
+      "word": "hard",
+      "meaning": "",
+      "pos": []
+    },
+    "word-every": {
+      "word": "every",
+      "meaning": "",
+      "pos": []
+    },
+    "word-think": {
+      "word": "think",
+      "meaning": "",
+      "pos": []
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "",
+      "pos": []
+    },
+    "word-iruka": {
+      "word": "iruka",
+      "meaning": "",
+      "pos": []
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Iruka",
+      "text": "Naruto, why are you here alone?",
+      "translation": "Naruto, sao em ở đây một mình?",
+      "tokens": [
+        "Naruto",
+        "why",
+        "are",
+        "you",
+        "here",
+        "alone"
+      ],
+      "words": [
+        "word-naruto",
+        "word-why",
+        "word-are",
+        "word-you",
+        "word-here",
+        "word-alone"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Naruto",
+      "text": "People do not want to talk to me.",
+      "translation": "Mọi người không muốn nói chuyện với em.",
+      "tokens": [
+        "People",
+        "do",
+        "not",
+        "want",
+        "to",
+        "talk",
+        "to",
+        "me"
+      ],
+      "words": [
+        "word-people",
+        "word-do",
+        "word-not",
+        "word-want",
+        "word-to",
+        "word-talk",
+        "word-to",
+        "word-me"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Iruka",
+      "text": "I am here, Naruto. You can talk to me.",
+      "translation": "Thầy ở đây mà, Naruto. Em có thể nói chuyện với thầy.",
+      "tokens": [
+        "I",
+        "am",
+        "here",
+        "Naruto",
+        "You",
+        "can",
+        "talk",
+        "to",
+        "me"
+      ],
+      "words": [
+        "word-i",
+        "word-am",
+        "word-here",
+        "word-naruto",
+        "word-you",
+        "word-can",
+        "word-talk",
+        "word-to",
+        "word-me"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Naruto",
+      "text": "I want people to see me.",
+      "translation": "Em muốn mọi người chú ý đến em.",
+      "tokens": [
+        "I",
+        "want",
+        "people",
+        "to",
+        "see",
+        "me"
+      ],
+      "words": [
+        "word-i",
+        "word-want",
+        "word-people",
+        "word-to",
+        "word-see",
+        "word-me"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Iruka",
+      "text": "I see you. Tell me about your dream.",
+      "translation": "Thầy thấy em mà. Kể thầy nghe về ước mơ của em đi.",
+      "tokens": [
+        "I",
+        "see",
+        "you",
+        "Tell",
+        "me",
+        "about",
+        "your",
+        "dream"
+      ],
+      "words": [
+        "word-i",
+        "word-see",
+        "word-you",
+        "word-tell",
+        "word-me",
+        "word-about",
+        "word-your",
+        "word-dream"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Naruto",
+      "text": "I want to be Hokage one day!",
+      "translation": "Một ngày nào đó em muốn trở thành Hokage!",
+      "tokens": [
+        "I",
+        "want",
+        "to",
+        "be",
+        "Hokage",
+        "one",
+        "day"
+      ],
+      "words": [
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-be",
+        "word-hokage",
+        "word-one",
+        "word-day"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Iruka",
+      "text": "Why do you want to be Hokage?",
+      "translation": "Tại sao em muốn trở thành Hokage?",
+      "tokens": [
+        "Why",
+        "do",
+        "you",
+        "want",
+        "to",
+        "be",
+        "Hokage"
+      ],
+      "words": [
+        "word-why",
+        "word-do",
+        "word-you",
+        "word-want",
+        "word-to",
+        "word-be",
+        "word-hokage"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Naruto",
+      "text": "I want to help everyone in our village.",
+      "translation": "Em muốn giúp mọi người trong làng.",
+      "tokens": [
+        "I",
+        "want",
+        "to",
+        "help",
+        "everyone",
+        "in",
+        "our",
+        "village"
+      ],
+      "words": [
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-help",
+        "word-everyone",
+        "word-in",
+        "word-our",
+        "word-village"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Naruto",
+      "text": "I want people to know my name, too.",
+      "translation": "Em cũng muốn mọi người biết đến tên em.",
+      "tokens": [
+        "I",
+        "want",
+        "people",
+        "to",
+        "know",
+        "my",
+        "name",
+        "too"
+      ],
+      "words": [
+        "word-i",
+        "word-want",
+        "word-people",
+        "word-to",
+        "word-know",
+        "word-my",
+        "word-name",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Iruka",
+      "text": "That is a big dream. You can work hard every day.",
+      "translation": "Đó là một ước mơ lớn. Em có thể chăm chỉ mỗi ngày.",
+      "tokens": [
+        "That",
+        "is",
+        "a",
+        "big",
+        "dream",
+        "You",
+        "can",
+        "work",
+        "hard",
+        "every",
+        "day"
+      ],
+      "words": [
+        "word-that",
+        "word-is",
+        "word-a",
+        "word-big",
+        "word-dream",
+        "word-you",
+        "word-can",
+        "word-work",
+        "word-hard",
+        "word-every",
+        "word-day"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Naruto",
+      "text": "Do you think I can do it?",
+      "translation": "Thầy có nghĩ em làm được không?",
+      "tokens": [
+        "Do",
+        "you",
+        "think",
+        "I",
+        "can",
+        "do",
+        "it"
+      ],
+      "words": [
+        "word-do",
+        "word-you",
+        "word-think",
+        "word-i",
+        "word-can",
+        "word-do",
+        "word-it"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Iruka",
+      "text": "Yes, Naruto. You can do it!",
+      "translation": "Có chứ, Naruto. Em làm được mà!",
+      "tokens": [
+        "Yes",
+        "Naruto",
+        "You",
+        "can",
+        "do",
+        "it"
+      ],
+      "words": [
+        "word-yes",
+        "word-naruto",
+        "word-you",
+        "word-can",
+        "word-do",
+        "word-it"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Naruto",
+      "text": "Thank you, Iruka. I will work hard!",
+      "translation": "Cảm ơn thầy, Iruka. Em sẽ chăm chỉ!",
+      "tokens": [
+        "Thank",
+        "you",
+        "Iruka",
+        "I",
+        "will",
+        "work",
+        "hard"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-iruka",
+        "word-i",
+        "word-will",
+        "word-work",
+        "word-hard"
+      ],
+      "phrases": []
+    }
+  }
+}
