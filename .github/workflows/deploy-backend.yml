@@ -1,22 +1,82 @@
-name: Deploy Backend to VPS
+name: Backend tests and gated production deployment
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    branches: [main]
     paths:
       - "server/**"
+      - "client/app/**/dialogue/_data/**"
+      - "client/app/_lib/dialogue/localization.js"
+      - "client/scripts/config/**"
       - ".github/workflows/deploy-backend.yml"
+  push:
+    branches: [main]
+    paths:
+      - "server/**"
+      - "client/app/**/dialogue/_data/**"
+      - "client/app/_lib/dialogue/localization.js"
+      - "client/scripts/config/**"
+      - ".github/workflows/deploy-backend.yml"
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: studyjony-backend-production
+  group: studyjony-backend-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
   cancel-in-progress: false
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out the exact revision
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Use the verified backend Node version
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "22.23.2"
+      - name: Install test dependencies from the lockfile
+        working-directory: server
+        run: npm ci --engine-strict --no-audit --no-fund
+      - name: Run every backend test on disposable MongoDB
+        working-directory: server
+        run: node --test --test-concurrency=1 tests/*.test.js
+      - name: Verify catalogue and syntax
+        working-directory: server
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run dialogue:catalogue:check
+          node --check app.js
+          node --check server.js
+          find controllers middleware models routes services utils scripts -type f -name '*.js' -print0 | xargs -0 -r -n 1 node --check
+          git diff --exit-code
+      - name: Package the tested source only
+        shell: bash
+        run: |
+          set -euo pipefail
+          destination="$RUNNER_TEMP/studyjony-release"
+          mkdir -p "$destination"
+          node server/scripts/release-artifact.js build "$GITHUB_SHA" "$destination/release.json"
+          cp server/scripts/release-artifact.js server/scripts/check-deployment.js server/deploy/ecosystem.config.cjs "$destination/"
+      - name: Keep the tested artifact
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: backend-${{ github.sha }}
+          path: ${{ runner.temp }}/studyjony-release/
+          if-no-files-found: error
+          retention-days: 7
+
   deploy:
+    # PHASE 1: literal kill switch. No secret or setting can enable this job.
+    # Remove only in a separate activation PR after VPS migration and approvals.
+    if: ${{ false }}
+    needs: test
+    environment: production
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
@@ -24,14 +84,42 @@ jobs:
       VPS_PORT: ${{ secrets.VPS_PORT }}
       VPS_USER: ${{ secrets.VPS_USER }}
       DEPLOY_HEALTH_URL: ${{ vars.VPS_HEALTH_URL }}
-
     steps:
-      - name: Check out the triggering revision
+      - name: Refuse deployment outside main
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$GITHUB_REF" == refs/heads/main && "$GITHUB_EVENT_NAME" != pull_request ]]
+      - name: Check out the tested revision
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-
-      - name: Validate configuration and pinned SSH identity
+      - name: Use the verified backend Node version
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: "22.23.2"
+      - name: Download this run's tested source
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
+        with:
+          name: backend-${{ github.sha }}
+          path: ${{ runner.temp }}/studyjony-release
+      - name: Refuse an approval for an outdated main revision
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          node <<'NODE'
+          (async () => {
+            const url = `${process.env.GITHUB_API_URL}/repos/${process.env.GITHUB_REPOSITORY}/git/ref/heads/main`;
+            const response = await fetch(url, { signal: AbortSignal.timeout(10000), headers: {
+              Authorization: `Bearer ${process.env.GH_TOKEN}`, Accept: 'application/vnd.github+json'
+            } });
+            if (!response.ok || (await response.json()).object?.sha !== process.env.GITHUB_SHA) {
+              throw new Error('Main changed while awaiting approval. Run and approve tests for the new revision.');
+            }
+          })().catch(() => { console.error('Current-main revision check failed; no deployment attempted.'); process.exitCode = 1; });
+          NODE
+      - name: Validate pinned SSH identity and non-root account
         shell: bash
         env:
           VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
@@ -40,13 +128,12 @@ jobs:
         run: |
           set -euo pipefail
           : "${VPS_SSH_KEY:?Missing SSH private key}"
-          : "${VPS_KNOWN_HOSTS:?Missing independently verified known_hosts entry}"
-          : "${VPS_HOST_KEY_SHA256:?Missing independently verified SHA256 host fingerprint}"
-          : "${DEPLOY_HEALTH_URL:?Missing verified loopback health URL}"
-          node -e 'const host = process.env.VPS_HOST || ""; if (!require("node:net").isIP(host) && !/^[A-Za-z0-9][A-Za-z0-9.-]*$/.test(host)) process.exit(1);'
-          [[ "$VPS_USER" =~ ^[A-Za-z_][A-Za-z0-9_-]*$ ]]
+          : "${VPS_KNOWN_HOSTS:?Missing independently verified host key}"
+          : "${VPS_HOST_KEY_SHA256:?Missing independently verified fingerprint}"
+          [[ "$VPS_USER" == studyjony ]]
+          [[ "$VPS_HOST" =~ ^[A-Za-z0-9][A-Za-z0-9.-]*$ ]]
           [[ "$VPS_PORT" =~ ^[1-9][0-9]{0,4}$ ]]
-          (( 10#$VPS_PORT >= 1 && 10#$VPS_PORT <= 65535 ))
+          (( 10#$VPS_PORT <= 65535 ))
           node server/scripts/check-deployment.js --health-url
           umask 077
           mkdir -p "$HOME/.ssh"
@@ -58,20 +145,25 @@ jobs:
           ssh-keygen -F "$host_lookup" -f "$HOME/.ssh/known_hosts" > "$RUNNER_TEMP/matched-host-key"
           fingerprints=$(ssh-keygen -lf "$RUNNER_TEMP/matched-host-key" -E sha256 | awk '{print $2}')
           [[ "$fingerprints" == "$VPS_HOST_KEY_SHA256" ]]
-
-      - name: Deploy backend
+      - name: Upload and deploy the isolated release
         shell: bash
         run: |
           set -euo pipefail
           [[ "$GITHUB_SHA" =~ ^[a-f0-9]{40}$ ]]
-          ssh -i "$HOME/.ssh/id_ed25519" \
-            -o BatchMode=yes -o IdentitiesOnly=yes \
-            -o StrictHostKeyChecking=yes -o UpdateHostKeys=no \
-            -o UserKnownHostsFile="$HOME/.ssh/known_hosts" \
-            -o ConnectTimeout=15 -o ServerAliveInterval=15 -o ServerAliveCountMax=3 \
-            -p "$VPS_PORT" "$VPS_USER@$VPS_HOST" \
-            "bash -s -- '$GITHUB_SHA' '$DEPLOY_HEALTH_URL'" < server/scripts/deploy-backend.sh
-
+          [[ "$GITHUB_RUN_ID" =~ ^[0-9]+$ && "$GITHUB_RUN_ATTEMPT" =~ ^[0-9]+$ ]]
+          incoming="/var/www/studyjony/incoming/$GITHUB_SHA-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          destination="$RUNNER_TEMP/studyjony-release"
+          checksum=$(cat "$destination/release.json.sha256")
+          [[ "$checksum" =~ ^[a-f0-9]{64}$ ]]
+          options=(-i "$HOME/.ssh/id_ed25519" -o BatchMode=yes -o IdentitiesOnly=yes
+            -o StrictHostKeyChecking=yes -o UpdateHostKeys=no
+            -o UserKnownHostsFile="$HOME/.ssh/known_hosts" -o ConnectTimeout=15
+            -o ServerAliveInterval=15 -o ServerAliveCountMax=3)
+          ssh "${options[@]}" -p "$VPS_PORT" "$VPS_USER@$VPS_HOST" "mkdir -m 700 -- '$incoming'"
+          scp "${options[@]}" -P "$VPS_PORT" "$destination/release.json" "$destination/release-artifact.js" \
+            "$destination/check-deployment.js" "$destination/ecosystem.config.cjs" "$VPS_USER@$VPS_HOST:$incoming/"
+          ssh "${options[@]}" -p "$VPS_PORT" "$VPS_USER@$VPS_HOST" \
+            "bash -s -- '$GITHUB_SHA' '$incoming' '$checksum' '$DEPLOY_HEALTH_URL'" < server/scripts/deploy-backend.sh
       - name: Remove runner SSH material
         if: always()
         shell: bash
