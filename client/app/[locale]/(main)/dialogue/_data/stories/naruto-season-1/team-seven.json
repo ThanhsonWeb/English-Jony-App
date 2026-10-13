@@ -1,0 +1,1573 @@
+{
+  "metadata": {
+    "courseId": "naruto-season-1",
+    "dialogueId": "team-seven",
+    "contextualGlossaryVersion": 1,
+    "title": "Đội Bảy",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Naruto – Mùa 1",
+        "en": "Naruto – Season 1"
+      },
+      "courseDescription": {
+        "vi": "Theo chân Naruto trên hành trình trở thành ninja và theo đuổi ước mơ Hokage.",
+        "en": "Follow Naruto as he becomes a ninja and works toward his dream of becoming Hokage."
+      },
+      "title": {
+        "vi": "Đội Bảy",
+        "en": "Team Seven"
+      },
+      "description": {
+        "vi": "Naruto learns that Sasuke and Sakura will be his teammates. The three students have very different personalities.",
+        "en": "Naruto learns that Sasuke and Sakura will be his teammates. The three students have very different personalities."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Naruto learns that Sasuke and Sakura will be his teammates. The three students have very different personalities.",
+    "scene": "/stories/naruto-season-1/team-seven/bg.png",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/team-seven.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Iruka",
+      "text": "Naruto, your new team is Team Seven.",
+      "translation": "Naruto, đội mới của em là Đội Bảy.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Naruto",
+      "text": "Team Seven? Who is on my team?",
+      "translation": "Đội Bảy ạ? Ai ở trong đội của em vậy?",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Iruka",
+      "text": "Sasuke and Sakura are your teammates.",
+      "translation": "Sasuke và Sakura là đồng đội của em.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Naruto",
+      "text": "Sakura! We are on the same team!",
+      "translation": "Sakura! Chúng ta ở cùng một đội rồi!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Sakura",
+      "text": "Yes, Naruto. I am happy to work with Sasuke.",
+      "translation": "Ừ, Naruto. Tớ rất vui khi được làm việc cùng Sasuke.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sakura-01.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Naruto",
+      "text": "What about me?",
+      "translation": "Còn tớ thì sao?",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Sakura",
+      "text": "Please be serious, Naruto. We have to work together.",
+      "translation": "Nghiêm túc đi, Naruto. Chúng ta phải cùng nhau hợp tác.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sakura-02.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Sasuke",
+      "text": "I like to work alone.",
+      "translation": "Tớ thích làm việc một mình.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Naruto",
+      "text": "But we are a team now!",
+      "translation": "Nhưng bây giờ chúng ta là một đội mà!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Sasuke",
+      "text": "You talk too much, Naruto.",
+      "translation": "Cậu nói nhiều quá đấy, Naruto.",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sasuke-02.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Naruto",
+      "text": "And you are always so quiet!",
+      "translation": "Còn cậu thì lúc nào cũng im lặng!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-05.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Iruka",
+      "text": "Stop, everyone. You are all different.",
+      "translation": "Mọi người dừng lại nào. Các em đều khác nhau.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-03.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Iruka",
+      "text": "Good teammates help each other.",
+      "translation": "Đồng đội tốt luôn giúp đỡ lẫn nhau.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-04.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Sakura",
+      "text": "Okay. I want us to do well.",
+      "translation": "Được rồi. Tớ muốn cả đội làm tốt.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sakura-03.mp3"
+    },
+    {
+      "id": 15,
+      "speaker": "Sasuke",
+      "text": "I will try to work with you.",
+      "translation": "Tớ sẽ cố gắng hợp tác với các cậu.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sasuke-03.mp3"
+    },
+    {
+      "id": 16,
+      "speaker": "Naruto",
+      "text": "Me too! We can be a great team!",
+      "translation": "Tớ cũng vậy! Chúng ta có thể trở thành một đội tuyệt vời!",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-06.mp3"
+    },
+    {
+      "id": 17,
+      "speaker": "Iruka",
+      "text": "Good. You will meet your teacher tomorrow.",
+      "translation": "Tốt. Ngày mai các em sẽ gặp thầy hướng dẫn của mình.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-05.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "teammates",
+      "pronunciation": "/ˈtiːm.meɪts/",
+      "meaning": "đồng đội",
+      "example": "Sasuke and Sakura are my teammates."
+    },
+    {
+      "word": "on my team",
+      "pronunciation": "/ɑːn maɪ tiːm/",
+      "meaning": "trong đội của tôi",
+      "example": "Who is on my team?"
+    },
+    {
+      "word": "same team",
+      "pronunciation": "/seɪm tiːm/",
+      "meaning": "cùng một đội",
+      "example": "We are on the same team."
+    },
+    {
+      "word": "be serious",
+      "pronunciation": "/bi ˈsɪr.i.əs/",
+      "meaning": "nghiêm túc",
+      "example": "Please be serious."
+    },
+    {
+      "word": "work together",
+      "pronunciation": "/wɝːk təˈɡeð.ər/",
+      "meaning": "làm việc cùng nhau",
+      "example": "We can work together."
+    },
+    {
+      "word": "work alone",
+      "pronunciation": "/wɝːk əˈloʊn/",
+      "meaning": "làm việc một mình",
+      "example": "I do not want to work alone."
+    },
+    {
+      "word": "too much",
+      "pronunciation": "/tuː mʌtʃ/",
+      "meaning": "quá nhiều",
+      "example": "You talk too much."
+    },
+    {
+      "word": "each other",
+      "pronunciation": "/iːtʃ ˈʌð.ər/",
+      "meaning": "lẫn nhau",
+      "example": "We can help each other."
+    },
+    {
+      "word": "do well",
+      "pronunciation": "/duː wel/",
+      "meaning": "làm tốt",
+      "example": "I want us to do well."
+    },
+    {
+      "word": "great team",
+      "pronunciation": "/ɡreɪt tiːm/",
+      "meaning": "đội tuyệt vời",
+      "example": "We can be a great team."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Naruto, your ",
+        " is Team Seven."
+      ],
+      "answers": [
+        "new team"
+      ],
+      "speaker": "Iruka",
+      "transcript": "Naruto, your new team is Team Seven.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Naruto, your new team is ",
+        "."
+      ],
+      "answers": [
+        "Team Seven"
+      ],
+      "speaker": "Iruka",
+      "transcript": "Naruto, your new team is Team Seven.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "",
+        "? Who is on my team?"
+      ],
+      "answers": [
+        "Team Seven"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Team Seven? Who is on my team?",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Team Seven? Who is on ",
+        "?"
+      ],
+      "answers": [
+        "my team"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Team Seven? Who is on my team?",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Sasuke and Sakura ",
+        " your teammates."
+      ],
+      "answers": [
+        "are"
+      ],
+      "speaker": "Iruka",
+      "transcript": "Sasuke and Sakura are your teammates.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Sasuke and Sakura are your ",
+        "."
+      ],
+      "answers": [
+        "teammates"
+      ],
+      "speaker": "Iruka",
+      "transcript": "Sasuke and Sakura are your teammates.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Iruka thông báo điều gì cho Naruto?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Iruka thông báo điều gì cho Naruto?",
+          "en": "What does Iruka tell Naruto?"
+        },
+        "options": [
+          {
+            "vi": "Sasuke sẽ làm giáo viên của Naruto.",
+            "en": "Sasuke will be Naruto’s teacher."
+          },
+          {
+            "vi": "Sakura sẽ rời lớp học.",
+            "en": "Sakura will leave the class."
+          },
+          {
+            "vi": "Naruto phải thi lại một mình.",
+            "en": "Naruto must take another test alone."
+          },
+          {
+            "vi": "Sasuke và Sakura là đồng đội của Naruto.",
+            "en": "Sasuke and Sakura are Naruto’s teammates."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Sasuke sẽ làm giáo viên của Naruto.",
+        "Sakura sẽ rời lớp học.",
+        "Naruto phải thi lại một mình.",
+        "Sasuke và Sakura là đồng đội của Naruto."
+      ],
+      "answer": "Sasuke và Sakura là đồng đội của Naruto.",
+      "speaker": "Iruka",
+      "transcript": "Sasuke and Sakura are your teammates.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Sakura! ",
+        " on the same team!"
+      ],
+      "answers": [
+        "We are"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Sakura! We are on the same team!",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Sakura! We are on the ",
+        "!"
+      ],
+      "answers": [
+        "same team"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Sakura! We are on the same team!",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes, Naruto. I am ",
+        " to work with Sasuke."
+      ],
+      "answers": [
+        "happy"
+      ],
+      "speaker": "Sakura",
+      "transcript": "Yes, Naruto. I am happy to work with Sasuke.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sakura-01.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes, Naruto. I am happy to ",
+        " Sasuke."
+      ],
+      "answers": [
+        "work with"
+      ],
+      "speaker": "Sakura",
+      "transcript": "Yes, Naruto. I am happy to work with Sasuke.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sakura-01.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "",
+        " me?"
+      ],
+      "answers": [
+        "What about"
+      ],
+      "speaker": "Naruto",
+      "transcript": "What about me?",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Please be ",
+        ", Naruto. We have to work together."
+      ],
+      "answers": [
+        "serious"
+      ],
+      "speaker": "Sakura",
+      "transcript": "Please be serious, Naruto. We have to work together.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sakura-02.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Please be serious, Naruto. We have to work ",
+        "."
+      ],
+      "answers": [
+        "together"
+      ],
+      "speaker": "Sakura",
+      "transcript": "Please be serious, Naruto. We have to work together.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sakura-02.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "question": "Cụm “have to” cho thấy Sakura nghĩ gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Cụm “have to” cho thấy Sakura nghĩ gì?",
+          "en": "What does “have to” show about Sakura’s view?"
+        },
+        "options": [
+          {
+            "vi": "Cả đội cần phải hợp tác.",
+            "en": "The team needs to work together."
+          },
+          {
+            "vi": "Naruto chỉ được làm việc một mình.",
+            "en": "Naruto can only work alone."
+          },
+          {
+            "vi": "Sakura không muốn ở trong đội.",
+            "en": "Sakura does not want to be on the team."
+          },
+          {
+            "vi": "Cả đội đã hoàn thành nhiệm vụ.",
+            "en": "The team has finished its task."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "have to",
+      "options": [
+        "Cả đội cần phải hợp tác.",
+        "Naruto chỉ được làm việc một mình.",
+        "Sakura không muốn ở trong đội.",
+        "Cả đội đã hoàn thành nhiệm vụ."
+      ],
+      "answer": "Cả đội cần phải hợp tác.",
+      "speaker": "Sakura",
+      "transcript": "Please be serious, Naruto. We have to work together.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sakura-02.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I like to ",
+        " alone."
+      ],
+      "answers": [
+        "work"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "I like to work alone.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I like to work ",
+        "."
+      ],
+      "answers": [
+        "alone"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "I like to work alone.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "But we are a ",
+        " now!"
+      ],
+      "answers": [
+        "team"
+      ],
+      "speaker": "Naruto",
+      "transcript": "But we are a team now!",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-04.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "But we are a team ",
+        "!"
+      ],
+      "answers": [
+        "now"
+      ],
+      "speaker": "Naruto",
+      "transcript": "But we are a team now!",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-04.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Vì sao Naruto phản đối Sasuke?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Vì sao Naruto phản đối Sasuke?",
+          "en": "Why does Naruto disagree with Sasuke?"
+        },
+        "options": [
+          {
+            "vi": "Vì Naruto muốn đổi sang đội khác.",
+            "en": "Because Naruto wants to change teams."
+          },
+          {
+            "vi": "Vì Naruto muốn các thành viên cùng hợp tác.",
+            "en": "Because Naruto wants the members to work together."
+          },
+          {
+            "vi": "Vì Naruto không muốn làm ninja.",
+            "en": "Because Naruto does not want to be a ninja."
+          },
+          {
+            "vi": "Vì Sasuke muốn học với Iruka.",
+            "en": "Because Sasuke wants to study with Iruka."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì Naruto muốn đổi sang đội khác.",
+        "Vì Naruto muốn các thành viên cùng hợp tác.",
+        "Vì Naruto không muốn làm ninja.",
+        "Vì Sasuke muốn học với Iruka."
+      ],
+      "answer": "Vì Naruto muốn các thành viên cùng hợp tác.",
+      "speaker": "Naruto",
+      "transcript": "But we are a team now!",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-04.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "You talk ",
+        ", Naruto."
+      ],
+      "answers": [
+        "too much"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "You talk too much, Naruto.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sasuke-02.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "And you are ",
+        " so quiet!"
+      ],
+      "answers": [
+        "always"
+      ],
+      "speaker": "Naruto",
+      "transcript": "And you are always so quiet!",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "And you are always so ",
+        "!"
+      ],
+      "answers": [
+        "quiet"
+      ],
+      "speaker": "Naruto",
+      "transcript": "And you are always so quiet!",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-05.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Stop, ",
+        ". You are all different."
+      ],
+      "answers": [
+        "everyone"
+      ],
+      "speaker": "Iruka",
+      "transcript": "Stop, everyone. You are all different.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-03.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Stop, everyone. You are all ",
+        "."
+      ],
+      "answers": [
+        "different"
+      ],
+      "speaker": "Iruka",
+      "transcript": "Stop, everyone. You are all different.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-03.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 12,
+      "type": "multipleChoice",
+      "question": "Trong tình huống này, Iruka nói “Stop” để làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Trong tình huống này, Iruka nói “Stop” để làm gì?",
+          "en": "Why does Iruka say “Stop” here?"
+        },
+        "options": [
+          {
+            "vi": "Để kết thúc buổi học ngay lập tức.",
+            "en": "To end the class immediately."
+          },
+          {
+            "vi": "Để bắt đầu bài kiểm tra.",
+            "en": "To start the test."
+          },
+          {
+            "vi": "Để ngăn các bạn cãi nhau.",
+            "en": "To stop the students from arguing."
+          },
+          {
+            "vi": "Để gọi một đội khác đến.",
+            "en": "To call another team over."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "Stop",
+      "options": [
+        "Để kết thúc buổi học ngay lập tức.",
+        "Để bắt đầu bài kiểm tra.",
+        "Để ngăn các bạn cãi nhau.",
+        "Để gọi một đội khác đến."
+      ],
+      "answer": "Để ngăn các bạn cãi nhau.",
+      "speaker": "Iruka",
+      "transcript": "Stop, everyone. You are all different.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-03.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Good ",
+        " help each other."
+      ],
+      "answers": [
+        "teammates"
+      ],
+      "speaker": "Iruka",
+      "transcript": "Good teammates help each other.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-04.mp3"
+    },
+    {
+      "id": 28,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Good teammates help ",
+        "."
+      ],
+      "answers": [
+        "each other"
+      ],
+      "speaker": "Iruka",
+      "transcript": "Good teammates help each other.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-04.mp3"
+    },
+    {
+      "id": 29,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Okay. I ",
+        " us to do well."
+      ],
+      "answers": [
+        "want"
+      ],
+      "speaker": "Sakura",
+      "transcript": "Okay. I want us to do well.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sakura-03.mp3"
+    },
+    {
+      "id": 30,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Okay. I want us to ",
+        "."
+      ],
+      "answers": [
+        "do well"
+      ],
+      "speaker": "Sakura",
+      "transcript": "Okay. I want us to do well.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sakura-03.mp3"
+    },
+    {
+      "id": 31,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I will ",
+        " to work with you."
+      ],
+      "answers": [
+        "try"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "I will try to work with you.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sasuke-03.mp3"
+    },
+    {
+      "id": 32,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I will try to ",
+        " you."
+      ],
+      "answers": [
+        "work with"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "I will try to work with you.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/sasuke-03.mp3"
+    },
+    {
+      "id": 33,
+      "dialogueLineId": 16,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "",
+        "! We can be a great team!"
+      ],
+      "answers": [
+        "Me too"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Me too! We can be a great team!",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-06.mp3"
+    },
+    {
+      "id": 34,
+      "dialogueLineId": 16,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Me too! We can be a ",
+        "!"
+      ],
+      "answers": [
+        "great team"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Me too! We can be a great team!",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-06.mp3"
+    },
+    {
+      "id": 35,
+      "dialogueLineId": 17,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Good. You will meet your ",
+        " tomorrow."
+      ],
+      "answers": [
+        "teacher"
+      ],
+      "speaker": "Iruka",
+      "transcript": "Good. You will meet your teacher tomorrow.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-05.mp3"
+    },
+    {
+      "id": 36,
+      "dialogueLineId": 17,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Good. You will meet your teacher ",
+        "."
+      ],
+      "answers": [
+        "tomorrow"
+      ],
+      "speaker": "Iruka",
+      "transcript": "Good. You will meet your teacher tomorrow.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-05.mp3"
+    },
+    {
+      "id": 37,
+      "dialogueLineId": 17,
+      "type": "multipleChoice",
+      "question": "Điều gì sẽ xảy ra vào ngày mai?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Điều gì sẽ xảy ra vào ngày mai?",
+          "en": "What will happen tomorrow?"
+        },
+        "options": [
+          {
+            "vi": "Cả đội sẽ gặp thầy hướng dẫn.",
+            "en": "The team will meet its teacher."
+          },
+          {
+            "vi": "Cả đội sẽ tốt nghiệp lần nữa.",
+            "en": "The team will graduate again."
+          },
+          {
+            "vi": "Naruto sẽ gặp Konohamaru lần đầu.",
+            "en": "Naruto will meet Konohamaru for the first time."
+          },
+          {
+            "vi": "Sakura sẽ chuyển sang đội mới.",
+            "en": "Sakura will move to a new team."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Cả đội sẽ gặp thầy hướng dẫn.",
+        "Cả đội sẽ tốt nghiệp lần nữa.",
+        "Naruto sẽ gặp Konohamaru lần đầu.",
+        "Sakura sẽ chuyển sang đội mới."
+      ],
+      "answer": "Cả đội sẽ gặp thầy hướng dẫn.",
+      "speaker": "Iruka",
+      "transcript": "Good. You will meet your teacher tomorrow.",
+      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-05.mp3"
+    },
+    {
+      "id": 38,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập toàn bộ hội thoại",
+          "en": "Full dialogue review"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu để hoàn thành hội thoại.",
+          "en": "Fill in the missing words to complete the dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Iruka",
+          "parts": [
+            "Naruto, your ",
+            {
+              "id": "1",
+              "blank": "new team"
+            },
+            " is Team Seven."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Naruto",
+          "parts": [
+            "",
+            {
+              "id": "2",
+              "blank": "Team Seven"
+            },
+            "? Who is on my team?"
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Iruka",
+          "parts": [
+            "Sasuke and Sakura ",
+            {
+              "id": "3",
+              "blank": "are"
+            },
+            " your teammates."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Naruto",
+          "parts": [
+            "Sakura! ",
+            {
+              "id": "4",
+              "blank": "We are"
+            },
+            " on the same team!"
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Sakura",
+          "parts": [
+            "Yes, Naruto. I am ",
+            {
+              "id": "5",
+              "blank": "happy"
+            },
+            " to work with Sasuke."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Naruto",
+          "parts": [
+            "",
+            {
+              "id": "6",
+              "blank": "What about"
+            },
+            " me?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Sakura",
+          "parts": [
+            "Please be ",
+            {
+              "id": "7",
+              "blank": "serious"
+            },
+            ", Naruto. We have to work together."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Sasuke",
+          "parts": [
+            "I like to ",
+            {
+              "id": "8",
+              "blank": "work"
+            },
+            " alone."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Naruto",
+          "parts": [
+            "But we are a ",
+            {
+              "id": "9",
+              "blank": "team"
+            },
+            " now!"
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Sasuke",
+          "parts": [
+            "You talk ",
+            {
+              "id": "10",
+              "blank": "too much"
+            },
+            ", Naruto."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Naruto",
+          "parts": [
+            "And you are ",
+            {
+              "id": "11",
+              "blank": "always"
+            },
+            " so quiet!"
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Iruka",
+          "parts": [
+            "Stop, ",
+            {
+              "id": "12",
+              "blank": "everyone"
+            },
+            ". You are all different."
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Iruka",
+          "parts": [
+            "Good ",
+            {
+              "id": "13",
+              "blank": "teammates"
+            },
+            " help each other."
+          ]
+        },
+        {
+          "dialogueLineId": 14,
+          "speaker": "Sakura",
+          "parts": [
+            "Okay. I ",
+            {
+              "id": "14",
+              "blank": "want"
+            },
+            " us to do well."
+          ]
+        },
+        {
+          "dialogueLineId": 15,
+          "speaker": "Sasuke",
+          "parts": [
+            "I will ",
+            {
+              "id": "15",
+              "blank": "try"
+            },
+            " to work with you."
+          ]
+        },
+        {
+          "dialogueLineId": 16,
+          "speaker": "Naruto",
+          "parts": [
+            "",
+            {
+              "id": "16",
+              "blank": "Me too"
+            },
+            "! We can be a great team!"
+          ]
+        },
+        {
+          "dialogueLineId": 17,
+          "speaker": "Iruka",
+          "parts": [
+            "Good. You will meet your ",
+            {
+              "id": "17",
+              "blank": "teacher"
+            },
+            " tomorrow."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Have to + động từ – Nói về điều cần làm",
+      "explanation": "Dùng “have to” cùng động từ nguyên mẫu để nói một việc cần phải làm. Ví dụ, “We have to work together” nghĩa là chúng ta phải hợp tác.",
+      "localized": {
+        "title": {
+          "vi": "Have to + động từ – Nói về điều cần làm",
+          "en": "Have to + verb – Saying what is necessary"
+        },
+        "explanation": {
+          "vi": "Dùng “have to” cùng động từ nguyên mẫu để nói một việc cần phải làm. Ví dụ, “We have to work together” nghĩa là chúng ta phải hợp tác.",
+          "en": "Use “have to” with a base verb to say something is necessary. For example, “We have to work together” means teamwork is necessary."
+        }
+      },
+      "example": "We have to work together."
+    }
+  ]
+}

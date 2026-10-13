@@ -1,0 +1,269 @@
+StudyJony contextual glossary authoring — story: naruto-season-1/a-new-friend
+
+Codex must author meanings offline after the English draft and Vietnamese translations are final.
+Read every line and its translation. Save a separate glossary.json beside draft.json.
+Use the existing schemaVersion 1 glossary and the prepared glossary-template.json.
+Keep lessonId=naruto-season-1, dialogueId=a-new-friend, source line IDs, exact text,
+translation, speaker, tokens, and zero-based word positions unchanged.
+
+Review EVERY word occurrence, not only usefulWords. Write short, natural Vietnamese
+meanings, usually 1–5 words. Never blindly copy a dictionary's first sense.
+Reuse shared entries only when the English word, Vietnamese sense and POS agree;
+split references for repeated words with different senses or grammatical roles.
+Each word entry has word (lowercase English token), meaning and pos (array).
+Optional pron is an IPA array: use trustworthy surface-form IPA, never a lemma's
+IPA for an inflected word or one word's IPA for a whole phrase. Omit unknown IPA.
+Keep useful grammar explanations in optional note fields, hidden in the popup.
+Use a short grammar label when there is no direct Vietnamese translation.
+Identify names as proper names. Do not translate character names as ordinary words.
+
+Preserve individual word entries even inside expressions. Add useful phrase entries
+with pos:["phrase"] and inclusive spans {start,end,text,entry}. Phrase text must
+exactly match the source span, contain at least two words, and never cross punctuation.
+Review usefulWords as candidates; do not force every adjacent word into a phrase.
+Each line has words (entry IDs in token order) and phrases (span array).
+Each character has meaning (name), role and optional note.
+
+Use the English sentence AND its existing Vietnamese translation to select senses.
+Check natural Vietnamese, phrase boundaries, individual meanings, POS and IPA.
+Flag uncertain senses in optional notes for human review; validation is not proof
+of translation accuracy. Never modify an approved glossary automatically.
+No runtime translation API, build-time translation API or dictionary-based meaning generator.
+
+After authoring, run:
+npm run glossary:check -- naruto-season-1 a-new-friend
+Then the existing dialogue:build command validates again before any promotion.
+
+Final source (all lines and useful expressions):
+{
+  "metadata": {
+    "courseId": "naruto-season-1",
+    "dialogueId": "a-new-friend",
+    "contextualGlossaryVersion": 1,
+    "title": "Người bạn mới",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Naruto – Mùa 1",
+        "en": "Naruto – Season 1"
+      },
+      "courseDescription": {
+        "vi": "Theo chân Naruto khi cậu trở thành ninja và theo đuổi ước mơ trở thành Hokage.",
+        "en": "Follow Naruto as he becomes a ninja and follows his dream of becoming Hokage."
+      },
+      "title": {
+        "vi": "Người bạn mới",
+        "en": "A New Friend"
+      },
+      "description": {
+        "vi": "Naruto meets Konohamaru, a young boy who wants to become strong. They begin an unexpected friendship.",
+        "en": "Naruto meets Konohamaru, a younger boy who wants to become strong. They begin an unexpected friendship."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Naruto meets Konohamaru, a young boy who wants to become strong. They begin an unexpected friendship.",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/a-new-friend.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Konohamaru",
+      "text": "Hey! Is that your new ninja headband?",
+      "translation": "Này! Đó là băng trán ninja mới của anh à?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Naruto",
+      "text": "Yes! I passed the test yesterday.",
+      "translation": "Đúng rồi! Hôm qua anh đã vượt qua bài kiểm tra.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Konohamaru",
+      "text": "Wow! You are a real ninja!",
+      "translation": "Ồ! Anh là một ninja thực thụ rồi!",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Naruto",
+      "text": "I work hard. What is your name?",
+      "translation": "Anh luôn chăm chỉ. Em tên gì?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Konohamaru",
+      "text": "My name is Konohamaru. I want to be strong like you.",
+      "translation": "Em tên là Konohamaru. Em muốn mạnh mẽ như anh.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Naruto",
+      "text": "Nice to meet you, Konohamaru!",
+      "translation": "Rất vui được gặp em, Konohamaru!",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Konohamaru",
+      "text": "Can you teach me a ninja technique?",
+      "translation": "Anh có thể dạy em một kỹ thuật ninja không?",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Naruto",
+      "text": "I can help you, but you need to practice.",
+      "translation": "Anh có thể giúp em, nhưng em cần luyện tập.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Konohamaru",
+      "text": "I practice every day. I want to be Hokage!",
+      "translation": "Em luyện tập mỗi ngày. Em muốn trở thành Hokage!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Naruto",
+      "text": "Hey! I want to be Hokage too!",
+      "translation": "Này! Anh cũng muốn trở thành Hokage!",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Konohamaru",
+      "text": "Then we have the same dream!",
+      "translation": "Vậy chúng ta có cùng một ước mơ!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Naruto",
+      "text": "That is right. We can train together.",
+      "translation": "Đúng vậy. Chúng ta có thể luyện tập cùng nhau.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-06.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Konohamaru",
+      "text": "Can we be friends too?",
+      "translation": "Chúng ta cũng có thể làm bạn không?",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-07.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Naruto",
+      "text": "Of course! You are my friend now.",
+      "translation": "Tất nhiên rồi! Bây giờ em là bạn của anh.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-07.mp3"
+    },
+    {
+      "id": 15,
+      "speaker": "Konohamaru",
+      "text": "Thank you, Naruto! See you tomorrow!",
+      "translation": "Cảm ơn anh, Naruto! Mai gặp lại nhé!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-08.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "ninja headband",
+      "pronunciation": "/ˈnɪndʒə ˈhɛdbænd/",
+      "meaning": "băng trán ninja",
+      "example": "He has a new ninja headband."
+    },
+    {
+      "word": "passed the test",
+      "pronunciation": "/pæst ðə tɛst/",
+      "meaning": "đã vượt qua bài kiểm tra",
+      "example": "She passed the test."
+    },
+    {
+      "word": "work hard",
+      "pronunciation": "/wɝːk hɑːrd/",
+      "meaning": "chăm chỉ, cố gắng",
+      "example": "I work hard every day."
+    },
+    {
+      "word": "Nice to meet you",
+      "pronunciation": "/naɪs tə miːt juː/",
+      "meaning": "rất vui được gặp bạn",
+      "example": "Nice to meet you, Ben."
+    },
+    {
+      "word": "teach me",
+      "pronunciation": "/tiːtʃ miː/",
+      "meaning": "dạy tôi",
+      "example": "Can you teach me English?"
+    },
+    {
+      "word": "practice",
+      "pronunciation": "/ˈpræktɪs/",
+      "meaning": "luyện tập",
+      "example": "I practice English every day."
+    },
+    {
+      "word": "every day",
+      "pronunciation": "/ˈɛvri deɪ/",
+      "meaning": "mỗi ngày",
+      "example": "We read every day."
+    },
+    {
+      "word": "same dream",
+      "pronunciation": "/seɪm driːm/",
+      "meaning": "cùng ước mơ",
+      "example": "We have the same dream."
+    },
+    {
+      "word": "train together",
+      "pronunciation": "/treɪn təˈɡɛðər/",
+      "meaning": "luyện tập cùng nhau",
+      "example": "We can train together."
+    },
+    {
+      "word": "be friends",
+      "pronunciation": "/biː frɛndz/",
+      "meaning": "làm bạn",
+      "example": "Can we be friends?"
+    }
+  ]
+}

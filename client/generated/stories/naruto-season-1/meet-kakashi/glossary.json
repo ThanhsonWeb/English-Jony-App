@@ -1,0 +1,1018 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "naruto-season-1",
+  "dialogueId": "meet-kakashi",
+  "characters": {
+    "Sakura": {
+      "meaning": "Sakura",
+      "role": "Học sinh trong Đội 7"
+    },
+    "Naruto": {
+      "meaning": "Naruto",
+      "role": "Học sinh trong Đội 7"
+    },
+    "Kakashi": {
+      "meaning": "Kakashi",
+      "role": "Thầy giáo mới của Đội 7"
+    },
+    "Sasuke": {
+      "meaning": "Sasuke",
+      "role": "Học sinh trong Đội 7"
+    }
+  },
+  "entries": {
+    "word-our": {
+      "word": "our",
+      "meaning": "của chúng ta",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-teacher": {
+      "word": "teacher",
+      "meaning": "thầy, cô giáo",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "là; thường không dịch riêng",
+      "pos": [
+        "verb"
+      ],
+      "note": "Động từ be nối chủ ngữ với tính từ hoặc danh từ; tiếng Việt thường lược bỏ."
+    },
+    "word-late": {
+      "word": "late",
+      "meaning": "muộn",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "tôi; em; tớ (tùy người nói)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "muốn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "đánh dấu động từ nguyên mẫu",
+      "pos": [
+        "particle"
+      ],
+      "note": "Trong want to, to đứng trước động từ nguyên mẫu và không có nghĩa “để”."
+    },
+    "word-meet": {
+      "word": "meet",
+      "meaning": "gặp",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-him": {
+      "word": "him",
+      "meaning": "thầy ấy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "ngay bây giờ",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-hello": {
+      "word": "hello",
+      "meaning": "xin chào",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "là",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-kakashi": {
+      "word": "kakashi",
+      "meaning": "Kakashi",
+      "pos": [
+        "proper name"
+      ]
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "của các em",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-new": {
+      "word": "new",
+      "meaning": "mới",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "em; các em",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "động từ be; thường không dịch riêng",
+      "pos": [
+        "verb"
+      ],
+      "note": "Động từ be nối chủ ngữ với tính từ hoặc danh từ; tiếng Việt thường lược bỏ."
+    },
+    "word-please": {
+      "word": "please",
+      "meaning": "xin; hãy",
+      "pos": [
+        "polite marker"
+      ]
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "nói cho biết",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "thầy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-names": {
+      "word": "names",
+      "meaning": "tên",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-and": {
+      "word": "and",
+      "meaning": "và",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-dreams": {
+      "word": "dreams",
+      "meaning": "ước mơ",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "của mình; em",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-name": {
+      "word": "name",
+      "meaning": "tên",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-sakura": {
+      "word": "sakura",
+      "meaning": "Sakura",
+      "pos": [
+        "proper name"
+      ]
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "giúp đỡ",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-team": {
+      "word": "team",
+      "meaning": "đội, nhóm",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "em là",
+      "pos": [
+        "contraction"
+      ],
+      "note": "Dạng rút gọn của I am."
+    },
+    "word-sasuke": {
+      "word": "sasuke",
+      "meaning": "Sasuke",
+      "pos": [
+        "proper name"
+      ]
+    },
+    "word-be": {
+      "word": "be",
+      "meaning": "là; trở thành; ở",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-strong": {
+      "word": "strong",
+      "meaning": "mạnh mẽ",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-naruto": {
+      "word": "naruto",
+      "meaning": "Naruto",
+      "pos": [
+        "proper name"
+      ]
+    },
+    "word-hokage": {
+      "word": "hokage",
+      "meaning": "Hokage (danh hiệu lãnh đạo làng Lá)",
+      "pos": [
+        "proper name"
+      ],
+      "note": "Danh hiệu trong thế giới Naruto."
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "tốt",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-tomorrow": {
+      "word": "tomorrow",
+      "meaning": "ngày mai",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "sẽ",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "có",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "một (mạo từ)",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-hard": {
+      "word": "hard",
+      "meaning": "khó",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-test": {
+      "word": "test",
+      "meaning": "bài kiểm tra",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "nó; điều đó",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "có; vâng",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-must": {
+      "word": "must",
+      "meaning": "phải",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-work": {
+      "word": "work",
+      "meaning": "làm việc",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-together": {
+      "word": "together",
+      "meaning": "cùng nhau",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "làm",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-alone": {
+      "word": "alone",
+      "meaning": "một mình",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "không",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-can't": {
+      "word": "can't",
+      "meaning": "không thể",
+      "pos": [
+        "contraction",
+        "modal verb"
+      ],
+      "note": "Dạng rút gọn của cannot."
+    },
+    "word-pass": {
+      "word": "pass",
+      "meaning": "vượt qua (bài kiểm tra)",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "được rồi",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "chúng ta",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-each": {
+      "word": "each",
+      "meaning": "mỗi",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-other": {
+      "word": "other",
+      "meaning": "người khác",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "ở đây",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-morning": {
+      "word": "morning",
+      "meaning": "buổi sáng",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-on": {
+      "word": "on",
+      "meaning": "vào",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-time": {
+      "word": "time",
+      "meaning": "giờ",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-i-naruto-familiar": {
+      "word": "i",
+      "meaning": "tớ",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-i-kakashi": {
+      "word": "i",
+      "meaning": "thầy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-i-student": {
+      "word": "i",
+      "meaning": "em",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-you-teacher": {
+      "word": "you",
+      "meaning": "thầy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-me-teacher": {
+      "word": "me",
+      "meaning": "thầy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-my-name": {
+      "word": "my",
+      "meaning": "em",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-my-team": {
+      "word": "my",
+      "meaning": "của mình",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-be-strong": {
+      "word": "be",
+      "meaning": "trở nên",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-be-hokage": {
+      "word": "be",
+      "meaning": "trở thành",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-be-here": {
+      "word": "be",
+      "meaning": "có mặt",
+      "pos": [
+        "verb"
+      ]
+    },
+    "phrase-new-teacher": {
+      "word": "new teacher",
+      "meaning": "giáo viên mới",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-tell-me": {
+      "word": "tell me",
+      "meaning": "nói cho thầy biết",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-my-name": {
+      "word": "my name",
+      "meaning": "tên em",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-my-team": {
+      "word": "my team",
+      "meaning": "đội của mình",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-be-strong": {
+      "word": "be strong",
+      "meaning": "trở nên mạnh mẽ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-hard-test": {
+      "word": "hard test",
+      "meaning": "bài kiểm tra khó",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-work-together": {
+      "word": "work together",
+      "meaning": "hợp tác cùng nhau",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-each-other": {
+      "word": "each other",
+      "meaning": "lẫn nhau",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-help-each-other": {
+      "word": "help each other",
+      "meaning": "giúp đỡ lẫn nhau",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-on-time": {
+      "word": "on time",
+      "meaning": "đúng giờ",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Sakura",
+      "text": "Our teacher is late.",
+      "translation": "Thầy của chúng ta đến muộn rồi.",
+      "tokens": [
+        "Our",
+        "teacher",
+        "is",
+        "late"
+      ],
+      "words": [
+        "word-our",
+        "word-teacher",
+        "word-is",
+        "word-late"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Naruto",
+      "text": "I want to meet him now!",
+      "translation": "Tớ muốn gặp thầy ấy ngay bây giờ!",
+      "tokens": [
+        "I",
+        "want",
+        "to",
+        "meet",
+        "him",
+        "now"
+      ],
+      "words": [
+        "word-i-naruto-familiar",
+        "word-want",
+        "word-to",
+        "word-meet",
+        "word-him",
+        "word-now"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Kakashi",
+      "text": "Hello. I am Kakashi, your new teacher.",
+      "translation": "Xin chào. Thầy là Kakashi, giáo viên mới của các em.",
+      "tokens": [
+        "Hello",
+        "I",
+        "am",
+        "Kakashi",
+        "your",
+        "new",
+        "teacher"
+      ],
+      "words": [
+        "word-hello",
+        "word-i-kakashi",
+        "word-am",
+        "word-kakashi",
+        "word-your",
+        "word-new",
+        "word-teacher"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "new teacher",
+          "entry": "phrase-new-teacher"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Naruto",
+      "text": "You are late!",
+      "translation": "Thầy đến muộn quá!",
+      "tokens": [
+        "You",
+        "are",
+        "late"
+      ],
+      "words": [
+        "word-you-teacher",
+        "word-are",
+        "word-late"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Kakashi",
+      "text": "Please tell me your names and your dreams.",
+      "translation": "Hãy cho thầy biết tên và ước mơ của các em nhé.",
+      "tokens": [
+        "Please",
+        "tell",
+        "me",
+        "your",
+        "names",
+        "and",
+        "your",
+        "dreams"
+      ],
+      "words": [
+        "word-please",
+        "word-tell",
+        "word-me-teacher",
+        "word-your",
+        "word-names",
+        "word-and",
+        "word-your",
+        "word-dreams"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "text": "tell me",
+          "entry": "phrase-tell-me"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Sakura",
+      "text": "My name is Sakura. I want to help my team.",
+      "translation": "Em tên là Sakura. Em muốn giúp đỡ đội của mình.",
+      "tokens": [
+        "My",
+        "name",
+        "is",
+        "Sakura",
+        "I",
+        "want",
+        "to",
+        "help",
+        "my",
+        "team"
+      ],
+      "words": [
+        "word-my-name",
+        "word-name",
+        "word-is",
+        "word-sakura",
+        "word-i-student",
+        "word-want",
+        "word-to",
+        "word-help",
+        "word-my-team",
+        "word-team"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "My name",
+          "entry": "phrase-my-name"
+        },
+        {
+          "start": 8,
+          "end": 9,
+          "text": "my team",
+          "entry": "phrase-my-team"
+        }
+      ]
+    },
+    "7": {
+      "speaker": "Sasuke",
+      "text": "I'm Sasuke. I want to be strong.",
+      "translation": "Em là Sasuke. Em muốn trở nên mạnh mẽ.",
+      "tokens": [
+        "I'm",
+        "Sasuke",
+        "I",
+        "want",
+        "to",
+        "be",
+        "strong"
+      ],
+      "words": [
+        "word-i'm",
+        "word-sasuke",
+        "word-i-student",
+        "word-want",
+        "word-to",
+        "word-be-strong",
+        "word-strong"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "be strong",
+          "entry": "phrase-be-strong"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Naruto",
+      "text": "I'm Naruto! I want to be Hokage!",
+      "translation": "Em là Naruto! Em muốn trở thành Hokage!",
+      "tokens": [
+        "I'm",
+        "Naruto",
+        "I",
+        "want",
+        "to",
+        "be",
+        "Hokage"
+      ],
+      "words": [
+        "word-i'm",
+        "word-naruto",
+        "word-i-student",
+        "word-want",
+        "word-to",
+        "word-be-hokage",
+        "word-hokage"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Kakashi",
+      "text": "Good. Tomorrow, you will have a hard test.",
+      "translation": "Tốt. Ngày mai, các em sẽ có một bài kiểm tra khó.",
+      "tokens": [
+        "Good",
+        "Tomorrow",
+        "you",
+        "will",
+        "have",
+        "a",
+        "hard",
+        "test"
+      ],
+      "words": [
+        "word-good",
+        "word-tomorrow",
+        "word-you",
+        "word-will",
+        "word-have",
+        "word-a",
+        "word-hard",
+        "word-test"
+      ],
+      "phrases": [
+        {
+          "start": 6,
+          "end": 7,
+          "text": "hard test",
+          "entry": "phrase-hard-test"
+        }
+      ]
+    },
+    "10": {
+      "speaker": "Sakura",
+      "text": "A test? Is it hard?",
+      "translation": "Một bài kiểm tra ạ? Nó có khó không thầy?",
+      "tokens": [
+        "A",
+        "test",
+        "Is",
+        "it",
+        "hard"
+      ],
+      "words": [
+        "word-a",
+        "word-test",
+        "word-is",
+        "word-it",
+        "word-hard"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Kakashi",
+      "text": "Yes. You must work together.",
+      "translation": "Có. Các em phải hợp tác với nhau.",
+      "tokens": [
+        "Yes",
+        "You",
+        "must",
+        "work",
+        "together"
+      ],
+      "words": [
+        "word-yes",
+        "word-you",
+        "word-must",
+        "word-work",
+        "word-together"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "work together",
+          "entry": "phrase-work-together"
+        }
+      ]
+    },
+    "12": {
+      "speaker": "Sasuke",
+      "text": "Can I do it alone?",
+      "translation": "Em có thể tự làm một mình không?",
+      "tokens": [
+        "Can",
+        "I",
+        "do",
+        "it",
+        "alone"
+      ],
+      "words": [
+        "word-can",
+        "word-i-student",
+        "word-do",
+        "word-it",
+        "word-alone"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Kakashi",
+      "text": "No. You can't pass alone.",
+      "translation": "Không. Em không thể vượt qua nếu chỉ làm một mình.",
+      "tokens": [
+        "No",
+        "You",
+        "can't",
+        "pass",
+        "alone"
+      ],
+      "words": [
+        "word-no",
+        "word-you",
+        "word-can't",
+        "word-pass",
+        "word-alone"
+      ],
+      "phrases": []
+    },
+    "14": {
+      "speaker": "Naruto",
+      "text": "Okay! We can help each other!",
+      "translation": "Được thôi! Chúng ta có thể giúp đỡ lẫn nhau!",
+      "tokens": [
+        "Okay",
+        "We",
+        "can",
+        "help",
+        "each",
+        "other"
+      ],
+      "words": [
+        "word-okay",
+        "word-we",
+        "word-can",
+        "word-help",
+        "word-each",
+        "word-other"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "each other",
+          "entry": "phrase-each-other"
+        },
+        {
+          "start": 3,
+          "end": 5,
+          "text": "help each other",
+          "entry": "phrase-help-each-other"
+        }
+      ]
+    },
+    "15": {
+      "speaker": "Kakashi",
+      "text": "Good. Be here tomorrow morning.",
+      "translation": "Tốt. Hãy có mặt ở đây vào sáng mai.",
+      "tokens": [
+        "Good",
+        "Be",
+        "here",
+        "tomorrow",
+        "morning"
+      ],
+      "words": [
+        "word-good",
+        "word-be",
+        "word-here",
+        "word-tomorrow",
+        "word-morning"
+      ],
+      "phrases": []
+    },
+    "16": {
+      "speaker": "Sakura",
+      "text": "Okay. We will be here on time.",
+      "translation": "Vâng. Chúng em sẽ có mặt đúng giờ.",
+      "tokens": [
+        "Okay",
+        "We",
+        "will",
+        "be",
+        "here",
+        "on",
+        "time"
+      ],
+      "words": [
+        "word-okay",
+        "word-we",
+        "word-will",
+        "word-be-here",
+        "word-here",
+        "word-on",
+        "word-time"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "on time",
+          "entry": "phrase-on-time"
+        }
+      ]
+    }
+  }
+}

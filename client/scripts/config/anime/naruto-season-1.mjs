@@ -17,8 +17,12 @@ const narutoSeason1 = {
 
   voiceIds: {
     Naruto: "HJdgjMBpPzwZ2VRzSTbw",
+    Konohamaru: "HJdgjMBpPzwZ2VRzSTbw",
     Iruka: "oflxQzyUUjpgLlEYlSq2",
     Mizuki: "oF10V53nXu6mNLtJLgko",
+    Kakashi: "oF10V53nXu6mNLtJLgko",
+    Sakura: "ur0MtycxCulNrunXsdLx",
+    Sasuke: "s3TPKV1kjDlVtZbl4Ksh",
   },
 
   dialogues: [

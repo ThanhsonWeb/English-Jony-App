@@ -4,6 +4,12 @@ import theLonelyBoy from "../stories/naruto-season-1/the-lonely-boy.json";
 import theNinjaTest from "../stories/naruto-season-1/the-ninja-test.json";
 import theForbiddenScroll from "../stories/naruto-season-1/the-forbidden-scroll.json";
 import someoneBelievesInHim from "../stories/naruto-season-1/someone-believes-in-him.json";
+import aNewFriend from "../stories/naruto-season-1/a-new-friend.json";
+import teamSeven from "../stories/naruto-season-1/team-seven.json";
+import meetKakashi from "../stories/naruto-season-1/meet-kakashi.json";
+import theBellTest from "../stories/naruto-season-1/the-bell-test.json";
+import workingTogether from "../stories/naruto-season-1/working-together.json";
+import aRealTeam from "../stories/naruto-season-1/a-real-team.json";
 import { narutoSeason1Media } from "../stories/naruto-season-1/media";
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
 
@@ -72,6 +78,12 @@ const narutoSeason1Course = {
 		buildCourseDialogue(theNinjaTest),
 		buildCourseDialogue(theForbiddenScroll),
 		buildCourseDialogue(someoneBelievesInHim),
+		buildCourseDialogue(aNewFriend),
+		buildCourseDialogue(teamSeven),
+		buildCourseDialogue(meetKakashi),
+		buildCourseDialogue(theBellTest),
+		buildCourseDialogue(workingTogether),
+		buildCourseDialogue(aRealTeam),
 	],
 };
 

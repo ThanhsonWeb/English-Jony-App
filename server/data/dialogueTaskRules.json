@@ -6193,6 +6193,1182 @@
 	{
 		"ids": [
 			"naruto-season-1",
+			"a-new-friend",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"new"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"like you"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"meet you"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"teach me"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ninja technique"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help you"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"practice"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"every day"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Hokage"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"19"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"headband"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Hokage"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"same"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"dream"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"train"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"together"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"25"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Can we"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"friends"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"28"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"29"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Of course"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"passed"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"30"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"friend"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"31"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"32"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tomorrow"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"33"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"headband",
+			"passed",
+			"ninja",
+			"name",
+			"strong",
+			"meet",
+			"teach me",
+			"practice",
+			"Hokage",
+			"Hokage",
+			"dream",
+			"train",
+			"friends",
+			"friend",
+			"tomorrow"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"yesterday"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"5"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"real"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"work hard"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"your name"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-new-friend",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"strong"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"passed"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"test"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"11"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"work"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"together"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"shared"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"alone"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"friend"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"18"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"happy"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"test"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"same team"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"students"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Team Seven"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"23"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Team Seven"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"next"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"still"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"learn"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"28"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"together"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"29"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Tomorrow"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"helped"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"30"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"first mission"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"31"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"team"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"32"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ready"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"33"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"34"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"passed",
+			"each other",
+			"bells",
+			"only",
+			"real test",
+			"work together",
+			"shared",
+			"friend",
+			"same team",
+			"Team Seven",
+			"next",
+			"learn",
+			"together",
+			"first mission",
+			"can't wait"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"each other"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"5"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"bells"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"bells"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"test"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"a-real-team",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"real"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"teacher"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"10"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"name"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"I'm"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"strong"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"I'm"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want to"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Tomorrow"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"hard test"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"19"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"test"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"hard"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"must"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"work together"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"24"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Can I"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"alone"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"can't"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"28"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"pass"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"29"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"meet"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"30"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"31"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"each other"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"32"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Be here"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"33"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tomorrow morning"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"34"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"be here"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"35"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"on time"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"36"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"teacher",
+			"meet",
+			"new teacher",
+			"late",
+			"names",
+			"help",
+			"strong",
+			"Hokage",
+			"hard test",
+			"hard",
+			"work together",
+			"alone",
+			"pass",
+			"each other",
+			"tomorrow morning",
+			"on time"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"I am"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"new teacher"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"6"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"late"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tell me"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"meet-kakashi",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"dreams"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
 			"someone-believes-in-him",
 			"1"
 		],
@@ -6623,6 +7799,942 @@
 		"type": "fillBlank",
 		"answers": [
 			"lied"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"new team"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"happy"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"work with"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"What about"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"serious"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"together"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"15"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"work"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"alone"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"team"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"now"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Team Seven"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"20"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"too much"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"always"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"quiet"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"everyone"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"different"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"26"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"teammates"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"28"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"each other"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"29"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Team Seven"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"30"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"do well"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"31"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"try"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"32"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"work with"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"33"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Me too"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"34"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"great team"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"35"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"teacher"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"36"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tomorrow"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"37"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"38"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"new team",
+			"Team Seven",
+			"are",
+			"We are",
+			"happy",
+			"What about",
+			"serious",
+			"work",
+			"team",
+			"too much",
+			"always",
+			"everyone",
+			"teammates",
+			"want",
+			"try",
+			"Me too",
+			"teacher"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"my team"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"are"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"teammates"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"7"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"We are"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"team-seven",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"same team"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"on time"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"there are"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"three"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Only"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"bell"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"get one"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"by myself"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"will"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"alone"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"19"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ready"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"need"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"plan"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"22"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"No time"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"start"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"until noon"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Good luck"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"can't"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"28"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"catch"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"29"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"can't"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"test"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"30"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"either"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"31"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"not"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"32"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"working together"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"33"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"over"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"34"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"no bells"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"35"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"36"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tried"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"37"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"so hard"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"38"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"alone"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"39"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"problem"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Good morning"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"40"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"41"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"each other"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"42"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Think"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"43"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"after lunch"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"44"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"on time",
+			"ready",
+			"Good morning",
+			"two bells",
+			"there are",
+			"Only",
+			"get one",
+			"will",
+			"need",
+			"No time",
+			"until noon",
+			"can't",
+			"can't",
+			"not",
+			"over",
+			"tried",
+			"alone",
+			"help",
+			"Think"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Today"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"two bells"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"must"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"pass"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"the-bell-test",
+			"9"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
 		]
 	},
 	{
@@ -7740,6 +9852,406 @@
 		"type": "fillBlank",
 		"answers": [
 			"weak"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"lunch time"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"come back"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"have"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"lunch"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"said"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"food"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"team"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"each other"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"stay here"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"both"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"see"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"follow"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"24"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"but"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"friend"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"27"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"28"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"care"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"29"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"each other"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tied"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"30"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"pass"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"31"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"test"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"32"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"team"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"33"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"each other"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"34"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"35"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"lunch time",
+			"tied",
+			"eat",
+			"needs",
+			"rule",
+			"want",
+			"have",
+			"said",
+			"food",
+			"help",
+			"Thank you",
+			"see",
+			"but",
+			"care",
+			"pass",
+			"team"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"hungry"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"eat"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"any food"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"7"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"needs"
+		]
+	},
+	{
+		"ids": [
+			"naruto-season-1",
+			"working-together",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"rule"
 		]
 	},
 	{

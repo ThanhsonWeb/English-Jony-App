@@ -1,0 +1,1462 @@
+{
+  "metadata": {
+    "courseId": "naruto-season-1",
+    "dialogueId": "working-together",
+    "contextualGlossaryVersion": 1,
+    "title": "Cùng nhau hợp tác",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Naruto – Mùa 1",
+        "en": "Naruto – Season 1"
+      },
+      "courseDescription": {
+        "vi": "Naruto và những người bạn học cách trở thành ninja và giúp đỡ lẫn nhau.",
+        "en": "Naruto and his friends learn to become ninja and help one another."
+      },
+      "title": {
+        "vi": "Cùng nhau hợp tác",
+        "en": "Working Together"
+      },
+      "description": {
+        "vi": "Naruto is tied to a post, and his teammates share their food with him despite Kakashi's rule. Kakashi sees that they care about each other.",
+        "en": "Naruto is tied to a post, and his teammates share their food with him despite Kakashi's rule. Kakashi sees that they care about each other."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Naruto is tied to a post, and his teammates share their food with him despite Kakashi's rule. Kakashi sees that they care about each other.",
+    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/working-together.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Kakashi",
+      "text": "It is lunch time. Naruto, you must stay here.",
+      "translation": "Đến giờ ăn trưa rồi. Naruto, em phải ở lại đây.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Naruto",
+      "text": "I'm tied to this post. I'm so hungry!",
+      "translation": "Tớ bị trói vào cái cọc này. Tớ đói quá!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Kakashi",
+      "text": "Sasuke, Sakura, you can eat. Do not give Naruto any food.",
+      "translation": "Sasuke, Sakura, hai em có thể ăn. Không được cho Naruto thức ăn.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Sakura",
+      "text": "But Naruto needs food too.",
+      "translation": "Nhưng Naruto cũng cần ăn mà.",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-01.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Kakashi",
+      "text": "That is my rule. I will come back soon.",
+      "translation": "Đó là quy định của thầy. Thầy sẽ sớm quay lại.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Naruto",
+      "text": "This is not fair. I want some food.",
+      "translation": "Thật không công bằng. Tớ muốn ăn gì đó.",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-02.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Sasuke",
+      "text": "Naruto, you can have some of my lunch.",
+      "translation": "Naruto, cậu có thể ăn một ít bữa trưa của tớ.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Naruto",
+      "text": "Really? But Kakashi said no.",
+      "translation": "Thật sao? Nhưng thầy Kakashi đã nói không được mà.",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-03.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Sakura",
+      "text": "You can have my food too. We are a team.",
+      "translation": "Cậu cũng có thể ăn đồ ăn của tớ. Chúng ta là một đội.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-02.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Sasuke",
+      "text": "Yes. We need to help each other.",
+      "translation": "Đúng vậy. Chúng ta cần giúp đỡ lẫn nhau.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-02.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Naruto",
+      "text": "Thank you, both of you.",
+      "translation": "Cảm ơn cả hai cậu.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-04.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Kakashi",
+      "text": "I can see you. You did not follow my rule!",
+      "translation": "Thầy thấy hết rồi. Các em đã không làm theo quy định của thầy!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-04.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Sakura",
+      "text": "I'm sorry, but Naruto is our friend.",
+      "translation": "Em xin lỗi, nhưng Naruto là bạn của chúng em.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-03.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Kakashi",
+      "text": "Good. You care about each other.",
+      "translation": "Tốt lắm. Các em biết quan tâm đến nhau.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 15,
+      "speaker": "Sasuke",
+      "text": "So, did we pass the test?",
+      "translation": "Vậy chúng em đã vượt qua bài kiểm tra chưa?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-03.mp3"
+    },
+    {
+      "id": 16,
+      "speaker": "Kakashi",
+      "text": "Yes! A good team helps each other.",
+      "translation": "Rồi! Một đội tốt luôn giúp đỡ lẫn nhau.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "stay here",
+      "pronunciation": "/steɪ hɪr/",
+      "meaning": "ở lại đây",
+      "example": "Please stay here."
+    },
+    {
+      "word": "hungry",
+      "pronunciation": "/ˈhʌŋɡri/",
+      "meaning": "đói",
+      "example": "I'm hungry."
+    },
+    {
+      "word": "give",
+      "pronunciation": "/ɡɪv/",
+      "meaning": "cho, đưa",
+      "example": "Please give me some water."
+    },
+    {
+      "word": "come back",
+      "pronunciation": "/kʌm bæk/",
+      "meaning": "quay lại",
+      "example": "Come back soon."
+    },
+    {
+      "word": "a team",
+      "pronunciation": "/ə tiːm/",
+      "meaning": "một đội",
+      "example": "We are a team."
+    },
+    {
+      "word": "help each other",
+      "pronunciation": "/help iːtʃ ˈʌðər/",
+      "meaning": "giúp đỡ lẫn nhau",
+      "example": "We help each other."
+    },
+    {
+      "word": "care about",
+      "pronunciation": "/ker əˈbaʊt/",
+      "meaning": "quan tâm đến",
+      "example": "I care about my friends."
+    },
+    {
+      "word": "pass the test",
+      "pronunciation": "/pæs ðə test/",
+      "meaning": "vượt qua bài kiểm tra",
+      "example": "I want to pass the test."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "It is ",
+        ". Naruto, you must stay here."
+      ],
+      "answers": [
+        "lunch time"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "It is lunch time. Naruto, you must stay here.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "It is lunch time. Naruto, you must ",
+        "."
+      ],
+      "answers": [
+        "stay here"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "It is lunch time. Naruto, you must stay here.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I'm ",
+        " to this post. I'm so hungry!"
+      ],
+      "answers": [
+        "tied"
+      ],
+      "speaker": "Naruto",
+      "transcript": "I'm tied to this post. I'm so hungry!",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I'm tied to this post. I'm so ",
+        "!"
+      ],
+      "answers": [
+        "hungry"
+      ],
+      "speaker": "Naruto",
+      "transcript": "I'm tied to this post. I'm so hungry!",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Sasuke, Sakura, you can ",
+        ". Do not give Naruto any food."
+      ],
+      "answers": [
+        "eat"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "Sasuke, Sakura, you can eat. Do not give Naruto any food.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Sasuke, Sakura, you can eat. Do not give Naruto ",
+        "."
+      ],
+      "answers": [
+        "any food"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "Sasuke, Sakura, you can eat. Do not give Naruto any food.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Kakashi dùng “Do not” để làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Kakashi dùng “Do not” để làm gì?",
+          "en": "What is Kakashi doing with “Do not”?"
+        },
+        "options": [
+          {
+            "vi": "Hỏi xin thức ăn.",
+            "en": "Ask for food."
+          },
+          {
+            "vi": "Mời mọi người ăn.",
+            "en": "Invite everyone to eat."
+          },
+          {
+            "vi": "Nói thức ăn ở đâu.",
+            "en": "Say where the food is."
+          },
+          {
+            "vi": "Cấm cho Naruto ăn.",
+            "en": "Tell them not to feed Naruto."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "options": [
+        "Hỏi xin thức ăn.",
+        "Mời mọi người ăn.",
+        "Nói thức ăn ở đâu.",
+        "Cấm cho Naruto ăn."
+      ],
+      "answer": "Cấm cho Naruto ăn.",
+      "speaker": "Kakashi",
+      "transcript": "Sasuke, Sakura, you can eat. Do not give Naruto any food.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-02.mp3",
+      "mcTarget": "Do not"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "But Naruto ",
+        " food too."
+      ],
+      "answers": [
+        "needs"
+      ],
+      "speaker": "Sakura",
+      "transcript": "But Naruto needs food too.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-01.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "That is my ",
+        ". I will come back soon."
+      ],
+      "answers": [
+        "rule"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "That is my rule. I will come back soon.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-03.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "That is my rule. I will ",
+        " soon."
+      ],
+      "answers": [
+        "come back"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "That is my rule. I will come back soon.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "This is not fair. I ",
+        " some food."
+      ],
+      "answers": [
+        "want"
+      ],
+      "speaker": "Naruto",
+      "transcript": "This is not fair. I want some food.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-02.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Naruto, you can ",
+        " some of my lunch."
+      ],
+      "answers": [
+        "have"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "Naruto, you can have some of my lunch.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Naruto, you can have some of my ",
+        "."
+      ],
+      "answers": [
+        "lunch"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "Naruto, you can have some of my lunch.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "question": "Vì sao Sasuke cho Naruto ăn?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Vì sao Sasuke cho Naruto ăn?",
+          "en": "Why does Sasuke offer Naruto some lunch?"
+        },
+        "options": [
+          {
+            "vi": "Vì Naruto đang đói.",
+            "en": "Because Naruto is hungry."
+          },
+          {
+            "vi": "Vì Kakashi yêu cầu chia sẻ.",
+            "en": "Because Kakashi asked him to share."
+          },
+          {
+            "vi": "Vì Sasuke không thích bữa trưa.",
+            "en": "Because Sasuke does not like his lunch."
+          },
+          {
+            "vi": "Vì bài kiểm tra chưa bắt đầu.",
+            "en": "Because the test has not started."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì Naruto đang đói.",
+        "Vì Kakashi yêu cầu chia sẻ.",
+        "Vì Sasuke không thích bữa trưa.",
+        "Vì bài kiểm tra chưa bắt đầu."
+      ],
+      "answer": "Vì Naruto đang đói.",
+      "speaker": "Sasuke",
+      "transcript": "Naruto, you can have some of my lunch.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Really? But Kakashi ",
+        " no."
+      ],
+      "answers": [
+        "said"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Really? But Kakashi said no.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-03.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "You can have my ",
+        " too. We are a team."
+      ],
+      "answers": [
+        "food"
+      ],
+      "speaker": "Sakura",
+      "transcript": "You can have my food too. We are a team.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-02.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "You can have my food too. We are a ",
+        "."
+      ],
+      "answers": [
+        "team"
+      ],
+      "speaker": "Sakura",
+      "transcript": "You can have my food too. We are a team.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-02.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes. We need to ",
+        " each other."
+      ],
+      "answers": [
+        "help"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "Yes. We need to help each other.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-02.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes. We need to help ",
+        "."
+      ],
+      "answers": [
+        "each other"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "Yes. We need to help each other.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-02.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "",
+        ", both of you."
+      ],
+      "answers": [
+        "Thank you"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Thank you, both of you.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-04.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Thank you, ",
+        " of you."
+      ],
+      "answers": [
+        "both"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Thank you, both of you.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-04.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I can ",
+        " you. You did not follow my rule!"
+      ],
+      "answers": [
+        "see"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "I can see you. You did not follow my rule!",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-04.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I can see you. You did not ",
+        " my rule!"
+      ],
+      "answers": [
+        "follow"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "I can see you. You did not follow my rule!",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-04.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 12,
+      "type": "multipleChoice",
+      "question": "Kakashi đã thấy điều gì khi quay lại?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Kakashi đã thấy điều gì khi quay lại?",
+          "en": "What did Kakashi see when he returned?"
+        },
+        "options": [
+          {
+            "vi": "Sasuke và Sakura đã rời đi.",
+            "en": "Sasuke and Sakura had left."
+          },
+          {
+            "vi": "Hai bạn đã chia thức ăn cho Naruto.",
+            "en": "The two teammates had shared food with Naruto."
+          },
+          {
+            "vi": "Naruto đã lấy được một chiếc chuông.",
+            "en": "Naruto had taken a bell."
+          },
+          {
+            "vi": "Naruto đã ngủ quên.",
+            "en": "Naruto had fallen asleep."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Sasuke và Sakura đã rời đi.",
+        "Hai bạn đã chia thức ăn cho Naruto.",
+        "Naruto đã lấy được một chiếc chuông.",
+        "Naruto đã ngủ quên."
+      ],
+      "answer": "Hai bạn đã chia thức ăn cho Naruto.",
+      "speaker": "Kakashi",
+      "transcript": "I can see you. You did not follow my rule!",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-04.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I'm sorry, ",
+        " Naruto is our friend."
+      ],
+      "answers": [
+        "but"
+      ],
+      "speaker": "Sakura",
+      "transcript": "I'm sorry, but Naruto is our friend.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-03.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "I'm sorry, but Naruto is our ",
+        "."
+      ],
+      "answers": [
+        "friend"
+      ],
+      "speaker": "Sakura",
+      "transcript": "I'm sorry, but Naruto is our friend.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-03.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 13,
+      "type": "multipleChoice",
+      "question": "Sakura không nghe lời thầy. Cách mở lời nào lịch sự nhất?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Sakura không nghe lời thầy. Cách mở lời nào lịch sự nhất?",
+          "en": "Sakura did not follow the rule. What is the most polite way to respond?"
+        },
+        "options": [
+          {
+            "vi": "Nói rằng đó không phải chuyện của mình.",
+            "en": "Say it is not her problem."
+          },
+          {
+            "vi": "Giả vờ không nghe thấy thầy.",
+            "en": "Pretend not to hear the teacher."
+          },
+          {
+            "vi": "Xin lỗi rồi giải thích lý do.",
+            "en": "Apologize, then explain why."
+          },
+          {
+            "vi": "Yêu cầu thầy đổi luật ngay.",
+            "en": "Demand that the teacher change the rule."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "options": [
+        "Nói rằng đó không phải chuyện của mình.",
+        "Giả vờ không nghe thấy thầy.",
+        "Xin lỗi rồi giải thích lý do.",
+        "Yêu cầu thầy đổi luật ngay."
+      ],
+      "answer": "Xin lỗi rồi giải thích lý do.",
+      "speaker": "Sakura",
+      "transcript": "I'm sorry, but Naruto is our friend.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-03.mp3",
+      "mcTarget": "I'm sorry"
+    },
+    {
+      "id": 28,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Good. You ",
+        " about each other."
+      ],
+      "answers": [
+        "care"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "Good. You care about each other.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 29,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Good. You care about ",
+        "."
+      ],
+      "answers": [
+        "each other"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "Good. You care about each other.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 30,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "So, did we ",
+        " the test?"
+      ],
+      "answers": [
+        "pass"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "So, did we pass the test?",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-03.mp3"
+    },
+    {
+      "id": 31,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "So, did we pass the ",
+        "?"
+      ],
+      "answers": [
+        "test"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "So, did we pass the test?",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-03.mp3"
+    },
+    {
+      "id": 32,
+      "dialogueLineId": 16,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes! A good ",
+        " helps each other."
+      ],
+      "answers": [
+        "team"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "Yes! A good team helps each other.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-06.mp3"
+    },
+    {
+      "id": 33,
+      "dialogueLineId": 16,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes! A good team helps ",
+        "."
+      ],
+      "answers": [
+        "each other"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "Yes! A good team helps each other.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-06.mp3"
+    },
+    {
+      "id": 34,
+      "dialogueLineId": 16,
+      "type": "multipleChoice",
+      "question": "Vì sao cuối cùng cả đội vượt qua bài kiểm tra?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Vì sao cuối cùng cả đội vượt qua bài kiểm tra?",
+          "en": "Why does the team pass the test in the end?"
+        },
+        "options": [
+          {
+            "vi": "Vì họ biết giúp đỡ lẫn nhau.",
+            "en": "Because they help each other."
+          },
+          {
+            "vi": "Vì Naruto đã lấy cả hai chiếc chuông.",
+            "en": "Because Naruto took both bells."
+          },
+          {
+            "vi": "Vì Kakashi quên kết quả.",
+            "en": "Because Kakashi forgot the result."
+          },
+          {
+            "vi": "Vì Sasuke làm mọi việc một mình.",
+            "en": "Because Sasuke did everything alone."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì họ biết giúp đỡ lẫn nhau.",
+        "Vì Naruto đã lấy cả hai chiếc chuông.",
+        "Vì Kakashi quên kết quả.",
+        "Vì Sasuke làm mọi việc một mình."
+      ],
+      "answer": "Vì họ biết giúp đỡ lẫn nhau.",
+      "speaker": "Kakashi",
+      "transcript": "Yes! A good team helps each other.",
+      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-06.mp3"
+    },
+    {
+      "id": 35,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập toàn bộ hội thoại",
+          "en": "Full dialogue review"
+        },
+        "instruction": {
+          "vi": "Điền các từ còn thiếu để hoàn thành hội thoại.",
+          "en": "Fill in the missing words to complete the dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Kakashi",
+          "parts": [
+            "It is ",
+            {
+              "id": "1",
+              "blank": "lunch time"
+            },
+            ". Naruto, you must stay here."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Naruto",
+          "parts": [
+            "I'm ",
+            {
+              "id": "2",
+              "blank": "tied"
+            },
+            " to this post. I'm so hungry!"
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Kakashi",
+          "parts": [
+            "Sasuke, Sakura, you can ",
+            {
+              "id": "3",
+              "blank": "eat"
+            },
+            ". Do not give Naruto any food."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Sakura",
+          "parts": [
+            "But Naruto ",
+            {
+              "id": "4",
+              "blank": "needs"
+            },
+            " food too."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Kakashi",
+          "parts": [
+            "That is my ",
+            {
+              "id": "5",
+              "blank": "rule"
+            },
+            ". I will come back soon."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Naruto",
+          "parts": [
+            "This is not fair. I ",
+            {
+              "id": "6",
+              "blank": "want"
+            },
+            " some food."
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Sasuke",
+          "parts": [
+            "Naruto, you can ",
+            {
+              "id": "7",
+              "blank": "have"
+            },
+            " some of my lunch."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Naruto",
+          "parts": [
+            "Really? But Kakashi ",
+            {
+              "id": "8",
+              "blank": "said"
+            },
+            " no."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Sakura",
+          "parts": [
+            "You can have my ",
+            {
+              "id": "9",
+              "blank": "food"
+            },
+            " too. We are a team."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Sasuke",
+          "parts": [
+            "Yes. We need to ",
+            {
+              "id": "10",
+              "blank": "help"
+            },
+            " each other."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Naruto",
+          "parts": [
+            "",
+            {
+              "id": "11",
+              "blank": "Thank you"
+            },
+            ", both of you."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Kakashi",
+          "parts": [
+            "I can ",
+            {
+              "id": "12",
+              "blank": "see"
+            },
+            " you. You did not follow my rule!"
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Sakura",
+          "parts": [
+            "I'm sorry, ",
+            {
+              "id": "13",
+              "blank": "but"
+            },
+            " Naruto is our friend."
+          ]
+        },
+        {
+          "dialogueLineId": 14,
+          "speaker": "Kakashi",
+          "parts": [
+            "Good. You ",
+            {
+              "id": "14",
+              "blank": "care"
+            },
+            " about each other."
+          ]
+        },
+        {
+          "dialogueLineId": 15,
+          "speaker": "Sasuke",
+          "parts": [
+            "So, did we ",
+            {
+              "id": "15",
+              "blank": "pass"
+            },
+            " the test?"
+          ]
+        },
+        {
+          "dialogueLineId": 16,
+          "speaker": "Kakashi",
+          "parts": [
+            "Yes! A good ",
+            {
+              "id": "16",
+              "blank": "team"
+            },
+            " helps each other."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Do not + động từ",
+      "explanation": "Dùng “Do not” trước động từ để bảo ai đó không làm một việc. Ví dụ, “Do not give Naruto any food” nghĩa là không được cho Naruto ăn.",
+      "localized": {
+        "title": {
+          "vi": "Do not + động từ",
+          "en": "Do not + verb"
+        },
+        "explanation": {
+          "vi": "Dùng “Do not” trước động từ để bảo ai đó không làm một việc. Ví dụ, “Do not give Naruto any food” nghĩa là không được cho Naruto ăn.",
+          "en": "Use “Do not” before a verb to tell someone not to do something. For example, “Do not give Naruto any food” is a rule against feeding Naruto."
+        }
+      },
+      "example": "Do not run here."
+    }
+  ]
+}

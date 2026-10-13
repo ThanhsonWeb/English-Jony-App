@@ -1,0 +1,837 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "naruto-season-1",
+  "dialogueId": "the-bell-test",
+  "characters": {
+    "Sakura": {
+      "meaning": "Sakura",
+      "role": ""
+    },
+    "Naruto": {
+      "meaning": "Naruto",
+      "role": ""
+    },
+    "Kakashi": {
+      "meaning": "Kakashi",
+      "role": ""
+    },
+    "Sasuke": {
+      "meaning": "Sasuke",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-we": {
+      "word": "we",
+      "meaning": "",
+      "pos": []
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "",
+      "pos": []
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "",
+      "pos": []
+    },
+    "word-on": {
+      "word": "on",
+      "meaning": "",
+      "pos": []
+    },
+    "word-time": {
+      "word": "time",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "",
+      "pos": []
+    },
+    "word-ready": {
+      "word": "ready",
+      "meaning": "",
+      "pos": []
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "",
+      "pos": []
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "",
+      "pos": []
+    },
+    "word-test": {
+      "word": "test",
+      "meaning": "",
+      "pos": []
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "",
+      "pos": []
+    },
+    "word-morning": {
+      "word": "morning",
+      "meaning": "",
+      "pos": []
+    },
+    "word-today": {
+      "word": "today",
+      "meaning": "",
+      "pos": []
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "",
+      "pos": []
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-look": {
+      "word": "look",
+      "meaning": "",
+      "pos": []
+    },
+    "word-two": {
+      "word": "two",
+      "meaning": "",
+      "pos": []
+    },
+    "word-bells": {
+      "word": "bells",
+      "meaning": "",
+      "pos": []
+    },
+    "word-must": {
+      "word": "must",
+      "meaning": "",
+      "pos": []
+    },
+    "word-take": {
+      "word": "take",
+      "meaning": "",
+      "pos": []
+    },
+    "word-one": {
+      "word": "one",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-pass": {
+      "word": "pass",
+      "meaning": "",
+      "pos": []
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "",
+      "pos": []
+    },
+    "word-there": {
+      "word": "there",
+      "meaning": "",
+      "pos": []
+    },
+    "word-three": {
+      "word": "three",
+      "meaning": "",
+      "pos": []
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "",
+      "pos": []
+    },
+    "word-us": {
+      "word": "us",
+      "meaning": "",
+      "pos": []
+    },
+    "word-only": {
+      "word": "only",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "",
+      "pos": []
+    },
+    "word-get": {
+      "word": "get",
+      "meaning": "",
+      "pos": []
+    },
+    "word-bell": {
+      "word": "bell",
+      "meaning": "",
+      "pos": []
+    },
+    "word-by": {
+      "word": "by",
+      "meaning": "",
+      "pos": []
+    },
+    "word-myself": {
+      "word": "myself",
+      "meaning": "",
+      "pos": []
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "",
+      "pos": []
+    },
+    "word-work": {
+      "word": "work",
+      "meaning": "",
+      "pos": []
+    },
+    "word-alone": {
+      "word": "alone",
+      "meaning": "",
+      "pos": []
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "",
+      "pos": []
+    },
+    "word-wait": {
+      "word": "wait",
+      "meaning": "",
+      "pos": []
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "",
+      "pos": []
+    },
+    "word-plan": {
+      "word": "plan",
+      "meaning": "",
+      "pos": []
+    },
+    "word-first": {
+      "word": "first",
+      "meaning": "",
+      "pos": []
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "",
+      "pos": []
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "",
+      "pos": []
+    },
+    "word-start": {
+      "word": "start",
+      "meaning": "",
+      "pos": []
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "",
+      "pos": []
+    },
+    "word-until": {
+      "word": "until",
+      "meaning": "",
+      "pos": []
+    },
+    "word-noon": {
+      "word": "noon",
+      "meaning": "",
+      "pos": []
+    },
+    "word-luck": {
+      "word": "luck",
+      "meaning": "",
+      "pos": []
+    },
+    "word-why": {
+      "word": "why",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can't": {
+      "word": "can't",
+      "meaning": "",
+      "pos": []
+    },
+    "word-catch": {
+      "word": "catch",
+      "meaning": "",
+      "pos": []
+    },
+    "word-either": {
+      "word": "either",
+      "meaning": "",
+      "pos": []
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "",
+      "pos": []
+    },
+    "word-working": {
+      "word": "working",
+      "meaning": "",
+      "pos": []
+    },
+    "word-together": {
+      "word": "together",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-over": {
+      "word": "over",
+      "meaning": "",
+      "pos": []
+    },
+    "word-tried": {
+      "word": "tried",
+      "meaning": "",
+      "pos": []
+    },
+    "word-so": {
+      "word": "so",
+      "meaning": "",
+      "pos": []
+    },
+    "word-hard": {
+      "word": "hard",
+      "meaning": "",
+      "pos": []
+    },
+    "word-worked": {
+      "word": "worked",
+      "meaning": "",
+      "pos": []
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "",
+      "pos": []
+    },
+    "word-problem": {
+      "word": "problem",
+      "meaning": "",
+      "pos": []
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "",
+      "pos": []
+    },
+    "word-each": {
+      "word": "each",
+      "meaning": "",
+      "pos": []
+    },
+    "word-other": {
+      "word": "other",
+      "meaning": "",
+      "pos": []
+    },
+    "word-think": {
+      "word": "think",
+      "meaning": "",
+      "pos": []
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "",
+      "pos": []
+    },
+    "word-talk": {
+      "word": "talk",
+      "meaning": "",
+      "pos": []
+    },
+    "word-after": {
+      "word": "after",
+      "meaning": "",
+      "pos": []
+    },
+    "word-lunch": {
+      "word": "lunch",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Sakura",
+      "text": "We are here on time.",
+      "translation": "Chúng em đã có mặt đúng giờ.",
+      "tokens": [
+        "We",
+        "are",
+        "here",
+        "on",
+        "time"
+      ],
+      "words": [
+        "word-we",
+        "word-are",
+        "word-here",
+        "word-on",
+        "word-time"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Naruto",
+      "text": "I am ready for the test!",
+      "translation": "Em đã sẵn sàng cho bài kiểm tra!",
+      "tokens": [
+        "I",
+        "am",
+        "ready",
+        "for",
+        "the",
+        "test"
+      ],
+      "words": [
+        "word-i",
+        "word-am",
+        "word-ready",
+        "word-for",
+        "word-the",
+        "word-test"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Kakashi",
+      "text": "Good morning. Today, I have a test for you.",
+      "translation": "Chào buổi sáng. Hôm nay thầy có một bài kiểm tra dành cho các em.",
+      "tokens": [
+        "Good",
+        "morning",
+        "Today",
+        "I",
+        "have",
+        "a",
+        "test",
+        "for",
+        "you"
+      ],
+      "words": [
+        "word-good",
+        "word-morning",
+        "word-today",
+        "word-i",
+        "word-have",
+        "word-a",
+        "word-test",
+        "word-for",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Kakashi",
+      "text": "Look, I have two bells. You must take one to pass.",
+      "translation": "Nhìn này, thầy có hai chiếc chuông. Các em phải lấy được một chiếc mới vượt qua.",
+      "tokens": [
+        "Look",
+        "I",
+        "have",
+        "two",
+        "bells",
+        "You",
+        "must",
+        "take",
+        "one",
+        "to",
+        "pass"
+      ],
+      "words": [
+        "word-look",
+        "word-i",
+        "word-have",
+        "word-two",
+        "word-bells",
+        "word-you",
+        "word-must",
+        "word-take",
+        "word-one",
+        "word-to",
+        "word-pass"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Sakura",
+      "text": "But there are three of us!",
+      "translation": "Nhưng có đến ba người chúng em mà!",
+      "tokens": [
+        "But",
+        "there",
+        "are",
+        "three",
+        "of",
+        "us"
+      ],
+      "words": [
+        "word-but",
+        "word-there",
+        "word-are",
+        "word-three",
+        "word-of",
+        "word-us"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Kakashi",
+      "text": "Only two of you can get a bell.",
+      "translation": "Chỉ hai trong số các em có thể lấy được chuông.",
+      "tokens": [
+        "Only",
+        "two",
+        "of",
+        "you",
+        "can",
+        "get",
+        "a",
+        "bell"
+      ],
+      "words": [
+        "word-only",
+        "word-two",
+        "word-of",
+        "word-you",
+        "word-can",
+        "word-get",
+        "word-a",
+        "word-bell"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Naruto",
+      "text": "I can get one by myself!",
+      "translation": "Em có thể tự mình lấy được một chiếc!",
+      "tokens": [
+        "I",
+        "can",
+        "get",
+        "one",
+        "by",
+        "myself"
+      ],
+      "words": [
+        "word-i",
+        "word-can",
+        "word-get",
+        "word-one",
+        "word-by",
+        "word-myself"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Sasuke",
+      "text": "I will work alone too.",
+      "translation": "Em cũng sẽ làm một mình.",
+      "tokens": [
+        "I",
+        "will",
+        "work",
+        "alone",
+        "too"
+      ],
+      "words": [
+        "word-i",
+        "word-will",
+        "word-work",
+        "word-alone",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Sakura",
+      "text": "Wait. We need a plan first.",
+      "translation": "Khoan đã. Chúng ta cần lên kế hoạch trước.",
+      "tokens": [
+        "Wait",
+        "We",
+        "need",
+        "a",
+        "plan",
+        "first"
+      ],
+      "words": [
+        "word-wait",
+        "word-we",
+        "word-need",
+        "word-a",
+        "word-plan",
+        "word-first"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Naruto",
+      "text": "No time! I want to start now!",
+      "translation": "Không còn thời gian đâu! Tớ muốn bắt đầu ngay!",
+      "tokens": [
+        "No",
+        "time",
+        "I",
+        "want",
+        "to",
+        "start",
+        "now"
+      ],
+      "words": [
+        "word-no",
+        "word-time",
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-start",
+        "word-now"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Kakashi",
+      "text": "You have until noon. Good luck!",
+      "translation": "Các em có thời gian đến trưa. Chúc may mắn!",
+      "tokens": [
+        "You",
+        "have",
+        "until",
+        "noon",
+        "Good",
+        "luck"
+      ],
+      "words": [
+        "word-you",
+        "word-have",
+        "word-until",
+        "word-noon",
+        "word-good",
+        "word-luck"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Naruto",
+      "text": "Why can't I catch you?",
+      "translation": "Sao em không thể bắt được thầy chứ?",
+      "tokens": [
+        "Why",
+        "can't",
+        "I",
+        "catch",
+        "you"
+      ],
+      "words": [
+        "word-why",
+        "word-can't",
+        "word-i",
+        "word-catch",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Sasuke",
+      "text": "I can't get a bell either.",
+      "translation": "Em cũng không lấy được chiếc chuông nào.",
+      "tokens": [
+        "I",
+        "can't",
+        "get",
+        "a",
+        "bell",
+        "either"
+      ],
+      "words": [
+        "word-i",
+        "word-can't",
+        "word-get",
+        "word-a",
+        "word-bell",
+        "word-either"
+      ],
+      "phrases": []
+    },
+    "14": {
+      "speaker": "Sakura",
+      "text": "We are not working together.",
+      "translation": "Chúng ta đang không hợp tác với nhau.",
+      "tokens": [
+        "We",
+        "are",
+        "not",
+        "working",
+        "together"
+      ],
+      "words": [
+        "word-we",
+        "word-are",
+        "word-not",
+        "word-working",
+        "word-together"
+      ],
+      "phrases": []
+    },
+    "15": {
+      "speaker": "Kakashi",
+      "text": "The test is over. You have no bells.",
+      "translation": "Bài kiểm tra kết thúc rồi. Các em không có chiếc chuông nào.",
+      "tokens": [
+        "The",
+        "test",
+        "is",
+        "over",
+        "You",
+        "have",
+        "no",
+        "bells"
+      ],
+      "words": [
+        "word-the",
+        "word-test",
+        "word-is",
+        "word-over",
+        "word-you",
+        "word-have",
+        "word-no",
+        "word-bells"
+      ],
+      "phrases": []
+    },
+    "16": {
+      "speaker": "Naruto",
+      "text": "But I tried so hard!",
+      "translation": "Nhưng em đã cố gắng hết sức mà!",
+      "tokens": [
+        "But",
+        "I",
+        "tried",
+        "so",
+        "hard"
+      ],
+      "words": [
+        "word-but",
+        "word-i",
+        "word-tried",
+        "word-so",
+        "word-hard"
+      ],
+      "phrases": []
+    },
+    "17": {
+      "speaker": "Kakashi",
+      "text": "You worked alone. That is the problem.",
+      "translation": "Các em đều làm một mình. Đó chính là vấn đề.",
+      "tokens": [
+        "You",
+        "worked",
+        "alone",
+        "That",
+        "is",
+        "the",
+        "problem"
+      ],
+      "words": [
+        "word-you",
+        "word-worked",
+        "word-alone",
+        "word-that",
+        "word-is",
+        "word-the",
+        "word-problem"
+      ],
+      "phrases": []
+    },
+    "18": {
+      "speaker": "Sakura",
+      "text": "We need to help each other.",
+      "translation": "Chúng ta cần giúp đỡ lẫn nhau.",
+      "tokens": [
+        "We",
+        "need",
+        "to",
+        "help",
+        "each",
+        "other"
+      ],
+      "words": [
+        "word-we",
+        "word-need",
+        "word-to",
+        "word-help",
+        "word-each",
+        "word-other"
+      ],
+      "phrases": []
+    },
+    "19": {
+      "speaker": "Kakashi",
+      "text": "Think about that. We will talk after lunch.",
+      "translation": "Hãy suy nghĩ về điều đó. Chúng ta sẽ nói chuyện sau bữa trưa.",
+      "tokens": [
+        "Think",
+        "about",
+        "that",
+        "We",
+        "will",
+        "talk",
+        "after",
+        "lunch"
+      ],
+      "words": [
+        "word-think",
+        "word-about",
+        "word-that",
+        "word-we",
+        "word-will",
+        "word-talk",
+        "word-after",
+        "word-lunch"
+      ],
+      "phrases": []
+    }
+  }
+}

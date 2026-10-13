@@ -1,0 +1,774 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "naruto-season-1",
+  "dialogueId": "working-together",
+  "characters": {
+    "Kakashi": {
+      "meaning": "Kakashi",
+      "role": ""
+    },
+    "Naruto": {
+      "meaning": "Naruto",
+      "role": ""
+    },
+    "Sakura": {
+      "meaning": "Sakura",
+      "role": ""
+    },
+    "Sasuke": {
+      "meaning": "Sasuke",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-it": {
+      "word": "it",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-lunch": {
+      "word": "lunch",
+      "meaning": "",
+      "pos": []
+    },
+    "word-time": {
+      "word": "time",
+      "meaning": "",
+      "pos": []
+    },
+    "word-naruto": {
+      "word": "naruto",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-must": {
+      "word": "must",
+      "meaning": "",
+      "pos": []
+    },
+    "word-stay": {
+      "word": "stay",
+      "meaning": "",
+      "pos": []
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "",
+      "pos": []
+    },
+    "word-tied": {
+      "word": "tied",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-this": {
+      "word": "this",
+      "meaning": "",
+      "pos": []
+    },
+    "word-post": {
+      "word": "post",
+      "meaning": "",
+      "pos": []
+    },
+    "word-so": {
+      "word": "so",
+      "meaning": "",
+      "pos": []
+    },
+    "word-hungry": {
+      "word": "hungry",
+      "meaning": "",
+      "pos": []
+    },
+    "word-sasuke": {
+      "word": "sasuke",
+      "meaning": "",
+      "pos": []
+    },
+    "word-sakura": {
+      "word": "sakura",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "",
+      "pos": []
+    },
+    "word-eat": {
+      "word": "eat",
+      "meaning": "",
+      "pos": []
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "",
+      "pos": []
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "",
+      "pos": []
+    },
+    "word-give": {
+      "word": "give",
+      "meaning": "",
+      "pos": []
+    },
+    "word-any": {
+      "word": "any",
+      "meaning": "",
+      "pos": []
+    },
+    "word-food": {
+      "word": "food",
+      "meaning": "",
+      "pos": []
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "",
+      "pos": []
+    },
+    "word-needs": {
+      "word": "needs",
+      "meaning": "",
+      "pos": []
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "",
+      "pos": []
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "",
+      "pos": []
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "",
+      "pos": []
+    },
+    "word-rule": {
+      "word": "rule",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "",
+      "pos": []
+    },
+    "word-come": {
+      "word": "come",
+      "meaning": "",
+      "pos": []
+    },
+    "word-back": {
+      "word": "back",
+      "meaning": "",
+      "pos": []
+    },
+    "word-soon": {
+      "word": "soon",
+      "meaning": "",
+      "pos": []
+    },
+    "word-fair": {
+      "word": "fair",
+      "meaning": "",
+      "pos": []
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "",
+      "pos": []
+    },
+    "word-some": {
+      "word": "some",
+      "meaning": "",
+      "pos": []
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "",
+      "pos": []
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "",
+      "pos": []
+    },
+    "word-really": {
+      "word": "really",
+      "meaning": "",
+      "pos": []
+    },
+    "word-kakashi": {
+      "word": "kakashi",
+      "meaning": "",
+      "pos": []
+    },
+    "word-said": {
+      "word": "said",
+      "meaning": "",
+      "pos": []
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "",
+      "pos": []
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "",
+      "pos": []
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "",
+      "pos": []
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "",
+      "pos": []
+    },
+    "word-team": {
+      "word": "team",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "",
+      "pos": []
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "",
+      "pos": []
+    },
+    "word-each": {
+      "word": "each",
+      "meaning": "",
+      "pos": []
+    },
+    "word-other": {
+      "word": "other",
+      "meaning": "",
+      "pos": []
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "",
+      "pos": []
+    },
+    "word-both": {
+      "word": "both",
+      "meaning": "",
+      "pos": []
+    },
+    "word-see": {
+      "word": "see",
+      "meaning": "",
+      "pos": []
+    },
+    "word-did": {
+      "word": "did",
+      "meaning": "",
+      "pos": []
+    },
+    "word-follow": {
+      "word": "follow",
+      "meaning": "",
+      "pos": []
+    },
+    "word-sorry": {
+      "word": "sorry",
+      "meaning": "",
+      "pos": []
+    },
+    "word-our": {
+      "word": "our",
+      "meaning": "",
+      "pos": []
+    },
+    "word-friend": {
+      "word": "friend",
+      "meaning": "",
+      "pos": []
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "",
+      "pos": []
+    },
+    "word-care": {
+      "word": "care",
+      "meaning": "",
+      "pos": []
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "",
+      "pos": []
+    },
+    "word-pass": {
+      "word": "pass",
+      "meaning": "",
+      "pos": []
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "",
+      "pos": []
+    },
+    "word-test": {
+      "word": "test",
+      "meaning": "",
+      "pos": []
+    },
+    "word-helps": {
+      "word": "helps",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Kakashi",
+      "text": "It is lunch time. Naruto, you must stay here.",
+      "translation": "Đến giờ ăn trưa rồi. Naruto, em phải ở lại đây.",
+      "tokens": [
+        "It",
+        "is",
+        "lunch",
+        "time",
+        "Naruto",
+        "you",
+        "must",
+        "stay",
+        "here"
+      ],
+      "words": [
+        "word-it",
+        "word-is",
+        "word-lunch",
+        "word-time",
+        "word-naruto",
+        "word-you",
+        "word-must",
+        "word-stay",
+        "word-here"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Naruto",
+      "text": "I'm tied to this post. I'm so hungry!",
+      "translation": "Tớ bị trói vào cái cọc này. Tớ đói quá!",
+      "tokens": [
+        "I'm",
+        "tied",
+        "to",
+        "this",
+        "post",
+        "I'm",
+        "so",
+        "hungry"
+      ],
+      "words": [
+        "word-i'm",
+        "word-tied",
+        "word-to",
+        "word-this",
+        "word-post",
+        "word-i'm",
+        "word-so",
+        "word-hungry"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Kakashi",
+      "text": "Sasuke, Sakura, you can eat. Do not give Naruto any food.",
+      "translation": "Sasuke, Sakura, hai em có thể ăn. Không được cho Naruto thức ăn.",
+      "tokens": [
+        "Sasuke",
+        "Sakura",
+        "you",
+        "can",
+        "eat",
+        "Do",
+        "not",
+        "give",
+        "Naruto",
+        "any",
+        "food"
+      ],
+      "words": [
+        "word-sasuke",
+        "word-sakura",
+        "word-you",
+        "word-can",
+        "word-eat",
+        "word-do",
+        "word-not",
+        "word-give",
+        "word-naruto",
+        "word-any",
+        "word-food"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Sakura",
+      "text": "But Naruto needs food too.",
+      "translation": "Nhưng Naruto cũng cần ăn mà.",
+      "tokens": [
+        "But",
+        "Naruto",
+        "needs",
+        "food",
+        "too"
+      ],
+      "words": [
+        "word-but",
+        "word-naruto",
+        "word-needs",
+        "word-food",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Kakashi",
+      "text": "That is my rule. I will come back soon.",
+      "translation": "Đó là quy định của thầy. Thầy sẽ sớm quay lại.",
+      "tokens": [
+        "That",
+        "is",
+        "my",
+        "rule",
+        "I",
+        "will",
+        "come",
+        "back",
+        "soon"
+      ],
+      "words": [
+        "word-that",
+        "word-is",
+        "word-my",
+        "word-rule",
+        "word-i",
+        "word-will",
+        "word-come",
+        "word-back",
+        "word-soon"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Naruto",
+      "text": "This is not fair. I want some food.",
+      "translation": "Thật không công bằng. Tớ muốn ăn gì đó.",
+      "tokens": [
+        "This",
+        "is",
+        "not",
+        "fair",
+        "I",
+        "want",
+        "some",
+        "food"
+      ],
+      "words": [
+        "word-this",
+        "word-is",
+        "word-not",
+        "word-fair",
+        "word-i",
+        "word-want",
+        "word-some",
+        "word-food"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Sasuke",
+      "text": "Naruto, you can have some of my lunch.",
+      "translation": "Naruto, cậu có thể ăn một ít bữa trưa của tớ.",
+      "tokens": [
+        "Naruto",
+        "you",
+        "can",
+        "have",
+        "some",
+        "of",
+        "my",
+        "lunch"
+      ],
+      "words": [
+        "word-naruto",
+        "word-you",
+        "word-can",
+        "word-have",
+        "word-some",
+        "word-of",
+        "word-my",
+        "word-lunch"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Naruto",
+      "text": "Really? But Kakashi said no.",
+      "translation": "Thật sao? Nhưng thầy Kakashi đã nói không được mà.",
+      "tokens": [
+        "Really",
+        "But",
+        "Kakashi",
+        "said",
+        "no"
+      ],
+      "words": [
+        "word-really",
+        "word-but",
+        "word-kakashi",
+        "word-said",
+        "word-no"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Sakura",
+      "text": "You can have my food too. We are a team.",
+      "translation": "Cậu cũng có thể ăn đồ ăn của tớ. Chúng ta là một đội.",
+      "tokens": [
+        "You",
+        "can",
+        "have",
+        "my",
+        "food",
+        "too",
+        "We",
+        "are",
+        "a",
+        "team"
+      ],
+      "words": [
+        "word-you",
+        "word-can",
+        "word-have",
+        "word-my",
+        "word-food",
+        "word-too",
+        "word-we",
+        "word-are",
+        "word-a",
+        "word-team"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Sasuke",
+      "text": "Yes. We need to help each other.",
+      "translation": "Đúng vậy. Chúng ta cần giúp đỡ lẫn nhau.",
+      "tokens": [
+        "Yes",
+        "We",
+        "need",
+        "to",
+        "help",
+        "each",
+        "other"
+      ],
+      "words": [
+        "word-yes",
+        "word-we",
+        "word-need",
+        "word-to",
+        "word-help",
+        "word-each",
+        "word-other"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Naruto",
+      "text": "Thank you, both of you.",
+      "translation": "Cảm ơn cả hai cậu.",
+      "tokens": [
+        "Thank",
+        "you",
+        "both",
+        "of",
+        "you"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-both",
+        "word-of",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Kakashi",
+      "text": "I can see you. You did not follow my rule!",
+      "translation": "Thầy thấy hết rồi. Các em đã không làm theo quy định của thầy!",
+      "tokens": [
+        "I",
+        "can",
+        "see",
+        "you",
+        "You",
+        "did",
+        "not",
+        "follow",
+        "my",
+        "rule"
+      ],
+      "words": [
+        "word-i",
+        "word-can",
+        "word-see",
+        "word-you",
+        "word-you",
+        "word-did",
+        "word-not",
+        "word-follow",
+        "word-my",
+        "word-rule"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Sakura",
+      "text": "I'm sorry, but Naruto is our friend.",
+      "translation": "Em xin lỗi, nhưng Naruto là bạn của chúng em.",
+      "tokens": [
+        "I'm",
+        "sorry",
+        "but",
+        "Naruto",
+        "is",
+        "our",
+        "friend"
+      ],
+      "words": [
+        "word-i'm",
+        "word-sorry",
+        "word-but",
+        "word-naruto",
+        "word-is",
+        "word-our",
+        "word-friend"
+      ],
+      "phrases": []
+    },
+    "14": {
+      "speaker": "Kakashi",
+      "text": "Good. You care about each other.",
+      "translation": "Tốt lắm. Các em biết quan tâm đến nhau.",
+      "tokens": [
+        "Good",
+        "You",
+        "care",
+        "about",
+        "each",
+        "other"
+      ],
+      "words": [
+        "word-good",
+        "word-you",
+        "word-care",
+        "word-about",
+        "word-each",
+        "word-other"
+      ],
+      "phrases": []
+    },
+    "15": {
+      "speaker": "Sasuke",
+      "text": "So, did we pass the test?",
+      "translation": "Vậy chúng em đã vượt qua bài kiểm tra chưa?",
+      "tokens": [
+        "So",
+        "did",
+        "we",
+        "pass",
+        "the",
+        "test"
+      ],
+      "words": [
+        "word-so",
+        "word-did",
+        "word-we",
+        "word-pass",
+        "word-the",
+        "word-test"
+      ],
+      "phrases": []
+    },
+    "16": {
+      "speaker": "Kakashi",
+      "text": "Yes! A good team helps each other.",
+      "translation": "Rồi! Một đội tốt luôn giúp đỡ lẫn nhau.",
+      "tokens": [
+        "Yes",
+        "A",
+        "good",
+        "team",
+        "helps",
+        "each",
+        "other"
+      ],
+      "words": [
+        "word-yes",
+        "word-a",
+        "word-good",
+        "word-team",
+        "word-helps",
+        "word-each",
+        "word-other"
+      ],
+      "phrases": []
+    }
+  }
+}

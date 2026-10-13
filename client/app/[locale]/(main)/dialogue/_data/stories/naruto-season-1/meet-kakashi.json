@@ -1,0 +1,1015 @@
+{
+  "metadata": {
+    "courseId": "naruto-season-1",
+    "dialogueId": "meet-kakashi",
+    "contextualGlossaryVersion": 1,
+    "title": "Thầy Kakashi",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Naruto — Ninja cô đơn",
+        "en": "Naruto — The Lonely Ninja"
+      },
+      "courseDescription": {
+        "vi": "Hành trình của Naruto từ một cậu bé cô đơn đến khi trở thành thành viên Đội Bảy.",
+        "en": "Naruto's journey from a lonely boy to becoming a member of Team Seven."
+      },
+      "title": {
+        "vi": "Thầy Kakashi",
+        "en": "Meet Kakashi"
+      },
+      "description": {
+        "vi": "Team Seven meets Kakashi, their new teacher. He asks them to introduce themselves and announces a difficult test.",
+        "en": "Team Seven meets Kakashi, their new teacher. He asks them to introduce themselves and announces a difficult test."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Team Seven meets Kakashi, their new teacher. He asks them to introduce themselves and announces a difficult test.",
+    "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/meet-kakashi.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Sakura",
+      "text": "Our teacher is late.",
+      "translation": "Thầy của chúng ta đến muộn rồi.",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Naruto",
+      "text": "I want to meet him now!",
+      "translation": "Tớ muốn gặp thầy ấy ngay bây giờ!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Kakashi",
+      "text": "Hello. I am Kakashi, your new teacher.",
+      "translation": "Xin chào. Thầy là Kakashi, giáo viên mới của các em.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-01.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Naruto",
+      "text": "You are late!",
+      "translation": "Thầy đến muộn quá!",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Kakashi",
+      "text": "Please tell me your names and your dreams.",
+      "translation": "Hãy cho thầy biết tên và ước mơ của các em nhé.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Sakura",
+      "text": "My name is Sakura. I want to help my team.",
+      "translation": "Em tên là Sakura. Em muốn giúp đỡ đội của mình.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-02.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Sasuke",
+      "text": "I'm Sasuke. I want to be strong.",
+      "translation": "Em là Sasuke. Em muốn trở nên mạnh mẽ.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Naruto",
+      "text": "I'm Naruto! I want to be Hokage!",
+      "translation": "Em là Naruto! Em muốn trở thành Hokage!",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-03.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Kakashi",
+      "text": "Good. Tomorrow, you will have a hard test.",
+      "translation": "Tốt. Ngày mai, các em sẽ có một bài kiểm tra khó.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-03.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Sakura",
+      "text": "A test? Is it hard?",
+      "translation": "Một bài kiểm tra ạ? Nó có khó không thầy?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-03.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Kakashi",
+      "text": "Yes. You must work together.",
+      "translation": "Có. Các em phải hợp tác với nhau.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-04.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Sasuke",
+      "text": "Can I do it alone?",
+      "translation": "Em có thể tự làm một mình không?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sasuke-02.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Kakashi",
+      "text": "No. You can't pass alone.",
+      "translation": "Không. Em không thể vượt qua nếu chỉ làm một mình.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Naruto",
+      "text": "Okay! We can help each other!",
+      "translation": "Được thôi! Chúng ta có thể giúp đỡ lẫn nhau!",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-04.mp3"
+    },
+    {
+      "id": 15,
+      "speaker": "Kakashi",
+      "text": "Good. Be here tomorrow morning.",
+      "translation": "Tốt. Hãy có mặt ở đây vào sáng mai.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-06.mp3"
+    },
+    {
+      "id": 16,
+      "speaker": "Sakura",
+      "text": "Okay. We will be here on time.",
+      "translation": "Vâng. Chúng em sẽ có mặt đúng giờ.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-04.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "new teacher",
+      "pronunciation": "/nuː ˈtiːtʃər/",
+      "meaning": "giáo viên mới",
+      "example": "He is our new teacher."
+    },
+    {
+      "word": "tell me",
+      "pronunciation": "/tel miː/",
+      "meaning": "hãy nói cho tôi biết",
+      "example": "Please tell me your name."
+    },
+    {
+      "word": "dreams",
+      "pronunciation": "/driːmz/",
+      "meaning": "những ước mơ",
+      "example": "We all have dreams."
+    },
+    {
+      "word": "be strong",
+      "pronunciation": "/biː strɔːŋ/",
+      "meaning": "trở nên mạnh mẽ",
+      "example": "I want to be strong."
+    },
+    {
+      "word": "hard test",
+      "pronunciation": "/hɑːrd test/",
+      "meaning": "bài kiểm tra khó",
+      "example": "We have a hard test today."
+    },
+    {
+      "word": "work together",
+      "pronunciation": "/wɝːk təˈɡeðər/",
+      "meaning": "làm việc cùng nhau, hợp tác",
+      "example": "We must work together."
+    },
+    {
+      "word": "each other",
+      "pronunciation": "/iːtʃ ˈʌðər/",
+      "meaning": "lẫn nhau",
+      "example": "Good friends help each other."
+    },
+    {
+      "word": "on time",
+      "pronunciation": "/ɑːn taɪm/",
+      "meaning": "đúng giờ",
+      "example": "Please come to school on time."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Our ", " is late."],
+      "answers": ["teacher"],
+      "speaker": "Sakura",
+      "transcript": "Our teacher is late.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["I ", " to meet him now!"],
+      "answers": ["want"],
+      "speaker": "Naruto",
+      "transcript": "I want to meet him now!",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["I want to ", " him now!"],
+      "answers": ["meet"],
+      "speaker": "Naruto",
+      "transcript": "I want to meet him now!",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Hello. ", " Kakashi, your new teacher."],
+      "answers": ["I am"],
+      "speaker": "Kakashi",
+      "transcript": "Hello. I am Kakashi, your new teacher.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Hello. I am Kakashi, your ", "."],
+      "answers": ["new teacher"],
+      "speaker": "Kakashi",
+      "transcript": "Hello. I am Kakashi, your new teacher.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "mcCategory": "comprehension",
+      "question": "Ai là giáo viên mới của Đội Bảy?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {"vi": "Ai là giáo viên mới của Đội Bảy?", "en": "Who is Team Seven's new teacher?"},
+        "options": [
+          {"vi": "Thầy Iruka", "en": "Iruka"},
+          {"vi": "Thầy Mizuki", "en": "Mizuki"},
+          {"vi": "Thầy Kakashi", "en": "Kakashi"},
+          {"vi": "Hokage", "en": "The Hokage"}
+        ]
+      },
+      "options": ["Thầy Iruka", "Thầy Mizuki", "Thầy Kakashi", "Hokage"],
+      "answer": "Thầy Kakashi",
+      "speaker": "Kakashi",
+      "transcript": "Hello. I am Kakashi, your new teacher.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-01.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["You are ", "!"],
+      "answers": ["late"],
+      "speaker": "Naruto",
+      "transcript": "You are late!",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Please ", " your names and your dreams."],
+      "answers": ["tell me"],
+      "speaker": "Kakashi",
+      "transcript": "Please tell me your names and your dreams.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Please tell me your names and your ", "."],
+      "answers": ["dreams"],
+      "speaker": "Kakashi",
+      "transcript": "Please tell me your names and your dreams.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "multipleChoice",
+      "mcCategory": "usage",
+      "mcTarget": "Please",
+      "question": "Vì sao Kakashi dùng từ 'Please' trong lời nhờ?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {"vi": "Vì sao Kakashi dùng từ 'Please' trong lời nhờ?", "en": "Why does Kakashi use 'Please' in his request?"},
+        "options": [
+          {"vi": "Để nhờ các em giới thiệu một cách lịch sự.", "en": "To politely ask the students to introduce themselves."},
+          {"vi": "Để ra lệnh bắt đầu bài thi.", "en": "To order the students to start the test."},
+          {"vi": "Để yêu cầu các em ngồi xuống.", "en": "To ask the students to sit down."},
+          {"vi": "Để báo rằng thầy chưa sẵn sàng.", "en": "To say that he is not ready."}
+        ]
+      },
+      "options": [
+        "Để nhờ các em giới thiệu một cách lịch sự.",
+        "Để ra lệnh bắt đầu bài thi.",
+        "Để yêu cầu các em ngồi xuống.",
+        "Để báo rằng thầy chưa sẵn sàng."
+      ],
+      "answer": "Để nhờ các em giới thiệu một cách lịch sự.",
+      "speaker": "Kakashi",
+      "transcript": "Please tell me your names and your dreams.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["My ", " is Sakura. I want to help my team."],
+      "answers": ["name"],
+      "speaker": "Sakura",
+      "transcript": "My name is Sakura. I want to help my team.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-02.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["My name is Sakura. I want to ", " my team."],
+      "answers": ["help"],
+      "speaker": "Sakura",
+      "transcript": "My name is Sakura. I want to help my team.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-02.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["", " Sasuke. I want to be strong."],
+      "answers": ["I'm"],
+      "speaker": "Sasuke",
+      "transcript": "I'm Sasuke. I want to be strong.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["I'm Sasuke. I want to be ", "."],
+      "answers": ["strong"],
+      "speaker": "Sasuke",
+      "transcript": "I'm Sasuke. I want to be strong.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["", " Naruto! I want to be Hokage!"],
+      "answers": ["I'm"],
+      "speaker": "Naruto",
+      "transcript": "I'm Naruto! I want to be Hokage!",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-03.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["I'm Naruto! I ", " be Hokage!"],
+      "answers": ["want to"],
+      "speaker": "Naruto",
+      "transcript": "I'm Naruto! I want to be Hokage!",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-03.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Good. ", ", you will have a hard test."],
+      "answers": ["Tomorrow"],
+      "speaker": "Kakashi",
+      "transcript": "Good. Tomorrow, you will have a hard test.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-03.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Good. Tomorrow, you will have a ", "."],
+      "answers": ["hard test"],
+      "speaker": "Kakashi",
+      "transcript": "Good. Tomorrow, you will have a hard test.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-03.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "mcCategory": "grammar",
+      "mcTarget": "will",
+      "question": "Trong câu của Kakashi, 'will' cho biết điều gì?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {"vi": "Trong câu của Kakashi, 'will' cho biết điều gì?", "en": "What does 'will' tell us in Kakashi's sentence?"},
+        "options": [
+          {"vi": "Bài kiểm tra đang diễn ra.", "en": "The test is happening now."},
+          {"vi": "Bài kiểm tra diễn ra mỗi ngày.", "en": "The test happens every day."},
+          {"vi": "Bài kiểm tra đã kết thúc.", "en": "The test has already finished."},
+          {"vi": "Bài kiểm tra sẽ diễn ra sau.", "en": "The test will happen later."}
+        ]
+      },
+      "options": [
+        "Bài kiểm tra đang diễn ra.",
+        "Bài kiểm tra diễn ra mỗi ngày.",
+        "Bài kiểm tra đã kết thúc.",
+        "Bài kiểm tra sẽ diễn ra sau."
+      ],
+      "answer": "Bài kiểm tra sẽ diễn ra sau.",
+      "speaker": "Kakashi",
+      "transcript": "Good. Tomorrow, you will have a hard test.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-03.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["A ", "? Is it hard?"],
+      "answers": ["test"],
+      "speaker": "Sakura",
+      "transcript": "A test? Is it hard?",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-03.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["A test? Is it ", "?"],
+      "answers": ["hard"],
+      "speaker": "Sakura",
+      "transcript": "A test? Is it hard?",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-03.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Yes. You ", " work together."],
+      "answers": ["must"],
+      "speaker": "Kakashi",
+      "transcript": "Yes. You must work together.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-04.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Yes. You must ", "."],
+      "answers": ["work together"],
+      "speaker": "Kakashi",
+      "transcript": "Yes. You must work together.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-04.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 11,
+      "type": "multipleChoice",
+      "mcCategory": "comprehension",
+      "question": "Kakashi muốn các em hợp tác để chuẩn bị cho việc gì?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {"vi": "Kakashi muốn các em hợp tác để chuẩn bị cho việc gì?", "en": "What does Kakashi want the students to work together for?"},
+        "options": [
+          {"vi": "Để đổi sang đội khác.", "en": "To change to another team."},
+          {"vi": "Để vượt qua bài kiểm tra ngày mai.", "en": "To pass tomorrow's test."},
+          {"vi": "Để giới thiệu bản thân lần nữa.", "en": "To introduce themselves again."},
+          {"vi": "Để chọn một giáo viên mới.", "en": "To choose a new teacher."}
+        ]
+      },
+      "options": [
+        "Để đổi sang đội khác.",
+        "Để vượt qua bài kiểm tra ngày mai.",
+        "Để giới thiệu bản thân lần nữa.",
+        "Để chọn một giáo viên mới."
+      ],
+      "answer": "Để vượt qua bài kiểm tra ngày mai.",
+      "speaker": "Kakashi",
+      "transcript": "Yes. You must work together.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-04.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["", " do it alone?"],
+      "answers": ["Can I"],
+      "speaker": "Sasuke",
+      "transcript": "Can I do it alone?",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sasuke-02.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Can I do it ", "?"],
+      "answers": ["alone"],
+      "speaker": "Sasuke",
+      "transcript": "Can I do it alone?",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sasuke-02.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["No. You ", " pass alone."],
+      "answers": ["can't"],
+      "speaker": "Kakashi",
+      "transcript": "No. You can't pass alone.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 28,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["No. You can't ", " alone."],
+      "answers": ["pass"],
+      "speaker": "Kakashi",
+      "transcript": "No. You can't pass alone.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 29,
+      "dialogueLineId": 13,
+      "type": "multipleChoice",
+      "mcCategory": "comprehension",
+      "question": "Theo Kakashi, Sasuke cần thay đổi điều gì để vượt qua bài kiểm tra?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {"vi": "Theo Kakashi, Sasuke cần thay đổi điều gì để vượt qua bài kiểm tra?", "en": "According to Kakashi, what does Sasuke need to change to pass the test?"},
+        "options": [
+          {"vi": "Không chỉ làm việc một mình nữa.", "en": "Stop working only by himself."},
+          {"vi": "Tập luyện một mình nhiều hơn.", "en": "Train alone more often."},
+          {"vi": "Xin chuyển sang một đội khác.", "en": "Ask to join a different team."},
+          {"vi": "Để Naruto làm bài kiểm tra thay mình.", "en": "Let Naruto take the test for him."}
+        ]
+      },
+      "options": [
+        "Không chỉ làm việc một mình nữa.",
+        "Tập luyện một mình nhiều hơn.",
+        "Xin chuyển sang một đội khác.",
+        "Để Naruto làm bài kiểm tra thay mình."
+      ],
+      "answer": "Không chỉ làm việc một mình nữa.",
+      "speaker": "Kakashi",
+      "transcript": "No. You can't pass alone.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 30,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Okay! We can ", " each other!"],
+      "answers": ["help"],
+      "speaker": "Naruto",
+      "transcript": "Okay! We can help each other!",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-04.mp3"
+    },
+    {
+      "id": 31,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Okay! We can help ", "!"],
+      "answers": ["each other"],
+      "speaker": "Naruto",
+      "transcript": "Okay! We can help each other!",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-04.mp3"
+    },
+    {
+      "id": 32,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Good. ", " tomorrow morning."],
+      "answers": ["Be here"],
+      "speaker": "Kakashi",
+      "transcript": "Good. Be here tomorrow morning.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-06.mp3"
+    },
+    {
+      "id": 33,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Good. Be here ", "."],
+      "answers": ["tomorrow morning"],
+      "speaker": "Kakashi",
+      "transcript": "Good. Be here tomorrow morning.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-06.mp3"
+    },
+    {
+      "id": 34,
+      "dialogueLineId": 16,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Okay. We will ", " on time."],
+      "answers": ["be here"],
+      "speaker": "Sakura",
+      "transcript": "Okay. We will be here on time.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-04.mp3"
+    },
+    {
+      "id": 35,
+      "dialogueLineId": 16,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Okay. We will be here ", "."],
+      "answers": ["on time"],
+      "speaker": "Sakura",
+      "transcript": "Okay. We will be here on time.",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-04.mp3"
+    },
+    {
+      "id": 36,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập toàn bộ hội thoại",
+          "en": "Review the full dialogue"
+        },
+        "instruction": {
+          "vi": "Điền các từ còn thiếu để hoàn thành toàn bộ hội thoại.",
+          "en": "Fill in the missing words to complete the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Sakura",
+          "parts": [
+            "Our ",
+            {"id": "1", "blank": "teacher"},
+            " is late."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Naruto",
+          "parts": [
+            "I want to ",
+            {"id": "2", "blank": "meet"},
+            " him now!"
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Kakashi",
+          "parts": [
+            "Hello. I am Kakashi, your ",
+            {"id": "3", "blank": "new teacher"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Naruto",
+          "parts": [
+            "You are ",
+            {"id": "4", "blank": "late"},
+            "!"
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Kakashi",
+          "parts": [
+            "Please tell me your ",
+            {"id": "5", "blank": "names"},
+            " and your dreams."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Sakura",
+          "parts": [
+            "My name is Sakura. I want to ",
+            {"id": "6", "blank": "help"},
+            " my team."
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Sasuke",
+          "parts": [
+            "I'm Sasuke. I want to be ",
+            {"id": "7", "blank": "strong"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Naruto",
+          "parts": [
+            "I'm Naruto! I want to be ",
+            {"id": "8", "blank": "Hokage"},
+            "!"
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Kakashi",
+          "parts": [
+            "Good. Tomorrow, you will have a ",
+            {"id": "9", "blank": "hard test"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Sakura",
+          "parts": [
+            "A test? Is it ",
+            {"id": "10", "blank": "hard"},
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Kakashi",
+          "parts": [
+            "Yes. You must ",
+            {"id": "11", "blank": "work together"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Sasuke",
+          "parts": [
+            "Can I do it ",
+            {"id": "12", "blank": "alone"},
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Kakashi",
+          "parts": [
+            "No. You can't ",
+            {"id": "13", "blank": "pass"},
+            " alone."
+          ]
+        },
+        {
+          "dialogueLineId": 14,
+          "speaker": "Naruto",
+          "parts": [
+            "Okay! We can help ",
+            {"id": "14", "blank": "each other"},
+            "!"
+          ]
+        },
+        {
+          "dialogueLineId": 15,
+          "speaker": "Kakashi",
+          "parts": [
+            "Good. Be here ",
+            {"id": "15", "blank": "tomorrow morning"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 16,
+          "speaker": "Sakura",
+          "parts": [
+            "Okay. We will be here ",
+            {"id": "16", "blank": "on time"},
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Will — Nói về tương lai",
+      "explanation": "Dùng will + động từ nguyên mẫu để nói về điều sẽ xảy ra trong tương lai. Ví dụ: You will have a test. (Bạn sẽ có một bài kiểm tra.)",
+      "localized": {
+        "title": {
+          "vi": "Will — Nói về tương lai",
+          "en": "Will — Talking about the future"
+        },
+        "explanation": {
+          "vi": "Dùng will + động từ nguyên mẫu để nói về điều sẽ xảy ra trong tương lai. Ví dụ: You will have a test. (Bạn sẽ có một bài kiểm tra.)",
+          "en": "Use will + the base form of a verb to talk about something that will happen in the future. Example: You will have a test."
+        }
+      },
+      "example": "Tomorrow, you will have a hard test."
+    },
+    {
+      "title": "Must — Diễn tả điều bắt buộc",
+      "explanation": "Dùng must + động từ nguyên mẫu khi nói về điều cần phải làm. Ví dụ: You must work together. (Các bạn phải hợp tác với nhau.)",
+      "localized": {
+        "title": {
+          "vi": "Must — Diễn tả điều bắt buộc",
+          "en": "Must — Expressing obligation"
+        },
+        "explanation": {
+          "vi": "Dùng must + động từ nguyên mẫu khi nói về điều cần phải làm. Ví dụ: You must work together. (Các bạn phải hợp tác với nhau.)",
+          "en": "Use must + the base form of a verb to say that something is necessary. Example: You must work together."
+        }
+      },
+      "example": "You must work together."
+    }
+  ]
+}

@@ -28,4 +28,56 @@ export const narutoSeason1Media = {
 			"Iruka": "/stories/naruto-season-1/the-lonely-boy/shared/iruka.png",
 		},
 	},
+	"a-new-friend": {
+		scene: "/stories/naruto-season-1/a-new-friend/bg.png",
+		characters: {
+			"Konohamaru": "/stories/naruto-season-1/a-new-friend/shared/konohamaru.png",
+			"Naruto": "/stories/naruto-season-1/a-new-friend/shared/naruto.png",
+		},
+	},
+	"team-seven": {
+		scene: "/stories/naruto-season-1/team-seven/bg.png",
+		characters: {
+			"Iruka": "/stories/naruto-season-1/team-seven/shared/iruka.png",
+			"Naruto": "/stories/naruto-season-1/team-seven/shared/naruto.png",
+			"Sasuke": "/stories/naruto-season-1/team-seven/shared/sasuke.png",
+			"Sakura": "/stories/naruto-season-1/team-seven/shared/sakura.png",
+		},
+	},
+	"meet-kakashi": {
+		scene: "/stories/naruto-season-1/meet-kakashi/bg.png",
+		characters: {
+			"Kakashi": "/stories/naruto-season-1/meet-kakashi/shared/kakashi.png",
+			"Sakura": "/stories/naruto-season-1/meet-kakashi/shared/sakura.png",
+			"Naruto": "/stories/naruto-season-1/meet-kakashi/shared/naruto.png",
+			"Sasuke": "/stories/naruto-season-1/team-seven/shared/sasuke.png",
+		},
+	},
+	"the-bell-test": {
+		scene: "/stories/naruto-season-1/the-bell-test/bg.png",
+		characters: {
+			"Kakashi": "/stories/naruto-season-1/meet-kakashi/shared/kakashi.png",
+			"Sakura": "/stories/naruto-season-1/the-bell-test/shared/sakura.png",
+			"Naruto": "/stories/naruto-season-1/the-bell-test/shared/naruto.png",
+			"Sasuke": "/stories/naruto-season-1/the-bell-test/shared/sasuke.png",
+		},
+	},
+	"working-together": {
+		scene: "/stories/naruto-season-1/working-together/bg.png",
+		characters: {
+			"Kakashi": "/stories/naruto-season-1/meet-kakashi/shared/kakashi.png",
+			"Sakura": "/stories/naruto-season-1/working-together/shared/sakura.png",
+			"Naruto": "/stories/naruto-season-1/working-together/shared/naruto.png",
+			"Sasuke": "/stories/naruto-season-1/working-together/shared/sasuke.png",
+		},
+	},
+	"a-real-team": {
+		scene: "/stories/naruto-season-1/a-real-team/bg.png",
+		characters: {
+			"Kakashi": "/stories/naruto-season-1/meet-kakashi/shared/kakashi.png",
+			"Naruto": "/stories/naruto-season-1/working-together/shared/naruto.png",
+			"Sakura": "/stories/naruto-season-1/team-seven/shared/sakura.png",
+			"Sasuke": "/stories/naruto-season-1/team-seven/shared/sasuke.png",
+		},
+	},
 };

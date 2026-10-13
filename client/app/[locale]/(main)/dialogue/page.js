@@ -41,6 +41,7 @@ const courseImages = {
 	"ten-minutes-a-day": "/stories/ten-minutes-a-day/thumbnails/ten-minutes-a-day.png",
 	"grateful": "/stories/grateful/thumbnails/grateful.png",
 	"a-small-surprise": "/stories/a-small-surprise/thumbnails/a-small-surprise.png",
+	"naruto-season-1": "/stories/naruto-season-1/thumbnails/naruto-season-1.png",
 };
 
 function getCourseImage(courseId) {

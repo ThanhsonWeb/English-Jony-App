@@ -1,0 +1,1044 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "naruto-season-1",
+  "dialogueId": "team-seven",
+  "characters": {
+    "Iruka": {
+      "meaning": "Iruka",
+      "role": "thầy ninja của Naruto"
+    },
+    "Naruto": {
+      "meaning": "Naruto",
+      "role": "thành viên mới của Đội Bảy"
+    },
+    "Sakura": {
+      "meaning": "Sakura",
+      "role": "thành viên của Đội Bảy"
+    },
+    "Sasuke": {
+      "meaning": "Sasuke",
+      "role": "thành viên của Đội Bảy"
+    }
+  },
+  "entries": {
+    "word-naruto": {
+      "word": "naruto",
+      "meaning": "Naruto",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "của em, của cậu (tùy người nói)",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-new": {
+      "word": "new",
+      "meaning": "mới",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-team": {
+      "word": "team",
+      "meaning": "đội, nhóm",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "là",
+      "pos": [
+        "be verb"
+      ]
+    },
+    "word-seven": {
+      "word": "seven",
+      "meaning": "Bảy (tên riêng của đội)",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-who": {
+      "word": "who",
+      "meaning": "ai",
+      "pos": [
+        "question word"
+      ]
+    },
+    "word-on": {
+      "word": "on",
+      "meaning": "trong; thuộc về",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "của tớ; của em",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-sasuke": {
+      "word": "sasuke",
+      "meaning": "Sasuke",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-and": {
+      "word": "and",
+      "meaning": "và",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-sakura": {
+      "word": "sakura",
+      "meaning": "Sakura",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "là",
+      "pos": [
+        "be verb"
+      ]
+    },
+    "word-teammates": {
+      "word": "teammates",
+      "meaning": "đồng đội",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "chúng ta",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "(mạo từ xác định, thường không dịch)",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-same": {
+      "word": "same",
+      "meaning": "cùng; giống nhau",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "ừ; vâng",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "tớ; em",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "là; cảm thấy",
+      "pos": [
+        "be verb"
+      ]
+    },
+    "word-happy": {
+      "word": "happy",
+      "meaning": "vui",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "(dấu hiệu động từ nguyên mẫu)",
+      "pos": [
+        "infinitive marker"
+      ]
+    },
+    "word-work": {
+      "word": "work",
+      "meaning": "làm việc; hợp tác",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-with": {
+      "word": "with",
+      "meaning": "với",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "gì",
+      "pos": [
+        "question word"
+      ]
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "còn về; về",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "tớ; em",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-please": {
+      "word": "please",
+      "meaning": "xin hãy; nhé",
+      "pos": [
+        "polite expression"
+      ]
+    },
+    "word-be": {
+      "word": "be",
+      "meaning": "là; hãy",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-serious": {
+      "word": "serious",
+      "meaning": "nghiêm túc",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "phải (trong have to)",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-together": {
+      "word": "together",
+      "meaning": "cùng nhau",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-like": {
+      "word": "like",
+      "meaning": "thích",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-alone": {
+      "word": "alone",
+      "meaning": "một mình",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "nhưng",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "một (mạo từ không xác định)",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "bây giờ",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "cậu, các em (tùy người nói)",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-talk": {
+      "word": "talk",
+      "meaning": "nói",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "quá",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-much": {
+      "word": "much",
+      "meaning": "nhiều",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-always": {
+      "word": "always",
+      "meaning": "luôn luôn",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-so": {
+      "word": "so",
+      "meaning": "rất",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-quiet": {
+      "word": "quiet",
+      "meaning": "im lặng",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-stop": {
+      "word": "stop",
+      "meaning": "dừng lại",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-everyone": {
+      "word": "everyone",
+      "meaning": "mọi người",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-all": {
+      "word": "all",
+      "meaning": "tất cả",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-different": {
+      "word": "different",
+      "meaning": "khác nhau",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "tốt",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "giúp",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-each": {
+      "word": "each",
+      "meaning": "mỗi",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-other": {
+      "word": "other",
+      "meaning": "nhau; người khác",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "được; vâng",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "muốn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-us": {
+      "word": "us",
+      "meaning": "chúng ta",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "làm",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-well": {
+      "word": "well",
+      "meaning": "tốt",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "sẽ",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-try": {
+      "word": "try",
+      "meaning": "thử; cố gắng",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-great": {
+      "word": "great",
+      "meaning": "tuyệt vời",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-meet": {
+      "word": "meet",
+      "meaning": "gặp",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-teacher": {
+      "word": "teacher",
+      "meaning": "thầy, cô giáo",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-tomorrow": {
+      "word": "tomorrow",
+      "meaning": "ngày mai",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "phrase-team-seven": {
+      "word": "team seven",
+      "meaning": "Đội Bảy",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-on-my-team": {
+      "word": "on my team",
+      "meaning": "trong đội của tớ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-same-team": {
+      "word": "same team",
+      "meaning": "cùng một đội",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-be-serious": {
+      "word": "be serious",
+      "meaning": "nghiêm túc",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-work-together": {
+      "word": "work together",
+      "meaning": "hợp tác cùng nhau",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-work-alone": {
+      "word": "work alone",
+      "meaning": "làm việc một mình",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-too-much": {
+      "word": "too much",
+      "meaning": "quá nhiều",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-each-other": {
+      "word": "each other",
+      "meaning": "lẫn nhau",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-do-well": {
+      "word": "do well",
+      "meaning": "làm tốt",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-great-team": {
+      "word": "great team",
+      "meaning": "đội tuyệt vời",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-work-with": {
+      "word": "work with",
+      "meaning": "làm việc cùng",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-help-each-other": {
+      "word": "help each other",
+      "meaning": "giúp đỡ lẫn nhau",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Iruka",
+      "text": "Naruto, your new team is Team Seven.",
+      "translation": "Naruto, đội mới của em là Đội Bảy.",
+      "tokens": [
+        "Naruto",
+        "your",
+        "new",
+        "team",
+        "is",
+        "Team",
+        "Seven"
+      ],
+      "words": [
+        "word-naruto",
+        "word-your",
+        "word-new",
+        "word-team",
+        "word-is",
+        "word-team",
+        "word-seven"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "Team Seven",
+          "entry": "phrase-team-seven"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Naruto",
+      "text": "Team Seven? Who is on my team?",
+      "translation": "Đội Bảy ạ? Ai ở trong đội của em vậy?",
+      "tokens": [
+        "Team",
+        "Seven",
+        "Who",
+        "is",
+        "on",
+        "my",
+        "team"
+      ],
+      "words": [
+        "word-team",
+        "word-seven",
+        "word-who",
+        "word-is",
+        "word-on",
+        "word-my",
+        "word-team"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Team Seven",
+          "entry": "phrase-team-seven"
+        },
+        {
+          "start": 4,
+          "end": 6,
+          "text": "on my team",
+          "entry": "phrase-on-my-team"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Iruka",
+      "text": "Sasuke and Sakura are your teammates.",
+      "translation": "Sasuke và Sakura là đồng đội của em.",
+      "tokens": [
+        "Sasuke",
+        "and",
+        "Sakura",
+        "are",
+        "your",
+        "teammates"
+      ],
+      "words": [
+        "word-sasuke",
+        "word-and",
+        "word-sakura",
+        "word-are",
+        "word-your",
+        "word-teammates"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Naruto",
+      "text": "Sakura! We are on the same team!",
+      "translation": "Sakura! Chúng ta ở cùng một đội rồi!",
+      "tokens": [
+        "Sakura",
+        "We",
+        "are",
+        "on",
+        "the",
+        "same",
+        "team"
+      ],
+      "words": [
+        "word-sakura",
+        "word-we",
+        "word-are",
+        "word-on",
+        "word-the",
+        "word-same",
+        "word-team"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "same team",
+          "entry": "phrase-same-team"
+        }
+      ]
+    },
+    "5": {
+      "speaker": "Sakura",
+      "text": "Yes, Naruto. I am happy to work with Sasuke.",
+      "translation": "Ừ, Naruto. Tớ rất vui khi được làm việc cùng Sasuke.",
+      "tokens": [
+        "Yes",
+        "Naruto",
+        "I",
+        "am",
+        "happy",
+        "to",
+        "work",
+        "with",
+        "Sasuke"
+      ],
+      "words": [
+        "word-yes",
+        "word-naruto",
+        "word-i",
+        "word-am",
+        "word-happy",
+        "word-to",
+        "word-work",
+        "word-with",
+        "word-sasuke"
+      ],
+      "phrases": [
+        {
+          "start": 6,
+          "end": 7,
+          "text": "work with",
+          "entry": "phrase-work-with"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Naruto",
+      "text": "What about me?",
+      "translation": "Còn tớ thì sao?",
+      "tokens": [
+        "What",
+        "about",
+        "me"
+      ],
+      "words": [
+        "word-what",
+        "word-about",
+        "word-me"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Sakura",
+      "text": "Please be serious, Naruto. We have to work together.",
+      "translation": "Nghiêm túc đi, Naruto. Chúng ta phải cùng nhau hợp tác.",
+      "tokens": [
+        "Please",
+        "be",
+        "serious",
+        "Naruto",
+        "We",
+        "have",
+        "to",
+        "work",
+        "together"
+      ],
+      "words": [
+        "word-please",
+        "word-be",
+        "word-serious",
+        "word-naruto",
+        "word-we",
+        "word-have",
+        "word-to",
+        "word-work",
+        "word-together"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "text": "be serious",
+          "entry": "phrase-be-serious"
+        },
+        {
+          "start": 7,
+          "end": 8,
+          "text": "work together",
+          "entry": "phrase-work-together"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Sasuke",
+      "text": "I like to work alone.",
+      "translation": "Tớ thích làm việc một mình.",
+      "tokens": [
+        "I",
+        "like",
+        "to",
+        "work",
+        "alone"
+      ],
+      "words": [
+        "word-i",
+        "word-like",
+        "word-to",
+        "word-work",
+        "word-alone"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "work alone",
+          "entry": "phrase-work-alone"
+        }
+      ]
+    },
+    "9": {
+      "speaker": "Naruto",
+      "text": "But we are a team now!",
+      "translation": "Nhưng bây giờ chúng ta là một đội mà!",
+      "tokens": [
+        "But",
+        "we",
+        "are",
+        "a",
+        "team",
+        "now"
+      ],
+      "words": [
+        "word-but",
+        "word-we",
+        "word-are",
+        "word-a",
+        "word-team",
+        "word-now"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Sasuke",
+      "text": "You talk too much, Naruto.",
+      "translation": "Cậu nói nhiều quá đấy, Naruto.",
+      "tokens": [
+        "You",
+        "talk",
+        "too",
+        "much",
+        "Naruto"
+      ],
+      "words": [
+        "word-you",
+        "word-talk",
+        "word-too",
+        "word-much",
+        "word-naruto"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "too much",
+          "entry": "phrase-too-much"
+        }
+      ]
+    },
+    "11": {
+      "speaker": "Naruto",
+      "text": "And you are always so quiet!",
+      "translation": "Còn cậu thì lúc nào cũng im lặng!",
+      "tokens": [
+        "And",
+        "you",
+        "are",
+        "always",
+        "so",
+        "quiet"
+      ],
+      "words": [
+        "word-and",
+        "word-you",
+        "word-are",
+        "word-always",
+        "word-so",
+        "word-quiet"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Iruka",
+      "text": "Stop, everyone. You are all different.",
+      "translation": "Mọi người dừng lại nào. Các em đều khác nhau.",
+      "tokens": [
+        "Stop",
+        "everyone",
+        "You",
+        "are",
+        "all",
+        "different"
+      ],
+      "words": [
+        "word-stop",
+        "word-everyone",
+        "word-you",
+        "word-are",
+        "word-all",
+        "word-different"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Iruka",
+      "text": "Good teammates help each other.",
+      "translation": "Đồng đội tốt luôn giúp đỡ lẫn nhau.",
+      "tokens": [
+        "Good",
+        "teammates",
+        "help",
+        "each",
+        "other"
+      ],
+      "words": [
+        "word-good",
+        "word-teammates",
+        "word-help",
+        "word-each",
+        "word-other"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "each other",
+          "entry": "phrase-each-other"
+        },
+        {
+          "start": 2,
+          "end": 4,
+          "text": "help each other",
+          "entry": "phrase-help-each-other"
+        }
+      ]
+    },
+    "14": {
+      "speaker": "Sakura",
+      "text": "Okay. I want us to do well.",
+      "translation": "Được rồi. Tớ muốn cả đội làm tốt.",
+      "tokens": [
+        "Okay",
+        "I",
+        "want",
+        "us",
+        "to",
+        "do",
+        "well"
+      ],
+      "words": [
+        "word-okay",
+        "word-i",
+        "word-want",
+        "word-us",
+        "word-to",
+        "word-do",
+        "word-well"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "do well",
+          "entry": "phrase-do-well"
+        }
+      ]
+    },
+    "15": {
+      "speaker": "Sasuke",
+      "text": "I will try to work with you.",
+      "translation": "Tớ sẽ cố gắng hợp tác với các cậu.",
+      "tokens": [
+        "I",
+        "will",
+        "try",
+        "to",
+        "work",
+        "with",
+        "you"
+      ],
+      "words": [
+        "word-i",
+        "word-will",
+        "word-try",
+        "word-to",
+        "word-work",
+        "word-with",
+        "word-you"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "work with",
+          "entry": "phrase-work-with"
+        }
+      ]
+    },
+    "16": {
+      "speaker": "Naruto",
+      "text": "Me too! We can be a great team!",
+      "translation": "Tớ cũng vậy! Chúng ta có thể trở thành một đội tuyệt vời!",
+      "tokens": [
+        "Me",
+        "too",
+        "We",
+        "can",
+        "be",
+        "a",
+        "great",
+        "team"
+      ],
+      "words": [
+        "word-me",
+        "word-too",
+        "word-we",
+        "word-can",
+        "word-be",
+        "word-a",
+        "word-great",
+        "word-team"
+      ],
+      "phrases": [
+        {
+          "start": 6,
+          "end": 7,
+          "text": "great team",
+          "entry": "phrase-great-team"
+        }
+      ]
+    },
+    "17": {
+      "speaker": "Iruka",
+      "text": "Good. You will meet your teacher tomorrow.",
+      "translation": "Tốt. Ngày mai các em sẽ gặp thầy hướng dẫn của mình.",
+      "tokens": [
+        "Good",
+        "You",
+        "will",
+        "meet",
+        "your",
+        "teacher",
+        "tomorrow"
+      ],
+      "words": [
+        "word-good",
+        "word-you",
+        "word-will",
+        "word-meet",
+        "word-your",
+        "word-teacher",
+        "word-tomorrow"
+      ],
+      "phrases": []
+    }
+  }
+}

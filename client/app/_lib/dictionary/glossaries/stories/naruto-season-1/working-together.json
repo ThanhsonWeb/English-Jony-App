@@ -1,0 +1,1276 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "naruto-season-1",
+  "dialogueId": "working-together",
+  "characters": {
+    "Kakashi": {
+      "meaning": "Kakashi",
+      "role": "Thầy giáo hướng dẫn Đội 7"
+    },
+    "Naruto": {
+      "meaning": "Naruto",
+      "role": "Thành viên Đội 7"
+    },
+    "Sakura": {
+      "meaning": "Sakura",
+      "role": "Thành viên Đội 7"
+    },
+    "Sasuke": {
+      "meaning": "Sasuke",
+      "role": "Thành viên Đội 7"
+    }
+  },
+  "entries": {
+    "word-it": {
+      "word": "it",
+      "meaning": "chủ ngữ giả",
+      "pos": [
+        "pronoun"
+      ],
+      "note": "Trong “It is lunch time”, it là chủ ngữ giả và không dịch riêng."
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "là; thì",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-lunch": {
+      "word": "lunch",
+      "meaning": "bữa trưa",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-time": {
+      "word": "time",
+      "meaning": "giờ; thời gian",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-naruto": {
+      "word": "naruto",
+      "meaning": "Naruto",
+      "pos": [
+        "proper name"
+      ]
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "em; các em",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-must": {
+      "word": "must",
+      "meaning": "phải",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-stay": {
+      "word": "stay",
+      "meaning": "ở lại",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "ở đây",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "dạng rút gọn của I am",
+      "pos": [
+        "contraction"
+      ],
+      "note": "Dạng rút gọn của I am; nghĩa cụ thể tùy phần theo sau và người nói."
+    },
+    "word-tied": {
+      "word": "tied",
+      "meaning": "bị trói",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "đến; đánh dấu động từ nguyên mẫu",
+      "pos": [
+        "preposition",
+        "particle"
+      ],
+      "note": "Trong “tied to”, to chỉ điểm gắn vào; trong “need to help”, nó đánh dấu động từ nguyên mẫu."
+    },
+    "word-this": {
+      "word": "this",
+      "meaning": "này; cái này",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-post": {
+      "word": "post",
+      "meaning": "cái cọc",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-so": {
+      "word": "so",
+      "meaning": "quá; rất",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-hungry": {
+      "word": "hungry",
+      "meaning": "đói",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-sasuke": {
+      "word": "sasuke",
+      "meaning": "Sasuke",
+      "pos": [
+        "proper name"
+      ]
+    },
+    "word-sakura": {
+      "word": "sakura",
+      "meaning": "Sakura",
+      "pos": [
+        "proper name"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-eat": {
+      "word": "eat",
+      "meaning": "ăn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "trợ động từ trong câu mệnh lệnh phủ định",
+      "pos": [
+        "auxiliary verb"
+      ],
+      "note": "Do not đứng trước động từ để tạo lời cấm hoặc yêu cầu không làm việc gì."
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "không",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-give": {
+      "word": "give",
+      "meaning": "cho; đưa",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-any": {
+      "word": "any",
+      "meaning": "chút nào; bất kỳ",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-food": {
+      "word": "food",
+      "meaning": "thức ăn; đồ ăn",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "nhưng",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-needs": {
+      "word": "needs",
+      "meaning": "cần",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "cũng",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "đó; điều đó",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "của tôi; của mình",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-rule": {
+      "word": "rule",
+      "meaning": "quy định",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "em; tớ",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "sẽ",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-come": {
+      "word": "come",
+      "meaning": "đến",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-back": {
+      "word": "back",
+      "meaning": "quay lại",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-soon": {
+      "word": "soon",
+      "meaning": "sớm",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-fair": {
+      "word": "fair",
+      "meaning": "công bằng",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "muốn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-some": {
+      "word": "some",
+      "meaning": "một ít; chút gì đó",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "ăn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "của; trong số",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-really": {
+      "word": "really",
+      "meaning": "thật sao",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-kakashi": {
+      "word": "kakashi",
+      "meaning": "Kakashi",
+      "pos": [
+        "proper name"
+      ]
+    },
+    "word-said": {
+      "word": "said",
+      "meaning": "đã nói",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "không được",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "chúng ta; chúng em",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "là",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "một (mạo từ)",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-team": {
+      "word": "team",
+      "meaning": "đội; nhóm",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "đúng vậy; rồi",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "cần",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "giúp đỡ",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-each": {
+      "word": "each",
+      "meaning": "mỗi",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-other": {
+      "word": "other",
+      "meaning": "người khác",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "cảm ơn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-both": {
+      "word": "both",
+      "meaning": "cả hai",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-see": {
+      "word": "see",
+      "meaning": "thấy",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-did": {
+      "word": "did",
+      "meaning": "trợ động từ chỉ quá khứ",
+      "pos": [
+        "auxiliary verb"
+      ],
+      "note": "Trong câu hỏi quá khứ, did đứng trước chủ ngữ và động từ nguyên mẫu; thường không dịch riêng."
+    },
+    "word-follow": {
+      "word": "follow",
+      "meaning": "làm theo; tuân theo",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-sorry": {
+      "word": "sorry",
+      "meaning": "xin lỗi",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-our": {
+      "word": "our",
+      "meaning": "của chúng em",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-friend": {
+      "word": "friend",
+      "meaning": "bạn",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "tốt",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-care": {
+      "word": "care",
+      "meaning": "quan tâm",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "đến; về",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-pass": {
+      "word": "pass",
+      "meaning": "vượt qua",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "mạo từ xác định",
+      "pos": [
+        "article"
+      ],
+      "note": "Dùng trước danh từ đã xác định; tiếng Việt thường không dịch riêng."
+    },
+    "word-test": {
+      "word": "test",
+      "meaning": "bài kiểm tra",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-helps": {
+      "word": "helps",
+      "meaning": "giúp đỡ",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-you-naruto": {
+      "word": "you",
+      "meaning": "em",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-you-students": {
+      "word": "you",
+      "meaning": "các em",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-you-cau": {
+      "word": "you",
+      "meaning": "cậu",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-im-naruto": {
+      "word": "i'm",
+      "meaning": "tớ đang; tớ bị",
+      "pos": [
+        "contraction"
+      ]
+    },
+    "word-im-sakura": {
+      "word": "i'm",
+      "meaning": "em",
+      "pos": [
+        "contraction"
+      ]
+    },
+    "word-i-kakashi": {
+      "word": "i",
+      "meaning": "thầy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-i-naruto-familiar": {
+      "word": "i",
+      "meaning": "tớ",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-my-kakashi": {
+      "word": "my",
+      "meaning": "của thầy",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-my-sasuke": {
+      "word": "my",
+      "meaning": "của tớ",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-we-students": {
+      "word": "we",
+      "meaning": "chúng em",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-of-lunch": {
+      "word": "of",
+      "meaning": "của",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-of-you": {
+      "word": "of",
+      "meaning": "trong số",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-that-rule": {
+      "word": "that",
+      "meaning": "đó",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-that-fair": {
+      "word": "this",
+      "meaning": "điều này",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "phrase-lunch-time": {
+      "word": "lunch time",
+      "meaning": "giờ ăn trưa",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-stay-here": {
+      "word": "stay here",
+      "meaning": "ở lại đây",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-tied-to": {
+      "word": "tied to",
+      "meaning": "bị trói vào",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-so-hungry": {
+      "word": "so hungry",
+      "meaning": "đói quá",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-do-not": {
+      "word": "Do not",
+      "meaning": "không được; đừng",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-come-back": {
+      "word": "come back",
+      "meaning": "quay lại",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-some-food": {
+      "word": "some food",
+      "meaning": "một ít thức ăn",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-some-of-my-lunch": {
+      "word": "some of my lunch",
+      "meaning": "một ít bữa trưa của tớ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-both-of-you": {
+      "word": "both of you",
+      "meaning": "cả hai cậu",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-thank-you": {
+      "word": "Thank you",
+      "meaning": "cảm ơn",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-im-sorry": {
+      "word": "I'm sorry",
+      "meaning": "em xin lỗi",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-care-about": {
+      "word": "care about",
+      "meaning": "quan tâm đến",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-pass-the-test": {
+      "word": "pass the test",
+      "meaning": "vượt qua bài kiểm tra",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-a-team": {
+      "word": "a team",
+      "meaning": "một đội",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-good-team": {
+      "word": "good team",
+      "meaning": "đội tốt",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-each-other": {
+      "word": "each other",
+      "meaning": "lẫn nhau",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-help-each-other": {
+      "word": "help each other",
+      "meaning": "giúp đỡ lẫn nhau",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-helps-each-other": {
+      "word": "helps each other",
+      "meaning": "giúp đỡ lẫn nhau",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Kakashi",
+      "text": "It is lunch time. Naruto, you must stay here.",
+      "translation": "Đến giờ ăn trưa rồi. Naruto, em phải ở lại đây.",
+      "tokens": [
+        "It",
+        "is",
+        "lunch",
+        "time",
+        "Naruto",
+        "you",
+        "must",
+        "stay",
+        "here"
+      ],
+      "words": [
+        "word-it",
+        "word-is",
+        "word-lunch",
+        "word-time",
+        "word-naruto",
+        "word-you-naruto",
+        "word-must",
+        "word-stay",
+        "word-here"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "lunch time",
+          "entry": "phrase-lunch-time"
+        },
+        {
+          "start": 7,
+          "end": 8,
+          "text": "stay here",
+          "entry": "phrase-stay-here"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Naruto",
+      "text": "I'm tied to this post. I'm so hungry!",
+      "translation": "Tớ bị trói vào cái cọc này. Tớ đói quá!",
+      "tokens": [
+        "I'm",
+        "tied",
+        "to",
+        "this",
+        "post",
+        "I'm",
+        "so",
+        "hungry"
+      ],
+      "words": [
+        "word-im-naruto",
+        "word-tied",
+        "word-to",
+        "word-this",
+        "word-post",
+        "word-im-naruto",
+        "word-so",
+        "word-hungry"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "text": "tied to",
+          "entry": "phrase-tied-to"
+        },
+        {
+          "start": 6,
+          "end": 7,
+          "text": "so hungry",
+          "entry": "phrase-so-hungry"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Kakashi",
+      "text": "Sasuke, Sakura, you can eat. Do not give Naruto any food.",
+      "translation": "Sasuke, Sakura, hai em có thể ăn. Không được cho Naruto thức ăn.",
+      "tokens": [
+        "Sasuke",
+        "Sakura",
+        "you",
+        "can",
+        "eat",
+        "Do",
+        "not",
+        "give",
+        "Naruto",
+        "any",
+        "food"
+      ],
+      "words": [
+        "word-sasuke",
+        "word-sakura",
+        "word-you-students",
+        "word-can",
+        "word-eat",
+        "word-do",
+        "word-not",
+        "word-give",
+        "word-naruto",
+        "word-any",
+        "word-food"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "Do not",
+          "entry": "phrase-do-not"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Sakura",
+      "text": "But Naruto needs food too.",
+      "translation": "Nhưng Naruto cũng cần ăn mà.",
+      "tokens": [
+        "But",
+        "Naruto",
+        "needs",
+        "food",
+        "too"
+      ],
+      "words": [
+        "word-but",
+        "word-naruto",
+        "word-needs",
+        "word-food",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Kakashi",
+      "text": "That is my rule. I will come back soon.",
+      "translation": "Đó là quy định của thầy. Thầy sẽ sớm quay lại.",
+      "tokens": [
+        "That",
+        "is",
+        "my",
+        "rule",
+        "I",
+        "will",
+        "come",
+        "back",
+        "soon"
+      ],
+      "words": [
+        "word-that-rule",
+        "word-is",
+        "word-my-kakashi",
+        "word-rule",
+        "word-i-kakashi",
+        "word-will",
+        "word-come",
+        "word-back",
+        "word-soon"
+      ],
+      "phrases": [
+        {
+          "start": 6,
+          "end": 7,
+          "text": "come back",
+          "entry": "phrase-come-back"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Naruto",
+      "text": "This is not fair. I want some food.",
+      "translation": "Thật không công bằng. Tớ muốn ăn gì đó.",
+      "tokens": [
+        "This",
+        "is",
+        "not",
+        "fair",
+        "I",
+        "want",
+        "some",
+        "food"
+      ],
+      "words": [
+        "word-that-fair",
+        "word-is",
+        "word-not",
+        "word-fair",
+        "word-i-naruto-familiar",
+        "word-want",
+        "word-some",
+        "word-food"
+      ],
+      "phrases": [
+        {
+          "start": 6,
+          "end": 7,
+          "text": "some food",
+          "entry": "phrase-some-food"
+        }
+      ]
+    },
+    "7": {
+      "speaker": "Sasuke",
+      "text": "Naruto, you can have some of my lunch.",
+      "translation": "Naruto, cậu có thể ăn một ít bữa trưa của tớ.",
+      "tokens": [
+        "Naruto",
+        "you",
+        "can",
+        "have",
+        "some",
+        "of",
+        "my",
+        "lunch"
+      ],
+      "words": [
+        "word-naruto",
+        "word-you-cau",
+        "word-can",
+        "word-have",
+        "word-some",
+        "word-of-lunch",
+        "word-my-sasuke",
+        "word-lunch"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 7,
+          "text": "some of my lunch",
+          "entry": "phrase-some-of-my-lunch"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Naruto",
+      "text": "Really? But Kakashi said no.",
+      "translation": "Thật sao? Nhưng thầy Kakashi đã nói không được mà.",
+      "tokens": [
+        "Really",
+        "But",
+        "Kakashi",
+        "said",
+        "no"
+      ],
+      "words": [
+        "word-really",
+        "word-but",
+        "word-kakashi",
+        "word-said",
+        "word-no"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Sakura",
+      "text": "You can have my food too. We are a team.",
+      "translation": "Cậu cũng có thể ăn đồ ăn của tớ. Chúng ta là một đội.",
+      "tokens": [
+        "You",
+        "can",
+        "have",
+        "my",
+        "food",
+        "too",
+        "We",
+        "are",
+        "a",
+        "team"
+      ],
+      "words": [
+        "word-you-cau",
+        "word-can",
+        "word-have",
+        "word-my-sasuke",
+        "word-food",
+        "word-too",
+        "word-we",
+        "word-are",
+        "word-a",
+        "word-team"
+      ],
+      "phrases": [
+        {
+          "start": 8,
+          "end": 9,
+          "text": "a team",
+          "entry": "phrase-a-team"
+        }
+      ]
+    },
+    "10": {
+      "speaker": "Sasuke",
+      "text": "Yes. We need to help each other.",
+      "translation": "Đúng vậy. Chúng ta cần giúp đỡ lẫn nhau.",
+      "tokens": [
+        "Yes",
+        "We",
+        "need",
+        "to",
+        "help",
+        "each",
+        "other"
+      ],
+      "words": [
+        "word-yes",
+        "word-we",
+        "word-need",
+        "word-to",
+        "word-help",
+        "word-each",
+        "word-other"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "each other",
+          "entry": "phrase-each-other"
+        },
+        {
+          "start": 4,
+          "end": 6,
+          "text": "help each other",
+          "entry": "phrase-help-each-other"
+        }
+      ]
+    },
+    "11": {
+      "speaker": "Naruto",
+      "text": "Thank you, both of you.",
+      "translation": "Cảm ơn cả hai cậu.",
+      "tokens": [
+        "Thank",
+        "you",
+        "both",
+        "of",
+        "you"
+      ],
+      "words": [
+        "word-thank",
+        "word-you-cau",
+        "word-both",
+        "word-of-you",
+        "word-you-cau"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 4,
+          "text": "both of you",
+          "entry": "phrase-both-of-you"
+        },
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Thank you",
+          "entry": "phrase-thank-you"
+        }
+      ]
+    },
+    "12": {
+      "speaker": "Kakashi",
+      "text": "I can see you. You did not follow my rule!",
+      "translation": "Thầy thấy hết rồi. Các em đã không làm theo quy định của thầy!",
+      "tokens": [
+        "I",
+        "can",
+        "see",
+        "you",
+        "You",
+        "did",
+        "not",
+        "follow",
+        "my",
+        "rule"
+      ],
+      "words": [
+        "word-i-kakashi",
+        "word-can",
+        "word-see",
+        "word-you-students",
+        "word-you-students",
+        "word-did",
+        "word-not",
+        "word-follow",
+        "word-my-kakashi",
+        "word-rule"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Sakura",
+      "text": "I'm sorry, but Naruto is our friend.",
+      "translation": "Em xin lỗi, nhưng Naruto là bạn của chúng em.",
+      "tokens": [
+        "I'm",
+        "sorry",
+        "but",
+        "Naruto",
+        "is",
+        "our",
+        "friend"
+      ],
+      "words": [
+        "word-im-sakura",
+        "word-sorry",
+        "word-but",
+        "word-naruto",
+        "word-is",
+        "word-our",
+        "word-friend"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "I'm sorry",
+          "entry": "phrase-im-sorry"
+        }
+      ]
+    },
+    "14": {
+      "speaker": "Kakashi",
+      "text": "Good. You care about each other.",
+      "translation": "Tốt lắm. Các em biết quan tâm đến nhau.",
+      "tokens": [
+        "Good",
+        "You",
+        "care",
+        "about",
+        "each",
+        "other"
+      ],
+      "words": [
+        "word-good",
+        "word-you",
+        "word-care",
+        "word-about",
+        "word-each",
+        "word-other"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "care about",
+          "entry": "phrase-care-about"
+        },
+        {
+          "start": 4,
+          "end": 5,
+          "text": "each other",
+          "entry": "phrase-each-other"
+        }
+      ]
+    },
+    "15": {
+      "speaker": "Sasuke",
+      "text": "So, did we pass the test?",
+      "translation": "Vậy chúng em đã vượt qua bài kiểm tra chưa?",
+      "tokens": [
+        "So",
+        "did",
+        "we",
+        "pass",
+        "the",
+        "test"
+      ],
+      "words": [
+        "word-so",
+        "word-did",
+        "word-we-students",
+        "word-pass",
+        "word-the",
+        "word-test"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 5,
+          "text": "pass the test",
+          "entry": "phrase-pass-the-test"
+        }
+      ]
+    },
+    "16": {
+      "speaker": "Kakashi",
+      "text": "Yes! A good team helps each other.",
+      "translation": "Rồi! Một đội tốt luôn giúp đỡ lẫn nhau.",
+      "tokens": [
+        "Yes",
+        "A",
+        "good",
+        "team",
+        "helps",
+        "each",
+        "other"
+      ],
+      "words": [
+        "word-yes",
+        "word-a",
+        "word-good",
+        "word-team",
+        "word-helps",
+        "word-each",
+        "word-other"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "good team",
+          "entry": "phrase-good-team"
+        },
+        {
+          "start": 5,
+          "end": 6,
+          "text": "each other",
+          "entry": "phrase-each-other"
+        },
+        {
+          "start": 4,
+          "end": 6,
+          "text": "helps each other",
+          "entry": "phrase-helps-each-other"
+        }
+      ]
+    }
+  }
+}

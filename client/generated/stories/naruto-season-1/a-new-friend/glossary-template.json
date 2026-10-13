@@ -1,0 +1,679 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "naruto-season-1",
+  "dialogueId": "a-new-friend",
+  "characters": {
+    "Konohamaru": {
+      "meaning": "Konohamaru",
+      "role": ""
+    },
+    "Naruto": {
+      "meaning": "Naruto",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-hey": {
+      "word": "hey",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "",
+      "pos": []
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "",
+      "pos": []
+    },
+    "word-new": {
+      "word": "new",
+      "meaning": "",
+      "pos": []
+    },
+    "word-ninja": {
+      "word": "ninja",
+      "meaning": "",
+      "pos": []
+    },
+    "word-headband": {
+      "word": "headband",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-passed": {
+      "word": "passed",
+      "meaning": "",
+      "pos": []
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "",
+      "pos": []
+    },
+    "word-test": {
+      "word": "test",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yesterday": {
+      "word": "yesterday",
+      "meaning": "",
+      "pos": []
+    },
+    "word-wow": {
+      "word": "wow",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "",
+      "pos": []
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "",
+      "pos": []
+    },
+    "word-real": {
+      "word": "real",
+      "meaning": "",
+      "pos": []
+    },
+    "word-work": {
+      "word": "work",
+      "meaning": "",
+      "pos": []
+    },
+    "word-hard": {
+      "word": "hard",
+      "meaning": "",
+      "pos": []
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "",
+      "pos": []
+    },
+    "word-name": {
+      "word": "name",
+      "meaning": "",
+      "pos": []
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "",
+      "pos": []
+    },
+    "word-konohamaru": {
+      "word": "konohamaru",
+      "meaning": "",
+      "pos": []
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-be": {
+      "word": "be",
+      "meaning": "",
+      "pos": []
+    },
+    "word-strong": {
+      "word": "strong",
+      "meaning": "",
+      "pos": []
+    },
+    "word-like": {
+      "word": "like",
+      "meaning": "",
+      "pos": []
+    },
+    "word-nice": {
+      "word": "nice",
+      "meaning": "",
+      "pos": []
+    },
+    "word-meet": {
+      "word": "meet",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "",
+      "pos": []
+    },
+    "word-teach": {
+      "word": "teach",
+      "meaning": "",
+      "pos": []
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "",
+      "pos": []
+    },
+    "word-technique": {
+      "word": "technique",
+      "meaning": "",
+      "pos": []
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "",
+      "pos": []
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "",
+      "pos": []
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "",
+      "pos": []
+    },
+    "word-practice": {
+      "word": "practice",
+      "meaning": "",
+      "pos": []
+    },
+    "word-every": {
+      "word": "every",
+      "meaning": "",
+      "pos": []
+    },
+    "word-day": {
+      "word": "day",
+      "meaning": "",
+      "pos": []
+    },
+    "word-hokage": {
+      "word": "hokage",
+      "meaning": "",
+      "pos": []
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "",
+      "pos": []
+    },
+    "word-then": {
+      "word": "then",
+      "meaning": "",
+      "pos": []
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "",
+      "pos": []
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "",
+      "pos": []
+    },
+    "word-same": {
+      "word": "same",
+      "meaning": "",
+      "pos": []
+    },
+    "word-dream": {
+      "word": "dream",
+      "meaning": "",
+      "pos": []
+    },
+    "word-right": {
+      "word": "right",
+      "meaning": "",
+      "pos": []
+    },
+    "word-train": {
+      "word": "train",
+      "meaning": "",
+      "pos": []
+    },
+    "word-together": {
+      "word": "together",
+      "meaning": "",
+      "pos": []
+    },
+    "word-friends": {
+      "word": "friends",
+      "meaning": "",
+      "pos": []
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "",
+      "pos": []
+    },
+    "word-course": {
+      "word": "course",
+      "meaning": "",
+      "pos": []
+    },
+    "word-friend": {
+      "word": "friend",
+      "meaning": "",
+      "pos": []
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "",
+      "pos": []
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "",
+      "pos": []
+    },
+    "word-naruto": {
+      "word": "naruto",
+      "meaning": "",
+      "pos": []
+    },
+    "word-see": {
+      "word": "see",
+      "meaning": "",
+      "pos": []
+    },
+    "word-tomorrow": {
+      "word": "tomorrow",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Konohamaru",
+      "text": "Hey! Is that your new ninja headband?",
+      "translation": "Này! Đó là băng trán ninja mới của anh à?",
+      "tokens": [
+        "Hey",
+        "Is",
+        "that",
+        "your",
+        "new",
+        "ninja",
+        "headband"
+      ],
+      "words": [
+        "word-hey",
+        "word-is",
+        "word-that",
+        "word-your",
+        "word-new",
+        "word-ninja",
+        "word-headband"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Naruto",
+      "text": "Yes! I passed the test yesterday.",
+      "translation": "Đúng rồi! Hôm qua anh đã vượt qua bài kiểm tra.",
+      "tokens": [
+        "Yes",
+        "I",
+        "passed",
+        "the",
+        "test",
+        "yesterday"
+      ],
+      "words": [
+        "word-yes",
+        "word-i",
+        "word-passed",
+        "word-the",
+        "word-test",
+        "word-yesterday"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Konohamaru",
+      "text": "Wow! You are a real ninja!",
+      "translation": "Ồ! Anh là một ninja thực thụ rồi!",
+      "tokens": [
+        "Wow",
+        "You",
+        "are",
+        "a",
+        "real",
+        "ninja"
+      ],
+      "words": [
+        "word-wow",
+        "word-you",
+        "word-are",
+        "word-a",
+        "word-real",
+        "word-ninja"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Naruto",
+      "text": "I work hard. What is your name?",
+      "translation": "Anh luôn chăm chỉ. Em tên gì?",
+      "tokens": [
+        "I",
+        "work",
+        "hard",
+        "What",
+        "is",
+        "your",
+        "name"
+      ],
+      "words": [
+        "word-i",
+        "word-work",
+        "word-hard",
+        "word-what",
+        "word-is",
+        "word-your",
+        "word-name"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Konohamaru",
+      "text": "My name is Konohamaru. I want to be strong like you.",
+      "translation": "Em tên là Konohamaru. Em muốn mạnh mẽ như anh.",
+      "tokens": [
+        "My",
+        "name",
+        "is",
+        "Konohamaru",
+        "I",
+        "want",
+        "to",
+        "be",
+        "strong",
+        "like",
+        "you"
+      ],
+      "words": [
+        "word-my",
+        "word-name",
+        "word-is",
+        "word-konohamaru",
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-be",
+        "word-strong",
+        "word-like",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Naruto",
+      "text": "Nice to meet you, Konohamaru!",
+      "translation": "Rất vui được gặp em, Konohamaru!",
+      "tokens": [
+        "Nice",
+        "to",
+        "meet",
+        "you",
+        "Konohamaru"
+      ],
+      "words": [
+        "word-nice",
+        "word-to",
+        "word-meet",
+        "word-you",
+        "word-konohamaru"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Konohamaru",
+      "text": "Can you teach me a ninja technique?",
+      "translation": "Anh có thể dạy em một kỹ thuật ninja không?",
+      "tokens": [
+        "Can",
+        "you",
+        "teach",
+        "me",
+        "a",
+        "ninja",
+        "technique"
+      ],
+      "words": [
+        "word-can",
+        "word-you",
+        "word-teach",
+        "word-me",
+        "word-a",
+        "word-ninja",
+        "word-technique"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Naruto",
+      "text": "I can help you, but you need to practice.",
+      "translation": "Anh có thể giúp em, nhưng em cần luyện tập.",
+      "tokens": [
+        "I",
+        "can",
+        "help",
+        "you",
+        "but",
+        "you",
+        "need",
+        "to",
+        "practice"
+      ],
+      "words": [
+        "word-i",
+        "word-can",
+        "word-help",
+        "word-you",
+        "word-but",
+        "word-you",
+        "word-need",
+        "word-to",
+        "word-practice"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Konohamaru",
+      "text": "I practice every day. I want to be Hokage!",
+      "translation": "Em luyện tập mỗi ngày. Em muốn trở thành Hokage!",
+      "tokens": [
+        "I",
+        "practice",
+        "every",
+        "day",
+        "I",
+        "want",
+        "to",
+        "be",
+        "Hokage"
+      ],
+      "words": [
+        "word-i",
+        "word-practice",
+        "word-every",
+        "word-day",
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-be",
+        "word-hokage"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Naruto",
+      "text": "Hey! I want to be Hokage too!",
+      "translation": "Này! Anh cũng muốn trở thành Hokage!",
+      "tokens": [
+        "Hey",
+        "I",
+        "want",
+        "to",
+        "be",
+        "Hokage",
+        "too"
+      ],
+      "words": [
+        "word-hey",
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-be",
+        "word-hokage",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Konohamaru",
+      "text": "Then we have the same dream!",
+      "translation": "Vậy chúng ta có cùng một ước mơ!",
+      "tokens": [
+        "Then",
+        "we",
+        "have",
+        "the",
+        "same",
+        "dream"
+      ],
+      "words": [
+        "word-then",
+        "word-we",
+        "word-have",
+        "word-the",
+        "word-same",
+        "word-dream"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Naruto",
+      "text": "That is right. We can train together.",
+      "translation": "Đúng vậy. Chúng ta có thể luyện tập cùng nhau.",
+      "tokens": [
+        "That",
+        "is",
+        "right",
+        "We",
+        "can",
+        "train",
+        "together"
+      ],
+      "words": [
+        "word-that",
+        "word-is",
+        "word-right",
+        "word-we",
+        "word-can",
+        "word-train",
+        "word-together"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Konohamaru",
+      "text": "Can we be friends too?",
+      "translation": "Chúng ta cũng có thể làm bạn không?",
+      "tokens": [
+        "Can",
+        "we",
+        "be",
+        "friends",
+        "too"
+      ],
+      "words": [
+        "word-can",
+        "word-we",
+        "word-be",
+        "word-friends",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "14": {
+      "speaker": "Naruto",
+      "text": "Of course! You are my friend now.",
+      "translation": "Tất nhiên rồi! Bây giờ em là bạn của anh.",
+      "tokens": [
+        "Of",
+        "course",
+        "You",
+        "are",
+        "my",
+        "friend",
+        "now"
+      ],
+      "words": [
+        "word-of",
+        "word-course",
+        "word-you",
+        "word-are",
+        "word-my",
+        "word-friend",
+        "word-now"
+      ],
+      "phrases": []
+    },
+    "15": {
+      "speaker": "Konohamaru",
+      "text": "Thank you, Naruto! See you tomorrow!",
+      "translation": "Cảm ơn anh, Naruto! Mai gặp lại nhé!",
+      "tokens": [
+        "Thank",
+        "you",
+        "Naruto",
+        "See",
+        "you",
+        "tomorrow"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-naruto",
+        "word-see",
+        "word-you",
+        "word-tomorrow"
+      ],
+      "phrases": []
+    }
+  }
+}

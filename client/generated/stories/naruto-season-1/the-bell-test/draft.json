@@ -1,0 +1,1124 @@
+{
+  "metadata": {
+    "courseId": "naruto-season-1",
+    "dialogueId": "the-bell-test",
+    "contextualGlossaryVersion": 1,
+    "title": "Bài kiểm tra hai chiếc chuông",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Naruto — Ninja cô đơn",
+        "en": "Naruto — The Lonely Ninja"
+      },
+      "courseDescription": {
+        "vi": "Hành trình của Naruto từ một cậu bé cô đơn đến khi trở thành thành viên Đội Bảy.",
+        "en": "Naruto's journey from a lonely boy to becoming a member of Team Seven."
+      },
+      "title": {
+        "vi": "Bài kiểm tra hai chiếc chuông",
+        "en": "The Bell Test"
+      },
+      "description": {
+        "vi": "Kakashi challenges Naruto, Sasuke, and Sakura to take two bells from him. At first, they try to win alone.",
+        "en": "Kakashi challenges Naruto, Sasuke, and Sakura to take two bells from him. At first, they try to win alone."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Kakashi challenges Naruto, Sasuke, and Sakura to take two bells from him. At first, they try to win alone.",
+    "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/the-bell-test.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Sakura",
+      "text": "We are here on time.",
+      "translation": "Chúng em đã có mặt đúng giờ.",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Naruto",
+      "text": "I am ready for the test!",
+      "translation": "Em đã sẵn sàng cho bài kiểm tra!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Kakashi",
+      "text": "Good morning. Today, I have a test for you.",
+      "translation": "Chào buổi sáng. Hôm nay thầy có một bài kiểm tra dành cho các em.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-01.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Kakashi",
+      "text": "Look, I have two bells. You must take one to pass.",
+      "translation": "Nhìn này, thầy có hai chiếc chuông. Các em phải lấy được một chiếc mới vượt qua.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Sakura",
+      "text": "But there are three of us!",
+      "translation": "Nhưng có đến ba người chúng em mà!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Kakashi",
+      "text": "Only two of you can get a bell.",
+      "translation": "Chỉ hai trong số các em có thể lấy được chuông.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Naruto",
+      "text": "I can get one by myself!",
+      "translation": "Em có thể tự mình lấy được một chiếc!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-02.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Sasuke",
+      "text": "I will work alone too.",
+      "translation": "Em cũng sẽ làm một mình.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Sakura",
+      "text": "Wait. We need a plan first.",
+      "translation": "Khoan đã. Chúng ta cần lên kế hoạch trước.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-03.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Naruto",
+      "text": "No time! I want to start now!",
+      "translation": "Không còn thời gian đâu! Tớ muốn bắt đầu ngay!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-03.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Kakashi",
+      "text": "You have until noon. Good luck!",
+      "translation": "Các em có thời gian đến trưa. Chúc may mắn!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-04.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Naruto",
+      "text": "Why can't I catch you?",
+      "translation": "Sao em không thể bắt được thầy chứ?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-04.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Sasuke",
+      "text": "I can't get a bell either.",
+      "translation": "Em cũng không lấy được chiếc chuông nào.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-02.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Sakura",
+      "text": "We are not working together.",
+      "translation": "Chúng ta đang không hợp tác với nhau.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-04.mp3"
+    },
+    {
+      "id": 15,
+      "speaker": "Kakashi",
+      "text": "The test is over. You have no bells.",
+      "translation": "Bài kiểm tra kết thúc rồi. Các em không có chiếc chuông nào.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 16,
+      "speaker": "Naruto",
+      "text": "But I tried so hard!",
+      "translation": "Nhưng em đã cố gắng hết sức mà!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-05.mp3"
+    },
+    {
+      "id": 17,
+      "speaker": "Kakashi",
+      "text": "You worked alone. That is the problem.",
+      "translation": "Các em đều làm một mình. Đó chính là vấn đề.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-06.mp3"
+    },
+    {
+      "id": 18,
+      "speaker": "Sakura",
+      "text": "We need to help each other.",
+      "translation": "Chúng ta cần giúp đỡ lẫn nhau.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-05.mp3"
+    },
+    {
+      "id": 19,
+      "speaker": "Kakashi",
+      "text": "Think about that. We will talk after lunch.",
+      "translation": "Hãy suy nghĩ về điều đó. Chúng ta sẽ nói chuyện sau bữa trưa.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-07.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "on time",
+      "pronunciation": "/ɒn taɪm/",
+      "meaning": "đúng giờ",
+      "example": "We are at school on time."
+    },
+    {
+      "word": "ready for",
+      "pronunciation": "/ˈredi fɔːr/",
+      "meaning": "sẵn sàng cho",
+      "example": "I am ready for the game."
+    },
+    {
+      "word": "two bells",
+      "pronunciation": "/tuː belz/",
+      "meaning": "hai chiếc chuông",
+      "example": "There are two bells on the table."
+    },
+    {
+      "word": "by myself",
+      "pronunciation": "/baɪ maɪˈself/",
+      "meaning": "tự mình",
+      "example": "I can do it by myself."
+    },
+    {
+      "word": "a plan",
+      "pronunciation": "/ə plæn/",
+      "meaning": "một kế hoạch",
+      "example": "We need a plan."
+    },
+    {
+      "word": "Good luck",
+      "pronunciation": "/ɡʊd lʌk/",
+      "meaning": "chúc may mắn",
+      "example": "Good luck on your test!"
+    },
+    {
+      "word": "working together",
+      "pronunciation": "/ˈwɜːrkɪŋ təˈɡeðər/",
+      "meaning": "hợp tác, làm việc cùng nhau",
+      "example": "We are working together today."
+    },
+    {
+      "word": "each other",
+      "pronunciation": "/iːtʃ ˈʌðər/",
+      "meaning": "lẫn nhau",
+      "example": "We help each other."
+    },
+    {
+      "word": "after lunch",
+      "pronunciation": "/ˈæftər lʌntʃ/",
+      "meaning": "sau bữa trưa",
+      "example": "We can talk after lunch."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["We are here ", "."],
+      "answers": ["on time"],
+      "speaker": "Sakura",
+      "transcript": "We are here on time.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["I am ", " for the test!"],
+      "answers": ["ready"],
+      "speaker": "Naruto",
+      "transcript": "I am ready for the test!",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["I am ready for the ", "!"],
+      "answers": ["test"],
+      "speaker": "Naruto",
+      "transcript": "I am ready for the test!",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["", ". Today, I have a test for you."],
+      "answers": ["Good morning"],
+      "speaker": "Kakashi",
+      "transcript": "Good morning. Today, I have a test for you.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Good morning. ", ", I have a test for you."],
+      "answers": ["Today"],
+      "speaker": "Kakashi",
+      "transcript": "Good morning. Today, I have a test for you.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Look, I have ", ". You must take one to pass."],
+      "answers": ["two bells"],
+      "speaker": "Kakashi",
+      "transcript": "Look, I have two bells. You must take one to pass.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Look, I have two bells. You ", " take one to pass."],
+      "answers": ["must"],
+      "speaker": "Kakashi",
+      "transcript": "Look, I have two bells. You must take one to pass.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Look, I have two bells. You must take one to ", "."],
+      "answers": ["pass"],
+      "speaker": "Kakashi",
+      "transcript": "Look, I have two bells. You must take one to pass.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "multipleChoice",
+      "mcCategory": "comprehension",
+      "question": "Để vượt qua bài kiểm tra, các học trò phải làm gì?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Để vượt qua bài kiểm tra, các học trò phải làm gì?",
+          "en": "What must the students do to pass the test?"
+        },
+        "options": [
+          {"vi": "Đợi Kakashi phát chuông.", "en": "Wait for Kakashi to give out the bells."},
+          {"vi": "Chỉ cần có mặt đúng giờ.", "en": "Simply arrive on time."},
+          {"vi": "Trả lời các câu hỏi của thầy.", "en": "Answer the teacher's questions."},
+          {"vi": "Lấy được một chiếc chuông từ Kakashi.", "en": "Get one bell from Kakashi."}
+        ]
+      },
+      "options": [
+        "Đợi Kakashi phát chuông.",
+        "Chỉ cần có mặt đúng giờ.",
+        "Trả lời các câu hỏi của thầy.",
+        "Lấy được một chiếc chuông từ Kakashi."
+      ],
+      "answer": "Lấy được một chiếc chuông từ Kakashi.",
+      "speaker": "Kakashi",
+      "transcript": "Look, I have two bells. You must take one to pass.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["But ", " three of us!"],
+      "answers": ["there are"],
+      "speaker": "Sakura",
+      "transcript": "But there are three of us!",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-02.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["But there are ", " of us!"],
+      "answers": ["three"],
+      "speaker": "Sakura",
+      "transcript": "But there are three of us!",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-02.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["", " two of you can get a bell."],
+      "answers": ["Only"],
+      "speaker": "Kakashi",
+      "transcript": "Only two of you can get a bell.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Only two of you can get a ", "."],
+      "answers": ["bell"],
+      "speaker": "Kakashi",
+      "transcript": "Only two of you can get a bell.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "mcCategory": "comprehension",
+      "question": "Điều gì khiến bài kiểm tra trở nên khó xử cho Đội Bảy?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Điều gì khiến bài kiểm tra trở nên khó xử cho Đội Bảy?",
+          "en": "What makes the test difficult for Team Seven?"
+        },
+        "options": [
+          {"vi": "Có ba học trò nhưng chỉ có hai chiếc chuông.", "en": "There are three students but only two bells."},
+          {"vi": "Các học trò phải đổi giáo viên.", "en": "The students must change teachers."},
+          {"vi": "Kakashi chưa đến sân tập.", "en": "Kakashi has not come to the training ground."},
+          {"vi": "Sakura phải thi một mình.", "en": "Sakura must take the test alone."}
+        ]
+      },
+      "options": [
+        "Có ba học trò nhưng chỉ có hai chiếc chuông.",
+        "Các học trò phải đổi giáo viên.",
+        "Kakashi chưa đến sân tập.",
+        "Sakura phải thi một mình."
+      ],
+      "answer": "Có ba học trò nhưng chỉ có hai chiếc chuông.",
+      "speaker": "Kakashi",
+      "transcript": "Only two of you can get a bell.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-03.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["I can ", " by myself!"],
+      "answers": ["get one"],
+      "speaker": "Naruto",
+      "transcript": "I can get one by myself!",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-02.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["I can get one ", "!"],
+      "answers": ["by myself"],
+      "speaker": "Naruto",
+      "transcript": "I can get one by myself!",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-02.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["I ", " work alone too."],
+      "answers": ["will"],
+      "speaker": "Sasuke",
+      "transcript": "I will work alone too.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["I will work ", " too."],
+      "answers": ["alone"],
+      "speaker": "Sasuke",
+      "transcript": "I will work alone too.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 8,
+      "type": "multipleChoice",
+      "mcCategory": "grammar",
+      "mcTarget": "will",
+      "question": "Khi Sasuke nói 'I will work alone too', cậu ấy đang làm gì?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Khi Sasuke nói 'I will work alone too', cậu ấy đang làm gì?",
+          "en": "What is Sasuke doing when he says 'I will work alone too'?"
+        },
+        "options": [
+          {"vi": "Hỏi thầy cho phép làm một mình.", "en": "Asking the teacher for permission to work alone."},
+          {"vi": "Nói điều mình định làm tiếp theo.", "en": "Saying what he plans to do next."},
+          {"vi": "Kể về bài kiểm tra hôm qua.", "en": "Talking about yesterday's test."},
+          {"vi": "Nói mình thường luôn làm một mình.", "en": "Saying that he always works alone."}
+        ]
+      },
+      "options": [
+        "Hỏi thầy cho phép làm một mình.",
+        "Nói điều mình định làm tiếp theo.",
+        "Kể về bài kiểm tra hôm qua.",
+        "Nói mình thường luôn làm một mình."
+      ],
+      "answer": "Nói điều mình định làm tiếp theo.",
+      "speaker": "Sasuke",
+      "transcript": "I will work alone too.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Wait. We ", " a plan first."],
+      "answers": ["need"],
+      "speaker": "Sakura",
+      "transcript": "Wait. We need a plan first.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-03.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Wait. We need a ", " first."],
+      "answers": ["plan"],
+      "speaker": "Sakura",
+      "transcript": "Wait. We need a plan first.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-03.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "mcCategory": "usage",
+      "mcTarget": "We need a plan",
+      "question": "Vì sao Sakura nói 'We need a plan first'?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Vì sao Sakura nói 'We need a plan first'?",
+          "en": "Why does Sakura say 'We need a plan first'?"
+        },
+        "options": [
+          {"vi": "Cô ấy muốn bỏ bài kiểm tra.", "en": "She wants to quit the test."},
+          {"vi": "Cô ấy muốn đổi đồng đội.", "en": "She wants to change teammates."},
+          {"vi": "Cô ấy muốn cả đội suy nghĩ trước khi bắt đầu.", "en": "She wants the team to think before starting."},
+          {"vi": "Cô ấy nghĩ bài kiểm tra đã kết thúc.", "en": "She thinks the test is over."}
+        ]
+      },
+      "options": [
+        "Cô ấy muốn bỏ bài kiểm tra.",
+        "Cô ấy muốn đổi đồng đội.",
+        "Cô ấy muốn cả đội suy nghĩ trước khi bắt đầu.",
+        "Cô ấy nghĩ bài kiểm tra đã kết thúc."
+      ],
+      "answer": "Cô ấy muốn cả đội suy nghĩ trước khi bắt đầu.",
+      "speaker": "Sakura",
+      "transcript": "Wait. We need a plan first.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-03.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["", "! I want to start now!"],
+      "answers": ["No time"],
+      "speaker": "Naruto",
+      "transcript": "No time! I want to start now!",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-03.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["No time! I want to ", " now!"],
+      "answers": ["start"],
+      "speaker": "Naruto",
+      "transcript": "No time! I want to start now!",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-03.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["You have ", ". Good luck!"],
+      "answers": ["until noon"],
+      "speaker": "Kakashi",
+      "transcript": "You have until noon. Good luck!",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-04.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["You have until noon. ", "!"],
+      "answers": ["Good luck"],
+      "speaker": "Kakashi",
+      "transcript": "You have until noon. Good luck!",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-04.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Why ", " I catch you?"],
+      "answers": ["can't"],
+      "speaker": "Naruto",
+      "transcript": "Why can't I catch you?",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-04.mp3"
+    },
+    {
+      "id": 28,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Why can't I ", " you?"],
+      "answers": ["catch"],
+      "speaker": "Naruto",
+      "transcript": "Why can't I catch you?",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-04.mp3"
+    },
+    {
+      "id": 29,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["I ", " get a bell either."],
+      "answers": ["can't"],
+      "speaker": "Sasuke",
+      "transcript": "I can't get a bell either.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-02.mp3"
+    },
+    {
+      "id": 30,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["I can't get a bell ", "."],
+      "answers": ["either"],
+      "speaker": "Sasuke",
+      "transcript": "I can't get a bell either.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-02.mp3"
+    },
+    {
+      "id": 31,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["We are ", " working together."],
+      "answers": ["not"],
+      "speaker": "Sakura",
+      "transcript": "We are not working together.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-04.mp3"
+    },
+    {
+      "id": 32,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["We are not ", "."],
+      "answers": ["working together"],
+      "speaker": "Sakura",
+      "transcript": "We are not working together.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-04.mp3"
+    },
+    {
+      "id": 33,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["The test is ", ". You have no bells."],
+      "answers": ["over"],
+      "speaker": "Kakashi",
+      "transcript": "The test is over. You have no bells.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 34,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["The test is over. You have ", "."],
+      "answers": ["no bells"],
+      "speaker": "Kakashi",
+      "transcript": "The test is over. You have no bells.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 35,
+      "dialogueLineId": 15,
+      "type": "multipleChoice",
+      "mcCategory": "comprehension",
+      "question": "Khi hết giờ, kết quả của Đội Bảy là gì?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Khi hết giờ, kết quả của Đội Bảy là gì?",
+          "en": "What happened to Team Seven when time ran out?"
+        },
+        "options": [
+          {"vi": "Không ai lấy được chiếc chuông nào.", "en": "No one got a bell."},
+          {"vi": "Naruto lấy được cả hai chiếc chuông.", "en": "Naruto got both bells."},
+          {"vi": "Sasuke và Sakura mỗi người lấy được một chiếc.", "en": "Sasuke and Sakura each got one bell."},
+          {"vi": "Kakashi cho cả đội thêm thời gian.", "en": "Kakashi gave the team more time."}
+        ]
+      },
+      "options": [
+        "Không ai lấy được chiếc chuông nào.",
+        "Naruto lấy được cả hai chiếc chuông.",
+        "Sasuke và Sakura mỗi người lấy được một chiếc.",
+        "Kakashi cho cả đội thêm thời gian."
+      ],
+      "answer": "Không ai lấy được chiếc chuông nào.",
+      "speaker": "Kakashi",
+      "transcript": "The test is over. You have no bells.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 36,
+      "dialogueLineId": 16,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["But I ", " so hard!"],
+      "answers": ["tried"],
+      "speaker": "Naruto",
+      "transcript": "But I tried so hard!",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-05.mp3"
+    },
+    {
+      "id": 37,
+      "dialogueLineId": 16,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["But I tried ", "!"],
+      "answers": ["so hard"],
+      "speaker": "Naruto",
+      "transcript": "But I tried so hard!",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-05.mp3"
+    },
+    {
+      "id": 38,
+      "dialogueLineId": 17,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["You worked ", ". That is the problem."],
+      "answers": ["alone"],
+      "speaker": "Kakashi",
+      "transcript": "You worked alone. That is the problem.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-06.mp3"
+    },
+    {
+      "id": 39,
+      "dialogueLineId": 17,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["You worked alone. That is the ", "."],
+      "answers": ["problem"],
+      "speaker": "Kakashi",
+      "transcript": "You worked alone. That is the problem.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-06.mp3"
+    },
+    {
+      "id": 40,
+      "dialogueLineId": 18,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["We need to ", " each other."],
+      "answers": ["help"],
+      "speaker": "Sakura",
+      "transcript": "We need to help each other.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-05.mp3"
+    },
+    {
+      "id": 41,
+      "dialogueLineId": 18,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["We need to help ", "."],
+      "answers": ["each other"],
+      "speaker": "Sakura",
+      "transcript": "We need to help each other.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-05.mp3"
+    },
+    {
+      "id": 42,
+      "dialogueLineId": 19,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["", " about that. We will talk after lunch."],
+      "answers": ["Think"],
+      "speaker": "Kakashi",
+      "transcript": "Think about that. We will talk after lunch.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-07.mp3"
+    },
+    {
+      "id": 43,
+      "dialogueLineId": 19,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing word."}
+      },
+      "parts": ["Think about that. We will talk ", "."],
+      "answers": ["after lunch"],
+      "speaker": "Kakashi",
+      "transcript": "Think about that. We will talk after lunch.",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-07.mp3"
+    },
+    {
+      "id": 44,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập toàn bộ hội thoại",
+          "en": "Review the full dialogue"
+        },
+        "instruction": {
+          "vi": "Điền các từ còn thiếu để hoàn thành toàn bộ hội thoại.",
+          "en": "Fill in the missing words to complete the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Sakura",
+          "parts": ["We are here ", {"id": "1", "blank": "on time"}, "."]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Naruto",
+          "parts": ["I am ", {"id": "2", "blank": "ready"}, " for the test!"]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Kakashi",
+          "parts": ["", {"id": "3", "blank": "Good morning"}, ". Today, I have a test for you."]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Kakashi",
+          "parts": ["Look, I have ", {"id": "4", "blank": "two bells"}, ". You must take one to pass."]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Sakura",
+          "parts": ["But ", {"id": "5", "blank": "there are"}, " three of us!"]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Kakashi",
+          "parts": ["", {"id": "6", "blank": "Only"}, " two of you can get a bell."]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Naruto",
+          "parts": ["I can ", {"id": "7", "blank": "get one"}, " by myself!"]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Sasuke",
+          "parts": ["I ", {"id": "8", "blank": "will"}, " work alone too."]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Sakura",
+          "parts": ["Wait. We ", {"id": "9", "blank": "need"}, " a plan first."]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Naruto",
+          "parts": ["", {"id": "10", "blank": "No time"}, "! I want to start now!"]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Kakashi",
+          "parts": ["You have ", {"id": "11", "blank": "until noon"}, ". Good luck!"]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Naruto",
+          "parts": ["Why ", {"id": "12", "blank": "can't"}, " I catch you?"]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Sasuke",
+          "parts": ["I ", {"id": "13", "blank": "can't"}, " get a bell either."]
+        },
+        {
+          "dialogueLineId": 14,
+          "speaker": "Sakura",
+          "parts": ["We are ", {"id": "14", "blank": "not"}, " working together."]
+        },
+        {
+          "dialogueLineId": 15,
+          "speaker": "Kakashi",
+          "parts": ["The test is ", {"id": "15", "blank": "over"}, ". You have no bells."]
+        },
+        {
+          "dialogueLineId": 16,
+          "speaker": "Naruto",
+          "parts": ["But I ", {"id": "16", "blank": "tried"}, " so hard!"]
+        },
+        {
+          "dialogueLineId": 17,
+          "speaker": "Kakashi",
+          "parts": ["You worked ", {"id": "17", "blank": "alone"}, ". That is the problem."]
+        },
+        {
+          "dialogueLineId": 18,
+          "speaker": "Sakura",
+          "parts": ["We need to ", {"id": "18", "blank": "help"}, " each other."]
+        },
+        {
+          "dialogueLineId": 19,
+          "speaker": "Kakashi",
+          "parts": ["", {"id": "19", "blank": "Think"}, " about that. We will talk after lunch."]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Must — Điều bắt buộc",
+      "explanation": "Dùng must + động từ nguyên mẫu để nói điều bắt buộc phải làm. Ví dụ: You must take one to pass. (Các em phải lấy một chiếc để vượt qua.)",
+      "localized": {
+        "title": {
+          "vi": "Must — Điều bắt buộc",
+          "en": "Must — Something you have to do"
+        },
+        "explanation": {
+          "vi": "Dùng must + động từ nguyên mẫu để nói điều bắt buộc phải làm. Ví dụ: You must take one to pass. (Các em phải lấy một chiếc để vượt qua.)",
+          "en": "Use must + a verb to say that something is necessary. Example: You must take one to pass."
+        }
+      },
+      "example": "You must take one to pass."
+    }
+  ]
+}

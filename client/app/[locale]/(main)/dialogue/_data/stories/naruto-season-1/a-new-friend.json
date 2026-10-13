@@ -1,0 +1,1401 @@
+{
+  "metadata": {
+    "courseId": "naruto-season-1",
+    "dialogueId": "a-new-friend",
+    "contextualGlossaryVersion": 1,
+    "title": "Người bạn mới",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Naruto – Mùa 1",
+        "en": "Naruto – Season 1"
+      },
+      "courseDescription": {
+        "vi": "Theo chân Naruto khi cậu trở thành ninja và theo đuổi ước mơ trở thành Hokage.",
+        "en": "Follow Naruto as he becomes a ninja and follows his dream of becoming Hokage."
+      },
+      "title": {
+        "vi": "Người bạn mới",
+        "en": "A New Friend"
+      },
+      "description": {
+        "vi": "Naruto meets Konohamaru, a young boy who wants to become strong. They begin an unexpected friendship.",
+        "en": "Naruto meets Konohamaru, a younger boy who wants to become strong. They begin an unexpected friendship."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Naruto meets Konohamaru, a young boy who wants to become strong. They begin an unexpected friendship.",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/a-new-friend.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Konohamaru",
+      "text": "Hey! Is that your new ninja headband?",
+      "translation": "Này! Đó là băng trán ninja mới của anh à?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Naruto",
+      "text": "Yes! I passed the test yesterday.",
+      "translation": "Đúng rồi! Hôm qua anh đã vượt qua bài kiểm tra.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Konohamaru",
+      "text": "Wow! You are a real ninja!",
+      "translation": "Ồ! Anh là một ninja thực thụ rồi!",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Naruto",
+      "text": "I work hard. What is your name?",
+      "translation": "Anh luôn chăm chỉ. Em tên gì?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Konohamaru",
+      "text": "My name is Konohamaru. I want to be strong like you.",
+      "translation": "Em tên là Konohamaru. Em muốn mạnh mẽ như anh.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Naruto",
+      "text": "Nice to meet you, Konohamaru!",
+      "translation": "Rất vui được gặp em, Konohamaru!",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Konohamaru",
+      "text": "Can you teach me a ninja technique?",
+      "translation": "Anh có thể dạy em một kỹ thuật ninja không?",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Naruto",
+      "text": "I can help you, but you need to practice.",
+      "translation": "Anh có thể giúp em, nhưng em cần luyện tập.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Konohamaru",
+      "text": "I practice every day. I want to be Hokage!",
+      "translation": "Em luyện tập mỗi ngày. Em muốn trở thành Hokage!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Naruto",
+      "text": "Hey! I want to be Hokage too!",
+      "translation": "Này! Anh cũng muốn trở thành Hokage!",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Konohamaru",
+      "text": "Then we have the same dream!",
+      "translation": "Vậy chúng ta có cùng một ước mơ!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Naruto",
+      "text": "That is right. We can train together.",
+      "translation": "Đúng vậy. Chúng ta có thể luyện tập cùng nhau.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-06.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Konohamaru",
+      "text": "Can we be friends too?",
+      "translation": "Chúng ta cũng có thể làm bạn không?",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-07.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Naruto",
+      "text": "Of course! You are my friend now.",
+      "translation": "Tất nhiên rồi! Bây giờ em là bạn của anh.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-07.mp3"
+    },
+    {
+      "id": 15,
+      "speaker": "Konohamaru",
+      "text": "Thank you, Naruto! See you tomorrow!",
+      "translation": "Cảm ơn anh, Naruto! Mai gặp lại nhé!",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-08.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "ninja headband",
+      "pronunciation": "/ˈnɪndʒə ˈhɛdbænd/",
+      "meaning": "băng trán ninja",
+      "example": "He has a new ninja headband."
+    },
+    {
+      "word": "passed the test",
+      "pronunciation": "/pæst ðə tɛst/",
+      "meaning": "đã vượt qua bài kiểm tra",
+      "example": "She passed the test."
+    },
+    {
+      "word": "work hard",
+      "pronunciation": "/wɝːk hɑːrd/",
+      "meaning": "chăm chỉ, cố gắng",
+      "example": "I work hard every day."
+    },
+    {
+      "word": "Nice to meet you",
+      "pronunciation": "/naɪs tə miːt juː/",
+      "meaning": "rất vui được gặp bạn",
+      "example": "Nice to meet you, Ben."
+    },
+    {
+      "word": "teach me",
+      "pronunciation": "/tiːtʃ miː/",
+      "meaning": "dạy tôi",
+      "example": "Can you teach me English?"
+    },
+    {
+      "word": "practice",
+      "pronunciation": "/ˈpræktɪs/",
+      "meaning": "luyện tập",
+      "example": "I practice English every day."
+    },
+    {
+      "word": "every day",
+      "pronunciation": "/ˈɛvri deɪ/",
+      "meaning": "mỗi ngày",
+      "example": "We read every day."
+    },
+    {
+      "word": "same dream",
+      "pronunciation": "/seɪm driːm/",
+      "meaning": "cùng ước mơ",
+      "example": "We have the same dream."
+    },
+    {
+      "word": "train together",
+      "pronunciation": "/treɪn təˈɡɛðər/",
+      "meaning": "luyện tập cùng nhau",
+      "example": "We can train together."
+    },
+    {
+      "word": "be friends",
+      "pronunciation": "/biː frɛndz/",
+      "meaning": "làm bạn",
+      "example": "Can we be friends?"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Hey! Is that your ",
+        " ninja headband?"
+      ],
+      "answers": [
+        "new"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "Hey! Is that your new ninja headband?",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Hey! Is that your new ninja ",
+        "?"
+      ],
+      "answers": [
+        "headband"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "Hey! Is that your new ninja headband?",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes! I ",
+        " the test yesterday."
+      ],
+      "answers": [
+        "passed"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Yes! I passed the test yesterday.",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes! I passed the test ",
+        "."
+      ],
+      "answers": [
+        "yesterday"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Yes! I passed the test yesterday.",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 2,
+      "type": "multipleChoice",
+      "question": "Sau khi vượt qua bài kiểm tra, Naruto đã có gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Sau khi vượt qua bài kiểm tra, Naruto đã có gì?",
+          "en": "What did Naruto get after passing the test?"
+        },
+        "options": [
+          {
+            "vi": "Một bài kiểm tra khác",
+            "en": "Another test"
+          },
+          {
+            "vi": "Một nhiệm vụ mới",
+            "en": "A new mission"
+          },
+          {
+            "vi": "Một bộ sách mới",
+            "en": "A new set of books"
+          },
+          {
+            "vi": "Băng trán ninja",
+            "en": "A ninja headband"
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Một bài kiểm tra khác",
+        "Một nhiệm vụ mới",
+        "Một bộ sách mới",
+        "Băng trán ninja"
+      ],
+      "answer": "Băng trán ninja",
+      "speaker": "Naruto",
+      "transcript": "Yes! I passed the test yesterday.",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Wow! You are a ",
+        " ninja!"
+      ],
+      "answers": [
+        "real"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "Wow! You are a real ninja!",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I ",
+        ". What is your name?"
+      ],
+      "answers": [
+        "work hard"
+      ],
+      "speaker": "Naruto",
+      "transcript": "I work hard. What is your name?",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I work hard. What is ",
+        "?"
+      ],
+      "answers": [
+        "your name"
+      ],
+      "speaker": "Naruto",
+      "transcript": "I work hard. What is your name?",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "My name is Konohamaru. I want to be ",
+        " like you."
+      ],
+      "answers": [
+        "strong"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "My name is Konohamaru. I want to be strong like you.",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-03.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "My name is Konohamaru. I want to be strong ",
+        "."
+      ],
+      "answers": [
+        "like you"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "My name is Konohamaru. I want to be strong like you.",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Nice to ",
+        ", Konohamaru!"
+      ],
+      "answers": [
+        "meet you"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Nice to meet you, Konohamaru!",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Can you ",
+        " a ninja technique?"
+      ],
+      "answers": [
+        "teach me"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "Can you teach me a ninja technique?",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-04.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Can you teach me a ",
+        "?"
+      ],
+      "answers": [
+        "ninja technique"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "Can you teach me a ninja technique?",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-04.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "question": "Konohamaru dùng “Can you...” để làm gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Konohamaru dùng “Can you...” để làm gì?",
+          "en": "Why does Konohamaru say “Can you...”?"
+        },
+        "options": [
+          {
+            "vi": "Để lịch sự nhờ Naruto dạy mình",
+            "en": "To politely ask Naruto to teach him"
+          },
+          {
+            "vi": "Để yêu cầu Naruto đi về",
+            "en": "To tell Naruto to go home"
+          },
+          {
+            "vi": "Để khoe mình đã biết kỹ thuật",
+            "en": "To say he already knows the technique"
+          },
+          {
+            "vi": "Để hỏi Naruto có đói không",
+            "en": "To ask whether Naruto is hungry"
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "options": [
+        "Để lịch sự nhờ Naruto dạy mình",
+        "Để yêu cầu Naruto đi về",
+        "Để khoe mình đã biết kỹ thuật",
+        "Để hỏi Naruto có đói không"
+      ],
+      "answer": "Để lịch sự nhờ Naruto dạy mình",
+      "speaker": "Konohamaru",
+      "transcript": "Can you teach me a ninja technique?",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-04.mp3",
+      "mcTarget": "Can you"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I can ",
+        ", but you need to practice."
+      ],
+      "answers": [
+        "help you"
+      ],
+      "speaker": "Naruto",
+      "transcript": "I can help you, but you need to practice.",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I can help you, but you need to ",
+        "."
+      ],
+      "answers": [
+        "practice"
+      ],
+      "speaker": "Naruto",
+      "transcript": "I can help you, but you need to practice.",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I practice ",
+        ". I want to be Hokage!"
+      ],
+      "answers": [
+        "every day"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "I practice every day. I want to be Hokage!",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-05.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I practice every day. I want to be ",
+        "!"
+      ],
+      "answers": [
+        "Hokage"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "I practice every day. I want to be Hokage!",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-05.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Konohamaru muốn trở thành ai trong tương lai?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Konohamaru muốn trở thành ai trong tương lai?",
+          "en": "Who does Konohamaru want to become?"
+        },
+        "options": [
+          {
+            "vi": "Thầy giáo ở học viện",
+            "en": "A teacher at the academy"
+          },
+          {
+            "vi": "Hokage",
+            "en": "Hokage"
+          },
+          {
+            "vi": "Người bán hàng trong làng",
+            "en": "A shopkeeper in the village"
+          },
+          {
+            "vi": "Trưởng nhóm của Naruto",
+            "en": "Naruto’s team leader"
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Thầy giáo ở học viện",
+        "Hokage",
+        "Người bán hàng trong làng",
+        "Trưởng nhóm của Naruto"
+      ],
+      "answer": "Hokage",
+      "speaker": "Konohamaru",
+      "transcript": "I practice every day. I want to be Hokage!",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-05.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Hey! I want to be ",
+        " too!"
+      ],
+      "answers": [
+        "Hokage"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Hey! I want to be Hokage too!",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Then we have the ",
+        " dream!"
+      ],
+      "answers": [
+        "same"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "Then we have the same dream!",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-06.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Then we have the same ",
+        "!"
+      ],
+      "answers": [
+        "dream"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "Then we have the same dream!",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-06.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "That is right. We can ",
+        " together."
+      ],
+      "answers": [
+        "train"
+      ],
+      "speaker": "Naruto",
+      "transcript": "That is right. We can train together.",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-06.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "That is right. We can train ",
+        "."
+      ],
+      "answers": [
+        "together"
+      ],
+      "speaker": "Naruto",
+      "transcript": "That is right. We can train together.",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-06.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 12,
+      "type": "multipleChoice",
+      "question": "Từ “can” trong câu của Naruto diễn tả điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Từ “can” trong câu của Naruto diễn tả điều gì?",
+          "en": "What does “can” express in Naruto’s sentence?"
+        },
+        "options": [
+          {
+            "vi": "Hai người đã luyện tập xong",
+            "en": "They have finished training"
+          },
+          {
+            "vi": "Hai người không được luyện tập",
+            "en": "They are not allowed to train"
+          },
+          {
+            "vi": "Hai người có thể luyện tập cùng nhau",
+            "en": "They can train together"
+          },
+          {
+            "vi": "Hai người luyện tập ở những nơi khác nhau",
+            "en": "They train in different places"
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "options": [
+        "Hai người đã luyện tập xong",
+        "Hai người không được luyện tập",
+        "Hai người có thể luyện tập cùng nhau",
+        "Hai người luyện tập ở những nơi khác nhau"
+      ],
+      "answer": "Hai người có thể luyện tập cùng nhau",
+      "speaker": "Naruto",
+      "transcript": "That is right. We can train together.",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-06.mp3",
+      "mcTarget": "can"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "",
+        " be friends too?"
+      ],
+      "answers": [
+        "Can we"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "Can we be friends too?",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-07.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Can we be ",
+        " too?"
+      ],
+      "answers": [
+        "friends"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "Can we be friends too?",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-07.mp3"
+    },
+    {
+      "id": 28,
+      "dialogueLineId": 13,
+      "type": "multipleChoice",
+      "question": "Ngoài việc học kỹ thuật ninja, Konohamaru còn muốn gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Ngoài việc học kỹ thuật ninja, Konohamaru còn muốn gì?",
+          "en": "Besides learning a ninja technique, what else does Konohamaru want?"
+        },
+        "options": [
+          {
+            "vi": "Được làm bạn với Naruto",
+            "en": "To become friends with Naruto"
+          },
+          {
+            "vi": "Được thi lại bài kiểm tra",
+            "en": "To retake the test"
+          },
+          {
+            "vi": "Được mượn băng trán ninja",
+            "en": "To borrow the ninja headband"
+          },
+          {
+            "vi": "Được học cùng thầy Iruka",
+            "en": "To study with Iruka"
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Được làm bạn với Naruto",
+        "Được thi lại bài kiểm tra",
+        "Được mượn băng trán ninja",
+        "Được học cùng thầy Iruka"
+      ],
+      "answer": "Được làm bạn với Naruto",
+      "speaker": "Konohamaru",
+      "transcript": "Can we be friends too?",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-07.mp3"
+    },
+    {
+      "id": 29,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "",
+        "! You are my friend now."
+      ],
+      "answers": [
+        "Of course"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Of course! You are my friend now.",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-07.mp3"
+    },
+    {
+      "id": 30,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Of course! You are my ",
+        " now."
+      ],
+      "answers": [
+        "friend"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Of course! You are my friend now.",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-07.mp3"
+    },
+    {
+      "id": 31,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "",
+        ", Naruto! See you tomorrow!"
+      ],
+      "answers": [
+        "Thank you"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "Thank you, Naruto! See you tomorrow!",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-08.mp3"
+    },
+    {
+      "id": 32,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Thank you, Naruto! See you ",
+        "!"
+      ],
+      "answers": [
+        "tomorrow"
+      ],
+      "speaker": "Konohamaru",
+      "transcript": "Thank you, Naruto! See you tomorrow!",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-08.mp3"
+    },
+    {
+      "id": 33,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập toàn bộ hội thoại",
+          "en": "Full dialogue review"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu để hoàn thành hội thoại.",
+          "en": "Fill in the missing words to complete the dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Konohamaru",
+          "parts": [
+            "Hey! Is that your new ninja ",
+            {
+              "id": "1",
+              "blank": "headband"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Naruto",
+          "parts": [
+            "Yes! I ",
+            {
+              "id": "2",
+              "blank": "passed"
+            },
+            " the test yesterday."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Konohamaru",
+          "parts": [
+            "Wow! You are a real ",
+            {
+              "id": "3",
+              "blank": "ninja"
+            },
+            "!"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Naruto",
+          "parts": [
+            "I work hard. What is your ",
+            {
+              "id": "4",
+              "blank": "name"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Konohamaru",
+          "parts": [
+            "My name is Konohamaru. I want to be ",
+            {
+              "id": "5",
+              "blank": "strong"
+            },
+            " like you."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Naruto",
+          "parts": [
+            "Nice to ",
+            {
+              "id": "6",
+              "blank": "meet"
+            },
+            " you, Konohamaru!"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Konohamaru",
+          "parts": [
+            "Can you ",
+            {
+              "id": "7",
+              "blank": "teach me"
+            },
+            " a ninja technique?"
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Naruto",
+          "parts": [
+            "I can help you, but you need to ",
+            {
+              "id": "8",
+              "blank": "practice"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Konohamaru",
+          "parts": [
+            "I practice every day. I want to be ",
+            {
+              "id": "9",
+              "blank": "Hokage"
+            },
+            "!"
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Naruto",
+          "parts": [
+            "Hey! I want to be ",
+            {
+              "id": "10",
+              "blank": "Hokage"
+            },
+            " too!"
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Konohamaru",
+          "parts": [
+            "Then we have the same ",
+            {
+              "id": "11",
+              "blank": "dream"
+            },
+            "!"
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Naruto",
+          "parts": [
+            "That is right. We can ",
+            {
+              "id": "12",
+              "blank": "train"
+            },
+            " together."
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Konohamaru",
+          "parts": [
+            "Can we be ",
+            {
+              "id": "13",
+              "blank": "friends"
+            },
+            " too?"
+          ]
+        },
+        {
+          "dialogueLineId": 14,
+          "speaker": "Naruto",
+          "parts": [
+            "Of course! You are my ",
+            {
+              "id": "14",
+              "blank": "friend"
+            },
+            " now."
+          ]
+        },
+        {
+          "dialogueLineId": 15,
+          "speaker": "Konohamaru",
+          "parts": [
+            "Thank you, Naruto! See you ",
+            {
+              "id": "15",
+              "blank": "tomorrow"
+            },
+            "!"
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Can you...? – Nhờ ai đó làm việc gì",
+      "explanation": "Dùng “Can you...?” để nhờ hoặc hỏi ai đó có thể làm một việc không. Đặt động từ nguyên mẫu ngay sau “Can you”.",
+      "localized": {
+        "title": {
+          "vi": "Can you...? – Nhờ ai đó làm việc gì",
+          "en": "Can you...? – Asking someone for help"
+        },
+        "explanation": {
+          "vi": "Dùng “Can you...?” để nhờ hoặc hỏi ai đó có thể làm một việc không. Đặt động từ nguyên mẫu ngay sau “Can you”.",
+          "en": "Use “Can you...?” to ask someone to do something. Use the base form of the verb immediately after “Can you”."
+        }
+      },
+      "example": "Can you teach me a ninja technique?"
+    }
+  ]
+}

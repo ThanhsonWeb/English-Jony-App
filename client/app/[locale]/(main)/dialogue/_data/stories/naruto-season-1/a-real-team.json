@@ -1,0 +1,1415 @@
+{
+  "metadata": {
+    "courseId": "naruto-season-1",
+    "dialogueId": "a-real-team",
+    "contextualGlossaryVersion": 1,
+    "title": "Một đội thực sự",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Naruto – Mùa 1",
+        "en": "Naruto – Season 1"
+      },
+      "courseDescription": {
+        "vi": "Hành trình đầu tiên của Naruto từ một cậu bé bị cô lập đến khi trở thành thành viên Đội Bảy.",
+        "en": "Naruto's first journey, from a lonely boy to a member of Team Seven."
+      },
+      "title": {
+        "vi": "Một đội thực sự",
+        "en": "A Real Team"
+      },
+      "description": {
+        "vi": "Kakashi passes all three students because they put teamwork first. Naruto is ready to begin his journey with Team Seven.",
+        "en": "Kakashi passes all three students because they put teamwork first. Naruto is ready to begin his journey with Team Seven."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Kakashi passes all three students because they put teamwork first. Naruto is ready to begin his journey with Team Seven.",
+    "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/a-real-team.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Naruto",
+      "text": "Wait, we all passed the test?",
+      "translation": "Khoan đã, cả ba chúng em đều vượt qua bài kiểm tra sao?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Kakashi",
+      "text": "Yes. You helped each other.",
+      "translation": "Đúng vậy. Các em đã giúp đỡ lẫn nhau.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Sakura",
+      "text": "Even without the bells?",
+      "translation": "Ngay cả khi chúng em không lấy được chuông sao?",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sakura-01.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Kakashi",
+      "text": "Yes. The bells were only part of the test.",
+      "translation": "Đúng vậy. Những chiếc chuông chỉ là một phần của bài kiểm tra.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Sasuke",
+      "text": "So what was the real test?",
+      "translation": "Vậy bài kiểm tra thực sự là gì ạ?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Kakashi",
+      "text": "The real test was to work together.",
+      "translation": "Bài kiểm tra thực sự là phải biết hợp tác với nhau.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Kakashi",
+      "text": "You shared your food with Naruto. You did not leave him alone.",
+      "translation": "Các em đã chia sẻ thức ăn với Naruto. Các em không bỏ mặc bạn ấy một mình.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Sakura",
+      "text": "He is our friend. We want to help him.",
+      "translation": "Cậu ấy là bạn của chúng em. Chúng em muốn giúp cậu ấy.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sakura-02.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Naruto",
+      "text": "I am happy we are on the same team.",
+      "translation": "Tớ rất vui vì chúng ta ở cùng một đội.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-02.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Kakashi",
+      "text": "You are not just three students. You are Team Seven!",
+      "translation": "Các em không chỉ là ba học sinh. Các em là Đội Bảy!",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Naruto",
+      "text": "Team Seven! What do we do next?",
+      "translation": "Đội Bảy! Tiếp theo chúng ta sẽ làm gì?",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-03.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Sasuke",
+      "text": "We still have a lot to learn.",
+      "translation": "Chúng ta vẫn còn nhiều điều phải học.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sasuke-02.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Sakura",
+      "text": "We can learn together.",
+      "translation": "Chúng ta có thể học cùng nhau.",
+      "practicePriority": "simple",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sakura-03.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Kakashi",
+      "text": "Good. Tomorrow, we start our first mission.",
+      "translation": "Tốt. Ngày mai, chúng ta bắt đầu nhiệm vụ đầu tiên.",
+      "practicePriority": "important",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-06.mp3"
+    },
+    {
+      "id": 15,
+      "speaker": "Naruto",
+      "text": "I can't wait! Our team is ready!",
+      "translation": "Tớ háo hức quá! Đội của chúng ta đã sẵn sàng!",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-04.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "passed the test",
+      "pronunciation": "/pæst ðə test/",
+      "meaning": "đã vượt qua bài kiểm tra",
+      "example": "We passed the test!"
+    },
+    {
+      "word": "each other",
+      "pronunciation": "/iːtʃ ˈʌðər/",
+      "meaning": "lẫn nhau",
+      "example": "We help each other."
+    },
+    {
+      "word": "work together",
+      "pronunciation": "/wɜːrk təˈɡeðər/",
+      "meaning": "hợp tác, làm việc cùng nhau",
+      "example": "We work together at school."
+    },
+    {
+      "word": "shared",
+      "pronunciation": "/ʃerd/",
+      "meaning": "đã chia sẻ",
+      "example": "She shared her lunch with me."
+    },
+    {
+      "word": "same team",
+      "pronunciation": "/seɪm tiːm/",
+      "meaning": "cùng một đội",
+      "example": "We are on the same team."
+    },
+    {
+      "word": "Team Seven",
+      "pronunciation": "/tiːm ˈsevən/",
+      "meaning": "Đội Bảy",
+      "example": "Team Seven is ready."
+    },
+    {
+      "word": "first mission",
+      "pronunciation": "/fɜːrst ˈmɪʃən/",
+      "meaning": "nhiệm vụ đầu tiên",
+      "example": "This is our first mission."
+    },
+    {
+      "word": "can't wait",
+      "pronunciation": "/kænt weɪt/",
+      "meaning": "rất háo hức, nóng lòng",
+      "example": "I can’t wait to start!"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Wait, we all ",
+        " the test?"
+      ],
+      "answers": [
+        "passed"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Wait, we all passed the test?",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Wait, we all passed the ",
+        "?"
+      ],
+      "answers": [
+        "test"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Wait, we all passed the test?",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes. You ",
+        " each other."
+      ],
+      "answers": [
+        "helped"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "Yes. You helped each other.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes. You helped ",
+        "."
+      ],
+      "answers": [
+        "each other"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "Yes. You helped each other.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 2,
+      "type": "multipleChoice",
+      "question": "Vì sao cả ba vượt qua bài kiểm tra?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Vì sao cả ba vượt qua bài kiểm tra?",
+          "en": "Why did all three pass the test?"
+        },
+        "options": [
+          {
+            "vi": "Vì Naruto lấy được hai chiếc chuông.",
+            "en": "Because Naruto got both bells."
+          },
+          {
+            "vi": "Vì họ biết giúp đỡ lẫn nhau.",
+            "en": "Because they helped each other."
+          },
+          {
+            "vi": "Vì họ làm bài nhanh nhất.",
+            "en": "Because they finished first."
+          },
+          {
+            "vi": "Vì Sasuke làm mọi việc một mình.",
+            "en": "Because Sasuke did everything alone."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì Naruto lấy được hai chiếc chuông.",
+        "Vì họ biết giúp đỡ lẫn nhau.",
+        "Vì họ làm bài nhanh nhất.",
+        "Vì Sasuke làm mọi việc một mình."
+      ],
+      "answer": "Vì họ biết giúp đỡ lẫn nhau.",
+      "speaker": "Kakashi",
+      "transcript": "Yes. You helped each other.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Even without the ",
+        "?"
+      ],
+      "answers": [
+        "bells"
+      ],
+      "speaker": "Sakura",
+      "transcript": "Even without the bells?",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sakura-01.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes. The ",
+        " were only part of the test."
+      ],
+      "answers": [
+        "bells"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "Yes. The bells were only part of the test.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes. The bells were only part of the ",
+        "."
+      ],
+      "answers": [
+        "test"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "Yes. The bells were only part of the test.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "So what was the ",
+        " test?"
+      ],
+      "answers": [
+        "real"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "So what was the real test?",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "So what was the real ",
+        "?"
+      ],
+      "answers": [
+        "test"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "So what was the real test?",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "multipleChoice",
+      "question": "Sasuke muốn biết điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Sasuke muốn biết điều gì?",
+          "en": "What does Sasuke want to know?"
+        },
+        "options": [
+          {
+            "vi": "Khi nào được ăn trưa.",
+            "en": "When they can eat lunch."
+          },
+          {
+            "vi": "Ngày mai ai sẽ vắng mặt.",
+            "en": "Who will be absent tomorrow."
+          },
+          {
+            "vi": "Bài kiểm tra thật sự là gì.",
+            "en": "What the real test was."
+          },
+          {
+            "vi": "Ai giữ hai chiếc chuông.",
+            "en": "Who has the two bells."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Khi nào được ăn trưa.",
+        "Ngày mai ai sẽ vắng mặt.",
+        "Bài kiểm tra thật sự là gì.",
+        "Ai giữ hai chiếc chuông."
+      ],
+      "answer": "Bài kiểm tra thật sự là gì.",
+      "speaker": "Sasuke",
+      "transcript": "So what was the real test?",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sasuke-01.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "The real test was to ",
+        " together."
+      ],
+      "answers": [
+        "work"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "The real test was to work together.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-03.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "The real test was to work ",
+        "."
+      ],
+      "answers": [
+        "together"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "The real test was to work together.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "You ",
+        " your food with Naruto. You did not leave him alone."
+      ],
+      "answers": [
+        "shared"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "You shared your food with Naruto. You did not leave him alone.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-04.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "You shared your food with Naruto. You did not leave him ",
+        "."
+      ],
+      "answers": [
+        "alone"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "You shared your food with Naruto. You did not leave him alone.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-04.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "He is our ",
+        ". We want to help him."
+      ],
+      "answers": [
+        "friend"
+      ],
+      "speaker": "Sakura",
+      "transcript": "He is our friend. We want to help him.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sakura-02.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "He is our friend. We want to ",
+        " him."
+      ],
+      "answers": [
+        "help"
+      ],
+      "speaker": "Sakura",
+      "transcript": "He is our friend. We want to help him.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sakura-02.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 8,
+      "type": "multipleChoice",
+      "question": "Trong câu \"We want to help him\", \"want to\" cho biết điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Trong câu \"We want to help him\", \"want to\" cho biết điều gì?",
+          "en": "In \"We want to help him\", what does \"want to\" express?"
+        },
+        "options": [
+          {
+            "vi": "Sakura và Sasuke muốn giúp Naruto.",
+            "en": "Sakura and Sasuke want to help Naruto."
+          },
+          {
+            "vi": "Sakura và Sasuke không được giúp Naruto.",
+            "en": "Sakura and Sasuke are not allowed to help Naruto."
+          },
+          {
+            "vi": "Sakura đang hỏi Naruto có cần giúp không.",
+            "en": "Sakura is asking whether Naruto needs help."
+          },
+          {
+            "vi": "Sakura nói Naruto đã giúp hai bạn ấy.",
+            "en": "Sakura says Naruto helped them."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "want to",
+      "options": [
+        "Sakura và Sasuke muốn giúp Naruto.",
+        "Sakura và Sasuke không được giúp Naruto.",
+        "Sakura đang hỏi Naruto có cần giúp không.",
+        "Sakura nói Naruto đã giúp hai bạn ấy."
+      ],
+      "answer": "Sakura và Sasuke muốn giúp Naruto.",
+      "speaker": "Sakura",
+      "transcript": "He is our friend. We want to help him.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sakura-02.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I am ",
+        " we are on the same team."
+      ],
+      "answers": [
+        "happy"
+      ],
+      "speaker": "Naruto",
+      "transcript": "I am happy we are on the same team.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-02.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I am happy we are on the ",
+        "."
+      ],
+      "answers": [
+        "same team"
+      ],
+      "speaker": "Naruto",
+      "transcript": "I am happy we are on the same team.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-02.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "You are not just three ",
+        ". You are Team Seven!"
+      ],
+      "answers": [
+        "students"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "You are not just three students. You are Team Seven!",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "You are not just three students. You are ",
+        "!"
+      ],
+      "answers": [
+        "Team Seven"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "You are not just three students. You are Team Seven!",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Theo Kakashi, ba học sinh giờ là gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Theo Kakashi, ba học sinh giờ là gì?",
+          "en": "According to Kakashi, what are the three students now?"
+        },
+        "options": [
+          {
+            "vi": "Ba học sinh phải thi lại.",
+            "en": "Three students who must take the test again."
+          },
+          {
+            "vi": "Hai người trong đội mới.",
+            "en": "Two members of a new team."
+          },
+          {
+            "vi": "Ba học sinh đang làm việc riêng.",
+            "en": "Three students who are working alone."
+          },
+          {
+            "vi": "Các thành viên của Đội Bảy.",
+            "en": "Members of Team Seven."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Ba học sinh phải thi lại.",
+        "Hai người trong đội mới.",
+        "Ba học sinh đang làm việc riêng.",
+        "Các thành viên của Đội Bảy."
+      ],
+      "answer": "Các thành viên của Đội Bảy.",
+      "speaker": "Kakashi",
+      "transcript": "You are not just three students. You are Team Seven!",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-05.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "",
+        "! What do we do next?"
+      ],
+      "answers": [
+        "Team Seven"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Team Seven! What do we do next?",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-03.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Team Seven! What do we do ",
+        "?"
+      ],
+      "answers": [
+        "next"
+      ],
+      "speaker": "Naruto",
+      "transcript": "Team Seven! What do we do next?",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-03.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "We ",
+        " have a lot to learn."
+      ],
+      "answers": [
+        "still"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "We still have a lot to learn.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sasuke-02.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "We still have a lot to ",
+        "."
+      ],
+      "answers": [
+        "learn"
+      ],
+      "speaker": "Sasuke",
+      "transcript": "We still have a lot to learn.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sasuke-02.mp3"
+    },
+    {
+      "id": 28,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "We can learn ",
+        "."
+      ],
+      "answers": [
+        "together"
+      ],
+      "speaker": "Sakura",
+      "transcript": "We can learn together.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sakura-03.mp3"
+    },
+    {
+      "id": 29,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Good. ",
+        ", we start our first mission."
+      ],
+      "answers": [
+        "Tomorrow"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "Good. Tomorrow, we start our first mission.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-06.mp3"
+    },
+    {
+      "id": 30,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Good. Tomorrow, we start our ",
+        "."
+      ],
+      "answers": [
+        "first mission"
+      ],
+      "speaker": "Kakashi",
+      "transcript": "Good. Tomorrow, we start our first mission.",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-06.mp3"
+    },
+    {
+      "id": 31,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I can't wait! Our ",
+        " is ready!"
+      ],
+      "answers": [
+        "team"
+      ],
+      "speaker": "Naruto",
+      "transcript": "I can't wait! Our team is ready!",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-04.mp3"
+    },
+    {
+      "id": 32,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu vào câu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I can't wait! Our team is ",
+        "!"
+      ],
+      "answers": [
+        "ready"
+      ],
+      "speaker": "Naruto",
+      "transcript": "I can't wait! Our team is ready!",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-04.mp3"
+    },
+    {
+      "id": 33,
+      "dialogueLineId": 15,
+      "type": "multipleChoice",
+      "question": "Khi nói \"I can't wait!\", Naruto muốn thể hiện điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Khi nói \"I can't wait!\", Naruto muốn thể hiện điều gì?",
+          "en": "When Naruto says \"I can't wait!\", what is he expressing?"
+        },
+        "options": [
+          {
+            "vi": "Cậu ấy rất háo hức bắt đầu.",
+            "en": "He is excited to get started."
+          },
+          {
+            "vi": "Cậu ấy không muốn tham gia.",
+            "en": "He does not want to join."
+          },
+          {
+            "vi": "Cậu ấy muốn nghỉ cả ngày.",
+            "en": "He wants to rest all day."
+          },
+          {
+            "vi": "Cậu ấy lo rằng mình bị loại.",
+            "en": "He worries he has failed."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "can't wait",
+      "options": [
+        "Cậu ấy rất háo hức bắt đầu.",
+        "Cậu ấy không muốn tham gia.",
+        "Cậu ấy muốn nghỉ cả ngày.",
+        "Cậu ấy lo rằng mình bị loại."
+      ],
+      "answer": "Cậu ấy rất háo hức bắt đầu.",
+      "speaker": "Naruto",
+      "transcript": "I can't wait! Our team is ready!",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-04.mp3"
+    },
+    {
+      "id": 34,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập cả hội thoại",
+          "en": "Full dialogue review"
+        },
+        "instruction": {
+          "vi": "Điền các từ còn thiếu để hoàn thành cả hội thoại.",
+          "en": "Fill in the missing words to complete the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Naruto",
+          "parts": [
+            "Wait, we all ",
+            {
+              "id": "1",
+              "blank": "passed"
+            },
+            " the test?"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Kakashi",
+          "parts": [
+            "Yes. You helped ",
+            {
+              "id": "2",
+              "blank": "each other"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Sakura",
+          "parts": [
+            "Even without the ",
+            {
+              "id": "3",
+              "blank": "bells"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Kakashi",
+          "parts": [
+            "Yes. The bells were ",
+            {
+              "id": "4",
+              "blank": "only"
+            },
+            " part of the test."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Sasuke",
+          "parts": [
+            "So what was the ",
+            {
+              "id": "5",
+              "blank": "real test"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Kakashi",
+          "parts": [
+            "The real test was to ",
+            {
+              "id": "6",
+              "blank": "work together"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Kakashi",
+          "parts": [
+            "You ",
+            {
+              "id": "7",
+              "blank": "shared"
+            },
+            " your food with Naruto. You did not leave him alone."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Sakura",
+          "parts": [
+            "He is our ",
+            {
+              "id": "8",
+              "blank": "friend"
+            },
+            ". We want to help him."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Naruto",
+          "parts": [
+            "I am happy we are on the ",
+            {
+              "id": "9",
+              "blank": "same team"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Kakashi",
+          "parts": [
+            "You are not just three students. You are ",
+            {
+              "id": "10",
+              "blank": "Team Seven"
+            },
+            "!"
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Naruto",
+          "parts": [
+            "Team Seven! What do we do ",
+            {
+              "id": "11",
+              "blank": "next"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Sasuke",
+          "parts": [
+            "We still have a lot to ",
+            {
+              "id": "12",
+              "blank": "learn"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Sakura",
+          "parts": [
+            "We can learn ",
+            {
+              "id": "13",
+              "blank": "together"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 14,
+          "speaker": "Kakashi",
+          "parts": [
+            "Good. Tomorrow, we start our ",
+            {
+              "id": "14",
+              "blank": "first mission"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 15,
+          "speaker": "Naruto",
+          "parts": [
+            "I ",
+            {
+              "id": "15",
+              "blank": "can't wait"
+            },
+            "! Our team is ready!"
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Want to + động từ",
+      "explanation": "Dùng \"want to\" + động từ để nói điều mình muốn làm. Ví dụ: \"We want to help him\" nghĩa là chúng em muốn giúp cậu ấy.",
+      "localized": {
+        "title": {
+          "vi": "Want to + động từ",
+          "en": "Want to + verb"
+        },
+        "explanation": {
+          "vi": "Dùng \"want to\" + động từ để nói điều mình muốn làm. Ví dụ: \"We want to help him\" nghĩa là chúng em muốn giúp cậu ấy.",
+          "en": "Use \"want to\" + a verb to say what someone wants to do. For example, \"We want to help him\" expresses a wish to help."
+        }
+      },
+      "example": "I want to learn English."
+    }
+  ]
+}

@@ -1,0 +1,1315 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "naruto-season-1",
+  "dialogueId": "the-bell-test",
+  "characters": {
+    "Sakura": {
+      "meaning": "Sakura",
+      "role": "Thành viên Đội 7"
+    },
+    "Naruto": {
+      "meaning": "Naruto",
+      "role": "Thành viên Đội 7"
+    },
+    "Kakashi": {
+      "meaning": "Kakashi",
+      "role": "Thầy giáo hướng dẫn Đội 7"
+    },
+    "Sasuke": {
+      "meaning": "Sasuke",
+      "role": "Thành viên Đội 7"
+    }
+  },
+  "entries": {
+    "word-we": {
+      "word": "we",
+      "meaning": "chúng ta; chúng em",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "động từ be",
+      "pos": [
+        "verb"
+      ],
+      "note": "Động từ be nối chủ ngữ với tính từ hoặc cụm danh từ; tiếng Việt thường lược bỏ."
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "ở đây; có mặt",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-on": {
+      "word": "on",
+      "meaning": "vào",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-time": {
+      "word": "time",
+      "meaning": "thời gian; giờ",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "em; tớ",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "động từ be",
+      "pos": [
+        "verb"
+      ],
+      "note": "Động từ be nối chủ ngữ với tính từ hoặc cụm danh từ; tiếng Việt thường lược bỏ."
+    },
+    "word-ready": {
+      "word": "ready",
+      "meaning": "sẵn sàng",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "cho; dành cho",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "mạo từ xác định",
+      "pos": [
+        "article"
+      ],
+      "note": "Dùng trước danh từ xác định; tiếng Việt thường không dịch riêng."
+    },
+    "word-test": {
+      "word": "test",
+      "meaning": "bài kiểm tra",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "tốt",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-morning": {
+      "word": "morning",
+      "meaning": "buổi sáng",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-today": {
+      "word": "today",
+      "meaning": "hôm nay",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "có",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "một (mạo từ)",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "các em",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-look": {
+      "word": "look",
+      "meaning": "nhìn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-two": {
+      "word": "two",
+      "meaning": "hai",
+      "pos": [
+        "number"
+      ]
+    },
+    "word-bells": {
+      "word": "bells",
+      "meaning": "những chiếc chuông",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-must": {
+      "word": "must",
+      "meaning": "phải",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-take": {
+      "word": "take",
+      "meaning": "lấy",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-one": {
+      "word": "one",
+      "meaning": "một chiếc",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "đánh dấu động từ nguyên mẫu",
+      "pos": [
+        "particle"
+      ],
+      "note": "Trong need to, to đứng trước động từ nguyên mẫu và không có nghĩa riêng."
+    },
+    "word-pass": {
+      "word": "pass",
+      "meaning": "vượt qua",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "nhưng",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-there": {
+      "word": "there",
+      "meaning": "có (trong there is/are)",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-three": {
+      "word": "three",
+      "meaning": "ba",
+      "pos": [
+        "number"
+      ]
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "trong số",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-us": {
+      "word": "us",
+      "meaning": "chúng em",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-only": {
+      "word": "only",
+      "meaning": "chỉ",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-get": {
+      "word": "get",
+      "meaning": "lấy được",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-bell": {
+      "word": "bell",
+      "meaning": "chiếc chuông",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-by": {
+      "word": "by",
+      "meaning": "tự (trong by myself)",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-myself": {
+      "word": "myself",
+      "meaning": "chính mình",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "sẽ",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-work": {
+      "word": "work",
+      "meaning": "làm việc",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-alone": {
+      "word": "alone",
+      "meaning": "một mình",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "cũng",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-wait": {
+      "word": "wait",
+      "meaning": "khoan; đợi đã",
+      "pos": [
+        "interjection",
+        "verb"
+      ]
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "cần",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-plan": {
+      "word": "plan",
+      "meaning": "kế hoạch",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-first": {
+      "word": "first",
+      "meaning": "trước tiên",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "không",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "muốn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-start": {
+      "word": "start",
+      "meaning": "bắt đầu",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "ngay bây giờ",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-until": {
+      "word": "until",
+      "meaning": "đến (một mốc thời gian)",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-noon": {
+      "word": "noon",
+      "meaning": "buổi trưa",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-luck": {
+      "word": "luck",
+      "meaning": "may mắn",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-why": {
+      "word": "why",
+      "meaning": "tại sao",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-can't": {
+      "word": "can't",
+      "meaning": "không thể",
+      "pos": [
+        "contraction",
+        "modal verb"
+      ],
+      "note": "Dạng rút gọn của cannot."
+    },
+    "word-catch": {
+      "word": "catch",
+      "meaning": "bắt; đuổi kịp",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-either": {
+      "word": "either",
+      "meaning": "cũng (trong câu phủ định)",
+      "pos": [
+        "adverb"
+      ],
+      "note": "Ở cuối câu phủ định, either mang nghĩa “cũng không”."
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "không",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-working": {
+      "word": "working",
+      "meaning": "đang làm việc",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-together": {
+      "word": "together",
+      "meaning": "cùng nhau",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "là; thì",
+      "pos": [
+        "verb"
+      ],
+      "note": "Động từ be nối chủ ngữ với tính từ hoặc cụm danh từ; tiếng Việt thường lược bỏ."
+    },
+    "word-over": {
+      "word": "over",
+      "meaning": "kết thúc",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-tried": {
+      "word": "tried",
+      "meaning": "đã cố gắng",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-so": {
+      "word": "so",
+      "meaning": "rất; đến mức",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-hard": {
+      "word": "hard",
+      "meaning": "hết sức",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-worked": {
+      "word": "worked",
+      "meaning": "đã làm việc",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "đó; điều đó",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-problem": {
+      "word": "problem",
+      "meaning": "vấn đề",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "giúp đỡ",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-each": {
+      "word": "each",
+      "meaning": "mỗi",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-other": {
+      "word": "other",
+      "meaning": "người khác",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-think": {
+      "word": "think",
+      "meaning": "suy nghĩ",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "về",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-talk": {
+      "word": "talk",
+      "meaning": "nói chuyện",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-after": {
+      "word": "after",
+      "meaning": "sau",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-lunch": {
+      "word": "lunch",
+      "meaning": "bữa trưa",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-i-kakashi": {
+      "word": "i",
+      "meaning": "thầy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-i-familiar": {
+      "word": "i",
+      "meaning": "tớ",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-you-teacher": {
+      "word": "you",
+      "meaning": "thầy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-are-here": {
+      "word": "are",
+      "meaning": "đã có mặt",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-are-exist": {
+      "word": "are",
+      "meaning": "có",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-are-progressive": {
+      "word": "are",
+      "meaning": "đang",
+      "pos": [
+        "verb"
+      ],
+      "note": "Trợ động từ trong thì hiện tại tiếp diễn."
+    },
+    "word-to-purpose": {
+      "word": "to",
+      "meaning": "để",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-no-time": {
+      "word": "no",
+      "meaning": "không còn",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-no-bells": {
+      "word": "no",
+      "meaning": "không có",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-is-over": {
+      "word": "is",
+      "meaning": "đã",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-that-problem": {
+      "word": "that",
+      "meaning": "đó",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-that-thought": {
+      "word": "that",
+      "meaning": "điều đó",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "phrase-on-time": {
+      "word": "on time",
+      "meaning": "đúng giờ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-ready-for": {
+      "word": "ready for",
+      "meaning": "sẵn sàng cho",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-good-morning": {
+      "word": "good morning",
+      "meaning": "chào buổi sáng",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-two-bells": {
+      "word": "two bells",
+      "meaning": "hai chiếc chuông",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-three-of-us": {
+      "word": "three of us",
+      "meaning": "ba người chúng em",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-two-of-you": {
+      "word": "two of you",
+      "meaning": "hai trong số các em",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-by-myself": {
+      "word": "by myself",
+      "meaning": "tự mình",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-work-alone": {
+      "word": "work alone",
+      "meaning": "làm việc một mình",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-a-plan": {
+      "word": "a plan",
+      "meaning": "một kế hoạch",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-no-time": {
+      "word": "no time",
+      "meaning": "không còn thời gian",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-good-luck": {
+      "word": "good luck",
+      "meaning": "chúc may mắn",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-working-together": {
+      "word": "working together",
+      "meaning": "hợp tác cùng nhau",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-no-bells": {
+      "word": "no bells",
+      "meaning": "không có chiếc chuông nào",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-each-other": {
+      "word": "each other",
+      "meaning": "lẫn nhau",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-help-each-other": {
+      "word": "help each other",
+      "meaning": "giúp đỡ lẫn nhau",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-after-lunch": {
+      "word": "after lunch",
+      "meaning": "sau bữa trưa",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-think-about-that": {
+      "word": "think about that",
+      "meaning": "suy nghĩ về điều đó",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Sakura",
+      "text": "We are here on time.",
+      "translation": "Chúng em đã có mặt đúng giờ.",
+      "tokens": [
+        "We",
+        "are",
+        "here",
+        "on",
+        "time"
+      ],
+      "words": [
+        "word-we",
+        "word-are-here",
+        "word-here",
+        "word-on",
+        "word-time"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "on time",
+          "entry": "phrase-on-time"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Naruto",
+      "text": "I am ready for the test!",
+      "translation": "Em đã sẵn sàng cho bài kiểm tra!",
+      "tokens": [
+        "I",
+        "am",
+        "ready",
+        "for",
+        "the",
+        "test"
+      ],
+      "words": [
+        "word-i",
+        "word-am",
+        "word-ready",
+        "word-for",
+        "word-the",
+        "word-test"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "ready for",
+          "entry": "phrase-ready-for"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Kakashi",
+      "text": "Good morning. Today, I have a test for you.",
+      "translation": "Chào buổi sáng. Hôm nay thầy có một bài kiểm tra dành cho các em.",
+      "tokens": [
+        "Good",
+        "morning",
+        "Today",
+        "I",
+        "have",
+        "a",
+        "test",
+        "for",
+        "you"
+      ],
+      "words": [
+        "word-good",
+        "word-morning",
+        "word-today",
+        "word-i-kakashi",
+        "word-have",
+        "word-a",
+        "word-test",
+        "word-for",
+        "word-you"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Good morning",
+          "entry": "phrase-good-morning"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Kakashi",
+      "text": "Look, I have two bells. You must take one to pass.",
+      "translation": "Nhìn này, thầy có hai chiếc chuông. Các em phải lấy được một chiếc mới vượt qua.",
+      "tokens": [
+        "Look",
+        "I",
+        "have",
+        "two",
+        "bells",
+        "You",
+        "must",
+        "take",
+        "one",
+        "to",
+        "pass"
+      ],
+      "words": [
+        "word-look",
+        "word-i-kakashi",
+        "word-have",
+        "word-two",
+        "word-bells",
+        "word-you",
+        "word-must",
+        "word-take",
+        "word-one",
+        "word-to-purpose",
+        "word-pass"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "two bells",
+          "entry": "phrase-two-bells"
+        }
+      ]
+    },
+    "5": {
+      "speaker": "Sakura",
+      "text": "But there are three of us!",
+      "translation": "Nhưng có đến ba người chúng em mà!",
+      "tokens": [
+        "But",
+        "there",
+        "are",
+        "three",
+        "of",
+        "us"
+      ],
+      "words": [
+        "word-but",
+        "word-there",
+        "word-are-exist",
+        "word-three",
+        "word-of",
+        "word-us"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 5,
+          "text": "three of us",
+          "entry": "phrase-three-of-us"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Kakashi",
+      "text": "Only two of you can get a bell.",
+      "translation": "Chỉ hai trong số các em có thể lấy được chuông.",
+      "tokens": [
+        "Only",
+        "two",
+        "of",
+        "you",
+        "can",
+        "get",
+        "a",
+        "bell"
+      ],
+      "words": [
+        "word-only",
+        "word-two",
+        "word-of",
+        "word-you",
+        "word-can",
+        "word-get",
+        "word-a",
+        "word-bell"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 3,
+          "text": "two of you",
+          "entry": "phrase-two-of-you"
+        }
+      ]
+    },
+    "7": {
+      "speaker": "Naruto",
+      "text": "I can get one by myself!",
+      "translation": "Em có thể tự mình lấy được một chiếc!",
+      "tokens": [
+        "I",
+        "can",
+        "get",
+        "one",
+        "by",
+        "myself"
+      ],
+      "words": [
+        "word-i",
+        "word-can",
+        "word-get",
+        "word-one",
+        "word-by",
+        "word-myself"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "by myself",
+          "entry": "phrase-by-myself"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Sasuke",
+      "text": "I will work alone too.",
+      "translation": "Em cũng sẽ làm một mình.",
+      "tokens": [
+        "I",
+        "will",
+        "work",
+        "alone",
+        "too"
+      ],
+      "words": [
+        "word-i",
+        "word-will",
+        "word-work",
+        "word-alone",
+        "word-too"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "work alone",
+          "entry": "phrase-work-alone"
+        }
+      ]
+    },
+    "9": {
+      "speaker": "Sakura",
+      "text": "Wait. We need a plan first.",
+      "translation": "Khoan đã. Chúng ta cần lên kế hoạch trước.",
+      "tokens": [
+        "Wait",
+        "We",
+        "need",
+        "a",
+        "plan",
+        "first"
+      ],
+      "words": [
+        "word-wait",
+        "word-we",
+        "word-need",
+        "word-a",
+        "word-plan",
+        "word-first"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "a plan",
+          "entry": "phrase-a-plan"
+        }
+      ]
+    },
+    "10": {
+      "speaker": "Naruto",
+      "text": "No time! I want to start now!",
+      "translation": "Không còn thời gian đâu! Tớ muốn bắt đầu ngay!",
+      "tokens": [
+        "No",
+        "time",
+        "I",
+        "want",
+        "to",
+        "start",
+        "now"
+      ],
+      "words": [
+        "word-no-time",
+        "word-time",
+        "word-i-familiar",
+        "word-want",
+        "word-to",
+        "word-start",
+        "word-now"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "No time",
+          "entry": "phrase-no-time"
+        }
+      ]
+    },
+    "11": {
+      "speaker": "Kakashi",
+      "text": "You have until noon. Good luck!",
+      "translation": "Các em có thời gian đến trưa. Chúc may mắn!",
+      "tokens": [
+        "You",
+        "have",
+        "until",
+        "noon",
+        "Good",
+        "luck"
+      ],
+      "words": [
+        "word-you",
+        "word-have",
+        "word-until",
+        "word-noon",
+        "word-good",
+        "word-luck"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "Good luck",
+          "entry": "phrase-good-luck"
+        }
+      ]
+    },
+    "12": {
+      "speaker": "Naruto",
+      "text": "Why can't I catch you?",
+      "translation": "Sao em không thể bắt được thầy chứ?",
+      "tokens": [
+        "Why",
+        "can't",
+        "I",
+        "catch",
+        "you"
+      ],
+      "words": [
+        "word-why",
+        "word-can't",
+        "word-i",
+        "word-catch",
+        "word-you-teacher"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Sasuke",
+      "text": "I can't get a bell either.",
+      "translation": "Em cũng không lấy được chiếc chuông nào.",
+      "tokens": [
+        "I",
+        "can't",
+        "get",
+        "a",
+        "bell",
+        "either"
+      ],
+      "words": [
+        "word-i",
+        "word-can't",
+        "word-get",
+        "word-a",
+        "word-bell",
+        "word-either"
+      ],
+      "phrases": []
+    },
+    "14": {
+      "speaker": "Sakura",
+      "text": "We are not working together.",
+      "translation": "Chúng ta đang không hợp tác với nhau.",
+      "tokens": [
+        "We",
+        "are",
+        "not",
+        "working",
+        "together"
+      ],
+      "words": [
+        "word-we",
+        "word-are-progressive",
+        "word-not",
+        "word-working",
+        "word-together"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "working together",
+          "entry": "phrase-working-together"
+        }
+      ]
+    },
+    "15": {
+      "speaker": "Kakashi",
+      "text": "The test is over. You have no bells.",
+      "translation": "Bài kiểm tra kết thúc rồi. Các em không có chiếc chuông nào.",
+      "tokens": [
+        "The",
+        "test",
+        "is",
+        "over",
+        "You",
+        "have",
+        "no",
+        "bells"
+      ],
+      "words": [
+        "word-the",
+        "word-test",
+        "word-is-over",
+        "word-over",
+        "word-you",
+        "word-have",
+        "word-no-bells",
+        "word-bells"
+      ],
+      "phrases": [
+        {
+          "start": 6,
+          "end": 7,
+          "text": "no bells",
+          "entry": "phrase-no-bells"
+        }
+      ]
+    },
+    "16": {
+      "speaker": "Naruto",
+      "text": "But I tried so hard!",
+      "translation": "Nhưng em đã cố gắng hết sức mà!",
+      "tokens": [
+        "But",
+        "I",
+        "tried",
+        "so",
+        "hard"
+      ],
+      "words": [
+        "word-but",
+        "word-i",
+        "word-tried",
+        "word-so",
+        "word-hard"
+      ],
+      "phrases": []
+    },
+    "17": {
+      "speaker": "Kakashi",
+      "text": "You worked alone. That is the problem.",
+      "translation": "Các em đều làm một mình. Đó chính là vấn đề.",
+      "tokens": [
+        "You",
+        "worked",
+        "alone",
+        "That",
+        "is",
+        "the",
+        "problem"
+      ],
+      "words": [
+        "word-you",
+        "word-worked",
+        "word-alone",
+        "word-that-problem",
+        "word-is",
+        "word-the",
+        "word-problem"
+      ],
+      "phrases": []
+    },
+    "18": {
+      "speaker": "Sakura",
+      "text": "We need to help each other.",
+      "translation": "Chúng ta cần giúp đỡ lẫn nhau.",
+      "tokens": [
+        "We",
+        "need",
+        "to",
+        "help",
+        "each",
+        "other"
+      ],
+      "words": [
+        "word-we",
+        "word-need",
+        "word-to",
+        "word-help",
+        "word-each",
+        "word-other"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "each other",
+          "entry": "phrase-each-other"
+        },
+        {
+          "start": 3,
+          "end": 5,
+          "text": "help each other",
+          "entry": "phrase-help-each-other"
+        }
+      ]
+    },
+    "19": {
+      "speaker": "Kakashi",
+      "text": "Think about that. We will talk after lunch.",
+      "translation": "Hãy suy nghĩ về điều đó. Chúng ta sẽ nói chuyện sau bữa trưa.",
+      "tokens": [
+        "Think",
+        "about",
+        "that",
+        "We",
+        "will",
+        "talk",
+        "after",
+        "lunch"
+      ],
+      "words": [
+        "word-think",
+        "word-about",
+        "word-that-thought",
+        "word-we",
+        "word-will",
+        "word-talk",
+        "word-after",
+        "word-lunch"
+      ],
+      "phrases": [
+        {
+          "start": 6,
+          "end": 7,
+          "text": "after lunch",
+          "entry": "phrase-after-lunch"
+        },
+        {
+          "start": 0,
+          "end": 2,
+          "text": "Think about that",
+          "entry": "phrase-think-about-that"
+        }
+      ]
+    }
+  }
+}
