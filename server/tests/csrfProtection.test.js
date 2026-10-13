@@ -100,6 +100,30 @@ test("trusted frontend Origin supports global/owned-topic CRUD and preserves F07
 	assert.equal((await request(`/topics/${foreign.id}`, "DELETE")).status, 404);
 	assert.equal((await request(`/topics/${topic.id}`, "DELETE")).status, 204);
 });
+test("production theme save requires the configured frontend origin and the matching signed-in account", async () => {
+	const path = "/users/theme";
+	const dark = { theme: "dark", expectedUserId: owner.id };
+	const saved = await request(path, "PATCH", dark);
+	assert.equal(saved.status, 200);
+	assert.equal(saved.body.data.theme, "dark");
+	assert.equal((await request("/users/me")).body.data.user.theme, "dark");
+
+	denied(await request(path, "PATCH", { theme: "light", expectedUserId: owner.id }, { Origin: "https://www.studyjony.test" }));
+	denied(await request(path, "PATCH", { theme: "light", expectedUserId: owner.id }, { Origin: undefined, Referer: undefined }));
+	assert.equal((await request(path, "PATCH", { theme: "light", expectedUserId: owner.id }, { Cookie: undefined })).status, 401);
+	assert.equal((await request(path, "PATCH", { theme: "light", expectedUserId: googleUser.id })).status, 409);
+	assert.equal((await request(path, "PATCH", { theme: "bright-pink", expectedUserId: owner.id })).status, 400);
+
+	process.env.FRONTEND_URL = "http://localhost:3000";
+	try {
+		const misconfigured = await request(path, "PATCH", { theme: "light", expectedUserId: owner.id });
+		assert.equal(misconfigured.status, 500);
+		assert.equal(misconfigured.body.message, "Request origin validation is unavailable. Please try again later.");
+	} finally {
+		process.env.FRONTEND_URL = frontend;
+	}
+	assert.equal((await User.findById(owner.id)).theme, "dark");
+});
 test("trusted frontend requests still record activity, review/SRS XP and Dialogue/Story progress", async () => {
 	assert.equal((await request("/study-activities", "POST")).status, 405);
 	const review = await request(`/vocab/${word.id}/review`, "POST", { mode: "writing", answer: "water", reviewId: randomUUID() });

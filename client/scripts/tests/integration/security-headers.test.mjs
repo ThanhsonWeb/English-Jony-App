@@ -29,6 +29,21 @@ test("Next configuration attaches security headers to every locale without chang
 	assert.equal((await config.rewrites())[0].source, "/api/v1/:path*");
 });
 
+test("API rewrite uses one path separator with or without a trailing slash in the backend URL", async () => {
+	const config = require("../../../next.config.js");
+	const original = process.env.NEXT_PUBLIC_API_URL;
+	try {
+		for (const backend of ["https://api.studyjony.test", "https://api.studyjony.test/"]) {
+			process.env.NEXT_PUBLIC_API_URL = backend;
+			const [rewrite] = await config.rewrites();
+			assert.equal(rewrite.destination, "https://api.studyjony.test/api/v1/:path*");
+		}
+	} finally {
+		if (original === undefined) delete process.env.NEXT_PUBLIC_API_URL;
+		else process.env.NEXT_PUBLIC_API_URL = original;
+	}
+});
+
 for (const locale of ["vi", "en"]) test(`${locale}: password byte-limit feedback is translated for code and validation-message responses`, () => {
 	const messages = JSON.parse(readFileSync(new URL(`../../../messages/${locale}.json`, import.meta.url))).Auth;
 	assert.ok(messages.passwordTooLong.includes("72"));
