@@ -72,9 +72,9 @@ jobs:
           retention-days: 7
 
   deploy:
-    # PHASE 1: literal kill switch. No secret or setting can enable this job.
-    # Remove only in a separate activation PR after VPS migration and approvals.
-    if: ${{ false }}
+    # Phase 2 candidate: the workflow stays manually disabled until operator activation.
+    # PRs, forks, tags, failed tests and other events cannot enter production approval.
+    if: ${{ github.repository == 'ThanhsonWeb/English-Jony-App' && github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && needs.test.result == 'success' }}
     needs: test
     environment: production
     runs-on: ubuntu-latest
