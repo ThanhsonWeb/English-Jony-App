@@ -1,9 +1,9 @@
-import { DialogueProgressLink as Link } from "./DialogueProgressSave";
 import { Fragment, useEffect, useRef, useState } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
 import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
 import GrammarNote from "./GrammarNote";
 import TaskAudioScene from "./TaskAudioScene";
+import useDialogueAutoAdvance from "../_hooks/useDialogueAutoAdvance";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 import { fillBlankAnswersMatch } from "../_utils/fillBlankAnswer";
 import { useTranslations } from "next-intl";
@@ -36,6 +36,10 @@ function FillBlankTask({
 		expectedAnswers.map(() => ""),
 	);
 	const [result, setResult] = useState(null);
+	const autoAdvance = useDialogueAutoAdvance({
+		onComplete,
+		href: nextTask ? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}` : completionHref || `/dialogue/${lessonId}`,
+	});
 	const actionRef = useRef(null);
 	const audioSceneRef = useRef(null);
 	const inputRefs = useRef([]);
@@ -58,6 +62,7 @@ function FillBlankTask({
 	});
 
 	function updateAnswer(index, value) {
+		if (autoAdvance.isSubmitted()) return;
 		setAnswerValues((current) =>
 			current.map((answer, answerIndex) =>
 				answerIndex === index ? value : answer,
@@ -74,13 +79,14 @@ function FillBlankTask({
 	}
 
 	function checkAnswer() {
+		if (autoAdvance.isSubmitted()) return;
 		const isCorrect = expectedAnswers.every(
 			(expectedAnswer, index) =>
 				fillBlankAnswersMatch(answerValues[index] || "", expectedAnswer),
 		);
 
 		setResult(isCorrect ? "correct" : "wrong");
-		if (isCorrect) onComplete?.({ answers: answerValues });
+		if (isCorrect) autoAdvance.complete({ answers: answerValues });
 	}
 
 	function getInputBorderColor(index) {
@@ -101,7 +107,7 @@ function FillBlankTask({
 			!event.altKey &&
 			!event.metaKey &&
 			!event.shiftKey;
-		if (!isPlainEnter) return;
+		if (!isPlainEnter || event.repeat) return;
 
 		event.preventDefault();
 		event.stopPropagation();
@@ -154,6 +160,7 @@ function FillBlankTask({
 														handleInputKeyDown(event, index)
 													}
 													aria-label={t("blankNumber", { number: index + 1 })}
+													readOnly={result === "correct"}
 													placeholder="..."
 													style={{
 														width: getInputWidth(expectedAnswers[index]),
@@ -175,6 +182,7 @@ function FillBlankTask({
 											value={answerValues[0] || ""}
 											onChange={(event) => updateAnswer(0, event.target.value)}
 											onKeyDown={(event) => handleInputKeyDown(event, 0)}
+											readOnly={result === "correct"}
 											placeholder="..."
 											style={{
 												width: getInputWidth(expectedAnswers[0]),
@@ -198,7 +206,7 @@ function FillBlankTask({
 												key={choice}
 												type="button"
 												onClick={() => selectChoice(choice)}
-												disabled={isUsed}
+												disabled={isUsed || result === "correct"}
 												className="rounded-lg border border-slate-700 bg-slate-950/60 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-violet-500 hover:bg-violet-500/10 disabled:cursor-not-allowed disabled:opacity-35"
 											>
 												{choice}
@@ -209,35 +217,18 @@ function FillBlankTask({
 							)}
 						</div>
 
-						{result === "correct" && (
-							<div className="mt-5 rounded-xl border border-green-500/30 bg-green-500/10 p-4 text-green-400">
-								✅ {t("correct")}
-							</div>
-						)}
-
 						{result === "wrong" && (
 							<div className="mt-5 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-red-400">
 								❌ {t("wrongTryAgain")}
 							</div>
 						)}
 
+						<span className="sr-only" role="status">{result === "correct" ? t("correct") : ""}</span>
 						<DialogueShortcutHint />
 						<div className="mt-4 flex items-start justify-between gap-4">
 							{result && <GrammarNote grammar={task.grammar} />}
 							<div className="ml-auto shrink-0">
-								{result === "correct" ? (
-									<Link
-									ref={actionRef}
-									href={
-										nextTask
-										? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
-											: completionHref || `/dialogue/${lessonId}`
-									}
-									className="rounded-xl bg-green-600 px-6 py-3 font-semibold"
-								>
-									{nextTask ? t("continueArrow") : t("completeDialogue")}
-									</Link>
-								) : (
+								{result !== "correct" && (
 									<button
 									ref={actionRef}
 									type="button"

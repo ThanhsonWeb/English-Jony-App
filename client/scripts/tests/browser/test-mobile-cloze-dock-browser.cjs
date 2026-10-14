@@ -16,7 +16,8 @@ async function setup(browser, width, height, locale, theme, taskRoute = route) {
 	page.on("pageerror", error => errors.push(error.message));
 	page.on("console", message => { if (message.type() === "error") errors.push(message.text()); });
 	await page.addInitScript(theme => localStorage.setItem("studyjony-theme", theme), theme);
-	await page.route("https://accounts.google.com/**", request => request.abort());
+	await page.route("**/*", request => new URL(request.request().url()).origin === new URL(baseURL).origin
+		? request.continue() : request.fulfill({ contentType: "application/javascript", body: "" }));
 	await page.route("**/api/v1/**", request => request.fulfill({ json: { data: {
 		user: { _id: "learner", name: "Learner", theme }, progress: {},
 	} } }));
@@ -117,13 +118,6 @@ async function checkPhone(browser, width, height, locale, theme, initialOrder) {
 		await words.getByRole("button", { name: answers[index], exact: true }).tap();
 		await assertVisibleBlank(page);
 	}
-	await check.evaluate(element => window.scrollBy(0, element.getBoundingClientRect().top - 100));
-	await check.tap();
-	const complete = page.getByRole("link", { name: t.completeDialogue, exact: true });
-	await complete.evaluate(element => window.scrollBy(0, element.getBoundingClientRect().top - 100));
-	await complete.click({ trial: true });
-	assert.ok((await complete.boundingBox()).y + (await complete.boundingBox()).height < (await dock.boundingBox()).y,
-		"Completion action stays reachable above dock");
 	await page.getByRole("button", { name: t.typeAnswer, exact: true }).click();
 	assert.equal(await dock.evaluate(element => getComputedStyle(element).position), "static", "Typing has no fixed dock");
 	assert.equal(await section.evaluate(element => getComputedStyle(element).overflowY), "auto");
@@ -132,6 +126,10 @@ async function checkPhone(browser, width, height, locale, theme, initialOrder) {
 	assert.deepEqual(await dock.locator(".grid > div").allTextContents(), initialOrder, "Mode switch preserves shuffled order");
 	await page.getByRole("button", { name: t.chooseWords, exact: true }).click();
 	await assertNoOverflow(page);
+	await check.evaluate(element => window.scrollBy(0, element.getBoundingClientRect().top - 100));
+	await check.tap();
+	await page.waitForURL(url => url.pathname === `${locale === "en" ? "/en" : ""}/dialogue/coffee-shop/ordering-a-coffee/useful-words`);
+	assert.equal(await page.getByRole("link", { name: t.completeDialogue, exact: true }).count(), 0, "Final cloze advances without a Continue action");
 	assert.deepEqual(errors, [], "No hydration/runtime/console errors");
 	await page.close();
 }

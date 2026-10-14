@@ -1,9 +1,9 @@
-import { DialogueProgressLink as Link } from "./DialogueProgressSave";
 import { useRef, useState } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
 import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
 import GrammarNote from "./GrammarNote";
 import TaskAudioScene from "./TaskAudioScene";
+import useDialogueAutoAdvance from "../_hooks/useDialogueAutoAdvance";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 import { useTranslations } from "next-intl";
 
@@ -71,6 +71,10 @@ function ArrangeWordsTask({
 	);
 	const [selectedWords, setSelectedWords] = useState([]);
 	const [result, setResult] = useState(null);
+	const autoAdvance = useDialogueAutoAdvance({
+		onComplete,
+		href: nextTask ? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}` : completionHref || `/dialogue/${lessonId}`,
+	});
 	const actionRef = useRef(null);
 	const audioSceneRef = useRef(null);
 
@@ -81,9 +85,9 @@ function ArrangeWordsTask({
 	const hasMedia = Boolean(
 		task.audioUrl || task.scene || task.character?.image,
 	);
-	const answerText = getAnswerText(task.answer);
 
 	function selectWord(word, index) {
+		if (autoAdvance.isSubmitted()) return;
 		setSelectedWords((previous) => [...previous, word]);
 		setAvailableWords((previous) =>
 			previous.filter((_, wordIndex) => wordIndex !== index),
@@ -92,6 +96,7 @@ function ArrangeWordsTask({
 	}
 
 	function removeWord(word, index) {
+		if (autoAdvance.isSubmitted()) return;
 		setAvailableWords((previous) => [...previous, word]);
 		setSelectedWords((previous) =>
 			previous.filter((_, wordIndex) => wordIndex !== index),
@@ -100,14 +105,16 @@ function ArrangeWordsTask({
 	}
 
 	function checkAnswer() {
+		if (autoAdvance.isSubmitted()) return;
 		const isCorrect =
 			normalizeAnswer(selectedWords) === normalizeAnswer(task.answer);
 
 		setResult(isCorrect ? "correct" : "wrong");
-		if (isCorrect) onComplete?.({ answers: [selectedWords.join(" ")] });
+		if (isCorrect) autoAdvance.complete({ answers: [selectedWords.join(" ")] });
 	}
 
 	function resetAnswer() {
+		if (autoAdvance.isSubmitted()) return;
 		setAvailableWords(shuffleWords(task.words || []));
 		setSelectedWords([]);
 		setResult(null);
@@ -140,7 +147,7 @@ function ArrangeWordsTask({
 							{task.instruction || t("arrangeWordsFallback")}
 						</p>
 
-						<div className="mt-6 min-h-24 rounded-2xl border border-dashed border-slate-700 bg-slate-900/40 p-4">
+						<div className={`mt-6 min-h-24 rounded-2xl border border-dashed ${result === "correct" ? "border-green-500" : "border-slate-700"} bg-slate-900/40 p-4`}>
 							{selectedWords.length === 0 ? (
 								<p className="text-sm text-slate-500">{t("chooseWordsPrompt")}</p>
 							) : (
@@ -149,6 +156,7 @@ function ArrangeWordsTask({
 										<button
 											key={`${word}-${index}`}
 											type="button"
+											disabled={result === "correct"}
 											onClick={() => removeWord(word, index)}
 											className="rounded-lg bg-blue-600 px-4 py-2 font-medium hover:bg-blue-500"
 										>
@@ -164,6 +172,7 @@ function ArrangeWordsTask({
 								<button
 									key={`${word}-${index}`}
 									type="button"
+									disabled={result === "correct"}
 									onClick={() => selectWord(word, index)}
 									className="rounded-xl border border-slate-700 bg-slate-900 px-4 py-2 text-slate-200 transition hover:border-blue-500 hover:text-white"
 								>
@@ -172,23 +181,19 @@ function ArrangeWordsTask({
 							))}
 						</div>
 
-						{result === "correct" && (
-							<div className="mt-6 rounded-xl border border-green-500/30 bg-green-500/10 p-4 text-green-400">
-								✅ {t("correct")} {answerText}
-							</div>
-						)}
-
 						{result === "wrong" && (
 							<div className="mt-6 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-red-400">
 								❌ {t("wrongTryAgain")}
 							</div>
 						)}
 
+						<span className="sr-only" role="status">{result === "correct" ? t("correct") : ""}</span>
 						<DialogueShortcutHint />
 						<div className="mt-4 flex items-start justify-between gap-4">
 							<div className="flex items-start gap-4">
 								<button
 									type="button"
+									disabled={result === "correct"}
 									onClick={resetAnswer}
 									className="py-2 text-sm text-slate-400 hover:text-white"
 								>
@@ -198,19 +203,7 @@ function ArrangeWordsTask({
 							</div>
 
 							<div className="ml-auto shrink-0">
-							{result === "correct" ? (
-								<Link
-									ref={actionRef}
-									href={
-										nextTask
-										? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
-											: completionHref || `/dialogue/${lessonId}`
-									}
-									className="rounded-xl bg-green-600 px-6 py-3 font-semibold hover:bg-green-500"
-								>
-									{nextTask ? t("continueArrow") : t("completeDialogue")}
-								</Link>
-							) : (
+							{result !== "correct" && (
 								<button
 									ref={actionRef}
 									type="button"

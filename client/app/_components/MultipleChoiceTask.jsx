@@ -1,10 +1,10 @@
-import { ArrowLeft, CheckCircle2, Circle } from "lucide-react";
-import { DialogueProgressLink as Link } from "./DialogueProgressSave";
+import { CheckCircle2, Circle } from "lucide-react";
 import { useRef, useState } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
 import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
 import GrammarNote from "./GrammarNote";
 import TaskAudioScene from "./TaskAudioScene";
+import useDialogueAutoAdvance from "../_hooks/useDialogueAutoAdvance";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 import { useLocale, useTranslations } from "next-intl";
 
@@ -22,6 +22,10 @@ function MultipleChoiceTask({
 	const locale = useLocale();
 	const [selected, setSelected] = useState("");
 	const [result, setResult] = useState(null);
+	const autoAdvance = useDialogueAutoAdvance({
+		onComplete,
+		href: nextTask ? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}` : completionHref || `/dialogue/${lessonId}`,
+	});
 	const actionRef = useRef(null);
 	const audioSceneRef = useRef(null);
 
@@ -36,10 +40,11 @@ function MultipleChoiceTask({
 	});
 
 	function checkAnswer() {
+		if (autoAdvance.isSubmitted()) return;
 		const isCorrect = selected === task.answer;
 
 		setResult(isCorrect ? "correct" : "wrong");
-		if (isCorrect) onComplete?.({ optionIndex: task.options.indexOf(selected) });
+		if (isCorrect) autoAdvance.complete({ optionIndex: task.options.indexOf(selected) });
 	}
 
 	return (
@@ -84,7 +89,9 @@ function MultipleChoiceTask({
 									<button
 										key={option}
 										type="button"
+										disabled={result === "correct"}
 										onClick={() => {
+											if (autoAdvance.isSubmitted()) return;
 											setSelected(option);
 											setResult(null);
 										}}
@@ -99,7 +106,7 @@ function MultipleChoiceTask({
 										{isSelected ? (
 											<CheckCircle2
 												size={20}
-												className="mt-0.5 shrink-0 text-violet-400"
+												className={`mt-0.5 shrink-0 ${isCorrectAnswer ? "text-emerald-400" : "text-violet-400"}`}
 											/>
 										) : (
 											<Circle
@@ -117,44 +124,24 @@ function MultipleChoiceTask({
 								);
 							})}
 						</div>
-
-						{result === "correct" && (
-							<div className="mt-5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5">
-								<p className="font-semibold text-emerald-400">✓ {t("correct")}</p>
-								{task.explanation && (locale === "vi" || task.localized?.explanation?.en) && (
-									<p className="mt-2 leading-relaxed text-slate-300">
-										{task.explanation}
-									</p>
-								)}
-							</div>
-						)}
-
 						{result === "wrong" && (
 							<div className="mt-5 rounded-xl border border-red-500/30 bg-red-500/10 p-5">
 								<p className="font-semibold text-red-400">{t("wrong")}</p>
 								<p className="mt-1 text-sm text-slate-300">
 									{t("listenAndTryAgain")}
 								</p>
+								{task.explanation && (locale === "vi" || task.localized?.explanation?.en) && (
+									<p className="mt-2 leading-relaxed text-slate-300">{task.explanation}</p>
+								)}
 							</div>
 						)}
 
+						<span className="sr-only" role="status">{result === "correct" ? t("correct") : ""}</span>
 						<DialogueShortcutHint />
 						<div className="mt-4 flex items-start justify-between gap-4">
 							{result && <GrammarNote grammar={task.grammar} />}
 							<div className="ml-auto shrink-0">
-								{result === "correct" ? (
-									<Link
-									ref={actionRef}
-									href={
-										nextTask
-										? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
-											: completionHref || `/dialogue/${lessonId}`
-									}
-									className="rounded-xl bg-emerald-600 px-6 py-3 font-semibold transition hover:bg-emerald-500"
-								>
-									{nextTask ? t("continueArrow") : t("completeDialogue")}
-									</Link>
-								) : (
+								{result !== "correct" && (
 									<button
 									ref={actionRef}
 									type="button"

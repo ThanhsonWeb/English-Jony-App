@@ -1,8 +1,8 @@
-import { DialogueProgressLink as Link } from "./DialogueProgressSave";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
 import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
+import useDialogueAutoAdvance from "../_hooks/useDialogueAutoAdvance";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 import { useTranslations } from "next-intl";
 import styles from "./DialogueClozeReviewTask.module.css";
@@ -98,6 +98,10 @@ function DialogueClozeReviewTask({
 	const dockRef = useRef(null);
 	const blankRefs = useRef([]);
 	const revealBlankRef = useRef(false);
+	const autoAdvance = useDialogueAutoAdvance({
+		onComplete,
+		href: nextTask ? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}` : completionHref || `/dialogue/${lessonId}`,
+	});
 	const actionRef = useRef(null);
 
 	const isComplete =
@@ -241,6 +245,7 @@ function DialogueClozeReviewTask({
 	}
 
 	function checkAnswers() {
+		if (autoAdvance.isSubmitted()) return;
 		const nextResults = expectedAnswers.map((expected, index) =>
 			normalizeAnswer(answers[index]) === normalizeAnswer(expected)
 				? "correct"
@@ -251,7 +256,7 @@ function DialogueClozeReviewTask({
 		setBlankResults(nextResults);
 
 		if (allCorrect) {
-			onComplete?.({ answers });
+			autoAdvance.complete({ answers });
 			setSelectedBlankIndex(null);
 			return;
 		}
@@ -526,33 +531,18 @@ function DialogueClozeReviewTask({
 					)}
 				</div>
 
-				<div className="mt-4 min-h-6 text-sm" aria-live="polite">
-					{isComplete ? (
-						<p className="font-medium text-emerald-400">
-							✓ {t("clozeCorrect")}
-						</p>
-					) : blankResults.includes("wrong") ? (
+				<div className={blankResults.includes("wrong") ? "mt-4 text-sm" : "sr-only"} aria-live="polite">
+					{isComplete && <span>{t("clozeCorrect")}</span>}
+					{blankResults.includes("wrong") && (
 						<p className="font-medium text-red-400">
 							✕ {t("clozeWrong")}
 						</p>
-					) : null}
+					)}
 				</div>
 
 				<DialogueShortcutHint showReplay={false} />
 				<div className="mt-4 flex justify-end">
-					{isComplete ? (
-						<Link
-							ref={actionRef}
-							href={
-								nextTask
-									? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
-									: completionHref || `/dialogue/${lessonId}`
-							}
-							className="rounded-xl bg-emerald-600 px-6 py-3 font-semibold text-white transition hover:bg-emerald-500"
-						>
-							{nextTask ? t("continueArrow") : t("completeDialogue")}
-						</Link>
-					) : (
+					{!isComplete && (
 						<button
 							ref={actionRef}
 							type="button"

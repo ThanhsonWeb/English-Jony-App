@@ -105,32 +105,56 @@ async function flow(browser, width, locale, ids) {
 		f.hold(); await f.open(rule(1).ids);
 		await f.answer(rule(1), ["wrong answer"]);
 		await f.page.getByText(f.t.wrongTryAgain, { exact: false }).waitFor();
+		await pause(600);
+		assert.equal(new URL(f.page.url()).pathname, f.prefix + taskPath(rule(1).ids), "Wrong answers stay on the exercise");
 		assert.equal(f.writes.length, 0, "Wrong answers cannot submit completion");
-		await f.answer(rule(1));
-		const next = f.page.getByRole("link", { name: f.t.continueArrow, exact: true });
-		await next.waitFor({ timeout: 1500 });
+		await f.page.evaluate(() => {
+			window.replayCalls = 0;
+			HTMLMediaElement.prototype.play = function() { window.replayCalls++; return Promise.resolve(); };
+		});
+		await f.page.keyboard.press("Control");
+		assert.ok(await f.page.evaluate(() => window.replayCalls > 0), "Ctrl replays audio");
+		const inputs = f.page.locator('input[placeholder="..."]');
+		for (let index = 0; index < rule(1).answers.length; index++) await inputs.nth(index).fill(rule(1).answers[index]);
+		await f.page.evaluate(() => {
+			window.checkedAt = performance.now();
+			for (let index = 0; index < 10; index++) window.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+		});
+		assert.equal(await f.page.getByRole("link", { name: f.t.continueArrow, exact: true }).count(), 0);
+		assert.equal(await f.page.locator('div[class*="border-green-500/30"], div[class*="border-emerald-500/30"]').count(), 0, "No large success banner");
+		await pause(150);
+		assert.equal(new URL(f.page.url()).pathname, f.prefix + taskPath(rule(1).ids), "No early transition");
 		await until(() => f.writes.length === 1);
 		assert.equal(f.confirmed.length, 0); assert.equal((await f.pending()).length, 1);
 		await expectNoProgressNotice(f.page, f.t);
-		await f.page.keyboard.press("Enter");
 		await f.page.waitForURL(url => url.pathname === f.prefix + taskPath(rule(2).ids));
-		await f.answer(rule(2)); await next.waitFor({ timeout: 1500 }); await next.click();
+		assert.ok(await f.page.evaluate(() => performance.now() - window.checkedAt >= 390), "Feedback lasts 400ms");
+		if (rule(2).type === "multipleChoice") {
+			await f.answer(rule(2), [(rule(2).answers[0] + 1) % 4]);
+			await f.page.getByText(f.t.wrong, { exact: true }).waitFor(); await pause(600);
+			assert.equal(new URL(f.page.url()).pathname, f.prefix + taskPath(rule(2).ids));
+		}
+		await f.answer(rule(2));
 		await f.page.waitForURL(url => url.pathname === f.prefix + taskPath(rule(3).ids));
-		await f.answer(rule(3)); await next.waitFor({ timeout: 1500 });
+		if (rule(3).type === "multipleChoice") {
+			await f.answer(rule(3), [(rule(3).answers[0] + 1) % 4]);
+			await f.page.getByText(f.t.wrong, { exact: true }).waitFor(); await pause(600);
+			assert.equal(new URL(f.page.url()).pathname, f.prefix + taskPath(rule(3).ids));
+		}
+		await f.answer(rule(3));
+		await f.page.waitForURL(url => url.pathname === f.prefix + taskPath(rule(4).ids));
 		assert.equal(f.writes.length, 1, "Only one request is active while three exercises are complete");
 		assert.equal((await f.pending()).length, 3);
 		await expectNoProgressNotice(f.page, f.t);
 		await f.page.getByRole("button", { name: f.t.exit, exact: true }).first().click();
 		await f.page.getByRole("dialog").getByText(f.t.leaveUnsavedProgress, { exact: true }).waitFor();
-		await f.page.keyboard.press("Enter");
-		assert.equal(new URL(f.page.url()).pathname, f.prefix + taskPath(rule(3).ids), "Enter in the exit modal must not advance the exercise");
 		await f.page.keyboard.press("Escape");
 		assert.equal(await f.page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
 		f.release(); await until(() => f.confirmed.length === 3);
 		assert.deepEqual(f.writes.map(write => write.path), [1, 2, 3].map(number => apiPath(rule(number).ids)));
 		await f.page.waitForFunction(prefix => Object.keys(localStorage).filter(key => key.startsWith(prefix)).every(key => JSON.parse(localStorage.getItem(key)).status === "saved"), queuePrefix);
 
-		// A temporary failure retries silently with the original attempt and keeps Continue.
+		// A temporary failure retries silently with the original attempt during auto-advance.
 		await f.open(rule(4).ids); f.fail(); await f.answer(rule(4));
 		await f.page.waitForFunction(prefix => Object.keys(localStorage).filter(key => key.startsWith(prefix)).some(key => {
 			const record = JSON.parse(localStorage.getItem(key));
@@ -138,7 +162,6 @@ async function flow(browser, width, locale, ids) {
 		}), queuePrefix);
 		await expectNoProgressNotice(f.page, f.t);
 		assert.equal(await f.page.getByText(f.t.progressSaveFailed, { exact: true }).count(), 0, "No save error notice during automatic retry");
-		await next.waitFor(); await next.click();
 		await f.page.waitForURL(url => url.pathname === f.prefix + taskPath(rule(5).ids));
 		await until(() => f.writes.filter(write => write.path === apiPath(rule(4).ids)).length === 2);
 		await until(() => f.confirmed.length === 4);
@@ -147,6 +170,7 @@ async function flow(browser, width, locale, ids) {
 
 		// Refresh while saving; the server may have committed before the reply vanished.
 		await f.open(rule(6).ids); f.permanent(true); await f.answer(rule(6));
+		await f.page.waitForURL(url => url.pathname === f.prefix + taskPath(rule(7).ids));
 		await f.page.getByRole("alert").getByText(f.t.progressSaveFailed, { exact: true }).waitFor();
 		const before = f.writes.length, stored = (await f.pending())[0];
 		f.permanent(false); f.loseReply();
@@ -158,24 +182,31 @@ async function flow(browser, width, locale, ids) {
 
 		// Leaving through Exit keeps the worker running silently.
 		f.hold(); await f.open(rule(7).ids); await f.answer(rule(7));
-		await next.waitFor();
 		await f.page.getByRole("button", { name: f.t.exit, exact: true }).first().click();
+		await pause(600);
+		assert.equal(new URL(f.page.url()).pathname, f.prefix + taskPath(rule(7).ids), "Auto-advance waits while the exit modal is open");
 		await f.page.getByRole("dialog").getByRole("button", { name: f.t.exit, exact: true }).click();
 		await f.page.waitForURL(url => url.pathname === f.prefix + "/dialogue/" + ids[0]);
+		await pause(600);
+		assert.equal(new URL(f.page.url()).pathname, f.prefix + "/dialogue/" + ids[0], "Timer cleanup prevents navigation after Exit");
 		await expectNoProgressNotice(f.page, f.t);
 		assert.equal((await f.pending()).length, 1);
 		f.release(); await until(() => f.confirmed.some(write => write.path === apiPath(rule(7).ids)));
 
 		// Final exercise can leave for useful words before the final PATCH confirms.
-		f.hold(); await f.open(rule(25).ids); await f.answer(rule(25));
-		const final = f.page.getByRole("link", { name: f.t.completeDialogue, exact: true });
-		await final.waitFor({ timeout: 1500 }); await final.click();
+		f.hold(); await f.open(rule(25).ids);
+		const incorrect = [...rule(25).answers]; incorrect[0] = "wrong answer";
+		await f.answer(rule(25), incorrect);
+		await f.page.getByText(f.t.clozeWrong, { exact: false }).waitFor(); await pause(600);
+		assert.equal(new URL(f.page.url()).pathname, f.prefix + taskPath(rule(25).ids));
+		await f.page.locator('[data-cloze-line] input').first().fill(rule(25).answers[0]);
+		await f.page.getByRole("button", { name: f.t.check, exact: true }).click();
 		await f.page.waitForURL(url => url.pathname === f.prefix + taskPath(ids) + "/useful-words");
 		await expectNoProgressNotice(f.page, f.t);
 		assert.equal((await f.pending()).length, 1);
 		f.release(); await until(() => f.confirmed.some(write => write.path === apiPath(rule(25).ids)));
 		assert.deepEqual(f.errors, []);
-		console.log(`PASS ${width}px ${locale} ${ids[0]}: feedback, slow saves, Enter, rapid tasks/FIFO, retry, refresh/lost reply, final exercise, mobile layout`);
+		console.log(`PASS ${width}px ${locale} ${ids[0]}: 400ms auto-advance, wrong/retry, Enter/Ctrl, rapid tasks/FIFO, retry, refresh/lost reply, final exercise, exit cleanup, mobile layout`);
 	} finally { f.release(); await f.context.close(); }
 }
 
@@ -192,9 +223,31 @@ async function flow(browser, width, locale, ids) {
 			await until(() => f.writes.length === 1);
 			assert.equal(await f.page.getByRole("link", { name: f.t.continueArrow, exact: true }).count(), 0);
 			await f.page.getByText(f.t.progressStorageUnavailable, { exact: true }).waitFor();
-			f.release(); await f.page.getByRole("link", { name: f.t.continueArrow, exact: true }).waitFor();
-			console.log("PASS unavailable device storage: Continue waits for server confirmation");
+			await pause(600);
+			assert.equal(new URL(f.page.url()).pathname, f.prefix + taskPath(first.ids), "Unsafe storage blocks auto-advance");
+			f.permanent(true); f.release();
+			await f.page.getByRole("button", { name: f.t.retryProgressSave, exact: true }).waitFor();
+			await pause(600);
+			assert.equal(new URL(f.page.url()).pathname, f.prefix + taskPath(first.ids), "Failed non-durable save cannot advance");
+			assert.equal(f.confirmed.length, 0, "An unsuccessful save is never confirmed");
+			f.permanent(false);
+			await f.page.getByRole("button", { name: f.t.retryProgressSave, exact: true }).click();
+			await f.page.waitForURL(url => url.pathname === f.prefix + taskPath([...first.ids.slice(0, 2), "2"]));
+			console.log("PASS unavailable device storage: auto-advance waits for server confirmation");
 		} finally { f.release(); await f.context.close(); }
+		const switched = await fixture(browser, 375, "en");
+		try {
+			const ids = ["asking-for-directions", "finding-a-cafe", "2"];
+			const task = rules.find(rule => rule.ids.join("/") === ids.join("/"));
+			switched.hold(); await switched.open(ids); await switched.answer(task);
+			await switched.page.getByRole("link", { name: switched.t.previousExercise, exact: true }).click();
+			await switched.page.waitForURL(url => url.pathname === switched.prefix + taskPath([ids[0], ids[1], "1"]));
+			await pause(600);
+			assert.equal(new URL(switched.page.url()).pathname, switched.prefix + taskPath([ids[0], ids[1], "1"]), "Switching tasks cancels the 400ms timer");
+			switched.release(); await until(() => switched.confirmed.length === 1);
+			assert.equal(switched.writes.length, 1);
+			console.log("PASS task switch: timer cancelled and completed progress retained");
+		} finally { switched.release(); await switched.context.close(); }
 		const tabs = await fixture(browser, 1280, "en");
 		try {
 			const ids = ["asking-for-directions", "finding-a-cafe", "1"];
@@ -205,7 +258,7 @@ async function flow(browser, width, locale, ids) {
 			await second.goto(baseURL + tabs.prefix + taskPath(ids), { waitUntil: "domcontentloaded" });
 			await second.locator('input[placeholder="..."]').fill("find");
 			await second.getByRole("button", { name: tabs.t.check, exact: true }).click();
-			await second.getByRole("link", { name: tabs.t.continueArrow, exact: true }).waitFor();
+			await second.waitForURL(url => url.pathname === tabs.prefix + taskPath([ids[0], ids[1], "2"]));
 			assert.equal(tabs.writes.length, 1);
 			tabs.release();
 			await waitForConfirmedStorage(second);
