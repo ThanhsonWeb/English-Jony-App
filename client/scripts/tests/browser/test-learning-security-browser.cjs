@@ -76,7 +76,7 @@ async function run(width, locale, theme) {
 		for (const [path, answer] of [[paths[0], "find"], [paths[0], "find"], [paths[1], "book"]]) {
 			await open(path, answer);
 			await page.getByRole("button", { name: t.check, exact: true }).click();
-			await page.getByRole("link", { name: t.continueArrow, exact: true }).waitFor();
+			await page.waitForURL(url => url.pathname === prefix + path.replace(/1$/, "2"));
 			await waitForSaves(++savedCount);
 			assert.equal(writes.at(-1).status, 200);
 		}
@@ -99,17 +99,16 @@ async function run(width, locale, theme) {
 		assert.equal(await page.getByText(t.progressSaveFailed, { exact: true }).count(), 0, "Automatic quota retries need no save error notice");
 		assert.equal(await page.locator("div.mx-auto.mt-4.w-full.max-w-6xl").count(), 0, "No background saving banner or space");
 		assert.equal(writes.at(-1).status, 429);
-		assert.equal(await page.getByRole("link", { name: t.continueArrow, exact: true }).count(), 1, "Durably queued progress must still offer Continue after a failed save");
+		assert.equal(await page.getByRole("link", { name: t.continueArrow, exact: true }).count(), 0, "Auto-advance does not show Continue during a failed save");
 		assert.equal(await page.evaluate(async () => (await fetch("/api/v1/study-activities", { method: "POST" })).status), 429);
 		assert.equal((await StudyActivity.findOne({ user: user.id })).count, 0, "Rejected activity must not increment legacy count");
 		// Reset the fixture quota; auto-retry may already have completed the save.
 		activeLimits = limits.createLearningRateLimits();
-		const next = page.getByRole("link", { name: t.continueArrow, exact: true }); await next.waitFor();
+		await page.waitForURL(url => url.pathname === prefix + paths[0].replace(/1$/, "2"));
 		await waitForSaves(4);
 		assert.equal(writes.filter(item => item.path.includes("/tasks/") && !item.path.endsWith("/attempt") && item.status === 200).length, 4, "Automatic retry commits once");
 		assert.equal(await XPEvent.countDocuments({ user: user.id }), 2);
 		assert.equal((await User.findById(user.id)).totalXp, 20);
-		await next.click(); await page.waitForURL(url => url.pathname === prefix + paths[0].replace(/1$/, "2"));
 		assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
 
 		}
@@ -130,11 +129,15 @@ async function run(width, locale, theme) {
 				for (let i = 0; i < rule.answers.length; i++) await blanks.nth(i).fill(rule.answers[i]);
 			}
 			await page.getByRole("button", { name: t.check, exact: true }).click();
-			await page.getByRole("link", { name: type === "dialogueCloze" ? t.completeDialogue : t.continueArrow, exact: true }).waitFor();
+			await page.waitForURL(url => url.pathname === prefix + "/dialogue/" + rule.ids.slice(0, 2).join("/") + "/" + (type === "dialogueCloze" ? "useful-words" : Number(rule.ids[2]) + 1));
 			await waitForSaves(saveCount + 1);
 			const saved = writes.filter(write => write.path.includes("/tasks/") && !write.path.endsWith("/attempt")).at(-1);
 			assert.equal(saved.status, 200); assert.match(saved.body.attemptId, /^[a-f0-9]{64}$/);
 			assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
+		}
+		if (process.env.STUDYJONY_TEST_GROUP === "dialogue") {
+			assert.deepEqual(errors, []);
+			return;
 		}
 		const meanings = { apple: "quả táo", book: "sách", water: "nước", hello: "xin chào" };
 		for (const mode of ["flashcard", "quiz", "write"]) {
@@ -216,7 +219,7 @@ async function run(width, locale, theme) {
 		let cases = 0;
 		for (const width of [320, 375, 430, 1280]) for (const locale of ["vi", "en"]) for (const theme of ["light", "dark"]) {
 			await run(width, locale, theme); cases++;
-			console.log(`PASS ${width}px ${locale} ${theme}: Dialogue/Story attempts/save/replay; fabricated activity blocked; silent 429 auto-retry; XP dedup; navigation; MC/Cloze; Flashcard/Quiz/Write; dictionary lookup/validation`);
+			console.log(`PASS ${width}px ${locale} ${theme}: Dialogue/Story attempts/save/replay; fabricated activity blocked; silent 429 auto-retry; XP dedup; navigation; MC/Cloze${process.env.STUDYJONY_TEST_GROUP === "dialogue" ? "" : "; Flashcard/Quiz/Write; dictionary lookup/validation"}`);
 		}
 		console.log(`PASS ${cases} browser cases; local full app/disposable DB only`);
 	} finally {
