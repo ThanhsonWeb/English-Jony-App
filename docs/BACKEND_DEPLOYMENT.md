@@ -1,9 +1,11 @@
-# StudyJony backend deployment — Phase 1
+# StudyJony backend deployment
 
-Status: repository preparation only. The `deploy` job has the literal condition
-`if: ${{ false }}`. Neither a secret nor a repository variable enables it. Do not
-enable the disabled GitHub workflow, migrate PM2, or remove this guard until the
-operator approves Phase 2. Tests may run on a feature PR; production cannot run.
+Status: Phase 2 activation candidate only. The deployment workflow remains manually
+disabled in GitHub. The proposed job condition permits only successful main
+push/manual runs in the canonical repository, behind the production environment
+approval gate. Preparing this PR does not enable the workflow or deploy anything.
+See [the activation audit and checklist](BACKEND_DEPLOYMENT_ACTIVATION.md) before
+operator activation. Feature PRs can run the separate CI-only workflow.
 
 ## Architecture
 
@@ -146,8 +148,9 @@ existing authenticated administrator with interactive sudo; never enable root SS
 
 ## GitHub setup and activation — separate approval
 
-The workflow file can run tests when enabled, but its production job remains
-hard-disabled. Phase 1 does not call the API to enable the workflow or change settings.
+The workflow must stay manually disabled until the activation PR is reviewed,
+merged by the operator and the checklist is accepted. Repository preparation never
+calls the API to enable the workflow or change environment settings.
 
 - Configure a `production` environment restricted to main. Put VPS_HOST, VPS_PORT,
   VPS_USER (`studyjony`), VPS_SSH_KEY, VPS_KNOWN_HOSTS and VPS_HOST_KEY_SHA256 in that
@@ -155,13 +158,14 @@ hard-disabled. Phase 1 does not call the API to enable the workflow or change se
   Confirm the public host key/fingerprint independently; no `ssh-keyscan` trust.
 - Configure required reviewers and check that approval actually blocks access to
   secrets. Availability depends on repository visibility/GitHub plan. If required
-  reviewers are unavailable, keep the literal kill switch and review a manual-only
+  reviewers are unavailable, keep the workflow disabled and review a manual-only
   activation design; `environment: production` alone does not impose approval.
 - Review repository branch permissions because main deployment code can run with
   application privileges. This account intentionally has no host administration.
-- After non-root migration, boot restoration and fault tests pass, use a separate
-  activation PR to replace `if: ${{ false }}` with an explicit main/non-PR condition.
-  Only then enable the workflow if it is disabled. The shell also rejects non-main.
+- The separate Phase 2 activation PR replaces the Phase 1 literal kill switch with
+  a canonical-repository/main/push-or-manual/successful-test condition. Only after
+  review, merge and operator approval may the workflow be enabled. The shell also
+  rejects non-main; the current-main API check rejects stale approved revisions.
 - Vercel has independent deployment timing. API/lesson changes requiring a new
   backend must coordinate the frontend rollout; this workflow cannot delay Vercel.
 

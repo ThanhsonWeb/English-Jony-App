@@ -54,9 +54,31 @@ test("private API check requires unauthenticated denial and explicit no-store", 
  for (const [status, header] of [[200, "private, no-store"], [401, "public, max-age=0, must-revalidate"]]) await assert.rejects(checkPrivateApi("http://127.0.0.1:5000/health", async () => ({ status, headers: new Headers({ "cache-control": header }) })));
 });
 
-test("Phase 1 production job is unconditionally disabled behind tests and environment approval", () => {
+test("production job allows only successful main push/manual runs in the canonical repository", () => {
  const source = fs.readFileSync(path.join(root, ".github/workflows/deploy-backend.yml"), "utf8");
- assert.match(source, /  deploy:\n[\s\S]*?if: \$\{\{ false \}\}\n    needs: test\n    environment: production/);
+ const job = source.split("\n  deploy:\n")[1];
+ assert.ok(job, "A production job exists");
+ assert.match(job, /\n    needs: test\n    environment: production/);
+ const expression = job.match(/^    if: \$\{\{ (.+) \}\}$/m)?.[1];
+ assert.ok(expression, "An explicit production condition is required");
+ // Evaluate the actual checked-in condition, using its JS-compatible equality/
+ // boolean subset. These fixtures use GitHub's canonical lowercase refs/events.
+ const allowed = new Function("github", "needs", `return (${expression});`);
+ const canonical = { repository: "ThanhsonWeb/English-Jony-App", ref: "refs/heads/main", event_name: "push" };
+ const success = { test: { result: "success" } };
+ assert.equal(allowed(canonical, success), true);
+ assert.equal(allowed({ ...canonical, event_name: "workflow_dispatch" }, success), true);
+ for (const changed of [
+  { event_name: "pull_request", ref: "refs/pull/2/merge" },
+  { event_name: "pull_request" }, { event_name: "pull_request_target" },
+  { event_name: "schedule" }, { event_name: "workflow_run" },
+  { ref: "refs/heads/feature" }, { ref: "refs/tags/main" },
+  { repository: "another-owner/English-Jony-App" },
+  { event_name: "workflow_dispatch", ref: "refs/heads/feature" },
+ ]) assert.equal(allowed({ ...canonical, ...changed }, success), false, JSON.stringify(changed));
+ for (const result of ["failure", "cancelled", "skipped", "", undefined]) {
+  assert.equal(allowed(canonical, { test: { result } }), false, String(result));
+ }
  assert.ok(source.includes("node --test --test-concurrency=1 tests/*.test.js"));
  assert.ok(source.includes('[[ "$GITHUB_REF" == refs/heads/main'));
  assert.ok(source.includes('[[ "$VPS_USER" == studyjony ]]'));
