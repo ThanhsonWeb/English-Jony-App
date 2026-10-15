@@ -7,6 +7,7 @@ import useDialogueAutoAdvance from "../_hooks/useDialogueAutoAdvance";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 import { fillBlankAnswersMatch } from "../_utils/fillBlankAnswer";
 import { useTranslations } from "next-intl";
+import { useAuth } from "../_contexts/AuthContext";
 
 function getExpectedAnswers(task) {
 	return Array.isArray(task.answers) ? task.answers : [task.answer];
@@ -30,6 +31,7 @@ function FillBlankTask({
 	totalTasks,
 }) {
 	const t = useTranslations("DialogueFeature");
+	const { loading: authLoading } = useAuth();
 	const isMultiBlank = Array.isArray(task.parts) && Array.isArray(task.answers);
 	const expectedAnswers = getExpectedAnswers(task);
 	const [answerValues, setAnswerValues] = useState(() =>
@@ -45,16 +47,14 @@ function FillBlankTask({
 	const inputRefs = useRef([]);
 
 	useEffect(() => {
-		if (task.completed || task.locked) return;
-		if (!window.matchMedia("(min-width: 768px) and (pointer: fine)").matches) {
-			return;
-		}
+		// The theme provider keeps inputs invisible during session restoration.
+		if (authLoading || task.completed || task.locked) return;
 
 		const focusFrame = requestAnimationFrame(() =>
-			inputRefs.current[0]?.focus(),
+			inputRefs.current[0]?.focus({ preventScroll: true }),
 		);
 		return () => cancelAnimationFrame(focusFrame);
-	}, [task.completed, task.id, task.locked]);
+	}, [authLoading, task.completed, task.id, task.locked]);
 
 	useDialogueShortcuts({
 		onEnter: () => actionRef.current?.click(),
@@ -126,7 +126,7 @@ function FillBlankTask({
 				<h1 className="mt-2 text-2xl font-bold">{task.title} ✍️</h1>
 
 				<div className="mt-8 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-					<TaskAudioScene ref={audioSceneRef} key={task.audioUrl} task={task} />
+					<TaskAudioScene ref={audioSceneRef} key={task.audioUrl} task={task} autoPlay />
 
 					<div>
 						<DialogueTaskNavigation

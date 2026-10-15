@@ -5,17 +5,20 @@ import { Captions, ChevronDown, Languages, Pause, Play } from "lucide-react";
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import useDialoguePlaybackRate from "@/app/_hooks/useDialoguePlaybackRate";
+import { createTaskAudioPlayback } from "@/app/_lib/dialogue/taskAudioPlayback.mjs";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import {
 	PLAYBACK_RATES,
 	saveDialoguePlaybackRate,
 } from "@/app/_lib/dialogue/playbackRate.mjs";
 
-const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
+const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = false }, ref) {
 	const t = useTranslations("DialogueFeature");
 	const { user } = useAuth();
 	const userId = user?._id || user?.id || null;
 	const audioRef = useRef(null);
+	const playbackRef = useRef(null);
+	const startSpeakingRef = useRef(null);
 
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [showCaptions, setShowCaptions] = useState(false);
@@ -89,13 +92,8 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 		const audio = audioRef.current;
 		if (!audio) return;
 
-		if (!showCharacter) {
-			setShowCharacter(true);
-
-			await new Promise((resolve) => {
-				window.setTimeout(resolve, 450);
-			});
-		}
+		const delay = showCharacter ? 0 : 450;
+		setShowCharacter(true);
 
 		if (audio.ended || audio.currentTime >= audio.duration) {
 			audio.currentTime = 0;
@@ -105,11 +103,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 		setIsAudioFinished(false);
 		setShowFinishedCaptionBackground(false);
 
-		try {
-			await audio.play();
-		} catch {
-			setIsPlaying(false);
-		}
+		await playbackRef.current?.play(delay);
 	}
 
 	async function toggleAudio() {
@@ -119,7 +113,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 		if (audio.paused) {
 			await startSpeaking();
 		} else {
-			audio.pause();
+			playbackRef.current?.pause();
 		}
 	}
 
@@ -133,12 +127,23 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task }, ref) {
 		setIsAudioFinished(false);
 		setShowFinishedCaptionBackground(false);
 
-		try {
-			await audio.play();
-		} catch {
-			setIsPlaying(false);
-		}
+		await playbackRef.current?.play();
 	}
+
+	useEffect(() => { startSpeakingRef.current = startSpeaking; });
+	useEffect(() => {
+		const audio = audioRef.current;
+		if (!audio) return;
+		const playback = createTaskAudioPlayback(audio, () => playbackRateRef.current, () => setIsPlaying(false));
+		playbackRef.current = playback;
+		// Defer one tick so Strict Mode cleanup can cancel its first setup.
+		const timer = autoPlay ? window.setTimeout(() => startSpeakingRef.current?.(), 0) : null;
+		return () => {
+			window.clearTimeout(timer);
+			playback.dispose();
+			if (playbackRef.current === playback) playbackRef.current = null;
+		};
+	}, [autoPlay, task.id, task.audioUrl]);
 
 	useImperativeHandle(ref, () => ({ replay: replayAudio }));
 
