@@ -92,6 +92,7 @@ export default function DialogueTaskPage() {
 
 	const props = {
 		task: taskWithTranslation,
+		dialogueLine: matchingDialogueLine,
 		lessonId,
 		dialogueId,
 		previousTask,

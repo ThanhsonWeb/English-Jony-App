@@ -7,21 +7,26 @@ import { useTranslations } from "next-intl";
 import useDialoguePlaybackRate from "@/app/_hooks/useDialoguePlaybackRate";
 import { createTaskAudioPlayback } from "@/app/_lib/dialogue/taskAudioPlayback.mjs";
 import { useAuth } from "@/app/_contexts/AuthContext";
+import { findLessonLookup } from "@/app/_lib/dictionary/findLessonLookup";
+import DialogueWordPopup from "./DialogueWordPopup";
+import renderSubtitleTokens from "./renderSubtitleTokens";
 import {
 	PLAYBACK_RATES,
 	saveDialoguePlaybackRate,
 } from "@/app/_lib/dialogue/playbackRate.mjs";
 
-const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = false }, ref) {
+const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = false, lessonId, dialogueId, dialogueLine }, ref) {
 	const t = useTranslations("DialogueFeature");
 	const { user } = useAuth();
 	const userId = user?._id || user?.id || null;
 	const audioRef = useRef(null);
 	const playbackRef = useRef(null);
 	const startSpeakingRef = useRef(null);
+	const dictionaryPopupRef = useRef(null);
 
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [showCaptions, setShowCaptions] = useState(false);
+	const [selectedLookup, setSelectedLookup] = useState(null);
 	const [isBlinking, setIsBlinking] = useState(false);
 	const [showCharacter, setShowCharacter] = useState(false);
 	const playbackRate = useDialoguePlaybackRate();
@@ -165,6 +170,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 
 	function handleCaptionsClick() {
 		if (!isAudioFinished) {
+			if (showCaptions) setSelectedLookup(null);
 			setShowCaptions((current) => !current);
 			return;
 		}
@@ -184,6 +190,54 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 		(!isAudioFinished || showFinishedCaptionBackground);
 	const showSubtitleText =
 		showCaptions && hasAudioStarted && !isAudioFinished;
+
+	useEffect(() => {
+		if (!showSubtitleText || !selectedLookup) return;
+		function dismiss(event) {
+			if (dictionaryPopupRef.current?.contains(event.target) ||
+				event.target.closest?.('[data-dictionary-token="true"]')) return;
+			setSelectedLookup(null);
+		}
+		function dismissOnEscape(event) {
+			if (event.key === "Escape") setSelectedLookup(null);
+		}
+		document.addEventListener("pointerdown", dismiss);
+		document.addEventListener("keydown", dismissOnEscape);
+		window.addEventListener("resize", dismissOnEscape);
+		window.addEventListener("scroll", dismissOnEscape, true);
+		return () => {
+			document.removeEventListener("pointerdown", dismiss);
+			document.removeEventListener("keydown", dismissOnEscape);
+			window.removeEventListener("resize", dismissOnEscape);
+			window.removeEventListener("scroll", dismissOnEscape, true);
+		};
+	}, [selectedLookup, showSubtitleText]);
+
+	function handleSubtitleWordClick(clickedWordIndex, event) {
+		const line = dialogueLine?.text === task.transcript
+			? dialogueLine : { text: task.transcript };
+		const lookup = findLessonLookup({ lessonId, dialogueId, line, clickedWordIndex });
+		if (!lookup) { setSelectedLookup(null); return; }
+		const bounds = event.currentTarget.getBoundingClientRect();
+		const popupWidth = 256;
+		setSelectedLookup({ ...lookup, phraseLookup: lookup.wordLookup ? lookup : null,
+			isMobile: window.innerWidth < 640,
+			position: {
+				left: Math.min(Math.max(bounds.left + bounds.width / 2 - popupWidth / 2, 12), window.innerWidth - popupWidth - 12),
+				top: bounds.top >= 180 ? bounds.top - 10 : bounds.bottom + 10,
+				opensAbove: bounds.top >= 180,
+			},
+		});
+	}
+
+	function pronounceLookup() {
+		if (!selectedLookup || !("speechSynthesis" in window)) return;
+		window.speechSynthesis.cancel();
+		const utterance = new SpeechSynthesisUtterance(selectedLookup.result.text);
+		utterance.lang = "en-US";
+		utterance.rate = 0.9;
+		window.speechSynthesis.speak(utterance);
+	}
 
 	return (
 		<div>
@@ -243,7 +297,9 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 								</p>
 
 								<p className="dialogue-subtitle-text mt-1 text-sm font-medium text-white sm:text-lg">
-									{task.transcript}
+									{lessonId && dialogueId && task.transcript
+										? renderSubtitleTokens(task.transcript, handleSubtitleWordClick, selectedLookup)
+										: task.transcript}
 								</p>
 
 								{showTranslation && task.translation && (
@@ -273,6 +329,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 						onEnded={() => {
 							setIsPlaying(false);
 							setIsAudioFinished(true);
+							setSelectedLookup(null);
 							setShowFinishedCaptionBackground(false);
 							setShowCharacter(false);
 						}}
@@ -363,6 +420,9 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 					</button>
 				</div>
 			</div>
+			<DialogueWordPopup lookup={showSubtitleText ? selectedLookup : null}
+				popupRef={dictionaryPopupRef} onPronounce={pronounceLookup}
+				onSwitch={(switchTo) => setSelectedLookup((current) => ({ ...current, ...switchTo }))} />
 		</div>
 	);
 });

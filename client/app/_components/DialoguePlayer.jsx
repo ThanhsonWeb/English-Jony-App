@@ -1,20 +1,17 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { Languages, ArrowLeft } from "lucide-react";
-import {
-	SUBTITLE_WORD_PATTERN,
-	SUBTITLE_WORD_TOKEN_PATTERN,
-} from "@/app/_lib/dictionary/findPreferredLookup";
 import { findLessonLookup } from "@/app/_lib/dictionary/findLessonLookup";
 import useDialogueShortcuts from "@/app/_hooks/useDialogueShortcuts";
 import { useTranslations } from "next-intl";
 import useDialoguePlaybackRate from "@/app/_hooks/useDialoguePlaybackRate";
 import styles from "./DialoguePlayer.module.css";
 import { useAuth } from "@/app/_contexts/AuthContext";
+import DialogueWordPopup from "./DialogueWordPopup";
+import renderSubtitleTokens from "./renderSubtitleTokens";
 import {
 	PLAYBACK_RATES,
 	saveDialoguePlaybackRate,
@@ -43,73 +40,6 @@ function preloadDialogueAsset(src) {
 		void image.decode().catch(() => {});
 	}
 }
-function renderSubtitleTokens(text, onWordClick, activeWordRange) {
-	let wordIndex = -1;
-	const segments = text.split(SUBTITLE_WORD_PATTERN).map((token, index) => ({
-		index,
-		token,
-		wordIndex: SUBTITLE_WORD_TOKEN_PATTERN.test(token)
-			? (wordIndex += 1)
-			: null,
-	}));
-	const hasActivePhrase =
-		activeWordRange &&
-		activeWordRange.startWordIndex < activeWordRange.endWordIndex;
-	const phraseStart = hasActivePhrase
-		? segments.findIndex(
-				(segment) => segment.wordIndex === activeWordRange.startWordIndex,
-			)
-		: -1;
-	const phraseEnd = hasActivePhrase
-		? segments.findLastIndex(
-				(segment) => segment.wordIndex === activeWordRange.endWordIndex,
-			)
-		: -1;
-
-	function renderWordButton(segment, isActive = false, grouped = false) {
-		return (
-			<button
-				key={`${segment.token}-${segment.index}`}
-				type="button"
-				onClick={(event) => onWordClick(segment.wordIndex, event)}
-				data-dictionary-token="true"
-				className={`${grouped ? "" : "rounded-sm"} transition-colors hover:text-cyan-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 ${
-					!grouped ? "hover:bg-white/10" : ""
-				} ${isActive ? "bg-cyan-400/15 text-cyan-100" : ""}`}
-			>
-				{segment.token}
-			</button>
-		);
-	}
-
-	return segments.map((segment, index) => {
-		if (index === phraseStart) {
-			return (
-				<span
-					key={`active-phrase-${phraseStart}-${phraseEnd}`}
-					className="box-decoration-clone rounded-sm bg-cyan-400/15 text-cyan-100"
-				>
-					{segments
-						.slice(phraseStart, phraseEnd + 1)
-						.map((phraseSegment) =>
-							phraseSegment.wordIndex === null
-								? phraseSegment.token
-								: renderWordButton(phraseSegment, false, true),
-						)}
-				</span>
-			);
-		}
-
-		if (index > phraseStart && index <= phraseEnd) return null;
-		if (segment.wordIndex === null) return segment.token;
-
-		const isActive =
-			activeWordRange?.startWordIndex === segment.wordIndex &&
-			activeWordRange.endWordIndex === segment.wordIndex;
-		return renderWordButton(segment, isActive);
-	});
-}
-
 export default function DialoguePlayer({
 	task,
 	lessonId,
@@ -852,77 +782,12 @@ export default function DialoguePlayer({
 					}
 				`}</style>
 
-				{selectedLookup?.lineIndex === currentLine &&
-					createPortal(
-						<div
-							ref={dictionaryPopupRef}
-							role="dialog"
-							aria-label={t("meaningOf", { word: selectedLookup.result.text })}
-							className={
-								selectedLookup.isMobile
-									? "dialogue-word-popup theme-dark-overlay fixed inset-x-3 bottom-3 z-[100] rounded-2xl border border-slate-700/80 bg-slate-950/95 px-3.5 py-3 text-left text-sm text-slate-200 shadow-2xl backdrop-blur-md"
-									: `dialogue-word-popup theme-dark-overlay fixed z-[100] w-64 rounded-xl border border-slate-700/80 bg-slate-950/95 px-3.5 py-3 text-left text-sm text-slate-200 shadow-2xl backdrop-blur-md ${
-											selectedLookup.position.opensAbove
-												? "-translate-y-full"
-												: ""
-										}`
-							}
-							style={
-								selectedLookup.isMobile
-									? undefined
-									: {
-											left: selectedLookup.position.left,
-											top: selectedLookup.position.top,
-										}
-							}
-						>
-							<div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-								<div className="flex items-center gap-1.5">
-									<strong className="text-base text-white">
-										{selectedLookup.result.text}
-									</strong>
-									<button
-										type="button"
-										onClick={handlePronounceLookup}
-										aria-label={t("pronounceWord", { word: selectedLookup.result.text })}
-										className="inline-flex h-7 w-7 items-center justify-center rounded-full text-cyan-300 transition hover:bg-cyan-400/15 hover:text-cyan-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
-									>
-										<Volume2 size={15} />
-									</button>
-								</div>
-								<span className="text-cyan-300">
-									{selectedLookup.result.source === "phrase"
-										? selectedLookup.result.type
-										: selectedLookup.result.pos?.join(", ")}
-								</span>
-							</div>
-
-							{selectedLookup.result.pron?.length > 0 && (
-								<p className="mt-1 text-slate-400">
-									{selectedLookup.result.pron.join(", ")}
-								</p>
-							)}
-
-							<p className="mt-2 leading-relaxed text-slate-200">
-								{selectedLookup.result.displayMeaning}
-							</p>
-							{selectedLookup.phraseLookup && (
-								<button
-									type="button"
-									data-dictionary-switch="true"
-									aria-label={t("meaningOf", { word: selectedLookup.result.source === "phrase"
-										? selectedLookup.phraseLookup.wordLookup.result.text : selectedLookup.phraseLookup.result.text })}
-									onClick={() => setSelectedLookup(current => ({ ...current,
-										...(current.result.source === "phrase" ? current.phraseLookup.wordLookup : current.phraseLookup) }))}
-									className="mt-2 text-cyan-300 underline underline-offset-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70"
-								>
-									{selectedLookup.result.source === "phrase"
-										? selectedLookup.phraseLookup.wordLookup.result.text : selectedLookup.phraseLookup.result.text}
-								</button>
-							)}
-						</div>,
-						document.body,
-					)}
+				<DialogueWordPopup
+					lookup={selectedLookup?.lineIndex === currentLine ? selectedLookup : null}
+					popupRef={dictionaryPopupRef}
+					onPronounce={handlePronounceLookup}
+					onSwitch={(switchTo) => setSelectedLookup((current) => ({ ...current, ...switchTo }))}
+				/>
 			</div>
 		</div>
 	);
