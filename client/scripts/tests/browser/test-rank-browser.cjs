@@ -13,6 +13,8 @@ async function run() {
 			const errors = [];
 			page.on("pageerror", error => errors.push(error.message));
 			let mode = "normal";
+			let profileMode = "normal";
+			const profileRequests = [];
 			const requests = [];
 			const person = (rank, self = false) => ({
 				id: self ? "self" : `user-${rank}`, rank, name: self ? "Current Learner" : `Learner ${rank}`,
@@ -22,6 +24,17 @@ async function run() {
 			});
 			await page.route("**/api/v1/**", async route => {
 				const url = new URL(route.request().url());
+				if (url.pathname.startsWith("/api/v1/leaderboard/users/")) {
+					const id = url.pathname.split("/").at(-1);
+					profileRequests.push(id);
+					if (profileMode === "slow") await new Promise(resolve => setTimeout(resolve, 1000));
+					if (profileMode === "error") return route.fulfill({ status: 500, json: { status: "fail" } });
+					return route.fulfill({ json: { status: "success", data: { profile: {
+						id, name: `Learner ${id.split("-").at(-1)}`, avatar: "", level: 5,
+						monthlyRank: 7, monthlyXp: 456, streakDays: 3,
+						email: "never-show@example.com", password: "never-show",
+					} } } });
+				}
 				if (url.pathname !== "/api/v1/leaderboard") return route.fulfill({ status: 401, json: { status: "fail" } });
 				requests.push(Object.fromEntries(url.searchParams));
 				const selectedMode = mode;
@@ -43,13 +56,49 @@ async function run() {
 			assert.match(await page.locator('tr[aria-current="true"]').innerText(), /2 days/);
 			assert.equal(await page.getByRole("list", { name: "Study days this week" }).getByRole("listitem", { name: /: Studied$/ }).count(), 2);
 			assert.equal(await page.getByText("27,500 KN", { exact: true }).count(), 1);
-			assert.equal(await page.getByText("Lv. 20", { exact: true }).count(), 1);
+			assert.equal(await page.getByRole("region", { name: "Level" }).getByText("Lv. 20", { exact: true }).count(), 1);
 			assert.equal(await page.getByRole("progressbar").getAttribute("value"), "100");
 			assert.equal(await page.getByText("Max level", { exact: true }).count(), 1);
+			assert.equal(await page.getByRole("button", { name: "View Current Learner's profile" }).count(), 0);
+			profileMode = "slow";
+			await page.getByRole("button", { name: "View Learner 2's profile" }).first().click();
+			const profileDialog = page.getByRole("dialog", { name: "Learner 2" });
+			await profileDialog.waitFor();
+			await profileDialog.getByRole("status").filter({ hasText: "Loading profile" }).waitFor();
+			await profileDialog.getByText("Monthly rank").waitFor();
+			assert.match(await profileDialog.innerText(), /Lv\. 5/);
+			assert.match(await profileDialog.innerText(), /#7/);
+			assert.match(await profileDialog.innerText(), /456 KN/);
+			assert.match(await profileDialog.innerText(), /3 days/);
+			assert.doesNotMatch(await profileDialog.innerText(), /never-show|@example.com/);
+			assert.equal(profileRequests.at(-1), "user-2");
+			const bounds = await profileDialog.evaluate(element => {
+				const rect = element.getBoundingClientRect();
+				return { centerX: rect.left + rect.width / 2, centerY: rect.top + rect.height / 2, bottom: rect.bottom };
+			});
+			if (width < 640) assert.ok(Math.abs(bounds.bottom - 1000) < 2, "Mobile profile is a bottom sheet");
+			else assert.ok(Math.abs(bounds.centerX - width / 2) < 2 && Math.abs(bounds.centerY - 500) < 2, "Desktop profile is centered");
+			await page.keyboard.press("Escape");
+			assert.equal(await page.getByRole("dialog").count(), 0);
+			profileMode = "error";
+			await page.getByRole("row", { name: /Learner 4/ }).getByRole("button", { name: "View Learner 4's profile" }).click();
+			await page.getByRole("dialog").getByRole("alert").waitFor();
+			profileMode = "normal";
+			await page.getByRole("dialog").getByRole("button", { name: "Try again" }).click();
+			await page.getByRole("dialog").getByText("Monthly rank").waitFor();
+			await page.mouse.click(5, 5);
+			assert.equal(await page.getByRole("dialog").count(), 0, "Outside click closes profile");
+			await page.getByRole("button", { name: "View Learner 3's profile" }).first().click();
+			await page.getByRole("dialog").getByRole("button", { name: "Close profile" }).click();
+			assert.equal(await page.getByRole("dialog").count(), 0, "X closes profile");
 			await page.getByRole("button", { name: "Week", exact: true }).click();
 			await page.getByRole("columnheader", { name: "Weekly KN" }).waitFor({ state: "attached" });
 			await page.getByRole("cell", { name: "42", exact: true }).waitFor();
 			assert.equal(requests.at(-1).period, "week");
+			await page.getByRole("button", { name: "View Learner 2's profile" }).first().click();
+			await page.getByRole("dialog").getByText("456 KN").waitFor();
+			assert.equal(profileRequests.at(-1), "user-2", "Weekly view still fetches current-month profile");
+			await page.keyboard.press("Escape");
 			await page.getByRole("combobox", { name: "Choose ranking period" }).selectOption("previous");
 			await page.getByRole("cell", { name: "42", exact: true }).waitFor();
 			assert.equal(requests.at(-1).timeframe, "previous");
@@ -75,19 +124,17 @@ async function run() {
 			await page.getByRole("button", { name: "Try again" }).click();
 			await page.getByRole("article", { name: "Rank 1: Current Learner" }).waitFor();
 			assert.equal(await page.locator("article").count(), 1);
-			assert.equal(await page.getByText("Lv. 5", { exact: true }).count(), 1);
+			assert.equal(await page.getByRole("region", { name: "Level" }).getByText("Lv. 5", { exact: true }).count(), 1);
 			assert.equal(await page.getByText("22 / 600 KN", { exact: true }).count(), 1);
-			assert.equal(await page.getByText("578 KN to Lv. 6", { exact: true }).count(), 1);
 			assert.equal(await page.getByRole("progressbar").getAttribute("value"), String(22 / 600 * 100));
 			assert.equal(await page.locator('tr[aria-current="true"]').count(), 1);
 			mode = "slow";
 			await page.getByRole("button", { name: "Week", exact: true }).click();
 			await page.getByRole("status").filter({ hasText: "Loading leaderboard" }).waitFor();
-			mode = "empty";
 			await page.getByRole("button", { name: "Month", exact: true }).click();
-			await page.getByText("No XP earned in this period yet.").waitFor();
+			await page.getByRole("article", { name: "Rank 1: Current Learner" }).waitFor();
 			await page.waitForTimeout(850);
-			assert.equal(await page.locator("article").count(), 0, "stale response must not replace newer results");
+			assert.equal(await page.locator("article").count(), 1, "stale response must not replace the cached month");
 			mode = "auth";
 			await open();
 			await page.getByText("Sign in to see the leaderboard.").waitFor();

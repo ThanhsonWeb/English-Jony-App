@@ -11,3 +11,14 @@ exports.getLeaderboard = catchAsync(async (req, res) => {
 	res.set("Cache-Control", "private, no-store");
 	res.status(200).json({ status: "success", data });
 });
+
+exports.getPublicProfile = catchAsync(async (req, res) => {
+	const { userId } = req.params;
+	if (!/^[a-f\d]{24}$/i.test(userId)) throw new AppError("Invalid user ID", 400);
+	const { currentUser } = await getLeaderboard({ userId, period: "month", timeframe: "current", limit: 1 });
+	const { id, name, avatar, level, rank, periodXp, streakDays } = currentUser;
+	res.set("Cache-Control", "private, no-store");
+	res.status(200).json({ status: "success", data: { profile: {
+		id, name, avatar, level, monthlyRank: rank, monthlyXp: periodXp, streakDays,
+	} } });
+});

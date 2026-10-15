@@ -1,12 +1,13 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { useLeaderboardResource } from "@/app/_lib/useStudyResources";
 import { resolveAvatarUrl } from "@/app/_lib/resolveAvatarUrl";
-import { CalendarDays, ChartNoAxesColumnIncreasing, Check, ChevronDown, Crown, Flame, Target } from "lucide-react";
+import { CalendarDays, ChartNoAxesColumnIncreasing, Check, ChevronDown, Crown, Flame, Target, X } from "lucide-react";
 import styles from "../rank.module.css";
 
 function RankAvatar({ user, large = false }) {
@@ -86,14 +87,18 @@ function StreakCard({ t, user }) {
 	);
 }
 
-function RankTopCard({ user, t, format }) {
+function RankTopCard({ user, t, format, onOpenProfile }) {
 	const metal = user.rank === 1 ? "gold" : user.rank === 2 ? "silver" : "bronze";
 	return (
 		<article className={`${styles.topCard} ${user.rank === 1 ? styles.winner : ""}`} data-medal={metal} aria-label={t("rankedUser", { rank: user.rank, name: user.name })}>
 			<Laurels />
 			<span className={styles.medal} aria-hidden="true"><span>{user.rank}</span></span>
-			<RankAvatar user={user} large />
-			<h3>{user.name}</h3>
+			{user.isCurrentUser ? <><RankAvatar user={user} large /><h3>{user.name}</h3></> :
+				<button type="button" className={styles.topProfileTrigger}
+					aria-label={t("viewProfile", { name: user.name })}
+					onClick={(event) => onOpenProfile(user, event)}>
+					<RankAvatar user={user} large /><h3>{user.name}</h3>
+				</button>}
 			<div className={styles.topStats}>
 				<strong>{format(user.periodXp)} KN</strong>
 				<span className={styles.streak}><Flame size={18} aria-hidden="true" />{t("days", { count: user.streakDays })}</span>
@@ -103,15 +108,90 @@ function RankTopCard({ user, t, format }) {
 	);
 }
 
-function LeaderboardRow({ user, t, format }) {
+function LeaderboardRow({ user, t, format, onOpenProfile }) {
 	return (
 		<tr className={`${styles.leaderboardRow} ${user.isCurrentUser ? styles.currentUser : ""}`} aria-current={user.isCurrentUser ? "true" : undefined}>
 			<td className={styles.rankNumber}>{user.rank ?? "—"}</td>
-			<th scope="row"><div className={styles.rowUser}><RankAvatar user={user} /><span className={styles.userName}>{user.name}</span>{user.isCurrentUser && <span className={styles.youBadge}>{t("you")}</span>}</div></th>
+			<th scope="row"><div className={styles.rowUser}>
+				{user.isCurrentUser ? <><RankAvatar user={user} /><span className={styles.userName}>{user.name}</span></> :
+					<button type="button" className={styles.profileTrigger}
+						aria-label={t("viewProfile", { name: user.name })}
+						onClick={(event) => onOpenProfile(user, event)}>
+						<RankAvatar user={user} /><span className={styles.userName}>{user.name}</span>
+					</button>}
+				{user.isCurrentUser && <span className={styles.youBadge}>{t("you")}</span>}
+			</div></th>
 			<td className={styles.rowLevel}>Lv. {user.level}</td>
 			<td className={styles.rowStreak}><span className={styles.streak}><Flame size={19} aria-hidden="true" />{t("days", { count: user.streakDays })}</span></td>
 			<td className={styles.rowKn}>{format(user.periodXp)} KN</td>
 		</tr>
+	);
+}
+
+function RankProfilePopup({ selectedUser, onClose, t, format }) {
+	const closeRef = useRef(null);
+	const [requestId, setRequestId] = useState(0);
+	const [request, setRequest] = useState({ status: "loading", profile: null });
+
+	useEffect(() => {
+		const controller = new AbortController();
+		async function load() {
+			try {
+				const response = await fetch(`/api/v1/leaderboard/users/${selectedUser.id}`, {
+					credentials: "include", cache: "no-store", signal: controller.signal,
+				});
+				if (!response.ok) throw new Error("loadError");
+				const profile = (await response.json()).data?.profile;
+				if (profile?.id !== selectedUser.id) throw new Error("loadError");
+				setRequest({ status: "ready", profile });
+			} catch {
+				if (!controller.signal.aborted) setRequest({ status: "error", profile: null });
+			}
+		}
+		void load();
+		return () => controller.abort();
+	}, [selectedUser.id, requestId]);
+
+	useEffect(() => {
+		const oldOverflow = document.body.style.overflow;
+		document.body.style.overflow = "hidden";
+		closeRef.current?.focus();
+		function onKeyDown(event) {
+			if (event.key === "Escape") onClose();
+		}
+		window.addEventListener("keydown", onKeyDown);
+		return () => {
+			document.body.style.overflow = oldOverflow;
+			window.removeEventListener("keydown", onKeyDown);
+		};
+	}, [onClose]);
+
+	const profile = request.profile;
+	return createPortal(
+		<div className={styles.profileBackdrop} onClick={(event) => {
+			if (event.target === event.currentTarget) onClose();
+		}}>
+			<section role="dialog" aria-modal="true" aria-labelledby="rank-profile-title" className={styles.profileDialog}>
+				<button ref={closeRef} type="button" className={styles.profileClose}
+					aria-label={t("closeProfile")} onClick={onClose}><X size={20} /></button>
+				<p className={styles.profileEyebrow}>{t("profileTitle")}</p>
+				<div className={styles.profileIdentity}>
+					<RankAvatar user={profile || selectedUser} large />
+					<h2 id="rank-profile-title">{profile?.name || selectedUser.name}</h2>
+				</div>
+				{request.status === "loading" && <p className={styles.profileStatus} role="status">{t("profileLoading")}</p>}
+				{request.status === "error" && <div className={styles.profileStatus} role="alert">
+					<p>{t("profileError")}</p>
+					<button type="button" onClick={() => { setRequest({ status: "loading", profile: null }); setRequestId((id) => id + 1); }}>{t("retry")}</button>
+				</div>}
+				{profile && <dl className={styles.profileStats}>
+					<div><dt>{t("level")}</dt><dd>Lv. {profile.level}</dd></div>
+					<div><dt>{t("monthlyRank")}</dt><dd>{profile.monthlyRank === null ? t("unranked") : `#${profile.monthlyRank}`}</dd></div>
+					<div><dt>{t("monthKn")}</dt><dd>{format(profile.monthlyXp)} KN</dd></div>
+					<div><dt>{t("streakTitle")}</dt><dd>{t("days", { count: profile.streakDays })}</dd></div>
+				</dl>}
+			</section>
+		</div>, document.body,
 	);
 }
 
@@ -141,6 +221,8 @@ export default function RankDashboard() {
 	const { user: signedInUser, loading: authLoading } = useAuth();
 	const [period, setPeriod] = useState("month");
 	const [timeframe, setTimeframe] = useState("current");
+	const [selectedUser, setSelectedUser] = useState(null);
+	const openerRef = useRef(null);
 	const { data, error: loadError, loading: queryLoading, refresh } = useLeaderboardResource(
 		signedInUser?._id || signedInUser?.id, period, timeframe, !authLoading,
 	);
@@ -162,6 +244,16 @@ export default function RankDashboard() {
 		setPeriod(nextPeriod);
 		setTimeframe("current");
 	}
+
+	function openProfile(user, event) {
+		openerRef.current = event.currentTarget;
+		setSelectedUser(user);
+	}
+
+	const closeProfile = useCallback(() => {
+		setSelectedUser(null);
+		requestAnimationFrame(() => openerRef.current?.focus());
+	}, []);
 
 	return (
 		<main className={styles.page}>
@@ -202,17 +294,19 @@ export default function RankDashboard() {
 				</div>
 
 				<section aria-label={t("topThree")} className={styles.podium}>
-					{[leaderboard[1], leaderboard[0], leaderboard[2]].filter(Boolean).map(user => <RankTopCard key={user.id} user={user} t={t} format={format} />)}
+					{[leaderboard[1], leaderboard[0], leaderboard[2]].filter(Boolean).map(user => <RankTopCard key={user.id} user={user} t={t} format={format} onOpenProfile={openProfile} />)}
 				</section>
 
 				<section aria-label={t("leaderboard")} className={styles.leaderboardPanel}>
 					<table className={styles.leaderboard}>
 						<caption className="sr-only">{t("leaderboard")} — {activePeriod}</caption>
 						<thead><tr><th scope="col">#</th><th scope="col">{t("user")}</th><th scope="col">{t("level")}</th><th scope="col">{t("streak")}</th><th scope="col">{t(period === "week" ? "weekKn" : "monthKn")}</th></tr></thead>
-						<tbody>{rows.map(user => <LeaderboardRow key={user.id} user={user} t={t} format={format} />)}</tbody>
+						<tbody>{rows.map(user => <LeaderboardRow key={user.id} user={user} t={t} format={format} onOpenProfile={openProfile} />)}</tbody>
 					</table>
 				</section>
 			</div>
+			{selectedUser && <RankProfilePopup key={selectedUser.id} selectedUser={selectedUser}
+				onClose={closeProfile} t={t} format={format} />}
 		</main>
 	);
 }

@@ -250,6 +250,29 @@ test("HTTP response exposes only public fields for ranked and unranked users", a
 	assert.doesNotMatch(JSON.stringify(response.body), /private-hash|private-reset-token|@example.com|googleId|password|email/);
 });
 
+test("public profile endpoint returns only current-month leaderboard fields", async () => {
+	const other = await learner("Public Learner", 2750);
+	await User.collection.updateOne({ _id: other._id }, { $set: {
+		password: "private-hash", passwordResetToken: "private-reset-token", role: "admin",
+	} });
+	await event(other, 35, new Date());
+	const headers = { Authorization: `Bearer ${token}` };
+	let response = await fetch(`${baseUrl}/users/${other.id}`, { headers });
+	assert.equal(response.status, 200);
+	assert.equal(response.headers.get("cache-control"), "private, no-store");
+	let body = await response.json();
+	assert.deepEqual(Object.keys(body.data.profile).sort(), ["avatar", "id", "level", "monthlyRank", "monthlyXp", "name", "streakDays"]);
+	assert.deepEqual([body.data.profile.name, body.data.profile.monthlyRank, body.data.profile.monthlyXp], ["Public Learner", 1, 35]);
+	assert.doesNotMatch(JSON.stringify(body), /private-hash|private-reset-token|@example.com|googleId|password|email/);
+	response = await fetch(`${baseUrl}/users/${user.id}`, { headers });
+	body = await response.json();
+	assert.equal(body.data.profile.monthlyRank, null);
+	assert.equal(body.data.profile.monthlyXp, 0);
+	assert.equal((await fetch(`${baseUrl}/users/not-an-id`, { headers })).status, 400);
+	assert.equal((await fetch(`${baseUrl}/users/${new mongoose.Types.ObjectId()}`, { headers })).status, 404);
+	assert.equal((await fetch(`${baseUrl}/users/${other.id}`)).status, 401);
+});
+
 test("custom avatar takes priority over the Google photo for ranked and unranked users", async () => {
 	const avatar = "https://res.cloudinary.com/studyjony/image/upload/avatar.jpg";
 	await User.updateOne({ _id: user._id }, { $set: { avatar } });

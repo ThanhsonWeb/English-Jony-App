@@ -313,7 +313,13 @@
 		"unranked": "Chưa xếp hạng",
 		"unavailable": "Chưa có dữ liệu",
 		"weekKn": "KN trong tuần",
-		"monthKn": "KN trong tháng"
+		"monthKn": "KN trong tháng",
+		"viewProfile": "Xem hồ sơ của {name}",
+		"profileTitle": "Hồ sơ công khai",
+		"monthlyRank": "Hạng tháng này",
+		"closeProfile": "Đóng hồ sơ",
+		"profileLoading": "Đang tải hồ sơ…",
+		"profileError": "Không tải được hồ sơ. Vui lòng thử lại."
 	},
 	"Theme": {
 		"light": "Sáng dịu",

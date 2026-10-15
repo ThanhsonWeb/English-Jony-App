@@ -136,6 +136,24 @@
 .currentUser .rankNumber { font-weight: 700; }
 .statusMessage { padding: 20px; text-align: center; color: var(--sj-text-secondary); }
 .statusMessage button { margin-top: 10px; padding: 7px 16px; border: 1px solid var(--sj-border); border-radius: 20px; background: var(--sj-primary-soft); color: var(--sj-brand-text); cursor: pointer; }
+.profileTrigger { display: inline-flex; align-items: center; gap: 18px; min-width: 0; color: inherit; text-align: left; cursor: pointer; }
+.topProfileTrigger { display: inline-flex; flex-direction: column; align-items: center; min-width: 0; color: inherit; cursor: pointer; }
+.profileTrigger:hover .userName, .topProfileTrigger:hover h3 { text-decoration: underline; text-underline-offset: 3px; }
+.profileTrigger:focus-visible, .topProfileTrigger:focus-visible, .profileClose:focus-visible { outline: 2px solid var(--sj-primary); outline-offset: 3px; border-radius: 6px; }
+.profileBackdrop { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 16px; background: rgb(2 6 23 / 68%); }
+.profileDialog { position: relative; width: min(420px, 100%); max-height: calc(100dvh - 32px); overflow-y: auto; border: 1px solid var(--sj-border); border-radius: 20px; padding: 24px; background: var(--sj-surface); color: var(--sj-text); box-shadow: 0 24px 70px rgb(0 0 0 / 35%); }
+.profileClose { position: absolute; top: 16px; right: 16px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; color: var(--sj-text-secondary); cursor: pointer; }
+.profileClose:hover { background: var(--sj-hover); color: var(--sj-text); }
+.profileEyebrow { margin: 0 42px 18px 0; color: var(--sj-text-secondary); font-size: 13px; }
+.profileIdentity { display: flex; align-items: center; gap: 16px; min-width: 0; }
+.profileIdentity .avatarLarge { width: 64px; height: 64px; border: 2px solid var(--sj-primary); box-shadow: none; font-size: 25px; }
+.profileIdentity h2 { min-width: 0; margin: 0; font-size: 20px; font-weight: 700; overflow-wrap: anywhere; }
+.profileStats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 22px 0 0; }
+.profileStats > div { min-width: 0; padding: 12px; border: 1px solid var(--sj-border); border-radius: 12px; background: var(--sj-surface-muted); }
+.profileStats dt { color: var(--sj-text-secondary); font-size: 12px; }
+.profileStats dd { margin: 5px 0 0; font-size: 17px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.profileStatus { margin: 22px 0 0; color: var(--sj-text-secondary); font-size: 14px; }
+.profileStatus button { margin-top: 12px; padding: 8px 14px; border-radius: 10px; background: var(--sj-primary-soft); color: var(--sj-brand-text); cursor: pointer; }
 
 @media (max-width: 1199px) {
 	.summaryGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
@@ -174,6 +192,7 @@
 }
 
 @media (max-width: 539px) {
+	.profileTrigger { gap: 8px; }
 	.page { padding-inline: 16px; }
 	.heading h1 { font-size: 25px; align-items: start; }
 	.heading h1 svg { margin-top: 2px; }
@@ -218,6 +237,11 @@
 	.youBadge { font-size: 10px; padding: 2px 7px; }
 	.rowStreak svg { width: 15px; }
 	.rowLevel { font-size: 10px; }
+}
+
+@media (max-width: 639px) {
+	.profileBackdrop { align-items: end; padding: 0; }
+	.profileDialog { width: 100%; max-height: 85dvh; border-radius: 20px 20px 0 0; padding: 24px 20px calc(20px + env(safe-area-inset-bottom)); }
 }
 
 @media (prefers-reduced-motion: reduce) {

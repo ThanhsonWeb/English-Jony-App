@@ -313,7 +313,13 @@
 		"unranked": "Unranked",
 		"unavailable": "Not available yet",
 		"weekKn": "Weekly KN",
-		"monthKn": "Monthly KN"
+		"monthKn": "Monthly KN",
+		"viewProfile": "View {name}'s profile",
+		"profileTitle": "Public profile",
+		"monthlyRank": "Monthly rank",
+		"closeProfile": "Close profile",
+		"profileLoading": "Loading profile…",
+		"profileError": "Could not load this profile. Please try again."
 	},
 	"Theme": {
 		"light": "Soft light",
