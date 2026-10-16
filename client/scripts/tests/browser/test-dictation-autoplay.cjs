@@ -8,7 +8,7 @@ const userId = "aaaaaaaaaaaaaaaaaaaaaaaa";
 const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 async function run(browser, width, locale, ids) {
-	const context = await browser.newContext({ viewport: { width, height: 900 }, hasTouch: width < 768 });
+	const context = await browser.newContext({ locale, viewport: { width, height: 900 }, hasTouch: width < 768 });
 	await context.addInitScript(userId => {
 		localStorage.setItem("studyjony-theme", "dark");
 		localStorage.setItem(`studyjony-dialogue-playback-rate:${userId}`, "1.25");

@@ -10,8 +10,10 @@ export default function useDialogueAutoAdvance({ onComplete, href }) {
 	const progress = useDialogueProgress();
 	const hasProgress = Boolean(progress);
 	const loading = progress?.loading;
+	const paused = Boolean(progress?.autoAdvancePaused);
 	const submitted = useRef(false);
 	const navigating = useRef(false);
+	const wasPaused = useRef(false);
 	const onCompleteRef = useRef(onComplete);
 	const [completion, setCompletion] = useState(null);
 	const [accepted, setAccepted] = useState(false);
@@ -20,9 +22,14 @@ export default function useDialogueAutoAdvance({ onComplete, href }) {
 	useEffect(() => { onCompleteRef.current = onComplete; }, [onComplete]);
 	useEffect(() => {
 		if (!completion) return;
+		if (paused) {
+			wasPaused.current = true;
+			return;
+		}
+		if (wasPaused.current) return;
 		const timer = setTimeout(() => setElapsed(true), 400);
 		return () => clearTimeout(timer);
-	}, [completion]);
+	}, [completion, paused]);
 
 	useEffect(() => {
 		if (!completion || loading) return;
@@ -37,7 +44,8 @@ export default function useDialogueAutoAdvance({ onComplete, href }) {
 	const safeToAdvance = !progress?.loading && (!progress || progress.canNavigate) &&
 		(accepted || progress?.status === "saved");
 	useEffect(() => {
-		if (!elapsed || !safeToAdvance) return;
+		// Dismissing the reminder resumes immediately; login leaves it paused.
+		if (paused || (!elapsed && !wasPaused.current) || !safeToAdvance) return;
 		const advance = () => {
 			if (navigating.current || document.querySelector('[aria-modal="true"]')) return;
 			navigating.current = true;
@@ -48,7 +56,7 @@ export default function useDialogueAutoAdvance({ onComplete, href }) {
 		observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["aria-modal"] });
 		advance();
 		return () => observer.disconnect();
-	}, [elapsed, safeToAdvance, href, router]);
+	}, [elapsed, paused, safeToAdvance, href, router]);
 
 	return {
 		isSubmitted: () => submitted.current,

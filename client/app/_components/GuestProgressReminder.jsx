@@ -56,7 +56,6 @@ function GuestProgressReminder({ isOpen, onDismiss }) {
 			<div className="mt-4 flex gap-2 sm:justify-end">
 				<Link
 					href="/login"
-					onClick={onDismiss}
 					className="flex min-h-11 flex-1 items-center justify-center rounded-xl bg-violet-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-400 sm:flex-none"
 				>
 					{t("signIn")}

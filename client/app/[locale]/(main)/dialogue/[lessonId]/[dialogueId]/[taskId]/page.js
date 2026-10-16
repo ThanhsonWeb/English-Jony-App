@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { getLocalizedDialogueValue } from "@/app/_lib/dialogue/localization";
@@ -28,8 +28,8 @@ export default function DialogueTaskPage() {
 	const { user, loading: authLoading } = useAuth();
 	const progressSave = useDialogueProgressSave(`/api/v1/dialogue-progress/${lessonId}/${dialogueId}/tasks/${taskId}`);
 	const [guestReminderRequested, setGuestReminderRequested] = useState(false);
+	const guestReminderSeen = useRef(false);
 	const dismissGuestReminder = useCallback(() => {
-		sessionStorage.setItem(GUEST_REMINDER_DISMISSED_KEY, "true");
 		setGuestReminderRequested(false);
 	}, []);
 
@@ -77,11 +77,14 @@ export default function DialogueTaskPage() {
 	};
 
 	function maybeShowGuestReminder() {
-		if (taskIndex !== 0 || user) return;
-		if (sessionStorage.getItem(GUEST_REMINDER_DISMISSED_KEY) === "true") {
-			return;
-		}
+		if (taskIndex !== 0 || user || guestReminderSeen.current) return;
+		try {
+			if (sessionStorage.getItem(GUEST_REMINDER_DISMISSED_KEY) === "true") return;
+			// Count the reminder when shown, including if the guest leaves to log in.
+			sessionStorage.setItem(GUEST_REMINDER_DISMISSED_KEY, "true");
+		} catch { /* Still show once in this page session if storage is unavailable. */ }
 
+		guestReminderSeen.current = true;
 		setGuestReminderRequested(true);
 	}
 
@@ -131,7 +134,10 @@ export default function DialogueTaskPage() {
 	}
 
 	return (
-		<DialogueProgressProvider key={`${lessonId}/${dialogueId}/${taskId}`} value={progressSave}>
+		<DialogueProgressProvider key={`${lessonId}/${dialogueId}/${taskId}`} value={{
+			...progressSave,
+			autoAdvancePaused: guestReminderRequested && !user,
+		}}>
 			<DialogueExerciseHeader
 				lessonId={lessonId}
 				lessonTitle={getLocalizedDialogueValue(lesson, "title", locale)}
