@@ -1,0 +1,691 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "conan-season-1",
+  "dialogueId": "the-men-in-black",
+  "characters": {
+    "Shinichi": {
+      "meaning": "Shinichi",
+      "role": ""
+    },
+    "Vodka": {
+      "meaning": "Vodka",
+      "role": ""
+    },
+    "Gin": {
+      "meaning": "Gin",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-those": {
+      "word": "those",
+      "meaning": "",
+      "pos": []
+    },
+    "word-two": {
+      "word": "two",
+      "meaning": "",
+      "pos": []
+    },
+    "word-men": {
+      "word": "men",
+      "meaning": "",
+      "pos": []
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "",
+      "pos": []
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "",
+      "pos": []
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "",
+      "pos": []
+    },
+    "word-they": {
+      "word": "they",
+      "meaning": "",
+      "pos": []
+    },
+    "word-doing": {
+      "word": "doing",
+      "meaning": "",
+      "pos": []
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "",
+      "pos": []
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-go": {
+      "word": "go",
+      "meaning": "",
+      "pos": []
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "",
+      "pos": []
+    },
+    "word-wait": {
+      "word": "wait",
+      "meaning": "",
+      "pos": []
+    },
+    "word-where": {
+      "word": "where",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "",
+      "pos": []
+    },
+    "word-big": {
+      "word": "big",
+      "meaning": "",
+      "pos": []
+    },
+    "word-bag": {
+      "word": "bag",
+      "meaning": "",
+      "pos": []
+    },
+    "word-it's": {
+      "word": "it's",
+      "meaning": "",
+      "pos": []
+    },
+    "word-right": {
+      "word": "right",
+      "meaning": "",
+      "pos": []
+    },
+    "word-don't": {
+      "word": "don't",
+      "meaning": "",
+      "pos": []
+    },
+    "word-worry": {
+      "word": "worry",
+      "meaning": "",
+      "pos": []
+    },
+    "word-why": {
+      "word": "why",
+      "meaning": "",
+      "pos": []
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "",
+      "pos": []
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "",
+      "pos": []
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "",
+      "pos": []
+    },
+    "word-stop": {
+      "word": "stop",
+      "meaning": "",
+      "pos": []
+    },
+    "word-who": {
+      "word": "who",
+      "meaning": "",
+      "pos": []
+    },
+    "word-there": {
+      "word": "there",
+      "meaning": "",
+      "pos": []
+    },
+    "word-oh": {
+      "word": "oh",
+      "meaning": "",
+      "pos": []
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "",
+      "pos": []
+    },
+    "word-see": {
+      "word": "see",
+      "meaning": "",
+      "pos": []
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "",
+      "pos": []
+    },
+    "word-boy": {
+      "word": "boy",
+      "meaning": "",
+      "pos": []
+    },
+    "word-from": {
+      "word": "from",
+      "meaning": "",
+      "pos": []
+    },
+    "word-park": {
+      "word": "park",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-following": {
+      "word": "following",
+      "meaning": "",
+      "pos": []
+    },
+    "word-us": {
+      "word": "us",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-just": {
+      "word": "just",
+      "meaning": "",
+      "pos": []
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "",
+      "pos": []
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "",
+      "pos": []
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "",
+      "pos": []
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "",
+      "pos": []
+    },
+    "word-much": {
+      "word": "much",
+      "meaning": "",
+      "pos": []
+    },
+    "word-please": {
+      "word": "please",
+      "meaning": "",
+      "pos": []
+    },
+    "word-let": {
+      "word": "let",
+      "meaning": "",
+      "pos": []
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "",
+      "pos": []
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "",
+      "pos": []
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "",
+      "pos": []
+    },
+    "word-anyone": {
+      "word": "anyone",
+      "meaning": "",
+      "pos": []
+    },
+    "word-he": {
+      "word": "he",
+      "meaning": "",
+      "pos": []
+    },
+    "word-must": {
+      "word": "must",
+      "meaning": "",
+      "pos": []
+    },
+    "word-take": {
+      "word": "take",
+      "meaning": "",
+      "pos": []
+    },
+    "word-this": {
+      "word": "this",
+      "meaning": "",
+      "pos": []
+    },
+    "word-pill": {
+      "word": "pill",
+      "meaning": "",
+      "pos": []
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "",
+      "pos": []
+    },
+    "word-asleep": {
+      "word": "asleep",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Shinichi",
+      "text": "Those two men are here. What are they doing?",
+      "translation": "Hai người đàn ông đó đang ở đây. Họ đang làm gì vậy?",
+      "tokens": [
+        "Those",
+        "two",
+        "men",
+        "are",
+        "here",
+        "What",
+        "are",
+        "they",
+        "doing"
+      ],
+      "words": [
+        "word-those",
+        "word-two",
+        "word-men",
+        "word-are",
+        "word-here",
+        "word-what",
+        "word-are",
+        "word-they",
+        "word-doing"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Vodka",
+      "text": "We need to go now.",
+      "translation": "Chúng ta cần đi ngay.",
+      "tokens": [
+        "We",
+        "need",
+        "to",
+        "go",
+        "now"
+      ],
+      "words": [
+        "word-we",
+        "word-need",
+        "word-to",
+        "word-go",
+        "word-now"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Gin",
+      "text": "Wait. Where is the big bag?",
+      "translation": "Khoan. Chiếc túi lớn đâu rồi?",
+      "tokens": [
+        "Wait",
+        "Where",
+        "is",
+        "the",
+        "big",
+        "bag"
+      ],
+      "words": [
+        "word-wait",
+        "word-where",
+        "word-is",
+        "word-the",
+        "word-big",
+        "word-bag"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Vodka",
+      "text": "It's right here. Don't worry.",
+      "translation": "Nó ở ngay đây. Đừng lo.",
+      "tokens": [
+        "It's",
+        "right",
+        "here",
+        "Don't",
+        "worry"
+      ],
+      "words": [
+        "word-it's",
+        "word-right",
+        "word-here",
+        "word-don't",
+        "word-worry"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Shinichi",
+      "text": "Why do they have that bag?",
+      "translation": "Tại sao họ có chiếc túi đó?",
+      "tokens": [
+        "Why",
+        "do",
+        "they",
+        "have",
+        "that",
+        "bag"
+      ],
+      "words": [
+        "word-why",
+        "word-do",
+        "word-they",
+        "word-have",
+        "word-that",
+        "word-bag"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Gin",
+      "text": "Stop! Who is there?",
+      "translation": "Đứng lại! Ai ở đó?",
+      "tokens": [
+        "Stop",
+        "Who",
+        "is",
+        "there"
+      ],
+      "words": [
+        "word-stop",
+        "word-who",
+        "word-is",
+        "word-there"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Shinichi",
+      "text": "Oh no. They see me.",
+      "translation": "Ôi không. Họ thấy mình rồi.",
+      "tokens": [
+        "Oh",
+        "no",
+        "They",
+        "see",
+        "me"
+      ],
+      "words": [
+        "word-oh",
+        "word-no",
+        "word-they",
+        "word-see",
+        "word-me"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Vodka",
+      "text": "It's the boy from the park.",
+      "translation": "Đó là cậu nhóc ở công viên.",
+      "tokens": [
+        "It's",
+        "the",
+        "boy",
+        "from",
+        "the",
+        "park"
+      ],
+      "words": [
+        "word-it's",
+        "word-the",
+        "word-boy",
+        "word-from",
+        "word-the",
+        "word-park"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Gin",
+      "text": "Why are you following us?",
+      "translation": "Tại sao cậu lại đi theo chúng tôi?",
+      "tokens": [
+        "Why",
+        "are",
+        "you",
+        "following",
+        "us"
+      ],
+      "words": [
+        "word-why",
+        "word-are",
+        "word-you",
+        "word-following",
+        "word-us"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Shinichi",
+      "text": "I just want to know about the bag.",
+      "translation": "Tôi chỉ muốn biết về chiếc túi.",
+      "tokens": [
+        "I",
+        "just",
+        "want",
+        "to",
+        "know",
+        "about",
+        "the",
+        "bag"
+      ],
+      "words": [
+        "word-i",
+        "word-just",
+        "word-want",
+        "word-to",
+        "word-know",
+        "word-about",
+        "word-the",
+        "word-bag"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Gin",
+      "text": "You know too much.",
+      "translation": "Cậu biết quá nhiều rồi.",
+      "tokens": [
+        "You",
+        "know",
+        "too",
+        "much"
+      ],
+      "words": [
+        "word-you",
+        "word-know",
+        "word-too",
+        "word-much"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Shinichi",
+      "text": "Please let me go. I will not tell anyone.",
+      "translation": "Làm ơn thả tôi ra. Tôi sẽ không kể với ai đâu.",
+      "tokens": [
+        "Please",
+        "let",
+        "me",
+        "go",
+        "I",
+        "will",
+        "not",
+        "tell",
+        "anyone"
+      ],
+      "words": [
+        "word-please",
+        "word-let",
+        "word-me",
+        "word-go",
+        "word-i",
+        "word-will",
+        "word-not",
+        "word-tell",
+        "word-anyone"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Vodka",
+      "text": "What do we do now?",
+      "translation": "Bây giờ chúng ta làm gì?",
+      "tokens": [
+        "What",
+        "do",
+        "we",
+        "do",
+        "now"
+      ],
+      "words": [
+        "word-what",
+        "word-do",
+        "word-we",
+        "word-do",
+        "word-now"
+      ],
+      "phrases": []
+    },
+    "14": {
+      "speaker": "Gin",
+      "text": "He must take this pill.",
+      "translation": "Cậu ta phải uống viên thuốc này.",
+      "tokens": [
+        "He",
+        "must",
+        "take",
+        "this",
+        "pill"
+      ],
+      "words": [
+        "word-he",
+        "word-must",
+        "word-take",
+        "word-this",
+        "word-pill"
+      ],
+      "phrases": []
+    },
+    "15": {
+      "speaker": "Shinichi",
+      "text": "What is it? I don't want it.",
+      "translation": "Đó là gì? Tôi không muốn uống đâu.",
+      "tokens": [
+        "What",
+        "is",
+        "it",
+        "I",
+        "don't",
+        "want",
+        "it"
+      ],
+      "words": [
+        "word-what",
+        "word-is",
+        "word-it",
+        "word-i",
+        "word-don't",
+        "word-want",
+        "word-it"
+      ],
+      "phrases": []
+    },
+    "16": {
+      "speaker": "Shinichi",
+      "text": "No! Please stop!",
+      "translation": "Không! Làm ơn dừng lại!",
+      "tokens": [
+        "No",
+        "Please",
+        "stop"
+      ],
+      "words": [
+        "word-no",
+        "word-please",
+        "word-stop"
+      ],
+      "phrases": []
+    },
+    "17": {
+      "speaker": "Gin",
+      "text": "He is asleep now. We must go.",
+      "translation": "Cậu ta ngủ mê rồi. Chúng ta phải đi.",
+      "tokens": [
+        "He",
+        "is",
+        "asleep",
+        "now",
+        "We",
+        "must",
+        "go"
+      ],
+      "words": [
+        "word-he",
+        "word-is",
+        "word-asleep",
+        "word-now",
+        "word-we",
+        "word-must",
+        "word-go"
+      ],
+      "phrases": []
+    }
+  }
+}

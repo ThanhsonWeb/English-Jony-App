@@ -1,0 +1,887 @@
+{
+  "metadata": {
+    "courseId": "conan-season-1",
+    "dialogueId": "a-small-body",
+    "contextualGlossaryVersion": 1,
+    "title": "Cơ thể nhỏ bé",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Thám tử lừng danh Conan – Mùa 1",
+        "en": "Detective Conan – Season 1"
+      },
+      "courseDescription": {
+        "vi": "Shinichi tỉnh dậy trong cơ thể một đứa trẻ. Cậu tìm đến tiến sĩ Agasa và nhờ ông giữ bí mật về thân phận của mình.",
+        "en": "Shinichi wakes up in a child's body. He goes to Dr. Agasa and asks him to keep his identity secret."
+      },
+      "title": {
+        "vi": "Cơ thể nhỏ bé",
+        "en": "A Small Body"
+      },
+      "description": {
+        "vi": "Shinichi tỉnh dậy trong cơ thể một đứa trẻ. Cậu tìm đến tiến sĩ Agasa và nhờ ông giữ bí mật về thân phận của mình.",
+        "en": "Shinichi wakes up in a child's body. He goes to Dr. Agasa and asks him to keep his identity secret."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Shinichi tỉnh dậy trong cơ thể một đứa trẻ. Cậu tìm đến tiến sĩ Agasa và nhờ ông giữ bí mật về thân phận của mình.",
+    "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+    "thumbnail": "/stories/conan-season-1/thumbnails/a-small-body.webp"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Conan",
+      "text": "My hands are so small! What happened?",
+      "translation": "Tay mình nhỏ quá! Chuyện gì đã xảy ra?",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Conan",
+      "text": "I need help. I can ask Dr. Agasa.",
+      "translation": "Mình cần giúp đỡ. Mình có thể nhờ tiến sĩ Agasa.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-02.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Agasa",
+      "text": "Hello, little boy. Are you okay?",
+      "translation": "Chào cháu bé. Cháu có ổn không?",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-01.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Conan",
+      "text": "Dr. Agasa, it's me. I'm Shinichi!",
+      "translation": "Tiến sĩ Agasa, là cháu đây. Cháu là Shinichi!",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-03.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Agasa",
+      "text": "Shinichi? But you are a little boy!",
+      "translation": "Shinichi? Nhưng cháu là một cậu bé mà!",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Conan",
+      "text": "Two men gave me a pill.",
+      "translation": "Hai người đàn ông đã đưa cho cháu một viên thuốc.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-04.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Conan",
+      "text": "Now I'm a child. I don't know why.",
+      "translation": "Giờ cháu là một đứa trẻ. Cháu không biết tại sao.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-05.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Agasa",
+      "text": "Oh no! Are you hurt?",
+      "translation": "Ôi không! Cháu có bị thương không?",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-03.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Conan",
+      "text": "No, I'm okay. But I need your help.",
+      "translation": "Không, cháu ổn. Nhưng cháu cần bác giúp.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-06.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Agasa",
+      "text": "What can I do?",
+      "translation": "Bác có thể làm gì?",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-04.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Conan",
+      "text": "Please don't tell anyone my real name.",
+      "translation": "Xin bác đừng nói tên thật của cháu cho bất kỳ ai.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-07.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Conan",
+      "text": "I'm afraid of those men.",
+      "translation": "Cháu sợ hai người đàn ông đó.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-08.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Agasa",
+      "text": "I understand. I will keep your secret.",
+      "translation": "Bác hiểu rồi. Bác sẽ giữ bí mật cho cháu.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-05.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Conan",
+      "text": "Thank you. I need a new name.",
+      "translation": "Cảm ơn bác. Cháu cần một cái tên mới.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-09.mp3"
+    },
+    {
+      "id": 15,
+      "speaker": "Agasa",
+      "text": "How about Conan? You can stay here for now.",
+      "translation": "Tên Conan thì sao? Cháu có thể ở đây tạm thời.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-06.mp3"
+    },
+    {
+      "id": 16,
+      "speaker": "Conan",
+      "text": "Conan sounds good. Thank you, Doctor.",
+      "translation": "Conan nghe hay đấy. Cảm ơn bác, tiến sĩ.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-10.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "need help",
+      "pronunciation": "/niːd help/",
+      "meaning": "cần giúp đỡ",
+      "example": "I need help with my homework."
+    },
+    {
+      "word": "Are you okay?",
+      "pronunciation": "/ɑːr juː oʊˈkeɪ/",
+      "meaning": "Bạn có ổn không?",
+      "example": "You look sad. Are you okay?"
+    },
+    {
+      "word": "it's me",
+      "pronunciation": "/ɪts miː/",
+      "meaning": "là tôi đây; là mình đây",
+      "example": "Hi, Mom. It's me!"
+    },
+    {
+      "word": "a pill",
+      "pronunciation": "/ə pɪl/",
+      "meaning": "một viên thuốc",
+      "example": "The doctor gives me a pill."
+    },
+    {
+      "word": "don't know",
+      "pronunciation": "/doʊnt noʊ/",
+      "meaning": "không biết",
+      "example": "I don't know his name."
+    },
+    {
+      "word": "real name",
+      "pronunciation": "/riːəl neɪm/",
+      "meaning": "tên thật",
+      "example": "What is your real name?"
+    },
+    {
+      "word": "keep your secret",
+      "pronunciation": "/kiːp jʊr ˈsiːkrət/",
+      "meaning": "giữ bí mật cho bạn",
+      "example": "I will keep your secret."
+    },
+    {
+      "word": "How about",
+      "pronunciation": "/haʊ əˈbaʊt/",
+      "meaning": "... thì sao? (dùng để đề xuất)",
+      "example": "How about a cup of tea?"
+    },
+    {
+      "word": "for now",
+      "pronunciation": "/fɔːr naʊ/",
+      "meaning": "tạm thời; lúc này",
+      "example": "You can sit here for now."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["My hands are ", "! What happened?"],
+      "answers": ["so small"],
+      "speaker": "Conan",
+      "transcript": "My hands are so small! What happened?",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I ", ". I can ask Dr. Agasa."],
+      "answers": ["need help"],
+      "speaker": "Conan",
+      "transcript": "I need help. I can ask Dr. Agasa.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-02.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I need help. I ", " Dr. Agasa."],
+      "answers": ["can ask"],
+      "speaker": "Conan",
+      "transcript": "I need help. I can ask Dr. Agasa.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-02.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Hello, ", ". Are you okay?"],
+      "answers": ["little boy"],
+      "speaker": "Agasa",
+      "transcript": "Hello, little boy. Are you okay?",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Dr. Agasa, ", ". I'm Shinichi!"],
+      "answers": ["it's me"],
+      "speaker": "Conan",
+      "transcript": "Dr. Agasa, it's me. I'm Shinichi!",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-03.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Dr. Agasa, it's me. I'm ", "!"],
+      "answers": ["Shinichi"],
+      "speaker": "Conan",
+      "transcript": "Dr. Agasa, it's me. I'm Shinichi!",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-03.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Shinichi? But you are a ", "!"],
+      "answers": ["little boy"],
+      "speaker": "Agasa",
+      "transcript": "Shinichi? But you are a little boy!",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-02.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 5,
+      "type": "multipleChoice",
+      "question": "Vì sao Agasa ngạc nhiên khi nghe tên Shinichi?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Vì sao Agasa ngạc nhiên khi nghe tên Shinichi?",
+          "en": "Why is Agasa surprised to hear the name Shinichi?"
+        },
+        "options": [
+          {"vi": "Vì cậu bé nói mình bị thương.", "en": "Because the boy says he is hurt."},
+          {"vi": "Vì Agasa không biết Shinichi là ai.", "en": "Because Agasa does not know who Shinichi is."},
+          {"vi": "Vì Shinichi đã rời khỏi nhà.", "en": "Because Shinichi has left home."},
+          {"vi": "Vì cậu bé nói mình là Shinichi.", "en": "Because the boy says he is Shinichi."}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì cậu bé nói mình bị thương.",
+        "Vì Agasa không biết Shinichi là ai.",
+        "Vì Shinichi đã rời khỏi nhà.",
+        "Vì cậu bé nói mình là Shinichi."
+      ],
+      "answer": "Vì cậu bé nói mình là Shinichi.",
+      "speaker": "Agasa",
+      "transcript": "Shinichi? But you are a little boy!",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-02.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["", " gave me a pill."],
+      "answers": ["Two men"],
+      "speaker": "Conan",
+      "transcript": "Two men gave me a pill.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-04.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Two men gave me ", "."],
+      "answers": ["a pill"],
+      "speaker": "Conan",
+      "transcript": "Two men gave me a pill.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-04.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Conan nói hai người đàn ông đã đưa gì cho cậu?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Conan nói hai người đàn ông đã đưa gì cho cậu?",
+          "en": "What does Conan say the two men gave him?"
+        },
+        "options": [
+          {"vi": "Một viên thuốc.", "en": "A pill."},
+          {"vi": "Một chiếc chìa khóa.", "en": "A key."},
+          {"vi": "Một bức thư.", "en": "A letter."},
+          {"vi": "Một chiếc điện thoại.", "en": "A phone."}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Một viên thuốc.",
+        "Một chiếc chìa khóa.",
+        "Một bức thư.",
+        "Một chiếc điện thoại."
+      ],
+      "answer": "Một viên thuốc.",
+      "speaker": "Conan",
+      "transcript": "Two men gave me a pill.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-04.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Now I'm a child. I ", " why."],
+      "answers": ["don't know"],
+      "speaker": "Conan",
+      "transcript": "Now I'm a child. I don't know why.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-05.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Oh no! Are you ", "?"],
+      "answers": ["hurt"],
+      "speaker": "Agasa",
+      "transcript": "Oh no! Are you hurt?",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["No, I'm ", ". But I need your help."],
+      "answers": ["okay"],
+      "speaker": "Conan",
+      "transcript": "No, I'm okay. But I need your help.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-06.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["No, I'm okay. But I need ", "."],
+      "answers": ["your help"],
+      "speaker": "Conan",
+      "transcript": "No, I'm okay. But I need your help.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-06.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["", " I do?"],
+      "answers": ["What can"],
+      "speaker": "Agasa",
+      "transcript": "What can I do?",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Please ", " anyone my real name."],
+      "answers": ["don't tell"],
+      "speaker": "Conan",
+      "transcript": "Please don't tell anyone my real name.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-07.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Please don't tell anyone my ", "."],
+      "answers": ["real name"],
+      "speaker": "Conan",
+      "transcript": "Please don't tell anyone my real name.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-07.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 11,
+      "type": "multipleChoice",
+      "question": "Conan dùng “Please” để làm gì?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Conan dùng “Please” để làm gì?",
+          "en": "Why does Conan use “Please”?"
+        },
+        "options": [
+          {"vi": "Để hỏi Agasa tên của ông.", "en": "To ask Agasa for his name."},
+          {"vi": "Để nhờ Agasa giữ bí mật một cách lịch sự.", "en": "To politely ask Agasa to keep a secret."},
+          {"vi": "Để cảnh báo hai người đàn ông.", "en": "To warn the two men."},
+          {"vi": "Để nói mình đã khỏe.", "en": "To say he feels better."}
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "Please",
+      "options": [
+        "Để hỏi Agasa tên của ông.",
+        "Để nhờ Agasa giữ bí mật một cách lịch sự.",
+        "Để cảnh báo hai người đàn ông.",
+        "Để nói mình đã khỏe."
+      ],
+      "answer": "Để nhờ Agasa giữ bí mật một cách lịch sự.",
+      "speaker": "Conan",
+      "transcript": "Please don't tell anyone my real name.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-07.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I'm ", " those men."],
+      "answers": ["afraid of"],
+      "speaker": "Conan",
+      "transcript": "I'm afraid of those men.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-08.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I ", ". I will keep your secret."],
+      "answers": ["understand"],
+      "speaker": "Agasa",
+      "transcript": "I understand. I will keep your secret.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I understand. I will keep ", "."],
+      "answers": ["your secret"],
+      "speaker": "Agasa",
+      "transcript": "I understand. I will keep your secret.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 13,
+      "type": "multipleChoice",
+      "question": "Từ “will” cho thấy Agasa đang làm gì?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Từ “will” cho thấy Agasa đang làm gì?",
+          "en": "What does “will” show about what Agasa is saying?"
+        },
+        "options": [
+          {"vi": "Ông kể một việc đã xảy ra.", "en": "He is describing something that already happened."},
+          {"vi": "Ông hỏi Conan một câu.", "en": "He is asking Conan a question."},
+          {"vi": "Ông hứa sẽ giữ bí mật.", "en": "He is promising to keep the secret."},
+          {"vi": "Ông nói mình không hiểu.", "en": "He is saying he does not understand."}
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "will",
+      "options": [
+        "Ông kể một việc đã xảy ra.",
+        "Ông hỏi Conan một câu.",
+        "Ông hứa sẽ giữ bí mật.",
+        "Ông nói mình không hiểu."
+      ],
+      "answer": "Ông hứa sẽ giữ bí mật.",
+      "speaker": "Agasa",
+      "transcript": "I understand. I will keep your secret.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-05.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["", ". I need a new name."],
+      "answers": ["Thank you"],
+      "speaker": "Conan",
+      "transcript": "Thank you. I need a new name.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-09.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Thank you. I need a ", "."],
+      "answers": ["new name"],
+      "speaker": "Conan",
+      "transcript": "Thank you. I need a new name.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-09.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["", " Conan? You can stay here for now."],
+      "answers": ["How about"],
+      "speaker": "Agasa",
+      "transcript": "How about Conan? You can stay here for now.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-06.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["How about Conan? You can stay here ", "."],
+      "answers": ["for now"],
+      "speaker": "Agasa",
+      "transcript": "How about Conan? You can stay here for now.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-06.mp3"
+    },
+    {
+      "id": 28,
+      "dialogueLineId": 15,
+      "type": "multipleChoice",
+      "question": "Vì sao Agasa gợi ý tên Conan?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Vì sao Agasa gợi ý tên Conan?",
+          "en": "Why does Agasa suggest the name Conan?"
+        },
+        "options": [
+          {"vi": "Để cậu dùng tên mới và giấu thân phận.", "en": "So he can use a new name and hide his identity."},
+          {"vi": "Vì đó là tên thật của Agasa.", "en": "Because it is Agasa's real name."},
+          {"vi": "Vì ông quên tên Shinichi.", "en": "Because he forgot Shinichi's name."},
+          {"vi": "Vì Ran muốn đổi tên.", "en": "Because Ran wants to change her name."}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Để cậu dùng tên mới và giấu thân phận.",
+        "Vì đó là tên thật của Agasa.",
+        "Vì ông quên tên Shinichi.",
+        "Vì Ran muốn đổi tên."
+      ],
+      "answer": "Để cậu dùng tên mới và giấu thân phận.",
+      "speaker": "Agasa",
+      "transcript": "How about Conan? You can stay here for now.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/agasa-06.mp3"
+    },
+    {
+      "id": 29,
+      "dialogueLineId": 16,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Conan ", ". Thank you, Doctor."],
+      "answers": ["sounds good"],
+      "speaker": "Conan",
+      "transcript": "Conan sounds good. Thank you, Doctor.",
+      "scene": "/stories/conan-season-1/a-small-body/bg.webp",
+      "audioUrl": "/stories/conan-season-1/a-small-body/audio/conan-10.mp3"
+    },
+    {
+      "id": 30,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập hội thoại",
+          "en": "Dialogue review"
+        },
+        "instruction": {
+          "vi": "Hoàn thành toàn bộ đoạn hội thoại.",
+          "en": "Complete the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Conan",
+          "parts": ["My hands are so ", {"id": "1", "blank": "small"}, "! What happened?"]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Conan",
+          "parts": ["I need ", {"id": "2", "blank": "help"}, ". I can ask Dr. Agasa."]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Agasa",
+          "parts": ["Hello, little boy. Are you ", {"id": "3", "blank": "okay"}, "?"]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Conan",
+          "parts": ["Dr. Agasa, it's me. I'm ", {"id": "4", "blank": "Shinichi"}, "!"]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Agasa",
+          "parts": ["Shinichi? But you are a ", {"id": "5", "blank": "little boy"}, "!"]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Conan",
+          "parts": ["Two men gave me a ", {"id": "6", "blank": "pill"}, "."]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Conan",
+          "parts": ["Now I'm a ", {"id": "7", "blank": "child"}, ". I don't know why."]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Agasa",
+          "parts": ["Oh no! Are you ", {"id": "8", "blank": "hurt"}, "?"]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Conan",
+          "parts": ["No, I'm okay. But I need your ", {"id": "9", "blank": "help"}, "."]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Agasa",
+          "parts": ["", {"id": "10", "blank": "What"}, " can I do?"]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Conan",
+          "parts": ["Please don't tell anyone my ", {"id": "11", "blank": "real name"}, "."]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Conan",
+          "parts": ["I'm ", {"id": "12", "blank": "afraid"}, " of those men."]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Agasa",
+          "parts": ["I understand. I will keep your ", {"id": "13", "blank": "secret"}, "."]
+        },
+        {
+          "dialogueLineId": 14,
+          "speaker": "Conan",
+          "parts": ["Thank you. I need a ", {"id": "14", "blank": "new name"}, "."]
+        },
+        {
+          "dialogueLineId": 15,
+          "speaker": "Agasa",
+          "parts": ["How about ", {"id": "15", "blank": "Conan"}, "? You can stay here for now."]
+        },
+        {
+          "dialogueLineId": 16,
+          "speaker": "Conan",
+          "parts": ["Conan ", {"id": "16", "blank": "sounds good"}, ". Thank you, Doctor."]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Please + câu yêu cầu",
+      "explanation": "Dùng “Please” để nhờ ai đó làm việc gì một cách lịch sự. “Please don’t + động từ” dùng khi muốn nhờ ai đó đừng làm việc gì.",
+      "localized": {
+        "title": {
+          "vi": "Please + câu yêu cầu",
+          "en": "Polite requests with Please"
+        },
+        "explanation": {
+          "vi": "Dùng “Please” để nhờ ai đó làm việc gì một cách lịch sự. “Please don’t + động từ” dùng khi muốn nhờ ai đó đừng làm việc gì.",
+          "en": "Use “Please” to make a polite request. Use “Please don’t + verb” to politely ask someone not to do something."
+        }
+      },
+      "example": "Please don't tell anyone."
+    },
+    {
+      "title": "Will + động từ: nói điều sẽ làm",
+      "explanation": "Dùng “will” trước động từ nguyên mẫu để nói điều mình sẽ làm hoặc đưa ra lời hứa.",
+      "localized": {
+        "title": {
+          "vi": "Will + động từ: nói điều sẽ làm",
+          "en": "Will + verb for future actions and promises"
+        },
+        "explanation": {
+          "vi": "Dùng “will” trước động từ nguyên mẫu để nói điều mình sẽ làm hoặc đưa ra lời hứa.",
+          "en": "Put “will” before a base verb to talk about something you will do or to make a promise."
+        }
+      },
+      "example": "I will keep your secret."
+    }
+  ]
+}

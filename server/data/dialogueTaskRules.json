@@ -5079,6 +5079,708 @@
 	{
 		"ids": [
 			"conan-season-1",
+			"a-small-body",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"so small"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"a pill"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"11"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"don't know"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"hurt"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"okay"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"your help"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"What can"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"don't tell"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"real name"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"19"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"need help"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"afraid of"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"understand"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"your secret"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"23"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"new name"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"How about"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"for now"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"28"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"29"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sounds good"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"can ask"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"30"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"small",
+			"help",
+			"okay",
+			"Shinichi",
+			"little boy",
+			"pill",
+			"child",
+			"hurt",
+			"help",
+			"What",
+			"real name",
+			"afraid",
+			"secret",
+			"new name",
+			"Conan",
+			"sounds good"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"little boy"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"it's me"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Shinichi"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"little boy"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"8"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-small-body",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Two men"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"doing"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Who"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"11"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"see"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"park"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Why"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"following"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"16"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"know"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"too much"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"need"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"let me"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tell anyone"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"22"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"now"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"must"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"pill"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"What"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"28"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"29"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"stop"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"now"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"30"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"asleep"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"31"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"two men",
+			"need",
+			"big bag",
+			"right here",
+			"have",
+			"Who",
+			"see",
+			"boy",
+			"following",
+			"know",
+			"too much",
+			"let me",
+			"What",
+			"pill",
+			"want",
+			"Please",
+			"asleep"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Where"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"big bag"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"6"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Don't worry"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"bag"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-men-in-black",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Stop"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
 			"the-roller-coaster",
 			"1"
 		],

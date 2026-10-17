@@ -43,6 +43,7 @@ const courseImages = {
 	"a-small-surprise": "/stories/a-small-surprise/thumbnails/a-small-surprise.webp",
 	"a-little-lie": "/stories/a-little-lie/thumbnails/the-broken-window.png",
 	"naruto-season-1": "/stories/naruto-season-1/thumbnails/naruto-season-1.webp",
+	"conan-season-1": "/stories/conan-season-1/thumbnails/conan-season-1.png",
 };
 
 function getCourseImage(courseId) {

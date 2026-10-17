@@ -1,0 +1,1007 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "conan-season-1",
+  "dialogueId": "a-small-body",
+  "characters": {
+    "Conan": {
+      "meaning": "Conan",
+      "role": "T?n Shinichi khi s?ng trong c? th? tr? con.",
+      "note": "T?n ri?ng c?a nh?n v?t."
+    },
+    "Agasa": {
+      "meaning": "Agasa",
+      "role": "Ti?n s? gi?p Conan gi? b? m?t.",
+      "note": "T?n ri?ng c?a nh?n v?t."
+    }
+  },
+  "entries": {
+    "word-my": {
+      "word": "my",
+      "meaning": "c?a m?nh",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-hands": {
+      "word": "hands",
+      "meaning": "b?n tay",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "l?; c?",
+      "pos": [
+        "verb"
+      ],
+      "note": "D?ng c?a be; ti?ng Vi?t di?n ??t ngh?a theo ng? c?nh."
+    },
+    "word-so": {
+      "word": "so",
+      "meaning": "r?t; qu?",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-small": {
+      "word": "small",
+      "meaning": "nh?",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "g?",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-happened": {
+      "word": "happened",
+      "meaning": "x?y ra",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "m?nh; t?i",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "c?n",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "gi?p ??",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "c? th?",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-ask": {
+      "word": "ask",
+      "meaning": "nh?; h?i",
+      "pos": [
+        "verb"
+      ],
+      "note": "Trong c?u n?y ask Dr. Agasa ngh?a l? nh? ti?n s? Agasa."
+    },
+    "word-dr": {
+      "word": "dr",
+      "meaning": "ti?n s?",
+      "pos": [
+        "title"
+      ]
+    },
+    "word-agasa": {
+      "word": "agasa",
+      "meaning": "Agasa",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-hello": {
+      "word": "hello",
+      "meaning": "xin ch?o",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-little": {
+      "word": "little",
+      "meaning": "nh?; b?",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-boy": {
+      "word": "boy",
+      "meaning": "c?u b?",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "ch?u",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "?n",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-it's": {
+      "word": "it's",
+      "meaning": "l? ... ??y",
+      "pos": [
+        "contraction"
+      ],
+      "note": "D?ng r?t g?n c?a it is; trong c?u n?y d?ng ?? nh?n di?n ng??i n?i."
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "m?nh; ch?u",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "m?nh l?; m?nh ?ang",
+      "pos": [
+        "contraction"
+      ],
+      "note": "D?ng r?t g?n c?a I am."
+    },
+    "word-shinichi": {
+      "word": "shinichi",
+      "meaning": "Shinichi",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "nh?ng",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "m?t",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-two": {
+      "word": "two",
+      "meaning": "hai",
+      "pos": [
+        "number"
+      ]
+    },
+    "word-men": {
+      "word": "men",
+      "meaning": "ng??i ??n ?ng",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-gave": {
+      "word": "gave",
+      "meaning": "??a; cho",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-pill": {
+      "word": "pill",
+      "meaning": "vi?n thu?c",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "b?y gi?; gi?",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-child": {
+      "word": "child",
+      "meaning": "??a tr?",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "bi?t",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-why": {
+      "word": "why",
+      "meaning": "t?i sao",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-oh": {
+      "word": "oh",
+      "meaning": "?i",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "kh?ng",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-hurt": {
+      "word": "hurt",
+      "meaning": "b? th??ng",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "c?a ch?u",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "l?m",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-please": {
+      "word": "please",
+      "meaning": "l?m ?n",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "n?i; ti?t l?",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-anyone": {
+      "word": "anyone",
+      "meaning": "b?t k? ai",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-real": {
+      "word": "real",
+      "meaning": "th?t",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-name": {
+      "word": "name",
+      "meaning": "t?n",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-afraid": {
+      "word": "afraid",
+      "meaning": "s?",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "gi?i t? ?i v?i afraid",
+      "pos": [
+        "preposition"
+      ],
+      "note": "Trong afraid of, ti?ng Vi?t th??ng ch? c?n d?ng s?."
+    },
+    "word-those": {
+      "word": "those",
+      "meaning": "nh?ng ... ??",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-understand": {
+      "word": "understand",
+      "meaning": "hi?u",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "s?",
+      "pos": [
+        "auxiliary verb"
+      ]
+    },
+    "word-keep": {
+      "word": "keep",
+      "meaning": "gi?",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-secret": {
+      "word": "secret",
+      "meaning": "b? m?t",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "c?m ?n",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-new": {
+      "word": "new",
+      "meaning": "m?i",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-how": {
+      "word": "how",
+      "meaning": "th? n?o",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "v?",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-conan": {
+      "word": "conan",
+      "meaning": "Conan",
+      "pos": [
+        "proper noun"
+      ]
+    },
+    "word-stay": {
+      "word": "stay",
+      "meaning": "? l?i",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "? ??y",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "trong; su?t",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-sounds": {
+      "word": "sounds",
+      "meaning": "nghe c? v?",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "hay; t?t",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-doctor": {
+      "word": "doctor",
+      "meaning": "ti?n s?",
+      "pos": [
+        "title"
+      ]
+    },
+    "word-dont-negative": {
+      "word": "don't",
+      "meaning": "kh?ng",
+      "pos": [
+        "auxiliary verb"
+      ],
+      "note": "D?ng r?t g?n c?a do not; ph? ??nh ??ng t? know."
+    },
+    "word-dont-command": {
+      "word": "don't",
+      "meaning": "??ng",
+      "pos": [
+        "auxiliary verb"
+      ],
+      "note": "Trong c?u m?nh l?nh, di?n ??t l?i nh?c ho?c y?u c?u."
+    },
+    "phrase-need-help": {
+      "word": "need help",
+      "meaning": "cần giúp đỡ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-are-you-okay": {
+      "word": "Are you okay",
+      "meaning": "Bạn có ổn không?",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-it-s-me": {
+      "word": "it's me",
+      "meaning": "là tôi đây; là mình đây",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-a-pill": {
+      "word": "a pill",
+      "meaning": "một viên thuốc",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-don-t-know": {
+      "word": "don't know",
+      "meaning": "không biết",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-real-name": {
+      "word": "real name",
+      "meaning": "tên thật",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-keep-your-secret": {
+      "word": "keep your secret",
+      "meaning": "giữ bí mật cho bạn",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-how-about": {
+      "word": "How about",
+      "meaning": "... thì sao? (dùng để đề xuất)",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-for-now": {
+      "word": "for now",
+      "meaning": "tạm thời; lúc này",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-thank-you": {
+      "word": "Thank you",
+      "meaning": "c?m ?n",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-little-boy": {
+      "word": "little boy",
+      "meaning": "c?u b?",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Conan",
+      "text": "My hands are so small! What happened?",
+      "translation": "Tay mình nhỏ quá! Chuyện gì đã xảy ra?",
+      "tokens": [
+        "My",
+        "hands",
+        "are",
+        "so",
+        "small",
+        "What",
+        "happened"
+      ],
+      "words": [
+        "word-my",
+        "word-hands",
+        "word-are",
+        "word-so",
+        "word-small",
+        "word-what",
+        "word-happened"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Conan",
+      "text": "I need help. I can ask Dr. Agasa.",
+      "translation": "Mình cần giúp đỡ. Mình có thể nhờ tiến sĩ Agasa.",
+      "tokens": [
+        "I",
+        "need",
+        "help",
+        "I",
+        "can",
+        "ask",
+        "Dr",
+        "Agasa"
+      ],
+      "words": [
+        "word-i",
+        "word-need",
+        "word-help",
+        "word-i",
+        "word-can",
+        "word-ask",
+        "word-dr",
+        "word-agasa"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "text": "need help",
+          "entry": "phrase-need-help"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Agasa",
+      "text": "Hello, little boy. Are you okay?",
+      "translation": "Chào cháu bé. Cháu có ổn không?",
+      "tokens": [
+        "Hello",
+        "little",
+        "boy",
+        "Are",
+        "you",
+        "okay"
+      ],
+      "words": [
+        "word-hello",
+        "word-little",
+        "word-boy",
+        "word-are",
+        "word-you",
+        "word-okay"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 5,
+          "text": "Are you okay",
+          "entry": "phrase-are-you-okay"
+        },
+        {
+          "start": 1,
+          "end": 2,
+          "text": "little boy",
+          "entry": "phrase-little-boy"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Conan",
+      "text": "Dr. Agasa, it's me. I'm Shinichi!",
+      "translation": "Tiến sĩ Agasa, là cháu đây. Cháu là Shinichi!",
+      "tokens": [
+        "Dr",
+        "Agasa",
+        "it's",
+        "me",
+        "I'm",
+        "Shinichi"
+      ],
+      "words": [
+        "word-dr",
+        "word-agasa",
+        "word-it's",
+        "word-me",
+        "word-i'm",
+        "word-shinichi"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "it's me",
+          "entry": "phrase-it-s-me"
+        }
+      ]
+    },
+    "5": {
+      "speaker": "Agasa",
+      "text": "Shinichi? But you are a little boy!",
+      "translation": "Shinichi? Nhưng cháu là một cậu bé mà!",
+      "tokens": [
+        "Shinichi",
+        "But",
+        "you",
+        "are",
+        "a",
+        "little",
+        "boy"
+      ],
+      "words": [
+        "word-shinichi",
+        "word-but",
+        "word-you",
+        "word-are",
+        "word-a",
+        "word-little",
+        "word-boy"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "little boy",
+          "entry": "phrase-little-boy"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Conan",
+      "text": "Two men gave me a pill.",
+      "translation": "Hai người đàn ông đã đưa cho cháu một viên thuốc.",
+      "tokens": [
+        "Two",
+        "men",
+        "gave",
+        "me",
+        "a",
+        "pill"
+      ],
+      "words": [
+        "word-two",
+        "word-men",
+        "word-gave",
+        "word-me",
+        "word-a",
+        "word-pill"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "a pill",
+          "entry": "phrase-a-pill"
+        }
+      ]
+    },
+    "7": {
+      "speaker": "Conan",
+      "text": "Now I'm a child. I don't know why.",
+      "translation": "Giờ cháu là một đứa trẻ. Cháu không biết tại sao.",
+      "tokens": [
+        "Now",
+        "I'm",
+        "a",
+        "child",
+        "I",
+        "don't",
+        "know",
+        "why"
+      ],
+      "words": [
+        "word-now",
+        "word-i'm",
+        "word-a",
+        "word-child",
+        "word-i",
+        "word-dont-negative",
+        "word-know",
+        "word-why"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "don't know",
+          "entry": "phrase-don-t-know"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Agasa",
+      "text": "Oh no! Are you hurt?",
+      "translation": "Ôi không! Cháu có bị thương không?",
+      "tokens": [
+        "Oh",
+        "no",
+        "Are",
+        "you",
+        "hurt"
+      ],
+      "words": [
+        "word-oh",
+        "word-no",
+        "word-are",
+        "word-you",
+        "word-hurt"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Conan",
+      "text": "No, I'm okay. But I need your help.",
+      "translation": "Không, cháu ổn. Nhưng cháu cần bác giúp.",
+      "tokens": [
+        "No",
+        "I'm",
+        "okay",
+        "But",
+        "I",
+        "need",
+        "your",
+        "help"
+      ],
+      "words": [
+        "word-no",
+        "word-i'm",
+        "word-okay",
+        "word-but",
+        "word-i",
+        "word-need",
+        "word-your",
+        "word-help"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Agasa",
+      "text": "What can I do?",
+      "translation": "Bác có thể làm gì?",
+      "tokens": [
+        "What",
+        "can",
+        "I",
+        "do"
+      ],
+      "words": [
+        "word-what",
+        "word-can",
+        "word-i",
+        "word-do"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Conan",
+      "text": "Please don't tell anyone my real name.",
+      "translation": "Xin bác đừng nói tên thật của cháu cho bất kỳ ai.",
+      "tokens": [
+        "Please",
+        "don't",
+        "tell",
+        "anyone",
+        "my",
+        "real",
+        "name"
+      ],
+      "words": [
+        "word-please",
+        "word-dont-command",
+        "word-tell",
+        "word-anyone",
+        "word-my",
+        "word-real",
+        "word-name"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "real name",
+          "entry": "phrase-real-name"
+        }
+      ]
+    },
+    "12": {
+      "speaker": "Conan",
+      "text": "I'm afraid of those men.",
+      "translation": "Cháu sợ hai người đàn ông đó.",
+      "tokens": [
+        "I'm",
+        "afraid",
+        "of",
+        "those",
+        "men"
+      ],
+      "words": [
+        "word-i'm",
+        "word-afraid",
+        "word-of",
+        "word-those",
+        "word-men"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Agasa",
+      "text": "I understand. I will keep your secret.",
+      "translation": "Bác hiểu rồi. Bác sẽ giữ bí mật cho cháu.",
+      "tokens": [
+        "I",
+        "understand",
+        "I",
+        "will",
+        "keep",
+        "your",
+        "secret"
+      ],
+      "words": [
+        "word-i",
+        "word-understand",
+        "word-i",
+        "word-will",
+        "word-keep",
+        "word-your",
+        "word-secret"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "keep your secret",
+          "entry": "phrase-keep-your-secret"
+        }
+      ]
+    },
+    "14": {
+      "speaker": "Conan",
+      "text": "Thank you. I need a new name.",
+      "translation": "Cảm ơn bác. Cháu cần một cái tên mới.",
+      "tokens": [
+        "Thank",
+        "you",
+        "I",
+        "need",
+        "a",
+        "new",
+        "name"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-i",
+        "word-need",
+        "word-a",
+        "word-new",
+        "word-name"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Thank you",
+          "entry": "phrase-thank-you"
+        }
+      ]
+    },
+    "15": {
+      "speaker": "Agasa",
+      "text": "How about Conan? You can stay here for now.",
+      "translation": "Tên Conan thì sao? Cháu có thể ở đây tạm thời.",
+      "tokens": [
+        "How",
+        "about",
+        "Conan",
+        "You",
+        "can",
+        "stay",
+        "here",
+        "for",
+        "now"
+      ],
+      "words": [
+        "word-how",
+        "word-about",
+        "word-conan",
+        "word-you",
+        "word-can",
+        "word-stay",
+        "word-here",
+        "word-for",
+        "word-now"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "How about",
+          "entry": "phrase-how-about"
+        },
+        {
+          "start": 7,
+          "end": 8,
+          "text": "for now",
+          "entry": "phrase-for-now"
+        }
+      ]
+    },
+    "16": {
+      "speaker": "Conan",
+      "text": "Conan sounds good. Thank you, Doctor.",
+      "translation": "Conan nghe hay đấy. Cảm ơn bác, tiến sĩ.",
+      "tokens": [
+        "Conan",
+        "sounds",
+        "good",
+        "Thank",
+        "you",
+        "Doctor"
+      ],
+      "words": [
+        "word-conan",
+        "word-sounds",
+        "word-good",
+        "word-thank",
+        "word-you",
+        "word-doctor"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "Thank you",
+          "entry": "phrase-thank-you"
+        }
+      ]
+    }
+  }
+}

@@ -54,7 +54,7 @@ const conanSeason1 = {
       dialogueId: "the-men-in-black",
       title: "Hai người đàn ông mặc đồ đen",
       thumbnail:
-        "/stories/conan-season-1/thumbnails/the-men-in-black.png",
+        "/stories/conan-season-1/thumbnails/the-men-in-black.webp",
       situation:
         "Shinichi bí mật đi theo hai người đàn ông mặc đồ đen. Họ phát hiện ra cậu, tấn công và ép cậu uống một viên thuốc lạ.",
     },
@@ -65,7 +65,7 @@ const conanSeason1 = {
       dialogueId: "a-small-body",
       title: "Cơ thể nhỏ bé",
       thumbnail:
-        "/stories/conan-season-1/thumbnails/a-small-body.png",
+        "/stories/conan-season-1/thumbnails/a-small-body.webp",
       situation:
         "Shinichi tỉnh dậy trong cơ thể một đứa trẻ. Cậu tìm đến tiến sĩ Agasa và nhờ ông giữ bí mật về thân phận của mình.",
     },

@@ -1,6 +1,8 @@
 import conanSeason1Config from "@/scripts/config/anime/conan-season-1.mjs";
 
 import theRollerCoaster from "../stories/conan-season-1/the-roller-coaster.json";
+import theMenInBlack from "../stories/conan-season-1/the-men-in-black.json";
+import aSmallBody from "../stories/conan-season-1/a-small-body.json";
 import { conanSeason1Media } from "../stories/conan-season-1/media";
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
 
@@ -64,7 +66,11 @@ const conanSeason1Course = {
 	description: "Shinichi và Ran vui vẻ trò chuyện sau khi đi tàu lượn. Khi chuẩn bị về nhà, Shinichi nhìn thấy hai người đàn ông đáng ngờ.",
 	localized: {"title":{"vi":"Thám tử Conan – Mùa 1","en":"Detective Conan – Season 1"},"description":{"vi":"Shinichi và Ran vui vẻ trò chuyện sau khi đi tàu lượn. Khi chuẩn bị về nhà, Shinichi nhìn thấy hai người đàn ông đáng ngờ.","en":"Shinichi and Ran talk happily after riding the roller coaster. As they get ready to go home, Shinichi notices two suspicious men."}},
 	level: conanSeason1Config.level,
-	dialogues: [buildCourseDialogue(theRollerCoaster)],
+	dialogues: [
+		buildCourseDialogue(theRollerCoaster),
+		buildCourseDialogue(theMenInBlack),
+		buildCourseDialogue(aSmallBody),
+	],
 };
 
 export default conanSeason1Course;

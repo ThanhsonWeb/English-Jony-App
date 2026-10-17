@@ -1,0 +1,1394 @@
+{
+  "metadata": {
+    "courseId": "conan-season-1",
+    "dialogueId": "the-men-in-black",
+    "contextualGlossaryVersion": 1,
+    "title": "Hai người đàn ông mặc đồ đen",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Thám tử Conan – Mùa 1",
+        "en": "Detective Conan – Season 1"
+      },
+      "courseDescription": {
+        "vi": "Shinichi bí mật đi theo hai người đàn ông mặc đồ đen. Họ phát hiện ra cậu, tấn công và ép cậu uống một viên thuốc lạ.",
+        "en": "Shinichi secretly follows two men in black. They catch him, hurt him, and force him to take a strange pill."
+      },
+      "title": {
+        "vi": "Hai người đàn ông mặc đồ đen",
+        "en": "The Men in Black"
+      },
+      "description": {
+        "vi": "Shinichi bí mật đi theo hai người đàn ông mặc đồ đen. Họ phát hiện ra cậu, tấn công và ép cậu uống một viên thuốc lạ.",
+        "en": "Shinichi secretly follows two men in black. They catch him, hurt him, and force him to take a strange pill."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Shinichi bí mật đi theo hai người đàn ông mặc đồ đen. Họ phát hiện ra cậu, tấn công và ép cậu uống một viên thuốc lạ.",
+    "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+    "thumbnail": "/stories/conan-season-1/thumbnails/the-men-in-black.webp"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Shinichi",
+      "text": "Those two men are here. What are they doing?",
+      "translation": "Hai người đàn ông đó đang ở đây. Họ đang làm gì vậy?",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Vodka",
+      "text": "We need to go now.",
+      "translation": "Chúng ta cần đi ngay.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/vodka-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Gin",
+      "text": "Wait. Where is the big bag?",
+      "translation": "Khoan. Chiếc túi lớn đâu rồi?",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-01.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Vodka",
+      "text": "It's right here. Don't worry.",
+      "translation": "Nó ở ngay đây. Đừng lo.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/vodka-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Shinichi",
+      "text": "Why do they have that bag?",
+      "translation": "Tại sao họ có chiếc túi đó?",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Gin",
+      "text": "Stop! Who is there?",
+      "translation": "Đứng lại! Ai ở đó?",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-02.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Shinichi",
+      "text": "Oh no. They see me.",
+      "translation": "Ôi không. Họ thấy mình rồi.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Vodka",
+      "text": "It's the boy from the park.",
+      "translation": "Đó là cậu nhóc ở công viên.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/vodka-03.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Gin",
+      "text": "Why are you following us?",
+      "translation": "Tại sao cậu lại đi theo chúng tôi?",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-03.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Shinichi",
+      "text": "I just want to know about the bag.",
+      "translation": "Tôi chỉ muốn biết về chiếc túi.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-04.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Gin",
+      "text": "You know too much.",
+      "translation": "Cậu biết quá nhiều rồi.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-04.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Shinichi",
+      "text": "Please let me go. I will not tell anyone.",
+      "translation": "Làm ơn thả tôi ra. Tôi sẽ không kể với ai đâu.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-05.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Vodka",
+      "text": "What do we do now?",
+      "translation": "Bây giờ chúng ta làm gì?",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/vodka-04.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Gin",
+      "text": "He must take this pill.",
+      "translation": "Cậu ta phải uống viên thuốc này.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-05.mp3"
+    },
+    {
+      "id": 15,
+      "speaker": "Shinichi",
+      "text": "What is it? I don't want it.",
+      "translation": "Đó là gì? Tôi không muốn uống đâu.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-06.mp3"
+    },
+    {
+      "id": 16,
+      "speaker": "Shinichi",
+      "text": "No! Please stop!",
+      "translation": "Không! Làm ơn dừng lại!",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-07.mp3"
+    },
+    {
+      "id": 17,
+      "speaker": "Gin",
+      "text": "He is asleep now. We must go.",
+      "translation": "Cậu ta ngủ mê rồi. Chúng ta phải đi.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "need to",
+      "pronunciation": "/niːd tuː/",
+      "meaning": "cần phải",
+      "example": "I need to go home."
+    },
+    {
+      "word": "Don't worry",
+      "pronunciation": "/doʊnt ˈwɜːri/",
+      "meaning": "Đừng lo",
+      "example": "Don't worry. I am here."
+    },
+    {
+      "word": "Who is there?",
+      "pronunciation": "/huː ɪz ðer/",
+      "meaning": "Ai ở đó?",
+      "example": "Who is there? I cannot see you."
+    },
+    {
+      "word": "following",
+      "pronunciation": "/ˈfɑːloʊɪŋ/",
+      "meaning": "đang đi theo",
+      "example": "Why are you following me?"
+    },
+    {
+      "word": "let me go",
+      "pronunciation": "/let miː ɡoʊ/",
+      "meaning": "thả tôi ra",
+      "example": "Please let me go."
+    },
+    {
+      "word": "tell anyone",
+      "pronunciation": "/tel ˈeniwʌn/",
+      "meaning": "kể cho bất kỳ ai",
+      "example": "I will not tell anyone."
+    },
+    {
+      "word": "take this pill",
+      "pronunciation": "/teɪk ðɪs pɪl/",
+      "meaning": "uống viên thuốc này",
+      "example": "You must take this pill."
+    },
+    {
+      "word": "asleep",
+      "pronunciation": "/əˈsliːp/",
+      "meaning": "đang ngủ",
+      "example": "My brother is asleep."
+    }
+  ],
+  "tasks": [
+    {
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Those two men are here. What are they ",
+        "?"
+      ],
+      "answers": [
+        "doing"
+      ],
+      "speaker": "Shinichi",
+      "transcript": "Those two men are here. What are they doing?",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-01.mp3",
+      "id": 1
+    },
+    {
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "We ",
+        " to go now."
+      ],
+      "answers": [
+        "need"
+      ],
+      "speaker": "Vodka",
+      "transcript": "We need to go now.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/vodka-01.mp3",
+      "id": 2
+    },
+    {
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "We need to go ",
+        "."
+      ],
+      "answers": [
+        "now"
+      ],
+      "speaker": "Vodka",
+      "transcript": "We need to go now.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/vodka-01.mp3",
+      "id": 3
+    },
+    {
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Wait. ",
+        " is the big bag?"
+      ],
+      "answers": [
+        "Where"
+      ],
+      "speaker": "Gin",
+      "transcript": "Wait. Where is the big bag?",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-01.mp3",
+      "id": 4
+    },
+    {
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Wait. Where is the ",
+        "?"
+      ],
+      "answers": [
+        "big bag"
+      ],
+      "speaker": "Gin",
+      "transcript": "Wait. Where is the big bag?",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-01.mp3",
+      "id": 5
+    },
+    {
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Vì sao Gin bảo đợi lại?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Vì sao Gin bảo đợi lại?",
+          "en": "Why does Gin tell Vodka to wait?"
+        },
+        "options": [
+          {
+            "vi": "Anh ta muốn quay lại trò chơi.",
+            "en": "He wants to go on the ride again."
+          },
+          {
+            "vi": "Anh ta muốn tìm Shinichi.",
+            "en": "He wants to find Shinichi."
+          },
+          {
+            "vi": "Anh ta muốn gọi cho Ran.",
+            "en": "He wants to call Ran."
+          },
+          {
+            "vi": "Anh ta muốn kiểm tra chiếc túi.",
+            "en": "He wants to check the bag."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Anh ta muốn quay lại trò chơi.",
+        "Anh ta muốn tìm Shinichi.",
+        "Anh ta muốn gọi cho Ran.",
+        "Anh ta muốn kiểm tra chiếc túi."
+      ],
+      "answer": "Anh ta muốn kiểm tra chiếc túi.",
+      "speaker": "Gin",
+      "transcript": "Wait. Where is the big bag?",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-01.mp3",
+      "id": 6
+    },
+    {
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "It's right here. ",
+        "."
+      ],
+      "answers": [
+        "Don't worry"
+      ],
+      "speaker": "Vodka",
+      "transcript": "It's right here. Don't worry.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/vodka-02.mp3",
+      "id": 7
+    },
+    {
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Why do they have that ",
+        "?"
+      ],
+      "answers": [
+        "bag"
+      ],
+      "speaker": "Shinichi",
+      "transcript": "Why do they have that bag?",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-02.mp3",
+      "id": 8
+    },
+    {
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "",
+        "! Who is there?"
+      ],
+      "answers": [
+        "Stop"
+      ],
+      "speaker": "Gin",
+      "transcript": "Stop! Who is there?",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-02.mp3",
+      "id": 9
+    },
+    {
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Stop! ",
+        " is there?"
+      ],
+      "answers": [
+        "Who"
+      ],
+      "speaker": "Gin",
+      "transcript": "Stop! Who is there?",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-02.mp3",
+      "id": 10
+    },
+    {
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Vì sao Gin bất ngờ lên tiếng?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Vì sao Gin bất ngờ lên tiếng?",
+          "en": "Why does Gin suddenly speak?"
+        },
+        "options": [
+          {
+            "vi": "Anh ta nhận ra có người ở gần.",
+            "en": "He notices someone nearby."
+          },
+          {
+            "vi": "Anh ta muốn hỏi đường.",
+            "en": "He wants directions."
+          },
+          {
+            "vi": "Anh ta chuẩn bị rời công viên.",
+            "en": "He is preparing to leave the park."
+          },
+          {
+            "vi": "Anh ta đang tìm chiếc túi.",
+            "en": "He is looking for the bag."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Anh ta nhận ra có người ở gần.",
+        "Anh ta muốn hỏi đường.",
+        "Anh ta chuẩn bị rời công viên.",
+        "Anh ta đang tìm chiếc túi."
+      ],
+      "answer": "Anh ta nhận ra có người ở gần.",
+      "speaker": "Gin",
+      "transcript": "Stop! Who is there?",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-02.mp3",
+      "id": 11
+    },
+    {
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Oh no. They ",
+        " me."
+      ],
+      "answers": [
+        "see"
+      ],
+      "speaker": "Shinichi",
+      "transcript": "Oh no. They see me.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-03.mp3",
+      "id": 12
+    },
+    {
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "It's the boy from the ",
+        "."
+      ],
+      "answers": [
+        "park"
+      ],
+      "speaker": "Vodka",
+      "transcript": "It's the boy from the park.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/vodka-03.mp3",
+      "id": 13
+    },
+    {
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "",
+        " are you following us?"
+      ],
+      "answers": [
+        "Why"
+      ],
+      "speaker": "Gin",
+      "transcript": "Why are you following us?",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-03.mp3",
+      "id": 14
+    },
+    {
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Why are you ",
+        " us?"
+      ],
+      "answers": [
+        "following"
+      ],
+      "speaker": "Gin",
+      "transcript": "Why are you following us?",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-03.mp3",
+      "id": 15
+    },
+    {
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "“are you following” hỏi về việc nào?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "“are you following” hỏi về việc nào?",
+          "en": "What does “are you following” ask about?"
+        },
+        "options": [
+          {
+            "vi": "Việc Shinichi sẽ làm ngày mai.",
+            "en": "What Shinichi will do tomorrow."
+          },
+          {
+            "vi": "Việc Shinichi đang làm lúc này.",
+            "en": "What Shinichi is doing now."
+          },
+          {
+            "vi": "Việc Shinichi làm mỗi ngày.",
+            "en": "What Shinichi does every day."
+          },
+          {
+            "vi": "Việc Shinichi đã làm hôm qua.",
+            "en": "What Shinichi did yesterday."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "options": [
+        "Việc Shinichi sẽ làm ngày mai.",
+        "Việc Shinichi đang làm lúc này.",
+        "Việc Shinichi làm mỗi ngày.",
+        "Việc Shinichi đã làm hôm qua."
+      ],
+      "answer": "Việc Shinichi đang làm lúc này.",
+      "mcTarget": "are you following",
+      "speaker": "Gin",
+      "transcript": "Why are you following us?",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-03.mp3",
+      "id": 16
+    },
+    {
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "I just ",
+        " to know about the bag."
+      ],
+      "answers": [
+        "want"
+      ],
+      "speaker": "Shinichi",
+      "transcript": "I just want to know about the bag.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-04.mp3",
+      "id": 17
+    },
+    {
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "I just want to ",
+        " about the bag."
+      ],
+      "answers": [
+        "know"
+      ],
+      "speaker": "Shinichi",
+      "transcript": "I just want to know about the bag.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-04.mp3",
+      "id": 18
+    },
+    {
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "You know ",
+        "."
+      ],
+      "answers": [
+        "too much"
+      ],
+      "speaker": "Gin",
+      "transcript": "You know too much.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-04.mp3",
+      "id": 19
+    },
+    {
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Please ",
+        " go. I will not tell anyone."
+      ],
+      "answers": [
+        "let me"
+      ],
+      "speaker": "Shinichi",
+      "transcript": "Please let me go. I will not tell anyone.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-05.mp3",
+      "id": 20
+    },
+    {
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "Please let me go. I will not ",
+        "."
+      ],
+      "answers": [
+        "tell anyone"
+      ],
+      "speaker": "Shinichi",
+      "transcript": "Please let me go. I will not tell anyone.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-05.mp3",
+      "id": 21
+    },
+    {
+      "dialogueLineId": 12,
+      "type": "multipleChoice",
+      "question": "Từ “Please” giúp Shinichi thể hiện điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Từ “Please” giúp Shinichi thể hiện điều gì?",
+          "en": "What does “Please” show in Shinichi’s request?"
+        },
+        "options": [
+          {
+            "vi": "Cậu đang ra lệnh rất tức giận.",
+            "en": "He is giving an angry order."
+          },
+          {
+            "vi": "Cậu đang nói đùa với họ.",
+            "en": "He is joking with them."
+          },
+          {
+            "vi": "Cậu đang khẩn khoản nhờ họ thả mình.",
+            "en": "He is politely begging them to let him go."
+          },
+          {
+            "vi": "Cậu đang hứa sẽ theo họ.",
+            "en": "He is promising to follow them."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "options": [
+        "Cậu đang ra lệnh rất tức giận.",
+        "Cậu đang nói đùa với họ.",
+        "Cậu đang khẩn khoản nhờ họ thả mình.",
+        "Cậu đang hứa sẽ theo họ."
+      ],
+      "answer": "Cậu đang khẩn khoản nhờ họ thả mình.",
+      "mcTarget": "Please",
+      "speaker": "Shinichi",
+      "transcript": "Please let me go. I will not tell anyone.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-05.mp3",
+      "id": 22
+    },
+    {
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "What do we do ",
+        "?"
+      ],
+      "answers": [
+        "now"
+      ],
+      "speaker": "Vodka",
+      "transcript": "What do we do now?",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/vodka-04.mp3",
+      "id": 23
+    },
+    {
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "He ",
+        " take this pill."
+      ],
+      "answers": [
+        "must"
+      ],
+      "speaker": "Gin",
+      "transcript": "He must take this pill.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-05.mp3",
+      "id": 24
+    },
+    {
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "He must take this ",
+        "."
+      ],
+      "answers": [
+        "pill"
+      ],
+      "speaker": "Gin",
+      "transcript": "He must take this pill.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-05.mp3",
+      "id": 25
+    },
+    {
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "",
+        " is it? I don't want it."
+      ],
+      "answers": [
+        "What"
+      ],
+      "speaker": "Shinichi",
+      "transcript": "What is it? I don't want it.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-06.mp3",
+      "id": 26
+    },
+    {
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "What is it? I don't ",
+        " it."
+      ],
+      "answers": [
+        "want"
+      ],
+      "speaker": "Shinichi",
+      "transcript": "What is it? I don't want it.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-06.mp3",
+      "id": 27
+    },
+    {
+      "dialogueLineId": 15,
+      "type": "multipleChoice",
+      "question": "Shinichi cảm thấy thế nào về viên thuốc?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Shinichi cảm thấy thế nào về viên thuốc?",
+          "en": "How does Shinichi feel about the pill?"
+        },
+        "options": [
+          {
+            "vi": "Cậu sợ và không muốn uống.",
+            "en": "He is scared and does not want to take it."
+          },
+          {
+            "vi": "Cậu vui vẻ đồng ý uống.",
+            "en": "He happily agrees to take it."
+          },
+          {
+            "vi": "Cậu nghĩ đó là một món quà.",
+            "en": "He thinks it is a gift."
+          },
+          {
+            "vi": "Cậu muốn hỏi xin thêm một viên.",
+            "en": "He wants to ask for another pill."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Cậu sợ và không muốn uống.",
+        "Cậu vui vẻ đồng ý uống.",
+        "Cậu nghĩ đó là một món quà.",
+        "Cậu muốn hỏi xin thêm một viên."
+      ],
+      "answer": "Cậu sợ và không muốn uống.",
+      "speaker": "Shinichi",
+      "transcript": "What is it? I don't want it.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-06.mp3",
+      "id": 28
+    },
+    {
+      "dialogueLineId": 16,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "No! Please ",
+        "!"
+      ],
+      "answers": [
+        "stop"
+      ],
+      "speaker": "Shinichi",
+      "transcript": "No! Please stop!",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/shinichi-07.mp3",
+      "id": 29
+    },
+    {
+      "dialogueLineId": 17,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blanks"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and complete the sentence."
+        }
+      },
+      "parts": [
+        "He is ",
+        " now. We must go."
+      ],
+      "answers": [
+        "asleep"
+      ],
+      "speaker": "Gin",
+      "transcript": "He is asleep now. We must go.",
+      "scene": "/stories/conan-season-1/the-men-in-black/bg.webp",
+      "audioUrl": "/stories/conan-season-1/the-men-in-black/audio/gin-06.mp3",
+      "id": 30
+    },
+    {
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập toàn bộ hội thoại",
+          "en": "Full dialogue review"
+        },
+        "instruction": {
+          "vi": "Điền các từ còn thiếu để hoàn thành hội thoại.",
+          "en": "Complete the missing words to review the whole dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Shinichi",
+          "parts": [
+            "Those ",
+            {
+              "id": "1",
+              "blank": "two men"
+            },
+            " are here. What are they doing?"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Vodka",
+          "parts": [
+            "We ",
+            {
+              "id": "2",
+              "blank": "need"
+            },
+            " to go now."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Gin",
+          "parts": [
+            "Wait. Where is the ",
+            {
+              "id": "3",
+              "blank": "big bag"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Vodka",
+          "parts": [
+            "It's ",
+            {
+              "id": "4",
+              "blank": "right here"
+            },
+            ". Don't worry."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Shinichi",
+          "parts": [
+            "Why do they ",
+            {
+              "id": "5",
+              "blank": "have"
+            },
+            " that bag?"
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Gin",
+          "parts": [
+            "Stop! ",
+            {
+              "id": "6",
+              "blank": "Who"
+            },
+            " is there?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Shinichi",
+          "parts": [
+            "Oh no. They ",
+            {
+              "id": "7",
+              "blank": "see"
+            },
+            " me."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Vodka",
+          "parts": [
+            "It's the ",
+            {
+              "id": "8",
+              "blank": "boy"
+            },
+            " from the park."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Gin",
+          "parts": [
+            "Why are you ",
+            {
+              "id": "9",
+              "blank": "following"
+            },
+            " us?"
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Shinichi",
+          "parts": [
+            "I just want to ",
+            {
+              "id": "10",
+              "blank": "know"
+            },
+            " about the bag."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Gin",
+          "parts": [
+            "You know ",
+            {
+              "id": "11",
+              "blank": "too much"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Shinichi",
+          "parts": [
+            "Please ",
+            {
+              "id": "12",
+              "blank": "let me"
+            },
+            " go. I will not tell anyone."
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Vodka",
+          "parts": [
+            "",
+            {
+              "id": "13",
+              "blank": "What"
+            },
+            " do we do now?"
+          ]
+        },
+        {
+          "dialogueLineId": 14,
+          "speaker": "Gin",
+          "parts": [
+            "He must take this ",
+            {
+              "id": "14",
+              "blank": "pill"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 15,
+          "speaker": "Shinichi",
+          "parts": [
+            "What is it? I don't ",
+            {
+              "id": "15",
+              "blank": "want"
+            },
+            " it."
+          ]
+        },
+        {
+          "dialogueLineId": 16,
+          "speaker": "Shinichi",
+          "parts": [
+            "No! ",
+            {
+              "id": "16",
+              "blank": "Please"
+            },
+            " stop!"
+          ]
+        },
+        {
+          "dialogueLineId": 17,
+          "speaker": "Gin",
+          "parts": [
+            "He is ",
+            {
+              "id": "17",
+              "blank": "asleep"
+            },
+            " now. We must go."
+          ]
+        }
+      ],
+      "id": 31
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Hỏi về việc đang xảy ra",
+      "explanation": "Dùng “are you + động từ thêm -ing” để hỏi về việc ai đó đang làm ngay lúc nói.",
+      "localized": {
+        "title": {
+          "vi": "Hỏi về việc đang xảy ra",
+          "en": "Ask about an action happening now"
+        },
+        "explanation": {
+          "vi": "Dùng “are you + động từ thêm -ing” để hỏi về việc ai đó đang làm ngay lúc nói.",
+          "en": "Use “are you + verb-ing” to ask about something happening now."
+        }
+      },
+      "example": "Why are you looking at me?"
+    },
+    {
+      "title": "Nhờ vả với “please”",
+      "explanation": "Thêm “please” để lời đề nghị hoặc cầu xin nghe lịch sự hơn.",
+      "localized": {
+        "title": {
+          "vi": "Nhờ vả với “please”",
+          "en": "Making requests with “please”"
+        },
+        "explanation": {
+          "vi": "Thêm “please” để lời đề nghị hoặc cầu xin nghe lịch sự hơn.",
+          "en": "Add “please” to make a request or plea more polite."
+        }
+      },
+      "example": "Please help me."
+    }
+  ]
+}
