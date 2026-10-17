@@ -11,6 +11,7 @@ import aSmallSurprise from "./stories/a-small-surprise.mjs";
 import theBoyWhoWasAfraidToFall from "./stories/the-boy-who-was-afraid-to-fall.mjs";
 import aLittleLie from "./stories/a-little-lie.mjs";
 import narutoSeason1 from "./anime/naruto-season-1.mjs";
+import conanSeason1 from "./anime/conan-season-1.mjs";
 
 export const dialogueCourseConfigs = [
 	weekendCamping,
@@ -29,6 +30,7 @@ export const storyCourseConfigs = [
 	theBoyWhoWasAfraidToFall,
 	aLittleLie,
 	narutoSeason1,
+	conanSeason1,
 ];
 
 export const courseConfigs = [...dialogueCourseConfigs, ...storyCourseConfigs];

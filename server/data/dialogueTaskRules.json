@@ -5078,6 +5078,329 @@
 	},
 	{
 		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"fun"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Chocolate"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"11"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"minute"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"something"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"two men"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"in black"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"17"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ride"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"big bag"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"again"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"worried"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"lost"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want to"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"know more"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"go far"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"25"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Don't worry"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"be back"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"28"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"fun",
+			"scared",
+			"great",
+			"glad",
+			"ice cream",
+			"want",
+			"Chocolate",
+			"minute",
+			"something",
+			"two men",
+			"ride",
+			"worried",
+			"lost",
+			"know more",
+			"go far",
+			"be back"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"scared"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"great"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"5"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"glad"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Can we"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ice cream"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"the-roller-coaster",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want"
+		]
+	},
+	{
+		"ids": [
 			"grateful",
 			"a-busy-morning",
 			"1"

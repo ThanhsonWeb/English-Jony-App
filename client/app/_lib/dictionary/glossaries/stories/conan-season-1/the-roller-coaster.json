@@ -1,0 +1,1048 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "conan-season-1",
+  "dialogueId": "the-roller-coaster",
+  "characters": {
+    "Ran": {
+      "meaning": "Ran",
+      "role": "Bạn thân của Shinichi",
+      "note": "Tên riêng của nhân vật."
+    },
+    "Shinichi": {
+      "meaning": "Shinichi",
+      "role": "Thám tử trung học, bạn của Ran",
+      "note": "Tên riêng của nhân vật."
+    }
+  },
+  "entries": {
+    "word-that": {
+      "word": "that",
+      "meaning": "điều đó",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-was": {
+      "word": "was",
+      "meaning": "đã; thì",
+      "pos": [
+        "verb"
+      ],
+      "note": "Dạng quá khứ của be; tiếng Việt thường không cần dịch riêng."
+    },
+    "word-so": {
+      "word": "so",
+      "meaning": "rất",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-much": {
+      "word": "much",
+      "meaning": "nhiều",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-fun": {
+      "word": "fun",
+      "meaning": "niềm vui",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "tớ",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "muốn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "dấu hiệu động từ nguyên mẫu",
+      "pos": [
+        "particle"
+      ],
+      "note": "Đứng trước động từ nguyên mẫu và thường không dịch riêng."
+    },
+    "word-go": {
+      "word": "go",
+      "meaning": "đi",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-again": {
+      "word": "again",
+      "meaning": "lần nữa",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "cậu",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-were": {
+      "word": "were",
+      "meaning": "đã; thì",
+      "pos": [
+        "verb"
+      ],
+      "note": "Dạng quá khứ của be; tiếng Việt thường không cần dịch riêng."
+    },
+    "word-scared": {
+      "word": "scared",
+      "meaning": "sợ",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-at": {
+      "word": "at",
+      "meaning": "vào",
+      "pos": [
+        "preposition"
+      ],
+      "note": "Trong at first, cả cụm nghĩa là lúc đầu."
+    },
+    "word-first": {
+      "word": "first",
+      "meaning": "đầu tiên",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "biết",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "nhưng",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "điều đó",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-great": {
+      "word": "great",
+      "meaning": "tuyệt",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "tớ",
+      "pos": [
+        "contraction"
+      ],
+      "note": "Dạng rút gọn của I am; be không được dịch riêng trong câu này."
+    },
+    "word-glad": {
+      "word": "glad",
+      "meaning": "vui",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-liked": {
+      "word": "liked",
+      "meaning": "thích",
+      "pos": [
+        "verb"
+      ],
+      "note": "Dạng quá khứ của like."
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "chúng ta",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-get": {
+      "word": "get",
+      "meaning": "mua",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-some": {
+      "word": "some",
+      "meaning": "một ít",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-ice": {
+      "word": "ice",
+      "meaning": "đá",
+      "pos": [
+        "noun"
+      ],
+      "note": "Trong ice cream, từ này đi với cream tạo thành từ ghép kem."
+    },
+    "word-cream": {
+      "word": "cream",
+      "meaning": "kem",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "bây giờ",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "của",
+      "pos": [
+        "preposition"
+      ],
+      "note": "Trong of course, cả cụm có nghĩa là tất nhiên."
+    },
+    "word-course": {
+      "word": "course",
+      "meaning": "khóa học",
+      "pos": [
+        "noun"
+      ],
+      "note": "Trong of course, cả cụm có nghĩa là tất nhiên."
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "gì",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "trợ động từ câu hỏi",
+      "pos": [
+        "auxiliary verb"
+      ],
+      "note": "Dùng trong câu hỏi hiện tại; thường không dịch riêng."
+    },
+    "word-chocolate": {
+      "word": "chocolate",
+      "meaning": "sô-cô-la",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-please": {
+      "word": "please",
+      "meaning": "nhé",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "về",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-wait": {
+      "word": "wait",
+      "meaning": "đợi",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "một",
+      "pos": [
+        "determiner"
+      ],
+      "note": "Mạo từ bất định đứng trước danh từ số ít; thường không dịch riêng."
+    },
+    "word-minute": {
+      "word": "minute",
+      "meaning": "phút",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-ran": {
+      "word": "ran",
+      "meaning": "Ran",
+      "pos": [
+        "proper noun"
+      ],
+      "note": "Tên riêng của nhân vật."
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "là",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-did": {
+      "word": "did",
+      "meaning": "trợ động từ quá khứ",
+      "pos": [
+        "auxiliary verb"
+      ],
+      "note": "Dùng để tạo câu hỏi quá khứ; thường không dịch riêng."
+    },
+    "word-see": {
+      "word": "see",
+      "meaning": "thấy",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-something": {
+      "word": "something",
+      "meaning": "điều gì đó",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "có",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-those": {
+      "word": "those",
+      "meaning": "những ... kia",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-two": {
+      "word": "two",
+      "meaning": "hai",
+      "pos": [
+        "number"
+      ]
+    },
+    "word-men": {
+      "word": "men",
+      "meaning": "những người đàn ông",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-in": {
+      "word": "in",
+      "meaning": "mặc",
+      "pos": [
+        "preposition"
+      ],
+      "note": "Trong in black, cả cụm nghĩa là mặc đồ đen."
+    },
+    "word-black": {
+      "word": "black",
+      "meaning": "đen",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-they": {
+      "word": "they",
+      "meaning": "họ",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-on": {
+      "word": "on",
+      "meaning": "trên",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "mạo từ xác định",
+      "pos": [
+        "determiner"
+      ],
+      "note": "Đứng trước danh từ đã được xác định; thường không dịch riêng."
+    },
+    "word-ride": {
+      "word": "ride",
+      "meaning": "chuyến tàu lượn",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "cũng",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-one": {
+      "word": "one",
+      "meaning": "một",
+      "pos": [
+        "number"
+      ]
+    },
+    "word-man": {
+      "word": "man",
+      "meaning": "người đàn ông",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-has": {
+      "word": "has",
+      "meaning": "có",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-big": {
+      "word": "big",
+      "meaning": "lớn",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-bag": {
+      "word": "bag",
+      "meaning": "túi",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-he": {
+      "word": "he",
+      "meaning": "ông ấy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-looks": {
+      "word": "looks",
+      "meaning": "trông có vẻ",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-worried": {
+      "word": "worried",
+      "meaning": "lo lắng",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-maybe": {
+      "word": "maybe",
+      "meaning": "có lẽ",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-lost": {
+      "word": "lost",
+      "meaning": "mất",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-more": {
+      "word": "more",
+      "meaning": "thêm",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-don't": {
+      "word": "don't",
+      "meaning": "đừng",
+      "pos": [
+        "contraction"
+      ],
+      "note": "Dạng rút gọn của do not; trong câu mệnh lệnh mang nghĩa đừng."
+    },
+    "word-far": {
+      "word": "far",
+      "meaning": "xa",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-shinichi": {
+      "word": "shinichi",
+      "meaning": "Shinichi",
+      "pos": [
+        "proper noun"
+      ],
+      "note": "Tên riêng của nhân vật."
+    },
+    "word-worry": {
+      "word": "worry",
+      "meaning": "lo",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "sẽ",
+      "pos": [
+        "modal verb"
+      ]
+    },
+    "word-be": {
+      "word": "be",
+      "meaning": "là; ở",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-back": {
+      "word": "back",
+      "meaning": "trở lại",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-soon": {
+      "word": "soon",
+      "meaning": "sớm",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "phrase-so-much-fun": {
+      "word": "so much fun",
+      "meaning": "rất vui",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-at-first": {
+      "word": "at first",
+      "meaning": "lúc đầu",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-ice-cream": {
+      "word": "ice cream",
+      "meaning": "kem",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-of-course": {
+      "word": "of course",
+      "meaning": "tất nhiên",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-what-about-you": {
+      "word": "what about you",
+      "meaning": "còn cậu thì sao",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-wait-a-minute": {
+      "word": "wait a minute",
+      "meaning": "đợi một chút",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-in-black": {
+      "word": "in black",
+      "meaning": "mặc đồ đen",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-looks-worried": {
+      "word": "looks worried",
+      "meaning": "trông có vẻ lo lắng",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-don-t-worry": {
+      "word": "don't worry",
+      "meaning": "đừng lo",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Ran",
+      "text": "That was so much fun! I want to go again.",
+      "translation": "Vui quá đi! Tớ muốn chơi lần nữa.",
+      "tokens": [
+        "That",
+        "was",
+        "so",
+        "much",
+        "fun",
+        "I",
+        "want",
+        "to",
+        "go",
+        "again"
+      ],
+      "words": [
+        "word-that",
+        "word-was",
+        "word-so",
+        "word-much",
+        "word-fun",
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-go",
+        "word-again"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 4,
+          "text": "so much fun",
+          "entry": "phrase-so-much-fun"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Shinichi",
+      "text": "You were scared at first!",
+      "translation": "Lúc đầu cậu còn sợ cơ mà!",
+      "tokens": [
+        "You",
+        "were",
+        "scared",
+        "at",
+        "first"
+      ],
+      "words": [
+        "word-you",
+        "word-were",
+        "word-scared",
+        "word-at",
+        "word-first"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "at first",
+          "entry": "phrase-at-first"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Ran",
+      "text": "I know. But it was great!",
+      "translation": "Tớ biết. Nhưng nó tuyệt thật!",
+      "tokens": [
+        "I",
+        "know",
+        "But",
+        "it",
+        "was",
+        "great"
+      ],
+      "words": [
+        "word-i",
+        "word-know",
+        "word-but",
+        "word-it",
+        "word-was",
+        "word-great"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Shinichi",
+      "text": "I'm glad you liked it.",
+      "translation": "Tớ vui vì cậu thích trò đó.",
+      "tokens": [
+        "I'm",
+        "glad",
+        "you",
+        "liked",
+        "it"
+      ],
+      "words": [
+        "word-i'm",
+        "word-glad",
+        "word-you",
+        "word-liked",
+        "word-it"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Ran",
+      "text": "Can we get some ice cream now?",
+      "translation": "Giờ chúng ta đi mua kem được không?",
+      "tokens": [
+        "Can",
+        "we",
+        "get",
+        "some",
+        "ice",
+        "cream",
+        "now"
+      ],
+      "words": [
+        "word-can",
+        "word-we",
+        "word-get",
+        "word-some",
+        "word-ice",
+        "word-cream",
+        "word-now"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "ice cream",
+          "entry": "phrase-ice-cream"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Shinichi",
+      "text": "Of course. What do you want?",
+      "translation": "Tất nhiên rồi. Cậu muốn ăn vị gì?",
+      "tokens": [
+        "Of",
+        "course",
+        "What",
+        "do",
+        "you",
+        "want"
+      ],
+      "words": [
+        "word-of",
+        "word-course",
+        "word-what",
+        "word-do",
+        "word-you",
+        "word-want"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Of course",
+          "entry": "phrase-of-course"
+        }
+      ]
+    },
+    "7": {
+      "speaker": "Ran",
+      "text": "Chocolate, please. What about you?",
+      "translation": "Vị sô-cô-la nhé. Còn cậu thì sao?",
+      "tokens": [
+        "Chocolate",
+        "please",
+        "What",
+        "about",
+        "you"
+      ],
+      "words": [
+        "word-chocolate",
+        "word-please",
+        "word-what",
+        "word-about",
+        "word-you"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 4,
+          "text": "What about you",
+          "entry": "phrase-what-about-you"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Shinichi",
+      "text": "Wait a minute, Ran.",
+      "translation": "Đợi một chút, Ran.",
+      "tokens": [
+        "Wait",
+        "a",
+        "minute",
+        "Ran"
+      ],
+      "words": [
+        "word-wait",
+        "word-a",
+        "word-minute",
+        "word-ran"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "Wait a minute",
+          "entry": "phrase-wait-a-minute"
+        }
+      ]
+    },
+    "9": {
+      "speaker": "Ran",
+      "text": "What is it? Did you see something?",
+      "translation": "Có chuyện gì vậy? Cậu nhìn thấy gì à?",
+      "tokens": [
+        "What",
+        "is",
+        "it",
+        "Did",
+        "you",
+        "see",
+        "something"
+      ],
+      "words": [
+        "word-what",
+        "word-is",
+        "word-it",
+        "word-did",
+        "word-you",
+        "word-see",
+        "word-something"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Shinichi",
+      "text": "Yes. Do you see those two men in black?",
+      "translation": "Có. Cậu thấy hai người đàn ông mặc đồ đen kia không?",
+      "tokens": [
+        "Yes",
+        "Do",
+        "you",
+        "see",
+        "those",
+        "two",
+        "men",
+        "in",
+        "black"
+      ],
+      "words": [
+        "word-yes",
+        "word-do",
+        "word-you",
+        "word-see",
+        "word-those",
+        "word-two",
+        "word-men",
+        "word-in",
+        "word-black"
+      ],
+      "phrases": [
+        {
+          "start": 7,
+          "end": 8,
+          "text": "in black",
+          "entry": "phrase-in-black"
+        }
+      ]
+    },
+    "11": {
+      "speaker": "Ran",
+      "text": "Yes. They were on the ride, too.",
+      "translation": "Có. Họ cũng chơi trò đó mà.",
+      "tokens": [
+        "Yes",
+        "They",
+        "were",
+        "on",
+        "the",
+        "ride",
+        "too"
+      ],
+      "words": [
+        "word-yes",
+        "word-they",
+        "word-were",
+        "word-on",
+        "word-the",
+        "word-ride",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Shinichi",
+      "text": "One man has a big bag. He looks worried.",
+      "translation": "Một người có chiếc túi lớn. Trông ông ta có vẻ lo lắng.",
+      "tokens": [
+        "One",
+        "man",
+        "has",
+        "a",
+        "big",
+        "bag",
+        "He",
+        "looks",
+        "worried"
+      ],
+      "words": [
+        "word-one",
+        "word-man",
+        "word-has",
+        "word-a",
+        "word-big",
+        "word-bag",
+        "word-he",
+        "word-looks",
+        "word-worried"
+      ],
+      "phrases": [
+        {
+          "start": 7,
+          "end": 8,
+          "text": "looks worried",
+          "entry": "phrase-looks-worried"
+        }
+      ]
+    },
+    "13": {
+      "speaker": "Ran",
+      "text": "Maybe he lost something.",
+      "translation": "Có thể ông ấy bị mất thứ gì đó.",
+      "tokens": [
+        "Maybe",
+        "he",
+        "lost",
+        "something"
+      ],
+      "words": [
+        "word-maybe",
+        "word-he",
+        "word-lost",
+        "word-something"
+      ],
+      "phrases": []
+    },
+    "14": {
+      "speaker": "Shinichi",
+      "text": "Maybe, but I want to know more.",
+      "translation": "Có thể, nhưng tớ muốn tìm hiểu thêm.",
+      "tokens": [
+        "Maybe",
+        "but",
+        "I",
+        "want",
+        "to",
+        "know",
+        "more"
+      ],
+      "words": [
+        "word-maybe",
+        "word-but",
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-know",
+        "word-more"
+      ],
+      "phrases": []
+    },
+    "15": {
+      "speaker": "Ran",
+      "text": "Please don't go far, Shinichi.",
+      "translation": "Đừng đi xa nhé, Shinichi.",
+      "tokens": [
+        "Please",
+        "don't",
+        "go",
+        "far",
+        "Shinichi"
+      ],
+      "words": [
+        "word-please",
+        "word-don't",
+        "word-go",
+        "word-far",
+        "word-shinichi"
+      ],
+      "phrases": []
+    },
+    "16": {
+      "speaker": "Shinichi",
+      "text": "Don't worry. I will be back soon.",
+      "translation": "Đừng lo. Tớ sẽ quay lại sớm.",
+      "tokens": [
+        "Don't",
+        "worry",
+        "I",
+        "will",
+        "be",
+        "back",
+        "soon"
+      ],
+      "words": [
+        "word-don't",
+        "word-worry",
+        "word-i",
+        "word-will",
+        "word-be",
+        "word-back",
+        "word-soon"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Don't worry",
+          "entry": "phrase-don-t-worry"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,915 @@
+{
+  "metadata": {
+    "courseId": "conan-season-1",
+    "dialogueId": "the-roller-coaster",
+    "contextualGlossaryVersion": 1,
+    "title": "Tàu lượn bí ẩn",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Thám tử Conan – Mùa 1",
+        "en": "Detective Conan – Season 1"
+      },
+      "courseDescription": {
+        "vi": "Shinichi và Ran vui vẻ trò chuyện sau khi đi tàu lượn. Khi chuẩn bị về nhà, Shinichi nhìn thấy hai người đàn ông đáng ngờ.",
+        "en": "Shinichi and Ran talk happily after riding the roller coaster. As they get ready to go home, Shinichi notices two suspicious men."
+      },
+      "title": {
+        "vi": "Tàu lượn bí ẩn",
+        "en": "The Mysterious Roller Coaster"
+      },
+      "description": {
+        "vi": "Shinichi và Ran vui vẻ trò chuyện sau khi đi tàu lượn. Khi chuẩn bị về nhà, Shinichi nhìn thấy hai người đàn ông đáng ngờ.",
+        "en": "Shinichi and Ran talk happily after riding the roller coaster. As they get ready to go home, Shinichi notices two suspicious men."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Shinichi và Ran vui vẻ trò chuyện sau khi đi tàu lượn. Khi chuẩn bị về nhà, Shinichi nhìn thấy hai người đàn ông đáng ngờ.",
+    "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+    "thumbnail": "/stories/conan-season-1/thumbnails/the-roller-coaster.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Ran",
+      "text": "That was so much fun! I want to go again.",
+      "translation": "Vui quá đi! Tớ muốn chơi lần nữa.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Shinichi",
+      "text": "You were scared at first!",
+      "translation": "Lúc đầu cậu còn sợ cơ mà!",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Ran",
+      "text": "I know. But it was great!",
+      "translation": "Tớ biết. Nhưng nó tuyệt thật!",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Shinichi",
+      "text": "I'm glad you liked it.",
+      "translation": "Tớ vui vì cậu thích trò đó.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Ran",
+      "text": "Can we get some ice cream now?",
+      "translation": "Giờ chúng ta đi mua kem được không?",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Shinichi",
+      "text": "Of course. What do you want?",
+      "translation": "Tất nhiên rồi. Cậu muốn ăn vị gì?",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-03.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Ran",
+      "text": "Chocolate, please. What about you?",
+      "translation": "Vị sô-cô-la nhé. Còn cậu thì sao?",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Shinichi",
+      "text": "Wait a minute, Ran.",
+      "translation": "Đợi một chút, Ran.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Ran",
+      "text": "What is it? Did you see something?",
+      "translation": "Có chuyện gì vậy? Cậu nhìn thấy gì à?",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Shinichi",
+      "text": "Yes. Do you see those two men in black?",
+      "translation": "Có. Cậu thấy hai người đàn ông mặc đồ đen kia không?",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Ran",
+      "text": "Yes. They were on the ride, too.",
+      "translation": "Có. Họ cũng chơi trò đó mà.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Shinichi",
+      "text": "One man has a big bag. He looks worried.",
+      "translation": "Một người có chiếc túi lớn. Trông ông ta có vẻ lo lắng.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-06.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Ran",
+      "text": "Maybe he lost something.",
+      "translation": "Có thể ông ấy bị mất thứ gì đó.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-07.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Shinichi",
+      "text": "Maybe, but I want to know more.",
+      "translation": "Có thể, nhưng tớ muốn tìm hiểu thêm.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-07.mp3"
+    },
+    {
+      "id": 15,
+      "speaker": "Ran",
+      "text": "Please don't go far, Shinichi.",
+      "translation": "Đừng đi xa nhé, Shinichi.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-08.mp3"
+    },
+    {
+      "id": 16,
+      "speaker": "Shinichi",
+      "text": "Don't worry. I will be back soon.",
+      "translation": "Đừng lo. Tớ sẽ quay lại sớm.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-08.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "so much fun",
+      "pronunciation": "/soʊ mʌtʃ fʌn/",
+      "meaning": "rất vui",
+      "example": "The game was so much fun."
+    },
+    {
+      "word": "at first",
+      "pronunciation": "/æt fɝːst/",
+      "meaning": "lúc đầu",
+      "example": "I was scared at first."
+    },
+    {
+      "word": "ice cream",
+      "pronunciation": "/ˈaɪs kriːm/",
+      "meaning": "kem",
+      "example": "Can we get some ice cream?"
+    },
+    {
+      "word": "What about you?",
+      "pronunciation": "/wʌt əˈbaʊt juː/",
+      "meaning": "Còn bạn thì sao?",
+      "example": "I like chocolate. What about you?"
+    },
+    {
+      "word": "Wait a minute",
+      "pronunciation": "/weɪt ə ˈmɪnɪt/",
+      "meaning": "Đợi một chút",
+      "example": "Wait a minute, please."
+    },
+    {
+      "word": "in black",
+      "pronunciation": "/ɪn blæk/",
+      "meaning": "mặc đồ đen",
+      "example": "Do you see the man in black?"
+    },
+    {
+      "word": "looks worried",
+      "pronunciation": "/lʊks ˈwɝːid/",
+      "meaning": "trông có vẻ lo lắng",
+      "example": "My friend looks worried."
+    },
+    {
+      "word": "Don't worry",
+      "pronunciation": "/doʊnt ˈwɝːi/",
+      "meaning": "Đừng lo",
+      "example": "Don't worry. I am okay."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["That was so much ", "! I want to go again."],
+      "answers": ["fun"],
+      "speaker": "Ran",
+      "transcript": "That was so much fun! I want to go again.",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["That was so much fun! I want to go ", "."],
+      "answers": ["again"],
+      "speaker": "Ran",
+      "transcript": "That was so much fun! I want to go again.",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["You were ", " at first!"],
+      "answers": ["scared"],
+      "speaker": "Shinichi",
+      "transcript": "You were scared at first!",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["I know. But it was ", "!"],
+      "answers": ["great"],
+      "speaker": "Ran",
+      "transcript": "I know. But it was great!",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-02.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Vì sao Ran muốn đi tàu lượn lần nữa?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Vì sao Ran muốn đi tàu lượn lần nữa?",
+          "en": "Why does Ran want to ride again?"
+        },
+        "options": [
+          {"vi": "Vì cô ấy muốn gặp cảnh sát.", "en": "Because she wants to see the police."},
+          {"vi": "Vì Shinichi bảo cô ấy phải đi.", "en": "Because Shinichi tells her she must."},
+          {"vi": "Vì cô ấy thấy trò chơi rất vui.", "en": "Because she enjoyed the ride."},
+          {"vi": "Vì cô ấy chưa đi lần nào.", "en": "Because she has not tried it yet."}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì cô ấy muốn gặp cảnh sát.",
+        "Vì Shinichi bảo cô ấy phải đi.",
+        "Vì cô ấy thấy trò chơi rất vui.",
+        "Vì cô ấy chưa đi lần nào."
+      ],
+      "answer": "Vì cô ấy thấy trò chơi rất vui.",
+      "speaker": "Ran",
+      "transcript": "I know. But it was great!",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["I'm ", " you liked it."],
+      "answers": ["glad"],
+      "speaker": "Shinichi",
+      "transcript": "I'm glad you liked it.",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["", " get some ice cream now?"],
+      "answers": ["Can we"],
+      "speaker": "Ran",
+      "transcript": "Can we get some ice cream now?",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-03.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["Can we get some ", " now?"],
+      "answers": ["ice cream"],
+      "speaker": "Ran",
+      "transcript": "Can we get some ice cream now?",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-03.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["Of course. What do you ", "?"],
+      "answers": ["want"],
+      "speaker": "Shinichi",
+      "transcript": "Of course. What do you want?",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-03.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["", ", please. What about you?"],
+      "answers": ["Chocolate"],
+      "speaker": "Ran",
+      "transcript": "Chocolate, please. What about you?",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-04.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "question": "Ran hỏi “What about you?” để làm gì?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Ran hỏi “What about you?” để làm gì?",
+          "en": "Why does Ran ask “What about you?”?"
+        },
+        "options": [
+          {"vi": "Hỏi Shinichi muốn ăn gì.", "en": "To ask what Shinichi wants to eat."},
+          {"vi": "Hỏi Shinichi có sợ không.", "en": "To ask if Shinichi is scared."},
+          {"vi": "Hỏi Shinichi muốn về chưa.", "en": "To ask if Shinichi wants to go home."},
+          {"vi": "Hỏi Shinichi đã lên tàu lượn chưa.", "en": "To ask if Shinichi rode the roller coaster."}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Hỏi Shinichi muốn ăn gì.",
+        "Hỏi Shinichi có sợ không.",
+        "Hỏi Shinichi muốn về chưa.",
+        "Hỏi Shinichi đã lên tàu lượn chưa."
+      ],
+      "answer": "Hỏi Shinichi muốn ăn gì.",
+      "speaker": "Ran",
+      "transcript": "Chocolate, please. What about you?",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-04.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["Wait a ", ", Ran."],
+      "answers": ["minute"],
+      "speaker": "Shinichi",
+      "transcript": "Wait a minute, Ran.",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-04.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["What is it? Did you see ", "?"],
+      "answers": ["something"],
+      "speaker": "Ran",
+      "transcript": "What is it? Did you see something?",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-05.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Vì sao Ran hỏi Shinichi có nhìn thấy gì không?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Vì sao Ran hỏi Shinichi có nhìn thấy gì không?",
+          "en": "Why does Ran ask if Shinichi saw something?"
+        },
+        "options": [
+          {"vi": "Vì Ran làm rơi tiền.", "en": "Because Ran dropped some money."},
+          {"vi": "Vì hai người đang tìm chỗ ngồi.", "en": "Because they are looking for seats."},
+          {"vi": "Vì Ran muốn mua vé mới.", "en": "Because Ran wants another ticket."},
+          {"vi": "Vì Shinichi đột nhiên dừng lại.", "en": "Because Shinichi suddenly stopped."}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì Ran làm rơi tiền.",
+        "Vì hai người đang tìm chỗ ngồi.",
+        "Vì Ran muốn mua vé mới.",
+        "Vì Shinichi đột nhiên dừng lại."
+      ],
+      "answer": "Vì Shinichi đột nhiên dừng lại.",
+      "speaker": "Ran",
+      "transcript": "What is it? Did you see something?",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-05.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["Yes. Do you see those ", " in black?"],
+      "answers": ["two men"],
+      "speaker": "Shinichi",
+      "transcript": "Yes. Do you see those two men in black?",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-05.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["Yes. Do you see those two men ", "?"],
+      "answers": ["in black"],
+      "speaker": "Shinichi",
+      "transcript": "Yes. Do you see those two men in black?",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-05.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Shinichi dùng “Do you” để làm gì?",
+      "localized": {
+        "title": {"vi": "Kiểm tra cách dùng", "en": "Check usage"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Shinichi dùng “Do you” để làm gì?",
+          "en": "Why does Shinichi use “Do you”?"
+        },
+        "options": [
+          {"vi": "Để nói rằng Ran không thấy ai.", "en": "To say Ran cannot see anyone."},
+          {"vi": "Để hỏi Ran có nhìn thấy hai người đó không.", "en": "To ask if Ran can see the two men."},
+          {"vi": "Để bảo Ran nhắm mắt lại.", "en": "To tell Ran to close her eyes."},
+          {"vi": "Để kể chuyện đã xảy ra hôm qua.", "en": "To talk about what happened yesterday."}
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "Do you",
+      "options": [
+        "Để nói rằng Ran không thấy ai.",
+        "Để hỏi Ran có nhìn thấy hai người đó không.",
+        "Để bảo Ran nhắm mắt lại.",
+        "Để kể chuyện đã xảy ra hôm qua."
+      ],
+      "answer": "Để hỏi Ran có nhìn thấy hai người đó không.",
+      "speaker": "Shinichi",
+      "transcript": "Yes. Do you see those two men in black?",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-05.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["Yes. They were on the ", ", too."],
+      "answers": ["ride"],
+      "speaker": "Ran",
+      "transcript": "Yes. They were on the ride, too.",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-06.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["One man has a ", ". He looks worried."],
+      "answers": ["big bag"],
+      "speaker": "Shinichi",
+      "transcript": "One man has a big bag. He looks worried.",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-06.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["One man has a big bag. He looks ", "."],
+      "answers": ["worried"],
+      "speaker": "Shinichi",
+      "transcript": "One man has a big bag. He looks worried.",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-06.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["Maybe he ", " something."],
+      "answers": ["lost"],
+      "speaker": "Ran",
+      "transcript": "Maybe he lost something.",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-07.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["Maybe, but I ", " know more."],
+      "answers": ["want to"],
+      "speaker": "Shinichi",
+      "transcript": "Maybe, but I want to know more.",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-07.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["Maybe, but I want to ", "."],
+      "answers": ["know more"],
+      "speaker": "Shinichi",
+      "transcript": "Maybe, but I want to know more.",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-07.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["Please don't ", ", Shinichi."],
+      "answers": ["go far"],
+      "speaker": "Ran",
+      "transcript": "Please don't go far, Shinichi.",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-08.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 15,
+      "type": "multipleChoice",
+      "question": "Từ “Please” giúp lời nói của Ran như thế nào?",
+      "localized": {
+        "title": {"vi": "Kiểm tra cách dùng", "en": "Check usage"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Từ “Please” giúp lời nói của Ran như thế nào?",
+          "en": "What does “Please” add to Ran's request?"
+        },
+        "options": [
+          {"vi": "Khiến câu nói trở thành một câu hỏi về giá.", "en": "It makes the sentence a question about price."},
+          {"vi": "Cho thấy Ran đang tức giận với Shinichi.", "en": "It shows Ran is angry with Shinichi."},
+          {"vi": "Làm lời nhắc nhở nghe nhẹ nhàng, lịch sự hơn.", "en": "It makes her request sound gentler and more polite."},
+          {"vi": "Cho biết Ran đang muốn về nhà.", "en": "It shows Ran wants to go home."}
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "Please",
+      "options": [
+        "Khiến câu nói trở thành một câu hỏi về giá.",
+        "Cho thấy Ran đang tức giận với Shinichi.",
+        "Làm lời nhắc nhở nghe nhẹ nhàng, lịch sự hơn.",
+        "Cho biết Ran đang muốn về nhà."
+      ],
+      "answer": "Làm lời nhắc nhở nghe nhẹ nhàng, lịch sự hơn.",
+      "speaker": "Ran",
+      "transcript": "Please don't go far, Shinichi.",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/ran-08.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 16,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["", ". I will be back soon."],
+      "answers": ["Don't worry"],
+      "speaker": "Shinichi",
+      "transcript": "Don't worry. I will be back soon.",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-08.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 16,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blank"},
+        "instruction": {"vi": "Nghe và điền từ hoặc cụm từ còn thiếu.", "en": "Listen and fill in the missing word or phrase."}
+      },
+      "parts": ["Don't worry. I will ", " soon."],
+      "answers": ["be back"],
+      "speaker": "Shinichi",
+      "transcript": "Don't worry. I will be back soon.",
+      "scene": "/stories/conan-season-1/the-roller-coaster/bg.png",
+      "audioUrl": "/stories/conan-season-1/the-roller-coaster/audio/shinichi-08.mp3"
+    },
+    {
+      "id": 28,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập toàn bộ hội thoại",
+          "en": "Full dialogue review"
+        },
+        "instruction": {
+          "vi": "Hoàn thành những từ còn thiếu trong toàn bộ hội thoại.",
+          "en": "Fill in the missing words in the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Ran",
+          "parts": [
+            "That was so much ",
+            {"id": "1", "blank": "fun"},
+            "! I want to go again."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Shinichi",
+          "parts": [
+            "You were ",
+            {"id": "2", "blank": "scared"},
+            " at first!"
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Ran",
+          "parts": [
+            "I know. But it was ",
+            {"id": "3", "blank": "great"},
+            "!"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Shinichi",
+          "parts": [
+            "I'm ",
+            {"id": "4", "blank": "glad"},
+            " you liked it."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Ran",
+          "parts": [
+            "Can we get some ",
+            {"id": "5", "blank": "ice cream"},
+            " now?"
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Shinichi",
+          "parts": [
+            "Of course. What do you ",
+            {"id": "6", "blank": "want"},
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Ran",
+          "parts": [
+            "",
+            {"id": "7", "blank": "Chocolate"},
+            ", please. What about you?"
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Shinichi",
+          "parts": [
+            "Wait a ",
+            {"id": "8", "blank": "minute"},
+            ", Ran."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Ran",
+          "parts": [
+            "What is it? Did you see ",
+            {"id": "9", "blank": "something"},
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Shinichi",
+          "parts": [
+            "Yes. Do you see those ",
+            {"id": "10", "blank": "two men"},
+            " in black?"
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Ran",
+          "parts": [
+            "Yes. They were on the ",
+            {"id": "11", "blank": "ride"},
+            ", too."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Shinichi",
+          "parts": [
+            "One man has a big bag. He looks ",
+            {"id": "12", "blank": "worried"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Ran",
+          "parts": [
+            "Maybe he ",
+            {"id": "13", "blank": "lost"},
+            " something."
+          ]
+        },
+        {
+          "dialogueLineId": 14,
+          "speaker": "Shinichi",
+          "parts": [
+            "Maybe, but I want to ",
+            {"id": "14", "blank": "know more"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 15,
+          "speaker": "Ran",
+          "parts": [
+            "Please don't ",
+            {"id": "15", "blank": "go far"},
+            ", Shinichi."
+          ]
+        },
+        {
+          "dialogueLineId": 16,
+          "speaker": "Shinichi",
+          "parts": [
+            "Don't worry. I will ",
+            {"id": "16", "blank": "be back"},
+            " soon."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Can we + động từ?",
+      "explanation": "Dùng “Can we” để hỏi xem mình và người khác có thể làm gì không. Sau “can”, dùng động từ nguyên mẫu.",
+      "localized": {
+        "title": {
+          "vi": "Can we + động từ?",
+          "en": "Can we + verb?"
+        },
+        "explanation": {
+          "vi": "Dùng “Can we” để hỏi xem mình và người khác có thể làm gì không. Sau “can”, dùng động từ nguyên mẫu.",
+          "en": "Use “Can we” to ask if you and another person can do something. Use the base form of the verb after “can”."
+        }
+      },
+      "example": "Can we get some ice cream now?"
+    },
+    {
+      "title": "Do you see...?",
+      "explanation": "Dùng “Do you see...?” để hỏi người khác có nhìn thấy ai hoặc vật gì không.",
+      "localized": {
+        "title": {
+          "vi": "Do you see...?",
+          "en": "Do you see...?"
+        },
+        "explanation": {
+          "vi": "Dùng “Do you see...?” để hỏi người khác có nhìn thấy ai hoặc vật gì không.",
+          "en": "Use “Do you see...?” to ask if another person can see someone or something."
+        }
+      },
+      "example": "Do you see those two men in black?"
+    }
+  ]
+}
