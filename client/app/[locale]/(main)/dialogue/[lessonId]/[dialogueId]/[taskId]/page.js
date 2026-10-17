@@ -50,6 +50,10 @@ export default function DialogueTaskPage() {
 
 	const previousTask = dialogue.tasks[taskIndex - 1];
 	const nextTask = dialogue.tasks[taskIndex + 1];
+	const nextTaskWithScene = nextTask && {
+		...nextTask,
+		scene: nextTask.scene || dialogue.scene,
+	};
 	const completionHref = dialogue.usefulWords?.length
 		? `/dialogue/${lessonId}/${dialogueId}/useful-words`
 		: `/dialogue/${lessonId}`;
@@ -99,7 +103,7 @@ export default function DialogueTaskPage() {
 		lessonId,
 		dialogueId,
 		previousTask,
-		nextTask,
+		nextTask: nextTaskWithScene,
 		completionHref,
 		totalTasks,
 		onComplete,

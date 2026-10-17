@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { DialogueProgressLink, useDialogueProgress } from "./DialogueProgressSave";
+import { preloadTaskImages } from "@/app/_lib/dialogue/preloadImages";
 
 export default function DialogueExerciseHeader({
 	lessonId,
@@ -113,6 +114,14 @@ export function DialogueTaskNavigation({
 	const t = useTranslations("DialogueFeature");
 	const taskHref = (id) => `/dialogue/${lessonId}/${dialogueId}/${id}`;
 
+	useEffect(() => {
+		if (!nextTask) return;
+		const timer = window.setTimeout(() => {
+			void preloadTaskImages(nextTask);
+		}, 1000);
+		return () => window.clearTimeout(timer);
+	}, [nextTask]);
+
 	return (
 		<nav
 			className="mb-4 grid w-full grid-cols-[2.5rem_1fr_2.5rem] items-center gap-3"
@@ -137,6 +146,8 @@ export function DialogueTaskNavigation({
 			{nextTask ? (
 				<DialogueProgressLink requireSave={false}
 					href={taskHref(nextTask.id)}
+					onPointerEnter={() => void preloadTaskImages(nextTask)}
+					onFocus={() => void preloadTaskImages(nextTask)}
 					aria-label={t("nextExercise")}
 					className="flex h-10 w-10 items-center justify-center rounded-full border border-app bg-surface text-secondary transition hover:border-primary hover:text-primary"
 				>
