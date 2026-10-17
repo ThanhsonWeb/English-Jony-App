@@ -1,0 +1,831 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "a-little-lie",
+  "dialogueId": "a-little-lie",
+  "characters": {
+    "Mom": {
+      "meaning": "Mom",
+      "role": "mẹ của Noah",
+      "note": "Tự xưng là mẹ khi nói với Noah."
+    },
+    "Noah": {
+      "meaning": "Noah",
+      "role": "con trai của Mom",
+      "note": "Tự xưng là con khi nói với Mom."
+    }
+  },
+  "entries": {
+    "word-noah": {
+      "word": "noah",
+      "meaning": "Noah",
+      "pos": [
+        "name"
+      ]
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "mạo từ xác định",
+      "pos": [
+        "det"
+      ],
+      "note": "Thường không dịch riêng sang tiếng Việt."
+    },
+    "word-window": {
+      "word": "window",
+      "meaning": "cửa sổ",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "động từ nối",
+      "pos": [
+        "v"
+      ],
+      "note": "Nối chủ ngữ với trạng thái broken hoặc wrong; thường không dịch riêng."
+    },
+    "word-broken": {
+      "word": "broken",
+      "meaning": "bị vỡ",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "trợ động từ hỏi",
+      "pos": [
+        "aux"
+      ],
+      "note": "Dùng để tạo câu hỏi ở thì hiện tại đơn."
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mom đang nói với Noah."
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "biết",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "gì",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-happened": {
+      "word": "happened",
+      "meaning": "đã xảy ra",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "không",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-mom": {
+      "word": "mom",
+      "meaning": "mẹ",
+      "pos": [
+        "name"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Noah tự xưng là con khi nói với Mom."
+    },
+    "word-don't": {
+      "word": "don't",
+      "meaning": "không",
+      "pos": [
+        "aux"
+      ],
+      "note": "Dạng rút gọn của do not; dùng để phủ định động từ know."
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "nhưng",
+      "pos": [
+        "conj"
+      ]
+    },
+    "word-said": {
+      "word": "said",
+      "meaning": "đã nói",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-made": {
+      "word": "made",
+      "meaning": "mắc",
+      "pos": [
+        "v"
+      ],
+      "note": "Trong cụm made a mistake, dịch tự nhiên là mắc lỗi."
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "một",
+      "pos": [
+        "det"
+      ],
+      "note": "Mạo từ bất định; thường không dịch riêng."
+    },
+    "word-mistake": {
+      "word": "mistake",
+      "meaning": "lỗi",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-was": {
+      "word": "was",
+      "meaning": "đang",
+      "pos": [
+        "aux"
+      ],
+      "note": "Trợ động từ trong thì quá khứ tiếp diễn; kết hợp với talking hoặc playing."
+    },
+    "word-talking": {
+      "word": "talking",
+      "meaning": "nói",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "về",
+      "pos": [
+        "prep"
+      ]
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "của con",
+      "pos": [
+        "det"
+      ],
+      "note": "Noah đang nói với mẹ."
+    },
+    "word-game": {
+      "word": "game",
+      "meaning": "trò chơi",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-did": {
+      "word": "did",
+      "meaning": "trợ động từ quá khứ",
+      "pos": [
+        "aux"
+      ],
+      "note": "Dùng trong câu hỏi và câu phủ định ở thì quá khứ đơn."
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "của con",
+      "pos": [
+        "det"
+      ],
+      "note": "Mom đang nói với Noah."
+    },
+    "word-ball": {
+      "word": "ball",
+      "meaning": "quả bóng",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-hit": {
+      "word": "hit",
+      "meaning": "đập vào",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "nó",
+      "pos": [
+        "pron"
+      ],
+      "note": "Chỉ quả bóng ở câu này."
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "không",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-just": {
+      "word": "just",
+      "meaning": "chỉ",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-playing": {
+      "word": "playing",
+      "meaning": "chơi",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "trợ động từ tiếp diễn",
+      "pos": [
+        "aux"
+      ],
+      "note": "Dùng với telling để tạo thì hiện tại tiếp diễn trong câu hỏi."
+    },
+    "word-telling": {
+      "word": "telling",
+      "meaning": "nói",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "mẹ",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mom tự xưng là mẹ khi nói với Noah."
+    },
+    "word-truth": {
+      "word": "truth",
+      "meaning": "sự thật",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "có ạ",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "động từ nối",
+      "pos": [
+        "v"
+      ],
+      "note": "Nối I với tính từ sure; thường không dịch riêng."
+    },
+    "word-sure": {
+      "word": "sure",
+      "meaning": "chắc chắn",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "aux"
+      ]
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "nói",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-if": {
+      "word": "if",
+      "meaning": "nếu",
+      "pos": [
+        "conj"
+      ]
+    },
+    "word-something": {
+      "word": "something",
+      "meaning": "điều gì đó",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-wrong": {
+      "word": "wrong",
+      "meaning": "không ổn",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Dạng rút gọn của I am; Noah tự xưng là con, còn động từ nối thường được lược trong tiếng Việt."
+    },
+    "word-scared": {
+      "word": "scared",
+      "meaning": "sợ",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "được rồi",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "mẹ con mình",
+      "pos": [
+        "pron"
+      ],
+      "note": "Bao gồm Mom và Noah."
+    },
+    "word-talk": {
+      "word": "talk",
+      "meaning": "nói chuyện",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-later": {
+      "word": "later",
+      "meaning": "sau",
+      "pos": [
+        "adv"
+      ]
+    },
+    "phrase-is-broken": {
+      "meaning": "bị vỡ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-what-happened": {
+      "meaning": "chuyện gì đã xảy ra",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-dont-know": {
+      "meaning": "không biết",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-made-a-mistake": {
+      "meaning": "đã mắc lỗi",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-talking-about": {
+      "meaning": "đang nói về",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-hit-the-window": {
+      "meaning": "đập vào cửa sổ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-did-not": {
+      "meaning": "không",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-telling-me-the-truth": {
+      "meaning": "nói thật với mẹ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-am-sure": {
+      "meaning": "chắc chắn",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-tell-me": {
+      "meaning": "nói với mẹ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-something-is-wrong": {
+      "meaning": "có chuyện gì không ổn",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-im-just-scared": {
+      "meaning": "con chỉ sợ thôi",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-talk-later": {
+      "meaning": "nói chuyện sau",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Mom",
+      "text": "Noah, the window is broken.",
+      "translation": "Noah, cửa sổ bị vỡ rồi.",
+      "tokens": [
+        "Noah",
+        "the",
+        "window",
+        "is",
+        "broken"
+      ],
+      "words": [
+        "word-noah",
+        "word-the",
+        "word-window",
+        "word-is",
+        "word-broken"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "is broken",
+          "entry": "phrase-is-broken"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Mom",
+      "text": "Do you know what happened?",
+      "translation": "Con có biết chuyện gì đã xảy ra không?",
+      "tokens": [
+        "Do",
+        "you",
+        "know",
+        "what",
+        "happened"
+      ],
+      "words": [
+        "word-do",
+        "word-you",
+        "word-know",
+        "word-what",
+        "word-happened"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "what happened",
+          "entry": "phrase-what-happened"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Noah",
+      "text": "No, Mom. I don't know what happened.",
+      "translation": "Không, mẹ ạ. Con không biết chuyện gì đã xảy ra.",
+      "tokens": [
+        "No",
+        "Mom",
+        "I",
+        "don't",
+        "know",
+        "what",
+        "happened"
+      ],
+      "words": [
+        "word-no",
+        "word-mom",
+        "word-i",
+        "word-don't",
+        "word-know",
+        "word-what",
+        "word-happened"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "don't know",
+          "entry": "phrase-dont-know"
+        },
+        {
+          "start": 5,
+          "end": 6,
+          "text": "what happened",
+          "entry": "phrase-what-happened"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Mom",
+      "text": "But you said you made a mistake.",
+      "translation": "Nhưng con đã nói là con mắc lỗi mà.",
+      "tokens": [
+        "But",
+        "you",
+        "said",
+        "you",
+        "made",
+        "a",
+        "mistake"
+      ],
+      "words": [
+        "word-but",
+        "word-you",
+        "word-said",
+        "word-you",
+        "word-made",
+        "word-a",
+        "word-mistake"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "made a mistake",
+          "entry": "phrase-made-a-mistake"
+        }
+      ]
+    },
+    "5": {
+      "speaker": "Noah",
+      "text": "I was talking about my game.",
+      "translation": "Con đang nói về trò chơi của con thôi.",
+      "tokens": [
+        "I",
+        "was",
+        "talking",
+        "about",
+        "my",
+        "game"
+      ],
+      "words": [
+        "word-i",
+        "word-was",
+        "word-talking",
+        "word-about",
+        "word-my",
+        "word-game"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "talking about",
+          "entry": "phrase-talking-about"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Mom",
+      "text": "Did your ball hit the window?",
+      "translation": "Quả bóng của con có đập vào cửa sổ không?",
+      "tokens": [
+        "Did",
+        "your",
+        "ball",
+        "hit",
+        "the",
+        "window"
+      ],
+      "words": [
+        "word-did",
+        "word-your",
+        "word-ball",
+        "word-hit",
+        "word-the",
+        "word-window"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 5,
+          "text": "hit the window",
+          "entry": "phrase-hit-the-window"
+        }
+      ]
+    },
+    "7": {
+      "speaker": "Noah",
+      "text": "No, it did not. I was just playing.",
+      "translation": "Không ạ, không có đâu. Con chỉ đang chơi thôi.",
+      "tokens": [
+        "No",
+        "it",
+        "did",
+        "not",
+        "I",
+        "was",
+        "just",
+        "playing"
+      ],
+      "words": [
+        "word-no",
+        "word-it",
+        "word-did",
+        "word-not",
+        "word-i",
+        "word-was",
+        "word-just",
+        "word-playing"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "did not",
+          "entry": "phrase-did-not"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Mom",
+      "text": "Are you telling me the truth?",
+      "translation": "Con có đang nói thật với mẹ không?",
+      "tokens": [
+        "Are",
+        "you",
+        "telling",
+        "me",
+        "the",
+        "truth"
+      ],
+      "words": [
+        "word-are",
+        "word-you",
+        "word-telling",
+        "word-me",
+        "word-the",
+        "word-truth"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 5,
+          "text": "telling me the truth",
+          "entry": "phrase-telling-me-the-truth"
+        }
+      ]
+    },
+    "9": {
+      "speaker": "Noah",
+      "text": "Yes, Mom. I am sure.",
+      "translation": "Có ạ, mẹ. Con chắc chắn.",
+      "tokens": [
+        "Yes",
+        "Mom",
+        "I",
+        "am",
+        "sure"
+      ],
+      "words": [
+        "word-yes",
+        "word-mom",
+        "word-i",
+        "word-am",
+        "word-sure"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "am sure",
+          "entry": "phrase-am-sure"
+        }
+      ]
+    },
+    "10": {
+      "speaker": "Mom",
+      "text": "You can tell me if something is wrong.",
+      "translation": "Con có thể nói với mẹ nếu có chuyện gì không ổn.",
+      "tokens": [
+        "You",
+        "can",
+        "tell",
+        "me",
+        "if",
+        "something",
+        "is",
+        "wrong"
+      ],
+      "words": [
+        "word-you",
+        "word-can",
+        "word-tell",
+        "word-me",
+        "word-if",
+        "word-something",
+        "word-is",
+        "word-wrong"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "tell me",
+          "entry": "phrase-tell-me"
+        },
+        {
+          "start": 5,
+          "end": 7,
+          "text": "something is wrong",
+          "entry": "phrase-something-is-wrong"
+        }
+      ]
+    },
+    "11": {
+      "speaker": "Noah",
+      "text": "I know, Mom. I'm just scared.",
+      "translation": "Con biết, mẹ ạ. Con chỉ sợ thôi.",
+      "tokens": [
+        "I",
+        "know",
+        "Mom",
+        "I'm",
+        "just",
+        "scared"
+      ],
+      "words": [
+        "word-i",
+        "word-know",
+        "word-mom",
+        "word-i'm",
+        "word-just",
+        "word-scared"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 5,
+          "text": "I'm just scared",
+          "entry": "phrase-im-just-scared"
+        }
+      ]
+    },
+    "12": {
+      "speaker": "Mom",
+      "text": "Okay. We can talk later.",
+      "translation": "Được rồi. Mẹ con mình có thể nói chuyện sau.",
+      "tokens": [
+        "Okay",
+        "We",
+        "can",
+        "talk",
+        "later"
+      ],
+      "words": [
+        "word-okay",
+        "word-we",
+        "word-can",
+        "word-talk",
+        "word-later"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 4,
+          "text": "talk later",
+          "entry": "phrase-talk-later"
+        }
+      ]
+    }
+  }
+}

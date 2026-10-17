@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useReducer, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useReducer, useRef, useState } from "react";
 import { useParams, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
@@ -12,6 +12,7 @@ import { createMistakeReviewSession } from "@/app/_lib/mistakeReviewSession.mjs"
 import { createReviewQuestionState, reviewQuestionReducer } from "@/app/_lib/reviewQuestionState.mjs";
 import { submitQuizletReviewAnswer } from "@/app/_lib/quizletReviewAction.mjs";
 import { useBackgroundReviewSave } from "@/app/_lib/useBackgroundReviewSave.mjs";
+import { buildQuestions, eligibleQuizWords, getUniqueTranslations, normalizeText } from "@/app/_lib/quizQuestions.mjs";
 import {
 	Brain,
 	CheckCircle2,
@@ -25,59 +26,6 @@ import {
 	ReviewShell,
 	ReviewStatus,
 } from "@/app/_components/review/ReviewLayout";
-
-function normalizeText(value) {
-	return String(value || "").trim().toLowerCase();
-}
-
-function shuffle(items) {
-	const shuffled = [...items];
-
-	for (let index = shuffled.length - 1; index > 0; index -= 1) {
-		const randomIndex = Math.floor(Math.random() * (index + 1));
-		[shuffled[index], shuffled[randomIndex]] = [
-			shuffled[randomIndex],
-			shuffled[index],
-		];
-	}
-
-	return shuffled;
-}
-
-function getUniqueTranslations(words) {
-	const translations = new Map();
-
-	for (const word of words) {
-		const normalized = normalizeText(word.vietnamese);
-		if (normalized && !translations.has(normalized)) {
-			translations.set(normalized, word.vietnamese.trim());
-		}
-	}
-
-	return [...translations.values()];
-}
-
-function buildQuestions(reviewWords, vocabularyPool) {
-	const translations = getUniqueTranslations(vocabularyPool);
-
-	if (translations.length < 4) return [];
-
-	return reviewWords.map((word) => {
-		const correctAnswer = word.vietnamese.trim();
-		const distractors = shuffle(
-			translations.filter(
-				(translation) =>
-					normalizeText(translation) !== normalizeText(correctAnswer),
-			),
-		).slice(0, 3);
-
-		return {
-			word,
-			correctAnswer,
-			choices: shuffle([correctAnswer, ...distractors]),
-		};
-	});
-}
 
 export default function QuizReviewPage() {
 	const t = useTranslations("WordlistReview");
@@ -124,14 +72,16 @@ export default function QuizReviewPage() {
 		function installQuestions(reviewWords, vocabularyPool) {
 			reviewWordsRef.current = reviewWords;
 			vocabularyPoolRef.current = vocabularyPool;
-			if (reviewWords.length > 0 && getUniqueTranslations(vocabularyPool).length < 4) {
-				setNotEnoughChoices(true);
-			} else {
-				const nextQuestions = buildQuestions(reviewWords, vocabularyPool);
-				sessionRef.current = createMistakeReviewSession(nextQuestions.length);
-				dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
-				setQuestions(nextQuestions);
-			}
+			const nextQuestions = buildQuestions(reviewWords, vocabularyPool);
+			setNotEnoughChoices(reviewWords.length > 0 && nextQuestions.length === 0);
+			setError("");
+			setSessionFinished(false);
+			setResults({ correct: 0, wrong: 0 });
+			setPracticeMode(false);
+			resetAnswers();
+			sessionRef.current = createMistakeReviewSession(nextQuestions.length);
+			dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
+			setQuestions(nextQuestions);
 		}
 		if (usableCached) {
 			queueMicrotask(() => {
@@ -145,17 +95,17 @@ export default function QuizReviewPage() {
 		async function loadReviewWords() {
 			try {
 				const vocabulary = await loadVocabulary(userId, topicId);
-				const topicWords = vocabulary.filter(
-					(word) => word.english?.trim() && word.vietnamese?.trim(),
-				);
+				const topicWords = eligibleQuizWords(vocabulary);
 				const reviewWords = selectReviewWords(topicWords, { global: !topicId, dueOnly });
 				let vocabularyPool = topicWords;
 
 				if (topicId && reviewWords.length > 0 && getUniqueTranslations(topicWords).length < 4) {
-					const allWords = await loadVocabulary(userId);
-					vocabularyPool = allWords.filter(
-						(word) => word.vietnamese?.trim(),
-					);
+					try {
+						vocabularyPool = eligibleQuizWords(await loadVocabulary(userId));
+					} catch (fetchError) {
+						if (fetchError.message === "unauthorized") throw fetchError;
+						throw new Error("choiceLoadError");
+					}
 				}
 
 				if (cancelled || usableCached) return;
@@ -174,7 +124,7 @@ export default function QuizReviewPage() {
 		return () => {
 			cancelled = true;
 		};
-	}, [topicId, dueOnly, userId, authLoading, reviewKey]);
+	}, [topicId, dueOnly, userId, authLoading, reviewKey, resetAnswers]);
 
 	function checkAnswer() {
 		if (!currentQuestion || !selectedChoice || sessionRef.current?.getSnapshot().waitingForContinue) return;
@@ -281,6 +231,8 @@ export default function QuizReviewPage() {
 				icon={<Brain className="h-12 w-12 text-cyan-400" />}
 				title={t("quiz.notEnoughTitle")}
 				message={t("quiz.notEnoughMessage")}
+				actionLabel={t("quiz.flashcardAction")}
+				onAction={() => router.push(`${topicId ? `/wordlist/${topicId}/learn` : "/wordlist/review"}/flashcard${dueOnly ? "?reviewMode=due" : ""}`)}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);

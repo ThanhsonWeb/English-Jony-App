@@ -1,0 +1,785 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "a-little-lie",
+  "dialogueId": "the-heavy-feeling",
+  "characters": {
+    "Mom": {
+      "meaning": "Mom",
+      "role": "mẹ của Noah",
+      "note": "Tự xưng là mẹ khi nói với Noah."
+    },
+    "Noah": {
+      "meaning": "Noah",
+      "role": "con trai của Mom",
+      "note": "Tự xưng là con khi nói với Mom."
+    }
+  },
+  "entries": {
+    "word-i": {
+      "word": "i",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Noah tự xưng là con khi nói với Mom."
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "cần",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "dấu hiệu nguyên mẫu",
+      "pos": [
+        "part"
+      ],
+      "note": "Đứng trước động từ nguyên mẫu sau need hoặc want."
+    },
+    "word-fix": {
+      "word": "fix",
+      "meaning": "sửa",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "mạo từ xác định",
+      "pos": [
+        "det"
+      ],
+      "note": "Thường không dịch riêng sang tiếng Việt."
+    },
+    "word-window": {
+      "word": "window",
+      "meaning": "cửa sổ",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "nhưng",
+      "pos": [
+        "conj"
+      ]
+    },
+    "word-still": {
+      "word": "still",
+      "meaning": "vẫn",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-don't": {
+      "word": "don't",
+      "meaning": "không",
+      "pos": [
+        "aux"
+      ],
+      "note": "Dạng rút gọn của do not."
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "biết",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "gì",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-happened": {
+      "word": "happened",
+      "meaning": "đã xảy ra",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mom đang nói với Noah."
+    },
+    "word-look": {
+      "word": "look",
+      "meaning": "có vẻ",
+      "pos": [
+        "v"
+      ],
+      "note": "Look diễn tả vẻ ngoài trong look worried."
+    },
+    "word-worried": {
+      "word": "worried",
+      "meaning": "lo lắng",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-mom": {
+      "word": "mom",
+      "meaning": "mẹ",
+      "pos": [
+        "name"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "ừ",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "muốn",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "nó",
+      "pos": [
+        "pron"
+      ],
+      "note": "Chỉ cửa sổ ở câu này."
+    },
+    "word-soon": {
+      "word": "soon",
+      "meaning": "sớm",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-feel": {
+      "word": "feel",
+      "meaning": "cảm thấy",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-bad": {
+      "word": "bad",
+      "meaning": "áy náy",
+      "pos": [
+        "adj"
+      ],
+      "note": "Trong feel bad about the window, diễn tả cảm giác có lỗi."
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "về",
+      "pos": [
+        "prep"
+      ]
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "trợ động từ hỏi",
+      "pos": [
+        "aux"
+      ],
+      "note": "Dùng để tạo câu hỏi ở thì hiện tại đơn."
+    },
+    "word-mean": {
+      "word": "mean",
+      "meaning": "ý nói",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-did": {
+      "word": "did",
+      "meaning": "trợ động từ quá khứ",
+      "pos": [
+        "aux"
+      ],
+      "note": "Dùng để tạo câu phủ định ở thì quá khứ đơn."
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "không",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "nói",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-truth": {
+      "word": "truth",
+      "meaning": "sự thật",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-take": {
+      "word": "take",
+      "meaning": "dành",
+      "pos": [
+        "v"
+      ],
+      "note": "Trong take your time, mang nghĩa cứ từ từ."
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "của con",
+      "pos": [
+        "det"
+      ],
+      "note": "Mom đang nói với Noah."
+    },
+    "word-time": {
+      "word": "time",
+      "meaning": "thời gian",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-noah": {
+      "word": "noah",
+      "meaning": "Noah",
+      "pos": [
+        "name"
+      ]
+    },
+    "word-was": {
+      "word": "was",
+      "meaning": "đã",
+      "pos": [
+        "v"
+      ],
+      "note": "Động từ nối ở quá khứ, đi với tính từ scared."
+    },
+    "word-scared": {
+      "word": "scared",
+      "meaning": "sợ",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-so": {
+      "word": "so",
+      "meaning": "nên",
+      "pos": [
+        "conj"
+      ]
+    },
+    "word-said": {
+      "word": "said",
+      "meaning": "nói",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "không",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-everyone": {
+      "word": "everyone",
+      "meaning": "ai cũng",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-makes": {
+      "word": "makes",
+      "meaning": "mắc",
+      "pos": [
+        "v"
+      ],
+      "note": "Trong makes mistakes, mang nghĩa mắc lỗi."
+    },
+    "word-mistakes": {
+      "word": "mistakes",
+      "meaning": "lỗi",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-everything": {
+      "word": "everything",
+      "meaning": "mọi chuyện",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "mẹ đang",
+      "pos": [
+        "pron",
+        "aux"
+      ],
+      "note": "Dạng rút gọn của I am; Mom đang nói với Noah."
+    },
+    "word-listening": {
+      "word": "listening",
+      "meaning": "nghe",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-i-mom": {
+      "word": "i",
+      "meaning": "mẹ",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mom tự xưng là mẹ khi nói với Noah."
+    },
+    "word-you-mom": {
+      "word": "you",
+      "meaning": "mẹ",
+      "pos": [
+        "pron"
+      ],
+      "note": "Noah đang nói với Mom."
+    },
+    "word-tell-everything": {
+      "word": "tell",
+      "meaning": "kể",
+      "pos": [
+        "v"
+      ],
+      "note": "Tell you everything mang nghĩa kể hết mọi chuyện cho mẹ."
+    },
+    "phrase-need-to-fix": {
+      "meaning": "cần sửa",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-still-dont-know": {
+      "meaning": "vẫn không biết",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-what-happened": {
+      "meaning": "chuyện gì đã xảy ra",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-look-worried": {
+      "meaning": "có vẻ lo lắng",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-want-to-fix-it": {
+      "meaning": "muốn sửa nó",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-feel-bad-about-the-window": {
+      "meaning": "cảm thấy áy náy về chuyện cửa sổ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-what-do-you-mean": {
+      "meaning": "ý con là sao",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-did-not-tell-you-the-truth": {
+      "meaning": "đã không nói thật với mẹ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-take-your-time": {
+      "meaning": "cứ từ từ thôi",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-i-was-scared": {
+      "meaning": "con đã sợ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-everyone-makes-mistakes": {
+      "meaning": "ai cũng có lúc mắc lỗi",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-tell-you-everything": {
+      "meaning": "kể hết mọi chuyện cho mẹ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-im-listening": {
+      "meaning": "mẹ đang nghe",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Mom",
+      "text": "I need to fix the window.",
+      "translation": "Mẹ cần sửa cửa sổ.",
+      "tokens": [
+        "I",
+        "need",
+        "to",
+        "fix",
+        "the",
+        "window"
+      ],
+      "words": [
+        "word-i-mom",
+        "word-need",
+        "word-to",
+        "word-fix",
+        "word-the",
+        "word-window"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 3,
+          "text": "need to fix",
+          "entry": "phrase-need-to-fix"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Mom",
+      "text": "But I still don't know what happened.",
+      "translation": "Nhưng mẹ vẫn không biết chuyện gì đã xảy ra.",
+      "tokens": [
+        "But",
+        "I",
+        "still",
+        "don't",
+        "know",
+        "what",
+        "happened"
+      ],
+      "words": [
+        "word-but",
+        "word-i-mom",
+        "word-still",
+        "word-don't",
+        "word-know",
+        "word-what",
+        "word-happened"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 4,
+          "text": "still don't know",
+          "entry": "phrase-still-dont-know"
+        },
+        {
+          "start": 5,
+          "end": 6,
+          "text": "what happened",
+          "entry": "phrase-what-happened"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Noah",
+      "text": "You look worried, Mom.",
+      "translation": "Trông mẹ có vẻ lo lắng.",
+      "tokens": [
+        "You",
+        "look",
+        "worried",
+        "Mom"
+      ],
+      "words": [
+        "word-you-mom",
+        "word-look",
+        "word-worried",
+        "word-mom"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "text": "look worried",
+          "entry": "phrase-look-worried"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Mom",
+      "text": "Yes. I want to fix it soon.",
+      "translation": "Ừ. Mẹ muốn sửa nó sớm.",
+      "tokens": [
+        "Yes",
+        "I",
+        "want",
+        "to",
+        "fix",
+        "it",
+        "soon"
+      ],
+      "words": [
+        "word-yes",
+        "word-i-mom",
+        "word-want",
+        "word-to",
+        "word-fix",
+        "word-it",
+        "word-soon"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 5,
+          "text": "want to fix it",
+          "entry": "phrase-want-to-fix-it"
+        }
+      ]
+    },
+    "5": {
+      "speaker": "Noah",
+      "text": "I feel bad about the window.",
+      "translation": "Con cảm thấy áy náy về chuyện cửa sổ.",
+      "tokens": [
+        "I",
+        "feel",
+        "bad",
+        "about",
+        "the",
+        "window"
+      ],
+      "words": [
+        "word-i",
+        "word-feel",
+        "word-bad",
+        "word-about",
+        "word-the",
+        "word-window"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 5,
+          "text": "feel bad about the window",
+          "entry": "phrase-feel-bad-about-the-window"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Mom",
+      "text": "What do you mean?",
+      "translation": "Ý con là sao?",
+      "tokens": [
+        "What",
+        "do",
+        "you",
+        "mean"
+      ],
+      "words": [
+        "word-what",
+        "word-do",
+        "word-you",
+        "word-mean"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "What do you mean",
+          "entry": "phrase-what-do-you-mean"
+        }
+      ]
+    },
+    "7": {
+      "speaker": "Noah",
+      "text": "I did not tell you the truth.",
+      "translation": "Con đã không nói thật với mẹ.",
+      "tokens": [
+        "I",
+        "did",
+        "not",
+        "tell",
+        "you",
+        "the",
+        "truth"
+      ],
+      "words": [
+        "word-i",
+        "word-did",
+        "word-not",
+        "word-tell",
+        "word-you-mom",
+        "word-the",
+        "word-truth"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 6,
+          "text": "did not tell you the truth",
+          "entry": "phrase-did-not-tell-you-the-truth"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Mom",
+      "text": "Take your time, Noah.",
+      "translation": "Cứ từ từ thôi, Noah.",
+      "tokens": [
+        "Take",
+        "your",
+        "time",
+        "Noah"
+      ],
+      "words": [
+        "word-take",
+        "word-your",
+        "word-time",
+        "word-noah"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "Take your time",
+          "entry": "phrase-take-your-time"
+        }
+      ]
+    },
+    "9": {
+      "speaker": "Noah",
+      "text": "I was scared, so I said no.",
+      "translation": "Con đã sợ, nên con nói không.",
+      "tokens": [
+        "I",
+        "was",
+        "scared",
+        "so",
+        "I",
+        "said",
+        "no"
+      ],
+      "words": [
+        "word-i",
+        "word-was",
+        "word-scared",
+        "word-so",
+        "word-i",
+        "word-said",
+        "word-no"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "I was scared",
+          "entry": "phrase-i-was-scared"
+        }
+      ]
+    },
+    "10": {
+      "speaker": "Mom",
+      "text": "Everyone makes mistakes.",
+      "translation": "Ai cũng có lúc mắc lỗi.",
+      "tokens": [
+        "Everyone",
+        "makes",
+        "mistakes"
+      ],
+      "words": [
+        "word-everyone",
+        "word-makes",
+        "word-mistakes"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "Everyone makes mistakes",
+          "entry": "phrase-everyone-makes-mistakes"
+        }
+      ]
+    },
+    "11": {
+      "speaker": "Noah",
+      "text": "I want to tell you everything.",
+      "translation": "Con muốn kể hết mọi chuyện cho mẹ.",
+      "tokens": [
+        "I",
+        "want",
+        "to",
+        "tell",
+        "you",
+        "everything"
+      ],
+      "words": [
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-tell-everything",
+        "word-you-mom",
+        "word-everything"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 5,
+          "text": "tell you everything",
+          "entry": "phrase-tell-you-everything"
+        }
+      ]
+    },
+    "12": {
+      "speaker": "Mom",
+      "text": "I'm listening, Noah.",
+      "translation": "Mẹ đang nghe đây, Noah.",
+      "tokens": [
+        "I'm",
+        "listening",
+        "Noah"
+      ],
+      "words": [
+        "word-i'm",
+        "word-listening",
+        "word-noah"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "I'm listening",
+          "entry": "phrase-im-listening"
+        }
+      ]
+    }
+  }
+}

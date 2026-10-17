@@ -1,0 +1,1160 @@
+{
+  "metadata": {
+    "courseId": "a-little-lie",
+    "dialogueId": "the-broken-window",
+    "contextualGlossaryVersion": 1,
+    "title": "Ô cửa sổ bị vỡ",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Lời nói dối nhỏ",
+        "en": "A Little Lie"
+      },
+      "courseDescription": {
+        "vi": "Một cậu bé học được rằng nói sự thật và nhận lỗi quan trọng hơn việc che giấu sai lầm.",
+        "en": "A boy learns that telling the truth and admitting mistakes is more important than hiding them."
+      },
+      "title": {
+        "vi": "Ô cửa sổ bị vỡ",
+        "en": "The Broken Window"
+      },
+      "description": {
+        "vi": "Noah vô tình làm vỡ cửa sổ khi chơi bóng. Cậu sợ mẹ phát hiện.",
+        "en": "Noah accidentally breaks a window while playing ball. He is afraid his mom will find out."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Noah vô tình làm vỡ cửa sổ khi chơi bóng. Cậu sợ mẹ phát hiện.",
+    "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+    "thumbnail": "/stories/a-little-lie/thumbnails/the-broken-window.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Noah",
+      "text": "Oh no! The window is broken.",
+      "translation": "Ôi không! Cửa sổ bị vỡ rồi.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Noah",
+      "text": "My ball hit the window.",
+      "translation": "Quả bóng của con đập vào cửa sổ.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-02.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Noah",
+      "text": "Mom will be angry.",
+      "translation": "Mẹ sẽ giận mất.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-03.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Mom",
+      "text": "Noah, what was that noise?",
+      "translation": "Noah, tiếng động vừa rồi là gì vậy?",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/mom-01.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Noah",
+      "text": "I was outside, Mom.",
+      "translation": "Con vừa ở ngoài, mẹ ạ.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-04.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Mom",
+      "text": "Is everything okay?",
+      "translation": "Mọi chuyện vẫn ổn chứ?",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/mom-02.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Noah",
+      "text": "I'm okay, but I'm scared.",
+      "translation": "Con không sao, nhưng con sợ.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-05.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Mom",
+      "text": "Why are you scared?",
+      "translation": "Sao con lại sợ?",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/mom-03.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Noah",
+      "text": "I made a mistake.",
+      "translation": "Con đã mắc lỗi.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-06.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Mom",
+      "text": "What happened?",
+      "translation": "Có chuyện gì xảy ra vậy?",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/mom-04.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Noah",
+      "text": "I don't want you to be angry.",
+      "translation": "Con không muốn mẹ giận.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-07.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Mom",
+      "text": "Please tell me the truth.",
+      "translation": "Hãy nói thật với mẹ nhé.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/mom-05.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Noah",
+      "text": "I need a minute, Mom.",
+      "translation": "Cho con một chút thời gian, mẹ nhé.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-08.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "broken",
+      "pronunciation": "/ˈbroʊ.kən/",
+      "meaning": "bị vỡ, bị hỏng",
+      "example": "My phone is broken."
+    },
+    {
+      "word": "hit",
+      "pronunciation": "/hɪt/",
+      "meaning": "đập vào, va vào",
+      "example": "The ball hit the door."
+    },
+    {
+      "word": "angry",
+      "pronunciation": "/ˈæŋ.ɡri/",
+      "meaning": "tức giận",
+      "example": "My dad is angry."
+    },
+    {
+      "word": "noise",
+      "pronunciation": "/nɔɪz/",
+      "meaning": "tiếng động, tiếng ồn",
+      "example": "What is that noise?"
+    },
+    {
+      "word": "outside",
+      "pronunciation": "/ˌaʊtˈsaɪd/",
+      "meaning": "ở bên ngoài",
+      "example": "My brother is outside."
+    },
+    {
+      "word": "scared",
+      "pronunciation": "/skerd/",
+      "meaning": "sợ hãi, lo sợ",
+      "example": "I'm scared of dogs."
+    },
+    {
+      "word": "made a mistake",
+      "pronunciation": "/meɪd ə mɪˈsteɪk/",
+      "meaning": "đã mắc lỗi",
+      "example": "I made a mistake at school."
+    },
+    {
+      "word": "tell me the truth",
+      "pronunciation": "/tel mi ðə truːθ/",
+      "meaning": "nói thật với tôi",
+      "example": "Please tell me the truth."
+    },
+    {
+      "word": "need a minute",
+      "pronunciation": "/niːd ə ˈmɪn.ɪt/",
+      "meaning": "cần một chút thời gian",
+      "example": "I need a minute to think."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Oh no! The window is ",
+        "."
+      ],
+      "answers": [
+        "broken"
+      ],
+      "speaker": "Noah",
+      "transcript": "Oh no! The window is broken.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "My ",
+        " hit the window."
+      ],
+      "answers": [
+        "ball"
+      ],
+      "speaker": "Noah",
+      "transcript": "My ball hit the window.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-02.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "My ball ",
+        " the window."
+      ],
+      "answers": [
+        "hit"
+      ],
+      "speaker": "Noah",
+      "transcript": "My ball hit the window.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-02.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Mom will be ",
+        "."
+      ],
+      "answers": [
+        "angry"
+      ],
+      "speaker": "Noah",
+      "transcript": "Mom will be angry.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-03.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Từ “will” giúp Noah nói về điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra cách dùng",
+          "en": "Check language usage"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Từ “will” giúp Noah nói về điều gì?",
+          "en": "What does the word “will” help Noah talk about?"
+        },
+        "options": [
+          {
+            "vi": "Chuyện đang xảy ra với quả bóng.",
+            "en": "Something happening to the ball now."
+          },
+          {
+            "vi": "Chuyện đã xảy ra hôm qua.",
+            "en": "Something that happened yesterday."
+          },
+          {
+            "vi": "Một điều mẹ đang yêu cầu.",
+            "en": "Something Mom is asking him to do."
+          },
+          {
+            "vi": "Điều Noah nghĩ sẽ xảy ra tiếp theo.",
+            "en": "What Noah thinks will happen next."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "will",
+      "options": [
+        "Chuyện đang xảy ra với quả bóng.",
+        "Chuyện đã xảy ra hôm qua.",
+        "Một điều mẹ đang yêu cầu.",
+        "Điều Noah nghĩ sẽ xảy ra tiếp theo."
+      ],
+      "answer": "Điều Noah nghĩ sẽ xảy ra tiếp theo.",
+      "speaker": "Noah",
+      "transcript": "Mom will be angry.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-03.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Noah, ",
+        " was that noise?"
+      ],
+      "answers": [
+        "what"
+      ],
+      "speaker": "Mom",
+      "transcript": "Noah, what was that noise?",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/mom-01.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Noah, what was that ",
+        "?"
+      ],
+      "answers": [
+        "noise"
+      ],
+      "speaker": "Mom",
+      "transcript": "Noah, what was that noise?",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/mom-01.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I was ",
+        ", Mom."
+      ],
+      "answers": [
+        "outside"
+      ],
+      "speaker": "Noah",
+      "transcript": "I was outside, Mom.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-04.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "multipleChoice",
+      "question": "Noah đã nói cho mẹ nguyên nhân tiếng động chưa?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Noah đã nói cho mẹ nguyên nhân tiếng động chưa?",
+          "en": "Has Noah told Mom what caused the noise?"
+        },
+        "options": [
+          {
+            "vi": "Chưa, cậu chỉ nói mình ở ngoài.",
+            "en": "No, he only says he was outside."
+          },
+          {
+            "vi": "Rồi, cậu nói quả bóng đập vào cửa sổ.",
+            "en": "Yes, he says his ball hit the window."
+          },
+          {
+            "vi": "Rồi, cậu nói tiếng động là do gió.",
+            "en": "Yes, he says the wind caused the noise."
+          },
+          {
+            "vi": "Rồi, cậu nói ai đó làm vỡ cửa sổ.",
+            "en": "Yes, he says someone broke the window."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Chưa, cậu chỉ nói mình ở ngoài.",
+        "Rồi, cậu nói quả bóng đập vào cửa sổ.",
+        "Rồi, cậu nói tiếng động là do gió.",
+        "Rồi, cậu nói ai đó làm vỡ cửa sổ."
+      ],
+      "answer": "Chưa, cậu chỉ nói mình ở ngoài.",
+      "speaker": "Noah",
+      "transcript": "I was outside, Mom.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-04.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Is everything ",
+        "?"
+      ],
+      "answers": [
+        "okay"
+      ],
+      "speaker": "Mom",
+      "transcript": "Is everything okay?",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/mom-02.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I'm ",
+        ", but I'm scared."
+      ],
+      "answers": [
+        "okay"
+      ],
+      "speaker": "Noah",
+      "transcript": "I'm okay, but I'm scared.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-05.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I'm okay, but I'm ",
+        "."
+      ],
+      "answers": [
+        "scared"
+      ],
+      "speaker": "Noah",
+      "transcript": "I'm okay, but I'm scared.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-05.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "",
+        " are you scared?"
+      ],
+      "answers": [
+        "Why"
+      ],
+      "speaker": "Mom",
+      "transcript": "Why are you scared?",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/mom-03.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I ",
+        " a mistake."
+      ],
+      "answers": [
+        "made"
+      ],
+      "speaker": "Noah",
+      "transcript": "I made a mistake.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-06.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I made a ",
+        "."
+      ],
+      "answers": [
+        "mistake"
+      ],
+      "speaker": "Noah",
+      "transcript": "I made a mistake.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-06.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Sau câu này, mẹ đã biết chính xác chuyện gì xảy ra chưa?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Sau câu này, mẹ đã biết chính xác chuyện gì xảy ra chưa?",
+          "en": "After this sentence, does Mom know exactly what happened?"
+        },
+        "options": [
+          {
+            "vi": "Rồi, mẹ biết cửa sổ đã vỡ.",
+            "en": "Yes, she knows the window is broken."
+          },
+          {
+            "vi": "Rồi, mẹ biết quả bóng đã gây ra tiếng động.",
+            "en": "Yes, she knows the ball caused the noise."
+          },
+          {
+            "vi": "Chưa, mẹ chỉ biết Noah đã mắc lỗi.",
+            "en": "No, she only knows Noah made a mistake."
+          },
+          {
+            "vi": "Chưa, mẹ nghĩ Noah làm mất bóng.",
+            "en": "No, she thinks Noah lost his ball."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Rồi, mẹ biết cửa sổ đã vỡ.",
+        "Rồi, mẹ biết quả bóng đã gây ra tiếng động.",
+        "Chưa, mẹ chỉ biết Noah đã mắc lỗi.",
+        "Chưa, mẹ nghĩ Noah làm mất bóng."
+      ],
+      "answer": "Chưa, mẹ chỉ biết Noah đã mắc lỗi.",
+      "speaker": "Noah",
+      "transcript": "I made a mistake.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-06.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "What ",
+        "?"
+      ],
+      "answers": [
+        "happened"
+      ],
+      "speaker": "Mom",
+      "transcript": "What happened?",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/mom-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền cụm từ còn thiếu.",
+          "en": "Fill in the missing phrase."
+        }
+      },
+      "parts": [
+        "I ",
+        " you to be angry."
+      ],
+      "answers": [
+        "don't want"
+      ],
+      "speaker": "Noah",
+      "transcript": "I don't want you to be angry.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-07.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I don't want you to be ",
+        "."
+      ],
+      "answers": [
+        "angry"
+      ],
+      "speaker": "Noah",
+      "transcript": "I don't want you to be angry.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-07.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Please ",
+        " me the truth."
+      ],
+      "answers": [
+        "tell"
+      ],
+      "speaker": "Mom",
+      "transcript": "Please tell me the truth.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/mom-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Please tell me the ",
+        "."
+      ],
+      "answers": [
+        "truth"
+      ],
+      "speaker": "Mom",
+      "transcript": "Please tell me the truth.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/mom-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 12,
+      "type": "multipleChoice",
+      "question": "Vì sao mẹ dùng “Please” khi nói với Noah?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra cách dùng",
+          "en": "Check language usage"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Vì sao mẹ dùng “Please” khi nói với Noah?",
+          "en": "Why does Mom use “Please” when speaking to Noah?"
+        },
+        "options": [
+          {
+            "vi": "Để trách Noah ngay lập tức.",
+            "en": "To scold Noah immediately."
+          },
+          {
+            "vi": "Để lời đề nghị nghe nhẹ nhàng hơn.",
+            "en": "To make her request sound gentler."
+          },
+          {
+            "vi": "Để nói mẹ đã hiểu mọi chuyện.",
+            "en": "To say she already understands everything."
+          },
+          {
+            "vi": "Để yêu cầu Noah ngừng nói.",
+            "en": "To ask Noah to stop talking."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "Please",
+      "options": [
+        "Để trách Noah ngay lập tức.",
+        "Để lời đề nghị nghe nhẹ nhàng hơn.",
+        "Để nói mẹ đã hiểu mọi chuyện.",
+        "Để yêu cầu Noah ngừng nói."
+      ],
+      "answer": "Để lời đề nghị nghe nhẹ nhàng hơn.",
+      "speaker": "Mom",
+      "transcript": "Please tell me the truth.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/mom-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I need a ",
+        ", Mom."
+      ],
+      "answers": [
+        "minute"
+      ],
+      "speaker": "Noah",
+      "transcript": "I need a minute, Mom.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-08.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 13,
+      "type": "multipleChoice",
+      "question": "Noah muốn gì trước khi trả lời mẹ?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Noah muốn gì trước khi trả lời mẹ?",
+          "en": "What does Noah want before answering Mom?"
+        },
+        "options": [
+          {
+            "vi": "Một chút thời gian trước khi nói.",
+            "en": "A little time before speaking."
+          },
+          {
+            "vi": "Mẹ trả lời thay mình.",
+            "en": "Mom to answer for him."
+          },
+          {
+            "vi": "Được ra ngoài chơi bóng tiếp.",
+            "en": "To go outside and play ball again."
+          },
+          {
+            "vi": "Không bao giờ phải nói về chuyện này.",
+            "en": "To never talk about this again."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Một chút thời gian trước khi nói.",
+        "Mẹ trả lời thay mình.",
+        "Được ra ngoài chơi bóng tiếp.",
+        "Không bao giờ phải nói về chuyện này."
+      ],
+      "answer": "Một chút thời gian trước khi nói.",
+      "speaker": "Noah",
+      "transcript": "I need a minute, Mom.",
+      "scene": "/stories/a-little-lie/the-broken-window/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-broken-window/audio/noah-08.mp3"
+    },
+    {
+      "id": 25,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập hội thoại",
+          "en": "Dialogue review"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu để hoàn thành toàn bộ hội thoại.",
+          "en": "Fill in the missing words to complete the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Noah",
+          "parts": [
+            "Oh no! The window is ",
+            {
+              "id": "1",
+              "blank": "broken"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Noah",
+          "parts": [
+            "My ",
+            {
+              "id": "2",
+              "blank": "ball"
+            },
+            " hit the window."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Noah",
+          "parts": [
+            "Mom will be ",
+            {
+              "id": "3",
+              "blank": "angry"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Mom",
+          "parts": [
+            "Noah, what was that ",
+            {
+              "id": "4",
+              "blank": "noise"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Noah",
+          "parts": [
+            "I was ",
+            {
+              "id": "5",
+              "blank": "outside"
+            },
+            ", Mom."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Mom",
+          "parts": [
+            "Is everything ",
+            {
+              "id": "6",
+              "blank": "okay"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Noah",
+          "parts": [
+            "I'm okay, but I'm ",
+            {
+              "id": "7",
+              "blank": "scared"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Mom",
+          "parts": [
+            "",
+            {
+              "id": "8",
+              "blank": "Why"
+            },
+            " are you scared?"
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Noah",
+          "parts": [
+            "I made a ",
+            {
+              "id": "9",
+              "blank": "mistake"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Mom",
+          "parts": [
+            "What ",
+            {
+              "id": "10",
+              "blank": "happened"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Noah",
+          "parts": [
+            "I ",
+            {
+              "id": "11",
+              "blank": "don't want"
+            },
+            " you to be angry."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Mom",
+          "parts": [
+            "Please tell me the ",
+            {
+              "id": "12",
+              "blank": "truth"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Noah",
+          "parts": [
+            "I need a ",
+            {
+              "id": "13",
+              "blank": "minute"
+            },
+            ", Mom."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Will – nói về điều sẽ xảy ra",
+      "explanation": "Dùng will + động từ nguyên mẫu để nói về điều bạn nghĩ sẽ xảy ra trong tương lai. Ví dụ: “Mom will be angry.” nghĩa là Noah nghĩ mẹ sẽ giận.",
+      "localized": {
+        "title": {
+          "vi": "Will – nói về điều sẽ xảy ra",
+          "en": "Will – talking about the future"
+        },
+        "explanation": {
+          "vi": "Dùng will + động từ nguyên mẫu để nói về điều bạn nghĩ sẽ xảy ra trong tương lai. Ví dụ: “Mom will be angry.” nghĩa là Noah nghĩ mẹ sẽ giận.",
+          "en": "Use will + the base form of a verb to talk about something you think will happen in the future. For example, “Mom will be angry” shows that Noah thinks his mom will get angry."
+        }
+      },
+      "example": "Mom will be angry."
+    },
+    {
+      "title": "Was – nói về trạng thái trong quá khứ",
+      "explanation": "Was là dạng quá khứ của am và is. Dùng was để nói về nơi bạn đã ở hoặc trạng thái của bạn trước đó. Ví dụ: “I was outside.” nghĩa là trước đó tôi đã ở bên ngoài.",
+      "localized": {
+        "title": {
+          "vi": "Was – nói về trạng thái trong quá khứ",
+          "en": "Was – talking about the past"
+        },
+        "explanation": {
+          "vi": "Was là dạng quá khứ của am và is. Dùng was để nói về nơi bạn đã ở hoặc trạng thái của bạn trước đó. Ví dụ: “I was outside.” nghĩa là trước đó tôi đã ở bên ngoài.",
+          "en": "Was is the past form of am and is. Use was to talk about where you were or how you felt before. For example, “I was outside” tells us where the speaker was earlier."
+        }
+      },
+      "example": "I was outside, Mom."
+    }
+  ]
+}

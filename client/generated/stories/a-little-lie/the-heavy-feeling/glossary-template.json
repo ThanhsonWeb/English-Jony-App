@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "a-little-lie",
+  "dialogueId": "the-heavy-feeling",
+  "characters": {
+    "Mom": {
+      "meaning": "Mom",
+      "role": ""
+    },
+    "Noah": {
+      "meaning": "Noah",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-fix": {
+      "word": "fix",
+      "meaning": "",
+      "pos": []
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "",
+      "pos": []
+    },
+    "word-window": {
+      "word": "window",
+      "meaning": "",
+      "pos": []
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "",
+      "pos": []
+    },
+    "word-still": {
+      "word": "still",
+      "meaning": "",
+      "pos": []
+    },
+    "word-don't": {
+      "word": "don't",
+      "meaning": "",
+      "pos": []
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "",
+      "pos": []
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "",
+      "pos": []
+    },
+    "word-happened": {
+      "word": "happened",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-look": {
+      "word": "look",
+      "meaning": "",
+      "pos": []
+    },
+    "word-worried": {
+      "word": "worried",
+      "meaning": "",
+      "pos": []
+    },
+    "word-mom": {
+      "word": "mom",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "",
+      "pos": []
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "",
+      "pos": []
+    },
+    "word-soon": {
+      "word": "soon",
+      "meaning": "",
+      "pos": []
+    },
+    "word-feel": {
+      "word": "feel",
+      "meaning": "",
+      "pos": []
+    },
+    "word-bad": {
+      "word": "bad",
+      "meaning": "",
+      "pos": []
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "",
+      "pos": []
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "",
+      "pos": []
+    },
+    "word-mean": {
+      "word": "mean",
+      "meaning": "",
+      "pos": []
+    },
+    "word-did": {
+      "word": "did",
+      "meaning": "",
+      "pos": []
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "",
+      "pos": []
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "",
+      "pos": []
+    },
+    "word-truth": {
+      "word": "truth",
+      "meaning": "",
+      "pos": []
+    },
+    "word-take": {
+      "word": "take",
+      "meaning": "",
+      "pos": []
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "",
+      "pos": []
+    },
+    "word-time": {
+      "word": "time",
+      "meaning": "",
+      "pos": []
+    },
+    "word-noah": {
+      "word": "noah",
+      "meaning": "",
+      "pos": []
+    },
+    "word-was": {
+      "word": "was",
+      "meaning": "",
+      "pos": []
+    },
+    "word-scared": {
+      "word": "scared",
+      "meaning": "",
+      "pos": []
+    },
+    "word-so": {
+      "word": "so",
+      "meaning": "",
+      "pos": []
+    },
+    "word-said": {
+      "word": "said",
+      "meaning": "",
+      "pos": []
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "",
+      "pos": []
+    },
+    "word-everyone": {
+      "word": "everyone",
+      "meaning": "",
+      "pos": []
+    },
+    "word-makes": {
+      "word": "makes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-mistakes": {
+      "word": "mistakes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-everything": {
+      "word": "everything",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "",
+      "pos": []
+    },
+    "word-listening": {
+      "word": "listening",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Mom",
+      "text": "I need to fix the window.",
+      "translation": "Mẹ cần sửa cửa sổ.",
+      "tokens": [
+        "I",
+        "need",
+        "to",
+        "fix",
+        "the",
+        "window"
+      ],
+      "words": [
+        "word-i",
+        "word-need",
+        "word-to",
+        "word-fix",
+        "word-the",
+        "word-window"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Mom",
+      "text": "But I still don't know what happened.",
+      "translation": "Nhưng mẹ vẫn không biết chuyện gì đã xảy ra.",
+      "tokens": [
+        "But",
+        "I",
+        "still",
+        "don't",
+        "know",
+        "what",
+        "happened"
+      ],
+      "words": [
+        "word-but",
+        "word-i",
+        "word-still",
+        "word-don't",
+        "word-know",
+        "word-what",
+        "word-happened"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Noah",
+      "text": "You look worried, Mom.",
+      "translation": "Trông mẹ có vẻ lo lắng.",
+      "tokens": [
+        "You",
+        "look",
+        "worried",
+        "Mom"
+      ],
+      "words": [
+        "word-you",
+        "word-look",
+        "word-worried",
+        "word-mom"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Mom",
+      "text": "Yes. I want to fix it soon.",
+      "translation": "Ừ. Mẹ muốn sửa nó sớm.",
+      "tokens": [
+        "Yes",
+        "I",
+        "want",
+        "to",
+        "fix",
+        "it",
+        "soon"
+      ],
+      "words": [
+        "word-yes",
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-fix",
+        "word-it",
+        "word-soon"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Noah",
+      "text": "I feel bad about the window.",
+      "translation": "Con cảm thấy áy náy về chuyện cửa sổ.",
+      "tokens": [
+        "I",
+        "feel",
+        "bad",
+        "about",
+        "the",
+        "window"
+      ],
+      "words": [
+        "word-i",
+        "word-feel",
+        "word-bad",
+        "word-about",
+        "word-the",
+        "word-window"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Mom",
+      "text": "What do you mean?",
+      "translation": "Ý con là sao?",
+      "tokens": [
+        "What",
+        "do",
+        "you",
+        "mean"
+      ],
+      "words": [
+        "word-what",
+        "word-do",
+        "word-you",
+        "word-mean"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Noah",
+      "text": "I did not tell you the truth.",
+      "translation": "Con đã không nói thật với mẹ.",
+      "tokens": [
+        "I",
+        "did",
+        "not",
+        "tell",
+        "you",
+        "the",
+        "truth"
+      ],
+      "words": [
+        "word-i",
+        "word-did",
+        "word-not",
+        "word-tell",
+        "word-you",
+        "word-the",
+        "word-truth"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Mom",
+      "text": "Take your time, Noah.",
+      "translation": "Cứ từ từ thôi, Noah.",
+      "tokens": [
+        "Take",
+        "your",
+        "time",
+        "Noah"
+      ],
+      "words": [
+        "word-take",
+        "word-your",
+        "word-time",
+        "word-noah"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Noah",
+      "text": "I was scared, so I said no.",
+      "translation": "Con đã sợ, nên con nói không.",
+      "tokens": [
+        "I",
+        "was",
+        "scared",
+        "so",
+        "I",
+        "said",
+        "no"
+      ],
+      "words": [
+        "word-i",
+        "word-was",
+        "word-scared",
+        "word-so",
+        "word-i",
+        "word-said",
+        "word-no"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Mom",
+      "text": "Everyone makes mistakes.",
+      "translation": "Ai cũng có lúc mắc lỗi.",
+      "tokens": [
+        "Everyone",
+        "makes",
+        "mistakes"
+      ],
+      "words": [
+        "word-everyone",
+        "word-makes",
+        "word-mistakes"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Noah",
+      "text": "I want to tell you everything.",
+      "translation": "Con muốn kể hết mọi chuyện cho mẹ.",
+      "tokens": [
+        "I",
+        "want",
+        "to",
+        "tell",
+        "you",
+        "everything"
+      ],
+      "words": [
+        "word-i",
+        "word-want",
+        "word-to",
+        "word-tell",
+        "word-you",
+        "word-everything"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Mom",
+      "text": "I'm listening, Noah.",
+      "translation": "Mẹ đang nghe đây, Noah.",
+      "tokens": [
+        "I'm",
+        "listening",
+        "Noah"
+      ],
+      "words": [
+        "word-i'm",
+        "word-listening",
+        "word-noah"
+      ],
+      "phrases": []
+    }
+  }
+}

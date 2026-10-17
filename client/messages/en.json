@@ -564,7 +564,8 @@
 			"completionTitle": "Complete!",
 			"completion": "{count, plural, one {You completed # Quiz question.} other {You completed # Quiz questions.}}",
 			"notEnoughTitle": "Not enough words to create questions",
-			"notEnoughMessage": "You need at least 4 different Vietnamese meanings in your wordlist to use Quiz mode.",
+			"notEnoughMessage": "Quiz needs at least 4 different Vietnamese meanings. You can review these words with Flashcards instead.",
+			"flashcardAction": "Use Flashcards",
 			"choiceLoadError": "Unable to load words for the answer choices.",
 			"continueHint": "Press Enter to continue",
 			"chooseHint": "Press 1–4 to choose · Enter to check"

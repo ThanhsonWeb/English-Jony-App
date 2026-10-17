@@ -144,7 +144,7 @@ export function ReviewCompletion({
 	);
 }
 
-export function ReviewStatus({ icon, title, message, onBack }) {
+export function ReviewStatus({ icon, title, message, onBack, actionLabel, onAction }) {
 	const t = useTranslations("WordlistReview.common");
 
 	return (
@@ -154,6 +154,11 @@ export function ReviewStatus({ icon, title, message, onBack }) {
 					<div className="flex justify-center">{icon}</div>
 					<h1 className="mt-5 text-2xl font-bold tracking-tight">{title}</h1>
 					<p className="mt-3 leading-relaxed text-secondary">{message}</p>
+					{onAction && <button
+						type="button"
+						onClick={onAction}
+						className="mt-7 w-full rounded-xl bg-primary px-5 py-3.5 font-semibold text-white transition hover:bg-primary-hover active:scale-[0.98]"
+					>{actionLabel}</button>}
 					<button
 						type="button"
 						onClick={onBack}

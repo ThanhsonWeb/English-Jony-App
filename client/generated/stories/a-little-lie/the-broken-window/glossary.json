@@ -1,0 +1,774 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "a-little-lie",
+  "dialogueId": "the-broken-window",
+  "characters": {
+    "Noah": {
+      "meaning": "Noah",
+      "role": "con trai của Mom",
+      "note": "Cậu bé vô tình làm vỡ cửa sổ; tự xưng là con khi nói với mẹ."
+    },
+    "Mom": {
+      "meaning": "Mẹ",
+      "role": "mẹ của Noah",
+      "note": "Gọi Noah là con và tự xưng là mẹ."
+    }
+  },
+  "entries": {
+    "word-oh": {
+      "word": "oh",
+      "meaning": "ôi",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "không",
+      "pos": [
+        "interj"
+      ],
+      "note": "Trong lời cảm thán Oh no!, diễn tả sự hốt hoảng."
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "mạo từ xác định",
+      "pos": [
+        "article"
+      ],
+      "note": "Chỉ cửa sổ hoặc sự thật đã xác định; tiếng Việt thường không dịch riêng từ này."
+    },
+    "word-window": {
+      "word": "window",
+      "meaning": "cửa sổ",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "động từ nối",
+      "pos": [
+        "v"
+      ],
+      "note": "Nối chủ ngữ với tính từ chỉ trạng thái. Trong các câu này, không dịch thành là."
+    },
+    "word-broken": {
+      "word": "broken",
+      "meaning": "bị vỡ",
+      "pos": [
+        "adj"
+      ],
+      "note": "Ở đây nói về cửa sổ bị vỡ, không phải một đồ vật bị hỏng máy.",
+      "pron": [
+        "/ˈbroʊ.kən/"
+      ]
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "của con",
+      "pos": [
+        "det"
+      ],
+      "note": "Noah nói với mẹ về quả bóng của mình."
+    },
+    "word-ball": {
+      "word": "ball",
+      "meaning": "quả bóng",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-hit": {
+      "word": "hit",
+      "meaning": "đập vào",
+      "pos": [
+        "v"
+      ],
+      "note": "Dạng quá khứ của hit; quả bóng đã va vào cửa sổ.",
+      "pron": [
+        "/hɪt/"
+      ]
+    },
+    "word-mom": {
+      "word": "mom",
+      "meaning": "mẹ",
+      "pos": [
+        "name"
+      ],
+      "note": "Cách Noah gọi mẹ; không phải tên riêng của một người khác."
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "sẽ",
+      "pos": [
+        "aux"
+      ],
+      "note": "Noah dự đoán mẹ sẽ giận khi biết chuyện."
+    },
+    "word-be": {
+      "word": "be",
+      "meaning": "động từ nối",
+      "pos": [
+        "v"
+      ],
+      "note": "Dạng nguyên mẫu trong be angry, nghĩa là giận; không dịch riêng thành là."
+    },
+    "word-angry": {
+      "word": "angry",
+      "meaning": "giận",
+      "pos": [
+        "adj"
+      ],
+      "pron": [
+        "/ˈæŋ.ɡri/"
+      ]
+    },
+    "word-noah": {
+      "word": "noah",
+      "meaning": "Noah",
+      "pos": [
+        "name"
+      ],
+      "note": "Tên riêng của cậu bé trong câu chuyện."
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "gì",
+      "pos": [
+        "pron"
+      ],
+      "note": "Hỏi tiếng động vừa rồi là gì."
+    },
+    "word-was": {
+      "word": "was",
+      "meaning": "là",
+      "pos": [
+        "v"
+      ],
+      "note": "Dạng quá khứ của is, dùng khi mẹ hỏi về tiếng động vừa nghe."
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "đó",
+      "pos": [
+        "det"
+      ],
+      "note": "Chỉ tiếng động mẹ vừa nghe thấy."
+    },
+    "word-noise": {
+      "word": "noise",
+      "meaning": "tiếng động",
+      "pos": [
+        "n"
+      ],
+      "pron": [
+        "/nɔɪz/"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Noah tự xưng con khi nói với mẹ."
+    },
+    "word-outside": {
+      "word": "outside",
+      "meaning": "ở bên ngoài",
+      "pos": [
+        "adv"
+      ],
+      "pron": [
+        "/ˌaʊtˈsaɪd/"
+      ]
+    },
+    "word-everything": {
+      "word": "everything",
+      "meaning": "mọi chuyện",
+      "pos": [
+        "pron"
+      ]
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "ổn",
+      "pos": [
+        "adj"
+      ],
+      "note": "Nói về tình hình chung trong câu hỏi của mẹ."
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "con",
+      "pos": [
+        "pron",
+        "v"
+      ],
+      "note": "Viết tắt của I am. Noah tự xưng con; am nối với tính từ chỉ trạng thái và thường không dịch riêng."
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "nhưng",
+      "pos": [
+        "conj"
+      ]
+    },
+    "word-scared": {
+      "word": "scared",
+      "meaning": "sợ",
+      "pos": [
+        "adj"
+      ],
+      "pron": [
+        "/skerd/"
+      ]
+    },
+    "word-why": {
+      "word": "why",
+      "meaning": "tại sao",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "động từ nối",
+      "pos": [
+        "v"
+      ],
+      "note": "Dạng của be đi với you, được đảo lên trước chủ ngữ để hỏi về trạng thái sợ hãi."
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mom gọi Noah là con."
+    },
+    "word-made": {
+      "word": "made",
+      "meaning": "đã mắc",
+      "pos": [
+        "v"
+      ],
+      "note": "Dạng quá khứ của make. Trong made a mistake, made được hiểu là đã mắc, không phải chế tạo."
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "một",
+      "pos": [
+        "article"
+      ]
+    },
+    "word-mistake": {
+      "word": "mistake",
+      "meaning": "lỗi",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-happened": {
+      "word": "happened",
+      "meaning": "đã xảy ra",
+      "pos": [
+        "v"
+      ],
+      "note": "Dạng quá khứ của happen."
+    },
+    "word-don't": {
+      "word": "don't",
+      "meaning": "không",
+      "pos": [
+        "aux"
+      ],
+      "note": "Viết tắt của do not, phủ định động từ want."
+    },
+    "word-want": {
+      "word": "want",
+      "meaning": "muốn",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "dấu hiệu nguyên mẫu",
+      "pos": [
+        "particle"
+      ],
+      "note": "Đứng trước be trong want you to be angry; không mang nghĩa đến hoặc để."
+    },
+    "word-please": {
+      "word": "please",
+      "meaning": "hãy",
+      "pos": [
+        "adv"
+      ],
+      "note": "Làm lời đề nghị nói thật nghe nhẹ nhàng hơn; không mang nghĩa làm hài lòng ở đây."
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "nói",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "mẹ",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mom tự xưng mẹ trong lời đề nghị Noah nói thật với mình."
+    },
+    "word-truth": {
+      "word": "truth",
+      "meaning": "sự thật",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-need": {
+      "word": "need",
+      "meaning": "cần",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-minute": {
+      "word": "minute",
+      "meaning": "chút thời gian",
+      "pos": [
+        "n"
+      ],
+      "note": "Trong a minute, Noah xin một chút thời gian để bình tĩnh, không nhất thiết đúng 60 giây."
+    },
+    "word-was-location": {
+      "word": "was",
+      "meaning": "đã ở",
+      "pos": [
+        "v"
+      ],
+      "note": "Dạng quá khứ của am, nói về nơi Noah vừa ở trước đó."
+    },
+    "word-okay-person": {
+      "word": "okay",
+      "meaning": "không sao",
+      "pos": [
+        "adj"
+      ],
+      "note": "Noah nói bản thân không sao, dù đang sợ mẹ giận."
+    },
+    "word-what-event": {
+      "word": "what",
+      "meaning": "chuyện gì",
+      "pos": [
+        "pron"
+      ],
+      "note": "Trong What happened?, mẹ hỏi chuyện gì đã xảy ra."
+    },
+    "word-you-mom": {
+      "word": "you",
+      "meaning": "mẹ",
+      "pos": [
+        "pron"
+      ],
+      "note": "Noah nói với Mom, nên you ở câu này là mẹ."
+    },
+    "phrase-oh-no": {
+      "word": "oh no",
+      "meaning": "ôi không",
+      "pos": [
+        "phrase"
+      ],
+      "note": "Lời cảm thán khi Noah nhận ra cửa sổ bị vỡ."
+    },
+    "phrase-be-angry": {
+      "word": "be angry",
+      "meaning": "giận",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-im-okay": {
+      "word": "i'm okay",
+      "meaning": "con không sao",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-im-scared": {
+      "word": "i'm scared",
+      "meaning": "con sợ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-made-a-mistake": {
+      "word": "made a mistake",
+      "meaning": "đã mắc lỗi",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/meɪd ə mɪˈsteɪk/"
+      ]
+    },
+    "phrase-what-happened": {
+      "word": "what happened",
+      "meaning": "có chuyện gì xảy ra",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-dont-want": {
+      "word": "don't want",
+      "meaning": "không muốn",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-tell-me-the-truth": {
+      "word": "tell me the truth",
+      "meaning": "nói thật với mẹ",
+      "pos": [
+        "phrase"
+      ],
+      "note": "Me chỉ Mom, người đang nói câu này.",
+      "pron": [
+        "/tel mi ðə truːθ/"
+      ]
+    },
+    "phrase-need-a-minute": {
+      "word": "need a minute",
+      "meaning": "cần một chút thời gian",
+      "pos": [
+        "phrase"
+      ],
+      "pron": [
+        "/niːd ə ˈmɪn.ɪt/"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Noah",
+      "text": "Oh no! The window is broken.",
+      "translation": "Ôi không! Cửa sổ bị vỡ rồi.",
+      "tokens": [
+        "Oh",
+        "no",
+        "The",
+        "window",
+        "is",
+        "broken"
+      ],
+      "words": [
+        "word-oh",
+        "word-no",
+        "word-the",
+        "word-window",
+        "word-is",
+        "word-broken"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Oh no",
+          "entry": "phrase-oh-no"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Noah",
+      "text": "My ball hit the window.",
+      "translation": "Quả bóng của con đập vào cửa sổ.",
+      "tokens": [
+        "My",
+        "ball",
+        "hit",
+        "the",
+        "window"
+      ],
+      "words": [
+        "word-my",
+        "word-ball",
+        "word-hit",
+        "word-the",
+        "word-window"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Noah",
+      "text": "Mom will be angry.",
+      "translation": "Mẹ sẽ giận mất.",
+      "tokens": [
+        "Mom",
+        "will",
+        "be",
+        "angry"
+      ],
+      "words": [
+        "word-mom",
+        "word-will",
+        "word-be",
+        "word-angry"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "be angry",
+          "entry": "phrase-be-angry"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Mom",
+      "text": "Noah, what was that noise?",
+      "translation": "Noah, tiếng động vừa rồi là gì vậy?",
+      "tokens": [
+        "Noah",
+        "what",
+        "was",
+        "that",
+        "noise"
+      ],
+      "words": [
+        "word-noah",
+        "word-what",
+        "word-was",
+        "word-that",
+        "word-noise"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Noah",
+      "text": "I was outside, Mom.",
+      "translation": "Con vừa ở ngoài, mẹ ạ.",
+      "tokens": [
+        "I",
+        "was",
+        "outside",
+        "Mom"
+      ],
+      "words": [
+        "word-i",
+        "word-was-location",
+        "word-outside",
+        "word-mom"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Mom",
+      "text": "Is everything okay?",
+      "translation": "Mọi chuyện vẫn ổn chứ?",
+      "tokens": [
+        "Is",
+        "everything",
+        "okay"
+      ],
+      "words": [
+        "word-is",
+        "word-everything",
+        "word-okay"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Noah",
+      "text": "I'm okay, but I'm scared.",
+      "translation": "Con không sao, nhưng con sợ.",
+      "tokens": [
+        "I'm",
+        "okay",
+        "but",
+        "I'm",
+        "scared"
+      ],
+      "words": [
+        "word-i'm",
+        "word-okay-person",
+        "word-but",
+        "word-i'm",
+        "word-scared"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "I'm okay",
+          "entry": "phrase-im-okay"
+        },
+        {
+          "start": 3,
+          "end": 4,
+          "text": "I'm scared",
+          "entry": "phrase-im-scared"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Mom",
+      "text": "Why are you scared?",
+      "translation": "Sao con lại sợ?",
+      "tokens": [
+        "Why",
+        "are",
+        "you",
+        "scared"
+      ],
+      "words": [
+        "word-why",
+        "word-are",
+        "word-you",
+        "word-scared"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Noah",
+      "text": "I made a mistake.",
+      "translation": "Con đã mắc lỗi.",
+      "tokens": [
+        "I",
+        "made",
+        "a",
+        "mistake"
+      ],
+      "words": [
+        "word-i",
+        "word-made",
+        "word-a",
+        "word-mistake"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 3,
+          "text": "made a mistake",
+          "entry": "phrase-made-a-mistake"
+        }
+      ]
+    },
+    "10": {
+      "speaker": "Mom",
+      "text": "What happened?",
+      "translation": "Có chuyện gì xảy ra vậy?",
+      "tokens": [
+        "What",
+        "happened"
+      ],
+      "words": [
+        "word-what-event",
+        "word-happened"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "What happened",
+          "entry": "phrase-what-happened"
+        }
+      ]
+    },
+    "11": {
+      "speaker": "Noah",
+      "text": "I don't want you to be angry.",
+      "translation": "Con không muốn mẹ giận.",
+      "tokens": [
+        "I",
+        "don't",
+        "want",
+        "you",
+        "to",
+        "be",
+        "angry"
+      ],
+      "words": [
+        "word-i",
+        "word-don't",
+        "word-want",
+        "word-you-mom",
+        "word-to",
+        "word-be",
+        "word-angry"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "text": "don't want",
+          "entry": "phrase-dont-want"
+        },
+        {
+          "start": 5,
+          "end": 6,
+          "text": "be angry",
+          "entry": "phrase-be-angry"
+        }
+      ]
+    },
+    "12": {
+      "speaker": "Mom",
+      "text": "Please tell me the truth.",
+      "translation": "Hãy nói thật với mẹ nhé.",
+      "tokens": [
+        "Please",
+        "tell",
+        "me",
+        "the",
+        "truth"
+      ],
+      "words": [
+        "word-please",
+        "word-tell",
+        "word-me",
+        "word-the",
+        "word-truth"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 4,
+          "text": "tell me the truth",
+          "entry": "phrase-tell-me-the-truth"
+        }
+      ]
+    },
+    "13": {
+      "speaker": "Noah",
+      "text": "I need a minute, Mom.",
+      "translation": "Cho con một chút thời gian, mẹ nhé.",
+      "tokens": [
+        "I",
+        "need",
+        "a",
+        "minute",
+        "Mom"
+      ],
+      "words": [
+        "word-i",
+        "word-need",
+        "word-a",
+        "word-minute",
+        "word-mom"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 3,
+          "text": "need a minute",
+          "entry": "phrase-need-a-minute"
+        }
+      ]
+    }
+  }
+}

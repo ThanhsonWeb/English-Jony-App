@@ -1,0 +1,862 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "a-little-lie",
+  "dialogueId": "telling-the-truth",
+  "characters": {
+    "Noah": {
+      "meaning": "Noah",
+      "role": "con trai của Mom",
+      "note": "Tự xưng là con khi nói với Mom."
+    },
+    "Mom": {
+      "meaning": "Mom",
+      "role": "mẹ của Noah",
+      "note": "Tự xưng là mẹ khi nói với Noah."
+    }
+  },
+  "entries": {
+    "word-mom": {
+      "word": "mom",
+      "meaning": "mẹ",
+      "pos": [
+        "name"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Noah tự xưng là con khi nói với Mom."
+    },
+    "word-broke": {
+      "word": "broke",
+      "meaning": "làm vỡ",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "mạo từ xác định",
+      "pos": [
+        "det"
+      ],
+      "note": "Thường không dịch riêng sang tiếng Việt."
+    },
+    "word-window": {
+      "word": "window",
+      "meaning": "cửa sổ",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "của con",
+      "pos": [
+        "det"
+      ],
+      "note": "Noah đang nói với Mom."
+    },
+    "word-ball": {
+      "word": "ball",
+      "meaning": "quả bóng",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-hit": {
+      "word": "hit",
+      "meaning": "đập vào",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "nó",
+      "pos": [
+        "pron"
+      ],
+      "note": "Chỉ cửa sổ ở câu này."
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "con",
+      "pos": [
+        "pron",
+        "aux"
+      ],
+      "note": "Dạng rút gọn của I am; Noah tự xưng là con."
+    },
+    "word-very": {
+      "word": "very",
+      "meaning": "thật sự",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-sorry": {
+      "word": "sorry",
+      "meaning": "xin lỗi",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-was": {
+      "word": "was",
+      "meaning": "đã",
+      "pos": [
+        "v"
+      ],
+      "note": "Động từ nối ở quá khứ, đi với tính từ scared."
+    },
+    "word-scared": {
+      "word": "scared",
+      "meaning": "sợ",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-so": {
+      "word": "so",
+      "meaning": "nên",
+      "pos": [
+        "conj"
+      ]
+    },
+    "word-lied": {
+      "word": "lied",
+      "meaning": "nói dối",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "cảm ơn",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mom đang nói với Noah."
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "vì",
+      "pos": [
+        "prep"
+      ]
+    },
+    "word-telling": {
+      "word": "telling",
+      "meaning": "nói",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "mẹ",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mom tự xưng là mẹ khi nói với Noah."
+    },
+    "word-truth": {
+      "word": "truth",
+      "meaning": "sự thật",
+      "pos": [
+        "n"
+      ]
+    },
+    "word-worried": {
+      "word": "worried",
+      "meaning": "lo lắng",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "về",
+      "pos": [
+        "prep"
+      ]
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "trợ động từ hỏi",
+      "pos": [
+        "aux"
+      ],
+      "note": "Đứng đầu câu hỏi Are you...?; thường không dịch riêng."
+    },
+    "word-still": {
+      "word": "still",
+      "meaning": "vẫn",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-angry": {
+      "word": "angry",
+      "meaning": "giận",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-with": {
+      "word": "with",
+      "meaning": "với",
+      "pos": [
+        "prep"
+      ]
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "động từ nối",
+      "pos": [
+        "v"
+      ],
+      "note": "Nối I với tính từ sad; thường không dịch riêng."
+    },
+    "word-sad": {
+      "word": "sad",
+      "meaning": "buồn",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "vì",
+      "pos": [
+        "conj"
+      ],
+      "note": "Nối cảm xúc với lý do ở mệnh đề sau."
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "nhưng",
+      "pos": [
+        "conj"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "động từ nối",
+      "pos": [
+        "v"
+      ],
+      "note": "Nối chủ ngữ truth với tính từ important; thường không dịch riêng."
+    },
+    "word-important": {
+      "word": "important",
+      "meaning": "quan trọng",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "aux"
+      ]
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "giúp",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "được chứ",
+      "pos": [
+        "interj"
+      ]
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "mẹ con mình",
+      "pos": [
+        "pron"
+      ],
+      "note": "Bao gồm Mom và Noah."
+    },
+    "word-fix": {
+      "word": "fix",
+      "meaning": "sửa",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-together": {
+      "word": "together",
+      "meaning": "cùng nhau",
+      "pos": [
+        "adv"
+      ]
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "sẽ",
+      "pos": [
+        "aux"
+      ]
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "nói",
+      "pos": [
+        "v"
+      ]
+    },
+    "word-next": {
+      "word": "next",
+      "meaning": "sau",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-time": {
+      "word": "time",
+      "meaning": "lần",
+      "pos": [
+        "n"
+      ],
+      "note": "Trong next time, nghĩa là lần sau."
+    },
+    "word-proud": {
+      "word": "proud",
+      "meaning": "tự hào",
+      "pos": [
+        "adj"
+      ]
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "về",
+      "pos": [
+        "prep"
+      ]
+    },
+    "word-noah": {
+      "word": "noah",
+      "meaning": "Noah",
+      "pos": [
+        "name"
+      ]
+    },
+    "word-i-mom": {
+      "word": "i",
+      "meaning": "mẹ",
+      "pos": [
+        "pron"
+      ],
+      "note": "Mom tự xưng là mẹ khi nói với Noah."
+    },
+    "word-you-mom": {
+      "word": "you",
+      "meaning": "mẹ",
+      "pos": [
+        "pron"
+      ],
+      "note": "Noah đang nói với Mom."
+    },
+    "word-me-noah": {
+      "word": "me",
+      "meaning": "con",
+      "pos": [
+        "pron"
+      ],
+      "note": "Noah đang nói về chính mình."
+    },
+    "word-with-task": {
+      "word": "with",
+      "meaning": "về",
+      "pos": [
+        "prep"
+      ],
+      "note": "Trong help someone with something, nói về việc cần giúp."
+    },
+    "word-im-mom": {
+      "word": "i'm",
+      "meaning": "mẹ",
+      "pos": [
+        "pron",
+        "aux"
+      ],
+      "note": "Dạng rút gọn của I am; Mom tự xưng là mẹ."
+    },
+    "phrase-broke-the-window": {
+      "meaning": "làm vỡ cửa sổ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-hit-it": {
+      "meaning": "đập vào nó",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-im-very-sorry": {
+      "meaning": "con thật sự xin lỗi",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-i-was-scared": {
+      "meaning": "con đã sợ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-said-no": {
+      "meaning": "nói không",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-thank-you": {
+      "meaning": "cảm ơn con",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-telling-me-the-truth": {
+      "meaning": "nói thật với mẹ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-worried-about-you": {
+      "meaning": "lo lắng cho con",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-still-angry-with-me": {
+      "meaning": "vẫn còn giận con",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-sad-that-you-lied": {
+      "meaning": "buồn vì con đã nói dối",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-truth-is-important": {
+      "meaning": "sự thật rất quan trọng",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-help-you-with-the-window": {
+      "meaning": "giúp mẹ xử lý chuyện cửa sổ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-fix-it-together": {
+      "meaning": "cùng nhau sửa nó",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-next-time": {
+      "meaning": "lần sau",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-proud-of-you": {
+      "meaning": "tự hào về con",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Noah",
+      "text": "Mom, I broke the window.",
+      "translation": "Mẹ ơi, con đã làm vỡ cửa sổ.",
+      "tokens": [
+        "Mom",
+        "I",
+        "broke",
+        "the",
+        "window"
+      ],
+      "words": [
+        "word-mom",
+        "word-i",
+        "word-broke",
+        "word-the",
+        "word-window"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 4,
+          "text": "broke the window",
+          "entry": "phrase-broke-the-window"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Noah",
+      "text": "My ball hit it. I'm very sorry.",
+      "translation": "Quả bóng của con đã đập vào nó. Con thật sự xin lỗi.",
+      "tokens": [
+        "My",
+        "ball",
+        "hit",
+        "it",
+        "I'm",
+        "very",
+        "sorry"
+      ],
+      "words": [
+        "word-my",
+        "word-ball",
+        "word-hit",
+        "word-it",
+        "word-i'm",
+        "word-very",
+        "word-sorry"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "hit it",
+          "entry": "phrase-hit-it"
+        },
+        {
+          "start": 4,
+          "end": 6,
+          "text": "I'm very sorry",
+          "entry": "phrase-im-very-sorry"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Noah",
+      "text": "I was scared, so I lied.",
+      "translation": "Con đã sợ, nên con nói dối.",
+      "tokens": [
+        "I",
+        "was",
+        "scared",
+        "so",
+        "I",
+        "lied"
+      ],
+      "words": [
+        "word-i",
+        "word-was",
+        "word-scared",
+        "word-so",
+        "word-i",
+        "word-lied"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 2,
+          "text": "I was scared",
+          "entry": "phrase-i-was-scared"
+        },
+        {
+          "start": 4,
+          "end": 5,
+          "text": "I lied",
+          "entry": "phrase-said-no"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Mom",
+      "text": "Thank you for telling me the truth.",
+      "translation": "Cảm ơn con vì đã nói thật với mẹ.",
+      "tokens": [
+        "Thank",
+        "you",
+        "for",
+        "telling",
+        "me",
+        "the",
+        "truth"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-for",
+        "word-telling",
+        "word-me",
+        "word-the",
+        "word-truth"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Thank you",
+          "entry": "phrase-thank-you"
+        },
+        {
+          "start": 3,
+          "end": 6,
+          "text": "telling me the truth",
+          "entry": "phrase-telling-me-the-truth"
+        }
+      ]
+    },
+    "5": {
+      "speaker": "Mom",
+      "text": "I was worried about you.",
+      "translation": "Mẹ đã lo lắng cho con.",
+      "tokens": [
+        "I",
+        "was",
+        "worried",
+        "about",
+        "you"
+      ],
+      "words": [
+        "word-i-mom",
+        "word-was",
+        "word-worried",
+        "word-about",
+        "word-you"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 4,
+          "text": "worried about you",
+          "entry": "phrase-worried-about-you"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Noah",
+      "text": "Are you still angry with me?",
+      "translation": "Mẹ vẫn còn giận con sao?",
+      "tokens": [
+        "Are",
+        "you",
+        "still",
+        "angry",
+        "with",
+        "me"
+      ],
+      "words": [
+        "word-are",
+        "word-you-mom",
+        "word-still",
+        "word-angry",
+        "word-with",
+        "word-me-noah"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 5,
+          "text": "still angry with me",
+          "entry": "phrase-still-angry-with-me"
+        }
+      ]
+    },
+    "7": {
+      "speaker": "Mom",
+      "text": "I am sad that you lied.",
+      "translation": "Mẹ buồn vì con đã nói dối.",
+      "tokens": [
+        "I",
+        "am",
+        "sad",
+        "that",
+        "you",
+        "lied"
+      ],
+      "words": [
+        "word-i-mom",
+        "word-am",
+        "word-sad",
+        "word-that",
+        "word-you",
+        "word-lied"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 5,
+          "text": "sad that you lied",
+          "entry": "phrase-sad-that-you-lied"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Mom",
+      "text": "But the truth is important.",
+      "translation": "Nhưng sự thật rất quan trọng.",
+      "tokens": [
+        "But",
+        "the",
+        "truth",
+        "is",
+        "important"
+      ],
+      "words": [
+        "word-but",
+        "word-the",
+        "word-truth",
+        "word-is",
+        "word-important"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 4,
+          "text": "truth is important",
+          "entry": "phrase-truth-is-important"
+        }
+      ]
+    },
+    "9": {
+      "speaker": "Noah",
+      "text": "Can I help you with the window?",
+      "translation": "Con có thể giúp mẹ xử lý chuyện cửa sổ không?",
+      "tokens": [
+        "Can",
+        "I",
+        "help",
+        "you",
+        "with",
+        "the",
+        "window"
+      ],
+      "words": [
+        "word-can",
+        "word-i",
+        "word-help",
+        "word-you-mom",
+        "word-with-task",
+        "word-the",
+        "word-window"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 6,
+          "text": "help you with the window",
+          "entry": "phrase-help-you-with-the-window"
+        }
+      ]
+    },
+    "10": {
+      "speaker": "Mom",
+      "text": "Yes. We can fix it together.",
+      "translation": "Được chứ. Mẹ con mình có thể cùng nhau sửa nó.",
+      "tokens": [
+        "Yes",
+        "We",
+        "can",
+        "fix",
+        "it",
+        "together"
+      ],
+      "words": [
+        "word-yes",
+        "word-we",
+        "word-can",
+        "word-fix",
+        "word-it",
+        "word-together"
+      ],
+      "phrases": [
+        {
+          "start": 3,
+          "end": 5,
+          "text": "fix it together",
+          "entry": "phrase-fix-it-together"
+        }
+      ]
+    },
+    "11": {
+      "speaker": "Noah",
+      "text": "I will tell the truth next time.",
+      "translation": "Lần sau con sẽ nói thật.",
+      "tokens": [
+        "I",
+        "will",
+        "tell",
+        "the",
+        "truth",
+        "next",
+        "time"
+      ],
+      "words": [
+        "word-i",
+        "word-will",
+        "word-tell",
+        "word-the",
+        "word-truth",
+        "word-next",
+        "word-time"
+      ],
+      "phrases": [
+        {
+          "start": 5,
+          "end": 6,
+          "text": "next time",
+          "entry": "phrase-next-time"
+        }
+      ]
+    },
+    "12": {
+      "speaker": "Mom",
+      "text": "I'm proud of you, Noah.",
+      "translation": "Mẹ tự hào về con, Noah.",
+      "tokens": [
+        "I'm",
+        "proud",
+        "of",
+        "you",
+        "Noah"
+      ],
+      "words": [
+        "word-im-mom",
+        "word-proud",
+        "word-of",
+        "word-you",
+        "word-noah"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 3,
+          "text": "proud of you",
+          "entry": "phrase-proud-of-you"
+        }
+      ]
+    }
+  }
+}

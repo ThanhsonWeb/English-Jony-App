@@ -1,0 +1,230 @@
+StudyJony contextual glossary authoring — story: a-little-lie/the-heavy-feeling
+
+Codex must author meanings offline after the English draft and Vietnamese translations are final.
+Read every line and its translation. Save a separate glossary.json beside draft.json.
+Use the existing schemaVersion 1 glossary and the prepared glossary-template.json.
+Keep lessonId=a-little-lie, dialogueId=the-heavy-feeling, source line IDs, exact text,
+translation, speaker, tokens, and zero-based word positions unchanged.
+
+Review EVERY word occurrence, not only usefulWords. Write short, natural Vietnamese
+meanings, usually 1–5 words. Never blindly copy a dictionary's first sense.
+Reuse shared entries only when the English word, Vietnamese sense and POS agree;
+split references for repeated words with different senses or grammatical roles.
+Each word entry has word (lowercase English token), meaning and pos (array).
+Optional pron is an IPA array: use trustworthy surface-form IPA, never a lemma's
+IPA for an inflected word or one word's IPA for a whole phrase. Omit unknown IPA.
+Keep useful grammar explanations in optional note fields, hidden in the popup.
+Use a short grammar label when there is no direct Vietnamese translation.
+Identify names as proper names. Do not translate character names as ordinary words.
+
+Preserve individual word entries even inside expressions. Add useful phrase entries
+with pos:["phrase"] and inclusive spans {start,end,text,entry}. Phrase text must
+exactly match the source span, contain at least two words, and never cross punctuation.
+Review usefulWords as candidates; do not force every adjacent word into a phrase.
+Each line has words (entry IDs in token order) and phrases (span array).
+Each character has meaning (name), role and optional note.
+
+Use the English sentence AND its existing Vietnamese translation to select senses.
+Check natural Vietnamese, phrase boundaries, individual meanings, POS and IPA.
+Flag uncertain senses in optional notes for human review; validation is not proof
+of translation accuracy. Never modify an approved glossary automatically.
+No runtime translation API, build-time translation API or dictionary-based meaning generator.
+
+After authoring, run:
+npm run glossary:check -- a-little-lie the-heavy-feeling
+Then the existing dialogue:build command validates again before any promotion.
+
+Final source (all lines and useful expressions):
+{
+  "metadata": {
+    "courseId": "a-little-lie",
+    "dialogueId": "the-heavy-feeling",
+    "contextualGlossaryVersion": 1,
+    "title": "Cảm giác day dứt",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Lời nói dối nhỏ",
+        "en": "A Little Lie"
+      },
+      "courseDescription": {
+        "vi": "Một cậu bé học được rằng nói sự thật và nhận lỗi quan trọng hơn việc che giấu sai lầm.",
+        "en": "A boy learns that telling the truth and admitting mistakes is more important than hiding them."
+      },
+      "title": {
+        "vi": "Cảm giác day dứt",
+        "en": "The Heavy Feeling"
+      },
+      "description": {
+        "vi": "Noah cảm thấy day dứt khi thấy mẹ lo lắng. Cậu muốn nói ra sự thật.",
+        "en": "Noah feels bad when he sees his mom worrying. He wants to tell her the truth."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Noah cảm thấy day dứt khi thấy mẹ lo lắng. Cậu muốn nói ra sự thật.",
+    "scene": "/stories/a-little-lie/the-heavy-feeling/bg.png",
+    "thumbnail": "/stories/a-little-lie/thumbnails/the-heavy-feeling.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Mom",
+      "text": "I need to fix the window.",
+      "translation": "Mẹ cần sửa cửa sổ.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/the-heavy-feeling/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-heavy-feeling/audio/mom-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Mom",
+      "text": "But I still don't know what happened.",
+      "translation": "Nhưng mẹ vẫn không biết chuyện gì đã xảy ra.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/the-heavy-feeling/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-heavy-feeling/audio/mom-02.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Noah",
+      "text": "You look worried, Mom.",
+      "translation": "Trông mẹ có vẻ lo lắng.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/the-heavy-feeling/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-heavy-feeling/audio/noah-01.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Mom",
+      "text": "Yes. I want to fix it soon.",
+      "translation": "Ừ. Mẹ muốn sửa nó sớm.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/the-heavy-feeling/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-heavy-feeling/audio/mom-03.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Noah",
+      "text": "I feel bad about the window.",
+      "translation": "Con cảm thấy áy náy về chuyện cửa sổ.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/the-heavy-feeling/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-heavy-feeling/audio/noah-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Mom",
+      "text": "What do you mean?",
+      "translation": "Ý con là sao?",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/the-heavy-feeling/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-heavy-feeling/audio/mom-04.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Noah",
+      "text": "I did not tell you the truth.",
+      "translation": "Con đã không nói thật với mẹ.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-little-lie/the-heavy-feeling/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-heavy-feeling/audio/noah-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Mom",
+      "text": "Take your time, Noah.",
+      "translation": "Cứ từ từ thôi, Noah.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/the-heavy-feeling/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-heavy-feeling/audio/mom-05.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Noah",
+      "text": "I was scared, so I said no.",
+      "translation": "Con đã sợ, nên con nói không.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/the-heavy-feeling/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-heavy-feeling/audio/noah-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Mom",
+      "text": "Everyone makes mistakes.",
+      "translation": "Ai cũng có lúc mắc lỗi.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/the-heavy-feeling/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-heavy-feeling/audio/mom-06.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Noah",
+      "text": "I want to tell you everything.",
+      "translation": "Con muốn kể hết mọi chuyện cho mẹ.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-little-lie/the-heavy-feeling/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-heavy-feeling/audio/noah-05.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Mom",
+      "text": "I'm listening, Noah.",
+      "translation": "Mẹ đang nghe đây, Noah.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/the-heavy-feeling/bg.png",
+      "audioUrl": "/stories/a-little-lie/the-heavy-feeling/audio/mom-07.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "fix the window",
+      "pronunciation": "/fɪks ðə ˈwɪn.doʊ/",
+      "meaning": "sửa cửa sổ",
+      "example": "Dad can fix the window."
+    },
+    {
+      "word": "look worried",
+      "pronunciation": "/lʊk ˈwɝː.id/",
+      "meaning": "trông có vẻ lo lắng",
+      "example": "You look worried today."
+    },
+    {
+      "word": "feel bad",
+      "pronunciation": "/fiːl bæd/",
+      "meaning": "cảm thấy buồn, áy náy",
+      "example": "I feel bad about my mistake."
+    },
+    {
+      "word": "tell you the truth",
+      "pronunciation": "/tel ju ðə truːθ/",
+      "meaning": "nói sự thật với bạn",
+      "example": "I want to tell you the truth."
+    },
+    {
+      "word": "take your time",
+      "pronunciation": "/teɪk jʊr taɪm/",
+      "meaning": "cứ từ từ, không cần vội",
+      "example": "Take your time. I can wait."
+    },
+    {
+      "word": "scared",
+      "pronunciation": "/skerd/",
+      "meaning": "sợ hãi",
+      "example": "I'm scared of big dogs."
+    },
+    {
+      "word": "makes mistakes",
+      "pronunciation": "/meɪks mɪˈsteɪks/",
+      "meaning": "mắc lỗi, phạm sai lầm",
+      "example": "My brother makes mistakes too."
+    },
+    {
+      "word": "I'm listening",
+      "pronunciation": "/aɪm ˈlɪs.ən.ɪŋ/",
+      "meaning": "tôi đang lắng nghe",
+      "example": "Please talk. I'm listening."
+    }
+  ]
+}

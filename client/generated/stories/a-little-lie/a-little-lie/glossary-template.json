@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "a-little-lie",
+  "dialogueId": "a-little-lie",
+  "characters": {
+    "Mom": {
+      "meaning": "Mom",
+      "role": ""
+    },
+    "Noah": {
+      "meaning": "Noah",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-noah": {
+      "word": "noah",
+      "meaning": "",
+      "pos": []
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "",
+      "pos": []
+    },
+    "word-window": {
+      "word": "window",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-broken": {
+      "word": "broken",
+      "meaning": "",
+      "pos": []
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-know": {
+      "word": "know",
+      "meaning": "",
+      "pos": []
+    },
+    "word-what": {
+      "word": "what",
+      "meaning": "",
+      "pos": []
+    },
+    "word-happened": {
+      "word": "happened",
+      "meaning": "",
+      "pos": []
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "",
+      "pos": []
+    },
+    "word-mom": {
+      "word": "mom",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-don't": {
+      "word": "don't",
+      "meaning": "",
+      "pos": []
+    },
+    "word-but": {
+      "word": "but",
+      "meaning": "",
+      "pos": []
+    },
+    "word-said": {
+      "word": "said",
+      "meaning": "",
+      "pos": []
+    },
+    "word-made": {
+      "word": "made",
+      "meaning": "",
+      "pos": []
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "",
+      "pos": []
+    },
+    "word-mistake": {
+      "word": "mistake",
+      "meaning": "",
+      "pos": []
+    },
+    "word-was": {
+      "word": "was",
+      "meaning": "",
+      "pos": []
+    },
+    "word-talking": {
+      "word": "talking",
+      "meaning": "",
+      "pos": []
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "",
+      "pos": []
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "",
+      "pos": []
+    },
+    "word-game": {
+      "word": "game",
+      "meaning": "",
+      "pos": []
+    },
+    "word-did": {
+      "word": "did",
+      "meaning": "",
+      "pos": []
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "",
+      "pos": []
+    },
+    "word-ball": {
+      "word": "ball",
+      "meaning": "",
+      "pos": []
+    },
+    "word-hit": {
+      "word": "hit",
+      "meaning": "",
+      "pos": []
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "",
+      "pos": []
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "",
+      "pos": []
+    },
+    "word-just": {
+      "word": "just",
+      "meaning": "",
+      "pos": []
+    },
+    "word-playing": {
+      "word": "playing",
+      "meaning": "",
+      "pos": []
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "",
+      "pos": []
+    },
+    "word-telling": {
+      "word": "telling",
+      "meaning": "",
+      "pos": []
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "",
+      "pos": []
+    },
+    "word-truth": {
+      "word": "truth",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "",
+      "pos": []
+    },
+    "word-sure": {
+      "word": "sure",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "",
+      "pos": []
+    },
+    "word-tell": {
+      "word": "tell",
+      "meaning": "",
+      "pos": []
+    },
+    "word-if": {
+      "word": "if",
+      "meaning": "",
+      "pos": []
+    },
+    "word-something": {
+      "word": "something",
+      "meaning": "",
+      "pos": []
+    },
+    "word-wrong": {
+      "word": "wrong",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "",
+      "pos": []
+    },
+    "word-scared": {
+      "word": "scared",
+      "meaning": "",
+      "pos": []
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "",
+      "pos": []
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "",
+      "pos": []
+    },
+    "word-talk": {
+      "word": "talk",
+      "meaning": "",
+      "pos": []
+    },
+    "word-later": {
+      "word": "later",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Mom",
+      "text": "Noah, the window is broken.",
+      "translation": "Noah, cửa sổ bị vỡ rồi.",
+      "tokens": [
+        "Noah",
+        "the",
+        "window",
+        "is",
+        "broken"
+      ],
+      "words": [
+        "word-noah",
+        "word-the",
+        "word-window",
+        "word-is",
+        "word-broken"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Mom",
+      "text": "Do you know what happened?",
+      "translation": "Con có biết chuyện gì đã xảy ra không?",
+      "tokens": [
+        "Do",
+        "you",
+        "know",
+        "what",
+        "happened"
+      ],
+      "words": [
+        "word-do",
+        "word-you",
+        "word-know",
+        "word-what",
+        "word-happened"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Noah",
+      "text": "No, Mom. I don't know what happened.",
+      "translation": "Không, mẹ ạ. Con không biết chuyện gì đã xảy ra.",
+      "tokens": [
+        "No",
+        "Mom",
+        "I",
+        "don't",
+        "know",
+        "what",
+        "happened"
+      ],
+      "words": [
+        "word-no",
+        "word-mom",
+        "word-i",
+        "word-don't",
+        "word-know",
+        "word-what",
+        "word-happened"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Mom",
+      "text": "But you said you made a mistake.",
+      "translation": "Nhưng con đã nói là con mắc lỗi mà.",
+      "tokens": [
+        "But",
+        "you",
+        "said",
+        "you",
+        "made",
+        "a",
+        "mistake"
+      ],
+      "words": [
+        "word-but",
+        "word-you",
+        "word-said",
+        "word-you",
+        "word-made",
+        "word-a",
+        "word-mistake"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Noah",
+      "text": "I was talking about my game.",
+      "translation": "Con đang nói về trò chơi của con thôi.",
+      "tokens": [
+        "I",
+        "was",
+        "talking",
+        "about",
+        "my",
+        "game"
+      ],
+      "words": [
+        "word-i",
+        "word-was",
+        "word-talking",
+        "word-about",
+        "word-my",
+        "word-game"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Mom",
+      "text": "Did your ball hit the window?",
+      "translation": "Quả bóng của con có đập vào cửa sổ không?",
+      "tokens": [
+        "Did",
+        "your",
+        "ball",
+        "hit",
+        "the",
+        "window"
+      ],
+      "words": [
+        "word-did",
+        "word-your",
+        "word-ball",
+        "word-hit",
+        "word-the",
+        "word-window"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Noah",
+      "text": "No, it did not. I was just playing.",
+      "translation": "Không ạ, không có đâu. Con chỉ đang chơi thôi.",
+      "tokens": [
+        "No",
+        "it",
+        "did",
+        "not",
+        "I",
+        "was",
+        "just",
+        "playing"
+      ],
+      "words": [
+        "word-no",
+        "word-it",
+        "word-did",
+        "word-not",
+        "word-i",
+        "word-was",
+        "word-just",
+        "word-playing"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Mom",
+      "text": "Are you telling me the truth?",
+      "translation": "Con có đang nói thật với mẹ không?",
+      "tokens": [
+        "Are",
+        "you",
+        "telling",
+        "me",
+        "the",
+        "truth"
+      ],
+      "words": [
+        "word-are",
+        "word-you",
+        "word-telling",
+        "word-me",
+        "word-the",
+        "word-truth"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Noah",
+      "text": "Yes, Mom. I am sure.",
+      "translation": "Có ạ, mẹ. Con chắc chắn.",
+      "tokens": [
+        "Yes",
+        "Mom",
+        "I",
+        "am",
+        "sure"
+      ],
+      "words": [
+        "word-yes",
+        "word-mom",
+        "word-i",
+        "word-am",
+        "word-sure"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Mom",
+      "text": "You can tell me if something is wrong.",
+      "translation": "Con có thể nói với mẹ nếu có chuyện gì không ổn.",
+      "tokens": [
+        "You",
+        "can",
+        "tell",
+        "me",
+        "if",
+        "something",
+        "is",
+        "wrong"
+      ],
+      "words": [
+        "word-you",
+        "word-can",
+        "word-tell",
+        "word-me",
+        "word-if",
+        "word-something",
+        "word-is",
+        "word-wrong"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Noah",
+      "text": "I know, Mom. I'm just scared.",
+      "translation": "Con biết, mẹ ạ. Con chỉ sợ thôi.",
+      "tokens": [
+        "I",
+        "know",
+        "Mom",
+        "I'm",
+        "just",
+        "scared"
+      ],
+      "words": [
+        "word-i",
+        "word-know",
+        "word-mom",
+        "word-i'm",
+        "word-just",
+        "word-scared"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Mom",
+      "text": "Okay. We can talk later.",
+      "translation": "Được rồi. Mẹ con mình có thể nói chuyện sau.",
+      "tokens": [
+        "Okay",
+        "We",
+        "can",
+        "talk",
+        "later"
+      ],
+      "words": [
+        "word-okay",
+        "word-we",
+        "word-can",
+        "word-talk",
+        "word-later"
+      ],
+      "phrases": []
+    }
+  }
+}

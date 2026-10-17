@@ -41,6 +41,7 @@ const courseImages = {
 	"ten-minutes-a-day": "/stories/ten-minutes-a-day/thumbnails/ten-minutes-a-day.webp",
 	"grateful": "/stories/grateful/thumbnails/grateful.webp",
 	"a-small-surprise": "/stories/a-small-surprise/thumbnails/a-small-surprise.webp",
+	"a-little-lie": "/stories/a-little-lie/thumbnails/the-broken-window.png",
 	"naruto-season-1": "/stories/naruto-season-1/thumbnails/naruto-season-1.webp",
 };
 

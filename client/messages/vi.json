@@ -564,7 +564,8 @@
 			"completionTitle": "Hoàn thành!",
 			"completion": "Bạn đã hoàn thành {count} câu hỏi Trắc nghiệm.",
 			"notEnoughTitle": "Chưa đủ từ để tạo câu hỏi",
-			"notEnoughMessage": "Bạn cần ít nhất 4 nghĩa tiếng Việt khác nhau trong sổ tay để dùng chế độ Trắc nghiệm.",
+			"notEnoughMessage": "Trắc nghiệm cần ít nhất 4 nghĩa tiếng Việt khác nhau. Bạn có thể ôn các từ này bằng Thẻ ghi nhớ.",
+			"flashcardAction": "Ôn bằng Thẻ ghi nhớ",
 			"choiceLoadError": "Không thể tải từ để tạo đáp án.",
 			"continueHint": "Enter để tiếp tục",
 			"chooseHint": "Phím 1–4 để chọn · Enter để kiểm tra"

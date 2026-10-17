@@ -1,6 +1,1206 @@
 [
 	{
 		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"broken"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"game"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"11"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ball"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"window"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"not"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"playing"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"telling"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"truth"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sure"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"know"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"20"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tell"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"wrong"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"23"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"scared"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"talk"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"later"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"27"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"broken",
+			"happened",
+			"know",
+			"mistake",
+			"talking",
+			"hit",
+			"not",
+			"truth",
+			"sure",
+			"tell",
+			"scared",
+			"later"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"happened"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"know"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"happened"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"6"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"said"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"mistake"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"a-little-lie",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"talking"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"broke"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"10"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"worried"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"still"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"angry"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sad"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"15"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"truth"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"important"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"window"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"window"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"20"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"fix"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"together"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"truth"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"next time"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"proud"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"26"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"27"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"broke",
+			"hit",
+			"scared",
+			"truth",
+			"worried",
+			"angry",
+			"sad",
+			"important",
+			"help",
+			"together",
+			"next time",
+			"proud"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ball"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"sorry"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"5"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"scared"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"lied"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"telling-the-truth",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"truth"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"broken"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"okay"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"okay"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"scared"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Why"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"made"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"mistake"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"16"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"happened"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"don't want"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"angry"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"ball"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tell"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"truth"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"22"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"minute"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"24"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"25"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"broken",
+			"ball",
+			"angry",
+			"noise",
+			"outside",
+			"okay",
+			"scared",
+			"Why",
+			"mistake",
+			"happened",
+			"don't want",
+			"truth",
+			"minute"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"hit"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"angry"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"5"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"what"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"noise"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"outside"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-broken-window",
+			"9"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"fix"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"window"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"11"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"mean"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"tell"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"truth"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"15"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"16"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"time"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"scared"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"said"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"19"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Everyone"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"know"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"mistakes"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"21"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"want"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"everything"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"24"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"25"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"listening"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"26"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"fix",
+			"know",
+			"worried",
+			"soon",
+			"feel bad",
+			"mean",
+			"truth",
+			"time",
+			"scared",
+			"mistakes",
+			"everything",
+			"listening"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"happened"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"4"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"look"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"worried"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"fix"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"soon"
+		]
+	},
+	{
+		"ids": [
+			"a-little-lie",
+			"the-heavy-feeling",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"feel bad"
+		]
+	},
+	{
+		"ids": [
 			"a-small-surprise",
 			"a-secret-plan",
 			"1"

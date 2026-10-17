@@ -1,0 +1,1191 @@
+{
+  "metadata": {
+    "courseId": "a-little-lie",
+    "dialogueId": "a-little-lie",
+    "contextualGlossaryVersion": 1,
+    "title": "Lời nói dối nhỏ",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Lời nói dối nhỏ",
+        "en": "A Little Lie"
+      },
+      "courseDescription": {
+        "vi": "Một cậu bé học được rằng nói sự thật và nhận lỗi quan trọng hơn việc che giấu sai lầm.",
+        "en": "A boy learns that telling the truth and admitting mistakes is more important than hiding them."
+      },
+      "title": {
+        "vi": "Lời nói dối nhỏ",
+        "en": "A Little Lie"
+      },
+      "description": {
+        "vi": "Mẹ hỏi về cửa sổ bị vỡ. Vì sợ bị mắng, Noah nói dối rằng mình không biết.",
+        "en": "Mom asks about the broken window. Afraid of getting in trouble, Noah lies and says he does not know what happened."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Mẹ hỏi về cửa sổ bị vỡ. Vì sợ bị mắng, Noah nói dối rằng mình không biết.",
+    "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+    "thumbnail": "/stories/a-little-lie/thumbnails/a-little-lie.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Mom",
+      "text": "Noah, the window is broken.",
+      "translation": "Noah, cửa sổ bị vỡ rồi.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Mom",
+      "text": "Do you know what happened?",
+      "translation": "Con có biết chuyện gì đã xảy ra không?",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-02.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Noah",
+      "text": "No, Mom. I don't know what happened.",
+      "translation": "Không, mẹ ạ. Con không biết chuyện gì đã xảy ra.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-01.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Mom",
+      "text": "But you said you made a mistake.",
+      "translation": "Nhưng con đã nói là con mắc lỗi mà.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-03.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Noah",
+      "text": "I was talking about my game.",
+      "translation": "Con đang nói về trò chơi của con thôi.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Mom",
+      "text": "Did your ball hit the window?",
+      "translation": "Quả bóng của con có đập vào cửa sổ không?",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-04.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Noah",
+      "text": "No, it did not. I was just playing.",
+      "translation": "Không ạ, không có đâu. Con chỉ đang chơi thôi.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Mom",
+      "text": "Are you telling me the truth?",
+      "translation": "Con có đang nói thật với mẹ không?",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-05.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Noah",
+      "text": "Yes, Mom. I am sure.",
+      "translation": "Có ạ, mẹ. Con chắc chắn.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Mom",
+      "text": "You can tell me if something is wrong.",
+      "translation": "Con có thể nói với mẹ nếu có chuyện gì không ổn.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-06.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Noah",
+      "text": "I know, Mom. I'm just scared.",
+      "translation": "Con biết, mẹ ạ. Con chỉ sợ thôi.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-05.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Mom",
+      "text": "Okay. We can talk later.",
+      "translation": "Được rồi. Mẹ con mình có thể nói chuyện sau.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-07.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "broken",
+      "pronunciation": "/ˈbroʊ.kən/",
+      "meaning": "bị vỡ, bị hỏng",
+      "example": "My phone is broken."
+    },
+    {
+      "word": "what happened",
+      "pronunciation": "/wʌt ˈhæp.ənd/",
+      "meaning": "chuyện gì đã xảy ra",
+      "example": "What happened at school?"
+    },
+    {
+      "word": "I don't know",
+      "pronunciation": "/aɪ doʊnt noʊ/",
+      "meaning": "tôi không biết",
+      "example": "I don't know the answer."
+    },
+    {
+      "word": "made a mistake",
+      "pronunciation": "/meɪd ə mɪˈsteɪk/",
+      "meaning": "đã mắc lỗi",
+      "example": "I made a mistake at school."
+    },
+    {
+      "word": "talking about",
+      "pronunciation": "/ˈtɔː.kɪŋ əˈbaʊt/",
+      "meaning": "đang nói về",
+      "example": "I'm talking about my friend."
+    },
+    {
+      "word": "hit",
+      "pronunciation": "/hɪt/",
+      "meaning": "đập vào, va vào",
+      "example": "The ball hit the door."
+    },
+    {
+      "word": "the truth",
+      "pronunciation": "/ðə truːθ/",
+      "meaning": "sự thật",
+      "example": "Please tell me the truth."
+    },
+    {
+      "word": "sure",
+      "pronunciation": "/ʃʊr/",
+      "meaning": "chắc chắn",
+      "example": "Are you sure?"
+    },
+    {
+      "word": "talk later",
+      "pronunciation": "/tɔːk ˈleɪ.tər/",
+      "meaning": "nói chuyện sau",
+      "example": "We can talk later."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Noah, the window is ",
+        "."
+      ],
+      "answers": [
+        "broken"
+      ],
+      "speaker": "Mom",
+      "transcript": "Noah, the window is broken.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Do you ",
+        " what happened?"
+      ],
+      "answers": [
+        "know"
+      ],
+      "speaker": "Mom",
+      "transcript": "Do you know what happened?",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-02.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Do you know what ",
+        "?"
+      ],
+      "answers": [
+        "happened"
+      ],
+      "speaker": "Mom",
+      "transcript": "Do you know what happened?",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-02.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "No, Mom. I don't ",
+        " what happened."
+      ],
+      "answers": [
+        "know"
+      ],
+      "speaker": "Noah",
+      "transcript": "No, Mom. I don't know what happened.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-01.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "No, Mom. I don't know what ",
+        "."
+      ],
+      "answers": [
+        "happened"
+      ],
+      "speaker": "Noah",
+      "transcript": "No, Mom. I don't know what happened.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-01.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Vì sao Noah nói mình không biết chuyện gì xảy ra?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Vì sao Noah nói mình không biết chuyện gì xảy ra?",
+          "en": "Why does Noah say he does not know what happened?"
+        },
+        "options": [
+          {
+            "vi": "Vì cậu không nhìn thấy cửa sổ.",
+            "en": "Because he did not see the window."
+          },
+          {
+            "vi": "Vì cậu không nhớ mình đã chơi ở đâu.",
+            "en": "Because he does not remember where he played."
+          },
+          {
+            "vi": "Vì cậu nghĩ quả bóng không liên quan.",
+            "en": "Because he thinks the ball was not involved."
+          },
+          {
+            "vi": "Vì cậu sợ mẹ giận nên giấu sự thật.",
+            "en": "Because he is afraid Mom will be angry, so he hides the truth."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì cậu không nhìn thấy cửa sổ.",
+        "Vì cậu không nhớ mình đã chơi ở đâu.",
+        "Vì cậu nghĩ quả bóng không liên quan.",
+        "Vì cậu sợ mẹ giận nên giấu sự thật."
+      ],
+      "answer": "Vì cậu sợ mẹ giận nên giấu sự thật.",
+      "speaker": "Noah",
+      "transcript": "No, Mom. I don't know what happened.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-01.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "But you ",
+        " you made a mistake."
+      ],
+      "answers": [
+        "said"
+      ],
+      "speaker": "Mom",
+      "transcript": "But you said you made a mistake.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-03.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "But you said you made a ",
+        "."
+      ],
+      "answers": [
+        "mistake"
+      ],
+      "speaker": "Mom",
+      "transcript": "But you said you made a mistake.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-03.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I was ",
+        " about my game."
+      ],
+      "answers": [
+        "talking"
+      ],
+      "speaker": "Noah",
+      "transcript": "I was talking about my game.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I was talking about my ",
+        "."
+      ],
+      "answers": [
+        "game"
+      ],
+      "speaker": "Noah",
+      "transcript": "I was talking about my game.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-02.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "multipleChoice",
+      "question": "Noah giải thích câu “con đã mắc lỗi” trước đó như thế nào?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Noah giải thích câu “con đã mắc lỗi” trước đó như thế nào?",
+          "en": "How does Noah explain what he meant when he said he made a mistake?"
+        },
+        "options": [
+          {
+            "vi": "Cậu nói mình đang nhắc đến trò chơi.",
+            "en": "He says he was talking about his game."
+          },
+          {
+            "vi": "Cậu nói mình làm mất quả bóng.",
+            "en": "He says he lost his ball."
+          },
+          {
+            "vi": "Cậu nói mình làm vỡ cửa sổ.",
+            "en": "He says he broke the window."
+          },
+          {
+            "vi": "Cậu nói mình quên đóng cửa.",
+            "en": "He says he forgot to close the door."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Cậu nói mình đang nhắc đến trò chơi.",
+        "Cậu nói mình làm mất quả bóng.",
+        "Cậu nói mình làm vỡ cửa sổ.",
+        "Cậu nói mình quên đóng cửa."
+      ],
+      "answer": "Cậu nói mình đang nhắc đến trò chơi.",
+      "speaker": "Noah",
+      "transcript": "I was talking about my game.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-02.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Did your ",
+        " hit the window?"
+      ],
+      "answers": [
+        "ball"
+      ],
+      "speaker": "Mom",
+      "transcript": "Did your ball hit the window?",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-04.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Did your ball hit the ",
+        "?"
+      ],
+      "answers": [
+        "window"
+      ],
+      "speaker": "Mom",
+      "transcript": "Did your ball hit the window?",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-04.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Từ “Did” giúp mẹ hỏi về điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra cách dùng",
+          "en": "Check language usage"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Từ “Did” giúp mẹ hỏi về điều gì?",
+          "en": "What does “Did” help Mom ask about?"
+        },
+        "options": [
+          {
+            "vi": "Điều Noah muốn làm vào ngày mai.",
+            "en": "What Noah wants to do tomorrow."
+          },
+          {
+            "vi": "Điều Noah thường làm mỗi ngày.",
+            "en": "What Noah usually does every day."
+          },
+          {
+            "vi": "Một việc có xảy ra trước đó hay không.",
+            "en": "Whether something happened earlier."
+          },
+          {
+            "vi": "Điều Noah đang định làm ngay bây giờ.",
+            "en": "What Noah plans to do right now."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "Did",
+      "options": [
+        "Điều Noah muốn làm vào ngày mai.",
+        "Điều Noah thường làm mỗi ngày.",
+        "Một việc có xảy ra trước đó hay không.",
+        "Điều Noah đang định làm ngay bây giờ."
+      ],
+      "answer": "Một việc có xảy ra trước đó hay không.",
+      "speaker": "Mom",
+      "transcript": "Did your ball hit the window?",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-04.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "No, it did ",
+        ". I was just playing."
+      ],
+      "answers": [
+        "not"
+      ],
+      "speaker": "Noah",
+      "transcript": "No, it did not. I was just playing.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-03.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "No, it did not. I was just ",
+        "."
+      ],
+      "answers": [
+        "playing"
+      ],
+      "speaker": "Noah",
+      "transcript": "No, it did not. I was just playing.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-03.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Are you ",
+        " me the truth?"
+      ],
+      "answers": [
+        "telling"
+      ],
+      "speaker": "Mom",
+      "transcript": "Are you telling me the truth?",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-05.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Are you telling me the ",
+        "?"
+      ],
+      "answers": [
+        "truth"
+      ],
+      "speaker": "Mom",
+      "transcript": "Are you telling me the truth?",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-05.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes, Mom. I am ",
+        "."
+      ],
+      "answers": [
+        "sure"
+      ],
+      "speaker": "Noah",
+      "transcript": "Yes, Mom. I am sure.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-04.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Noah đang làm gì khi nói mình chắc chắn?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Noah đang làm gì khi nói mình chắc chắn?",
+          "en": "What is Noah doing when he says he is sure?"
+        },
+        "options": [
+          {
+            "vi": "Thừa nhận mình đã làm vỡ cửa sổ.",
+            "en": "Admitting that he broke the window."
+          },
+          {
+            "vi": "Tiếp tục che giấu chuyện đã xảy ra.",
+            "en": "Continuing to hide what happened."
+          },
+          {
+            "vi": "Nhờ mẹ giúp sửa cửa sổ.",
+            "en": "Asking Mom to help fix the window."
+          },
+          {
+            "vi": "Hỏi mẹ có tin mình không.",
+            "en": "Asking Mom if she believes him."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Thừa nhận mình đã làm vỡ cửa sổ.",
+        "Tiếp tục che giấu chuyện đã xảy ra.",
+        "Nhờ mẹ giúp sửa cửa sổ.",
+        "Hỏi mẹ có tin mình không."
+      ],
+      "answer": "Tiếp tục che giấu chuyện đã xảy ra.",
+      "speaker": "Noah",
+      "transcript": "Yes, Mom. I am sure.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-04.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "You can ",
+        " me if something is wrong."
+      ],
+      "answers": [
+        "tell"
+      ],
+      "speaker": "Mom",
+      "transcript": "You can tell me if something is wrong.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-06.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "You can tell me if something is ",
+        "."
+      ],
+      "answers": [
+        "wrong"
+      ],
+      "speaker": "Mom",
+      "transcript": "You can tell me if something is wrong.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-06.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Cách nói “You can” của mẹ giúp Noah cảm thấy thế nào?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra cách dùng",
+          "en": "Check language usage"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Cách nói “You can” của mẹ giúp Noah cảm thấy thế nào?",
+          "en": "How does Mom's use of “You can” help Noah feel?"
+        },
+        "options": [
+          {
+            "vi": "Cậu có thể thoải mái chia sẻ với mẹ.",
+            "en": "He can feel comfortable sharing with Mom."
+          },
+          {
+            "vi": "Cậu phải trả lời ngay lập tức.",
+            "en": "He must answer immediately."
+          },
+          {
+            "vi": "Mẹ không muốn nghe chuyện của cậu.",
+            "en": "Mom does not want to hear his story."
+          },
+          {
+            "vi": "Mẹ yêu cầu cậu tự sửa cửa sổ.",
+            "en": "Mom is telling him to fix the window himself."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "You can",
+      "options": [
+        "Cậu có thể thoải mái chia sẻ với mẹ.",
+        "Cậu phải trả lời ngay lập tức.",
+        "Mẹ không muốn nghe chuyện của cậu.",
+        "Mẹ yêu cầu cậu tự sửa cửa sổ."
+      ],
+      "answer": "Cậu có thể thoải mái chia sẻ với mẹ.",
+      "speaker": "Mom",
+      "transcript": "You can tell me if something is wrong.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-06.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I know, Mom. I'm just ",
+        "."
+      ],
+      "answers": [
+        "scared"
+      ],
+      "speaker": "Noah",
+      "transcript": "I know, Mom. I'm just scared.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/noah-05.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Okay. We can ",
+        " later."
+      ],
+      "answers": [
+        "talk"
+      ],
+      "speaker": "Mom",
+      "transcript": "Okay. We can talk later.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-07.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Okay. We can talk ",
+        "."
+      ],
+      "answers": [
+        "later"
+      ],
+      "speaker": "Mom",
+      "transcript": "Okay. We can talk later.",
+      "scene": "/stories/a-little-lie/a-little-lie/bg.png",
+      "audioUrl": "/stories/a-little-lie/a-little-lie/audio/mom-07.mp3"
+    },
+    {
+      "id": 27,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập hội thoại",
+          "en": "Dialogue review"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu để hoàn thành toàn bộ hội thoại.",
+          "en": "Fill in the missing words to complete the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Mom",
+          "parts": [
+            "Noah, the window is ",
+            {
+              "id": "1",
+              "blank": "broken"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Mom",
+          "parts": [
+            "Do you know what ",
+            {
+              "id": "2",
+              "blank": "happened"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Noah",
+          "parts": [
+            "No, Mom. I don't ",
+            {
+              "id": "3",
+              "blank": "know"
+            },
+            " what happened."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Mom",
+          "parts": [
+            "But you said you made a ",
+            {
+              "id": "4",
+              "blank": "mistake"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Noah",
+          "parts": [
+            "I was ",
+            {
+              "id": "5",
+              "blank": "talking"
+            },
+            " about my game."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Mom",
+          "parts": [
+            "Did your ball ",
+            {
+              "id": "6",
+              "blank": "hit"
+            },
+            " the window?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Noah",
+          "parts": [
+            "No, it did ",
+            {
+              "id": "7",
+              "blank": "not"
+            },
+            ". I was just playing."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Mom",
+          "parts": [
+            "Are you telling me the ",
+            {
+              "id": "8",
+              "blank": "truth"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Noah",
+          "parts": [
+            "Yes, Mom. I am ",
+            {
+              "id": "9",
+              "blank": "sure"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Mom",
+          "parts": [
+            "You can ",
+            {
+              "id": "10",
+              "blank": "tell"
+            },
+            " me if something is wrong."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Noah",
+          "parts": [
+            "I know, Mom. I'm just ",
+            {
+              "id": "11",
+              "blank": "scared"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Mom",
+          "parts": [
+            "Okay. We can talk ",
+            {
+              "id": "12",
+              "blank": "later"
+            },
+            "."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Did – hỏi về việc đã xảy ra",
+      "explanation": "Dùng Did + chủ ngữ + động từ nguyên mẫu để hỏi một việc có xảy ra trong quá khứ không. Ví dụ: “Did your ball hit the window?” nghĩa là mẹ muốn biết quả bóng có đập vào cửa sổ trước đó không.",
+      "localized": {
+        "title": {
+          "vi": "Did – hỏi về việc đã xảy ra",
+          "en": "Did – asking about the past"
+        },
+        "explanation": {
+          "vi": "Dùng Did + chủ ngữ + động từ nguyên mẫu để hỏi một việc có xảy ra trong quá khứ không. Ví dụ: “Did your ball hit the window?” nghĩa là mẹ muốn biết quả bóng có đập vào cửa sổ trước đó không.",
+          "en": "Use Did + subject + base verb to ask whether something happened in the past. For example, “Did your ball hit the window?” asks if the ball hit the window earlier."
+        }
+      },
+      "example": "Did your ball hit the window?"
+    },
+    {
+      "title": "Can – cho phép hoặc khuyến khích",
+      "explanation": "Dùng can + động từ nguyên mẫu để nói ai đó có thể làm điều gì. Trong câu “You can tell me if something is wrong.”, mẹ dùng can để khuyến khích Noah chia sẻ mà không gây áp lực.",
+      "localized": {
+        "title": {
+          "vi": "Can – cho phép hoặc khuyến khích",
+          "en": "Can – giving permission or encouragement"
+        },
+        "explanation": {
+          "vi": "Dùng can + động từ nguyên mẫu để nói ai đó có thể làm điều gì. Trong câu “You can tell me if something is wrong.”, mẹ dùng can để khuyến khích Noah chia sẻ mà không gây áp lực.",
+          "en": "Use can + the base form of a verb to say someone is allowed or able to do something. In “You can tell me if something is wrong,” Mom uses can to encourage Noah to share without pressure."
+        }
+      },
+      "example": "You can tell me if something is wrong."
+    }
+  ]
+}

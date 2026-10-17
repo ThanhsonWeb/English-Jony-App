@@ -1,0 +1,1197 @@
+{
+  "metadata": {
+    "courseId": "a-little-lie",
+    "dialogueId": "telling-the-truth",
+    "contextualGlossaryVersion": 1,
+    "title": "Nói ra sự thật",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Lời nói dối nhỏ",
+        "en": "A Little Lie"
+      },
+      "courseDescription": {
+        "vi": "Một cậu bé học được rằng nói sự thật và nhận lỗi quan trọng hơn việc che giấu sai lầm.",
+        "en": "A boy learns that telling the truth and admitting mistakes is more important than hiding them."
+      },
+      "title": {
+        "vi": "Nói ra sự thật",
+        "en": "Telling the Truth"
+      },
+      "description": {
+        "vi": "Noah thú nhận và xin lỗi mẹ. Cậu hiểu rằng trung thực quan trọng hơn che giấu sai lầm.",
+        "en": "Noah admits his mistake and apologizes to his mom. He learns that being honest is more important than hiding mistakes."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Noah thú nhận và xin lỗi mẹ. Cậu hiểu rằng trung thực quan trọng hơn che giấu sai lầm.",
+    "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+    "thumbnail": "/stories/a-little-lie/thumbnails/telling-the-truth.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Noah",
+      "text": "Mom, I broke the window.",
+      "translation": "Mẹ ơi, con đã làm vỡ cửa sổ.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Noah",
+      "text": "My ball hit it. I'm very sorry.",
+      "translation": "Quả bóng của con đã đập vào nó. Con thật sự xin lỗi.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-02.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Noah",
+      "text": "I was scared, so I lied.",
+      "translation": "Con đã sợ, nên con nói dối.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-03.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Mom",
+      "text": "Thank you for telling me the truth.",
+      "translation": "Cảm ơn con vì đã nói thật với mẹ.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-01.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Mom",
+      "text": "I was worried about you.",
+      "translation": "Mẹ đã lo lắng cho con.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-02.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Noah",
+      "text": "Are you still angry with me?",
+      "translation": "Mẹ vẫn còn giận con sao?",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-04.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Mom",
+      "text": "I am sad that you lied.",
+      "translation": "Mẹ buồn vì con đã nói dối.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Mom",
+      "text": "But the truth is important.",
+      "translation": "Nhưng sự thật rất quan trọng.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-04.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Noah",
+      "text": "Can I help you with the window?",
+      "translation": "Con có thể giúp mẹ xử lý chuyện cửa sổ không?",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Mom",
+      "text": "Yes. We can fix it together.",
+      "translation": "Được chứ. Mẹ con mình có thể cùng nhau sửa nó.",
+      "practicePriority": "important",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-05.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Noah",
+      "text": "I will tell the truth next time.",
+      "translation": "Lần sau con sẽ nói thật.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Mom",
+      "text": "I'm proud of you, Noah.",
+      "translation": "Mẹ tự hào về con, Noah.",
+      "practicePriority": "simple",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "broke",
+      "pronunciation": "/broʊk/",
+      "meaning": "đã làm vỡ, đã làm hỏng",
+      "example": "I broke my cup."
+    },
+    {
+      "word": "hit",
+      "pronunciation": "/hɪt/",
+      "meaning": "đập vào, va vào",
+      "example": "The ball hit the door."
+    },
+    {
+      "word": "very sorry",
+      "pronunciation": "/ˈvɛri ˈsɑri/",
+      "meaning": "rất xin lỗi",
+      "example": "I'm very sorry, Mom."
+    },
+    {
+      "word": "lied",
+      "pronunciation": "/laɪd/",
+      "meaning": "đã nói dối",
+      "example": "I lied to my dad."
+    },
+    {
+      "word": "tell the truth",
+      "pronunciation": "/tel ðə truːθ/",
+      "meaning": "nói sự thật, nói thật",
+      "example": "Please tell the truth."
+    },
+    {
+      "word": "worried",
+      "pronunciation": "/ˈwɝː.id/",
+      "meaning": "lo lắng",
+      "example": "My mom is worried."
+    },
+    {
+      "word": "angry",
+      "pronunciation": "/ˈæŋ.ɡri/",
+      "meaning": "tức giận, giận dữ",
+      "example": "Are you angry with me?"
+    },
+    {
+      "word": "help",
+      "pronunciation": "/help/",
+      "meaning": "giúp đỡ",
+      "example": "Can I help you?"
+    },
+    {
+      "word": "together",
+      "pronunciation": "/təˈɡeð.ər/",
+      "meaning": "cùng nhau",
+      "example": "We can study together."
+    },
+    {
+      "word": "proud of you",
+      "pronunciation": "/praʊd əv juː/",
+      "meaning": "tự hào về bạn",
+      "example": "I'm proud of you, my son."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Mom, I ",
+        " the window."
+      ],
+      "answers": [
+        "broke"
+      ],
+      "speaker": "Noah",
+      "transcript": "Mom, I broke the window.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Mom, I broke the ",
+        "."
+      ],
+      "answers": [
+        "window"
+      ],
+      "speaker": "Noah",
+      "transcript": "Mom, I broke the window.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "My ",
+        " hit it. I'm very sorry."
+      ],
+      "answers": [
+        "ball"
+      ],
+      "speaker": "Noah",
+      "transcript": "My ball hit it. I'm very sorry.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-02.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "My ball hit it. I'm very ",
+        "."
+      ],
+      "answers": [
+        "sorry"
+      ],
+      "speaker": "Noah",
+      "transcript": "My ball hit it. I'm very sorry.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-02.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 2,
+      "type": "multipleChoice",
+      "question": "Noah đang nhận trách nhiệm về chuyện gì?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Noah đang nhận trách nhiệm về chuyện gì?",
+          "en": "What is Noah taking responsibility for?"
+        },
+        "options": [
+          {
+            "vi": "Cậu đã làm mất quả bóng.",
+            "en": "He lost his ball."
+          },
+          {
+            "vi": "Cậu đã chơi bóng trong nhà.",
+            "en": "He played ball inside the house."
+          },
+          {
+            "vi": "Cậu không giúp mẹ sửa cửa sổ.",
+            "en": "He did not help Mom fix the window."
+          },
+          {
+            "vi": "Quả bóng của cậu đã làm vỡ cửa sổ.",
+            "en": "His ball broke the window."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Cậu đã làm mất quả bóng.",
+        "Cậu đã chơi bóng trong nhà.",
+        "Cậu không giúp mẹ sửa cửa sổ.",
+        "Quả bóng của cậu đã làm vỡ cửa sổ."
+      ],
+      "answer": "Quả bóng của cậu đã làm vỡ cửa sổ.",
+      "speaker": "Noah",
+      "transcript": "My ball hit it. I'm very sorry.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I was ",
+        ", so I lied."
+      ],
+      "answers": [
+        "scared"
+      ],
+      "speaker": "Noah",
+      "transcript": "I was scared, so I lied.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-03.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I was scared, so I ",
+        "."
+      ],
+      "answers": [
+        "lied"
+      ],
+      "speaker": "Noah",
+      "transcript": "I was scared, so I lied.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-03.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền cụm từ còn thiếu.",
+          "en": "Fill in the missing phrase."
+        }
+      },
+      "parts": [
+        "",
+        " for telling me the truth."
+      ],
+      "answers": [
+        "Thank you"
+      ],
+      "speaker": "Mom",
+      "transcript": "Thank you for telling me the truth.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-01.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Thank you for telling me the ",
+        "."
+      ],
+      "answers": [
+        "truth"
+      ],
+      "speaker": "Mom",
+      "transcript": "Thank you for telling me the truth.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-01.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 4,
+      "type": "multipleChoice",
+      "question": "Vì sao mẹ cảm ơn Noah dù cậu đã làm sai?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra cách dùng",
+          "en": "Check language usage"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Vì sao mẹ cảm ơn Noah dù cậu đã làm sai?",
+          "en": "Why does Mom thank Noah even though he made a mistake?"
+        },
+        "options": [
+          {
+            "vi": "Vì cậu đã can đảm nói ra sự thật.",
+            "en": "Because he was brave enough to tell the truth."
+          },
+          {
+            "vi": "Vì cửa sổ đã được sửa xong.",
+            "en": "Because the window has been fixed."
+          },
+          {
+            "vi": "Vì cậu đã hứa không chơi bóng nữa.",
+            "en": "Because he promised not to play ball again."
+          },
+          {
+            "vi": "Vì mẹ nghĩ cậu không làm gì sai.",
+            "en": "Because Mom thinks he did nothing wrong."
+          }
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "Thank you",
+      "options": [
+        "Vì cậu đã can đảm nói ra sự thật.",
+        "Vì cửa sổ đã được sửa xong.",
+        "Vì cậu đã hứa không chơi bóng nữa.",
+        "Vì mẹ nghĩ cậu không làm gì sai."
+      ],
+      "answer": "Vì cậu đã can đảm nói ra sự thật.",
+      "speaker": "Mom",
+      "transcript": "Thank you for telling me the truth.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-01.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I was ",
+        " about you."
+      ],
+      "answers": [
+        "worried"
+      ],
+      "speaker": "Mom",
+      "transcript": "I was worried about you.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-02.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Are you ",
+        " angry with me?"
+      ],
+      "answers": [
+        "still"
+      ],
+      "speaker": "Noah",
+      "transcript": "Are you still angry with me?",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-04.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Are you still ",
+        " with me?"
+      ],
+      "answers": [
+        "angry"
+      ],
+      "speaker": "Noah",
+      "transcript": "Are you still angry with me?",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-04.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I am ",
+        " that you lied."
+      ],
+      "answers": [
+        "sad"
+      ],
+      "speaker": "Mom",
+      "transcript": "I am sad that you lied.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-03.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "question": "Điều gì khiến mẹ buồn nhất trong chuyện này?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Điều gì khiến mẹ buồn nhất trong chuyện này?",
+          "en": "What makes Mom most upset in this situation?"
+        },
+        "options": [
+          {
+            "vi": "Noah không biết sửa cửa sổ.",
+            "en": "Noah does not know how to fix the window."
+          },
+          {
+            "vi": "Noah đã nói dối mẹ.",
+            "en": "Noah lied to Mom."
+          },
+          {
+            "vi": "Noah muốn chơi bóng.",
+            "en": "Noah wants to play ball."
+          },
+          {
+            "vi": "Noah đã nói lời xin lỗi.",
+            "en": "Noah apologized."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Noah không biết sửa cửa sổ.",
+        "Noah đã nói dối mẹ.",
+        "Noah muốn chơi bóng.",
+        "Noah đã nói lời xin lỗi."
+      ],
+      "answer": "Noah đã nói dối mẹ.",
+      "speaker": "Mom",
+      "transcript": "I am sad that you lied.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-03.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "But the ",
+        " is important."
+      ],
+      "answers": [
+        "truth"
+      ],
+      "speaker": "Mom",
+      "transcript": "But the truth is important.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-04.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "But the truth is ",
+        "."
+      ],
+      "answers": [
+        "important"
+      ],
+      "speaker": "Mom",
+      "transcript": "But the truth is important.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-04.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Can I ",
+        " you with the window?"
+      ],
+      "answers": [
+        "help"
+      ],
+      "speaker": "Noah",
+      "transcript": "Can I help you with the window?",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-05.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Can I help you with the ",
+        "?"
+      ],
+      "answers": [
+        "window"
+      ],
+      "speaker": "Noah",
+      "transcript": "Can I help you with the window?",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-05.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 9,
+      "type": "multipleChoice",
+      "question": "Noah dùng “Can I” để làm gì trong câu này?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra cách dùng",
+          "en": "Check language usage"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Noah dùng “Can I” để làm gì trong câu này?",
+          "en": "Why does Noah use “Can I” in this sentence?"
+        },
+        "options": [
+          {
+            "vi": "Kể về việc cậu đã làm trước đó.",
+            "en": "To talk about something he did earlier."
+          },
+          {
+            "vi": "Yêu cầu mẹ tự sửa cửa sổ.",
+            "en": "To tell Mom to fix the window herself."
+          },
+          {
+            "vi": "Ngỏ ý giúp và hỏi xem mẹ có đồng ý không.",
+            "en": "To offer help and ask if Mom agrees."
+          },
+          {
+            "vi": "Nói rằng cậu không muốn giúp.",
+            "en": "To say he does not want to help."
+          }
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "Can I",
+      "options": [
+        "Kể về việc cậu đã làm trước đó.",
+        "Yêu cầu mẹ tự sửa cửa sổ.",
+        "Ngỏ ý giúp và hỏi xem mẹ có đồng ý không.",
+        "Nói rằng cậu không muốn giúp."
+      ],
+      "answer": "Ngỏ ý giúp và hỏi xem mẹ có đồng ý không.",
+      "speaker": "Noah",
+      "transcript": "Can I help you with the window?",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-05.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes. We can ",
+        " it together."
+      ],
+      "answers": [
+        "fix"
+      ],
+      "speaker": "Mom",
+      "transcript": "Yes. We can fix it together.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-05.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "Yes. We can fix it ",
+        "."
+      ],
+      "answers": [
+        "together"
+      ],
+      "speaker": "Mom",
+      "transcript": "Yes. We can fix it together.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-05.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I will tell the ",
+        " next time."
+      ],
+      "answers": [
+        "truth"
+      ],
+      "speaker": "Noah",
+      "transcript": "I will tell the truth next time.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-06.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền cụm từ còn thiếu.",
+          "en": "Fill in the missing phrase."
+        }
+      },
+      "parts": [
+        "I will tell the truth ",
+        "."
+      ],
+      "answers": [
+        "next time"
+      ],
+      "speaker": "Noah",
+      "transcript": "I will tell the truth next time.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/noah-06.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Luyện nghe",
+          "en": "Listening practice"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu.",
+          "en": "Fill in the missing word."
+        }
+      },
+      "parts": [
+        "I'm ",
+        " of you, Noah."
+      ],
+      "answers": [
+        "proud"
+      ],
+      "speaker": "Mom",
+      "transcript": "I'm proud of you, Noah.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-06.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 12,
+      "type": "multipleChoice",
+      "question": "Vì sao mẹ cảm thấy tự hào về Noah?",
+      "localized": {
+        "title": {
+          "vi": "Kiểm tra hiểu bài",
+          "en": "Check understanding"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án đúng.",
+          "en": "Choose the correct answer."
+        },
+        "question": {
+          "vi": "Vì sao mẹ cảm thấy tự hào về Noah?",
+          "en": "Why does Mom feel proud of Noah?"
+        },
+        "options": [
+          {
+            "vi": "Vì cậu đã nhận lỗi, xin lỗi và quyết định nói thật.",
+            "en": "Because he admitted his mistake, apologized, and decided to tell the truth."
+          },
+          {
+            "vi": "Vì cậu đã sửa xong cửa sổ.",
+            "en": "Because he has finished fixing the window."
+          },
+          {
+            "vi": "Vì cậu không làm vỡ thứ gì.",
+            "en": "Because he did not break anything."
+          },
+          {
+            "vi": "Vì cậu đã giấu được chuyện xảy ra.",
+            "en": "Because he successfully hid what happened."
+          }
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì cậu đã nhận lỗi, xin lỗi và quyết định nói thật.",
+        "Vì cậu đã sửa xong cửa sổ.",
+        "Vì cậu không làm vỡ thứ gì.",
+        "Vì cậu đã giấu được chuyện xảy ra."
+      ],
+      "answer": "Vì cậu đã nhận lỗi, xin lỗi và quyết định nói thật.",
+      "speaker": "Mom",
+      "transcript": "I'm proud of you, Noah.",
+      "scene": "/stories/a-little-lie/telling-the-truth/bg.png",
+      "audioUrl": "/stories/a-little-lie/telling-the-truth/audio/mom-06.mp3"
+    },
+    {
+      "id": 27,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập hội thoại",
+          "en": "Dialogue review"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu để hoàn thành toàn bộ hội thoại.",
+          "en": "Fill in the missing words to complete the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Noah",
+          "parts": [
+            "Mom, I ",
+            {
+              "id": "1",
+              "blank": "broke"
+            },
+            " the window."
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Noah",
+          "parts": [
+            "My ball ",
+            {
+              "id": "2",
+              "blank": "hit"
+            },
+            " it. I'm very sorry."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Noah",
+          "parts": [
+            "I was ",
+            {
+              "id": "3",
+              "blank": "scared"
+            },
+            ", so I lied."
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Mom",
+          "parts": [
+            "Thank you for telling me the ",
+            {
+              "id": "4",
+              "blank": "truth"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Mom",
+          "parts": [
+            "I was ",
+            {
+              "id": "5",
+              "blank": "worried"
+            },
+            " about you."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Noah",
+          "parts": [
+            "Are you still ",
+            {
+              "id": "6",
+              "blank": "angry"
+            },
+            " with me?"
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Mom",
+          "parts": [
+            "I am ",
+            {
+              "id": "7",
+              "blank": "sad"
+            },
+            " that you lied."
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Mom",
+          "parts": [
+            "But the truth is ",
+            {
+              "id": "8",
+              "blank": "important"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Noah",
+          "parts": [
+            "Can I ",
+            {
+              "id": "9",
+              "blank": "help"
+            },
+            " you with the window?"
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Mom",
+          "parts": [
+            "Yes. We can fix it ",
+            {
+              "id": "10",
+              "blank": "together"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Noah",
+          "parts": [
+            "I will tell the truth ",
+            {
+              "id": "11",
+              "blank": "next time"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Mom",
+          "parts": [
+            "I'm ",
+            {
+              "id": "12",
+              "blank": "proud"
+            },
+            " of you, Noah."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Can I – xin phép hoặc ngỏ ý giúp đỡ",
+      "explanation": "Dùng Can I + động từ nguyên mẫu để hỏi xem mình có thể làm điều gì không. Khi muốn giúp ai đó, bạn có thể nói “Can I help you?” để ngỏ ý giúp đỡ một cách lịch sự.",
+      "localized": {
+        "title": {
+          "vi": "Can I – xin phép hoặc ngỏ ý giúp đỡ",
+          "en": "Can I – asking permission or offering help"
+        },
+        "explanation": {
+          "vi": "Dùng Can I + động từ nguyên mẫu để hỏi xem mình có thể làm điều gì không. Khi muốn giúp ai đó, bạn có thể nói “Can I help you?” để ngỏ ý giúp đỡ một cách lịch sự.",
+          "en": "Use Can I + the base form of a verb to ask if you can do something. When you want to help someone, you can say “Can I help you?” to offer help politely."
+        }
+      },
+      "example": "Can I help you with the window?"
+    },
+    {
+      "title": "Will – nói về quyết định trong tương lai",
+      "explanation": "Dùng will + động từ nguyên mẫu để nói về điều bạn quyết định hoặc hứa sẽ làm trong tương lai. Ví dụ: “I will tell the truth next time.” nghĩa là lần sau Noah sẽ nói thật.",
+      "localized": {
+        "title": {
+          "vi": "Will – nói về quyết định trong tương lai",
+          "en": "Will – talking about future decisions"
+        },
+        "explanation": {
+          "vi": "Dùng will + động từ nguyên mẫu để nói về điều bạn quyết định hoặc hứa sẽ làm trong tương lai. Ví dụ: “I will tell the truth next time.” nghĩa là lần sau Noah sẽ nói thật.",
+          "en": "Use will + the base form of a verb to talk about a decision or promise for the future. For example, “I will tell the truth next time” shows Noah's promise to be honest."
+        }
+      },
+      "example": "I will tell the truth next time."
+    }
+  ]
+}
