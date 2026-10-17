@@ -26,8 +26,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Ben và Emma gặp nhau ở công viên vào một buổi chiều. Họ chào nhau và quyết định đi dạo cùng nhau.",
-    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
-    "thumbnail": "/dialogue/walk-in-the-park/thumbnails/meeting-at-the-park.png"
+    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
+    "thumbnail": "/dialogue/walk-in-the-park/thumbnails/meeting-at-the-park.webp"
   },
   "dialogue": [
     {
@@ -36,7 +36,7 @@
       "text": "Hi, Emma! Nice to see you here.",
       "translation": "Chào Emma! Rất vui được gặp bạn ở đây.",
       "practicePriority": "simple",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-01.mp3"
     },
     {
@@ -45,7 +45,7 @@
       "text": "The park is really nice this afternoon.",
       "translation": "Công viên chiều nay thật đẹp.",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-02.mp3"
     },
     {
@@ -54,7 +54,7 @@
       "text": "Hi, Ben! Yes, it is. The weather is good too.",
       "translation": "Chào Ben! Đúng vậy. Thời tiết cũng đẹp nữa.",
       "practicePriority": "simple",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-01.mp3"
     },
     {
@@ -63,7 +63,7 @@
       "text": "Are you here for a walk?",
       "translation": "Bạn đến đây để đi dạo à?",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-02.mp3"
     },
     {
@@ -72,7 +72,7 @@
       "text": "Yes. I want to walk for a while.",
       "translation": "Ừ. Mình muốn đi dạo một lúc.",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-03.mp3"
     },
     {
@@ -81,7 +81,7 @@
       "text": "Me too. Do you want to walk together?",
       "translation": "Mình cũng vậy. Bạn có muốn đi dạo cùng nhau không?",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-03.mp3"
     },
     {
@@ -90,7 +90,7 @@
       "text": "Sure. That sounds nice.",
       "translation": "Được chứ. Nghe hay đấy.",
       "practicePriority": "simple",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-04.mp3"
     },
     {
@@ -99,7 +99,7 @@
       "text": "We can walk near the lake. It is quiet there.",
       "translation": "Chúng ta có thể đi dạo gần hồ. Ở đó khá yên tĩnh.",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-05.mp3"
     },
     {
@@ -108,7 +108,7 @@
       "text": "Good idea. I like that part of the park.",
       "translation": "Ý hay đấy. Mình thích khu đó của công viên.",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-04.mp3"
     },
     {
@@ -117,7 +117,7 @@
       "text": "Are you ready to go?",
       "translation": "Bạn sẵn sàng đi chưa?",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-05.mp3"
     },
     {
@@ -126,7 +126,7 @@
       "text": "Yes. We can start now.",
       "translation": "Ừ. Chúng ta có thể bắt đầu ngay bây giờ.",
       "practicePriority": "simple",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-06.mp3"
     }
   ],
@@ -204,7 +204,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Hi, Emma! Nice to see you here.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-01.mp3"
     },
     {
@@ -230,7 +230,7 @@
       ],
       "speaker": "Ben",
       "transcript": "The park is really nice this afternoon.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-02.mp3"
     },
     {
@@ -256,7 +256,7 @@
       ],
       "speaker": "Ben",
       "transcript": "The park is really nice this afternoon.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-02.mp3"
     },
     {
@@ -306,7 +306,7 @@
       "answer": "Công viên rất đẹp.",
       "speaker": "Ben",
       "transcript": "The park is really nice this afternoon.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-02.mp3"
     },
     {
@@ -332,7 +332,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Hi, Ben! Yes, it is. The weather is good too.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-01.mp3"
     },
     {
@@ -358,7 +358,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Are you here for a walk?",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-02.mp3"
     },
     {
@@ -384,7 +384,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Are you here for a walk?",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-02.mp3"
     },
     {
@@ -410,7 +410,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Yes. I want to walk for a while.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-03.mp3"
     },
     {
@@ -436,7 +436,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Yes. I want to walk for a while.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-03.mp3"
     },
     {
@@ -462,7 +462,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Me too. Do you want to walk together?",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-03.mp3"
     },
     {
@@ -488,7 +488,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Me too. Do you want to walk together?",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-03.mp3"
     },
     {
@@ -539,7 +539,7 @@
       "answer": "Hỏi Ben có muốn cùng làm một việc không.",
       "speaker": "Emma",
       "transcript": "Me too. Do you want to walk together?",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-03.mp3"
     },
     {
@@ -565,7 +565,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Sure. That sounds nice.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-04.mp3"
     },
     {
@@ -616,7 +616,7 @@
       "answer": "Anh ấy thích lời đề nghị của Emma.",
       "speaker": "Ben",
       "transcript": "Sure. That sounds nice.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-04.mp3"
     },
     {
@@ -642,7 +642,7 @@
       ],
       "speaker": "Ben",
       "transcript": "We can walk near the lake. It is quiet there.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-05.mp3"
     },
     {
@@ -668,7 +668,7 @@
       ],
       "speaker": "Ben",
       "transcript": "We can walk near the lake. It is quiet there.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-05.mp3"
     },
     {
@@ -718,7 +718,7 @@
       "answer": "Gần hồ.",
       "speaker": "Ben",
       "transcript": "We can walk near the lake. It is quiet there.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-05.mp3"
     },
     {
@@ -744,7 +744,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Good idea. I like that part of the park.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-04.mp3"
     },
     {
@@ -770,7 +770,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Good idea. I like that part of the park.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-04.mp3"
     },
     {
@@ -796,7 +796,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Are you ready to go?",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-05.mp3"
     },
     {
@@ -822,7 +822,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Are you ready to go?",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-05.mp3"
     },
     {
@@ -872,7 +872,7 @@
       "answer": "Ben đã sẵn sàng bắt đầu đi chưa.",
       "speaker": "Emma",
       "transcript": "Are you ready to go?",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-05.mp3"
     },
     {
@@ -898,7 +898,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Yes. We can start now.",
-      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+      "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-06.mp3"
     },
     {

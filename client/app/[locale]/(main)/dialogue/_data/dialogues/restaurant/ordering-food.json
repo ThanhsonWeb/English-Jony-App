@@ -7,8 +7,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Alex đến nhận món. Ben và Emma gọi món ăn và đồ uống bằng những câu đơn giản, lịch sự.",
-    "scene": "/dialogue/restaurant/ordering-food/bg.png",
-    "thumbnail": "/dialogue/restaurant/thumbnails/ordering-food.png"
+    "scene": "/dialogue/restaurant/ordering-food/bg.webp",
+    "thumbnail": "/dialogue/restaurant/thumbnails/ordering-food.webp"
   },
   "dialogue": [
     {
@@ -17,7 +17,7 @@
       "text": "Are you ready to order?",
       "translation": "Hai bạn đã sẵn sàng gọi món chưa?",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-01.mp3"
     },
     {
@@ -26,7 +26,7 @@
       "text": "Yes, please. I would like the chicken pasta.",
       "translation": "Vâng. Tôi muốn món mì Ý gà.",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-01.mp3"
     },
     {
@@ -35,7 +35,7 @@
       "text": "And a glass of water, please.",
       "translation": "Và một ly nước nữa nhé.",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-02.mp3"
     },
     {
@@ -44,7 +44,7 @@
       "text": "Sure. Would you like anything else?",
       "translation": "Được. Bạn có muốn thêm gì nữa không?",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-02.mp3"
     },
     {
@@ -53,7 +53,7 @@
       "text": "Yes. I would like the tomato soup, please.",
       "translation": "Có. Tôi muốn món súp cà chua.",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-01.mp3"
     },
     {
@@ -62,7 +62,7 @@
       "text": "Can I have some bread too?",
       "translation": "Tôi có thể gọi thêm một ít bánh mì không?",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-02.mp3"
     },
     {
@@ -71,7 +71,7 @@
       "text": "Of course. What would you like to drink?",
       "translation": "Tất nhiên. Bạn muốn uống gì?",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-03.mp3"
     },
     {
@@ -80,7 +80,7 @@
       "text": "Orange juice, please.",
       "translation": "Nước cam nhé.",
       "practicePriority": "simple",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-03.mp3"
     },
     {
@@ -89,7 +89,7 @@
       "text": "Okay. One chicken pasta, one tomato soup, water, and orange juice.",
       "translation": "Được. Một mì Ý gà, một súp cà chua, nước lọc và nước cam.",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-04.mp3"
     },
     {
@@ -98,7 +98,7 @@
       "text": "Yes, that is right.",
       "translation": "Vâng, đúng rồi.",
       "practicePriority": "simple",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-03.mp3"
     },
     {
@@ -107,7 +107,7 @@
       "text": "Great. Thank you.",
       "translation": "Tuyệt. Cảm ơn hai bạn.",
       "practicePriority": "simple",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-05.mp3"
     }
   ],
@@ -175,7 +175,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Are you ready to order?",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-01.mp3"
     },
     {
@@ -191,7 +191,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Are you ready to order?",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-01.mp3"
     },
     {
@@ -209,7 +209,7 @@
       "answer": "Hỏi họ đã sẵn sàng gọi món chưa.",
       "speaker": "Alex",
       "transcript": "Are you ready to order?",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-01.mp3"
     },
     {
@@ -225,7 +225,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Yes, please. I would like the chicken pasta.",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-01.mp3"
     },
     {
@@ -241,7 +241,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Yes, please. I would like the chicken pasta.",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-01.mp3"
     },
     {
@@ -257,7 +257,7 @@
       ],
       "speaker": "Ben",
       "transcript": "And a glass of water, please.",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-02.mp3"
     },
     {
@@ -273,7 +273,7 @@
       ],
       "speaker": "Ben",
       "transcript": "And a glass of water, please.",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-02.mp3"
     },
     {
@@ -289,7 +289,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Sure. Would you like anything else?",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-02.mp3"
     },
     {
@@ -305,7 +305,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Sure. Would you like anything else?",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-02.mp3"
     },
     {
@@ -324,7 +324,7 @@
       "answer": "Một cách lịch sự về điều khách muốn thêm.",
       "speaker": "Alex",
       "transcript": "Sure. Would you like anything else?",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-02.mp3"
     },
     {
@@ -340,7 +340,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Yes. I would like the tomato soup, please.",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-01.mp3"
     },
     {
@@ -356,7 +356,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Yes. I would like the tomato soup, please.",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-01.mp3"
     },
     {
@@ -374,7 +374,7 @@
       "answer": "Cô ấy gọi món của mình.",
       "speaker": "Emma",
       "transcript": "Yes. I would like the tomato soup, please.",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-01.mp3"
     },
     {
@@ -390,7 +390,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Can I have some bread too?",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-02.mp3"
     },
     {
@@ -406,7 +406,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Can I have some bread too?",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-02.mp3"
     },
     {
@@ -425,7 +425,7 @@
       "answer": "Yêu cầu thêm bánh mì một cách lịch sự.",
       "speaker": "Emma",
       "transcript": "Can I have some bread too?",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-02.mp3"
     },
     {
@@ -441,7 +441,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Of course. What would you like to drink?",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-03.mp3"
     },
     {
@@ -457,7 +457,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Of course. What would you like to drink?",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-03.mp3"
     },
     {
@@ -473,7 +473,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Orange juice, please.",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-03.mp3"
     },
     {
@@ -489,7 +489,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Okay. One chicken pasta, one tomato soup, water, and orange juice.",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-04.mp3"
     },
     {
@@ -505,7 +505,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Okay. One chicken pasta, one tomato soup, water, and orange juice.",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-04.mp3"
     },
     {
@@ -523,7 +523,7 @@
       "answer": "Để xác nhận đơn gọi món.",
       "speaker": "Alex",
       "transcript": "Okay. One chicken pasta, one tomato soup, water, and orange juice.",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-04.mp3"
     },
     {
@@ -539,7 +539,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Yes, that is right.",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-03.mp3"
     },
     {
@@ -555,7 +555,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Great. Thank you.",
-      "scene": "/dialogue/restaurant/ordering-food/bg.png",
+      "scene": "/dialogue/restaurant/ordering-food/bg.webp",
       "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-05.mp3"
     },
     {

@@ -32,7 +32,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Hi, Emma! Nice to see you here.",
     "translation": "Chào Emma! Rất vui được gặp bạn ở đây.",
     "practicePriority": "simple",
-    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
     "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-01.mp3"
   },
   {
@@ -41,7 +41,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "The park is really nice this afternoon.",
     "translation": "Công viên chiều nay thật đẹp.",
     "practicePriority": "important",
-    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
     "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-02.mp3"
   },
   {
@@ -50,7 +50,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Hi, Ben! Yes, it is. The weather is good too.",
     "translation": "Chào Ben! Đúng vậy. Thời tiết cũng đẹp nữa.",
     "practicePriority": "simple",
-    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
     "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-01.mp3"
   },
   {
@@ -59,7 +59,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Are you here for a walk?",
     "translation": "Bạn đến đây để đi dạo à?",
     "practicePriority": "important",
-    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
     "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-02.mp3"
   },
   {
@@ -68,7 +68,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes. I want to walk for a while.",
     "translation": "Ừ. Mình muốn đi dạo một lúc.",
     "practicePriority": "important",
-    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
     "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-03.mp3"
   },
   {
@@ -77,7 +77,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Me too. Do you want to walk together?",
     "translation": "Mình cũng vậy. Bạn có muốn đi dạo cùng nhau không?",
     "practicePriority": "veryImportant",
-    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
     "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-03.mp3"
   },
   {
@@ -86,7 +86,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Sure. That sounds nice.",
     "translation": "Được chứ. Nghe hay đấy.",
     "practicePriority": "simple",
-    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
     "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-04.mp3"
   },
   {
@@ -95,7 +95,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "We can walk near the lake. It is quiet there.",
     "translation": "Chúng ta có thể đi dạo gần hồ. Ở đó khá yên tĩnh.",
     "practicePriority": "important",
-    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
     "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-05.mp3"
   },
   {
@@ -104,7 +104,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Good idea. I like that part of the park.",
     "translation": "Ý hay đấy. Mình thích khu đó của công viên.",
     "practicePriority": "important",
-    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
     "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-04.mp3"
   },
   {
@@ -113,7 +113,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Are you ready to go?",
     "translation": "Bạn sẵn sàng đi chưa?",
     "practicePriority": "important",
-    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
     "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/emma-05.mp3"
   },
   {
@@ -122,7 +122,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes. We can start now.",
     "translation": "Ừ. Chúng ta có thể bắt đầu ngay bây giờ.",
     "practicePriority": "simple",
-    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
+    "scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
     "audioUrl": "/dialogue/walk-in-the-park/meeting-at-the-park/audio/ben-06.mp3"
   }
 ]
@@ -440,7 +440,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/walk-in-the-park/talking-about-work/bg.png"
+"/dialogue/walk-in-the-park/talking-about-work/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -450,10 +450,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/walk-in-the-park/talking-about-work/bg.png"
+"/dialogue/walk-in-the-park/talking-about-work/bg.webp"
 
 Thumbnail:
-"/dialogue/walk-in-the-park/thumbnails/talking-about-work.png"
+"/dialogue/walk-in-the-park/thumbnails/talking-about-work.webp"
 
 Audio format:
 "/dialogue/walk-in-the-park/talking-about-work/audio/{speaker}-{number}.mp3"
@@ -489,8 +489,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Trong lúc đi dạo, Ben và Emma nói về công việc của mình. Emma là giáo viên, còn Ben làm việc tại một công ty.",
-		"scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
-		"thumbnail": "/dialogue/walk-in-the-park/thumbnails/talking-about-work.png"
+		"scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
+		"thumbnail": "/dialogue/walk-in-the-park/thumbnails/talking-about-work.webp"
 	},
 
 	"dialogue": [

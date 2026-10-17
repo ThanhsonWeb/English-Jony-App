@@ -27,8 +27,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Noah remembers that tomorrow is Dad's birthday. He wants to give Dad a special gift, but he has little money. He asks Mom for help.",
-    "scene": "/stories/a-small-surprise/a-special-day/bg.png",
-    "thumbnail": "/stories/a-small-surprise/thumbnails/a-special-day.png"
+    "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
+    "thumbnail": "/stories/a-small-surprise/thumbnails/a-special-day.webp"
   },
   "dialogue": [
     {
@@ -37,7 +37,7 @@
       "text": "Mom, tomorrow is Dad's birthday!",
       "translation": "Mẹ ơi, ngày mai là sinh nhật của bố!",
       "practicePriority": "simple",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-01.mp3"
     },
     {
@@ -46,7 +46,7 @@
       "text": "Yes, it is. Do you have a gift for him?",
       "translation": "Đúng rồi. Con có quà cho bố chưa?",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-01.mp3"
     },
     {
@@ -55,7 +55,7 @@
       "text": "Not yet. I want to give him something special.",
       "translation": "Chưa ạ. Con muốn tặng bố một món quà thật đặc biệt.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-02.mp3"
     },
     {
@@ -64,7 +64,7 @@
       "text": "But I only have five dollars.",
       "translation": "Nhưng con chỉ có năm đô la thôi.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-03.mp3"
     },
     {
@@ -73,7 +73,7 @@
       "text": "That is okay. You can make a gift.",
       "translation": "Không sao đâu. Con có thể tự làm một món quà mà.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-02.mp3"
     },
     {
@@ -82,7 +82,7 @@
       "text": "What can I make?",
       "translation": "Con có thể làm gì ạ?",
       "practicePriority": "simple",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-04.mp3"
     },
     {
@@ -91,7 +91,7 @@
       "text": "Dad loves your drawings. You can make him a card.",
       "translation": "Bố rất thích những bức tranh con vẽ. Con có thể làm một tấm thiệp cho bố.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-03.mp3"
     },
     {
@@ -100,7 +100,7 @@
       "text": "A birthday card? That is a good idea!",
       "translation": "Thiệp sinh nhật ạ? Ý hay quá mẹ!",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-05.mp3"
     },
     {
@@ -109,7 +109,7 @@
       "text": "You can write a nice message inside.",
       "translation": "Con có thể viết một lời nhắn thật hay bên trong.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-04.mp3"
     },
     {
@@ -118,7 +118,7 @@
       "text": "I can write, 'Happy birthday, Dad! I love you!'",
       "translation": "Con có thể viết: 'Chúc mừng sinh nhật bố! Con yêu bố!'",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-06.mp3"
     },
     {
@@ -127,7 +127,7 @@
       "text": "Dad will be happy. He loves your cards.",
       "translation": "Bố sẽ vui lắm. Bố rất thích những tấm thiệp của con.",
       "practicePriority": "simple",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-05.mp3"
     },
     {
@@ -136,7 +136,7 @@
       "text": "Thank you, Mom. Can you help me make it?",
       "translation": "Con cảm ơn mẹ. Mẹ giúp con làm thiệp được không ạ?",
       "practicePriority": "veryImportant",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-07.mp3"
     },
     {
@@ -145,7 +145,7 @@
       "text": "Of course! We can make it together.",
       "translation": "Tất nhiên rồi! Mẹ con mình có thể cùng nhau làm.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-06.mp3"
     }
   ],
@@ -230,7 +230,7 @@
       "answers": ["tomorrow"],
       "speaker": "Noah",
       "transcript": "Mom, tomorrow is Dad's birthday!",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-01.mp3"
     },
     {
@@ -280,7 +280,7 @@
       "answer": "Sinh nhật của Dad.",
       "speaker": "Noah",
       "transcript": "Mom, tomorrow is Dad's birthday!",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-01.mp3"
     },
     {
@@ -304,7 +304,7 @@
       "answers": ["gift"],
       "speaker": "Mom",
       "transcript": "Yes, it is. Do you have a gift for him?",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-01.mp3"
     },
     {
@@ -328,7 +328,7 @@
       "answers": ["for him"],
       "speaker": "Mom",
       "transcript": "Yes, it is. Do you have a gift for him?",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-01.mp3"
     },
     {
@@ -352,7 +352,7 @@
       "answers": ["give"],
       "speaker": "Noah",
       "transcript": "Not yet. I want to give him something special.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-02.mp3"
     },
     {
@@ -376,7 +376,7 @@
       "answers": ["something special"],
       "speaker": "Noah",
       "transcript": "Not yet. I want to give him something special.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-02.mp3"
     },
     {
@@ -400,7 +400,7 @@
       "answers": ["only"],
       "speaker": "Noah",
       "transcript": "But I only have five dollars.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-03.mp3"
     },
     {
@@ -424,7 +424,7 @@
       "answers": ["five dollars"],
       "speaker": "Noah",
       "transcript": "But I only have five dollars.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-03.mp3"
     },
     {
@@ -448,7 +448,7 @@
       "answers": ["make"],
       "speaker": "Mom",
       "transcript": "That is okay. You can make a gift.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-02.mp3"
     },
     {
@@ -472,7 +472,7 @@
       "answers": ["gift"],
       "speaker": "Mom",
       "transcript": "That is okay. You can make a gift.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-02.mp3"
     },
     {
@@ -523,7 +523,7 @@
       "answer": "Noah có thể tự làm một món quà.",
       "speaker": "Mom",
       "transcript": "That is okay. You can make a gift.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-02.mp3"
     },
     {
@@ -547,7 +547,7 @@
       "answers": ["make"],
       "speaker": "Noah",
       "transcript": "What can I make?",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-04.mp3"
     },
     {
@@ -597,7 +597,7 @@
       "answer": "Vì Noah muốn biết nên làm món quà gì.",
       "speaker": "Noah",
       "transcript": "What can I make?",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-04.mp3"
     },
     {
@@ -621,7 +621,7 @@
       "answers": ["drawings"],
       "speaker": "Mom",
       "transcript": "Dad loves your drawings. You can make him a card.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-03.mp3"
     },
     {
@@ -645,7 +645,7 @@
       "answers": ["card"],
       "speaker": "Mom",
       "transcript": "Dad loves your drawings. You can make him a card.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-03.mp3"
     },
     {
@@ -669,7 +669,7 @@
       "answers": ["birthday card"],
       "speaker": "Noah",
       "transcript": "A birthday card? That is a good idea!",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-05.mp3"
     },
     {
@@ -693,7 +693,7 @@
       "answers": ["good idea"],
       "speaker": "Noah",
       "transcript": "A birthday card? That is a good idea!",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-05.mp3"
     },
     {
@@ -717,7 +717,7 @@
       "answers": ["write"],
       "speaker": "Mom",
       "transcript": "You can write a nice message inside.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-04.mp3"
     },
     {
@@ -741,7 +741,7 @@
       "answers": ["message"],
       "speaker": "Mom",
       "transcript": "You can write a nice message inside.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-04.mp3"
     },
     {
@@ -765,7 +765,7 @@
       "answers": ["Happy birthday"],
       "speaker": "Noah",
       "transcript": "I can write, 'Happy birthday, Dad! I love you!'",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-06.mp3"
     },
     {
@@ -789,7 +789,7 @@
       "answers": ["love you"],
       "speaker": "Noah",
       "transcript": "I can write, 'Happy birthday, Dad! I love you!'",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-06.mp3"
     },
     {
@@ -813,7 +813,7 @@
       "answers": ["cards"],
       "speaker": "Mom",
       "transcript": "Dad will be happy. He loves your cards.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-05.mp3"
     },
     {
@@ -863,7 +863,7 @@
       "answer": "Dad sẽ vui vì thích những tấm thiệp của Noah.",
       "speaker": "Mom",
       "transcript": "Dad will be happy. He loves your cards.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-05.mp3"
     },
     {
@@ -887,7 +887,7 @@
       "answers": ["Thank you"],
       "speaker": "Noah",
       "transcript": "Thank you, Mom. Can you help me make it?",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-07.mp3"
     },
     {
@@ -911,7 +911,7 @@
       "answers": ["help"],
       "speaker": "Noah",
       "transcript": "Thank you, Mom. Can you help me make it?",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/noah-07.mp3"
     },
     {
@@ -935,7 +935,7 @@
       "answers": ["make"],
       "speaker": "Mom",
       "transcript": "Of course! We can make it together.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-06.mp3"
     },
     {
@@ -959,7 +959,7 @@
       "answers": ["together"],
       "speaker": "Mom",
       "transcript": "Of course! We can make it together.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-06.mp3"
     },
     {
@@ -1010,7 +1010,7 @@
       "answer": "Mom vui vẻ đồng ý giúp Noah.",
       "speaker": "Mom",
       "transcript": "Of course! We can make it together.",
-      "scene": "/stories/a-small-surprise/a-special-day/bg.png",
+      "scene": "/stories/a-small-surprise/a-special-day/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-special-day/audio/mom-06.mp3"
     },
     {

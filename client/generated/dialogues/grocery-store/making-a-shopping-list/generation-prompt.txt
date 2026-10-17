@@ -263,7 +263,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/grocery-store/making-a-shopping-list/bg.png"
+"/dialogue/grocery-store/making-a-shopping-list/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -273,10 +273,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/grocery-store/making-a-shopping-list/bg.png"
+"/dialogue/grocery-store/making-a-shopping-list/bg.webp"
 
 Thumbnail:
-"/dialogue/grocery-store/thumbnails/making-a-shopping-list.png"
+"/dialogue/grocery-store/thumbnails/making-a-shopping-list.webp"
 
 Audio format:
 "/dialogue/grocery-store/making-a-shopping-list/audio/{speaker}-{number}.mp3"
@@ -300,8 +300,8 @@ Use this structure:
 		"title": "Lập danh sách mua sắm",
 		"level": "a1",
 		"situation": "Ben và Emma chuẩn bị đi siêu thị. Họ cùng kiểm tra xem cần mua những gì và lập một danh sách mua sắm đơn giản.",
-		"scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
-		"thumbnail": "/dialogue/grocery-store/thumbnails/making-a-shopping-list.png"
+		"scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
+		"thumbnail": "/dialogue/grocery-store/thumbnails/making-a-shopping-list.webp"
 	},
 
 	"dialogue": [

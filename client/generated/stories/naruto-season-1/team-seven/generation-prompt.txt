@@ -32,7 +32,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Hey! Is that your new ninja headband?",
     "translation": "Này! Đó là băng trán ninja mới của anh à?",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-01.mp3"
   },
   {
@@ -41,7 +41,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes! I passed the test yesterday.",
     "translation": "Đúng rồi! Hôm qua anh đã vượt qua bài kiểm tra.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-01.mp3"
   },
   {
@@ -50,7 +50,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Wow! You are a real ninja!",
     "translation": "Ồ! Anh là một ninja thực thụ rồi!",
     "practicePriority": "simple",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-02.mp3"
   },
   {
@@ -59,7 +59,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I work hard. What is your name?",
     "translation": "Anh luôn chăm chỉ. Em tên gì?",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-02.mp3"
   },
   {
@@ -68,7 +68,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "My name is Konohamaru. I want to be strong like you.",
     "translation": "Em tên là Konohamaru. Em muốn mạnh mẽ như anh.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-03.mp3"
   },
   {
@@ -77,7 +77,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Nice to meet you, Konohamaru!",
     "translation": "Rất vui được gặp em, Konohamaru!",
     "practicePriority": "simple",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-03.mp3"
   },
   {
@@ -86,7 +86,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Can you teach me a ninja technique?",
     "translation": "Anh có thể dạy em một kỹ thuật ninja không?",
     "practicePriority": "veryImportant",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-04.mp3"
   },
   {
@@ -95,7 +95,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I can help you, but you need to practice.",
     "translation": "Anh có thể giúp em, nhưng em cần luyện tập.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-04.mp3"
   },
   {
@@ -104,7 +104,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I practice every day. I want to be Hokage!",
     "translation": "Em luyện tập mỗi ngày. Em muốn trở thành Hokage!",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-05.mp3"
   },
   {
@@ -113,7 +113,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Hey! I want to be Hokage too!",
     "translation": "Này! Anh cũng muốn trở thành Hokage!",
     "practicePriority": "simple",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-05.mp3"
   },
   {
@@ -122,7 +122,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Then we have the same dream!",
     "translation": "Vậy chúng ta có cùng một ước mơ!",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-06.mp3"
   },
   {
@@ -131,7 +131,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "That is right. We can train together.",
     "translation": "Đúng vậy. Chúng ta có thể luyện tập cùng nhau.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-06.mp3"
   },
   {
@@ -140,7 +140,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Can we be friends too?",
     "translation": "Chúng ta cũng có thể làm bạn không?",
     "practicePriority": "veryImportant",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-07.mp3"
   },
   {
@@ -149,7 +149,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Of course! You are my friend now.",
     "translation": "Tất nhiên rồi! Bây giờ em là bạn của anh.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-07.mp3"
   },
   {
@@ -158,7 +158,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Thank you, Naruto! See you tomorrow!",
     "translation": "Cảm ơn anh, Naruto! Mai gặp lại nhé!",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
     "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-08.mp3"
   }
 ]
@@ -476,7 +476,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/stories/naruto-season-1/team-seven/bg.png"
+"/stories/naruto-season-1/team-seven/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -486,10 +486,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/stories/naruto-season-1/team-seven/bg.png"
+"/stories/naruto-season-1/team-seven/bg.webp"
 
 Thumbnail:
-"/stories/naruto-season-1/thumbnails/team-seven.png"
+"/stories/naruto-season-1/thumbnails/team-seven.webp"
 
 Audio format:
 "/stories/naruto-season-1/team-seven/audio/{speaker}-{number}.mp3"
@@ -526,8 +526,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Naruto learns that Sasuke and Sakura will be his teammates. The three students have very different personalities.",
-		"scene": "/stories/naruto-season-1/team-seven/bg.png",
-		"thumbnail": "/stories/naruto-season-1/thumbnails/team-seven.png"
+		"scene": "/stories/naruto-season-1/team-seven/bg.webp",
+		"thumbnail": "/stories/naruto-season-1/thumbnails/team-seven.webp"
 	},
 
 	"dialogue": [

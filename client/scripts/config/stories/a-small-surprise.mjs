@@ -20,7 +20,7 @@ const aSmallSurprise = {
       dialogueId: "a-special-day",
       title: "Một ngày đặc biệt",
       thumbnail:
-        "/stories/a-small-surprise/thumbnails/a-special-day.png",
+        "/stories/a-small-surprise/thumbnails/a-special-day.webp",
       situation:
         "Noah remembers that tomorrow is Dad's birthday. He wants to give Dad a special gift, but he has little money. He asks Mom for help.",
     },
@@ -28,7 +28,7 @@ const aSmallSurprise = {
       dialogueId: "a-secret-plan",
       title: "Kế hoạch bí mật",
       thumbnail:
-        "/stories/a-small-surprise/thumbnails/a-secret-plan.png",
+        "/stories/a-small-surprise/thumbnails/a-secret-plan.webp",
       situation:
         "Noah and Mom decide to make a birthday cake for Dad. They prepare everything in secret while Dad is away.",
     },
@@ -36,7 +36,7 @@ const aSmallSurprise = {
       dialogueId: "the-broken-cake",
       title: "Chiếc bánh bị hỏng",
       thumbnail:
-        "/stories/a-small-surprise/thumbnails/the-broken-cake.png",
+        "/stories/a-small-surprise/thumbnails/the-broken-cake.webp",
       situation:
         "While preparing the birthday surprise, Noah accidentally breaks the cake. He feels sad and worries that Dad's birthday is ruined. Mom comforts him.",
     },
@@ -44,7 +44,7 @@ const aSmallSurprise = {
       dialogueId: "the-best-gift",
       title: "Món quà tuyệt vời nhất",
       thumbnail:
-        "/stories/a-small-surprise/thumbnails/the-best-gift.png",
+        "/stories/a-small-surprise/thumbnails/the-best-gift.webp",
       situation:
         "On his birthday, Dad discovers the broken cake and Noah's surprise. Instead of feeling disappointed, Dad hugs Noah and tells him that love and effort are more important than expensive gifts.",
     },

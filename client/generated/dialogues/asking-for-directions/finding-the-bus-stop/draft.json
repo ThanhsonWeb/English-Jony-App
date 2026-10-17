@@ -5,8 +5,8 @@
 		"title": "Tìm trạm xe buýt",
 		"level": "a1",
 		"situation": "Ben hỏi Emma cách đi đến trạm xe buýt gần nhất",
-		"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-		"thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-the-bus-stop.png"
+		"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
+		"thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-the-bus-stop.webp"
 	},
 	"dialogue": [
 		{
@@ -14,7 +14,7 @@
 			"speaker": "Ben",
 			"text": "Excuse me. Where is the nearest bus stop?",
 			"translation": "Xin lỗi, cho tôi hỏi. Trạm xe buýt gần nhất ở đâu?",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-01.mp3"
 		},
 		{
@@ -22,7 +22,7 @@
 			"speaker": "Emma",
 			"text": "Go straight along this street.",
 			"translation": "Đi thẳng dọc theo con đường này.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-01.mp3"
 		},
 		{
@@ -30,7 +30,7 @@
 			"speaker": "Emma",
 			"text": "Then turn left at the bank.",
 			"translation": "Sau đó rẽ trái ở chỗ ngân hàng.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-02.mp3"
 		},
 		{
@@ -38,7 +38,7 @@
 			"speaker": "Ben",
 			"text": "Is the bank near the supermarket?",
 			"translation": "Ngân hàng có gần siêu thị không?",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-02.mp3"
 		},
 		{
@@ -46,7 +46,7 @@
 			"speaker": "Emma",
 			"text": "Yes, it's next to the supermarket.",
 			"translation": "Có, nó ở ngay cạnh siêu thị.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-03.mp3"
 		},
 		{
@@ -54,7 +54,7 @@
 			"speaker": "Ben",
 			"text": "Is the bus stop next to the bank?",
 			"translation": "Trạm xe buýt có ở ngay cạnh ngân hàng không?",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-03.mp3"
 		},
 		{
@@ -62,7 +62,7 @@
 			"speaker": "Emma",
 			"text": "No, it's across from the bank.",
 			"translation": "Không, nó ở đối diện ngân hàng.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-04.mp3"
 		},
 		{
@@ -70,7 +70,7 @@
 			"speaker": "Ben",
 			"text": "How far is it from here?",
 			"translation": "Từ đây đến đó bao xa?",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-04.mp3"
 		},
 		{
@@ -78,7 +78,7 @@
 			"speaker": "Emma",
 			"text": "It's about two minutes on foot.",
 			"translation": "Đi bộ mất khoảng hai phút.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-05.mp3"
 		},
 		{
@@ -86,7 +86,7 @@
 			"speaker": "Ben",
 			"text": "Thank you for your help!",
 			"translation": "Cảm ơn bạn đã giúp đỡ!",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-05.mp3"
 		}
 	],
@@ -161,7 +161,7 @@
 			"answer": "Excuse",
 			"speaker": "Ben",
 			"transcript": "Excuse me. Where is the nearest bus stop?",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-01.mp3"
 		},
 		{
@@ -172,7 +172,7 @@
 			"answer": "bus stop",
 			"speaker": "Ben",
 			"transcript": "Excuse me. Where is the nearest bus stop?",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-01.mp3"
 		},
 		{
@@ -189,7 +189,7 @@
 			"answer": "Trạm xe buýt gần nhất",
 			"speaker": "Ben",
 			"transcript": "Excuse me. Where is the nearest bus stop?",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-01.mp3"
 		},
 		{
@@ -200,7 +200,7 @@
 			"answer": "straight",
 			"speaker": "Emma",
 			"transcript": "Go straight along this street.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-01.mp3"
 		},
 		{
@@ -217,7 +217,7 @@
 			"answer": "Đi thẳng theo con đường này",
 			"speaker": "Emma",
 			"transcript": "Go straight along this street.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-01.mp3"
 		},
 		{
@@ -228,7 +228,7 @@
 			"answer": "left",
 			"speaker": "Emma",
 			"transcript": "Then turn left at the bank.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-02.mp3"
 		},
 		{
@@ -239,7 +239,7 @@
 			"answer": "bank",
 			"speaker": "Emma",
 			"transcript": "Then turn left at the bank.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-02.mp3"
 		},
 		{
@@ -250,7 +250,7 @@
 			"answer": "near",
 			"speaker": "Ben",
 			"transcript": "Is the bank near the supermarket?",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-02.mp3"
 		},
 		{
@@ -267,7 +267,7 @@
 			"answer": "Ngân hàng có gần siêu thị không",
 			"speaker": "Ben",
 			"transcript": "Is the bank near the supermarket?",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-02.mp3"
 		},
 		{
@@ -278,7 +278,7 @@
 			"answer": "next to",
 			"speaker": "Emma",
 			"transcript": "Yes, it's next to the supermarket.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-03.mp3"
 		},
 		{
@@ -295,7 +295,7 @@
 			"answer": "Ngay cạnh siêu thị",
 			"speaker": "Emma",
 			"transcript": "Yes, it's next to the supermarket.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-03.mp3"
 		},
 		{
@@ -306,7 +306,7 @@
 			"answer": "Is",
 			"speaker": "Ben",
 			"transcript": "Is the bus stop next to the bank?",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-03.mp3"
 		},
 		{
@@ -317,7 +317,7 @@
 			"answer": "next to",
 			"speaker": "Ben",
 			"transcript": "Is the bus stop next to the bank?",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-03.mp3"
 		},
 		{
@@ -328,7 +328,7 @@
 			"answer": "across from",
 			"speaker": "Emma",
 			"transcript": "No, it's across from the bank.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-04.mp3"
 		},
 		{
@@ -340,7 +340,7 @@
 			"answer": "đối diện",
 			"speaker": "Emma",
 			"transcript": "No, it's across from the bank.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-04.mp3"
 		},
 		{
@@ -351,7 +351,7 @@
 			"answer": "far",
 			"speaker": "Ben",
 			"transcript": "How far is it from here?",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-04.mp3"
 		},
 		{
@@ -368,7 +368,7 @@
 			"answer": "Khoảng cách từ chỗ đang đứng đến trạm",
 			"speaker": "Ben",
 			"transcript": "How far is it from here?",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-04.mp3"
 		},
 		{
@@ -379,7 +379,7 @@
 			"answer": "on foot",
 			"speaker": "Emma",
 			"transcript": "It's about two minutes on foot.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-05.mp3"
 		},
 		{
@@ -391,7 +391,7 @@
 			"answer": "Hai phút",
 			"speaker": "Emma",
 			"transcript": "It's about two minutes on foot.",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/emma-05.mp3"
 		},
 		{
@@ -402,7 +402,7 @@
 			"answer": "help",
 			"speaker": "Ben",
 			"transcript": "Thank you for your help!",
-			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-bus-stop/audio/ben-05.mp3"
 		}
 	],

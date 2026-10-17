@@ -32,7 +32,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Mom, I dropped the cake!",
     "translation": "Mẹ ơi, con làm rơi chiếc bánh rồi!",
     "practicePriority": "veryImportant",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
     "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-01.mp3"
   },
   {
@@ -41,7 +41,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Oh no! Are you okay?",
     "translation": "Ôi không! Con có sao không?",
     "practicePriority": "simple",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
     "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-01.mp3"
   },
   {
@@ -50,7 +50,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes, but the cake is broken.",
     "translation": "Con không sao, nhưng chiếc bánh bị hỏng rồi.",
     "practicePriority": "important",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
     "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-02.mp3"
   },
   {
@@ -59,7 +59,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "It was a surprise for Dad.",
     "translation": "Đó là món quà bất ngờ dành cho bố mà.",
     "practicePriority": "important",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
     "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-03.mp3"
   },
   {
@@ -68,7 +68,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I know, Noah. It was an accident.",
     "translation": "Mẹ biết, Noah. Con chỉ vô tình thôi.",
     "practicePriority": "important",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
     "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-02.mp3"
   },
   {
@@ -77,7 +77,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I'm sorry. I feel so sad.",
     "translation": "Con xin lỗi. Con buồn quá.",
     "practicePriority": "veryImportant",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
     "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-04.mp3"
   },
   {
@@ -86,7 +86,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "It's okay. We can make another cake.",
     "translation": "Không sao đâu. Mẹ con mình có thể làm một chiếc bánh khác.",
     "practicePriority": "veryImportant",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
     "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-03.mp3"
   },
   {
@@ -95,7 +95,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Really? But his birthday is tomorrow!",
     "translation": "Thật ạ? Nhưng mai là sinh nhật bố rồi!",
     "practicePriority": "important",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
     "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-05.mp3"
   },
   {
@@ -104,7 +104,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "We still have time. Dad is at work.",
     "translation": "Mình vẫn còn thời gian. Bố đang ở chỗ làm.",
     "practicePriority": "important",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
     "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-04.mp3"
   },
   {
@@ -113,7 +113,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Do we have enough chocolate?",
     "translation": "Nhà mình có đủ sô-cô-la không mẹ?",
     "practicePriority": "important",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
     "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-06.mp3"
   },
   {
@@ -122,7 +122,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes, we have some left.",
     "translation": "Có chứ, mình vẫn còn một ít.",
     "practicePriority": "simple",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
     "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-05.mp3"
   },
   {
@@ -131,7 +131,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Can we make it together again?",
     "translation": "Mẹ con mình có thể cùng làm lại được không ạ?",
     "practicePriority": "important",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
     "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-07.mp3"
   },
   {
@@ -140,7 +140,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Of course! We can make a small one.",
     "translation": "Tất nhiên rồi! Mình có thể làm một chiếc bánh nhỏ.",
     "practicePriority": "important",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
     "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-06.mp3"
   },
   {
@@ -149,7 +149,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Thank you, Mom. I feel much better now!",
     "translation": "Con cảm ơn mẹ. Bây giờ con thấy đỡ buồn hơn nhiều rồi!",
     "practicePriority": "important",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
     "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-08.mp3"
   }
 ]
@@ -467,7 +467,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/stories/a-small-surprise/the-best-gift/bg.png"
+"/stories/a-small-surprise/the-best-gift/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -477,10 +477,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/stories/a-small-surprise/the-best-gift/bg.png"
+"/stories/a-small-surprise/the-best-gift/bg.webp"
 
 Thumbnail:
-"/stories/a-small-surprise/thumbnails/the-best-gift.png"
+"/stories/a-small-surprise/thumbnails/the-best-gift.webp"
 
 Audio format:
 "/stories/a-small-surprise/the-best-gift/audio/{speaker}-{number}.mp3"
@@ -517,8 +517,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "On his birthday, Dad discovers the broken cake and Noah's surprise. Instead of feeling disappointed, Dad hugs Noah and tells him that love and effort are more important than expensive gifts.",
-		"scene": "/stories/a-small-surprise/the-best-gift/bg.png",
-		"thumbnail": "/stories/a-small-surprise/thumbnails/the-best-gift.png"
+		"scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
+		"thumbnail": "/stories/a-small-surprise/thumbnails/the-best-gift.webp"
 	},
 
 	"dialogue": [

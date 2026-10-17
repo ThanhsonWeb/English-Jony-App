@@ -64,8 +64,8 @@ Final source (all lines and useful expressions):
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Mizuki tricks Naruto into taking a forbidden scroll. Naruto believes learning a new technique will help him graduate.",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
-    "thumbnail": "/stories/naruto-season-1/thumbnails/the-forbidden-scroll.png"
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/the-forbidden-scroll.webp"
   },
   "dialogue": [
     {
@@ -74,7 +74,7 @@ Final source (all lines and useful expressions):
       "text": "Naruto, I know you did not pass the test.",
       "translation": "Naruto, thầy biết em đã không vượt qua bài kiểm tra.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-01.mp3"
     },
     {
@@ -83,7 +83,7 @@ Final source (all lines and useful expressions):
       "text": "Yes. My clone was too weak.",
       "translation": "Vâng. Phân thân của em quá yếu.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-01.mp3"
     },
     {
@@ -92,7 +92,7 @@ Final source (all lines and useful expressions):
       "text": "I know another way to pass.",
       "translation": "Thầy biết một cách khác để vượt qua bài kiểm tra.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-02.mp3"
     },
     {
@@ -101,7 +101,7 @@ Final source (all lines and useful expressions):
       "text": "Really? Can you help me?",
       "translation": "Thật ạ? Thầy có thể giúp em không?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-02.mp3"
     },
     {
@@ -110,7 +110,7 @@ Final source (all lines and useful expressions):
       "text": "There is a forbidden scroll in the village.",
       "translation": "Trong làng có một cuộn giấy cấm.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-03.mp3"
     },
     {
@@ -119,7 +119,7 @@ Final source (all lines and useful expressions):
       "text": "A forbidden scroll? Is it safe to take it?",
       "translation": "Cuộn giấy cấm ạ? Lấy nó có an toàn không?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-03.mp3"
     },
     {
@@ -128,7 +128,7 @@ Final source (all lines and useful expressions):
       "text": "Do not worry. It is a secret test.",
       "translation": "Đừng lo. Đây là một bài kiểm tra bí mật.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-04.mp3"
     },
     {
@@ -137,7 +137,7 @@ Final source (all lines and useful expressions):
       "text": "The scroll has a special ninja technique.",
       "translation": "Cuộn giấy có một kỹ thuật ninja đặc biệt.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-05.mp3"
     },
     {
@@ -146,7 +146,7 @@ Final source (all lines and useful expressions):
       "text": "Learn the technique, and you can pass the test.",
       "translation": "Học được kỹ thuật đó thì em có thể vượt qua bài kiểm tra.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-06.mp3"
     },
     {
@@ -155,7 +155,7 @@ Final source (all lines and useful expressions):
       "text": "Then I can become a ninja!",
       "translation": "Vậy em có thể trở thành ninja rồi!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-04.mp3"
     },
     {
@@ -164,7 +164,7 @@ Final source (all lines and useful expressions):
       "text": "Yes. Take the scroll tonight.",
       "translation": "Đúng vậy. Hãy lấy cuộn giấy tối nay.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-07.mp3"
     },
     {
@@ -173,7 +173,7 @@ Final source (all lines and useful expressions):
       "text": "Can I tell Iruka?",
       "translation": "Em có thể nói với thầy Iruka không?",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-05.mp3"
     },
     {
@@ -182,7 +182,7 @@ Final source (all lines and useful expressions):
       "text": "No, do not tell him. Keep it a secret.",
       "translation": "Không, đừng nói với thầy ấy. Hãy giữ bí mật nhé.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-08.mp3"
     },
     {
@@ -191,7 +191,7 @@ Final source (all lines and useful expressions):
       "text": "Meet me in the forest tonight.",
       "translation": "Tối nay hãy gặp thầy trong rừng.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-09.mp3"
     },
     {
@@ -200,7 +200,7 @@ Final source (all lines and useful expressions):
       "text": "Okay! I will take the scroll and learn the technique!",
       "translation": "Vâng! Em sẽ lấy cuộn giấy và học kỹ thuật đó!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+      "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-06.mp3"
     }
   ],

@@ -6,8 +6,8 @@
 "title": "Tìm đồ trong siêu thị",
 "level": "a1",
 "situation": "Ben và Emma đang đi quanh siêu thị. Ben không tìm thấy một vài món đồ nên hỏi Emma chúng ở đâu.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
-"thumbnail": "/dialogue/grocery-store/thumbnails/finding-items.png"
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
+"thumbnail": "/dialogue/grocery-store/thumbnails/finding-items.webp"
 },
 "dialogue": [
 {
@@ -16,7 +16,7 @@
 "text": "Okay, we have our list. Where should we start?",
 "translation": "Được rồi, chúng ta có danh sách rồi. Bắt đầu từ đâu nhỉ?",
 "practicePriority": "simple",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-01.mp3"
 },
 {
@@ -25,7 +25,7 @@
 "text": "Let's start with the milk.",
 "translation": "Bắt đầu với sữa nhé.",
 "practicePriority": "important",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-01.mp3"
 },
 {
@@ -34,7 +34,7 @@
 "text": "Good idea. Do you know where the milk is?",
 "translation": "Ý hay đấy. Bạn có biết sữa ở đâu không?",
 "practicePriority": "veryImportant",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-02.mp3"
 },
 {
@@ -43,7 +43,7 @@
 "text": "Yes. It's in the dairy section, near the eggs.",
 "translation": "Có. Nó ở khu đồ sữa, gần trứng.",
 "practicePriority": "important",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-02.mp3"
 },
 {
@@ -52,7 +52,7 @@
 "text": "Great. We need eggs too.",
 "translation": "Tuyệt. Chúng ta cũng cần trứng.",
 "practicePriority": "simple",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-03.mp3"
 },
 {
@@ -61,7 +61,7 @@
 "text": "Right. Then we can look for the fruit.",
 "translation": "Đúng rồi. Sau đó chúng ta có thể tìm trái cây.",
 "practicePriority": "important",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-03.mp3"
 },
 {
@@ -70,7 +70,7 @@
 "text": "I can see the bananas and apples over there.",
 "translation": "Mình có thể thấy chuối và táo ở đằng kia.",
 "practicePriority": "simple",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-04.mp3"
 },
 {
@@ -79,7 +79,7 @@
 "text": "Perfect. But where is the bread?",
 "translation": "Tuyệt. Nhưng bánh mì ở đâu nhỉ?",
 "practicePriority": "important",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-04.mp3"
 },
 {
@@ -88,7 +88,7 @@
 "text": "I don't know. Let's ask someone.",
 "translation": "Mình không biết. Hỏi ai đó nhé.",
 "practicePriority": "important",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-05.mp3"
 },
 {
@@ -97,7 +97,7 @@
 "text": "Excuse me. Where can we find the bread?",
 "translation": "Xin lỗi. Chúng tôi có thể tìm bánh mì ở đâu?",
 "practicePriority": "veryImportant",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-06.mp3"
 },
 {
@@ -106,7 +106,7 @@
 "text": "It's in aisle four, next to the cakes.",
 "translation": "Nó ở dãy số 4, bên cạnh bánh ngọt.",
 "practicePriority": "important",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/lee-01.mp3"
 },
 {
@@ -115,7 +115,7 @@
 "text": "Thanks! Then we just need the orange juice.",
 "translation": "Cảm ơn! Sau đó chúng ta chỉ còn cần nước cam thôi.",
 "practicePriority": "simple",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-07.mp3"
 }
 ],
@@ -183,7 +183,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Okay, we have our list. Where should we start?",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-01.mp3"
 },
 {
@@ -200,7 +200,7 @@
 "answer": "Họ nên bắt đầu tìm đồ từ đâu.",
 "speaker": "Ben",
 "transcript": "Okay, we have our list. Where should we start?",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-01.mp3"
 },
 {
@@ -216,7 +216,7 @@
 ],
 "speaker": "Emma",
 "transcript": "Let's start with the milk.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-01.mp3"
 },
 {
@@ -232,7 +232,7 @@
 ],
 "speaker": "Emma",
 "transcript": "Let's start with the milk.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-01.mp3"
 },
 {
@@ -248,7 +248,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Good idea. Do you know where the milk is?",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-02.mp3"
 },
 {
@@ -264,7 +264,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Good idea. Do you know where the milk is?",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-02.mp3"
 },
 {
@@ -281,7 +281,7 @@
 "answer": "Ben muốn biết sữa ở đâu.",
 "speaker": "Ben",
 "transcript": "Good idea. Do you know where the milk is?",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-02.mp3"
 },
 {
@@ -297,7 +297,7 @@
 ],
 "speaker": "Emma",
 "transcript": "Yes. It's in the dairy section, near the eggs.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-02.mp3"
 },
 {
@@ -313,7 +313,7 @@
 ],
 "speaker": "Emma",
 "transcript": "Yes. It's in the dairy section, near the eggs.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-02.mp3"
 },
 {
@@ -329,7 +329,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Great. We need eggs too.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-03.mp3"
 },
 {
@@ -345,7 +345,7 @@
 ],
 "speaker": "Emma",
 "transcript": "Right. Then we can look for the fruit.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-03.mp3"
 },
 {
@@ -361,7 +361,7 @@
 ],
 "speaker": "Emma",
 "transcript": "Right. Then we can look for the fruit.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-03.mp3"
 },
 {
@@ -378,7 +378,7 @@
 "answer": "Trái cây.",
 "speaker": "Emma",
 "transcript": "Right. Then we can look for the fruit.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-03.mp3"
 },
 {
@@ -394,7 +394,7 @@
 ],
 "speaker": "Ben",
 "transcript": "I can see the bananas and apples over there.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-04.mp3"
 },
 {
@@ -410,7 +410,7 @@
 ],
 "speaker": "Emma",
 "transcript": "Perfect. But where is the bread?",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-04.mp3"
 },
 {
@@ -426,7 +426,7 @@
 ],
 "speaker": "Emma",
 "transcript": "Perfect. But where is the bread?",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-04.mp3"
 },
 {
@@ -442,7 +442,7 @@
 ],
 "speaker": "Ben",
 "transcript": "I don't know. Let's ask someone.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-05.mp3"
 },
 {
@@ -458,7 +458,7 @@
 ],
 "speaker": "Ben",
 "transcript": "I don't know. Let's ask someone.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-05.mp3"
 },
 {
@@ -474,7 +474,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Excuse me. Where can we find the bread?",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-06.mp3"
 },
 {
@@ -490,7 +490,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Excuse me. Where can we find the bread?",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-06.mp3"
 },
 {
@@ -507,7 +507,7 @@
 "answer": "Lịch sự thu hút sự chú ý của Lee.",
 "speaker": "Ben",
 "transcript": "Excuse me. Where can we find the bread?",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-06.mp3"
 },
 {
@@ -523,7 +523,7 @@
 ],
 "speaker": "Lee",
 "transcript": "It's in aisle four, next to the cakes.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/lee-01.mp3"
 },
 {
@@ -539,7 +539,7 @@
 ],
 "speaker": "Lee",
 "transcript": "It's in aisle four, next to the cakes.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/lee-01.mp3"
 },
 {
@@ -556,7 +556,7 @@
 "answer": "Ở dãy số 4, cạnh bánh ngọt.",
 "speaker": "Lee",
 "transcript": "It's in aisle four, next to the cakes.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/lee-01.mp3"
 },
 {
@@ -572,7 +572,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Thanks! Then we just need the orange juice.",
-"scene": "/dialogue/grocery-store/finding-items/bg.png",
+"scene": "/dialogue/grocery-store/finding-items/bg.webp",
 "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-07.mp3"
 },
 {

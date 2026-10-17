@@ -30,7 +30,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Are you ready to order?",
     "translation": "Hai bạn đã sẵn sàng gọi món chưa?",
     "practicePriority": "veryImportant",
-    "scene": "/dialogue/restaurant/ordering-food/bg.png",
+    "scene": "/dialogue/restaurant/ordering-food/bg.webp",
     "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-01.mp3"
   },
   {
@@ -39,7 +39,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes, please. I would like the chicken pasta.",
     "translation": "Vâng. Tôi muốn món mì Ý gà.",
     "practicePriority": "veryImportant",
-    "scene": "/dialogue/restaurant/ordering-food/bg.png",
+    "scene": "/dialogue/restaurant/ordering-food/bg.webp",
     "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-01.mp3"
   },
   {
@@ -48,7 +48,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "And a glass of water, please.",
     "translation": "Và một ly nước nữa nhé.",
     "practicePriority": "important",
-    "scene": "/dialogue/restaurant/ordering-food/bg.png",
+    "scene": "/dialogue/restaurant/ordering-food/bg.webp",
     "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-02.mp3"
   },
   {
@@ -57,7 +57,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Sure. Would you like anything else?",
     "translation": "Được. Bạn có muốn thêm gì nữa không?",
     "practicePriority": "important",
-    "scene": "/dialogue/restaurant/ordering-food/bg.png",
+    "scene": "/dialogue/restaurant/ordering-food/bg.webp",
     "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-02.mp3"
   },
   {
@@ -66,7 +66,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes. I would like the tomato soup, please.",
     "translation": "Có. Tôi muốn món súp cà chua.",
     "practicePriority": "veryImportant",
-    "scene": "/dialogue/restaurant/ordering-food/bg.png",
+    "scene": "/dialogue/restaurant/ordering-food/bg.webp",
     "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-01.mp3"
   },
   {
@@ -75,7 +75,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Can I have some bread too?",
     "translation": "Tôi có thể gọi thêm một ít bánh mì không?",
     "practicePriority": "important",
-    "scene": "/dialogue/restaurant/ordering-food/bg.png",
+    "scene": "/dialogue/restaurant/ordering-food/bg.webp",
     "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-02.mp3"
   },
   {
@@ -84,7 +84,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Of course. What would you like to drink?",
     "translation": "Tất nhiên. Bạn muốn uống gì?",
     "practicePriority": "important",
-    "scene": "/dialogue/restaurant/ordering-food/bg.png",
+    "scene": "/dialogue/restaurant/ordering-food/bg.webp",
     "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-03.mp3"
   },
   {
@@ -93,7 +93,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Orange juice, please.",
     "translation": "Nước cam nhé.",
     "practicePriority": "simple",
-    "scene": "/dialogue/restaurant/ordering-food/bg.png",
+    "scene": "/dialogue/restaurant/ordering-food/bg.webp",
     "audioUrl": "/dialogue/restaurant/ordering-food/audio/emma-03.mp3"
   },
   {
@@ -102,7 +102,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Okay. One chicken pasta, one tomato soup, water, and orange juice.",
     "translation": "Được. Một mì Ý gà, một súp cà chua, nước lọc và nước cam.",
     "practicePriority": "important",
-    "scene": "/dialogue/restaurant/ordering-food/bg.png",
+    "scene": "/dialogue/restaurant/ordering-food/bg.webp",
     "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-04.mp3"
   },
   {
@@ -111,7 +111,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes, that is right.",
     "translation": "Vâng, đúng rồi.",
     "practicePriority": "simple",
-    "scene": "/dialogue/restaurant/ordering-food/bg.png",
+    "scene": "/dialogue/restaurant/ordering-food/bg.webp",
     "audioUrl": "/dialogue/restaurant/ordering-food/audio/ben-03.mp3"
   },
   {
@@ -120,7 +120,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Great. Thank you.",
     "translation": "Tuyệt. Cảm ơn hai bạn.",
     "practicePriority": "simple",
-    "scene": "/dialogue/restaurant/ordering-food/bg.png",
+    "scene": "/dialogue/restaurant/ordering-food/bg.webp",
     "audioUrl": "/dialogue/restaurant/ordering-food/audio/alex-05.mp3"
   }
 ]
@@ -426,7 +426,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/restaurant/during-the-meal/bg.png"
+"/dialogue/restaurant/during-the-meal/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -436,10 +436,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/restaurant/during-the-meal/bg.png"
+"/dialogue/restaurant/during-the-meal/bg.webp"
 
 Thumbnail:
-"/dialogue/restaurant/thumbnails/during-the-meal.png"
+"/dialogue/restaurant/thumbnails/during-the-meal.webp"
 
 Audio format:
 "/dialogue/restaurant/during-the-meal/audio/{speaker}-{number}.mp3"
@@ -468,8 +468,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Ben và Emma đang dùng bữa. Họ nói về món ăn và hỏi Alex một vài điều đơn giản.",
-		"scene": "/dialogue/restaurant/during-the-meal/bg.png",
-		"thumbnail": "/dialogue/restaurant/thumbnails/during-the-meal.png"
+		"scene": "/dialogue/restaurant/during-the-meal/bg.webp",
+		"thumbnail": "/dialogue/restaurant/thumbnails/during-the-meal.webp"
 	},
 
 	"dialogue": [

@@ -5,8 +5,8 @@
 		"title": "Làm thủ tục nhận phòng",
 		"level": "a1",
 		"situation": "Ben đến khách sạn và làm thủ tục nhận phòng với Maya.",
-		"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
-		"thumbnail": "/dialogue/at-a-hotel/thumbnails/checking-in.png"
+		"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
+		"thumbnail": "/dialogue/at-a-hotel/thumbnails/checking-in.webp"
 	},
 	"dialogue": [
 		{
@@ -15,7 +15,7 @@
 			"text": "Hi. I'd like to check in, please.",
 			"translation": "Chào bạn. Tôi muốn làm thủ tục nhận phòng.",
 			"practicePriority": "veryImportant",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-01.mp3"
 		},
 		{
@@ -24,7 +24,7 @@
 			"text": "Of course. What's your name?",
 			"translation": "Tất nhiên. Tên của bạn là gì?",
 			"practicePriority": "simple",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-01.mp3"
 		},
 		{
@@ -33,7 +33,7 @@
 			"text": "Ben Carter. I have a reservation.",
 			"translation": "Ben Carter. Tôi đã đặt phòng trước.",
 			"practicePriority": "veryImportant",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-02.mp3"
 		},
 		{
@@ -42,7 +42,7 @@
 			"text": "Great. How many nights are you staying?",
 			"translation": "Tốt. Bạn sẽ ở bao nhiêu đêm?",
 			"practicePriority": "important",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-02.mp3"
 		},
 		{
@@ -51,7 +51,7 @@
 			"text": "Three nights.",
 			"translation": "Ba đêm.",
 			"practicePriority": "simple",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-03.mp3"
 		},
 		{
@@ -60,7 +60,7 @@
 			"text": "Perfect. Your room is 204, on the second floor.",
 			"translation": "Tuyệt. Phòng của bạn là phòng 204, ở tầng hai.",
 			"practicePriority": "important",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-03.mp3"
 		},
 		{
@@ -69,7 +69,7 @@
 			"text": "Your key card is ready.",
 			"translation": "Thẻ phòng của bạn đã sẵn sàng.",
 			"practicePriority": "simple",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-04.mp3"
 		},
 		{
@@ -78,7 +78,7 @@
 			"text": "Great. Thank you.",
 			"translation": "Tuyệt. Cảm ơn bạn.",
 			"practicePriority": "simple",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-04.mp3"
 		},
 		{
@@ -87,7 +87,7 @@
 			"text": "You're welcome. Enjoy your stay.",
 			"translation": "Không có gì. Chúc bạn có kỳ nghỉ vui vẻ.",
 			"practicePriority": "important",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-05.mp3"
 		}
 	],
@@ -105,7 +105,7 @@
 			],
 			"speaker": "Ben",
 			"transcript": "Hi. I'd like to check in, please.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-01.mp3"
 		},
 		{
@@ -121,7 +121,7 @@
 			],
 			"speaker": "Ben",
 			"transcript": "Hi. I'd like to check in, please.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-01.mp3"
 		},
 		{
@@ -138,7 +138,7 @@
 			"answer": "Để nói mong muốn một cách lịch sự.",
 			"speaker": "Ben",
 			"transcript": "Hi. I'd like to check in, please.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-01.mp3"
 		},
 		{
@@ -154,7 +154,7 @@
 			],
 			"speaker": "Maya",
 			"transcript": "Of course. What's your name?",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-01.mp3"
 		},
 		{
@@ -170,7 +170,7 @@
 			],
 			"speaker": "Ben",
 			"transcript": "Ben Carter. I have a reservation.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-02.mp3"
 		},
 		{
@@ -186,7 +186,7 @@
 			],
 			"speaker": "Ben",
 			"transcript": "Ben Carter. I have a reservation.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-02.mp3"
 		},
 		{
@@ -203,7 +203,7 @@
 			"answer": "Tìm thông tin đặt phòng của Ben.",
 			"speaker": "Ben",
 			"transcript": "Ben Carter. I have a reservation.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-02.mp3"
 		},
 		{
@@ -219,7 +219,7 @@
 			],
 			"speaker": "Maya",
 			"transcript": "Great. How many nights are you staying?",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-02.mp3"
 		},
 		{
@@ -235,7 +235,7 @@
 			],
 			"speaker": "Maya",
 			"transcript": "Great. How many nights are you staying?",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-02.mp3"
 		},
 		{
@@ -252,7 +252,7 @@
 			"answer": "Ben sẽ ở bao nhiêu đêm.",
 			"speaker": "Maya",
 			"transcript": "Great. How many nights are you staying?",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-02.mp3"
 		},
 		{
@@ -268,7 +268,7 @@
 			],
 			"speaker": "Ben",
 			"transcript": "Three nights.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-03.mp3"
 		},
 		{
@@ -284,7 +284,7 @@
 			],
 			"speaker": "Maya",
 			"transcript": "Perfect. Your room is 204, on the second floor.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-03.mp3"
 		},
 		{
@@ -300,7 +300,7 @@
 			],
 			"speaker": "Maya",
 			"transcript": "Perfect. Your room is 204, on the second floor.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-03.mp3"
 		},
 		{
@@ -317,7 +317,7 @@
 			"answer": "Số phòng và tầng.",
 			"speaker": "Maya",
 			"transcript": "Perfect. Your room is 204, on the second floor.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-03.mp3"
 		},
 		{
@@ -333,7 +333,7 @@
 			],
 			"speaker": "Maya",
 			"transcript": "Your key card is ready.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-04.mp3"
 		},
 		{
@@ -349,7 +349,7 @@
 			],
 			"speaker": "Ben",
 			"transcript": "Great. Thank you.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/ben-04.mp3"
 		},
 		{
@@ -365,7 +365,7 @@
 			],
 			"speaker": "Maya",
 			"transcript": "You're welcome. Enjoy your stay.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-05.mp3"
 		},
 		{
@@ -381,7 +381,7 @@
 			],
 			"speaker": "Maya",
 			"transcript": "You're welcome. Enjoy your stay.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-05.mp3"
 		},
 		{
@@ -398,7 +398,7 @@
 			"answer": "Chúc Ben có thời gian vui vẻ ở khách sạn.",
 			"speaker": "Maya",
 			"transcript": "You're welcome. Enjoy your stay.",
-			"scene": "/dialogue/at-a-hotel/checking-in/bg.png",
+			"scene": "/dialogue/at-a-hotel/checking-in/bg.webp",
 			"audioUrl": "/dialogue/at-a-hotel/checking-in/audio/maya-05.mp3"
 		},
 		{

@@ -1,15 +1,15 @@
 ## A Busy Morning
 - Dialogue slug: `a-busy-morning`
-- Output PNG: `/stories/grateful/thumbnails/a-busy-morning.png`
+- Output PNG: `/stories/grateful/thumbnails/a-busy-morning.webp`
 - Characters: Mom, Lily, Sam
 - Scene/context: Lily is late for school. Mom prepares her breakfast and helps her find her bag, but Lily leaves without saying thank you.
 - Important visual details from the real dialogue:
   - Lily: “I can't eat now. Where is my school bag?”
   - Mom: “It's next to the front door.”
   - Lily: “Okay, I see my bag. Can I take some food?”
-- Recommended background: Show the setting in “Lily is late for school. Mom prepares her breakfast and helps her find her bag, but Lily leaves without saying thank you.”, matching the existing scene reference `/stories/grateful/a-busy-morning/bg.png`.
+- Recommended background: Show the setting in “Lily is late for school. Mom prepares her breakfast and helps her find her bag, but Lily leaves without saying thank you.”, matching the existing scene reference `/stories/grateful/a-busy-morning/bg.webp`.
 - Recommended time of day: Morning
-- Character references: Mom — public/stories/grateful/a-busy-morning/shared/mom.png; Lily — public/stories/grateful/a-busy-morning/shared/lily.png; Sam — public/stories/grateful/a-busy-morning/shared/sam.png
+- Character references: Mom — public/stories/grateful/a-busy-morning/shared/mom.webp; Lily — public/stories/grateful/a-busy-morning/shared/lily.webp; Sam — public/stories/grateful/a-busy-morning/shared/sam.webp
 - Style: Create one separate 16:9 landscape PNG for each dialogue. Match StudyJony's polished, warm, storybook/anime-inspired illustration style: expressive consistent character faces, detailed setting, natural poses, clear story moment, and cinematic but friendly lighting. Keep the characters, rendering, color treatment, and framing consistent across this topic as one series. No title text, captions, badge, UI, watermark, or multi-panel collage.
 - Full dialogue context:
   - Mom: Lily, it's seven thirty. Time for school!

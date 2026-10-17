@@ -27,8 +27,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Kakashi challenges Naruto, Sasuke, and Sakura to take two bells from him. At first, they try to win alone.",
-    "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
-    "thumbnail": "/stories/naruto-season-1/thumbnails/the-bell-test.png"
+    "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/the-bell-test.webp"
   },
   "dialogue": [
     {
@@ -37,7 +37,7 @@
       "text": "We are here on time.",
       "translation": "Chúng em đã có mặt đúng giờ.",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-01.mp3"
     },
     {
@@ -46,7 +46,7 @@
       "text": "I am ready for the test!",
       "translation": "Em đã sẵn sàng cho bài kiểm tra!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-01.mp3"
     },
     {
@@ -55,7 +55,7 @@
       "text": "Good morning. Today, I have a test for you.",
       "translation": "Chào buổi sáng. Hôm nay thầy có một bài kiểm tra dành cho các em.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-01.mp3"
     },
     {
@@ -64,7 +64,7 @@
       "text": "Look, I have two bells. You must take one to pass.",
       "translation": "Nhìn này, thầy có hai chiếc chuông. Các em phải lấy được một chiếc mới vượt qua.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-02.mp3"
     },
     {
@@ -73,7 +73,7 @@
       "text": "But there are three of us!",
       "translation": "Nhưng có đến ba người chúng em mà!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-02.mp3"
     },
     {
@@ -82,7 +82,7 @@
       "text": "Only two of you can get a bell.",
       "translation": "Chỉ hai trong số các em có thể lấy được chuông.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-03.mp3"
     },
     {
@@ -91,7 +91,7 @@
       "text": "I can get one by myself!",
       "translation": "Em có thể tự mình lấy được một chiếc!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-02.mp3"
     },
     {
@@ -100,7 +100,7 @@
       "text": "I will work alone too.",
       "translation": "Em cũng sẽ làm một mình.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-01.mp3"
     },
     {
@@ -109,7 +109,7 @@
       "text": "Wait. We need a plan first.",
       "translation": "Khoan đã. Chúng ta cần lên kế hoạch trước.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-03.mp3"
     },
     {
@@ -118,7 +118,7 @@
       "text": "No time! I want to start now!",
       "translation": "Không còn thời gian đâu! Tớ muốn bắt đầu ngay!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-03.mp3"
     },
     {
@@ -127,7 +127,7 @@
       "text": "You have until noon. Good luck!",
       "translation": "Các em có thời gian đến trưa. Chúc may mắn!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-04.mp3"
     },
     {
@@ -136,7 +136,7 @@
       "text": "Why can't I catch you?",
       "translation": "Sao em không thể bắt được thầy chứ?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-04.mp3"
     },
     {
@@ -145,7 +145,7 @@
       "text": "I can't get a bell either.",
       "translation": "Em cũng không lấy được chiếc chuông nào.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-02.mp3"
     },
     {
@@ -154,7 +154,7 @@
       "text": "We are not working together.",
       "translation": "Chúng ta đang không hợp tác với nhau.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-04.mp3"
     },
     {
@@ -163,7 +163,7 @@
       "text": "The test is over. You have no bells.",
       "translation": "Bài kiểm tra kết thúc rồi. Các em không có chiếc chuông nào.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-05.mp3"
     },
     {
@@ -172,7 +172,7 @@
       "text": "But I tried so hard!",
       "translation": "Nhưng em đã cố gắng hết sức mà!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-05.mp3"
     },
     {
@@ -181,7 +181,7 @@
       "text": "You worked alone. That is the problem.",
       "translation": "Các em đều làm một mình. Đó chính là vấn đề.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-06.mp3"
     },
     {
@@ -190,7 +190,7 @@
       "text": "We need to help each other.",
       "translation": "Chúng ta cần giúp đỡ lẫn nhau.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-05.mp3"
     },
     {
@@ -199,7 +199,7 @@
       "text": "Think about that. We will talk after lunch.",
       "translation": "Hãy suy nghĩ về điều đó. Chúng ta sẽ nói chuyện sau bữa trưa.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-07.mp3"
     }
   ],
@@ -272,7 +272,7 @@
       "answers": ["on time"],
       "speaker": "Sakura",
       "transcript": "We are here on time.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-01.mp3"
     },
     {
@@ -287,7 +287,7 @@
       "answers": ["ready"],
       "speaker": "Naruto",
       "transcript": "I am ready for the test!",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-01.mp3"
     },
     {
@@ -302,7 +302,7 @@
       "answers": ["test"],
       "speaker": "Naruto",
       "transcript": "I am ready for the test!",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-01.mp3"
     },
     {
@@ -317,7 +317,7 @@
       "answers": ["Good morning"],
       "speaker": "Kakashi",
       "transcript": "Good morning. Today, I have a test for you.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-01.mp3"
     },
     {
@@ -332,7 +332,7 @@
       "answers": ["Today"],
       "speaker": "Kakashi",
       "transcript": "Good morning. Today, I have a test for you.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-01.mp3"
     },
     {
@@ -347,7 +347,7 @@
       "answers": ["two bells"],
       "speaker": "Kakashi",
       "transcript": "Look, I have two bells. You must take one to pass.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-02.mp3"
     },
     {
@@ -362,7 +362,7 @@
       "answers": ["must"],
       "speaker": "Kakashi",
       "transcript": "Look, I have two bells. You must take one to pass.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-02.mp3"
     },
     {
@@ -377,7 +377,7 @@
       "answers": ["pass"],
       "speaker": "Kakashi",
       "transcript": "Look, I have two bells. You must take one to pass.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-02.mp3"
     },
     {
@@ -409,7 +409,7 @@
       "answer": "Lấy được một chiếc chuông từ Kakashi.",
       "speaker": "Kakashi",
       "transcript": "Look, I have two bells. You must take one to pass.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-02.mp3"
     },
     {
@@ -424,7 +424,7 @@
       "answers": ["there are"],
       "speaker": "Sakura",
       "transcript": "But there are three of us!",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-02.mp3"
     },
     {
@@ -439,7 +439,7 @@
       "answers": ["three"],
       "speaker": "Sakura",
       "transcript": "But there are three of us!",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-02.mp3"
     },
     {
@@ -454,7 +454,7 @@
       "answers": ["Only"],
       "speaker": "Kakashi",
       "transcript": "Only two of you can get a bell.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-03.mp3"
     },
     {
@@ -469,7 +469,7 @@
       "answers": ["bell"],
       "speaker": "Kakashi",
       "transcript": "Only two of you can get a bell.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-03.mp3"
     },
     {
@@ -501,7 +501,7 @@
       "answer": "Có ba học trò nhưng chỉ có hai chiếc chuông.",
       "speaker": "Kakashi",
       "transcript": "Only two of you can get a bell.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-03.mp3"
     },
     {
@@ -516,7 +516,7 @@
       "answers": ["get one"],
       "speaker": "Naruto",
       "transcript": "I can get one by myself!",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-02.mp3"
     },
     {
@@ -531,7 +531,7 @@
       "answers": ["by myself"],
       "speaker": "Naruto",
       "transcript": "I can get one by myself!",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-02.mp3"
     },
     {
@@ -546,7 +546,7 @@
       "answers": ["will"],
       "speaker": "Sasuke",
       "transcript": "I will work alone too.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-01.mp3"
     },
     {
@@ -561,7 +561,7 @@
       "answers": ["alone"],
       "speaker": "Sasuke",
       "transcript": "I will work alone too.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-01.mp3"
     },
     {
@@ -594,7 +594,7 @@
       "answer": "Nói điều mình định làm tiếp theo.",
       "speaker": "Sasuke",
       "transcript": "I will work alone too.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-01.mp3"
     },
     {
@@ -609,7 +609,7 @@
       "answers": ["need"],
       "speaker": "Sakura",
       "transcript": "Wait. We need a plan first.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-03.mp3"
     },
     {
@@ -624,7 +624,7 @@
       "answers": ["plan"],
       "speaker": "Sakura",
       "transcript": "Wait. We need a plan first.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-03.mp3"
     },
     {
@@ -657,7 +657,7 @@
       "answer": "Cô ấy muốn cả đội suy nghĩ trước khi bắt đầu.",
       "speaker": "Sakura",
       "transcript": "Wait. We need a plan first.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-03.mp3"
     },
     {
@@ -672,7 +672,7 @@
       "answers": ["No time"],
       "speaker": "Naruto",
       "transcript": "No time! I want to start now!",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-03.mp3"
     },
     {
@@ -687,7 +687,7 @@
       "answers": ["start"],
       "speaker": "Naruto",
       "transcript": "No time! I want to start now!",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-03.mp3"
     },
     {
@@ -702,7 +702,7 @@
       "answers": ["until noon"],
       "speaker": "Kakashi",
       "transcript": "You have until noon. Good luck!",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-04.mp3"
     },
     {
@@ -717,7 +717,7 @@
       "answers": ["Good luck"],
       "speaker": "Kakashi",
       "transcript": "You have until noon. Good luck!",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-04.mp3"
     },
     {
@@ -732,7 +732,7 @@
       "answers": ["can't"],
       "speaker": "Naruto",
       "transcript": "Why can't I catch you?",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-04.mp3"
     },
     {
@@ -747,7 +747,7 @@
       "answers": ["catch"],
       "speaker": "Naruto",
       "transcript": "Why can't I catch you?",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-04.mp3"
     },
     {
@@ -762,7 +762,7 @@
       "answers": ["can't"],
       "speaker": "Sasuke",
       "transcript": "I can't get a bell either.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-02.mp3"
     },
     {
@@ -777,7 +777,7 @@
       "answers": ["either"],
       "speaker": "Sasuke",
       "transcript": "I can't get a bell either.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-02.mp3"
     },
     {
@@ -792,7 +792,7 @@
       "answers": ["not"],
       "speaker": "Sakura",
       "transcript": "We are not working together.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-04.mp3"
     },
     {
@@ -807,7 +807,7 @@
       "answers": ["working together"],
       "speaker": "Sakura",
       "transcript": "We are not working together.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-04.mp3"
     },
     {
@@ -822,7 +822,7 @@
       "answers": ["over"],
       "speaker": "Kakashi",
       "transcript": "The test is over. You have no bells.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-05.mp3"
     },
     {
@@ -837,7 +837,7 @@
       "answers": ["no bells"],
       "speaker": "Kakashi",
       "transcript": "The test is over. You have no bells.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-05.mp3"
     },
     {
@@ -869,7 +869,7 @@
       "answer": "Không ai lấy được chiếc chuông nào.",
       "speaker": "Kakashi",
       "transcript": "The test is over. You have no bells.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-05.mp3"
     },
     {
@@ -884,7 +884,7 @@
       "answers": ["tried"],
       "speaker": "Naruto",
       "transcript": "But I tried so hard!",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-05.mp3"
     },
     {
@@ -899,7 +899,7 @@
       "answers": ["so hard"],
       "speaker": "Naruto",
       "transcript": "But I tried so hard!",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-05.mp3"
     },
     {
@@ -914,7 +914,7 @@
       "answers": ["alone"],
       "speaker": "Kakashi",
       "transcript": "You worked alone. That is the problem.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-06.mp3"
     },
     {
@@ -929,7 +929,7 @@
       "answers": ["problem"],
       "speaker": "Kakashi",
       "transcript": "You worked alone. That is the problem.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-06.mp3"
     },
     {
@@ -944,7 +944,7 @@
       "answers": ["help"],
       "speaker": "Sakura",
       "transcript": "We need to help each other.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-05.mp3"
     },
     {
@@ -959,7 +959,7 @@
       "answers": ["each other"],
       "speaker": "Sakura",
       "transcript": "We need to help each other.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-05.mp3"
     },
     {
@@ -974,7 +974,7 @@
       "answers": ["Think"],
       "speaker": "Kakashi",
       "transcript": "Think about that. We will talk after lunch.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-07.mp3"
     },
     {
@@ -989,7 +989,7 @@
       "answers": ["after lunch"],
       "speaker": "Kakashi",
       "transcript": "Think about that. We will talk after lunch.",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-07.mp3"
     },
     {

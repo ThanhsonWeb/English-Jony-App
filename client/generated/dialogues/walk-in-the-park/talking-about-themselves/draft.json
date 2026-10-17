@@ -26,8 +26,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Ben và Emma chia sẻ thêm về bản thân, nơi họ sống, những điều họ thích và cuộc sống hằng ngày.",
-    "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
-    "thumbnail": "/dialogue/walk-in-the-park/thumbnails/talking-about-themselves.png"
+    "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
+    "thumbnail": "/dialogue/walk-in-the-park/thumbnails/talking-about-themselves.webp"
   },
   "dialogue": [
     {
@@ -36,7 +36,7 @@
       "text": "That sounds like a nice job.",
       "translation": "Nghe có vẻ là một công việc tốt.",
       "practicePriority": "simple",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-01.mp3"
     },
     {
@@ -45,7 +45,7 @@
       "text": "Thanks. Do you live near here?",
       "translation": "Cảm ơn. Bạn có sống gần đây không?",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-01.mp3"
     },
     {
@@ -54,7 +54,7 @@
       "text": "Yes. I live in an apartment near the park.",
       "translation": "Có. Mình sống trong một căn hộ gần công viên.",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-02.mp3"
     },
     {
@@ -63,7 +63,7 @@
       "text": "I live near my school. It is easy to get to work.",
       "translation": "Mình sống gần trường. Đi làm rất thuận tiện.",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-02.mp3"
     },
     {
@@ -72,7 +72,7 @@
       "text": "What do you like to do after work?",
       "translation": "Bạn thích làm gì sau giờ làm?",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-03.mp3"
     },
     {
@@ -81,7 +81,7 @@
       "text": "I like cooking and watching movies at home.",
       "translation": "Mình thích nấu ăn và xem phim ở nhà.",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-03.mp3"
     },
     {
@@ -90,7 +90,7 @@
       "text": "What about you?",
       "translation": "Còn bạn thì sao?",
       "practicePriority": "simple",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-04.mp3"
     },
     {
@@ -99,7 +99,7 @@
       "text": "I usually read books or listen to music.",
       "translation": "Mình thường đọc sách hoặc nghe nhạc.",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-04.mp3"
     },
     {
@@ -108,7 +108,7 @@
       "text": "What do you usually do on weekends?",
       "translation": "Bạn thường làm gì vào cuối tuần?",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-05.mp3"
     },
     {
@@ -117,7 +117,7 @@
       "text": "I usually go to the gym or meet my friends.",
       "translation": "Mình thường đi tập gym hoặc gặp bạn bè.",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-05.mp3"
     },
     {
@@ -126,7 +126,7 @@
       "text": "Nice. I like walking in the park and having coffee with friends.",
       "translation": "Hay đấy. Mình thích đi dạo trong công viên và uống cà phê với bạn bè.",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-06.mp3"
     },
     {
@@ -135,7 +135,7 @@
       "text": "We like some of the same things.",
       "translation": "Chúng ta thích một vài điều giống nhau.",
       "practicePriority": "simple",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-06.mp3"
     }
   ],
@@ -225,7 +225,7 @@
       ],
       "speaker": "Ben",
       "transcript": "That sounds like a nice job.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-01.mp3"
     },
     {
@@ -251,7 +251,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Thanks. Do you live near here?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-01.mp3"
     },
     {
@@ -277,7 +277,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Thanks. Do you live near here?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-01.mp3"
     },
     {
@@ -303,7 +303,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Yes. I live in an apartment near the park.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-02.mp3"
     },
     {
@@ -329,7 +329,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Yes. I live in an apartment near the park.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-02.mp3"
     },
     {
@@ -355,7 +355,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Yes. I live in an apartment near the park.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-02.mp3"
     },
     {
@@ -405,7 +405,7 @@
       "answer": "Trong một căn hộ gần công viên.",
       "speaker": "Ben",
       "transcript": "Yes. I live in an apartment near the park.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-02.mp3"
     },
     {
@@ -431,7 +431,7 @@
       ],
       "speaker": "Emma",
       "transcript": "I live near my school. It is easy to get to work.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-02.mp3"
     },
     {
@@ -457,7 +457,7 @@
       ],
       "speaker": "Emma",
       "transcript": "I live near my school. It is easy to get to work.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-02.mp3"
     },
     {
@@ -483,7 +483,7 @@
       ],
       "speaker": "Emma",
       "transcript": "What do you like to do after work?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-03.mp3"
     },
     {
@@ -509,7 +509,7 @@
       ],
       "speaker": "Emma",
       "transcript": "What do you like to do after work?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-03.mp3"
     },
     {
@@ -560,7 +560,7 @@
       "answer": "Những việc Ben thích làm sau giờ làm.",
       "speaker": "Emma",
       "transcript": "What do you like to do after work?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-03.mp3"
     },
     {
@@ -586,7 +586,7 @@
       ],
       "speaker": "Ben",
       "transcript": "I like cooking and watching movies at home.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-03.mp3"
     },
     {
@@ -612,7 +612,7 @@
       ],
       "speaker": "Ben",
       "transcript": "I like cooking and watching movies at home.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-03.mp3"
     },
     {
@@ -638,7 +638,7 @@
       ],
       "speaker": "Ben",
       "transcript": "What about you?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-04.mp3"
     },
     {
@@ -664,7 +664,7 @@
       ],
       "speaker": "Emma",
       "transcript": "I usually read books or listen to music.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-04.mp3"
     },
     {
@@ -690,7 +690,7 @@
       ],
       "speaker": "Emma",
       "transcript": "I usually read books or listen to music.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-04.mp3"
     },
     {
@@ -740,7 +740,7 @@
       "answer": "Cô ấy đọc sách hoặc nghe nhạc.",
       "speaker": "Emma",
       "transcript": "I usually read books or listen to music.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-04.mp3"
     },
     {
@@ -766,7 +766,7 @@
       ],
       "speaker": "Emma",
       "transcript": "What do you usually do on weekends?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-05.mp3"
     },
     {
@@ -792,7 +792,7 @@
       ],
       "speaker": "Emma",
       "transcript": "What do you usually do on weekends?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-05.mp3"
     },
     {
@@ -843,7 +843,7 @@
       "answer": "Một việc Ben thường làm.",
       "speaker": "Emma",
       "transcript": "What do you usually do on weekends?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-05.mp3"
     },
     {
@@ -869,7 +869,7 @@
       ],
       "speaker": "Ben",
       "transcript": "I usually go to the gym or meet my friends.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-05.mp3"
     },
     {
@@ -895,7 +895,7 @@
       ],
       "speaker": "Ben",
       "transcript": "I usually go to the gym or meet my friends.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-05.mp3"
     },
     {
@@ -945,7 +945,7 @@
       "answer": "Đi tập gym hoặc gặp bạn bè.",
       "speaker": "Ben",
       "transcript": "I usually go to the gym or meet my friends.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-05.mp3"
     },
     {
@@ -971,7 +971,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Nice. I like walking in the park and having coffee with friends.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-06.mp3"
     },
     {
@@ -997,7 +997,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Nice. I like walking in the park and having coffee with friends.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/emma-06.mp3"
     },
     {
@@ -1023,7 +1023,7 @@
       ],
       "speaker": "Ben",
       "transcript": "We like some of the same things.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-themselves/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-themselves/audio/ben-06.mp3"
     },
     {

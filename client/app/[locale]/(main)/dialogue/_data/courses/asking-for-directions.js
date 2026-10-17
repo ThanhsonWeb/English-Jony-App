@@ -14,8 +14,8 @@ function buildCourseDialogue(draft) {
   const dialogue = buildGeneratedDialogue(
     draft,
     media?.characters ?? {
-      Ben: "/dialogue/asking-for-directions/shared/ben.png",
-      Emma: "/dialogue/asking-for-directions/shared/emma.png",
+      Ben: "/dialogue/asking-for-directions/shared/ben.webp",
+      Emma: "/dialogue/asking-for-directions/shared/emma.webp",
     },
   );
 

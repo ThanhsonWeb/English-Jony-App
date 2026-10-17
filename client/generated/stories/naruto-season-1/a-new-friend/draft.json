@@ -27,8 +27,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Naruto meets Konohamaru, a young boy who wants to become strong. They begin an unexpected friendship.",
-    "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
-    "thumbnail": "/stories/naruto-season-1/thumbnails/a-new-friend.png"
+    "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/a-new-friend.webp"
   },
   "dialogue": [
     {
@@ -37,7 +37,7 @@
       "text": "Hey! Is that your new ninja headband?",
       "translation": "Này! Đó là băng trán ninja mới của anh à?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-01.mp3"
     },
     {
@@ -46,7 +46,7 @@
       "text": "Yes! I passed the test yesterday.",
       "translation": "Đúng rồi! Hôm qua anh đã vượt qua bài kiểm tra.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-01.mp3"
     },
     {
@@ -55,7 +55,7 @@
       "text": "Wow! You are a real ninja!",
       "translation": "Ồ! Anh là một ninja thực thụ rồi!",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-02.mp3"
     },
     {
@@ -64,7 +64,7 @@
       "text": "I work hard. What is your name?",
       "translation": "Anh luôn chăm chỉ. Em tên gì?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-02.mp3"
     },
     {
@@ -73,7 +73,7 @@
       "text": "My name is Konohamaru. I want to be strong like you.",
       "translation": "Em tên là Konohamaru. Em muốn mạnh mẽ như anh.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-03.mp3"
     },
     {
@@ -82,7 +82,7 @@
       "text": "Nice to meet you, Konohamaru!",
       "translation": "Rất vui được gặp em, Konohamaru!",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-03.mp3"
     },
     {
@@ -91,7 +91,7 @@
       "text": "Can you teach me a ninja technique?",
       "translation": "Anh có thể dạy em một kỹ thuật ninja không?",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-04.mp3"
     },
     {
@@ -100,7 +100,7 @@
       "text": "I can help you, but you need to practice.",
       "translation": "Anh có thể giúp em, nhưng em cần luyện tập.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-04.mp3"
     },
     {
@@ -109,7 +109,7 @@
       "text": "I practice every day. I want to be Hokage!",
       "translation": "Em luyện tập mỗi ngày. Em muốn trở thành Hokage!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-05.mp3"
     },
     {
@@ -118,7 +118,7 @@
       "text": "Hey! I want to be Hokage too!",
       "translation": "Này! Anh cũng muốn trở thành Hokage!",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-05.mp3"
     },
     {
@@ -127,7 +127,7 @@
       "text": "Then we have the same dream!",
       "translation": "Vậy chúng ta có cùng một ước mơ!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-06.mp3"
     },
     {
@@ -136,7 +136,7 @@
       "text": "That is right. We can train together.",
       "translation": "Đúng vậy. Chúng ta có thể luyện tập cùng nhau.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-06.mp3"
     },
     {
@@ -145,7 +145,7 @@
       "text": "Can we be friends too?",
       "translation": "Chúng ta cũng có thể làm bạn không?",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-07.mp3"
     },
     {
@@ -154,7 +154,7 @@
       "text": "Of course! You are my friend now.",
       "translation": "Tất nhiên rồi! Bây giờ em là bạn của anh.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-07.mp3"
     },
     {
@@ -163,7 +163,7 @@
       "text": "Thank you, Naruto! See you tomorrow!",
       "translation": "Cảm ơn anh, Naruto! Mai gặp lại nhé!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-08.mp3"
     }
   ],
@@ -253,7 +253,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "Hey! Is that your new ninja headband?",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-01.mp3"
     },
     {
@@ -279,7 +279,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "Hey! Is that your new ninja headband?",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-01.mp3"
     },
     {
@@ -305,7 +305,7 @@
       ],
       "speaker": "Naruto",
       "transcript": "Yes! I passed the test yesterday.",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-01.mp3"
     },
     {
@@ -331,7 +331,7 @@
       ],
       "speaker": "Naruto",
       "transcript": "Yes! I passed the test yesterday.",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-01.mp3"
     },
     {
@@ -381,7 +381,7 @@
       "answer": "Băng trán ninja",
       "speaker": "Naruto",
       "transcript": "Yes! I passed the test yesterday.",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-01.mp3"
     },
     {
@@ -407,7 +407,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "Wow! You are a real ninja!",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-02.mp3"
     },
     {
@@ -433,7 +433,7 @@
       ],
       "speaker": "Naruto",
       "transcript": "I work hard. What is your name?",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-02.mp3"
     },
     {
@@ -459,7 +459,7 @@
       ],
       "speaker": "Naruto",
       "transcript": "I work hard. What is your name?",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-02.mp3"
     },
     {
@@ -485,7 +485,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "My name is Konohamaru. I want to be strong like you.",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-03.mp3"
     },
     {
@@ -511,7 +511,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "My name is Konohamaru. I want to be strong like you.",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-03.mp3"
     },
     {
@@ -537,7 +537,7 @@
       ],
       "speaker": "Naruto",
       "transcript": "Nice to meet you, Konohamaru!",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-03.mp3"
     },
     {
@@ -563,7 +563,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "Can you teach me a ninja technique?",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-04.mp3"
     },
     {
@@ -589,7 +589,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "Can you teach me a ninja technique?",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-04.mp3"
     },
     {
@@ -639,7 +639,7 @@
       "answer": "Để lịch sự nhờ Naruto dạy mình",
       "speaker": "Konohamaru",
       "transcript": "Can you teach me a ninja technique?",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-04.mp3",
       "mcTarget": "Can you"
     },
@@ -666,7 +666,7 @@
       ],
       "speaker": "Naruto",
       "transcript": "I can help you, but you need to practice.",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-04.mp3"
     },
     {
@@ -692,7 +692,7 @@
       ],
       "speaker": "Naruto",
       "transcript": "I can help you, but you need to practice.",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-04.mp3"
     },
     {
@@ -718,7 +718,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "I practice every day. I want to be Hokage!",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-05.mp3"
     },
     {
@@ -744,7 +744,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "I practice every day. I want to be Hokage!",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-05.mp3"
     },
     {
@@ -794,7 +794,7 @@
       "answer": "Hokage",
       "speaker": "Konohamaru",
       "transcript": "I practice every day. I want to be Hokage!",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-05.mp3"
     },
     {
@@ -820,7 +820,7 @@
       ],
       "speaker": "Naruto",
       "transcript": "Hey! I want to be Hokage too!",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-05.mp3"
     },
     {
@@ -846,7 +846,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "Then we have the same dream!",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-06.mp3"
     },
     {
@@ -872,7 +872,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "Then we have the same dream!",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-06.mp3"
     },
     {
@@ -898,7 +898,7 @@
       ],
       "speaker": "Naruto",
       "transcript": "That is right. We can train together.",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-06.mp3"
     },
     {
@@ -924,7 +924,7 @@
       ],
       "speaker": "Naruto",
       "transcript": "That is right. We can train together.",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-06.mp3"
     },
     {
@@ -974,7 +974,7 @@
       "answer": "Hai người có thể luyện tập cùng nhau",
       "speaker": "Naruto",
       "transcript": "That is right. We can train together.",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-06.mp3",
       "mcTarget": "can"
     },
@@ -1001,7 +1001,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "Can we be friends too?",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-07.mp3"
     },
     {
@@ -1027,7 +1027,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "Can we be friends too?",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-07.mp3"
     },
     {
@@ -1077,7 +1077,7 @@
       "answer": "Được làm bạn với Naruto",
       "speaker": "Konohamaru",
       "transcript": "Can we be friends too?",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-07.mp3"
     },
     {
@@ -1103,7 +1103,7 @@
       ],
       "speaker": "Naruto",
       "transcript": "Of course! You are my friend now.",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-07.mp3"
     },
     {
@@ -1129,7 +1129,7 @@
       ],
       "speaker": "Naruto",
       "transcript": "Of course! You are my friend now.",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/naruto-07.mp3"
     },
     {
@@ -1155,7 +1155,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "Thank you, Naruto! See you tomorrow!",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-08.mp3"
     },
     {
@@ -1181,7 +1181,7 @@
       ],
       "speaker": "Konohamaru",
       "transcript": "Thank you, Naruto! See you tomorrow!",
-      "scene": "/stories/naruto-season-1/a-new-friend/bg.png",
+      "scene": "/stories/naruto-season-1/a-new-friend/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-new-friend/audio/konohamaru-08.mp3"
     },
     {

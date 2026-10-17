@@ -24,16 +24,20 @@ async function exists(filePath) {
 }
 
 function characterReference(files, courseId, dialogueId, speaker) {
-	const name = `${speaker.toLowerCase()}.png`;
-	const matches = files.filter((file) =>
-		file.toLowerCase().endsWith(`/shared/${name}`),
-	);
-	const preferred = [
-		`${courseId}/shared/${name}`,
-		`${courseId}/${dialogueId}/shared/${name}`,
-	];
-	return preferred.map((item) => matches.find((file) => file.toLowerCase() === item))
-		.find(Boolean) || matches.find((file) => file.startsWith(`${courseId}/`)) || matches[0] || null;
+	for (const extension of ["webp", "png"]) {
+		const name = `${speaker.toLowerCase()}.${extension}`;
+		const matches = files.filter((file) =>
+			file.toLowerCase().endsWith(`/shared/${name}`),
+		);
+		const preferred = [
+			`${courseId}/shared/${name}`,
+			`${courseId}/${dialogueId}/shared/${name}`,
+		];
+		const found = preferred.map((item) => matches.find((file) => file.toLowerCase() === item))
+			.find(Boolean) || matches.find((file) => file.startsWith(`${courseId}/`)) || matches[0];
+		if (found) return found;
+	}
+	return null;
 }
 
 function recommendedTime(draft) {
@@ -90,13 +94,16 @@ async function main() {
 	const generatedCourseDirectory = getGeneratedCourseDirectory(root, course.contentType, courseId);
 
 	const allFiles = (await readdir(publicRoot, { recursive: true }))
-		.filter((file) => file.toLowerCase().endsWith(".png"))
+		.filter((file) => /\.(png|webp)$/i.test(file))
 		.map((file) => file.replaceAll("\\", "/"));
+	const fallbackReference = (await exists(path.join(root, "public", "dialogue", "restaurant", "thumbnails", "getting-a-table.webp")))
+		? "restaurant/thumbnails/getting-a-table.webp"
+		: "restaurant/thumbnails/getting-a-table.png";
 	const styleReference = allFiles.find((file) => file.startsWith(`${courseId}/thumbnails/`))
 		|| allFiles.find((file) => file.startsWith(`${courseId}/`) && file.includes("/thumbnails/"))
-		|| "restaurant/thumbnails/getting-a-table.png";
+		|| fallbackReference;
 	const styleReferenceDirectory =
-		styleReference === "restaurant/thumbnails/getting-a-table.png"
+		styleReference === fallbackReference
 			? "dialogue"
 			: publicDirectory;
 	const styleReferencePath = path.join(
@@ -120,8 +127,8 @@ async function main() {
 			"thumbnails",
 			`${dialogueId}.png`,
 		);
-		if (config.thumbnail !== targetUrl) {
-			throw new Error(`Config thumbnail for ${dialogueId} must be ${targetUrl}`);
+		if (config.thumbnail !== targetUrl && config.thumbnail !== targetUrl.replace(/\.png$/, ".webp")) {
+			throw new Error(`Config thumbnail for ${dialogueId} must be ${targetUrl} or its WebP version`);
 		}
 		const draft = await loadFinalDialogue(course.contentType, courseId, dialogueId);
 		const speakers = [...new Set(draft.dialogue.map((line) => line.speaker))];

@@ -327,7 +327,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/stories/grateful/a-busy-morning/bg.png"
+"/stories/grateful/a-busy-morning/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -337,10 +337,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/stories/grateful/a-busy-morning/bg.png"
+"/stories/grateful/a-busy-morning/bg.webp"
 
 Thumbnail:
-"/stories/grateful/thumbnails/a-busy-morning.png"
+"/stories/grateful/thumbnails/a-busy-morning.webp"
 
 Audio format:
 "/stories/grateful/a-busy-morning/audio/{speaker}-{number}.mp3"
@@ -377,8 +377,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Lily is late for school. Mom prepares her breakfast and helps her find her bag, but Lily leaves without saying thank you.",
-		"scene": "/stories/grateful/a-busy-morning/bg.png",
-		"thumbnail": "/stories/grateful/thumbnails/a-busy-morning.png"
+		"scene": "/stories/grateful/a-busy-morning/bg.webp",
+		"thumbnail": "/stories/grateful/thumbnails/a-busy-morning.webp"
 	},
 
 	"dialogue": [

@@ -8,7 +8,7 @@ const weekendCamping = {
 			dialogueId: "arriving-at-the-campsite",
 			title: "Đến khu cắm trại",
 			thumbnail:
-				"/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				"/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 			situation:
 				"Leo and Mia arrive at the campsite and choose a suitable place for their tent.",
 		},

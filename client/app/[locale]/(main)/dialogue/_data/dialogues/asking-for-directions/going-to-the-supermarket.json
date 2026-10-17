@@ -5,8 +5,8 @@
 		"title": "Đi đến siêu thị",
 		"level": "a1",
 		"situation": "Ngày hôm sau, Ben tình cờ gặp lại Emma, người đã giúp anh tìm trạm xe buýt. Hai người nhận ra nhau. Ben vẫn đang làm quen với đường sá trong thành phố và hỏi Emma cách đi đến siêu thị.",
-		"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
-		"thumbnail": "/dialogue/asking-for-directions/thumbnails/going-to-the-supermarket.png"
+		"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
+		"thumbnail": "/dialogue/asking-for-directions/thumbnails/going-to-the-supermarket.webp"
 	},
 	"dialogue": [
 		{
@@ -14,7 +14,7 @@
 			"speaker": "Ben",
 			"text": "Hi! You helped me at the bus stop yesterday.",
 			"translation": "Chào bạn! Hôm qua bạn đã giúp tôi ở trạm xe buýt.",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-01.mp3"
 		},
 		{
@@ -22,7 +22,7 @@
 			"speaker": "Emma",
 			"text": "Oh, hi! I remember you.",
 			"translation": "Ồ, chào bạn! Tôi nhớ bạn rồi.",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-01.mp3"
 		},
 		{
@@ -30,7 +30,7 @@
 			"speaker": "Ben",
 			"text": "I'm still learning my way around the city.",
 			"translation": "Tôi vẫn đang làm quen với đường sá trong thành phố.",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-02.mp3"
 		},
 		{
@@ -38,7 +38,7 @@
 			"speaker": "Ben",
 			"text": "Do you know where the supermarket is?",
 			"translation": "Bạn có biết siêu thị ở đâu không?",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-03.mp3"
 		},
 		{
@@ -46,7 +46,7 @@
 			"speaker": "Emma",
 			"text": "Yes. Walk along this street and go past the bank.",
 			"translation": "Có. Bạn đi dọc con phố này rồi đi qua ngân hàng.",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-02.mp3"
 		},
 		{
@@ -54,7 +54,7 @@
 			"speaker": "Emma",
 			"text": "Then turn right at the traffic lights.",
 			"translation": "Sau đó rẽ phải ở chỗ đèn giao thông.",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-03.mp3"
 		},
 		{
@@ -62,7 +62,7 @@
 			"speaker": "Ben",
 			"text": "Okay. Right at the traffic lights?",
 			"translation": "Được rồi. Rẽ phải ở chỗ đèn giao thông phải không?",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-04.mp3"
 		},
 		{
@@ -70,7 +70,7 @@
 			"speaker": "Emma",
 			"text": "Yes. The supermarket is on the corner, across from the bakery.",
 			"translation": "Đúng rồi. Siêu thị ở góc phố, đối diện tiệm bánh.",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-04.mp3"
 		},
 		{
@@ -78,7 +78,7 @@
 			"speaker": "Ben",
 			"text": "Is it far from here?",
 			"translation": "Siêu thị có xa đây không?",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-05.mp3"
 		},
 		{
@@ -86,7 +86,7 @@
 			"speaker": "Emma",
 			"text": "No, it's about ten minutes on foot.",
 			"translation": "Không, đi bộ mất khoảng mười phút thôi.",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-05.mp3"
 		}
 	],
@@ -99,7 +99,7 @@
 			"transcript": "Hi! You helped me at the bus stop yesterday.",
 			"parts": ["Hi! You ", " me at the bus stop ", "."],
 			"answers": ["helped", "yesterday"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-01.mp3"
 		},
 		{
@@ -116,7 +116,7 @@
 				"Emma muốn Ben chỉ đường."
 			],
 			"answer": "Emma nhận ra Ben từ lần gặp trước.",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-01.mp3"
 		},
 		{
@@ -127,7 +127,7 @@
 			"transcript": "I'm still learning my way around the city.",
 			"parts": ["I'm still learning my ", " ", " the city."],
 			"answers": ["way", "around"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-02.mp3"
 		},
 		{
@@ -144,7 +144,7 @@
 				"Học tên các phương tiện giao thông."
 			],
 			"answer": "Làm quen với đường sá và cách đi lại.",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-02.mp3"
 		},
 		{
@@ -155,7 +155,7 @@
 			"transcript": "Do you know where the supermarket is?",
 			"parts": ["Do you ", " ", " the supermarket is?"],
 			"answers": ["know", "where"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-03.mp3"
 		},
 		{
@@ -172,7 +172,7 @@
 				"Ai đang làm việc ở siêu thị."
 			],
 			"answer": "Siêu thị nằm ở đâu.",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-03.mp3"
 		},
 		{
@@ -183,7 +183,7 @@
 			"transcript": "Yes. Walk along this street and go past the bank.",
 			"parts": ["Yes. Walk ", " this street and go ", " the bank."],
 			"answers": ["along", "past"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-02.mp3"
 		},
 		{
@@ -194,7 +194,7 @@
 			"transcript": "Yes. Walk along this street and go past the bank.",
 			"parts": ["Yes. Walk along this ", " and go past the ", "."],
 			"answers": ["street", "bank"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-02.mp3"
 		},
 		{
@@ -211,7 +211,7 @@
 				"Đi qua ngân hàng và tiếp tục đi."
 			],
 			"answer": "Đi qua ngân hàng và tiếp tục đi.",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-02.mp3"
 		},
 		{
@@ -222,7 +222,7 @@
 			"transcript": "Then turn right at the traffic lights.",
 			"parts": ["Then turn right at the ", " ", "."],
 			"answers": ["traffic", "lights"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-03.mp3"
 		},
 		{
@@ -239,7 +239,7 @@
 				"Ở trạm xe buýt."
 			],
 			"answer": "Ở chỗ đèn giao thông.",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-03.mp3"
 		},
 		{
@@ -251,7 +251,7 @@
 			"sentenceBefore": "Okay. ",
 			"sentenceAfter": " at the traffic lights?",
 			"answer": "Right",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-04.mp3"
 		},
 		{
@@ -262,7 +262,7 @@
 			"transcript": "Okay. Right at the traffic lights?",
 			"parts": ["Okay. Right ", " the ", " ", "?"],
 			"answers": ["at", "traffic", "lights"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-04.mp3"
 		},
 		{
@@ -273,7 +273,7 @@
 			"transcript": "Yes. The supermarket is on the corner, across from the bakery.",
 			"parts": ["Yes. The supermarket is ", " the ", ", across from the bakery."],
 			"answers": ["on", "corner"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-04.mp3"
 		},
 		{
@@ -284,7 +284,7 @@
 			"transcript": "Yes. The supermarket is on the corner, across from the bakery.",
 			"parts": ["Yes. The supermarket is on the corner, ", " ", " the ", "."],
 			"answers": ["across", "from", "bakery"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-04.mp3"
 		},
 		{
@@ -301,7 +301,7 @@
 				"Bên trong tiệm bánh."
 			],
 			"answer": "Đối diện tiệm bánh.",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-04.mp3"
 		},
 		{
@@ -313,7 +313,7 @@
 			"sentenceBefore": "Is it ",
 			"sentenceAfter": " from here?",
 			"answer": "far",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-05.mp3"
 		},
 		{
@@ -324,7 +324,7 @@
 			"transcript": "Is it far from here?",
 			"parts": ["Is it far ", " ", "?"],
 			"answers": ["from", "here"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-05.mp3"
 		},
 		{
@@ -335,7 +335,7 @@
 			"transcript": "No, it's about ten minutes on foot.",
 			"parts": ["No, it's about ", " minutes ", " ", "."],
 			"answers": ["ten", "on", "foot"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-05.mp3"
 		},
 		{
@@ -352,7 +352,7 @@
 				"Đi ô tô khoảng hai phút."
 			],
 			"answer": "Đi bộ khoảng mười phút.",
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-05.mp3"
 		},
 		{
@@ -363,7 +363,7 @@
 			"transcript": "Do you know where the supermarket is?",
 			"parts": ["", " know ", " the supermarket is?"],
 			"answers": ["Do you", "where"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-03.mp3"
 		},
 		{
@@ -374,7 +374,7 @@
 			"transcript": "Then turn right at the traffic lights.",
 			"parts": ["Then ", " at the ", "."],
 			"answers": ["turn right", "traffic lights"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-03.mp3"
 		},
 		{
@@ -385,7 +385,7 @@
 			"transcript": "Is it far from here?",
 			"parts": ["", " ", " here?"],
 			"answers": ["Is it far", "from"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/ben-05.mp3"
 		},
 		{
@@ -396,7 +396,7 @@
 			"transcript": "No, it's about ten minutes on foot.",
 			"parts": ["No, it's about ", " minutes ", "."],
 			"answers": ["ten", "on foot"],
-			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.png",
+			"scene": "/dialogue/asking-for-directions/going-to-the-supermarket/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/going-to-the-supermarket/audio/emma-05.mp3"
 		},
 		{

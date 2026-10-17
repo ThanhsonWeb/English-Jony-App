@@ -7,42 +7,42 @@ function orderDialogueTasks(tasks, orderedTaskIds) {
 
 const weekendCampingMedia = {
   "arriving-at-the-campsite": {
-    scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+    scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
     characters: {
-      Leo: "/dialogue/weekend-camping/shared/leo.png",
-      Mia: "/dialogue/weekend-camping/shared/mia.png",
+      Leo: "/dialogue/weekend-camping/shared/leo.webp",
+      Mia: "/dialogue/weekend-camping/shared/mia.webp",
     },
   },
 
   "setting-up-the-tent": {
-    scene: "/dialogue/weekend-camping/setting-up-the-tent/bg.png",
+    scene: "/dialogue/weekend-camping/setting-up-the-tent/bg.webp",
     characters: {
-      Leo: "/dialogue/weekend-camping/shared/leo.png",
-      Mia: "/dialogue/weekend-camping/shared/mia.png",
+      Leo: "/dialogue/weekend-camping/shared/leo.webp",
+      Mia: "/dialogue/weekend-camping/shared/mia.webp",
     },
   },
 
   "starting-a-campfire": {
-    scene: "/dialogue/weekend-camping/starting-a-campfire/bg.png",
+    scene: "/dialogue/weekend-camping/starting-a-campfire/bg.webp",
     characters: {
-      Leo: "/dialogue/weekend-camping/shared/leo-d3.png",
-      Mia: "/dialogue/weekend-camping/shared/mia-d3.png",
+      Leo: "/dialogue/weekend-camping/shared/leo-d3.webp",
+      Mia: "/dialogue/weekend-camping/shared/mia-d3.webp",
     },
   },
 
   "cooking-dinner": {
-    scene: "/dialogue/weekend-camping/cooking-dinner/bg.png",
+    scene: "/dialogue/weekend-camping/cooking-dinner/bg.webp",
     characters: {
-      Leo: "/dialogue/weekend-camping/shared/leo-d3.png",
-      Mia: "/dialogue/weekend-camping/shared/mia-d3.png",
+      Leo: "/dialogue/weekend-camping/shared/leo-d3.webp",
+      Mia: "/dialogue/weekend-camping/shared/mia-d3.webp",
     },
   },
 
   "talking-by-the-campfire": {
-    scene: "/dialogue/weekend-camping/talking-by-the-campfire/bg.png",
+    scene: "/dialogue/weekend-camping/talking-by-the-campfire/bg.webp",
     characters: {
-      Leo: "/dialogue/weekend-camping/shared/leo-d4.png",
-      Mia: "/dialogue/weekend-camping/shared/mia-d4.png",
+      Leo: "/dialogue/weekend-camping/shared/leo-d4.webp",
+      Mia: "/dialogue/weekend-camping/shared/mia-d4.webp",
     },
   },
 };

@@ -30,7 +30,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "We found the bread. Now we just need the orange juice.",
     "translation": "Chúng ta đã tìm thấy bánh mì rồi. Bây giờ chỉ còn cần nước cam thôi.",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+    "scene": "/dialogue/grocery-store/choosing-food/bg.webp",
     "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-01.mp3"
   },
   {
@@ -39,7 +39,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Here it is. There are two sizes.",
     "translation": "Nó ở đây này. Có hai kích cỡ.",
     "practicePriority": "simple",
-    "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+    "scene": "/dialogue/grocery-store/choosing-food/bg.webp",
     "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-01.mp3"
   },
   {
@@ -48,7 +48,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Which one should we get?",
     "translation": "Chúng ta nên lấy loại nào?",
     "practicePriority": "veryImportant",
-    "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+    "scene": "/dialogue/grocery-store/choosing-food/bg.webp",
     "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-02.mp3"
   },
   {
@@ -57,7 +57,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Let's get the small one. We don't need much.",
     "translation": "Lấy chai nhỏ nhé. Chúng ta không cần nhiều.",
     "practicePriority": "veryImportant",
-    "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+    "scene": "/dialogue/grocery-store/choosing-food/bg.webp",
     "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-02.mp3"
   },
   {
@@ -66,7 +66,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Okay. This bottle is cheaper too.",
     "translation": "Được. Chai này cũng rẻ hơn.",
     "practicePriority": "simple",
-    "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+    "scene": "/dialogue/grocery-store/choosing-food/bg.webp",
     "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-03.mp3"
   },
   {
@@ -75,7 +75,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "What about the apples? Red or green?",
     "translation": "Còn táo thì sao? Đỏ hay xanh?",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+    "scene": "/dialogue/grocery-store/choosing-food/bg.webp",
     "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-03.mp3"
   },
   {
@@ -84,7 +84,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I like the red ones. They look fresh.",
     "translation": "Mình thích những quả màu đỏ. Trông chúng tươi.",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+    "scene": "/dialogue/grocery-store/choosing-food/bg.webp",
     "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-04.mp3"
   },
   {
@@ -93,7 +93,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "How many should we get?",
     "translation": "Chúng ta nên lấy bao nhiêu quả?",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+    "scene": "/dialogue/grocery-store/choosing-food/bg.webp",
     "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-04.mp3"
   },
   {
@@ -102,7 +102,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Let's get four.",
     "translation": "Lấy bốn quả nhé.",
     "practicePriority": "simple",
-    "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+    "scene": "/dialogue/grocery-store/choosing-food/bg.webp",
     "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-05.mp3"
   },
   {
@@ -111,7 +111,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "And these bananas are ripe.",
     "translation": "Và những quả chuối này đã chín.",
     "practicePriority": "simple",
-    "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+    "scene": "/dialogue/grocery-store/choosing-food/bg.webp",
     "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-05.mp3"
   },
   {
@@ -120,7 +120,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Great. I think we have everything now.",
     "translation": "Tuyệt. Mình nghĩ bây giờ chúng ta đã có đủ mọi thứ rồi.",
     "practicePriority": "simple",
-    "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+    "scene": "/dialogue/grocery-store/choosing-food/bg.webp",
     "audioUrl": "/dialogue/grocery-store/choosing-food/audio/ben-06.mp3"
   },
   {
@@ -129,7 +129,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes. Let's go to the checkout.",
     "translation": "Ừ. Đi đến quầy thanh toán nhé.",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/choosing-food/bg.png",
+    "scene": "/dialogue/grocery-store/choosing-food/bg.webp",
     "audioUrl": "/dialogue/grocery-store/choosing-food/audio/emma-06.mp3"
   }
 ]
@@ -386,7 +386,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/grocery-store/checking-out/bg.png"
+"/dialogue/grocery-store/checking-out/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -396,10 +396,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/grocery-store/checking-out/bg.png"
+"/dialogue/grocery-store/checking-out/bg.webp"
 
 Thumbnail:
-"/dialogue/grocery-store/thumbnails/checking-out.png"
+"/dialogue/grocery-store/thumbnails/checking-out.webp"
 
 Audio format:
 "/dialogue/grocery-store/checking-out/audio/{speaker}-{number}.mp3"
@@ -425,8 +425,8 @@ Use this structure:
 		"title": "Thanh toán tại quầy",
 		"level": "a1",
 		"situation": "Ben và Emma mang đồ đến quầy thanh toán. Lee tính tiền và Ben hỏi về tổng số tiền và cách thanh toán.",
-		"scene": "/dialogue/grocery-store/checking-out/bg.png",
-		"thumbnail": "/dialogue/grocery-store/thumbnails/checking-out.png"
+		"scene": "/dialogue/grocery-store/checking-out/bg.webp",
+		"thumbnail": "/dialogue/grocery-store/thumbnails/checking-out.webp"
 	},
 
 	"dialogue": [

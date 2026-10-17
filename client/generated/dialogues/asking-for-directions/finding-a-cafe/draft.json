@@ -5,8 +5,8 @@
 "title": "Tìm quán cà phê",
 "level": "a1",
 "situation": "Buổi tối, Ben đang trên đường đến gặp Emma tại một quán cà phê. Emma đã ở quán, còn Ben đang ở ngoài đường và không tìm thấy quán nên gọi cho Emma để hỏi đường.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
-"thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-a-cafe.png"
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
+"thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-a-cafe.webp"
 },
 "dialogue": [
 {
@@ -14,7 +14,7 @@
 "speaker": "Ben",
 "text": "Hi, Emma! I can't find the cafe.",
 "translation": "Chào Emma! Tôi không tìm thấy quán cà phê.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-01.mp3"
 },
 {
@@ -22,7 +22,7 @@
 "speaker": "Emma",
 "text": "Hi, Ben! I'm inside. Where are you?",
 "translation": "Chào Ben! Tôi đang ở trong quán. Bạn đang ở đâu?",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-01.mp3"
 },
 {
@@ -30,7 +30,7 @@
 "speaker": "Ben",
 "text": "I'm outside the bank on Green Street.",
 "translation": "Tôi đang ở bên ngoài ngân hàng trên phố Green.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-02.mp3"
 },
 {
@@ -38,7 +38,7 @@
 "speaker": "Emma",
 "text": "Go straight ahead. Turn left at the traffic lights.",
 "translation": "Bạn đi thẳng nhé. Rẽ trái ở chỗ đèn giao thông.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-02.mp3"
 },
 {
@@ -46,7 +46,7 @@
 "speaker": "Ben",
 "text": "Okay. Is the cafe near the bus stop?",
 "translation": "Được rồi. Quán cà phê có gần trạm xe buýt không?",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-03.mp3"
 },
 {
@@ -54,7 +54,7 @@
 "speaker": "Emma",
 "text": "Yes. It's next to the bakery.",
 "translation": "Có. Quán nằm ngay cạnh tiệm bánh.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-03.mp3"
 },
 {
@@ -62,7 +62,7 @@
 "speaker": "Emma",
 "text": "Look for a blue door. That's the cafe.",
 "translation": "Bạn tìm một cánh cửa màu xanh dương nhé. Đó là quán cà phê.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-04.mp3"
 },
 {
@@ -70,7 +70,7 @@
 "speaker": "Ben",
 "text": "Oh, I can see it now! It's across the street.",
 "translation": "Ồ, giờ tôi thấy quán rồi! Quán ở bên kia đường.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-04.mp3"
 },
 {
@@ -78,7 +78,7 @@
 "speaker": "Emma",
 "text": "Great! I'll meet you at the door.",
 "translation": "Tốt quá! Tôi sẽ gặp bạn ở cửa quán.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-05.mp3"
 },
 {
@@ -86,7 +86,7 @@
 "speaker": "Ben",
 "text": "Thanks for your help. See you soon!",
 "translation": "Cảm ơn bạn đã giúp đỡ. Hẹn gặp bạn lát nữa!",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-05.mp3"
 }
 ],
@@ -161,7 +161,7 @@
 "answer": "find",
 "speaker": "Ben",
 "transcript": "Hi, Emma! I can't find the cafe.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-01.mp3"
 },
 {
@@ -178,7 +178,7 @@
 "answer": "Anh ấy không tìm thấy quán cà phê.",
 "speaker": "Ben",
 "transcript": "Hi, Emma! I can't find the cafe.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-01.mp3"
 },
 {
@@ -189,7 +189,7 @@
 "answer": "inside",
 "speaker": "Emma",
 "transcript": "Hi, Ben! I'm inside. Where are you?",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-01.mp3"
 },
 {
@@ -200,7 +200,7 @@
 "answer": "outside",
 "speaker": "Ben",
 "transcript": "I'm outside the bank on Green Street.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-02.mp3"
 },
 {
@@ -217,7 +217,7 @@
 "answer": "Bên ngoài ngân hàng",
 "speaker": "Ben",
 "transcript": "I'm outside the bank on Green Street.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-02.mp3"
 },
 {
@@ -228,7 +228,7 @@
 "answer": "straight ahead",
 "speaker": "Emma",
 "transcript": "Go straight ahead. Turn left at the traffic lights.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-02.mp3"
 },
 {
@@ -245,7 +245,7 @@
 "answer": "Rẽ trái ở chỗ đèn giao thông",
 "speaker": "Emma",
 "transcript": "Go straight ahead. Turn left at the traffic lights.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-02.mp3"
 },
 {
@@ -256,7 +256,7 @@
 "answer": "traffic lights",
 "speaker": "Emma",
 "transcript": "Go straight ahead. Turn left at the traffic lights.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-02.mp3"
 },
 {
@@ -267,7 +267,7 @@
 "answer": "near",
 "speaker": "Ben",
 "transcript": "Okay. Is the cafe near the bus stop?",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-03.mp3"
 },
 {
@@ -284,7 +284,7 @@
 "answer": "Quán cà phê có gần trạm xe buýt không",
 "speaker": "Ben",
 "transcript": "Okay. Is the cafe near the bus stop?",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-03.mp3"
 },
 {
@@ -295,7 +295,7 @@
 "answer": "next to",
 "speaker": "Emma",
 "transcript": "Yes. It's next to the bakery.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-03.mp3"
 },
 {
@@ -312,7 +312,7 @@
 "answer": "Ngay cạnh",
 "speaker": "Emma",
 "transcript": "Yes. It's next to the bakery.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-03.mp3"
 },
 {
@@ -323,7 +323,7 @@
 "answer": "bakery",
 "speaker": "Emma",
 "transcript": "Yes. It's next to the bakery.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-03.mp3"
 },
 {
@@ -334,7 +334,7 @@
 "answer": "Look for",
 "speaker": "Emma",
 "transcript": "Look for a blue door. That's the cafe.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-04.mp3"
 },
 {
@@ -351,7 +351,7 @@
 "answer": "Một cánh cửa màu xanh dương",
 "speaker": "Emma",
 "transcript": "Look for a blue door. That's the cafe.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-04.mp3"
 },
 {
@@ -362,7 +362,7 @@
 "answer": "door",
 "speaker": "Emma",
 "transcript": "Look for a blue door. That's the cafe.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-04.mp3"
 },
 {
@@ -373,7 +373,7 @@
 "answer": "can see",
 "speaker": "Ben",
 "transcript": "Oh, I can see it now! It's across the street.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-04.mp3"
 },
 {
@@ -390,7 +390,7 @@
 "answer": "Ở bên kia đường",
 "speaker": "Ben",
 "transcript": "Oh, I can see it now! It's across the street.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-04.mp3"
 },
 {
@@ -401,7 +401,7 @@
 "answer": "across the street",
 "speaker": "Ben",
 "transcript": "Oh, I can see it now! It's across the street.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-04.mp3"
 },
 {
@@ -412,7 +412,7 @@
 "answer": "meet",
 "speaker": "Emma",
 "transcript": "Great! I'll meet you at the door.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-05.mp3"
 },
 {
@@ -429,7 +429,7 @@
 "answer": "Ở cửa quán cà phê",
 "speaker": "Emma",
 "transcript": "Great! I'll meet you at the door.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-05.mp3"
 },
 {
@@ -440,7 +440,7 @@
 "answer": "at",
 "speaker": "Emma",
 "transcript": "Great! I'll meet you at the door.",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-emma.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/emma-05.mp3"
 },
 {
@@ -451,7 +451,7 @@
 "answer": "for",
 "speaker": "Ben",
 "transcript": "Thanks for your help. See you soon!",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-05.mp3"
 },
 {
@@ -462,7 +462,7 @@
 "answer": "See you soon",
 "speaker": "Ben",
 "transcript": "Thanks for your help. See you soon!",
-"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.png",
+"scene": "/dialogue/asking-for-directions/finding-a-cafe/bg-ben.webp",
 "audioUrl": "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-05.mp3"
 },
 {

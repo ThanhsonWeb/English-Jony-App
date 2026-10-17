@@ -64,8 +64,8 @@ Final source (all lines and useful expressions):
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Lily giúp mẹ chuẩn bị bữa tối và đề nghị giúp Sam học bài vào ngày hôm sau. Cô bé học cách thể hiện lòng biết ơn bằng cả lời nói lẫn hành động.",
-    "scene": "/stories/grateful/helping-in-return/bg.png",
-    "thumbnail": "/stories/grateful/thumbnails/helping-in-return.png"
+    "scene": "/stories/grateful/helping-in-return/bg.webp",
+    "thumbnail": "/stories/grateful/thumbnails/helping-in-return.webp"
   },
   "dialogue": [
     {
@@ -74,7 +74,7 @@ Final source (all lines and useful expressions):
       "text": "It is almost dinner time. I need some help.",
       "translation": "Sắp đến giờ ăn tối rồi. Mẹ cần người giúp một chút.",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "scene": "/stories/grateful/helping-in-return/bg.webp",
       "audioUrl": "/stories/grateful/helping-in-return/audio/mom-01.mp3"
     },
     {
@@ -83,7 +83,7 @@ Final source (all lines and useful expressions):
       "text": "I can help you, Mom. What can I do?",
       "translation": "Con có thể giúp mẹ. Con làm gì được ạ?",
       "practicePriority": "veryImportant",
-      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "scene": "/stories/grateful/helping-in-return/bg.webp",
       "audioUrl": "/stories/grateful/helping-in-return/audio/lily-01.mp3"
     },
     {
@@ -92,7 +92,7 @@ Final source (all lines and useful expressions):
       "text": "Can you wash the vegetables for our soup?",
       "translation": "Con rửa rau để nấu súp nhé?",
       "practicePriority": "important",
-      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "scene": "/stories/grateful/helping-in-return/bg.webp",
       "audioUrl": "/stories/grateful/helping-in-return/audio/mom-02.mp3"
     },
     {
@@ -101,7 +101,7 @@ Final source (all lines and useful expressions):
       "text": "Of course. You helped me this morning. I want to help you, too.",
       "translation": "Dạ được ạ. Sáng nay mẹ đã giúp con. Con cũng muốn giúp mẹ.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "scene": "/stories/grateful/helping-in-return/bg.webp",
       "audioUrl": "/stories/grateful/helping-in-return/audio/lily-02.mp3"
     },
     {
@@ -110,7 +110,7 @@ Final source (all lines and useful expressions):
       "text": "Thank you, Lily. You are a big help with dinner.",
       "translation": "Cảm ơn con, Lily. Con giúp mẹ rất nhiều khi chuẩn bị bữa tối.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "scene": "/stories/grateful/helping-in-return/bg.webp",
       "audioUrl": "/stories/grateful/helping-in-return/audio/mom-03.mp3"
     },
     {
@@ -119,7 +119,7 @@ Final source (all lines and useful expressions):
       "text": "The soup smells good. Can I help, too?",
       "translation": "Món súp thơm quá. Em cũng giúp được không?",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "scene": "/stories/grateful/helping-in-return/bg.webp",
       "audioUrl": "/stories/grateful/helping-in-return/audio/sam-01.mp3"
     },
     {
@@ -128,7 +128,7 @@ Final source (all lines and useful expressions):
       "text": "Yes, Sam. We can all help Mom.",
       "translation": "Ừ, Sam. Chúng ta đều có thể giúp mẹ.",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "scene": "/stories/grateful/helping-in-return/bg.webp",
       "audioUrl": "/stories/grateful/helping-in-return/audio/lily-03.mp3"
     },
     {
@@ -137,7 +137,7 @@ Final source (all lines and useful expressions):
       "text": "I need help with my schoolwork sometimes.",
       "translation": "Đôi khi em cần người giúp làm bài ở trường.",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "scene": "/stories/grateful/helping-in-return/bg.webp",
       "audioUrl": "/stories/grateful/helping-in-return/audio/sam-02.mp3"
     },
     {
@@ -146,7 +146,7 @@ Final source (all lines and useful expressions):
       "text": "I can help you with your schoolwork tomorrow.",
       "translation": "Ngày mai chị có thể giúp em học bài.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "scene": "/stories/grateful/helping-in-return/bg.webp",
       "audioUrl": "/stories/grateful/helping-in-return/audio/lily-04.mp3"
     },
     {
@@ -155,7 +155,7 @@ Final source (all lines and useful expressions):
       "text": "Really? Thank you, Lily. That makes me happy.",
       "translation": "Thật sao? Cảm ơn chị, Lily. Em vui quá.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "scene": "/stories/grateful/helping-in-return/bg.webp",
       "audioUrl": "/stories/grateful/helping-in-return/audio/sam-03.mp3"
     },
     {
@@ -164,7 +164,7 @@ Final source (all lines and useful expressions):
       "text": "You shared your lunch with me today. Now I can help you.",
       "translation": "Hôm nay em đã chia sẻ bữa trưa với chị. Giờ chị có thể giúp em.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "scene": "/stories/grateful/helping-in-return/bg.webp",
       "audioUrl": "/stories/grateful/helping-in-return/audio/lily-05.mp3"
     },
     {
@@ -173,7 +173,7 @@ Final source (all lines and useful expressions):
       "text": "I am so happy. You are both very kind.",
       "translation": "Mẹ vui quá. Hai con đều rất tốt bụng.",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/helping-in-return/bg.png",
+      "scene": "/stories/grateful/helping-in-return/bg.webp",
       "audioUrl": "/stories/grateful/helping-in-return/audio/mom-04.mp3"
     }
   ],

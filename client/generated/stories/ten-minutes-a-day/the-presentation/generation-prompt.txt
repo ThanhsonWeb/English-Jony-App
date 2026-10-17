@@ -32,7 +32,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I tried the book last night. I got bored, so I stopped.",
     "translation": "Tối qua tớ đã thử đọc cuốn sách. Tớ thấy chán nên đã dừng lại.",
     "practicePriority": "important",
-    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.webp",
     "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-01.mp3"
   },
   {
@@ -41,7 +41,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I read for ten minutes after dinner.",
     "translation": "Tớ đọc trong mười phút sau bữa tối.",
     "practicePriority": "veryImportant",
-    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.webp",
     "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-01.mp3"
   },
   {
@@ -50,7 +50,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Every day?",
     "translation": "Mỗi ngày à?",
     "practicePriority": "simple",
-    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.webp",
     "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-02.mp3"
   },
   {
@@ -59,7 +59,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes. Ten minutes is not very long.",
     "translation": "Ừ. Mười phút không lâu lắm.",
     "practicePriority": "important",
-    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.webp",
     "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-02.mp3"
   },
   {
@@ -68,7 +68,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I want to read more, but I get tired.",
     "translation": "Tớ muốn đọc nhiều hơn, nhưng tớ thấy mệt.",
     "practicePriority": "important",
-    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.webp",
     "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-03.mp3"
   },
   {
@@ -77,7 +77,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "You do not need to read a lot. Just read for ten minutes.",
     "translation": "Cậu không cần đọc nhiều. Chỉ cần đọc trong mười phút thôi.",
     "practicePriority": "veryImportant",
-    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.webp",
     "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-03.mp3"
   },
   {
@@ -86,7 +86,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "What do you do when you get bored?",
     "translation": "Cậu làm gì khi cảm thấy chán?",
     "practicePriority": "important",
-    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.webp",
     "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-04.mp3"
   },
   {
@@ -95,7 +95,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I read one more page. Then I stop.",
     "translation": "Tớ đọc thêm một trang nữa. Sau đó tớ dừng lại.",
     "practicePriority": "important",
-    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.webp",
     "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-04.mp3"
   },
   {
@@ -104,7 +104,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "That sounds easy.",
     "translation": "Nghe có vẻ dễ đấy.",
     "practicePriority": "simple",
-    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.webp",
     "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-05.mp3"
   },
   {
@@ -113,7 +113,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Try it tonight. Set a timer for ten minutes.",
     "translation": "Tối nay thử nhé. Hãy đặt hẹn giờ trong mười phút.",
     "practicePriority": "veryImportant",
-    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.webp",
     "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/leo-05.mp3"
   },
   {
@@ -122,7 +122,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Okay. I will try again tonight.",
     "translation": "Được rồi. Tối nay tớ sẽ thử lại.",
     "practicePriority": "important",
-    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.png",
+    "scene": "/stories/ten-minutes-a-day/only-ten-minutes/bg.webp",
     "audioUrl": "/stories/ten-minutes-a-day/only-ten-minutes/audio/ryan-06.mp3"
   }
 ]
@@ -440,7 +440,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/stories/ten-minutes-a-day/the-presentation/bg.png"
+"/stories/ten-minutes-a-day/the-presentation/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -450,10 +450,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/stories/ten-minutes-a-day/the-presentation/bg.png"
+"/stories/ten-minutes-a-day/the-presentation/bg.webp"
 
 Thumbnail:
-"/stories/ten-minutes-a-day/thumbnails/the-presentation.png"
+"/stories/ten-minutes-a-day/thumbnails/the-presentation.webp"
 
 Audio format:
 "/stories/ten-minutes-a-day/the-presentation/audio/{speaker}-{number}.mp3"
@@ -489,8 +489,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "A few months later, Leo and Ryan must give a short English presentation.",
-		"scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
-		"thumbnail": "/stories/ten-minutes-a-day/thumbnails/the-presentation.png"
+		"scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
+		"thumbnail": "/stories/ten-minutes-a-day/thumbnails/the-presentation.webp"
 	},
 
 	"dialogue": [

@@ -27,8 +27,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Naruto tries to pass the ninja graduation test, but he cannot make a proper clone. Iruka tells him he has failed.",
-    "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
-    "thumbnail": "/stories/naruto-season-1/thumbnails/the-ninja-test.png"
+    "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/the-ninja-test.webp"
   },
   "dialogue": [
     {
@@ -37,7 +37,7 @@
       "text": "Naruto, are you ready for the ninja test?",
       "translation": "Naruto, em đã sẵn sàng cho bài kiểm tra ninja chưa?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-01.mp3"
     },
     {
@@ -46,7 +46,7 @@
       "text": "Yes! I worked hard every day.",
       "translation": "Vâng! Em đã chăm chỉ mỗi ngày.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-01.mp3"
     },
     {
@@ -55,7 +55,7 @@
       "text": "Good. Please make a clone.",
       "translation": "Tốt. Em hãy tạo một phân thân nhé.",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-02.mp3"
     },
     {
@@ -64,7 +64,7 @@
       "text": "I can do it! I want to pass.",
       "translation": "Em làm được mà! Em muốn vượt qua bài kiểm tra.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-02.mp3"
     },
     {
@@ -73,7 +73,7 @@
       "text": "Oh no! My clone looks weak.",
       "translation": "Ôi không! Phân thân của em trông yếu quá.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-03.mp3"
     },
     {
@@ -82,7 +82,7 @@
       "text": "It is too weak, Naruto.",
       "translation": "Nó yếu quá, Naruto.",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-03.mp3"
     },
     {
@@ -91,7 +91,7 @@
       "text": "Can I try again, please?",
       "translation": "Thầy cho em thử lại được không ạ?",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-04.mp3"
     },
     {
@@ -100,7 +100,7 @@
       "text": "Yes, you can try one more time.",
       "translation": "Được, em có thể thử thêm một lần nữa.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-04.mp3"
     },
     {
@@ -109,7 +109,7 @@
       "text": "I tried again, but the clone is still weak.",
       "translation": "Em đã thử lại rồi, nhưng phân thân vẫn còn yếu.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-05.mp3"
     },
     {
@@ -118,7 +118,7 @@
       "text": "I am sorry, Naruto. You did not pass the test.",
       "translation": "Thầy rất tiếc, Naruto. Em đã không vượt qua bài kiểm tra.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-05.mp3"
     },
     {
@@ -127,7 +127,7 @@
       "text": "But I worked so hard!",
       "translation": "Nhưng em đã cố gắng rất nhiều mà!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-06.mp3"
     },
     {
@@ -136,7 +136,7 @@
       "text": "I know. You need more practice.",
       "translation": "Thầy biết. Em cần luyện tập thêm.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-06.mp3"
     },
     {
@@ -145,7 +145,7 @@
       "text": "I will not give up. I will be Hokage one day!",
       "translation": "Em sẽ không bỏ cuộc. Một ngày nào đó em sẽ trở thành Hokage!",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-07.mp3"
     },
     {
@@ -154,7 +154,7 @@
       "text": "Keep trying, Naruto. You can do better next time.",
       "translation": "Hãy tiếp tục cố gắng, Naruto. Lần sau em có thể làm tốt hơn.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-07.mp3"
     }
   ],
@@ -227,7 +227,7 @@
       "answers": ["ready"],
       "speaker": "Iruka",
       "transcript": "Naruto, are you ready for the ninja test?",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-01.mp3"
     },
     {
@@ -242,7 +242,7 @@
       "answers": ["ninja test"],
       "speaker": "Iruka",
       "transcript": "Naruto, are you ready for the ninja test?",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-01.mp3"
     },
     {
@@ -257,7 +257,7 @@
       "answers": ["worked hard"],
       "speaker": "Naruto",
       "transcript": "Yes! I worked hard every day.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-01.mp3"
     },
     {
@@ -272,7 +272,7 @@
       "answers": ["every day"],
       "speaker": "Naruto",
       "transcript": "Yes! I worked hard every day.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-01.mp3"
     },
     {
@@ -287,7 +287,7 @@
       "answers": ["clone"],
       "speaker": "Iruka",
       "transcript": "Good. Please make a clone.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-02.mp3"
     },
     {
@@ -302,7 +302,7 @@
       "answers": ["do it"],
       "speaker": "Naruto",
       "transcript": "I can do it! I want to pass.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-02.mp3"
     },
     {
@@ -317,7 +317,7 @@
       "answers": ["pass"],
       "speaker": "Naruto",
       "transcript": "I can do it! I want to pass.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-02.mp3"
     },
     {
@@ -332,7 +332,7 @@
       "answers": ["clone"],
       "speaker": "Naruto",
       "transcript": "Oh no! My clone looks weak.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-03.mp3"
     },
     {
@@ -347,7 +347,7 @@
       "answers": ["weak"],
       "speaker": "Naruto",
       "transcript": "Oh no! My clone looks weak.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-03.mp3"
     },
     {
@@ -379,7 +379,7 @@
       "answer": "Vì phân thân của cậu quá yếu",
       "speaker": "Naruto",
       "transcript": "Oh no! My clone looks weak.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-03.mp3"
     },
     {
@@ -394,7 +394,7 @@
       "answers": ["too weak"],
       "speaker": "Iruka",
       "transcript": "It is too weak, Naruto.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-03.mp3"
     },
     {
@@ -409,7 +409,7 @@
       "answers": ["Can I"],
       "speaker": "Naruto",
       "transcript": "Can I try again, please?",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-04.mp3"
     },
     {
@@ -424,7 +424,7 @@
       "answers": ["try again"],
       "speaker": "Naruto",
       "transcript": "Can I try again, please?",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-04.mp3"
     },
     {
@@ -457,7 +457,7 @@
       "answer": "Lịch sự hơn",
       "speaker": "Naruto",
       "transcript": "Can I try again, please?",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-04.mp3"
     },
     {
@@ -472,7 +472,7 @@
       "answers": ["try"],
       "speaker": "Iruka",
       "transcript": "Yes, you can try one more time.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-04.mp3"
     },
     {
@@ -487,7 +487,7 @@
       "answers": ["one more"],
       "speaker": "Iruka",
       "transcript": "Yes, you can try one more time.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-04.mp3"
     },
     {
@@ -502,7 +502,7 @@
       "answers": ["tried again"],
       "speaker": "Naruto",
       "transcript": "I tried again, but the clone is still weak.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-05.mp3"
     },
     {
@@ -517,7 +517,7 @@
       "answers": ["still weak"],
       "speaker": "Naruto",
       "transcript": "I tried again, but the clone is still weak.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-05.mp3"
     },
     {
@@ -549,7 +549,7 @@
       "answer": "Phân thân vẫn còn yếu",
       "speaker": "Naruto",
       "transcript": "I tried again, but the clone is still weak.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-05.mp3"
     },
     {
@@ -564,7 +564,7 @@
       "answers": ["sorry"],
       "speaker": "Iruka",
       "transcript": "I am sorry, Naruto. You did not pass the test.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-05.mp3"
     },
     {
@@ -579,7 +579,7 @@
       "answers": ["did not"],
       "speaker": "Iruka",
       "transcript": "I am sorry, Naruto. You did not pass the test.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-05.mp3"
     },
     {
@@ -594,7 +594,7 @@
       "answers": ["pass"],
       "speaker": "Iruka",
       "transcript": "I am sorry, Naruto. You did not pass the test.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-05.mp3"
     },
     {
@@ -627,7 +627,7 @@
       "answer": "Naruto đã không vượt qua bài kiểm tra",
       "speaker": "Iruka",
       "transcript": "I am sorry, Naruto. You did not pass the test.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-05.mp3"
     },
     {
@@ -642,7 +642,7 @@
       "answers": ["worked"],
       "speaker": "Naruto",
       "transcript": "But I worked so hard!",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-06.mp3"
     },
     {
@@ -657,7 +657,7 @@
       "answers": ["so hard"],
       "speaker": "Naruto",
       "transcript": "But I worked so hard!",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-06.mp3"
     },
     {
@@ -672,7 +672,7 @@
       "answers": ["need"],
       "speaker": "Iruka",
       "transcript": "I know. You need more practice.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-06.mp3"
     },
     {
@@ -687,7 +687,7 @@
       "answers": ["practice"],
       "speaker": "Iruka",
       "transcript": "I know. You need more practice.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-06.mp3"
     },
     {
@@ -719,7 +719,7 @@
       "answer": "Vì phân thân của Naruto chưa đủ tốt",
       "speaker": "Iruka",
       "transcript": "I know. You need more practice.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-06.mp3"
     },
     {
@@ -734,7 +734,7 @@
       "answers": ["give up"],
       "speaker": "Naruto",
       "transcript": "I will not give up. I will be Hokage one day!",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-07.mp3"
     },
     {
@@ -749,7 +749,7 @@
       "answers": ["Hokage"],
       "speaker": "Naruto",
       "transcript": "I will not give up. I will be Hokage one day!",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-07.mp3"
     },
     {
@@ -764,7 +764,7 @@
       "answers": ["one day"],
       "speaker": "Naruto",
       "transcript": "I will not give up. I will be Hokage one day!",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-07.mp3"
     },
     {
@@ -779,7 +779,7 @@
       "answers": ["Keep trying"],
       "speaker": "Iruka",
       "transcript": "Keep trying, Naruto. You can do better next time.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-07.mp3"
     },
     {
@@ -794,7 +794,7 @@
       "answers": ["next time"],
       "speaker": "Iruka",
       "transcript": "Keep trying, Naruto. You can do better next time.",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-07.mp3"
     },
     {

@@ -20,7 +20,7 @@ function settingUpTentTaskMedia(speaker, appearance) {
 const settingUpTheTent = {
 	id: "setting-up-the-tent",
 	thumbnail:
-		"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail2.png",
+		"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail2.webp",
 	title: "Dựng lều",
 	description:
 		"Leo và Mia cùng nhau dựng lều sau khi đã chọn được chỗ cắm trại.",

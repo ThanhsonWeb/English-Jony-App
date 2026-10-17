@@ -32,7 +32,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Naruto, I know you did not pass the test.",
     "translation": "Naruto, thầy biết em đã không vượt qua bài kiểm tra.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-01.mp3"
   },
   {
@@ -41,7 +41,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes. My clone was too weak.",
     "translation": "Vâng. Phân thân của em quá yếu.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-01.mp3"
   },
   {
@@ -50,7 +50,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I know another way to pass.",
     "translation": "Thầy biết một cách khác để vượt qua bài kiểm tra.",
     "practicePriority": "veryImportant",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-02.mp3"
   },
   {
@@ -59,7 +59,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Really? Can you help me?",
     "translation": "Thật ạ? Thầy có thể giúp em không?",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-02.mp3"
   },
   {
@@ -68,7 +68,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "There is a forbidden scroll in the village.",
     "translation": "Trong làng có một cuộn giấy cấm.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-03.mp3"
   },
   {
@@ -77,7 +77,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "A forbidden scroll? Is it safe to take it?",
     "translation": "Cuộn giấy cấm ạ? Lấy nó có an toàn không?",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-03.mp3"
   },
   {
@@ -86,7 +86,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Do not worry. It is a secret test.",
     "translation": "Đừng lo. Đây là một bài kiểm tra bí mật.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-04.mp3"
   },
   {
@@ -95,7 +95,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "The scroll has a special ninja technique.",
     "translation": "Cuộn giấy có một kỹ thuật ninja đặc biệt.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-05.mp3"
   },
   {
@@ -104,7 +104,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Learn the technique, and you can pass the test.",
     "translation": "Học được kỹ thuật đó thì em có thể vượt qua bài kiểm tra.",
     "practicePriority": "veryImportant",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-06.mp3"
   },
   {
@@ -113,7 +113,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Then I can become a ninja!",
     "translation": "Vậy em có thể trở thành ninja rồi!",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-04.mp3"
   },
   {
@@ -122,7 +122,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes. Take the scroll tonight.",
     "translation": "Đúng vậy. Hãy lấy cuộn giấy tối nay.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-07.mp3"
   },
   {
@@ -131,7 +131,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Can I tell Iruka?",
     "translation": "Em có thể nói với thầy Iruka không?",
     "practicePriority": "simple",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-05.mp3"
   },
   {
@@ -140,7 +140,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "No, do not tell him. Keep it a secret.",
     "translation": "Không, đừng nói với thầy ấy. Hãy giữ bí mật nhé.",
     "practicePriority": "veryImportant",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-08.mp3"
   },
   {
@@ -149,7 +149,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Meet me in the forest tonight.",
     "translation": "Tối nay hãy gặp thầy trong rừng.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/mizuki-09.mp3"
   },
   {
@@ -158,7 +158,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Okay! I will take the scroll and learn the technique!",
     "translation": "Vâng! Em sẽ lấy cuộn giấy và học kỹ thuật đó!",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.png",
+    "scene": "/stories/naruto-season-1/the-forbidden-scroll/bg.webp",
     "audioUrl": "/stories/naruto-season-1/the-forbidden-scroll/audio/naruto-06.mp3"
   }
 ]
@@ -476,7 +476,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/stories/naruto-season-1/someone-believes-in-him/bg.png"
+"/stories/naruto-season-1/someone-believes-in-him/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -486,10 +486,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/stories/naruto-season-1/someone-believes-in-him/bg.png"
+"/stories/naruto-season-1/someone-believes-in-him/bg.webp"
 
 Thumbnail:
-"/stories/naruto-season-1/thumbnails/someone-believes-in-him.png"
+"/stories/naruto-season-1/thumbnails/someone-believes-in-him.webp"
 
 Audio format:
 "/stories/naruto-season-1/someone-believes-in-him/audio/{speaker}-{number}.mp3"
@@ -526,8 +526,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Iruka protects Naruto from Mizuki. Naruto learns that Iruka believes in him, uses his new technique, and earns his ninja headband.",
-		"scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
-		"thumbnail": "/stories/naruto-season-1/thumbnails/someone-believes-in-him.png"
+		"scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
+		"thumbnail": "/stories/naruto-season-1/thumbnails/someone-believes-in-him.webp"
 	},
 
 	"dialogue": [

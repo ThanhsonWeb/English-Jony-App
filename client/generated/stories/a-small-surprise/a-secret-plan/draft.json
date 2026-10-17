@@ -27,8 +27,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Noah and Mom decide to make a birthday cake for Dad. They prepare everything in secret while Dad is away.",
-    "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
-    "thumbnail": "/stories/a-small-surprise/thumbnails/a-secret-plan.png"
+    "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
+    "thumbnail": "/stories/a-small-surprise/thumbnails/a-secret-plan.webp"
   },
   "dialogue": [
     {
@@ -37,7 +37,7 @@
       "text": "Mom, can we make a cake for Dad too?",
       "translation": "Mẹ ơi, mẹ con mình làm thêm một chiếc bánh cho bố được không ạ?",
       "practicePriority": "veryImportant",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-01.mp3"
     },
     {
@@ -46,7 +46,7 @@
       "text": "Yes! Dad is at work now.",
       "translation": "Được chứ! Bố đang ở chỗ làm.",
       "practicePriority": "simple",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-01.mp3"
     },
     {
@@ -55,7 +55,7 @@
       "text": "Great! I want it to be a surprise.",
       "translation": "Tuyệt quá! Con muốn đó là một điều bất ngờ.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-02.mp3"
     },
     {
@@ -64,7 +64,7 @@
       "text": "What kind of cake does Dad like?",
       "translation": "Bố thích loại bánh nào nhỉ?",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-02.mp3"
     },
     {
@@ -73,7 +73,7 @@
       "text": "He loves chocolate cake.",
       "translation": "Bố rất thích bánh sô-cô-la.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-03.mp3"
     },
     {
@@ -82,7 +82,7 @@
       "text": "We can make it together.",
       "translation": "Mẹ con mình có thể cùng làm bánh.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-03.mp3"
     },
     {
@@ -91,7 +91,7 @@
       "text": "Do we have eggs and milk?",
       "translation": "Nhà mình có trứng và sữa không mẹ?",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-04.mp3"
     },
     {
@@ -100,7 +100,7 @@
       "text": "We have eggs, but we need milk.",
       "translation": "Nhà mình có trứng, nhưng cần mua thêm sữa.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-04.mp3"
     },
     {
@@ -109,7 +109,7 @@
       "text": "Can we buy some milk today?",
       "translation": "Hôm nay mẹ con mình đi mua sữa được không ạ?",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-05.mp3"
     },
     {
@@ -118,7 +118,7 @@
       "text": "Yes, we can go to the store soon.",
       "translation": "Được, lát nữa mẹ con mình có thể đến cửa hàng.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-05.mp3"
     },
     {
@@ -127,7 +127,7 @@
       "text": "Please do not tell Dad. It is a secret!",
       "translation": "Mẹ đừng nói với bố nhé. Đây là bí mật đấy!",
       "practicePriority": "veryImportant",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-06.mp3"
     },
     {
@@ -136,7 +136,7 @@
       "text": "I will not tell him. Dad will be happy tomorrow!",
       "translation": "Mẹ sẽ không nói với bố đâu. Ngày mai bố sẽ rất vui!",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-06.mp3"
     },
     {
@@ -145,7 +145,7 @@
       "text": "I can make his birthday card today, too!",
       "translation": "Hôm nay con cũng có thể làm thiệp sinh nhật cho bố nữa!",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-07.mp3"
     },
     {
@@ -154,7 +154,7 @@
       "text": "He will love both surprises!",
       "translation": "Bố sẽ thích cả hai điều bất ngờ!",
       "practicePriority": "simple",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-07.mp3"
     }
   ],
@@ -227,7 +227,7 @@
       "answers": ["make"],
       "speaker": "Noah",
       "transcript": "Mom, can we make a cake for Dad too?",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-01.mp3"
     },
     {
@@ -242,7 +242,7 @@
       "answers": ["cake"],
       "speaker": "Noah",
       "transcript": "Mom, can we make a cake for Dad too?",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-01.mp3"
     },
     {
@@ -257,7 +257,7 @@
       "answers": ["at work"],
       "speaker": "Mom",
       "transcript": "Yes! Dad is at work now.",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-01.mp3"
     },
     {
@@ -272,7 +272,7 @@
       "answers": ["want"],
       "speaker": "Noah",
       "transcript": "Great! I want it to be a surprise.",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-02.mp3"
     },
     {
@@ -287,7 +287,7 @@
       "answers": ["a surprise"],
       "speaker": "Noah",
       "transcript": "Great! I want it to be a surprise.",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-02.mp3"
     },
     {
@@ -302,7 +302,7 @@
       "answers": ["kind of"],
       "speaker": "Mom",
       "transcript": "What kind of cake does Dad like?",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-02.mp3"
     },
     {
@@ -317,7 +317,7 @@
       "answers": ["like"],
       "speaker": "Mom",
       "transcript": "What kind of cake does Dad like?",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-02.mp3"
     },
     {
@@ -349,7 +349,7 @@
       "answer": "Để chọn loại bánh phù hợp",
       "speaker": "Mom",
       "transcript": "What kind of cake does Dad like?",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-02.mp3"
     },
     {
@@ -364,7 +364,7 @@
       "answers": ["loves"],
       "speaker": "Noah",
       "transcript": "He loves chocolate cake.",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-03.mp3"
     },
     {
@@ -379,7 +379,7 @@
       "answers": ["chocolate cake"],
       "speaker": "Noah",
       "transcript": "He loves chocolate cake.",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-03.mp3"
     },
     {
@@ -394,7 +394,7 @@
       "answers": ["make"],
       "speaker": "Mom",
       "transcript": "We can make it together.",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-03.mp3"
     },
     {
@@ -409,7 +409,7 @@
       "answers": ["together"],
       "speaker": "Mom",
       "transcript": "We can make it together.",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-03.mp3"
     },
     {
@@ -424,7 +424,7 @@
       "answers": ["eggs"],
       "speaker": "Noah",
       "transcript": "Do we have eggs and milk?",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-04.mp3"
     },
     {
@@ -439,7 +439,7 @@
       "answers": ["milk"],
       "speaker": "Noah",
       "transcript": "Do we have eggs and milk?",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-04.mp3"
     },
     {
@@ -472,7 +472,7 @@
       "answer": "Để hỏi nhà có sẵn nguyên liệu không",
       "speaker": "Noah",
       "transcript": "Do we have eggs and milk?",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-04.mp3"
     },
     {
@@ -487,7 +487,7 @@
       "answers": ["have eggs"],
       "speaker": "Mom",
       "transcript": "We have eggs, but we need milk.",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-04.mp3"
     },
     {
@@ -502,7 +502,7 @@
       "answers": ["need milk"],
       "speaker": "Mom",
       "transcript": "We have eggs, but we need milk.",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-04.mp3"
     },
     {
@@ -517,7 +517,7 @@
       "answers": ["buy"],
       "speaker": "Noah",
       "transcript": "Can we buy some milk today?",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-05.mp3"
     },
     {
@@ -532,7 +532,7 @@
       "answers": ["today"],
       "speaker": "Noah",
       "transcript": "Can we buy some milk today?",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-05.mp3"
     },
     {
@@ -564,7 +564,7 @@
       "answer": "Vì hai mẹ con cần sữa để làm bánh",
       "speaker": "Noah",
       "transcript": "Can we buy some milk today?",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-05.mp3"
     },
     {
@@ -579,7 +579,7 @@
       "answers": ["go to"],
       "speaker": "Mom",
       "transcript": "Yes, we can go to the store soon.",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-05.mp3"
     },
     {
@@ -594,7 +594,7 @@
       "answers": ["store"],
       "speaker": "Mom",
       "transcript": "Yes, we can go to the store soon.",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-05.mp3"
     },
     {
@@ -609,7 +609,7 @@
       "answers": ["tell Dad"],
       "speaker": "Noah",
       "transcript": "Please do not tell Dad. It is a secret!",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-06.mp3"
     },
     {
@@ -624,7 +624,7 @@
       "answers": ["a secret"],
       "speaker": "Noah",
       "transcript": "Please do not tell Dad. It is a secret!",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-06.mp3"
     },
     {
@@ -657,7 +657,7 @@
       "answer": "Để lịch sự nhờ mẹ giữ bí mật",
       "speaker": "Noah",
       "transcript": "Please do not tell Dad. It is a secret!",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-06.mp3"
     },
     {
@@ -672,7 +672,7 @@
       "answers": ["not tell"],
       "speaker": "Mom",
       "transcript": "I will not tell him. Dad will be happy tomorrow!",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-06.mp3"
     },
     {
@@ -687,7 +687,7 @@
       "answers": ["tomorrow"],
       "speaker": "Mom",
       "transcript": "I will not tell him. Dad will be happy tomorrow!",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-06.mp3"
     },
     {
@@ -702,7 +702,7 @@
       "answers": ["birthday card"],
       "speaker": "Noah",
       "transcript": "I can make his birthday card today, too!",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-07.mp3"
     },
     {
@@ -717,7 +717,7 @@
       "answers": ["today"],
       "speaker": "Noah",
       "transcript": "I can make his birthday card today, too!",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/noah-07.mp3"
     },
     {
@@ -732,7 +732,7 @@
       "answers": ["both surprises"],
       "speaker": "Mom",
       "transcript": "He will love both surprises!",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-07.mp3"
     },
     {
@@ -764,7 +764,7 @@
       "answer": "Thiệp sinh nhật và bánh",
       "speaker": "Mom",
       "transcript": "He will love both surprises!",
-      "scene": "/stories/a-small-surprise/a-secret-plan/bg.png",
+      "scene": "/stories/a-small-surprise/a-secret-plan/bg.webp",
       "audioUrl": "/stories/a-small-surprise/a-secret-plan/audio/mom-07.mp3"
     },
     {

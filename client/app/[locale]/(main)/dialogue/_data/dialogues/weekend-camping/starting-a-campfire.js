@@ -20,7 +20,7 @@ const startingCampfireTaskMedia = (speaker, audioIndex) => ({
 const startingACampfire = {
 	id: "starting-a-campfire",
 	thumbnail:
-		"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail3.png",
+		"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail3.webp",
 	title: "Nhóm lửa trại",
 	description:
 		"Leo và Mia cùng nhau chuẩn bị và nhóm lửa sau khi dựng lều xong.",

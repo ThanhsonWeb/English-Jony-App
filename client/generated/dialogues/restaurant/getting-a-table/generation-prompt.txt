@@ -292,7 +292,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/restaurant/getting-a-table/bg.png"
+"/dialogue/restaurant/getting-a-table/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -302,10 +302,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/restaurant/getting-a-table/bg.png"
+"/dialogue/restaurant/getting-a-table/bg.webp"
 
 Thumbnail:
-"/dialogue/restaurant/thumbnails/getting-a-table.png"
+"/dialogue/restaurant/thumbnails/getting-a-table.webp"
 
 Audio format:
 "/dialogue/restaurant/getting-a-table/audio/{speaker}-{number}.mp3"
@@ -334,8 +334,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Ben và Emma đến một nhà hàng. Alex là nhân viên phục vụ và giúp họ tìm một bàn phù hợp.",
-		"scene": "/dialogue/restaurant/getting-a-table/bg.png",
-		"thumbnail": "/dialogue/restaurant/thumbnails/getting-a-table.png"
+		"scene": "/dialogue/restaurant/getting-a-table/bg.webp",
+		"thumbnail": "/dialogue/restaurant/thumbnails/getting-a-table.webp"
 	},
 
 	"dialogue": [

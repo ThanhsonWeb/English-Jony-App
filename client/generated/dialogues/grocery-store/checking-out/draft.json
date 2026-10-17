@@ -5,8 +5,8 @@
     "title": "Thanh toán tại quầy",
     "level": "a1",
     "situation": "Ben và Emma mang đồ đến quầy thanh toán. Lee tính tiền và Ben hỏi về tổng số tiền và cách thanh toán.",
-    "scene": "/dialogue/grocery-store/checking-out/bg.png",
-    "thumbnail": "/dialogue/grocery-store/thumbnails/checking-out.png"
+    "scene": "/dialogue/grocery-store/checking-out/bg.webp",
+    "thumbnail": "/dialogue/grocery-store/thumbnails/checking-out.webp"
   },
   "dialogue": [
     {
@@ -15,7 +15,7 @@
       "text": "Hi. Did you find everything you needed?",
       "translation": "Chào bạn. Hai bạn đã tìm được mọi thứ mình cần chưa?",
       "practicePriority": "simple",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-01.mp3"
     },
     {
@@ -24,7 +24,7 @@
       "text": "Yes, we did. Thanks.",
       "translation": "Rồi, chúng tôi tìm được rồi. Cảm ơn.",
       "practicePriority": "simple",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/emma-01.mp3"
     },
     {
@@ -33,7 +33,7 @@
       "text": "How much is it altogether?",
       "translation": "Tổng cộng là bao nhiêu tiền?",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-01.mp3"
     },
     {
@@ -42,7 +42,7 @@
       "text": "It's eighteen dollars and fifty cents.",
       "translation": "Tổng cộng là mười tám đô la năm mươi xu.",
       "practicePriority": "important",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-02.mp3"
     },
     {
@@ -51,7 +51,7 @@
       "text": "Okay. Can I pay by card?",
       "translation": "Được. Tôi có thể thanh toán bằng thẻ không?",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-02.mp3"
     },
     {
@@ -60,7 +60,7 @@
       "text": "Yes. We take cash and cards.",
       "translation": "Có. Chúng tôi nhận tiền mặt và thẻ.",
       "practicePriority": "important",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-03.mp3"
     },
     {
@@ -69,7 +69,7 @@
       "text": "Can I pay with my phone too?",
       "translation": "Tôi cũng có thể thanh toán bằng điện thoại không?",
       "practicePriority": "important",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-03.mp3"
     },
     {
@@ -78,7 +78,7 @@
       "text": "Yes, you can.",
       "translation": "Có, bạn có thể.",
       "practicePriority": "simple",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-04.mp3"
     },
     {
@@ -87,7 +87,7 @@
       "text": "Do we need a bag?",
       "translation": "Chúng ta có cần túi không?",
       "practicePriority": "simple",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/emma-02.mp3"
     },
     {
@@ -96,7 +96,7 @@
       "text": "Yes. One bag is enough.",
       "translation": "Có. Một túi là đủ.",
       "practicePriority": "important",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-04.mp3"
     },
     {
@@ -105,7 +105,7 @@
       "text": "The bag is ten cents. Is that okay?",
       "translation": "Túi có giá mười xu. Như vậy có được không?",
       "practicePriority": "important",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-05.mp3"
     },
     {
@@ -114,7 +114,7 @@
       "text": "Yes, that's fine. Thank you.",
       "translation": "Vâng, được thôi. Cảm ơn.",
       "practicePriority": "simple",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-05.mp3"
     },
     {
@@ -123,7 +123,7 @@
       "text": "You're welcome. Have a nice day.",
       "translation": "Không có gì. Chúc bạn một ngày tốt lành.",
       "practicePriority": "important",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-06.mp3"
     }
   ],
@@ -191,7 +191,7 @@
       ],
       "speaker": "Lee",
       "transcript": "Hi. Did you find everything you needed?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-01.mp3"
     },
     {
@@ -208,7 +208,7 @@
       "answer": "Đang thanh toán tại quầy.",
       "speaker": "Lee",
       "transcript": "Hi. Did you find everything you needed?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-01.mp3"
     },
     {
@@ -224,7 +224,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Yes, we did. Thanks.",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/emma-01.mp3"
     },
     {
@@ -240,7 +240,7 @@
       ],
       "speaker": "Ben",
       "transcript": "How much is it altogether?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-01.mp3"
     },
     {
@@ -256,7 +256,7 @@
       ],
       "speaker": "Ben",
       "transcript": "How much is it altogether?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-01.mp3"
     },
     {
@@ -273,7 +273,7 @@
       "answer": "Tổng số tiền.",
       "speaker": "Ben",
       "transcript": "How much is it altogether?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-01.mp3"
     },
     {
@@ -289,7 +289,7 @@
       ],
       "speaker": "Lee",
       "transcript": "It's eighteen dollars and fifty cents.",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-02.mp3"
     },
     {
@@ -305,7 +305,7 @@
       ],
       "speaker": "Lee",
       "transcript": "It's eighteen dollars and fifty cents.",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-02.mp3"
     },
     {
@@ -321,7 +321,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Okay. Can I pay by card?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-02.mp3"
     },
     {
@@ -337,7 +337,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Okay. Can I pay by card?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-02.mp3"
     },
     {
@@ -354,7 +354,7 @@
       "answer": "Thẻ.",
       "speaker": "Ben",
       "transcript": "Okay. Can I pay by card?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-02.mp3"
     },
     {
@@ -370,7 +370,7 @@
       ],
       "speaker": "Lee",
       "transcript": "Yes. We take cash and cards.",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-03.mp3"
     },
     {
@@ -386,7 +386,7 @@
       ],
       "speaker": "Lee",
       "transcript": "Yes. We take cash and cards.",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-03.mp3"
     },
     {
@@ -402,7 +402,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Can I pay with my phone too?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-03.mp3"
     },
     {
@@ -418,7 +418,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Can I pay with my phone too?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-03.mp3"
     },
     {
@@ -434,7 +434,7 @@
       ],
       "speaker": "Lee",
       "transcript": "Yes, you can.",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-04.mp3"
     },
     {
@@ -450,7 +450,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Do we need a bag?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/emma-02.mp3"
     },
     {
@@ -467,7 +467,7 @@
       "answer": "Có cần túi hay không.",
       "speaker": "Emma",
       "transcript": "Do we need a bag?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/emma-02.mp3"
     },
     {
@@ -483,7 +483,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Yes. One bag is enough.",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-04.mp3"
     },
     {
@@ -499,7 +499,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Yes. One bag is enough.",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-04.mp3"
     },
     {
@@ -515,7 +515,7 @@
       ],
       "speaker": "Lee",
       "transcript": "The bag is ten cents. Is that okay?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-05.mp3"
     },
     {
@@ -531,7 +531,7 @@
       ],
       "speaker": "Lee",
       "transcript": "The bag is ten cents. Is that okay?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-05.mp3"
     },
     {
@@ -548,7 +548,7 @@
       "answer": "Ben đồng ý với phí của chiếc túi.",
       "speaker": "Lee",
       "transcript": "The bag is ten cents. Is that okay?",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-05.mp3"
     },
     {
@@ -564,7 +564,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Yes, that's fine. Thank you.",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/ben-05.mp3"
     },
     {
@@ -580,7 +580,7 @@
       ],
       "speaker": "Lee",
       "transcript": "You're welcome. Have a nice day.",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-06.mp3"
     },
     {
@@ -596,7 +596,7 @@
       ],
       "speaker": "Lee",
       "transcript": "You're welcome. Have a nice day.",
-      "scene": "/dialogue/grocery-store/checking-out/bg.png",
+      "scene": "/dialogue/grocery-store/checking-out/bg.webp",
       "audioUrl": "/dialogue/grocery-store/checking-out/audio/lee-06.mp3"
     },
     {

@@ -52,10 +52,10 @@ Grammar:
 ASSET PATHS
 
 Scene:
-"/dialogue/weekend-camping/talking-by-the-campfire/bg.png"
+"/dialogue/weekend-camping/talking-by-the-campfire/bg.webp"
 
 Thumbnail:
-"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail5.png"
+"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail5.webp"
 
 Audio format:
 "/dialogue/weekend-camping/talking-by-the-campfire/audio/{speaker}-{number}.mp3"

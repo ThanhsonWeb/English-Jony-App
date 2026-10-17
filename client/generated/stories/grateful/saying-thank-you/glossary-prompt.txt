@@ -64,8 +64,8 @@ Final source (all lines and useful expressions):
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Lily cảm ơn Sam vì đã chia sẻ bữa trưa. Khi về nhà, cô bé cũng cảm ơn mẹ vì đã giúp mình vào buổi sáng.",
-    "scene": "/stories/grateful/saying-thank-you/bg.png",
-    "thumbnail": "/stories/grateful/thumbnails/saying-thank-you.png"
+    "scene": "/stories/grateful/saying-thank-you/bg.webp",
+    "thumbnail": "/stories/grateful/thumbnails/saying-thank-you.webp"
   },
   "dialogue": [
     {
@@ -74,7 +74,7 @@ Final source (all lines and useful expressions):
       "text": "School is over. Are you ready to go home?",
       "translation": "Tan học rồi. Chị sẵn sàng về nhà chưa?",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/sam-01.mp3"
     },
     {
@@ -83,7 +83,7 @@ Final source (all lines and useful expressions):
       "text": "Yes. Thank you again for sharing your lunch with me.",
       "translation": "Ừ. Cảm ơn em lần nữa vì đã chia sẻ bữa trưa với chị.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-01.mp3"
     },
     {
@@ -92,7 +92,7 @@ Final source (all lines and useful expressions):
       "text": "You're welcome. I am glad you had enough to eat.",
       "translation": "Không có gì đâu chị. Em vui vì chị đã ăn no.",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/sam-02.mp3"
     },
     {
@@ -101,7 +101,7 @@ Final source (all lines and useful expressions):
       "text": "Welcome home! How was school?",
       "translation": "Hai con về rồi! Hôm nay ở trường thế nào?",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-01.mp3"
     },
     {
@@ -110,7 +110,7 @@ Final source (all lines and useful expressions):
       "text": "It was good. Sam shared his lunch with me.",
       "translation": "Dạ vui ạ. Sam đã chia sẻ bữa trưa với con.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-02.mp3"
     },
     {
@@ -119,7 +119,7 @@ Final source (all lines and useful expressions):
       "text": "That was kind of Sam.",
       "translation": "Sam thật tốt bụng.",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-02.mp3"
     },
     {
@@ -128,7 +128,7 @@ Final source (all lines and useful expressions):
       "text": "Mom, thank you for breakfast and for helping me find my bag.",
       "translation": "Mẹ ơi, con cảm ơn mẹ vì bữa sáng và vì đã giúp con tìm cặp sách.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-03.mp3"
     },
     {
@@ -137,7 +137,7 @@ Final source (all lines and useful expressions):
       "text": "You're welcome. I am happy to help.",
       "translation": "Không có gì đâu con. Mẹ rất vui khi được giúp con.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-03.mp3"
     },
     {
@@ -146,7 +146,7 @@ Final source (all lines and useful expressions):
       "text": "I want to say thank you when someone helps me.",
       "translation": "Con muốn nói lời cảm ơn khi có ai đó giúp con.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-04.mp3"
     },
     {
@@ -155,7 +155,7 @@ Final source (all lines and useful expressions):
       "text": "That is kind of you. We can help each other.",
       "translation": "Con thật tốt bụng. Chúng ta có thể giúp đỡ lẫn nhau.",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-04.mp3"
     }
   ],

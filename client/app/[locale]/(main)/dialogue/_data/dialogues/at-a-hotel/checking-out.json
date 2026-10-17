@@ -5,8 +5,8 @@
 "title": "Làm thủ tục trả phòng",
 "level": "a1",
 "situation": "Ben trả phòng, kiểm tra hóa đơn và nói lời cảm ơn trước khi rời khách sạn.",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
-"thumbnail": "/dialogue/at-a-hotel/thumbnails/checking-out.png"
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
+"thumbnail": "/dialogue/at-a-hotel/thumbnails/checking-out.webp"
 },
 "dialogue": [
 {
@@ -15,7 +15,7 @@
 "text": "Good morning. How can I help you?",
 "translation": "Chào buổi sáng. Tôi có thể giúp gì cho bạn?",
 "practicePriority": "simple",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-01.mp3"
 },
 {
@@ -24,7 +24,7 @@
 "text": "Hi. I'd like to check out, please.",
 "translation": "Chào bạn. Tôi muốn làm thủ tục trả phòng.",
 "practicePriority": "veryImportant",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-01.mp3"
 },
 {
@@ -33,7 +33,7 @@
 "text": "Of course. What is your room number?",
 "translation": "Tất nhiên. Số phòng của bạn là bao nhiêu?",
 "practicePriority": "important",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-02.mp3"
 },
 {
@@ -42,7 +42,7 @@
 "text": "Room 204.",
 "translation": "Phòng 204.",
 "practicePriority": "simple",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-02.mp3"
 },
 {
@@ -51,7 +51,7 @@
 "text": "Thank you. Let me check your bill.",
 "translation": "Cảm ơn bạn. Để tôi kiểm tra hóa đơn của bạn.",
 "practicePriority": "important",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-03.mp3"
 },
 {
@@ -60,7 +60,7 @@
 "text": "Your total is eighty dollars.",
 "translation": "Tổng cộng là tám mươi đô la.",
 "practicePriority": "important",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-04.mp3"
 },
 {
@@ -69,7 +69,7 @@
 "text": "Okay. Can I pay by card?",
 "translation": "Được rồi. Tôi có thể thanh toán bằng thẻ không?",
 "practicePriority": "veryImportant",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-03.mp3"
 },
 {
@@ -78,7 +78,7 @@
 "text": "Yes, you can.",
 "translation": "Có, bạn có thể.",
 "practicePriority": "simple",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-05.mp3"
 },
 {
@@ -87,7 +87,7 @@
 "text": "Great. Is everything paid now?",
 "translation": "Tuyệt. Bây giờ mọi thứ đã được thanh toán chưa?",
 "practicePriority": "important",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-04.mp3"
 },
 {
@@ -96,7 +96,7 @@
 "text": "Yes. Everything is paid. Thank you for staying with us.",
 "translation": "Vâng. Mọi thứ đã được thanh toán. Cảm ơn bạn đã ở tại khách sạn của chúng tôi.",
 "practicePriority": "simple",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-06.mp3"
 },
 {
@@ -105,7 +105,7 @@
 "text": "Thank you. I had a nice stay.",
 "translation": "Cảm ơn bạn. Tôi đã có một kỳ nghỉ vui vẻ.",
 "practicePriority": "simple",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-05.mp3"
 }
 ],
@@ -167,7 +167,7 @@
 ],
 "speaker": "Maya",
 "transcript": "Good morning. How can I help you?",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-01.mp3"
 },
 {
@@ -183,7 +183,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Hi. I'd like to check out, please.",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-01.mp3"
 },
 {
@@ -199,7 +199,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Hi. I'd like to check out, please.",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-01.mp3"
 },
 {
@@ -216,7 +216,7 @@
 "answer": "Làm thủ tục trả phòng",
 "speaker": "Ben",
 "transcript": "Hi. I'd like to check out, please.",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-01.mp3"
 },
 {
@@ -232,7 +232,7 @@
 ],
 "speaker": "Maya",
 "transcript": "Of course. What is your room number?",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-02.mp3"
 },
 {
@@ -248,7 +248,7 @@
 ],
 "speaker": "Maya",
 "transcript": "Of course. What is your room number?",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-02.mp3"
 },
 {
@@ -265,7 +265,7 @@
 "answer": "Số phòng",
 "speaker": "Maya",
 "transcript": "Of course. What is your room number?",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-02.mp3"
 },
 {
@@ -281,7 +281,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Room 204.",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-02.mp3"
 },
 {
@@ -297,7 +297,7 @@
 ],
 "speaker": "Maya",
 "transcript": "Thank you. Let me check your bill.",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-03.mp3"
 },
 {
@@ -313,7 +313,7 @@
 ],
 "speaker": "Maya",
 "transcript": "Thank you. Let me check your bill.",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-03.mp3"
 },
 {
@@ -330,7 +330,7 @@
 "answer": "Kiểm tra hóa đơn",
 "speaker": "Maya",
 "transcript": "Thank you. Let me check your bill.",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-03.mp3"
 },
 {
@@ -346,7 +346,7 @@
 ],
 "speaker": "Maya",
 "transcript": "Your total is eighty dollars.",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-04.mp3"
 },
 {
@@ -362,7 +362,7 @@
 ],
 "speaker": "Maya",
 "transcript": "Your total is eighty dollars.",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-04.mp3"
 },
 {
@@ -379,7 +379,7 @@
 "answer": "Tám mươi đô la",
 "speaker": "Maya",
 "transcript": "Your total is eighty dollars.",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-04.mp3"
 },
 {
@@ -395,7 +395,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Okay. Can I pay by card?",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-03.mp3"
 },
 {
@@ -411,7 +411,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Okay. Can I pay by card?",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-03.mp3"
 },
 {
@@ -428,7 +428,7 @@
 "answer": "Cách thanh toán",
 "speaker": "Ben",
 "transcript": "Okay. Can I pay by card?",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-03.mp3"
 },
 {
@@ -444,7 +444,7 @@
 ],
 "speaker": "Maya",
 "transcript": "Yes, you can.",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-05.mp3"
 },
 {
@@ -460,7 +460,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Great. Is everything paid now?",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-04.mp3"
 },
 {
@@ -476,7 +476,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Great. Is everything paid now?",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-04.mp3"
 },
 {
@@ -492,7 +492,7 @@
 ],
 "speaker": "Maya",
 "transcript": "Yes. Everything is paid. Thank you for staying with us.",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/maya-06.mp3"
 },
 {
@@ -508,7 +508,7 @@
 ],
 "speaker": "Ben",
 "transcript": "Thank you. I had a nice stay.",
-"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
+"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
 "audioUrl": "/dialogue/at-a-hotel/checking-out/audio/ben-05.mp3"
 },
 {

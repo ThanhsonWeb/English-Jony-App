@@ -27,8 +27,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "While preparing the birthday surprise, Noah accidentally breaks the cake. He feels sad and worries that Dad's birthday is ruined. Mom comforts him.",
-    "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
-    "thumbnail": "/stories/a-small-surprise/thumbnails/the-broken-cake.png"
+    "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
+    "thumbnail": "/stories/a-small-surprise/thumbnails/the-broken-cake.webp"
   },
   "dialogue": [
     {
@@ -37,7 +37,7 @@
       "text": "Mom, I dropped the cake!",
       "translation": "Mẹ ơi, con làm rơi chiếc bánh rồi!",
       "practicePriority": "veryImportant",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-01.mp3"
     },
     {
@@ -46,7 +46,7 @@
       "text": "Oh no! Are you okay?",
       "translation": "Ôi không! Con có sao không?",
       "practicePriority": "simple",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-01.mp3"
     },
     {
@@ -55,7 +55,7 @@
       "text": "Yes, but the cake is broken.",
       "translation": "Con không sao, nhưng chiếc bánh bị hỏng rồi.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-02.mp3"
     },
     {
@@ -64,7 +64,7 @@
       "text": "It was a surprise for Dad.",
       "translation": "Đó là món quà bất ngờ dành cho bố mà.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-03.mp3"
     },
     {
@@ -73,7 +73,7 @@
       "text": "I know, Noah. It was an accident.",
       "translation": "Mẹ biết, Noah. Con chỉ vô tình thôi.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-02.mp3"
     },
     {
@@ -82,7 +82,7 @@
       "text": "I'm sorry. I feel so sad.",
       "translation": "Con xin lỗi. Con buồn quá.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-04.mp3"
     },
     {
@@ -91,7 +91,7 @@
       "text": "It's okay. We can make another cake.",
       "translation": "Không sao đâu. Mẹ con mình có thể làm một chiếc bánh khác.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-03.mp3"
     },
     {
@@ -100,7 +100,7 @@
       "text": "Really? But his birthday is tomorrow!",
       "translation": "Thật ạ? Nhưng mai là sinh nhật bố rồi!",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-05.mp3"
     },
     {
@@ -109,7 +109,7 @@
       "text": "We still have time. Dad is at work.",
       "translation": "Mình vẫn còn thời gian. Bố đang ở chỗ làm.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-04.mp3"
     },
     {
@@ -118,7 +118,7 @@
       "text": "Do we have enough chocolate?",
       "translation": "Nhà mình có đủ sô-cô-la không mẹ?",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-06.mp3"
     },
     {
@@ -127,7 +127,7 @@
       "text": "Yes, we have some left.",
       "translation": "Có chứ, mình vẫn còn một ít.",
       "practicePriority": "simple",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-05.mp3"
     },
     {
@@ -136,7 +136,7 @@
       "text": "Can we make it together again?",
       "translation": "Mẹ con mình có thể cùng làm lại được không ạ?",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-07.mp3"
     },
     {
@@ -145,7 +145,7 @@
       "text": "Of course! We can make a small one.",
       "translation": "Tất nhiên rồi! Mình có thể làm một chiếc bánh nhỏ.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-06.mp3"
     },
     {
@@ -154,7 +154,7 @@
       "text": "Thank you, Mom. I feel much better now!",
       "translation": "Con cảm ơn mẹ. Bây giờ con thấy đỡ buồn hơn nhiều rồi!",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-08.mp3"
     }
   ],
@@ -238,7 +238,7 @@
       ],
       "speaker": "Noah",
       "transcript": "Mom, I dropped the cake!",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-01.mp3"
     },
     {
@@ -264,7 +264,7 @@
       ],
       "speaker": "Noah",
       "transcript": "Mom, I dropped the cake!",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-01.mp3"
     },
     {
@@ -290,7 +290,7 @@
       ],
       "speaker": "Mom",
       "transcript": "Oh no! Are you okay?",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-01.mp3"
     },
     {
@@ -316,7 +316,7 @@
       ],
       "speaker": "Noah",
       "transcript": "Yes, but the cake is broken.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-02.mp3"
     },
     {
@@ -342,7 +342,7 @@
       ],
       "speaker": "Noah",
       "transcript": "Yes, but the cake is broken.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-02.mp3"
     },
     {
@@ -392,7 +392,7 @@
       "answer": "Chiếc bánh bị hỏng.",
       "speaker": "Noah",
       "transcript": "Yes, but the cake is broken.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-02.mp3"
     },
     {
@@ -418,7 +418,7 @@
       ],
       "speaker": "Noah",
       "transcript": "It was a surprise for Dad.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-03.mp3"
     },
     {
@@ -444,7 +444,7 @@
       ],
       "speaker": "Noah",
       "transcript": "It was a surprise for Dad.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-03.mp3"
     },
     {
@@ -470,7 +470,7 @@
       ],
       "speaker": "Mom",
       "transcript": "I know, Noah. It was an accident.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-02.mp3"
     },
     {
@@ -496,7 +496,7 @@
       ],
       "speaker": "Mom",
       "transcript": "I know, Noah. It was an accident.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-02.mp3"
     },
     {
@@ -522,7 +522,7 @@
       ],
       "speaker": "Noah",
       "transcript": "I'm sorry. I feel so sad.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-04.mp3"
     },
     {
@@ -548,7 +548,7 @@
       ],
       "speaker": "Noah",
       "transcript": "I'm sorry. I feel so sad.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-04.mp3"
     },
     {
@@ -574,7 +574,7 @@
       ],
       "speaker": "Mom",
       "transcript": "It's okay. We can make another cake.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-03.mp3"
     },
     {
@@ -600,7 +600,7 @@
       ],
       "speaker": "Mom",
       "transcript": "It's okay. We can make another cake.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-03.mp3"
     },
     {
@@ -650,7 +650,7 @@
       "answer": "Làm một chiếc bánh khác.",
       "speaker": "Mom",
       "transcript": "It's okay. We can make another cake.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-03.mp3"
     },
     {
@@ -676,7 +676,7 @@
       ],
       "speaker": "Noah",
       "transcript": "Really? But his birthday is tomorrow!",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-05.mp3"
     },
     {
@@ -702,7 +702,7 @@
       ],
       "speaker": "Noah",
       "transcript": "Really? But his birthday is tomorrow!",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-05.mp3"
     },
     {
@@ -728,7 +728,7 @@
       ],
       "speaker": "Mom",
       "transcript": "We still have time. Dad is at work.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-04.mp3"
     },
     {
@@ -754,7 +754,7 @@
       ],
       "speaker": "Mom",
       "transcript": "We still have time. Dad is at work.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-04.mp3"
     },
     {
@@ -804,7 +804,7 @@
       "answer": "Vì bố vẫn đang ở chỗ làm.",
       "speaker": "Mom",
       "transcript": "We still have time. Dad is at work.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-04.mp3"
     },
     {
@@ -830,7 +830,7 @@
       ],
       "speaker": "Noah",
       "transcript": "Do we have enough chocolate?",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-06.mp3"
     },
     {
@@ -856,7 +856,7 @@
       ],
       "speaker": "Noah",
       "transcript": "Do we have enough chocolate?",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-06.mp3"
     },
     {
@@ -882,7 +882,7 @@
       ],
       "speaker": "Mom",
       "transcript": "Yes, we have some left.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-05.mp3"
     },
     {
@@ -908,7 +908,7 @@
       ],
       "speaker": "Noah",
       "transcript": "Can we make it together again?",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-07.mp3"
     },
     {
@@ -934,7 +934,7 @@
       ],
       "speaker": "Noah",
       "transcript": "Can we make it together again?",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-07.mp3"
     },
     {
@@ -985,7 +985,7 @@
       "answer": "Để hỏi liệu hai mẹ con có thể cùng làm bánh nữa không.",
       "speaker": "Noah",
       "transcript": "Can we make it together again?",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-07.mp3"
     },
     {
@@ -1011,7 +1011,7 @@
       ],
       "speaker": "Mom",
       "transcript": "Of course! We can make a small one.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-06.mp3"
     },
     {
@@ -1037,7 +1037,7 @@
       ],
       "speaker": "Mom",
       "transcript": "Of course! We can make a small one.",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/mom-06.mp3"
     },
     {
@@ -1063,7 +1063,7 @@
       ],
       "speaker": "Noah",
       "transcript": "Thank you, Mom. I feel much better now!",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-08.mp3"
     },
     {
@@ -1089,7 +1089,7 @@
       ],
       "speaker": "Noah",
       "transcript": "Thank you, Mom. I feel much better now!",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-08.mp3"
     },
     {
@@ -1140,7 +1140,7 @@
       "answer": "Thank you, Mom.",
       "speaker": "Noah",
       "transcript": "Thank you, Mom. I feel much better now!",
-      "scene": "/stories/a-small-surprise/the-broken-cake/bg.png",
+      "scene": "/stories/a-small-surprise/the-broken-cake/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-broken-cake/audio/noah-08.mp3"
     },
     {

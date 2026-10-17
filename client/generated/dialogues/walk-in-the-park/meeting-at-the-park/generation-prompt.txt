@@ -327,7 +327,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/walk-in-the-park/meeting-at-the-park/bg.png"
+"/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -337,10 +337,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/walk-in-the-park/meeting-at-the-park/bg.png"
+"/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp"
 
 Thumbnail:
-"/dialogue/walk-in-the-park/thumbnails/meeting-at-the-park.png"
+"/dialogue/walk-in-the-park/thumbnails/meeting-at-the-park.webp"
 
 Audio format:
 "/dialogue/walk-in-the-park/meeting-at-the-park/audio/{speaker}-{number}.mp3"
@@ -376,8 +376,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Ben và Emma gặp nhau ở công viên vào một buổi chiều. Họ chào nhau và quyết định đi dạo cùng nhau.",
-		"scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.png",
-		"thumbnail": "/dialogue/walk-in-the-park/thumbnails/meeting-at-the-park.png"
+		"scene": "/dialogue/walk-in-the-park/meeting-at-the-park/bg.webp",
+		"thumbnail": "/dialogue/walk-in-the-park/thumbnails/meeting-at-the-park.webp"
 	},
 
 	"dialogue": [

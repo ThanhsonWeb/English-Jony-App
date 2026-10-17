@@ -1,6 +1,6 @@
 const officeCharacterImages = {
-	Maria: "/dialogue/office-introduction/shared/maria.png",
-	Tom: "/dialogue/office-introduction/shared/tom.png",
+	Maria: "/dialogue/office-introduction/shared/maria.webp",
+	Tom: "/dialogue/office-introduction/shared/tom.webp",
 };
 
 function lunchBreakTaskMedia(speaker, appearance) {
@@ -16,7 +16,7 @@ function lunchBreakTaskMedia(speaker, appearance) {
 
 const officeIntroductionCourse = {
 		id: "office-introduction",
-		heroImage: "/dialogue/office-introduction/shared/bg.png",
+		heroImage: "/dialogue/office-introduction/shared/bg.webp",
 		title: "Ngày đầu tiên tại văn phòng",
 		description:
 			"Maria gặp Tom trong ngày đầu đi làm. Học cách giới thiệu bản thân và giao tiếp trong văn phòng.",
@@ -26,13 +26,13 @@ const officeIntroductionCourse = {
 			// meeting-tom
 			{
 				id: "meeting-tom",
-				thumbnail: "/dialogue/office-introduction/thumbnails/meeting-tem.png",
+				thumbnail: "/dialogue/office-introduction/thumbnails/meeting-tem.webp",
 				title: "Maria gặp Tom",
 				description: "Maria làm quen với Tom trong ngày đầu tiên tại công ty.",
-				scene: "/dialogue/office-introduction/meeting-tom/bg.png",
+				scene: "/dialogue/office-introduction/meeting-tom/bg.webp",
 				characters: {
-					Maria: "/dialogue/office-introduction/shared/maria.png",
-					Tom: "/dialogue/office-introduction/shared/tom.png",
+					Maria: "/dialogue/office-introduction/shared/maria.webp",
+					Tom: "/dialogue/office-introduction/shared/tom.webp",
 				},
 				dialogue: [
 					{
@@ -153,10 +153,10 @@ const officeIntroductionCourse = {
 								"“must be” dùng để đưa ra một phỏng đoán mà người nói khá chắc chắn.",
 							example: "You must be tired. = Chắc bạn mệt rồi.",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-01.mp3",
@@ -178,10 +178,10 @@ const officeIntroductionCourse = {
 								'"I’m + tên/nghề nghiệp" thường dùng để giới thiệu bản thân.',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-01.mp3",
@@ -203,10 +203,10 @@ const officeIntroductionCourse = {
 								'"I’m" là cách nói ngắn gọn và tự nhiên của "I am".',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-01.mp3",
@@ -238,10 +238,10 @@ const officeIntroductionCourse = {
 								"Bạn thường dùng câu này ngay sau khi giới thiệu tên.",
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/tom-01.mp3",
@@ -263,10 +263,10 @@ const officeIntroductionCourse = {
 								'"my first day" nghĩa là ngày đầu tiên của tôi.',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/tom-01.mp3",
@@ -281,10 +281,10 @@ const officeIntroductionCourse = {
 						type: "arrangeWords",
 						title: "Sắp xếp câu",
 						instruction: "Nghe Tom và sắp xếp câu đúng thứ tự.",
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/tom-01.mp3",
@@ -304,10 +304,10 @@ const officeIntroductionCourse = {
 								'"Today’s my first day" thường dùng khi mới bắt đầu đi học hoặc đi làm.',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/tom-01.mp3",
@@ -340,10 +340,10 @@ const officeIntroductionCourse = {
 								'"feeling" ở đây nói về cảm giác của một người.',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-02.mp3",
@@ -364,10 +364,10 @@ const officeIntroductionCourse = {
 								"Cụm này thường nói về một trải nghiệm vẫn đang diễn ra.",
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-02.mp3",
@@ -381,10 +381,10 @@ const officeIntroductionCourse = {
 						type: "arrangeWords",
 						title: "Sắp xếp câu",
 						instruction: "Nghe Maria và sắp xếp câu đúng thứ tự.",
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-02.mp3",
@@ -404,10 +404,10 @@ const officeIntroductionCourse = {
 								"Cụm này nói về một trải nghiệm vẫn đang diễn ra.",
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-02.mp3",
@@ -432,10 +432,10 @@ const officeIntroductionCourse = {
 								'"nervous" nghĩa là lo lắng hoặc hồi hộp.',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/tom-02.mp3",
@@ -456,10 +456,10 @@ const officeIntroductionCourse = {
 								'"a little nervous" nghĩa là hơi lo lắng.',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/tom-02.mp3",
@@ -484,10 +484,10 @@ const officeIntroductionCourse = {
 								'Nó không mang nghĩa xinh đẹp trong cụm "Pretty good".',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/tom-02.mp3",
@@ -508,10 +508,10 @@ const officeIntroductionCourse = {
 								'"Don’t worry" là cách rất phổ biến để trấn an ai đó.',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-03.mp3",
@@ -532,10 +532,10 @@ const officeIntroductionCourse = {
 								'"really friendly" nghĩa là rất thân thiện.',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-03.mp3",
@@ -556,10 +556,10 @@ const officeIntroductionCourse = {
 								'"friendly" dùng để nói một người thân thiện, dễ gần.',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-03.mp3",
@@ -580,10 +580,10 @@ const officeIntroductionCourse = {
 								'"That’s good to hear" là cách tự nhiên để phản hồi khi nghe điều tích cực.',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/tom-03.mp3",
@@ -610,10 +610,10 @@ const officeIntroductionCourse = {
 								'"Thanks for helping me out" là lời cảm ơn thân thiện, tự nhiên.',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/tom-03.mp3",
@@ -634,10 +634,10 @@ const officeIntroductionCourse = {
 								"Đây là cách nói thân thiện trong hội thoại hằng ngày.",
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/tom-03.mp3",
@@ -658,10 +658,10 @@ const officeIntroductionCourse = {
 								'"office" nghĩa là văn phòng hoặc nơi làm việc.',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-04.mp3",
@@ -682,10 +682,10 @@ const officeIntroductionCourse = {
 								'"Let me show you around" là lời đề nghị dẫn ai đó đi tham quan.',
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-04.mp3",
@@ -699,10 +699,10 @@ const officeIntroductionCourse = {
 						type: "arrangeWords",
 						title: "Sắp xếp câu",
 						instruction: "Nghe Maria và sắp xếp câu đúng thứ tự.",
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-04.mp3",
@@ -722,10 +722,10 @@ const officeIntroductionCourse = {
 								"Đây là lời đề nghị thân thiện dành cho người mới.",
 							],
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meeting-tom/audio/maria-04.mp3",
@@ -813,15 +813,15 @@ const officeIntroductionCourse = {
 			{
 				id: "meet-coworkers",
 				thumbnail:
-					"/dialogue/office-introduction/thumbnails/meet-coworkers.png",
+					"/dialogue/office-introduction/thumbnails/meet-coworkers.webp",
 				title: "Gặp đồng nghiệp mới",
 				description:
 					"Maria giới thiệu Tom với Anna, một đồng nghiệp trong nhóm.",
-				scene: "/dialogue/office-introduction/meet-coworkers/bg.png",
+				scene: "/dialogue/office-introduction/meet-coworkers/bg.webp",
 				characters: {
-					Maria: "/dialogue/office-introduction/shared/maria.png",
-					Anna: "/dialogue/office-introduction/shared/anna.png",
-					Tom: "/dialogue/office-introduction/shared/tom.png",
+					Maria: "/dialogue/office-introduction/shared/maria.webp",
+					Anna: "/dialogue/office-introduction/shared/anna.webp",
+					Tom: "/dialogue/office-introduction/shared/tom.webp",
 				},
 
 				dialogue: [
@@ -984,9 +984,9 @@ const officeIntroductionCourse = {
 						speaker: "Maria",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/maria-01.mp3",
 						transcript:
@@ -1011,9 +1011,9 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/tom-01.mp3",
 						transcript:
@@ -1038,9 +1038,9 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/tom-01.mp3",
 						transcript:
@@ -1068,9 +1068,9 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/anna-01.mp3",
 						transcript: "Nice to meet you too, Tom. Welcome to the team!",
@@ -1097,9 +1097,9 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/anna-01.mp3",
 						transcript: "Nice to meet you too, Tom. Welcome to the team!",
@@ -1130,9 +1130,9 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/tom-02.mp3",
 						transcript: "Thanks! How long have you been working here?",
@@ -1155,9 +1155,9 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/tom-02.mp3",
 						transcript: "Thanks! How long have you been working here?",
@@ -1184,9 +1184,9 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/anna-02.mp3",
 						transcript:
@@ -1221,9 +1221,9 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/anna-02.mp3",
 						transcript:
@@ -1248,9 +1248,9 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/tom-03.mp3",
 						transcript: "Mostly website and app designs.",
@@ -1274,9 +1274,9 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/tom-03.mp3",
 						transcript: "Mostly website and app designs.",
@@ -1303,9 +1303,9 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/anna-03.mp3",
 						transcript:
@@ -1336,9 +1336,9 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/anna-03.mp3",
 						transcript:
@@ -1370,9 +1370,9 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/tom-04.mp3",
 						transcript: "That sounds great. I’m looking forward to it.",
@@ -1395,9 +1395,9 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/tom-04.mp3",
 						transcript: "That sounds great. I’m looking forward to it.",
@@ -1427,9 +1427,9 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/tom-04.mp3",
 						transcript: "That sounds great. I’m looking forward to it.",
@@ -1473,7 +1473,7 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/anna-03.mp3",
@@ -1509,9 +1509,9 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/anna-04.mp3",
 						transcript: "If you need any help, just let me know.",
@@ -1535,9 +1535,9 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/anna-04.mp3",
 						transcript: "If you need any help, just let me know.",
@@ -1561,7 +1561,7 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/anna-04.mp3",
@@ -1596,9 +1596,9 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/anna-04.mp3",
 						transcript: "If you need any help, just let me know.",
@@ -1631,9 +1631,9 @@ const officeIntroductionCourse = {
 						speaker: "Maria",
 						character: {
 							name: "Maria",
-							image: "/dialogue/office-introduction/shared/maria.png",
+							image: "/dialogue/office-introduction/shared/maria.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/maria-02.mp3",
 						transcript: "Alright, let’s go meet the rest of the team.",
@@ -1666,9 +1666,9 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
-						scene: "/dialogue/office-introduction/shared/bg.png",
+						scene: "/dialogue/office-introduction/shared/bg.webp",
 						audioUrl:
 							"/dialogue/office-introduction/meet-coworkers/audio/tom-06.mp3",
 						transcript: "Sounds good. Let’s go!",
@@ -1780,13 +1780,13 @@ const officeIntroductionCourse = {
 			{
 				id: "talk-about-work",
 				thumbnail:
-					"/dialogue/office-introduction/thumbnails/talk-about-work.png",
+					"/dialogue/office-introduction/thumbnails/talk-about-work.webp",
 				title: "Hỏi về công việc",
 				description: "Anna và Tom nói về công việc và nhiệm vụ.",
-				scene: "/dialogue/office-introduction/talk-about-work/bg.png",
+				scene: "/dialogue/office-introduction/talk-about-work/bg.webp",
 				characters: {
-					Tom: "/dialogue/office-introduction/shared/tom.png",
-					Anna: "/dialogue/office-introduction/shared/anna.png",
+					Tom: "/dialogue/office-introduction/shared/tom.webp",
+					Anna: "/dialogue/office-introduction/shared/anna.webp",
 				},
 				dialogue: [
 					{
@@ -1935,7 +1935,7 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/tom-01.mp3",
@@ -1952,7 +1952,7 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/tom-01.mp3",
@@ -1979,7 +1979,7 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/tom-01.mp3",
@@ -2001,7 +2001,7 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/anna-01.mp3",
@@ -2018,7 +2018,7 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/anna-01.mp3",
@@ -2034,7 +2034,7 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/tom-02.mp3",
@@ -2051,7 +2051,7 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/tom-02.mp3",
@@ -2073,7 +2073,7 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/anna-02.mp3",
@@ -2090,7 +2090,7 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/anna-02.mp3",
@@ -2112,7 +2112,7 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/tom-03.mp3",
@@ -2128,7 +2128,7 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/tom-03.mp3",
@@ -2148,7 +2148,7 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/anna-03.mp3",
@@ -2165,7 +2165,7 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/anna-03.mp3",
@@ -2192,7 +2192,7 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/tom-04.mp3",
@@ -2209,7 +2209,7 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/tom-04.mp3",
@@ -2236,7 +2236,7 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/anna-04.mp3",
@@ -2253,7 +2253,7 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/anna-04.mp3",
@@ -2270,7 +2270,7 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/anna-04.mp3",
@@ -2296,7 +2296,7 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/tom-05.mp3",
@@ -2313,7 +2313,7 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/tom-05.mp3",
@@ -2340,7 +2340,7 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/anna-05.mp3",
@@ -2356,7 +2356,7 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/anna-05.mp3",
@@ -2379,7 +2379,7 @@ const officeIntroductionCourse = {
 						speaker: "Tom",
 						character: {
 							name: "Tom",
-							image: "/dialogue/office-introduction/shared/tom.png",
+							image: "/dialogue/office-introduction/shared/tom.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/tom-06.mp3",
@@ -2399,7 +2399,7 @@ const officeIntroductionCourse = {
 						speaker: "Anna",
 						character: {
 							name: "Anna",
-							image: "/dialogue/office-introduction/shared/anna.png",
+							image: "/dialogue/office-introduction/shared/anna.webp",
 						},
 						audioUrl:
 							"/dialogue/office-introduction/talk-about-work/audio/anna-06.mp3",
@@ -2497,10 +2497,10 @@ const officeIntroductionCourse = {
 			// lunch break
 			{
 				id: "lunch-break",
-				thumbnail: "/dialogue/office-introduction/thumbnails/lunch-break.png",
+				thumbnail: "/dialogue/office-introduction/thumbnails/lunch-break.webp",
 				title: "Giờ nghỉ trưa",
 				description: "Maria và Tom cùng ăn trưa và trò chuyện.",
-				scene: "/dialogue/office-introduction/lunch-break/bg.png",
+				scene: "/dialogue/office-introduction/lunch-break/bg.webp",
 				characters: officeCharacterImages,
 				dialogue: [
 					{

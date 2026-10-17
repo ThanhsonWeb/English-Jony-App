@@ -327,7 +327,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/stories/a-small-surprise/a-special-day/bg.png"
+"/stories/a-small-surprise/a-special-day/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -337,10 +337,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/stories/a-small-surprise/a-special-day/bg.png"
+"/stories/a-small-surprise/a-special-day/bg.webp"
 
 Thumbnail:
-"/stories/a-small-surprise/thumbnails/a-special-day.png"
+"/stories/a-small-surprise/thumbnails/a-special-day.webp"
 
 Audio format:
 "/stories/a-small-surprise/a-special-day/audio/{speaker}-{number}.mp3"
@@ -377,8 +377,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Noah remembers that tomorrow is Dad's birthday. He wants to give Dad a special gift, but he has little money. He asks Mom for help.",
-		"scene": "/stories/a-small-surprise/a-special-day/bg.png",
-		"thumbnail": "/stories/a-small-surprise/thumbnails/a-special-day.png"
+		"scene": "/stories/a-small-surprise/a-special-day/bg.webp",
+		"thumbnail": "/stories/a-small-surprise/thumbnails/a-special-day.webp"
 	},
 
 	"dialogue": [

@@ -292,7 +292,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/weekend-camping/arriving-at-the-campsite/bg.png"
+"/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -302,10 +302,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/weekend-camping/arriving-at-the-campsite/bg.png"
+"/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp"
 
 Thumbnail:
-"/dialogue/weekend-camping/arriving-at-the-campsite/bg.png"
+"/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp"
 
 Audio format:
 "/dialogue/weekend-camping/arriving-at-the-campsite/audio/{speaker}-{number}.mp3"
@@ -334,8 +334,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Leo and Mia arrive at the campsite and choose a suitable place for their tent.",
-		"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
-		"thumbnail": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png"
+		"scene": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
+		"thumbnail": "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp"
 	},
 
 	"dialogue": [
