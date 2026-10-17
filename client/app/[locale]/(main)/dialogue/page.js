@@ -27,21 +27,21 @@ import { useLocale, useTranslations } from "next-intl";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { useCatalogueProgressResource } from "@/app/_lib/useStudyResources";
 const courseImages = {
-	"coffee-shop": "/dialogue/coffee-shop/thumbnails/coffee-shop.png",
+	"coffee-shop": "/dialogue/coffee-shop/thumbnails/coffee-shop.webp",
 	"office-introduction":
-		"/dialogue/office-introduction/thumbnails/office-introduction.png",
-	"weekend-camping": "/dialogue/weekend-camping/thumbnails/weekend-camping.png",
+		"/dialogue/office-introduction/thumbnails/office-introduction.webp",
+	"weekend-camping": "/dialogue/weekend-camping/thumbnails/weekend-camping.webp",
 
 	"asking-for-directions":
-		"/dialogue/asking-for-directions/thumbnails/asking-for-direction.png",
-	"at-a-hotel": "/dialogue/at-a-hotel/thumbnails/at-a-hotel.png",
-	"grocery-store": "/dialogue/grocery-store/thumbnails/grocery-store.png",
-	"restaurant": "/dialogue/restaurant/thumbnails/restaurant.png",
-	"walk-in-the-park": "/dialogue/walk-in-the-park/thumbnails/walk-in-the-park.png",
-	"ten-minutes-a-day": "/stories/ten-minutes-a-day/thumbnails/ten-minutes-a-day.png",
-	"grateful": "/stories/grateful/thumbnails/grateful.png",
-	"a-small-surprise": "/stories/a-small-surprise/thumbnails/a-small-surprise.png",
-	"naruto-season-1": "/stories/naruto-season-1/thumbnails/naruto-season-1.png",
+		"/dialogue/asking-for-directions/thumbnails/asking-for-direction.webp",
+	"at-a-hotel": "/dialogue/at-a-hotel/thumbnails/at-a-hotel.webp",
+	"grocery-store": "/dialogue/grocery-store/thumbnails/grocery-store.webp",
+	"restaurant": "/dialogue/restaurant/thumbnails/restaurant.webp",
+	"walk-in-the-park": "/dialogue/walk-in-the-park/thumbnails/walk-in-the-park.webp",
+	"ten-minutes-a-day": "/stories/ten-minutes-a-day/thumbnails/ten-minutes-a-day.webp",
+	"grateful": "/stories/grateful/thumbnails/grateful.webp",
+	"a-small-surprise": "/stories/a-small-surprise/thumbnails/a-small-surprise.webp",
+	"naruto-season-1": "/stories/naruto-season-1/thumbnails/naruto-season-1.webp",
 };
 
 function getCourseImage(courseId) {

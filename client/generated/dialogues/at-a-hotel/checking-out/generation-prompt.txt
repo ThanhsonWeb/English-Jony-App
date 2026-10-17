@@ -263,7 +263,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/at-a-hotel/checking-out/bg.png"
+"/dialogue/at-a-hotel/checking-out/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -273,10 +273,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/at-a-hotel/checking-out/bg.png"
+"/dialogue/at-a-hotel/checking-out/bg.webp"
 
 Thumbnail:
-"/dialogue/at-a-hotel/thumbnails/checking-out.png"
+"/dialogue/at-a-hotel/thumbnails/checking-out.webp"
 
 Audio format:
 "/dialogue/at-a-hotel/checking-out/audio/{speaker}-{number}.mp3"
@@ -300,8 +300,8 @@ Use this structure:
 		"title": "Làm thủ tục trả phòng",
 		"level": "a1",
 		"situation": "Ben trả phòng, kiểm tra hóa đơn và nói lời cảm ơn trước khi rời khách sạn.",
-		"scene": "/dialogue/at-a-hotel/checking-out/bg.png",
-		"thumbnail": "/dialogue/at-a-hotel/thumbnails/checking-out.png"
+		"scene": "/dialogue/at-a-hotel/checking-out/bg.webp",
+		"thumbnail": "/dialogue/at-a-hotel/thumbnails/checking-out.webp"
 	},
 
 	"dialogue": [

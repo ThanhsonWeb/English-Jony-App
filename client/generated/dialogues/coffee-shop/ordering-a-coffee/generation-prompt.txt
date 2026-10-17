@@ -244,7 +244,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/coffee-shop/ordering-a-coffee/bg.png"
+"/dialogue/coffee-shop/ordering-a-coffee/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -254,10 +254,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/coffee-shop/ordering-a-coffee/bg.png"
+"/dialogue/coffee-shop/ordering-a-coffee/bg.webp"
 
 Thumbnail:
-"/dialogue/coffee-shop/thumbnails/ordering-a-coffee.png"
+"/dialogue/coffee-shop/thumbnails/ordering-a-coffee.webp"
 
 Audio format:
 "/dialogue/coffee-shop/ordering-a-coffee/audio/{speaker}-{number}.mp3"
@@ -281,8 +281,8 @@ Use this structure:
 		"title": "Gọi cà phê",
 		"level": "a1",
 		"situation": "Ben gọi một ly cà phê tại quầy và Emma giúp Ben chọn loại đồ uống phù hợp.",
-		"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.png",
-		"thumbnail": "/dialogue/coffee-shop/thumbnails/ordering-a-coffee.png"
+		"scene": "/dialogue/coffee-shop/ordering-a-coffee/bg.webp",
+		"thumbnail": "/dialogue/coffee-shop/thumbnails/ordering-a-coffee.webp"
 	},
 
 	"dialogue": [

@@ -1,14 +1,14 @@
 ## A Small Act of Kindness
 - Dialogue slug: `a-small-act-of-kindness`
-- Output PNG: `/stories/grateful/thumbnails/a-small-act-of-kindness.png`
+- Output PNG: `/stories/grateful/thumbnails/a-small-act-of-kindness.webp`
 - Characters: Sam, Lily
 - Scene/context: At school, Lily realizes she forgot her lunch. Sam shares his food with her, and she begins to notice the small ways people help her.
 - Important visual details from the real dialogue:
   - Lily: “Yes, I ate it this morning. I have no food now.”
   - Lily: “Mom made breakfast for me, too. She helped me find my bag.”
-- Recommended background: Show the setting in “At school, Lily realizes she forgot her lunch. Sam shares his food with her, and she begins to notice the small ways people help her.”, matching the existing scene reference `/stories/grateful/a-small-act-of-kindness/bg.png`.
+- Recommended background: Show the setting in “At school, Lily realizes she forgot her lunch. Sam shares his food with her, and she begins to notice the small ways people help her.”, matching the existing scene reference `/stories/grateful/a-small-act-of-kindness/bg.webp`.
 - Recommended time of day: Morning
-- Character references: Sam — public/stories/grateful/a-small-act-of-kindness/shared/sam.png; Lily — public/stories/grateful/a-small-act-of-kindness/shared/lily.png
+- Character references: Sam — public/stories/grateful/a-small-act-of-kindness/shared/sam.webp; Lily — public/stories/grateful/a-small-act-of-kindness/shared/lily.webp
 - Style: Create one separate 16:9 landscape PNG for each dialogue. Match StudyJony's polished, warm, storybook/anime-inspired illustration style: expressive consistent character faces, detailed setting, natural poses, clear story moment, and cinematic but friendly lighting. Keep the characters, rendering, color treatment, and framing consistent across this topic as one series. No title text, captions, badge, UI, watermark, or multi-panel collage.
 - Full dialogue context:
   - Sam: Lily, it's lunchtime. Why are you sad?

@@ -2,6 +2,7 @@ import { execFileSync } from "node:child_process";
 import { access, copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { courseConfigs } from "./config/index.mjs";
+import { optimizeImages } from "./optimize-dialogue-images.mjs";
 import { planGlossary, publishGlossary } from "./lib/contextual-glossary.mjs";
 import {
 	getContentStorageDirectory,
@@ -209,16 +210,19 @@ async function updateMediaFile({ contentType, courseId, dialogueId, draft, speak
 	}
 
 	const knownCharacters = extractCharacterMappings(source);
-	const characterLines = speakers.map((speaker) => {
-		const fallback = getPublicAssetPath(
+	const characterLines = await Promise.all(speakers.map(async (speaker) => {
+		const webp = getPublicAssetPath(
 			contentType,
 			courseId,
 			dialogueId,
 			"shared",
-			`${speaker.toLowerCase()}.png`,
+			`${speaker.toLowerCase()}.webp`,
+		);
+		const fallback = (await exists(publicFilePath(webp))) ? webp : getPublicAssetPath(
+			contentType, courseId, dialogueId, "shared", `${speaker.toLowerCase()}.png`,
 		);
 		return `\t\t\t${JSON.stringify(speaker)}: "${knownCharacters.get(speaker) || fallback}",`;
-	});
+	}));
 	const entry = [
 		`\t"${dialogueId}": {`,
 		`\t\tscene: "${draft.metadata.scene}",`,
@@ -423,7 +427,7 @@ async function main() {
 
 	logStep(verbose, "[1/7] Validating draft");
 	const draftValidation = runNode(VALIDATOR_PATH, [draftPath, "--require-localization"], verbose);
-	const draft = await loadJson(draftPath);
+	let draft = await loadJson(draftPath);
 	validateDraftIdentity(draft, courseId, dialogueId);
 	findConfigDialogue(config, dialogueId);
 	const speakers = getSpeakerNames(draft, config);
@@ -435,6 +439,17 @@ async function main() {
 	const glossaryPlan = await planGlossary(ROOT, config, draft,
 		draft.metadata.contextualGlossaryVersion === 1 || !(await exists(productionPath)));
 	console.log(glossaryPlan.glossary ? "✅ Contextual glossary validated" : "Existing lesson: production dictionary fallback retained");
+
+	const optimized = await optimizeImages(["--lesson", courseId, dialogueId]);
+	if (optimized.converted) {
+		draft = await loadJson(draftPath);
+		for (const dialogue of config.dialogues) {
+			if (optimized.replacements[dialogue.thumbnail]) {
+				dialogue.thumbnail = optimized.replacements[dialogue.thumbnail];
+			}
+		}
+		if (!verbose) console.log(`Images optimized: ${optimized.converted} lossless WebP files`);
+	}
 
 	logStep(verbose, "[2/7] Promoting dialogue JSON");
 	await mkdir(path.dirname(productionPath), { recursive: true });
@@ -486,6 +501,7 @@ async function main() {
 		path.relative(ROOT, LESSON_DATA_PATH),
 		path.relative(ROOT, COURSE_CONFIG_INDEX_PATH),
 		path.join("scripts", "lib", "dialogue-content-paths.mjs"),
+		path.join("scripts", "optimize-dialogue-images.mjs"),
 		path.join("scripts", "tests", "unit", "dialogue-content-paths.test.mjs"),
 		path.join("scripts", "lib", "contextual-glossary.mjs"),
 		path.join("app", "_lib", "dictionary", "validateLessonGlossary.js"),
@@ -495,6 +511,7 @@ async function main() {
 		path.join(ROOT, "scripts", "tests", "integration", "dialogue-mc-report.test.mjs"),
 		path.join(ROOT, "scripts", "tests", "integration", "dialogue-practice-rule.test.mjs"),
 		path.join(ROOT, "scripts", "tests", "unit", "dialogue-content-paths.test.mjs"),
+		path.join(ROOT, "scripts", "tests", "unit", "dialogue-image-optimizer.test.mjs"),
 		path.join(ROOT, "scripts", "tests", "integration", "contextual-glossary-workflow.test.mjs"),
 	], verbose);
 	if (!verbose) console.log(`✅ Tests — ${getPassedTestCount(testOutput)} passed`);

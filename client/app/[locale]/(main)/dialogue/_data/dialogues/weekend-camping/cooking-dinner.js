@@ -10,8 +10,8 @@ const cookingDinnerDraft = {
 "title": "Nấu bữa tối",
 "level": "beginner",
 "situation": "Leo and Mia cook dinner beside the campfire.",
-"scene": "/dialogue/weekend-camping/cooking-dinner/bg.png",
-"thumbnail": "/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail4.png"
+"scene": "/dialogue/weekend-camping/cooking-dinner/bg.webp",
+"thumbnail": "/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail4.webp"
 },
 "dialogue": [
 {

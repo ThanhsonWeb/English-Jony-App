@@ -8,7 +8,7 @@ const origin = new URL(baseURL).origin;
 assert.ok(["localhost", "127.0.0.1"].includes(new URL(baseURL).hostname), "Use a local test server only");
 const root = path.resolve(__dirname, "../../..");
 const png = fs.readFileSync(path.join(root, "public/lugo.png"));
-const assets = ["/lugo.png", "/dialogue/coffee-shop/thumbnails/coffee-shop.png", "/stories/ten-minutes-a-day/the-old-book/bg.png"];
+const assets = ["/lugo.png", "/dialogue/coffee-shop/thumbnails/coffee-shop.webp", "/stories/ten-minutes-a-day/the-old-book/bg.webp"];
 const audio = "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-01.mp3";
 
 (async () => {
@@ -27,12 +27,12 @@ const audio = "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-01.mp3";
 			await page.route("**/*", route => {
 				const url = new URL(route.request().url());
 				if (url.origin === origin) return route.continue();
-				if (url.hostname === "avatar.example.test") return route.fulfill({ contentType: "image/png", body: png });
+				if (url.hostname === "res.cloudinary.com") return route.fulfill({ contentType: "image/png", body: png });
 				return route.fulfill({ contentType: "application/javascript", body: "" });
 			});
 			await page.route("**/_vercel/insights/**", route => route.fulfill({ contentType: "application/javascript", body: "" }));
 			await page.route("**/api/v1/**", route => route.fulfill({ json: { status: "success", data: {
-				user: { _id: "000000000000000000000001", name: "Media Learner", email: "media@example.test", photo: "https://avatar.example.test/avatar.png", theme },
+				user: { _id: "000000000000000000000001", name: "Media Learner", email: "media@example.test", photo: "https://res.cloudinary.com/studyjony-test/avatar.png", theme },
 				vocabularies: [], topics: [], progress: [], activities: [],
 			} } }));
 			try {
@@ -46,7 +46,7 @@ const audio = "/dialogue/asking-for-directions/finding-a-cafe/audio/ben-01.mp3";
 						});
 						return visible.length > 0 && visible.every(img => img.complete && img.naturalWidth > 0);
 					});
-					assert.ok(await page.locator('img[src="https://avatar.example.test/avatar.png"]').count(), "Account avatar remains rendered");
+					assert.ok(await page.locator('img[src="https://res.cloudinary.com/studyjony-test/avatar.png"]').count(), "Account avatar remains rendered");
 					assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), "No horizontal overflow");
 					assert.deepEqual(errors, [], "No hydration/runtime/console errors"); pages++;
 				}

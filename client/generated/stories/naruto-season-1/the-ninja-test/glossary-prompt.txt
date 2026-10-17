@@ -64,8 +64,8 @@ Final source (all lines and useful expressions):
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Naruto tries to pass the ninja graduation test, but he cannot make a proper clone. Iruka tells him he has failed.",
-    "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
-    "thumbnail": "/stories/naruto-season-1/thumbnails/the-ninja-test.png"
+    "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/the-ninja-test.webp"
   },
   "dialogue": [
     {
@@ -74,7 +74,7 @@ Final source (all lines and useful expressions):
       "text": "Naruto, are you ready for the ninja test?",
       "translation": "Naruto, em đã sẵn sàng cho bài kiểm tra ninja chưa?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-01.mp3"
     },
     {
@@ -83,7 +83,7 @@ Final source (all lines and useful expressions):
       "text": "Yes! I worked hard every day.",
       "translation": "Vâng! Em đã chăm chỉ mỗi ngày.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-01.mp3"
     },
     {
@@ -92,7 +92,7 @@ Final source (all lines and useful expressions):
       "text": "Good. Please make a clone.",
       "translation": "Tốt. Em hãy tạo một phân thân nhé.",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-02.mp3"
     },
     {
@@ -101,7 +101,7 @@ Final source (all lines and useful expressions):
       "text": "I can do it! I want to pass.",
       "translation": "Em làm được mà! Em muốn vượt qua bài kiểm tra.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-02.mp3"
     },
     {
@@ -110,7 +110,7 @@ Final source (all lines and useful expressions):
       "text": "Oh no! My clone looks weak.",
       "translation": "Ôi không! Phân thân của em trông yếu quá.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-03.mp3"
     },
     {
@@ -119,7 +119,7 @@ Final source (all lines and useful expressions):
       "text": "It is too weak, Naruto.",
       "translation": "Nó yếu quá, Naruto.",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-03.mp3"
     },
     {
@@ -128,7 +128,7 @@ Final source (all lines and useful expressions):
       "text": "Can I try again, please?",
       "translation": "Thầy cho em thử lại được không ạ?",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-04.mp3"
     },
     {
@@ -137,7 +137,7 @@ Final source (all lines and useful expressions):
       "text": "Yes, you can try one more time.",
       "translation": "Được, em có thể thử thêm một lần nữa.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-04.mp3"
     },
     {
@@ -146,7 +146,7 @@ Final source (all lines and useful expressions):
       "text": "I tried again, but the clone is still weak.",
       "translation": "Em đã thử lại rồi, nhưng phân thân vẫn còn yếu.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-05.mp3"
     },
     {
@@ -155,7 +155,7 @@ Final source (all lines and useful expressions):
       "text": "I am sorry, Naruto. You did not pass the test.",
       "translation": "Thầy rất tiếc, Naruto. Em đã không vượt qua bài kiểm tra.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-05.mp3"
     },
     {
@@ -164,7 +164,7 @@ Final source (all lines and useful expressions):
       "text": "But I worked so hard!",
       "translation": "Nhưng em đã cố gắng rất nhiều mà!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-06.mp3"
     },
     {
@@ -173,7 +173,7 @@ Final source (all lines and useful expressions):
       "text": "I know. You need more practice.",
       "translation": "Thầy biết. Em cần luyện tập thêm.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-06.mp3"
     },
     {
@@ -182,7 +182,7 @@ Final source (all lines and useful expressions):
       "text": "I will not give up. I will be Hokage one day!",
       "translation": "Em sẽ không bỏ cuộc. Một ngày nào đó em sẽ trở thành Hokage!",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/naruto-07.mp3"
     },
     {
@@ -191,7 +191,7 @@ Final source (all lines and useful expressions):
       "text": "Keep trying, Naruto. You can do better next time.",
       "translation": "Hãy tiếp tục cố gắng, Naruto. Lần sau em có thể làm tốt hơn.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-ninja-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-ninja-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-ninja-test/audio/iruka-07.mp3"
     }
   ],

@@ -20,6 +20,7 @@ import {
 import {
 	Play,
 	Pause,
+	LoaderCircle,
 	ChevronDown,
 	MessageSquareText,
 	Captions,
@@ -31,14 +32,20 @@ const DIALOGUE_LINE_DELAY = 300;
 const preloadedDialogueAssets = new Map();
 
 function preloadDialogueAsset(src) {
-	if (!src || preloadedDialogueAssets.has(src)) return;
+	if (!src) return Promise.resolve();
+	if (preloadedDialogueAssets.has(src)) return preloadedDialogueAssets.get(src);
 
 	const image = new window.Image();
-	preloadedDialogueAssets.set(src, image);
-	image.src = src;
-	if (typeof image.decode === "function") {
-		void image.decode().catch(() => {});
-	}
+	const ready = new Promise((resolve) => {
+		image.onload = resolve;
+		image.onerror = resolve;
+		image.src = src;
+		if (typeof image.decode === "function") {
+			void image.decode().then(resolve, resolve);
+		}
+	});
+	preloadedDialogueAssets.set(src, ready);
+	return ready;
 }
 export default function DialoguePlayer({
 	task,
@@ -52,6 +59,7 @@ export default function DialoguePlayer({
 	const userId = user?._id || user?.id || null;
 	const [currentLine, setCurrentLine] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(false);
+	const [isPreparing, setIsPreparing] = useState(false);
 	const [showTranslation, setShowTranslation] = useState(false);
 	const [isTranscriptOpen, setIsTranscriptOpen] = useState(false);
 	const [hasWatched, setHasWatched] = useState(false);
@@ -68,6 +76,10 @@ export default function DialoguePlayer({
 	const lineTimeoutRef = useRef(null);
 	const pendingLineRef = useRef(null);
 	const dictionaryPopupRef = useRef(null);
+	const preparationRef = useRef(false);
+	const preparationIdRef = useRef(0);
+
+	useEffect(() => () => { preparationIdRef.current += 1; }, []);
 
 	useEffect(() => {
 		playbackRateRef.current = playbackRate;
@@ -84,27 +96,13 @@ export default function DialoguePlayer({
 		).size > 1;
 
 	useEffect(() => {
-		if (!activeScene) return;
-
-		const currentAssets = new Set([activeScene]);
-		if (usesSpeakerSpecificScenes) {
-			currentAssets.add(task.characters?.[activeLine?.speaker]);
-		} else {
-			Object.values(task.characters || {}).forEach((src) =>
-				currentAssets.add(src),
-			);
-		}
-		currentAssets.forEach((src) => {
-			if (src && !preloadedDialogueAssets.has(src)) {
-				preloadedDialogueAssets.set(src, null);
-			}
-		});
+		if (!activeScene || !hasStarted) return;
 
 		const nextSceneStart = task.dialogue.findIndex(
 			(line, index) =>
 				index > currentLine && (line.scene || task.scene) !== activeScene,
 		);
-		if (nextSceneStart === -1) return;
+		if (nextSceneStart === -1 || nextSceneStart > currentLine + 2) return;
 
 		const nextScene = task.dialogue[nextSceneStart].scene || task.scene;
 		const nextAssets = new Set([nextScene]);
@@ -117,12 +115,13 @@ export default function DialoguePlayer({
 		}
 
 		nextAssets.forEach((src) => {
-			if (!currentAssets.has(src)) preloadDialogueAsset(src);
+			if (src !== activeScene) void preloadDialogueAsset(src);
 		});
 	}, [
 		activeLine?.speaker,
 		activeScene,
 		currentLine,
+		hasStarted,
 		task.characters,
 		task.dialogue,
 		task.scene,
@@ -304,6 +303,7 @@ export default function DialoguePlayer({
 		const audio = audioRef.current;
 
 		if (!audio) return;
+		if (preparationRef.current) return;
 
 		if (startTimeoutRef.current) {
 			clearStartTimeout();
@@ -330,7 +330,18 @@ export default function DialoguePlayer({
 
 		// First start / restart after characters have left the scene
 		if (!hasStarted || dialogueFinished) {
-			startDialogueAfterCharacters(currentLine);
+			preparationRef.current = true;
+			setIsPreparing(true);
+			const preparationId = ++preparationIdRef.current;
+			const neededCharacters = usesSpeakerSpecificScenes
+				? [task.characters?.[activeLine?.speaker]]
+				: Object.values(task.characters || {});
+			void Promise.all(neededCharacters.map(preloadDialogueAsset)).then(() => {
+				if (preparationId !== preparationIdRef.current) return;
+				preparationRef.current = false;
+				setIsPreparing(false);
+				startDialogueAfterCharacters(currentLine);
+			});
 			return;
 		}
 
@@ -448,7 +459,7 @@ export default function DialoguePlayer({
 						{/* Small overlay */}
 						<div className="absolute inset-0 bg-black/5" />
 
-						{characters.map(([characterName, imageUrl], characterIndex) => {
+						{hasStarted && characters.map(([characterName, imageUrl], characterIndex) => {
 							if (
 								usesSpeakerSpecificScenes &&
 								activeLine?.speaker !== characterName
@@ -550,10 +561,13 @@ export default function DialoguePlayer({
 										type="button"
 										onClick={handlePlayPause}
 										aria-label={isPlaying ? t("pause") : t("play")}
+										aria-busy={isPreparing}
 										title={`Ctrl: ${t("play")} / ${t("pause")}`}
 										className="relative z-30 flex h-11 w-11 items-center justify-center rounded-full border border-slate-700 bg-[#111827] text-slate-100 shadow-md transition hover:border-violet-500/50 hover:bg-[#1a2235] hover:text-violet-300 active:scale-95 cursor-pointer md:h-12 md:w-12"
 									>
-										{isPlaying ? (
+										{isPreparing ? (
+											<LoaderCircle size={18} className="animate-spin" />
+										) : isPlaying ? (
 											<Pause size={18} fill="currentColor" />
 										) : (
 											<Play size={18} fill="currentColor" className="ml-0.5" />

@@ -26,8 +26,8 @@
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Cuối buổi đi dạo, Ben và Emma nói về những việc họ thường làm vào cuối tuần và kế hoạch sắp tới.",
-		"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
-		"thumbnail": "/dialogue/walk-in-the-park/thumbnails/weekend-plans.png"
+		"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
+		"thumbnail": "/dialogue/walk-in-the-park/thumbnails/weekend-plans.webp"
 	},
 	"dialogue": [
 		{
@@ -36,7 +36,7 @@
 			"text": "It is getting late. Do you have plans this weekend?",
 			"translation": "Trời đang muộn rồi. Cuối tuần này bạn có kế hoạch gì không?",
 			"practicePriority": "important",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-01.mp3"
 		},
 		{
@@ -45,7 +45,7 @@
 			"text": "On Saturday, I want to go to the gym in the morning.",
 			"translation": "Vào thứ Bảy, mình muốn đi tập gym vào buổi sáng.",
 			"practicePriority": "veryImportant",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-01.mp3"
 		},
 		{
@@ -54,7 +54,7 @@
 			"text": "After that, I want to meet some friends.",
 			"translation": "Sau đó, mình muốn gặp vài người bạn.",
 			"practicePriority": "important",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-02.mp3"
 		},
 		{
@@ -63,7 +63,7 @@
 			"text": "That sounds nice. I usually have a quiet Saturday.",
 			"translation": "Nghe hay đấy. Thứ Bảy mình thường khá yên tĩnh.",
 			"practicePriority": "important",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-02.mp3"
 		},
 		{
@@ -72,7 +72,7 @@
 			"text": "I read books and have coffee at home.",
 			"translation": "Mình đọc sách và uống cà phê ở nhà.",
 			"practicePriority": "important",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-03.mp3"
 		},
 		{
@@ -81,7 +81,7 @@
 			"text": "What about Sunday?",
 			"translation": "Còn Chủ nhật thì sao?",
 			"practicePriority": "simple",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-03.mp3"
 		},
 		{
@@ -90,7 +90,7 @@
 			"text": "I want to visit my parents on Sunday.",
 			"translation": "Mình muốn thăm bố mẹ vào Chủ nhật.",
 			"practicePriority": "veryImportant",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-04.mp3"
 		},
 		{
@@ -99,7 +99,7 @@
 			"text": "That sounds good. I am free on Sunday afternoon.",
 			"translation": "Nghe hay đấy. Mình rảnh vào chiều Chủ nhật.",
 			"practicePriority": "important",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-04.mp3"
 		},
 		{
@@ -108,7 +108,7 @@
 			"text": "Maybe we can have coffee sometime.",
 			"translation": "Có lẽ lúc nào đó chúng ta có thể đi uống cà phê.",
 			"practicePriority": "veryImportant",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-05.mp3"
 		},
 		{
@@ -117,7 +117,7 @@
 			"text": "Yes, that sounds nice.",
 			"translation": "Ừ, nghe hay đấy.",
 			"practicePriority": "simple",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-05.mp3"
 		},
 		{
@@ -126,7 +126,7 @@
 			"text": "We can talk about it later.",
 			"translation": "Chúng ta có thể nói về chuyện đó sau.",
 			"practicePriority": "important",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-06.mp3"
 		}
 	],
@@ -193,7 +193,7 @@
 			"answers": ["this weekend"],
 			"speaker": "Emma",
 			"transcript": "It is getting late. Do you have plans this weekend?",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-01.mp3"
 		},
 		{
@@ -214,7 +214,7 @@
 			"answers": ["plans"],
 			"speaker": "Emma",
 			"transcript": "It is getting late. Do you have plans this weekend?",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-01.mp3"
 		},
 		{
@@ -235,7 +235,7 @@
 			"answers": ["On Saturday"],
 			"speaker": "Ben",
 			"transcript": "On Saturday, I want to go to the gym in the morning.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-01.mp3"
 		},
 		{
@@ -256,7 +256,7 @@
 			"answers": ["gym"],
 			"speaker": "Ben",
 			"transcript": "On Saturday, I want to go to the gym in the morning.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-01.mp3"
 		},
 		{
@@ -277,7 +277,7 @@
 			"answers": ["the morning"],
 			"speaker": "Ben",
 			"transcript": "On Saturday, I want to go to the gym in the morning.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-01.mp3"
 		},
 		{
@@ -322,7 +322,7 @@
 			"answer": "Đi tập gym.",
 			"speaker": "Ben",
 			"transcript": "On Saturday, I want to go to the gym in the morning.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-01.mp3"
 		},
 		{
@@ -343,7 +343,7 @@
 			"answers": ["After that"],
 			"speaker": "Ben",
 			"transcript": "After that, I want to meet some friends.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-02.mp3"
 		},
 		{
@@ -364,7 +364,7 @@
 			"answers": ["friends"],
 			"speaker": "Ben",
 			"transcript": "After that, I want to meet some friends.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-02.mp3"
 		},
 		{
@@ -385,7 +385,7 @@
 			"answers": ["usually"],
 			"speaker": "Emma",
 			"transcript": "That sounds nice. I usually have a quiet Saturday.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-02.mp3"
 		},
 		{
@@ -406,7 +406,7 @@
 			"answers": ["Saturday"],
 			"speaker": "Emma",
 			"transcript": "That sounds nice. I usually have a quiet Saturday.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-02.mp3"
 		},
 		{
@@ -427,7 +427,7 @@
 			"answers": ["books"],
 			"speaker": "Emma",
 			"transcript": "I read books and have coffee at home.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-03.mp3"
 		},
 		{
@@ -448,7 +448,7 @@
 			"answers": ["coffee"],
 			"speaker": "Emma",
 			"transcript": "I read books and have coffee at home.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-03.mp3"
 		},
 		{
@@ -498,7 +498,7 @@
 			"answer": "Đọc sách và uống cà phê ở nhà.",
 			"speaker": "Emma",
 			"transcript": "I read books and have coffee at home.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-03.mp3"
 		},
 		{
@@ -519,7 +519,7 @@
 			"answers": ["Sunday"],
 			"speaker": "Ben",
 			"transcript": "What about Sunday?",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-03.mp3"
 		},
 		{
@@ -540,7 +540,7 @@
 			"answers": ["visit"],
 			"speaker": "Emma",
 			"transcript": "I want to visit my parents on Sunday.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-04.mp3"
 		},
 		{
@@ -561,7 +561,7 @@
 			"answers": ["parents"],
 			"speaker": "Emma",
 			"transcript": "I want to visit my parents on Sunday.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-04.mp3"
 		},
 		{
@@ -612,7 +612,7 @@
 			"answer": "Một việc Emma muốn làm.",
 			"speaker": "Emma",
 			"transcript": "I want to visit my parents on Sunday.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-04.mp3"
 		},
 		{
@@ -633,7 +633,7 @@
 			"answers": ["free"],
 			"speaker": "Ben",
 			"transcript": "That sounds good. I am free on Sunday afternoon.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-04.mp3"
 		},
 		{
@@ -654,7 +654,7 @@
 			"answers": ["Sunday afternoon"],
 			"speaker": "Ben",
 			"transcript": "That sounds good. I am free on Sunday afternoon.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-04.mp3"
 		},
 		{
@@ -675,7 +675,7 @@
 			"answers": ["coffee"],
 			"speaker": "Ben",
 			"transcript": "Maybe we can have coffee sometime.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-05.mp3"
 		},
 		{
@@ -696,7 +696,7 @@
 			"answers": ["sometime"],
 			"speaker": "Ben",
 			"transcript": "Maybe we can have coffee sometime.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-05.mp3"
 		},
 		{
@@ -747,7 +747,7 @@
 			"answer": "Để đưa ra một gợi ý nhẹ nhàng.",
 			"speaker": "Ben",
 			"transcript": "Maybe we can have coffee sometime.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/ben-05.mp3"
 		},
 		{
@@ -768,7 +768,7 @@
 			"answers": ["sounds nice"],
 			"speaker": "Emma",
 			"transcript": "Yes, that sounds nice.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-05.mp3"
 		},
 		{
@@ -789,7 +789,7 @@
 			"answers": ["talk"],
 			"speaker": "Emma",
 			"transcript": "We can talk about it later.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-06.mp3"
 		},
 		{
@@ -810,7 +810,7 @@
 			"answers": ["later"],
 			"speaker": "Emma",
 			"transcript": "We can talk about it later.",
-			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.png",
+			"scene": "/dialogue/walk-in-the-park/weekend-plans/bg.webp",
 			"audioUrl": "/dialogue/walk-in-the-park/weekend-plans/audio/emma-06.mp3"
 		},
 		{

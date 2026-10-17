@@ -64,8 +64,8 @@ Final source (all lines and useful expressions):
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Naruto is tied to a post, and his teammates share their food with him despite Kakashi's rule. Kakashi sees that they care about each other.",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
-    "thumbnail": "/stories/naruto-season-1/thumbnails/working-together.png"
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/working-together.webp"
   },
   "dialogue": [
     {
@@ -74,7 +74,7 @@ Final source (all lines and useful expressions):
       "text": "It is lunch time. Naruto, you must stay here.",
       "translation": "Đến giờ ăn trưa rồi. Naruto, em phải ở lại đây.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-01.mp3"
     },
     {
@@ -83,7 +83,7 @@ Final source (all lines and useful expressions):
       "text": "I'm tied to this post. I'm so hungry!",
       "translation": "Tớ bị trói vào cái cọc này. Tớ đói quá!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-01.mp3"
     },
     {
@@ -92,7 +92,7 @@ Final source (all lines and useful expressions):
       "text": "Sasuke, Sakura, you can eat. Do not give Naruto any food.",
       "translation": "Sasuke, Sakura, hai em có thể ăn. Không được cho Naruto thức ăn.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-02.mp3"
     },
     {
@@ -101,7 +101,7 @@ Final source (all lines and useful expressions):
       "text": "But Naruto needs food too.",
       "translation": "Nhưng Naruto cũng cần ăn mà.",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-01.mp3"
     },
     {
@@ -110,7 +110,7 @@ Final source (all lines and useful expressions):
       "text": "That is my rule. I will come back soon.",
       "translation": "Đó là quy định của thầy. Thầy sẽ sớm quay lại.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-03.mp3"
     },
     {
@@ -119,7 +119,7 @@ Final source (all lines and useful expressions):
       "text": "This is not fair. I want some food.",
       "translation": "Thật không công bằng. Tớ muốn ăn gì đó.",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-02.mp3"
     },
     {
@@ -128,7 +128,7 @@ Final source (all lines and useful expressions):
       "text": "Naruto, you can have some of my lunch.",
       "translation": "Naruto, cậu có thể ăn một ít bữa trưa của tớ.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-01.mp3"
     },
     {
@@ -137,7 +137,7 @@ Final source (all lines and useful expressions):
       "text": "Really? But Kakashi said no.",
       "translation": "Thật sao? Nhưng thầy Kakashi đã nói không được mà.",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-03.mp3"
     },
     {
@@ -146,7 +146,7 @@ Final source (all lines and useful expressions):
       "text": "You can have my food too. We are a team.",
       "translation": "Cậu cũng có thể ăn đồ ăn của tớ. Chúng ta là một đội.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-02.mp3"
     },
     {
@@ -155,7 +155,7 @@ Final source (all lines and useful expressions):
       "text": "Yes. We need to help each other.",
       "translation": "Đúng vậy. Chúng ta cần giúp đỡ lẫn nhau.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-02.mp3"
     },
     {
@@ -164,7 +164,7 @@ Final source (all lines and useful expressions):
       "text": "Thank you, both of you.",
       "translation": "Cảm ơn cả hai cậu.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-04.mp3"
     },
     {
@@ -173,7 +173,7 @@ Final source (all lines and useful expressions):
       "text": "I can see you. You did not follow my rule!",
       "translation": "Thầy thấy hết rồi. Các em đã không làm theo quy định của thầy!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-04.mp3"
     },
     {
@@ -182,7 +182,7 @@ Final source (all lines and useful expressions):
       "text": "I'm sorry, but Naruto is our friend.",
       "translation": "Em xin lỗi, nhưng Naruto là bạn của chúng em.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-03.mp3"
     },
     {
@@ -191,7 +191,7 @@ Final source (all lines and useful expressions):
       "text": "Good. You care about each other.",
       "translation": "Tốt lắm. Các em biết quan tâm đến nhau.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-05.mp3"
     },
     {
@@ -200,7 +200,7 @@ Final source (all lines and useful expressions):
       "text": "So, did we pass the test?",
       "translation": "Vậy chúng em đã vượt qua bài kiểm tra chưa?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-03.mp3"
     },
     {
@@ -209,7 +209,7 @@ Final source (all lines and useful expressions):
       "text": "Yes! A good team helps each other.",
       "translation": "Rồi! Một đội tốt luôn giúp đỡ lẫn nhau.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/working-together/bg.png",
+      "scene": "/stories/naruto-season-1/working-together/bg.webp",
       "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-06.mp3"
     }
   ],

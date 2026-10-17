@@ -11,7 +11,7 @@ const restaurant = {
 			dialogueId: "getting-a-table",
 			title: "Xin bàn tại nhà hàng",
 			thumbnail:
-				"/dialogue/restaurant/thumbnails/getting-a-table.png",
+				"/dialogue/restaurant/thumbnails/getting-a-table.webp",
 			situation:
 				"Ben và Emma đến một nhà hàng. Alex là nhân viên phục vụ và giúp họ tìm một bàn phù hợp.",
 		},
@@ -19,7 +19,7 @@ const restaurant = {
 			dialogueId: "reading-the-menu",
 			title: "Xem thực đơn",
 			thumbnail:
-				"/dialogue/restaurant/thumbnails/reading-the-menu.png",
+				"/dialogue/restaurant/thumbnails/reading-the-menu.webp",
 			situation:
 				"Ben và Emma xem thực đơn và nói về các món ăn. Họ hỏi nhau món nào trông ngon và món nào họ muốn thử.",
 		},
@@ -27,7 +27,7 @@ const restaurant = {
 			dialogueId: "ordering-food",
 			title: "Gọi món",
 			thumbnail:
-				"/dialogue/restaurant/thumbnails/ordering-food.png",
+				"/dialogue/restaurant/thumbnails/ordering-food.webp",
 			situation:
 				"Alex đến nhận món. Ben và Emma gọi món ăn và đồ uống bằng những câu đơn giản, lịch sự.",
 		},
@@ -35,7 +35,7 @@ const restaurant = {
 			dialogueId: "during-the-meal",
 			title: "Trong bữa ăn",
 			thumbnail:
-				"/dialogue/restaurant/thumbnails/during-the-meal.png",
+				"/dialogue/restaurant/thumbnails/during-the-meal.webp",
 			situation:
 				"Ben và Emma đang dùng bữa. Họ nói về món ăn và hỏi Alex một vài điều đơn giản.",
 		},

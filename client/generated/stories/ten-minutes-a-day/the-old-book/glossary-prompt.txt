@@ -63,8 +63,8 @@ Final source (all lines and useful expressions):
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Mr. Daniel gives Leo and Ryan the same English book and asks them to read for ten minutes every day.",
-    "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
-    "thumbnail": "/stories/ten-minutes-a-day/thumbnails/the-old-book.png"
+    "scene": "/stories/ten-minutes-a-day/the-old-book/bg.webp",
+    "thumbnail": "/stories/ten-minutes-a-day/thumbnails/the-old-book.webp"
   },
   "dialogue": [
     {
@@ -73,7 +73,7 @@ Final source (all lines and useful expressions):
       "text": "I have a book for each of you.",
       "translation": "Thầy có một cuốn sách cho mỗi em.",
       "practicePriority": "important",
-      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-01.mp3"
     },
     {
@@ -82,7 +82,7 @@ Final source (all lines and useful expressions):
       "text": "An English book? It looks old.",
       "translation": "Một cuốn sách tiếng Anh à? Nó trông cũ quá.",
       "practicePriority": "simple",
-      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-01.mp3"
     },
     {
@@ -91,7 +91,7 @@ Final source (all lines and useful expressions):
       "text": "What should we do with it?",
       "translation": "Chúng em nên làm gì với nó ạ?",
       "practicePriority": "important",
-      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/leo-01.mp3"
     },
     {
@@ -100,7 +100,7 @@ Final source (all lines and useful expressions):
       "text": "Read it for ten minutes every day.",
       "translation": "Hãy đọc nó trong mười phút mỗi ngày.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-02.mp3"
     },
     {
@@ -109,7 +109,7 @@ Final source (all lines and useful expressions):
       "text": "Only ten minutes?",
       "translation": "Chỉ mười phút thôi ạ?",
       "practicePriority": "simple",
-      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-02.mp3"
     },
     {
@@ -118,7 +118,7 @@ Final source (all lines and useful expressions):
       "text": "Yes. Ten minutes is enough to start.",
       "translation": "Đúng vậy. Mười phút là đủ để bắt đầu.",
       "practicePriority": "important",
-      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-03.mp3"
     },
     {
@@ -127,7 +127,7 @@ Final source (all lines and useful expressions):
       "text": "I can do that after dinner.",
       "translation": "Em có thể làm vậy sau bữa tối.",
       "practicePriority": "important",
-      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/leo-02.mp3"
     },
     {
@@ -136,7 +136,7 @@ Final source (all lines and useful expressions):
       "text": "I get bored when I read.",
       "translation": "Em thấy chán khi đọc sách.",
       "practicePriority": "simple",
-      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-03.mp3"
     },
     {
@@ -145,7 +145,7 @@ Final source (all lines and useful expressions):
       "text": "Do not worry about reading a lot. Just read a little every day.",
       "translation": "Đừng lo về việc phải đọc nhiều. Chỉ cần đọc một chút mỗi ngày.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-04.mp3"
     },
     {
@@ -154,7 +154,7 @@ Final source (all lines and useful expressions):
       "text": "What if I miss a day?",
       "translation": "Nếu em bỏ lỡ một ngày thì sao ạ?",
       "practicePriority": "important",
-      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/ryan-04.mp3"
     },
     {
@@ -163,7 +163,7 @@ Final source (all lines and useful expressions):
       "text": "Start again the next day. The important thing is to continue.",
       "translation": "Hãy bắt đầu lại vào ngày hôm sau. Điều quan trọng là tiếp tục.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-old-book/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-old-book/audio/mr-daniel-05.mp3"
     }
   ],

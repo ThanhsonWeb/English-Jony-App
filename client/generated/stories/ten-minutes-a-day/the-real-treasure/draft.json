@@ -26,8 +26,8 @@
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Ryan realizes that Leo's daily habit, not the book itself, was the real treasure.",
-		"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
-		"thumbnail": "/stories/ten-minutes-a-day/thumbnails/the-real-treasure.png"
+		"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
+		"thumbnail": "/stories/ten-minutes-a-day/thumbnails/the-real-treasure.webp"
 	},
 	"dialogue": [
 		{
@@ -36,7 +36,7 @@
 			"text": "Your presentation was very good. What did you learn from this?",
 			"translation": "Bài thuyết trình của hai em rất tốt. Hai em đã học được gì từ việc này?",
 			"practicePriority": "simple",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-01.mp3"
 		},
 		{
@@ -45,7 +45,7 @@
 			"text": "At first, I thought the old book was special.",
 			"translation": "Lúc đầu, em nghĩ cuốn sách cũ rất đặc biệt.",
 			"practicePriority": "important",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-01.mp3"
 		},
 		{
@@ -54,7 +54,7 @@
 			"text": "The book helped me, but the habit was more important.",
 			"translation": "Cuốn sách đã giúp em, nhưng thói quen còn quan trọng hơn.",
 			"practicePriority": "important",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/leo-01.mp3"
 		},
 		{
@@ -63,7 +63,7 @@
 			"text": "Yes. I understand that now.",
 			"translation": "Đúng vậy. Bây giờ em đã hiểu điều đó.",
 			"practicePriority": "simple",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-02.mp3"
 		},
 		{
@@ -72,7 +72,7 @@
 			"text": "The real treasure was not the book. It was the ten-minute habit.",
 			"translation": "Kho báu thật sự không phải là cuốn sách. Đó là thói quen mười phút.",
 			"practicePriority": "veryImportant",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-03.mp3"
 		},
 		{
@@ -81,7 +81,7 @@
 			"text": "Why was that habit important?",
 			"translation": "Tại sao thói quen đó lại quan trọng?",
 			"practicePriority": "simple",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-02.mp3"
 		},
 		{
@@ -90,7 +90,7 @@
 			"text": "Because it helped me read every day.",
 			"translation": "Bởi vì nó giúp em đọc sách mỗi ngày.",
 			"practicePriority": "important",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-04.mp3"
 		},
 		{
@@ -99,7 +99,7 @@
 			"text": "And small steps made reading easier.",
 			"translation": "Và những bước nhỏ khiến việc đọc trở nên dễ dàng hơn.",
 			"practicePriority": "important",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/leo-02.mp3"
 		},
 		{
@@ -108,7 +108,7 @@
 			"text": "Now I can use the same idea for English too.",
 			"translation": "Bây giờ em cũng có thể dùng cách tương tự cho tiếng Anh.",
 			"practicePriority": "important",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-05.mp3"
 		},
 		{
@@ -117,7 +117,7 @@
 			"text": "That is a good lesson. Start small and keep going.",
 			"translation": "Đó là một bài học hay. Hãy bắt đầu từ việc nhỏ và tiếp tục.",
 			"practicePriority": "veryImportant",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-03.mp3"
 		},
 		{
@@ -126,7 +126,7 @@
 			"text": "I will. Ten minutes a day can change a lot.",
 			"translation": "Em sẽ làm vậy. Mười phút mỗi ngày có thể thay đổi rất nhiều.",
 			"practicePriority": "simple",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-06.mp3"
 		}
 	],
@@ -196,7 +196,7 @@
 			"answers": ["learn"],
 			"speaker": "Mr. Daniel",
 			"transcript": "Your presentation was very good. What did you learn from this?",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-01.mp3"
 		},
 		{
@@ -217,7 +217,7 @@
 			"answers": ["At first"],
 			"speaker": "Ryan",
 			"transcript": "At first, I thought the old book was special.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-01.mp3"
 		},
 		{
@@ -238,7 +238,7 @@
 			"answers": ["special"],
 			"speaker": "Ryan",
 			"transcript": "At first, I thought the old book was special.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-01.mp3"
 		},
 		{
@@ -288,7 +288,7 @@
 			"answer": "Cuốn sách cũ rất đặc biệt",
 			"speaker": "Ryan",
 			"transcript": "At first, I thought the old book was special.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-01.mp3"
 		},
 		{
@@ -309,7 +309,7 @@
 			"answers": ["helped"],
 			"speaker": "Leo",
 			"transcript": "The book helped me, but the habit was more important.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/leo-01.mp3"
 		},
 		{
@@ -330,7 +330,7 @@
 			"answers": ["habit"],
 			"speaker": "Leo",
 			"transcript": "The book helped me, but the habit was more important.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/leo-01.mp3"
 		},
 		{
@@ -351,7 +351,7 @@
 			"answers": ["understand"],
 			"speaker": "Ryan",
 			"transcript": "Yes. I understand that now.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-02.mp3"
 		},
 		{
@@ -372,7 +372,7 @@
 			"answers": ["real treasure"],
 			"speaker": "Ryan",
 			"transcript": "The real treasure was not the book. It was the ten-minute habit.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-03.mp3"
 		},
 		{
@@ -396,7 +396,7 @@
 			"answers": ["habit"],
 			"speaker": "Ryan",
 			"transcript": "The real treasure was not the book. It was the ten-minute habit.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-03.mp3"
 		},
 		{
@@ -446,7 +446,7 @@
 			"answer": "Thói quen mười phút",
 			"speaker": "Ryan",
 			"transcript": "The real treasure was not the book. It was the ten-minute habit.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-03.mp3"
 		},
 		{
@@ -467,7 +467,7 @@
 			"answers": ["important"],
 			"speaker": "Mr. Daniel",
 			"transcript": "Why was that habit important?",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-02.mp3"
 		},
 		{
@@ -488,7 +488,7 @@
 			"answers": ["Because"],
 			"speaker": "Ryan",
 			"transcript": "Because it helped me read every day.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-04.mp3"
 		},
 		{
@@ -509,7 +509,7 @@
 			"answers": ["every day"],
 			"speaker": "Ryan",
 			"transcript": "Because it helped me read every day.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-04.mp3"
 		},
 		{
@@ -560,7 +560,7 @@
 			"answer": "Để đưa ra lý do",
 			"speaker": "Ryan",
 			"transcript": "Because it helped me read every day.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-04.mp3"
 		},
 		{
@@ -581,7 +581,7 @@
 			"answers": ["small steps"],
 			"speaker": "Leo",
 			"transcript": "And small steps made reading easier.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/leo-02.mp3"
 		},
 		{
@@ -602,7 +602,7 @@
 			"answers": ["easier"],
 			"speaker": "Leo",
 			"transcript": "And small steps made reading easier.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/leo-02.mp3"
 		},
 		{
@@ -623,7 +623,7 @@
 			"answers": ["same idea"],
 			"speaker": "Ryan",
 			"transcript": "Now I can use the same idea for English too.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-05.mp3"
 		},
 		{
@@ -644,7 +644,7 @@
 			"answers": ["English"],
 			"speaker": "Ryan",
 			"transcript": "Now I can use the same idea for English too.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-05.mp3"
 		},
 		{
@@ -695,7 +695,7 @@
 			"answer": "Bắt đầu nhỏ và luyện tập mỗi ngày",
 			"speaker": "Ryan",
 			"transcript": "Now I can use the same idea for English too.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-05.mp3"
 		},
 		{
@@ -716,7 +716,7 @@
 			"answers": ["good lesson"],
 			"speaker": "Mr. Daniel",
 			"transcript": "That is a good lesson. Start small and keep going.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-03.mp3"
 		},
 		{
@@ -737,7 +737,7 @@
 			"answers": ["keep going"],
 			"speaker": "Mr. Daniel",
 			"transcript": "That is a good lesson. Start small and keep going.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-03.mp3"
 		},
 		{
@@ -787,7 +787,7 @@
 			"answer": "Bắt đầu từ việc nhỏ và tiếp tục",
 			"speaker": "Mr. Daniel",
 			"transcript": "That is a good lesson. Start small and keep going.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/mr-daniel-03.mp3"
 		},
 		{
@@ -808,7 +808,7 @@
 			"answers": ["Ten minutes"],
 			"speaker": "Ryan",
 			"transcript": "I will. Ten minutes a day can change a lot.",
-			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.png",
+			"scene": "/stories/ten-minutes-a-day/the-real-treasure/bg.webp",
 			"audioUrl": "/stories/ten-minutes-a-day/the-real-treasure/audio/ryan-06.mp3"
 		},
 		{

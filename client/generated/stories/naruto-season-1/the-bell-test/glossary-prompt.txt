@@ -64,8 +64,8 @@ Final source (all lines and useful expressions):
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Kakashi challenges Naruto, Sasuke, and Sakura to take two bells from him. At first, they try to win alone.",
-    "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
-    "thumbnail": "/stories/naruto-season-1/thumbnails/the-bell-test.png"
+    "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/the-bell-test.webp"
   },
   "dialogue": [
     {
@@ -74,7 +74,7 @@ Final source (all lines and useful expressions):
       "text": "We are here on time.",
       "translation": "Chúng em đã có mặt đúng giờ.",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-01.mp3"
     },
     {
@@ -83,7 +83,7 @@ Final source (all lines and useful expressions):
       "text": "I am ready for the test!",
       "translation": "Em đã sẵn sàng cho bài kiểm tra!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-01.mp3"
     },
     {
@@ -92,7 +92,7 @@ Final source (all lines and useful expressions):
       "text": "Good morning. Today, I have a test for you.",
       "translation": "Chào buổi sáng. Hôm nay thầy có một bài kiểm tra dành cho các em.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-01.mp3"
     },
     {
@@ -101,7 +101,7 @@ Final source (all lines and useful expressions):
       "text": "Look, I have two bells. You must take one to pass.",
       "translation": "Nhìn này, thầy có hai chiếc chuông. Các em phải lấy được một chiếc mới vượt qua.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-02.mp3"
     },
     {
@@ -110,7 +110,7 @@ Final source (all lines and useful expressions):
       "text": "But there are three of us!",
       "translation": "Nhưng có đến ba người chúng em mà!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-02.mp3"
     },
     {
@@ -119,7 +119,7 @@ Final source (all lines and useful expressions):
       "text": "Only two of you can get a bell.",
       "translation": "Chỉ hai trong số các em có thể lấy được chuông.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-03.mp3"
     },
     {
@@ -128,7 +128,7 @@ Final source (all lines and useful expressions):
       "text": "I can get one by myself!",
       "translation": "Em có thể tự mình lấy được một chiếc!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-02.mp3"
     },
     {
@@ -137,7 +137,7 @@ Final source (all lines and useful expressions):
       "text": "I will work alone too.",
       "translation": "Em cũng sẽ làm một mình.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-01.mp3"
     },
     {
@@ -146,7 +146,7 @@ Final source (all lines and useful expressions):
       "text": "Wait. We need a plan first.",
       "translation": "Khoan đã. Chúng ta cần lên kế hoạch trước.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-03.mp3"
     },
     {
@@ -155,7 +155,7 @@ Final source (all lines and useful expressions):
       "text": "No time! I want to start now!",
       "translation": "Không còn thời gian đâu! Tớ muốn bắt đầu ngay!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-03.mp3"
     },
     {
@@ -164,7 +164,7 @@ Final source (all lines and useful expressions):
       "text": "You have until noon. Good luck!",
       "translation": "Các em có thời gian đến trưa. Chúc may mắn!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-04.mp3"
     },
     {
@@ -173,7 +173,7 @@ Final source (all lines and useful expressions):
       "text": "Why can't I catch you?",
       "translation": "Sao em không thể bắt được thầy chứ?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-04.mp3"
     },
     {
@@ -182,7 +182,7 @@ Final source (all lines and useful expressions):
       "text": "I can't get a bell either.",
       "translation": "Em cũng không lấy được chiếc chuông nào.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sasuke-02.mp3"
     },
     {
@@ -191,7 +191,7 @@ Final source (all lines and useful expressions):
       "text": "We are not working together.",
       "translation": "Chúng ta đang không hợp tác với nhau.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-04.mp3"
     },
     {
@@ -200,7 +200,7 @@ Final source (all lines and useful expressions):
       "text": "The test is over. You have no bells.",
       "translation": "Bài kiểm tra kết thúc rồi. Các em không có chiếc chuông nào.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-05.mp3"
     },
     {
@@ -209,7 +209,7 @@ Final source (all lines and useful expressions):
       "text": "But I tried so hard!",
       "translation": "Nhưng em đã cố gắng hết sức mà!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/naruto-05.mp3"
     },
     {
@@ -218,7 +218,7 @@ Final source (all lines and useful expressions):
       "text": "You worked alone. That is the problem.",
       "translation": "Các em đều làm một mình. Đó chính là vấn đề.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-06.mp3"
     },
     {
@@ -227,7 +227,7 @@ Final source (all lines and useful expressions):
       "text": "We need to help each other.",
       "translation": "Chúng ta cần giúp đỡ lẫn nhau.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/sakura-05.mp3"
     },
     {
@@ -236,7 +236,7 @@ Final source (all lines and useful expressions):
       "text": "Think about that. We will talk after lunch.",
       "translation": "Hãy suy nghĩ về điều đó. Chúng ta sẽ nói chuyện sau bữa trưa.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/the-bell-test/bg.png",
+      "scene": "/stories/naruto-season-1/the-bell-test/bg.webp",
       "audioUrl": "/stories/naruto-season-1/the-bell-test/audio/kakashi-07.mp3"
     }
   ],

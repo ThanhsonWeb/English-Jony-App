@@ -276,7 +276,7 @@ Default/fallback scene:
 "/dialogue/at-a-hotel/asking-for-extra-towels/bg.png"
 
 Thumbnail:
-"/dialogue/at-a-hotel/thumbnails/asking-for-extra-towels.png"
+"/dialogue/at-a-hotel/thumbnails/asking-for-extra-towels.webp"
 
 Audio format:
 "/dialogue/at-a-hotel/asking-for-extra-towels/audio/{speaker}-{number}.mp3"
@@ -301,7 +301,7 @@ Use this structure:
 		"level": "a1",
 		"situation": "Ben liên hệ nhân viên khách sạn để xin thêm khăn một cách lịch sự.",
 		"scene": "/dialogue/at-a-hotel/asking-for-extra-towels/bg.png",
-		"thumbnail": "/dialogue/at-a-hotel/thumbnails/asking-for-extra-towels.png"
+		"thumbnail": "/dialogue/at-a-hotel/thumbnails/asking-for-extra-towels.webp"
 	},
 
 	"dialogue": [

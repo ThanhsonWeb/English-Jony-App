@@ -28,8 +28,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Lily cảm ơn Sam vì đã chia sẻ bữa trưa. Khi về nhà, cô bé cũng cảm ơn mẹ vì đã giúp mình vào buổi sáng.",
-    "scene": "/stories/grateful/saying-thank-you/bg.png",
-    "thumbnail": "/stories/grateful/thumbnails/saying-thank-you.png"
+    "scene": "/stories/grateful/saying-thank-you/bg.webp",
+    "thumbnail": "/stories/grateful/thumbnails/saying-thank-you.webp"
   },
   "dialogue": [
     {
@@ -38,7 +38,7 @@
       "text": "School is over. Are you ready to go home?",
       "translation": "Tan học rồi. Chị sẵn sàng về nhà chưa?",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/sam-01.mp3"
     },
     {
@@ -47,7 +47,7 @@
       "text": "Yes. Thank you again for sharing your lunch with me.",
       "translation": "Ừ. Cảm ơn em lần nữa vì đã chia sẻ bữa trưa với chị.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-01.mp3"
     },
     {
@@ -56,7 +56,7 @@
       "text": "You're welcome. I am glad you had enough to eat.",
       "translation": "Không có gì đâu chị. Em vui vì chị đã ăn no.",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/sam-02.mp3"
     },
     {
@@ -65,7 +65,7 @@
       "text": "Welcome home! How was school?",
       "translation": "Hai con về rồi! Hôm nay ở trường thế nào?",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-01.mp3"
     },
     {
@@ -74,7 +74,7 @@
       "text": "It was good. Sam shared his lunch with me.",
       "translation": "Dạ vui ạ. Sam đã chia sẻ bữa trưa với con.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-02.mp3"
     },
     {
@@ -83,7 +83,7 @@
       "text": "That was kind of Sam.",
       "translation": "Sam thật tốt bụng.",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-02.mp3"
     },
     {
@@ -92,7 +92,7 @@
       "text": "Mom, thank you for breakfast and for helping me find my bag.",
       "translation": "Mẹ ơi, con cảm ơn mẹ vì bữa sáng và vì đã giúp con tìm cặp sách.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-03.mp3"
     },
     {
@@ -101,7 +101,7 @@
       "text": "You're welcome. I am happy to help.",
       "translation": "Không có gì đâu con. Mẹ rất vui khi được giúp con.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-03.mp3"
     },
     {
@@ -110,7 +110,7 @@
       "text": "I want to say thank you when someone helps me.",
       "translation": "Con muốn nói lời cảm ơn khi có ai đó giúp con.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-04.mp3"
     },
     {
@@ -119,7 +119,7 @@
       "text": "That is kind of you. We can help each other.",
       "translation": "Con thật tốt bụng. Chúng ta có thể giúp đỡ lẫn nhau.",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-04.mp3"
     }
   ],
@@ -195,7 +195,7 @@
       "answers": ["ready"],
       "speaker": "Sam",
       "transcript": "School is over. Are you ready to go home?",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/sam-01.mp3"
     },
     {
@@ -219,7 +219,7 @@
       "answers": ["Thank you"],
       "speaker": "Lily",
       "transcript": "Yes. Thank you again for sharing your lunch with me.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-01.mp3"
     },
     {
@@ -243,7 +243,7 @@
       "answers": ["sharing"],
       "speaker": "Lily",
       "transcript": "Yes. Thank you again for sharing your lunch with me.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-01.mp3"
     },
     {
@@ -294,7 +294,7 @@
       "answer": "Vì Lily đã cảm ơn Sam trước đó.",
       "speaker": "Lily",
       "transcript": "Yes. Thank you again for sharing your lunch with me.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-01.mp3"
     },
     {
@@ -318,7 +318,7 @@
       "answers": ["You're welcome"],
       "speaker": "Sam",
       "transcript": "You're welcome. I am glad you had enough to eat.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/sam-02.mp3"
     },
     {
@@ -368,7 +368,7 @@
       "answer": "Vui vì Lily đã ăn đủ no.",
       "speaker": "Sam",
       "transcript": "You're welcome. I am glad you had enough to eat.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/sam-02.mp3"
     },
     {
@@ -392,7 +392,7 @@
       "answers": ["school"],
       "speaker": "Mom",
       "transcript": "Welcome home! How was school?",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-01.mp3"
     },
     {
@@ -416,7 +416,7 @@
       "answers": ["shared"],
       "speaker": "Lily",
       "transcript": "It was good. Sam shared his lunch with me.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-02.mp3"
     },
     {
@@ -440,7 +440,7 @@
       "answers": ["lunch"],
       "speaker": "Lily",
       "transcript": "It was good. Sam shared his lunch with me.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-02.mp3"
     },
     {
@@ -490,7 +490,7 @@
       "answer": "Sam đã chia sẻ bữa trưa với Lily.",
       "speaker": "Lily",
       "transcript": "It was good. Sam shared his lunch with me.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-02.mp3"
     },
     {
@@ -514,7 +514,7 @@
       "answers": ["kind"],
       "speaker": "Mom",
       "transcript": "That was kind of Sam.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-02.mp3"
     },
     {
@@ -538,7 +538,7 @@
       "answers": ["thank you"],
       "speaker": "Lily",
       "transcript": "Mom, thank you for breakfast and for helping me find my bag.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-03.mp3"
     },
     {
@@ -562,7 +562,7 @@
       "answers": ["helping"],
       "speaker": "Lily",
       "transcript": "Mom, thank you for breakfast and for helping me find my bag.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-03.mp3"
     },
     {
@@ -613,7 +613,7 @@
       "answer": "Nói lý do Lily cảm ơn mẹ.",
       "speaker": "Lily",
       "transcript": "Mom, thank you for breakfast and for helping me find my bag.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-03.mp3"
     },
     {
@@ -637,7 +637,7 @@
       "answers": ["You're welcome"],
       "speaker": "Mom",
       "transcript": "You're welcome. I am happy to help.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-03.mp3"
     },
     {
@@ -661,7 +661,7 @@
       "answers": ["happy"],
       "speaker": "Mom",
       "transcript": "You're welcome. I am happy to help.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-03.mp3"
     },
     {
@@ -685,7 +685,7 @@
       "answers": ["thank you"],
       "speaker": "Lily",
       "transcript": "I want to say thank you when someone helps me.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-04.mp3"
     },
     {
@@ -709,7 +709,7 @@
       "answers": ["helps"],
       "speaker": "Lily",
       "transcript": "I want to say thank you when someone helps me.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/lily-04.mp3"
     },
     {
@@ -733,7 +733,7 @@
       "answers": ["each other"],
       "speaker": "Mom",
       "transcript": "That is kind of you. We can help each other.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-04.mp3"
     },
     {
@@ -783,7 +783,7 @@
       "answer": "Mọi người có thể giúp đỡ nhau.",
       "speaker": "Mom",
       "transcript": "That is kind of you. We can help each other.",
-      "scene": "/stories/grateful/saying-thank-you/bg.png",
+      "scene": "/stories/grateful/saying-thank-you/bg.webp",
       "audioUrl": "/stories/grateful/saying-thank-you/audio/mom-04.mp3"
     },
     {

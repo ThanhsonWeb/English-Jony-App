@@ -7,8 +7,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Ben và Emma đến một nhà hàng. Alex là nhân viên phục vụ và giúp họ tìm một bàn phù hợp.",
-    "scene": "/dialogue/restaurant/getting-a-table/bg.png",
-    "thumbnail": "/dialogue/restaurant/thumbnails/getting-a-table.png"
+    "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
+    "thumbnail": "/dialogue/restaurant/thumbnails/getting-a-table.webp"
   },
   "dialogue": [
     {
@@ -17,7 +17,7 @@
       "text": "Good evening. How many people?",
       "translation": "Chào buổi tối. Có bao nhiêu người?",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-01.mp3"
     },
     {
@@ -26,7 +26,7 @@
       "text": "A table for two, please.",
       "translation": "Cho chúng tôi một bàn cho hai người.",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-01.mp3"
     },
     {
@@ -35,7 +35,7 @@
       "text": "Do you have a reservation?",
       "translation": "Hai bạn có đặt bàn trước không?",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-02.mp3"
     },
     {
@@ -44,7 +44,7 @@
       "text": "No, we do not.",
       "translation": "Không, chúng tôi chưa đặt.",
       "practicePriority": "simple",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-01.mp3"
     },
     {
@@ -53,7 +53,7 @@
       "text": "That is fine. We have a table near the window.",
       "translation": "Không sao. Chúng tôi có một bàn gần cửa sổ.",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-03.mp3"
     },
     {
@@ -62,7 +62,7 @@
       "text": "Is it quiet near the window?",
       "translation": "Chỗ gần cửa sổ có yên tĩnh không?",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-02.mp3"
     },
     {
@@ -71,7 +71,7 @@
       "text": "Yes, it is. It is a quiet area.",
       "translation": "Có. Đó là một khu vực yên tĩnh.",
       "practicePriority": "simple",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-04.mp3"
     },
     {
@@ -80,7 +80,7 @@
       "text": "That sounds good.",
       "translation": "Nghe ổn đấy.",
       "practicePriority": "simple",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-02.mp3"
     },
     {
@@ -89,7 +89,7 @@
       "text": "We would like that table, please.",
       "translation": "Chúng tôi muốn chọn bàn đó.",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-03.mp3"
     },
     {
@@ -98,7 +98,7 @@
       "text": "Great. The table is ready.",
       "translation": "Tuyệt. Bàn đã sẵn sàng.",
       "practicePriority": "simple",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-05.mp3"
     },
     {
@@ -107,7 +107,7 @@
       "text": "Thank you.",
       "translation": "Cảm ơn bạn.",
       "practicePriority": "simple",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-03.mp3"
     },
     {
@@ -116,7 +116,7 @@
       "text": "You are welcome. Enjoy your meal.",
       "translation": "Không có gì. Chúc hai bạn ngon miệng.",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-06.mp3"
     }
   ],
@@ -184,7 +184,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Good evening. How many people?",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-01.mp3"
     },
     {
@@ -200,7 +200,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Good evening. How many people?",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-01.mp3"
     },
     {
@@ -216,7 +216,7 @@
       ],
       "speaker": "Ben",
       "transcript": "A table for two, please.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-01.mp3"
     },
     {
@@ -232,7 +232,7 @@
       ],
       "speaker": "Ben",
       "transcript": "A table for two, please.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-01.mp3"
     },
     {
@@ -250,7 +250,7 @@
       "answer": "Hai người.",
       "speaker": "Ben",
       "transcript": "A table for two, please.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-01.mp3"
     },
     {
@@ -266,7 +266,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Do you have a reservation?",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-02.mp3"
     },
     {
@@ -282,7 +282,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Do you have a reservation?",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-02.mp3"
     },
     {
@@ -301,7 +301,7 @@
       "answer": "Hỏi khách có đặt bàn trước hay không.",
       "speaker": "Alex",
       "transcript": "Do you have a reservation?",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-02.mp3"
     },
     {
@@ -317,7 +317,7 @@
       ],
       "speaker": "Emma",
       "transcript": "No, we do not.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-01.mp3"
     },
     {
@@ -333,7 +333,7 @@
       ],
       "speaker": "Alex",
       "transcript": "That is fine. We have a table near the window.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-03.mp3"
     },
     {
@@ -349,7 +349,7 @@
       ],
       "speaker": "Alex",
       "transcript": "That is fine. We have a table near the window.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-03.mp3"
     },
     {
@@ -365,7 +365,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Is it quiet near the window?",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-02.mp3"
     },
     {
@@ -381,7 +381,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Is it quiet near the window?",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-02.mp3"
     },
     {
@@ -399,7 +399,7 @@
       "answer": "Chỗ đó có yên tĩnh không.",
       "speaker": "Ben",
       "transcript": "Is it quiet near the window?",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-02.mp3"
     },
     {
@@ -415,7 +415,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Yes, it is. It is a quiet area.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-04.mp3"
     },
     {
@@ -431,7 +431,7 @@
       ],
       "speaker": "Emma",
       "transcript": "That sounds good.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-02.mp3"
     },
     {
@@ -450,7 +450,7 @@
       "answer": "Emma thấy lựa chọn đó phù hợp.",
       "speaker": "Emma",
       "transcript": "That sounds good.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-02.mp3"
     },
     {
@@ -466,7 +466,7 @@
       ],
       "speaker": "Ben",
       "transcript": "We would like that table, please.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-03.mp3"
     },
     {
@@ -482,7 +482,7 @@
       ],
       "speaker": "Ben",
       "transcript": "We would like that table, please.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-03.mp3"
     },
     {
@@ -500,7 +500,7 @@
       "answer": "Bàn gần cửa sổ.",
       "speaker": "Ben",
       "transcript": "We would like that table, please.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-03.mp3"
     },
     {
@@ -516,7 +516,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Great. The table is ready.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-05.mp3"
     },
     {
@@ -532,7 +532,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Thank you.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-03.mp3"
     },
     {
@@ -548,7 +548,7 @@
       ],
       "speaker": "Alex",
       "transcript": "You are welcome. Enjoy your meal.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-06.mp3"
     },
     {
@@ -564,7 +564,7 @@
       ],
       "speaker": "Alex",
       "transcript": "You are welcome. Enjoy your meal.",
-      "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+      "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
       "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-06.mp3"
     },
     {

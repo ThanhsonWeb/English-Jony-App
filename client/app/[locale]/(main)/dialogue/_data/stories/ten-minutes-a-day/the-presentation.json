@@ -26,8 +26,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "A few months later, Leo and Ryan must give a short English presentation.",
-    "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
-    "thumbnail": "/stories/ten-minutes-a-day/thumbnails/the-presentation.png"
+    "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
+    "thumbnail": "/stories/ten-minutes-a-day/thumbnails/the-presentation.webp"
   },
   "dialogue": [
     {
@@ -36,7 +36,7 @@
       "text": "Today, Leo and Ryan will give a short presentation.",
       "translation": "Hôm nay, Leo và Ryan sẽ thực hiện một bài thuyết trình ngắn.",
       "practicePriority": "simple",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/mr-daniel-01.mp3"
     },
     {
@@ -45,7 +45,7 @@
       "text": "Good morning. Our topic is reading for ten minutes a day.",
       "translation": "Chào buổi sáng. Chủ đề của chúng em là đọc sách mười phút mỗi ngày.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/leo-01.mp3"
     },
     {
@@ -54,7 +54,7 @@
       "text": "A few months ago, I did not like reading very much.",
       "translation": "Vài tháng trước, em không thích đọc sách lắm.",
       "practicePriority": "important",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-01.mp3"
     },
     {
@@ -63,7 +63,7 @@
       "text": "I started with only ten minutes after dinner.",
       "translation": "Em bắt đầu chỉ với mười phút sau bữa tối.",
       "practicePriority": "important",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/leo-02.mp3"
     },
     {
@@ -72,7 +72,7 @@
       "text": "Leo told me to try the same habit.",
       "translation": "Leo bảo em thử cùng thói quen đó.",
       "practicePriority": "important",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-02.mp3"
     },
     {
@@ -81,7 +81,7 @@
       "text": "At first, I got bored and tired.",
       "translation": "Lúc đầu, em cảm thấy chán và mệt.",
       "practicePriority": "important",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-03.mp3"
     },
     {
@@ -90,7 +90,7 @@
       "text": "But ten minutes was easy to finish.",
       "translation": "Nhưng mười phút thì khá dễ để hoàn thành.",
       "practicePriority": "simple",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/leo-03.mp3"
     },
     {
@@ -99,7 +99,7 @@
       "text": "So I tried again every night.",
       "translation": "Vì vậy, em thử lại mỗi tối.",
       "practicePriority": "important",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-04.mp3"
     },
     {
@@ -108,7 +108,7 @@
       "text": "And what happened after that?",
       "translation": "Và sau đó chuyện gì đã xảy ra?",
       "practicePriority": "simple",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/mr-daniel-02.mp3"
     },
     {
@@ -117,7 +117,7 @@
       "text": "Now I read every day, and I enjoy it more.",
       "translation": "Bây giờ em đọc mỗi ngày và em thích việc đó hơn.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-05.mp3"
     },
     {
@@ -126,7 +126,7 @@
       "text": "Small habits can help us do difficult things.",
       "translation": "Những thói quen nhỏ có thể giúp chúng ta làm những việc khó.",
       "practicePriority": "important",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/leo-04.mp3"
     },
     {
@@ -135,7 +135,7 @@
       "text": "You do not need to do a lot. Start small and keep going.",
       "translation": "Bạn không cần phải làm quá nhiều. Hãy bắt đầu từ việc nhỏ và tiếp tục.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-06.mp3"
     },
     {
@@ -144,7 +144,7 @@
       "text": "Thank you. That was clear and easy to understand.",
       "translation": "Cảm ơn hai em. Phần trình bày rất rõ ràng và dễ hiểu.",
       "practicePriority": "simple",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/mr-daniel-03.mp3"
     }
   ],
@@ -216,7 +216,7 @@
       ],
       "speaker": "Mr. Daniel",
       "transcript": "Today, Leo and Ryan will give a short presentation.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/mr-daniel-01.mp3"
     },
     {
@@ -242,7 +242,7 @@
       ],
       "speaker": "Leo",
       "transcript": "Good morning. Our topic is reading for ten minutes a day.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/leo-01.mp3"
     },
     {
@@ -268,7 +268,7 @@
       ],
       "speaker": "Leo",
       "transcript": "Good morning. Our topic is reading for ten minutes a day.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/leo-01.mp3"
     },
     {
@@ -318,7 +318,7 @@
       "answer": "Đọc sách mười phút mỗi ngày",
       "speaker": "Leo",
       "transcript": "Good morning. Our topic is reading for ten minutes a day.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/leo-01.mp3"
     },
     {
@@ -344,7 +344,7 @@
       ],
       "speaker": "Ryan",
       "transcript": "A few months ago, I did not like reading very much.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-01.mp3"
     },
     {
@@ -370,7 +370,7 @@
       ],
       "speaker": "Ryan",
       "transcript": "A few months ago, I did not like reading very much.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-01.mp3"
     },
     {
@@ -396,7 +396,7 @@
       ],
       "speaker": "Leo",
       "transcript": "I started with only ten minutes after dinner.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/leo-02.mp3"
     },
     {
@@ -422,7 +422,7 @@
       ],
       "speaker": "Leo",
       "transcript": "I started with only ten minutes after dinner.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/leo-02.mp3"
     },
     {
@@ -448,7 +448,7 @@
       ],
       "speaker": "Ryan",
       "transcript": "Leo told me to try the same habit.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-02.mp3"
     },
     {
@@ -474,7 +474,7 @@
       ],
       "speaker": "Ryan",
       "transcript": "Leo told me to try the same habit.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-02.mp3"
     },
     {
@@ -500,7 +500,7 @@
       ],
       "speaker": "Ryan",
       "transcript": "At first, I got bored and tired.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-03.mp3"
     },
     {
@@ -526,7 +526,7 @@
       ],
       "speaker": "Ryan",
       "transcript": "At first, I got bored and tired.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-03.mp3"
     },
     {
@@ -576,7 +576,7 @@
       "answer": "Chán và mệt",
       "speaker": "Ryan",
       "transcript": "At first, I got bored and tired.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-03.mp3"
     },
     {
@@ -602,7 +602,7 @@
       ],
       "speaker": "Leo",
       "transcript": "But ten minutes was easy to finish.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/leo-03.mp3"
     },
     {
@@ -628,7 +628,7 @@
       ],
       "speaker": "Ryan",
       "transcript": "So I tried again every night.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-04.mp3"
     },
     {
@@ -654,7 +654,7 @@
       ],
       "speaker": "Ryan",
       "transcript": "So I tried again every night.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-04.mp3"
     },
     {
@@ -705,7 +705,7 @@
       "answer": "Việc đó xảy ra thường xuyên vào mỗi tối",
       "speaker": "Ryan",
       "transcript": "So I tried again every night.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-04.mp3"
     },
     {
@@ -731,7 +731,7 @@
       ],
       "speaker": "Mr. Daniel",
       "transcript": "And what happened after that?",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/mr-daniel-02.mp3"
     },
     {
@@ -757,7 +757,7 @@
       ],
       "speaker": "Ryan",
       "transcript": "Now I read every day, and I enjoy it more.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-05.mp3"
     },
     {
@@ -783,7 +783,7 @@
       ],
       "speaker": "Ryan",
       "transcript": "Now I read every day, and I enjoy it more.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-05.mp3"
     },
     {
@@ -833,7 +833,7 @@
       "answer": "Cậu ấy đọc mỗi ngày và thích đọc hơn",
       "speaker": "Ryan",
       "transcript": "Now I read every day, and I enjoy it more.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-05.mp3"
     },
     {
@@ -859,7 +859,7 @@
       ],
       "speaker": "Leo",
       "transcript": "Small habits can help us do difficult things.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/leo-04.mp3"
     },
     {
@@ -885,7 +885,7 @@
       ],
       "speaker": "Leo",
       "transcript": "Small habits can help us do difficult things.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/leo-04.mp3"
     },
     {
@@ -911,7 +911,7 @@
       ],
       "speaker": "Ryan",
       "transcript": "You do not need to do a lot. Start small and keep going.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-06.mp3"
     },
     {
@@ -937,7 +937,7 @@
       ],
       "speaker": "Ryan",
       "transcript": "You do not need to do a lot. Start small and keep going.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/ryan-06.mp3"
     },
     {
@@ -963,7 +963,7 @@
       ],
       "speaker": "Mr. Daniel",
       "transcript": "Thank you. That was clear and easy to understand.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/mr-daniel-03.mp3"
     },
     {
@@ -1014,7 +1014,7 @@
       "answer": "Để cảm ơn và kết thúc phần trình bày một cách lịch sự",
       "speaker": "Mr. Daniel",
       "transcript": "Thank you. That was clear and easy to understand.",
-      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.png",
+      "scene": "/stories/ten-minutes-a-day/the-presentation/bg.webp",
       "audioUrl": "/stories/ten-minutes-a-day/the-presentation/audio/mr-daniel-03.mp3"
     },
     {

@@ -9,7 +9,7 @@ const atAHotel = {
 		{
 			dialogueId: "checking-in",
 			title: "Làm thủ tục nhận phòng",
-			thumbnail: "/dialogue/at-a-hotel/thumbnails/checking-in.png",
+			thumbnail: "/dialogue/at-a-hotel/thumbnails/checking-in.webp",
 			situation: "Ben đến khách sạn và làm thủ tục nhận phòng với lễ tân.",
 		},
 		{
@@ -22,21 +22,21 @@ const atAHotel = {
 		{
 			dialogueId: "asking-for-extra-towels",
 			title: "Xin thêm khăn",
-			thumbnail: "/dialogue/at-a-hotel/thumbnails/asking-for-extra-towels.png",
+			thumbnail: "/dialogue/at-a-hotel/thumbnails/asking-for-extra-towels.webp",
 			situation:
 				"Ben liên hệ nhân viên khách sạn để xin thêm khăn một cách lịch sự.",
 		},
 		{
 			dialogueId: "reporting-a-room-problem",
 			title: "Báo vấn đề trong phòng",
-			thumbnail: "/dialogue/at-a-hotel/thumbnails/reporting-a-room-problem.png",
+			thumbnail: "/dialogue/at-a-hotel/thumbnails/reporting-a-room-problem.webp",
 			situation:
 				"Ben báo với nhân viên rằng một thiết bị trong phòng không hoạt động và nhờ giúp đỡ.",
 		},
 		{
 			dialogueId: "checking-out",
 			title: "Làm thủ tục trả phòng",
-			thumbnail: "/dialogue/at-a-hotel/thumbnails/checking-out.png",
+			thumbnail: "/dialogue/at-a-hotel/thumbnails/checking-out.webp",
 			situation:
 				"Ben trả phòng, kiểm tra hóa đơn và nói lời cảm ơn trước khi rời khách sạn.",
 		},

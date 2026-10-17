@@ -27,8 +27,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "At school, Lily realizes she forgot her lunch. Sam shares his food with her, and she begins to notice the small ways people help her.",
-    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
-    "thumbnail": "/stories/grateful/thumbnails/a-small-act-of-kindness.png"
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
+    "thumbnail": "/stories/grateful/thumbnails/a-small-act-of-kindness.webp"
   },
   "dialogue": [
     {
@@ -37,7 +37,7 @@
       "text": "Lily, it's lunchtime. Why are you sad?",
       "translation": "Chị Lily, đến giờ ăn trưa rồi. Sao chị buồn vậy?",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-01.mp3"
     },
     {
@@ -46,7 +46,7 @@
       "text": "I forgot my lunch at home. I'm so hungry!",
       "translation": "Chị để quên bữa trưa ở nhà rồi. Chị đói quá!",
       "practicePriority": "important",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-01.mp3"
     },
     {
@@ -55,7 +55,7 @@
       "text": "Did you eat the toast Mom gave you?",
       "translation": "Chị đã ăn bánh mì nướng mẹ cho chưa?",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-02.mp3"
     },
     {
@@ -64,7 +64,7 @@
       "text": "Yes, I ate it this morning. I have no food now.",
       "translation": "Rồi, chị ăn sáng nay rồi. Giờ chị không còn đồ ăn nữa.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-02.mp3"
     },
     {
@@ -73,7 +73,7 @@
       "text": "I have two sandwiches. You can have one.",
       "translation": "Em có hai chiếc bánh sandwich. Chị có thể lấy một chiếc.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-03.mp3"
     },
     {
@@ -82,7 +82,7 @@
       "text": "Really? Is that okay?",
       "translation": "Thật sao? Như vậy có được không?",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-03.mp3"
     },
     {
@@ -91,7 +91,7 @@
       "text": "Of course. We can share my lunch.",
       "translation": "Tất nhiên rồi. Chúng ta có thể chia sẻ bữa trưa của em.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-04.mp3"
     },
     {
@@ -100,7 +100,7 @@
       "text": "Thank you, Sam. You're very kind!",
       "translation": "Cảm ơn em, Sam. Em thật tốt bụng!",
       "practicePriority": "veryImportant",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-04.mp3"
     },
     {
@@ -109,7 +109,7 @@
       "text": "You're welcome. Mom made these sandwiches.",
       "translation": "Không có gì đâu chị. Mẹ làm những chiếc bánh sandwich này đấy.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-05.mp3"
     },
     {
@@ -118,7 +118,7 @@
       "text": "Mom made breakfast for me, too. She helped me find my bag.",
       "translation": "Mẹ cũng làm bữa sáng cho chị nữa. Mẹ còn giúp chị tìm cặp sách.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-05.mp3"
     },
     {
@@ -127,7 +127,7 @@
       "text": "But I did not say thank you to her.",
       "translation": "Nhưng chị đã không nói cảm ơn mẹ.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-06.mp3"
     },
     {
@@ -136,7 +136,7 @@
       "text": "You can tell her after school.",
       "translation": "Chị có thể nói với mẹ sau giờ học mà.",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-06.mp3"
     },
     {
@@ -145,7 +145,7 @@
       "text": "Yes. I want to thank Mom when we get home.",
       "translation": "Ừ. Chị muốn cảm ơn mẹ khi chúng ta về nhà.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-07.mp3"
     }
   ],
@@ -235,7 +235,7 @@
       ],
       "speaker": "Sam",
       "transcript": "Lily, it's lunchtime. Why are you sad?",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-01.mp3"
     },
     {
@@ -261,7 +261,7 @@
       ],
       "speaker": "Lily",
       "transcript": "I forgot my lunch at home. I'm so hungry!",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-01.mp3"
     },
     {
@@ -287,7 +287,7 @@
       ],
       "speaker": "Lily",
       "transcript": "I forgot my lunch at home. I'm so hungry!",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-01.mp3"
     },
     {
@@ -313,7 +313,7 @@
       ],
       "speaker": "Sam",
       "transcript": "Did you eat the toast Mom gave you?",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-02.mp3"
     },
     {
@@ -339,7 +339,7 @@
       ],
       "speaker": "Lily",
       "transcript": "Yes, I ate it this morning. I have no food now.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-02.mp3"
     },
     {
@@ -365,7 +365,7 @@
       ],
       "speaker": "Lily",
       "transcript": "Yes, I ate it this morning. I have no food now.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-02.mp3"
     },
     {
@@ -391,7 +391,7 @@
       ],
       "speaker": "Sam",
       "transcript": "I have two sandwiches. You can have one.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-03.mp3"
     },
     {
@@ -417,7 +417,7 @@
       ],
       "speaker": "Sam",
       "transcript": "I have two sandwiches. You can have one.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-03.mp3"
     },
     {
@@ -468,7 +468,7 @@
       "answer": "Cho Lily biết cô bé có thể lấy một chiếc bánh.",
       "speaker": "Sam",
       "transcript": "I have two sandwiches. You can have one.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-03.mp3"
     },
     {
@@ -494,7 +494,7 @@
       ],
       "speaker": "Lily",
       "transcript": "Really? Is that okay?",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-03.mp3"
     },
     {
@@ -544,7 +544,7 @@
       "answer": "Cô bé muốn chắc Sam thật sự đồng ý chia đồ ăn.",
       "speaker": "Lily",
       "transcript": "Really? Is that okay?",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-03.mp3"
     },
     {
@@ -570,7 +570,7 @@
       ],
       "speaker": "Sam",
       "transcript": "Of course. We can share my lunch.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-04.mp3"
     },
     {
@@ -596,7 +596,7 @@
       ],
       "speaker": "Sam",
       "transcript": "Of course. We can share my lunch.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-04.mp3"
     },
     {
@@ -622,7 +622,7 @@
       ],
       "speaker": "Lily",
       "transcript": "Thank you, Sam. You're very kind!",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-04.mp3"
     },
     {
@@ -648,7 +648,7 @@
       ],
       "speaker": "Lily",
       "transcript": "Thank you, Sam. You're very kind!",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-04.mp3"
     },
     {
@@ -698,7 +698,7 @@
       "answer": "Sam sẵn lòng chia sẻ bữa trưa với Lily.",
       "speaker": "Lily",
       "transcript": "Thank you, Sam. You're very kind!",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-04.mp3"
     },
     {
@@ -724,7 +724,7 @@
       ],
       "speaker": "Sam",
       "transcript": "You're welcome. Mom made these sandwiches.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-05.mp3"
     },
     {
@@ -750,7 +750,7 @@
       ],
       "speaker": "Sam",
       "transcript": "You're welcome. Mom made these sandwiches.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-05.mp3"
     },
     {
@@ -801,7 +801,7 @@
       "answer": "Không có gì đâu.",
       "speaker": "Sam",
       "transcript": "You're welcome. Mom made these sandwiches.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-05.mp3"
     },
     {
@@ -827,7 +827,7 @@
       ],
       "speaker": "Lily",
       "transcript": "Mom made breakfast for me, too. She helped me find my bag.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-05.mp3"
     },
     {
@@ -853,7 +853,7 @@
       ],
       "speaker": "Lily",
       "transcript": "Mom made breakfast for me, too. She helped me find my bag.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-05.mp3"
     },
     {
@@ -879,7 +879,7 @@
       ],
       "speaker": "Lily",
       "transcript": "But I did not say thank you to her.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-06.mp3"
     },
     {
@@ -905,7 +905,7 @@
       ],
       "speaker": "Lily",
       "transcript": "But I did not say thank you to her.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-06.mp3"
     },
     {
@@ -931,7 +931,7 @@
       ],
       "speaker": "Sam",
       "transcript": "You can tell her after school.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-06.mp3"
     },
     {
@@ -981,7 +981,7 @@
       "answer": "Nói lời cảm ơn với mẹ sau giờ học.",
       "speaker": "Sam",
       "transcript": "You can tell her after school.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-06.mp3"
     },
     {
@@ -1007,7 +1007,7 @@
       ],
       "speaker": "Lily",
       "transcript": "Yes. I want to thank Mom when we get home.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-07.mp3"
     },
     {
@@ -1033,7 +1033,7 @@
       ],
       "speaker": "Lily",
       "transcript": "Yes. I want to thank Mom when we get home.",
-      "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+      "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
       "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-07.mp3"
     },
     {

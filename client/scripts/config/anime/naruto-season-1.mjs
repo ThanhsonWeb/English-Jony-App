@@ -30,7 +30,7 @@ const narutoSeason1 = {
       dialogueId: "the-lonely-boy",
       title: "Cậu bé cô đơn",
       thumbnail:
-        "/stories/naruto-season-1/thumbnails/the-lonely-boy.png",
+        "/stories/naruto-season-1/thumbnails/the-lonely-boy.webp",
       situation:
         "Naruto lives alone in the Hidden Leaf Village. He wants people to notice him and dreams of becoming Hokage.",
     },
@@ -38,7 +38,7 @@ const narutoSeason1 = {
       dialogueId: "the-ninja-test",
       title: "Bài kiểm tra ninja",
       thumbnail:
-        "/stories/naruto-season-1/thumbnails/the-ninja-test.png",
+        "/stories/naruto-season-1/thumbnails/the-ninja-test.webp",
       situation:
         "Naruto tries to pass the ninja graduation test, but he cannot make a proper clone. Iruka tells him he has failed.",
     },
@@ -46,7 +46,7 @@ const narutoSeason1 = {
       dialogueId: "the-forbidden-scroll",
       title: "Cuộn giấy cấm",
       thumbnail:
-        "/stories/naruto-season-1/thumbnails/the-forbidden-scroll.png",
+        "/stories/naruto-season-1/thumbnails/the-forbidden-scroll.webp",
       situation:
         "Mizuki tricks Naruto into taking a forbidden scroll. Naruto believes learning a new technique will help him graduate.",
     },
@@ -54,7 +54,7 @@ const narutoSeason1 = {
       dialogueId: "someone-believes-in-him",
       title: "Người tin tưởng Naruto",
       thumbnail:
-        "/stories/naruto-season-1/thumbnails/someone-believes-in-him.png",
+        "/stories/naruto-season-1/thumbnails/someone-believes-in-him.webp",
       situation:
         "Iruka protects Naruto from Mizuki. Naruto learns that Iruka believes in him, uses his new technique, and earns his ninja headband.",
     },
@@ -62,7 +62,7 @@ const narutoSeason1 = {
       dialogueId: "a-new-friend",
       title: "Người bạn mới",
       thumbnail:
-        "/stories/naruto-season-1/thumbnails/a-new-friend.png",
+        "/stories/naruto-season-1/thumbnails/a-new-friend.webp",
       situation:
         "Naruto meets Konohamaru, a young boy who wants to become strong. They begin an unexpected friendship.",
     },
@@ -70,7 +70,7 @@ const narutoSeason1 = {
       dialogueId: "team-seven",
       title: "Đội Bảy",
       thumbnail:
-        "/stories/naruto-season-1/thumbnails/team-seven.png",
+        "/stories/naruto-season-1/thumbnails/team-seven.webp",
       situation:
         "Naruto learns that Sasuke and Sakura will be his teammates. The three students have very different personalities.",
     },
@@ -78,7 +78,7 @@ const narutoSeason1 = {
       dialogueId: "meet-kakashi",
       title: "Thầy Kakashi",
       thumbnail:
-        "/stories/naruto-season-1/thumbnails/meet-kakashi.png",
+        "/stories/naruto-season-1/thumbnails/meet-kakashi.webp",
       situation:
         "Team Seven meets Kakashi, their new teacher. He asks them to introduce themselves and announces a difficult test.",
     },
@@ -86,7 +86,7 @@ const narutoSeason1 = {
       dialogueId: "the-bell-test",
       title: "Bài kiểm tra hai chiếc chuông",
       thumbnail:
-        "/stories/naruto-season-1/thumbnails/the-bell-test.png",
+        "/stories/naruto-season-1/thumbnails/the-bell-test.webp",
       situation:
         "Kakashi challenges Naruto, Sasuke, and Sakura to take two bells from him. At first, they try to win alone.",
     },
@@ -94,7 +94,7 @@ const narutoSeason1 = {
       dialogueId: "working-together",
       title: "Cùng nhau hợp tác",
       thumbnail:
-        "/stories/naruto-season-1/thumbnails/working-together.png",
+        "/stories/naruto-season-1/thumbnails/working-together.webp",
       situation:
         "Naruto is tied to a post, and his teammates share their food with him despite Kakashi's rule. Kakashi sees that they care about each other.",
     },
@@ -102,7 +102,7 @@ const narutoSeason1 = {
       dialogueId: "a-real-team",
       title: "Một đội thực sự",
       thumbnail:
-        "/stories/naruto-season-1/thumbnails/a-real-team.png",
+        "/stories/naruto-season-1/thumbnails/a-real-team.webp",
       situation:
         "Kakashi passes all three students because they put teamwork first. Naruto is ready to begin his journey with Team Seven.",
     },

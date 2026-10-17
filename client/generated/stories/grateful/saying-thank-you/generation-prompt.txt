@@ -32,7 +32,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Lily, it's lunchtime. Why are you sad?",
     "translation": "Chị Lily, đến giờ ăn trưa rồi. Sao chị buồn vậy?",
     "practicePriority": "simple",
-    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
     "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-01.mp3"
   },
   {
@@ -41,7 +41,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I forgot my lunch at home. I'm so hungry!",
     "translation": "Chị để quên bữa trưa ở nhà rồi. Chị đói quá!",
     "practicePriority": "important",
-    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
     "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-01.mp3"
   },
   {
@@ -50,7 +50,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Did you eat the toast Mom gave you?",
     "translation": "Chị đã ăn bánh mì nướng mẹ cho chưa?",
     "practicePriority": "simple",
-    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
     "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-02.mp3"
   },
   {
@@ -59,7 +59,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes, I ate it this morning. I have no food now.",
     "translation": "Rồi, chị ăn sáng nay rồi. Giờ chị không còn đồ ăn nữa.",
     "practicePriority": "important",
-    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
     "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-02.mp3"
   },
   {
@@ -68,7 +68,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I have two sandwiches. You can have one.",
     "translation": "Em có hai chiếc bánh sandwich. Chị có thể lấy một chiếc.",
     "practicePriority": "important",
-    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
     "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-03.mp3"
   },
   {
@@ -77,7 +77,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Really? Is that okay?",
     "translation": "Thật sao? Như vậy có được không?",
     "practicePriority": "simple",
-    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
     "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-03.mp3"
   },
   {
@@ -86,7 +86,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Of course. We can share my lunch.",
     "translation": "Tất nhiên rồi. Chúng ta có thể chia sẻ bữa trưa của em.",
     "practicePriority": "important",
-    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
     "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-04.mp3"
   },
   {
@@ -95,7 +95,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Thank you, Sam. You're very kind!",
     "translation": "Cảm ơn em, Sam. Em thật tốt bụng!",
     "practicePriority": "veryImportant",
-    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
     "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-04.mp3"
   },
   {
@@ -104,7 +104,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "You're welcome. Mom made these sandwiches.",
     "translation": "Không có gì đâu chị. Mẹ làm những chiếc bánh sandwich này đấy.",
     "practicePriority": "important",
-    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
     "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-05.mp3"
   },
   {
@@ -113,7 +113,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Mom made breakfast for me, too. She helped me find my bag.",
     "translation": "Mẹ cũng làm bữa sáng cho chị nữa. Mẹ còn giúp chị tìm cặp sách.",
     "practicePriority": "important",
-    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
     "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-05.mp3"
   },
   {
@@ -122,7 +122,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "But I did not say thank you to her.",
     "translation": "Nhưng chị đã không nói cảm ơn mẹ.",
     "practicePriority": "veryImportant",
-    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
     "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-06.mp3"
   },
   {
@@ -131,7 +131,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "You can tell her after school.",
     "translation": "Chị có thể nói với mẹ sau giờ học mà.",
     "practicePriority": "simple",
-    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
     "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/sam-06.mp3"
   },
   {
@@ -140,7 +140,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes. I want to thank Mom when we get home.",
     "translation": "Ừ. Chị muốn cảm ơn mẹ khi chúng ta về nhà.",
     "practicePriority": "important",
-    "scene": "/stories/grateful/a-small-act-of-kindness/bg.png",
+    "scene": "/stories/grateful/a-small-act-of-kindness/bg.webp",
     "audioUrl": "/stories/grateful/a-small-act-of-kindness/audio/lily-07.mp3"
   }
 ]
@@ -458,7 +458,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/stories/grateful/saying-thank-you/bg.png"
+"/stories/grateful/saying-thank-you/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -468,10 +468,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/stories/grateful/saying-thank-you/bg.png"
+"/stories/grateful/saying-thank-you/bg.webp"
 
 Thumbnail:
-"/stories/grateful/thumbnails/saying-thank-you.png"
+"/stories/grateful/thumbnails/saying-thank-you.webp"
 
 Audio format:
 "/stories/grateful/saying-thank-you/audio/{speaker}-{number}.mp3"
@@ -508,8 +508,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Lily thanks Sam for sharing his lunch. When she gets home, she also thanks Mom for helping her that morning.",
-		"scene": "/stories/grateful/saying-thank-you/bg.png",
-		"thumbnail": "/stories/grateful/thumbnails/saying-thank-you.png"
+		"scene": "/stories/grateful/saying-thank-you/bg.webp",
+		"thumbnail": "/stories/grateful/thumbnails/saying-thank-you.webp"
 	},
 
 	"dialogue": [

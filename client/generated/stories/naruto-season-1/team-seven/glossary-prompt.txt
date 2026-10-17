@@ -64,8 +64,8 @@ Final source (all lines and useful expressions):
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Naruto learns that Sasuke and Sakura will be his teammates. The three students have very different personalities.",
-    "scene": "/stories/naruto-season-1/team-seven/bg.png",
-    "thumbnail": "/stories/naruto-season-1/thumbnails/team-seven.png"
+    "scene": "/stories/naruto-season-1/team-seven/bg.webp",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/team-seven.webp"
   },
   "dialogue": [
     {
@@ -74,7 +74,7 @@ Final source (all lines and useful expressions):
       "text": "Naruto, your new team is Team Seven.",
       "translation": "Naruto, đội mới của em là Đội Bảy.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-01.mp3"
     },
     {
@@ -83,7 +83,7 @@ Final source (all lines and useful expressions):
       "text": "Team Seven? Who is on my team?",
       "translation": "Đội Bảy ạ? Ai ở trong đội của em vậy?",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-01.mp3"
     },
     {
@@ -92,7 +92,7 @@ Final source (all lines and useful expressions):
       "text": "Sasuke and Sakura are your teammates.",
       "translation": "Sasuke và Sakura là đồng đội của em.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-02.mp3"
     },
     {
@@ -101,7 +101,7 @@ Final source (all lines and useful expressions):
       "text": "Sakura! We are on the same team!",
       "translation": "Sakura! Chúng ta ở cùng một đội rồi!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-02.mp3"
     },
     {
@@ -110,7 +110,7 @@ Final source (all lines and useful expressions):
       "text": "Yes, Naruto. I am happy to work with Sasuke.",
       "translation": "Ừ, Naruto. Tớ rất vui khi được làm việc cùng Sasuke.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/sakura-01.mp3"
     },
     {
@@ -119,7 +119,7 @@ Final source (all lines and useful expressions):
       "text": "What about me?",
       "translation": "Còn tớ thì sao?",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-03.mp3"
     },
     {
@@ -128,7 +128,7 @@ Final source (all lines and useful expressions):
       "text": "Please be serious, Naruto. We have to work together.",
       "translation": "Nghiêm túc đi, Naruto. Chúng ta phải cùng nhau hợp tác.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/sakura-02.mp3"
     },
     {
@@ -137,7 +137,7 @@ Final source (all lines and useful expressions):
       "text": "I like to work alone.",
       "translation": "Tớ thích làm việc một mình.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/sasuke-01.mp3"
     },
     {
@@ -146,7 +146,7 @@ Final source (all lines and useful expressions):
       "text": "But we are a team now!",
       "translation": "Nhưng bây giờ chúng ta là một đội mà!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-04.mp3"
     },
     {
@@ -155,7 +155,7 @@ Final source (all lines and useful expressions):
       "text": "You talk too much, Naruto.",
       "translation": "Cậu nói nhiều quá đấy, Naruto.",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/sasuke-02.mp3"
     },
     {
@@ -164,7 +164,7 @@ Final source (all lines and useful expressions):
       "text": "And you are always so quiet!",
       "translation": "Còn cậu thì lúc nào cũng im lặng!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-05.mp3"
     },
     {
@@ -173,7 +173,7 @@ Final source (all lines and useful expressions):
       "text": "Stop, everyone. You are all different.",
       "translation": "Mọi người dừng lại nào. Các em đều khác nhau.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-03.mp3"
     },
     {
@@ -182,7 +182,7 @@ Final source (all lines and useful expressions):
       "text": "Good teammates help each other.",
       "translation": "Đồng đội tốt luôn giúp đỡ lẫn nhau.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-04.mp3"
     },
     {
@@ -191,7 +191,7 @@ Final source (all lines and useful expressions):
       "text": "Okay. I want us to do well.",
       "translation": "Được rồi. Tớ muốn cả đội làm tốt.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/sakura-03.mp3"
     },
     {
@@ -200,7 +200,7 @@ Final source (all lines and useful expressions):
       "text": "I will try to work with you.",
       "translation": "Tớ sẽ cố gắng hợp tác với các cậu.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/sasuke-03.mp3"
     },
     {
@@ -209,7 +209,7 @@ Final source (all lines and useful expressions):
       "text": "Me too! We can be a great team!",
       "translation": "Tớ cũng vậy! Chúng ta có thể trở thành một đội tuyệt vời!",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/naruto-06.mp3"
     },
     {
@@ -218,7 +218,7 @@ Final source (all lines and useful expressions):
       "text": "Good. You will meet your teacher tomorrow.",
       "translation": "Tốt. Ngày mai các em sẽ gặp thầy hướng dẫn của mình.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/team-seven/bg.png",
+      "scene": "/stories/naruto-season-1/team-seven/bg.webp",
       "audioUrl": "/stories/naruto-season-1/team-seven/audio/iruka-05.mp3"
     }
   ],

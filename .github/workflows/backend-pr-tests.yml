@@ -29,6 +29,8 @@ jobs:
         run: node --test --test-concurrency=1 tests/*.test.js
       - name: Validate Dialogue and Story catalogue
         run: npm run dialogue:catalogue:check
+      - name: Validate active media paths and filename casing
+        run: node --experimental-vm-modules ../client/scripts/audit-dialogue-media.mjs
       - name: Check JavaScript syntax
         shell: bash
         run: |

@@ -32,7 +32,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "It is lunch time. Naruto, you must stay here.",
     "translation": "Đến giờ ăn trưa rồi. Naruto, em phải ở lại đây.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-01.mp3"
   },
   {
@@ -41,7 +41,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I'm tied to this post. I'm so hungry!",
     "translation": "Tớ bị trói vào cái cọc này. Tớ đói quá!",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-01.mp3"
   },
   {
@@ -50,7 +50,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Sasuke, Sakura, you can eat. Do not give Naruto any food.",
     "translation": "Sasuke, Sakura, hai em có thể ăn. Không được cho Naruto thức ăn.",
     "practicePriority": "veryImportant",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-02.mp3"
   },
   {
@@ -59,7 +59,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "But Naruto needs food too.",
     "translation": "Nhưng Naruto cũng cần ăn mà.",
     "practicePriority": "simple",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-01.mp3"
   },
   {
@@ -68,7 +68,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "That is my rule. I will come back soon.",
     "translation": "Đó là quy định của thầy. Thầy sẽ sớm quay lại.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-03.mp3"
   },
   {
@@ -77,7 +77,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "This is not fair. I want some food.",
     "translation": "Thật không công bằng. Tớ muốn ăn gì đó.",
     "practicePriority": "simple",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-02.mp3"
   },
   {
@@ -86,7 +86,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Naruto, you can have some of my lunch.",
     "translation": "Naruto, cậu có thể ăn một ít bữa trưa của tớ.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-01.mp3"
   },
   {
@@ -95,7 +95,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Really? But Kakashi said no.",
     "translation": "Thật sao? Nhưng thầy Kakashi đã nói không được mà.",
     "practicePriority": "simple",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-03.mp3"
   },
   {
@@ -104,7 +104,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "You can have my food too. We are a team.",
     "translation": "Cậu cũng có thể ăn đồ ăn của tớ. Chúng ta là một đội.",
     "practicePriority": "veryImportant",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-02.mp3"
   },
   {
@@ -113,7 +113,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes. We need to help each other.",
     "translation": "Đúng vậy. Chúng ta cần giúp đỡ lẫn nhau.",
     "practicePriority": "veryImportant",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-02.mp3"
   },
   {
@@ -122,7 +122,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Thank you, both of you.",
     "translation": "Cảm ơn cả hai cậu.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/naruto-04.mp3"
   },
   {
@@ -131,7 +131,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I can see you. You did not follow my rule!",
     "translation": "Thầy thấy hết rồi. Các em đã không làm theo quy định của thầy!",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-04.mp3"
   },
   {
@@ -140,7 +140,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I'm sorry, but Naruto is our friend.",
     "translation": "Em xin lỗi, nhưng Naruto là bạn của chúng em.",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/sakura-03.mp3"
   },
   {
@@ -149,7 +149,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Good. You care about each other.",
     "translation": "Tốt lắm. Các em biết quan tâm đến nhau.",
     "practicePriority": "veryImportant",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-05.mp3"
   },
   {
@@ -158,7 +158,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "So, did we pass the test?",
     "translation": "Vậy chúng em đã vượt qua bài kiểm tra chưa?",
     "practicePriority": "important",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/sasuke-03.mp3"
   },
   {
@@ -167,7 +167,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes! A good team helps each other.",
     "translation": "Rồi! Một đội tốt luôn giúp đỡ lẫn nhau.",
     "practicePriority": "veryImportant",
-    "scene": "/stories/naruto-season-1/working-together/bg.png",
+    "scene": "/stories/naruto-season-1/working-together/bg.webp",
     "audioUrl": "/stories/naruto-season-1/working-together/audio/kakashi-06.mp3"
   }
 ]
@@ -485,7 +485,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/stories/naruto-season-1/a-real-team/bg.png"
+"/stories/naruto-season-1/a-real-team/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -495,10 +495,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/stories/naruto-season-1/a-real-team/bg.png"
+"/stories/naruto-season-1/a-real-team/bg.webp"
 
 Thumbnail:
-"/stories/naruto-season-1/thumbnails/a-real-team.png"
+"/stories/naruto-season-1/thumbnails/a-real-team.webp"
 
 Audio format:
 "/stories/naruto-season-1/a-real-team/audio/{speaker}-{number}.mp3"
@@ -535,8 +535,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Kakashi passes all three students because they put teamwork first. Naruto is ready to begin his journey with Team Seven.",
-		"scene": "/stories/naruto-season-1/a-real-team/bg.png",
-		"thumbnail": "/stories/naruto-season-1/thumbnails/a-real-team.png"
+		"scene": "/stories/naruto-season-1/a-real-team/bg.webp",
+		"thumbnail": "/stories/naruto-season-1/thumbnails/a-real-team.webp"
 	},
 
 	"dialogue": [

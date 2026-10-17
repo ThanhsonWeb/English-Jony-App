@@ -12,7 +12,7 @@ const talkingByTheCampfireDraft = {
 			"Leo and Mia relax beside the campfire after dinner and talk about their day and plans for tomorrow.",
 		scene: media.scene,
 		thumbnail:
-			"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail5.png",
+			"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail5.webp",
 	},
 	dialogue: [
 		{

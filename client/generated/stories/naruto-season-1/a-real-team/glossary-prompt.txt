@@ -64,8 +64,8 @@ Final source (all lines and useful expressions):
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Kakashi passes all three students because they put teamwork first. Naruto is ready to begin his journey with Team Seven.",
-    "scene": "/stories/naruto-season-1/a-real-team/bg.png",
-    "thumbnail": "/stories/naruto-season-1/thumbnails/a-real-team.png"
+    "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/a-real-team.webp"
   },
   "dialogue": [
     {
@@ -74,7 +74,7 @@ Final source (all lines and useful expressions):
       "text": "Wait, we all passed the test?",
       "translation": "Khoan đã, cả ba chúng em đều vượt qua bài kiểm tra sao?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-01.mp3"
     },
     {
@@ -83,7 +83,7 @@ Final source (all lines and useful expressions):
       "text": "Yes. You helped each other.",
       "translation": "Đúng vậy. Các em đã giúp đỡ lẫn nhau.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-01.mp3"
     },
     {
@@ -92,7 +92,7 @@ Final source (all lines and useful expressions):
       "text": "Even without the bells?",
       "translation": "Ngay cả khi chúng em không lấy được chuông sao?",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sakura-01.mp3"
     },
     {
@@ -101,7 +101,7 @@ Final source (all lines and useful expressions):
       "text": "Yes. The bells were only part of the test.",
       "translation": "Đúng vậy. Những chiếc chuông chỉ là một phần của bài kiểm tra.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-02.mp3"
     },
     {
@@ -110,7 +110,7 @@ Final source (all lines and useful expressions):
       "text": "So what was the real test?",
       "translation": "Vậy bài kiểm tra thực sự là gì ạ?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sasuke-01.mp3"
     },
     {
@@ -119,7 +119,7 @@ Final source (all lines and useful expressions):
       "text": "The real test was to work together.",
       "translation": "Bài kiểm tra thực sự là phải biết hợp tác với nhau.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-03.mp3"
     },
     {
@@ -128,7 +128,7 @@ Final source (all lines and useful expressions):
       "text": "You shared your food with Naruto. You did not leave him alone.",
       "translation": "Các em đã chia sẻ thức ăn với Naruto. Các em không bỏ mặc bạn ấy một mình.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-04.mp3"
     },
     {
@@ -137,7 +137,7 @@ Final source (all lines and useful expressions):
       "text": "He is our friend. We want to help him.",
       "translation": "Cậu ấy là bạn của chúng em. Chúng em muốn giúp cậu ấy.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sakura-02.mp3"
     },
     {
@@ -146,7 +146,7 @@ Final source (all lines and useful expressions):
       "text": "I am happy we are on the same team.",
       "translation": "Tớ rất vui vì chúng ta ở cùng một đội.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-02.mp3"
     },
     {
@@ -155,7 +155,7 @@ Final source (all lines and useful expressions):
       "text": "You are not just three students. You are Team Seven!",
       "translation": "Các em không chỉ là ba học sinh. Các em là Đội Bảy!",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-05.mp3"
     },
     {
@@ -164,7 +164,7 @@ Final source (all lines and useful expressions):
       "text": "Team Seven! What do we do next?",
       "translation": "Đội Bảy! Tiếp theo chúng ta sẽ làm gì?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-03.mp3"
     },
     {
@@ -173,7 +173,7 @@ Final source (all lines and useful expressions):
       "text": "We still have a lot to learn.",
       "translation": "Chúng ta vẫn còn nhiều điều phải học.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sasuke-02.mp3"
     },
     {
@@ -182,7 +182,7 @@ Final source (all lines and useful expressions):
       "text": "We can learn together.",
       "translation": "Chúng ta có thể học cùng nhau.",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/sakura-03.mp3"
     },
     {
@@ -191,7 +191,7 @@ Final source (all lines and useful expressions):
       "text": "Good. Tomorrow, we start our first mission.",
       "translation": "Tốt. Ngày mai, chúng ta bắt đầu nhiệm vụ đầu tiên.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/kakashi-06.mp3"
     },
     {
@@ -200,7 +200,7 @@ Final source (all lines and useful expressions):
       "text": "I can't wait! Our team is ready!",
       "translation": "Tớ háo hức quá! Đội của chúng ta đã sẵn sàng!",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/a-real-team/bg.png",
+      "scene": "/stories/naruto-season-1/a-real-team/bg.webp",
       "audioUrl": "/stories/naruto-season-1/a-real-team/audio/naruto-04.mp3"
     }
   ],

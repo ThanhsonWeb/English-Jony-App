@@ -64,8 +64,8 @@ Final source (all lines and useful expressions):
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Iruka protects Naruto from Mizuki. Naruto learns that Iruka believes in him, uses his new technique, and earns his ninja headband.",
-    "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
-    "thumbnail": "/stories/naruto-season-1/thumbnails/someone-believes-in-him.png"
+    "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/someone-believes-in-him.webp"
   },
   "dialogue": [
     {
@@ -74,7 +74,7 @@ Final source (all lines and useful expressions):
       "text": "Mizuki, I have the scroll. I learned a new technique!",
       "translation": "Thầy Mizuki, em có cuộn giấy rồi. Em đã học được một kỹ thuật mới!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/naruto-01.mp3"
     },
     {
@@ -83,7 +83,7 @@ Final source (all lines and useful expressions):
       "text": "Good. Give me the scroll.",
       "translation": "Tốt. Đưa cuộn giấy cho thầy.",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/mizuki-01.mp3"
     },
     {
@@ -92,7 +92,7 @@ Final source (all lines and useful expressions):
       "text": "Stop, Naruto! That scroll is forbidden.",
       "translation": "Dừng lại, Naruto! Cuộn giấy đó bị cấm.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/iruka-01.mp3"
     },
     {
@@ -101,7 +101,7 @@ Final source (all lines and useful expressions):
       "text": "But Mizuki said it was a secret test!",
       "translation": "Nhưng thầy Mizuki nói đó là một bài kiểm tra bí mật!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/naruto-02.mp3"
     },
     {
@@ -110,7 +110,7 @@ Final source (all lines and useful expressions):
       "text": "I lied. I only want the scroll.",
       "translation": "Ta đã nói dối. Ta chỉ muốn cuộn giấy thôi.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/mizuki-02.mp3"
     },
     {
@@ -119,7 +119,7 @@ Final source (all lines and useful expressions):
       "text": "You lied to me? I trusted you!",
       "translation": "Thầy đã nói dối em sao? Em đã tin thầy mà!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/naruto-03.mp3"
     },
     {
@@ -128,7 +128,7 @@ Final source (all lines and useful expressions):
       "text": "Stay back, Naruto! I will protect you.",
       "translation": "Lùi lại, Naruto! Thầy sẽ bảo vệ em.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/iruka-02.mp3"
     },
     {
@@ -137,7 +137,7 @@ Final source (all lines and useful expressions):
       "text": "Why do you help him?",
       "translation": "Tại sao cậu lại giúp nó?",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/mizuki-03.mp3"
     },
     {
@@ -146,7 +146,7 @@ Final source (all lines and useful expressions):
       "text": "Because I believe in Naruto. He works hard.",
       "translation": "Vì tôi tin Naruto. Em ấy rất chăm chỉ.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/iruka-03.mp3"
     },
     {
@@ -155,7 +155,7 @@ Final source (all lines and useful expressions):
       "text": "You really believe in me, Iruka?",
       "translation": "Thầy thật sự tin em sao, thầy Iruka?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/naruto-04.mp3"
     },
     {
@@ -164,7 +164,7 @@ Final source (all lines and useful expressions):
       "text": "Yes. You can become a great ninja!",
       "translation": "Đúng vậy. Em có thể trở thành một ninja giỏi!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/iruka-04.mp3"
     },
     {
@@ -173,7 +173,7 @@ Final source (all lines and useful expressions):
       "text": "You cannot stop me!",
       "translation": "Các người không thể ngăn ta đâu!",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/mizuki-04.mp3"
     },
     {
@@ -182,7 +182,7 @@ Final source (all lines and useful expressions):
       "text": "Leave Iruka alone! My new technique makes many clones!",
       "translation": "Để thầy Iruka yên! Kỹ thuật mới của tôi tạo ra rất nhiều phân thân!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/naruto-05.mp3"
     },
     {
@@ -191,7 +191,7 @@ Final source (all lines and useful expressions):
       "text": "No! There are too many!",
       "translation": "Không! Có quá nhiều phân thân!",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/mizuki-05.mp3"
     },
     {
@@ -200,7 +200,7 @@ Final source (all lines and useful expressions):
       "text": "You saved me, Naruto. You passed the test!",
       "translation": "Em đã cứu thầy, Naruto. Em đã vượt qua bài kiểm tra!",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/iruka-05.mp3"
     },
     {
@@ -209,7 +209,7 @@ Final source (all lines and useful expressions):
       "text": "Am I really a ninja now?",
       "translation": "Giờ em thật sự là một ninja rồi sao?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/naruto-06.mp3"
     },
     {
@@ -218,7 +218,7 @@ Final source (all lines and useful expressions):
       "text": "Yes. This headband is yours. I am proud of you.",
       "translation": "Đúng vậy. Chiếc băng trán này là của em. Thầy tự hào về em.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/iruka-06.mp3"
     },
     {
@@ -227,7 +227,7 @@ Final source (all lines and useful expressions):
       "text": "Thank you, Iruka! I will never give up!",
       "translation": "Cảm ơn thầy Iruka! Em sẽ không bao giờ bỏ cuộc!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.png",
+      "scene": "/stories/naruto-season-1/someone-believes-in-him/bg.webp",
       "audioUrl": "/stories/naruto-season-1/someone-believes-in-him/audio/naruto-07.mp3"
     }
   ],

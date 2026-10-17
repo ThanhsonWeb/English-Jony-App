@@ -5,8 +5,8 @@
     "title": "Lập danh sách mua sắm",
     "level": "a1",
     "situation": "Ben và Emma chuẩn bị đi siêu thị. Họ cùng kiểm tra xem cần mua những gì và lập một danh sách mua sắm đơn giản.",
-    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
-    "thumbnail": "/dialogue/grocery-store/thumbnails/making-a-shopping-list.png"
+    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
+    "thumbnail": "/dialogue/grocery-store/thumbnails/making-a-shopping-list.webp"
   },
   "dialogue": [
     {
@@ -15,7 +15,7 @@
       "text": "We need some food for this week.",
       "translation": "Chúng ta cần một ít đồ ăn cho tuần này.",
       "practicePriority": "important",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-01.mp3"
     },
     {
@@ -24,7 +24,7 @@
       "text": "Okay. What do we need?",
       "translation": "Được rồi. Chúng ta cần gì?",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-01.mp3"
     },
     {
@@ -33,7 +33,7 @@
       "text": "We need some milk and eggs.",
       "translation": "Chúng ta cần một ít sữa và trứng.",
       "practicePriority": "important",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-02.mp3"
     },
     {
@@ -42,7 +42,7 @@
       "text": "Do we have any bread at home?",
       "translation": "Ở nhà chúng ta còn bánh mì không?",
       "practicePriority": "important",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-02.mp3"
     },
     {
@@ -51,7 +51,7 @@
       "text": "No, we don't. Let's buy one loaf.",
       "translation": "Không, hết rồi. Hãy mua một ổ nhé.",
       "practicePriority": "important",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-03.mp3"
     },
     {
@@ -60,7 +60,7 @@
       "text": "What about fruit?",
       "translation": "Còn trái cây thì sao?",
       "practicePriority": "simple",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-03.mp3"
     },
     {
@@ -69,7 +69,7 @@
       "text": "Let's get some bananas and apples.",
       "translation": "Hãy mua một ít chuối và táo.",
       "practicePriority": "important",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-04.mp3"
     },
     {
@@ -78,7 +78,7 @@
       "text": "Do we need anything to drink?",
       "translation": "Chúng ta có cần mua gì để uống không?",
       "practicePriority": "important",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-04.mp3"
     },
     {
@@ -87,7 +87,7 @@
       "text": "Yes. Let's get some orange juice.",
       "translation": "Có. Hãy mua một ít nước cam.",
       "practicePriority": "important",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-05.mp3"
     },
     {
@@ -96,7 +96,7 @@
       "text": "Great. That's everything on our list.",
       "translation": "Tuyệt. Đó là tất cả những gì có trong danh sách của chúng ta.",
       "practicePriority": "simple",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-05.mp3"
     }
   ],
@@ -159,7 +159,7 @@
       "answers": ["need"],
       "speaker": "Ben",
       "transcript": "We need some food for this week.",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-01.mp3"
     },
     {
@@ -170,7 +170,7 @@
       "answers": ["this week"],
       "speaker": "Ben",
       "transcript": "We need some food for this week.",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-01.mp3"
     },
     {
@@ -181,7 +181,7 @@
       "answers": ["What"],
       "speaker": "Emma",
       "transcript": "Okay. What do we need?",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-01.mp3"
     },
     {
@@ -192,7 +192,7 @@
       "answers": ["do we need"],
       "speaker": "Emma",
       "transcript": "Okay. What do we need?",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-01.mp3"
     },
     {
@@ -209,7 +209,7 @@
       "answer": "Lập danh sách đồ cần mua.",
       "speaker": "Emma",
       "transcript": "Okay. What do we need?",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-01.mp3"
     },
     {
@@ -220,7 +220,7 @@
       "answers": ["milk"],
       "speaker": "Ben",
       "transcript": "We need some milk and eggs.",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-02.mp3"
     },
     {
@@ -231,7 +231,7 @@
       "answers": ["eggs"],
       "speaker": "Ben",
       "transcript": "We need some milk and eggs.",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-02.mp3"
     },
     {
@@ -242,7 +242,7 @@
       "answers": ["bread"],
       "speaker": "Emma",
       "transcript": "Do we have any bread at home?",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-02.mp3"
     },
     {
@@ -253,7 +253,7 @@
       "answers": ["at home"],
       "speaker": "Emma",
       "transcript": "Do we have any bread at home?",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-02.mp3"
     },
     {
@@ -270,7 +270,7 @@
       "answer": "Họ còn bánh mì ở nhà không.",
       "speaker": "Emma",
       "transcript": "Do we have any bread at home?",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-02.mp3"
     },
     {
@@ -281,7 +281,7 @@
       "answers": ["don't"],
       "speaker": "Ben",
       "transcript": "No, we don't. Let's buy one loaf.",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-03.mp3"
     },
     {
@@ -292,7 +292,7 @@
       "answers": ["one loaf"],
       "speaker": "Ben",
       "transcript": "No, we don't. Let's buy one loaf.",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-03.mp3"
     },
     {
@@ -309,7 +309,7 @@
       "answer": "Một ổ bánh mì.",
       "speaker": "Ben",
       "transcript": "No, we don't. Let's buy one loaf.",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-03.mp3"
     },
     {
@@ -320,7 +320,7 @@
       "answers": ["fruit"],
       "speaker": "Emma",
       "transcript": "What about fruit?",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-03.mp3"
     },
     {
@@ -331,7 +331,7 @@
       "answers": ["bananas"],
       "speaker": "Ben",
       "transcript": "Let's get some bananas and apples.",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-04.mp3"
     },
     {
@@ -342,7 +342,7 @@
       "answers": ["apples"],
       "speaker": "Ben",
       "transcript": "Let's get some bananas and apples.",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-04.mp3"
     },
     {
@@ -353,7 +353,7 @@
       "answers": ["anything"],
       "speaker": "Emma",
       "transcript": "Do we need anything to drink?",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-04.mp3"
     },
     {
@@ -364,7 +364,7 @@
       "answers": ["to drink"],
       "speaker": "Emma",
       "transcript": "Do we need anything to drink?",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-04.mp3"
     },
     {
@@ -381,7 +381,7 @@
       "answer": "Họ có cần mua đồ uống không.",
       "speaker": "Emma",
       "transcript": "Do we need anything to drink?",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-04.mp3"
     },
     {
@@ -392,7 +392,7 @@
       "answers": ["Let's get"],
       "speaker": "Ben",
       "transcript": "Yes. Let's get some orange juice.",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-05.mp3"
     },
     {
@@ -403,7 +403,7 @@
       "answers": ["orange juice"],
       "speaker": "Ben",
       "transcript": "Yes. Let's get some orange juice.",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-05.mp3"
     },
     {
@@ -414,7 +414,7 @@
       "answers": ["everything"],
       "speaker": "Emma",
       "transcript": "Great. That's everything on our list.",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-05.mp3"
     },
     {
@@ -431,7 +431,7 @@
       "answer": "Danh sách đã đủ đồ cần mua.",
       "speaker": "Emma",
       "transcript": "Great. That's everything on our list.",
-      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+      "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
       "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-05.mp3"
     },
     {

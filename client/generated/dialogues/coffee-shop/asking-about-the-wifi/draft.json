@@ -5,8 +5,8 @@
 "title": "Hỏi mật khẩu Wi-Fi",
 "level": "a1",
 "situation": "Ben muốn sử dụng Wi-Fi của quán và hỏi Emma cách kết nối.",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
-"thumbnail": "/dialogue/coffee-shop/thumbnails/asking-about-the-wifi.png"
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
+"thumbnail": "/dialogue/coffee-shop/thumbnails/asking-about-the-wifi.webp"
 },
 "dialogue": [
 {
@@ -15,7 +15,7 @@
 "text": "Is there Wi-Fi here?",
 "translation": "Ở đây có Wi-Fi không?",
 "practicePriority": "veryImportant",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-01.mp3"
 },
 {
@@ -24,7 +24,7 @@
 "text": "Yes, there is free Wi-Fi.",
 "translation": "Có, ở đây có Wi-Fi miễn phí.",
 "practicePriority": "important",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-01.mp3"
 },
 {
@@ -33,7 +33,7 @@
 "text": "Great. What's the Wi-Fi name?",
 "translation": "Tuyệt. Tên Wi-Fi là gì?",
 "practicePriority": "veryImportant",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-02.mp3"
 },
 {
@@ -42,7 +42,7 @@
 "text": "The Wi-Fi name is Coffee House Guest.",
 "translation": "Tên Wi-Fi là Coffee House Guest.",
 "practicePriority": "simple",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-02.mp3"
 },
 {
@@ -51,7 +51,7 @@
 "text": "And what's the password?",
 "translation": "Còn mật khẩu là gì?",
 "practicePriority": "veryImportant",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-03.mp3"
 },
 {
@@ -60,7 +60,7 @@
 "text": "It's coffee123.",
 "translation": "Là coffee123.",
 "practicePriority": "simple",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-03.mp3"
 },
 {
@@ -69,7 +69,7 @@
 "text": "Can you say that again, please?",
 "translation": "Bạn có thể nói lại được không?",
 "practicePriority": "important",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-04.mp3"
 },
 {
@@ -78,7 +78,7 @@
 "text": "Sure. It's coffee one two three.",
 "translation": "Được chứ. Là coffee một hai ba.",
 "practicePriority": "simple",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-04.mp3"
 },
 {
@@ -87,7 +87,7 @@
 "text": "Thanks. How do I connect?",
 "translation": "Cảm ơn. Tôi kết nối như thế nào?",
 "practicePriority": "important",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-05.mp3"
 },
 {
@@ -96,7 +96,7 @@
 "text": "Choose the Wi-Fi name and enter the password.",
 "translation": "Chọn tên Wi-Fi và nhập mật khẩu.",
 "practicePriority": "important",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-05.mp3"
 },
 {
@@ -105,7 +105,7 @@
 "text": "Got it. I'm connected now.",
 "translation": "Hiểu rồi. Bây giờ tôi đã kết nối.",
 "practicePriority": "simple",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-06.mp3"
 },
 {
@@ -114,7 +114,7 @@
 "text": "Perfect. Enjoy your coffee.",
 "translation": "Tuyệt. Chúc bạn thưởng thức cà phê ngon miệng.",
 "practicePriority": "simple",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-06.mp3"
 }
 ],
@@ -177,7 +177,7 @@
 "answers": ["Wi-Fi"],
 "speaker": "Ben",
 "transcript": "Is there Wi-Fi here?",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-01.mp3"
 },
 {
@@ -188,7 +188,7 @@
 "answers": ["Is there"],
 "speaker": "Ben",
 "transcript": "Is there Wi-Fi here?",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-01.mp3"
 },
 {
@@ -205,7 +205,7 @@
 "answer": "Hỏi xem quán có Wi-Fi không.",
 "speaker": "Ben",
 "transcript": "Is there Wi-Fi here?",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-01.mp3"
 },
 {
@@ -216,7 +216,7 @@
 "answers": ["free"],
 "speaker": "Emma",
 "transcript": "Yes, there is free Wi-Fi.",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-01.mp3"
 },
 {
@@ -227,7 +227,7 @@
 "answers": ["Yes, there is"],
 "speaker": "Emma",
 "transcript": "Yes, there is free Wi-Fi.",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-01.mp3"
 },
 {
@@ -238,7 +238,7 @@
 "answers": ["Wi-Fi name"],
 "speaker": "Ben",
 "transcript": "Great. What's the Wi-Fi name?",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-02.mp3"
 },
 {
@@ -249,7 +249,7 @@
 "answers": ["What's the"],
 "speaker": "Ben",
 "transcript": "Great. What's the Wi-Fi name?",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-02.mp3"
 },
 {
@@ -266,7 +266,7 @@
 "answer": "Hài lòng vì quán có Wi-Fi.",
 "speaker": "Ben",
 "transcript": "Great. What's the Wi-Fi name?",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-02.mp3"
 },
 {
@@ -277,7 +277,7 @@
 "answers": ["Coffee House Guest"],
 "speaker": "Emma",
 "transcript": "The Wi-Fi name is Coffee House Guest.",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-02.mp3"
 },
 {
@@ -288,7 +288,7 @@
 "answers": ["password"],
 "speaker": "Ben",
 "transcript": "And what's the password?",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-03.mp3"
 },
 {
@@ -299,7 +299,7 @@
 "answers": ["what's the"],
 "speaker": "Ben",
 "transcript": "And what's the password?",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-03.mp3"
 },
 {
@@ -316,7 +316,7 @@
 "answer": "Để có thể kết nối Wi-Fi.",
 "speaker": "Ben",
 "transcript": "And what's the password?",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-03.mp3"
 },
 {
@@ -327,7 +327,7 @@
 "answers": ["coffee123"],
 "speaker": "Emma",
 "transcript": "It's coffee123.",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-03.mp3"
 },
 {
@@ -338,7 +338,7 @@
 "answers": ["say that again"],
 "speaker": "Ben",
 "transcript": "Can you say that again, please?",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-04.mp3"
 },
 {
@@ -349,7 +349,7 @@
 "answers": ["please"],
 "speaker": "Ben",
 "transcript": "Can you say that again, please?",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-04.mp3"
 },
 {
@@ -360,7 +360,7 @@
 "answers": ["coffee one two three"],
 "speaker": "Emma",
 "transcript": "Sure. It's coffee one two three.",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-04.mp3"
 },
 {
@@ -371,7 +371,7 @@
 "answers": ["connect"],
 "speaker": "Ben",
 "transcript": "Thanks. How do I connect?",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-05.mp3"
 },
 {
@@ -382,7 +382,7 @@
 "answers": ["How do I"],
 "speaker": "Ben",
 "transcript": "Thanks. How do I connect?",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-05.mp3"
 },
 {
@@ -399,7 +399,7 @@
 "answer": "Hướng dẫn cách kết nối.",
 "speaker": "Ben",
 "transcript": "Thanks. How do I connect?",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-05.mp3"
 },
 {
@@ -410,7 +410,7 @@
 "answers": ["Choose"],
 "speaker": "Emma",
 "transcript": "Choose the Wi-Fi name and enter the password.",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-05.mp3"
 },
 {
@@ -421,7 +421,7 @@
 "answers": ["enter the password"],
 "speaker": "Emma",
 "transcript": "Choose the Wi-Fi name and enter the password.",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-05.mp3"
 },
 {
@@ -438,7 +438,7 @@
 "answer": "Chọn tên Wi-Fi.",
 "speaker": "Emma",
 "transcript": "Choose the Wi-Fi name and enter the password.",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-05.mp3"
 },
 {
@@ -449,7 +449,7 @@
 "answers": ["connected"],
 "speaker": "Ben",
 "transcript": "Got it. I'm connected now.",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/ben-06.mp3"
 },
 {
@@ -460,7 +460,7 @@
 "answers": ["Enjoy your coffee"],
 "speaker": "Emma",
 "transcript": "Perfect. Enjoy your coffee.",
-"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
+"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
 "audioUrl": "/dialogue/coffee-shop/asking-about-the-wifi/audio/emma-06.mp3"
 },
 {

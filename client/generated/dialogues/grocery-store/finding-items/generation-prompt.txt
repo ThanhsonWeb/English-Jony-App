@@ -30,7 +30,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "We need some food for this week.",
     "translation": "Chúng ta cần một ít đồ ăn cho tuần này.",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
     "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-01.mp3"
   },
   {
@@ -39,7 +39,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Okay. What do we need?",
     "translation": "Được rồi. Chúng ta cần gì?",
     "practicePriority": "veryImportant",
-    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
     "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-01.mp3"
   },
   {
@@ -48,7 +48,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "We need some milk and eggs.",
     "translation": "Chúng ta cần một ít sữa và trứng.",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
     "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-02.mp3"
   },
   {
@@ -57,7 +57,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Do we have any bread at home?",
     "translation": "Ở nhà chúng ta còn bánh mì không?",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
     "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-02.mp3"
   },
   {
@@ -66,7 +66,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "No, we don't. Let's buy one loaf.",
     "translation": "Không, hết rồi. Hãy mua một ổ nhé.",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
     "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-03.mp3"
   },
   {
@@ -75,7 +75,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "What about fruit?",
     "translation": "Còn trái cây thì sao?",
     "practicePriority": "simple",
-    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
     "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-03.mp3"
   },
   {
@@ -84,7 +84,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Let's get some bananas and apples.",
     "translation": "Hãy mua một ít chuối và táo.",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
     "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-04.mp3"
   },
   {
@@ -93,7 +93,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Do we need anything to drink?",
     "translation": "Chúng ta có cần mua gì để uống không?",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
     "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-04.mp3"
   },
   {
@@ -102,7 +102,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes. Let's get some orange juice.",
     "translation": "Có. Hãy mua một ít nước cam.",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
     "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/ben-05.mp3"
   },
   {
@@ -111,7 +111,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Great. That's everything on our list.",
     "translation": "Tuyệt. Đó là tất cả những gì có trong danh sách của chúng ta.",
     "practicePriority": "simple",
-    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+    "scene": "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
     "audioUrl": "/dialogue/grocery-store/making-a-shopping-list/audio/emma-05.mp3"
   }
 ]
@@ -368,7 +368,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/grocery-store/finding-items/bg.png"
+"/dialogue/grocery-store/finding-items/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -378,10 +378,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/grocery-store/finding-items/bg.png"
+"/dialogue/grocery-store/finding-items/bg.webp"
 
 Thumbnail:
-"/dialogue/grocery-store/thumbnails/finding-items.png"
+"/dialogue/grocery-store/thumbnails/finding-items.webp"
 
 Audio format:
 "/dialogue/grocery-store/finding-items/audio/{speaker}-{number}.mp3"
@@ -407,8 +407,8 @@ Use this structure:
 		"title": "Tìm đồ trong siêu thị",
 		"level": "a1",
 		"situation": "Ben và Emma đang đi quanh siêu thị. Ben không tìm thấy một vài món đồ nên hỏi Emma chúng ở đâu.",
-		"scene": "/dialogue/grocery-store/finding-items/bg.png",
-		"thumbnail": "/dialogue/grocery-store/thumbnails/finding-items.png"
+		"scene": "/dialogue/grocery-store/finding-items/bg.webp",
+		"thumbnail": "/dialogue/grocery-store/thumbnails/finding-items.webp"
 	},
 
 	"dialogue": [

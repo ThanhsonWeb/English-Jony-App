@@ -30,7 +30,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Good evening. How many people?",
     "translation": "Chào buổi tối. Có bao nhiêu người?",
     "practicePriority": "important",
-    "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+    "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
     "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-01.mp3"
   },
   {
@@ -39,7 +39,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "A table for two, please.",
     "translation": "Cho chúng tôi một bàn cho hai người.",
     "practicePriority": "veryImportant",
-    "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+    "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
     "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-01.mp3"
   },
   {
@@ -48,7 +48,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Do you have a reservation?",
     "translation": "Hai bạn có đặt bàn trước không?",
     "practicePriority": "important",
-    "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+    "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
     "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-02.mp3"
   },
   {
@@ -57,7 +57,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "No, we do not.",
     "translation": "Không, chúng tôi chưa đặt.",
     "practicePriority": "simple",
-    "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+    "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
     "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-01.mp3"
   },
   {
@@ -66,7 +66,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "That is fine. We have a table near the window.",
     "translation": "Không sao. Chúng tôi có một bàn gần cửa sổ.",
     "practicePriority": "important",
-    "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+    "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
     "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-03.mp3"
   },
   {
@@ -75,7 +75,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Is it quiet near the window?",
     "translation": "Chỗ gần cửa sổ có yên tĩnh không?",
     "practicePriority": "important",
-    "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+    "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
     "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-02.mp3"
   },
   {
@@ -84,7 +84,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes, it is. It is a quiet area.",
     "translation": "Có. Đó là một khu vực yên tĩnh.",
     "practicePriority": "simple",
-    "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+    "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
     "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-04.mp3"
   },
   {
@@ -93,7 +93,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "That sounds good.",
     "translation": "Nghe ổn đấy.",
     "practicePriority": "simple",
-    "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+    "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
     "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-02.mp3"
   },
   {
@@ -102,7 +102,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "We would like that table, please.",
     "translation": "Chúng tôi muốn chọn bàn đó.",
     "practicePriority": "veryImportant",
-    "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+    "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
     "audioUrl": "/dialogue/restaurant/getting-a-table/audio/ben-03.mp3"
   },
   {
@@ -111,7 +111,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Great. The table is ready.",
     "translation": "Tuyệt. Bàn đã sẵn sàng.",
     "practicePriority": "simple",
-    "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+    "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
     "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-05.mp3"
   },
   {
@@ -120,7 +120,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Thank you.",
     "translation": "Cảm ơn bạn.",
     "practicePriority": "simple",
-    "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+    "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
     "audioUrl": "/dialogue/restaurant/getting-a-table/audio/emma-03.mp3"
   },
   {
@@ -129,7 +129,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "You are welcome. Enjoy your meal.",
     "translation": "Không có gì. Chúc hai bạn ngon miệng.",
     "practicePriority": "important",
-    "scene": "/dialogue/restaurant/getting-a-table/bg.png",
+    "scene": "/dialogue/restaurant/getting-a-table/bg.webp",
     "audioUrl": "/dialogue/restaurant/getting-a-table/audio/alex-06.mp3"
   }
 ]
@@ -414,7 +414,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/restaurant/reading-the-menu/bg.png"
+"/dialogue/restaurant/reading-the-menu/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -424,10 +424,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/restaurant/reading-the-menu/bg.png"
+"/dialogue/restaurant/reading-the-menu/bg.webp"
 
 Thumbnail:
-"/dialogue/restaurant/thumbnails/reading-the-menu.png"
+"/dialogue/restaurant/thumbnails/reading-the-menu.webp"
 
 Audio format:
 "/dialogue/restaurant/reading-the-menu/audio/{speaker}-{number}.mp3"
@@ -456,8 +456,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Ben và Emma xem thực đơn và nói về các món ăn. Họ hỏi nhau món nào trông ngon và món nào họ muốn thử.",
-		"scene": "/dialogue/restaurant/reading-the-menu/bg.png",
-		"thumbnail": "/dialogue/restaurant/thumbnails/reading-the-menu.png"
+		"scene": "/dialogue/restaurant/reading-the-menu/bg.webp",
+		"thumbnail": "/dialogue/restaurant/thumbnails/reading-the-menu.webp"
 	},
 
 	"dialogue": [

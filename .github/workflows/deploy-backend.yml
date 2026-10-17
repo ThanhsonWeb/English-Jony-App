@@ -51,6 +51,7 @@ jobs:
         run: |
           set -euo pipefail
           npm run dialogue:catalogue:check
+          node --experimental-vm-modules ../client/scripts/audit-dialogue-media.mjs
           node --check app.js
           node --check server.js
           find controllers middleware models routes services utils scripts -type f -name '*.js' -print0 | xargs -0 -r -n 1 node --check

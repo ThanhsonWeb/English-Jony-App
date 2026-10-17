@@ -26,8 +26,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Trong lúc đi dạo, Ben và Emma nói về công việc của mình. Emma là giáo viên, còn Ben làm việc tại một công ty.",
-    "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
-    "thumbnail": "/dialogue/walk-in-the-park/thumbnails/talking-about-work.png"
+    "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
+    "thumbnail": "/dialogue/walk-in-the-park/thumbnails/talking-about-work.webp"
   },
   "dialogue": [
     {
@@ -36,7 +36,7 @@
       "text": "It is nice to walk here after work.",
       "translation": "Đi dạo ở đây sau giờ làm thật dễ chịu.",
       "practicePriority": "simple",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-01.mp3"
     },
     {
@@ -45,7 +45,7 @@
       "text": "Where do you work, Emma?",
       "translation": "Emma, bạn làm việc ở đâu?",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-02.mp3"
     },
     {
@@ -54,7 +54,7 @@
       "text": "I work at a school close to home.",
       "translation": "Mình làm việc ở một trường học gần nhà.",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-01.mp3"
     },
     {
@@ -63,7 +63,7 @@
       "text": "Are you a teacher there?",
       "translation": "Bạn là giáo viên ở đó à?",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-03.mp3"
     },
     {
@@ -72,7 +72,7 @@
       "text": "Yes, I am. I teach English to children.",
       "translation": "Đúng vậy. Mình dạy tiếng Anh cho trẻ em.",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-02.mp3"
     },
     {
@@ -81,7 +81,7 @@
       "text": "Where do you work, Ben?",
       "translation": "Còn bạn làm việc ở đâu, Ben?",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-03.mp3"
     },
     {
@@ -90,7 +90,7 @@
       "text": "I work at a company in the city.",
       "translation": "Mình làm việc ở một công ty trong thành phố.",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-04.mp3"
     },
     {
@@ -99,7 +99,7 @@
       "text": "I use a computer every day.",
       "translation": "Mình dùng máy tính mỗi ngày.",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-05.mp3"
     },
     {
@@ -108,7 +108,7 @@
       "text": "Do you like your job?",
       "translation": "Bạn có thích công việc của mình không?",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-04.mp3"
     },
     {
@@ -117,7 +117,7 @@
       "text": "Yes, I do. My coworkers are very nice.",
       "translation": "Có. Đồng nghiệp của mình rất tốt.",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-06.mp3"
     },
     {
@@ -126,7 +126,7 @@
       "text": "Do you like your job too?",
       "translation": "Bạn cũng thích công việc của mình chứ?",
       "practicePriority": "important",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-07.mp3"
     },
     {
@@ -135,7 +135,7 @@
       "text": "Yes, I do. I like helping my students.",
       "translation": "Có. Mình thích giúp đỡ học sinh của mình.",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-05.mp3"
     }
   ],
@@ -213,7 +213,7 @@
       ],
       "speaker": "Ben",
       "transcript": "It is nice to walk here after work.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-01.mp3"
     },
     {
@@ -239,7 +239,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Where do you work, Emma?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-02.mp3"
     },
     {
@@ -265,7 +265,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Where do you work, Emma?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-02.mp3"
     },
     {
@@ -291,7 +291,7 @@
       ],
       "speaker": "Emma",
       "transcript": "I work at a school close to home.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-01.mp3"
     },
     {
@@ -317,7 +317,7 @@
       ],
       "speaker": "Emma",
       "transcript": "I work at a school close to home.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-01.mp3"
     },
     {
@@ -367,7 +367,7 @@
       "answer": "Ở một trường học.",
       "speaker": "Emma",
       "transcript": "I work at a school close to home.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-01.mp3"
     },
     {
@@ -393,7 +393,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Are you a teacher there?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-03.mp3"
     },
     {
@@ -419,7 +419,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Are you a teacher there?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-03.mp3"
     },
     {
@@ -470,7 +470,7 @@
       "answer": "Để hỏi xem Emma có phải là giáo viên không.",
       "speaker": "Ben",
       "transcript": "Are you a teacher there?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-03.mp3"
     },
     {
@@ -496,7 +496,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Yes, I am. I teach English to children.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-02.mp3"
     },
     {
@@ -522,7 +522,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Yes, I am. I teach English to children.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-02.mp3"
     },
     {
@@ -548,7 +548,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Yes, I am. I teach English to children.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-02.mp3"
     },
     {
@@ -574,7 +574,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Where do you work, Ben?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-03.mp3"
     },
     {
@@ -600,7 +600,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Where do you work, Ben?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-03.mp3"
     },
     {
@@ -626,7 +626,7 @@
       ],
       "speaker": "Ben",
       "transcript": "I work at a company in the city.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-04.mp3"
     },
     {
@@ -652,7 +652,7 @@
       ],
       "speaker": "Ben",
       "transcript": "I work at a company in the city.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-04.mp3"
     },
     {
@@ -702,7 +702,7 @@
       "answer": "Ở một công ty.",
       "speaker": "Ben",
       "transcript": "I work at a company in the city.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-04.mp3"
     },
     {
@@ -728,7 +728,7 @@
       ],
       "speaker": "Ben",
       "transcript": "I use a computer every day.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-05.mp3"
     },
     {
@@ -754,7 +754,7 @@
       ],
       "speaker": "Ben",
       "transcript": "I use a computer every day.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-05.mp3"
     },
     {
@@ -780,7 +780,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Do you like your job?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-04.mp3"
     },
     {
@@ -806,7 +806,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Do you like your job?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-04.mp3"
     },
     {
@@ -832,7 +832,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Yes, I do. My coworkers are very nice.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-06.mp3"
     },
     {
@@ -858,7 +858,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Yes, I do. My coworkers are very nice.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-06.mp3"
     },
     {
@@ -908,7 +908,7 @@
       "answer": "Họ rất tốt.",
       "speaker": "Ben",
       "transcript": "Yes, I do. My coworkers are very nice.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-06.mp3"
     },
     {
@@ -934,7 +934,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Do you like your job too?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-07.mp3"
     },
     {
@@ -960,7 +960,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Do you like your job too?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-07.mp3"
     },
     {
@@ -1011,7 +1011,7 @@
       "answer": "too",
       "speaker": "Ben",
       "transcript": "Do you like your job too?",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/ben-07.mp3"
     },
     {
@@ -1037,7 +1037,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Yes, I do. I like helping my students.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-05.mp3"
     },
     {
@@ -1063,7 +1063,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Yes, I do. I like helping my students.",
-      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.png",
+      "scene": "/dialogue/walk-in-the-park/talking-about-work/bg.webp",
       "audioUrl": "/dialogue/walk-in-the-park/talking-about-work/audio/emma-05.mp3"
     },
     {

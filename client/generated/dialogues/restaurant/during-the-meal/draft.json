@@ -7,8 +7,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Ben và Emma đang dùng bữa. Họ nói về món ăn và hỏi Alex một vài điều đơn giản.",
-    "scene": "/dialogue/restaurant/during-the-meal/bg.png",
-    "thumbnail": "/dialogue/restaurant/thumbnails/during-the-meal.png"
+    "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
+    "thumbnail": "/dialogue/restaurant/thumbnails/during-the-meal.webp"
   },
   "dialogue": [
     {
@@ -17,7 +17,7 @@
       "text": "The tomato soup is really good. It is warm, but not spicy.",
       "translation": "Món súp cà chua rất ngon. Nó ấm nhưng không cay.",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-01.mp3"
     },
     {
@@ -26,7 +26,7 @@
       "text": "I like the bread too.",
       "translation": "Mình cũng thích bánh mì.",
       "practicePriority": "simple",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-02.mp3"
     },
     {
@@ -35,7 +35,7 @@
       "text": "My chicken pasta is good too. The chicken is very soft.",
       "translation": "Món mì Ý gà của mình cũng ngon. Thịt gà rất mềm.",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-01.mp3"
     },
     {
@@ -44,7 +44,7 @@
       "text": "I think this is my favorite dish here.",
       "translation": "Mình nghĩ đây là món mình thích nhất ở đây.",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-02.mp3"
     },
     {
@@ -53,7 +53,7 @@
       "text": "The soup is lighter, so it is perfect for me.",
       "translation": "Món súp nhẹ hơn nên rất hợp với mình.",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-03.mp3"
     },
     {
@@ -62,7 +62,7 @@
       "text": "How is everything? Is the food okay?",
       "translation": "Mọi thứ thế nào? Đồ ăn ổn chứ?",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-01.mp3"
     },
     {
@@ -71,7 +71,7 @@
       "text": "Everything is great, thank you.",
       "translation": "Mọi thứ đều rất tuyệt, cảm ơn bạn.",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-03.mp3"
     },
     {
@@ -80,7 +80,7 @@
       "text": "Can I have some more water, please?",
       "translation": "Tôi có thể xin thêm một ít nước được không?",
       "practicePriority": "veryImportant",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-04.mp3"
     },
     {
@@ -89,7 +89,7 @@
       "text": "Of course. Do you need anything else?",
       "translation": "Tất nhiên. Bạn có cần thêm gì nữa không?",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-02.mp3"
     },
     {
@@ -98,7 +98,7 @@
       "text": "No, thank you. That is all.",
       "translation": "Không, cảm ơn bạn. Chỉ vậy thôi.",
       "practicePriority": "important",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-05.mp3"
     },
     {
@@ -107,7 +107,7 @@
       "text": "Great. Enjoy your meal.",
       "translation": "Tuyệt. Chúc hai bạn ngon miệng.",
       "practicePriority": "simple",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-03.mp3"
     }
   ],
@@ -181,7 +181,7 @@
       ],
       "speaker": "Emma",
       "transcript": "The tomato soup is really good. It is warm, but not spicy.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-01.mp3"
     },
     {
@@ -197,7 +197,7 @@
       ],
       "speaker": "Emma",
       "transcript": "The tomato soup is really good. It is warm, but not spicy.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-01.mp3"
     },
     {
@@ -215,7 +215,7 @@
       "answer": "Cô ấy thích món súp.",
       "speaker": "Emma",
       "transcript": "The tomato soup is really good. It is warm, but not spicy.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-01.mp3"
     },
     {
@@ -231,7 +231,7 @@
       ],
       "speaker": "Emma",
       "transcript": "I like the bread too.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-02.mp3"
     },
     {
@@ -247,7 +247,7 @@
       ],
       "speaker": "Ben",
       "transcript": "My chicken pasta is good too. The chicken is very soft.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-01.mp3"
     },
     {
@@ -263,7 +263,7 @@
       ],
       "speaker": "Ben",
       "transcript": "My chicken pasta is good too. The chicken is very soft.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-01.mp3"
     },
     {
@@ -279,7 +279,7 @@
       ],
       "speaker": "Ben",
       "transcript": "I think this is my favorite dish here.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-02.mp3"
     },
     {
@@ -295,7 +295,7 @@
       ],
       "speaker": "Ben",
       "transcript": "I think this is my favorite dish here.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-02.mp3"
     },
     {
@@ -313,7 +313,7 @@
       "answer": "Đây có thể là món anh ấy thích nhất ở nhà hàng.",
       "speaker": "Ben",
       "transcript": "I think this is my favorite dish here.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-02.mp3"
     },
     {
@@ -329,7 +329,7 @@
       ],
       "speaker": "Emma",
       "transcript": "The soup is lighter, so it is perfect for me.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-03.mp3"
     },
     {
@@ -345,7 +345,7 @@
       ],
       "speaker": "Emma",
       "transcript": "The soup is lighter, so it is perfect for me.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-03.mp3"
     },
     {
@@ -361,7 +361,7 @@
       ],
       "speaker": "Alex",
       "transcript": "How is everything? Is the food okay?",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-01.mp3"
     },
     {
@@ -377,7 +377,7 @@
       ],
       "speaker": "Alex",
       "transcript": "How is everything? Is the food okay?",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-01.mp3"
     },
     {
@@ -396,7 +396,7 @@
       "answer": "Hỏi khách thấy bữa ăn thế nào.",
       "speaker": "Alex",
       "transcript": "How is everything? Is the food okay?",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-01.mp3"
     },
     {
@@ -412,7 +412,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Everything is great, thank you.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-03.mp3"
     },
     {
@@ -428,7 +428,7 @@
       ],
       "speaker": "Ben",
       "transcript": "Everything is great, thank you.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/ben-03.mp3"
     },
     {
@@ -444,7 +444,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Can I have some more water, please?",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-04.mp3"
     },
     {
@@ -460,7 +460,7 @@
       ],
       "speaker": "Emma",
       "transcript": "Can I have some more water, please?",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-04.mp3"
     },
     {
@@ -479,7 +479,7 @@
       "answer": "Xin thêm nước một cách lịch sự.",
       "speaker": "Emma",
       "transcript": "Can I have some more water, please?",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-04.mp3"
     },
     {
@@ -495,7 +495,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Of course. Do you need anything else?",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-02.mp3"
     },
     {
@@ -511,7 +511,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Of course. Do you need anything else?",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-02.mp3"
     },
     {
@@ -527,7 +527,7 @@
       ],
       "speaker": "Emma",
       "transcript": "No, thank you. That is all.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-05.mp3"
     },
     {
@@ -543,7 +543,7 @@
       ],
       "speaker": "Emma",
       "transcript": "No, thank you. That is all.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-05.mp3"
     },
     {
@@ -561,7 +561,7 @@
       "answer": "Không, cô ấy không cần thêm gì.",
       "speaker": "Emma",
       "transcript": "No, thank you. That is all.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/emma-05.mp3"
     },
     {
@@ -577,7 +577,7 @@
       ],
       "speaker": "Alex",
       "transcript": "Great. Enjoy your meal.",
-      "scene": "/dialogue/restaurant/during-the-meal/bg.png",
+      "scene": "/dialogue/restaurant/during-the-meal/bg.webp",
       "audioUrl": "/dialogue/restaurant/during-the-meal/audio/alex-03.mp3"
     },
     {

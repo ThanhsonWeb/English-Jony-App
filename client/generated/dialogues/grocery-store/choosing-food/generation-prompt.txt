@@ -30,7 +30,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Okay, we have our list. Where should we start?",
     "translation": "Được rồi, chúng ta có danh sách rồi. Bắt đầu từ đâu nhỉ?",
     "practicePriority": "simple",
-    "scene": "/dialogue/grocery-store/finding-items/bg.png",
+    "scene": "/dialogue/grocery-store/finding-items/bg.webp",
     "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-01.mp3"
   },
   {
@@ -39,7 +39,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Let's start with the milk.",
     "translation": "Bắt đầu với sữa nhé.",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/finding-items/bg.png",
+    "scene": "/dialogue/grocery-store/finding-items/bg.webp",
     "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-01.mp3"
   },
   {
@@ -48,7 +48,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Good idea. Do you know where the milk is?",
     "translation": "Ý hay đấy. Bạn có biết sữa ở đâu không?",
     "practicePriority": "veryImportant",
-    "scene": "/dialogue/grocery-store/finding-items/bg.png",
+    "scene": "/dialogue/grocery-store/finding-items/bg.webp",
     "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-02.mp3"
   },
   {
@@ -57,7 +57,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Yes. It's in the dairy section, near the eggs.",
     "translation": "Có. Nó ở khu đồ sữa, gần trứng.",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/finding-items/bg.png",
+    "scene": "/dialogue/grocery-store/finding-items/bg.webp",
     "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-02.mp3"
   },
   {
@@ -66,7 +66,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Great. We need eggs too.",
     "translation": "Tuyệt. Chúng ta cũng cần trứng.",
     "practicePriority": "simple",
-    "scene": "/dialogue/grocery-store/finding-items/bg.png",
+    "scene": "/dialogue/grocery-store/finding-items/bg.webp",
     "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-03.mp3"
   },
   {
@@ -75,7 +75,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Right. Then we can look for the fruit.",
     "translation": "Đúng rồi. Sau đó chúng ta có thể tìm trái cây.",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/finding-items/bg.png",
+    "scene": "/dialogue/grocery-store/finding-items/bg.webp",
     "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-03.mp3"
   },
   {
@@ -84,7 +84,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I can see the bananas and apples over there.",
     "translation": "Mình có thể thấy chuối và táo ở đằng kia.",
     "practicePriority": "simple",
-    "scene": "/dialogue/grocery-store/finding-items/bg.png",
+    "scene": "/dialogue/grocery-store/finding-items/bg.webp",
     "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-04.mp3"
   },
   {
@@ -93,7 +93,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Perfect. But where is the bread?",
     "translation": "Tuyệt. Nhưng bánh mì ở đâu nhỉ?",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/finding-items/bg.png",
+    "scene": "/dialogue/grocery-store/finding-items/bg.webp",
     "audioUrl": "/dialogue/grocery-store/finding-items/audio/emma-04.mp3"
   },
   {
@@ -102,7 +102,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "I don't know. Let's ask someone.",
     "translation": "Mình không biết. Hỏi ai đó nhé.",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/finding-items/bg.png",
+    "scene": "/dialogue/grocery-store/finding-items/bg.webp",
     "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-05.mp3"
   },
   {
@@ -111,7 +111,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Excuse me. Where can we find the bread?",
     "translation": "Xin lỗi. Chúng tôi có thể tìm bánh mì ở đâu?",
     "practicePriority": "veryImportant",
-    "scene": "/dialogue/grocery-store/finding-items/bg.png",
+    "scene": "/dialogue/grocery-store/finding-items/bg.webp",
     "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-06.mp3"
   },
   {
@@ -120,7 +120,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "It's in aisle four, next to the cakes.",
     "translation": "Nó ở dãy số 4, bên cạnh bánh ngọt.",
     "practicePriority": "important",
-    "scene": "/dialogue/grocery-store/finding-items/bg.png",
+    "scene": "/dialogue/grocery-store/finding-items/bg.webp",
     "audioUrl": "/dialogue/grocery-store/finding-items/audio/lee-01.mp3"
   },
   {
@@ -129,7 +129,7 @@ The JSON below is the immediately previous dialogue in this course. Read it befo
     "text": "Thanks! Then we just need the orange juice.",
     "translation": "Cảm ơn! Sau đó chúng ta chỉ còn cần nước cam thôi.",
     "practicePriority": "simple",
-    "scene": "/dialogue/grocery-store/finding-items/bg.png",
+    "scene": "/dialogue/grocery-store/finding-items/bg.webp",
     "audioUrl": "/dialogue/grocery-store/finding-items/audio/ben-07.mp3"
   }
 ]
@@ -386,7 +386,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/grocery-store/choosing-food/bg.png"
+"/dialogue/grocery-store/choosing-food/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -396,10 +396,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/grocery-store/choosing-food/bg.png"
+"/dialogue/grocery-store/choosing-food/bg.webp"
 
 Thumbnail:
-"/dialogue/grocery-store/thumbnails/choosing-food.png"
+"/dialogue/grocery-store/thumbnails/choosing-food.webp"
 
 Audio format:
 "/dialogue/grocery-store/choosing-food/audio/{speaker}-{number}.mp3"
@@ -425,8 +425,8 @@ Use this structure:
 		"title": "Chọn đồ ăn",
 		"level": "a1",
 		"situation": "Ben và Emma đang chọn thực phẩm. Họ nói về các lựa chọn và quyết định nên mua món nào.",
-		"scene": "/dialogue/grocery-store/choosing-food/bg.png",
-		"thumbnail": "/dialogue/grocery-store/thumbnails/choosing-food.png"
+		"scene": "/dialogue/grocery-store/choosing-food/bg.webp",
+		"thumbnail": "/dialogue/grocery-store/thumbnails/choosing-food.webp"
 	},
 
 	"dialogue": [

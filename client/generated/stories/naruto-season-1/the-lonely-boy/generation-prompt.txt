@@ -327,7 +327,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/stories/naruto-season-1/the-lonely-boy/bg.png"
+"/stories/naruto-season-1/the-lonely-boy/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -337,10 +337,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/stories/naruto-season-1/the-lonely-boy/bg.png"
+"/stories/naruto-season-1/the-lonely-boy/bg.webp"
 
 Thumbnail:
-"/stories/naruto-season-1/thumbnails/the-lonely-boy.png"
+"/stories/naruto-season-1/thumbnails/the-lonely-boy.webp"
 
 Audio format:
 "/stories/naruto-season-1/the-lonely-boy/audio/{speaker}-{number}.mp3"
@@ -377,8 +377,8 @@ Use this structure:
 		"a1ContentRulesVersion": 2,
 		"teachesContractions": [],
 		"situation": "Naruto lives alone in the Hidden Leaf Village. He wants people to notice him and dreams of becoming Hokage.",
-		"scene": "/stories/naruto-season-1/the-lonely-boy/bg.png",
-		"thumbnail": "/stories/naruto-season-1/thumbnails/the-lonely-boy.png"
+		"scene": "/stories/naruto-season-1/the-lonely-boy/bg.webp",
+		"thumbnail": "/stories/naruto-season-1/thumbnails/the-lonely-boy.webp"
 	},
 
 	"dialogue": [

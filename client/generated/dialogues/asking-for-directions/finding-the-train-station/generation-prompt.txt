@@ -74,8 +74,8 @@ LANGUAGE DIFFICULTY — A1
 The CEFR level controls language difficulty only. It must not change the dialogue-line or task-count ranges above.
 
 ASSET PATHS
-Scene: "/dialogue/asking-for-directions/finding-the-train-station/bg.png"
-Thumbnail: "/dialogue/asking-for-directions/thumbnails/finding-the-train-station.png"
+Scene: "/dialogue/asking-for-directions/finding-the-train-station/bg.webp"
+Thumbnail: "/dialogue/asking-for-directions/thumbnails/finding-the-train-station.webp"
 Audio format: "/dialogue/asking-for-directions/finding-the-train-station/audio/{speaker}-{number}.mp3"
 
 RETURN JSON ONLY.
@@ -89,8 +89,8 @@ Use this structure:
     "title": "Tìm ga tàu",
     "level": "a1",
     "situation": "Ben hỏi Emma cách đi đến ga tàu.",
-    "scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
-    "thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-the-train-station.png"
+    "scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
+    "thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-the-train-station.webp"
   },
   "dialogue": [
     {
@@ -98,7 +98,7 @@ Use this structure:
       "speaker": "",
       "text": "",
       "translation": "",
-      "scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+      "scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
       "audioUrl": ""
     }
   ],
@@ -119,7 +119,7 @@ Use this structure:
       "answer": "",
       "speaker": "",
       "transcript": "",
-      "scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+      "scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
       "audioUrl": ""
     },
     {
@@ -131,7 +131,7 @@ Use this structure:
       "answer": "",
       "speaker": "",
       "transcript": "",
-      "scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+      "scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
       "audioUrl": ""
     }
   ],

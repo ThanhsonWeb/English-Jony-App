@@ -249,7 +249,7 @@ SCENE RULES
 
 All dialogue lines use this shared scene:
 
-"/dialogue/coffee-shop/asking-about-the-wifi/bg.png"
+"/dialogue/coffee-shop/asking-about-the-wifi/bg.webp"
 
 Every linked task must reuse the same scene as its dialogue line.
 
@@ -259,10 +259,10 @@ ASSET PATHS
 ==================================================
 
 Default/fallback scene:
-"/dialogue/coffee-shop/asking-about-the-wifi/bg.png"
+"/dialogue/coffee-shop/asking-about-the-wifi/bg.webp"
 
 Thumbnail:
-"/dialogue/coffee-shop/thumbnails/asking-about-the-wifi.png"
+"/dialogue/coffee-shop/thumbnails/asking-about-the-wifi.webp"
 
 Audio format:
 "/dialogue/coffee-shop/asking-about-the-wifi/audio/{speaker}-{number}.mp3"
@@ -286,8 +286,8 @@ Use this structure:
 		"title": "Hỏi mật khẩu Wi-Fi",
 		"level": "a1",
 		"situation": "Ben muốn sử dụng Wi-Fi của quán và hỏi Emma cách kết nối.",
-		"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.png",
-		"thumbnail": "/dialogue/coffee-shop/thumbnails/asking-about-the-wifi.png"
+		"scene": "/dialogue/coffee-shop/asking-about-the-wifi/bg.webp",
+		"thumbnail": "/dialogue/coffee-shop/thumbnails/asking-about-the-wifi.webp"
 	},
 
 	"dialogue": [

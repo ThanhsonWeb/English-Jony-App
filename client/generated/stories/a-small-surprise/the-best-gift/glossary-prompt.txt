@@ -64,8 +64,8 @@ Final source (all lines and useful expressions):
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "On his birthday, Dad discovers the broken cake and Noah's surprise. Instead of feeling disappointed, Dad hugs Noah and tells him that love and effort are more important than expensive gifts.",
-    "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
-    "thumbnail": "/stories/a-small-surprise/thumbnails/the-best-gift.png"
+    "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
+    "thumbnail": "/stories/a-small-surprise/thumbnails/the-best-gift.webp"
   },
   "dialogue": [
     {
@@ -74,7 +74,7 @@ Final source (all lines and useful expressions):
       "text": "Happy birthday! We have a surprise for you.",
       "translation": "Chúc mừng sinh nhật anh! Mẹ con em có một điều bất ngờ dành cho anh.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/mom-01.mp3"
     },
     {
@@ -83,7 +83,7 @@ Final source (all lines and useful expressions):
       "text": "Thank you! Is that chocolate cake?",
       "translation": "Cảm ơn hai mẹ con! Đó là bánh sô-cô-la à?",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-01.mp3"
     },
     {
@@ -92,7 +92,7 @@ Final source (all lines and useful expressions):
       "text": "Yes, Dad. Mom and I made it.",
       "translation": "Vâng ạ, bố. Mẹ và con đã cùng làm đấy.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-01.mp3"
     },
     {
@@ -101,7 +101,7 @@ Final source (all lines and useful expressions):
       "text": "It looks wonderful!",
       "translation": "Trông tuyệt quá!",
       "practicePriority": "simple",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-02.mp3"
     },
     {
@@ -110,7 +110,7 @@ Final source (all lines and useful expressions):
       "text": "But I need to tell you something.",
       "translation": "Nhưng con có chuyện muốn nói với bố.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-02.mp3"
     },
     {
@@ -119,7 +119,7 @@ Final source (all lines and useful expressions):
       "text": "What is it, Noah?",
       "translation": "Chuyện gì vậy, Noah?",
       "practicePriority": "simple",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-03.mp3"
     },
     {
@@ -128,7 +128,7 @@ Final source (all lines and useful expressions):
       "text": "I dropped the first cake yesterday.",
       "translation": "Hôm qua con đã làm rơi chiếc bánh đầu tiên.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-03.mp3"
     },
     {
@@ -137,7 +137,7 @@ Final source (all lines and useful expressions):
       "text": "It broke. I felt so sad.",
       "translation": "Chiếc bánh bị hỏng. Con đã buồn lắm.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-04.mp3"
     },
     {
@@ -146,7 +146,7 @@ Final source (all lines and useful expressions):
       "text": "Oh, Noah. Are you okay?",
       "translation": "Ôi, Noah. Con có sao không?",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-04.mp3"
     },
     {
@@ -155,7 +155,7 @@ Final source (all lines and useful expressions):
       "text": "Yes, but I'm sorry. I wanted a perfect cake for you.",
       "translation": "Dạ con không sao, nhưng con xin lỗi. Con đã muốn làm một chiếc bánh thật đẹp cho bố.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-05.mp3"
     },
     {
@@ -164,7 +164,7 @@ Final source (all lines and useful expressions):
       "text": "It was an accident. We made this one together.",
       "translation": "Chỉ là vô tình thôi. Mẹ con em đã cùng làm chiếc bánh này.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/mom-02.mp3"
     },
     {
@@ -173,7 +173,7 @@ Final source (all lines and useful expressions):
       "text": "Thank you both. I know you worked hard.",
       "translation": "Cảm ơn hai mẹ con. Bố biết hai mẹ con đã rất cố gắng.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-05.mp3"
     },
     {
@@ -182,7 +182,7 @@ Final source (all lines and useful expressions):
       "text": "But it's smaller than the first cake.",
       "translation": "Nhưng nó nhỏ hơn chiếc bánh đầu tiên.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-06.mp3"
     },
     {
@@ -191,7 +191,7 @@ Final source (all lines and useful expressions):
       "text": "That is okay. I do not need a big cake.",
       "translation": "Không sao đâu. Bố không cần một chiếc bánh lớn.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-06.mp3"
     },
     {
@@ -200,7 +200,7 @@ Final source (all lines and useful expressions):
       "text": "I do not need expensive gifts, either.",
       "translation": "Bố cũng không cần những món quà đắt tiền.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-07.mp3"
     },
     {
@@ -209,7 +209,7 @@ Final source (all lines and useful expressions):
       "text": "Your love is the best gift for me.",
       "translation": "Tình yêu thương của con là món quà tuyệt vời nhất đối với bố.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-08.mp3"
     },
     {
@@ -218,7 +218,7 @@ Final source (all lines and useful expressions):
       "text": "Really? So you are not sad?",
       "translation": "Thật ạ? Vậy bố không buồn chứ ạ?",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-07.mp3"
     },
     {
@@ -227,7 +227,7 @@ Final source (all lines and useful expressions):
       "text": "No, I'm happy! Come here for a hug, Noah.",
       "translation": "Không, bố vui lắm! Lại đây để bố ôm nào, Noah.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-09.mp3"
     },
     {
@@ -236,7 +236,7 @@ Final source (all lines and useful expressions):
       "text": "Noah made you a birthday card, too!",
       "translation": "Noah còn làm thiệp sinh nhật cho anh nữa!",
       "practicePriority": "simple",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/mom-03.mp3"
     },
     {
@@ -245,7 +245,7 @@ Final source (all lines and useful expressions):
       "text": "Happy birthday, Dad! I love you.",
       "translation": "Chúc mừng sinh nhật bố! Con yêu bố.",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/noah-08.mp3"
     },
     {
@@ -254,7 +254,7 @@ Final source (all lines and useful expressions):
       "text": "I love you both. This is the best birthday!",
       "translation": "Bố yêu cả hai mẹ con. Đây là sinh nhật tuyệt vời nhất!",
       "practicePriority": "important",
-      "scene": "/stories/a-small-surprise/the-best-gift/bg.png",
+      "scene": "/stories/a-small-surprise/the-best-gift/bg.webp",
       "audioUrl": "/stories/a-small-surprise/the-best-gift/audio/dad-10.mp3"
     }
   ],

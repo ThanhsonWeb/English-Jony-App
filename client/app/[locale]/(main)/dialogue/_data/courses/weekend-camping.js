@@ -6,9 +6,9 @@ import talkingByTheCampfire from "../dialogues/weekend-camping/talking-by-the-ca
 
 const weekendCampingCourse = {
 		id: "weekend-camping",
-		heroImage: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+		heroImage: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 		title: "Cuối tuần cắm trại",
-		image: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+		image: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 		description:
 			"Theo chân Leo và Mia trong chuyến cắm trại cuối tuần và học tiếng Anh qua những tình huống thực tế.",
 		level: "beginner",

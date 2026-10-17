@@ -27,8 +27,8 @@
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Team Seven meets Kakashi, their new teacher. He asks them to introduce themselves and announces a difficult test.",
-    "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
-    "thumbnail": "/stories/naruto-season-1/thumbnails/meet-kakashi.png"
+    "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
+    "thumbnail": "/stories/naruto-season-1/thumbnails/meet-kakashi.webp"
   },
   "dialogue": [
     {
@@ -37,7 +37,7 @@
       "text": "Our teacher is late.",
       "translation": "Thầy của chúng ta đến muộn rồi.",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-01.mp3"
     },
     {
@@ -46,7 +46,7 @@
       "text": "I want to meet him now!",
       "translation": "Tớ muốn gặp thầy ấy ngay bây giờ!",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-01.mp3"
     },
     {
@@ -55,7 +55,7 @@
       "text": "Hello. I am Kakashi, your new teacher.",
       "translation": "Xin chào. Thầy là Kakashi, giáo viên mới của các em.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-01.mp3"
     },
     {
@@ -64,7 +64,7 @@
       "text": "You are late!",
       "translation": "Thầy đến muộn quá!",
       "practicePriority": "simple",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-02.mp3"
     },
     {
@@ -73,7 +73,7 @@
       "text": "Please tell me your names and your dreams.",
       "translation": "Hãy cho thầy biết tên và ước mơ của các em nhé.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-02.mp3"
     },
     {
@@ -82,7 +82,7 @@
       "text": "My name is Sakura. I want to help my team.",
       "translation": "Em tên là Sakura. Em muốn giúp đỡ đội của mình.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-02.mp3"
     },
     {
@@ -91,7 +91,7 @@
       "text": "I'm Sasuke. I want to be strong.",
       "translation": "Em là Sasuke. Em muốn trở nên mạnh mẽ.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sasuke-01.mp3"
     },
     {
@@ -100,7 +100,7 @@
       "text": "I'm Naruto! I want to be Hokage!",
       "translation": "Em là Naruto! Em muốn trở thành Hokage!",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-03.mp3"
     },
     {
@@ -109,7 +109,7 @@
       "text": "Good. Tomorrow, you will have a hard test.",
       "translation": "Tốt. Ngày mai, các em sẽ có một bài kiểm tra khó.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-03.mp3"
     },
     {
@@ -118,7 +118,7 @@
       "text": "A test? Is it hard?",
       "translation": "Một bài kiểm tra ạ? Nó có khó không thầy?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-03.mp3"
     },
     {
@@ -127,7 +127,7 @@
       "text": "Yes. You must work together.",
       "translation": "Có. Các em phải hợp tác với nhau.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-04.mp3"
     },
     {
@@ -136,7 +136,7 @@
       "text": "Can I do it alone?",
       "translation": "Em có thể tự làm một mình không?",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sasuke-02.mp3"
     },
     {
@@ -145,7 +145,7 @@
       "text": "No. You can't pass alone.",
       "translation": "Không. Em không thể vượt qua nếu chỉ làm một mình.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-05.mp3"
     },
     {
@@ -154,7 +154,7 @@
       "text": "Okay! We can help each other!",
       "translation": "Được thôi! Chúng ta có thể giúp đỡ lẫn nhau!",
       "practicePriority": "veryImportant",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-04.mp3"
     },
     {
@@ -163,7 +163,7 @@
       "text": "Good. Be here tomorrow morning.",
       "translation": "Tốt. Hãy có mặt ở đây vào sáng mai.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-06.mp3"
     },
     {
@@ -172,7 +172,7 @@
       "text": "Okay. We will be here on time.",
       "translation": "Vâng. Chúng em sẽ có mặt đúng giờ.",
       "practicePriority": "important",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-04.mp3"
     }
   ],
@@ -239,7 +239,7 @@
       "answers": ["teacher"],
       "speaker": "Sakura",
       "transcript": "Our teacher is late.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-01.mp3"
     },
     {
@@ -254,7 +254,7 @@
       "answers": ["want"],
       "speaker": "Naruto",
       "transcript": "I want to meet him now!",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-01.mp3"
     },
     {
@@ -269,7 +269,7 @@
       "answers": ["meet"],
       "speaker": "Naruto",
       "transcript": "I want to meet him now!",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-01.mp3"
     },
     {
@@ -284,7 +284,7 @@
       "answers": ["I am"],
       "speaker": "Kakashi",
       "transcript": "Hello. I am Kakashi, your new teacher.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-01.mp3"
     },
     {
@@ -299,7 +299,7 @@
       "answers": ["new teacher"],
       "speaker": "Kakashi",
       "transcript": "Hello. I am Kakashi, your new teacher.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-01.mp3"
     },
     {
@@ -323,7 +323,7 @@
       "answer": "Thầy Kakashi",
       "speaker": "Kakashi",
       "transcript": "Hello. I am Kakashi, your new teacher.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-01.mp3"
     },
     {
@@ -338,7 +338,7 @@
       "answers": ["late"],
       "speaker": "Naruto",
       "transcript": "You are late!",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-02.mp3"
     },
     {
@@ -353,7 +353,7 @@
       "answers": ["tell me"],
       "speaker": "Kakashi",
       "transcript": "Please tell me your names and your dreams.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-02.mp3"
     },
     {
@@ -368,7 +368,7 @@
       "answers": ["dreams"],
       "speaker": "Kakashi",
       "transcript": "Please tell me your names and your dreams.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-02.mp3"
     },
     {
@@ -398,7 +398,7 @@
       "answer": "Để nhờ các em giới thiệu một cách lịch sự.",
       "speaker": "Kakashi",
       "transcript": "Please tell me your names and your dreams.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-02.mp3"
     },
     {
@@ -413,7 +413,7 @@
       "answers": ["name"],
       "speaker": "Sakura",
       "transcript": "My name is Sakura. I want to help my team.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-02.mp3"
     },
     {
@@ -428,7 +428,7 @@
       "answers": ["help"],
       "speaker": "Sakura",
       "transcript": "My name is Sakura. I want to help my team.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-02.mp3"
     },
     {
@@ -443,7 +443,7 @@
       "answers": ["I'm"],
       "speaker": "Sasuke",
       "transcript": "I'm Sasuke. I want to be strong.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sasuke-01.mp3"
     },
     {
@@ -458,7 +458,7 @@
       "answers": ["strong"],
       "speaker": "Sasuke",
       "transcript": "I'm Sasuke. I want to be strong.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sasuke-01.mp3"
     },
     {
@@ -473,7 +473,7 @@
       "answers": ["I'm"],
       "speaker": "Naruto",
       "transcript": "I'm Naruto! I want to be Hokage!",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-03.mp3"
     },
     {
@@ -488,7 +488,7 @@
       "answers": ["want to"],
       "speaker": "Naruto",
       "transcript": "I'm Naruto! I want to be Hokage!",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-03.mp3"
     },
     {
@@ -503,7 +503,7 @@
       "answers": ["Tomorrow"],
       "speaker": "Kakashi",
       "transcript": "Good. Tomorrow, you will have a hard test.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-03.mp3"
     },
     {
@@ -518,7 +518,7 @@
       "answers": ["hard test"],
       "speaker": "Kakashi",
       "transcript": "Good. Tomorrow, you will have a hard test.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-03.mp3"
     },
     {
@@ -548,7 +548,7 @@
       "answer": "Bài kiểm tra sẽ diễn ra sau.",
       "speaker": "Kakashi",
       "transcript": "Good. Tomorrow, you will have a hard test.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-03.mp3"
     },
     {
@@ -563,7 +563,7 @@
       "answers": ["test"],
       "speaker": "Sakura",
       "transcript": "A test? Is it hard?",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-03.mp3"
     },
     {
@@ -578,7 +578,7 @@
       "answers": ["hard"],
       "speaker": "Sakura",
       "transcript": "A test? Is it hard?",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-03.mp3"
     },
     {
@@ -593,7 +593,7 @@
       "answers": ["must"],
       "speaker": "Kakashi",
       "transcript": "Yes. You must work together.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-04.mp3"
     },
     {
@@ -608,7 +608,7 @@
       "answers": ["work together"],
       "speaker": "Kakashi",
       "transcript": "Yes. You must work together.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-04.mp3"
     },
     {
@@ -637,7 +637,7 @@
       "answer": "Để vượt qua bài kiểm tra ngày mai.",
       "speaker": "Kakashi",
       "transcript": "Yes. You must work together.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-04.mp3"
     },
     {
@@ -652,7 +652,7 @@
       "answers": ["Can I"],
       "speaker": "Sasuke",
       "transcript": "Can I do it alone?",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sasuke-02.mp3"
     },
     {
@@ -667,7 +667,7 @@
       "answers": ["alone"],
       "speaker": "Sasuke",
       "transcript": "Can I do it alone?",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sasuke-02.mp3"
     },
     {
@@ -682,7 +682,7 @@
       "answers": ["can't"],
       "speaker": "Kakashi",
       "transcript": "No. You can't pass alone.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-05.mp3"
     },
     {
@@ -697,7 +697,7 @@
       "answers": ["pass"],
       "speaker": "Kakashi",
       "transcript": "No. You can't pass alone.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-05.mp3"
     },
     {
@@ -726,7 +726,7 @@
       "answer": "Không chỉ làm việc một mình nữa.",
       "speaker": "Kakashi",
       "transcript": "No. You can't pass alone.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-05.mp3"
     },
     {
@@ -741,7 +741,7 @@
       "answers": ["help"],
       "speaker": "Naruto",
       "transcript": "Okay! We can help each other!",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-04.mp3"
     },
     {
@@ -756,7 +756,7 @@
       "answers": ["each other"],
       "speaker": "Naruto",
       "transcript": "Okay! We can help each other!",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/naruto-04.mp3"
     },
     {
@@ -771,7 +771,7 @@
       "answers": ["Be here"],
       "speaker": "Kakashi",
       "transcript": "Good. Be here tomorrow morning.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-06.mp3"
     },
     {
@@ -786,7 +786,7 @@
       "answers": ["tomorrow morning"],
       "speaker": "Kakashi",
       "transcript": "Good. Be here tomorrow morning.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/kakashi-06.mp3"
     },
     {
@@ -801,7 +801,7 @@
       "answers": ["be here"],
       "speaker": "Sakura",
       "transcript": "Okay. We will be here on time.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-04.mp3"
     },
     {
@@ -816,7 +816,7 @@
       "answers": ["on time"],
       "speaker": "Sakura",
       "transcript": "Okay. We will be here on time.",
-      "scene": "/stories/naruto-season-1/meet-kakashi/bg.png",
+      "scene": "/stories/naruto-season-1/meet-kakashi/bg.webp",
       "audioUrl": "/stories/naruto-season-1/meet-kakashi/audio/sakura-04.mp3"
     },
     {

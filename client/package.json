@@ -18,6 +18,7 @@
 		"test:wordlist-review-localization": "node --test scripts/tests/integration/wordlist-review-localization.test.mjs",
 		"test:review-question-state": "node --test scripts/tests/unit/review-question-state.test.mjs",
 		"audit:dictionary": "node scripts/audit-local-dictionary.mjs",
+		"audit:media": "node --experimental-vm-modules scripts/audit-dialogue-media.mjs",
 		"generate:dialogue-audio": "node --env-file=.env.local scripts/generate-dialogue-audio.mjs",
 		"dialogue:build": "node --env-file=.env.local scripts/build-dialogue.mjs",
 		"dialogue:thumbnails:prepare": "node scripts/prepare-dialogue-thumbnails.mjs",
@@ -38,6 +39,7 @@
 		"@tailwindcss/postcss": "^4",
 		"eslint": "^9",
 		"eslint-config-next": "16.3.8",
+		"sharp": "0.35.5",
 		"tailwindcss": "^4"
 	}
 }

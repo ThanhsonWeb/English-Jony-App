@@ -64,8 +64,8 @@ Final source (all lines and useful expressions):
     "a1ContentRulesVersion": 2,
     "teachesContractions": [],
     "situation": "Lily is late for school. Mom prepares her breakfast and helps her find her bag, but Lily leaves without saying thank you.",
-    "scene": "/stories/grateful/a-busy-morning/bg.png",
-    "thumbnail": "/stories/grateful/thumbnails/a-busy-morning.png"
+    "scene": "/stories/grateful/a-busy-morning/bg.webp",
+    "thumbnail": "/stories/grateful/thumbnails/a-busy-morning.webp"
   },
   "dialogue": [
     {
@@ -74,7 +74,7 @@ Final source (all lines and useful expressions):
       "text": "Lily, it's seven thirty. Time for school!",
       "translation": "Lily, bảy giờ rưỡi rồi. Đến giờ đi học rồi con!",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "scene": "/stories/grateful/a-busy-morning/bg.webp",
       "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-01.mp3"
     },
     {
@@ -83,7 +83,7 @@ Final source (all lines and useful expressions):
       "text": "Oh no! I'm late for school!",
       "translation": "Ôi không! Con muộn học rồi!",
       "practicePriority": "important",
-      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "scene": "/stories/grateful/a-busy-morning/bg.webp",
       "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-01.mp3"
     },
     {
@@ -92,7 +92,7 @@ Final source (all lines and useful expressions):
       "text": "Your breakfast is ready. I made eggs for you.",
       "translation": "Bữa sáng của con xong rồi. Mẹ đã làm trứng cho con.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "scene": "/stories/grateful/a-busy-morning/bg.webp",
       "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-02.mp3"
     },
     {
@@ -101,7 +101,7 @@ Final source (all lines and useful expressions):
       "text": "I can't eat now. Where is my school bag?",
       "translation": "Giờ con không ăn được. Cặp sách của con đâu rồi mẹ?",
       "practicePriority": "important",
-      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "scene": "/stories/grateful/a-busy-morning/bg.webp",
       "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-02.mp3"
     },
     {
@@ -110,7 +110,7 @@ Final source (all lines and useful expressions):
       "text": "It's next to the front door.",
       "translation": "Nó ở cạnh cửa trước đấy con.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "scene": "/stories/grateful/a-busy-morning/bg.webp",
       "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-03.mp3"
     },
     {
@@ -119,7 +119,7 @@ Final source (all lines and useful expressions):
       "text": "Your shoes are there, too.",
       "translation": "Giày của chị cũng ở đó nữa.",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "scene": "/stories/grateful/a-busy-morning/bg.webp",
       "audioUrl": "/stories/grateful/a-busy-morning/audio/sam-01.mp3"
     },
     {
@@ -128,7 +128,7 @@ Final source (all lines and useful expressions):
       "text": "Okay, I see my bag. Can I take some food?",
       "translation": "Được rồi, chị thấy cặp rồi. Mẹ ơi, con mang theo ít đồ ăn được không?",
       "practicePriority": "important",
-      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "scene": "/stories/grateful/a-busy-morning/bg.webp",
       "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-03.mp3"
     },
     {
@@ -137,7 +137,7 @@ Final source (all lines and useful expressions):
       "text": "Yes, you can take some toast with you.",
       "translation": "Được chứ, con có thể mang theo ít bánh mì nướng.",
       "practicePriority": "important",
-      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "scene": "/stories/grateful/a-busy-morning/bg.webp",
       "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-04.mp3"
     },
     {
@@ -146,7 +146,7 @@ Final source (all lines and useful expressions):
       "text": "Great! I need to go now.",
       "translation": "Tuyệt! Giờ con phải đi đây.",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "scene": "/stories/grateful/a-busy-morning/bg.webp",
       "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-04.mp3"
     },
     {
@@ -155,7 +155,7 @@ Final source (all lines and useful expressions):
       "text": "Have a good day, Lily!",
       "translation": "Chúc con một ngày tốt lành, Lily!",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "scene": "/stories/grateful/a-busy-morning/bg.webp",
       "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-05.mp3"
     },
     {
@@ -164,7 +164,7 @@ Final source (all lines and useful expressions):
       "text": "Bye, Mom! See you later, Sam!",
       "translation": "Tạm biệt mẹ! Gặp lại em sau nhé, Sam!",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "scene": "/stories/grateful/a-busy-morning/bg.webp",
       "audioUrl": "/stories/grateful/a-busy-morning/audio/lily-05.mp3"
     },
     {
@@ -173,7 +173,7 @@ Final source (all lines and useful expressions):
       "text": "Mom, Lily did not say thank you.",
       "translation": "Mẹ ơi, chị Lily không nói cảm ơn mẹ.",
       "practicePriority": "veryImportant",
-      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "scene": "/stories/grateful/a-busy-morning/bg.webp",
       "audioUrl": "/stories/grateful/a-busy-morning/audio/sam-02.mp3"
     },
     {
@@ -182,7 +182,7 @@ Final source (all lines and useful expressions):
       "text": "I know. We can talk to her later.",
       "translation": "Mẹ biết. Chúng ta có thể nói chuyện với chị sau.",
       "practicePriority": "simple",
-      "scene": "/stories/grateful/a-busy-morning/bg.png",
+      "scene": "/stories/grateful/a-busy-morning/bg.webp",
       "audioUrl": "/stories/grateful/a-busy-morning/audio/mom-06.mp3"
     }
   ],

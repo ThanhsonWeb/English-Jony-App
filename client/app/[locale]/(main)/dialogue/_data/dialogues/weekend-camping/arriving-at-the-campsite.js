@@ -9,7 +9,7 @@ const media = weekendCampingMedia["arriving-at-the-campsite"];
 const arrivingAtTheCampsite = {
 	id: "arriving-at-the-campsite",
 	thumbnail:
-		"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail1.png",
+		"/dialogue/weekend-camping/thumbnails/weekend-camping-thumbnail1.webp",
 	title: "Đến khu cắm trại",
 	description:
 		"Leo và Mia đến khu cắm trại và tìm một nơi phù hợp để dựng lều.",
@@ -166,10 +166,10 @@ const arrivingAtTheCampsite = {
 						"“We’re here!” thường được dùng khi bạn vừa đến một địa điểm.",
 					example: "We’re here! = Chúng ta đến rồi!",
 				},
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Leo",
-					image: "/dialogue/weekend-camping/shared/leo.png",
+					image: "/dialogue/weekend-camping/shared/leo.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-01.mp3",
@@ -185,10 +185,10 @@ const arrivingAtTheCampsite = {
 				type: "multipleChoice",
 				title: "Hiểu tình huống",
 				instruction: "Nghe Mia và chọn đáp án đúng.",
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Mia",
-					image: "/dialogue/weekend-camping/shared/mia.png",
+					image: "/dialogue/weekend-camping/shared/mia.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-01.mp3",
@@ -213,10 +213,10 @@ const arrivingAtTheCampsite = {
 						"“Should we...?” được dùng để hỏi ý kiến hoặc đề xuất làm điều gì đó.",
 					example: "Where should we go? = Chúng ta nên đi đâu?",
 				},
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Leo",
-					image: "/dialogue/weekend-camping/shared/leo.png",
+					image: "/dialogue/weekend-camping/shared/leo.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-02.mp3",
@@ -232,10 +232,10 @@ const arrivingAtTheCampsite = {
 				type: "fillBlank",
 				title: "Điền từ còn thiếu",
 				instruction: "Nghe Mia và hoàn thành gợi ý về vị trí.",
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Mia",
-					image: "/dialogue/weekend-camping/shared/mia.png",
+					image: "/dialogue/weekend-camping/shared/mia.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-02.mp3",
@@ -250,10 +250,10 @@ const arrivingAtTheCampsite = {
 				type: "multipleChoice",
 				title: "Hiểu tình huống",
 				instruction: "Nghe Leo và chọn đáp án đúng.",
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Leo",
-					image: "/dialogue/weekend-camping/shared/leo.png",
+					image: "/dialogue/weekend-camping/shared/leo.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-03.mp3",
@@ -277,10 +277,10 @@ const arrivingAtTheCampsite = {
 				type: "fillBlank",
 				title: "Điền từ còn thiếu",
 				instruction: "Nghe Mia và hoàn thành nhận xét về khu cắm trại.",
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Mia",
-					image: "/dialogue/weekend-camping/shared/mia.png",
+					image: "/dialogue/weekend-camping/shared/mia.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-01.mp3",
@@ -301,10 +301,10 @@ const arrivingAtTheCampsite = {
 						"“Let me + động từ” dùng khi bạn muốn tự mình làm một việc.",
 					example: "Let me check. = Để mình kiểm tra.",
 				},
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Leo",
-					image: "/dialogue/weekend-camping/shared/leo.png",
+					image: "/dialogue/weekend-camping/shared/leo.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-04.mp3",
@@ -320,10 +320,10 @@ const arrivingAtTheCampsite = {
 				type: "multipleChoice",
 				title: "Hiểu tình huống",
 				instruction: "Nghe Mia và chọn ý nghĩa phù hợp với tình huống.",
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Mia",
-					image: "/dialogue/weekend-camping/shared/mia.png",
+					image: "/dialogue/weekend-camping/shared/mia.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-04.mp3",
@@ -348,10 +348,10 @@ const arrivingAtTheCampsite = {
 				type: "fillBlank",
 				title: "Điền từ còn thiếu",
 				instruction: "Nghe Leo và điền từ còn thiếu.",
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Leo",
-					image: "/dialogue/weekend-camping/shared/leo.png",
+					image: "/dialogue/weekend-camping/shared/leo.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-05.mp3",
@@ -373,10 +373,10 @@ const arrivingAtTheCampsite = {
 						"“anything else” được dùng khi hỏi xem có cần thêm thứ gì nữa không.",
 					example: "Do you need anything else? = Bạn có cần gì khác nữa không?",
 				},
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Mia",
-					image: "/dialogue/weekend-camping/shared/mia.png",
+					image: "/dialogue/weekend-camping/shared/mia.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-05.mp3",
@@ -407,10 +407,10 @@ const arrivingAtTheCampsite = {
 						"“Let’s + động từ” dùng để đề nghị cùng nhau làm một việc.",
 					example: "Let’s go. = Đi thôi.",
 				},
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Leo",
-					image: "/dialogue/weekend-camping/shared/leo.png",
+					image: "/dialogue/weekend-camping/shared/leo.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-06.mp3",
@@ -432,10 +432,10 @@ const arrivingAtTheCampsite = {
 						"“Sounds good” là cách nói tự nhiên để đồng ý với một đề xuất.",
 					example: "Sounds good! = Nghe ổn đấy!",
 				},
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Mia",
-					image: "/dialogue/weekend-camping/shared/mia.png",
+					image: "/dialogue/weekend-camping/shared/mia.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-06.mp3",
@@ -457,10 +457,10 @@ const arrivingAtTheCampsite = {
 						"Dùng mẫu câu này để hỏi ý kiến về nơi nên thực hiện một việc.",
 					example: "Where should we sit? = Chúng ta nên ngồi ở đâu?",
 				},
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Leo",
-					image: "/dialogue/weekend-camping/shared/leo.png",
+					image: "/dialogue/weekend-camping/shared/leo.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-02.mp3",
@@ -475,10 +475,10 @@ const arrivingAtTheCampsite = {
 				type: "multipleChoice",
 				title: "Hiểu tình huống",
 				instruction: "Nghe Leo và chọn mục đích của câu hỏi.",
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Leo",
-					image: "/dialogue/weekend-camping/shared/leo.png",
+					image: "/dialogue/weekend-camping/shared/leo.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-02.mp3",
@@ -499,10 +499,10 @@ const arrivingAtTheCampsite = {
 				type: "fillBlank",
 				title: "Điền từ còn thiếu",
 				instruction: "Nghe Mia và điền từ chỉ vị trí.",
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Mia",
-					image: "/dialogue/weekend-camping/shared/mia.png",
+					image: "/dialogue/weekend-camping/shared/mia.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-02.mp3",
@@ -518,10 +518,10 @@ const arrivingAtTheCampsite = {
 				type: "fillBlank",
 				title: "Điền từ còn thiếu",
 				instruction: "Nghe Leo và hoàn thành cụm từ chỉ địa điểm.",
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Leo",
-					image: "/dialogue/weekend-camping/shared/leo.png",
+					image: "/dialogue/weekend-camping/shared/leo.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-03.mp3",
@@ -537,10 +537,10 @@ const arrivingAtTheCampsite = {
 				type: "fillBlank",
 				title: "Điền từ còn thiếu",
 				instruction: "Nghe Mia và điền tính từ còn thiếu.",
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Mia",
-					image: "/dialogue/weekend-camping/shared/mia.png",
+					image: "/dialogue/weekend-camping/shared/mia.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-03.mp3",
@@ -555,10 +555,10 @@ const arrivingAtTheCampsite = {
 				type: "multipleChoice",
 				title: "Hiểu tình huống",
 				instruction: "Nghe Mia và chọn lý do phù hợp nhất.",
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Mia",
-					image: "/dialogue/weekend-camping/shared/mia.png",
+					image: "/dialogue/weekend-camping/shared/mia.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-03.mp3",
@@ -579,10 +579,10 @@ const arrivingAtTheCampsite = {
 				type: "fillBlank",
 				title: "Điền từ còn thiếu",
 				instruction: "Nghe Mia và điền vật cô ấy sẽ mang tới.",
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Mia",
-					image: "/dialogue/weekend-camping/shared/mia.png",
+					image: "/dialogue/weekend-camping/shared/mia.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-04.mp3",
@@ -597,10 +597,10 @@ const arrivingAtTheCampsite = {
 				type: "fillBlank",
 				title: "Điền từ còn thiếu",
 				instruction: "Nghe Mia và hoàn thành cụm từ thường dùng.",
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Mia",
-					image: "/dialogue/weekend-camping/shared/mia.png",
+					image: "/dialogue/weekend-camping/shared/mia.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/mia-05.mp3",
@@ -616,10 +616,10 @@ const arrivingAtTheCampsite = {
 				type: "fillBlank",
 				title: "Điền từ còn thiếu",
 				instruction: "Nghe Leo và hoàn thành lời đề nghị.",
-				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.png",
+				scene: "/dialogue/weekend-camping/arriving-at-the-campsite/bg.webp",
 				character: {
 					name: "Leo",
-					image: "/dialogue/weekend-camping/shared/leo.png",
+					image: "/dialogue/weekend-camping/shared/leo.webp",
 				},
 				audioUrl:
 					"/dialogue/weekend-camping/arriving-at-the-campsite/audio/leo-06.mp3",

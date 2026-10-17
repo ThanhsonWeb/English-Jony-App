@@ -71,8 +71,8 @@ LANGUAGE DIFFICULTY — A1
 The CEFR level controls language difficulty only. It must not change the dialogue-line or task-count ranges above.
 
 ASSET PATHS
-Scene: "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png"
-Thumbnail: "/dialogue/asking-for-directions/thumbnails/finding-the-bus-stop.png"
+Scene: "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp"
+Thumbnail: "/dialogue/asking-for-directions/thumbnails/finding-the-bus-stop.webp"
 Audio format: "/dialogue/asking-for-directions/finding-the-bus-stop/audio/{speaker}-{number}.mp3"
 
 RETURN JSON ONLY.
@@ -86,8 +86,8 @@ Use this structure:
     "title": "Tìm trạm xe buýt",
     "level": "a1",
     "situation": "Ben asks Emma how to get to the nearest bus stop.",
-    "scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
-    "thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-the-bus-stop.png"
+    "scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
+    "thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-the-bus-stop.webp"
   },
   "dialogue": [
     {
@@ -95,7 +95,7 @@ Use this structure:
       "speaker": "",
       "text": "",
       "translation": "",
-      "scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+      "scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
       "audioUrl": ""
     }
   ],
@@ -116,7 +116,7 @@ Use this structure:
       "answer": "",
       "speaker": "",
       "transcript": "",
-      "scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+      "scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
       "audioUrl": ""
     },
     {
@@ -128,7 +128,7 @@ Use this structure:
       "answer": "",
       "speaker": "",
       "transcript": "",
-      "scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.png",
+      "scene": "/dialogue/asking-for-directions/finding-the-bus-stop/bg.webp",
       "audioUrl": ""
     }
   ],

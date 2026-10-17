@@ -5,8 +5,8 @@
 		"title": "Tìm ga tàu",
 		"level": "a1",
 		"situation": "Ben gặp Emma tại ga tàu. Hai người đã quen nhau sau những lần hỏi đường trước. Hôm nay, Ben muốn đến Lake Town và hỏi Emma về vé, chuyến tàu, sân ga và thời gian di chuyển.",
-		"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
-		"thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-the-train-station.png"
+		"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
+		"thumbnail": "/dialogue/asking-for-directions/thumbnails/finding-the-train-station.webp"
 	},
 	"dialogue": [
 		{
@@ -14,7 +14,7 @@
 			"speaker": "Ben",
 			"text": "Hi, Emma! I'm going to Lake Town today.",
 			"translation": "Chào Emma! Hôm nay tôi định đến Lake Town.",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-01.mp3"
 		},
 		{
@@ -22,7 +22,7 @@
 			"speaker": "Emma",
 			"text": "Hi, Ben! You can take the number ten train.",
 			"translation": "Chào Ben! Bạn có thể đi tàu số mười.",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-01.mp3"
 		},
 		{
@@ -30,7 +30,7 @@
 			"speaker": "Ben",
 			"text": "Where can I buy a ticket?",
 			"translation": "Tôi có thể mua vé ở đâu?",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-02.mp3"
 		},
 		{
@@ -38,7 +38,7 @@
 			"speaker": "Emma",
 			"text": "You can use the ticket machine here.",
 			"translation": "Bạn có thể dùng máy bán vé ở đây.",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-02.mp3"
 		},
 		{
@@ -46,7 +46,7 @@
 			"speaker": "Ben",
 			"text": "Okay. Which platform do I need?",
 			"translation": "Được rồi. Tôi cần đến sân ga nào?",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-03.mp3"
 		},
 		{
@@ -54,7 +54,7 @@
 			"speaker": "Emma",
 			"text": "Platform three. Your train leaves in ten minutes.",
 			"translation": "Sân ga số ba. Tàu của bạn sẽ khởi hành sau mười phút nữa.",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-03.mp3"
 		},
 		{
@@ -62,7 +62,7 @@
 			"speaker": "Ben",
 			"text": "How long does the trip take?",
 			"translation": "Chuyến đi mất bao lâu?",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-04.mp3"
 		},
 		{
@@ -70,7 +70,7 @@
 			"speaker": "Emma",
 			"text": "It takes twenty minutes.",
 			"translation": "Mất hai mươi phút.",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-04.mp3"
 		},
 		{
@@ -78,7 +78,7 @@
 			"speaker": "Ben",
 			"text": "Do I need to change trains?",
 			"translation": "Tôi có cần đổi tàu không?",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-05.mp3"
 		},
 		{
@@ -86,7 +86,7 @@
 			"speaker": "Emma",
 			"text": "No. This train goes straight to Lake Town.",
 			"translation": "Không. Tàu này đi thẳng đến Lake Town.",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-05.mp3"
 		},
 		{
@@ -94,7 +94,7 @@
 			"speaker": "Ben",
 			"text": "Great! Thanks for your help again.",
 			"translation": "Tuyệt quá! Cảm ơn bạn lại giúp tôi nhé.",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-06.mp3"
 		},
 		{
@@ -102,7 +102,7 @@
 			"speaker": "Emma",
 			"text": "You're welcome. Have a good trip!",
 			"translation": "Không có gì. Chúc bạn có chuyến đi vui vẻ!",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-06.mp3"
 		}
 	],
@@ -166,7 +166,7 @@
 			"translation": "Chào Emma! Hôm nay tôi định đến Lake Town.",
 			"parts": ["Hi, Emma! I'm ", " to Lake Town ", "."],
 			"answers": ["going", "today"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-01.mp3"
 		},
 		{
@@ -178,7 +178,7 @@
 			"translation": "Chào Ben! Bạn có thể đi tàu số mười.",
 			"parts": ["Hi, Ben! You can ", " the number ", " train."],
 			"answers": ["take", "ten"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-01.mp3"
 		},
 		{
@@ -190,7 +190,7 @@
 			"question": "Emma gợi ý Ben đi chuyến tàu nào?",
 			"options": ["Tàu số ba", "Tàu số mười", "Tàu số hai", "Tàu số hai mươi"],
 			"answer": "Tàu số mười",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-01.mp3"
 		},
 		{
@@ -202,7 +202,7 @@
 			"translation": "Tôi có thể mua vé ở đâu?",
 			"parts": ["Where can I ", " a ", "?"],
 			"answers": ["buy", "ticket"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-02.mp3"
 		},
 		{
@@ -214,7 +214,7 @@
 			"translation": "Tôi có thể mua vé ở đâu?",
 			"parts": ["", " ", " I buy a ticket?"],
 			"answers": ["Where", "can"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-02.mp3"
 		},
 		{
@@ -226,7 +226,7 @@
 			"translation": "Bạn có thể dùng máy bán vé ở đây.",
 			"parts": ["You can ", " the ", " here."],
 			"answers": ["use", "ticket machine"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-02.mp3"
 		},
 		{
@@ -243,7 +243,7 @@
 				"Nhờ Emma mua trên mạng"
 			],
 			"answer": "Dùng máy bán vé tại đây",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-02.mp3"
 		},
 		{
@@ -255,7 +255,7 @@
 			"translation": "Được rồi. Tôi cần đến sân ga nào?",
 			"parts": ["Okay. ", " ", " do I need?"],
 			"answers": ["Which", "platform"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-03.mp3"
 		},
 		{
@@ -267,7 +267,7 @@
 			"translation": "Được rồi. Tôi cần đến sân ga nào?",
 			"parts": ["Okay. Which platform ", " I ", "?"],
 			"answers": ["do", "need"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-03.mp3"
 		},
 		{
@@ -279,7 +279,7 @@
 			"translation": "Sân ga số ba. Tàu của bạn sẽ khởi hành sau mười phút nữa.",
 			"parts": ["Platform ", ". Your train ", " in ", " minutes."],
 			"answers": ["three", "leaves", "ten"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-03.mp3"
 		},
 		{
@@ -296,7 +296,7 @@
 				"Sân ga số ba, sau mười phút"
 			],
 			"answer": "Sân ga số ba, sau mười phút",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-03.mp3"
 		},
 		{
@@ -308,7 +308,7 @@
 			"translation": "Chuyến đi mất bao lâu?",
 			"parts": ["", " does the trip ", "?"],
 			"answers": ["How long", "take"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-04.mp3"
 		},
 		{
@@ -325,7 +325,7 @@
 				"Nơi mua vé"
 			],
 			"answer": "Thời gian di chuyển đến Lake Town",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-04.mp3"
 		},
 		{
@@ -337,7 +337,7 @@
 			"question": "Chuyến đi đến Lake Town mất bao lâu?",
 			"options": ["Mười phút", "Ba phút", "Hai mươi phút", "Ba mươi phút"],
 			"answer": "Hai mươi phút",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-04.mp3"
 		},
 		{
@@ -349,7 +349,7 @@
 			"translation": "Tôi có cần đổi tàu không?",
 			"parts": ["Do I need to ", " ", "?"],
 			"answers": ["change", "trains"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-05.mp3"
 		},
 		{
@@ -361,7 +361,7 @@
 			"translation": "Tôi có cần đổi tàu không?",
 			"parts": ["", " I ", " ", " change trains?"],
 			"answers": ["Do", "need", "to"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-05.mp3"
 		},
 		{
@@ -373,7 +373,7 @@
 			"translation": "Không. Tàu này đi thẳng đến Lake Town.",
 			"parts": ["No. This ", " ", " straight to Lake Town."],
 			"answers": ["train", "goes"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-05.mp3"
 		},
 		{
@@ -390,7 +390,7 @@
 				"Không, tàu này đi đến Lake Town"
 			],
 			"answer": "Không, tàu này đi đến Lake Town",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-05.mp3"
 		},
 		{
@@ -402,7 +402,7 @@
 			"translation": "Tuyệt quá! Cảm ơn bạn lại giúp tôi nhé.",
 			"parts": ["Great! Thanks ", " your help ", "."],
 			"answers": ["for", "again"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-06.mp3"
 		},
 		{
@@ -419,7 +419,7 @@
 				"Khi ai đó hỏi giá vé"
 			],
 			"answer": "Khi ai đó chuẩn bị đi du lịch hoặc di chuyển đến nơi khác",
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-06.mp3"
 		},
 		{
@@ -430,7 +430,7 @@
 			"transcript": "Where can I buy a ticket?",
 			"parts": ["", " ", "?"],
 			"answers": ["Where can I buy", "a ticket"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-02.mp3"
 		},
 		{
@@ -441,7 +441,7 @@
 			"transcript": "Okay. Which platform do I need?",
 			"parts": ["Okay. ", " do I ", "?"],
 			"answers": ["Which platform", "need"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-03.mp3"
 		},
 		{
@@ -452,7 +452,7 @@
 			"transcript": "Platform three. Your train leaves in ten minutes.",
 			"parts": ["Platform three. Your train ", " in ", "."],
 			"answers": ["leaves", "ten minutes"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/emma-03.mp3"
 		},
 		{
@@ -463,7 +463,7 @@
 			"transcript": "Do I need to change trains?",
 			"parts": ["Do I need to ", "?"],
 			"answers": ["change trains"],
-			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.png",
+			"scene": "/dialogue/asking-for-directions/finding-the-train-station/bg.webp",
 			"audioUrl": "/dialogue/asking-for-directions/finding-the-train-station/audio/ben-05.mp3"
 		},
 		{

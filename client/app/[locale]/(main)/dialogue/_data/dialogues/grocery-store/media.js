@@ -1,35 +1,35 @@
 export const groceryStoreMedia = {
 	"making-a-shopping-list": {
-		scenes: "/dialogue/grocery-store/making-a-shopping-list/bg.png",
+		scenes: "/dialogue/grocery-store/making-a-shopping-list/bg.webp",
 
 		characters: {
-			Ben: "/dialogue/grocery-store/shared/ben.png",
-			Emma: "/dialogue/grocery-store/shared/emma.png",
+			Ben: "/dialogue/grocery-store/shared/ben.webp",
+			Emma: "/dialogue/grocery-store/shared/emma.webp",
 		},
 	},
 	"finding-items": {
-		scenes: "/dialogue/grocery-store/finding-items/bg.png",
+		scenes: "/dialogue/grocery-store/finding-items/bg.webp",
 
 		characters: {
-			Ben: "/dialogue/grocery-store/finding-items/shared/ben.png",
-			Emma: "/dialogue/grocery-store/finding-items/shared/emma.png",
-			Lee: "/dialogue/grocery-store/finding-items/shared/Lee.png",
+			Ben: "/dialogue/grocery-store/finding-items/shared/ben.webp",
+			Emma: "/dialogue/grocery-store/finding-items/shared/emma.webp",
+			Lee: "/dialogue/grocery-store/finding-items/shared/Lee.webp",
 		},
 	},
 	"choosing-food": {
-		scenes: "/dialogue/grocery-store/choosing-food/bg.png",
+		scenes: "/dialogue/grocery-store/choosing-food/bg.webp",
 
 		characters: {
-			Ben: "/dialogue/grocery-store/shared/ben.png",
-			Emma: "/dialogue/grocery-store/shared/emma.png",
+			Ben: "/dialogue/grocery-store/shared/ben.webp",
+			Emma: "/dialogue/grocery-store/shared/emma.webp",
 		},
 	},
 	"checking-out": {
-		scene: "/dialogue/grocery-store/checking-out/bg.png",
+		scene: "/dialogue/grocery-store/checking-out/bg.webp",
 		characters: {
-			Ben: "/dialogue/grocery-store/shared/ben.png",
-			Emma: "/dialogue/grocery-store/shared/emma.png",
-			Lee: "/dialogue/grocery-store/finding-items/shared/Lee.png",
+			Ben: "/dialogue/grocery-store/shared/ben.webp",
+			Emma: "/dialogue/grocery-store/shared/emma.webp",
+			Lee: "/dialogue/grocery-store/finding-items/shared/Lee.webp",
 		},
 	},
 };

@@ -49,8 +49,8 @@ test("public assets follow each course content type", () => {
 		"/dialogue/coffee-shop/ordering-a-coffee/audio/maria-01.mp3",
 	);
 	assert.equal(
-		getPublicAssetPath("story", "ten-minutes-a-day", "the-old-book", "bg.png"),
-		"/stories/ten-minutes-a-day/the-old-book/bg.png",
+		getPublicAssetPath("story", "ten-minutes-a-day", "the-old-book", "bg.webp"),
+		"/stories/ten-minutes-a-day/the-old-book/bg.webp",
 	);
 });
 
