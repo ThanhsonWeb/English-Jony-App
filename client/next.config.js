@@ -6,6 +6,7 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.js");
 const { securityHeaders } = require("./security-headers.cjs");
 
 const nextConfig = {
+	images: { qualities: [75, 90] },
 	async headers() {
 		return [{ source: "/:path*", locale: false, headers: securityHeaders() }];
 	},

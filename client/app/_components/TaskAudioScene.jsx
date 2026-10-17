@@ -1,6 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import {
+	CHARACTER_IMAGE_SIZES,
+	DIALOGUE_IMAGE_QUALITY,
+	SCENE_IMAGE_SIZES,
+	preloadDialogueImage,
+} from "@/app/_lib/dialogue/preloadImages";
 import { Captions, ChevronDown, Languages, Pause, Play } from "lucide-react";
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
@@ -61,8 +67,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 	useEffect(() => {
 		if (!canBlink) return;
 
-		const image = new window.Image();
-		image.src = eyesClosed;
+		void preloadDialogueImage(eyesClosed, CHARACTER_IMAGE_SIZES);
 	}, [canBlink, eyesClosed]);
 
 	// Random blinking every 2.5–5.5 seconds
@@ -250,8 +255,9 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 							alt={t("sceneAlt", { character: task.character?.name || t("sceneCharacter") })}
 							fill
 							priority
+							quality={DIALOGUE_IMAGE_QUALITY}
 							className="object-cover"
-							sizes="(max-width: 768px) 100vw, 768px"
+							sizes={SCENE_IMAGE_SIZES}
 						/>
 					)}
 
@@ -270,8 +276,9 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 								alt={task.character.name}
 								fill
 								priority
+								quality={DIALOGUE_IMAGE_QUALITY}
 								className="object-contain object-bottom"
-								sizes="(max-width: 640px) 65vw, 400px"
+								sizes={CHARACTER_IMAGE_SIZES}
 							/>
 
 							{/* Closed-eye overlay */}
@@ -281,8 +288,9 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 									alt=""
 									fill
 									aria-hidden="true"
+									quality={DIALOGUE_IMAGE_QUALITY}
 									className="pointer-events-none object-contain object-bottom"
-									sizes="(max-width: 640px) 65vw, 400px"
+									sizes={CHARACTER_IMAGE_SIZES}
 								/>
 							)}
 						</div>

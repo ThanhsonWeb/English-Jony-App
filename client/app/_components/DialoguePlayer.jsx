@@ -16,6 +16,13 @@ import {
 	PLAYBACK_RATES,
 	saveDialoguePlaybackRate,
 } from "@/app/_lib/dialogue/playbackRate.mjs";
+import {
+	CHARACTER_IMAGE_SIZES,
+	DIALOGUE_IMAGE_QUALITY,
+	SCENE_IMAGE_SIZES,
+	preloadDialogueImage,
+	preloadTaskImages,
+} from "@/app/_lib/dialogue/preloadImages";
 
 import {
 	Play,
@@ -29,24 +36,6 @@ import {
 
 const CHARACTER_ENTRY_DELAY = 700;
 const DIALOGUE_LINE_DELAY = 300;
-const preloadedDialogueAssets = new Map();
-
-function preloadDialogueAsset(src) {
-	if (!src) return Promise.resolve();
-	if (preloadedDialogueAssets.has(src)) return preloadedDialogueAssets.get(src);
-
-	const image = new window.Image();
-	const ready = new Promise((resolve) => {
-		image.onload = resolve;
-		image.onerror = resolve;
-		image.src = src;
-		if (typeof image.decode === "function") {
-			void image.decode().then(resolve, resolve);
-		}
-	});
-	preloadedDialogueAssets.set(src, ready);
-	return ready;
-}
 export default function DialoguePlayer({
 	task,
 	lessonId,
@@ -64,6 +53,7 @@ export default function DialoguePlayer({
 	const [isTranscriptOpen, setIsTranscriptOpen] = useState(false);
 	const [hasWatched, setHasWatched] = useState(false);
 	const [hasStarted, setHasStarted] = useState(false);
+	const [charactersReady, setCharactersReady] = useState(false);
 	const [dialogueFinished, setDialogueFinished] = useState(false);
 	const playbackRate = useDialoguePlaybackRate();
 	const [showSpeedMenu, setShowSpeedMenu] = useState(false);
@@ -78,6 +68,7 @@ export default function DialoguePlayer({
 	const dictionaryPopupRef = useRef(null);
 	const preparationRef = useRef(false);
 	const preparationIdRef = useRef(0);
+	const entryFrameRef = useRef(null);
 
 	useEffect(() => () => { preparationIdRef.current += 1; }, []);
 
@@ -115,7 +106,10 @@ export default function DialoguePlayer({
 		}
 
 		nextAssets.forEach((src) => {
-			if (src !== activeScene) void preloadDialogueAsset(src);
+			if (src) void preloadDialogueImage(
+				src,
+				src === nextScene ? SCENE_IMAGE_SIZES : CHARACTER_IMAGE_SIZES,
+			);
 		});
 	}, [
 		activeLine?.speaker,
@@ -170,8 +164,13 @@ export default function DialoguePlayer({
 		return () => {
 			clearStartTimeout();
 			clearLineTimeout();
+			if (entryFrameRef.current) cancelAnimationFrame(entryFrameRef.current);
 		};
 	}, []);
+
+	useEffect(() => {
+		if (hasWatched && nextTask) void preloadTaskImages(nextTask, task.scene);
+	}, [hasWatched, nextTask, task.scene]);
 
 	useEffect(() => {
 		if (!selectedLookup) return;
@@ -298,6 +297,35 @@ export default function DialoguePlayer({
 		}, CHARACTER_ENTRY_DELAY);
 	}
 
+	function enterCharacters(index) {
+		setCharactersReady(true);
+		// Let the hidden images paint before changing their transition classes.
+		entryFrameRef.current = requestAnimationFrame(() => {
+			entryFrameRef.current = requestAnimationFrame(() => {
+				entryFrameRef.current = null;
+				startDialogueAfterCharacters(index);
+			});
+		});
+	}
+
+	function prepareCharacters(index) {
+		if (preparationRef.current) return;
+		preparationRef.current = true;
+		setIsPreparing(true);
+		const preparationId = ++preparationIdRef.current;
+		const neededCharacters = usesSpeakerSpecificScenes
+			? [task.characters?.[task.dialogue[index]?.speaker]]
+			: Object.values(task.characters || {});
+		void Promise.all(neededCharacters.map((src) =>
+			preloadDialogueImage(src, CHARACTER_IMAGE_SIZES),
+		)).then(() => {
+			if (preparationId !== preparationIdRef.current) return;
+			preparationRef.current = false;
+			setIsPreparing(false);
+			enterCharacters(index);
+		});
+	}
+
 	// Play / pause
 	function handlePlayPause() {
 		const audio = audioRef.current;
@@ -330,18 +358,7 @@ export default function DialoguePlayer({
 
 		// First start / restart after characters have left the scene
 		if (!hasStarted || dialogueFinished) {
-			preparationRef.current = true;
-			setIsPreparing(true);
-			const preparationId = ++preparationIdRef.current;
-			const neededCharacters = usesSpeakerSpecificScenes
-				? [task.characters?.[activeLine?.speaker]]
-				: Object.values(task.characters || {});
-			void Promise.all(neededCharacters.map(preloadDialogueAsset)).then(() => {
-				if (preparationId !== preparationIdRef.current) return;
-				preparationRef.current = false;
-				setIsPreparing(false);
-				startDialogueAfterCharacters(currentLine);
-			});
+			prepareCharacters(currentLine);
 			return;
 		}
 
@@ -377,8 +394,12 @@ export default function DialoguePlayer({
 	}
 
 	function handleTranscriptClick(index) {
-		if (!hasStarted || dialogueFinished || startTimeoutRef.current) {
-			startDialogueAfterCharacters(index);
+		if (!hasStarted || dialogueFinished) {
+			prepareCharacters(index);
+			return;
+		}
+		if (startTimeoutRef.current) {
+			enterCharacters(index);
 			return;
 		}
 
@@ -445,12 +466,17 @@ export default function DialoguePlayer({
 					{/* Scene */}
 					<div className="relative h-[360px] bg-cover bg-center md:h-[460px]">
 						{activeScene && (
-							<div
+							<Image
 								key={activeScene}
+								src={activeScene}
+								alt=""
+								fill
+								priority
+								quality={DIALOGUE_IMAGE_QUALITY}
+								sizes={SCENE_IMAGE_SIZES}
 								aria-hidden="true"
-								className="absolute inset-0 bg-cover bg-center"
+								className="object-cover"
 								style={{
-									backgroundImage: `url(${activeScene})`,
 									animation: "dialogue-scene-fade-in 500ms ease-out both",
 								}}
 							/>
@@ -459,7 +485,7 @@ export default function DialoguePlayer({
 						{/* Small overlay */}
 						<div className="absolute inset-0 bg-black/5" />
 
-						{hasStarted && characters.map(([characterName, imageUrl], characterIndex) => {
+						{charactersReady && characters.map(([characterName, imageUrl], characterIndex) => {
 							if (
 								usesSpeakerSpecificScenes &&
 								activeLine?.speaker !== characterName
@@ -484,9 +510,10 @@ export default function DialoguePlayer({
 									key={characterName}
 									src={imageUrl}
 									alt={characterName}
-									unoptimized
 									width={400}
 									height={520}
+									sizes={CHARACTER_IMAGE_SIZES}
+									quality={DIALOGUE_IMAGE_QUALITY}
 									style={
 										usesSpeakerSpecificScenes && hasStarted && !dialogueFinished
 											? {
