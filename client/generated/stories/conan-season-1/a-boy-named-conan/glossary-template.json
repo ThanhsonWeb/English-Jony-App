@@ -1,0 +1,688 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "conan-season-1",
+  "dialogueId": "a-boy-named-conan",
+  "characters": {
+    "Ran": {
+      "meaning": "Ran",
+      "role": ""
+    },
+    "Agasa": {
+      "meaning": "Agasa",
+      "role": ""
+    },
+    "Conan": {
+      "meaning": "Conan",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-dr": {
+      "word": "dr",
+      "meaning": "",
+      "pos": []
+    },
+    "word-agasa": {
+      "word": "agasa",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-shinichi": {
+      "word": "shinichi",
+      "meaning": "",
+      "pos": []
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "",
+      "pos": []
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "",
+      "pos": []
+    },
+    "word-ran": {
+      "word": "ran",
+      "meaning": "",
+      "pos": []
+    },
+    "word-he": {
+      "word": "he",
+      "meaning": "",
+      "pos": []
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "",
+      "pos": []
+    },
+    "word-oh": {
+      "word": "oh",
+      "meaning": "",
+      "pos": []
+    },
+    "word-who": {
+      "word": "who",
+      "meaning": "",
+      "pos": []
+    },
+    "word-this": {
+      "word": "this",
+      "meaning": "",
+      "pos": []
+    },
+    "word-little": {
+      "word": "little",
+      "meaning": "",
+      "pos": []
+    },
+    "word-boy": {
+      "word": "boy",
+      "meaning": "",
+      "pos": []
+    },
+    "word-hello": {
+      "word": "hello",
+      "meaning": "",
+      "pos": []
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "",
+      "pos": []
+    },
+    "word-name": {
+      "word": "name",
+      "meaning": "",
+      "pos": []
+    },
+    "word-conan": {
+      "word": "conan",
+      "meaning": "",
+      "pos": []
+    },
+    "word-nice": {
+      "word": "nice",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-meet": {
+      "word": "meet",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "",
+      "pos": []
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "",
+      "pos": []
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "",
+      "pos": []
+    },
+    "word-live": {
+      "word": "live",
+      "meaning": "",
+      "pos": []
+    },
+    "word-with": {
+      "word": "with",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "",
+      "pos": []
+    },
+    "word-stay": {
+      "word": "stay",
+      "meaning": "",
+      "pos": []
+    },
+    "word-today": {
+      "word": "today",
+      "meaning": "",
+      "pos": []
+    },
+    "word-needs": {
+      "word": "needs",
+      "meaning": "",
+      "pos": []
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "",
+      "pos": []
+    },
+    "word-home": {
+      "word": "home",
+      "meaning": "",
+      "pos": []
+    },
+    "word-where": {
+      "word": "where",
+      "meaning": "",
+      "pos": []
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "",
+      "pos": []
+    },
+    "word-family": {
+      "word": "family",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can't": {
+      "word": "can't",
+      "meaning": "",
+      "pos": []
+    },
+    "word-go": {
+      "word": "go",
+      "meaning": "",
+      "pos": []
+    },
+    "word-right": {
+      "word": "right",
+      "meaning": "",
+      "pos": []
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "",
+      "pos": []
+    },
+    "word-dad": {
+      "word": "dad",
+      "meaning": "",
+      "pos": []
+    },
+    "word-and": {
+      "word": "and",
+      "meaning": "",
+      "pos": []
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "",
+      "pos": []
+    },
+    "word-really": {
+      "word": "really",
+      "meaning": "",
+      "pos": []
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "",
+      "pos": []
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "",
+      "pos": []
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "",
+      "pos": []
+    },
+    "word-room": {
+      "word": "room",
+      "meaning": "",
+      "pos": []
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "",
+      "pos": []
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "",
+      "pos": []
+    },
+    "word-please": {
+      "word": "please",
+      "meaning": "",
+      "pos": []
+    },
+    "word-take": {
+      "word": "take",
+      "meaning": "",
+      "pos": []
+    },
+    "word-care": {
+      "word": "care",
+      "meaning": "",
+      "pos": []
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "",
+      "pos": []
+    },
+    "word-him": {
+      "word": "him",
+      "meaning": "",
+      "pos": []
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "",
+      "pos": []
+    },
+    "word-be": {
+      "word": "be",
+      "meaning": "",
+      "pos": []
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Ran",
+      "text": "Dr. Agasa, is Shinichi here?",
+      "translation": "Tiến sĩ Agasa, Shinichi có ở đây không ạ?",
+      "tokens": [
+        "Dr",
+        "Agasa",
+        "is",
+        "Shinichi",
+        "here"
+      ],
+      "words": [
+        "word-dr",
+        "word-agasa",
+        "word-is",
+        "word-shinichi",
+        "word-here"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Agasa",
+      "text": "No, Ran. He is not here.",
+      "translation": "Không, Ran. Shinichi không có ở đây.",
+      "tokens": [
+        "No",
+        "Ran",
+        "He",
+        "is",
+        "not",
+        "here"
+      ],
+      "words": [
+        "word-no",
+        "word-ran",
+        "word-he",
+        "word-is",
+        "word-not",
+        "word-here"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Ran",
+      "text": "Oh. Who is this little boy?",
+      "translation": "Ồ. Cậu bé này là ai vậy ạ?",
+      "tokens": [
+        "Oh",
+        "Who",
+        "is",
+        "this",
+        "little",
+        "boy"
+      ],
+      "words": [
+        "word-oh",
+        "word-who",
+        "word-is",
+        "word-this",
+        "word-little",
+        "word-boy"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Conan",
+      "text": "Hello. My name is Conan.",
+      "translation": "Xin chào. Em tên là Conan.",
+      "tokens": [
+        "Hello",
+        "My",
+        "name",
+        "is",
+        "Conan"
+      ],
+      "words": [
+        "word-hello",
+        "word-my",
+        "word-name",
+        "word-is",
+        "word-conan"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Ran",
+      "text": "Nice to meet you, Conan. I'm Ran.",
+      "translation": "Rất vui được gặp em, Conan. Chị là Ran.",
+      "tokens": [
+        "Nice",
+        "to",
+        "meet",
+        "you",
+        "Conan",
+        "I'm",
+        "Ran"
+      ],
+      "words": [
+        "word-nice",
+        "word-to",
+        "word-meet",
+        "word-you",
+        "word-conan",
+        "word-i'm",
+        "word-ran"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Conan",
+      "text": "Nice to meet you, too.",
+      "translation": "Em cũng rất vui được gặp chị.",
+      "tokens": [
+        "Nice",
+        "to",
+        "meet",
+        "you",
+        "too"
+      ],
+      "words": [
+        "word-nice",
+        "word-to",
+        "word-meet",
+        "word-you",
+        "word-too"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Ran",
+      "text": "Do you live here with Dr. Agasa?",
+      "translation": "Em sống ở đây với tiến sĩ Agasa à?",
+      "tokens": [
+        "Do",
+        "you",
+        "live",
+        "here",
+        "with",
+        "Dr",
+        "Agasa"
+      ],
+      "words": [
+        "word-do",
+        "word-you",
+        "word-live",
+        "word-here",
+        "word-with",
+        "word-dr",
+        "word-agasa"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Agasa",
+      "text": "He can stay here today. He needs a home.",
+      "translation": "Hôm nay thằng bé có thể ở đây. Nhưng nó cần một mái nhà.",
+      "tokens": [
+        "He",
+        "can",
+        "stay",
+        "here",
+        "today",
+        "He",
+        "needs",
+        "a",
+        "home"
+      ],
+      "words": [
+        "word-he",
+        "word-can",
+        "word-stay",
+        "word-here",
+        "word-today",
+        "word-he",
+        "word-needs",
+        "word-a",
+        "word-home"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Ran",
+      "text": "Where is your family, Conan?",
+      "translation": "Gia đình em ở đâu, Conan?",
+      "tokens": [
+        "Where",
+        "is",
+        "your",
+        "family",
+        "Conan"
+      ],
+      "words": [
+        "word-where",
+        "word-is",
+        "word-your",
+        "word-family",
+        "word-conan"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Conan",
+      "text": "I can't go home right now.",
+      "translation": "Bây giờ em không thể về nhà được.",
+      "tokens": [
+        "I",
+        "can't",
+        "go",
+        "home",
+        "right",
+        "now"
+      ],
+      "words": [
+        "word-i",
+        "word-can't",
+        "word-go",
+        "word-home",
+        "word-right",
+        "word-now"
+      ],
+      "phrases": []
+    },
+    "11": {
+      "speaker": "Ran",
+      "text": "You can stay with my dad and me.",
+      "translation": "Em có thể ở cùng bố và chị.",
+      "tokens": [
+        "You",
+        "can",
+        "stay",
+        "with",
+        "my",
+        "dad",
+        "and",
+        "me"
+      ],
+      "words": [
+        "word-you",
+        "word-can",
+        "word-stay",
+        "word-with",
+        "word-my",
+        "word-dad",
+        "word-and",
+        "word-me"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Conan",
+      "text": "Really? Is that okay?",
+      "translation": "Thật sao? Như vậy có được không ạ?",
+      "tokens": [
+        "Really",
+        "Is",
+        "that",
+        "okay"
+      ],
+      "words": [
+        "word-really",
+        "word-is",
+        "word-that",
+        "word-okay"
+      ],
+      "phrases": []
+    },
+    "13": {
+      "speaker": "Ran",
+      "text": "Yes. We have a room for you.",
+      "translation": "Được chứ. Nhà chị có một phòng cho em.",
+      "tokens": [
+        "Yes",
+        "We",
+        "have",
+        "a",
+        "room",
+        "for",
+        "you"
+      ],
+      "words": [
+        "word-yes",
+        "word-we",
+        "word-have",
+        "word-a",
+        "word-room",
+        "word-for",
+        "word-you"
+      ],
+      "phrases": []
+    },
+    "14": {
+      "speaker": "Agasa",
+      "text": "Thank you, Ran. Please take care of him.",
+      "translation": "Cảm ơn cháu, Ran. Nhờ cháu chăm sóc thằng bé nhé.",
+      "tokens": [
+        "Thank",
+        "you",
+        "Ran",
+        "Please",
+        "take",
+        "care",
+        "of",
+        "him"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-ran",
+        "word-please",
+        "word-take",
+        "word-care",
+        "word-of",
+        "word-him"
+      ],
+      "phrases": []
+    },
+    "15": {
+      "speaker": "Conan",
+      "text": "Thank you. I will be good.",
+      "translation": "Cảm ơn chị. Em sẽ ngoan mà.",
+      "tokens": [
+        "Thank",
+        "you",
+        "I",
+        "will",
+        "be",
+        "good"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-i",
+        "word-will",
+        "word-be",
+        "word-good"
+      ],
+      "phrases": []
+    },
+    "16": {
+      "speaker": "Ran",
+      "text": "We can go home now, Conan.",
+      "translation": "Giờ chúng ta có thể về nhà rồi, Conan.",
+      "tokens": [
+        "We",
+        "can",
+        "go",
+        "home",
+        "now",
+        "Conan"
+      ],
+      "words": [
+        "word-we",
+        "word-can",
+        "word-go",
+        "word-home",
+        "word-now",
+        "word-conan"
+      ],
+      "phrases": []
+    }
+  }
+}

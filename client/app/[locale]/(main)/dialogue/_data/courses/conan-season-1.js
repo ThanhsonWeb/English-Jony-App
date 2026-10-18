@@ -3,6 +3,7 @@ import conanSeason1Config from "@/scripts/config/anime/conan-season-1.mjs";
 import theRollerCoaster from "../stories/conan-season-1/the-roller-coaster.json";
 import theMenInBlack from "../stories/conan-season-1/the-men-in-black.json";
 import aSmallBody from "../stories/conan-season-1/a-small-body.json";
+import aBoyNamedConan from "../stories/conan-season-1/a-boy-named-conan.json";
 import { conanSeason1Media } from "../stories/conan-season-1/media";
 import { buildGeneratedDialogue } from "../helpers/buildDialogue";
 
@@ -70,6 +71,7 @@ const conanSeason1Course = {
 		buildCourseDialogue(theRollerCoaster),
 		buildCourseDialogue(theMenInBlack),
 		buildCourseDialogue(aSmallBody),
+		buildCourseDialogue(aBoyNamedConan),
 	],
 };
 

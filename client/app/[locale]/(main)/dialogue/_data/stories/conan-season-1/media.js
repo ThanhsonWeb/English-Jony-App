@@ -21,4 +21,12 @@ export const conanSeason1Media = {
 			"Agasa": "/stories/conan-season-1/a-small-body/shared/agasa.webp",
 		},
 	},
+	"a-boy-named-conan": {
+		scene: "/stories/conan-season-1/a-boy-named-conan/bg.png",
+		characters: {
+			"Ran": "/stories/conan-season-1/the-roller-coaster/shared/ran.png",
+			"Agasa": "/stories/conan-season-1/a-small-body/shared/agasa.webp",
+			"Conan": "/stories/conan-season-1/a-small-body/shared/conan.webp",
+		},
+	},
 };

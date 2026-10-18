@@ -5079,6 +5079,340 @@
 	{
 		"ids": [
 			"conan-season-1",
+			"a-boy-named-conan",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Shinichi"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"live"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"11"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"stay here"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"home"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"family"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"go home"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"right now"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"16"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"17"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"stay with"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"18"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"my dad"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"19"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"not here"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"20"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"okay"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"21"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"room"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"22"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"for you"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"23"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Thank you"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"24"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"take care"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"25"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"26"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"good"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"27"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"go home"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"28"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"29"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"Shinichi",
+			"not",
+			"Who",
+			"Conan",
+			"meet",
+			"too",
+			"live",
+			"home",
+			"family",
+			"go home",
+			"stay",
+			"okay",
+			"room",
+			"take care",
+			"good",
+			"go home"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Who"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"little boy"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"5"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"My name"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Conan"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"meet"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
+			"a-boy-named-conan",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"too"
+		]
+	},
+	{
+		"ids": [
+			"conan-season-1",
 			"a-small-body",
 			"1"
 		],

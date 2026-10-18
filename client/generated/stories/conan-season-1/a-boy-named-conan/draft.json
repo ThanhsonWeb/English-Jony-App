@@ -1,0 +1,936 @@
+{
+  "metadata": {
+    "courseId": "conan-season-1",
+    "dialogueId": "a-boy-named-conan",
+    "contextualGlossaryVersion": 1,
+    "title": "Cậu bé tên Conan",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Thám tử lừng danh Conan – Mùa 1",
+        "en": "Detective Conan – Season 1"
+      },
+      "courseDescription": {
+        "vi": "Ran gặp một cậu bé lạ ở nhà tiến sĩ Agasa. Shinichi tự giới thiệu mình là Conan và được Ran đưa về sống cùng gia đình.",
+        "en": "Ran meets a strange little boy at Dr. Agasa's house. Shinichi introduces himself as Conan, and Ran takes him home to live with her family."
+      },
+      "title": {
+        "vi": "Cậu bé tên Conan",
+        "en": "A Boy Named Conan"
+      },
+      "description": {
+        "vi": "Ran gặp một cậu bé lạ ở nhà tiến sĩ Agasa. Shinichi tự giới thiệu mình là Conan và được Ran đưa về sống cùng gia đình.",
+        "en": "Ran meets a strange little boy at Dr. Agasa's house. Shinichi introduces himself as Conan, and Ran takes him home to live with her family."
+      }
+    },
+    "level": "a1",
+    "a1ContentRulesVersion": 2,
+    "teachesContractions": [],
+    "situation": "Ran gặp một cậu bé lạ ở nhà tiến sĩ Agasa. Shinichi tự giới thiệu mình là Conan và được Ran đưa về sống cùng gia đình.",
+    "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+    "thumbnail": "/stories/conan-season-1/thumbnails/a-boy-named-conan.webp"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Ran",
+      "text": "Dr. Agasa, is Shinichi here?",
+      "translation": "Tiến sĩ Agasa, Shinichi có ở đây không ạ?",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Agasa",
+      "text": "No, Ran. He is not here.",
+      "translation": "Không, Ran. Shinichi không có ở đây.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/agasa-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Ran",
+      "text": "Oh. Who is this little boy?",
+      "translation": "Ồ. Cậu bé này là ai vậy ạ?",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Conan",
+      "text": "Hello. My name is Conan.",
+      "translation": "Xin chào. Em tên là Conan.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/conan-01.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Ran",
+      "text": "Nice to meet you, Conan. I'm Ran.",
+      "translation": "Rất vui được gặp em, Conan. Chị là Ran.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Conan",
+      "text": "Nice to meet you, too.",
+      "translation": "Em cũng rất vui được gặp chị.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/conan-02.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Ran",
+      "text": "Do you live here with Dr. Agasa?",
+      "translation": "Em sống ở đây với tiến sĩ Agasa à?",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-04.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Agasa",
+      "text": "He can stay here today. He needs a home.",
+      "translation": "Hôm nay thằng bé có thể ở đây. Nhưng nó cần một mái nhà.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/agasa-02.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Ran",
+      "text": "Where is your family, Conan?",
+      "translation": "Gia đình em ở đâu, Conan?",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-05.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Conan",
+      "text": "I can't go home right now.",
+      "translation": "Bây giờ em không thể về nhà được.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/conan-03.mp3"
+    },
+    {
+      "id": 11,
+      "speaker": "Ran",
+      "text": "You can stay with my dad and me.",
+      "translation": "Em có thể ở cùng bố và chị.",
+      "practicePriority": "veryImportant",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-06.mp3"
+    },
+    {
+      "id": 12,
+      "speaker": "Conan",
+      "text": "Really? Is that okay?",
+      "translation": "Thật sao? Như vậy có được không ạ?",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/conan-04.mp3"
+    },
+    {
+      "id": 13,
+      "speaker": "Ran",
+      "text": "Yes. We have a room for you.",
+      "translation": "Được chứ. Nhà chị có một phòng cho em.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-07.mp3"
+    },
+    {
+      "id": 14,
+      "speaker": "Agasa",
+      "text": "Thank you, Ran. Please take care of him.",
+      "translation": "Cảm ơn cháu, Ran. Nhờ cháu chăm sóc thằng bé nhé.",
+      "practicePriority": "important",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/agasa-03.mp3"
+    },
+    {
+      "id": 15,
+      "speaker": "Conan",
+      "text": "Thank you. I will be good.",
+      "translation": "Cảm ơn chị. Em sẽ ngoan mà.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/conan-05.mp3"
+    },
+    {
+      "id": 16,
+      "speaker": "Ran",
+      "text": "We can go home now, Conan.",
+      "translation": "Giờ chúng ta có thể về nhà rồi, Conan.",
+      "practicePriority": "simple",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-08.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "Who is",
+      "pronunciation": "/huː ɪz/",
+      "meaning": "Ai là...?",
+      "example": "Who is that girl?"
+    },
+    {
+      "word": "My name is",
+      "pronunciation": "/maɪ neɪm ɪz/",
+      "meaning": "Tên tôi là...",
+      "example": "My name is Tom."
+    },
+    {
+      "word": "Nice to meet you",
+      "pronunciation": "/naɪs tə miːt juː/",
+      "meaning": "Rất vui được gặp bạn",
+      "example": "Hello, Anna. Nice to meet you."
+    },
+    {
+      "word": "live here",
+      "pronunciation": "/lɪv hɪr/",
+      "meaning": "sống ở đây",
+      "example": "I live here with my family."
+    },
+    {
+      "word": "stay here",
+      "pronunciation": "/steɪ hɪr/",
+      "meaning": "ở lại đây",
+      "example": "You can stay here tonight."
+    },
+    {
+      "word": "go home",
+      "pronunciation": "/ɡoʊ hoʊm/",
+      "meaning": "về nhà",
+      "example": "I want to go home."
+    },
+    {
+      "word": "right now",
+      "pronunciation": "/raɪt naʊ/",
+      "meaning": "ngay bây giờ",
+      "example": "I am busy right now."
+    },
+    {
+      "word": "Is that okay?",
+      "pronunciation": "/ɪz ðæt oʊˈkeɪ/",
+      "meaning": "Như vậy có được không?",
+      "example": "Can I sit here? Is that okay?"
+    },
+    {
+      "word": "take care of",
+      "pronunciation": "/teɪk ker əv/",
+      "meaning": "chăm sóc",
+      "example": "I take care of my little brother."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Dr. Agasa, is ", " here?"],
+      "answers": ["Shinichi"],
+      "speaker": "Ran",
+      "transcript": "Dr. Agasa, is Shinichi here?",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["No, Ran. He is ", "."],
+      "answers": ["not here"],
+      "speaker": "Agasa",
+      "transcript": "No, Ran. He is not here.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/agasa-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Oh. ", " is this little boy?"],
+      "answers": ["Who"],
+      "speaker": "Ran",
+      "transcript": "Oh. Who is this little boy?",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-02.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Oh. Who is this ", "?"],
+      "answers": ["little boy"],
+      "speaker": "Ran",
+      "transcript": "Oh. Who is this little boy?",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-02.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 3,
+      "type": "multipleChoice",
+      "question": "Vì sao Ran hỏi về cậu bé?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Vì sao Ran hỏi về cậu bé?",
+          "en": "Why does Ran ask about the little boy?"
+        },
+        "options": [
+          {"vi": "Vì cậu bé đang tìm Shinichi.", "en": "Because the boy is looking for Shinichi."},
+          {"vi": "Vì cậu bé nói mình bị bệnh.", "en": "Because the boy says he is sick."},
+          {"vi": "Vì Ran không biết cậu bé là ai.", "en": "Because Ran does not know who the boy is."},
+          {"vi": "Vì Agasa nhờ Ran tìm cậu bé.", "en": "Because Agasa asked Ran to find the boy."}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Vì cậu bé đang tìm Shinichi.",
+        "Vì cậu bé nói mình bị bệnh.",
+        "Vì Ran không biết cậu bé là ai.",
+        "Vì Agasa nhờ Ran tìm cậu bé."
+      ],
+      "answer": "Vì Ran không biết cậu bé là ai.",
+      "speaker": "Ran",
+      "transcript": "Oh. Who is this little boy?",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Hello. ", " is Conan."],
+      "answers": ["My name"],
+      "speaker": "Conan",
+      "transcript": "Hello. My name is Conan.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/conan-01.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Hello. My name is ", "."],
+      "answers": ["Conan"],
+      "speaker": "Conan",
+      "transcript": "Hello. My name is Conan.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/conan-01.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Nice to ", " you, Conan. I'm Ran."],
+      "answers": ["meet"],
+      "speaker": "Ran",
+      "transcript": "Nice to meet you, Conan. I'm Ran.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-03.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Nice to meet you, ", "."],
+      "answers": ["too"],
+      "speaker": "Conan",
+      "transcript": "Nice to meet you, too.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/conan-02.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Do you ", " here with Dr. Agasa?"],
+      "answers": ["live"],
+      "speaker": "Ran",
+      "transcript": "Do you live here with Dr. Agasa?",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-04.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["He can ", " today. He needs a home."],
+      "answers": ["stay here"],
+      "speaker": "Agasa",
+      "transcript": "He can stay here today. He needs a home.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/agasa-02.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["He can stay here today. He needs a ", "."],
+      "answers": ["home"],
+      "speaker": "Agasa",
+      "transcript": "He can stay here today. He needs a home.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/agasa-02.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Where is your ", ", Conan?"],
+      "answers": ["family"],
+      "speaker": "Ran",
+      "transcript": "Where is your family, Conan?",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-05.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I can't ", " right now."],
+      "answers": ["go home"],
+      "speaker": "Conan",
+      "transcript": "I can't go home right now.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/conan-03.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["I can't go home ", "."],
+      "answers": ["right now"],
+      "speaker": "Conan",
+      "transcript": "I can't go home right now.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/conan-03.mp3"
+    },
+    {
+      "id": 16,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Từ “can't” cho thấy điều gì về Conan?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Từ “can't” cho thấy điều gì về Conan?",
+          "en": "What does “can't” tell us about Conan?"
+        },
+        "options": [
+          {"vi": "Cậu đang trên đường về nhà.", "en": "He is on his way home."},
+          {"vi": "Cậu không thể về nhà lúc này.", "en": "He cannot go home right now."},
+          {"vi": "Cậu có thể về nhà ngay.", "en": "He can go home now."},
+          {"vi": "Cậu không biết nhà mình ở đâu.", "en": "He does not know where his home is."}
+        ]
+      },
+      "mcCategory": "grammar",
+      "mcTarget": "can't",
+      "options": [
+        "Cậu đang trên đường về nhà.",
+        "Cậu không thể về nhà lúc này.",
+        "Cậu có thể về nhà ngay.",
+        "Cậu không biết nhà mình ở đâu."
+      ],
+      "answer": "Cậu không thể về nhà lúc này.",
+      "speaker": "Conan",
+      "transcript": "I can't go home right now.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/conan-03.mp3"
+    },
+    {
+      "id": 17,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["You can ", " my dad and me."],
+      "answers": ["stay with"],
+      "speaker": "Ran",
+      "transcript": "You can stay with my dad and me.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-06.mp3"
+    },
+    {
+      "id": 18,
+      "dialogueLineId": 11,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["You can stay with ", " and me."],
+      "answers": ["my dad"],
+      "speaker": "Ran",
+      "transcript": "You can stay with my dad and me.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-06.mp3"
+    },
+    {
+      "id": 19,
+      "dialogueLineId": 11,
+      "type": "multipleChoice",
+      "question": "Ran quyết định giúp Conan bằng cách nào?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Ran quyết định giúp Conan bằng cách nào?",
+          "en": "How does Ran decide to help Conan?"
+        },
+        "options": [
+          {"vi": "Đưa Conan đến gặp Shinichi.", "en": "Take Conan to meet Shinichi."},
+          {"vi": "Đưa Conan đến bệnh viện.", "en": "Take Conan to the hospital."},
+          {"vi": "Nhờ Agasa tìm gia đình Conan.", "en": "Ask Agasa to find Conan's family."},
+          {"vi": "Cho Conan ở cùng bố và mình.", "en": "Let Conan stay with her and her dad."}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Đưa Conan đến gặp Shinichi.",
+        "Đưa Conan đến bệnh viện.",
+        "Nhờ Agasa tìm gia đình Conan.",
+        "Cho Conan ở cùng bố và mình."
+      ],
+      "answer": "Cho Conan ở cùng bố và mình.",
+      "speaker": "Ran",
+      "transcript": "You can stay with my dad and me.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-06.mp3"
+    },
+    {
+      "id": 20,
+      "dialogueLineId": 12,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Really? Is that ", "?"],
+      "answers": ["okay"],
+      "speaker": "Conan",
+      "transcript": "Really? Is that okay?",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/conan-04.mp3"
+    },
+    {
+      "id": 21,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Yes. We have a ", " for you."],
+      "answers": ["room"],
+      "speaker": "Ran",
+      "transcript": "Yes. We have a room for you.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-07.mp3"
+    },
+    {
+      "id": 22,
+      "dialogueLineId": 13,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Yes. We have a room ", "."],
+      "answers": ["for you"],
+      "speaker": "Ran",
+      "transcript": "Yes. We have a room for you.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-07.mp3"
+    },
+    {
+      "id": 23,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["", ", Ran. Please take care of him."],
+      "answers": ["Thank you"],
+      "speaker": "Agasa",
+      "transcript": "Thank you, Ran. Please take care of him.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/agasa-03.mp3"
+    },
+    {
+      "id": 24,
+      "dialogueLineId": 14,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Thank you, Ran. Please ", " of him."],
+      "answers": ["take care"],
+      "speaker": "Agasa",
+      "transcript": "Thank you, Ran. Please take care of him.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/agasa-03.mp3"
+    },
+    {
+      "id": 25,
+      "dialogueLineId": 14,
+      "type": "multipleChoice",
+      "question": "Vì sao Agasa dùng từ “Please” khi nói với Ran?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Vì sao Agasa dùng từ “Please” khi nói với Ran?",
+          "en": "Why does Agasa use “Please” when speaking to Ran?"
+        },
+        "options": [
+          {"vi": "Để lịch sự nhờ Ran chăm sóc Conan.", "en": "To politely ask Ran to take care of Conan."},
+          {"vi": "Để hỏi Ran có quen Conan không.", "en": "To ask Ran if she knows Conan."},
+          {"vi": "Để yêu cầu Ran tìm Shinichi.", "en": "To tell Ran to look for Shinichi."},
+          {"vi": "Để hỏi Ran có cần giúp đỡ không.", "en": "To ask Ran if she needs help."}
+        ]
+      },
+      "mcCategory": "usage",
+      "mcTarget": "Please",
+      "options": [
+        "Để lịch sự nhờ Ran chăm sóc Conan.",
+        "Để hỏi Ran có quen Conan không.",
+        "Để yêu cầu Ran tìm Shinichi.",
+        "Để hỏi Ran có cần giúp đỡ không."
+      ],
+      "answer": "Để lịch sự nhờ Ran chăm sóc Conan.",
+      "speaker": "Agasa",
+      "transcript": "Thank you, Ran. Please take care of him.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/agasa-03.mp3"
+    },
+    {
+      "id": 26,
+      "dialogueLineId": 15,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["Thank you. I will be ", "."],
+      "answers": ["good"],
+      "speaker": "Conan",
+      "transcript": "Thank you. I will be good.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/conan-05.mp3"
+    },
+    {
+      "id": 27,
+      "dialogueLineId": 16,
+      "type": "fillBlank",
+      "localized": {
+        "title": {"vi": "Điền từ còn thiếu", "en": "Fill in the blanks"},
+        "instruction": {"vi": "Nghe và điền từ còn thiếu.", "en": "Listen and fill in the missing words."}
+      },
+      "parts": ["We can ", " now, Conan."],
+      "answers": ["go home"],
+      "speaker": "Ran",
+      "transcript": "We can go home now, Conan.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-08.mp3"
+    },
+    {
+      "id": 28,
+      "dialogueLineId": 16,
+      "type": "multipleChoice",
+      "question": "Sau cuộc nói chuyện, Ran và Conan sẽ đi đâu?",
+      "localized": {
+        "title": {"vi": "Kiểm tra hiểu bài", "en": "Check understanding"},
+        "instruction": {"vi": "Chọn đáp án đúng.", "en": "Choose the correct answer."},
+        "question": {
+          "vi": "Sau cuộc nói chuyện, Ran và Conan sẽ đi đâu?",
+          "en": "Where will Ran and Conan go after their conversation?"
+        },
+        "options": [
+          {"vi": "Đến nhà Shinichi.", "en": "To Shinichi's house."},
+          {"vi": "Đến trường học.", "en": "To school."},
+          {"vi": "Về nhà của Ran.", "en": "To Ran's home."},
+          {"vi": "Đến bệnh viện.", "en": "To the hospital."}
+        ]
+      },
+      "mcCategory": "comprehension",
+      "options": [
+        "Đến nhà Shinichi.",
+        "Đến trường học.",
+        "Về nhà của Ran.",
+        "Đến bệnh viện."
+      ],
+      "answer": "Về nhà của Ran.",
+      "speaker": "Ran",
+      "transcript": "We can go home now, Conan.",
+      "scene": "/stories/conan-season-1/a-boy-named-conan/bg.png",
+      "audioUrl": "/stories/conan-season-1/a-boy-named-conan/audio/ran-08.mp3"
+    },
+    {
+      "id": 29,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Ôn tập hội thoại",
+          "en": "Dialogue review"
+        },
+        "instruction": {
+          "vi": "Hoàn thành toàn bộ đoạn hội thoại.",
+          "en": "Complete the full dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Ran",
+          "parts": [
+            "Dr. Agasa, is ",
+            {"id": "1", "blank": "Shinichi"},
+            " here?"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Agasa",
+          "parts": [
+            "No, Ran. He is ",
+            {"id": "2", "blank": "not"},
+            " here."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Ran",
+          "parts": [
+            "Oh. ",
+            {"id": "3", "blank": "Who"},
+            " is this little boy?"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Conan",
+          "parts": [
+            "Hello. My name is ",
+            {"id": "4", "blank": "Conan"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Ran",
+          "parts": [
+            "Nice to ",
+            {"id": "5", "blank": "meet"},
+            " you, Conan. I'm Ran."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Conan",
+          "parts": [
+            "Nice to meet you, ",
+            {"id": "6", "blank": "too"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Ran",
+          "parts": [
+            "Do you ",
+            {"id": "7", "blank": "live"},
+            " here with Dr. Agasa?"
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Agasa",
+          "parts": [
+            "He can stay here today. He needs a ",
+            {"id": "8", "blank": "home"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Ran",
+          "parts": [
+            "Where is your ",
+            {"id": "9", "blank": "family"},
+            ", Conan?"
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Conan",
+          "parts": [
+            "I can't ",
+            {"id": "10", "blank": "go home"},
+            " right now."
+          ]
+        },
+        {
+          "dialogueLineId": 11,
+          "speaker": "Ran",
+          "parts": [
+            "You can ",
+            {"id": "11", "blank": "stay"},
+            " with my dad and me."
+          ]
+        },
+        {
+          "dialogueLineId": 12,
+          "speaker": "Conan",
+          "parts": [
+            "Really? Is that ",
+            {"id": "12", "blank": "okay"},
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 13,
+          "speaker": "Ran",
+          "parts": [
+            "Yes. We have a ",
+            {"id": "13", "blank": "room"},
+            " for you."
+          ]
+        },
+        {
+          "dialogueLineId": 14,
+          "speaker": "Agasa",
+          "parts": [
+            "Thank you, Ran. Please ",
+            {"id": "14", "blank": "take care"},
+            " of him."
+          ]
+        },
+        {
+          "dialogueLineId": 15,
+          "speaker": "Conan",
+          "parts": [
+            "Thank you. I will be ",
+            {"id": "15", "blank": "good"},
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 16,
+          "speaker": "Ran",
+          "parts": [
+            "We can ",
+            {"id": "16", "blank": "go home"},
+            " now, Conan."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Can và can't: có thể và không thể",
+      "explanation": "Dùng “can + động từ” để nói ai đó có thể làm gì. Dùng “can't + động từ” khi không thể làm việc đó. Động từ sau can hoặc can't giữ nguyên dạng.",
+      "localized": {
+        "title": {
+          "vi": "Can và can't: có thể và không thể",
+          "en": "Can and can't: ability and permission"
+        },
+        "explanation": {
+          "vi": "Dùng “can + động từ” để nói ai đó có thể làm gì. Dùng “can't + động từ” khi không thể làm việc đó. Động từ sau can hoặc can't giữ nguyên dạng.",
+          "en": "Use “can + verb” to say someone can do something. Use “can't + verb” when someone cannot do something. Keep the verb in its base form after can or can't."
+        }
+      },
+      "example": "I can't go home right now."
+    },
+    {
+      "title": "Please: nhờ ai đó một cách lịch sự",
+      "explanation": "Dùng “Please” khi muốn nhờ ai đó làm việc gì một cách lịch sự. Có thể đặt Please ở đầu câu yêu cầu.",
+      "localized": {
+        "title": {
+          "vi": "Please: nhờ ai đó một cách lịch sự",
+          "en": "Please: making polite requests"
+        },
+        "explanation": {
+          "vi": "Dùng “Please” khi muốn nhờ ai đó làm việc gì một cách lịch sự. Có thể đặt Please ở đầu câu yêu cầu.",
+          "en": "Use “Please” to ask someone to do something politely. You can put Please at the beginning of a request."
+        }
+      },
+      "example": "Please take care of him."
+    }
+  ]
+}

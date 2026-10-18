@@ -1,0 +1,1023 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "conan-season-1",
+  "dialogueId": "a-boy-named-conan",
+  "characters": {
+    "Ran": {
+      "meaning": "Ran",
+      "role": "Con gái của Kogoro và bạn của Conan.",
+      "note": "Tên riêng của nhân vật."
+    },
+    "Agasa": {
+      "meaning": "Agasa",
+      "role": "Tiến sĩ giúp Conan và giữ bí mật về thân phận của cậu.",
+      "note": "Tên riêng của nhân vật."
+    },
+    "Conan": {
+      "meaning": "Conan",
+      "role": "Tên mới Shinichi dùng khi sống dưới hình dạng một cậu bé.",
+      "note": "Tên riêng của nhân vật."
+    }
+  },
+  "entries": {
+    "word-dr": {
+      "word": "dr",
+      "meaning": "tiến sĩ",
+      "pos": [
+        "title"
+      ]
+    },
+    "word-agasa": {
+      "word": "agasa",
+      "meaning": "Agasa",
+      "pos": [
+        "proper noun"
+      ],
+      "note": "Tên riêng của tiến sĩ Agasa."
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "là; có ở",
+      "pos": [
+        "verb"
+      ],
+      "note": "Dạng của be; nghĩa cụ thể phụ thuộc câu."
+    },
+    "word-shinichi": {
+      "word": "shinichi",
+      "meaning": "Shinichi",
+      "pos": [
+        "proper noun"
+      ],
+      "note": "Tên riêng."
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "ở đây",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "không",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-ran": {
+      "word": "ran",
+      "meaning": "Ran",
+      "pos": [
+        "proper noun"
+      ],
+      "note": "Tên riêng."
+    },
+    "word-he": {
+      "word": "he",
+      "meaning": "cậu ấy; thằng bé",
+      "pos": [
+        "pronoun"
+      ],
+      "note": "Chỉ Shinichi hoặc Conan."
+    },
+    "word-not": {
+      "word": "not",
+      "meaning": "không",
+      "pos": [
+        "adverb"
+      ],
+      "note": "Dùng để tạo câu phủ định."
+    },
+    "word-oh": {
+      "word": "oh",
+      "meaning": "ồ",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-who": {
+      "word": "who",
+      "meaning": "ai",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-this": {
+      "word": "this",
+      "meaning": "này; đây",
+      "pos": [
+        "determiner",
+        "pronoun"
+      ]
+    },
+    "word-little": {
+      "word": "little",
+      "meaning": "nhỏ",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-boy": {
+      "word": "boy",
+      "meaning": "cậu bé",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-hello": {
+      "word": "hello",
+      "meaning": "xin chào",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-name": {
+      "word": "name",
+      "meaning": "tên",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-conan": {
+      "word": "conan",
+      "meaning": "Conan",
+      "pos": [
+        "proper noun"
+      ],
+      "note": "Tên riêng của nhân vật."
+    },
+    "word-nice": {
+      "word": "nice",
+      "meaning": "vui; hay",
+      "pos": [
+        "adjective"
+      ],
+      "note": "Trong Nice to meet you, đây là lời chào lịch sự."
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "để; tới",
+      "pos": [
+        "preposition"
+      ],
+      "note": "Đứng trước động từ nguyên mẫu trong Nice to meet you."
+    },
+    "word-meet": {
+      "word": "meet",
+      "meaning": "gặp",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-i'm": {
+      "word": "i'm",
+      "meaning": "chị là",
+      "pos": [
+        "contraction"
+      ],
+      "note": "Dạng rút gọn của I am; Ran tự xưng là chị."
+    },
+    "word-too": {
+      "word": "too",
+      "meaning": "cũng",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "trợ động từ",
+      "pos": [
+        "auxiliary verb"
+      ],
+      "note": "Dùng để tạo câu hỏi hiện tại đơn."
+    },
+    "word-live": {
+      "word": "live",
+      "meaning": "sống",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-with": {
+      "word": "with",
+      "meaning": "với",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-can": {
+      "word": "can",
+      "meaning": "có thể",
+      "pos": [
+        "modal verb"
+      ],
+      "note": "Diễn tả khả năng hoặc sự cho phép tùy ngữ cảnh."
+    },
+    "word-stay": {
+      "word": "stay",
+      "meaning": "ở; ở lại",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-today": {
+      "word": "today",
+      "meaning": "hôm nay",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-needs": {
+      "word": "needs",
+      "meaning": "cần",
+      "pos": [
+        "verb"
+      ],
+      "note": "Dạng needs đi với chủ ngữ ngôi thứ ba số ít."
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "một",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-where": {
+      "word": "where",
+      "meaning": "ở đâu",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "của em",
+      "pos": [
+        "determiner"
+      ],
+      "note": "Ran đang nói với Conan."
+    },
+    "word-family": {
+      "word": "family",
+      "meaning": "gia đình",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "em",
+      "pos": [
+        "pronoun"
+      ],
+      "note": "Conan tự xưng là em khi nói với Ran."
+    },
+    "word-can't": {
+      "word": "can't",
+      "meaning": "không thể",
+      "pos": [
+        "contraction"
+      ],
+      "note": "Dạng rút gọn của cannot."
+    },
+    "word-go": {
+      "word": "go",
+      "meaning": "đi; về",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-right": {
+      "word": "right",
+      "meaning": "ngay",
+      "pos": [
+        "adverb"
+      ],
+      "note": "Trong right now, nhấn mạnh thời điểm hiện tại."
+    },
+    "word-now": {
+      "word": "now",
+      "meaning": "bây giờ",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-dad": {
+      "word": "dad",
+      "meaning": "bố",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-and": {
+      "word": "and",
+      "meaning": "và",
+      "pos": [
+        "conjunction"
+      ]
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "chị",
+      "pos": [
+        "pronoun"
+      ],
+      "note": "Ran tự xưng là chị khi nói với Conan."
+    },
+    "word-really": {
+      "word": "really",
+      "meaning": "thật sao",
+      "pos": [
+        "adverb"
+      ],
+      "note": "Dùng để thể hiện sự ngạc nhiên trong câu hỏi."
+    },
+    "word-that": {
+      "word": "that",
+      "meaning": "điều đó; như vậy",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-okay": {
+      "word": "okay",
+      "meaning": "ổn; được",
+      "pos": [
+        "adjective",
+        "interjection"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "vâng; có",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-we": {
+      "word": "we",
+      "meaning": "chúng ta",
+      "pos": [
+        "pronoun"
+      ],
+      "note": "Bao gồm người nói và người nghe."
+    },
+    "word-have": {
+      "word": "have",
+      "meaning": "có",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-room": {
+      "word": "room",
+      "meaning": "phòng",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "cho",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "cảm ơn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-please": {
+      "word": "please",
+      "meaning": "làm ơn; xin",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-take": {
+      "word": "take",
+      "meaning": "nhận; dành",
+      "pos": [
+        "verb"
+      ],
+      "note": "Trong take care of, kết hợp với care of để chỉ việc chăm sóc."
+    },
+    "word-care": {
+      "word": "care",
+      "meaning": "sự chăm sóc",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-of": {
+      "word": "of",
+      "meaning": "của",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-him": {
+      "word": "him",
+      "meaning": "cậu ấy; thằng bé",
+      "pos": [
+        "pronoun"
+      ],
+      "note": "Chỉ Conan."
+    },
+    "word-will": {
+      "word": "will",
+      "meaning": "sẽ",
+      "pos": [
+        "modal verb"
+      ],
+      "note": "Đứng trước động từ nguyên mẫu để nói về việc sẽ làm."
+    },
+    "word-be": {
+      "word": "be",
+      "meaning": "là; trở nên",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-good": {
+      "word": "good",
+      "meaning": "ngoan; tốt",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-you-ran": {
+      "word": "you",
+      "meaning": "em",
+      "pos": [
+        "pronoun"
+      ],
+      "note": "Ran đang nói với Conan."
+    },
+    "word-you-conan": {
+      "word": "you",
+      "meaning": "chị",
+      "pos": [
+        "pronoun"
+      ],
+      "note": "Conan đang nói với Ran."
+    },
+    "word-my-conan": {
+      "word": "my",
+      "meaning": "của em",
+      "pos": [
+        "determiner"
+      ],
+      "note": "Conan nói về tên của mình."
+    },
+    "word-my-ran": {
+      "word": "my",
+      "meaning": "của chị",
+      "pos": [
+        "determiner"
+      ],
+      "note": "Ran nói về bố của mình."
+    },
+    "word-home-noun": {
+      "word": "home",
+      "meaning": "nhà; mái nhà",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-home-adverb": {
+      "word": "home",
+      "meaning": "về nhà",
+      "pos": [
+        "adverb"
+      ],
+      "note": "Trong go home, home chỉ hướng về nhà."
+    },
+    "phrase-who-is": {
+      "word": "Who is",
+      "meaning": "ai là",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-my-name-is": {
+      "word": "My name is",
+      "meaning": "tên tôi/em là",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-nice-to-meet-you": {
+      "word": "Nice to meet you",
+      "meaning": "rất vui được gặp bạn",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-live-here": {
+      "word": "live here",
+      "meaning": "sống ở đây",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-stay-here": {
+      "word": "stay here",
+      "meaning": "ở lại đây",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-go-home": {
+      "word": "go home",
+      "meaning": "về nhà",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-right-now": {
+      "word": "right now",
+      "meaning": "ngay bây giờ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-is-that-okay": {
+      "word": "Is that okay",
+      "meaning": "như vậy có được không",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-take-care-of": {
+      "word": "take care of",
+      "meaning": "chăm sóc",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-thank-you": {
+      "word": "Thank you",
+      "meaning": "cảm ơn",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Ran",
+      "text": "Dr. Agasa, is Shinichi here?",
+      "translation": "Tiến sĩ Agasa, Shinichi có ở đây không ạ?",
+      "tokens": [
+        "Dr",
+        "Agasa",
+        "is",
+        "Shinichi",
+        "here"
+      ],
+      "words": [
+        "word-dr",
+        "word-agasa",
+        "word-is",
+        "word-shinichi",
+        "word-here"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Agasa",
+      "text": "No, Ran. He is not here.",
+      "translation": "Không, Ran. Shinichi không có ở đây.",
+      "tokens": [
+        "No",
+        "Ran",
+        "He",
+        "is",
+        "not",
+        "here"
+      ],
+      "words": [
+        "word-no",
+        "word-ran",
+        "word-he",
+        "word-is",
+        "word-not",
+        "word-here"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Ran",
+      "text": "Oh. Who is this little boy?",
+      "translation": "Ồ. Cậu bé này là ai vậy ạ?",
+      "tokens": [
+        "Oh",
+        "Who",
+        "is",
+        "this",
+        "little",
+        "boy"
+      ],
+      "words": [
+        "word-oh",
+        "word-who",
+        "word-is",
+        "word-this",
+        "word-little",
+        "word-boy"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "text": "Who is",
+          "entry": "phrase-who-is"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Conan",
+      "text": "Hello. My name is Conan.",
+      "translation": "Xin chào. Em tên là Conan.",
+      "tokens": [
+        "Hello",
+        "My",
+        "name",
+        "is",
+        "Conan"
+      ],
+      "words": [
+        "word-hello",
+        "word-my-conan",
+        "word-name",
+        "word-is",
+        "word-conan"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 3,
+          "text": "My name is",
+          "entry": "phrase-my-name-is"
+        }
+      ]
+    },
+    "5": {
+      "speaker": "Ran",
+      "text": "Nice to meet you, Conan. I'm Ran.",
+      "translation": "Rất vui được gặp em, Conan. Chị là Ran.",
+      "tokens": [
+        "Nice",
+        "to",
+        "meet",
+        "you",
+        "Conan",
+        "I'm",
+        "Ran"
+      ],
+      "words": [
+        "word-nice",
+        "word-to",
+        "word-meet",
+        "word-you-ran",
+        "word-conan",
+        "word-i'm",
+        "word-ran"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "Nice to meet you",
+          "entry": "phrase-nice-to-meet-you"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Conan",
+      "text": "Nice to meet you, too.",
+      "translation": "Em cũng rất vui được gặp chị.",
+      "tokens": [
+        "Nice",
+        "to",
+        "meet",
+        "you",
+        "too"
+      ],
+      "words": [
+        "word-nice",
+        "word-to",
+        "word-meet",
+        "word-you-conan",
+        "word-too"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 3,
+          "text": "Nice to meet you",
+          "entry": "phrase-nice-to-meet-you"
+        }
+      ]
+    },
+    "7": {
+      "speaker": "Ran",
+      "text": "Do you live here with Dr. Agasa?",
+      "translation": "Em sống ở đây với tiến sĩ Agasa à?",
+      "tokens": [
+        "Do",
+        "you",
+        "live",
+        "here",
+        "with",
+        "Dr",
+        "Agasa"
+      ],
+      "words": [
+        "word-do",
+        "word-you-ran",
+        "word-live",
+        "word-here",
+        "word-with",
+        "word-dr",
+        "word-agasa"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "live here",
+          "entry": "phrase-live-here"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Agasa",
+      "text": "He can stay here today. He needs a home.",
+      "translation": "Hôm nay thằng bé có thể ở đây. Nhưng nó cần một mái nhà.",
+      "tokens": [
+        "He",
+        "can",
+        "stay",
+        "here",
+        "today",
+        "He",
+        "needs",
+        "a",
+        "home"
+      ],
+      "words": [
+        "word-he",
+        "word-can",
+        "word-stay",
+        "word-here",
+        "word-today",
+        "word-he",
+        "word-needs",
+        "word-a",
+        "word-home-noun"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "stay here",
+          "entry": "phrase-stay-here"
+        }
+      ]
+    },
+    "9": {
+      "speaker": "Ran",
+      "text": "Where is your family, Conan?",
+      "translation": "Gia đình em ở đâu, Conan?",
+      "tokens": [
+        "Where",
+        "is",
+        "your",
+        "family",
+        "Conan"
+      ],
+      "words": [
+        "word-where",
+        "word-is",
+        "word-your",
+        "word-family",
+        "word-conan"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Conan",
+      "text": "I can't go home right now.",
+      "translation": "Bây giờ em không thể về nhà được.",
+      "tokens": [
+        "I",
+        "can't",
+        "go",
+        "home",
+        "right",
+        "now"
+      ],
+      "words": [
+        "word-i",
+        "word-can't",
+        "word-go",
+        "word-home-adverb",
+        "word-right",
+        "word-now"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "go home",
+          "entry": "phrase-go-home"
+        },
+        {
+          "start": 4,
+          "end": 5,
+          "text": "right now",
+          "entry": "phrase-right-now"
+        }
+      ]
+    },
+    "11": {
+      "speaker": "Ran",
+      "text": "You can stay with my dad and me.",
+      "translation": "Em có thể ở cùng bố và chị.",
+      "tokens": [
+        "You",
+        "can",
+        "stay",
+        "with",
+        "my",
+        "dad",
+        "and",
+        "me"
+      ],
+      "words": [
+        "word-you-ran",
+        "word-can",
+        "word-stay",
+        "word-with",
+        "word-my-ran",
+        "word-dad",
+        "word-and",
+        "word-me"
+      ],
+      "phrases": []
+    },
+    "12": {
+      "speaker": "Conan",
+      "text": "Really? Is that okay?",
+      "translation": "Thật sao? Như vậy có được không ạ?",
+      "tokens": [
+        "Really",
+        "Is",
+        "that",
+        "okay"
+      ],
+      "words": [
+        "word-really",
+        "word-is",
+        "word-that",
+        "word-okay"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 3,
+          "text": "Is that okay",
+          "entry": "phrase-is-that-okay"
+        }
+      ]
+    },
+    "13": {
+      "speaker": "Ran",
+      "text": "Yes. We have a room for you.",
+      "translation": "Được chứ. Nhà chị có một phòng cho em.",
+      "tokens": [
+        "Yes",
+        "We",
+        "have",
+        "a",
+        "room",
+        "for",
+        "you"
+      ],
+      "words": [
+        "word-yes",
+        "word-we",
+        "word-have",
+        "word-a",
+        "word-room",
+        "word-for",
+        "word-you-ran"
+      ],
+      "phrases": []
+    },
+    "14": {
+      "speaker": "Agasa",
+      "text": "Thank you, Ran. Please take care of him.",
+      "translation": "Cảm ơn cháu, Ran. Nhờ cháu chăm sóc thằng bé nhé.",
+      "tokens": [
+        "Thank",
+        "you",
+        "Ran",
+        "Please",
+        "take",
+        "care",
+        "of",
+        "him"
+      ],
+      "words": [
+        "word-thank",
+        "word-you-ran",
+        "word-ran",
+        "word-please",
+        "word-take",
+        "word-care",
+        "word-of",
+        "word-him"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 6,
+          "text": "take care of",
+          "entry": "phrase-take-care-of"
+        },
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Thank you",
+          "entry": "phrase-thank-you"
+        }
+      ]
+    },
+    "15": {
+      "speaker": "Conan",
+      "text": "Thank you. I will be good.",
+      "translation": "Cảm ơn chị. Em sẽ ngoan mà.",
+      "tokens": [
+        "Thank",
+        "you",
+        "I",
+        "will",
+        "be",
+        "good"
+      ],
+      "words": [
+        "word-thank",
+        "word-you-conan",
+        "word-i",
+        "word-will",
+        "word-be",
+        "word-good"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Thank you",
+          "entry": "phrase-thank-you"
+        }
+      ]
+    },
+    "16": {
+      "speaker": "Ran",
+      "text": "We can go home now, Conan.",
+      "translation": "Giờ chúng ta có thể về nhà rồi, Conan.",
+      "tokens": [
+        "We",
+        "can",
+        "go",
+        "home",
+        "now",
+        "Conan"
+      ],
+      "words": [
+        "word-we",
+        "word-can",
+        "word-go",
+        "word-home-adverb",
+        "word-now",
+        "word-conan"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "go home",
+          "entry": "phrase-go-home"
+        }
+      ]
+    }
+  }
+}
