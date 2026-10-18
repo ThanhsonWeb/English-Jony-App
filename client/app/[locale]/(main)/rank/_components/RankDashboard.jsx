@@ -9,6 +9,7 @@ import { useLeaderboardResource } from "@/app/_lib/useStudyResources";
 import { resolveAvatarUrl } from "@/app/_lib/resolveAvatarUrl";
 import { CalendarDays, ChartNoAxesColumnIncreasing, Check, ChevronDown, Crown, Flame, Target, X } from "lucide-react";
 import styles from "../rank.module.css";
+import RankGuestView from "./RankGuestView";
 
 function RankAvatar({ user, large = false }) {
 	const [failedAvatarUrls, setFailedAvatarUrls] = useState([]);
@@ -224,7 +225,7 @@ export default function RankDashboard() {
 	const [selectedUser, setSelectedUser] = useState(null);
 	const openerRef = useRef(null);
 	const { data, error: loadError, loading: queryLoading, refresh } = useLeaderboardResource(
-		signedInUser?._id || signedInUser?.id, period, timeframe, !authLoading,
+		signedInUser?._id || signedInUser?.id, period, timeframe, !authLoading && Boolean(signedInUser),
 	);
 	const loading = authLoading || queryLoading;
 	const error = data === undefined && loadError ? (loadError.message === "signIn" ? "signIn" : "loadError") : null;
@@ -267,6 +268,11 @@ export default function RankDashboard() {
 				
 				</header>
 
+				{authLoading ? (
+					<p className={styles.statusMessage} role="status">{t("loading")}</p>
+				) : !signedInUser ? (
+					<RankGuestView t={t} />
+				) : <>
 				<div className={styles.summaryGrid}>
 					<StreakCard t={t} user={currentUser} />
 					<RankSummaryCard icon={Crown} label={t("currentRank")} value={currentUser ? (currentUser.rank === null ? t("unranked") : `#${currentUser.rank}`) : "—"} tone="rank">
@@ -304,8 +310,9 @@ export default function RankDashboard() {
 						<tbody>{rows.map(user => <LeaderboardRow key={user.id} user={user} t={t} format={format} onOpenProfile={openProfile} />)}</tbody>
 					</table>
 				</section>
+				</>}
 			</div>
-			{selectedUser && <RankProfilePopup key={selectedUser.id} selectedUser={selectedUser}
+			{signedInUser && selectedUser && <RankProfilePopup key={selectedUser.id} selectedUser={selectedUser}
 				onClose={closeProfile} t={t} format={format} />}
 		</main>
 	);

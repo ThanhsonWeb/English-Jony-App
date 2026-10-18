@@ -13,6 +13,7 @@ async function run() {
 			const errors = [];
 			page.on("pageerror", error => errors.push(error.message));
 			let mode = "normal";
+			let signedIn = true;
 			let profileMode = "normal";
 			const profileRequests = [];
 			const requests = [];
@@ -24,6 +25,9 @@ async function run() {
 			});
 			await page.route("**/api/v1/**", async route => {
 				const url = new URL(route.request().url());
+				if (url.pathname === "/api/v1/users/me" && signedIn) {
+					return route.fulfill({ json: { status: "success", data: { user: { _id: "self", name: "Current Learner" } } } });
+				}
 				if (url.pathname.startsWith("/api/v1/leaderboard/users/")) {
 					const id = url.pathname.split("/").at(-1);
 					profileRequests.push(id);
@@ -137,7 +141,7 @@ async function run() {
 			assert.equal(await page.locator("article").count(), 1, "stale response must not replace the cached month");
 			mode = "auth";
 			await open();
-			await page.getByText("Sign in to see the leaderboard.").waitFor();
+			await page.getByRole("heading", { name: "Sign in to see the leaderboard!", exact: true }).waitFor();
 			mode = "empty";
 			await page.context().clearCookies();
 			await page.setExtraHTTPHeaders({ "Accept-Language": "vi" });
@@ -145,8 +149,46 @@ async function run() {
 			await page.getByText("Chưa xếp hạng", { exact: true }).waitFor();
 			assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
 			await page.screenshot({ path: path.join(os.tmpdir(), `studyjony-rank-vi-${width}.png`), fullPage: true });
+
+			signedIn = false;
+			for (const locale of ["vi", "en"]) {
+				const messages = require(`../../../messages/${locale}.json`).Rank;
+				const requestCount = requests.length;
+				await page.goto(`${process.env.RANK_TEST_URL || "http://localhost:3000"}/${locale}/rank`);
+				const hero = page.getByRole("region", { name: messages.guest.title });
+				await hero.waitFor();
+				assert.equal(await hero.getByRole("listitem").count(), 3);
+				const login = hero.getByRole("link", { name: messages.guest.login, exact: true });
+				const signup = hero.getByRole("link", { name: messages.guest.signup, exact: true });
+				assert.match(await login.getAttribute("href"), /\/login$/);
+				assert.match(await signup.getAttribute("href"), /\/signup$/);
+				const preview = page.getByRole("region", { name: messages.leaderboard, exact: true });
+				assert.equal(await preview.locator("tbody tr").count(), 3);
+				assert.equal(await preview.getByRole("columnheader").count(), 5);
+				await preview.getByText(messages.guest.previewMessage, { exact: true }).waitFor();
+				assert.doesNotMatch(await page.locator("main").innerText(), /Current Learner|Learner \d|27,500|never-show/);
+				assert.equal(await preview.locator("button, a").count(), 0, "Preview contains no real profiles");
+				await hero.locator("img").evaluate(image => image.decode());
+				const artwork = await hero.locator("img").evaluate(image => {
+					const bounds = image.getBoundingClientRect();
+					const container = image.closest("section").getBoundingClientRect();
+					return { loaded: image.complete && image.naturalWidth > 0, ratio: bounds.width / bounds.height,
+						contained: bounds.left >= container.left && bounds.right <= container.right && bounds.top >= container.top && bounds.bottom <= container.bottom };
+				});
+				assert.equal(artwork.loaded, true);
+				assert.ok(Math.abs(artwork.ratio - 2) < .01, "Artwork keeps its original aspect ratio");
+				assert.equal(artwork.contained, true, "Boy and cat stay inside the hero without cropping");
+				for (const theme of ["dark", "black", "light", "cream"]) {
+					await page.evaluate(theme => { document.documentElement.dataset.theme = theme; }, theme);
+					await page.waitForTimeout(250); // Let existing color transitions settle before visual inspection.
+					assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, `${locale}/${theme}: no horizontal overflow`);
+					await page.screenshot({ path: path.join(os.tmpdir(), `studyjony-rank-guest-${locale}-${theme}-${width}.png`), fullPage: true });
+				}
+				assert.equal(requests.length, requestCount, "Logged-out preview never requests protected rankings");
+				assert.equal(await page.getByRole("button", { name: messages.week, exact: true }).count(), 0, "Guest preview has no active ranking filters");
+			}
 			assert.deepEqual(errors, []);
-			console.log(`PASS ${width}px: filters, podium, own rank, empty/unranked, retry, loading, stale requests, auth, no overflow`);
+			console.log(`PASS ${width}px: signed-in rankings/profile/filters, guest hero and private preview, VI/EN, four themes, uncropped artwork, no guest ranking requests or overflow`);
 			await page.close();
 		}
 	} finally {

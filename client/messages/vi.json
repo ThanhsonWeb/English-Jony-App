@@ -308,6 +308,17 @@
 		"loading": "Đang tải bảng xếp hạng…",
 		"loadError": "Không thể tải bảng xếp hạng. Vui lòng thử lại.",
 		"signIn": "Đăng nhập để xem bảng xếp hạng.",
+		"guest": {
+			"title": "Đăng nhập để xem bảng xếp hạng!",
+			"trackStreak": "Theo dõi chuỗi học",
+			"seeLevel": "Xem cấp độ",
+			"compareLearners": "So sánh với người học khác",
+			"login": "Đăng nhập để xem bảng xếp hạng",
+			"signup": "Tạo tài khoản miễn phí",
+			"previewCaption": "Bản xem trước minh họa. Thông tin người học được ẩn.",
+			"hiddenInfo": "Thông tin được ẩn",
+			"previewMessage": "Đăng nhập để xem đầy đủ bảng xếp hạng."
+		},
 		"retry": "Thử lại",
 		"empty": "Chưa có KN trong khoảng thời gian này.",
 		"unranked": "Chưa xếp hạng",

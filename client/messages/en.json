@@ -308,6 +308,17 @@
 		"loading": "Loading leaderboard…",
 		"loadError": "Could not load the leaderboard. Please try again.",
 		"signIn": "Sign in to see the leaderboard.",
+		"guest": {
+			"title": "Sign in to see the leaderboard!",
+			"trackStreak": "Track your study streak",
+			"seeLevel": "See your level",
+			"compareLearners": "Compare with other learners",
+			"login": "Sign in to see the leaderboard",
+			"signup": "Create a free account",
+			"previewCaption": "Illustrative preview. Learner information is hidden.",
+			"hiddenInfo": "Information hidden",
+			"previewMessage": "Sign in to see the full leaderboard."
+		},
 		"retry": "Try again",
 		"empty": "No XP earned in this period yet.",
 		"unranked": "Unranked",
