@@ -1,5 +1,5 @@
 // Keep authentication documents separate from the user contract sent to clients.
-const CLIENT_USER_FIELDS = "_id name email role photo avatar theme totalXp createdAt updatedAt";
+const CLIENT_USER_FIELDS = "_id name email role photo avatar theme language totalXp createdAt updatedAt";
 const AUTH_USER_FIELDS = `${CLIENT_USER_FIELDS} googleId passwordChangedAt passwordSessionVersion`;
 
 function clientUser(user) {

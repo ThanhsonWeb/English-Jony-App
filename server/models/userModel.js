@@ -65,6 +65,11 @@ const userSchema = new mongoose.Schema(
 			enum: ["light", "cream", "dark", "black", "system"],
 			default: "system",
 		},
+		language: {
+			type: String,
+			enum: ["vi", "en"],
+			default: "vi",
+		},
 
 		totalXp: {
 			type: Number,
