@@ -5,6 +5,7 @@ import { useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
+import { useLanguagePreference } from "@/app/_contexts/LanguagePreferenceContext";
 
 const languages = [
 	{ locale: "vi", shortLabel: "VI", label: "Tiếng Việt" },
@@ -52,6 +53,7 @@ function LanguageIcon({ locale, large = false }) {
 
 export default function LanguageSwitcher({ variant = "compact" }) {
 	const locale = useLocale();
+	const { saveLanguage, saving, saveFailed } = useLanguagePreference();
 	const pathname = usePathname();
 	const router = useRouter();
 	const searchParams = useSearchParams();
@@ -81,9 +83,10 @@ export default function LanguageSwitcher({ variant = "compact" }) {
 		};
 	}, [isOpen]);
 
-	function changeLanguage(nextLocale) {
+	async function changeLanguage(nextLocale) {
 		setIsOpen(false);
 		if (nextLocale === locale) return;
+		if (!await saveLanguage(nextLocale)) return;
 
 		const query = searchParams.toString();
 		const href = query ? `${pathname}?${query}` : pathname;
@@ -94,6 +97,8 @@ export default function LanguageSwitcher({ variant = "compact" }) {
 		<div ref={containerRef} className={`relative shrink-0${isSettingsVariant ? " max-sm:ml-auto" : ""}`}>
 			<button
 				type="button"
+				disabled={saving}
+				aria-busy={saving}
 				onClick={() => setIsOpen((open) => !open)}
 				aria-label={locale === "vi" ? "Chọn ngôn ngữ" : "Choose language"}
 				aria-expanded={isOpen}
@@ -120,6 +125,9 @@ export default function LanguageSwitcher({ variant = "compact" }) {
 					} ${isOpen ? "rotate-180" : ""}`}
 				/>
 			</button>
+			{saveFailed && <span role="alert" className="absolute right-0 top-full z-[60] mt-2 w-56 rounded-lg border border-app bg-surface p-2 text-sm text-red-500">
+				{locale === "vi" ? "Không lưu được ngôn ngữ. Vui lòng thử lại." : "Could not save language. Please try again."}
+			</span>}
 
 			{isOpen && (
 				<div

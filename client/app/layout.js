@@ -1,5 +1,6 @@
 import { Analytics } from "@vercel/analytics/next";
 import { Inter } from "next/font/google";
+import { getLocale } from "next-intl/server";
 
 import "./_styles/globals.css";
 
@@ -19,9 +20,10 @@ export const metadata = {
 	description: "Học tiếng Anh cùng StudyJony",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+	const locale = await getLocale();
 	return (
-		<html lang="en" className={inter.className} suppressHydrationWarning>
+		<html lang={locale} className={inter.className} suppressHydrationWarning>
 			<body className="flex min-h-full flex-col bg-page text-main">
 				<AuthProvider>
 					<ThemeProvider>

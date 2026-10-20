@@ -33,7 +33,7 @@ export function AuthProvider({ children }) {
     const [sessionRestore] = useState(() => createSessionRestore({
         guard: sessionGuard,
         async loadUser(signal) {
-            const res = await fetch("/api/v1/users/me", { credentials: "include", signal,
+            const res = await fetch("/api/v1/users/me", { credentials: "include", cache: "no-store", signal,
                 headers: { "X-StudyJony-Credential-Cleanup": "1" } });
             if (!res.ok) return null;
             const data = await res.json();
