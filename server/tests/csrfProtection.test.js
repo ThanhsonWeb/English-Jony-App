@@ -67,7 +67,7 @@ test("every current mutation route rejects untrusted Origin before auth, parsing
 		["POST", "/auth/login"], ["POST", "/auth/signup"], ["POST", "/auth/logout"],
 		["POST", "/auth/credentials/login"], ["POST", "/auth/credentials/signup"], ["POST", "/auth/credentials/discard"],
 		["POST", "/users/forgotPassword"], ["PATCH", "/users/resetPassword/mock"], ["PATCH", "/users/updatePassword"],
-		["PATCH", "/users/updateMe"], ["PATCH", "/users/theme"], ["PATCH", "/users/avatar"],
+		["PATCH", "/users/updateMe"], ["PATCH", "/users/theme"], ["PATCH", "/users/language"], ["PATCH", "/users/avatar"],
 		["POST", "/topics"], ["PATCH", `/topics/${topic.id}`], ["DELETE", `/topics/${topic.id}`],
 		["POST", "/vocab"], ["PATCH", `/vocab/${word.id}`], ["DELETE", `/vocab/${word.id}`], ["POST", `/vocab/${word.id}/review`],
 		["POST", "/study-activities"], ["PATCH", "/dialogue-progress/asking-for-directions/finding-a-cafe/tasks/1"],

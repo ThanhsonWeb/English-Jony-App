@@ -40,6 +40,23 @@ exports.updateTheme = catchAsync(async (req, res, next) => {
 	res.status(200).json({ status: "success", data: { theme: user.theme } });
 });
 
+exports.updateLanguage = catchAsync(async (req, res, next) => {
+	const { language, expectedUserId } = req.body || {};
+	if (typeof language !== "string" || !User.schema.path("language").enumValues.includes(language) ||
+		Object.keys(req.body).some(key => !["language", "expectedUserId"].includes(key))) {
+		return next(new AppError("Invalid language preference.", 400));
+	}
+	// A request started by A must not update B after a cookie/account switch.
+	if (expectedUserId !== req.user.id) {
+		return next(new AppError("Account changed. Please try again.", 409));
+	}
+	const user = await User.findByIdAndUpdate(req.user.id, { language }, {
+		returnDocument: "after", runValidators: true,
+	}).select("language");
+	if (!user) return next(new AppError("Account no longer exists.", 401));
+	res.status(200).json({ status: "success", data: { language: user.language } });
+});
+
 exports.updateMe = catchAsync(async (req, res, next) => {
 	const updatedUser = await User.findByIdAndUpdate(
 		req.user.id,
