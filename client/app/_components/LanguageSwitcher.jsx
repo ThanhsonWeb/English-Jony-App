@@ -2,9 +2,7 @@
 
 import { Check, ChevronDown } from "lucide-react";
 import { useLocale } from "next-intl";
-import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { usePathname, useRouter } from "@/i18n/navigation";
 import { useLanguagePreference } from "@/app/_contexts/LanguagePreferenceContext";
 
 const languages = [
@@ -53,14 +51,11 @@ function LanguageIcon({ locale, large = false }) {
 
 export default function LanguageSwitcher({ variant = "compact" }) {
 	const locale = useLocale();
-	const { saveLanguage, saving, saveFailed } = useLanguagePreference();
-	const pathname = usePathname();
-	const router = useRouter();
-	const searchParams = useSearchParams();
+	const { saveLanguage, saving, saveFailed, selectedLanguage } = useLanguagePreference();
 	const containerRef = useRef(null);
 	const [isOpen, setIsOpen] = useState(false);
 	const currentLanguage =
-		languages.find((language) => language.locale === locale) || languages[0];
+		languages.find((language) => language.locale === selectedLanguage) || languages[0];
 	const isSettingsVariant = variant === "settings";
 
 	useEffect(() => {
@@ -83,14 +78,10 @@ export default function LanguageSwitcher({ variant = "compact" }) {
 		};
 	}, [isOpen]);
 
-	async function changeLanguage(nextLocale) {
+	function changeLanguage(nextLocale) {
 		setIsOpen(false);
-		if (nextLocale === locale) return;
-		if (!await saveLanguage(nextLocale)) return;
-
-		const query = searchParams.toString();
-		const href = query ? `${pathname}?${query}` : pathname;
-		router.replace(href, { locale: nextLocale });
+		if (nextLocale === selectedLanguage) return;
+		void saveLanguage(nextLocale);
 	}
 
 	return (
@@ -137,7 +128,7 @@ export default function LanguageSwitcher({ variant = "compact" }) {
 					}`}
 				>
 					{languages.map((language) => {
-						const isActive = language.locale === locale;
+						const isActive = language.locale === selectedLanguage;
 
 						return (
 							<button

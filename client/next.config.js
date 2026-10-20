@@ -6,6 +6,9 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.js");
 const { securityHeaders } = require("./security-headers.cjs");
 
 const nextConfig = {
+	// Keep the RSC rendering hint visible to proxy.js. Without this, Next
+	// strips it before the proxy and every client navigation repeats /users/me.
+	skipProxyUrlNormalize: true,
 	images: { qualities: [75, 90] },
 	async headers() {
 		return [{ source: "/:path*", locale: false, headers: securityHeaders() }];

@@ -10,18 +10,25 @@ const guestRouting = createMiddleware({
 const accountRouting = createMiddleware({ ...routing, localeDetection: false });
 
 export default async function proxy(request) {
-	const account = await resolveAccountLanguage(request.headers.get("cookie") || "", process.env.NEXT_PUBLIC_API_URL);
 	let response;
-	if (account.authenticated) {
-		const pathname = languagePath(request.nextUrl.pathname, account.language);
-		if (pathname !== request.nextUrl.pathname) {
-			const url = request.nextUrl.clone();
-			url.pathname = pathname;
-			response = NextResponse.redirect(url);
-		} else response = accountRouting(request);
+	if (request.method === "GET" && request.headers.get("rsc") === "1" && request.headers.get("sec-fetch-mode") !== "navigate") {
+		// This header selects public translation rendering, never authentication.
+		// Protected data is fetched separately from authenticated backend APIs.
+		// The client context reconciles the locale with its confirmed session.
+		response = accountRouting(request);
 	} else {
-		// Unavailable auth is not proof of a guest; keep its cookie untouched.
-		response = account.authenticated === false ? guestRouting(request) : accountRouting(request);
+		const account = await resolveAccountLanguage(request.headers.get("cookie") || "", process.env.NEXT_PUBLIC_API_URL);
+		if (account.authenticated) {
+			const pathname = languagePath(request.nextUrl.pathname, account.language);
+			if (pathname !== request.nextUrl.pathname) {
+				const url = request.nextUrl.clone();
+				url.pathname = pathname;
+				response = NextResponse.redirect(url);
+			} else response = accountRouting(request);
+		} else {
+			// Unavailable auth is not proof of a guest; keep its cookie untouched.
+			response = account.authenticated === false ? guestRouting(request) : accountRouting(request);
+		}
 	}
 	response.headers.set("Cache-Control", "private, no-store");
 	response.headers.append("Vary", "Cookie, Accept-Language");
