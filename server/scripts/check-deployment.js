@@ -102,6 +102,13 @@ async function checkDatabase(base, release, { loadConfig = readConfig, load = re
 	try {
 		await connection.asPromise();
 		await connection.db.command({ ping: 1 });
+		// The incoming guard also verifies rollback releases. Only mobile-enabled
+		// releases require this collection; an older website release stays usable.
+		const mobileFiles = ["models/mobileLoginWindowModel.js", "middleware/mobileLoginRateLimit.js", "utils/mobileLoginReadiness.js"];
+		if (!release || mobileFiles.some(file => fs.existsSync(path.join(release, "server", file)))) {
+			const readiness = release ? load(path.join(release, "server/utils/mobileLoginReadiness.js")) : require("../utils/mobileLoginReadiness");
+			await readiness.assertMobileLoginReady(connection.db);
+		}
 	} finally { await connection.destroy(); }
 }
 

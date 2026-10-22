@@ -17,11 +17,15 @@ const compression = require("compression");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const csrfProtection = require("./middleware/csrfProtection");
+const { isMobileLoginRequest } = require("./utils/mobileLoginRequest");
+const { trustNginxProxy } = require("./utils/trustedProxy");
 // test CI/CD deployment
 
 const app = express();
-app.set("trust proxy", 1);
+app.set("trust proxy", trustNginxProxy);
 const authLimiter = rateLimit({
+	// Native login has its own durable limits and must not consume web quotas.
+	skip: isMobileLoginRequest,
 	max: process.env.NODE_ENV === "development" ? 100 : 30,
 	windowMs: 60 * 60 * 1000,
 });

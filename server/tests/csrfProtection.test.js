@@ -65,6 +65,7 @@ const denied = response => {
 test("every current mutation route rejects untrusted Origin before auth, parsing, cookies or database effects", async () => {
 	const routes = [
 		["POST", "/auth/login"], ["POST", "/auth/signup"], ["POST", "/auth/logout"],
+		["POST", "/auth/mobile/login"],
 		["POST", "/auth/credentials/login"], ["POST", "/auth/credentials/signup"], ["POST", "/auth/credentials/discard"],
 		["POST", "/users/forgotPassword"], ["PATCH", "/users/resetPassword/mock"], ["PATCH", "/users/updatePassword"],
 		["PATCH", "/users/updateMe"], ["PATCH", "/users/theme"], ["PATCH", "/users/language"], ["PATCH", "/users/avatar"],
