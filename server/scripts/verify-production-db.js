@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { assertMobileLoginReady } = require("../utils/mobileLoginReadiness");
 require("dotenv").config({ quiet: true });
 
 const EXPECTED_COLLECTIONS = [
@@ -99,6 +100,8 @@ async function verifyProductionDb({ uri = process.env.MONGODB_URI, output = cons
 			}
 		}
 
+		await assertMobileLoginReady(db);
+		output.log("\nMobileLoginWindow: completed identity/TTL indexes and application counter permissions OK.");
 		if (failed) throw new Error("Production database readiness checks failed. No changes were made.");
 		output.log("\nPASS: transaction support and required indexes are ready. No changes were made.");
 	} finally {

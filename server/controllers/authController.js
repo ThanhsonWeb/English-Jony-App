@@ -18,6 +18,10 @@ const { assertPasswordByteLimit } = require("../utils/passwordPolicy");
 const { CLIENT_USER_FIELDS, AUTH_USER_FIELDS, clientUser } = require("../utils/clientUser");
 const privateResponse = require("../middleware/privateResponse");
 
+// Public dummy bcrypt hash (cost 12); not a credential. Unknown/Google-only
+// accounts still perform a password comparison to reduce timing differences.
+const MOBILE_DUMMY_PASSWORD_HASH = "$2b$12$uHvOOyABqgSBKh7OsUZhL.PuqutnXOcHg/c6y2AfLKwXLr63fft0i";
+
 const GOOGLE_OAUTH_STATE_COOKIE = "google_oauth_state";
 const GOOGLE_OAUTH_LOCALE_COOKIE = "google_oauth_locale";
 const GOOGLE_OAUTH_COOKIE_PATH = "/api/v1/auth/google";
@@ -30,9 +34,10 @@ const getGoogleClient = () =>
 		process.env.GOOGLE_REDIRECT_URI,
 	);
 
-const signToken = (user, attemptId) => {
+const signToken = (user, attemptId, mobile = false) => {
 	const payload = { id: user._id, jti: crypto.randomBytes(32).toString("hex") };
 	if (attemptId) payload.credentialAttempt = attemptId;
+	if (mobile) payload.sessionType = "mobile";
 	if (user.passwordChangedAt) {
 		payload.passwordChangedAt = user.passwordChangedAt.getTime();
 	}
@@ -40,7 +45,7 @@ const signToken = (user, attemptId) => {
 		payload.passwordSessionVersion = user.passwordSessionVersion;
 	}
 	return jwt.sign(payload, process.env.JWT_SECRET, {
-		expiresIn: process.env.JWT_EXPIRES_IN,
+		expiresIn: mobile ? 60 * 60 : process.env.JWT_EXPIRES_IN,
 	});
 };
 
@@ -134,6 +139,23 @@ exports.login = catchAsync(async (req, res, next) => {
 
 	createSendToken(user, 200, res, req.credentialAttempt);
 });
+exports.mobileLogin = catchAsync(async (req, res, next) => {
+	const { email, password } = req.mobileCredentials;
+	const user = await User.findOne({ email }).select(`${AUTH_USER_FIELDS} +password`);
+	const correct = await User.prototype.correctPassword(password, user?.password || MOBILE_DUMMY_PASSWORD_HASH);
+	if (!user?.password || !correct) {
+		return next(new AppError("Incorrect email or password.", 401));
+	}
+	const token = signToken(user, undefined, true);
+	res.status(200).json({
+		status: "success",
+		data: {
+			user: clientUser(user), token,
+			expiresAt: new Date(jwt.decode(token).exp * 1000).toISOString(),
+		},
+	});
+});
+
 exports.logout = catchAsync(async (req, res, next) => {
 	// The client captures this selector before invalidating local auth state.
 	// It is not a credential: only a verified JWT can be revoked.
@@ -198,6 +220,7 @@ const cleanupCredentialCookies = async (req, res) => {
 exports.protect = catchAsync(async (req, res, next) => {
 	privateResponse(req, res, () => {});
 	let token;
+	let bearerToken = false;
 
 	// 1. Check for Bearer token (Old way)
 	if (
@@ -205,6 +228,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 		req.headers.authorization.startsWith("Bearer")
 	) {
 		token = req.headers.authorization.split(" ")[1];
+		bearerToken = Boolean(token);
 	}
 
 	// 2. Check for Cookie (New way)
@@ -240,6 +264,9 @@ exports.protect = catchAsync(async (req, res, next) => {
 		return next(new AppError("Invalid or expired session. Please log in again.", 401));
 	}
 	if (selectedAttempt && decoded.credentialAttempt !== selectedAttempt) {
+		return next(new AppError("Invalid or expired session. Please log in again.", 401));
+	}
+	if (decoded.sessionType === "mobile" && !bearerToken) {
 		return next(new AppError("Invalid or expired session. Please log in again.", 401));
 	}
 	if (await sessionRevocation.isRevoked(token)) {

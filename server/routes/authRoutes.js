@@ -6,12 +6,16 @@ const {
 	createGoogleOAuthState,
 	googleOAuthCallback,
 	discardCredentialAttempt,
+	mobileLogin,
 } = require("../controllers/authController.js");
 const { requireCredentialAttempt } = require("../utils/credentialCookies");
+const { requireMobileLoginRequest } = require("../utils/mobileLoginRequest");
+const { mobileLoginRateLimit } = require("../middleware/mobileLoginRateLimit");
 
 const router = express.Router();
 router.use(require("../middleware/privateResponse"));
 // routes
+router.post("/mobile/login", requireMobileLoginRequest, mobileLoginRateLimit, mobileLogin);
 router.get("/google/state", createGoogleOAuthState);
 router.get("/google/callback", googleOAuthCallback);
 // Separate routes fail safely against an older backend during deployment.

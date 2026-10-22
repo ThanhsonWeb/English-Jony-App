@@ -1,4 +1,5 @@
 const AppError = require("../utils/appError");
+const { isMobileLoginRequest } = require("../utils/mobileLoginRequest");
 
 const safeMethods = new Set(["GET", "HEAD", "OPTIONS"]);
 function parseUrl(value) {
@@ -19,6 +20,10 @@ module.exports = (req, res, next) => {
 		(process.env.NODE_ENV === "production" && frontend.protocol !== "https:")) {
 		return next(new AppError("Request origin validation is unavailable. Please try again later.", 500));
 	}
+
+	// Only this exact, cookie-less native JSON login may start without a token.
+	// Keep frontend configuration validation and every existing web rule intact.
+	if (isMobileLoginRequest(req)) return next();
 
 	const origin = req.get("Origin");
 	if (origin !== undefined) {
