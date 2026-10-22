@@ -17,36 +17,43 @@ function readyIndex(index) {
 		!index.sparse && !index.partialFilterExpression;
 }
 
-async function assertMobileLoginReady(db) {
-	try {
-		const collections = await db.listCollections({ name: COLLECTION }, { nameOnly: false }).toArray();
-		const collection = collections.find(item => item.name === COLLECTION);
-		if (collection?.type !== "collection" || collection.options?.capped ||
-			collection.options?.timeseries || Object.keys(collection.options?.validator || {}).length) {
-			throw new Error("Collection not ready");
-		}
-		// Plain listIndexes also includes unfinished builds. Request build UUIDs so
-		// an in-progress index cannot satisfy readiness. The driver handles batches.
-		const indexes = await db.runCursorCommand({
-			listIndexes: COLLECTION, includeBuildUUIDs: true, cursor: {},
-		}).toArray();
-		const id = indexes.find(index => index.name === "_id_" && singleKey(index, "_id") && readyIndex(index));
-		const ttl = indexes.find(index => singleKey(index, "expiresAt") && readyIndex(index) &&
-			index.expireAfterSeconds === 0 && !index.unique && !index.prepareUnique);
-		if (!id || !ttl) throw new Error("Indexes not ready");
+function prerequisiteError(code) {
+	return Object.assign(new Error("Mobile login prerequisite not ready"), { code });
+}
 
-		// Ask for the effective privileges of THIS connection, not a role name or
-		// separate admin account. Inspection never writes a production probe row.
-		const { authInfo } = await db.command({ connectionStatus: 1, showPrivileges: true });
-		if (!authInfo?.authenticatedUsers?.length || !Array.isArray(authInfo.authenticatedUserPrivileges)) {
-			throw new Error("Authenticated permissions unavailable");
-		}
-		const actions = new Set(authInfo.authenticatedUserPrivileges
-			.filter(privilege => grantsCollection(privilege.resource, db.databaseName))
-			.flatMap(privilege => privilege.actions || []));
-		if (!actions.has("anyAction") && REQUIRED_ACTIONS.some(action => !actions.has(action))) {
-			throw new Error("Counter permissions not ready");
-		}
+async function assertMobileLoginReady(db, { runStage = (_stage, operation) => operation() } = {}) {
+	try {
+		await runStage("db.collection", async () => {
+			const collections = await db.listCollections({ name: COLLECTION }, { nameOnly: false }).toArray();
+			const collection = collections.find(item => item.name === COLLECTION);
+			if (collection?.type !== "collection" || collection.options?.capped ||
+				collection.options?.timeseries || Object.keys(collection.options?.validator || {}).length) {
+				throw prerequisiteError("MOBILE_COLLECTION_NOT_READY");
+			}
+		});
+		await runStage("db.indexes", async () => {
+			// Plain listIndexes includes unfinished builds. The driver handles batches.
+			const indexes = await db.runCursorCommand({
+				listIndexes: COLLECTION, includeBuildUUIDs: true, cursor: {},
+			}).toArray();
+			const id = indexes.find(index => index.name === "_id_" && singleKey(index, "_id") && readyIndex(index));
+			const ttl = indexes.find(index => singleKey(index, "expiresAt") && readyIndex(index) &&
+				index.expireAfterSeconds === 0 && !index.unique && !index.prepareUnique);
+			if (!id || !ttl) throw prerequisiteError("MOBILE_INDEXES_NOT_READY");
+		});
+		await runStage("db.permissions", async () => {
+			// Inspect THIS connection's effective privileges; never write probe rows.
+			const { authInfo } = await db.command({ connectionStatus: 1, showPrivileges: true });
+			if (!authInfo?.authenticatedUsers?.length || !Array.isArray(authInfo.authenticatedUserPrivileges)) {
+				throw prerequisiteError("MOBILE_PERMISSIONS_UNAVAILABLE");
+			}
+			const actions = new Set(authInfo.authenticatedUserPrivileges
+				.filter(privilege => grantsCollection(privilege.resource, db.databaseName))
+				.flatMap(privilege => privilege.actions || []));
+			if (!actions.has("anyAction") && REQUIRED_ACTIONS.some(action => !actions.has(action))) {
+				throw prerequisiteError("MOBILE_COUNTER_PERMISSIONS_MISSING");
+			}
+		});
 	} catch {
 		// Database errors can contain connection details. Only expose fixed text.
 		throw new Error("Mobile login database readiness failed. Verify the collection, completed indexes and application database permissions.");

@@ -209,17 +209,24 @@ function shellFixture(t, fail = "", options = {}) {
  return { ...result, log: fs.existsSync(log) ? fs.readFileSync(log, "utf8") : "", base, old, state, selected: fs.readFileSync(state, "utf8") };
 }
 
+const preparationStages = { root: "arguments", lock: "lock", checksum: "extract", watch: "current_pm2", install: "install", tree: "dependency_tree", native: "native_dependencies", syntax: "syntax", catalogue: "catalogue", config: "config", database: "database", "journal-path": "previous_integrity", "source-tamper": "post_catalogue_integrity" };
 for (const failure of ["root", "lock", "checksum", "watch", "install", "tree", "native", "syntax", "catalogue", "config", "database", "journal-path", "source-tamper"]) test(`${failure}: preparation fails without changing the running release`, t => {
  const result = shellFixture(t, failure);
  assert.notEqual(result.status, 0, result.stderr);
  assert.doesNotMatch(result.log, /pm2 delete|pm2 start|pm2 save/);
+ assert.ok(result.stderr.includes(`deployment operation=preparation stage=${preparationStages[failure]} status=started`), "The failed preparation step is named");
+ assert.doesNotMatch(result.stderr, /must-not-reach-PM2/);
  assert.equal(fs.realpathSync(path.join(result.base, "current")), fs.realpathSync(result.old));
 });
 
+const activationStages = { start: "pm2_start", "wrong-path": "pm2_verify", health: "health", "database-post": "database", headers: "private_api", "public-headers": "public_api", save: "save", pointer: "current_pointer", term: "pm2_start" };
 for (const failure of ["start", "wrong-path", "health", "database-post", "headers", "public-headers", "save", "pointer", "term"]) test(`${failure}: activation failure restores and verifies the previous release`, t => {
  const result = shellFixture(t, failure);
  assert.notEqual(result.status, 0, result.stderr);
  assert.match(result.stderr, /previous release restored and verified/, result.stderr);
+ assert.ok(result.stderr.includes(`deployment operation=activation stage=${activationStages[failure]} status=failed`), "The original activation failure remains visible after rollback");
+ assert.ok(result.stderr.includes("deployment operation=rollback stage=release_integrity status=started"));
+ assert.doesNotMatch(result.stderr, /must-not-reach-PM2/);
  assert.ok(result.selected.includes(oldSha));
  assert.equal(fs.realpathSync(path.join(result.base, "current")), fs.realpathSync(result.old));
  assert.equal(fs.existsSync(path.join(result.base, "deploy-state.json")), false);
@@ -229,6 +236,8 @@ for (const failure of ["start", "wrong-path", "health", "database-post", "header
 test("failed rollback retains the journal and both releases for operator recovery", t => {
  const result = shellFixture(t, "rollback"); assert.notEqual(result.status, 0);
  assert.match(result.stderr, /DEPLOYMENT AND ROLLBACK FAILED/, result.stderr);
+ assert.match(result.stderr, /operation=activation stage=health status=failed/);
+ assert.match(result.stderr, /operation=rollback stage=pm2_start status=failed/);
  assert.equal(fs.existsSync(path.join(result.base, "deploy-state.json")), true);
  assert.equal(fs.readdirSync(path.join(result.base, "releases")).length, 2);
  assert.doesNotMatch(result.log, /pm2 save/);
@@ -238,6 +247,7 @@ test("interrupted deployment is recovered, but never silently proceeds with anot
  const result = shellFixture(t, "interrupted"); assert.notEqual(result.status, 0, result.stderr);
  assert.match(result.stderr, /Recovered an interrupted deployment/);
  assert.ok(result.selected.includes(oldSha)); assert.doesNotMatch(result.log, /npm ci/);
+ assert.match(result.stderr, /operation=rollback stage=pm2_start status=started/);
  assert.equal(fs.existsSync(path.join(result.base, "deploy-state.json")), false);
 });
 
@@ -250,4 +260,7 @@ test("success installs away from current, switches explicit paths, verifies, sav
  assert.ok(result.log.indexOf("npm ci") < result.log.indexOf("pm2 delete"));
  assert.ok(result.log.indexOf("--private-api") < result.log.indexOf("pm2 save"));
  assert.doesNotMatch(result.log, /pm2 delete all|--update-env|sudo|git merge/);
+ assert.match(result.stderr, /operation=preparation stage=database status=started/);
+ assert.match(result.stderr, /operation=activation stage=database status=started/);
+ assert.doesNotMatch(result.stderr, /status=failed|must-not-reach-PM2/);
 });

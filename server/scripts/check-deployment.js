@@ -4,6 +4,85 @@ const path = require("node:path");
 const { createRequire } = require("node:module");
 const { sourcePath, hash } = require("./release-artifact");
 
+
+// Only fixed stages/categories/codes reach deployment logs; never stringify errors.
+const CHECK_STAGES = new Map([
+	['--runtime', 'check.runtime'], ['--health-url', 'check.health_url'],
+	['--pm2', 'check.pm2'], ['--health', 'check.health'], ['--release', 'check.release'],
+	['--config', 'check.config'], ['--database', 'check.database'],
+	['--private-api', 'check.private_api'], ['--public-api', 'check.public_api'],
+	['--dependencies', 'check.dependencies'],
+]);
+const DIAGNOSTIC_STAGES = new Set([...CHECK_STAGES.values(), 'check.unknown',
+	'db.config', 'db.connection_setup', 'db.connect', 'db.ping', 'db.mobile_readiness',
+	'db.collection', 'db.indexes', 'db.permissions', 'db.close',
+]);
+const ERROR_CATEGORIES = new Map([
+	['MongoServerSelectionError', 'server_selection'], ['MongooseServerSelectionError', 'server_selection'],
+	['MongoNetworkError', 'network'], ['MongoNetworkTimeoutError', 'network_timeout'],
+	['MongoServerError', 'database'], ['MongoParseError', 'connection_options'],
+	['MongooseError', 'database_client'], ['TypeError', 'invalid_input'],
+]);
+const DIAGNOSTIC_CODES = new Set([
+	13, 18, 26, 27, 50, 59, 73, 85, 86, 91, 8000, 11600, 11602,
+	'ENOTFOUND', 'EAI_AGAIN', 'ECONNREFUSED', 'ECONNRESET', 'ETIMEDOUT',
+	'EACCES', 'ENOENT', 'ENOTDIR', 'ELOOP', 'MODULE_NOT_FOUND',
+	'CERT_HAS_EXPIRED', 'UNABLE_TO_VERIFY_LEAF_SIGNATURE', 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY',
+	'ERR_TLS_CERT_ALTNAME_INVALID',
+	'MOBILE_COLLECTION_NOT_READY', 'MOBILE_INDEXES_NOT_READY',
+	'MOBILE_PERMISSIONS_UNAVAILABLE', 'MOBILE_COUNTER_PERMISSIONS_MISSING',
+]);
+const NO_DIAGNOSTICS = { sync: (_stage, operation) => operation(), run: (_stage, operation) => operation() };
+
+function diagnosticError(error) {
+	const result = { category: 'check_failed' };
+	try {
+		const name = error?.name, code = error?.code, cause = error?.cause, servers = error?.reason?.servers;
+		result.category = ERROR_CATEGORIES.get(name) || 'check_failed';
+		if (DIAGNOSTIC_CODES.has(code)) result.code = code;
+		const codes = new Set();
+		const inspect = value => {
+			const code = value?.code, causeCode = value?.cause?.code;
+			if (DIAGNOSTIC_CODES.has(code)) codes.add(code);
+			if (DIAGNOSTIC_CODES.has(causeCode)) codes.add(causeCode);
+		};
+		inspect(cause);
+		if (servers instanceof Map) {
+			let count = 0;
+			for (const server of servers.values()) {
+				if (count++ === 8) break;
+				inspect(server?.error);
+			}
+		}
+		if (codes.size) result.causeCodes = [...codes];
+	} catch { /* Untrusted error properties must not affect the original failure. */ }
+	return result;
+}
+
+function createDeploymentDiagnostics({ output = line => console.error(line), now = () => performance.now() } = {}) {
+	const timestamp = () => { try { const value = now(); return Number.isFinite(value) ? value : 0; } catch { return 0; } };
+	function emit(stage, status, start, error) {
+		try {
+			const event = { event: 'deployment_check', stage: DIAGNOSTIC_STAGES.has(stage) ? stage : 'check.unknown',
+				status, elapsedMs: Math.max(0, Math.round(timestamp() - start)) };
+			if (status === 'failed') Object.assign(event, diagnosticError(error));
+			output(JSON.stringify(event));
+		} catch { /* Logging must never change check results or cleanup/rollback behavior. */ }
+	}
+	return {
+		sync(stage, operation) {
+			const start = timestamp(); emit(stage, 'started', start);
+			try { const value = operation(); emit(stage, 'passed', start); return value; }
+			catch (error) { emit(stage, 'failed', start, error); throw error; }
+		},
+		async run(stage, operation) {
+			const start = timestamp(); emit(stage, 'started', start);
+			try { const value = await operation(); emit(stage, 'passed', start); return value; }
+			catch (error) { emit(stage, 'failed', start, error); throw error; }
+		},
+	};
+}
+
 function assertNodeVersion(version) {
 	const match = /^(\d+)\.(\d+)\.(\d+)$/.exec(version || "");
 	if (!match || Number(match[1]) !== 22 || Number(match[2]) < 14) {
@@ -93,23 +172,24 @@ function readConfig(base, release) {
 	return config;
 }
 
-async function checkDatabase(base, release, { loadConfig = readConfig, load = releaseRequire(release) } = {}) {
-	const config = loadConfig(base, release);
-	const mongoose = load("mongoose");
-	const connection = mongoose.createConnection(config.DATABASE, {
+async function checkDatabase(base, release, { loadConfig = readConfig, load = releaseRequire(release), diagnostics = NO_DIAGNOSTICS } = {}) {
+	const config = diagnostics.sync("db.config", () => loadConfig(base, release));
+	const connection = diagnostics.sync("db.connection_setup", () => load("mongoose").createConnection(config.DATABASE, {
 		autoIndex: false, autoCreate: false, serverSelectionTimeoutMS: 5000,
-	});
+	}));
 	try {
-		await connection.asPromise();
-		await connection.db.command({ ping: 1 });
+		await diagnostics.run("db.connect", () => connection.asPromise());
+		await diagnostics.run("db.ping", () => connection.db.command({ ping: 1 }));
 		// The incoming guard also verifies rollback releases. Only mobile-enabled
 		// releases require this collection; an older website release stays usable.
 		const mobileFiles = ["models/mobileLoginWindowModel.js", "middleware/mobileLoginRateLimit.js", "utils/mobileLoginReadiness.js"];
 		if (!release || mobileFiles.some(file => fs.existsSync(path.join(release, "server", file)))) {
-			const readiness = release ? load(path.join(release, "server/utils/mobileLoginReadiness.js")) : require("../utils/mobileLoginReadiness");
-			await readiness.assertMobileLoginReady(connection.db);
+			await diagnostics.run("db.mobile_readiness", async () => {
+				const readiness = release ? load(path.join(release, "server/utils/mobileLoginReadiness.js")) : require("../utils/mobileLoginReadiness");
+				await readiness.assertMobileLoginReady(connection.db, { runStage: diagnostics.run });
+			});
 		}
-	} finally { await connection.destroy(); }
+	} finally { await diagnostics.run("db.close", () => connection.destroy()); }
 }
 
 async function checkPrivateApi(value, fetchImpl = fetch) {
@@ -136,7 +216,7 @@ async function checkHealth(value, { attempts = 10, delayMs = 1000, fetchImpl = f
 	throw new Error("Post-start health verification failed. PM2 state was not saved.");
 }
 
-async function main(mode, args = []) {
+async function main(mode, args = [], diagnostics = NO_DIAGNOSTICS) {
 	if (mode === "--runtime") { assertNodeVersion(process.versions.node); return; }
 	if (mode === "--health-url") { healthURL(process.env.DEPLOY_HEALTH_URL); return; }
 	if (mode === "--pm2") {
@@ -147,7 +227,7 @@ async function main(mode, args = []) {
 	if (mode === "--health") { await checkHealth(process.env.DEPLOY_HEALTH_URL); return; }
 	if (mode === "--release") { checkRelease(args[0], args[1]); return; }
 	if (mode === "--config") { readConfig(args[0], args[1]); return; }
-	if (mode === "--database") { await checkDatabase(args[0], args[1]); return; }
+	if (mode === "--database") { await checkDatabase(args[0], args[1], { diagnostics }); return; }
 	if (mode === "--private-api") { await checkPrivateApi(process.env.DEPLOY_HEALTH_URL); return; }
 	if (mode === "--public-api") {
 		const config = readConfig(args[0], args[1]);
@@ -163,8 +243,11 @@ async function main(mode, args = []) {
 	throw new Error("Unknown deployment verification mode.");
 }
 
-if (require.main === module) main(process.argv[2], process.argv.slice(3)).catch(() => {
-	console.error("Deployment verification failed. Check runtime, release, private configuration, database, PM2 and health locally; do not share secrets.");
-	process.exitCode = 1;
-});
-module.exports = { assertNodeVersion, healthURL, checkPm2, checkHealth, checkRelease, assertPrivateConfig, readConfig, checkDatabase, checkPrivateApi };
+if (require.main === module) {
+	const diagnostics = createDeploymentDiagnostics();
+	diagnostics.run(CHECK_STAGES.get(process.argv[2]) || "check.unknown", () => main(process.argv[2], process.argv.slice(3), diagnostics)).catch(() => {
+		console.error("Deployment verification failed. Check runtime, release, private configuration, database, PM2 and health locally; do not share secrets.");
+		process.exitCode = 1;
+	});
+}
+module.exports = { createDeploymentDiagnostics, assertNodeVersion, healthURL, checkPm2, checkHealth, checkRelease, assertPrivateConfig, readConfig, checkDatabase, checkPrivateApi };

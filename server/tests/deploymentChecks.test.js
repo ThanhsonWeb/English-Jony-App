@@ -3,7 +3,7 @@ const { test } = require("node:test");
 const fs = require("node:fs");
 const os = require("node:os");
 const path = require("node:path");
-const { assertPrivateConfig, checkDatabase } = require("../scripts/check-deployment");
+const { createDeploymentDiagnostics, assertPrivateConfig, checkDatabase } = require("../scripts/check-deployment");
 
 test("shared production secrets reject public permissions, another owner and symlinks", () => {
 	const valid = { isFile: () => true, mode: 0o100600, uid: 1001 };
@@ -62,13 +62,14 @@ for (const mode of ["legacy", "mobile", "not-ready", "missing-check"]) test(`sel
 		const model = path.join(release, "server/models/mobileLoginWindowModel.js");
 		fs.mkdirSync(path.dirname(model), { recursive: true }); fs.writeFileSync(model, "// fixture marker\n");
 	}
-	const calls = [];
+	const calls = [], events = [];
 	const connection = {
 		asPromise: async () => calls.push("connect"),
 		db: { command: async input => { assert.deepEqual(input, { ping: 1 }); calls.push("ping"); } },
 		destroy: async () => calls.push("close"),
 	};
 	const options = {
+		diagnostics: createDeploymentDiagnostics({ output: line => events.push(JSON.parse(line)) }),
 		loadConfig: () => ({ DATABASE: "mongodb://fixture.test/not-production" }),
 		load: name => {
 			if (name === "mongoose") return { createConnection: () => connection };
@@ -83,4 +84,6 @@ for (const mode of ["legacy", "mobile", "not-ready", "missing-check"]) test(`sel
 	if (["not-ready", "missing-check"].includes(mode)) await assert.rejects(checkDatabase("unused", release, options));
 	else await checkDatabase("unused", release, options);
 	assert.deepEqual(calls, ["connect", "ping", ...(["mobile", "not-ready"].includes(mode) ? ["readiness"] : []), "close"]);
+	assert.equal(events.some(event => event.stage === "db.mobile_readiness"), mode !== "legacy");
+	assert.ok(!events.some(event => ["db.collection", "db.indexes", "db.permissions"].includes(event.stage)), "Older readiness modules can ignore optional callbacks");
 });
