@@ -4,7 +4,7 @@ const fs = require("node:fs");
 const os = require("node:os");
 const path = require("node:path");
 const { spawnSync, execFileSync } = require("node:child_process");
-const { assertNodeVersion, healthURL, checkPm2, checkHealth, checkRelease, checkPrivateApi } = require("../scripts/check-deployment");
+const { assertNodeVersion, healthURL, checkPm2, checkHealth, checkRelease, checkPrivateApi, checkPublicApi } = require("../scripts/check-deployment");
 const { build, extract, hash, validateBundle, sourcePath } = require("../scripts/release-artifact");
 const root = path.resolve(__dirname, "../..");
 const sha = "a".repeat(40), oldSha = "b".repeat(40);
@@ -52,6 +52,60 @@ test("private API check requires unauthenticated denial and explicit no-store", 
   return { status: 401, headers: new Headers({ "cache-control": "private, no-store" }) };
  });
  for (const [status, header] of [[200, "private, no-store"], [401, "public, max-age=0, must-revalidate"]]) await assert.rejects(checkPrivateApi("http://127.0.0.1:5000/health", async () => ({ status, headers: new Headers({ "cache-control": header }) })));
+});
+
+test("public API check retries bounded transient timeouts and gateway responses", async () => {
+ let requests = 0, waits = 0;
+ await checkPublicApi("https://studyjony.test", async (url, options) => {
+  assert.equal(url.href, "https://studyjony.test/api/v1/users/me");
+  assert.equal(options.redirect, "error");
+  assert.equal(options.signal instanceof AbortSignal, true);
+  requests++;
+  if (requests === 1) { const error = new Error("timed out"); error.name = "TimeoutError"; throw error; }
+  if (requests === 2) return { status: 503, headers: new Headers() };
+  return { status: 401, headers: new Headers({ "cache-control": "private, no-store" }) };
+ }, { sleep: async ms => { assert.equal(ms, 500); waits++; } });
+ assert.equal(requests, 3); assert.equal(waits, 2);
+});
+
+test("public API check stops after three transient failures", async () => {
+ for (const transient of [
+  async () => { const error = new Error("timed out"); error.name = "TimeoutError"; throw error; },
+  async () => ({ status: 503, headers: new Headers() }),
+ ]) {
+  let requests = 0;
+  await assert.rejects(checkPublicApi("https://studyjony.test", async () => { requests++; return transient(); }, { sleep: async () => {} }));
+  assert.equal(requests, 3);
+ }
+});
+
+test("public API check fails immediately on permanent statuses and policy failures", async () => {
+ for (const response of [
+  { status: 302, headers: new Headers() },
+  { status: 404, headers: new Headers() },
+  { status: 401, headers: new Headers({ "cache-control": "public, max-age=0" }) },
+  { status: 500, headers: new Headers() },
+ ]) {
+  let requests = 0;
+  await assert.rejects(checkPublicApi("https://studyjony.test", async () => { requests++; return response; }, { sleep: async () => {} }));
+  assert.equal(requests, 1);
+ }
+ let requests = 0;
+ await assert.rejects(checkPublicApi("https://studyjony.test", async () => {
+  requests++;
+  const error = new TypeError("redirect rejected"); error.cause = { code: "ERR_INVALID_URL" }; throw error;
+ }, { sleep: async () => {} }));
+ assert.equal(requests, 1);
+});
+
+test("private API check remains one-shot on a transient failure", async () => {
+ let requests = 0;
+ await assert.rejects(checkPrivateApi("http://127.0.0.1:5000/health", async (_url, options) => {
+  requests++;
+  assert.equal(options.redirect, "error");
+  const error = new Error("timed out"); error.name = "TimeoutError"; throw error;
+ }));
+ assert.equal(requests, 1);
 });
 
 test("production job allows only successful main push/manual runs in the canonical repository", () => {

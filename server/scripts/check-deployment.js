@@ -197,6 +197,41 @@ async function checkPrivateApi(value, fetchImpl = fetch) {
 	await checkPrivateResponse(url, fetchImpl);
 }
 
+const publicApiRetryableStatuses = new Set([502, 503, 504]);
+const publicApiRetryableErrorCodes = new Set(["ECONNRESET", "ECONNREFUSED", "ETIMEDOUT", "EAI_AGAIN"]);
+
+function isTransientPublicApiError(error) {
+	if (error?.name === "TimeoutError" || error?.name === "AbortError") return true;
+	let cause = error;
+	for (let depth = 0; cause && depth < 4; depth++, cause = cause.cause) {
+		if (publicApiRetryableErrorCodes.has(cause.code)) return true;
+	}
+	return false;
+}
+
+async function checkPublicApi(frontendUrl, fetchImpl = fetch, { sleep = ms => new Promise(resolve => setTimeout(resolve, ms)) } = {}) {
+	const url = new URL("/api/v1/users/me", frontendUrl);
+	for (let attempt = 0; attempt < 3; attempt++) {
+		let response;
+		try {
+			response = await fetchImpl(url, { redirect: "error", signal: AbortSignal.timeout(3000) });
+		} catch (error) {
+			if (attempt === 2 || !isTransientPublicApiError(error)) throw error;
+			await sleep(500);
+			continue;
+		}
+		if (publicApiRetryableStatuses.has(response.status) && attempt < 2) {
+			await sleep(500);
+			continue;
+		}
+		if (response.status !== 401 || response.headers.get("cache-control") !== "private, no-store") {
+			throw new Error("Private unauthenticated response policy failed");
+		}
+		return;
+	}
+	throw new Error("Private unauthenticated response policy failed");
+}
+
 async function checkPrivateResponse(url, fetchImpl = fetch) {
 	const response = await fetchImpl(url, { redirect: "error", signal: AbortSignal.timeout(3000) });
 	if (response.status !== 401 || response.headers.get("cache-control") !== "private, no-store") {
@@ -231,7 +266,7 @@ async function main(mode, args = [], diagnostics = NO_DIAGNOSTICS) {
 	if (mode === "--private-api") { await checkPrivateApi(process.env.DEPLOY_HEALTH_URL); return; }
 	if (mode === "--public-api") {
 		const config = readConfig(args[0], args[1]);
-		await checkPrivateResponse(new URL("/api/v1/users/me", config.FRONTEND_URL)); return;
+		await checkPublicApi(config.FRONTEND_URL); return;
 	}
 	if (mode === "--dependencies") {
 		const load = releaseRequire(args[0]);
@@ -250,4 +285,4 @@ if (require.main === module) {
 		process.exitCode = 1;
 	});
 }
-module.exports = { createDeploymentDiagnostics, assertNodeVersion, healthURL, checkPm2, checkHealth, checkRelease, assertPrivateConfig, readConfig, checkDatabase, checkPrivateApi };
+module.exports = { createDeploymentDiagnostics, assertNodeVersion, healthURL, checkPm2, checkHealth, checkRelease, assertPrivateConfig, readConfig, checkDatabase, checkPrivateApi, checkPublicApi };
