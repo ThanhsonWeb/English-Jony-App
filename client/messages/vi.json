@@ -40,6 +40,23 @@
 		"signupUnavailable": "Không thể tạo tài khoản với thông tin này. Hãy thử đăng nhập hoặc khôi phục tài khoản.",
 		"finishingGoogleLogin": "Đang hoàn tất đăng nhập..."
 	},
+	"Feedback": {
+		"button": "Góp ý",
+		"title": "Gửi góp ý",
+		"subtitle": "Ý kiến của bạn giúp StudyJony tốt hơn.",
+		"close": "Đóng cửa sổ góp ý",
+		"typeLabel": "Loại góp ý",
+		"suggestion": "Đề xuất",
+		"bug": "Báo lỗi",
+		"general": "Ý kiến khác",
+		"messageLabel": "Nội dung",
+		"placeholder": "Chia sẻ ý kiến của bạn...",
+		"submit": "Gửi góp ý",
+		"sending": "Đang gửi...",
+		"success": "Cảm ơn bạn! Góp ý đã được gửi.",
+		"error": "Chưa gửi được góp ý. Vui lòng thử lại.",
+		"rateLimited": "Bạn gửi góp ý hơi nhanh. Vui lòng thử lại sau."
+	},
 	"Home": {
 		"eyebrow": "Học tiếng Anh thực tế mỗi ngày",
 		"heroTitle": "Học tiếng Anh qua những tình huống bạn <accent>thực sự gặp</accent>",

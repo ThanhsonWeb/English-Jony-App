@@ -40,6 +40,23 @@
 		"signupUnavailable": "Unable to create an account with these details. Try signing in or use account recovery.",
 		"finishingGoogleLogin": "Finishing sign-in..."
 	},
+	"Feedback": {
+		"button": "Feedback",
+		"title": "Share feedback",
+		"subtitle": "Your feedback helps us improve StudyJony.",
+		"close": "Close feedback",
+		"typeLabel": "Feedback type",
+		"suggestion": "Suggestion",
+		"bug": "Report a bug",
+		"general": "General feedback",
+		"messageLabel": "Message",
+		"placeholder": "Tell us what you think...",
+		"submit": "Send feedback",
+		"sending": "Sending...",
+		"success": "Thanks! Your feedback has been sent.",
+		"error": "We couldn't send your feedback. Please try again.",
+		"rateLimited": "You're sending feedback too quickly. Please try again later."
+	},
 	"Home": {
 		"eyebrow": "Learn English in real life",
 		"heroTitle": "Learn English through situations you <accent>actually experience</accent>",
