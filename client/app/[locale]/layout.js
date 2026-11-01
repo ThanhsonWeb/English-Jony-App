@@ -6,6 +6,7 @@ import { DialogueBackgroundProgressProvider } from "@/app/_components/DialoguePr
 import { LanguagePreferenceProvider } from "@/app/_contexts/LanguagePreferenceContext";
 import { DEFAULT_LANGUAGE, guestLanguage } from "@/app/_lib/languagePreference.mjs";
 import { selectedSessionCookies } from "@/i18n/accountLanguage.mjs";
+import FeedbackWidget from "@/app/_components/FeedbackWidget";
 
 export default async function LocaleLayout({ children, params }) {
 	const { locale } = await params;
@@ -19,7 +20,7 @@ export default async function LocaleLayout({ children, params }) {
 	return (
 		<NextIntlClientProvider>
 			<LanguagePreferenceProvider initialGuestLanguage={initialGuestLanguage}>
-				<DialogueBackgroundProgressProvider>{children}</DialogueBackgroundProgressProvider>
+				<DialogueBackgroundProgressProvider>{children}<FeedbackWidget /></DialogueBackgroundProgressProvider>
 			</LanguagePreferenceProvider>
 		</NextIntlClientProvider>
 	);
