@@ -57,6 +57,49 @@
 		"error": "Chưa gửi được góp ý. Vui lòng thử lại.",
 		"rateLimited": "Bạn gửi góp ý hơi nhanh. Vui lòng thử lại sau."
 	},
+	"AdminFeedback": {
+		"eyebrow": "Khu vực riêng tư",
+		"title": "Góp ý của người dùng",
+		"subtitle": "Xem đề xuất và báo lỗi do người dùng StudyJony gửi.",
+		"privateTitle": "Trang quản lý góp ý",
+		"checkingAccess": "Đang kiểm tra quyền truy cập...",
+		"signInRequired": "Hãy đăng nhập bằng tài khoản quản trị để tiếp tục.",
+		"signIn": "Đăng nhập",
+		"adminRequired": "Bạn không có quyền xem trang này.",
+		"sessionExpired": "Phiên đăng nhập đã hết hạn. Hãy đăng nhập lại rồi thử lại.",
+		"filterHeading": "Lọc góp ý",
+		"typeFilter": "Loại góp ý",
+		"statusFilter": "Trạng thái",
+		"types": {
+			"all": "Tất cả loại",
+			"suggestion": "Đề xuất",
+			"bug": "Báo lỗi",
+			"other": "Khác"
+		},
+		"statuses": {
+			"all": "Tất cả trạng thái",
+			"new": "Mới",
+			"reviewing": "Đang xem xét",
+			"resolved": "Đã xử lý"
+		},
+		"count": "{count} mục",
+		"listLabel": "Danh sách góp ý",
+		"loading": "Đang tải góp ý...",
+		"loadFailed": "Không thể tải góp ý. Vui lòng thử lại.",
+		"actionFailed": "Không thể lưu thay đổi. Vui lòng thử lại.",
+		"empty": "Không có góp ý phù hợp với bộ lọc này.",
+		"markResolved": "Đánh dấu đã xử lý",
+		"saving": "Đang lưu...",
+		"delete": "Xóa",
+		"deleteTitle": "Xóa góp ý này?",
+		"deleteBody": "Góp ý này sẽ bị xóa vĩnh viễn.",
+		"cancel": "Hủy",
+		"deleting": "Đang xóa...",
+		"deleteFailed": "Không thể xóa góp ý. Vui lòng thử lại.",
+		"pageSummary": "Trang {current} / {total}",
+		"previous": "Trước",
+		"next": "Tiếp"
+	},
 	"Home": {
 		"eyebrow": "Học tiếng Anh thực tế mỗi ngày",
 		"heroTitle": "Học tiếng Anh qua những tình huống bạn <accent>thực sự gặp</accent>",
@@ -364,6 +407,7 @@
 		"signIn": "Đăng nhập",
 		"vip": "Vip",
 		"profile": "Hồ sơ",
+		"adminFeedback": "Quản lý góp ý",
 		"logout": "Đăng xuất"
 	},
 	"DialogueLanding": {

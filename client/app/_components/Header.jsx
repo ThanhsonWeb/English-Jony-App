@@ -5,7 +5,7 @@ import AuthButtons from "./AuthButtons";
 import { useAuth } from "../_contexts/AuthContext";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useEffect, useRef, useState } from "react";
-import { User, LogOut } from "lucide-react";
+import { User, LogOut, MessageSquareText } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
@@ -127,6 +127,18 @@ function Header() {
 											<User size={18} />
 											{t("profile")}
 										</button>
+										{user.role === "admin" && (
+											<button
+												onClick={() => {
+													setIsDropdownOpen(false);
+													router.push("/admin/feedback");
+												}}
+												className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-secondary hover:bg-surface-muted hover:text-main"
+											>
+												<MessageSquareText size={18} aria-hidden="true" />
+												{t("adminFeedback")}
+											</button>
+										)}
 									</div>
 									{/* log out */}
 									<div className="border-t border-app p-2">
