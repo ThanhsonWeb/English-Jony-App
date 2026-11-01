@@ -57,6 +57,49 @@
 		"error": "We couldn't send your feedback. Please try again.",
 		"rateLimited": "You're sending feedback too quickly. Please try again later."
 	},
+	"AdminFeedback": {
+		"eyebrow": "Private workspace",
+		"title": "User feedback",
+		"subtitle": "Review suggestions and reports sent by StudyJony visitors.",
+		"privateTitle": "Feedback dashboard",
+		"checkingAccess": "Checking access...",
+		"signInRequired": "Sign in with an administrator account to continue.",
+		"signIn": "Sign in",
+		"adminRequired": "You do not have permission to view this page.",
+		"sessionExpired": "Your session expired. Sign in again and retry.",
+		"filterHeading": "Filter feedback",
+		"typeFilter": "Feedback type",
+		"statusFilter": "Status",
+		"types": {
+			"all": "All types",
+			"suggestion": "Suggestion",
+			"bug": "Bug report",
+			"other": "Other"
+		},
+		"statuses": {
+			"all": "All statuses",
+			"new": "New",
+			"reviewing": "Reviewing",
+			"resolved": "Resolved"
+		},
+		"count": "{count} items",
+		"listLabel": "Feedback submissions",
+		"loading": "Loading feedback...",
+		"loadFailed": "Could not load feedback. Please try again.",
+		"actionFailed": "The change could not be saved. Please try again.",
+		"empty": "No feedback matches these filters.",
+		"markResolved": "Mark resolved",
+		"saving": "Saving...",
+		"delete": "Delete",
+		"deleteTitle": "Delete this feedback?",
+		"deleteBody": "This submission will be permanently removed.",
+		"cancel": "Cancel",
+		"deleting": "Deleting...",
+		"deleteFailed": "Could not delete this feedback. Please try again.",
+		"pageSummary": "Page {current} of {total}",
+		"previous": "Previous",
+		"next": "Next"
+	},
 	"Home": {
 		"eyebrow": "Learn English in real life",
 		"heroTitle": "Learn English through situations you <accent>actually experience</accent>",
@@ -364,6 +407,7 @@
 		"signIn": "Sign in",
 		"vip": "Vip",
 		"profile": "Profile",
+		"adminFeedback": "Manage feedback",
 		"logout": "Log out"
 	},
 	"DialogueLanding": {

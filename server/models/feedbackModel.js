@@ -6,6 +6,12 @@ const feedbackSchema = new mongoose.Schema({
 		enum: ["suggestion", "bug", "general"],
 		required: true,
 	},
+	status: {
+		type: String,
+		enum: ["new", "reviewing", "resolved"],
+		default: "new",
+		required: true,
+	},
 	message: {
 		type: String,
 		required: true,
