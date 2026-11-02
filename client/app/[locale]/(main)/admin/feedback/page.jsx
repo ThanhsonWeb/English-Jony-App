@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Check, ChevronLeft, ChevronRight, LoaderCircle, MessageSquareText, Trash2 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { useAuth } from "@/app/_contexts/AuthContext";
+import { notifyAdminFeedbackCountChanged } from "@/app/_lib/adminFeedbackNotifications.mjs";
 import styles from "./feedback.module.css";
 
 const PAGE_SIZE = 20;
@@ -150,6 +151,7 @@ export default function AdminFeedbackPage() {
 		setActionError("");
 		try {
 			await mutate(`/api/v1/admin/feedback/${id}/status`, "PATCH", { status: "resolved" });
+			notifyAdminFeedbackCountChanged();
 			setRefreshKey((value) => value + 1);
 		} catch (reason) {
 			setActionError(reason.message || "actionFailed");
@@ -160,6 +162,7 @@ export default function AdminFeedbackPage() {
 
 	async function deleteFeedback(id) {
 		await mutate(`/api/v1/admin/feedback/${id}`, "DELETE");
+		notifyAdminFeedbackCountChanged();
 		if (feedback.length === 1 && page > 1) setPage((value) => value - 1);
 		else setRefreshKey((value) => value + 1);
 	}

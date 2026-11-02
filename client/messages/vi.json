@@ -408,6 +408,7 @@
 		"vip": "Vip",
 		"profile": "Hồ sơ",
 		"adminFeedback": "Quản lý góp ý",
+		"newFeedbackNotifications": "Góp ý mới: {count}",
 		"logout": "Đăng xuất"
 	},
 	"DialogueLanding": {

@@ -75,6 +75,7 @@ test("guest and normal users cannot access any admin feedback endpoint", async (
 	const item = await Feedback.create({ type: "suggestion", message: "Keep adding useful dialogues." });
 	const endpoints = [
 		["", "GET"],
+		["/unread-count", "GET"],
 		[`/${item.id}/status`, "PATCH", { status: "resolved" }],
 		[`/${item.id}`, "DELETE"],
 	];
@@ -84,6 +85,30 @@ test("guest and normal users cannot access any admin feedback endpoint", async (
 	}
 	assert.equal((await Feedback.findById(item.id)).status, "new");
 	assert.equal(await Feedback.countDocuments(), 1);
+});
+
+test("admin unread count includes only new feedback and legacy records without a status", async () => {
+	const adminToken = await createSession("admin");
+	const newSuggestion = await Feedback.create({ type: "suggestion", message: "A new suggestion for the count." });
+	await Feedback.create({ type: "bug", message: "A new bug report for the count.", status: "new" });
+	await Feedback.create({ type: "general", message: "A suggestion already being reviewed.", status: "reviewing" });
+	await Feedback.create({ type: "suggestion", message: "An already resolved suggestion.", status: "resolved" });
+	const legacy = await Feedback.collection.insertOne({ type: "suggestion", message: "A legacy record without status." });
+
+	const initial = await request("/unread-count", { token: adminToken });
+	assert.equal(initial.status, 200);
+	assert.equal(initial.headers.get("cache-control"), "private, no-store");
+	assert.deepEqual(initial.body, { status: "success", data: { count: 3 } });
+
+	assert.equal((await request(`/${newSuggestion.id}/status`, {
+		method: "PATCH", token: adminToken, body: { status: "reviewing" },
+	})).status, 200);
+	assert.deepEqual((await request("/unread-count", { token: adminToken })).body.data, { count: 2 });
+
+	assert.equal((await request(`/${legacy.insertedId}/status`, {
+		method: "PATCH", token: adminToken, body: { status: "resolved" },
+	})).status, 200);
+	assert.deepEqual((await request("/unread-count", { token: adminToken })).body.data, { count: 1 });
 });
 
 test("admin can list newest first with pagination and filters, update status, and delete", async () => {
