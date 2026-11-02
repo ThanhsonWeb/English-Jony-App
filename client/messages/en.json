@@ -408,6 +408,7 @@
 		"vip": "Vip",
 		"profile": "Profile",
 		"adminFeedback": "Manage feedback",
+		"newFeedbackNotifications": "New feedback: {count}",
 		"logout": "Log out"
 	},
 	"DialogueLanding": {

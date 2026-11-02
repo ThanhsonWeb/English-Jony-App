@@ -21,6 +21,13 @@ function positiveInteger(value, fallback) {
 	return Number.isSafeInteger(parsed) ? parsed : null;
 }
 
+exports.getUnreadFeedbackCount = catchAsync(async (_req, res) => {
+	const count = await Feedback.countDocuments({
+		$or: [{ status: "new" }, { status: { $exists: false } }],
+	});
+	res.status(200).json({ status: "success", data: { count } });
+});
+
 exports.listFeedback = catchAsync(async (req, res, next) => {
 	const params = req.query || {};
 	if (Object.keys(params).some((key) => !allowedQueryFields.has(key))) return invalidRequest(next);

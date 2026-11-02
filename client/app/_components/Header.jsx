@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { User, LogOut, MessageSquareText } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
 import LanguageSwitcher from "./LanguageSwitcher";
+import AdminFeedbackNotifications from "./AdminFeedbackNotifications";
 import { useTranslations } from "next-intl";
 import { resolveAvatarUrl } from "../_lib/resolveAvatarUrl";
 
@@ -86,7 +87,8 @@ function Header() {
 						// Show a blur blank space
 						<div className="h-6 w-24 animate-pulse rounded bg-surface-muted"></div>
 					) : user ? (
-						<div ref={dropdownRef} className="relative ">
+						<div ref={dropdownRef} className="relative flex items-center gap-1">
+							{user.role === "admin" && <AdminFeedbackNotifications onNavigate={() => setIsDropdownOpen(false)} />}
 							<button
 								onClick={() => setIsDropdownOpen((open) => !open)}
 								className="group flex cursor-pointer items-center gap-2 rounded-xl px-1 py-2 transition-all duration-200 hover:bg-surface-muted sm:px-2 xl:gap-3 xl:px-3"
