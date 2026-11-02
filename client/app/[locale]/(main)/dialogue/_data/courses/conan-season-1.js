@@ -61,6 +61,7 @@ function buildCourseDialogue(draft) {
 const conanSeason1Course = {
 	id: "conan-season-1",
 	contentType: "story",
+	category: conanSeason1Config.category,
 	heroImage: theRollerCoaster.metadata.scene,
 	image: theRollerCoaster.metadata.scene,
 	title: "Conan Season 1",

@@ -67,6 +67,7 @@ function buildCourseDialogue(draft) {
 const narutoSeason1Course = {
 	id: "naruto-season-1",
 	contentType: "story",
+	category: narutoSeason1Config.category,
 	heroImage: theLonelyBoy.metadata.scene,
 	image: theLonelyBoy.metadata.scene,
 	title: "Naruto Season 1",

@@ -3,7 +3,6 @@ const legacyDialogueCategories = {
 	office: ["office-introduction"],
 	travel: ["at-a-hotel", "asking-for-directions", "weekend-camping"],
 	food: ["coffee-shop", "grocery-store", "restaurant"],
-	life: ["at-a-hotel", "weekend-camping"],
 	daily: ["at-a-hotel", "asking-for-directions", "coffee-shop", "grocery-store", "restaurant", "office-introduction", "weekend-camping"],
 };
 
@@ -12,7 +11,11 @@ export function matchesCourseCategory(course, category) {
 	const categories = Array.isArray(course.categories)
 		? course.categories : course.category ? [course.category] : [];
 	if (course.contentType === "story") {
-		return category === "story" && (!categories.length || categories.some(value => ["story", "story-of-life", "anime"].includes(value)));
+		if (category === "anime") return categories.includes("anime");
+		if (category === "story") {
+			return !categories.includes("anime") && (!categories.length || categories.some(value => ["story", "story-of-life"].includes(value)));
+		}
+		return false;
 	}
 	if (categories.length) return categories.includes(category);
 	return legacyDialogueCategories[category]?.includes(course.id) || false;

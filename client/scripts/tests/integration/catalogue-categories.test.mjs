@@ -4,29 +4,48 @@ import { readFileSync } from "node:fs";
 import { matchesCourseCategory } from "../../../app/_lib/dialogue/catalogueCategories.mjs";
 import tenMinutesConfig from "../../config/stories/ten-minutes-a-day.mjs";
 import narutoSeason1Config from "../../config/anime/naruto-season-1.mjs";
+import conanSeason1Config from "../../config/anime/conan-season-1.mjs";
 const futureStoryConfig = { courseId: "future-story", contentType: "story", category: "story-of-life" };
-test("Story category includes Story of Life and Anime metadata", () => {
-	for (const config of [tenMinutesConfig, futureStoryConfig, narutoSeason1Config]) {
+test("Story of Life and Anime remain separate categories", () => {
+	for (const config of [tenMinutesConfig, futureStoryConfig]) {
 		const course = { ...config, id: config.courseId };
 		assert.equal(matchesCourseCategory(course, "story"), true);
-		for (const category of ["food", "travel", "daily", "life", "office"]) assert.equal(matchesCourseCategory(course, category), false);
+		assert.equal(matchesCourseCategory(course, "anime"), false);
+		for (const category of ["food", "travel", "daily", "office"]) assert.equal(matchesCourseCategory(course, category), false);
 	}
+	const animeCourses = [narutoSeason1Config, conanSeason1Config].map(config => ({ ...config, id: config.courseId }));
+	assert.deepEqual(animeCourses.filter(course => matchesCourseCategory(course, "anime")).map(course => course.id), ["naruto-season-1", "conan-season-1"]);
+	assert.equal(animeCourses.filter(course => matchesCourseCategory(course, "anime")).length, 2);
+	for (const course of animeCourses) assert.equal(matchesCourseCategory(course, "story"), false);
+	for (const [filename, configName] of [["naruto-season-1.js", "narutoSeason1Config"], ["conan-season-1.js", "conanSeason1Config"]]) {
+		const courseSource = readFileSync(new URL(`../../../app/[locale]/(main)/dialogue/_data/courses/${filename}`, import.meta.url), "utf8");
+		assert.match(courseSource, new RegExp(`category: ${configName}\\.category`));
+	}
+	const englishMessages = JSON.parse(readFileSync(new URL("../../../messages/en.json", import.meta.url), "utf8"));
+	const vietnameseMessages = JSON.parse(readFileSync(new URL("../../../messages/vi.json", import.meta.url), "utf8"));
+	assert.equal(englishMessages.DialogueLanding.categories.anime, "Anime");
+	assert.equal(vietnameseMessages.DialogueLanding.categories.anime, "Anime");
+	assert.equal(englishMessages.DialogueLanding.categories.story, "Story of Life");
+	assert.equal(vietnameseMessages.DialogueLanding.categories.story, "Story of Life");
+	assert.equal("life" in englishMessages.DialogueLanding.categories, false);
+	assert.equal("life" in vietnameseMessages.DialogueLanding.categories, false);
 	assert.equal(matchesCourseCategory({ id: "any-new-story", contentType: "story" }, "story"), true);
+	assert.equal(matchesCourseCategory({ id: "any-new-story", contentType: "story" }, "anime"), false);
 	assert.equal(matchesCourseCategory({ id: "weekend-camping" }, "story"), false);
 });
 test("existing Dialogue memberships are preserved", () => {
 	const memberships = {
 		"coffee-shop": ["food", "daily"], "grocery-store": ["food", "daily"], "restaurant": ["food", "daily"],
-		"asking-for-directions": ["travel", "daily"], "at-a-hotel": ["travel", "life", "daily"],
-		"office-introduction": ["office", "daily"], "weekend-camping": ["travel", "life", "daily"],
+		"asking-for-directions": ["travel", "daily"], "at-a-hotel": ["travel", "daily"],
+		"office-introduction": ["office", "daily"], "weekend-camping": ["travel", "daily"],
 	};
 	for (const [id, expected] of Object.entries(memberships)) {
-		for (const category of ["office", "travel", "food", "life", "daily", "story"]) assert.equal(matchesCourseCategory({ id }, category), expected.includes(category), `${id}/${category}`);
+		for (const category of ["office", "travel", "food", "anime", "daily", "story"]) assert.equal(matchesCourseCategory({ id }, category), expected.includes(category), `${id}/${category}`);
 	}
 });
 test("declared category/categories metadata supports future Dialogue courses", () => {
 	assert.equal(matchesCourseCategory({ id: "future-dialogue", category: "travel" }, "travel"), true);
-	assert.equal(matchesCourseCategory({ id: "future-dialogue", categories: ["life", "daily"] }, "daily"), true);
+	assert.equal(matchesCourseCategory({ id: "future-dialogue", categories: ["anime", "daily"] }, "daily"), true);
 	assert.equal(matchesCourseCategory({ id: "unknown" }, "all"), true);
 	assert.equal(matchesCourseCategory({ id: "unknown" }, "story"), false);
 });

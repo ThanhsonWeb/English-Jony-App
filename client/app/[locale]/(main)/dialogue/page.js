@@ -7,6 +7,7 @@ import {
 	ArrowRight,
 	BookOpen,
 	BriefcaseBusiness,
+	Clapperboard,
 	ChevronDown,
 	ChevronLeft,
 	ChevronRight,
@@ -14,7 +15,6 @@ import {
 	Clock3,
 	GraduationCap,
 	Grid2X2,
-	House,
 	MessageCircleMore,
 	Plane,
 	Search,
@@ -71,7 +71,7 @@ const dialogueCategories = [
 	"office",
 	"travel",
 	"food",
-	"life",
+	"anime",
 	"daily",
 	"story",
 ];
@@ -81,7 +81,7 @@ const categoryIcons = {
 	office: BriefcaseBusiness,
 	travel: Plane,
 	food: Utensils,
-	life: House,
+	anime: Clapperboard,
 	daily: MessageCircleMore,
 	story: BookOpen,
 };
