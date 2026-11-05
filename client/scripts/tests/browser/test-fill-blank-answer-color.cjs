@@ -1,7 +1,7 @@
 const assert = require("node:assert/strict");
 const { chromium } = require("playwright");
 
-const baseURL = process.env.STUDYJONY_TEST_URL || "http://127.0.0.1:3100";
+const baseURL = process.env.STUDYJONY_TEST_URL || "http://localhost:3000";
 assert.ok(["localhost", "127.0.0.1"].includes(new URL(baseURL).hostname));
 const checkLabel = require("../../../messages/en.json").DialogueFeature.check;
 
@@ -10,6 +10,7 @@ const checkLabel = require("../../../messages/en.json").DialogueFeature.check;
 	try {
 		for (const width of [375, 1280]) {
 			const context = await browser.newContext({ viewport: { width, height: 900 } });
+			let accountLanguage = "en";
 			await context.addInitScript(() => {
 				localStorage.setItem("studyjony-theme", "dark");
 				HTMLMediaElement.prototype.play = function () { this.dispatchEvent(new Event("play")); return Promise.resolve(); };
@@ -17,7 +18,7 @@ const checkLabel = require("../../../messages/en.json").DialogueFeature.check;
 			await context.route("**/api/v1/**", route => {
 				const path = new URL(route.request().url()).pathname;
 				let data = { progress: [], vocabularies: [], topics: [], activities: [] };
-				if (path.endsWith("/users/me")) data = { user: { _id: "aaaaaaaaaaaaaaaaaaaaaaaa", name: "Tester", theme: "dark" } };
+				if (path.endsWith("/users/me")) data = { user: { _id: "aaaaaaaaaaaaaaaaaaaaaaaa", name: "Tester", theme: "dark", language: accountLanguage } };
 				else if (path.endsWith("/attempt")) data = { attemptId: "a".repeat(64), expiresAt: new Date(Date.now() + 600000).toISOString(), readyAfterMs: 0 };
 				else if (route.request().method() === "PATCH") data = { progress: { completedTaskIds: [path.split("/").at(-1)] } };
 				return route.fulfill({ json: { status: "success", data } });
@@ -32,6 +33,9 @@ const checkLabel = require("../../../messages/en.json").DialogueFeature.check;
 					const inputs = page.locator('input[placeholder="..."]');
 					await inputs.first().waitFor();
 					assert.equal(await inputs.count(), fixture.answers.length);
+					for (let index = 0; index < fixture.answers.length; index++) {
+						await page.getByRole("textbox", { name: `Blank ${index + 1}`, exact: true }).waitFor();
+					}
 					const sentenceColor = await inputs.first().evaluate(input => getComputedStyle(input.parentElement).color);
 					const originalAnswerColor = await inputs.first().evaluate(input => getComputedStyle(input).color);
 					for (let index = 0; index < fixture.answers.length; index++) await inputs.nth(index).fill("wrong");
@@ -51,7 +55,10 @@ const checkLabel = require("../../../messages/en.json").DialogueFeature.check;
 					await page.waitForURL(url => !url.pathname.endsWith(fixture.path));
 					assert.ok(Date.now() - submittedAt >= 350, "Auto-advance still waits about 400ms");
 				}
-				console.log(`PASS ${width}px: one and two blanks, wrong answer unchanged, immediate green answers, white sentence, auto-advance`);
+				accountLanguage = "vi";
+				await page.goto(`${baseURL}/vi/dialogue/naruto-season-1/the-lonely-boy/1`);
+				await page.getByRole("textbox", { name: require("../../../messages/vi.json").DialogueFeature.blankNumber.replace("{number}", "1"), exact: true }).waitFor();
+				console.log(`PASS ${width}px: English and Vietnamese blank labels, one and two blanks, wrong answer unchanged, immediate green answers, white sentence, auto-advance`);
 			} finally { await context.close(); }
 		}
 	} finally { await browser.close(); }

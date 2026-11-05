@@ -250,6 +250,7 @@ function FillBlankTask({
 											value={answerValues[0] || ""}
 											onChange={(event) => updateAnswer(0, event.target.value)}
 											onKeyDown={(event) => handleInputKeyDown(event, 0)}
+											aria-label={t("blankNumber", { number: 1 })}
 											readOnly={result === "correct"}
 											placeholder="..."
 											style={{

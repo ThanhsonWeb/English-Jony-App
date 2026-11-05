@@ -10,6 +10,7 @@ const multipleChoicePath = "/en/dialogue/a-little-lie/a-little-lie/11";
 
 async function createPage(browser) {
 	const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+	await context.addCookies([{ name: "sj_guest_language", value: "en", url: baseURL }]);
 	await context.addInitScript(() => {
 		localStorage.setItem("studyjony-theme", "dark");
 		HTMLMediaElement.prototype.play = () => Promise.resolve();
