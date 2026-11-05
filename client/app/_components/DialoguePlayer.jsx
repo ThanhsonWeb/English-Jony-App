@@ -751,12 +751,14 @@ export default function DialoguePlayer({
 					<button
 						type="button"
 						onClick={() => setIsTranscriptOpen((current) => !current)}
+						aria-expanded={isTranscriptOpen}
+						aria-controls="dialogue-transcript-panel"
 						className="flex w-full items-center justify-between px-5 py-4 text-left transition hover:bg-slate-800/40"
 					>
 						<div className="flex items-center gap-2">
 							<MessageSquareText size={18} className="text-violet-400" />
 
-							<span className="font-semibold">Transcript</span>
+							<span className="font-semibold">{t("transcript")}</span>
 						</div>
 
 						<ChevronDown
@@ -767,8 +769,8 @@ export default function DialoguePlayer({
 						/>
 					</button>
 
-					{isTranscriptOpen && (
-						<div className="space-y-1 border-t border-slate-800 p-3">
+					<div id="dialogue-transcript-panel" hidden={!isTranscriptOpen}
+						className="space-y-1 border-t border-slate-800 p-3">
 							{task.dialogue.map((line, index) => (
 								<button
 									key={index}
@@ -795,8 +797,7 @@ export default function DialoguePlayer({
 									</p>
 								</button>
 							))}
-						</div>
-					)}
+					</div>
 				</div>
 
 				<button

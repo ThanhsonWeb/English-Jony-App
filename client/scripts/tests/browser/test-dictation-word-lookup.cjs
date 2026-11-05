@@ -2,7 +2,7 @@ const assert = require("node:assert/strict");
 const { chromium } = require("playwright");
 const labels = require("../../../messages/en.json").DialogueFeature;
 
-const baseURL = process.env.STUDYJONY_TEST_URL || "http://127.0.0.1:3000";
+const baseURL = process.env.STUDYJONY_TEST_URL || "http://localhost:3000";
 assert.ok(["localhost", "127.0.0.1"].includes(new URL(baseURL).hostname));
 
 (async () => {
@@ -20,7 +20,7 @@ assert.ok(["localhost", "127.0.0.1"].includes(new URL(baseURL).hostname));
 			await context.route("**/api/v1/**", route => {
 				const path = new URL(route.request().url()).pathname;
 				const data = path.endsWith("/users/me")
-					? { user: { _id: "aaaaaaaaaaaaaaaaaaaaaaaa", name: "Tester", theme: "dark" } }
+					? { user: { _id: "aaaaaaaaaaaaaaaaaaaaaaaa", name: "Tester", theme: "dark", language: "en" } }
 					: { progress: [], vocabularies: [], topics: [], activities: [] };
 				return route.fulfill({ json: { status: "success", data } });
 			});

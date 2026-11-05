@@ -87,8 +87,8 @@ try {
 		` });
 		await command("Page.navigate", { url: `${baseURL}/dialogue/${courseId}/${dialogueId}` });
 		await until(() => evaluate(`window.__dictionaryAPICalls > 0`), "Client hydration and guest session effect");
-		await until(() => evaluate(`[...document.querySelectorAll('button')].some(button => button.textContent.trim() === 'Transcript')`), "Transcript button");
-		await evaluate(`[...document.querySelectorAll('button')].find(button => button.textContent.trim() === 'Transcript').click()`);
+		await until(() => evaluate(`document.querySelector('button[aria-controls="dialogue-transcript-panel"]')`), "Transcript button");
+		await evaluate(`document.querySelector('button[aria-controls="dialogue-transcript-panel"]').click()`);
 		await until(() => evaluate(`[...document.querySelectorAll('button')].some(button => button.querySelector('p.mt-1')?.textContent === ${JSON.stringify(draft.dialogue[0].text)})`), "Expanded transcript");
 		for (const line of draft.dialogue) {
 			await evaluate(`[...document.querySelectorAll('button')].find(button => button.querySelector('p.mt-1')?.textContent === ${JSON.stringify(line.text)}).click()`);

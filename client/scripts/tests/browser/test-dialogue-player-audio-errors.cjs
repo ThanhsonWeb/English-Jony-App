@@ -8,6 +8,7 @@ async function run(browser, locale) {
 	const t = require(`../../../messages/${locale}.json`).DialogueFeature;
 	const prefix = locale === "en" ? "/en" : "";
 	const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+	await context.addCookies([{ name: "sj_guest_language", value: locale, url: baseURL }]);
 	await context.addInitScript(() => {
 		window.audioFailureTest = { rejectNext: true, holdNext: false, playCalls: 0 };
 		HTMLMediaElement.prototype.play = function() {
@@ -36,6 +37,10 @@ async function run(browser, locale) {
 	page.on("pageerror", error => pageErrors.push(error.message));
 	try {
 		await page.goto(`${baseURL}${prefix}/dialogue/restaurant/getting-a-table`, { waitUntil: "domcontentloaded" });
+		const transcript = page.getByRole("button", { name: t.transcript, exact: true });
+		assert.equal(await transcript.getAttribute("aria-expanded"), "false", `${locale}: Transcript starts closed`);
+		assert.equal(await transcript.getAttribute("aria-controls"), "dialogue-transcript-panel");
+		assert.equal(await page.locator("#dialogue-transcript-panel").getAttribute("hidden"), "");
 		const alert = page.getByRole("alert").filter({ hasText: t.dialogueAudioPlaybackFailed });
 		await page.getByRole("button", { name: t.play, exact: true }).click();
 		await alert.getByText(t.dialogueAudioPlaybackFailed, { exact: true }).waitFor();
@@ -55,12 +60,17 @@ async function run(browser, locale) {
 
 		await page.locator("audio").evaluate(audio => audio.dispatchEvent(new Event("error")));
 		await alert.waitFor();
-		await page.getByRole("button", { name: t.transcript, exact: true }).click();
+		await transcript.click();
+		assert.equal(await transcript.getAttribute("aria-expanded"), "true", `${locale}: Transcript reports open`);
+		assert.equal(await page.locator("#dialogue-transcript-panel").getAttribute("hidden"), null);
 		await page.locator("button.w-full.rounded-lg.p-3").nth(1).waitFor();
 		await page.evaluate(() => { window.audioFailureTest.holdNext = true; });
 		await page.locator("button.w-full.rounded-lg.p-3").nth(1).click();
 		await page.getByText("A table for two, please.", { exact: true }).first().waitFor();
 		assert.equal(await alert.count(), 0, "Selecting another line clears the old error before playback resolves");
+		await transcript.click();
+		assert.equal(await transcript.getAttribute("aria-expanded"), "false", `${locale}: Transcript reports closed`);
+		assert.equal(await page.locator("#dialogue-transcript-panel").getAttribute("hidden"), "");
 		assert.deepEqual(pageErrors, []);
 		console.log(`PASS ${locale}: rejected play, media error, Play retry, line-change reset, accessible alert`);
 	} finally {
