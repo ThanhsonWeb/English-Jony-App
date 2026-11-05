@@ -1,10 +1,12 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useRef, useSyncExternalStore } from "react";
+import { createContext, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { Link, useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
+import { Sparkles } from "lucide-react";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { createDialogueProgressQueue, emptyProgressQueue, progressQueuePrefix } from "@/app/_lib/dialogueProgressQueue.mjs";
+import { isNewDialogueXpAward } from "@/app/_lib/dialogueProgressSave.mjs";
 import { cacheStudyProgress } from "@/app/_lib/cacheStudyProgress.mjs";
 
 const ProgressContext = createContext(null);
@@ -17,16 +19,22 @@ export const useDialogueProgress = () => useContext(ProgressContext);
 // Lives above exercise routes so navigation does not cancel completed work.
 export function DialogueBackgroundProgressProvider({ children }) {
 	const { loading, captureSession, isCurrentSession } = useAuth();
+	const t = useTranslations("DialogueFeature");
 	const { generation, userId } = captureSession();
+	const [xpReward, setXpReward] = useState(null);
 	const queue = useMemo(() => userId ? createDialogueProgressQueue({
 		userId,
 		storage: () => window.localStorage,
 		locks: () => navigator.locks,
 		isCurrent: () => isCurrentSession({ generation, userId }),
-		onSaved: progress => {
+		onSaved: (progress, xp) => {
 			if (!isCurrentSession({ generation, userId })) return;
 			cacheStudyProgress(userId, progress);
 			window.dispatchEvent(new CustomEvent("dialogue-progress-updated", { detail: progress }));
+			if (isNewDialogueXpAward(xp)) {
+				setXpReward(reward => ({ generation, userId,
+					amount: reward?.generation === generation && reward.userId === userId ? reward.amount + xp.awarded : xp.awarded }));
+			}
 		},
 	}) : null, [generation, userId, isCurrentSession]);
 	const snapshot = useSyncExternalStore(queue?.subscribe || noSubscribe, queue?.getSnapshot || emptySnapshot, emptySnapshot);
@@ -54,7 +62,17 @@ export function DialogueBackgroundProgressProvider({ children }) {
 		window.addEventListener("beforeunload", warn);
 		return () => window.removeEventListener("beforeunload", warn);
 	}, [snapshot.pendingCount]);
-	return <BackgroundContext.Provider value={{ queue, snapshot, loading, userId }}>{children}</BackgroundContext.Provider>;
+	useEffect(() => {
+		if (!xpReward || xpReward.generation !== generation || xpReward.userId !== userId) return;
+		const timer = setTimeout(() => setXpReward(null), 3500);
+		return () => clearTimeout(timer);
+	}, [xpReward, generation, userId]);
+	return <BackgroundContext.Provider value={{ queue, snapshot, loading, userId }}>{children}
+		{xpReward?.generation === generation && xpReward.userId === userId && xpReward.amount > 0 && <div role="status" aria-live="polite" className="fixed bottom-[calc(env(safe-area-inset-bottom)+5.25rem)] left-1/2 z-[100] flex max-w-[calc(100%-2rem)] -translate-x-1/2 items-center gap-2 rounded-full border border-primary/25 bg-surface px-4 py-3 text-sm font-semibold text-main shadow-xl sm:bottom-6">
+			<Sparkles size={18} aria-hidden="true" className="shrink-0 text-brand-text" />
+			<span>{t("xpRewardEarned", { amount: xpReward.amount })}</span>
+		</div>}
+	</BackgroundContext.Provider>;
 }
 
 export function useDialogueProgressSave(path) {

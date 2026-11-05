@@ -55,7 +55,11 @@ export async function saveDialogueProgress(path, signal, completion, userId) {
 	if (!response.ok) throw Object.assign(new Error("Progress was not saved"), { status: response.status });
 	const data = await response.json();
 	if (!data.data?.progress) throw new Error("Progress confirmation is missing");
-	return data.data.progress;
+	return { progress: data.data.progress, xp: data.data.xp ?? null };
+}
+
+export function isNewDialogueXpAward(xp) {
+	return xp?.reason === "awarded" && Number.isSafeInteger(xp.awarded) && xp.awarded > 0;
 }
 
 function wait(ms, signal) {

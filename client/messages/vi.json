@@ -161,6 +161,7 @@
 		"progressSaveFailed": "Tiến độ chưa được xác nhận. Bài đã làm được giữ trên thiết bị; bạn có thể tiếp tục. Lỗi tạm thời sẽ tự thử lại, hoặc bạn có thể bấm Thử lại.",
 		"retryProgressSave": "Thử lưu lại",
 		"leaveUnsavedProgress": "Một số tiến độ chưa được máy chủ xác nhận. Bài đã làm được giữ trên thiết bị và sẽ thử lưu lại khi bạn quay lại bằng tài khoản này. Hãy giữ dữ liệu trang trong trình duyệt cho đến khi lưu xong.",
+		"xpRewardEarned": "B\u1ea1n nh\u1eadn \u0111\u01b0\u1ee3c {amount} XP!",
 		"exerciseNavigation": "Điều hướng bài tập",
 		"previousExercise": "Bài trước",
 		"nextExercise": "Bài tiếp theo",

@@ -130,6 +130,34 @@ test("terminal failures remain visible and durable; rapid manual retries send on
 	assert.equal(queue.getSnapshot().requiresAttention, false);
 });
 
+test("only server-confirmed new XP is reported; duplicates and failures stay silent until a rewarding retry", async t => {
+	const rewards = [];
+	let writes = 0;
+	fetchStub(t, async url => {
+		writes++;
+		const progress = { completedTaskIds: [url.split("/").at(-1)] };
+		if (writes === 1) return response({ progress, xp: { awarded: 10, total: 10, reason: "awarded" } });
+		if (writes === 2) return response({ progress, xp: { awarded: 0, total: 10, reason: "already_completed" } });
+		if (writes === 3) return { ok: false, status: 403 };
+		return response({ progress, xp: { awarded: 10, total: 20, reason: "awarded" } });
+	});
+	const { queue } = fixture(t, { onSaved: (progress, xp) => rewards.push(xp) });
+	queue.enqueue(path(1), proof);
+	await until(() => queue.getSnapshot().pendingCount === 0);
+	assert.deepEqual(rewards, [{ awarded: 10, total: 10, reason: "awarded" }]);
+	queue.enqueue(path(1), proof);
+	await until(() => queue.getSnapshot().pendingCount === 0);
+	assert.equal(rewards.length, 2);
+	assert.equal(rewards[1].awarded, 0, "Duplicate completion reports no newly awarded XP");
+	queue.enqueue(path(2), proof);
+	await until(() => queue.getSnapshot().status === "error");
+	assert.equal(rewards.length, 2, "Failed saves do not report a reward");
+	queue.retry();
+	await until(() => queue.getSnapshot().pendingCount === 0);
+	assert.equal(rewards.length, 3);
+	assert.deepEqual(rewards[2], { awarded: 10, total: 20, reason: "awarded" }, "A successful retry reports its server-confirmed new award");
+});
+
 for (const mode of ["quota", "no-locks", "refused-lock"]) {
 	test(`${mode}: fallback requires server confirmation before leaving`, async t => {
 		const held = deferred(); let writes = 0;

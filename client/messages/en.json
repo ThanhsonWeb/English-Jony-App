@@ -161,6 +161,7 @@
 		"progressSaveFailed": "Progress is not confirmed yet. It is kept on this device; you can continue. Temporary failures retry automatically, or use Retry.",
 		"retryProgressSave": "Retry saving",
 		"leaveUnsavedProgress": "Some progress is not confirmed by the server yet. It is kept on this device and will retry when you return with this account. Keep this browser's site data until it finishes saving.",
+		"xpRewardEarned": "You earned {amount} XP!",
 		"exerciseNavigation": "Exercise navigation",
 		"previousExercise": "Previous exercise",
 		"nextExercise": "Next exercise",

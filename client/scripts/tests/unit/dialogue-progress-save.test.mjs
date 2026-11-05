@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { createDialogueProgressSaveController, saveDialogueProgress } from "../../../app/_lib/dialogueProgressSave.mjs";
+import { createDialogueProgressSaveController, isNewDialogueXpAward, saveDialogueProgress } from "../../../app/_lib/dialogueProgressSave.mjs";
 import { readFileSync } from "node:fs";
 function deferred() {
 	let resolve, reject;
@@ -53,15 +53,22 @@ test("HTTP/network/confirmation failures do not report saved progress", async t 
 	}
 	t.mock.method(globalThis, "fetch", async (url, options) => {
 		assert.equal(options.method, "PATCH"); assert.equal(options.credentials, "include");
-		return { ok: true, json: async () => ({ data: { progress: { completedTaskIds: ["1"] } } }) };
+		return { ok: true, json: async () => ({ data: { progress: { completedTaskIds: ["1"] }, xp: { awarded: 10, total: 10, reason: "awarded" } } }) };
 	});
-	assert.deepEqual(await saveDialogueProgress("/progress"), { completedTaskIds: ["1"] });
+	assert.deepEqual(await saveDialogueProgress("/progress"), { progress: { completedTaskIds: ["1"] }, xp: { awarded: 10, total: 10, reason: "awarded" } });
+});
+
+test("only an explicit positive server award counts as new XP", () => {
+	assert.equal(isNewDialogueXpAward({ awarded: 10, reason: "awarded" }), true);
+	for (const xp of [null, undefined, { awarded: 0, reason: "already_completed" }, { awarded: 10, reason: "already_awarded" }, { awarded: -1, reason: "awarded" }]) {
+		assert.equal(isNewDialogueXpAward(xp), false);
+	}
 });
 
 for (const locale of ["vi", "en"]) {
 	test(`${locale}: progress and dictionary persistence states have translated UI messages`, () => {
 		const messages = JSON.parse(readFileSync(new URL(`../../../messages/${locale}.json`, import.meta.url)));
-		for (const key of ["progressSaving", "progressNotSaved", "progressSaveFailed", "retryProgressSave", "leaveUnsavedProgress", "progressStorageUnavailable", "progressRecoveryFailed"]) {
+		for (const key of ["progressSaving", "progressNotSaved", "progressSaveFailed", "retryProgressSave", "leaveUnsavedProgress", "progressStorageUnavailable", "progressRecoveryFailed", "xpRewardEarned"]) {
 			assert.ok(messages.DialogueFeature[key]?.trim(), key);
 		}
 		for (const key of ["lookupLoading", "lookupError"]) assert.ok(messages.WordlistDetail.form[key]?.trim(), key);

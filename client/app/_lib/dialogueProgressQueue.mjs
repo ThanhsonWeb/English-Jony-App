@@ -32,13 +32,13 @@ export function createDialogueProgressQueue({ userId, storage, locks, isCurrent 
 			record.durable = store.getItem(key(record.path)) === value && !lockUnavailable && Boolean(lockManager()?.request);
 		} catch { record.durable = false; }
 	}
-	function confirm(record, progress) {
+	function confirm(record, progress, xp) {
 		record.status = "saved";
 		// Only written after a server response confirms this specific task.
 		try { storage().setItem(key(record.path), JSON.stringify({ id: record.id, path: record.path,
 			userId, createdAt: record.createdAt, status: "saved" })); } catch { /* Retrying the old proof remains idempotent. */ }
 		// UI observers must never turn a confirmed write into a failed save.
-		if (progress) { try { onSaved(progress); } catch { /* Progress is already confirmed. */ } }
+		if (progress) { try { onSaved(progress, xp); } catch { /* Progress is already confirmed. */ } }
 		publish();
 	}
 	function restore() {
@@ -100,13 +100,16 @@ export function createDialogueProgressQueue({ userId, storage, locks, isCurrent 
 			const timeout = setTimeout(stop, requestTimeout);
 			try {
 				const attempt = client(record.path);
-				const progress = await attempt.save(request.signal, record.input);
+				const result = await attempt.save(request.signal, record.input);
+				// Older/test clients may return a progress object directly; production responses include both fields.
+				const progress = result?.progress ?? result;
+				const xp = result?.progress ? result.xp : null;
 				if (!isCurrent() || signal.aborted || id !== generation) return;
 				const ids = record.path.split("/");
 				if (!Array.isArray(progress.completedTaskIds) || !progress.completedTaskIds.includes(record.path.split("/").at(-1)) ||
 					(progress.user && String(progress.user) !== userId) || (progress.lessonId && progress.lessonId !== ids.at(-4)) ||
 					(progress.dialogueId && progress.dialogueId !== ids.at(-3))) throw new Error("Task confirmation is missing or belongs to another account/lesson");
-				confirm(record, progress);
+				confirm(record, progress, xp);
 			} catch (error) {
 				if (!isCurrent() || signal.aborted || id !== generation) return;
 				record.status = "error";
