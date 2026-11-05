@@ -42,7 +42,6 @@ export default function DialoguePlayer({
 	lessonId,
 	dialogueId,
 	nextTask,
-	onComplete,
 }) {
 	const t = useTranslations("DialogueFeature");
 	const { user } = useAuth();
@@ -52,7 +51,6 @@ export default function DialoguePlayer({
 	const [isPreparing, setIsPreparing] = useState(false);
 	const [showTranslation, setShowTranslation] = useState(false);
 	const [isTranscriptOpen, setIsTranscriptOpen] = useState(false);
-	const [hasWatched, setHasWatched] = useState(false);
 	const [hasStarted, setHasStarted] = useState(false);
 	const [charactersReady, setCharactersReady] = useState(false);
 	const [dialogueFinished, setDialogueFinished] = useState(false);
@@ -171,10 +169,6 @@ export default function DialoguePlayer({
 			if (entryFrameRef.current) cancelAnimationFrame(entryFrameRef.current);
 		};
 	}, []);
-
-	useEffect(() => {
-		if (hasWatched && nextTask) void preloadTaskImages(nextTask, task.scene);
-	}, [hasWatched, nextTask, task.scene]);
 
 	useEffect(() => {
 		if (!selectedLookup) return;
@@ -800,48 +794,16 @@ export default function DialoguePlayer({
 					</div>
 				</div>
 
-				<button
-					type="button"
-					onClick={() =>
-						setHasWatched((current) => {
-							if (!current) onComplete?.();
-							return !current;
-						})
-					}
-					className={`mt-6 flex w-full items-center gap-3 rounded-xl border px-4 py-3 text-left transition ${
-						hasWatched
-							? "border-emerald-500/30 bg-emerald-500/10 text-emerald-300"
-							: "border-slate-800 bg-slate-900/40 text-slate-300 hover:border-slate-700"
-					}`}
-				>
-					<div
-						className={`flex h-5 w-5 items-center justify-center rounded border ${
-							hasWatched
-								? "border-emerald-500 bg-emerald-500 text-white"
-								: "border-slate-600"
-						}`}
+				<div className="mt-8 flex justify-end">
+					<Link
+						href={nextTask ? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}` : `/dialogue/${lessonId}`}
+						onPointerEnter={() => { if (nextTask) void preloadTaskImages(nextTask, task.scene); }}
+						onFocus={() => { if (nextTask) void preloadTaskImages(nextTask, task.scene); }}
+						className="rounded-xl border border-violet-500/30 bg-violet-500/10 px-6 py-3 font-semibold text-violet-300 transition hover:border-violet-400/50 hover:bg-violet-500/20 hover:text-white active:scale-[0.98]"
 					>
-						{hasWatched && "✓"}
-					</div>
-
-					<span>{t("watchedDialogue")}</span>
-				</button>
-
-				{/* Next */}
-				{hasWatched && (
-					<div className="mt-8 flex justify-end">
-						<Link
-							href={
-								nextTask
-									? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}`
-									: `/dialogue/${lessonId}`
-							}
-							className="rounded-xl border border-violet-500/30 bg-violet-500/10 px-6 py-3 font-semibold text-violet-300 transition hover:border-violet-400/50 hover:bg-violet-500/20 hover:text-white active:scale-[0.98]"
-						>
-							{nextTask ? t("continueArrow") : t("completeDialogue")}
-						</Link>
-					</div>
-				)}
+						{nextTask ? t("continueToPractice") : t("completeDialogue")}
+					</Link>
+				</div>
 
 				<style jsx global>{`
 					@keyframes dialogue-scene-fade-in {
