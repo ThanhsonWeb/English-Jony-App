@@ -221,6 +221,8 @@
 		"toggleSubtitles": "Toggle subtitles",
 		"showSubtitles": "Show subtitles",
 		"hideSubtitles": "Hide subtitles",
+		"dialogueAudioPlaybackFailed": "Audio couldn't play. Check your connection, then press Play to try again.",
+		"dialogueAudioMissing": "Audio isn't available for this line. You can read the transcript or choose another line.",
 		"watchedDialogue": "I have finished watching the dialogue",
 		"meaningOf": "Meaning of {word}",
 		"pronounceWord": "Pronounce {word}",

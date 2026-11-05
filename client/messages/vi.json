@@ -221,6 +221,8 @@
 		"toggleSubtitles": "Bật hoặc tắt phụ đề",
 		"showSubtitles": "Bật phụ đề",
 		"hideSubtitles": "Tắt phụ đề",
+		"dialogueAudioPlaybackFailed": "Không thể phát âm thanh. Hãy kiểm tra kết nối rồi nhấn Phát để thử lại.",
+		"dialogueAudioMissing": "Không có âm thanh cho câu này. Bạn có thể đọc lời thoại hoặc chọn câu khác.",
 		"watchedDialogue": "Tôi đã xem xong đoạn hội thoại",
 		"meaningOf": "Nghĩa của {word}",
 		"pronounceWord": "Phát âm {word}",

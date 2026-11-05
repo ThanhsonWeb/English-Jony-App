@@ -16,6 +16,7 @@ import {
 	PLAYBACK_RATES,
 	saveDialoguePlaybackRate,
 } from "@/app/_lib/dialogue/playbackRate.mjs";
+import { getDialogueAudioFailureKind } from "@/app/_lib/dialogue/dialogueAudioFailure.mjs";
 import {
 	CHARACTER_IMAGE_SIZES,
 	DIALOGUE_IMAGE_QUALITY,
@@ -69,6 +70,9 @@ export default function DialoguePlayer({
 	const preparationRef = useRef(false);
 	const preparationIdRef = useRef(0);
 	const entryFrameRef = useRef(null);
+	const playbackAttemptRef = useRef(0);
+	const activeAudioUrlRef = useRef(null);
+	const [audioError, setAudioError] = useState(null);
 
 	useEffect(() => () => { preparationIdRef.current += 1; }, []);
 
@@ -258,23 +262,37 @@ export default function DialoguePlayer({
 	// Play one dialogue line
 	function playCurrentLine(index = currentLine) {
 		const line = task.dialogue[index];
-
-		if (!line?.audioUrl || !audioRef.current) return;
+		if (!audioRef.current) return;
 
 		const audio = audioRef.current;
+		const attempt = ++playbackAttemptRef.current;
 		clearLineTimeout();
 		pendingLineRef.current = null;
 
 		setCurrentLine(index);
+		if (index !== currentLine) setAudioError(null);
+		if (getDialogueAudioFailureKind(line) === "missing") {
+			activeAudioUrlRef.current = null;
+			audio.pause();
+			audio.removeAttribute("src");
+			audio.load();
+			setIsPlaying(false);
+			setAudioError("missing");
+			return;
+		}
 
 		audio.pause();
 		audio.src = line.audioUrl;
+		activeAudioUrlRef.current = audio.src;
 		audio.currentTime = 0;
 		audio.playbackRate = playbackRateRef.current;
 
 		audio.play().catch((error) => {
+			const failure = getDialogueAudioFailureKind(line, error);
+			if (!failure || attempt !== playbackAttemptRef.current) return;
 			console.error("Audio play failed:", error);
 			setIsPlaying(false);
+			setAudioError(failure);
 		});
 	}
 
@@ -284,6 +302,8 @@ export default function DialoguePlayer({
 		pendingLineRef.current = null;
 
 		if (audioRef.current) {
+			playbackAttemptRef.current += 1;
+			activeAudioUrlRef.current = null;
 			audioRef.current.pause();
 		}
 
@@ -346,6 +366,7 @@ export default function DialoguePlayer({
 
 		// Currently playing → pause
 		if (isPlaying) {
+			playbackAttemptRef.current += 1;
 			setIsPlaying(false);
 			audio.pause();
 			return;
@@ -376,8 +397,14 @@ export default function DialoguePlayer({
 			return;
 		}
 
+		const attempt = ++playbackAttemptRef.current;
+		const line = task.dialogue[currentLine];
 		audio.play().catch((error) => {
+			const failure = getDialogueAudioFailureKind(line, error);
+			if (!failure || attempt !== playbackAttemptRef.current) return;
 			console.error("Audio resume failed:", error);
+			setIsPlaying(false);
+			setAudioError(failure);
 		});
 	}
 
@@ -394,6 +421,7 @@ export default function DialoguePlayer({
 	}
 
 	function handleTranscriptClick(index) {
+		if (index !== currentLine) setAudioError(null);
 		if (!hasStarted || dialogueFinished) {
 			prepareCharacters(index);
 			return;
@@ -704,8 +732,19 @@ export default function DialoguePlayer({
 					ref={audioRef}
 					preload="auto"
 					onEnded={handleEnded}
-					onPlay={() => setIsPlaying(true)}
+					onPlay={() => {
+						setAudioError(null);
+						setIsPlaying(true);
+					}}
+					onError={(event) => {
+						if (!activeAudioUrlRef.current || event.currentTarget.src !== activeAudioUrlRef.current) return;
+						setIsPlaying(false);
+						setAudioError("failed");
+					}}
 				/>
+				{audioError && <p role="alert" aria-live="assertive" aria-atomic="true" className="mt-3 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-2 text-sm text-red-300">
+					{t(audioError === "missing" ? "dialogueAudioMissing" : "dialogueAudioPlaybackFailed")}
+				</p>}
 
 				{/* Transcript */}
 				<div className="mt-5 overflow-hidden rounded-xl border border-slate-800 bg-slate-900/40">
