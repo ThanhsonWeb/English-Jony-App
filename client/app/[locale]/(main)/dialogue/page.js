@@ -402,7 +402,7 @@ export default function DialoguePage() {
 												onClick={() => setSelectedCategory(category)}
 												className={`relative flex h-11 shrink-0 items-center gap-3 rounded-xl px-4 text-left text-sm font-medium transition xl:w-full ${
 													isActive
-														? "bg-primary/15 text-brand-text before:absolute before:inset-y-0 before:left-0 before:w-1 before:rounded-full before:bg-primary before:shadow-[0_0_12px_var(--sj-primary)]"
+														? "bg-primary/15 text-main dark:text-brand-text before:absolute before:inset-y-0 before:left-0 before:w-1 before:rounded-full before:bg-primary before:shadow-[0_0_12px_var(--sj-primary)]"
 														: "text-secondary hover:bg-hover hover:text-main"
 												}`}
 											>
@@ -414,7 +414,7 @@ export default function DialoguePage() {
 													{t(`categories.${category}`)}
 												</span>
 												<span
-													className={`ml-auto hidden min-w-8 rounded-full px-2 py-1 text-center text-xs xl:inline-block ${isActive ? "bg-primary/15 text-brand-text" : "bg-surface-muted text-secondary"}`}
+													className={`ml-auto hidden min-w-8 rounded-full px-2 py-1 text-center text-xs xl:inline-block ${isActive ? "bg-primary/15 text-main dark:text-brand-text" : "bg-surface-muted text-secondary"}`}
 												>
 													{count}
 												</span>

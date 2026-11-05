@@ -173,7 +173,7 @@ function LoginPage() {
 					{/* Divider */}
 					<div className="my-6 flex items-center gap-4">
 						<div className="h-px flex-1 bg-slate-800" />
-						<span className="text-xs font-medium text-slate-500">{t("or")}</span>
+						<span className="text-xs font-medium text-slate-500 dark:text-secondary">{t("or")}</span>
 						<div className="h-px flex-1 bg-slate-800" />
 					</div>
 

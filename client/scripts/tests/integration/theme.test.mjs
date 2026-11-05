@@ -61,6 +61,12 @@ function luminance(hex) {
 	return rgb[0] * 0.2126 + rgb[1] * 0.7152 + rgb[2] * 0.0722;
 }
 
+function contrastRatio(first, second) {
+	const lighter = Math.max(luminance(first), luminance(second));
+	const darker = Math.min(luminance(first), luminance(second));
+	return (lighter + 0.05) / (darker + 0.05);
+}
+
 test("body, muted and teal text meet 4.5:1 across palette surfaces", () => {
 	const css = readFileSync(new URL("../../../app/_styles/globals.css", import.meta.url), "utf8");
 	const blocks = [...css.matchAll(/([^{}]+)\{([^{}]+)\}/g)];
@@ -80,4 +86,29 @@ test("body, muted and teal text meet 4.5:1 across palette surfaces", () => {
 			}
 		}
 	}
+});
+
+test("dark solid action fills and hover fills keep white text AA without changing light fills", () => {
+	const css = readFileSync(new URL("../../../app/_styles/globals.css", import.meta.url), "utf8");
+	const darkPalette = css.match(/:root,\s*html\[data-theme="dark"\]\s*\{([^}]+)\}/)?.[1];
+	const lightPalette = css.match(/html\[data-theme="light"\],\s*html\[data-theme="cream"\]\s*\{([^}]+)\}/)?.[1];
+	assert.ok(darkPalette, "dark palette tokens are defined");
+	assert.ok(lightPalette, "light palette tokens are defined");
+	const token = (palette, name) => palette.match(new RegExp(`--sj-${name}:\\s*(#[\\da-f]{6})`))?.[1];
+	const darkPrimary = token(darkPalette, "primary");
+	const darkHover = token(darkPalette, "primary-hover");
+	assert.ok(contrastRatio("#ffffff", darkPrimary) >= 4.5, "dark primary action text contrast");
+	assert.ok(contrastRatio("#ffffff", darkHover) >= 4.5, "dark action hover text contrast");
+	assert.equal(token(lightPalette, "primary"), "#08756b");
+	assert.equal(token(lightPalette, "primary-hover"), "#06665d");
+
+	const darkCompatibility = css.slice(
+		css.indexOf("/* Legacy brand-color utilities use the single teal primary in dark mode. */"),
+		css.indexOf("@keyframes mini-dictionary-enter"),
+	);
+	assert.match(darkCompatibility, /background-color: var\(--sj-primary\) !important;/);
+	assert.match(darkCompatibility, /\[class~="hover:bg-blue-800"\]:hover/);
+	assert.match(darkCompatibility, /background-color: var\(--sj-primary-hover\) !important;/);
+	assert.match(darkCompatibility, /--tw-gradient-from: var\(--sj-primary\) !important;/);
+	assert.match(darkCompatibility, /--tw-gradient-to: var\(--sj-primary-hover\) !important;/);
 });

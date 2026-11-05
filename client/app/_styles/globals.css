@@ -47,8 +47,8 @@ html[data-theme="dark"] {
 	--sj-border-strong: #64748b;
 	--sj-hover: #1e293b;
 	--sj-active: #26364c;
-	--sj-primary: #0f8f83;
-	--sj-primary-hover: #0b766d;
+	--sj-primary: #0b766d;
+	--sj-primary-hover: #075d56;
 	--sj-brand-text: #2dd4bf;
 	--sj-primary-soft: color-mix(in srgb, var(--sj-primary) 16%, transparent);
 	--sj-success: #4ade80;
@@ -557,13 +557,16 @@ html:is([data-theme="dark"], [data-theme="black"]) :where(
 	[class~="bg-blue-900"], [class~="bg-violet-500"],
 	[class~="bg-violet-600"]
 ) {
-	background-color: var(--sj-brand-text) !important;
+	background-color: var(--sj-primary) !important;
 }
 
 html:is([data-theme="dark"], [data-theme="black"]) :where(
 	[class~="hover:bg-blue-500"]:hover,
 	[class~="hover:bg-blue-600"]:hover,
-	[class~="hover:bg-blue-700"]:hover
+	[class~="hover:bg-blue-700"]:hover,
+	[class~="hover:bg-blue-800"]:hover,
+	[class~="hover:bg-violet-500"]:hover,
+	[class~="hover:bg-violet-600"]:hover
 ) {
 	background-color: var(--sj-primary-hover) !important;
 }
@@ -766,6 +769,12 @@ html[data-theme="black"] {
 html:is([data-theme="light"], [data-theme="cream"], [data-theme="black"]) .dialogue-subtitle-text,
 html:is([data-theme="light"], [data-theme="cream"], [data-theme="black"]) .dialogue-subtitle-translation {
 	color: #fff !important;
+}
+
+.dialogue-subtitle-text [data-dictionary-token]:is(:hover, :focus-visible, .bg-player-selected),
+.dialogue-subtitle-text .bg-player-selected {
+	background-color: var(--sj-player-selected) !important;
+	color: var(--sj-player-selected-text) !important;
 }
 
 html:is([data-theme="light"], [data-theme="cream"]) .dialogue-word-popup {

@@ -163,7 +163,7 @@ function SignUpForm() {
 					/>
 
 					{/* Divider (Optional) */}
-					<div className="flex items-center gap-4 my-6 text-slate-500 text-xs">
+					<div className="flex items-center gap-4 my-6 text-slate-500 text-xs dark:text-secondary">
 						<div className="flex-1 h-px bg-slate-800"></div>
 						{t("or")}
 						<div className="flex-1 h-px bg-slate-800"></div>

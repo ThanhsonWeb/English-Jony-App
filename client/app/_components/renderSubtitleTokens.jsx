@@ -33,9 +33,9 @@ export default function renderSubtitleTokens(text, onWordClick, activeWordRange)
 				type="button"
 				onClick={(event) => onWordClick(segment.wordIndex, event)}
 				data-dictionary-token="true"
-				className={`${grouped ? "" : "rounded-sm"} transition-colors hover:text-cyan-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 ${
-					!grouped ? "hover:bg-white/10" : ""
-				} ${isActive ? "bg-cyan-400/15 text-cyan-100" : ""}`}
+				className={`${grouped ? "" : "rounded-sm"} transition-colors hover:bg-player-selected hover:text-player-selected-text focus-visible:bg-player-selected focus-visible:text-player-selected-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+					isActive ? "bg-player-selected text-player-selected-text" : ""
+				}`}
 			>
 				{segment.token}
 			</button>
@@ -47,7 +47,7 @@ export default function renderSubtitleTokens(text, onWordClick, activeWordRange)
 			return (
 				<span
 					key={`active-phrase-${phraseStart}-${phraseEnd}`}
-					className="box-decoration-clone rounded-sm bg-cyan-400/15 text-cyan-100"
+					className="box-decoration-clone rounded-sm bg-player-selected text-player-selected-text"
 				>
 					{segments
 						.slice(phraseStart, phraseEnd + 1)

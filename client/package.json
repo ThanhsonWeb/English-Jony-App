@@ -14,6 +14,7 @@
 		"test:integration": "node scripts/tests/run-node-tests.cjs integration",
 		"test:app": "node scripts/tests/run-node-tests.cjs app",
 		"test:browser": "node scripts/tests/browser/run-all.cjs",
+		"test:theme-contrast": "node scripts/tests/browser/test-theme-contrast-browser.cjs",
 		"test:dialogue-playback-rate": "node --test app/_lib/dialogue/playbackRate.test.mjs",
 		"test:wordlist-review-localization": "node --test scripts/tests/integration/wordlist-review-localization.test.mjs",
 		"test:review-question-state": "node --test scripts/tests/unit/review-question-state.test.mjs",
@@ -36,9 +37,11 @@
 		"react-dom": "19.2.4"
 	},
 	"devDependencies": {
+		"@axe-core/playwright": "^4.14.0",
 		"@tailwindcss/postcss": "^4",
 		"eslint": "^9",
 		"eslint-config-next": "16.3.8",
+		"playwright": "^1.64.1",
 		"sharp": "0.35.5",
 		"tailwindcss": "^4"
 	}
