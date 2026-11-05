@@ -2,6 +2,30 @@
 
 import { useEffect, useRef } from "react";
 
+const INTERACTIVE_SELECTOR = [
+	"button",
+	"a[href]",
+	"input",
+	"select",
+	"textarea",
+	"summary",
+	"[contenteditable]:not([contenteditable='false'])",
+	"[role='button']",
+	"[role='link']",
+	"[role='checkbox']",
+	"[role='radio']",
+	"[role='switch']",
+	"[role='tab']",
+	"[role='menuitem']",
+	"[role='option']",
+	"[role='combobox']",
+	"[tabindex]:not([tabindex='-1'])",
+].join(",");
+
+function isInteractiveTarget(target) {
+	return target instanceof Element && Boolean(target.closest(INTERACTIVE_SELECTOR));
+}
+
 function useDialogueShortcuts({
 	onEnter,
 	onReplay,
@@ -37,6 +61,7 @@ function useDialogueShortcuts({
 			const isTyping =
 				event.target instanceof Element &&
 				event.target.matches("input, textarea, [contenteditable='true']");
+			const isInteractive = isInteractiveTarget(event.target);
 			const isModalOpen = Boolean(
 				document.querySelector('[aria-modal="true"]'),
 			);
@@ -64,7 +89,12 @@ function useDialogueShortcuts({
 				!event.altKey &&
 				!event.metaKey &&
 				!event.shiftKey;
-			if (isPlainEnter && handlersRef.current.onEnter && !isModalOpen) {
+			if (
+				isPlainEnter &&
+				handlersRef.current.onEnter &&
+				!isModalOpen &&
+				!isInteractive
+			) {
 				event.preventDefault();
 				handlersRef.current.onEnter();
 			}

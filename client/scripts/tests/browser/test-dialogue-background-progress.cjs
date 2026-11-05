@@ -43,7 +43,7 @@ async function fixture(browser, width, locale, unsafeStorage = false) {
 	await context.route("**/api/v1/**", async route => {
 		const request = route.request(), path = new URL(request.url()).pathname;
 		const json = data => route.fulfill({ json: { status: "success", data } });
-		if (path === "/api/v1/users/me") return json({ user: { _id: userId, name: "Progress tester", email: "test@example.test", theme: "dark" } });
+		if (path === "/api/v1/users/me") return json({ user: { _id: userId, name: "Progress tester", email: "test@example.test", theme: "dark", language: locale } });
 		if (path.endsWith("/attempt")) {
 			assert.equal(request.headers()["x-studyjony-progress-user"], userId);
 			const task = path.slice(0, -8);
