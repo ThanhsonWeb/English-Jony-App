@@ -281,6 +281,8 @@
 	  "retry": "Thử lại",
 	  "emptyTitle": "Cuốn sổ của bạn đang chờ từ đầu tiên",
 	  "emptyBody": "Thêm một từ mới hoặc lưu từ khi học hội thoại.",
+	  "guestEmptyBody": "Đăng nhập hoặc tạo tài khoản để lưu từ. Bạn cũng có thể khám phá hội thoại trước.",
+	  "signInOrCreateAccount": "Đăng nhập / Tạo tài khoản",
 	  "noResults": "Không tìm thấy từ phù hợp.",
 	  "clear": "Xóa bộ lọc",
 	  "unauthorized": "Đăng nhập để mở sổ tay của bạn.",

@@ -318,16 +318,16 @@ export default function WordlistPage() {
 			<div className={`${styles.empty} ${styles.firstWordEmpty} ${styles.authDesktopEmpty}`}>
 				<Image src="/wordlist-hero-2.png" alt="" width={300} height={200} className={styles.emptyImage} />
 				<h2>{t("emptyTitle")}</h2>
-				<p>{t("emptyBody")}</p>
-				<Link className={styles.primary} href="/dialogue"><MessageCircle size={18} />{t("exploreDialogues")}</Link>
-				<Link className={styles.secondary} href="/login"><LogIn size={18} />{t("loginToStart")}</Link>
+				<p>{t("guestEmptyBody")}</p>
+				<Link className={styles.primary} href="/login"><LogIn size={18} />{t("signInOrCreateAccount")}</Link>
+				<Link className={styles.secondary} href="/dialogue"><MessageCircle size={18} />{t("exploreDialogues")}</Link>
 			</div>
 							<div className={`${styles.empty} ${styles.firstWordEmpty} ${styles.mobileAuthEmpty}`}>
 								<Image src="/wordlist-hero-2.png" alt="" width={300} height={200} className={styles.emptyImage} />
-								<h2>{locale === "en" ? "Your notebook is ready for its first word!" : t("emptyTitle")}</h2>
-								<p>{locale === "en" ? "Add a new word or explore words while watching dialogues." : t("emptyBody")}</p>
-								<Link className={styles.primary} href="/dialogue"><MessageCircle size={18} />{t("exploreDialogues")}</Link>
-								<Link className={styles.secondary} href="/login"><LogIn size={20} />{t("loginToStart")}</Link>
+								<h2>{t("emptyTitle")}</h2>
+								<p>{t("guestEmptyBody")}</p>
+								<Link className={styles.primary} href="/login"><LogIn size={20} />{t("signInOrCreateAccount")}</Link>
+								<Link className={styles.secondary} href="/dialogue"><MessageCircle size={18} />{t("exploreDialogues")}</Link>
 							</div>
 							</>
 						) : error ? (

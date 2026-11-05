@@ -281,6 +281,8 @@
 	  "retry": "Try again",
 	  "emptyTitle": "Your notebook is ready for its first word",
 	  "emptyBody": "Add a new word or save one while studying a dialogue.",
+	  "guestEmptyBody": "Sign in or create an account to save words. You can explore dialogues first.",
+	  "signInOrCreateAccount": "Sign in / Create account",
 	  "noResults": "No matching words found.",
 	  "clear": "Clear filters",
 	  "unauthorized": "Sign in to open your notebook.",
