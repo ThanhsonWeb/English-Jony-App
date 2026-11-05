@@ -163,7 +163,9 @@ async function profile(locale) {
 	console.log("READY: isolated Next and disposable backend");
 	browser = await chromium.launch({ channel: "chrome", headless: true });
 	const one = await profile("en-US"), two = await profile("vi-VN");
-	await one.page.goto(base + "/wordlist?keep=guest"); await language(one.page, "en");
+	await one.page.goto(base + "/wordlist?keep=guest"); await language(one.page, "vi");
+	assert.equal(await cookie(one.context), "vi", "First-time English-preferring browsers default to Vietnamese");
+	await choose(one.page, "en"); await one.page.reload(); await language(one.page, "en");
 	if (process.env.STUDYJONY_TEST_DEBUG === "1") {
 		const redirect = await fetch(base + "/vi/wordlist", { headers: { Cookie: "sj_guest_language=vi" }, redirect: "manual" });
 		console.log("GUEST CANONICAL REDIRECT:", redirect.status, redirect.headers.get("location"));

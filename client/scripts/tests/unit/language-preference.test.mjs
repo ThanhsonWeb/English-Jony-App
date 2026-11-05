@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { accountLanguage, guestLanguage, languagePath } from "../../../app/_lib/languagePreference.mjs";
+import { accountLanguage, guestLanguage, guestLanguagePath, languagePath } from "../../../app/_lib/languagePreference.mjs";
 import { resolveAccountLanguage, selectedSessionCookies } from "../../../i18n/accountLanguage.mjs";
 
 test("account choices never inherit a browser's guest choice or the old shared cookie", () => {
@@ -19,6 +19,18 @@ test("locale correction preserves the route and cannot generate an external path
 	assert.equal(languagePath("/en", "vi"), "/");
 	assert.equal(languagePath("/", "en"), "/en");
 	assert.equal(languagePath("/en//example.test", "vi"), "/example.test");
+});
+
+test("guest locale defaults to Vietnamese and only a valid saved cookie selects English", () => {
+	// The default does not receive or inspect Accept-Language.
+	assert.equal(guestLanguagePath("/wordlist"), "/wordlist");
+	assert.equal(guestLanguagePath("/wordlist", "sj_guest_language=invalid"), "/wordlist");
+	assert.equal(guestLanguagePath("/wordlist", "sj_guest_language=en"), "/en/wordlist");
+	assert.equal(guestLanguagePath("/", "sj_guest_language=en"), "/en");
+	assert.equal(guestLanguagePath("/wordlist", "sj_guest_language=vi"), "/wordlist");
+	// Explicit locale URLs remain explicit; the account path is resolved separately.
+	assert.equal(guestLanguagePath("/en/wordlist", "sj_guest_language=vi"), "/en/wordlist");
+	assert.equal(accountLanguage({ _id: "account", language: "en" }), "en");
 });
 
 test("SSR forwards only the actively selected credential, respecting none and legacy", () => {

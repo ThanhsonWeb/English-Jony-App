@@ -21,3 +21,9 @@ export function languagePath(pathname, language) {
 	const path = pathname.replace(/^\/(en|vi)(?=\/|$)/, "").replace(/^\/+/, "");
 	return language === "en" ? `/en${path ? `/${path}` : ""}` : `/${path}`;
 }
+
+export function guestLanguagePath(pathname, cookieHeader = "") {
+	const language = guestLanguage(cookieHeader);
+	if (!language || /^\/(en|vi)(?=\/|$)/.test(pathname)) return pathname;
+	return languagePath(pathname, language);
+}
