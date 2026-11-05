@@ -9,6 +9,10 @@ import { useLocale, useTranslations } from "next-intl";
 import { loginWithPassword } from "@/app/_lib/passwordLogin.mjs";
 import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
 import AuthOverlay from "@/app/_components/AuthOverlay";
+import {
+	getSafeAuthReturnPath,
+	saveGoogleOAuthReturnPath,
+} from "@/app/_lib/authReturnPath.mjs";
 
 function LoginPage() {
 	const t = useTranslations("Auth");
@@ -24,6 +28,7 @@ function LoginPage() {
 	const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 	const locale = useLocale();
 	const searchParams = useSearchParams();
+	const returnTo = getSafeAuthReturnPath(searchParams.get("returnTo"));
 	const authError = searchParams.get("error");
 	const callbackError =
 		authError === "google_account_conflict"
@@ -72,6 +77,7 @@ function LoginPage() {
 
 		setError("");
 		try {
+			saveGoogleOAuthReturnPath(window.sessionStorage, returnTo);
 			const response = await fetch(
 				`/api/v1/auth/google/state?locale=${encodeURIComponent(locale)}`,
 				{ credentials: "include" },
@@ -116,7 +122,7 @@ function LoginPage() {
 				return;
 			}
 			succeeded = true;
-			router.push("/wordlist");
+			router.push(returnTo || "/wordlist");
 		} catch (error) {
 			if (isCurrentCredentialAttempt(attempt)) setError(t("loginFailed"));
 		} finally {

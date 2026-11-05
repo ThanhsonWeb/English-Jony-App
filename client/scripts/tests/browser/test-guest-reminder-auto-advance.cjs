@@ -27,7 +27,7 @@ async function fixture(browser, signedIn = false, width = 1280) {
 	await context.route("**/api/v1/**", route => {
 		const path = new URL(route.request().url()).pathname;
 		if (path.endsWith("/users/me")) return route.fulfill({ status: signedIn ? 200 : 401,
-			json: signedIn ? { status: "success", data: { user: { _id: userId, name: "Reminder tester", theme: "dark" } } } : { status: "fail" } });
+			json: signedIn ? { status: "success", data: { user: { _id: userId, name: "Reminder tester", theme: "dark", language: "en" } } } : { status: "fail" } });
 		let data = { progress: [], vocabularies: [], topics: [], activities: [] };
 		if (path.endsWith("/attempt")) data = { attemptId: "a".repeat(64), expiresAt: new Date(Date.now() + 600000).toISOString(), readyAfterMs: 0 };
 		if (route.request().method() === "PATCH") {
@@ -100,6 +100,7 @@ async function loginNavigation(browser) {
 		await f.page.waitForTimeout(550);
 		await f.page.locator('aside[aria-labelledby="guest-progress-title"]').getByRole("link", { name: t.signIn, exact: true }).click();
 		await f.page.waitForURL(url => url.pathname === "/en/login");
+		assert.equal(new URL(f.page.url()).searchParams.get("returnTo"), `/dialogue/${ids.join("/")}/1`, "Login keeps the original locale-neutral exercise route");
 		await f.page.waitForTimeout(700);
 		assert.equal(new URL(f.page.url()).pathname, "/en/login", "Login cannot race an exercise auto-next");
 		assert.equal(await f.page.evaluate(path => window.taskNavigations.includes(path), f.path(ids, 2)), false);

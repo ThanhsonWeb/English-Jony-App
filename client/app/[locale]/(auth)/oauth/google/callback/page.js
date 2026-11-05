@@ -4,6 +4,10 @@ import { useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useAuth } from "@/app/_contexts/AuthContext";
+import {
+	clearGoogleOAuthReturnPath,
+	readGoogleOAuthReturnPath,
+} from "@/app/_lib/authReturnPath.mjs";
 
 export default function GoogleOAuthCallbackPage() {
 	const t = useTranslations("Auth");
@@ -20,13 +24,16 @@ export default function GoogleOAuthCallbackPage() {
 		function navigate(path) {
 			if (cancelled || navigated.current) return;
 			navigated.current = true;
+			clearGoogleOAuthReturnPath(window.sessionStorage);
 			router.replace(`${prefix}${path}`);
 		}
 		async function finishLogin() {
+			const returnTo = readGoogleOAuthReturnPath(window.sessionStorage);
+			const loginReturnQuery = returnTo ? `&returnTo=${encodeURIComponent(returnTo)}` : "";
 			if (oauthError) {
 				const error = oauthError === "google_account_conflict"
 					? "google_account_conflict" : "google_oauth_failed";
-				navigate(`/login?error=${error}`);
+				navigate(`/login?error=${error}${loginReturnQuery}`);
 				return;
 			}
 
@@ -34,8 +41,8 @@ export default function GoogleOAuthCallbackPage() {
 			if (cancelled || result.status === "stale" || !isCurrentSession(result.session)) return;
 			navigate(
 				result.status === "success"
-					? "/wordlist"
-					: "/login?error=google_session_failed",
+					? returnTo || "/wordlist"
+					: `/login?error=google_session_failed${loginReturnQuery}`,
 			);
 		}
 

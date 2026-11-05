@@ -1,12 +1,13 @@
 "use client";
 
 import { CircleCheck, X } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useEffect } from "react";
 import { useTranslations } from "next-intl";
 
 function GuestProgressReminder({ isOpen, onDismiss }) {
 	const t = useTranslations("DialogueFeature");
+	const pathname = usePathname();
 	useEffect(() => {
 		if (!isOpen) return;
 
@@ -55,7 +56,7 @@ function GuestProgressReminder({ isOpen, onDismiss }) {
 
 			<div className="mt-4 flex gap-2 sm:justify-end">
 				<Link
-					href="/login"
+					href={`/login?returnTo=${encodeURIComponent(pathname)}`}
 					className="flex min-h-11 flex-1 items-center justify-center rounded-xl bg-violet-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-violet-500 focus:outline-none focus:ring-2 focus:ring-violet-400 sm:flex-none"
 				>
 					{t("signIn")}
