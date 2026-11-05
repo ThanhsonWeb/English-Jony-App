@@ -8,6 +8,7 @@ import {
 	ArrowRight,
 	BookmarkPlus,
 	Check,
+	CheckCircle2,
 	LoaderCircle,
 	LogIn,
 } from "lucide-react";
@@ -23,6 +24,7 @@ export default function DialogueUsefulWords({
 	lessonId,
 	dialogueId,
 	dialogueTitle,
+	completionMessage,
 }) {
 	const router = useRouter();
 	const t = useTranslations("DialogueFeature");
@@ -178,6 +180,19 @@ export default function DialogueUsefulWords({
 						{t("usefulWordsDescription")}
 					</p>
 				</header>
+				{completionMessage && (
+					<div role="status" aria-live="polite" className="mt-6 flex items-start gap-3 rounded-xl border border-app bg-surface p-4 text-main">
+						<CheckCircle2 size={20} aria-hidden="true" className="mt-0.5 shrink-0 text-brand-text" />
+						<div>
+							<p className="font-semibold">{t("dialogueCompletionTitle")}</p>
+							<p className="mt-1 text-sm leading-6 text-secondary">
+								{completionMessage.type === "guest"
+									? t("dialogueCompletionGuest")
+									: t("dialogueCompletionSaved", { completed: completionMessage.completed, total: completionMessage.total })}
+							</p>
+						</div>
+					</div>
+				)}
 
 				{!authLoading && !user && (
 					<div className="mt-7 rounded-2xl border border-blue-500/20 bg-blue-500/5 p-4 sm:flex sm:items-center sm:justify-between sm:gap-4">

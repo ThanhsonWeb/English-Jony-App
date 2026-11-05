@@ -54,8 +54,9 @@ export default function DialogueTaskPage() {
 		...nextTask,
 		scene: nextTask.scene || dialogue.scene,
 	};
+	const isFinalTask = taskIndex === dialogue.tasks.length - 1;
 	const completionHref = dialogue.usefulWords?.length
-		? `/dialogue/${lessonId}/${dialogueId}/useful-words`
+		? `/dialogue/${lessonId}/${dialogueId}/useful-words${isFinalTask ? "?completed=1" : ""}`
 		: `/dialogue/${lessonId}`;
 	const matchingDialogueLine = dialogue.dialogue?.find(
 		(line) => line.audioUrl === task.audioUrl,
