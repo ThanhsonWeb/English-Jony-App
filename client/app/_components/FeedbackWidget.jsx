@@ -13,6 +13,9 @@ export default function FeedbackWidget() {
 	const routePath = pathname.replace(/^\/(en|vi)(?=\/|$)/, "") || "/";
 	const isDialoguePractice =
 		/^\/dialogue\/[^/]+\/[^/]+\/(?!useful-words(?:\/|$))[^/]+$/.test(routePath);
+	const isDialogueLessonOverview = /^\/dialogue\/[^/]+$/.test(routePath);
+	const isSignup = routePath === "/signup";
+	const keepsMobileContentClear = isDialoguePractice || isDialogueLessonOverview || isSignup;
 	const [open, setOpen] = useState(false);
 	const [form, setForm] = useState(initialForm);
 	const [status, setStatus] = useState("idle");
@@ -89,7 +92,7 @@ export default function FeedbackWidget() {
 
 	return (
 		<>
-			<div className={isDialoguePractice ? "relative z-[90] flex justify-end px-4 pb-4 md:contents" : "contents"}>
+			<div className={keepsMobileContentClear ? "relative z-[90] flex justify-end px-4 pb-4 md:contents" : "contents"}>
 				<button
 					type="button"
 					onClick={() => {
@@ -97,7 +100,7 @@ export default function FeedbackWidget() {
 						setError("");
 						setOpen(true);
 					}}
-					className={`${isDialoguePractice ? "relative md:fixed md:bottom-6 md:right-6" : "fixed bottom-[calc(4.5rem+env(safe-area-inset-bottom))] right-4 sm:bottom-6 sm:right-6"} z-[90] inline-flex min-h-11 items-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-white shadow-lg transition hover:bg-primary-hover dark:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-page`}
+					className={`${keepsMobileContentClear ? "relative md:fixed md:bottom-6 md:right-6" : "fixed bottom-[calc(4.5rem+env(safe-area-inset-bottom))] right-4 sm:bottom-6 sm:right-6"} z-[90] inline-flex min-h-11 items-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-white shadow-lg transition hover:bg-primary-hover dark:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-page`}
 					aria-haspopup="dialog"
 					aria-expanded={open}
 				>
