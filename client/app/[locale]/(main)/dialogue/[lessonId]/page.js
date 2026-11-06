@@ -10,6 +10,7 @@ import {
 	ChevronDown,
 	Clock3,
 	Headphones,
+	LoaderCircle,
 } from "lucide-react";
 import { lessonData } from "../_data/lessonData";
 import { getLocalizedDialogueValue } from "@/app/_lib/dialogue/localization";
@@ -26,7 +27,18 @@ export default function DialogueLessonPage() {
 	const lesson = lessonData[lessonId];
 	const [openDialogueId, setOpenDialogueId] = useState(null);
 	const { user, loading: authLoading } = useAuth();
-	const { data: progressEntries = [] } = useLessonProgressResource(user?._id || user?.id, lessonId, !authLoading);
+	const userId = user?._id || user?.id;
+	const {
+		data: progressSnapshot,
+		loading: progressLoading,
+		error: progressError,
+		refresh: refreshProgress,
+	} = useLessonProgressResource(userId, lessonId, !authLoading);
+	const progressEntries = progressSnapshot || [];
+	const isProgressLoading = authLoading || Boolean(userId && progressLoading);
+	const hasConfirmedProgress = !isProgressLoading && (!userId || progressSnapshot !== undefined);
+	const progressUnavailable = Boolean(userId && progressError && progressSnapshot === undefined);
+	const progressRefreshFailed = Boolean(userId && progressError && progressSnapshot !== undefined);
 	const progress = { [lessonId]: Object.fromEntries(progressEntries.map(item => [item.dialogueId, item.completedTaskIds || []])) };
 
 	const totalTaskCount =
@@ -65,6 +77,20 @@ export default function DialogueLessonPage() {
 					{t("back")}
 				</Link>
 			</div>
+			{isProgressLoading && (
+				<div role="status" aria-live="polite" className="mx-auto mt-4 flex max-w-6xl items-center gap-2 rounded-xl border border-app bg-surface px-4 py-3 text-sm text-secondary">
+					<LoaderCircle size={17} aria-hidden="true" className="shrink-0 animate-spin text-brand-text" />
+					{t("progressLoading")}
+				</div>
+			)}
+			{(progressUnavailable || progressRefreshFailed) && (
+				<div role="alert" className="mx-auto mt-4 flex max-w-6xl flex-wrap items-center justify-between gap-3 rounded-xl border border-amber-500/25 bg-amber-500/5 px-4 py-3 text-sm text-main">
+					<p>{t(progressRefreshFailed ? "progressRefreshFailed" : "progressUnavailable")}</p>
+					<button type="button" onClick={() => { void refreshProgress(true).catch(() => {}); }} className="min-h-11 rounded-lg border border-app bg-surface px-4 py-2 font-semibold text-main transition hover:bg-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+						{t("retryProgressLoad")}
+					</button>
+				</div>
+			)}
 				{/* Hero */}
 				<div className="relative mx-auto mt-4 min-h-[290px] max-w-6xl overflow-hidden rounded-sm border border-app bg-hero">
 					{/* Hero image */}
@@ -111,14 +137,14 @@ export default function DialogueLessonPage() {
 								<Clock3 size={16} />{t("minutes", { count: estimatedDurationMinutes })}
 							</span>
 
-							<span className="flex items-center gap-2">
+							{hasConfirmedProgress && <span className="flex items-center gap-2">
 								<CheckCircle2 size={16} />
 								{t("tasksCompleted", { completed: totalCompletedTaskCount, total: totalTaskCount })}
-							</span>
+							</span>}
 						</div>
 
 						{/* Progress */}
-						<div className="mt-6 max-w-xl">
+						{hasConfirmedProgress && <div className="mt-6 max-w-xl">
 							<div className="mb-2 flex items-center justify-between text-xs">
 								<span className="text-slate-500">{t("courseProgress")}</span>
 								<span className="font-semibold text-emerald-400">
@@ -132,7 +158,7 @@ export default function DialogueLessonPage() {
 									style={{ width: `${progressPercent}%` }}
 								/>
 							</div>
-						</div>
+						</div>}
 					</div>
 				</div>
 			<div className="mx-auto max-w-5xl">
@@ -149,15 +175,15 @@ export default function DialogueLessonPage() {
 							const completedCount = dialogue.tasks.filter((task) =>
 								completedTaskIds.has(task.id),
 							).length;
-							const currentTask = dialogue.tasks.find(
+							const currentTask = hasConfirmedProgress && dialogue.tasks.find(
 								(task) => !completedTaskIds.has(task.id),
 							);
 							const totalTasks = dialogue.tasks.length;
 
-							const isCompleted =
+							const isCompleted = hasConfirmedProgress &&
 								totalTasks > 0 && completedCount === totalTasks;
 
-							const isInProgress = completedCount > 0 && !isCompleted;
+							const isInProgress = hasConfirmedProgress && completedCount > 0 && !isCompleted;
 							const thumbnail = dialogue.thumbnail;
 
 							return (
@@ -203,7 +229,7 @@ export default function DialogueLessonPage() {
 										</span>
 
 										{/* Status */}
-										<span
+										{hasConfirmedProgress && <span
 											className={`hidden shrink-0 rounded-full px-3 py-1 text-xs font-medium sm:inline-flex ${
 												isCompleted
 													? "bg-emerald-500/10 text-emerald-400"
@@ -217,7 +243,7 @@ export default function DialogueLessonPage() {
 												: isInProgress
 													? t("continue")
 													: t("notStarted")}
-										</span>
+											</span>}
 
 										<ChevronDown
 											size={20}
@@ -241,8 +267,8 @@ export default function DialogueLessonPage() {
 											{dialogue.tasks.length > 0 ? (
 												<div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10">
 													{dialogue.tasks.map((task) => {
-														const isCompleted = completedTaskIds.has(task.id);
-														const isCurrent = currentTask?.id === task.id;
+															const isCompleted = hasConfirmedProgress && completedTaskIds.has(task.id);
+															const isCurrent = hasConfirmedProgress && currentTask?.id === task.id;
 
 														return (
 															<Link

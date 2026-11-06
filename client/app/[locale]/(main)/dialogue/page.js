@@ -15,6 +15,7 @@ import {
 	Clock3,
 	GraduationCap,
 	Grid2X2,
+	LoaderCircle,
 	MessageCircleMore,
 	Plane,
 	Search,
@@ -103,7 +104,18 @@ export default function DialoguePage() {
 	const getLocalizedCourseValue = (course, field) => getLocalizedDialogueValue(course, field, locale);
 	const courses = useMemo(() => Object.values(lessonData), []);
 	const { user, loading: authLoading } = useAuth();
-	const { data: progressByLesson = {} } = useCatalogueProgressResource(user?._id || user?.id, courses, !authLoading);
+	const userId = user?._id || user?.id;
+	const {
+		data: progressSnapshot,
+		loading: progressLoading,
+		error: progressError,
+		refresh: refreshProgress,
+	} = useCatalogueProgressResource(userId, courses, !authLoading);
+	const progressByLesson = useMemo(() => progressSnapshot || {}, [progressSnapshot]);
+	const isProgressLoading = authLoading || Boolean(userId && progressLoading);
+	const hasConfirmedProgress = !isProgressLoading && (!userId || progressSnapshot !== undefined);
+	const progressUnavailable = Boolean(userId && progressError && progressSnapshot === undefined);
+	const progressRefreshFailed = Boolean(userId && progressError && progressSnapshot !== undefined);
 	const [search, setSearch] = useState("");
 	const [selectedLevel, setSelectedLevel] = useState("all");
 	const [selectedCategory, setSelectedCategory] = useState("all");
@@ -244,7 +256,7 @@ export default function DialoguePage() {
 	const courseMatchesFilters = (course) =>
 		courseMatchesSearch(course) && courseMatchesLevel(course);
 	const currentCourseMatchesSearch = Boolean(
-		currentCourse && courseMatchesFilters(currentCourse),
+		hasConfirmedProgress && currentCourse && courseMatchesFilters(currentCourse),
 	);
 	const visibleCourses = courses.filter(
 		(course) => courseMatchesFilters(course) && courseMatchesCategory(course),
@@ -282,6 +294,20 @@ export default function DialoguePage() {
 						</label>
 					</div>
 				</section>
+				{isProgressLoading && (
+					<div role="status" aria-live="polite" className="mt-4 flex items-center gap-2 rounded-xl border border-app bg-surface px-4 py-3 text-sm text-secondary">
+						<LoaderCircle size={17} aria-hidden="true" className="shrink-0 animate-spin text-brand-text" />
+						{t("progressLoading")}
+					</div>
+				)}
+				{(progressUnavailable || progressRefreshFailed) && (
+					<div role="alert" className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-amber-500/25 bg-amber-500/5 px-4 py-3 text-sm text-main">
+						<p>{t(progressRefreshFailed ? "progressRefreshFailed" : "progressUnavailable")}</p>
+						<button type="button" onClick={() => { void refreshProgress(true).catch(() => {}); }} className="min-h-11 rounded-lg border border-app bg-surface px-4 py-2 font-semibold text-main transition hover:bg-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+							{t("retryProgressLoad")}
+						</button>
+					</div>
+				)}
 				{/* ==================== CURRENT / IN-PROGRESS COURSE ==================== */}
 
 				{currentCourseMatchesSearch && (
@@ -470,11 +496,13 @@ export default function DialoguePage() {
 								<div className="grid gap-5 xl:gap-[22px] sm:grid-cols-2 xl:grid-cols-3">
 									{visibleCourses.map((course) => {
 										const stats = courseStats[course.id];
-										const statusLabel = stats.isCompleted
-											? t("completed")
-											: stats.isStarted
-												? t("learning")
-												: t("notStarted");
+										const statusLabel = !hasConfirmedProgress
+											? null
+											: stats.isCompleted
+												? t("completed")
+												: stats.isStarted
+													? t("learning")
+													: t("notStarted");
 										const statusClassName = stats.isCompleted
 											? "border-emerald-500/30 bg-emerald-600 text-white"
 											: stats.isStarted
@@ -505,11 +533,11 @@ export default function DialoguePage() {
 														{t("dialogues", { count: course.dialogues.length })}
 													</span>
 
-													<span
+												{statusLabel && <span
 														className={`absolute left-2 top-2 rounded-md border px-2.5 py-1 text-[10px] font-semibold shadow-sm ${statusClassName}`}
 													>
 														{statusLabel}
-													</span>
+													</span>}
 												</div>
 
 												{/* Content */}
