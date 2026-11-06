@@ -49,11 +49,8 @@ async function run(browser, { locale, theme, width, signedIn }) {
 			assert.ok(progressRequests > 0, "Signed-in progress is fetched normally");
 		} else {
 			await guestGuidance.waitFor();
-			await page.getByText("0%", { exact: true }).waitFor();
+			assert.equal(await page.getByText("0%", { exact: true }).count(), 0, "Guests must not see an assumed saved-progress percentage");
 			assert.equal(progressRequests, 0, "Guest sessions do not request saved account progress");
-			const noteBox = await guestGuidance.boundingBox();
-			const progressBox = await page.getByText("0%", { exact: true }).boundingBox();
-			assert.ok(noteBox && progressBox && noteBox.y >= progressBox.y, "Guest guidance sits beside the progress summary");
 		}
 		assert.equal(await page.locator("html").getAttribute("data-theme"), theme);
 		assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, "Lesson layout fits the viewport");

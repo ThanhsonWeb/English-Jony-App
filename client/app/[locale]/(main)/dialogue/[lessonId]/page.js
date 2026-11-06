@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { useParams } from "next/navigation";
 import {
 	ArrowLeft,
+	ArrowRight,
 	BookOpen,
 	CheckCircle2,
 	ChevronDown,
@@ -19,6 +20,12 @@ import { useAuth } from "@/app/_contexts/AuthContext";
 import { useLessonProgressResource } from "@/app/_lib/useStudyResources";
 
 import Image from "next/image";
+
+const beginnerStarterTaskTypeKeys = {
+	fillBlank: "fillBlankTitle",
+	multipleChoice: "starterQuiz",
+	dialogueCloze: "dialogueClozeTitle",
+};
 
 export default function DialogueLessonPage() {
 	const locale = useLocale();
@@ -174,6 +181,18 @@ export default function DialogueLessonPage() {
 					<div className="mt-4 space-y-3">
 						{lesson.dialogues.map((dialogue, index) => {
 							const isOpen = openDialogueId === dialogue.id;
+							const isBeginnerStarter =
+								lessonId === "asking-for-directions" && index === 0;
+							const starterActivityKeys = isBeginnerStarter
+								? [
+									"starterListen",
+									...new Set(
+										dialogue.tasks
+											.map((task) => beginnerStarterTaskTypeKeys[task.type])
+											.filter(Boolean),
+									),
+								]
+								: [];
 							const completedTaskIds = new Set(
 								progress[lessonId]?.[dialogue.id] || [],
 							);
@@ -261,9 +280,40 @@ export default function DialogueLessonPage() {
 										/>
 									</button>
 
+									{isBeginnerStarter && (
+										<div
+											data-testid="beginner-starter-overview"
+											role="group"
+											aria-label={t("starterSummaryLabel")}
+											className="border-t border-app px-3 py-3 sm:px-4"
+										>
+											<p data-testid="beginner-starter-activities" className="flex flex-wrap gap-x-2 text-xs leading-5 text-secondary">
+												{starterActivityKeys.map((key, activityIndex) => (
+													<span key={key}>
+														{activityIndex > 0 && <span aria-hidden="true" className="mr-2">·</span>}
+														{t(key)}
+													</span>
+												))}
+											</p>
+											<div className="mt-2 flex items-center justify-between gap-2">
+												<span data-testid="beginner-starter-task-count" className="text-xs font-medium text-secondary">
+													{t("starterTaskCount", { count: dialogue.tasks.length })}
+												</span>
+												<Link
+													data-testid="beginner-starter-link"
+													href={`/dialogue/${lessonId}/${dialogue.id}`}
+													className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-lg bg-primary px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+												>
+													{t("starterStartHere")}
+													<ArrowRight size={16} aria-hidden="true" />
+												</Link>
+											</div>
+										</div>
+									)}
+
 									{isOpen && (
 										<div className="space-y-4 border-t border-slate-800 px-4 py-4 sm:px-5">
-											{dialogue.dialogue?.length > 0 && (
+											{dialogue.dialogue?.length > 0 && !isBeginnerStarter && (
 												<Link
 													href={`/dialogue/${lessonId}/${dialogue.id}`}
 													className="inline-flex items-center gap-2 rounded-xl border border-violet-500/40 bg-violet-500/10 px-4 py-2.5 text-sm font-semibold text-violet-300 transition hover:bg-violet-500/20 hover:text-white"
