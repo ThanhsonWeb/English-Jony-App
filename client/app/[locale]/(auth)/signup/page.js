@@ -3,11 +3,13 @@
 import { useAuth } from "@/app/_contexts/AuthContext";
 import Image from "next/image";
 import { Link, useRouter } from "@/i18n/navigation";
+import { useSearchParams } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { submitCredential } from "@/app/_lib/credentialSubmission.mjs";
 import GoogleSignInButton from "@/app/_components/GoogleSignInButton";
 import AuthOverlay from "@/app/_components/AuthOverlay";
+import { getSafeAuthReturnPath, saveGoogleOAuthReturnPath } from "@/app/_lib/authReturnPath.mjs";
 
 function SignUpForm() {
 	const t = useTranslations("Auth");
@@ -22,6 +24,8 @@ function SignUpForm() {
 	}, [cancelCredentialAttempt]);
 	const googleClientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 	const locale = useLocale();
+	const searchParams = useSearchParams();
+	const returnTo = getSafeAuthReturnPath(searchParams.get("returnTo"));
 
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
@@ -53,7 +57,7 @@ function SignUpForm() {
 				return;
 			}
 			succeeded = true;
-			router.push("/wordlist");
+			router.push(returnTo || "/wordlist");
 		} catch (error) {
 			if (isCurrentCredentialAttempt(attempt)) setError(t("signupFailed"));
 		} finally {
@@ -96,6 +100,7 @@ function SignUpForm() {
 
 		setError("");
 		try {
+			saveGoogleOAuthReturnPath(window.sessionStorage, returnTo);
 			const response = await fetch(
 				`/api/v1/auth/google/state?locale=${encodeURIComponent(locale)}`,
 				{ credentials: "include" },
@@ -148,7 +153,7 @@ function SignUpForm() {
 						<p className="text-slate-400 text-sm">
 							{t("hasAccount")}{" "}
 							<Link
-								href="/login"
+								href={returnTo ? `/login?returnTo=${encodeURIComponent(returnTo)}` : "/login"}
 								className="text-blue-400 hover:underline font-semibold"
 							>
 								{t("login")}

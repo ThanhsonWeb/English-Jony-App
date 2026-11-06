@@ -142,7 +142,7 @@ function LoginPage() {
 				>
 					{/* Close Button */}
 					<Link
-						href="/"
+						href={returnTo || "/"}
 						onClick={() => cancelCredentialAttempt(attemptRef.current)}
 						aria-label={t("close")}
 						className="absolute right-4 top-4 text-2xl text-slate-500 transition hover:text-white"
@@ -272,7 +272,7 @@ function LoginPage() {
 					<p className="mt-5 text-center text-sm text-slate-400">
 						{t("noAccount")}{" "}
 						<Link
-							href="/signup"
+							href={returnTo ? `/signup?returnTo=${encodeURIComponent(returnTo)}` : "/signup"}
 							className="font-semibold text-blue-400 hover:text-blue-300 hover:underline"
 						>
 							{t("signup")}
