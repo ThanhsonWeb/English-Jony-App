@@ -2,12 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import { usePathname } from "@/i18n/navigation";
 import { MessageSquare, X } from "lucide-react";
 
 const initialForm = { type: "suggestion", message: "" };
 
 export default function FeedbackWidget() {
 	const t = useTranslations("Feedback");
+	const pathname = usePathname();
+	const routePath = pathname.replace(/^\/(en|vi)(?=\/|$)/, "") || "/";
+	const isDialoguePractice =
+		/^\/dialogue\/[^/]+\/[^/]+\/(?!useful-words(?:\/|$))[^/]+$/.test(routePath);
 	const [open, setOpen] = useState(false);
 	const [form, setForm] = useState(initialForm);
 	const [status, setStatus] = useState("idle");
@@ -84,20 +89,22 @@ export default function FeedbackWidget() {
 
 	return (
 		<>
-			<button
-				type="button"
-				onClick={() => {
-					setStatus("idle");
-					setError("");
-					setOpen(true);
-				}}
-				className="fixed bottom-[calc(4.5rem+env(safe-area-inset-bottom))] right-4 z-[90] inline-flex min-h-11 items-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-white shadow-lg transition hover:bg-primary-hover dark:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-page sm:bottom-6 sm:right-6"
-				aria-haspopup="dialog"
-				aria-expanded={open}
-			>
-				<MessageSquare size={17} aria-hidden="true" />
-				{t("button")}
-			</button>
+			<div className={isDialoguePractice ? "relative z-[90] flex justify-end px-4 pb-4 md:contents" : "contents"}>
+				<button
+					type="button"
+					onClick={() => {
+						setStatus("idle");
+						setError("");
+						setOpen(true);
+					}}
+					className={`${isDialoguePractice ? "relative md:fixed md:bottom-6 md:right-6" : "fixed bottom-[calc(4.5rem+env(safe-area-inset-bottom))] right-4 sm:bottom-6 sm:right-6"} z-[90] inline-flex min-h-11 items-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-white shadow-lg transition hover:bg-primary-hover dark:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-page`}
+					aria-haspopup="dialog"
+					aria-expanded={open}
+				>
+					<MessageSquare size={17} aria-hidden="true" />
+					{t("button")}
+				</button>
+			</div>
 
 			{open && (
 				<div
