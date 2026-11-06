@@ -10,6 +10,7 @@ import { useTranslations } from "next-intl";
 import useDialoguePlaybackRate from "@/app/_hooks/useDialoguePlaybackRate";
 import styles from "./DialoguePlayer.module.css";
 import { useAuth } from "@/app/_contexts/AuthContext";
+import { useLessonProgressResource } from "@/app/_lib/useStudyResources";
 import DialogueWordPopup from "./DialogueWordPopup";
 import renderSubtitleTokens from "./renderSubtitleTokens";
 import {
@@ -44,8 +45,30 @@ export default function DialoguePlayer({
 	nextTask,
 }) {
 	const t = useTranslations("DialogueFeature");
-	const { user } = useAuth();
+	const { user, loading: authLoading } = useAuth();
 	const userId = user?._id || user?.id || null;
+	const {
+		data: progressSnapshot,
+		loading: progressLoading,
+		error: progressError,
+		refresh: refreshProgress,
+	} = useLessonProgressResource(userId, lessonId, !authLoading);
+	const isProgressLoading = authLoading || Boolean(userId && progressLoading);
+	const hasConfirmedProgress = !isProgressLoading && (!userId || progressSnapshot !== undefined);
+	const progressUnavailable = Boolean(userId && progressError && progressSnapshot === undefined);
+	const progressRefreshFailed = Boolean(userId && progressError && progressSnapshot !== undefined);
+	const completedTaskIds = new Set(
+		(progressSnapshot || [])
+			.find((entry) => entry.dialogueId === dialogueId)
+			?.completedTaskIds?.map(String) || [],
+	);
+	const firstIncompleteTask = (task.tasks || []).find(
+		(item) => !completedTaskIds.has(String(item.id)),
+	);
+	const continueTask = userId && hasConfirmedProgress
+		? firstIncompleteTask || nextTask
+		: nextTask;
+	const canContinueToPractice = !authLoading && (!userId || hasConfirmedProgress);
 	const [currentLine, setCurrentLine] = useState(0);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [isPreparing, setIsPreparing] = useState(false);
@@ -794,16 +817,32 @@ export default function DialoguePlayer({
 					</div>
 				</div>
 
-				<div className="mt-8 flex justify-end">
-					<Link
-						href={nextTask ? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}` : `/dialogue/${lessonId}`}
-						onPointerEnter={() => { if (nextTask) void preloadTaskImages(nextTask, task.scene); }}
-						onFocus={() => { if (nextTask) void preloadTaskImages(nextTask, task.scene); }}
-						className="rounded-xl border border-violet-500/30 bg-violet-500/10 px-6 py-3 font-semibold text-violet-300 transition hover:border-violet-400/50 hover:bg-violet-500/20 hover:text-white active:scale-[0.98]"
-					>
-						{nextTask ? t("continueToPractice") : t("completeDialogue")}
-					</Link>
-				</div>
+				{isProgressLoading && (
+					<div role="status" aria-live="polite" className="mt-6 flex items-center gap-2 text-sm text-secondary">
+						<LoaderCircle size={17} aria-hidden="true" className="animate-spin text-brand-text" />
+						{t("progressLoading")}
+					</div>
+				)}
+				{(progressUnavailable || progressRefreshFailed) && (
+					<div role="alert" className="mt-6 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-amber-500/25 bg-amber-500/5 px-4 py-3 text-sm text-main">
+						<p>{t(progressRefreshFailed ? "progressRefreshFailed" : "progressUnavailable")}</p>
+						<button type="button" onClick={() => { void refreshProgress(true).catch(() => {}); }} className="min-h-11 rounded-lg border border-app bg-surface px-4 py-2 font-semibold text-main transition hover:bg-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+							{t("retryProgressLoad")}
+						</button>
+					</div>
+				)}
+				{canContinueToPractice && (
+					<div className="mt-8 flex justify-end">
+						<Link
+							href={continueTask ? `/dialogue/${lessonId}/${dialogueId}/${continueTask.id}` : `/dialogue/${lessonId}`}
+							onPointerEnter={() => { if (continueTask) void preloadTaskImages(continueTask, task.scene); }}
+							onFocus={() => { if (continueTask) void preloadTaskImages(continueTask, task.scene); }}
+							className="rounded-xl border border-violet-500/30 bg-violet-500/10 px-6 py-3 font-semibold text-violet-300 transition hover:border-violet-400/50 hover:bg-violet-500/20 hover:text-white active:scale-[0.98]"
+						>
+							{continueTask ? t("continueToPractice") : t("completeDialogue")}
+						</Link>
+					</div>
+				)}
 
 				<style jsx global>{`
 					@keyframes dialogue-scene-fade-in {

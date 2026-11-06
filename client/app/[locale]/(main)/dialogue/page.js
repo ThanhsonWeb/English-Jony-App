@@ -231,6 +231,28 @@ export default function DialoguePage() {
 				courseStats[second.id].latestUpdatedAt -
 				courseStats[first.id].latestUpdatedAt,
 		)[0];
+	const currentCourseContinueHref = useMemo(() => {
+		if (!userId || !hasConfirmedProgress || !currentCourse) return null;
+
+		const completedByDialogue = new Map(
+			(progressByLesson[currentCourse.id] || []).map((entry) => [
+				entry.dialogueId,
+				new Set((entry.completedTaskIds || []).map(String)),
+			]),
+		);
+
+		for (const dialogue of currentCourse.dialogues) {
+			const completedTaskIds = completedByDialogue.get(dialogue.id);
+			const nextTask = dialogue.tasks.find(
+				(task) => !completedTaskIds?.has(String(task.id)),
+			);
+			if (nextTask) {
+				return `/dialogue/${currentCourse.id}/${dialogue.id}/${nextTask.id}`;
+			}
+		}
+
+		return `/dialogue/${currentCourse.id}`;
+	}, [currentCourse, hasConfirmedProgress, progressByLesson, userId]);
 
 	const normalizedSearch = search.trim().toLocaleLowerCase(locale);
 	const courseMatchesSearch = (course) => {
@@ -375,7 +397,7 @@ export default function DialoguePage() {
 								</div>
 
 								<Link
-									href={`/dialogue/${currentCourse.id}`}
+									href={currentCourseContinueHref || `/dialogue/${currentCourse.id}`}
 									className="inline-flex min-h-11 shrink-0 self-stretch items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-primary px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:self-center lg:gap-3 lg:px-5 xl:px-6"
 								>
 									{t("continue")}
