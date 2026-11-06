@@ -145,7 +145,7 @@ function LoginPage() {
 						href={returnTo || "/"}
 						onClick={() => cancelCredentialAttempt(attemptRef.current)}
 						aria-label={t("close")}
-						className="absolute right-4 top-4 text-2xl text-slate-500 transition hover:text-white"
+						className="absolute right-4 top-4 text-2xl text-slate-500 transition hover:text-white after:absolute after:left-1/2 after:top-1/2 after:z-10 after:h-11 after:w-11 after:-translate-x-1/2 after:-translate-y-1/2 after:content-[''] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
 					>
 						&times;
 					</Link>
@@ -232,7 +232,7 @@ function LoginPage() {
 								onClick={() => setShowPassword((visible) => !visible)}
 								aria-label={t(showPassword ? "hidePassword" : "showPassword")}
 								aria-pressed={showPassword}
-								className="absolute inset-y-0 right-3 flex cursor-pointer items-center text-slate-400 transition hover:text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+								className="absolute inset-y-0 right-0 flex w-11 cursor-pointer items-center justify-center text-slate-400 transition hover:text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
 							>
 								<svg
 									aria-hidden="true"
@@ -273,7 +273,7 @@ function LoginPage() {
 						{t("noAccount")}{" "}
 						<Link
 							href={returnTo ? `/signup?returnTo=${encodeURIComponent(returnTo)}` : "/signup"}
-							className="font-semibold text-blue-400 hover:text-blue-300 hover:underline"
+							className="relative inline-flex items-center font-semibold text-blue-400 hover:text-blue-300 hover:underline after:absolute after:left-1/2 after:top-1/2 after:z-10 after:h-11 after:w-11 after:-translate-x-1/2 after:-translate-y-1/2 after:content-[''] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
 						>
 							{t("signup")}
 						</Link>
