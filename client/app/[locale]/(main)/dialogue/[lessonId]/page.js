@@ -36,7 +36,7 @@ export default function DialogueLessonPage() {
 	} = useLessonProgressResource(userId, lessonId, !authLoading);
 	const progressEntries = progressSnapshot || [];
 	const isProgressLoading = authLoading || Boolean(userId && progressLoading);
-	const hasConfirmedProgress = !isProgressLoading && (!userId || progressSnapshot !== undefined);
+	const hasConfirmedProgress = Boolean(userId) && !isProgressLoading && progressSnapshot !== undefined;
 	const progressUnavailable = Boolean(userId && progressError && progressSnapshot === undefined);
 	const progressRefreshFailed = Boolean(userId && progressError && progressSnapshot !== undefined);
 	const progress = { [lessonId]: Object.fromEntries(progressEntries.map(item => [item.dialogueId, item.completedTaskIds || []])) };
@@ -189,6 +189,12 @@ export default function DialogueLessonPage() {
 								totalTasks > 0 && completedCount === totalTasks;
 
 							const isInProgress = hasConfirmedProgress && completedCount > 0 && !isCompleted;
+							const statusKey = isCompleted ? "completed" : isInProgress ? "continue" : "notStarted";
+							const statusTone = isCompleted
+								? "bg-success-soft text-success"
+								: isInProgress
+									? "bg-primary-soft text-brand-text"
+									: "bg-hover text-secondary";
 							const thumbnail = dialogue.thumbnail;
 
 							return (
@@ -227,6 +233,12 @@ export default function DialogueLessonPage() {
 											<span className="block truncate font-semibold text-white">
 												{getLocalizedDialogueValue(dialogue, "title", locale)}
 											</span>
+											{hasConfirmedProgress && <span
+												data-testid="dialogue-progress-status"
+												className={`mt-1 inline-flex w-fit max-w-full rounded-full px-2.5 py-0.5 text-xs font-medium leading-4 sm:hidden ${statusTone}`}
+											>
+												{t(statusKey)}
+											</span>}
 
 											<span className="mt-1 hidden truncate text-sm text-slate-500 sm:block">
 												{getLocalizedDialogueValue(dialogue, "description", locale)}
@@ -235,19 +247,10 @@ export default function DialogueLessonPage() {
 
 										{/* Status */}
 										{hasConfirmedProgress && <span
-											className={`hidden shrink-0 rounded-full px-3 py-1 text-xs font-medium sm:inline-flex ${
-												isCompleted
-													? "bg-emerald-500/10 text-emerald-400"
-													: isInProgress
-														? "bg-purple-500/10 text-purple-400"
-														: "bg-slate-800 text-slate-400"
-											}`}
+											data-testid="dialogue-progress-status"
+											className={`hidden shrink-0 rounded-full px-3 py-1 text-xs font-medium sm:inline-flex ${statusTone}`}
 										>
-											{isCompleted
-												? t("completed")
-												: isInProgress
-													? t("continue")
-													: t("notStarted")}
+											{t(statusKey)}
 											</span>}
 
 										<ChevronDown
