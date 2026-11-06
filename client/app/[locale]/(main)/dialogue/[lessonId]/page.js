@@ -159,6 +159,11 @@ export default function DialogueLessonPage() {
 								/>
 							</div>
 						</div>}
+						{!authLoading && !userId && (
+							<p role="note" className="mt-3 max-w-xl text-xs leading-relaxed text-secondary">
+								{t("guestProgressNotSaved")}
+							</p>
+						)}
 					</div>
 				</div>
 			<div className="mx-auto max-w-5xl">

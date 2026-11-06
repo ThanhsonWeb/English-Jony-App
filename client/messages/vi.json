@@ -143,6 +143,7 @@
 		"minutes": "~{count} phút",
 		"tasksCompleted": "{completed}/{total} bài hoàn thành",
 		"courseProgress": "Tiến độ khóa học",
+		"guestProgressNotSaved": "Bạn đang học với tư cách khách. Tiến độ luyện tập sẽ không được lưu.",
 		"progressLoading": "Đang tải tiến độ đã lưu…",
 		"progressUnavailable": "Hiện chưa thể tải tiến độ đã lưu. Trạng thái tiến độ đang được ẩn cho đến khi có thể kiểm tra.",
 		"progressRefreshFailed": "Không thể làm mới tiến độ đã lưu. Đang hiển thị tiến độ đã được xác nhận gần nhất.",

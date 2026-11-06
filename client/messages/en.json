@@ -143,6 +143,7 @@
 		"minutes": "~{count} min",
 		"tasksCompleted": "{completed}/{total} exercises completed",
 		"courseProgress": "Course progress",
+		"guestProgressNotSaved": "You're learning as a guest. Practice progress won't be saved.",
 		"progressLoading": "Loading saved progress…",
 		"progressUnavailable": "Saved progress is unavailable right now. Progress states are hidden until it can be checked.",
 		"progressRefreshFailed": "Couldn't refresh saved progress. Showing the last confirmed progress.",
