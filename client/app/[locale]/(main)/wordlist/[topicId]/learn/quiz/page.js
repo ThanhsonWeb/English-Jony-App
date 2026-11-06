@@ -29,6 +29,7 @@ import {
 
 export default function QuizReviewPage() {
 	const t = useTranslations("WordlistReview");
+	const tError = useTranslations("ErrorPages");
 	const { topicId } = useParams();
 	const { user, loading: authLoading } = useAuth();
 	const userId = user?._id || user?.id;
@@ -49,6 +50,7 @@ export default function QuizReviewPage() {
 	const [loading, setLoading] = useState(true);
 	const [loadedUserId, setLoadedUserId] = useState(null);
 	const [error, setError] = useState("");
+	const [loadRetryCount, setLoadRetryCount] = useState(0);
 	const reviewSave = useBackgroundReviewSave();
 	const { resetAnswers, pending, failed } = reviewSave;
 	const [sessionFinished, setSessionFinished] = useState(false);
@@ -124,7 +126,15 @@ export default function QuizReviewPage() {
 		return () => {
 			cancelled = true;
 		};
-	}, [topicId, dueOnly, userId, authLoading, reviewKey, resetAnswers]);
+	}, [topicId, dueOnly, userId, authLoading, reviewKey, resetAnswers, loadRetryCount]);
+
+	function retryVocabularyLoad() {
+		if (!userId) return;
+		setError("");
+		setLoading(true);
+		setLoadedUserId(null);
+		setLoadRetryCount(count => count + 1);
+	}
 
 	function checkAnswer() {
 		if (!currentQuestion || !selectedChoice || sessionRef.current?.getSnapshot().waitingForContinue) return;
@@ -220,6 +230,8 @@ export default function QuizReviewPage() {
 				icon={<XCircle className="h-12 w-12 text-red-400" />}
 				title={t("common.openError")}
 				message={error === "choiceLoadError" ? t("quiz.choiceLoadError") : t(`common.${error || "signInError"}`)}
+				actionLabel={!topicId && userId && error && error !== "signInError" ? tError("retry") : undefined}
+				onAction={!topicId && userId && error && error !== "signInError" ? retryVocabularyLoad : undefined}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);

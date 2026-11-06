@@ -23,6 +23,7 @@ async function run() {
 						submitted.push(input);
 						return route.fulfill({ json: { status: "success", data: { updatedVocab: { ...words[0], reviewCount: 1 }, correct: true, xp: { awarded: mode === "flashcard" ? 2 : 5, total: 5, reason: "awarded" } } } });
 					}
+					if (url.pathname === "/api/v1/users/me") return route.fulfill({ json: { data: { user: { _id: "learner", name: "Vocabulary review tester", role: "user" } } } });
 					if (url.pathname === "/api/v1/vocab") return route.fulfill({ json: { data: { vocabularies: words } } });
 					if (url.pathname === "/api/v1/study-activities") return route.fulfill({ json: { status: "success" } });
 					return route.fulfill({ status: 401, json: { status: "fail" } });
@@ -30,12 +31,12 @@ async function run() {
 				await page.goto(`http://localhost:3000/wordlist/000000000000000000000099/learn/${mode}`);
 				if (mode === "flashcard") {
 					await page.getByRole("button", { name: /Còn mơ hồ/ }).click();
-					await page.getByRole("heading", { name: "apple", exact: true }).waitFor();
+					await page.getByText("apple", { exact: true }).first().waitFor();
 				} else {
 					if (mode === "write") await page.locator('input[type="text"]').first().fill("hello");
 					else await page.getByRole("button", { name: /xin chao/ }).click();
 					await page.getByRole("button", { name: "Kiểm tra", exact: true }).click();
-					await page.getByRole("heading", { name: mode === "write" ? "tao" : "apple", exact: true }).waitFor();
+					await page.getByText(mode === "write" ? "tao" : "apple", { exact: true }).first().waitFor();
 				}
 				assert.equal(submitted.length, 1);
 				assert.equal(submitted[0].mode, mode === "write" ? "writing" : mode);

@@ -22,6 +22,7 @@ import {
 
 function Page() {
 	const t = useTranslations("WordlistReview");
+	const tError = useTranslations("ErrorPages");
 	const { topicId } = useParams();
 	const { user, loading: authLoading } = useAuth();
 	const userId = user?._id || user?.id;
@@ -33,6 +34,7 @@ function Page() {
 	const [loading, setLoading] = useState(true);
 	const [loadedUserId, setLoadedUserId] = useState(null);
 	const [error, setError] = useState("");
+	const [loadRetryCount, setLoadRetryCount] = useState(0);
 	const [words, setWords] = useState([]);
 	const [questionState, dispatchQuestionState] = useReducer(
 		reviewQuestionReducer,
@@ -82,7 +84,15 @@ function Page() {
 
 		fetchWords();
 		return () => controller.abort();
-	}, [topicId, dueOnly, userId, authLoading, reviewKey]);
+	}, [topicId, dueOnly, userId, authLoading, reviewKey, loadRetryCount]);
+
+	function retryVocabularyLoad() {
+		if (!userId) return;
+		setError("");
+		setLoading(true);
+		setLoadedUserId(null);
+		setLoadRetryCount(count => count + 1);
+	}
 
 	function handleAnswer(level) {
 		if (!currentWord) return;
@@ -95,7 +105,13 @@ function Page() {
 	}
 
 	if (authLoading || (userId && (loading || loadedUserId !== reviewKey))) return <Loading />;
-	if (error || !userId) return <ReviewStatus title={t("common.openError")} message={t(`flashcard.${error || "loadError"}`)} onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")} />;
+	if (error || !userId) return <ReviewStatus
+		title={t("common.openError")}
+		message={t(`flashcard.${error || "loadError"}`)}
+		actionLabel={!topicId && userId && error ? tError("retry") : undefined}
+		onAction={!topicId && userId && error ? retryVocabularyLoad : undefined}
+		onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
+	/>;
 	if (sessionFinished && !isReviewCompletionReady(sessionFinished, pending)) {
 		return <ReviewPendingCompletion pending={pending} failed={failed} onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")} />;
 	}
