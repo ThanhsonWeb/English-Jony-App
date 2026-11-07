@@ -260,7 +260,7 @@
 		"partialSaveError": "Đã lưu {saved} từ, nhưng {failed} từ chưa lưu được. Bạn có thể thử lại.",
 		"guestClose": "Đóng lời nhắc đăng nhập",
 		"guestTitle": "Lưu tiến độ học tập",
-		"guestDescription": "Đăng nhập để tiếp tục học từ nơi bạn đã dừng lại.",
+		"guestDescription": "Tiến độ học khi chưa đăng nhập sẽ không được lưu. Đăng nhập để lưu tiến độ học từ bây giờ.",
 		"guestLater": "Để sau"
 	},
 	"Notebook": {

@@ -260,7 +260,7 @@
 		"partialSaveError": "Saved {saved} words, but {failed} could not be saved. Please try again.",
 		"guestClose": "Close sign-in reminder",
 		"guestTitle": "Save your learning progress",
-		"guestDescription": "Sign in to continue learning where you left off.",
+		"guestDescription": "Progress made as a guest is not saved. Sign in to save your learning progress from now on.",
 		"guestLater": "Later"
 	},
 	"Notebook": {
