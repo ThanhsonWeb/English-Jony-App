@@ -140,7 +140,6 @@
 		"unsupportedTask": "This exercise type is not supported.",
 		"redirecting": "Continuing...",
 		"dialoguesCount": "{count} dialogues",
-		"minutes": "~{count} min",
 		"tasksCompleted": "{completed}/{total} exercises completed",
 		"courseProgress": "Course progress",
 		"guestProgressNotSaved": "You're learning as a guest. Practice progress won't be saved.",

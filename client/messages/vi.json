@@ -140,7 +140,6 @@
 		"unsupportedTask": "Loại bài học không được hỗ trợ.",
 		"redirecting": "Đang tiếp tục...",
 		"dialoguesCount": "{count} hội thoại",
-		"minutes": "~{count} phút",
 		"tasksCompleted": "{completed}/{total} bài hoàn thành",
 		"courseProgress": "Tiến độ khóa học",
 		"guestProgressNotSaved": "Bạn đang học với tư cách khách. Tiến độ luyện tập sẽ không được lưu.",

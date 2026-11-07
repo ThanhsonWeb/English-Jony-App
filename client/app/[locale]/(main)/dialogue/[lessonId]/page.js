@@ -9,7 +9,6 @@ import {
 	BookOpen,
 	CheckCircle2,
 	ChevronDown,
-	Clock3,
 	Headphones,
 	LoaderCircle,
 } from "lucide-react";
@@ -53,8 +52,6 @@ export default function DialogueLessonPage() {
 			(total, dialogue) => total + dialogue.tasks.length,
 			0,
 		) || 0;
-	const estimatedDurationMinutes = Math.ceil(totalTaskCount * 0.4);
-
 	const totalCompletedTaskCount =
 		lesson?.dialogues.reduce((total, dialogue) => {
 			const completedIds = new Set(progress[lessonId]?.[dialogue.id] || []);
@@ -138,10 +135,6 @@ export default function DialogueLessonPage() {
 							<span className="flex items-center gap-2">
 								<BookOpen size={16} />
 								{t("dialoguesCount", { count: lesson.dialogues.length })}
-							</span>
-
-							<span className="flex items-center gap-2">
-								<Clock3 size={16} />{t("minutes", { count: estimatedDurationMinutes })}
 							</span>
 
 							{hasConfirmedProgress && <span className="flex items-center gap-2">
