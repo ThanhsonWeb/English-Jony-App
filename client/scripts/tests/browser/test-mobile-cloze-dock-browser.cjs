@@ -19,7 +19,7 @@ async function setup(browser, width, height, locale, theme, taskRoute = route) {
 	await page.route("**/*", request => new URL(request.request().url()).origin === new URL(baseURL).origin
 		? request.continue() : request.fulfill({ contentType: "application/javascript", body: "" }));
 	await page.route("**/api/v1/**", request => request.fulfill({ json: { data: {
-		user: { _id: "learner", name: "Learner", theme }, progress: {},
+		user: { _id: "learner", name: "Learner", theme, language: locale }, progress: {},
 	} } }));
 	await page.goto(`${baseURL}${locale === "en" ? "/en" : ""}${taskRoute}`);
 	await page.locator("aside div[id] button").first().waitFor();

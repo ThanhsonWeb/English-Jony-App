@@ -192,9 +192,9 @@ function FillBlankTask({
 			<div className="mx-auto max-w-6xl">
 				<h1 className="mt-2 text-2xl font-bold">{task.title} ✍️</h1>
 
-				<div className="mt-8 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+				<div className="mt-4 grid gap-4 sm:mt-8 sm:gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
 					<TaskAudioScene ref={audioSceneRef} key={task.audioUrl} task={task}
-						lessonId={lessonId} dialogueId={dialogueId} dialogueLine={dialogueLine} autoPlay />
+						lessonId={lessonId} dialogueId={dialogueId} dialogueLine={dialogueLine} autoPlay compactMobile />
 
 					<div>
 						<DialogueTaskNavigation
@@ -209,7 +209,7 @@ function FillBlankTask({
 							{task.instruction || t("fillBlankFallback")}
 						</p>
 
-						<div className="mt-6 min-w-0 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+						<div className="mt-4 min-w-0 rounded-2xl border border-slate-800 bg-slate-900/60 p-4 sm:mt-6 sm:p-6">
 							<p className="min-w-0 max-w-full whitespace-normal break-words text-lg leading-10">
 								{isMultiBlank ? (
 									task.parts.map((part, index) => (

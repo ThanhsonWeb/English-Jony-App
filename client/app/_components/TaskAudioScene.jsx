@@ -21,7 +21,7 @@ import {
 	saveDialoguePlaybackRate,
 } from "@/app/_lib/dialogue/playbackRate.mjs";
 
-const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = false, lessonId, dialogueId, dialogueLine }, ref) {
+const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = false, lessonId, dialogueId, dialogueLine, compactMobile = false }, ref) {
 	const t = useTranslations("DialogueFeature");
 	const { user } = useAuth();
 	const userId = user?._id || user?.id || null;
@@ -248,7 +248,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 		<div>
 			<div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950">
 				{/* Scene */}
-				<div className="relative aspect-[4/3] overflow-hidden">
+				<div className={`relative ${compactMobile ? "aspect-video sm:aspect-[4/3]" : "aspect-[4/3]"} overflow-hidden`}>
 					{hasScene && (
 						<Image
 							src={task.scene}
