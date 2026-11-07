@@ -248,6 +248,7 @@
 		"saving": "Đang lưu...",
 		"saveWords": "Lưu {count} từ vào Sổ tay",
 		"continueWithoutSaving": "Tiếp tục mà không lưu",
+		"nextDialogue": "Tiếp theo: {title}",
 		"skip": "Bỏ qua",
 		"notebookLoadError": "Không thể tải Sổ tay.",
 		"wordSaveError": "Không thể lưu “{word}”.",

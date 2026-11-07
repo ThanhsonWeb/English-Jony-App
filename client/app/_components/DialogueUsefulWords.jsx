@@ -25,6 +25,7 @@ export default function DialogueUsefulWords({
 	dialogueId,
 	dialogueTitle,
 	completionMessage,
+	nextDialogue,
 }) {
 	const router = useRouter();
 	const t = useTranslations("DialogueFeature");
@@ -51,6 +52,14 @@ export default function DialogueUsefulWords({
 	const error = saveError || (libraryError ? libraryError.message || t("notebookLoadError") : "");
 	const [savedCount, setSavedCount] = useState(null);
 	const lessonHref = `/dialogue/${lessonId}`;
+	const nextDialogueAction = nextDialogue && (
+		<Link
+			href={nextDialogue.href}
+			className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 py-2 text-center font-semibold text-brand-text transition hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+		>
+			{t("nextDialogue", { title: nextDialogue.title })} <ArrowRight size={18} aria-hidden="true" />
+		</Link>
+	);
 
 	const selectableWords = words.filter(
 		(item) => !savedWords.has(normalizeWord(item.word)),
@@ -159,6 +168,7 @@ export default function DialogueUsefulWords({
 						>
 							{t("continue")} <ArrowRight size={18} />
 						</button>
+						{nextDialogueAction && <div className="mt-3">{nextDialogueAction}</div>}
 					</div>
 				</section>
 			</main>
@@ -320,6 +330,7 @@ export default function DialogueUsefulWords({
 					>
 						{t("skip")}
 					</button>
+					{nextDialogueAction && <div className="mt-1 flex justify-center">{nextDialogueAction}</div>}
 				</div>
 			</div>
 		</main>

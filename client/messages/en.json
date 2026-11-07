@@ -248,6 +248,7 @@
 		"saving": "Saving...",
 		"saveWords": "Save {count} words to your notebook",
 		"continueWithoutSaving": "Continue without saving",
+		"nextDialogue": "Next: {title}",
 		"skip": "Skip",
 		"notebookLoadError": "Could not load your notebook.",
 		"wordSaveError": "Could not save “{word}”.",

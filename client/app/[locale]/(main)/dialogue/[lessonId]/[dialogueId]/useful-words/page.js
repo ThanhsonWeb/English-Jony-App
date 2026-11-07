@@ -39,11 +39,18 @@ export default function DialogueUsefulWordsPage() {
 	const { data: progressEntries = [] } = useLessonProgressResource(userId, lessonId, !authLoading && completionRequested);
 	const lesson = lessonData[lessonId];
 	const dialogue = lesson?.dialogues.find((item) => item.id === dialogueId);
+	const dialogueIndex = lesson?.dialogues.findIndex((item) => item.id === dialogueId) ?? -1;
+	const nextDialogue = dialogueIndex >= 0 ? lesson.dialogues[dialogueIndex + 1] ?? null : null;
 	const usefulWords = dialogue?.usefulWords || [];
 	const dialogueProgress = progressEntries.find((item) => item.dialogueId === dialogueId);
 	const completedTaskIds = new Set(dialogueProgress?.completedTaskIds || []);
 	const completedTaskCount = dialogue?.tasks.filter((task) => completedTaskIds.has(task.id)).length || 0;
 	const isProgressComplete = Boolean(dialogue?.tasks.length) && completedTaskCount === dialogue.tasks.length;
+	const completionMessage = completionRequested && !authLoading
+		? user
+			? (isProgressComplete ? { type: "saved", completed: completedTaskCount, total: dialogue.tasks.length } : null)
+			: { type: "guest" }
+		: null;
 
 	useEffect(() => {
 		if (dialogue && usefulWords.length === 0) {
@@ -69,11 +76,11 @@ export default function DialogueUsefulWordsPage() {
 			lessonId={lessonId}
 			dialogueId={dialogueId}
 			dialogueTitle={getLocalizedDialogueValue(dialogue, "title", locale)}
-			completionMessage={completionRequested && !authLoading
-				? user
-					? (isProgressComplete ? { type: "saved", completed: completedTaskCount, total: dialogue.tasks.length } : null)
-					: { type: "guest" }
-				: null}
+			completionMessage={completionMessage}
+			nextDialogue={completionMessage && nextDialogue ? {
+				href: `/dialogue/${lessonId}/${nextDialogue.id}`,
+				title: getLocalizedDialogueValue(nextDialogue, "title", locale),
+			} : null}
 		/>
 	);
 }
