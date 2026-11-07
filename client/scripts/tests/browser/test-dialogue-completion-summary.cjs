@@ -35,10 +35,10 @@ function contrastRatio(foreground, background) {
 }
 
 async function assertCompletionContrast(page) {
-	const colors = await page.getByRole("status").evaluate(element => ({
-		background: getComputedStyle(element).backgroundColor,
-		title: getComputedStyle(element.querySelector("p")).color,
-		body: getComputedStyle(element.querySelector("p + p")).color,
+	const colors = await page.getByTestId("dialogue-completion-card").evaluate(card => ({
+		background: getComputedStyle(card).backgroundColor,
+		title: getComputedStyle(card.querySelector("[data-completion-title]")).color,
+		body: getComputedStyle(card.querySelector("[data-completion-description]")).color,
 	}));
 	assert.ok(contrastRatio(colors.title, colors.background) >= 4.5, "Completion title meets normal-text contrast");
 	assert.ok(contrastRatio(colors.body, colors.background) >= 4.5, "Completion description meets normal-text contrast");
@@ -110,6 +110,10 @@ async function guestCompletion(browser, locale) {
 		await f.page.getByText(f.messages.dialogueCompletionGuest, { exact: true }).waitFor();
 		assert.equal(await f.page.locator("html").getAttribute("data-theme"), "light", "Completion message respects Light Mode");
 		await assertCompletionContrast(f.page);
+		const completionArt = f.page.locator('[data-testid="dialogue-completion-card"] img');
+		const imageSource = await completionArt.getAttribute("src");
+		assert.equal(new URL(imageSource, baseURL).searchParams.get("url") || imageSource, "/dialogue-completion-boy-cat.png");
+		assert.equal(await completionArt.getAttribute("alt"), "", "Celebration art is decorative for screen readers");
 		assert.equal(await f.page.getByText(f.messages.dialogueCompletionSaved.replace("{completed}", "25").replace("{total}", "25"), { exact: true }).count(), 0, "Guests do not see unsaved task counts");
 		assert.equal(f.patchSeen, false, "Guest completion does not save progress");
 		assert.ok(await f.page.getByRole("button", { name: f.messages.continueWithoutSaving, exact: true }).isVisible(), "Existing guest continue action remains available");
@@ -136,8 +140,14 @@ async function confirmedCompletion(browser, locale, theme) {
 		assert.equal(await f.page.getByRole("button", { name: f.messages.skip, exact: true }).count(), 1, "Existing skip action remains present after confirmation");
 		const unsavedWordCount = await f.page.locator("button[aria-pressed]").count();
 		const saveWordsLabel = f.messages.saveWords.replace("{count}", String(unsavedWordCount));
-		assert.ok(await f.page.getByRole("button", { name: saveWordsLabel, exact: true }).isVisible(), "Existing vocabulary save action remains available");
+		const saveWordsButton = f.page.getByRole("button", { name: saveWordsLabel, exact: true });
+		assert.ok(await saveWordsButton.isVisible(), "Existing vocabulary save action remains available");
 		assert.equal(await f.page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, "Completion banner fits the mobile viewport");
+		await saveWordsButton.click();
+		await f.page.getByText(f.messages.savedWords.replace("{count}", String(unsavedWordCount)), { exact: true }).waitFor();
+		await f.page.getByRole("button", { name: f.messages.continue, exact: true }).waitFor();
+		await f.page.getByRole("link", { name: /^(Next:|Tiếp theo:)/ }).waitFor();
+		await assertCompletionContrast(f.page);
 		console.log(`PASS ${locale} signed-in ${theme} completion waits for confirmed final save and shows 25/25`);
 	} finally { f.releasePatch(); await f.close(); }
 }

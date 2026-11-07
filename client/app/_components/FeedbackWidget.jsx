@@ -14,8 +14,9 @@ export default function FeedbackWidget() {
 	const isDialoguePractice =
 		/^\/dialogue\/[^/]+\/[^/]+\/(?!useful-words(?:\/|$))[^/]+$/.test(routePath);
 	const isDialogueLessonOverview = /^\/dialogue\/[^/]+$/.test(routePath);
+	const isDialogueUsefulWords = /^\/dialogue\/[^/]+\/[^/]+\/useful-words(?:\/|$)/.test(routePath);
 	const isSignup = routePath === "/signup";
-	const keepsMobileContentClear = isDialoguePractice || isDialogueLessonOverview || isSignup;
+	const keepsMobileContentClear = isDialoguePractice || isDialogueLessonOverview || isDialogueUsefulWords || isSignup;
 	const [open, setOpen] = useState(false);
 	const [form, setForm] = useState(initialForm);
 	const [status, setStatus] = useState("idle");

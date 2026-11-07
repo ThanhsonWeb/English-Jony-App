@@ -3,12 +3,12 @@
 import { useMemo, useRef, useState } from "react";
 import { Link, useRouter } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import {
 	AlertCircle,
 	ArrowRight,
 	BookmarkPlus,
 	Check,
-	CheckCircle2,
 	LoaderCircle,
 	LogIn,
 } from "lucide-react";
@@ -18,6 +18,35 @@ import { cacheVocabularyChange } from "@/app/_lib/vocabulary.mjs";
 import { useVocabularyResource } from "@/app/_lib/useStudyResources";
 
 const normalizeWord = (value = "") => value.trim().toLocaleLowerCase("en");
+
+function DialogueCompletionCard({ titleId, children }) {
+	return (
+		<section
+			data-testid="dialogue-completion-card"
+			aria-labelledby={titleId}
+			className="overflow-hidden rounded-3xl border border-app bg-surface text-main shadow-xl"
+		>
+			<div className="grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+				<div
+					aria-hidden="true"
+					className="relative h-36 overflow-hidden bg-gradient-to-br from-primary-soft via-hero to-success-soft md:h-auto md:min-h-[260px]"
+				>
+					<Image
+						src="/dialogue-completion-boy-cat.png"
+						alt=""
+						fill
+						priority
+						sizes="(max-width: 768px) 100vw, 360px"
+						className="object-contain p-3 sm:p-5"
+					/>
+				</div>
+				<div className="flex min-w-0 flex-col justify-center gap-4 p-5 sm:p-7 md:p-8">
+					{children}
+				</div>
+			</div>
+		</section>
+	);
+}
 
 export default function DialogueUsefulWords({
 	words: sourceWords,
@@ -148,29 +177,40 @@ export default function DialogueUsefulWords({
 
 	if (savedCount !== null) {
 		return (
-			<main className="flex min-h-[calc(100vh-80px)] items-center justify-center bg-[#030616] px-4 py-10 text-white">
-				<section className="relative w-full max-w-xl overflow-hidden rounded-[28px] border border-slate-800 bg-[#0a1224] p-7 text-center shadow-2xl sm:p-10">
-					<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.14),transparent_55%)]" />
-					<div className="relative">
-						<div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-emerald-500/25 bg-emerald-500/10 text-emerald-300">
-							<Check size={32} />
+			<main className="flex min-h-[calc(100vh-80px)] items-center justify-center bg-page px-4 py-8 text-main sm:py-10">
+				<div className="w-full max-w-4xl">
+					<DialogueCompletionCard titleId="dialogue-completion-title">
+						{completionMessage && (
+							<div data-testid="dialogue-completion-message" role="status" aria-live="polite" aria-atomic="true">
+								<h1 id="dialogue-completion-title" data-completion-title className="text-2xl font-bold sm:text-3xl">
+									{t("dialogueCompletionTitle")}
+								</h1>
+								<p data-completion-description className="mt-3 leading-7 text-secondary">
+									{completionMessage.type === "guest"
+										? t("dialogueCompletionGuest")
+										: t("dialogueCompletionSaved", { completed: completionMessage.completed, total: completionMessage.total })}
+								</p>
+							</div>
+						)}
+						<div className="flex items-start gap-3 rounded-2xl border border-success/25 bg-success-soft p-4">
+							<Check size={20} aria-hidden="true" className="mt-0.5 shrink-0 text-success" />
+							<div>
+								<h2 id={completionMessage ? undefined : "dialogue-completion-title"} className="font-semibold">
+									{t("savedWords", { count: savedCount })}
+								</h2>
+								<p className="mt-1 text-sm leading-6 text-secondary">{t("reviewWordsLater")}</p>
+							</div>
 						</div>
-						<h1 className="mt-5 text-2xl font-bold sm:text-3xl">
-							{t("savedWords", { count: savedCount })}
-						</h1>
-						<p className="mt-3 text-slate-400">
-							{t("reviewWordsLater")}
-						</p>
 						<button
 							type="button"
 							onClick={() => router.push(lessonHref)}
-							className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-3.5 font-semibold text-white transition hover:brightness-110"
+							className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 font-semibold text-white transition hover:bg-primary-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-text"
 						>
-							{t("continue")} <ArrowRight size={18} />
+							{t("continue")} <ArrowRight size={18} aria-hidden="true" />
 						</button>
-						{nextDialogueAction && <div className="mt-3">{nextDialogueAction}</div>}
-					</div>
-				</section>
+						{nextDialogueAction && <div className="flex justify-center">{nextDialogueAction}</div>}
+					</DialogueCompletionCard>
+				</div>
 			</main>
 		);
 	}
@@ -178,6 +218,20 @@ export default function DialogueUsefulWords({
 	return (
 		<main className="min-h-[calc(100vh-80px)] bg-[#030616] px-4 py-8 text-white sm:px-6 sm:py-10">
 			<div className="mx-auto w-full max-w-3xl">
+				{completionMessage && (
+					<DialogueCompletionCard titleId="dialogue-completion-title">
+						<div data-testid="dialogue-completion-message" role="status" aria-live="polite" aria-atomic="true">
+							<h2 id="dialogue-completion-title" data-completion-title className="text-xl font-bold sm:text-2xl">
+								{t("dialogueCompletionTitle")}
+							</h2>
+							<p data-completion-description className="mt-2 leading-7 text-secondary">
+								{completionMessage.type === "guest"
+									? t("dialogueCompletionGuest")
+									: t("dialogueCompletionSaved", { completed: completionMessage.completed, total: completionMessage.total })}
+							</p>
+						</div>
+					</DialogueCompletionCard>
+				)}
 				<header className="text-center">
 					<div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl border border-blue-500/25 bg-blue-500/10 text-blue-300">
 						<BookmarkPlus size={24} />
@@ -190,20 +244,6 @@ export default function DialogueUsefulWords({
 						{t("usefulWordsDescription")}
 					</p>
 				</header>
-				{completionMessage && (
-					<div role="status" aria-live="polite" className="mt-6 flex items-start gap-3 rounded-xl border border-app bg-surface p-4 text-main">
-						<CheckCircle2 size={20} aria-hidden="true" className="mt-0.5 shrink-0 text-brand-text" />
-						<div>
-							<p className="font-semibold">{t("dialogueCompletionTitle")}</p>
-							<p className="mt-1 text-sm leading-6 text-secondary">
-								{completionMessage.type === "guest"
-									? t("dialogueCompletionGuest")
-									: t("dialogueCompletionSaved", { completed: completionMessage.completed, total: completionMessage.total })}
-							</p>
-						</div>
-					</div>
-				)}
-
 				{!authLoading && !user && (
 					<div className="mt-7 rounded-2xl border border-blue-500/20 bg-blue-500/5 p-4 sm:flex sm:items-center sm:justify-between sm:gap-4">
 						<div>
