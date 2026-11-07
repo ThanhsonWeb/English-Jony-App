@@ -1,4 +1,4 @@
-// The first A1 dialogue has a clear, data-backed start point on mobile.
+// First Dialogue keeps its original Listen action and ordered practice links.
 const assert = require("node:assert/strict");
 const { chromium } = require("playwright");
 
@@ -6,41 +6,42 @@ const baseURL = process.env.STUDYJONY_TEST_URL || "http://localhost:3000";
 const lessonId = "asking-for-directions";
 const dialogue = require("../../../app/[locale]/(main)/dialogue/_data/dialogues/asking-for-directions/finding-the-bus-stop.json");
 const userId = "aaaaaaaaaaaaaaaaaaaaaaaa";
+const dialogueId = dialogue.metadata.dialogueId;
+const taskIds = dialogue.tasks.map(task => String(task.id));
+const prefixFor = locale => locale === "en" ? "/en" : "";
 assert.ok(["localhost", "127.0.0.1"].includes(new URL(baseURL).hostname));
 
-const activityKeys = {
-	fillBlank: "fillBlankTitle",
-	multipleChoice: "starterQuiz",
-	dialogueCloze: "dialogueClozeTitle",
-};
-
-async function run(browser, locale, signedIn) {
-	const prefix = locale === "en" ? "/en" : "";
+async function run(browser, locale, width, state) {
+	const prefix = prefixFor(locale);
 	const t = require(`../../../messages/${locale}.json`).DialogueFeature;
 	const context = await browser.newContext({
-		viewport: { width: 390, height: 844 },
-		isMobile: true,
-		hasTouch: true,
+		viewport: { width, height: 844 },
+		isMobile: width < 768,
+		hasTouch: width < 768,
 	});
 	await context.addCookies([{ name: "sj_guest_language", value: locale, url: baseURL }]);
 	const requests = [];
 	const pageErrors = [];
 	await context.route("**/*", route => new URL(route.request().url()).origin === new URL(baseURL).origin
-		? route.continue()
-		: route.fulfill({ body: "" }));
+		? route.continue() : route.fulfill({ body: "" }));
 	await context.route("**/api/v1/**", route => {
 		const request = route.request();
 		const path = new URL(request.url()).pathname;
 		requests.push({ method: request.method(), path });
 		if (path.endsWith("/users/me")) {
-			return signedIn
-				? route.fulfill({ json: { status: "success", data: { user: {
-					_id: userId, name: "Beginner starter tester", language: locale, theme: "light",
-				} } } })
-				: route.fulfill({ status: 401, json: { status: "fail" } });
+			return state === "guest"
+				? route.fulfill({ status: 401, json: { status: "fail" } })
+				: route.fulfill({ json: { status: "success", data: { user: {
+					_id: userId, name: "First dialogue tester", language: locale, theme: "light",
+				} } } });
 		}
 		if (request.method() === "GET" && path === `/api/v1/dialogue-progress/${lessonId}`) {
-			return route.fulfill({ json: { status: "success", data: { progress: [] } } });
+			const completedTaskIds = state === "completed" ? taskIds : state === "inProgress" ? taskIds.slice(0, 1) : [];
+			return route.fulfill({ json: { status: "success", data: { progress: state === "guest" ? [] : [{
+				dialogueId,
+				completedTaskIds,
+				updatedAt: "2026-01-01T00:00:00.000Z",
+			}] } } });
 		}
 		return route.fulfill({ json: { status: "success", data: { progress: [], vocabularies: [], topics: [], activities: [] } } });
 	});
@@ -49,83 +50,41 @@ async function run(browser, locale, signedIn) {
 	page.setDefaultTimeout(20000);
 	page.on("pageerror", error => pageErrors.push(error.message));
 	try {
-		const sessionResponse = page.waitForResponse(response => new URL(response.url()).pathname.endsWith("/users/me"));
+		const session = page.waitForResponse(response => new URL(response.url()).pathname.endsWith("/users/me"));
 		await page.goto(`${baseURL}${prefix}/dialogue/${lessonId}`, { waitUntil: "domcontentloaded", timeout: 90000 });
-		await sessionResponse;
-
-		const starter = page.getByTestId("beginner-starter-overview");
-		await starter.waitFor();
-		assert.equal(await page.getByTestId("beginner-starter-overview").count(), 1, "Only the first dialogue gets the starter panel");
-		assert.equal(
-			await starter.getByTestId("beginner-starter-task-count").innerText(),
-			t.starterTaskCount.replace("{count}", String(dialogue.tasks.length)),
-			"The displayed practice count comes from the dialogue's task data",
-		);
-
-		const activityText = await starter.getByTestId("beginner-starter-activities").innerText();
-		const expectedActivityKeys = [
-			"starterListen",
-			...[...new Set(dialogue.tasks.map(task => activityKeys[task.type]).filter(Boolean))],
-		];
-		for (const key of expectedActivityKeys) assert.ok(activityText.includes(t[key]), `Starter summary includes ${key}`);
-
-		const startLink = starter.getByRole("link", { name: t.starterStartHere, exact: true });
-		assert.ok(await startLink.isVisible());
-		const startBox = await startLink.boundingBox();
-		assert.ok(startBox && startBox.height >= 44, "Start here has a mobile-sized touch target");
-		const expectedPlayerPath = `${prefix}/dialogue/${lessonId}/${dialogue.metadata.dialogueId}`;
-		assert.equal(new URL(await startLink.getAttribute("href"), baseURL).pathname, expectedPlayerPath);
-
-		const dialogueSection = page.locator("section").filter({
-			has: page.getByRole("heading", { name: t.dialoguesHeading, exact: true }),
-		});
-		await dialogueSection.locator('button[aria-expanded]').first().click();
-		const taskPrefix = `${prefix}/dialogue/${lessonId}/${dialogue.metadata.dialogueId}/`;
-		const taskPaths = await page.locator("a[href]").evaluateAll((links, prefixValue) => links
-			.map(link => new URL(link.href).pathname)
-			.filter(path => path.startsWith(prefixValue) && /^\d+$/.test(path.slice(prefixValue.length))), taskPrefix);
-		assert.deepEqual(
-			taskPaths,
-			dialogue.tasks.map(task => `${taskPrefix}${task.id}`),
-			"All practice tasks remain available in their original order",
-		);
-
-		if (signedIn) {
-			assert.equal(await page.getByText(t.guestProgressNotSaved, { exact: true }).count(), 0);
-			assert.ok(requests.some(request => request.method === "GET" && request.path === `/api/v1/dialogue-progress/${lessonId}`));
+		await session;
+		const section = page.locator("section").filter({ has: page.getByRole("heading", { name: t.dialoguesHeading, exact: true }) });
+		const rows = section.locator("button[aria-expanded]");
+		const row = rows.first();
+		await row.waitFor({ state: "visible" });
+		assert.equal(await page.getByTestId("beginner-starter-overview").count(), 0, "The Beginner Starter Panel is removed");
+		assert.equal(await page.getByTestId("beginner-starter-link").count(), 0, "The starter CTA is removed");
+		if (state === "guest") {
+			await page.getByText(t.guestProgressNotSaved, { exact: true }).waitFor();
+			assert.equal(await row.getByTestId("dialogue-progress-status").count(), 0, "Guests see no saved progress status");
+			assert.equal(requests.some(request => request.path.startsWith("/api/v1/dialogue-progress/")), false, "Guests do not request account progress");
 		} else {
-			await page.getByRole("note").filter({ hasText: t.guestProgressNotSaved }).waitFor();
-			assert.equal(requests.filter(request => request.path.startsWith("/api/v1/dialogue-progress/")).length, 0, "Guests do not request saved account progress");
+			const expectedStatus = state === "completed" ? t.completed : state === "inProgress" ? t.continue : t.notStarted;
+			await page.waitForFunction(({ status }) => [...document.querySelectorAll('[data-testid="dialogue-progress-status"]')]
+				.some(element => element.textContent.trim() === status), { status: expectedStatus });
+			const badges = await row.getByTestId("dialogue-progress-status").all();
+			let visibleStatus = null;
+			for (const badge of badges) if (await badge.isVisible()) visibleStatus = await badge.innerText();
+			assert.equal(visibleStatus, expectedStatus, `${state} progress status is retained`);
 		}
 
-		assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, "The starter panel fits the mobile viewport");
-		await startLink.click();
-		await page.waitForURL(url => url.pathname === expectedPlayerPath);
-		assert.equal(requests.some(request => request.method === "PATCH" || request.method === "POST"), false, "Starting the dialogue does not save progress");
+		await row.click();
+		const card = row.locator("xpath=..");
+		const listen = card.getByRole("link", { name: t.listenDialogue, exact: true });
+		await listen.waitFor({ state: "visible" });
+		assert.equal(new URL(await listen.getAttribute("href"), baseURL).pathname, `${prefix}/dialogue/${lessonId}/${dialogueId}`);
+		const taskPrefix = `${prefix}/dialogue/${lessonId}/${dialogueId}/`;
+		const actualTaskRoutes = await card.locator("a[href]").evaluateAll((links, routePrefix) => links
+			.map(link => new URL(link.href).pathname)
+			.filter(path => path.startsWith(routePrefix) && /^\d+$/.test(path.slice(routePrefix.length))), taskPrefix);
+		assert.deepEqual(actualTaskRoutes, taskIds.map(taskId => `${taskPrefix}${taskId}`), "All 25 practice tasks remain in their original order");
 		assert.deepEqual(pageErrors, []);
-		console.log(`PASS ${locale} 390px ${signedIn ? "signed-in" : "guest"}: activity summary, data-backed count, start route, and ordered tasks`);
-	} finally {
-		await context.close();
-	}
-}
-
-async function otherCoursesUnchanged(browser) {
-	const locale = "en";
-	const t = require("../../../messages/en.json").DialogueFeature;
-	const context = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
-	await context.addCookies([{ name: "sj_guest_language", value: locale, url: baseURL }]);
-	await context.route("**/api/v1/**", route => route.fulfill({ status: 401, json: { status: "fail" } }));
-	const page = await context.newPage();
-	try {
-		await page.goto(`${baseURL}/en/dialogue/coffee-shop`, { waitUntil: "domcontentloaded", timeout: 90000 });
-		const section = page.locator("section").filter({
-			has: page.getByRole("heading", { name: t.dialoguesHeading, exact: true }),
-		});
-		await section.waitFor();
-		assert.equal(await page.getByTestId("beginner-starter-overview").count(), 0, "Other courses keep their existing layout");
-		await section.locator('button[aria-expanded]').first().click();
-		assert.equal(await page.getByRole("link", { name: t.listenDialogue, exact: true }).count(), 1, "Other courses retain their existing listen action");
-		console.log("PASS 390px: non-target courses remain unchanged");
+		console.log(`PASS ${locale} ${width}px ${state}: Listen action, ordered tasks, and progress state`);
 	} finally {
 		await context.close();
 	}
@@ -135,9 +94,10 @@ async function otherCoursesUnchanged(browser) {
 	const browser = await chromium.launch({ channel: "chrome", headless: true });
 	try {
 		for (const locale of ["vi", "en"]) {
-			for (const signedIn of [false, true]) await run(browser, locale, signedIn);
+			for (const width of [390, 1280]) {
+				for (const state of ["guest", "zero", "inProgress", "completed"]) await run(browser, locale, width, state);
+			}
 		}
-		await otherCoursesUnchanged(browser);
 	} finally {
 		await browser.close();
 	}
