@@ -79,13 +79,11 @@ async function verifyNextDialogue(browser, locale, width, signedIn) {
 	const taskCount = courseDialogues[firstDialogueId].tasks.length;
 	try {
 		await f.openCompletion();
-		if (signedIn) {
-			const savedMessage = f.messages.dialogueCompletionSaved
-				.replace("{completed}", String(taskCount))
-				.replace("{total}", String(taskCount));
-			await f.page.getByText(savedMessage, { exact: true }).waitFor();
-		} else {
-			await f.page.getByText(f.messages.dialogueCompletionGuest, { exact: true }).waitFor();
+		assert.equal(await f.page.getByText(f.messages.dialogueCompletionTitle, { exact: true }).count(), 0, "Vocabulary selection omits the removed completion heading");
+		assert.equal(await f.page.getByText(f.messages.dialogueCompletionSaved.replace("{completed}", String(taskCount)).replace("{total}", String(taskCount)), { exact: true }).count(), 0, "Vocabulary selection omits the removed saved-progress copy");
+		assert.equal(await f.page.getByText(f.messages.dialogueCompletionGuest, { exact: true }).count(), 0, "Vocabulary selection omits the removed guest-completion copy");
+		if (!signedIn) {
+			await f.page.getByText(f.messages.signInToSaveWords, { exact: false }).waitFor();
 			assert.equal(f.apiWrites, 0, "Guests do not save progress or vocabulary");
 		}
 
@@ -127,7 +125,7 @@ async function verifyFinalDialogueFallback(browser, locale, signedIn) {
 	const f = await fixture(browser, { locale, width: 390, signedIn, dialogueId: finalDialogueId });
 	try {
 		await f.openCompletion();
-		await f.page.getByText(f.messages.dialogueCompletionTitle, { exact: true }).waitFor();
+		assert.equal(await f.page.getByText(f.messages.dialogueCompletionTitle, { exact: true }).count(), 0, "Final-dialogue selection also omits the removed completion block");
 		assert.equal(await f.page.getByRole("link", { name: /^(Next:|Tiếp theo:)/ }).count(), 0, "The final dialogue has no next-dialogue link");
 		await f.page.getByRole("button", { name: f.messages.skip, exact: true }).click();
 		await f.page.waitForURL(url => url.pathname === `${f.prefix}/dialogue/${lessonId}`);

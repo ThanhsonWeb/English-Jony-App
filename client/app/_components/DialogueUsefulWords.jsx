@@ -11,6 +11,7 @@ import {
 	Check,
 	LoaderCircle,
 	LogIn,
+	Volume2,
 } from "lucide-react";
 
 import { useAuth } from "@/app/_contexts/AuthContext";
@@ -84,7 +85,7 @@ export default function DialogueUsefulWords({
 	const nextDialogueAction = nextDialogue && (
 		<Link
 			href={nextDialogue.href}
-			className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl px-4 py-2 text-center font-semibold text-brand-text transition hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+		className="inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-xl px-4 py-2 text-center font-semibold text-brand-text transition hover:bg-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current lg:whitespace-nowrap"
 		>
 			{t("nextDialogue", { title: nextDialogue.title })} <ArrowRight size={18} aria-hidden="true" />
 		</Link>
@@ -109,6 +110,14 @@ export default function DialogueUsefulWords({
 			else next.add(key);
 			return next;
 		});
+	}
+
+	function speakWord(word) {
+		if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+		window.speechSynthesis.cancel();
+		const utterance = new SpeechSynthesisUtterance(word);
+		utterance.lang = "en-US";
+		window.speechSynthesis.speak(utterance);
 	}
 
 	async function saveSelectedWords() {
@@ -216,132 +225,131 @@ export default function DialogueUsefulWords({
 	}
 
 	return (
-		<main className="min-h-[calc(100vh-80px)] bg-[#030616] px-4 py-8 text-white sm:px-6 sm:py-10">
-			<div className="mx-auto w-full max-w-3xl">
-				{completionMessage && (
-					<DialogueCompletionCard titleId="dialogue-completion-title">
-						<div data-testid="dialogue-completion-message" role="status" aria-live="polite" aria-atomic="true">
-							<h2 id="dialogue-completion-title" data-completion-title className="text-xl font-bold sm:text-2xl">
-								{t("dialogueCompletionTitle")}
-							</h2>
-							<p data-completion-description className="mt-2 leading-7 text-secondary">
-								{completionMessage.type === "guest"
-									? t("dialogueCompletionGuest")
-									: t("dialogueCompletionSaved", { completed: completionMessage.completed, total: completionMessage.total })}
-							</p>
-						</div>
-					</DialogueCompletionCard>
-				)}
-				<header className="text-center">
-					<div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl border border-blue-500/25 bg-blue-500/10 text-blue-300">
-						<BookmarkPlus size={24} />
+		<main data-testid="dialogue-vocabulary-selection" className="min-h-[calc(100vh-80px)] bg-page px-4 py-5 pb-[calc(100px+env(safe-area-inset-bottom))] text-main sm:px-6 sm:pt-5 sm:pb-8">
+			<div className="mx-auto w-full max-w-6xl">
+				<section className="grid items-center gap-2 md:mx-auto md:max-w-5xl md:grid-cols-[minmax(0,1.1fr)_minmax(260px,0.7fr)] md:gap-0">
+					<div className="min-w-0 pb-2 md:pb-0">
+						<p className="text-sm font-semibold text-brand-text sm:text-base">{dialogueTitle}</p>
+						<h1 id="useful-words-heading" data-testid="useful-words-heading" className="mt-2 flex items-center gap-2 text-xl font-bold tracking-tight sm:text-2xl lg:text-3xl">
+							<BookmarkPlus size={27} aria-hidden="true" className="shrink-0 text-success" />
+							{t("usefulWordsTitle")}
+						</h1>
+						<p className="mt-3 max-w-2xl text-sm leading-6 text-secondary sm:text-base">
+							{t("usefulWordsDescription")}
+						</p>
 					</div>
-					<p className="mt-5 text-sm font-semibold text-blue-400">{dialogueTitle}</p>
-					<h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-						{t("usefulWordsTitle")}
-					</h1>
-					<p className="mx-auto mt-3 max-w-xl leading-7 text-slate-400">
-						{t("usefulWordsDescription")}
-					</p>
-				</header>
-				{!authLoading && !user && (
-					<div className="mt-7 rounded-2xl border border-blue-500/20 bg-blue-500/5 p-4 sm:flex sm:items-center sm:justify-between sm:gap-4">
-						<div>
-							<p className="font-semibold text-white">{t("signInToSaveWords")}</p>
-							<p className="mt-1 text-sm text-slate-400">
-								{t("canSkipWords")}
-							</p>
+					<div data-testid="useful-words-illustration" className="relative mx-auto h-36 w-full max-w-sm md:mx-0 md:ml-0 md:h-36 md:max-w-xs lg:h-40">
+						<Image
+							src="/dialogue-completion-boy-cat.png"
+							alt=""
+							fill
+							priority
+							sizes="(max-width: 768px) 90vw, (max-width: 1280px) 42vw, 520px"
+							className="object-contain object-bottom"
+						/>
+						<div data-testid="dialogue-selected-word-count" role="status" aria-live="polite" aria-atomic="true" className="absolute bottom-2 right-2 inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-success/20 bg-success-soft px-3 py-1.5 text-sm font-semibold text-success shadow-sm md:right-[-4rem]">
+							<Check size={16} aria-hidden="true" />
+							{t("selectedWordCount", { count: selectedUnsavedWords.length })}
 						</div>
+					</div>
+				</section>
+				{!authLoading && !user && (
+					<div className="mt-3 flex flex-col gap-2 rounded-xl border border-app bg-surface-muted px-3 py-2.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+						<p className="min-w-0 text-sm leading-5 text-secondary">
+							<strong className="font-semibold text-main">{t("signInToSaveWords")}</strong>{" "}
+							{t("canSkipWords")}
+						</p>
 						<Link
 							href="/login"
-							className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-blue-300 sm:mt-0"
+							className="inline-flex min-h-10 shrink-0 items-center justify-center gap-2 rounded-lg px-3 text-sm font-semibold text-brand-text transition hover:bg-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
 						>
-							<LogIn size={16} /> {t("signIn")}
+							<LogIn size={16} aria-hidden="true" /> {t("signIn")}
 						</Link>
 					</div>
 				)}
 
 				{error && (
-					<div className="mt-5 flex items-start gap-3 rounded-xl border border-red-500/25 bg-red-500/10 p-4 text-sm text-red-200">
+					<div role="alert" className="mt-5 flex items-start gap-3 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-700 dark:text-red-300">
 						<AlertCircle className="mt-0.5 h-5 w-5 shrink-0" />
 						<p>{error}</p>
 					</div>
 				)}
 
-				<div className="mt-7 space-y-3">
-					{words.map((item) => {
-						const key = normalizeWord(item.word);
-						const isSaved = savedWords.has(key);
-						const isSelected = selectedWords.has(key);
+				<div className="mt-2 rounded-3xl border border-app bg-surface p-3 shadow-sm sm:p-4 md:mt-0">
+					<div
+						id="dialogue-useful-words-list"
+						data-testid="dialogue-word-list"
+						role="region"
+						aria-labelledby="useful-words-heading"
+						tabIndex={0}
+						style={{ scrollbarWidth: "thin", scrollbarColor: "color-mix(in srgb, var(--sj-primary) 55%, transparent) transparent" }}
+						className="h-[min(34vh,300px)] min-h-[220px] space-y-1.5 overflow-y-auto overscroll-contain pr-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 sm:h-[min(40vh,360px)] sm:min-h-[260px] sm:pr-2 md:h-[min(38vh,360px)] md:min-h-[280px]"
+					>
+						{words.map((item) => {
+							const key = normalizeWord(item.word);
+							const isSaved = savedWords.has(key);
+							const isSelected = selectedWords.has(key);
 
-						return (
-							<button
-								type="button"
-								key={key}
-								onClick={() => toggleWord(item)}
-								disabled={isSaved || isSaving}
-								aria-pressed={isSaved || isSelected}
-								className={`flex w-full items-start gap-4 rounded-2xl border p-4 text-left transition sm:p-5 ${
-									isSaved
-										? "cursor-default border-emerald-500/25 bg-emerald-500/8"
-										: isSelected
-											? "border-blue-500/50 bg-blue-500/10"
-											: "border-slate-800 bg-[#081123] hover:border-slate-700"
-								}`}
-							>
-								<span
-									className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border ${
+							return (
+								<div key={key} className="relative">
+								<button
+									type="button"
+									onClick={() => toggleWord(item)}
+									disabled={isSaved || isSaving}
+									aria-pressed={isSaved || isSelected}
+									className={`grid min-h-16 w-full cursor-pointer grid-cols-[24px_minmax(0,1fr)] items-center gap-x-3 gap-y-1 rounded-xl border px-3 py-2.5 pr-14 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 md:grid-cols-[28px_minmax(0,0.9fr)_minmax(110px,0.45fr)_minmax(0,1.1fr)] md:gap-x-4 md:px-5 md:pr-14 ${
 										isSaved
-											? "border-emerald-500 bg-emerald-500 text-slate-950"
+											? "cursor-default border-success/20 bg-success-soft"
 											: isSelected
-												? "border-blue-500 bg-blue-500 text-white"
-												: "border-slate-600 bg-slate-950"
-									}`}
+												? "border-success/25 bg-success-soft"
+												: "border-transparent bg-surface-muted/50 hover:bg-success-soft/50"
+										}`}
 								>
-									{(isSaved || isSelected) && <Check size={15} />}
-								</span>
-
-								<span className="min-w-0 flex-1">
-									<span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-										<strong className="text-lg text-white">{item.word}</strong>
-										{item.pronunciation && (
-											<span className="font-mono text-sm text-blue-300">
-												{item.pronunciation}
-											</span>
-										)}
-										{isSaved && (
-											<span className="ml-auto text-sm font-semibold text-emerald-300">
-											✓ {t("saved")}
-											</span>
-										)}
+									<span
+										aria-hidden="true"
+										className={`row-span-2 flex h-6 w-6 shrink-0 items-center justify-center rounded-md border md:row-span-1 ${
+											isSaved || isSelected
+												? "border-primary bg-primary text-white"
+												: "border-border-strong bg-input text-main"
+										}`}
+									>
+										{(isSaved || isSelected) && <Check size={15} aria-hidden="true" />}
 									</span>
-									<span className="mt-1 block text-sm font-medium text-slate-300">
+									<strong className="min-w-0 break-words text-base font-semibold text-main md:col-start-2 md:text-lg">
+										{item.word}
+										{isSaved && <span className="ml-2 text-xs font-semibold text-success">{t("saved")}</span>}
+									</strong>
+									{item.pronunciation ? (
+										<span className="min-w-0 font-mono text-xs text-secondary md:text-sm">
+											{item.pronunciation}
+										</span>
+									) : <span className="hidden md:block" aria-hidden="true" />}
+									<span className="col-start-2 min-w-0 text-sm leading-5 text-secondary md:col-start-4 md:text-base">
 										{item.translation || item.meaning}
 									</span>
-									{item.example && (
-										<span className="mt-2 block text-sm italic leading-6 text-slate-500">
-											“{item.example}”
-										</span>
-									)}
-								</span>
-							</button>
-						);
-					})}
+								</button>
+								<button type="button" aria-label={`Read ${item.word}`} onClick={(event) => { event.stopPropagation(); speakWord(item.word); }} className="absolute right-3 top-1/2 inline-flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-lg text-brand-text transition hover:scale-110 hover:bg-success-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50">
+									<Volume2 size={17} aria-hidden="true" />
+								</button>
+								</div>
+							);
+						})}
+					</div>
 				</div>
 
 				{(authLoading || libraryLoading) && user && (
-					<div className="mt-5 flex items-center justify-center gap-2 text-sm text-slate-400">
+					<div className="mt-5 flex items-center justify-center gap-2 text-sm text-secondary">
 						<LoaderCircle className="h-4 w-4 animate-spin" /> {t("checkingNotebook")}
 					</div>
 				)}
 
 				{allWordsSaved && (
-					<p className="mt-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-4 text-center text-sm text-emerald-300">
+					<p role="status" className="mt-5 rounded-xl border border-success/20 bg-success-soft p-4 text-center text-sm text-success">
 						✓ {t("allWordsSaved")}
 					</p>
 				)}
 
-				<div className="sticky bottom-[calc(76px+env(safe-area-inset-bottom))] mt-8 border-t border-slate-800 bg-[#030616]/95 py-4 backdrop-blur-md md:bottom-0">
+				<div data-testid="dialogue-selection-actions" className="mt-5 rounded-2xl border border-app bg-surface p-2 shadow-sm sm:p-4 lg:flex lg:items-center lg:justify-center lg:gap-12">
 					<button
 						type="button"
 						onClick={saveSelectedWords}
@@ -350,7 +358,7 @@ export default function DialogueUsefulWords({
 							authLoading ||
 							(Boolean(user) && libraryLoading)
 						}
-						className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-6 py-4 font-semibold text-white shadow-lg shadow-blue-600/15 transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-45"
+						className="mx-auto inline-flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2 focus-visible:ring-offset-surface disabled:cursor-not-allowed disabled:opacity-50 md:max-w-4xl lg:mx-0 lg:w-[28rem] lg:max-w-[40vw] lg:flex-none"
 					>
 						{isSaving ? (
 							<>
@@ -362,15 +370,17 @@ export default function DialogueUsefulWords({
 							t("continueWithoutSaving")
 						)}
 					</button>
-					<button
-						type="button"
-						onClick={() => router.push(lessonHref)}
-						disabled={isSaving}
-						className="mt-2 w-full px-6 py-2.5 text-sm font-semibold text-slate-400 transition hover:text-white disabled:opacity-40"
-					>
-						{t("skip")}
-					</button>
-					{nextDialogueAction && <div className="mt-1 flex justify-center">{nextDialogueAction}</div>}
+					<div className={`mt-1 grid items-center gap-1 ${nextDialogue ? "grid-cols-2 sm:flex sm:justify-center sm:gap-6" : ""} lg:mt-0 lg:flex lg:items-center lg:justify-center lg:gap-6`}>
+						<button
+							type="button"
+							onClick={() => router.push(lessonHref)}
+							disabled={isSaving}
+							className="min-h-11 w-full cursor-pointer rounded-lg px-2 py-2.5 text-sm font-semibold text-secondary transition hover:bg-hover hover:text-main focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 disabled:opacity-40 sm:w-auto sm:px-4 lg:whitespace-nowrap"
+						>
+							{t("skip")}
+						</button>
+						{nextDialogueAction && <div className="flex justify-center">{nextDialogueAction}</div>}
+					</div>
 				</div>
 			</div>
 		</main>

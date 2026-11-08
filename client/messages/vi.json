@@ -217,6 +217,7 @@
 		"clearBlank": "Xóa từ ở ô {number}",
 		"suggestedWords": "Từ gợi ý",
 		"wordCount": "{count} từ",
+		"selectedWordCount": "Đã chọn: {count} từ",
 		"clozeCorrect": "Chính xác! Bạn đã hoàn thành toàn bộ hội thoại.",
 		"clozeWrong": "Vẫn còn từ chưa đúng. Hãy sửa các ô màu đỏ.",
 		"sceneAlt": "Khung cảnh của {character}",
@@ -236,7 +237,7 @@
 		"pronounceWord": "Phát âm {word}",
 		"transcript": "Bản chép lời",
 		"usefulWordsTitle": "Từ vựng trong bài",
-		"usefulWordsDescription": "Chọn những từ bạn muốn lưu trực tiếp vào Sổ tay chung để ôn tập sau.",
+		"usefulWordsDescription": "Chọn những từ bạn muốn lưu vào sổ tay để ôn tập sau🍀",
 		"signInToSaveWords": "Đăng nhập để lưu từ",
 		"canSkipWords": "Bạn vẫn có thể xem các từ và bỏ qua bước này.",
 		"signIn": "Đăng nhập",
@@ -459,8 +460,7 @@
 			"travel": "Du lịch",
 			"food": "Ăn uống",
 			"anime": "Anime",
-			"daily": "Giao tiếp hằng ngày",
-			"story": "Story of Life"
+			"story": "Câu truyện"
 		},
 		"topics": "{count} chủ đề",
 		"dialogues": "{count} hội thoại",

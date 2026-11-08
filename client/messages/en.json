@@ -217,6 +217,7 @@
 		"clearBlank": "Clear blank {number}",
 		"suggestedWords": "Suggested words",
 		"wordCount": "{count} words",
+		"selectedWordCount": "Selected: {count} words",
 		"clozeCorrect": "Correct! You completed the whole dialogue.",
 		"clozeWrong": "Some words are still incorrect. Fix the red blanks.",
 		"sceneAlt": "Scene with {character}",
@@ -459,7 +460,6 @@
 			"travel": "Travel",
 			"food": "Food & drink",
 			"anime": "Anime",
-			"daily": "Everyday communication",
 			"story": "Story of Life"
 		},
 		"topics": "{count} topics",
