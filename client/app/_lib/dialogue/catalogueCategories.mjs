@@ -3,7 +3,6 @@ const legacyDialogueCategories = {
 	office: ["office-introduction"],
 	travel: ["at-a-hotel", "asking-for-directions", "weekend-camping"],
 	food: ["coffee-shop", "grocery-store", "restaurant"],
-	daily: ["at-a-hotel", "asking-for-directions", "coffee-shop", "grocery-store", "restaurant", "office-introduction", "weekend-camping"],
 };
 
 export function matchesCourseCategory(course, category) {

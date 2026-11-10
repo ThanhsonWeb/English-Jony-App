@@ -125,7 +125,7 @@
 .summaryValue { font-size: clamp(23px, 2vw, 29px); font-weight: 750; line-height: 1.25; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .summaryIcon, .streakIcon { display: grid; place-items: center; height: 52px; width: 52px; border-radius: 14px; flex-shrink: 0; background: var(--sj-surface-muted); color: var(--rank-gold); }
 .summaryIcon svg { width: 27px; height: 27px; }
-.summaryCard[data-tone="rank"] .summaryValue { color: var(--sj-brand-text); }
+.summaryCard[data-tone="rank"] .summaryValue { color: var(--sj-brand-text); font-size: clamp(19px, 1.6vw, 24px); }
 .summaryCard[data-tone="kn"] .summaryIcon { color: var(--sj-brand-text); background: var(--sj-primary-soft); }
 .summaryCard[data-tone="level"] .summaryIcon { color: var(--rank-rose); background: color-mix(in srgb, var(--rank-violet) 12%, var(--sj-surface)); }
 .summaryFooter { margin: 9px 0 0 66px; font-size: 11px; line-height: 1.4; color: var(--sj-text-secondary); }

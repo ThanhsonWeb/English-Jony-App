@@ -16,7 +16,6 @@ import {
 	GraduationCap,
 	Grid2X2,
 	LoaderCircle,
-	MessageCircleMore,
 	Plane,
 	Search,
 	Utensils,
@@ -73,7 +72,6 @@ const dialogueCategories = [
 	"travel",
 	"food",
 	"anime",
-	"daily",
 	"story",
 ];
 
@@ -83,7 +81,6 @@ const categoryIcons = {
 	travel: Plane,
 	food: Utensils,
 	anime: Clapperboard,
-	daily: MessageCircleMore,
 	story: BookOpen,
 };
 

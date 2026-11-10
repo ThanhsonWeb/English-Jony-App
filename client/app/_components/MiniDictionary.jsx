@@ -396,7 +396,7 @@ export default function MiniDictionary() {
 	return (
 		<div
 			ref={containerRef}
-			className="fixed bottom-[calc(env(safe-area-inset-bottom)+1rem)] right-4 z-[80] hidden md:block sm:bottom-6 sm:right-6"
+			className="hidden"
 		>
 			{isOpen && (
 				<>
