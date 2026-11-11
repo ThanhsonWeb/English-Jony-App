@@ -1,17 +1,18 @@
 const User = require("../models/userModel");
 const sendEmail = require("./email");
 const mongoose = require("mongoose");
+const { isActiveAccount, activeAccountFilter } = require("./accountLifecycle");
 
 module.exports = async function deliverPasswordRecovery(email, frontendOrigin) {
-	const user = await User.findOne({ email });
-	if (!user || user.passwordResetExpires?.getTime() > Date.now()) return;
+	const user = await User.findOne({ email }, "+lifecycleState");
+	if (!isActiveAccount(user) || user.passwordResetExpires?.getTime() > Date.now()) return;
 	const resetToken = user.createPasswordResetToken();
 	const hash = user.passwordResetToken;
 	// Never replace an unexpired link, including one created concurrently.
-	user.$where = { $or: [
+	user.$where = { $and: [activeAccountFilter(), { $or: [
 		{ passwordResetExpires: { $lte: new Date(Date.now()) } },
 		{ passwordResetExpires: null },
-	] };
+	] }] };
 	try {
 		await user.save({ validateBeforeSave: false });
 	} catch (error) {

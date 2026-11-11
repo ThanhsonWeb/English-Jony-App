@@ -51,6 +51,13 @@ const userSchema = new mongoose.Schema(
 			enum: ["user", "admin"],
 			default: "user",
 		},
+		lifecycleState: {
+			type: String,
+			enum: ["active", "deleting"],
+			default: "active",
+			required: true,
+			select: false,
+		},
 
 		photo: {
 			type: String,

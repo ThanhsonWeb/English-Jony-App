@@ -106,16 +106,62 @@ test("existing account receives a private one-hour JWT response without any cook
 	assert.equal(await User.countDocuments(), 3);
 });
 
+test("deleting accounts reject existing mobile sessions and sign-in without affecting another account", async () => {
+	const ownerToken = await tokenFor(owner), otherToken = await tokenFor(other);
+	await User.updateOne({ _id: owner._id }, { $set: { lifecycleState: "deleting" } });
+	assert.equal((await me(ownerToken)).status, 401);
+	const denied = await login({ email: owner.email, password });
+	const wrong = await login({ email: owner.email, password: "wrong-password" });
+	assert.equal(denied.status, 401); noCookies(denied);
+	assert.deepEqual(await denied.json(), await wrong.json());
+	assert.equal((await me(otherToken)).status, 200);
+	assert.equal((await login({ email: other.email, password })).status, 200);
+	assert.equal(await User.countDocuments(), 3);
+});
+
+test("legacy accounts remain active and malformed lifecycle states fail closed", async () => {
+	await User.collection.updateOne({ _id: owner._id }, { $unset: { lifecycleState: "" } });
+	const active = await login({ email: owner.email, password });
+	assert.equal(active.status, 200);
+	const body = await active.json();
+	assert.equal(body.data.user.lifecycleState, undefined);
+	assert.equal((await me(body.data.token)).status, 200);
+	for (const state of [null, "unexpected"]) {
+		await User.collection.updateOne({ _id: owner._id }, { $set: { lifecycleState: state } });
+		assert.equal((await me(body.data.token)).status, 401);
+		assert.equal((await login({ email: owner.email, password })).status, 401);
+	}
+});
+
+test("user validation accepts only the supported lifecycle states", async () => {
+	for (const state of [null, "unexpected"]) {
+		const invalid = new User({ name: "Test learner", email: "invalid@example.test", password, passwordConfirm: password, lifecycleState: state });
+		await assert.rejects(invalid.validate(), error => error.errors?.lifecycleState != null);
+	}
+});
+
+test("mobile sign-in rechecks lifecycle after password verification", async t => {
+	const original = User.prototype.correctPassword;
+	t.mock.method(User.prototype, "correctPassword", async function (...args) {
+		const correct = await original.apply(this, args);
+		await User.updateOne({ _id: owner._id }, { $set: { lifecycleState: "deleting" } });
+		return correct;
+	});
+	const response = await login({ email: owner.email, password });
+	assert.equal(response.status, 401); noCookies(response);
+});
+
 test("mobile signup creates a normal user and returns a private one-hour bearer session without cookies", async () => {
 	const credentials = { name: "  New learner  ", email: "  NEW.LEARNER@example.test  ", password: "signup-test-password", passwordConfirm: "signup-test-password" };
 	const response = await signup(credentials);
 	assert.equal(response.status, 201); noCookies(response);
 	assert.equal(response.headers.get("cache-control"), "private, no-store");
-	const body = await response.json(), user = await User.findOne({ email: "new.learner@example.test" }).select("+password");
+	const body = await response.json(), user = await User.findOne({ email: "new.learner@example.test" }).select("+password +lifecycleState");
 	const claims = jwt.verify(body.data.token, secret, { algorithms: ["HS256"] });
 	assert.equal(body.status, "success");
 	assert.equal(body.data.user._id, user.id); assert.equal(body.data.user.name, "New learner");
 	assert.equal(body.data.user.role, "user"); assert.equal(user.role, "user");
+	assert.equal(user.lifecycleState, "active"); assert.equal(body.data.user.lifecycleState, undefined);
 	assert.equal(claims.id, user.id); assert.equal(claims.sessionType, "mobile");
 	assert.equal(claims.exp - claims.iat, 3600);
 	assert.equal(new Date(body.data.expiresAt).getTime(), claims.exp * 1000);
@@ -133,6 +179,7 @@ test("mobile signup validates the website rules and rejects injected account fie
 		{ name: "New learner", email: "new@example.test", password: "a".repeat(73), passwordConfirm: "a".repeat(73) },
 		{ name: "New learner", email: "new@example.test", password, passwordConfirm: password, role: "admin" },
 		{ name: "New learner", email: "new@example.test", password, passwordConfirm: password, googleId: "injected" },
+		{ name: "New learner", email: "new@example.test", password, passwordConfirm: password, lifecycleState: "deleting" },
 		{ name: "x", email: "new@example.test", password, passwordConfirm: password },
 	]) {
 		const response = await signup(body); assert.equal(response.status, 400); noCookies(response);
