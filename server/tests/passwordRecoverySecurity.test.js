@@ -6,7 +6,7 @@ const { format } = require("node:util");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
-const { MongoMemoryServer } = require("mongodb-memory-server");
+const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const User = require("../models/userModel");
 const Vocab = require("../models/vocabModel");
 const RecoveryCooldown = require("../models/recoveryCooldownModel");
@@ -24,7 +24,7 @@ before(async () => {
 		NODE_ENV: "production", FRONTEND_URL: trustedOrigin,
 		JWT_SECRET: "isolated-password-recovery-security", JWT_EXPIRES_IN: "1h",
 	});
-	db = await MongoMemoryServer.create({ binary: { version: "7.0.14" } });
+	db = await MongoMemoryReplSet.create({ binary: { version: "7.0.14" }, replSet: { count: 1, storageEngine: "wiredTiger" } });
 	await mongoose.connect(db.getUri(), { dbName: "password_recovery_security_test" });
 	await User.init();
 	const app = require("../app");
