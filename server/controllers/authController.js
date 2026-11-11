@@ -106,19 +106,25 @@ const revokeCookieSession = async token => {
 };
 
 // request Handlers
-exports.signup = catchAsync(async (req, res, next) => {
-	const { name, email, password, passwordConfirm } = req.body;
+async function createAccount({ name, email, password, passwordConfirm }, res) {
 	assertPasswordByteLimit(password);
-	let newUser;
 	try {
-		newUser = await User.create({ name, email, password, passwordConfirm });
+		// Keep this allowlist shared by web and mobile registration. Never pass
+		// req.body to the model (role and account metadata are server controlled).
+		return await User.create({ name, email, password, passwordConfirm });
 	} catch (error) {
-		if (error.code === 11000 && (error.keyPattern?.email || error.keyValue?.email)) {
-			return res.status(400).json({ status: "fail", code: "signupUnavailable",
+		if (error.code === 11000) {
+			res.status(400).json({ status: "fail", code: "signupUnavailable",
 				message: "Unable to create an account with these details. Try signing in or use account recovery." });
+			return null;
 		}
 		throw error;
 	}
+}
+
+exports.signup = catchAsync(async (req, res) => {
+	const newUser = await createAccount(req.body, res);
+	if (!newUser) return;
 
 	createSendToken(newUser, 201, res, req.credentialAttempt);
 });
@@ -151,6 +157,19 @@ exports.mobileLogin = catchAsync(async (req, res, next) => {
 		status: "success",
 		data: {
 			user: clientUser(user), token,
+			expiresAt: new Date(jwt.decode(token).exp * 1000).toISOString(),
+		},
+	});
+});
+
+exports.mobileSignup = catchAsync(async (req, res) => {
+	const newUser = await createAccount(req.mobileSignup, res);
+	if (!newUser) return;
+	const token = signToken(newUser, undefined, true);
+	res.status(201).json({
+		status: "success",
+		data: {
+			user: clientUser(newUser), token,
 			expiresAt: new Date(jwt.decode(token).exp * 1000).toISOString(),
 		},
 	});

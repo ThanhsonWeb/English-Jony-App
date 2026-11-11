@@ -11,7 +11,7 @@ const MobileLoginWindow = require("../models/mobileLoginWindowModel");
 const RevokedSession = require("../models/revokedSessionModel");
 const sessionRevocation = require("../utils/sessionRevocation");
 const { requireMobileLoginRequest } = require("../utils/mobileLoginRequest");
-const { createMobileLoginRateLimit, mobileLoginPolicy } = require("../middleware/mobileLoginRateLimit");
+const { createMobileLoginRateLimit, mobileLoginPolicy, mobileSignupPolicy } = require("../middleware/mobileLoginRateLimit");
 const errorHandler = require("../controllers/errorController");
 
 // Synthetic fixtures only. No .env, production database, email or Google calls.
@@ -80,6 +80,7 @@ function nativeRequest(url, { method = "GET", body, headers = {}, raw } = {}) {
 const request = (path, options) => nativeRequest(base + path, options);
 const login = (body = { email: owner.email, password }, headers = {}, path = "/auth/mobile/login") =>
 	request(path, { method: "POST", body, headers });
+const signup = (body, headers = {}) => request("/auth/mobile/signup", { method: "POST", body, headers });
 async function tokenFor(user = owner) {
 	const response = await login({ email: user.email, password });
 	assert.equal(response.status, 200);
@@ -102,6 +103,67 @@ test("existing account receives a private one-hour JWT response without any cook
 	assert.equal(claims.credentialAttempt, undefined);
 	assert.ok(Object.keys(body.data.user).every(key => ["_id", "name", "email", "role", "photo", "avatar", "theme", "language", "totalXp", "createdAt", "updatedAt"].includes(key)));
 	assert.equal((await me(body.data.token)).status, 200);
+	assert.equal(await User.countDocuments(), 3);
+});
+
+test("mobile signup creates a normal user and returns a private one-hour bearer session without cookies", async () => {
+	const credentials = { name: "  New learner  ", email: "  NEW.LEARNER@example.test  ", password: "signup-test-password", passwordConfirm: "signup-test-password" };
+	const response = await signup(credentials);
+	assert.equal(response.status, 201); noCookies(response);
+	assert.equal(response.headers.get("cache-control"), "private, no-store");
+	const body = await response.json(), user = await User.findOne({ email: "new.learner@example.test" }).select("+password");
+	const claims = jwt.verify(body.data.token, secret, { algorithms: ["HS256"] });
+	assert.equal(body.status, "success");
+	assert.equal(body.data.user._id, user.id); assert.equal(body.data.user.name, "New learner");
+	assert.equal(body.data.user.role, "user"); assert.equal(user.role, "user");
+	assert.equal(claims.id, user.id); assert.equal(claims.sessionType, "mobile");
+	assert.equal(claims.exp - claims.iat, 3600);
+	assert.equal(new Date(body.data.expiresAt).getTime(), claims.exp * 1000);
+	assert.equal(claims.credentialAttempt, undefined);
+	assert.ok(!JSON.stringify(body.data.user).includes("password"));
+	assert.equal((await me(body.data.token)).status, 200);
+	assert.equal(await User.countDocuments(), 4);
+});
+
+test("mobile signup validates the website rules and rejects injected account fields before creating a user", async () => {
+	for (const body of [
+		{}, [], null, { name: "New learner", email: "bad", password, passwordConfirm: password },
+		{ name: "New learner", email: "new@example.test", password: "short", passwordConfirm: "short" },
+		{ name: "New learner", email: "new@example.test", password, passwordConfirm: "different-password" },
+		{ name: "New learner", email: "new@example.test", password: "a".repeat(73), passwordConfirm: "a".repeat(73) },
+		{ name: "New learner", email: "new@example.test", password, passwordConfirm: password, role: "admin" },
+		{ name: "New learner", email: "new@example.test", password, passwordConfirm: password, googleId: "injected" },
+		{ name: "x", email: "new@example.test", password, passwordConfirm: password },
+	]) {
+		const response = await signup(body); assert.equal(response.status, 400); noCookies(response);
+	}
+	assert.equal(await User.countDocuments(), 3);
+});
+
+test("mobile signup duplicate-email responses are generic and case/whitespace normalized", async () => {
+	const response = await signup({ name: "Other learner", email: ` ${owner.email.toUpperCase()} `, password, passwordConfirm: password });
+	assert.equal(response.status, 400); noCookies(response);
+	assert.deepEqual(await response.json(), {
+		status: "fail", code: "signupUnavailable",
+		message: "Unable to create an account with these details. Try signing in or use account recovery.",
+	});
+	assert.equal(await User.countDocuments(), 3);
+});
+
+test("mobile signup rate limits repeated account attempts and fails closed when its counter store is unavailable", async t => {
+	const duplicate = { name: "Another learner", email: owner.email, password, passwordConfirm: password };
+	for (let index = 0; index < mobileSignupPolicy.accountLimit; index++) assert.equal((await signup(duplicate)).status, 400);
+	const blocked = await signup(duplicate);
+	assert.equal(blocked.status, 429); assert.ok(Number(blocked.headers.get("retry-after")) > 0); noCookies(blocked);
+	const counter = t.mock.method(MobileLoginWindow, "findOneAndUpdate", async () => { throw new Error("Synthetic database failure"); });
+	const unavailable = await signup({ name: "Third learner", email: "third@example.test", password, passwordConfirm: password });
+	assert.equal(unavailable.status, 503); noCookies(unavailable); assert.equal(counter.mock.callCount(), 1);
+});
+
+test("mobile signup rate limits abusive peers before validation and does not create accounts", async () => {
+	for (let index = 0; index < mobileSignupPolicy.peerLimit; index++) assert.equal((await signup({})).status, 400);
+	const blocked = await signup({ name: "Peer learner", email: "peer@example.test", password, passwordConfirm: password });
+	assert.equal(blocked.status, 429); assert.ok(Number(blocked.headers.get("retry-after")) > 0); noCookies(blocked);
 	assert.equal(await User.countDocuments(), 3);
 });
 
@@ -146,9 +208,15 @@ test("native exception is exact and rejects browser headers, cookies, form bodie
 	]) {
 		const response = await login(undefined, headers); assert.equal(response.status, 403); noCookies(response);
 	}
-	for (const path of ["/auth/mobile/login/", "/auth/mobile/Login", "/auth/mobile/login?extra=1", "/auth/mobile/signup", "/auth/mobile/logout", "/auth/login", "/auth/credentials/login"]) {
+	for (const path of ["/auth/mobile/login/", "/auth/mobile/Login", "/auth/mobile/login?extra=1", "/auth/mobile/logout", "/auth/login", "/auth/credentials/login"]) {
 		const response = await login(undefined, {}, path); assert.equal(response.status, 403); noCookies(response);
 	}
+	for (const headers of [{ Origin: frontend }, { Cookie: "jwt=synthetic-cookie" }, { "Sec-Fetch-Site": "same-origin" }, { "Content-Type": "text/plain" }]) {
+		const response = await signup({ name: "Native learner", email: "native@example.test", password, passwordConfirm: password }, headers);
+		assert.equal(response.status, 403); noCookies(response);
+	}
+	const signupVariants = ["/auth/mobile/signup/", "/auth/mobile/Signup", "/auth/mobile/signup?extra=1"];
+	for (const path of signupVariants) assert.equal((await request(path, { method: "POST", body: { name: "Native learner", email: "native@example.test", password, passwordConfirm: password } })).status, 403);
 	const allowed = await login(undefined, { "Content-Type": "application/json; charset=utf-8" });
 	assert.equal(allowed.status, 200); noCookies(allowed);
 });

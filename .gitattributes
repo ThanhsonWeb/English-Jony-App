@@ -1,1 +1,3 @@
 .github/workflows/deploy-backend.yml text eol=lf
+server/data/dialogueTaskCatalogue.json text eol=lf
+server/data/dialogueTaskRules.json text eol=lf
