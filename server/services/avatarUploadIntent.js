@@ -11,6 +11,12 @@ const extensions = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "web
 const transactionOptions = {
 	readPreference: "primary", readConcern: { level: "snapshot" }, writeConcern: { w: "majority" },
 };
+const cleanupSafeUpload = {
+	$or: [
+		{ uploadStatus: "reserved", uploadResult: null },
+		{ uploadStatus: "finished", uploadResult: { $in: ["success", "failure"] } },
+	],
+};
 
 function validateOwnerAndIntent(userId, intentId) {
 	if (!mongoose.isObjectIdOrHexString(userId) || !mongoose.isObjectIdOrHexString(intentId)) {
@@ -122,20 +128,38 @@ async function queueAvatarCleanup(userId, intentId) {
 	return intent;
 }
 
-async function recordCleanupResult(userId, intentId, generation, succeeded) {
+// Claims do not expire automatically: an old worker might still be deleting.
+async function claimAvatarCleanup(userId, intentId) {
 	validateOwnerAndIntent(userId, intentId);
-	if (!Number.isSafeInteger(generation) || generation < 1 || typeof succeeded !== "boolean") {
+	const claimToken = randomUUID();
+	return mongoose.connection.transaction(async session => {
+		const claimed = await AvatarUploadIntent.findOneAndUpdate(
+			{ _id: intentId, user: userId, attachmentStatus: "unattached", ...cleanupSafeUpload, cleanupStatus: "pending" },
+			{ $set: { cleanupStatus: "claimed", cleanupClaimToken: claimToken } },
+			{ session, returnDocument: "after" },
+		);
+		if (claimed) return { claimed: true, intent: claimed, claimToken };
+		return { claimed: false, intent: await ownedIntent(userId, intentId, session) };
+	}, transactionOptions);
+}
+
+async function recordCleanupResult(userId, intentId, generation, claimToken, succeeded) {
+	validateOwnerAndIntent(userId, intentId);
+	if (!Number.isSafeInteger(generation) || generation < 1 || typeof claimToken !== "string" ||
+		!uuidPattern.test(claimToken) || typeof succeeded !== "boolean") {
 		throw new AppError("Invalid avatar cleanup result", 400);
 	}
 	const state = succeeded ? "complete" : "retry";
-	const filter = { _id: intentId, user: userId, attachmentStatus: "unattached", cleanupStatus: "pending", cleanupGeneration: generation };
-	// A missing asset is not final while an upload might still arrive later.
-	if (succeeded) filter.uploadStatus = { $in: ["reserved", "finished"] };
-	const updated = await AvatarUploadIntent.findOneAndUpdate(filter, { $set: { cleanupStatus: state } }, { returnDocument: "after" });
+	const filter = { _id: intentId, user: userId, attachmentStatus: "unattached", ...cleanupSafeUpload,
+		cleanupStatus: "claimed", cleanupGeneration: generation, cleanupClaimToken: claimToken };
+	const updated = await AvatarUploadIntent.findOneAndUpdate(filter,
+		{ $set: { cleanupStatus: state, lastCleanupClaimToken: claimToken }, $unset: { cleanupClaimToken: 1 } },
+		{ returnDocument: "after", writeConcern: { w: "majority" } });
 	if (updated) return updated;
-	const intent = await ownedIntent(userId, intentId);
-	if (intent.cleanupGeneration === generation && intent.cleanupStatus === state) return intent;
+	const intent = await AvatarUploadIntent.findOne({ _id: intentId, user: userId }).select("+lastCleanupClaimToken");
+	if (!intent) throw new AppError("Avatar intent not found", 404);
+	if (intent.cleanupGeneration === generation && intent.cleanupStatus === state && intent.lastCleanupClaimToken === claimToken) return intent;
 	throw new AppError("Invalid or stale avatar cleanup result", 409);
 }
 
-module.exports = { reserveAvatarUpload, beginAvatarUpload, recordUploadOutcome, attachAvatarUpload, queueAvatarCleanup, recordCleanupResult };
+module.exports = { reserveAvatarUpload, beginAvatarUpload, recordUploadOutcome, attachAvatarUpload, queueAvatarCleanup, claimAvatarCleanup, recordCleanupResult };

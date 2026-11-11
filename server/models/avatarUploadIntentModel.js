@@ -10,8 +10,10 @@ const schema = new mongoose.Schema({
 	uploadStatus: { type: String, enum: ["reserved", "uploading", "uncertain", "finished"], default: "reserved", required: true },
 	uploadResult: { type: String, enum: ["success", "failure", "unknown"], default: null },
 	attachmentStatus: { type: String, enum: ["unattached", "attached"], default: "unattached", required: true },
-	cleanupStatus: { type: String, enum: ["none", "pending", "retry", "complete"], default: "none", required: true },
+	cleanupStatus: { type: String, enum: ["none", "pending", "claimed", "retry", "complete"], default: "none", required: true },
 	cleanupGeneration: { type: Number, default: 0, min: 0, required: true },
+	cleanupClaimToken: { type: String, select: false },
+	lastCleanupClaimToken: { type: String, select: false },
 }, { timestamps: true, autoIndex: true });
 
 schema.index({ user: 1, operationId: 1 }, { unique: true });

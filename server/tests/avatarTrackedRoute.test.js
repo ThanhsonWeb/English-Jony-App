@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken");
 const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const User = require("../models/userModel");
 const Intent = require("../models/avatarUploadIntentModel");
-const { recordCleanupResult, queueAvatarCleanup } = require("../services/avatarUploadIntent");
+const { claimAvatarCleanup, queueAvatarCleanup } = require("../services/avatarUploadIntent");
 
 let db, server, url, owner, other, token;
 const originalFetch = global.fetch;
@@ -81,6 +81,7 @@ test("registration precedes storage; replacement queues only the previous manage
 	assert.equal(first.attachmentStatus, "attached");
 	assert.equal(first.cleanupStatus, "none");
 	await assert.rejects(queueAvatarCleanup(owner.id, first.id), error => error.statusCode === 409);
+	assert.equal((await claimAvatarCleanup(owner.id, first.id)).claimed, false);
 	assert.equal((await request()).status, 200);
 	const updatedOwner = await User.findById(owner.id).select("+avatarIntent");
 	const previous = await Intent.findById(first.id);
@@ -101,7 +102,7 @@ test("a Cloudinary timeout stays uncertain and cannot be marked cleaned", async 
 	assert.equal(intent.uploadStatus, "uncertain");
 	assert.equal(intent.uploadResult, "unknown");
 	assert.equal(intent.cleanupStatus, "pending");
-	await assert.rejects(recordCleanupResult(owner.id, intent.id, intent.cleanupGeneration, true), error => error.statusCode === 409);
+	assert.equal((await claimAvatarCleanup(owner.id, intent.id)).claimed, false);
 	assert.equal((await User.findById(owner.id)).avatar, legacy);
 });
 
@@ -263,5 +264,5 @@ test("a failed outcome write retains the prequeued in-flight intent", async () =
 	const intent = await Intent.findOne({ user: owner.id });
 	assert.equal(intent.uploadStatus, "uploading");
 	assert.equal(intent.cleanupStatus, "pending");
-	await assert.rejects(recordCleanupResult(owner.id, intent.id, intent.cleanupGeneration, true), error => error.statusCode === 409);
+	assert.equal((await claimAvatarCleanup(owner.id, intent.id)).claimed, false);
 });
