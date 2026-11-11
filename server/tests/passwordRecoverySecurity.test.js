@@ -209,6 +209,46 @@ test("emailed token resets password, consumes credential, revokes old sessions a
 	assertNoPrivateLogs(logs, [token, hash, link.href, password, resetBody.password, user.email, user.id]);
 });
 
+test("deleting accounts cannot use an existing password reset link or receive a new one", async t => {
+	const { mails } = capture(t);
+	const token = user.createPasswordResetToken();
+	await user.save({ validateBeforeSave: false });
+	await User.updateOne({ _id: user._id }, { $set: { lifecycleState: "deleting" } });
+	const reset = await request(`/users/resetPassword/${token}`, "PATCH", resetBody);
+	assert.equal(reset.status, 400);
+	assert.equal(reset.headers["set-cookie"], undefined);
+	await require("../utils/passwordRecovery")(user.email, trustedOrigin);
+	assert.equal(mails.length, 0);
+	const saved = await User.findById(user.id).select("+password +lifecycleState");
+	assert.equal(saved.lifecycleState, "deleting");
+	assert.equal(await saved.correctPassword(password, saved.password), true);
+	assert.ok(saved.passwordResetToken);
+});
+
+test("legacy accounts without lifecycle state can still recover their password", async t => {
+	const { mails } = capture(t);
+	await User.collection.updateOne({ _id: user._id }, { $unset: { lifecycleState: "" } });
+	assert.equal((await forgot()).status, 200);
+	const link = emailedUrl(mails);
+	assert.equal((await request(link.pathname.replace("/api/v1", ""), "PATCH", resetBody)).status, 200);
+});
+
+test("a password reset cannot save if deletion starts after the token is checked", async t => {
+	const token = user.createPasswordResetToken();
+	await user.save({ validateBeforeSave: false });
+	const original = User.prototype.save;
+	t.mock.method(User.prototype, "save", async function (...args) {
+		await User.updateOne({ _id: this._id }, { $set: { lifecycleState: "deleting" } });
+		return original.apply(this, args);
+	});
+	const response = await request(`/users/resetPassword/${token}`, "PATCH", resetBody);
+	assert.equal(response.status, 400);
+	assert.equal(response.headers["set-cookie"], undefined);
+	const saved = await User.findById(user.id).select("+password +lifecycleState");
+	assert.equal(saved.lifecycleState, "deleting");
+	assert.equal(await saved.correctPassword(password, saved.password), true);
+});
+
 test("reset expiry is still exactly 20 minutes and an expired token does not change password or session", async t => {
 	const { mails, logs } = capture(t);
 	let now = Date.now();

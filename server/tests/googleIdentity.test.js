@@ -85,14 +85,23 @@ for (const locale of ["vi", "en"]) test(`${locale}: pre-registered email never b
 	assert.equal((await login()).status, 200);
 });
 
-test("normal signup ignores injected Google identity, role and session-version fields", async () => {
-	const response = await signup({ googleId: claims.sub, role: "admin", passwordSessionVersion: "injected" });
+test("normal signup ignores injected Google identity, role, lifecycle and session-version fields", async () => {
+	const response = await signup({ googleId: claims.sub, role: "admin", lifecycleState: "deleting", passwordSessionVersion: "injected" });
 	assert.equal(response.status, 201);
-	const user = await User.findOne({ email });
+	const user = await User.findOne({ email }).select("+lifecycleState");
 	assert.equal(user.googleId, undefined); assert.equal(user.role, "user"); assert.equal(user.passwordSessionVersion, undefined);
+	assert.equal(user.lifecycleState, "active");
 	await assertMe(tokenFrom(response), user.id);
 	await assertMe(tokenFrom(await login()), user.id);
 	assert.equal((await login("wrong-password")).status, 401);
+});
+
+test("a deleting Google account cannot obtain a new session or a replacement account", async t => {
+	const user = await User.create({ name: "Google Learner", email, googleId: claims.sub, lifecycleState: "deleting" });
+	mockGoogle(t);
+	assertCallback(await callback(), "google_oauth_failed");
+	assert.equal(await User.countDocuments(), 1);
+	assert.ok(await User.exists({ _id: user._id }));
 });
 
 for (const locale of ["vi", "en"]) test(`${locale}: normal Google signup/login restores the same Google-only account and logout clears the browser session`, async t => {

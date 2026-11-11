@@ -16,6 +16,7 @@ const { claimRecovery, recoveryResponse } = require("../middleware/recoveryRateL
 const deliverPasswordRecovery = require("../utils/passwordRecovery");
 const { assertPasswordByteLimit } = require("../utils/passwordPolicy");
 const { CLIENT_USER_FIELDS, AUTH_USER_FIELDS, clientUser } = require("../utils/clientUser");
+const { isActiveAccount, activeAccountFilter } = require("../utils/accountLifecycle");
 const privateResponse = require("../middleware/privateResponse");
 
 // Public dummy bcrypt hash (cost 12); not a credential. Unknown/Google-only
@@ -33,6 +34,11 @@ const getGoogleClient = () =>
 		process.env.GOOGLE_CLIENT_SECRET,
 		process.env.GOOGLE_REDIRECT_URI,
 	);
+
+// Password verification can take long enough for the lifecycle state to change.
+const isStillActiveAccount = async user => isActiveAccount(user) && Boolean(await User.exists({
+	_id: user._id, ...activeAccountFilter(),
+}));
 
 const signToken = (user, attemptId, mobile = false) => {
 	const payload = { id: user._id, jti: crypto.randomBytes(32).toString("hex") };
@@ -139,7 +145,7 @@ exports.login = catchAsync(async (req, res, next) => {
 	// Find user and include password field
 	const user = await User.findOne({ email }).select(`${AUTH_USER_FIELDS} +password`);
 
-	if (!user || !(await user.correctPassword(password, user.password))) {
+	if (!user || !(await user.correctPassword(password, user.password)) || !(await isStillActiveAccount(user))) {
 		return next(new AppError("Email hoặc mật khẩu không chính xác!", 401));
 	}
 
@@ -149,7 +155,7 @@ exports.mobileLogin = catchAsync(async (req, res, next) => {
 	const { email, password } = req.mobileCredentials;
 	const user = await User.findOne({ email }).select(`${AUTH_USER_FIELDS} +password`);
 	const correct = await User.prototype.correctPassword(password, user?.password || MOBILE_DUMMY_PASSWORD_HASH);
-	if (!user?.password || !correct) {
+	if (!user?.password || !correct || !(await isStillActiveAccount(user))) {
 		return next(new AppError("Incorrect email or password.", 401));
 	}
 	const token = signToken(user, undefined, true);
@@ -294,7 +300,7 @@ exports.protect = catchAsync(async (req, res, next) => {
 
 	// check if user still exist
 	const currentUser = await User.findById(decoded.id, AUTH_USER_FIELDS);
-	if (!currentUser)
+	if (!isActiveAccount(currentUser))
 		return next(
 			new AppError(" User belong to this token is no longer exist ", 401),
 		);
@@ -350,12 +356,12 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 		passwordResetToken: hashedToken,
 		passwordResetExpires: { $gt: Date.now() },
 	}).select(`${AUTH_USER_FIELDS} passwordResetToken passwordResetExpires`);
-	if (!user) return next(new AppError("Token is invalid or expired", 400));
+	if (!isActiveAccount(user)) return next(new AppError("Token is invalid or expired", 400));
 
 	//modify and save new pass to mongo
 	// Mongoose merges $where into the save filter. Validation/bcrypt hooks run
 	// normally; token consumption and the password/version write are atomic.
-	user.$where = { passwordResetToken: hashedToken,
+	user.$where = { ...activeAccountFilter(), passwordResetToken: hashedToken,
 		$expr: { $gt: ["$passwordResetExpires", "$$NOW"] } };
 	user.password = req.body.password;
 	user.passwordConfirm = req.body.passwordConfirm;
@@ -378,6 +384,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 	const user = await User.findOne({ email: req.user.email }).select(
 		`${AUTH_USER_FIELDS} +password`,
 	);
+	if (!isActiveAccount(user)) return next(new AppError("Invalid or expired session. Please log in again.", 401));
 
 	// check passwordCurrent
 	const correct = await user.correctPassword(
@@ -393,7 +400,14 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 	user.password = req.body.password;
 	user.passwordConfirm = req.body.passwordConfirm;
 
-	await user.save();
+	user.$where = activeAccountFilter();
+	try { await user.save(); }
+	catch (error) {
+		if (error instanceof mongoose.Error.DocumentNotFoundError) {
+			return next(new AppError("Invalid or expired session. Please log in again.", 401));
+		}
+		throw error;
+	}
 
 	// 5. Send new JWT
 	createSendToken(user, 200, res);
@@ -564,6 +578,7 @@ exports.googleOAuthCallback = async (req, res) => {
 			}
 		}
 
+		if (!(await isStillActiveAccount(user))) throw new Error("Google identity is unavailable");
 		stage = "auth_cookie";
 		clearGoogleOAuthCookies(res);
 		setAuthCookie(user, res);

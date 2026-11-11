@@ -56,6 +56,60 @@ test("normal password login creates a valid session and wrong/unknown/Google-onl
 		if (expected) assert.deepEqual(body, expected); else expected = body;
 	}
 });
+
+test("deleting accounts cannot use existing web or bearer sessions or obtain a new password session", async () => {
+	const signedIn = await login(normal.email);
+	assert.equal(signedIn.status, 200);
+	const token = cookieToken(signedIn);
+	assert.equal((await request("/users/me", { token, cookie: true })).status, 200);
+	await User.updateOne({ _id: normal._id }, { $set: { lifecycleState: "deleting" } });
+	assert.equal((await request("/users/me", { token, cookie: true })).status, 401);
+	assert.equal((await request("/users/me", { token })).status, 401);
+	const denied = await login(normal.email), wrong = await login(normal.email, "wrong-password");
+	assert.equal(denied.status, 401);
+	assert.equal(denied.headers.get("set-cookie"), null);
+	assert.deepEqual(await denied.json(), await wrong.json());
+	assert.ok(await User.exists({ _id: normal._id }));
+});
+
+test("password change cannot complete if the account enters deletion during verification", async t => {
+	const signedIn = await login(normal.email), token = cookieToken(signedIn);
+	const original = User.prototype.correctPassword;
+	t.mock.method(User.prototype, "correctPassword", async function (...args) {
+		const correct = await original.apply(this, args);
+		await User.updateOne({ _id: this._id }, { $set: { lifecycleState: "deleting" } });
+		return correct;
+	});
+	const result = await request("/users/updatePassword", {
+		method: "PATCH", token, body: { passwordCurrent: "password-123", password: "replacement-password", passwordConfirm: "replacement-password" },
+	});
+	assert.equal(result.status, 401);
+	assert.equal(result.headers.get("set-cookie"), null);
+	const stored = await User.findById(normal._id).select("+password +lifecycleState");
+	assert.equal(stored.lifecycleState, "deleting");
+	assert.equal(await original.call(stored, "password-123", stored.password), true);
+});
+
+test("web sign-in rechecks lifecycle after password verification", async t => {
+	const original = User.prototype.correctPassword;
+	t.mock.method(User.prototype, "correctPassword", async function (...args) {
+		const correct = await original.apply(this, args);
+		await User.updateOne({ _id: normal._id }, { $set: { lifecycleState: "deleting" } });
+		return correct;
+	});
+	const response = await login(normal.email);
+	assert.equal(response.status, 401);
+	assert.equal(response.headers.get("set-cookie"), null);
+});
+
+test("profile edits cannot set lifecycle state", async () => {
+	const token = cookieToken(await login(normal.email));
+	const response = await request("/users/updateMe", { method: "PATCH", token, body: { name: "Updated learner", lifecycleState: "deleting" } });
+	assert.equal(response.status, 200);
+	assert.equal((await response.json()).data.user.lifecycleState, undefined);
+	assert.equal((await User.findById(normal._id).select("+lifecycleState")).lifecycleState, "active");
+	assert.equal((await request("/users/me", { token })).status, 200);
+});
 test("no missing/empty hash ever reaches bcrypt, including Google-only password login", async t => {
 	const compare = t.mock.method(bcrypt, "compare", () => { throw new Error("bcrypt must not receive a missing hash"); });
 	for (const hash of [undefined, null, "", 42]) assert.equal(await google.correctPassword("password-123", hash), false);
