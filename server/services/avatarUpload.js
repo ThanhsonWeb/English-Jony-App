@@ -24,10 +24,7 @@ function assertAvatarStorageConfigured(config = process.env) {
 	}
 }
 
-async function saveLocalAvatar(buffer, type, userId) {
-	if (!/^[0-9a-f]{24}$/.test(String(userId))) throw new Error("Invalid user ID");
-	const extension = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" }[type];
-	const filename = `user_${userId}_${crypto.randomUUID()}.${extension}`;
+async function saveLocalAvatar(buffer, filename) {
 	await fs.mkdir(localAvatarDirectory, { recursive: true });
 	await fs.writeFile(path.join(localAvatarDirectory, filename), buffer, { flag: "wx" });
 	return `/api/v1/users/avatar-files/${filename}`;
@@ -49,20 +46,38 @@ function signParameters(parameters, secret) {
 	return crypto.createHash("sha1").update(payload + secret).digest("hex");
 }
 
-async function uploadAvatar(buffer, type, userId, config = process.env) {
+function getAvatarStorageProvider(config = process.env) {
 	const { cloudName, apiKey, apiSecret } = getCloudinaryConfig(config);
 	const hasAnyCloudinarySetting = Boolean(cloudName || apiKey || apiSecret);
-	if (!hasAnyCloudinarySetting && config.NODE_ENV === "development") {
-		return saveLocalAvatar(buffer, type, userId);
-	}
+	if (!hasAnyCloudinarySetting && config.NODE_ENV === "development") return "local";
 	if (!cloudName || !apiKey || !apiSecret || !/^[a-zA-Z0-9_-]+$/.test(cloudName)) {
 		throw new Error("Avatar storage is not configured");
 	}
+	return "cloudinary";
+}
+
+async function uploadAvatar(buffer, type, userId, storageKey, config = process.env) {
+	const provider = getAvatarStorageProvider(config);
+	const user = String(userId);
+	const extension = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" }[type];
+	const uuid = "[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}";
+	const namePattern = `user_${user}_${uuid}`;
+	if (!/^[0-9a-f]{24}$/.test(user) || !extension || typeof storageKey !== "string" ||
+		!(provider === "local" ? new RegExp(`^${namePattern}\\.${extension}$`) : new RegExp(`^studyjony/avatars/${namePattern}$`)).test(storageKey)) {
+		const error = new Error("Invalid avatar storage key");
+		error.uploadOutcome = "failure";
+		throw error;
+	}
+	if (provider === "local") {
+		try { return await saveLocalAvatar(buffer, storageKey); }
+		catch (error) { error.uploadOutcome = error.code === "EEXIST" ? "uncertain" : "failure"; throw error; }
+	}
+	const { cloudName, apiKey, apiSecret } = getCloudinaryConfig(config);
 
 	const parameters = {
 		folder: "studyjony/avatars",
-		overwrite: "true",
-		public_id: `user_${userId}`,
+		overwrite: "false",
+		public_id: storageKey.slice("studyjony/avatars/".length),
 		timestamp: String(Math.floor(Date.now() / 1000)),
 	};
 	const form = new FormData();
@@ -71,34 +86,43 @@ async function uploadAvatar(buffer, type, userId, config = process.env) {
 	form.append("api_key", apiKey);
 	form.append("signature", signParameters(parameters, apiSecret));
 
-	const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
-		method: "POST",
-		body: form,
-		signal: AbortSignal.timeout(20000),
-	});
-	if (!response.ok) throw new Error("Avatar storage rejected the upload");
-	const result = await response.json();
-	const expectedPublicId = `studyjony/avatars/user_${userId}`;
-	const expectedSignature = signParameters({ public_id: result.public_id, version: result.version }, apiSecret);
-	const actualSignature = typeof result.signature === "string" ? result.signature : "";
-	const url = new URL(result.secure_url);
-	if (
-		url.protocol !== "https:" ||
-		url.hostname !== "res.cloudinary.com" ||
-		!url.pathname.startsWith(`/${cloudName}/image/upload/`) ||
-		result.public_id !== expectedPublicId ||
-		actualSignature.length !== expectedSignature.length ||
-		!crypto.timingSafeEqual(Buffer.from(actualSignature), Buffer.from(expectedSignature))
-	) {
-		throw new Error("Avatar storage returned an invalid response");
+	try {
+		const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
+			method: "POST",
+			body: form,
+			signal: AbortSignal.timeout(20000),
+		});
+		if (!response.ok) throw new Error("Avatar storage rejected the upload");
+		const result = await response.json();
+		const expectedPublicId = storageKey;
+		const expectedSignature = signParameters({ public_id: result.public_id, version: result.version }, apiSecret);
+		const actualSignature = typeof result.signature === "string" ? result.signature : "";
+		const url = new URL(result.secure_url);
+		const expectedPath = `/${cloudName}/image/upload/v${result.version}/${expectedPublicId}.`;
+		if (
+			url.protocol !== "https:" ||
+			url.hostname !== "res.cloudinary.com" ||
+			url.port || url.username || url.password || url.search || url.hash || result.existing === true ||
+			!Number.isSafeInteger(result.version) || result.version < 1 ||
+			!url.pathname.startsWith(expectedPath) || !/^[a-z0-9]+$/i.test(url.pathname.slice(expectedPath.length)) ||
+			result.public_id !== expectedPublicId ||
+			actualSignature.length !== expectedSignature.length ||
+			!crypto.timingSafeEqual(Buffer.from(actualSignature), Buffer.from(expectedSignature))
+		) {
+			throw new Error("Avatar storage returned an invalid response");
+		}
+		return result.secure_url;
+	} catch (error) {
+		error.uploadOutcome = "uncertain";
+		throw error;
 	}
-	return result.secure_url;
 }
 
 module.exports = {
 	AVATAR_TYPES,
 	MAX_AVATAR_BYTES,
 	assertAvatarStorageConfigured,
+	getAvatarStorageProvider,
 	isValidAvatar,
 	localAvatarDirectory,
 	uploadAvatar,

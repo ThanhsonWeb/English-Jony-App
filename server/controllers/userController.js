@@ -1,8 +1,10 @@
 const User = require("../models/userModel");
 const mongoose = require("mongoose");
+const { randomUUID } = require("node:crypto");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
-const { isValidAvatar, uploadAvatar } = require("../services/avatarUpload");
+const { isValidAvatar, uploadAvatar, getAvatarStorageProvider } = require("../services/avatarUpload");
+const { reserveAvatarUpload, beginAvatarUpload, recordUploadOutcome, attachAvatarUpload } = require("../services/avatarUploadIntent");
 const { CLIENT_USER_FIELDS, clientUser } = require("../utils/clientUser");
 const { fenceActiveAccountWrite } = require("../utils/accountLifecycle");
 
@@ -95,9 +97,9 @@ exports.updateAvatar = catchAsync(async (req, res, next) => {
 		return next(new AppError("Choose a JPG, PNG, or WebP image under 2 MB.", 400));
 	}
 
-	let avatar;
+	let provider;
 	try {
-		avatar = await uploadAvatar(req.body, type, req.user.id);
+		provider = getAvatarStorageProvider();
 	} catch (error) {
 		console.error("Avatar upload failed:", error.message);
 		if (error.message === "Avatar storage is not configured") {
@@ -106,9 +108,31 @@ exports.updateAvatar = catchAsync(async (req, res, next) => {
 		return next(new AppError("Could not upload avatar. Please try again.", 502));
 	}
 
-	const user = await User.findByIdAndUpdate(req.user.id, { avatar }, {
-		returnDocument: "after",
-		runValidators: true,
-	}).select(CLIENT_USER_FIELDS);
+	const intent = await reserveAvatarUpload(req.user.id, { operationId: randomUUID(), provider, contentType: type });
+	const claim = await beginAvatarUpload(req.user.id, intent.id);
+	if (!claim.claimed) throw new AppError("Could not start avatar upload. Please try again.", 409);
+	let avatar;
+	try {
+		avatar = await uploadAvatar(req.body, type, req.user.id, intent.storageKey);
+	} catch (error) {
+		// The pending cleanup record remains durable even if recording the result fails.
+		try { await recordUploadOutcome(req.user.id, intent.id, error.uploadOutcome || "uncertain"); }
+		catch { console.error("Could not record avatar upload outcome"); }
+		console.error("Avatar upload failed:", error.message);
+		if (error.message === "Avatar storage is not configured") {
+			return next(new AppError("Avatar storage is not configured.", 503));
+		}
+		return next(new AppError("Could not upload avatar. Please try again.", 502));
+	}
+
+	let user;
+	try {
+		user = await attachAvatarUpload(req.user.id, intent.id, avatar);
+	} catch (error) {
+		// This conditional update cannot mark an already-attached intent for cleanup.
+		try { await recordUploadOutcome(req.user.id, intent.id, "success"); }
+		catch { /* A committed or unresolved transaction remains discoverable. */ }
+		throw error;
+	}
 	res.status(200).json({ status: "success", data: { user: clientUser(user) } });
 });

@@ -67,7 +67,7 @@ test("another account cannot claim or alter an intent or its cleanup", async () 
 	const intent = await reserveAvatarUpload(owner.id, input());
 	for (const action of [
 		() => beginAvatarUpload(other.id, intent.id),
-		() => recordUploadOutcome(other.id, intent.id, "finished"),
+		() => recordUploadOutcome(other.id, intent.id, "success"),
 		() => queueAvatarCleanup(other.id, intent.id),
 		() => recordCleanupResult(other.id, intent.id, 1, true),
 	]) await assert.rejects(action(), error => error.statusCode === 404);
@@ -92,7 +92,7 @@ test("cleanup retries are durable, idempotent and reject stale or premature succ
 	assert.equal(second.cleanupGeneration, 2);
 	await assert.rejects(recordCleanupResult(owner.id, intent.id, 1, false), error => error.statusCode === 409);
 	await assert.rejects(recordCleanupResult(owner.id, intent.id, 2, true), error => error.statusCode === 409);
-	assert.equal((await recordUploadOutcome(owner.id, intent.id, "finished")).uploadStatus, "finished");
+	assert.equal((await recordUploadOutcome(owner.id, intent.id, "success")).uploadStatus, "finished");
 	assert.equal((await recordCleanupResult(owner.id, intent.id, 2, true)).cleanupStatus, "complete");
 	assert.equal((await recordCleanupResult(owner.id, intent.id, 2, true)).cleanupStatus, "complete");
 	assert.equal((await queueAvatarCleanup(owner.id, intent.id)).cleanupStatus, "complete");

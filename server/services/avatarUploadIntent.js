@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 const { randomUUID } = require("node:crypto");
 const AvatarUploadIntent = require("../models/avatarUploadIntentModel");
+const User = require("../models/userModel");
 const AppError = require("../utils/appError");
 const { fenceActiveAccountWrite } = require("../utils/accountLifecycle");
+const { CLIENT_USER_FIELDS } = require("../utils/clientUser");
 
 const uuidPattern = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i;
 const extensions = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" };
@@ -57,35 +59,67 @@ async function beginAvatarUpload(userId, intentId) {
 		await fenceActiveAccountWrite(userId, session);
 		const claimed = await AvatarUploadIntent.findOneAndUpdate(
 			{ _id: intentId, user: userId, uploadStatus: "reserved", cleanupStatus: "none" },
-			{ $set: { uploadStatus: "uploading" } }, { session, returnDocument: "after" },
+			{ $set: { uploadStatus: "uploading", cleanupStatus: "pending" }, $inc: { cleanupGeneration: 1 } },
+			{ session, returnDocument: "after" },
 		);
 		if (claimed) return { claimed: true, intent: claimed };
 		return { claimed: false, intent: await ownedIntent(userId, intentId, session) };
 	}, transactionOptions);
 }
 
-// "finished" requires definitive evidence that no upload can still complete.
+// Terminal outcomes require definitive evidence that no upload can still complete.
 async function recordUploadOutcome(userId, intentId, outcome) {
 	validateOwnerAndIntent(userId, intentId);
-	if (!["uncertain", "finished"].includes(outcome)) throw new AppError("Invalid avatar upload outcome", 400);
-	const allowed = outcome === "finished" ? ["uploading", "uncertain"] : ["uploading"];
+	if (!["uncertain", "success", "failure"].includes(outcome)) throw new AppError("Invalid avatar upload outcome", 400);
+	const status = outcome === "uncertain" ? "uncertain" : "finished";
+	const result = outcome === "uncertain" ? "unknown" : outcome;
+	const allowed = outcome === "uncertain" ? ["uploading"] : ["uploading", "uncertain"];
 	const updated = await AvatarUploadIntent.findOneAndUpdate(
-		{ _id: intentId, user: userId, uploadStatus: { $in: allowed } },
-		{ $set: { uploadStatus: outcome } }, { returnDocument: "after" },
+		{ _id: intentId, user: userId, uploadStatus: { $in: allowed }, attachmentStatus: "unattached" },
+		{ $set: { uploadStatus: status, uploadResult: result } }, { returnDocument: "after" },
 	);
 	if (updated) return updated;
 	const intent = await ownedIntent(userId, intentId);
-	if (intent.uploadStatus === outcome) return intent;
+	if (intent.uploadStatus === status && intent.uploadResult === result && intent.attachmentStatus === "unattached") return intent;
 	throw new AppError("Invalid avatar upload transition", 409);
+}
+
+// Store the new URL and change both managed intent records in one fenced transaction.
+async function attachAvatarUpload(userId, intentId, avatar) {
+	validateOwnerAndIntent(userId, intentId);
+	return mongoose.connection.transaction(async session => {
+		await fenceActiveAccountWrite(userId, session);
+		const current = await User.findById(userId).select("+avatarIntent").session(session);
+		const intent = await AvatarUploadIntent.findOneAndUpdate(
+			{ _id: intentId, user: userId, uploadStatus: "uploading", attachmentStatus: "unattached", cleanupStatus: "pending" },
+			{ $set: { uploadStatus: "finished", uploadResult: "success", attachmentStatus: "attached", cleanupStatus: "none" } },
+			{ session, returnDocument: "after" },
+		);
+		if (!intent) throw new AppError("Invalid avatar attachment", 409);
+		if (current.avatarIntent) {
+			const previous = await AvatarUploadIntent.findOneAndUpdate(
+				{ _id: current.avatarIntent, user: userId, attachmentStatus: "attached", cleanupStatus: "none" },
+				{ $set: { attachmentStatus: "unattached", cleanupStatus: "pending" }, $inc: { cleanupGeneration: 1 } },
+				{ session, returnDocument: "after" },
+			);
+			if (!previous) throw new AppError("Previous avatar intent not found", 409);
+		}
+		return User.findByIdAndUpdate(userId, { avatar, avatarIntent: intentId }, {
+			returnDocument: "after", runValidators: true, session,
+		}).select(CLIENT_USER_FIELDS);
+	}, transactionOptions);
 }
 
 async function queueAvatarCleanup(userId, intentId) {
 	validateOwnerAndIntent(userId, intentId);
 	const updated = await AvatarUploadIntent.findOneAndUpdate(
-		{ _id: intentId, user: userId, cleanupStatus: { $in: ["none", "retry"] } },
+		{ _id: intentId, user: userId, attachmentStatus: "unattached", cleanupStatus: { $in: ["none", "retry"] } },
 		{ $set: { cleanupStatus: "pending" }, $inc: { cleanupGeneration: 1 } }, { returnDocument: "after" },
 	);
-	return updated || ownedIntent(userId, intentId);
+	if (updated) return updated;
+	const intent = await ownedIntent(userId, intentId);
+	if (intent.attachmentStatus === "attached") throw new AppError("Avatar is still attached", 409);
+	return intent;
 }
 
 async function recordCleanupResult(userId, intentId, generation, succeeded) {
@@ -94,7 +128,7 @@ async function recordCleanupResult(userId, intentId, generation, succeeded) {
 		throw new AppError("Invalid avatar cleanup result", 400);
 	}
 	const state = succeeded ? "complete" : "retry";
-	const filter = { _id: intentId, user: userId, cleanupStatus: "pending", cleanupGeneration: generation };
+	const filter = { _id: intentId, user: userId, attachmentStatus: "unattached", cleanupStatus: "pending", cleanupGeneration: generation };
 	// A missing asset is not final while an upload might still arrive later.
 	if (succeeded) filter.uploadStatus = { $in: ["reserved", "finished"] };
 	const updated = await AvatarUploadIntent.findOneAndUpdate(filter, { $set: { cleanupStatus: state } }, { returnDocument: "after" });
@@ -104,4 +138,4 @@ async function recordCleanupResult(userId, intentId, generation, succeeded) {
 	throw new AppError("Invalid or stale avatar cleanup result", 409);
 }
 
-module.exports = { reserveAvatarUpload, beginAvatarUpload, recordUploadOutcome, queueAvatarCleanup, recordCleanupResult };
+module.exports = { reserveAvatarUpload, beginAvatarUpload, recordUploadOutcome, attachAvatarUpload, queueAvatarCleanup, recordCleanupResult };

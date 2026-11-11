@@ -8,6 +8,8 @@ const schema = new mongoose.Schema({
 	contentType: { type: String, enum: ["image/jpeg", "image/png", "image/webp"], required: true, immutable: true },
 	storageKey: { type: String, required: true, immutable: true },
 	uploadStatus: { type: String, enum: ["reserved", "uploading", "uncertain", "finished"], default: "reserved", required: true },
+	uploadResult: { type: String, enum: ["success", "failure", "unknown"], default: null },
+	attachmentStatus: { type: String, enum: ["unattached", "attached"], default: "unattached", required: true },
 	cleanupStatus: { type: String, enum: ["none", "pending", "retry", "complete"], default: "none", required: true },
 	cleanupGeneration: { type: Number, default: 0, min: 0, required: true },
 }, { timestamps: true, autoIndex: true });
