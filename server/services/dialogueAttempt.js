@@ -1,8 +1,10 @@
 const { randomBytes } = require("node:crypto");
+const mongoose = require("mongoose");
 const DialogueAttempt = require("../models/dialogueAttemptModel");
 const AppError = require("../utils/appError");
 const { getDialogueTaskRule } = require("../utils/dialogueCatalogue");
 const { fillBlankAnswersMatch } = require("../utils/fillBlankAnswer");
+const { fenceActiveAccountWrite } = require("../utils/accountLifecycle");
 
 const ATTEMPT_TTL_MS = 10 * 60 * 1000;
 const minimumAttemptMs = rule => rule.type === "review" ? 2000 : 500;
@@ -16,12 +18,16 @@ function taskRule(ids) {
 async function startDialogueAttempt(userId, ids, now = new Date()) {
 	const rule = taskRule(ids), taskKey = JSON.stringify(ids);
 	await DialogueAttempt.init();
-	// Reuse a still-open attempt rather than resetting a learner's start time.
-	let attempt = await DialogueAttempt.findOne({ user: userId, taskKey, consumedAt: { $exists: false }, expiresAt: { $gt: now } }).sort({ startedAt: -1 });
-	if (!attempt) attempt = await DialogueAttempt.create({
-		_id: randomBytes(32).toString("hex"), user: userId, taskKey,
-		startedAt: now, expiresAt: new Date(now.getTime() + ATTEMPT_TTL_MS),
-	});
+	const attempt = await mongoose.connection.transaction(async session => {
+		await fenceActiveAccountWrite(userId, session);
+		// Reuse a still-open attempt rather than resetting a learner's start time.
+		let existing = await DialogueAttempt.findOne({ user: userId, taskKey, consumedAt: { $exists: false }, expiresAt: { $gt: now } }).sort({ startedAt: -1 }).session(session);
+		if (!existing) [existing] = await DialogueAttempt.create([{
+			_id: randomBytes(32).toString("hex"), user: userId, taskKey,
+			startedAt: now, expiresAt: new Date(now.getTime() + ATTEMPT_TTL_MS),
+		}], { session });
+		return existing;
+	}, { readPreference: "primary", readConcern: { level: "snapshot" }, writeConcern: { w: "majority" } });
 	return { attemptId: attempt._id, expiresAt: attempt.expiresAt,
 		readyAfterMs: Math.max(0, attempt.startedAt.getTime() + minimumAttemptMs(rule) - now.getTime()) };
 }

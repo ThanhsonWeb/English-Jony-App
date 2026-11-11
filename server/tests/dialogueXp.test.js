@@ -169,7 +169,11 @@ test("existing XP event prevents another award if progress needs restoring", asy
 });
 
 test("failed XP write rolls back progress and the event; retry can still earn XP", async (t) => {
-	const stub = t.mock.method(User, "findOneAndUpdate", () => { throw new Error("Simulated XP write failure"); });
+	const original = User.findOneAndUpdate;
+	const stub = t.mock.method(User, "findOneAndUpdate", function (filter, update, options) {
+		if (update?.$inc?.totalXp) throw new Error("Simulated XP write failure");
+		return original.call(this, filter, update, options);
+	});
 	try {
 		assert.equal((await complete()).status, 500);
 	} finally {
