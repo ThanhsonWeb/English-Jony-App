@@ -58,6 +58,8 @@ const userSchema = new mongoose.Schema(
 			required: true,
 			select: false,
 		},
+		// Updated by each guarded account write to serialize it with lifecycle changes.
+		accountWriteFence: { type: Number, default: 0, select: false },
 
 		photo: {
 			type: String,
