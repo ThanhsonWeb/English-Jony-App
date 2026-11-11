@@ -17,7 +17,7 @@ const wordInput = { english: " water ", vietnamese: " nước ", pronunciation: 
 before(async () => {
 	process.env.JWT_SECRET = "isolated-topic-vocabulary-security-test";
 	db = await MongoMemoryReplSet.create({ binary: { version: "7.0.14" }, replSet: { count: 1 } });
-	await mongoose.connect(db.getUri(), { dbName: "topic_vocabulary_security" });
+	await mongoose.connect(db.getUri(), { dbName: "topic_vocabulary_security", monitorCommands: true });
 	await Promise.all([User.init(), Topic.init(), Vocab.init(), XPEvent.init(), StudyActivity.init()]);
 	const app = express();
 	app.use(express.json());
@@ -115,6 +115,173 @@ test("own Topic deletion still removes only the owner's attached words", async (
 	assert.ok(await Vocab.findById(foreignWord.id));
 	assert.ok(await Vocab.findById(globalWord.id));
 });
+
+test("Topic creation retains validation and assigns ownership on the server", async () => {
+	const response = await request("/topics", "POST", { name: "New topic", description: " Notes ", user: other.id });
+	assert.equal(response.status, 201);
+	assert.equal(response.body.data.topic.user, owner.id);
+	assert.equal(response.body.data.topic.description, "Notes");
+	assert.equal((await request("/topics", "POST", { name: "" })).status, 400);
+	assert.equal(await Topic.countDocuments({ user: owner.id }), 2);
+});
+
+const topicMutation = kind => kind === "create"
+	? request("/topics", "POST", { name: "New topic" })
+	: request(`/topics/${topic.id}`, kind === "edit" ? "PATCH" : "DELETE", kind === "edit" ? { name: "Edited topic" } : undefined);
+
+function waitForAccountCommand(count) {
+	return new Promise(resolve => {
+		const client = mongoose.connection.getClient();
+		let seen = 0;
+		const listener = event => {
+			if (event.commandName !== "findAndModify" || event.command.findAndModify !== User.collection.name) return;
+			if (++seen < count) return;
+			client.off("commandStarted", listener);
+			resolve();
+		};
+		client.on("commandStarted", listener);
+	});
+}
+
+for (const kind of ["create", "edit", "delete"]) {
+	test(`Topic ${kind} commits before a racing account deletion transition`, { timeout: 15000 }, async () => {
+		const ownWord = await Vocab.create({ ...wordInput, user: owner.id, topic: topic.id });
+		const foreignWord = await Vocab.create({ ...wordInput, user: other.id, topic: topic.id });
+		const method = kind === "create" ? "create" : kind === "edit" ? "findOneAndUpdate" : "findOneAndDelete";
+		const original = Topic[method];
+		let entered, release;
+		const enteredWrite = new Promise(resolve => { entered = resolve; });
+		const releaseWrite = new Promise(resolve => { release = resolve; });
+		Topic[method] = async function (...args) {
+			const options = args[kind === "edit" ? 2 : 1];
+			assert.ok(options?.session?.inTransaction());
+			const result = await original.apply(this, args);
+			entered();
+			await releaseWrite;
+			return result;
+		};
+		const order = [];
+		try {
+			const write = topicMutation(kind).then(response => { order.push("write"); return response; });
+			await enteredWrite;
+			const commandSent = waitForAccountCommand(1);
+			const deletion = mongoose.connection.transaction(async session => {
+				assert.ok(await User.findOneAndUpdate(
+					{ _id: owner._id, lifecycleState: "active" },
+					{ $set: { lifecycleState: "deleting" } },
+					{ session, returnDocument: "after" },
+				));
+			}).then(() => { order.push("deletion"); });
+			await commandSent;
+			release();
+			const response = await write;
+			await deletion;
+			assert.equal(response.status, kind === "create" ? 201 : kind === "edit" ? 200 : 204);
+			assert.deepEqual(order, ["write", "deletion"]);
+			if (kind === "create") assert.ok(await Topic.findOne({ _id: response.body.data.topic._id, user: owner._id }));
+			if (kind === "edit") assert.equal((await snapshot(topic.id)).name, "Edited topic");
+			if (kind === "delete") {
+				assert.equal(await snapshot(topic.id), null);
+				assert.equal(await Vocab.findById(ownWord.id), null);
+			} else assert.ok(await Vocab.findById(ownWord.id));
+			assert.ok(await snapshot(foreignTopic.id));
+			assert.ok(await Vocab.findById(foreignWord.id));
+		} finally {
+			release();
+			Topic[method] = original;
+		}
+	});
+}
+
+test("Topic writes racing behind account deletion are rejected without changing either account", { timeout: 15000 }, async () => {
+	const ownWord = await Vocab.create({ ...wordInput, user: owner.id, topic: topic.id });
+	const foreignWord = await Vocab.create({ ...wordInput, user: other.id, topic: topic.id });
+	let entered, release;
+	const enteredDeletion = new Promise(resolve => { entered = resolve; });
+	const releaseDeletion = new Promise(resolve => { release = resolve; });
+	const deletion = mongoose.connection.transaction(async session => {
+		assert.ok(await User.findOneAndUpdate(
+			{ _id: owner._id, lifecycleState: "active" }, { $set: { lifecycleState: "deleting" } },
+			{ session, returnDocument: "after" },
+		));
+		entered();
+		await releaseDeletion;
+	});
+	await enteredDeletion;
+	const commandsSent = waitForAccountCommand(3);
+	const writes = Promise.all([topicMutation("create"), topicMutation("edit"), topicMutation("delete")]);
+	try { await commandsSent; } finally { release(); }
+	await deletion;
+	assert.deepEqual((await writes).map(response => response.status), [401, 401, 401]);
+	assert.equal((await snapshot(topic.id)).name, "Owned topic");
+	assert.equal(await Topic.countDocuments({ user: owner.id }), 1);
+	assert.ok(await Vocab.findById(ownWord.id));
+	assert.ok(await Vocab.findById(foreignWord.id));
+	assert.ok(await snapshot(foreignTopic.id));
+	assert.equal((await User.findById(owner.id).select("+accountWriteFence")).accountWriteFence, 0);
+});
+
+test("Topic mutations roll back their data and fence after a write failure", async t => {
+	const ownWord = await Vocab.create({ ...wordInput, user: owner.id, topic: topic.id });
+	const foreignWord = await Vocab.create({ ...wordInput, user: other.id, topic: topic.id });
+	const originalTopic = await snapshot(topic.id);
+	for (const operation of [
+		{ model: Topic, method: "create", optionsIndex: 1, kind: "create" },
+		{ model: Topic, method: "findOneAndUpdate", optionsIndex: 2, kind: "edit" },
+		{ model: Vocab, method: "deleteMany", optionsIndex: 1, kind: "delete" },
+		{ model: Topic, method: "findOneAndDelete", optionsIndex: 1, kind: "delete" },
+	]) {
+		const original = operation.model[operation.method];
+		const stub = t.mock.method(operation.model, operation.method, async function (...args) {
+			assert.ok(args[operation.optionsIndex]?.session?.inTransaction());
+			await original.apply(this, args);
+			throw new Error("simulated failure after write");
+		});
+		try { assert.equal((await topicMutation(operation.kind)).status, 500); } finally { stub.mock.restore(); }
+		assert.deepEqual(await snapshot(topic.id), originalTopic);
+		assert.equal(await Topic.countDocuments({ user: owner.id }), 1);
+		assert.ok(await Vocab.findById(ownWord.id));
+		assert.ok(await Vocab.findById(foreignWord.id));
+		assert.ok(await snapshot(foreignTopic.id));
+		assert.equal((await User.findById(owner.id).select("+accountWriteFence")).accountWriteFence, 0);
+	}
+});
+
+for (const first of ["topic deletion", "vocabulary creation"]) {
+	test(`${first} serializes with the other operation and leaves no orphaned vocabulary`, { timeout: 15000 }, async () => {
+		const deleteFirst = first === "topic deletion";
+		const model = deleteFirst ? Topic : Vocab;
+		const method = deleteFirst ? "findOneAndDelete" : "create";
+		const original = model[method];
+		let entered, release;
+		const enteredWrite = new Promise(resolve => { entered = resolve; });
+		const releaseWrite = new Promise(resolve => { release = resolve; });
+		model[method] = async function (...args) {
+			assert.ok(args[1]?.session?.inTransaction());
+			const result = await original.apply(this, args);
+			entered();
+			await releaseWrite;
+			return result;
+		};
+		try {
+			const initial = deleteFirst ? topicMutation("delete") : createWord({ topic: topic.id });
+			await enteredWrite;
+			const commandSent = waitForAccountCommand(1);
+			const later = deleteFirst ? createWord({ topic: topic.id }) : topicMutation("delete");
+			await commandSent;
+			release();
+			const [firstResponse, laterResponse] = await Promise.all([initial, later]);
+			assert.equal(firstResponse.status, deleteFirst ? 204 : 201);
+			assert.equal(laterResponse.status, deleteFirst ? 400 : 204);
+			assert.equal(await snapshot(topic.id), null);
+			assert.equal(await Vocab.countDocuments({ user: owner.id, topic: topic.id }), 0);
+			assert.ok(await snapshot(foreignTopic.id));
+		} finally {
+			release();
+			model[method] = original;
+		}
+	});
+}
 
 test("normal vocabulary creation trims required text and preserves pronunciation/example", async () => {
 	const before = Date.now(), response = await createWord(), after = Date.now();

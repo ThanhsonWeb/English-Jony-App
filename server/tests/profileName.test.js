@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
-const { MongoMemoryServer } = require("mongodb-memory-server");
+const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const User = require("../models/userModel");
 const Topic = require("../models/topicModel");
 const rules = require("../utils/profileName");
@@ -13,7 +13,7 @@ const secret = "isolated-profile-name-test-secret";
 const previous = Object.fromEntries(["JWT_SECRET", "JWT_EXPIRES_IN", "NODE_ENV"].map(key => [key, process.env[key]]));
 before(async () => {
 	Object.assign(process.env, { JWT_SECRET: secret, JWT_EXPIRES_IN: "1h", NODE_ENV: "production" });
-	db = await MongoMemoryServer.create({ binary: { version: "7.0.14" } });
+	db = await MongoMemoryReplSet.create({ binary: { version: "7.0.14" }, replSet: { count: 1, storageEngine: "wiredTiger" } });
 	await mongoose.connect(db.getUri(), { dbName: "profile_name_test" });
 	users = await User.create([
 		{ name: "Password learner", email: "password@example.com", password: "password-123", passwordConfirm: "password-123" },
