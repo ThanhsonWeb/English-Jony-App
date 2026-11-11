@@ -1,8 +1,16 @@
 const User = require("../models/userModel");
+const mongoose = require("mongoose");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 const { isValidAvatar, uploadAvatar } = require("../services/avatarUpload");
 const { CLIENT_USER_FIELDS, clientUser } = require("../utils/clientUser");
+const { fenceActiveAccountWrite } = require("../utils/accountLifecycle");
+
+const ACCOUNT_WRITE_TRANSACTION_OPTIONS = {
+	readPreference: "primary",
+	readConcern: { level: "snapshot" },
+	writeConcern: { w: "majority" },
+};
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
 	const users = await User.find().select(CLIENT_USER_FIELDS);
@@ -32,11 +40,14 @@ exports.updateTheme = catchAsync(async (req, res, next) => {
 		return next(new AppError("Account changed. Please try again.", 409));
 	}
 
-	const user = await User.findByIdAndUpdate(
-		req.user.id,
-		{ theme },
-		{ returnDocument: "after", runValidators: true },
-	).select(CLIENT_USER_FIELDS);
+	const user = await mongoose.connection.transaction(async session => {
+		await fenceActiveAccountWrite(req.user.id, session);
+		return User.findByIdAndUpdate(
+			req.user.id,
+			{ theme },
+			{ returnDocument: "after", runValidators: true, session },
+		).select(CLIENT_USER_FIELDS);
+	}, ACCOUNT_WRITE_TRANSACTION_OPTIONS);
 	res.status(200).json({ status: "success", data: { theme: user.theme } });
 });
 
@@ -50,24 +61,25 @@ exports.updateLanguage = catchAsync(async (req, res, next) => {
 	if (expectedUserId !== req.user.id) {
 		return next(new AppError("Account changed. Please try again.", 409));
 	}
-	const user = await User.findByIdAndUpdate(req.user.id, { language }, {
-		returnDocument: "after", runValidators: true,
-	}).select("language");
+	const user = await mongoose.connection.transaction(async session => {
+		await fenceActiveAccountWrite(req.user.id, session);
+		return User.findByIdAndUpdate(req.user.id, { language }, {
+			returnDocument: "after", runValidators: true, session,
+		}).select("language");
+	}, ACCOUNT_WRITE_TRANSACTION_OPTIONS);
 	if (!user) return next(new AppError("Account no longer exists.", 401));
 	res.status(200).json({ status: "success", data: { language: user.language } });
 });
 
 exports.updateMe = catchAsync(async (req, res, next) => {
-	const updatedUser = await User.findByIdAndUpdate(
-		req.user.id,
-		{
-			name: req.body.name,
-		},
-		{
-			new: true,
-			runValidators: true,
-		},
-	).select(CLIENT_USER_FIELDS);
+	const updatedUser = await mongoose.connection.transaction(async session => {
+		await fenceActiveAccountWrite(req.user.id, session);
+		return User.findByIdAndUpdate(
+			req.user.id,
+			{ name: req.body.name },
+			{ new: true, runValidators: true, session },
+		).select(CLIENT_USER_FIELDS);
+	}, ACCOUNT_WRITE_TRANSACTION_OPTIONS);
 
 	res.status(200).json({
 		status: "success",

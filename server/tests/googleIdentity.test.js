@@ -3,7 +3,7 @@ const { test, before, after, beforeEach } = require("node:test");
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
-const { MongoMemoryServer } = require("mongodb-memory-server");
+const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const { OAuth2Client } = require("google-auth-library");
 const User = require("../models/userModel");
 const Topic = require("../models/topicModel");
@@ -17,7 +17,7 @@ const claims = { email, email_verified: true, sub: "verified-google-subject", na
 
 before(async () => {
 	Object.assign(process.env, environment);
-	db = await MongoMemoryServer.create({ binary: { version: "7.0.14" } });
+	db = await MongoMemoryReplSet.create({ binary: { version: "7.0.14" }, replSet: { count: 1, storageEngine: "wiredTiger" } });
 	await mongoose.connect(db.getUri(), { dbName: "google_identity_test" });
 	await User.init();
 	const app = express();
