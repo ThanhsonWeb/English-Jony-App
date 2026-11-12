@@ -65,6 +65,8 @@ async function createAccountDeletionReceipt(email, { retentionMs = DEFAULT_RETEN
 		).lean();
 	} catch (error) {
 		if (error.code !== 11000) throw error;
+		// An aborted caller transaction cannot be recovered by reading outside its snapshot.
+		if (session && !session.inTransaction()) throw error;
 		// A concurrent completion or an unexpired receipt already owns this digest.
 		const existing = await findReceipt({ _id, expiresAt: { $gt: completedAt } }, session);
 		if (existing) return existing;

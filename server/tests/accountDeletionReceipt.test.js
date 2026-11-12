@@ -11,6 +11,11 @@ const {
 
 const secretEnv = "ACCOUNT_DELETION_RECEIPT_HMAC_SECRET";
 const testSecret = "test-only-account-deletion-receipt-secret-32-bytes";
+const transactionOptions = {
+	readPreference: "primary",
+	readConcern: { level: "snapshot" },
+	writeConcern: { w: "majority" },
+};
 const originalSecret = process.env[secretEnv];
 const originalJwtSecret = process.env.JWT_SECRET;
 let db;
@@ -200,4 +205,225 @@ test("rejects a missing or inactive supplied session", async () => {
 	const inactive = await mongoose.startSession();
 	try { await assert.rejects(createAccountDeletionReceipt("inactive-session@example.test", { session: inactive }), TypeError); }
 	finally { await inactive.endSession(); }
+});
+
+test("handles a real duplicate-key race only through an active transaction or transaction retry", async t => {
+	const email = "real-duplicate@example.test";
+	const originalFindOne = AccountDeletionReceipt.findOne;
+	let releaseRead;
+	let reachedRead;
+	const readReached = new Promise(resolve => { reachedRead = resolve; });
+	const resumeRead = new Promise(resolve => { releaseRead = resolve; });
+	let paused = false;
+	const findOneStub = t.mock.method(AccountDeletionReceipt, "findOne", function (...args) {
+		const query = originalFindOne.apply(this, args);
+		if (!paused && args[0]?._id && !args[0]?.expiresAt) {
+			paused = true;
+			const originalLean = query.lean.bind(query);
+			query.lean = async (...leanArgs) => {
+				const result = await originalLean(...leanArgs);
+				if (!result) { reachedRead(); await resumeRead; }
+				return result;
+			};
+		}
+		return query;
+	});
+	const failedCommands = [];
+	const listener = event => {
+		if (event.failure && event.commandName === "findAndModify" && event.command?.findAndModify === AccountDeletionReceipt.collection.name) {
+			failedCommands.push(event.failure?.code);
+		}
+	};
+	const client = mongoose.connection.getClient();
+	client.on("commandFailed", listener);
+	let transactionPromise;
+	let callbackRuns = 0;
+	const activeAtHelperReturn = [];
+	try {
+		transactionPromise = mongoose.connection.transaction(async session => {
+			callbackRuns += 1;
+			const receipt = await createAccountDeletionReceipt(email, { session });
+			activeAtHelperReturn.push(session.inTransaction());
+			return receipt;
+		});
+		await readReached;
+		const committedByOtherWriter = await createAccountDeletionReceipt(email);
+		releaseRead();
+		const outcome = await Promise.allSettled([transactionPromise]);
+		assert.ok(await AccountDeletionReceipt.exists({ _id: committedByOtherWriter._id }));
+		assert.equal(await AccountDeletionReceipt.countDocuments({ _id: committedByOtherWriter._id }), 1);
+		if (outcome[0].status === "fulfilled") {
+			assert.equal(outcome[0].value._id, committedByOtherWriter._id);
+			assert.ok(callbackRuns >= 1);
+			assert.ok(activeAtHelperReturn.every(Boolean), "the helper must not return successfully from an aborted session");
+		} else {
+			assert.ok(callbackRuns >= 1);
+		}
+	} finally {
+		releaseRead();
+		client.off("commandFailed", listener);
+		findOneStub.mock.restore();
+	}
+});
+
+test("concurrent transactions never return an uncommitted receipt as successful", async t => {
+	const email = "two-transactions@example.test";
+	const originalFindOne = AccountDeletionReceipt.findOne;
+	let initialReads = 0;
+	let releaseReads;
+	let reachedReads;
+	const bothReadsReached = new Promise(resolve => { reachedReads = resolve; });
+	const resumeReads = new Promise(resolve => { releaseReads = resolve; });
+	const findOneStub = t.mock.method(AccountDeletionReceipt, "findOne", function (...args) {
+		const query = originalFindOne.apply(this, args);
+		if (initialReads < 2 && args[0]?._id && !args[0]?.expiresAt) {
+			initialReads += 1;
+			const originalLean = query.lean.bind(query);
+			query.lean = async (...leanArgs) => {
+				const result = await originalLean(...leanArgs);
+				if (!result && initialReads <= 2) {
+					if (initialReads === 2) reachedReads();
+					await resumeReads;
+				}
+				return result;
+			};
+		}
+		return query;
+	});
+	let outcomes;
+	try {
+		const transaction = () => mongoose.connection.transaction(async session =>
+			createAccountDeletionReceipt(email, { session }), transactionOptions);
+		const first = transaction();
+		const second = transaction();
+		await bothReadsReached;
+		releaseReads();
+		outcomes = await Promise.allSettled([first, second]);
+	} finally {
+		releaseReads();
+		findOneStub.mock.restore();
+	}
+	assert.ok(outcomes.some(outcome => outcome.status === "fulfilled"), "at least one competing transaction must commit the receipt");
+	const id = receiptIdForEmail(email);
+	const stored = await AccountDeletionReceipt.findById(id).lean();
+	assert.ok(stored);
+	for (const outcome of outcomes) {
+		if (outcome.status === "fulfilled") assert.equal(outcome.value._id, stored._id);
+	}
+	assert.equal(await AccountDeletionReceipt.countDocuments({ _id: id }), 1);
+});
+
+test("MongoDB reports and retries a real concurrent transaction write conflict", async t => {
+	const receipt = await createAccountDeletionReceipt("real-write-conflict@example.test");
+	let firstReads = 0;
+	let releaseReads;
+	let bothReads;
+	const bothReadsReached = new Promise(resolve => { bothReads = resolve; });
+	const resumeReads = new Promise(resolve => { releaseReads = resolve; });
+	const originalFindById = AccountDeletionReceipt.findById;
+	const findStub = t.mock.method(AccountDeletionReceipt, "findById", function (...args) {
+		const query = originalFindById.apply(this, args);
+		if (firstReads < 2) {
+			firstReads += 1;
+			const originalLean = query.lean.bind(query);
+			query.lean = async (...leanArgs) => {
+				const result = await originalLean(...leanArgs);
+				if (firstReads === 2) bothReads();
+				if (firstReads <= 2) await resumeReads;
+				return result;
+			};
+		}
+		return query;
+	});
+	const conflicts = [];
+	const client = mongoose.connection.getClient();
+	const listener = event => {
+		if (event.failure?.code === 112) conflicts.push(event.failure.code);
+	};
+	client.on("commandFailed", listener);
+	let callbacks = 0;
+	try {
+		const writer = value => mongoose.connection.transaction(async session => {
+			callbacks += 1;
+			await AccountDeletionReceipt.findById(receipt._id).session(session).lean();
+			await AccountDeletionReceipt.updateOne(
+				{ _id: receipt._id },
+				{ $set: { completedAt: new Date(value) } },
+				{ session },
+			);
+		}, transactionOptions);
+		const first = writer("2026-11-12T00:00:00.000Z");
+		const second = writer("2026-11-12T00:00:01.000Z");
+		await bothReadsReached;
+		releaseReads();
+		const results = await Promise.allSettled([first, second]);
+		assert.ok(results.every(result => result.status === "fulfilled"), "MongoDB transaction wrapper retries a transient write conflict");
+		assert.ok(callbacks >= 3, "one transaction callback reran after the server conflict");
+		assert.ok(conflicts.includes(112), `expected actual MongoDB WriteConflict code 112; got ${JSON.stringify(conflicts)}`);
+	} finally {
+		releaseReads();
+		client.off("commandFailed", listener);
+		findStub.mock.restore();
+	}
+});
+
+test("MongoDB rejects a duplicate receipt upsert inside a real transaction", async () => {
+	const receipt = await createAccountDeletionReceipt("duplicate-upsert@example.test");
+	await assert.rejects(mongoose.connection.transaction(async session => {
+		const completedAt = new Date();
+		return AccountDeletionReceipt.findOneAndUpdate(
+			{ _id: receipt._id, expiresAt: { $lte: completedAt } },
+			{ $set: { completedAt, expiresAt: new Date(completedAt.getTime() + 1000) } },
+			{ upsert: true, returnDocument: "after", session },
+		).lean();
+	}, transactionOptions), error => error.code === 11000);
+	assert.ok(await AccountDeletionReceipt.exists({ _id: receipt._id }));
+});
+
+test("keeps real duplicate-key retry reads inside the live caller transaction", async t => {
+	const prior = await createAccountDeletionReceipt("real-aborted-duplicate@example.test");
+	const originalFindOne = AccountDeletionReceipt.findOne;
+	let findOneCalls = 0;
+	const stub = t.mock.method(AccountDeletionReceipt, "findOne", function (...args) {
+		findOneCalls += 1;
+		const query = originalFindOne.apply(this, args);
+		if (findOneCalls === 1) query.lean = () => Promise.resolve(null);
+		return query;
+	});
+	const commands = [];
+	const client = mongoose.connection.getClient();
+	const startedListener = event => {
+		const collection = event.commandName === "find" ? event.command?.find
+			: event.commandName === "findAndModify" ? event.command?.findAndModify : null;
+		if (collection === AccountDeletionReceipt.collection.name) commands.push(event.command);
+	};
+	client.on("commandStarted", startedListener);
+	const activeAtReturn = [];
+	let receipt;
+	try {
+		receipt = await mongoose.connection.transaction(async session => {
+			const result = await createAccountDeletionReceipt("real-aborted-duplicate@example.test", { session });
+			activeAtReturn.push(session.inTransaction());
+			return result;
+		}, transactionOptions);
+	} finally {
+		client.off("commandStarted", startedListener);
+		stub.mock.restore();
+	}
+	assert.ok(findOneCalls >= 2, "the helper performs retry lookups after the actual E11000");
+	assert.ok(activeAtReturn.every(Boolean), "the helper must return only while the caller transaction is active");
+	assert.ok(commands.length >= 2);
+	assert.ok(commands.every(command => assert.deepEqual(command.lsid, commands[0].lsid) === undefined));
+	assert.equal(receipt._id, prior._id);
+	assert.ok(await AccountDeletionReceipt.exists({ _id: prior._id }));
+});
+
+test("a caller abort after helper stages a receipt rejects the transaction and leaves no receipt", async () => {
+	let result;
+	await assert.rejects(mongoose.connection.transaction(async session => {
+		result = await createAccountDeletionReceipt("caller-abort@example.test", { session });
+		assert.ok(result);
+		throw new Error("caller abort after receipt helper");
+	}, transactionOptions), /caller abort after receipt helper/);
+	assert.equal(await AccountDeletionReceipt.exists({ _id: receiptIdForEmail("caller-abort@example.test") }), null);
 });
