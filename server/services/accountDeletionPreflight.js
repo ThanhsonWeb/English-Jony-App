@@ -17,7 +17,14 @@ async function preflightAccountDeletion(userId, { session } = {}) {
 	);
 	if (!account) throw new AppError("Account is not deleting", 409);
 
-	return checkAccountDeletionReadiness(userId, { session });
+	const readiness = await checkAccountDeletionReadiness(userId, { session });
+	if (!readiness.ready) {
+		const error = new AppError("Account deletion preflight is blocked", 409);
+		error.blockers = readiness.blockers;
+		error.remainingCounts = readiness.remainingCounts;
+		throw error;
+	}
+	return readiness;
 }
 
 module.exports = { preflightAccountDeletion };
