@@ -92,8 +92,10 @@ test("legacy vocabulary counts remain visible without promoting them to qualifie
 	assert.equal((await getStudyStreaks([user._id])).get(user.id).streakDays, 0);
 });
 test("stored qualified days and heatmap projection share Vietnam midnight boundaries", async () => {
-	await markQualifiedStudy(user._id, { now: new Date("2026-10-06T16:59:59.999Z") });
-	await markQualifiedStudy(user._id, { now: new Date("2026-10-06T17:00:00Z") });
+	await mongoose.connection.transaction(async session => {
+		await markQualifiedStudy(user._id, { session, now: new Date("2026-10-06T16:59:59.999Z") });
+		await markQualifiedStudy(user._id, { session, now: new Date("2026-10-06T17:00:00Z") });
+	});
 	const activities = await StudyActivity.find().sort("date").lean();
 	const now = new Date("2026-10-06T17:00:00Z");
 	assert.equal(vietnamDay(now), "2026-10-07");

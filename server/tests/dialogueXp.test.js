@@ -337,7 +337,7 @@ test("legacy increments and visits never qualify; zero-XP replay does and preser
 test("qualified timestamps stay ordered and midnight creates separate Vietnam days", async () => {
 	await StudyActivity.init();
 	for (const instant of ["2026-09-18T16:59:59Z", "2026-09-18T17:00:00Z", "2026-09-18T16:00:00Z"]) {
-		await markQualifiedStudy(user._id, { now: new Date(instant) });
+		await mongoose.connection.transaction(session => markQualifiedStudy(user._id, { session, now: new Date(instant) }));
 	}
 	const days = await StudyActivity.find().sort("date").lean();
 	assert.deepEqual(days.map(day => day.date), ["2026-09-18", "2026-09-19"]);
