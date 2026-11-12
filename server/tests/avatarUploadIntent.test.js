@@ -66,6 +66,29 @@ test("workers skip attached and local records by default and claim each key once
 	assert.equal((await AvatarUploadIntent.findById(local.id)).cleanupStatus, "complete");
 });
 
+test("untracked legacy avatars cannot be replaced without losing their cleanup reference", async () => {
+	const legacyAvatar = "https://res.cloudinary.com/studyjony/image/upload/v123/legacy/avatar.jpg";
+	await User.updateOne({ _id: owner._id }, { $set: { avatar: legacyAvatar } });
+	const replacement = await reserveAvatarUpload(owner.id, input());
+	await beginAvatarUpload(owner.id, replacement.id);
+
+	await assert.rejects(
+		attachAvatarUpload(owner.id, replacement.id, "https://res.cloudinary.com/studyjony/image/upload/v123/replacement.jpg"),
+		error => error.statusCode === 409,
+	);
+	// The upload controller records the successful external upload after attach is rejected.
+	await recordUploadOutcome(owner.id, replacement.id, "success");
+
+	const saved = await User.findById(owner.id).select("+avatarIntent");
+	const intent = await AvatarUploadIntent.findById(replacement.id).lean();
+	assert.equal(saved.avatar, legacyAvatar);
+	assert.equal(saved.avatarIntent, undefined);
+	assert.equal(intent.uploadStatus, "finished");
+	assert.equal(intent.uploadResult, "success");
+	assert.equal(intent.attachmentStatus, "unattached");
+	assert.equal(intent.cleanupStatus, "pending");
+});
+
 test("reservation generates unique, provider-specific storage keys without caller-supplied paths", async () => {
 	const cloud = await reserveAvatarUpload(owner.id, { ...input(), storageKey: "forged" });
 	const local = await reserveAvatarUpload(owner.id, { ...input(), provider: "local", contentType: "image/png" });
