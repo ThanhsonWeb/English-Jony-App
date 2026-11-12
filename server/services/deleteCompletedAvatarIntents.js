@@ -19,7 +19,7 @@ function completedFilter(userId) {
 		]);
 	return {
 		user: userId,
-		uploadStatus: "finished", uploadResult: { $in: ["success", "failure"] },
+		uploadStatus: "finished", uploadResult: { $in: ["success", "failure", "not_started"] },
 		attachmentStatus: "unattached", cleanupStatus: "complete",
 		cleanupClaimToken: { $exists: false },
 		lastCleanupClaimToken: new RegExp(`^${uuid}$`, "i"),
@@ -76,4 +76,3 @@ async function deleteCompletedAvatarIntents(userId, { batchSize = DEFAULT_BATCH_
 }
 
 module.exports = { deleteCompletedAvatarIntents, DEFAULT_BATCH_SIZE, MAX_BATCH_SIZE };
-

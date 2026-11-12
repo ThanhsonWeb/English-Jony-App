@@ -90,18 +90,21 @@ async function readAccountDeletionReadiness(userId, session) {
 		if (!isValidStorageKey(intent) || !["attached", "unattached"].includes(intent.attachmentStatus) ||
 			!["none", "pending", "claimed", "retry", "complete"].includes(intent.cleanupStatus) ||
 			!["reserved", "uploading", "uncertain", "finished"].includes(intent.uploadStatus) ||
-			![null, undefined, "success", "failure", "unknown"].includes(intent.uploadResult)) {
+			![null, undefined, "success", "failure", "unknown", "not_started"].includes(intent.uploadResult)) {
 			blockers.add("avatar_tracking_inconsistent");
 		}
+		const notStartedReconciled = intent.uploadStatus === "finished" && intent.uploadResult === "not_started" &&
+			intent.attachmentStatus === "unattached" && intent.cleanupStatus === "complete";
 		if (["reserved", "uploading", "uncertain"].includes(intent.uploadStatus) ||
-			(intent.uploadStatus === "finished" && !["success", "failure"].includes(intent.uploadResult))) {
+			(intent.uploadStatus === "finished" && !["success", "failure"].includes(intent.uploadResult) && !notStartedReconciled)) {
 			blockers.add("avatar_upload_unfinished");
 		}
 		if ((intent.attachmentStatus === "attached" &&
 			(intent.uploadStatus !== "finished" || intent.uploadResult !== "success" || intent.cleanupStatus !== "none")) ||
 			(intent.uploadStatus === "uploading" && intent.cleanupStatus !== "pending") ||
 			(intent.uploadStatus === "uncertain" && !["pending", "retry", "claimed"].includes(intent.cleanupStatus)) ||
-			(intent.cleanupStatus === "complete" && intent.attachmentStatus !== "unattached")) {
+			(intent.cleanupStatus === "complete" && intent.attachmentStatus !== "unattached") ||
+			(intent.uploadResult === "not_started" && !notStartedReconciled)) {
 			blockers.add("avatar_tracking_inconsistent");
 		}
 		if (["pending", "retry"].includes(intent.cleanupStatus)) blockers.add("avatar_cleanup_pending");
