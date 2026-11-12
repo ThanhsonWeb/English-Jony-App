@@ -102,6 +102,14 @@ const userSchema = new mongoose.Schema(
 		timestamps: true,
 	},
 );
+
+// Non-empty string Google subjects are unique; accounts without an ID stay outside the index.
+userSchema.index({ googleId: 1 }, {
+	unique: true,
+	name: "google_id_unique_nonempty",
+	partialFilterExpression: { googleId: { $type: "string", $gt: "" } },
+});
+
 // methods
 userSchema.methods.correctPassword = async function (candidatePass, userPass) {
 	if (typeof userPass !== "string" || !userPass) return false;

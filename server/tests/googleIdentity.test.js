@@ -164,10 +164,83 @@ for (const invalid of [{ sub: "" }, { sub: null }, { sub: { $ne: null } }, { ema
 });
 
 test("duplicate legacy Google subjects require reconciliation; no arbitrary first account is authenticated", async t => {
-	await User.create({ name: "First learner", email, googleId: claims.sub });
-	await User.create({ name: "Second learner", email: "second@example.com", googleId: claims.sub });
-	mockGoogle(t); assertCallback(await callback(), "google_account_conflict");
-	assert.equal(await User.countDocuments(), 2);
+	mockGoogle(t);
+	const originalFind = User.find;
+	t.mock.method(User, "find", function (filter, ...args) {
+		if (filter?.googleId !== claims.sub) return originalFind.call(this, filter, ...args);
+		return {
+			select() { return this; },
+			limit: async () => [{ _id: new mongoose.Types.ObjectId() }, { _id: new mongoose.Types.ObjectId() }],
+		};
+	});
+	assertCallback(await callback(), "google_account_conflict");
+	assert.equal(await User.countDocuments(), 0);
+});
+
+test("concurrent OAuth callbacks for one subject cannot create duplicate Google accounts", async t => {
+	const subject = "racing-google-subject";
+	const emails = ["racing-one@example.com", "racing-two@example.com"];
+	let payloadIndex = 0;
+	t.mock.method(console, "error", () => {});
+	t.mock.method(OAuth2Client.prototype, "getToken", async () => ({ tokens: { id_token: "mock-id-token" } }));
+	t.mock.method(OAuth2Client.prototype, "verifyIdToken", async () => ({
+		getPayload: () => ({ ...claims, email: emails[payloadIndex++], sub: subject }),
+	}));
+
+	const originalFind = User.find;
+	let emptyReads = 0;
+	let releaseReads;
+	let bothReads;
+	const bothReadsReached = new Promise(resolve => { bothReads = resolve; });
+	const resumeReads = new Promise(resolve => { releaseReads = resolve; });
+	t.mock.method(User, "find", function (filter, ...args) {
+		const query = originalFind.call(this, filter, ...args);
+		if (filter?.googleId === subject && emptyReads < 2) {
+			const originalExec = query.exec.bind(query);
+			query.exec = async (...execArgs) => {
+				const matches = await originalExec(...execArgs);
+				if (matches.length === 0 && emptyReads < 2) {
+					emptyReads += 1;
+					if (emptyReads === 2) bothReads();
+					await resumeReads;
+				}
+				return matches;
+			};
+		}
+		return query;
+	});
+	let responses;
+	try {
+		const first = callback();
+		const second = callback();
+		await bothReadsReached;
+		releaseReads();
+		responses = await Promise.all([first, second]);
+	} finally {
+		releaseReads();
+	}
+
+	const users = await originalFind.call(User, { googleId: subject }).lean();
+	assert.equal(emptyReads, 2);
+	assert.equal(users.length, 1);
+	assert.equal(await User.countDocuments({ googleId: subject }), 1);
+	assert.equal(responses.filter(response => response.headers.get("location").includes("error=")).length, 1);
+	assert.equal(responses.filter(response => !response.headers.get("location").includes("error=")).length, 1);
+});
+
+test("multiple accounts without Google IDs remain outside the partial unique index", async () => {
+	const accounts = await User.create([
+		{ name: "Password One", email: "no-google-one@example.com", password, passwordConfirm: password },
+		{ name: "Password Two", email: "no-google-two@example.com", password, passwordConfirm: password, googleId: null },
+		{ name: "Password Three", email: "no-google-three@example.com", password, passwordConfirm: password, googleId: "" },
+		{ name: "Password Four", email: "no-google-four@example.com", password, passwordConfirm: password, googleId: "" },
+	]);
+	assert.equal(accounts.length, 4);
+	assert.equal(await User.countDocuments(), 4);
+	const index = (await User.collection.indexes()).find(item => item.name === "google_id_unique_nonempty");
+	assert.ok(index);
+	assert.equal(index.unique, true);
+	assert.deepEqual(index.partialFilterExpression, { googleId: { $type: "string", $gt: "" } });
 });
 
 test("racing new Google callbacks create one email record without authenticating a different identity", async t => {
