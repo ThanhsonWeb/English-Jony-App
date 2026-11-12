@@ -1,7 +1,25 @@
 const mongoose = require("mongoose");
 const User = require("../models/userModel");
 const AvatarUploadIntent = require("../models/avatarUploadIntentModel");
+const DialogueAttempt = require("../models/dialogueAttemptModel");
+const DialogueProgress = require("../models/dialogueProgressModel");
+const StudyActivity = require("../models/studyActivityModel");
+const Topic = require("../models/topicModel");
+const Vocab = require("../models/vocabModel");
+const VocabularyReviewEvent = require("../models/vocabularyReviewEventModel");
+const XPEvent = require("../models/xpEventModel");
 const AppError = require("../utils/appError");
+
+const ownedRecordModels = {
+	avatarUploadIntents: AvatarUploadIntent,
+	dialogueAttempts: DialogueAttempt,
+	dialogueProgress: DialogueProgress,
+	studyActivities: StudyActivity,
+	topics: Topic,
+	vocabularies: Vocab,
+	vocabularyReviewEvents: VocabularyReviewEvent,
+	xpEvents: XPEvent,
+};
 
 const extensions = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" };
 const uuid = "[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}";
@@ -35,8 +53,16 @@ async function checkAccountDeletionReadiness(userId) {
 		const user = await User.findById(userId).select("+lifecycleState +avatarIntent avatar").session(session).lean();
 		if (!user) throw new AppError("Account not found", 404);
 		const intents = await AvatarUploadIntent.find({ user: userId }).session(session).lean();
+		// Keep these reads sequential: MongoDB does not support parallel operations
+		// on one transaction session. The snapshot keeps every count consistent.
+		// The User row itself is the lifecycle tombstone and is intentionally not counted.
+		const remainingCounts = {};
+		for (const [key, Model] of Object.entries(ownedRecordModels)) {
+			remainingCounts[key] = await Model.countDocuments({ user: userId }).session(session);
+		}
 		const blockers = new Set();
 		if (user.lifecycleState !== "deleting") blockers.add("account_not_deleting");
+		if (Object.values(remainingCounts).some(count => count > 0)) blockers.add("account_owned_data_remaining");
 
 		const byId = new Map(intents.map(intent => [String(intent._id), intent]));
 		const trackedId = user.avatarIntent ? String(user.avatarIntent) : null;
@@ -83,7 +109,7 @@ async function checkAccountDeletionReadiness(userId) {
 		}
 
 		const ordered = [...blockers].sort();
-		return { ready: ordered.length === 0, blockers: ordered };
+		return { ready: ordered.length === 0, blockers: ordered, remainingCounts };
 	}, { readPreference: "primary", readConcern: { level: "snapshot" }, writeConcern: { w: "majority" } });
 }
 

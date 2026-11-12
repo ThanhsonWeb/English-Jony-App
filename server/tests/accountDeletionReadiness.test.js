@@ -5,20 +5,38 @@ const mongoose = require("mongoose");
 const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const User = require("../models/userModel");
 const Intent = require("../models/avatarUploadIntentModel");
+const DialogueAttempt = require("../models/dialogueAttemptModel");
+const DialogueProgress = require("../models/dialogueProgressModel");
+const StudyActivity = require("../models/studyActivityModel");
+const Topic = require("../models/topicModel");
+const Vocab = require("../models/vocabModel");
+const VocabularyReviewEvent = require("../models/vocabularyReviewEventModel");
+const XPEvent = require("../models/xpEventModel");
 const { initiateAccountDeletion } = require("../services/accountDeletion");
 const { checkAccountDeletionReadiness } = require("../services/accountDeletionReadiness");
 const { reserveAvatarUpload, queueAvatarCleanup, claimAvatarCleanup } = require("../services/avatarUploadIntent");
 
 let db, user;
 const legacy = "https://legacy.example.test/avatar.jpg";
+const ownedModels = [Intent, DialogueAttempt, DialogueProgress, StudyActivity, Topic, Vocab, VocabularyReviewEvent, XPEvent];
+const emptyCounts = {
+	avatarUploadIntents: 0,
+	dialogueAttempts: 0,
+	dialogueProgress: 0,
+	studyActivities: 0,
+	topics: 0,
+	vocabularies: 0,
+	vocabularyReviewEvents: 0,
+	xpEvents: 0,
+};
 before(async () => {
 	db = await MongoMemoryReplSet.create({ binary: { version: "7.0.14" }, replSet: { count: 1, storageEngine: "wiredTiger" } });
 	await mongoose.connect(db.getUri(), { dbName: "account_deletion_readiness", monitorCommands: true });
-	await Promise.all([User.init(), Intent.init()]);
+	await Promise.all([User, ...ownedModels].map(Model => Model.init()));
 }, { timeout: 180000 });
 after(async () => { await mongoose.disconnect(); await db?.stop(); });
 beforeEach(async () => {
-	await Promise.all([User.deleteMany({}), Intent.deleteMany({})]);
+	await Promise.all([User.deleteMany({}), ...ownedModels.map(Model => Model.deleteMany({}))]);
 	user = await User.create({ name: "Learner", email: "readiness@example.test", googleId: "readiness", avatar: legacy });
 });
 
@@ -36,7 +54,7 @@ async function blockers() { return (await checkAccountDeletionReadiness(user.id)
 
 test("reports ready after deletion when no tracked or legacy avatar remains", async () => {
 	await deletingAccount();
-	assert.deepEqual(await checkAccountDeletionReadiness(user.id), { ready: true, blockers: [] });
+	assert.deepEqual(await checkAccountDeletionReadiness(user.id), { ready: true, blockers: [], remainingCounts: emptyCounts });
 });
 
 test("an unresolved legacy avatar blocks readiness", async () => {
@@ -62,19 +80,48 @@ test("unfinished and uncertain upload outcomes block readiness", async () => {
 test("pending, retry, and held cleanup claims are distinct blockers", async () => {
 	const intent = await createIntent({ uploadStatus: "finished", uploadResult: "success", cleanupStatus: "pending" });
 	await deletingAccount();
-	assert.deepEqual(await blockers(), ["avatar_cleanup_pending"]);
+	assert.deepEqual(await blockers(), ["account_owned_data_remaining", "avatar_cleanup_pending"]);
 	await queueAvatarCleanup(user.id, intent._id);
 	await Intent.updateOne({ _id: intent._id }, { $set: { cleanupStatus: "retry" } });
-	assert.deepEqual(await blockers(), ["avatar_cleanup_pending"]);
+	assert.deepEqual(await blockers(), ["account_owned_data_remaining", "avatar_cleanup_pending"]);
 	await Intent.updateOne({ _id: intent._id }, { $set: { cleanupStatus: "pending" } });
 	assert.equal((await claimAvatarCleanup(user.id, intent._id)).claimed, true);
-	assert.deepEqual(await blockers(), ["avatar_cleanup_claim_held"]);
+	assert.deepEqual(await blockers(), ["account_owned_data_remaining", "avatar_cleanup_claim_held"]);
 });
 
-test("completed unattached cleanup is safe", async () => {
+test("completed avatar intent still counts until its tracking record is purged", async () => {
 	await createIntent({ uploadStatus: "finished", uploadResult: "success", cleanupStatus: "complete" });
 	await deletingAccount();
-	assert.deepEqual(await checkAccountDeletionReadiness(user.id), { ready: true, blockers: [] });
+	const result = await checkAccountDeletionReadiness(user.id);
+	assert.equal(result.ready, false);
+	assert.deepEqual(result.blockers, ["account_owned_data_remaining"]);
+	assert.equal(result.remainingCounts.avatarUploadIntents, 1);
+});
+
+test("counts remaining rows in every account-owned collection and keeps readiness false", async () => {
+	const topic = await Topic.create({ name: "Saved words", user: user._id });
+	const word = await Vocab.create({ user: user._id, topic: topic._id, english: "snapshot", vietnamese: "ảnh chụp" });
+	await Promise.all([
+		DialogueAttempt.create({ _id: randomUUID().replaceAll("-", ""), user: user._id, taskKey: "[]", startedAt: new Date(), expiresAt: new Date(Date.now() + 60000) }),
+		DialogueProgress.create({ user: user._id, lessonId: "lesson", dialogueId: "dialogue" }),
+		StudyActivity.create({ user: user._id, date: "2026-11-12" }),
+		XPEvent.create({ user: user._id, awardKey: "audit:1", sourceType: "dialogue_task", sourceId: "audit", amount: 1, earnedAt: new Date(), dayKey: "2026-11-12", ruleVersion: 1 }),
+		VocabularyReviewEvent.create({ _id: "review-audit", user: user._id, word: word._id, inputHash: "hash", correct: true, completedAt: new Date() }),
+	]);
+	await deletingAccount();
+	const result = await checkAccountDeletionReadiness(user.id);
+	assert.equal(result.ready, false);
+	assert.deepEqual(result.blockers, ["account_owned_data_remaining"]);
+	assert.deepEqual(result.remainingCounts, {
+		...emptyCounts,
+		dialogueAttempts: 1,
+		dialogueProgress: 1,
+		studyActivities: 1,
+		topics: 1,
+		vocabularies: 1,
+		vocabularyReviewEvents: 1,
+		xpEvents: 1,
+	});
 });
 
 test("inconsistent tracking and attached avatar records fail closed", async () => {
@@ -96,7 +143,7 @@ test("checker performs only reads and does not change account or intent state", 
 	const listener = event => {
 		const isWrite = ["insert", "update", "delete", "findAndModify", "bulkWrite"].includes(event.commandName);
 		const collection = event.command?.insert ?? event.command?.update ?? event.command?.delete ?? event.command?.findAndModify;
-		if (isWrite && [User.collection.name, Intent.collection.name].includes(collection)) writes.push(event.commandName);
+		if (isWrite && [User.collection.name, ...ownedModels.map(Model => Model.collection.name)].includes(collection)) writes.push(event.commandName);
 	};
 	client.on("commandStarted", listener);
 	try { await checkAccountDeletionReadiness(user.id); }
