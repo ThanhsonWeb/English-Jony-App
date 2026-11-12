@@ -1,4 +1,5 @@
 const crypto = require("node:crypto");
+const mongoose = require("mongoose");
 const validator = require("validator");
 const AccountDeletionReceipt = require("../models/accountDeletionReceiptModel");
 
@@ -37,22 +38,35 @@ function validateRetention(retentionMs) {
 	}
 }
 
+async function findReceipt(filter, session) {
+	const query = AccountDeletionReceipt.findOne(filter);
+	if (session) query.session(session);
+	return query.lean();
+}
+
 // Internal completion marker only. Repeated calls do not extend an unexpired receipt.
-async function createAccountDeletionReceipt(email, { retentionMs = DEFAULT_RETENTION_MS } = {}) {
+async function createAccountDeletionReceipt(email, { retentionMs = DEFAULT_RETENTION_MS, session } = {}) {
 	validateRetention(retentionMs);
+	if (session !== undefined && (!session || typeof session.inTransaction !== "function" || !session.inTransaction())) {
+		throw new TypeError("The supplied receipt session must have an active transaction");
+	}
 	const _id = receiptIdForEmail(email);
 	const completedAt = new Date();
 	const expiresAt = new Date(completedAt.getTime() + retentionMs);
+	if (session) {
+		const existing = await findReceipt({ _id }, session);
+		if (existing && existing.expiresAt > completedAt) return existing;
+	}
 	try {
 		return await AccountDeletionReceipt.findOneAndUpdate(
 			{ _id, expiresAt: { $lte: completedAt } },
 			{ $set: { completedAt, expiresAt } },
-			{ upsert: true, returnDocument: "after", runValidators: true, setDefaultsOnInsert: false },
+			{ upsert: true, returnDocument: "after", runValidators: true, setDefaultsOnInsert: false, ...(session ? { session } : {}) },
 		).lean();
 	} catch (error) {
 		if (error.code !== 11000) throw error;
 		// A concurrent completion or an unexpired receipt already owns this digest.
-		const existing = await AccountDeletionReceipt.findOne({ _id, expiresAt: { $gt: completedAt } }).lean();
+		const existing = await findReceipt({ _id, expiresAt: { $gt: completedAt } }, session);
 		if (existing) return existing;
 		throw error;
 	}
