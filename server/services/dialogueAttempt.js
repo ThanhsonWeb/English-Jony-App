@@ -47,6 +47,7 @@ function validateCompletion(rule, input) {
 }
 
 async function claimDialogueAttempt(userId, ids, input, session, now) {
+	await fenceActiveAccountWrite(userId, session);
 	const rule = taskRule(ids);
 	if (typeof input.attemptId !== "string" || !/^[a-f0-9]{64}$/.test(input.attemptId)) {
 		throw new AppError("A valid study attempt is required", 400);
