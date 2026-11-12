@@ -96,6 +96,9 @@ async function attachAvatarUpload(userId, intentId, avatar) {
 	return mongoose.connection.transaction(async session => {
 		await fenceActiveAccountWrite(userId, session);
 		const current = await User.findById(userId).select("+avatarIntent").session(session);
+		if (current?.avatarIntent == null && current?.avatar !== undefined && current.avatar !== "") {
+			throw new AppError("Existing avatar has no tracked cleanup intent", 409);
+		}
 		const intent = await AvatarUploadIntent.findOneAndUpdate(
 			{ _id: intentId, user: userId, uploadStatus: "uploading", attachmentStatus: "unattached", cleanupStatus: "pending" },
 			{ $set: { uploadStatus: "finished", uploadResult: "success", attachmentStatus: "attached", cleanupStatus: "none" } },
