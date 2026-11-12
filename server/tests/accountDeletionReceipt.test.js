@@ -88,6 +88,22 @@ test("enforces positive integer retention capped at 30 days", async () => {
 	assert.equal(short.expiresAt.getTime() - short.completedAt.getTime(), 1000);
 });
 
+test("schema rejects raw identifiers and expiry beyond the retention cap", async () => {
+	const completedAt = new Date();
+	await assert.rejects(AccountDeletionReceipt.create({
+		_id: "person@example.test",
+		completedAt,
+		expiresAt: new Date(completedAt.getTime() + 1000),
+	}), error => error.name === "ValidationError");
+	await assert.rejects(AccountDeletionReceipt.create({
+		_id: `v1:${"a".repeat(64)}`,
+		completedAt,
+		expiresAt: new Date(completedAt.getTime() + MAX_RETENTION_MS + 1),
+		userId: new mongoose.Types.ObjectId(),
+	}), error => error.name === "ValidationError");
+	assert.equal(await AccountDeletionReceipt.countDocuments({}), 0);
+});
+
 test("defines a zero-second expiresAt TTL index", async () => {
 	const indexes = await AccountDeletionReceipt.collection.indexes();
 	assert.ok(indexes.some(index => index.key?.expiresAt === 1 && index.expireAfterSeconds === 0));
