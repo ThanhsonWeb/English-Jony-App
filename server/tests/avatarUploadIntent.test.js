@@ -6,6 +6,7 @@ const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const User = require("../models/userModel");
 const AvatarUploadIntent = require("../models/avatarUploadIntentModel");
 const { reserveAvatarUpload, beginAvatarUpload, recordUploadOutcome, attachAvatarUpload, queueAvatarCleanup, claimAvatarCleanup, recordCleanupResult } = require("../services/avatarUploadIntent");
+const { runAvatarCleanupBatch, recoverAvatarCleanup } = require("../services/avatarCleanupWorker");
 
 let db, owner, other;
 const input = () => ({ operationId: randomUUID(), provider: "cloudinary", contentType: "image/jpeg" });
@@ -22,6 +23,47 @@ beforeEach(async () => {
 		{ name: "Owner", email: "owner@example.test", googleId: "owner" },
 		{ name: "Other", email: "other@example.test", googleId: "other" },
 	]);
+});
+
+test("worker respects claim eligibility, retries rejection and holds ambiguous results", async () => {
+	const pending = await reserveAvatarUpload(owner.id, input());
+	await queueAvatarCleanup(owner.id, pending.id);
+	const uncertain = await reserveAvatarUpload(other.id, input());
+	await beginAvatarUpload(other.id, uncertain.id);
+	await recordUploadOutcome(other.id, uncertain.id, "uncertain");
+	const config = { CLOUDINARY_CLOUD_NAME: "test", CLOUDINARY_API_KEY: "key", CLOUDINARY_API_SECRET: "secret" };
+	const reject = async () => ({ ok: false, status: 429 });
+	assert.deepEqual(await runAvatarCleanupBatch({ config, fetchImpl: reject }), { complete: 0, retry: 1, held: 0, skipped: 0 });
+	assert.equal((await AvatarUploadIntent.findById(pending.id)).cleanupStatus, "retry");
+	assert.deepEqual(await runAvatarCleanupBatch({ config, fetchImpl: async () => { throw new Error("timeout"); } }),
+		{ complete: 0, retry: 0, held: 1, skipped: 0 });
+	assert.equal((await AvatarUploadIntent.findById(pending.id)).cleanupStatus, "claimed");
+	assert.equal((await AvatarUploadIntent.findById(uncertain.id)).cleanupStatus, "pending");
+	assert.deepEqual(await runAvatarCleanupBatch({ config, fetchImpl: async () => assert.fail() }),
+		{ complete: 0, retry: 0, held: 0, skipped: 0 });
+	assert.equal(await recoverAvatarCleanup(owner.id, pending.id, { config, fetchImpl: async () => ({ ok: true, json: async () => ({ result: "not found" }) }) }), "complete");
+	assert.equal((await AvatarUploadIntent.findById(pending.id)).cleanupStatus, "complete");
+});
+
+test("workers skip attached and local records by default and claim each key once", async () => {
+	const attached = await reserveAvatarUpload(owner.id, input());
+	await beginAvatarUpload(owner.id, attached.id);
+	await attachAvatarUpload(owner.id, attached.id, "https://example.test/avatar.jpg");
+	const local = await reserveAvatarUpload(other.id, { ...input(), provider: "local" });
+	await queueAvatarCleanup(other.id, local.id);
+	const cloud = await reserveAvatarUpload(other.id, input());
+	await queueAvatarCleanup(other.id, cloud.id);
+	let calls = 0;
+	const config = { CLOUDINARY_CLOUD_NAME: "test", CLOUDINARY_API_KEY: "key", CLOUDINARY_API_SECRET: "secret" };
+	const fetchImpl = async () => { calls++; return { ok: true, json: async () => ({ result: "ok" }) }; };
+	await Promise.all([runAvatarCleanupBatch({ config, fetchImpl }), runAvatarCleanupBatch({ config, fetchImpl })]);
+	assert.equal(calls, 1);
+	assert.equal((await AvatarUploadIntent.findById(attached.id)).attachmentStatus, "attached");
+	assert.equal((await AvatarUploadIntent.findById(local.id)).cleanupStatus, "pending");
+	let localCalls = 0;
+	await runAvatarCleanupBatch({ allowLocal: true, config, unlink: async () => { localCalls++; } });
+	assert.equal(localCalls, 1);
+	assert.equal((await AvatarUploadIntent.findById(local.id)).cleanupStatus, "complete");
 });
 
 test("reservation generates unique, provider-specific storage keys without caller-supplied paths", async () => {
