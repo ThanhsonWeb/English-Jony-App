@@ -47,70 +47,85 @@ function avatarMatchesIntent(avatar, intent) {
 }
 
 // Read a consistent snapshot. This service reports readiness only; it performs no writes.
-async function checkAccountDeletionReadiness(userId) {
-	if (!mongoose.isObjectIdOrHexString(userId)) throw new AppError("Invalid account", 400);
-	return mongoose.connection.transaction(async session => {
-		const user = await User.findById(userId).select("+lifecycleState +avatarIntent avatar").session(session).lean();
-		if (!user) throw new AppError("Account not found", 404);
-		const intents = await AvatarUploadIntent.find({ user: userId }).session(session).lean();
-		// Keep these reads sequential: MongoDB does not support parallel operations
-		// on one transaction session. The snapshot keeps every count consistent.
-		// The User row itself is the lifecycle tombstone and is intentionally not counted.
-		const remainingCounts = {};
-		for (const [key, Model] of Object.entries(ownedRecordModels)) {
-			remainingCounts[key] = await Model.countDocuments({ user: userId }).session(session);
-		}
-		const blockers = new Set();
-		if (user.lifecycleState !== "deleting") blockers.add("account_not_deleting");
-		if (Object.values(remainingCounts).some(count => count > 0)) blockers.add("account_owned_data_remaining");
+async function readAccountDeletionReadiness(userId, session) {
+	const userQuery = User.findById(userId).select("+lifecycleState +avatarIntent avatar").session(session);
+	const user = await userQuery.lean();
+	if (!user) throw new AppError("Account not found", 404);
+	const intents = await AvatarUploadIntent.find({ user: userId }).session(session).lean();
+	// Keep these reads sequential: MongoDB does not support parallel operations
+	// on one transaction session. The snapshot keeps every count consistent.
+	// The User row itself is the lifecycle tombstone and is intentionally not counted.
+	const remainingCounts = {};
+	for (const [key, Model] of Object.entries(ownedRecordModels)) {
+		remainingCounts[key] = await Model.countDocuments({ user: userId }).session(session);
+	}
+	const blockers = new Set();
+	if (user.lifecycleState !== "deleting") blockers.add("account_not_deleting");
+	if (Object.values(remainingCounts).some(count => count > 0)) blockers.add("account_owned_data_remaining");
 
-		const byId = new Map(intents.map(intent => [String(intent._id), intent]));
-		const trackedId = user.avatarIntent ? String(user.avatarIntent) : null;
-		if (trackedId && !mongoose.isObjectIdOrHexString(trackedId)) blockers.add("avatar_tracking_inconsistent");
-		const attached = intents.filter(intent => intent.attachmentStatus === "attached");
-		if (attached.length > 1 || attached.some(intent => String(intent._id) !== trackedId)) {
+	const byId = new Map(intents.map(intent => [String(intent._id), intent]));
+	const hasTrackedIntent = user.avatarIntent !== undefined && user.avatarIntent !== null;
+	const trackedId = hasTrackedIntent && user.avatarIntent instanceof mongoose.Types.ObjectId
+		? String(user.avatarIntent).toLowerCase()
+		: null;
+	if (hasTrackedIntent && trackedId === null) blockers.add("avatar_tracking_inconsistent");
+	const avatarIsPresent = user.avatar !== undefined && user.avatar !== "";
+	if (user.avatar !== undefined && typeof user.avatar !== "string") blockers.add("avatar_tracking_inconsistent");
+	const attached = intents.filter(intent => intent.attachmentStatus === "attached");
+	if (attached.length > 1 || attached.some(intent => String(intent._id) !== trackedId)) {
+		blockers.add("avatar_tracking_inconsistent");
+	}
+	if (trackedId) {
+		const current = byId.get(trackedId);
+		if (!current || String(current.user) !== String(userId).toLowerCase() || current.attachmentStatus !== "attached" ||
+			current.cleanupStatus !== "none" || current.uploadStatus !== "finished" || current.uploadResult !== "success" ||
+			!isValidStorageKey(current) || !avatarMatchesIntent(user.avatar, current)) {
 			blockers.add("avatar_tracking_inconsistent");
 		}
-		if (trackedId) {
-			const current = byId.get(trackedId);
-			if (!current || String(current.user) !== String(userId).toLowerCase() || current.attachmentStatus !== "attached" ||
-				current.cleanupStatus !== "none" || current.uploadStatus !== "finished" || current.uploadResult !== "success" ||
-				!isValidStorageKey(current) || !avatarMatchesIntent(user.avatar, current)) {
-				blockers.add("avatar_tracking_inconsistent");
-			}
-		} else if (typeof user.avatar === "string" && user.avatar.trim()) {
-			blockers.add("legacy_avatar_unresolved");
-		}
+	} else if (avatarIsPresent) {
+		blockers.add("legacy_avatar_unresolved");
+	}
 
-		for (const intent of intents) {
-			if (!isValidStorageKey(intent) || !["attached", "unattached"].includes(intent.attachmentStatus) ||
-				!["none", "pending", "claimed", "retry", "complete"].includes(intent.cleanupStatus) ||
-				!["reserved", "uploading", "uncertain", "finished"].includes(intent.uploadStatus) ||
-				![null, undefined, "success", "failure", "unknown"].includes(intent.uploadResult)) {
-				blockers.add("avatar_tracking_inconsistent");
-			}
-			if (["reserved", "uploading", "uncertain"].includes(intent.uploadStatus) ||
-				(intent.uploadStatus === "finished" && !["success", "failure"].includes(intent.uploadResult))) {
-				blockers.add("avatar_upload_unfinished");
-			}
-			if ((intent.attachmentStatus === "attached" &&
-				(intent.uploadStatus !== "finished" || intent.uploadResult !== "success" || intent.cleanupStatus !== "none")) ||
-				(intent.uploadStatus === "uploading" && intent.cleanupStatus !== "pending") ||
-				(intent.uploadStatus === "uncertain" && !["pending", "retry", "claimed"].includes(intent.cleanupStatus)) ||
-				(intent.cleanupStatus === "complete" && intent.attachmentStatus !== "unattached")) {
-				blockers.add("avatar_tracking_inconsistent");
-			}
-			if (["pending", "retry"].includes(intent.cleanupStatus)) blockers.add("avatar_cleanup_pending");
-			if (intent.cleanupStatus === "claimed") blockers.add("avatar_cleanup_claim_held");
-			if (intent.attachmentStatus === "unattached" && intent.uploadStatus === "finished" &&
-				["success", "failure"].includes(intent.uploadResult) && intent.cleanupStatus === "none") {
-				blockers.add("avatar_tracking_inconsistent");
-			}
+	for (const intent of intents) {
+		if (!isValidStorageKey(intent) || !["attached", "unattached"].includes(intent.attachmentStatus) ||
+			!["none", "pending", "claimed", "retry", "complete"].includes(intent.cleanupStatus) ||
+			!["reserved", "uploading", "uncertain", "finished"].includes(intent.uploadStatus) ||
+			![null, undefined, "success", "failure", "unknown"].includes(intent.uploadResult)) {
+			blockers.add("avatar_tracking_inconsistent");
 		}
+		if (["reserved", "uploading", "uncertain"].includes(intent.uploadStatus) ||
+			(intent.uploadStatus === "finished" && !["success", "failure"].includes(intent.uploadResult))) {
+			blockers.add("avatar_upload_unfinished");
+		}
+		if ((intent.attachmentStatus === "attached" &&
+			(intent.uploadStatus !== "finished" || intent.uploadResult !== "success" || intent.cleanupStatus !== "none")) ||
+			(intent.uploadStatus === "uploading" && intent.cleanupStatus !== "pending") ||
+			(intent.uploadStatus === "uncertain" && !["pending", "retry", "claimed"].includes(intent.cleanupStatus)) ||
+			(intent.cleanupStatus === "complete" && intent.attachmentStatus !== "unattached")) {
+			blockers.add("avatar_tracking_inconsistent");
+		}
+		if (["pending", "retry"].includes(intent.cleanupStatus)) blockers.add("avatar_cleanup_pending");
+		if (intent.cleanupStatus === "claimed") blockers.add("avatar_cleanup_claim_held");
+		if (intent.attachmentStatus === "unattached" && intent.uploadStatus === "finished" &&
+			["success", "failure"].includes(intent.uploadResult) && intent.cleanupStatus === "none") {
+			blockers.add("avatar_tracking_inconsistent");
+		}
+	}
 
-		const ordered = [...blockers].sort();
-		return { ready: ordered.length === 0, blockers: ordered, remainingCounts };
-	}, { readPreference: "primary", readConcern: { level: "snapshot" }, writeConcern: { w: "majority" } });
+	const ordered = [...blockers].sort();
+	return { ready: ordered.length === 0, blockers: ordered, remainingCounts };
+}
+
+async function checkAccountDeletionReadiness(userId, { session } = {}) {
+	if (!mongoose.isObjectIdOrHexString(userId)) throw new AppError("Invalid account", 400);
+	if (session !== undefined && (!session || typeof session.inTransaction !== "function" || !session.inTransaction())) {
+		throw new TypeError("The supplied readiness session must have an active transaction");
+	}
+	if (session) return readAccountDeletionReadiness(userId, session);
+	return mongoose.connection.transaction(
+		transactionSession => readAccountDeletionReadiness(userId, transactionSession),
+		{ readPreference: "primary", readConcern: { level: "snapshot" }, writeConcern: { w: "majority" } },
+	);
 }
 
 module.exports = { checkAccountDeletionReadiness };

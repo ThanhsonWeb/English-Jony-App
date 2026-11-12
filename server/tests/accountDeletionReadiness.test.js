@@ -1,4 +1,4 @@
-const assert = require("node:assert/strict");
+﻿const assert = require("node:assert/strict");
 const { randomUUID } = require("node:crypto");
 const { before, after, beforeEach, test } = require("node:test");
 const mongoose = require("mongoose");
@@ -131,6 +131,69 @@ test("inconsistent tracking and attached avatar records fail closed", async () =
 	assert.ok((await blockers()).includes("avatar_tracking_inconsistent"));
 	await User.updateOne({ _id: user.id }, { $unset: { avatarIntent: 1 } });
 	assert.ok((await blockers()).includes("avatar_tracking_inconsistent"));
+});
+
+test("malformed avatarIntent values fail closed", async () => {
+	await deletingAccount();
+	for (const avatarIntent of ["", "not-an-object-id", user._id.toString(), 0, false, {}, []]) {
+		await User.collection.updateOne({ _id: user._id }, { $set: { avatarIntent } });
+		assert.ok((await blockers()).includes("avatar_tracking_inconsistent"), `avatarIntent=${String(avatarIntent)}`);
+	}
+});
+
+test("non-string and whitespace-only avatar values fail closed", async () => {
+	await deletingAccount();
+	for (const avatar of [null, 0, false, {}, []]) {
+		await User.collection.updateOne({ _id: user._id }, { $set: { avatar } });
+		assert.ok((await blockers()).includes("avatar_tracking_inconsistent"), `avatar=${String(avatar)}`);
+	}
+	await User.collection.updateOne({ _id: user._id }, { $set: { avatar: " \t  " } });
+	assert.ok((await blockers()).includes("legacy_avatar_unresolved"));
+});
+
+test("uses the caller transaction session without opening or committing a nested transaction", async () => {
+	await deletingAccount();
+	const originalTransaction = mongoose.connection.transaction;
+	const client = mongoose.connection.getClient();
+	const commands = [];
+	let nestedTransactionCalled = false;
+	const listener = event => {
+		const collection = event.command?.find || event.command?.aggregate;
+		if (collection && [User.collection.name, ...ownedModels.map(Model => Model.collection.name)].includes(collection)) {
+			commands.push({ collection, lsid: event.command.lsid });
+		}
+	};
+	client.on("commandStarted", listener);
+	try {
+		await mongoose.connection.transaction(async session => {
+			const sessionId = session.id;
+			mongoose.connection.transaction = () => {
+				nestedTransactionCalled = true;
+				throw new Error("readiness checker opened a nested transaction");
+			};
+			try {
+				assert.deepEqual(await checkAccountDeletionReadiness(user.id, { session }), {
+					ready: true, blockers: [], remainingCounts: emptyCounts,
+				});
+				assert.equal(session.inTransaction(), true);
+			} finally {
+				mongoose.connection.transaction = originalTransaction;
+			}
+			assert.deepEqual(commands.map(command => command.lsid), commands.map(() => sessionId));
+		}, { readPreference: "primary", readConcern: { level: "snapshot" }, writeConcern: { w: "majority" } });
+	} finally {
+		mongoose.connection.transaction = originalTransaction;
+		client.off("commandStarted", listener);
+	}
+	assert.equal(nestedTransactionCalled, false);
+	assert.ok(commands.length >= 10, "all owner, intent, and collection-count reads used the caller session");
+});
+
+test("rejects a supplied session that has no active transaction", async () => {
+	const session = await mongoose.startSession();
+	try {
+		await assert.rejects(checkAccountDeletionReadiness(user.id, { session }), /active transaction/);
+	} finally { await session.endSession(); }
 });
 
 test("checker performs only reads and does not change account or intent state", async () => {
