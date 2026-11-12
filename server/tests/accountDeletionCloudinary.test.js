@@ -2,6 +2,7 @@ const assert = require("node:assert/strict");
 const { randomUUID } = require("node:crypto");
 const { after, before, beforeEach, test } = require("node:test");
 const mongoose = require("mongoose");
+const path = require("node:path");
 const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const User = require("../models/userModel");
 const AccountDeletionReceipt = require("../models/accountDeletionReceiptModel");
@@ -17,6 +18,7 @@ const { initiateAccountDeletion } = require("../services/accountDeletion");
 const { deleteCompletedAvatarIntents } = require("../services/deleteCompletedAvatarIntents");
 const { finalizeAccountDeletion } = require("../services/finalizeAccountDeletion");
 const { runAvatarCleanupBatch } = require("../services/avatarCleanupWorker");
+const { localAvatarDirectory } = require("../services/avatarUpload");
 const { reserveAvatarUpload, beginAvatarUpload, recordUploadOutcome, attachAvatarUpload } = require("../services/avatarUploadIntent");
 const { receiptIdForEmail } = require("../utils/accountDeletionReceipt");
 
@@ -123,6 +125,60 @@ test("Cloudinary cleanup gates account finalization until deletion is verified",
 		assert.equal(error.statusCode, 409);
 		assert.ok(error.blockers.includes("avatar_cleanup_pending"));
 		assert.ok(error.blockers.includes("avatar_cleanup_claim_held"));
+		return true;
+	});
+	assert.ok(await User.exists({ _id: blocked._id }));
+	assert.equal(await AccountDeletionReceipt.countDocuments({}), 1);
+});
+
+test("local avatar cleanup requires opt-in and gates finalization on mocked file deletion", async () => {
+	async function createLocalAvatar(user) {
+		const intent = await reserveAvatarUpload(user._id, {
+			operationId: randomUUID(), provider: "local", contentType: "image/jpeg",
+		});
+		assert.equal((await beginAvatarUpload(user._id, intent._id)).claimed, true);
+		await attachAvatarUpload(user._id, intent._id, `/api/v1/users/avatar-files/${intent.storageKey}`);
+		return intent;
+	}
+
+	const successfulIntent = await createLocalAvatar(target);
+	await initiateAccountDeletion(target._id);
+	let unlinkCalls = 0;
+	const mockedUnlink = async filePath => {
+		unlinkCalls++;
+		assert.equal(filePath, path.join(localAvatarDirectory, successfulIntent.storageKey));
+	};
+	assert.deepEqual(await runAvatarCleanupBatch({ unlink: mockedUnlink }), {
+		complete: 0, retry: 0, held: 0, skipped: 0,
+	});
+	assert.equal(unlinkCalls, 0);
+	await assert.rejects(finalizeAccountDeletion(target._id), error => {
+		assert.equal(error.statusCode, 409);
+		assert.ok(error.blockers.includes("avatar_cleanup_pending"));
+		return true;
+	});
+
+	assert.deepEqual(await runAvatarCleanupBatch({ allowLocal: true, unlink: mockedUnlink }), {
+		complete: 1, retry: 0, held: 0, skipped: 0,
+	});
+	assert.equal(unlinkCalls, 1);
+	assert.deepEqual(await deleteCompletedAvatarIntents(target._id), { deletedCount: 1, hasMore: false });
+	assert.equal((await finalizeAccountDeletion(target._id)).deleted, true);
+
+	const failedIntent = await createLocalAvatar(blocked);
+	await initiateAccountDeletion(blocked._id);
+	const failedUnlink = async filePath => {
+		assert.equal(filePath, path.join(localAvatarDirectory, failedIntent.storageKey));
+		const error = new Error("mocked local file deletion failure");
+		error.code = "EIO";
+		throw error;
+	};
+	assert.deepEqual(await runAvatarCleanupBatch({ allowLocal: true, unlink: failedUnlink }), {
+		complete: 0, retry: 1, held: 0, skipped: 0,
+	});
+	await assert.rejects(finalizeAccountDeletion(blocked._id), error => {
+		assert.equal(error.statusCode, 409);
+		assert.ok(error.blockers.includes("avatar_cleanup_pending"));
 		return true;
 	});
 	assert.ok(await User.exists({ _id: blocked._id }));
