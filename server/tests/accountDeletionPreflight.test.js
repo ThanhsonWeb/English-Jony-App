@@ -98,11 +98,16 @@ test("fails closed for a non-deleting account, remaining account data, and unres
 	);
 	await User.updateOne({ _id: user._id }, { $set: { lifecycleState: "deleting", avatar: "https://legacy.example/avatar.jpg" } });
 	await Topic.create({ name: "Remaining topic", user: user._id });
-	const result = await mongoose.connection.transaction(session => preflightAccountDeletion(user.id, { session }));
-	assert.equal(result.ready, false);
-	assert.ok(result.blockers.includes("account_owned_data_remaining"));
-	assert.ok(result.blockers.includes("legacy_avatar_unresolved"));
-	assert.equal(result.remainingCounts.topics, 1);
+	await assert.rejects(
+		mongoose.connection.transaction(session => preflightAccountDeletion(user.id, { session })),
+		error => {
+			assert.equal(error.statusCode, 409);
+			assert.ok(error.blockers.includes("account_owned_data_remaining"));
+			assert.ok(error.blockers.includes("legacy_avatar_unresolved"));
+			assert.equal(error.remainingCounts.topics, 1);
+			return true;
+		},
+	);
 	assert.equal(await User.countDocuments({ _id: user._id }), 1, "preflight never deletes the User");
 });
 
@@ -148,8 +153,13 @@ test("waits for an in-flight fenced account write and reports its committed data
 		release();
 	}
 	await Promise.all([writing, deleting]);
-	const result = await mongoose.connection.transaction(session => preflightAccountDeletion(user.id, { session }));
-	assert.equal(result.ready, false);
-	assert.ok(result.blockers.includes("account_owned_data_remaining"));
-	assert.equal(result.remainingCounts.topics, 1);
+	await assert.rejects(
+		mongoose.connection.transaction(session => preflightAccountDeletion(user.id, { session })),
+		error => {
+			assert.equal(error.statusCode, 409);
+			assert.ok(error.blockers.includes("account_owned_data_remaining"));
+			assert.equal(error.remainingCounts.topics, 1);
+			return true;
+		},
+	);
 });
