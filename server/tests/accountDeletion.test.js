@@ -25,13 +25,16 @@ beforeEach(async () => {
 });
 
 async function startUpload(owner = user) {
-	const intent = await reserveAvatarUpload(owner.id, { operationId: randomUUID(), provider: "cloudinary", contentType: "image/jpeg" });
+	const intent = await reserveAvatarUpload(owner.id, { operationId: randomUUID(), provider: "cloudinary", cloudName: "studyjony-test", contentType: "image/jpeg" });
 	assert.equal((await beginAvatarUpload(owner.id, intent.id)).claimed, true);
 	return intent;
 }
+function cloudAvatarUrl(intent) {
+	return `https://res.cloudinary.com/studyjony-test/image/upload/v123/${intent.storageKey}.jpg`;
+}
 async function attach(owner = user) {
 	const intent = await startUpload(owner);
-	await attachAvatarUpload(owner.id, intent.id, `https://example.test/${intent.id}.jpg`);
+	await attachAvatarUpload(owner.id, intent.id, cloudAvatarUrl(intent));
 	return intent;
 }
 async function savedUser() { return User.findById(user.id).select("+lifecycleState +avatarIntent").lean(); }
@@ -78,6 +81,20 @@ test("legacy avatars and old active accounts remain untouched and no storage int
 	assert.equal(saved.avatarIntent, undefined);
 	assert.equal(await Intent.countDocuments(), 0);
 	assert.deepEqual(await initiateAccountDeletion(user.id), { initiated: false });
+});
+
+test("a tracked avatar URL for another Cloudinary account is preserved and blocks initiation", async () => {
+	const intent = await attach();
+	const mismatchedUrl = `https://res.cloudinary.com/other-account/image/upload/v123/${intent.storageKey}.jpg`;
+	await User.updateOne({ _id: user._id }, { $set: { avatar: mismatchedUrl } });
+	await assert.rejects(initiateAccountDeletion(user.id), error => error.statusCode === 409);
+	const saved = await savedUser();
+	assert.equal(saved.lifecycleState, "active");
+	assert.equal(String(saved.avatarIntent), String(intent._id));
+	assert.equal(saved.avatar, mismatchedUrl);
+	const tracked = await Intent.findById(intent._id).lean();
+	assert.equal(tracked.attachmentStatus, "attached");
+	assert.equal(tracked.cleanupStatus, "none");
 });
 
 test("missing, foreign or inconsistent tracked intents fail closed and roll back", async () => {
@@ -165,7 +182,7 @@ test("attachment already holding the fence commits before deletion and its new a
 		return query;
 	});
 	try {
-		const attaching = attachAvatarUpload(user.id, next.id, "https://example.test/new.jpg");
+		const attaching = attachAvatarUpload(user.id, next.id, cloudAvatarUrl(next));
 		await enteredWrite;
 		const sent = waitForUserWrite();
 		const deleting = initiateAccountDeletion(user.id);

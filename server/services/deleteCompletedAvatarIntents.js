@@ -15,7 +15,7 @@ function completedFilter(userId) {
 	const validKeys = Object.entries({ "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" })
 		.flatMap(([contentType, extension]) => [
 			{ provider: "local", contentType, storageKey: new RegExp(`^${name}\\.${extension}$`) },
-			{ provider: "cloudinary", contentType, storageKey: new RegExp(`^studyjony/avatars/${name}$`) },
+			{ provider: "cloudinary", cloudName: /^[a-zA-Z0-9_-]+$/, contentType, storageKey: new RegExp(`^studyjony/avatars/${name}$`) },
 		]);
 	return {
 		user: userId,

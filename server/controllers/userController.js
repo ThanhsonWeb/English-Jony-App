@@ -108,12 +108,16 @@ exports.updateAvatar = catchAsync(async (req, res, next) => {
 		return next(new AppError("Could not upload avatar. Please try again.", 502));
 	}
 
-	const intent = await reserveAvatarUpload(req.user.id, { operationId: randomUUID(), provider, contentType: type });
+	const intent = await reserveAvatarUpload(req.user.id, {
+		operationId: randomUUID(), provider, cloudName: provider === "cloudinary" ? process.env.CLOUDINARY_CLOUD_NAME?.trim() : undefined,
+		contentType: type,
+	});
 	const claim = await beginAvatarUpload(req.user.id, intent.id);
 	if (!claim.claimed) throw new AppError("Could not start avatar upload. Please try again.", 409);
 	let avatar;
 	try {
-		avatar = await uploadAvatar(req.body, type, req.user.id, intent.storageKey);
+		avatar = await uploadAvatar(req.body, type, req.user.id, intent.storageKey, process.env,
+			provider === "cloudinary" ? claim.intent.cloudName : undefined);
 	} catch (error) {
 		// The pending cleanup record remains durable even if recording the result fails.
 		try { await recordUploadOutcome(req.user.id, intent.id, error.uploadOutcome || "uncertain"); }

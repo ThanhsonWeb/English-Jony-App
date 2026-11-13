@@ -56,7 +56,7 @@ function getAvatarStorageProvider(config = process.env) {
 	return "cloudinary";
 }
 
-async function uploadAvatar(buffer, type, userId, storageKey, config = process.env) {
+async function uploadAvatar(buffer, type, userId, storageKey, config = process.env, expectedCloudName) {
 	const provider = getAvatarStorageProvider(config);
 	const user = String(userId);
 	const extension = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" }[type];
@@ -73,6 +73,11 @@ async function uploadAvatar(buffer, type, userId, storageKey, config = process.e
 		catch (error) { error.uploadOutcome = error.code === "EEXIST" ? "uncertain" : "failure"; throw error; }
 	}
 	const { cloudName, apiKey, apiSecret } = getCloudinaryConfig(config);
+	if (expectedCloudName !== undefined && expectedCloudName !== cloudName) {
+		const error = new Error("Avatar storage account does not match the upload intent");
+		error.uploadOutcome = "failure";
+		throw error;
+	}
 
 	const parameters = {
 		folder: "studyjony/avatars",

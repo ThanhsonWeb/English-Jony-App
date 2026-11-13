@@ -23,6 +23,7 @@ const ownedRecordModels = {
 
 const extensions = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" };
 const uuid = "[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}";
+const cloudNamePattern = /^[a-zA-Z0-9_-]+$/;
 
 function isValidStorageKey(intent) {
 	const userId = String(intent.user);
@@ -31,7 +32,8 @@ function isValidStorageKey(intent) {
 	const name = `user_${userId}_${uuid}`;
 	return intent.provider === "local"
 		? new RegExp(`^${name}\\.${extension}$`).test(intent.storageKey)
-		: intent.provider === "cloudinary" && new RegExp(`^studyjony/avatars/${name}$`).test(intent.storageKey);
+		: intent.provider === "cloudinary" && typeof intent.cloudName === "string" && cloudNamePattern.test(intent.cloudName) &&
+			new RegExp(`^studyjony/avatars/${name}$`).test(intent.storageKey);
 }
 
 function avatarMatchesIntent(avatar, intent) {
@@ -40,9 +42,9 @@ function avatarMatchesIntent(avatar, intent) {
 	try {
 		const url = new URL(avatar);
 		const extension = extensions[intent.contentType];
-		const match = url.pathname.match(/^\/[^/]+\/image\/upload\/v[1-9][0-9]*\/(.+)$/);
+		const match = url.pathname.match(/^\/([^/]+)\/image\/upload\/v[1-9][0-9]*\/(.+)$/);
 		return url.protocol === "https:" && url.hostname === "res.cloudinary.com" && !url.port && !url.username && !url.password &&
-			!url.search && !url.hash && Boolean(match) && match[1] === `${intent.storageKey}.${extension}`;
+			!url.search && !url.hash && Boolean(match) && match[1] === intent.cloudName && match[2] === `${intent.storageKey}.${extension}`;
 	} catch { return false; }
 }
 
@@ -131,4 +133,4 @@ async function checkAccountDeletionReadiness(userId, { session } = {}) {
 	);
 }
 
-module.exports = { checkAccountDeletionReadiness };
+module.exports = { checkAccountDeletionReadiness, isValidStorageKey, avatarMatchesIntent };

@@ -3,6 +3,7 @@ const User = require("../models/userModel");
 const AvatarUploadIntent = require("../models/avatarUploadIntentModel");
 const AppError = require("../utils/appError");
 const { activeAccountFilter } = require("../utils/accountLifecycle");
+const { isValidStorageKey, avatarMatchesIntent } = require("./accountDeletionReadiness");
 
 // Internal initiation only. Outstanding uploads and account data remain tracked.
 async function initiateAccountDeletion(userId) {
@@ -15,6 +16,15 @@ async function initiateAccountDeletion(userId) {
 			return { initiated: false };
 		}
 		if (user.lifecycleState !== "active") throw new AppError("Invalid account lifecycle state", 409);
+		if (user.avatarIntent) {
+			const tracked = await AvatarUploadIntent.findOne({
+				_id: user.avatarIntent, user: userId, attachmentStatus: "attached", cleanupStatus: "none",
+				uploadStatus: "finished", uploadResult: "success",
+			}).session(session).lean();
+			if (!tracked || !isValidStorageKey(tracked) || !avatarMatchesIntent(user.avatar, tracked)) {
+				throw new AppError("Tracked avatar identity is inconsistent", 409);
+			}
+		}
 
 		const update = { $set: { lifecycleState: "deleting" } };
 		if (user.avatarIntent) {

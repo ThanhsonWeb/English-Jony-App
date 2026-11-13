@@ -16,7 +16,8 @@ function validStorageKey(intent, userId) {
 	const name = `user_${userId}_${uuid}`;
 	return intent.provider === "local"
 		? new RegExp(`^${name}\\.${extension}$`, "i").test(intent.storageKey)
-		: intent.provider === "cloudinary" && new RegExp(`^studyjony/avatars/${name}$`, "i").test(intent.storageKey);
+		: intent.provider === "cloudinary" && typeof intent.cloudName === "string" && /^[a-zA-Z0-9_-]+$/.test(intent.cloudName) &&
+			new RegExp(`^studyjony/avatars/${name}$`, "i").test(intent.storageKey);
 }
 
 function hasValidCleanupProof(intent, userId) {

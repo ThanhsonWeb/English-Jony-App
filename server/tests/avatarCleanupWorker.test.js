@@ -5,7 +5,7 @@ const { deleteStoredAvatar } = require("../services/avatarCleanupWorker");
 
 const user = "0123456789abcdef01234567";
 const name = `user_${user}_${randomUUID()}`;
-const cloud = { user, provider: "cloudinary", contentType: "image/jpeg", storageKey: `studyjony/avatars/${name}` };
+const cloud = { user, provider: "cloudinary", cloudName: "test", contentType: "image/jpeg", storageKey: `studyjony/avatars/${name}` };
 const local = { user, provider: "local", contentType: "image/png", storageKey: `${name}.png` };
 const config = { CLOUDINARY_CLOUD_NAME: "test", CLOUDINARY_API_KEY: "key", CLOUDINARY_API_SECRET: "secret" };
 
@@ -28,6 +28,18 @@ test("Cloudinary ambiguous results retain the claim and explicit rejections can 
 	}
 	await assert.rejects(deleteStoredAvatar(cloud, { config, fetchImpl: async () => ({ ok: false, status: 429 }) }),
 		error => error.safeToRetry === true);
+});
+
+test("Cloudinary cleanup requires the recorded account identity", async () => {
+	let calls = 0;
+	await assert.rejects(deleteStoredAvatar(cloud, {
+		config: { ...config, CLOUDINARY_CLOUD_NAME: "different-account" },
+		fetchImpl: async () => { calls++; return { ok: true, json: async () => ({ result: "not found" }) }; },
+	}), /identity does not match/);
+	await assert.rejects(deleteStoredAvatar({ ...cloud, cloudName: undefined }, {
+		config, fetchImpl: async () => { calls++; return { ok: true, json: async () => ({ result: "ok" }) }; },
+	}), /identity is not verified/);
+	assert.equal(calls, 0);
 });
 
 test("local deletion handles missing files and rejects forged keys", async () => {

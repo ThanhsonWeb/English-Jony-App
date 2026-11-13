@@ -7,6 +7,7 @@ const { fenceActiveAccountWrite } = require("../utils/accountLifecycle");
 const { CLIENT_USER_FIELDS } = require("../utils/clientUser");
 
 const uuidPattern = /^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/i;
+const cloudNamePattern = /^[a-zA-Z0-9_-]+$/;
 const extensions = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" };
 const transactionOptions = {
 	readPreference: "primary", readConcern: { level: "snapshot" }, writeConcern: { w: "majority" },
@@ -33,18 +34,20 @@ async function ownedIntent(userId, intentId, session) {
 }
 
 // operationId is a stable server-generated UUID retained by the caller for retries.
-async function reserveAvatarUpload(userId, { operationId, provider, contentType }) {
+async function reserveAvatarUpload(userId, { operationId, provider, contentType, cloudName = process.env.CLOUDINARY_CLOUD_NAME?.trim() }) {
 	if (!mongoose.isObjectIdOrHexString(userId) || typeof operationId !== "string" || !uuidPattern.test(operationId) ||
-		!["cloudinary", "local"].includes(provider) || typeof contentType !== "string" || !Object.hasOwn(extensions, contentType)) {
+		!["cloudinary", "local"].includes(provider) || typeof contentType !== "string" || !Object.hasOwn(extensions, contentType) ||
+		(provider === "cloudinary" && (typeof cloudName !== "string" || !cloudNamePattern.test(cloudName)))) {
 		throw new AppError("Invalid avatar upload intent", 400);
 	}
+	const storageCloudName = provider === "cloudinary" ? cloudName : undefined;
 	const normalizedOperationId = operationId.toLowerCase();
 	await AvatarUploadIntent.init();
 	return mongoose.connection.transaction(async session => {
 		await fenceActiveAccountWrite(userId, session);
 		const existing = await AvatarUploadIntent.findOne({ user: userId, operationId: normalizedOperationId }).session(session);
 		if (existing) {
-			if (existing.provider !== provider || existing.contentType !== contentType) {
+			if (existing.provider !== provider || existing.contentType !== contentType || existing.cloudName !== storageCloudName) {
 				throw new AppError("Avatar operation identity already used", 409);
 			}
 			return existing;
@@ -52,7 +55,7 @@ async function reserveAvatarUpload(userId, { operationId, provider, contentType 
 		const name = `user_${String(userId).toLowerCase()}_${randomUUID()}`;
 		const storageKey = provider === "cloudinary" ? `studyjony/avatars/${name}` : `${name}.${extensions[contentType]}`;
 		const [intent] = await AvatarUploadIntent.create([{
-			user: userId, operationId: normalizedOperationId, provider, contentType, storageKey,
+			user: userId, operationId: normalizedOperationId, provider, cloudName: storageCloudName, contentType, storageKey,
 		}], { session });
 		return intent;
 	}, transactionOptions);
@@ -64,7 +67,9 @@ async function beginAvatarUpload(userId, intentId) {
 	return mongoose.connection.transaction(async session => {
 		await fenceActiveAccountWrite(userId, session);
 		const claimed = await AvatarUploadIntent.findOneAndUpdate(
-			{ _id: intentId, user: userId, uploadStatus: "reserved", cleanupStatus: "none" },
+			{ _id: intentId, user: userId, uploadStatus: "reserved", cleanupStatus: "none",
+				$or: [{ provider: "local" }, { provider: "cloudinary", cloudName: { $type: "string", $regex: /^[a-zA-Z0-9_-]+$/ } }],
+			},
 			{ $set: { uploadStatus: "uploading", cleanupStatus: "pending" }, $inc: { cleanupGeneration: 1 } },
 			{ session, returnDocument: "after" },
 		);

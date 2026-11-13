@@ -48,7 +48,7 @@ after(async () => {
 
 async function createCloudinaryAvatar(user, attach) {
 	const intent = await reserveAvatarUpload(user._id, {
-		operationId: randomUUID(), provider: "cloudinary", contentType: "image/jpeg",
+		operationId: randomUUID(), provider: "cloudinary", cloudName: cloudConfig.CLOUDINARY_CLOUD_NAME, contentType: "image/jpeg",
 	});
 	assert.equal((await beginAvatarUpload(user._id, intent._id)).claimed, true);
 	if (attach) {
@@ -129,6 +129,46 @@ test("Cloudinary cleanup gates account finalization until deletion is verified",
 	});
 	assert.ok(await User.exists({ _id: blocked._id }));
 	assert.equal(await AccountDeletionReceipt.countDocuments({}), 1);
+});
+
+test("Cloudinary account mismatch and missing identity block cleanup and finalization", async () => {
+	const mismatched = await createCloudinaryAvatar(target, true);
+	await initiateAccountDeletion(target._id);
+	let calls = 0;
+	assert.deepEqual(await runAvatarCleanupBatch({
+		config: { ...cloudConfig, CLOUDINARY_CLOUD_NAME: "other-account" },
+		fetchImpl: async () => { calls++; return { ok: true, json: async () => ({ result: "not found" }) }; },
+	}), { complete: 0, retry: 1, held: 0, skipped: 0 });
+	assert.equal(calls, 0);
+	assert.equal((await AvatarUploadIntent.findById(mismatched._id)).cleanupStatus, "retry");
+	await assert.rejects(finalizeAccountDeletion(target._id), error => {
+		assert.equal(error.statusCode, 409);
+		assert.ok(error.blockers.includes("avatar_cleanup_pending"));
+		return true;
+	});
+	assert.ok(await User.exists({ _id: target._id }));
+	assert.equal(await AccountDeletionReceipt.countDocuments({}), 0);
+	assert.deepEqual(await runAvatarCleanupBatch({
+		config: cloudConfig,
+		fetchImpl: async () => ({ ok: true, json: async () => ({ result: "ok" }) }),
+	}), { complete: 1, retry: 0, held: 0, skipped: 0 });
+	assert.deepEqual(await deleteCompletedAvatarIntents(target._id), { deletedCount: 1, hasMore: false });
+
+	const legacy = await createCloudinaryAvatar(blocked, true);
+	await initiateAccountDeletion(blocked._id);
+	await AvatarUploadIntent.collection.updateOne({ _id: legacy._id }, { $unset: { cloudName: "" } });
+	assert.deepEqual(await runAvatarCleanupBatch({ config: cloudConfig, fetchImpl: async () => { calls++; } }), {
+		complete: 0, retry: 0, held: 1, skipped: 0,
+	});
+	assert.equal(calls, 0);
+	await assert.rejects(finalizeAccountDeletion(blocked._id), error => {
+		assert.equal(error.statusCode, 409);
+		assert.ok(error.blockers.includes("avatar_tracking_inconsistent"));
+		assert.ok(error.blockers.includes("avatar_cleanup_claim_held"));
+		return true;
+	});
+	assert.ok(await User.exists({ _id: blocked._id }));
+	assert.equal(await AccountDeletionReceipt.countDocuments({}), 0);
 });
 
 test("local avatar cleanup requires opt-in and gates finalization on mocked file deletion", async () => {

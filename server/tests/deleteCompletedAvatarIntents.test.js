@@ -26,9 +26,12 @@ beforeEach(async () => {
 });
 
 async function createIntent(owner, overrides = {}) {
+	const provider = overrides.provider || "local";
 	const key = `user_${owner.id}_${randomUUID()}`;
 	return Intent.create({
-		user: owner._id, operationId: randomUUID(), provider: "local", contentType: "image/jpeg", storageKey: `${key}.jpg`,
+		user: owner._id, operationId: randomUUID(), provider,
+		cloudName: provider === "cloudinary" ? "studyjony-test" : undefined,
+		contentType: "image/jpeg", storageKey: provider === "cloudinary" ? `studyjony/avatars/${key}` : `${key}.jpg`,
 		uploadStatus: "finished", uploadResult: "success", attachmentStatus: "unattached", cleanupStatus: "complete",
 		cleanupGeneration: 1, lastCleanupClaimToken: randomUUID(), ...overrides,
 	});
@@ -91,6 +94,8 @@ test("retains uncertain, unfinished, pending, claimed, retrying, and inconsisten
 	await Intent.collection.updateOne({ _id: malformed._id }, { $set: { uploadStatus: ["finished"] } });
 	const referenced = await createIntent(user);
 	const urlReferenced = await createIntent(user);
+	const missingCloudIdentity = await createIntent(user, { provider: "cloudinary" });
+	await Intent.collection.updateOne({ _id: missingCloudIdentity._id }, { $unset: { cloudName: "" } });
 	await User.updateOne({ _id: other._id }, { $set: { avatarIntent: referenced._id, avatar: `/api/v1/users/avatar-files/${urlReferenced.storageKey}` } });
 	await createIntent(user);
 	await markDeleting();
@@ -99,6 +104,7 @@ test("retains uncertain, unfinished, pending, claimed, retrying, and inconsisten
 	assert.ok(await Intent.exists({ _id: malformed._id }));
 	assert.ok(await Intent.exists({ _id: referenced._id }));
 	assert.ok(await Intent.exists({ _id: urlReferenced._id }));
+	assert.ok(await Intent.exists({ _id: missingCloudIdentity._id }));
 });
 
 test("retains all candidates while account avatar tracking is unresolved", async () => {

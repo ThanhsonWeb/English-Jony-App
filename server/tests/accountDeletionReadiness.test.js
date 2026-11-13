@@ -44,8 +44,8 @@ async function deletingAccount({ keepLegacy = false } = {}) {
 	await initiateAccountDeletion(user.id);
 	if (!keepLegacy) await User.updateOne({ _id: user.id }, { $set: { avatar: "" } });
 }
-async function createIntent({ uploadStatus = "reserved", uploadResult = null, cleanupStatus = "none", attachmentStatus = "unattached", provider = "local" } = {}) {
-	const intent = await reserveAvatarUpload(user.id, { operationId: randomUUID(), provider, contentType: "image/jpeg" });
+async function createIntent({ uploadStatus = "reserved", uploadResult = null, cleanupStatus = "none", attachmentStatus = "unattached", provider = "local", cloudName = "studyjony-test" } = {}) {
+	const intent = await reserveAvatarUpload(user.id, { operationId: randomUUID(), provider, cloudName, contentType: "image/jpeg" });
 	const fields = { uploadStatus, uploadResult, cleanupStatus, attachmentStatus };
 	await Intent.updateOne({ _id: intent.id }, { $set: fields });
 	return Intent.findById(intent.id).lean();
@@ -130,6 +130,15 @@ test("inconsistent tracking and attached avatar records fail closed", async () =
 	await User.updateOne({ _id: user.id }, { $set: { avatarIntent: intent._id, avatar: "https://res.cloudinary.com/demo/image/upload/v123/studyjony/avatars/mismatched.jpg" } });
 	assert.ok((await blockers()).includes("avatar_tracking_inconsistent"));
 	await User.updateOne({ _id: user.id }, { $unset: { avatarIntent: 1 } });
+	assert.ok((await blockers()).includes("avatar_tracking_inconsistent"));
+});
+
+test("a tracked Cloudinary URL must name the same account as its intent", async () => {
+	const intent = await createIntent({ provider: "cloudinary", uploadStatus: "finished", uploadResult: "success", attachmentStatus: "attached" });
+	await User.updateOne({ _id: user.id }, { $set: { lifecycleState: "deleting", avatarIntent: intent._id,
+		avatar: `https://res.cloudinary.com/other-account/image/upload/v123/${intent.storageKey}.jpg` } });
+	assert.ok((await blockers()).includes("avatar_tracking_inconsistent"));
+	await Intent.updateOne({ _id: intent._id }, { $unset: { cloudName: 1 } });
 	assert.ok((await blockers()).includes("avatar_tracking_inconsistent"));
 });
 

@@ -9,7 +9,7 @@ const { reserveAvatarUpload, beginAvatarUpload, recordUploadOutcome, attachAvata
 const { runAvatarCleanupBatch, recoverAvatarCleanup } = require("../services/avatarCleanupWorker");
 
 let db, owner, other;
-const input = () => ({ operationId: randomUUID(), provider: "cloudinary", contentType: "image/jpeg" });
+const input = () => ({ operationId: randomUUID(), provider: "cloudinary", cloudName: "test", contentType: "image/jpeg" });
 
 before(async () => {
 	db = await MongoMemoryReplSet.create({ binary: { version: "7.0.14" }, replSet: { count: 1, storageEngine: "wiredTiger" } });
@@ -97,12 +97,22 @@ test("reservation generates unique, provider-specific storage keys without calle
 	assert.match(local.storageKey, new RegExp(`^user_${owner.id}_[0-9a-f-]{36}\\.png$`));
 	assert.notEqual(cloud.storageKey, another.storageKey);
 	assert.equal(String(cloud.user), owner.id);
+	assert.equal(cloud.cloudName, "test");
 	assert.equal(cloud.uploadStatus, "reserved");
 	assert.equal(cloud.cleanupStatus, "none");
 	assert.equal(cloud.cleanupGeneration, 0);
 	for (const options of [{ ...input(), provider: "other" }, { ...input(), contentType: "image/gif" }, { ...input(), operationId: "bad" }]) {
 		await assert.rejects(reserveAvatarUpload(owner.id, options), error => error.statusCode === 400);
 	}
+});
+
+test("a reserved legacy Cloudinary intent without account identity cannot start an upload", async () => {
+	const intent = await reserveAvatarUpload(owner.id, input());
+	await AvatarUploadIntent.collection.updateOne({ _id: intent._id }, { $unset: { cloudName: "" } });
+	const claim = await beginAvatarUpload(owner.id, intent._id);
+	assert.equal(claim.claimed, false);
+	assert.equal(claim.intent.uploadStatus, "reserved");
+	assert.equal(claim.intent.cleanupStatus, "none");
 });
 
 test("concurrent reservation and upload-claim retries are idempotent and isolated by owner", async () => {

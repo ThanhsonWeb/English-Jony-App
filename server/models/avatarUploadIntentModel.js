@@ -5,6 +5,11 @@ const schema = new mongoose.Schema({
 	user: { type: mongoose.Schema.ObjectId, required: true, ref: "User", immutable: true },
 	operationId: { type: String, required: true, immutable: true },
 	provider: { type: String, enum: ["cloudinary", "local"], required: true, immutable: true },
+	cloudName: {
+		type: String,
+		immutable: true,
+		validate: value => value === undefined || /^[a-zA-Z0-9_-]+$/.test(value),
+	},
 	contentType: { type: String, enum: ["image/jpeg", "image/png", "image/webp"], required: true, immutable: true },
 	storageKey: { type: String, required: true, immutable: true },
 	uploadStatus: { type: String, enum: ["reserved", "uploading", "uncertain", "finished"], default: "reserved", required: true },

@@ -39,7 +39,7 @@ after(async () => {
 test("finalization waits for an in-progress Cloudinary cleanup worker", async () => {
 	const user = await User.create({ name: "Cleanup race learner", email: "cleanup-race@example.test", googleId: "cleanup-race" });
 	const intent = await reserveAvatarUpload(user._id, {
-		operationId: randomUUID(), provider: "cloudinary", contentType: "image/jpeg",
+		operationId: randomUUID(), provider: "cloudinary", cloudName: cloudConfig.CLOUDINARY_CLOUD_NAME, contentType: "image/jpeg",
 	});
 	assert.equal((await beginAvatarUpload(user._id, intent._id)).claimed, true);
 	await attachAvatarUpload(user._id, intent._id,

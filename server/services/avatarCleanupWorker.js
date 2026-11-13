@@ -4,6 +4,7 @@ const path = require("node:path");
 const Intent = require("../models/avatarUploadIntentModel");
 const { localAvatarDirectory } = require("./avatarUpload");
 const { claimAvatarCleanup, queueAvatarCleanup, recordCleanupResult } = require("./avatarUploadIntent");
+const cloudNamePattern = /^[a-zA-Z0-9_-]+$/;
 
 // Never derive deletion targets from URLs or accept arbitrary paths, even from the database.
 function validKey(intent) {
@@ -13,10 +14,14 @@ function validKey(intent) {
 	if (!/^[0-9a-f]{24}$/.test(user) || !ext || typeof intent.storageKey !== "string") return false;
 	const name = `user_${user}_${uuid}`;
 	if (intent.provider === "local") return new RegExp(`^${name}\\.${ext}$`).test(intent.storageKey);
-	return intent.provider === "cloudinary" && new RegExp(`^studyjony/avatars/${name}$`).test(intent.storageKey);
+	return intent.provider === "cloudinary" && typeof intent.cloudName === "string" && cloudNamePattern.test(intent.cloudName) &&
+		new RegExp(`^studyjony/avatars/${name}$`).test(intent.storageKey);
 }
 
 async function deleteStoredAvatar(intent, { config = process.env, fetchImpl = fetch, unlink = fs.unlink } = {}) {
+	if (intent.provider === "cloudinary" && (typeof intent.cloudName !== "string" || !cloudNamePattern.test(intent.cloudName))) {
+		throw new Error("Cloudinary account identity is not verified");
+	}
 	if (!validKey(intent)) { const error = new Error("Invalid tracked avatar storage key"); error.safeToRetry = true; throw error; }
 	if (intent.provider === "local") {
 		try { await unlink(path.join(localAvatarDirectory, intent.storageKey)); }
@@ -28,6 +33,11 @@ async function deleteStoredAvatar(intent, { config = process.env, fetchImpl = fe
 	const secret = config.CLOUDINARY_API_SECRET?.trim();
 	if (!cloud || !/^[a-zA-Z0-9_-]+$/.test(cloud) || !key || !secret) {
 		const error = new Error("Cloudinary is not configured"); error.safeToRetry = true; throw error;
+	}
+	if (intent.cloudName !== cloud) {
+		const error = new Error("Cloudinary account identity does not match cleanup configuration");
+		error.safeToRetry = true;
+		throw error;
 	}
 	const timestamp = String(Math.floor(Date.now() / 1000));
 	const signature = crypto.createHash("sha1").update(`public_id=${intent.storageKey}&timestamp=${timestamp}${secret}`).digest("hex");
