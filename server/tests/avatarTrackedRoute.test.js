@@ -38,7 +38,7 @@ beforeEach(async () => {
 	Object.assign(process.env, env);
 	await Promise.all([User.deleteMany({}), Intent.deleteMany({})]);
 	[owner, other] = await User.create([
-		{ name: "Owner", email: "avatar-owner@example.test", googleId: "owner", avatar: legacy },
+		{ name: "Owner", email: "avatar-owner@example.test", googleId: "owner" },
 		{ name: "Other", email: "avatar-other@example.test", googleId: "other", avatar: "https://example.test/other.jpg" },
 	]);
 	token = jwt.sign({ id: owner.id }, env.JWT_SECRET, { expiresIn: "1h" });
@@ -91,11 +91,12 @@ test("registration precedes storage; replacement queues only the previous manage
 	assert.equal(previous.cleanupStatus, "pending");
 	assert.equal(current.attachmentStatus, "attached");
 	assert.equal(current.cleanupStatus, "none");
-	assert.equal(await Intent.countDocuments(), 2, "legacy avatar did not create a cleanup record");
+	assert.equal(await Intent.countDocuments(), 2, "only the two managed uploads have tracking records");
 	assert.equal((await User.findById(other.id)).avatar, other.avatar);
 });
 
 test("a Cloudinary timeout stays uncertain and cannot be marked cleaned", async () => {
+	await User.updateOne({ _id: owner._id }, { $set: { avatar: legacy } });
 	interceptCloud(async () => { throw new Error("simulated timeout"); });
 	assert.equal((await request()).status, 502);
 	const intent = await Intent.findOne({ user: owner.id });
@@ -107,6 +108,7 @@ test("a Cloudinary timeout stays uncertain and cannot be marked cleaned", async 
 });
 
 test("an unverified provider response stays uncertain and is not attached", async () => {
+	await User.updateOne({ _id: owner._id }, { $set: { avatar: legacy } });
 	interceptCloud(async options => {
 		const response = cloudResponse(options);
 		const body = await response.json();
@@ -146,6 +148,7 @@ test("simultaneous successful uploads leave one attachment and queue the superse
 });
 
 test("a local write failure records terminal failure and leaves cleanup pending", async () => {
+	await User.updateOne({ _id: owner._id }, { $set: { avatar: legacy } });
 	process.env.NODE_ENV = "development";
 	for (const key of ["CLOUDINARY_CLOUD_NAME", "CLOUDINARY_API_KEY", "CLOUDINARY_API_SECRET"]) delete process.env[key];
 	fs.writeFile = async () => { const error = new Error("simulated disk error"); error.code = "EIO"; throw error; };
@@ -159,6 +162,7 @@ test("a local write failure records terminal failure and leaves cleanup pending"
 });
 
 test("account deletion during storage prevents attachment and queues the completed upload", { timeout: 15000 }, async () => {
+	await User.updateOne({ _id: owner._id }, { $set: { avatar: legacy } });
 	let entered, release;
 	const started = new Promise(resolve => { entered = resolve; });
 	const proceed = new Promise(resolve => { release = resolve; });
