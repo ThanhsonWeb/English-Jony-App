@@ -29,7 +29,10 @@ exports.getMe = catchAsync(async (req, res, next) => {
 	res.status(200).json({
 		status: "success",
 		data: {
-			user: clientUser(req.user),
+			user: {
+				...clientUser(req.user),
+				canRequestPasswordAccountDeletion: !req.user.googleId,
+			},
 		},
 	});
 });
