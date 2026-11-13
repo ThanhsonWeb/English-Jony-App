@@ -43,7 +43,7 @@
 	"Feedback": {
 		"button": "Góp ý",
 		"title": "Gửi góp ý",
-		"subtitle": "Ý kiến của bạn giúp StudyJony tốt hơn.",
+		"subtitle": "Góp ý của bạn giúp StudyJony cải thiện dịch vụ. Góp ý được lưu riêng và có thể được giữ lại sau khi xóa tài khoản; nội dung có thể chứa thông tin cá nhân.",
 		"close": "Đóng cửa sổ góp ý",
 		"typeLabel": "Loại góp ý",
 		"suggestion": "Đề xuất",
@@ -534,7 +534,7 @@
 		"deleteAccountDescription": "Xóa vĩnh viễn tài khoản và dữ liệu học tập liên quan.",
 		"deleteAccountButton": "Xóa tài khoản",
 		"deleteAccountConfirmTitle": "Xác nhận xóa tài khoản",
-		"deleteAccountConfirmDescription": "Yêu cầu này sẽ bắt đầu quy trình xóa tài khoản. Tài khoản và dữ liệu học tập sẽ bị xóa vĩnh viễn sau khi hoàn tất xác minh dọn dẹp.",
+		"deleteAccountConfirmDescription": "Yêu cầu này sẽ bắt đầu quy trình xóa tài khoản. Sau khi xác minh hoàn tất việc dọn dẹp, tài khoản và dữ liệu học tập liên quan sẽ bị xóa vĩnh viễn. Biên nhận xác nhận xóa có thể được lưu tối đa 30 ngày. Góp ý bạn đã gửi trước đây được lưu riêng và có thể được giữ lại; nội dung có thể chứa thông tin cá nhân.",
 		"currentPassword": "Mật khẩu hiện tại",
 		"typeConfirmation": "Nhập \"{phrase}\" để xác nhận.",
 		"deletionRequestError": "Không thể gửi yêu cầu xóa tài khoản. Vui lòng thử lại.",
