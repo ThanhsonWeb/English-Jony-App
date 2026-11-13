@@ -60,6 +60,8 @@ const userSchema = new mongoose.Schema(
 		},
 		// Updated by each guarded account write to serialize it with lifecycle changes.
 		accountWriteFence: { type: Number, default: 0, select: false },
+		// Prevent a blocked deleting account from monopolizing successive runner calls.
+		deletionRunnerCycleAttempted: { type: Boolean, select: false },
 
 		photo: {
 			type: String,
