@@ -188,6 +188,8 @@
 		"check": "Check",
 		"continueArrow": "Continue →",
 		"continueToPractice": "Continue to practice",
+		"practicePreview": "This dialogue has {count} practice activities. Sign in to save progress and earn KN, or continue as a guest.",
+		"practicePreviewSignedIn": "This dialogue has {count} practice activities. Your progress saves as you practice, and you earn KN as you complete activities.",
 		"dialogueCompletionTitle": "Nice work — dialogue complete!",
 		"dialogueCompletionSaved": "You completed {completed} of {total} practice activities. Your progress is saved.",
 		"dialogueCompletionGuest": "You finished this dialogue, but guest progress is not saved. Sign in to keep your learning progress.",

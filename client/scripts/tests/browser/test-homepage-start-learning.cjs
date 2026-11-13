@@ -100,6 +100,23 @@ async function exploreRemainsCatalogue(browser) {
 	} finally { await f.context.close(); }
 }
 
+async function practicePreviewKeepsPracticeAccessible(browser, locale, signedIn = false) {
+	const f = await fixture(browser, { locale, signedIn });
+	try {
+		await openHome(f);
+		await f.page.getByRole("link", { name: f.messages.Home.startLearning, exact: true }).first().click();
+		await f.page.waitForURL(url => url.pathname === `${f.prefix}/dialogue/asking-for-directions/finding-a-cafe`);
+
+		const previewKey = signedIn ? "practicePreviewSignedIn" : "practicePreview";
+		const preview = f.messages.DialogueFeature[previewKey].replace("{count}", "25");
+		await f.page.getByRole("note").getByText(preview, { exact: true }).waitFor({ state: "visible" });
+		await f.page.getByRole("link", { name: f.messages.DialogueFeature.continueToPractice, exact: true }).click();
+		await f.page.waitForURL(url => url.pathname === `${f.prefix}/dialogue/asking-for-directions/finding-a-cafe/1`);
+		assertNoBrowserErrors(f);
+		console.log(`PASS ${locale} ${signedIn ? "signed-in" : "guest"}: practice preview shows 25 activities and continues directly`);
+	} finally { await f.context.close(); }
+}
+
 async function delayedResponsesDoNotShowCatalogue(browser, locale) {
 	const progress = createDelay();
 	const f = await fixture(browser, {
@@ -154,6 +171,9 @@ async function delayedResponsesDoNotShowCatalogue(browser, locale) {
 		await startLearning(browser, "en", true, [], "/dialogue/asking-for-directions/finding-a-cafe");
 		await startLearning(browser, "en", true, ["1"], "/dialogue");
 		await exploreRemainsCatalogue(browser);
+		await practicePreviewKeepsPracticeAccessible(browser, "vi");
+		await practicePreviewKeepsPracticeAccessible(browser, "en");
+		await practicePreviewKeepsPracticeAccessible(browser, "en", true);
 		await delayedResponsesDoNotShowCatalogue(browser, "vi");
 		await delayedResponsesDoNotShowCatalogue(browser, "en");
 	} finally { await browser.close(); }

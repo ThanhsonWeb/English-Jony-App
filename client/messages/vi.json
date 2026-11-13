@@ -188,6 +188,8 @@
 		"check": "Kiểm tra",
 		"continueArrow": "Tiếp tục →",
 		"continueToPractice": "Tiếp tục luyện tập",
+		"practicePreview": "Hội thoại này có {count} hoạt động luyện tập. Đăng nhập để lưu tiến độ và nhận KN, hoặc tiếp tục với tư cách khách.",
+		"practicePreviewSignedIn": "Hội thoại này có {count} hoạt động luyện tập. Tiến độ sẽ được lưu khi bạn luyện tập, và bạn sẽ nhận KN khi hoàn thành từng hoạt động.",
 		"dialogueCompletionTitle": "Làm tốt lắm — bạn đã hoàn thành hội thoại!",
 		"dialogueCompletionSaved": "Bạn đã hoàn thành {completed}/{total} bài luyện tập. Tiến độ đã được lưu.",
 		"dialogueCompletionGuest": "Bạn đã hoàn thành hội thoại, nhưng tiến độ của khách chưa được lưu. Hãy đăng nhập để lưu tiến độ học tập.",

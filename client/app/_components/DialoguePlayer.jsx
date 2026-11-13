@@ -832,15 +832,20 @@ export default function DialoguePlayer({
 					</div>
 				)}
 				{canContinueToPractice && (
-					<div className="mt-8 flex justify-end">
-						<Link
-							href={continueTask ? `/dialogue/${lessonId}/${dialogueId}/${continueTask.id}` : `/dialogue/${lessonId}`}
-							onPointerEnter={() => { if (continueTask) void preloadTaskImages(continueTask, task.scene); }}
-							onFocus={() => { if (continueTask) void preloadTaskImages(continueTask, task.scene); }}
-							className="rounded-xl border border-violet-500/30 bg-violet-500/10 px-6 py-3 font-semibold text-violet-300 transition hover:border-violet-400/50 hover:bg-violet-500/20 hover:text-white active:scale-[0.98]"
-						>
-							{continueTask ? t("continueToPractice") : t("completeDialogue")}
-						</Link>
+					<div className="mt-8 space-y-3">
+						<p role="note" className="rounded-xl border border-app bg-surface/60 px-4 py-3 text-sm leading-5 text-secondary">
+							{t(userId ? "practicePreviewSignedIn" : "practicePreview", { count: task.tasks?.length ?? 0 })}
+						</p>
+						<div className="flex justify-end">
+							<Link
+								href={continueTask ? `/dialogue/${lessonId}/${dialogueId}/${continueTask.id}` : `/dialogue/${lessonId}`}
+								onPointerEnter={() => { if (continueTask) void preloadTaskImages(continueTask, task.scene); }}
+								onFocus={() => { if (continueTask) void preloadTaskImages(continueTask, task.scene); }}
+								className="rounded-xl border border-violet-500/30 bg-violet-500/10 px-6 py-3 font-semibold text-violet-300 transition hover:border-violet-400/50 hover:bg-violet-500/20 hover:text-white active:scale-[0.98]"
+							>
+								{continueTask ? t("continueToPractice") : t("completeDialogue")}
+							</Link>
+						</div>
 					</div>
 				)}
 
