@@ -76,6 +76,25 @@ async function lifecycle(user) {
 	return current?.lifecycleState;
 }
 
+test("profile exposes password deletion eligibility separately from the public user projection", async () => {
+	async function getProfile(user) {
+		return fetch(`${base}/users/me`, {
+			headers: { Origin: frontend, Cookie: `jwt=${tokenFor(user)}` },
+		});
+	}
+	const passwordResponse = await getProfile(passwordUser);
+	assert.equal(passwordResponse.status, 200);
+	const passwordProfile = await passwordResponse.json();
+	assert.equal(passwordProfile.data.accountCapabilities.canRequestPasswordAccountDeletion, true);
+	assert.equal(passwordProfile.data.user.canRequestPasswordAccountDeletion, undefined);
+
+	const googleResponse = await getProfile(googleUser);
+	assert.equal(googleResponse.status, 200);
+	const googleProfile = await googleResponse.json();
+	assert.equal(googleProfile.data.accountCapabilities.canRequestPasswordAccountDeletion, false);
+	assert.equal(googleProfile.data.user.canRequestPasswordAccountDeletion, undefined);
+});
+
 test("request API is disabled by default even with valid authentication and confirmation", async () => {
 	assert.equal(process.env.ACCOUNT_DELETION_REQUEST_ENABLED, undefined);
 	const response = await request(passwordUser, validBody(password));
