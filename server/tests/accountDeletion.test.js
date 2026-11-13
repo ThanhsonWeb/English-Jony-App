@@ -71,16 +71,64 @@ test("tracked avatar is detached and queued exactly once under concurrent initia
 	} finally { fetch.mock.restore(); }
 });
 
-test("legacy avatars and old active accounts remain untouched and no storage intent is invented", async () => {
+test("untracked legacy avatars block initiation and leave the account active", async () => {
 	await User.updateOne({ _id: user._id }, { $set: { avatar: legacy } });
+	await assert.rejects(initiateAccountDeletion(user.id), error => error.statusCode === 409);
+	const saved = await savedUser();
+	assert.equal(saved.lifecycleState, "active");
+	assert.equal(saved.avatar, legacy);
+	assert.equal(saved.avatarIntent, undefined);
+	assert.equal(await Intent.countDocuments(), 0);
+});
+
+test("legacy active accounts without an avatar can still initiate deletion", async () => {
 	await User.collection.updateOne({ _id: user._id }, { $unset: { lifecycleState: "" } });
 	assert.deepEqual(await initiateAccountDeletion(user.id), { initiated: true });
 	const saved = await savedUser();
 	assert.equal(saved.lifecycleState, "deleting");
-	assert.equal(saved.avatar, legacy);
+	assert.equal(saved.avatar, "");
 	assert.equal(saved.avatarIntent, undefined);
 	assert.equal(await Intent.countDocuments(), 0);
 	assert.deepEqual(await initiateAccountDeletion(user.id), { initiated: false });
+});
+
+test("a legacy avatar added concurrently cannot race account initiation", async t => {
+	let entered, release;
+	const enteredRead = new Promise(resolve => { entered = resolve; });
+	let releaseRead;
+	const readGate = new Promise(resolve => { releaseRead = resolve; });
+	let pauseNextRead = true;
+	const original = User.findById;
+	const stub = t.mock.method(User, "findById", function (...args) {
+		const query = original.apply(this, args);
+		if (!pauseNextRead || String(args[0]) !== user.id) return query;
+		pauseNextRead = false;
+		const exec = query.exec;
+		query.exec = async function (...execArgs) {
+			const result = await exec.apply(this, execArgs);
+			entered();
+			await readGate;
+			return result;
+		};
+		return query;
+	});
+	try {
+		const deleting = initiateAccountDeletion(user.id);
+		await enteredRead;
+		await User.updateOne(
+			{ _id: user._id, lifecycleState: "active" },
+			{ $set: { avatar: legacy }, $inc: { accountWriteFence: 1 } },
+		);
+		releaseRead();
+		await assert.rejects(deleting, error => error.statusCode === 409);
+		const saved = await savedUser();
+		assert.equal(saved.lifecycleState, "active");
+		assert.equal(saved.avatar, legacy);
+		assert.equal(await Intent.countDocuments(), 0);
+	} finally {
+		releaseRead();
+		stub.mock.restore();
+	}
 });
 
 test("a tracked avatar URL for another Cloudinary account is preserved and blocks initiation", async () => {
