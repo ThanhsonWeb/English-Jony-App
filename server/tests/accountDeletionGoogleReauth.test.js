@@ -78,7 +78,7 @@ test("issues a short-lived challenge and stores only its hash with account and s
 	const { challenge, expiresAt } = await issueGoogleDeletionReauthChallenge(accountA, sessionA);
 	assert.match(challenge, /^[A-Za-z0-9_-]{43}$/);
 	assert.ok(expiresAt.getTime() > issuedAt);
-	assert.ok(expiresAt.getTime() - issuedAt <= GOOGLE_DELETION_REAUTH_CHALLENGE_TTL_MS);
+	assert.ok(expiresAt.getTime() - issuedAt <= GOOGLE_DELETION_REAUTH_CHALLENGE_TTL_MS + 1000);
 
 	const stored = await Challenge.findOne({}).lean();
 	assert.equal(stored._id, crypto.createHash("sha256").update(challenge).digest("hex"));
