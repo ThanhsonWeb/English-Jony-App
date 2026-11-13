@@ -6,7 +6,7 @@ import ThemeSelector from "@/app/_components/ThemeSelector";
 import MobileDialogOverlay from "@/app/_components/MobileDialogOverlay";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { resolveAvatarUrl } from "@/app/_lib/resolveAvatarUrl";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { validateProfileName } from "@/app/_lib/profileName.mjs";
 import {
@@ -78,11 +78,38 @@ function Page() {
 	const [deletionError, setDeletionError] = useState("");
 	const [deletionNotice, setDeletionNotice] = useState("");
 	const [isSubmittingDeletion, setIsSubmittingDeletion] = useState(false);
+	const [canRequestDeletion, setCanRequestDeletion] = useState(() => canRequestPasswordAccountDeletion(user));
 	const deletionSubmittingRef = useRef(false);
 	const avatarUrl = resolveAvatarUrl(user, failedAvatarUrls);
-	const showAccountDeletion = isAccountDeletionUiEnabled(
-		process.env.NEXT_PUBLIC_ACCOUNT_DELETION_UI_ENABLED,
-	) && canRequestPasswordAccountDeletion(user);
+	const deletionUiEnabled = isAccountDeletionUiEnabled(process.env.NEXT_PUBLIC_ACCOUNT_DELETION_UI_ENABLED);
+	const authenticatedUserId = user?._id || user?.id;
+
+	useEffect(() => {
+		if (!deletionUiEnabled || !authenticatedUserId) {
+			setCanRequestDeletion(false);
+			return;
+		}
+		if (typeof user?.canRequestPasswordAccountDeletion === "boolean") {
+			setCanRequestDeletion(user.canRequestPasswordAccountDeletion);
+			return;
+		}
+
+		let cancelled = false;
+		const session = captureSession();
+		setCanRequestDeletion(false);
+		fetch("/api/v1/users/me", { credentials: "include", cache: "no-store" })
+			.then((response) => response.ok ? response.json() : null)
+			.then((data) => {
+				if (cancelled || !isCurrentSession(session)) return;
+				setCanRequestDeletion(data?.data?.accountCapabilities?.canRequestPasswordAccountDeletion === true);
+			})
+			.catch(() => {
+				if (!cancelled && isCurrentSession(session)) setCanRequestDeletion(false);
+			});
+		return () => { cancelled = true; };
+	}, [deletionUiEnabled, authenticatedUserId, user?.canRequestPasswordAccountDeletion, captureSession, isCurrentSession]);
+
+	const showAccountDeletion = deletionUiEnabled && canRequestDeletion;
 
 	async function handleAvatarChange(event) {
 		const file = event.target.files?.[0];
