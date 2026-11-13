@@ -5,6 +5,11 @@ const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
 const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const User = require("../models/userModel");
+const Vocab = require("../models/vocabModel");
+const VocabularyReviewEvent = require("../models/vocabularyReviewEventModel");
+const AccountDeletionReceipt = require("../models/accountDeletionReceiptModel");
+const { receiptIdForEmail } = require("../utils/accountDeletionReceipt");
+const { coordinateAccountDeletion } = require("../services/accountDeletionCoordinator");
 const app = require("../app");
 
 const frontend = "https://studyjony.test";
@@ -136,4 +141,53 @@ test("per-user rate limiting blocks repeated reauthentication attempts", async (
 	}
 	assert.equal((await request(passwordUser, validBody("wrong-password"))).status, 429);
 	assert.equal(await lifecycle(passwordUser), "active");
+});
+
+test("password deletion request cleans learning data, finalizes with a receipt, and prevents later sign-in", async () => {
+	const previousFlag = process.env.ACCOUNT_DELETION_REQUEST_ENABLED;
+	const previousReceiptSecret = process.env.ACCOUNT_DELETION_RECEIPT_HMAC_SECRET;
+	process.env.ACCOUNT_DELETION_REQUEST_ENABLED = "true";
+	process.env.ACCOUNT_DELETION_RECEIPT_HMAC_SECRET = "account-deletion-test-secret-0123456789abcdef";
+	try {
+		const word = await Vocab.create({
+			user: passwordUser.id,
+			english: "temporary word",
+			vietnamese: "từ tạm",
+		});
+		await VocabularyReviewEvent.create({
+			_id: crypto.randomUUID(),
+			user: passwordUser._id,
+			word: word._id,
+			inputHash: "a".repeat(64),
+			correct: true,
+			completedAt: new Date(),
+		});
+
+		const requestResponse = await request(passwordUser, validBody(password));
+		assert.equal(requestResponse.status, 202);
+		assert.equal(await lifecycle(passwordUser), "deleting");
+
+		assert.deepEqual(await coordinateAccountDeletion(passwordUser.id), { status: "completed" });
+		assert.equal(await User.findById(passwordUser.id), null);
+		assert.equal(await Vocab.countDocuments({ user: passwordUser._id }), 0);
+		assert.equal(await VocabularyReviewEvent.countDocuments({ user: passwordUser._id }), 0);
+
+		const receipt = await AccountDeletionReceipt.findById(receiptIdForEmail(passwordUser.email)).lean();
+		assert.ok(receipt);
+		assert.ok(receipt.completedAt instanceof Date);
+		assert.ok(receipt.expiresAt > receipt.completedAt);
+		assert.deepEqual(Object.keys(receipt).sort(), ["_id", "completedAt", "expiresAt"]);
+
+		const loginResponse = await fetch(`${base}/auth/login`, {
+			method: "POST",
+			headers: { "Content-Type": "application/json", Origin: frontend },
+			body: JSON.stringify({ email: passwordUser.email, password }),
+		});
+		assert.equal(loginResponse.status, 401);
+	} finally {
+		if (previousFlag === undefined) delete process.env.ACCOUNT_DELETION_REQUEST_ENABLED;
+		else process.env.ACCOUNT_DELETION_REQUEST_ENABLED = previousFlag;
+		if (previousReceiptSecret === undefined) delete process.env.ACCOUNT_DELETION_RECEIPT_HMAC_SECRET;
+		else process.env.ACCOUNT_DELETION_RECEIPT_HMAC_SECRET = previousReceiptSecret;
+	}
 });
