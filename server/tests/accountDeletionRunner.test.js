@@ -5,31 +5,49 @@ const accountDeletion = require("../services/accountDeletionCoordinator");
 const { runAccountDeletionOnce } = require("../services/accountDeletionRunner");
 
 const firstUserId = "64b000000000000000000001";
+const secondUserId = "64b000000000000000000002";
 
-function mockCandidates(t, candidates) {
-	t.mock.method(User, "find", filter => {
-		assert.deepEqual(filter, { lifecycleState: "deleting" });
+function mockScheduler(t, userIds) {
+	const pool = userIds.map(_id => ({ _id, attempted: false }));
+	const selectedIds = [];
+	let resetCount = 0;
+
+	t.mock.method(User, "findOneAndUpdate", (filter, update, options) => {
+		assert.deepEqual(filter, {
+			lifecycleState: "deleting",
+			deletionRunnerCycleAttempted: { $ne: true },
+		});
+		assert.deepEqual(update, { $set: { deletionRunnerCycleAttempted: true } });
+		assert.deepEqual(options, { sort: { _id: 1 }, returnDocument: "after", timestamps: false });
+
+		const candidate = pool.filter(user => !user.attempted)
+			.sort((left, right) => String(left._id).localeCompare(String(right._id)))[0];
+		if (candidate) {
+			candidate.attempted = true;
+			selectedIds.push(String(candidate._id));
+		}
 		return {
 			select(fields) {
 				assert.equal(fields, "_id");
-				return {
-					sort(order) {
-						assert.deepEqual(order, { _id: 1 });
-						return {
-							limit(count) {
-								assert.equal(count, 1);
-								return { lean: async () => candidates };
-							},
-						};
-					},
-				};
+				return { lean: async () => candidate ? { _id: candidate._id } : null };
 			},
 		};
 	});
+
+	t.mock.method(User, "updateMany", async (filter, update, options) => {
+		assert.deepEqual(filter, { lifecycleState: "deleting", deletionRunnerCycleAttempted: true });
+		assert.deepEqual(update, { $unset: { deletionRunnerCycleAttempted: 1 } });
+		assert.deepEqual(options, { timestamps: false });
+		resetCount += 1;
+		for (const user of pool) user.attempted = false;
+		return { modifiedCount: pool.length };
+	});
+
+	return { pool, selectedIds, get resetCount() { return resetCount; } };
 }
 
 test("runner is idle when there is no deleting account", async t => {
-	mockCandidates(t, []);
+	mockScheduler(t, []);
 	t.mock.method(accountDeletion, "coordinateAccountDeletion", async () => {
 		assert.fail("coordinator must not run without a candidate");
 	});
@@ -38,7 +56,7 @@ test("runner is idle when there is no deleting account", async t => {
 });
 
 test("runner selects and processes only one deleting account", async t => {
-	mockCandidates(t, [{ _id: firstUserId }, { _id: "64b000000000000000000002" }]);
+	const scheduler = mockScheduler(t, [firstUserId, secondUserId]);
 	const processed = [];
 	t.mock.method(accountDeletion, "coordinateAccountDeletion", async id => {
 		processed.push(String(id));
@@ -50,10 +68,31 @@ test("runner selects and processes only one deleting account", async t => {
 		blockers: ["avatar_cleanup_pending"],
 	});
 	assert.deepEqual(processed, [firstUserId]);
+	assert.deepEqual(scheduler.selectedIds, [firstUserId]);
+	assert.equal(scheduler.pool[0].attempted, true);
+	assert.equal(scheduler.pool[1].attempted, false);
 });
 
-test("coordinator failures propagate and the selected account can be retried", async t => {
-	mockCandidates(t, [{ _id: firstUserId }]);
+test("a blocked account rotates behind other deleting accounts and retries next cycle", async t => {
+	const scheduler = mockScheduler(t, [firstUserId, secondUserId]);
+	const processed = [];
+	t.mock.method(accountDeletion, "coordinateAccountDeletion", async id => {
+		const accountId = String(id);
+		processed.push(accountId);
+		return accountId === firstUserId ? { status: "blocked", blockers: ["avatar_cleanup_pending"] } : { status: "completed" };
+	});
+
+	assert.equal((await runAccountDeletionOnce()).status, "blocked");
+	assert.deepEqual(await runAccountDeletionOnce(), { status: "completed" });
+	assert.equal((await runAccountDeletionOnce()).status, "blocked");
+
+	assert.deepEqual(processed, [firstUserId, secondUserId, firstUserId]);
+	assert.deepEqual(scheduler.selectedIds, [firstUserId, secondUserId, firstUserId]);
+	assert.equal(scheduler.resetCount, 1);
+});
+
+test("coordinator failures propagate and become retryable after the round completes", async t => {
+	const scheduler = mockScheduler(t, [firstUserId]);
 	let attempts = 0;
 	t.mock.method(accountDeletion, "coordinateAccountDeletion", async id => {
 		assert.equal(String(id), firstUserId);
@@ -68,10 +107,11 @@ test("coordinator failures propagate and the selected account can be retried", a
 		step: "vocabularies",
 	});
 	assert.equal(attempts, 2);
+	assert.equal(scheduler.resetCount, 1);
 });
 
 test("overlapping runner calls share one in-flight account operation", async t => {
-	mockCandidates(t, [{ _id: firstUserId }]);
+	const scheduler = mockScheduler(t, [firstUserId]);
 	let calls = 0;
 	let release;
 	t.mock.method(accountDeletion, "coordinateAccountDeletion", () => {
@@ -84,6 +124,7 @@ test("overlapping runner calls share one in-flight account operation", async t =
 	assert.strictEqual(second, first);
 	await new Promise(resolve => setImmediate(resolve));
 	assert.equal(calls, 1);
+	assert.deepEqual(scheduler.selectedIds, [firstUserId]);
 	release({ status: "completed" });
 	assert.deepEqual(await first, { status: "completed" });
 });
