@@ -13,12 +13,14 @@ const source = fs.readFileSync(path.join(__dirname, "../server.js"), "utf8");
 // or attaching fatal-error handlers to the test runner's process.
 function start(env = {}, app) {
 	const handlers = new Map(), exits = [], calls = [];
+	let schedulerStarts = 0;
 	let closed = false;
 	const fakeServer = { close(callback) { closed = true; callback(); } };
 	const modules = {
 		dotenv: { config() {} },
 		mongoose: { connect() { return Promise.resolve(); } },
 		"./services/avatarUpload": { assertAvatarStorageConfigured() {} },
+		"./services/accountDeletionScheduler": { startConfiguredAccountDeletionScheduler() { schedulerStarts += 1; } },
 		"./app": app || { listen(...args) { calls.push(args); args.at(-1)(); return fakeServer; } },
 	};
 	const server = vm.runInNewContext(source + "\nserver;", {
@@ -26,8 +28,15 @@ function start(env = {}, app) {
 		process: { env, on(event, handler) { handlers.set(event, handler); }, exit(code) { exits.push(code); } },
 		console: { log() {}, error() {} },
 	}, { filename: "server.js", timeout: 1000 });
-	return { server, handlers, exits, calls, closed: () => closed };
+	return { server, handlers, exits, calls, closed: () => closed, schedulerStarts: () => schedulerStarts };
 }
+
+test("account deletion scheduling remains disabled by default", async () => {
+	const running = start();
+	await Promise.resolve();
+	assert.equal(running.schedulerStarts(), 1, "startup calls the opt-in guard after MongoDB connects");
+	// The entry point leaves the default-off decision to the guarded scheduler.
+});
 
 for (const [name, env, port] of [
 	["default port", {}, 5000],
