@@ -30,7 +30,11 @@ const auditPipeline = [
 			duplicates: [
 				// Mirrors the User.googleId partial unique index filter exactly.
 				{ $match: { googleId: { $type: "string", $gt: "" } } },
-				{ $group: { _id: "$googleId", userCount: { $sum: 1 } } },
+				{ $project: { _id: 1, indexKeys: { $cond: [{ $isArray: "$googleId" }, "$googleId", ["$googleId"]] } } },
+				{ $unwind: "$indexKeys" },
+				// A multikey index stores each distinct array value for a document once.
+				{ $group: { _id: { user: "$_id", key: "$indexKeys" } } },
+				{ $group: { _id: "$_id.key", userCount: { $sum: 1 } } },
 				{ $match: { userCount: { $gt: 1 } } },
 				{
 					$group: {
