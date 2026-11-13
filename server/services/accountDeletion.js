@@ -20,6 +20,10 @@ async function initiateAccountDeletion(userId, { expectedPasswordHash } = {}) {
 			return { initiated: false };
 		}
 		if (user.lifecycleState !== "active") throw new AppError("Invalid account lifecycle state", 409);
+		// Keep unresolved legacy avatars active so their owners can retry after reconciliation.
+		if (!user.avatarIntent && user.avatar !== undefined && user.avatar !== "") {
+			throw new AppError("Legacy avatar cannot be safely deleted", 409);
+		}
 		if (user.avatarIntent) {
 			const tracked = await AvatarUploadIntent.findOne({
 				_id: user.avatarIntent, user: userId, attachmentStatus: "attached", cleanupStatus: "none",
