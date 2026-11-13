@@ -22,7 +22,9 @@ Internal cleanup services remove only the deleting account's dependent database 
 
 `finalizeAccountDeletion(userId)` is an internal service. It runs the preflight and readiness checks, creates the privacy-preserving completion receipt, and deletes the User record in one MongoDB transaction. The target must already be in `deleting` state. Any blocker or transaction failure aborts the whole operation; the receipt and User deletion cannot commit separately. The receipt stores a versioned HMAC of normalized email and completion/expiry timestamps, requires `ACCOUNT_DELETION_RECEIPT_HMAC_SECRET` (at least 32 bytes), and has at most 30 days of retention. MongoDB TTL removal is asynchronous.
 
-The User record remains as a lifecycle tombstone until finalization succeeds. No public account-deletion endpoint or automatic deletion orchestrator is included. Initiation, cleanup, readiness, and finalization require separate internal calls; deploying this PR does not by itself initiate account deletion.
+The User record remains as a lifecycle tombstone until finalization succeeds. Password accounts may request deletion through `POST /api/v1/users/request-account-deletion` when `ACCOUNT_DELETION_REQUEST_ENABLED=true`; the endpoint requires authentication, same-origin CSRF protection, exact confirmation, and the current password, and rejects Google-only accounts. The profile UI is separately gated by `NEXT_PUBLIC_ACCOUNT_DELETION_UI_ENABLED=true`.
+
+For manual processing, run `node scripts/run-avatar-cleanup.js` first (Cloudinary by default; add `--local-upload-host` only on the upload host for local files). Review the `complete`, `retry`, `held`, and `skipped` counts; held or uncertain claims remain blocked and must not be reset based on elapsed time. Then run `node scripts/run-account-deletion.js --confirm-account-deletion`; it processes at most one deleting account per invocation and can be rerun after resolving blockers. The optional `ACCOUNT_DELETION_SCHEDULER_ENABLED=true` flag starts the account runner every minute after server startup; it does not run the avatar cleanup worker and is disabled unless explicitly enabled.
 
 ## Index and rollout notes
 
