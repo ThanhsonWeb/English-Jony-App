@@ -323,6 +323,8 @@ exports.protect = catchAsync(async (req, res, next) => {
 	}
 	// Attach req.user
 	req.user = currentUser;
+	// Internal security services can bind one-time proofs to this exact verified JWT.
+	req.authSessionFingerprint = sessionRevocation.fingerprint(token);
 	next();
 });
 
