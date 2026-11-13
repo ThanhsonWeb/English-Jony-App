@@ -127,6 +127,17 @@ test("wrong current password and Google-only account are rejected without initia
 	assert.equal(await lifecycle(googleUser), "active");
 });
 
+test("legacy-avatar deletion request is rejected while the account remains active", async () => {
+	process.env.ACCOUNT_DELETION_REQUEST_ENABLED = "true";
+	const legacyAvatar = "https://legacy.example.test/old-avatar.jpg";
+	await User.updateOne({ _id: passwordUser._id }, { $set: { avatar: legacyAvatar } });
+
+	const response = await request(passwordUser, validBody(password));
+	assert.equal(response.status, 409);
+	assert.equal(await lifecycle(passwordUser), "active");
+	assert.equal((await User.findById(passwordUser.id)).avatar, legacyAvatar);
+});
+
 test("valid password reauthentication initiates deletion through the existing service", async () => {
 	process.env.ACCOUNT_DELETION_REQUEST_ENABLED = "true";
 	const response = await request(passwordUser, validBody(password));
