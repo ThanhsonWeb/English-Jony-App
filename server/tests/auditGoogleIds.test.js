@@ -30,6 +30,8 @@ test("reports duplicate and malformed Google ID aggregates without revealing rec
 		{ email: "safe-audit-empty@example.test", googleId: "" },
 		{ email: "safe-audit-whitespace@example.test", googleId: whitespaceOnlyGoogleId },
 		{ email: "safe-audit-whitespace-duplicate@example.test", googleId: whitespaceOnlyGoogleId },
+		{ email: "safe-audit-array@example.test", googleId: ["private-array-google-subject"] },
+		{ email: "safe-audit-array-collision@example.test", googleId: "private-array-google-subject" },
 		{ email: "safe-audit-padded@example.test", googleId: " padded-subject " },
 		{ email: "safe-audit-long@example.test", googleId: "x".repeat(256) },
 	]);
@@ -41,23 +43,23 @@ test("reports duplicate and malformed Google ID aggregates without revealing rec
 	const indexesAfter = await User.collection.indexes();
 
 	assert.deepEqual(result, {
-		totalUsers: 11,
+		totalUsers: 13,
 		googleIds: {
-			valid: 3,
+			valid: 4,
 			missing: 2,
 			malformed: {
-				nonString: 1,
+				nonString: 2,
 				empty: 1,
 				whitespaceOnly: 2,
 				surroundingWhitespace: 1,
 				tooLong: 1,
 			},
 		},
-		duplicates: { groups: 2, users: 4, extraRecords: 2 },
+		duplicates: { groups: 3, users: 6, extraRecords: 3 },
 	});
 	assert.equal(output.length, 1);
 	assert.deepEqual(JSON.parse(output[0]), result);
-	for (const privateValue of ["safe-audit-one@example.test", "safe-audit-two@example.test", duplicateId, whitespaceOnlyGoogleId, "valid-google-subject", "padded-subject"]) {
+	for (const privateValue of ["safe-audit-one@example.test", "safe-audit-two@example.test", duplicateId, whitespaceOnlyGoogleId, "private-array-google-subject", "valid-google-subject", "padded-subject"]) {
 		assert.equal(output[0].includes(privateValue), false);
 	}
 	assert.deepEqual(after, before, "the audit must not modify User records");
