@@ -1,8 +1,21 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
+const { spawnSync } = require("node:child_process");
+const path = require("node:path");
 const { runAccountDeletionCli, CONFIRMATION_FLAG } = require("../scripts/run-account-deletion");
 
 const testDatabase = "mongodb://127.0.0.1:27017/account-deletion-cli-test";
+
+test("direct CLI invocation refuses before reading configuration without confirmation", () => {
+	const cliPath = path.join(__dirname, "../scripts/run-account-deletion.js");
+	const env = { ...process.env };
+	delete env.DATABASE;
+	const result = spawnSync(process.execPath, [cliPath], { encoding: "utf8", env });
+
+	assert.equal(result.status, 1);
+	assert.match(result.stderr, /Explicit confirmation required: pass --confirm-account-deletion/);
+	assert.doesNotMatch(result.stderr, /mongodb:\/\//i);
+});
 
 test("CLI refuses to connect without the exact explicit confirmation", async () => {
 	let connects = 0;
