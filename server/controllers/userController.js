@@ -6,7 +6,8 @@ const AppError = require("../utils/appError");
 const { isValidAvatar, uploadAvatar, getAvatarStorageProvider } = require("../services/avatarUpload");
 const { reserveAvatarUpload, beginAvatarUpload, recordUploadOutcome, attachAvatarUpload } = require("../services/avatarUploadIntent");
 const { CLIENT_USER_FIELDS, clientUser } = require("../utils/clientUser");
-const { fenceActiveAccountWrite } = require("../utils/accountLifecycle");
+const { isActiveAccount, activeAccountFilter, fenceActiveAccountWrite } = require("../utils/accountLifecycle");
+const { initiateAccountDeletion } = require("../services/accountDeletion");
 
 const ACCOUNT_WRITE_TRANSACTION_OPTIONS = {
 	readPreference: "primary",
@@ -139,4 +140,36 @@ exports.updateAvatar = catchAsync(async (req, res, next) => {
 		throw error;
 	}
 	res.status(200).json({ status: "success", data: { user: clientUser(user) } });
+});
+
+exports.requestAccountDeletion = catchAsync(async (req, res, next) => {
+	const body = req.body;
+	if (!body || typeof body !== "object" || Array.isArray(body) ||
+		Object.keys(body).some(key => !["confirmation", "currentPassword"].includes(key)) ||
+		body.confirmation !== "DELETE MY ACCOUNT" ||
+		typeof body.currentPassword !== "string" || !body.currentPassword) {
+		return next(new AppError("Confirm deletion and provide your current password.", 400));
+	}
+
+	const account = await User.findById(req.user.id).select("+password +lifecycleState");
+	if (!isActiveAccount(account)) {
+		return next(new AppError("Invalid or expired session. Please log in again.", 401));
+	}
+	if (typeof account.password !== "string" || !account.password) {
+		return next(new AppError("Password reauthentication is unavailable for this account.", 403));
+	}
+
+	const correct = await account.correctPassword(body.currentPassword, account.password);
+	if (!correct) return next(new AppError("Your current password is wrong.", 401));
+
+	// Reject a password change or lifecycle transition that won while bcrypt was running.
+	const stillCurrent = await User.exists({
+		_id: account._id,
+		password: account.password,
+		...activeAccountFilter(),
+	});
+	if (!stillCurrent) return next(new AppError("Please reauthenticate and try again.", 401));
+
+	await initiateAccountDeletion(account._id, { expectedPasswordHash: account.password });
+	return res.status(202).json({ status: "success", data: { requested: true } });
 });
