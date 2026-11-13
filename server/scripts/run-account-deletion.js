@@ -35,8 +35,12 @@ async function main() {
 }
 
 if (require.main === module) {
-	main().catch(() => {
-		console.error("Account-deletion runner failed; retry only after checking the internal service state.");
+	main().catch(error => {
+		if (error.message === `Explicit confirmation required: pass ${CONFIRMATION_FLAG}`) {
+			console.error(error.message);
+		} else {
+			console.error("Account-deletion runner failed; retry only after checking the internal service state.");
+		}
 		process.exitCode = 1;
 	});
 }
