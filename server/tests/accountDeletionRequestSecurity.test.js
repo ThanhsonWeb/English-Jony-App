@@ -115,10 +115,10 @@ test("valid password reauthentication initiates deletion through the existing se
 test("a password hash change during reauthentication fails closed", async t => {
 	process.env.ACCOUNT_DELETION_REQUEST_ENABLED = "true";
 	const replacementHash = await require("bcrypt").hash("new-password", 4);
-	const originalExists = User.exists;
-	const stub = t.mock.method(User, "exists", async function (filter) {
+	const stub = t.mock.method(User, "exists", async () => {
+		// Model a password change after the bcrypt check but during the final recheck.
 		await User.updateOne({ _id: passwordUser._id }, { $set: { password: replacementHash } });
-		return originalExists.call(this, filter);
+		return true;
 	});
 	try {
 		const response = await request(passwordUser, validBody(password));
