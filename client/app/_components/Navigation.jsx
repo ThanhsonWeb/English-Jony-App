@@ -1,24 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link, usePathname } from "@/i18n/navigation";
 import AuthButtons from "./AuthButtons";
+import Logo from "./Logo";
 import { useAuth } from "../_contexts/AuthContext";
 import { useTranslations } from "next-intl";
+import styles from "./Navigation.module.css";
 import {
-	Menu,
-	X,
-	Headphones,
 	BookOpen,
-	PenLine,
+	Headphones,
+	House,
 	Languages,
+	Menu,
 	Trophy,
+	X,
 } from "lucide-react";
 
-const navLinks = [
+const desktopLinks = [
 	{ key: "dialogue", href: "/dialogue", icon: Headphones },
-	// { key: "vocabulary", href: "/vocabulary", icon: Languages },
 	{ key: "wordlist", href: "/wordlist", icon: BookOpen },
+	{ key: "rank", href: "/rank", icon: Trophy },
+];
+
+const mobileLinks = [
+	{ key: "home", href: "/", icon: House },
+	{ key: "dialogue", href: "/dialogue", icon: Headphones },
+	{ key: "stories", href: "/dialogue?category=story", icon: BookOpen },
+	{ key: "vocabulary", href: "/wordlist", icon: Languages },
 	{ key: "rank", href: "/rank", icon: Trophy },
 ];
 
@@ -33,83 +43,158 @@ function Navigation() {
 	const t = useTranslations("Navigation");
 	const pathname = usePathname();
 	const activePathname = pathname.replace(/^\/(en|vi)(?=\/|$)/, "") || "/";
-	const [openPathname, setOpenPathname] = useState(null);
-	const isOpen = openPathname === pathname;
+	const [isOpen, setIsOpen] = useState(false);
+	const triggerRef = useRef(null);
+	const closeRef = useRef(null);
+	const drawerRef = useRef(null);
 	const { user } = useAuth();
+
+	useEffect(() => {
+		if (!isOpen) return undefined;
+
+		const previousFocus = document.activeElement;
+		const previousOverflow = document.body.style.overflow;
+		document.body.style.overflow = "hidden";
+		closeRef.current?.focus();
+
+		function handleKeyDown(event) {
+			if (event.key === "Escape") {
+				event.preventDefault();
+				setIsOpen(false);
+				return;
+			}
+
+			if (event.key !== "Tab") return;
+			const focusable = drawerRef.current?.querySelectorAll(
+				'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+			);
+			if (!focusable?.length) {
+				event.preventDefault();
+				return;
+			}
+
+			const first = focusable[0];
+			const last = focusable[focusable.length - 1];
+			if (event.shiftKey && (document.activeElement === first || !drawerRef.current?.contains(document.activeElement))) {
+				event.preventDefault();
+				last.focus();
+			} else if (!event.shiftKey && (document.activeElement === last || !drawerRef.current?.contains(document.activeElement))) {
+				event.preventDefault();
+				first.focus();
+			}
+		}
+
+		document.addEventListener("keydown", handleKeyDown);
+		return () => {
+			document.removeEventListener("keydown", handleKeyDown);
+			document.body.style.overflow = previousOverflow;
+			if (previousFocus instanceof HTMLElement && previousFocus.isConnected) previousFocus.focus();
+		};
+	}, [isOpen]);
+
+	function closeDrawer() {
+		setIsOpen(false);
+	}
+
 	return (
-		<nav className="relative">
-			{/* Desktop Navigation */}
-			<ul className="hidden items-center gap-2 lg:flex">
-				{navLinks.map((link) => {
-					const Icon = link.icon;
-					const isActive =
-						activePathname === link.href ||
-						activePathname.startsWith(`${link.href}/`);
-
-					return (
-						<li key={link.key}>
-							<Link
-								href={link.href}
-								aria-current={isActive ? "page" : undefined}
-								className={`${navItemBase} gap-2 rounded-full px-3 py-2 text-base lg:px-3 xl:px-4 ${
-									isActive
-										? navItemActive
-										: navItemInactive
-								}`}
-							>
-								<Icon className="h-[18px] w-[18px] shrink-0" />
-								<span>{t(link.key)}</span>
-							</Link>
-						</li>
-					);
-				})}
-			</ul>
-
-			{/* Mobile Menu Button */}
-			<button
-				onClick={() => setOpenPathname(isOpen ? null : pathname)}
-				className="p-2 text-secondary hover:text-main lg:hidden"
-				aria-label="Toggle menu"
-			>
-				{isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
-			</button>
-
-			{/* Mobile Dropdown Menu */}
-			{isOpen && (
-				<div className="fixed inset-x-0 top-[73px] z-50 flex max-h-[calc(100dvh-73px-env(safe-area-inset-bottom))] flex-col gap-5 overflow-y-auto overscroll-y-contain border-b border-app bg-surface p-6 shadow-2xl lg:hidden [&>*]:shrink-0">
-					{navLinks.map((link) => {
-						const Icon = link.icon;
-						const isActive =
-							activePathname === link.href ||
-							activePathname.startsWith(`${link.href}/`);
-
+		<div className="relative">
+			{/* Desktop navigation remains unchanged. */}
+			<nav aria-label={t("desktopLabel")} className="hidden lg:block">
+				<ul className="flex items-center gap-2">
+					{desktopLinks.map(({ key, href, icon: Icon }) => {
+						const isActive = activePathname === href || activePathname.startsWith(`${href}/`);
 						return (
-							<Link
-								key={link.key}
-								href={link.href}
-								onClick={() => setOpenPathname(null)}
-								aria-current={isActive ? "page" : undefined}
-								className={`${navItemBase} w-full gap-3 rounded-2xl px-4 py-3 text-lg ${
-									isActive
-										? `${navItemActive} font-semibold`
-										: navItemInactive
-								}`}
-							>
-								<Icon className="w-5 h-5" />
-								<span>{t(link.key)}</span>
-							</Link>
+							<li key={key}>
+								<Link
+									href={href}
+									aria-current={isActive ? "page" : undefined}
+									className={`${navItemBase} gap-2 rounded-full px-3 py-2 text-base lg:px-3 xl:px-4 ${isActive ? navItemActive : navItemInactive}`}
+								>
+									<Icon className="h-[18px] w-[18px] shrink-0" aria-hidden="true" />
+									<span>{t(key)}</span>
+								</Link>
+							</li>
 						);
 					})}
+				</ul>
+			</nav>
 
-					{/* Auth Buttons inside mobile dropdown 🔑 */}
-					{!user && (
-						<div className="flex flex-col gap-3 border-t border-app pt-4 sm:hidden">
-							<AuthButtons />
+			<button
+				ref={triggerRef}
+				type="button"
+				onClick={() => setIsOpen(true)}
+				aria-label={t("openMenu")}
+				aria-expanded={isOpen}
+				aria-controls={isOpen ? "mobile-navigation-drawer" : undefined}
+				aria-haspopup="dialog"
+				className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-secondary transition hover:bg-hover hover:text-main focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 lg:hidden"
+			>
+				<Menu className="h-6 w-6" aria-hidden="true" />
+			</button>
+
+			{isOpen && createPortal(
+				<div
+					className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-[2px] lg:hidden"
+					onClick={(event) => {
+						if (event.target === event.currentTarget) closeDrawer();
+					}}
+				>
+					<section
+						ref={drawerRef}
+						id="mobile-navigation-drawer"
+						role="dialog"
+						aria-modal="true"
+						aria-labelledby="mobile-navigation-title"
+						className={`${styles.drawerPanel} fixed inset-y-0 left-0 flex w-[min(20rem,calc(100vw-3rem))] max-w-[85vw] flex-col border-r border-app bg-surface px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-[calc(1rem+env(safe-area-inset-top))] text-main shadow-2xl`}
+					>
+						<div className="mb-5 flex items-center justify-between border-b border-app pb-4">
+							<h2 id="mobile-navigation-title" className="sr-only">
+								{t("menuTitle")}
+							</h2>
+							<Logo mobileDrawer />
+							<button
+								ref={closeRef}
+								type="button"
+								onClick={closeDrawer}
+								aria-label={t("closeMenu")}
+								className="inline-flex h-11 w-11 items-center justify-center rounded-xl text-secondary transition hover:bg-hover hover:text-main focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+							>
+								<X className="h-5 w-5" aria-hidden="true" />
+							</button>
 						</div>
-					)}
-				</div>
+
+						<nav aria-label={t("mobileLabel")} className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto overscroll-contain">
+							{mobileLinks.map(({ key, href, icon: Icon }) => {
+								const isActive = key === "home"
+									? activePathname === "/"
+									: key === "stories"
+										? false
+										: activePathname === href || activePathname.startsWith(`${href}/`);
+								return (
+									<Link
+										key={key}
+										href={href}
+										onClick={closeDrawer}
+										aria-current={isActive ? "page" : undefined}
+										className={`flex min-h-12 items-center gap-3 rounded-xl border px-3.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${isActive ? navItemActive : navItemInactive}`}
+									>
+										<Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
+										<span>{t(key)}</span>
+									</Link>
+								);
+							})}
+						</nav>
+
+						{!user && (
+							<div className="mt-4 border-t border-app pt-4 sm:hidden">
+								<AuthButtons onNavigate={closeDrawer} />
+							</div>
+						)}
+					</section>
+				</div>,
+				document.body,
 			)}
-		</nav>
+		</div>
 	);
 }
 

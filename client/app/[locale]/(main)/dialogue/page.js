@@ -2,5 +2,7 @@ import DialogueCatalogueClient from "./DialogueCatalogueClient";
 
 export default async function DialoguePage({ searchParams }) {
 	const query = await searchParams;
-	return <DialogueCatalogueClient isStartIntent={query?.onboarding === "start"} />;
+	const initialCategory = query?.category === "story" ? "story" : "all";
+	const isStartIntent = query?.onboarding === "start";
+	return <DialogueCatalogueClient key={`${initialCategory}:${isStartIntent}`} isStartIntent={isStartIntent} initialCategory={initialCategory} />;
 }

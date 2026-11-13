@@ -225,7 +225,7 @@ export default function DialogueUsefulWords({
 	}
 
 	return (
-		<main data-testid="dialogue-vocabulary-selection" className="min-h-[calc(100vh-80px)] bg-page px-4 py-5 pb-[calc(100px+env(safe-area-inset-bottom))] text-main sm:px-6 sm:pt-5 sm:pb-8">
+		<main data-testid="dialogue-vocabulary-selection" className="min-h-[calc(100vh-80px)] bg-page px-4 py-5 pb-[calc(24px+env(safe-area-inset-bottom))] text-main sm:px-6 sm:pt-5 sm:pb-8">
 			<div className="mx-auto w-full max-w-6xl">
 				<section className="grid items-center gap-2 md:mx-auto md:max-w-5xl md:grid-cols-[minmax(0,1.1fr)_minmax(260px,0.7fr)] md:gap-0">
 					<div className="min-w-0 pb-2 md:pb-0">

@@ -68,7 +68,7 @@ export function DialogueBackgroundProgressProvider({ children }) {
 		return () => clearTimeout(timer);
 	}, [xpReward, generation, userId]);
 	return <BackgroundContext.Provider value={{ queue, snapshot, loading, userId }}>{children}
-		{xpReward?.generation === generation && xpReward.userId === userId && xpReward.amount > 0 && <div role="status" aria-live="polite" className="fixed bottom-[calc(env(safe-area-inset-bottom)+5.25rem)] left-1/2 z-[100] flex max-w-[calc(100%-2rem)] -translate-x-1/2 items-center gap-2 rounded-full border border-primary/25 bg-surface px-4 py-3 text-sm font-semibold text-main shadow-xl sm:bottom-6">
+		{xpReward?.generation === generation && xpReward.userId === userId && xpReward.amount > 0 && <div role="status" aria-live="polite" className="fixed bottom-[calc(env(safe-area-inset-bottom)+4.5rem)] left-1/2 z-[100] flex max-w-[calc(100%-2rem)] -translate-x-1/2 items-center gap-2 rounded-full border border-primary/25 bg-surface px-4 py-3 text-sm font-semibold text-main shadow-xl sm:bottom-6">
 			<Sparkles size={18} aria-hidden="true" className="shrink-0 text-brand-text" />
 			<span>{t("xpRewardEarned", { amount: xpReward.amount })}</span>
 		</div>}

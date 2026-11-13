@@ -338,8 +338,13 @@
 	},
 	"Navigation": {
 		"mobileLabel": "Mobile navigation",
+		"desktopLabel": "Main navigation",
+		"menuTitle": "Menu",
+		"openMenu": "Open navigation menu",
+		"closeMenu": "Close navigation menu",
 		"home": "Home",
 		"dialogue": "Dialogues",
+		"stories": "Stories",
 		"vocabulary": "Vocabulary",
 		"progress": "Progress",
 		"profile": "Profile",
@@ -421,6 +426,7 @@
 	},
 	"Header": {
 		"avatar": "User avatar",
+		"accountMenu": "Account menu for {name}",
 		"signIn": "Sign in",
 		"vip": "Vip",
 		"profile": "Profile",

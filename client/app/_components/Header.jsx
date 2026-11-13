@@ -72,12 +72,12 @@ function Header() {
 				{/* Mobile menu */}
 				<div className="flex items-center gap-3">
 					<div className="lg:hidden">
-						<Navigation />
+						<Navigation key={`mobile-${pathname}`} />
 					</div>
 					<Logo wordlistMobile={isWordlist} />
 				</div>
 				<div className="hidden justify-center lg:flex">
-					<Navigation />
+					<Navigation key={`desktop-${pathname}`} />
 				</div>
 
 				<div className="col-start-2 row-start-1 flex shrink-0 items-center justify-end gap-1 sm:gap-2 xl:gap-3 lg:col-start-3">
@@ -90,8 +90,12 @@ function Header() {
 						<div ref={dropdownRef} className="relative flex items-center gap-1">
 							{user.role === "admin" && <AdminFeedbackNotifications onNavigate={() => setIsDropdownOpen(false)} />}
 							<button
+								type="button"
 								onClick={() => setIsDropdownOpen((open) => !open)}
-								className="group flex cursor-pointer items-center gap-2 rounded-xl px-1 py-2 transition-all duration-200 hover:bg-surface-muted sm:px-2 xl:gap-3 xl:px-3"
+								aria-label={t("accountMenu", { name: user.name })}
+								aria-expanded={isDropdownOpen}
+								aria-controls={isDropdownOpen ? "header-account-menu" : undefined}
+								className="group flex cursor-pointer items-center gap-2 rounded-xl px-1 py-2 transition-all duration-200 hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 sm:px-2 xl:gap-3 xl:px-3"
 							>
 								<div className="hidden min-w-0 sm:block">
 									<p className="max-w-20 truncate whitespace-nowrap text-md font-semibold leading-tight text-main sm:max-w-24 xl:max-w-none">
@@ -106,7 +110,7 @@ function Header() {
 
 							{/* DropdownList */}
 							{isDropdownOpen && (
-								<div className="absolute right-0 top-full z-50 mt-3 w-64 overflow-hidden rounded-2xl border border-app bg-surface shadow-2xl">
+								<div id="header-account-menu" className="absolute right-0 top-full z-50 mt-3 w-64 overflow-hidden rounded-2xl border border-app bg-surface shadow-2xl">
 									{/* User Info */}
 									<div className="border-b border-app px-4 py-4">
 										<p className="text-sm font-semibold text-main">

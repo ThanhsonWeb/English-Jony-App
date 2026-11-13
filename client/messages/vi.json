@@ -337,6 +337,11 @@
 		"noDueWords": "Chưa có từ nào đến hạn ôn tập."
 	},
 	"Navigation": {
+		"desktopLabel": "\u0110i\u1ec1u h\u01b0\u1edbng ch\u00ednh",
+		"menuTitle": "Danh m\u1ee5c",
+		"openMenu": "M\u1edf menu \u0111i\u1ec1u h\u01b0\u1edbng",
+		"closeMenu": "\u0110\u00f3ng menu \u0111i\u1ec1u h\u01b0\u1edbng",
+		"stories": "Truy\u1ec7n",
 		"mobileLabel": "Điều hướng chính",
 		"home": "Trang chủ",
 		"dialogue": "Hội thoại",
@@ -420,6 +425,7 @@
 		"sessionExpired": "Phiên đăng nhập đã hết hạn. Đăng nhập lại để lưu giao diện vào tài khoản."
 	},
 	"Header": {
+		"accountMenu": "M\u1edf t\u00e0i kho\u1ea3n c\u1ee7a {name}",
 		"avatar": "Ảnh đại diện",
 		"signIn": "Đăng nhập",
 		"vip": "Vip",

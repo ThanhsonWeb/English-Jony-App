@@ -111,19 +111,25 @@ async function checkNavigation(browser, width, locale, theme, authenticated) {
 	const { page, prefix, ready, finish } = await setup(browser, width, locale, theme, authenticated);
 	await page.goto(`${baseURL}${prefix}/wordlist`);
 	await ready();
-	const toggle = page.getByRole("button", { name: "Toggle menu" });
+	const navigation = require(`../../../messages/${locale}.json`).Navigation;
+	assert.equal(await page.locator('nav a[href$="/profile"]').count(), 0, "Mobile bottom navigation is removed");
+	const toggle = page.getByRole("button", { name: navigation.openMenu, exact: true });
+	assert.equal(await toggle.getAttribute("aria-expanded"), "false");
 	await toggle.click();
-	const menu = toggle.locator('..').locator(':scope > div');
+	const menu = page.getByRole("dialog", { name: navigation.menuTitle, exact: true });
+	await menu.evaluate(element => Promise.all(element.getAnimations().map(animation => animation.finished)));
 	for (const height of [568, 280]) {
 		await page.setViewportSize({ width, height });
 		const bounds = await menu.boundingBox();
-		assert.ok(bounds.y >= 0 && bounds.y + bounds.height <= height + 1, "Menu must end within the viewport");
-		if (height === 280) assert.ok(await menu.evaluate(element => element.scrollHeight > element.clientHeight), "Short menu must scroll internally");
-		const lastLink = menu.getByRole("link").last();
-		await lastLink.scrollIntoViewIfNeeded();
-		await lastLink.click({ trial: true });
+		assert.ok(bounds.x >= 0 && bounds.y >= 0 && bounds.y + bounds.height <= height + 1,
+			`Drawer must stay within the ${width}x${height} viewport: ${JSON.stringify(bounds)}`);
+		assert.ok(await menu.getByRole("navigation", { name: navigation.mobileLabel, exact: true }).getByRole("link").count() === 5, "Drawer exposes five destinations");
+		if (height === 280) assert.ok(await menu.getByRole("navigation").evaluate(element => element.scrollHeight > element.clientHeight), "Short drawer navigation must scroll internally");
+		await menu.getByRole("link").last().scrollIntoViewIfNeeded();
+		await menu.getByRole("link").last().click({ trial: true });
 	}
-	await toggle.click();
+	await page.getByRole("button", { name: navigation.closeMenu, exact: true }).click();
+	assert.equal(await toggle.getAttribute("aria-expanded"), "false");
 	await finish();
 }
 

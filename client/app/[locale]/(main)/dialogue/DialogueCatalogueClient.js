@@ -90,7 +90,7 @@ function getCefrLevelLabel(level) {
 	return cefrLevelLabels[normalizedLevel] ?? level;
 }
 
-export default function DialogueCatalogueClient({ isStartIntent = false }) {
+export default function DialogueCatalogueClient({ isStartIntent = false, initialCategory = "all" }) {
 	const router = useRouter();
 	const t = useTranslations("DialogueLanding");
 	const locale = useLocale();
@@ -117,7 +117,7 @@ export default function DialogueCatalogueClient({ isStartIntent = false }) {
 	const progressRefreshFailed = Boolean(userId && progressError && progressSnapshot !== undefined);
 	const [search, setSearch] = useState("");
 	const [selectedLevel, setSelectedLevel] = useState("all");
-	const [selectedCategory, setSelectedCategory] = useState("all");
+	const [selectedCategory, setSelectedCategory] = useState(initialCategory);
 	const startIntentHandled = useRef(false);
 	const categoryNavRef = useRef(null);
 	const [categoryScroll, setCategoryScroll] = useState({

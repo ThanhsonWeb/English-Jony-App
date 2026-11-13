@@ -101,7 +101,7 @@ export default function FeedbackWidget() {
 						setError("");
 						setOpen(true);
 					}}
-					className={`${keepsMobileContentClear ? "relative md:fixed md:bottom-6 md:right-6" : "fixed bottom-[calc(4.5rem+env(safe-area-inset-bottom))] right-4 sm:bottom-6 sm:right-6"} z-[90] inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-white shadow-lg transition hover:bg-primary-hover dark:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-page`}
+					className={`${keepsMobileContentClear ? "relative md:fixed md:bottom-6 md:right-6" : "fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-4 sm:bottom-6 sm:right-6"} z-[90] inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-white shadow-lg transition hover:bg-primary-hover dark:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-page`}
 					aria-haspopup="dialog"
 					aria-expanded={open}
 				>

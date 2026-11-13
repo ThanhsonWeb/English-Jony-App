@@ -58,7 +58,7 @@ async function checkPhone(browser, width, height, locale, theme, initialOrder) {
 	const dock = page.locator("aside");
 	const words = page.locator("aside div[id]");
 	const section = page.locator("section[aria-label]");
-	const nav = page.locator("nav").filter({ has: page.locator('a[href$="/profile"]') }).last();
+	assert.equal(await page.locator('nav a[href$="/profile"]').count(), 0, "Fixed mobile bottom navigation is removed");
 	assert.deepEqual(await words.locator("button").allTextContents(), initialOrder, "SSR/client shuffled order must match");
 	assert.notDeepEqual(initialOrder, answers, "Word bank must stay shuffled");
 	assert.equal(await section.evaluate(element => getComputedStyle(element).maxHeight), "none");
@@ -69,11 +69,12 @@ async function checkPhone(browser, width, height, locale, theme, initialOrder) {
 	const session = await page.context().newCDPSession(page);
 	for (const safeArea of [0, 34]) {
 		await session.send("Emulation.setSafeAreaInsetsOverride", { insets: { top: 0, left: 0, right: 0, bottom: safeArea } });
-		assert.equal(await dock.evaluate(element => parseFloat(getComputedStyle(element).bottom)), 76 + safeArea);
+		assert.equal(await dock.evaluate(element => parseFloat(getComputedStyle(element).bottom)), 16 + safeArea);
 		for (const y of [0, 400, 100000]) {
 			await page.evaluate(y => window.scrollTo(0, y), y);
 			const bounds = await dock.boundingBox();
-			assert.ok(bounds.y + bounds.height <= (await nav.boundingBox()).y, "Dock clears navigation including safe area");
+			assert.ok(bounds.y + bounds.height <= (await page.evaluate(() => innerHeight)) - 16 - safeArea + 1,
+				"Dock clears the device bottom safe area");
 		}
 		await tapBlank(page, 9);
 		await words.getByRole("button", { name: answers[9], exact: true }).tap();

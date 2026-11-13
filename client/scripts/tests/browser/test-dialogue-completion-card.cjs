@@ -218,7 +218,7 @@ async function verifyCompletionCard(browser, locale, width, theme, signedIn) {
 			const boardBox = await f.page.getByTestId("dialogue-word-list").boundingBox();
 			const actionBarBox = await actionBar.boundingBox();
 			assert.ok(boardBox.y + boardBox.height <= actionBarBox.y, "Mobile actions follow the internally scrolling word board without covering it");
-			assert.ok(actionBarBox.y >= 0 && actionBarBox.y + actionBarBox.height <= 844 - 76, "Mobile actions remain above fixed bottom navigation when brought into view");
+			assert.ok(actionBarBox.y >= 0 && actionBarBox.y + actionBarBox.height <= 844, "Mobile actions remain within the viewport when brought into view");
 			if (await f.page.getByRole("link", { name: /^(Next:|Tiếp theo:)/ }).count()) {
 				assert.ok(await f.page.getByRole("link", { name: /^(Next:|Tiếp theo:)/ }).isVisible(), "Next Dialogue remains visible beside Skip after scrolling");
 			}

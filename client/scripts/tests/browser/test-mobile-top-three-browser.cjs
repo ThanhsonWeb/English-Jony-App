@@ -24,7 +24,7 @@ async function setup(browser, width, locale, theme, authenticated = false) {
 		const url = new URL(route.request().url());
 		if (url.pathname === "/api/v1/users/me") {
 			return route.fulfill({ status: authenticated ? 200 : 401, json: {
-				data: { user: authenticated ? { _id: "learner", name: "Learner", theme } : null },
+				data: { user: authenticated ? { _id: "learner", name: "Learner", theme, language: locale } : null },
 			} });
 		}
 		if (url.pathname === "/api/v1/vocab") {
@@ -110,18 +110,12 @@ async function checkUsefulWords(browser, width, locale, theme) {
 	const skip = page.getByRole("button", { name: t.skip, exact: true });
 	await skip.waitFor();
 	await assertTheme(page, theme);
-	const bar = skip.locator('..');
-	const nav = page.locator('nav').filter({ has: page.locator('a[href$="/profile"]') }).last();
+	assert.equal(await page.locator('nav a[href$="/profile"]').count(), 0, "Fixed mobile bottom navigation is removed");
 	const session = await page.context().newCDPSession(page);
 	for (const safeArea of [0, 34]) {
 		await session.send("Emulation.setSafeAreaInsetsOverride", { insets: { top: 0, left: 0, right: 0, bottom: safeArea } });
-		assert.equal(await bar.evaluate(element => parseFloat(getComputedStyle(element).bottom)), 76 + safeArea);
 		for (const scroll of [0, 250, 500, 100000]) {
 			await page.evaluate(y => window.scrollTo(0, y), scroll);
-			const actionBounds = await bar.boundingBox();
-			const navBounds = await nav.boundingBox();
-			assert.ok(actionBounds.y + actionBounds.height <= navBounds.y + 1,
-				`Action bar overlaps bottom navigation with ${safeArea}px safe area`);
 		}
 		await skip.click({ trial: true });
 	}
