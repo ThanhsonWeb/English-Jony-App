@@ -19,6 +19,7 @@ beforeEach(async () => { await User.collection.deleteMany({}); });
 
 test("reports duplicate and malformed Google ID aggregates without revealing record data", async () => {
 	const duplicateId = "private-google-subject-duplicate";
+	const whitespaceOnlyGoogleId = "  \t";
 	await User.collection.insertMany([
 		{ email: "safe-audit-one@example.test", googleId: duplicateId },
 		{ email: "safe-audit-two@example.test", googleId: duplicateId },
@@ -27,7 +28,8 @@ test("reports duplicate and malformed Google ID aggregates without revealing rec
 		{ email: "safe-audit-null@example.test", googleId: null },
 		{ email: "safe-audit-number@example.test", googleId: 42 },
 		{ email: "safe-audit-empty@example.test", googleId: "" },
-		{ email: "safe-audit-whitespace@example.test", googleId: "  \t" },
+		{ email: "safe-audit-whitespace@example.test", googleId: whitespaceOnlyGoogleId },
+		{ email: "safe-audit-whitespace-duplicate@example.test", googleId: whitespaceOnlyGoogleId },
 		{ email: "safe-audit-padded@example.test", googleId: " padded-subject " },
 		{ email: "safe-audit-long@example.test", googleId: "x".repeat(256) },
 	]);
@@ -39,23 +41,23 @@ test("reports duplicate and malformed Google ID aggregates without revealing rec
 	const indexesAfter = await User.collection.indexes();
 
 	assert.deepEqual(result, {
-		totalUsers: 10,
+		totalUsers: 11,
 		googleIds: {
 			valid: 3,
 			missing: 2,
 			malformed: {
 				nonString: 1,
 				empty: 1,
-				whitespaceOnly: 1,
+				whitespaceOnly: 2,
 				surroundingWhitespace: 1,
 				tooLong: 1,
 			},
 		},
-		duplicates: { groups: 1, users: 2, extraRecords: 1 },
+		duplicates: { groups: 2, users: 4, extraRecords: 2 },
 	});
 	assert.equal(output.length, 1);
 	assert.deepEqual(JSON.parse(output[0]), result);
-	for (const privateValue of ["safe-audit-one@example.test", "safe-audit-two@example.test", duplicateId, "valid-google-subject", "padded-subject"]) {
+	for (const privateValue of ["safe-audit-one@example.test", "safe-audit-two@example.test", duplicateId, whitespaceOnlyGoogleId, "valid-google-subject", "padded-subject"]) {
 		assert.equal(output[0].includes(privateValue), false);
 	}
 	assert.deepEqual(after, before, "the audit must not modify User records");
