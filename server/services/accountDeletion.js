@@ -6,11 +6,15 @@ const { activeAccountFilter } = require("../utils/accountLifecycle");
 const { isValidStorageKey, avatarMatchesIntent } = require("./accountDeletionReadiness");
 
 // Internal initiation only. Outstanding uploads and account data remain tracked.
-async function initiateAccountDeletion(userId) {
+async function initiateAccountDeletion(userId, { expectedPasswordHash } = {}) {
 	if (!mongoose.isObjectIdOrHexString(userId)) throw new AppError("Invalid account", 400);
 	return mongoose.connection.transaction(async session => {
-		const user = await User.findById(userId).select("+lifecycleState +avatarIntent").session(session);
+		const user = await User.findById(userId).select("+lifecycleState +avatarIntent +password").session(session);
 		if (!user) throw new AppError("Account not found", 404);
+		if (expectedPasswordHash !== undefined &&
+			(typeof expectedPasswordHash !== "string" || !expectedPasswordHash || user.password !== expectedPasswordHash)) {
+			throw new AppError("Current password verification is no longer valid", 401);
+		}
 		if (user.lifecycleState === "deleting") {
 			if (user.avatarIntent) throw new AppError("Deleting account still has a tracked avatar", 409);
 			return { initiated: false };
