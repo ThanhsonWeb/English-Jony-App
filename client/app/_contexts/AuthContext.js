@@ -38,7 +38,13 @@ export function AuthProvider({ children }) {
             if (!res.ok) return null;
             const data = await res.json();
             if (data?.status !== undefined && data.status !== "success") return null;
-            return data?.data?.user || null;
+            const restoredUser = data?.data?.user;
+            if (!restoredUser) return null;
+            return {
+                ...restoredUser,
+                canRequestPasswordAccountDeletion:
+                    data?.data?.accountCapabilities?.canRequestPasswordAccountDeletion === true,
+            };
         },
         onUser: acceptUser,
         onLoading: setLoading,
