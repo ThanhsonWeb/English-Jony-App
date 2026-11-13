@@ -2,6 +2,7 @@ const crypto = require("node:crypto");
 const RevokedSession = require("../models/revokedSessionModel");
 
 const fingerprint = token => crypto.createHash("sha256").update(token).digest("hex");
+exports.fingerprint = fingerprint;
 exports.isRevoked = async token => {
 	await RevokedSession.init();
 	return Boolean(await RevokedSession.exists({ _id: fingerprint(token) }));
