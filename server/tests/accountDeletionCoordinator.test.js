@@ -25,7 +25,8 @@ const stepServices = [
 	[avatarIntents, "deleteCompletedAvatarIntents"],
 ];
 
-function mockUser(t, lifecycleState = "deleting") {
+function mockUser(t, initialState = "deleting") {
+	let lifecycleState = initialState;
 	t.mock.method(User, "findById", id => {
 		assert.equal(String(id), userId);
 		return {
@@ -35,6 +36,7 @@ function mockUser(t, lifecycleState = "deleting") {
 			},
 		};
 	});
+	return state => { lifecycleState = state; };
 }
 
 function mockSteps(t, run) {
@@ -50,7 +52,7 @@ function mockSteps(t, run) {
 }
 
 test("coordinator rejects accounts that are missing or not deleting before cleanup", async t => {
-	mockUser(t, "active");
+	const setLifecycleState = mockUser(t, "active");
 	const calls = mockSteps(t);
 	t.mock.method(readiness, "checkAccountDeletionReadiness", async () => assert.fail("readiness must not run"));
 	t.mock.method(finalization, "finalizeAccountDeletion", async () => assert.fail("finalizer must not run"));
@@ -58,7 +60,7 @@ test("coordinator rejects accounts that are missing or not deleting before clean
 	await assert.rejects(coordinateAccountDeletion(userId), /not deleting/);
 	assert.deepEqual(calls, []);
 
-	mockUser(t, null);
+	setLifecycleState(null);
 	await assert.rejects(coordinateAccountDeletion(userId), /not found/);
 	assert.deepEqual(calls, []);
 });
