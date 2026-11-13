@@ -92,7 +92,13 @@ async function forgot(headers) {
 	// Recovery deliberately responds before delivery; wait for the isolated mock.
 	if (response.status === 200) {
 		for (let i = 0; i < 100; i++) {
-			if (captured.mails.length && (!captured.failMail || !(await User.findById(user.id)).passwordResetToken)) return response;
+			if (captured.mails.length) {
+				if (!captured.failMail) return response;
+				const saved = await User.findById(user.id);
+				const cleanupComplete = !saved.passwordResetToken;
+				const warningCaptured = captured.logs.includes("{ event: 'password_recovery_delivery_failed' }");
+				if (cleanupComplete && warningCaptured) return response;
+			}
 			await new Promise(resolve => setTimeout(resolve, 10));
 		}
 		assert.fail("Mock recovery delivery did not finish");
