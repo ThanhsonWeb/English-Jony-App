@@ -25,8 +25,12 @@ async function runAccountDeletionCli(args = process.argv.slice(2), {
 }
 
 async function main() {
+	const args = process.argv.slice(2);
+	if (args.length !== 1 || args[0] !== CONFIRMATION_FLAG) {
+		throw new Error(`Explicit confirmation required: pass ${CONFIRMATION_FLAG}`);
+	}
 	require("dotenv").config({ quiet: true });
-	const result = await runAccountDeletionCli();
+	const result = await runAccountDeletionCli(args);
 	console.log(JSON.stringify(result));
 }
 
