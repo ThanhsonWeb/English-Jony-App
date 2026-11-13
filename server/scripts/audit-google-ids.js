@@ -28,16 +28,8 @@ const auditPipeline = [
 				{ $group: { _id: "$status", count: { $sum: 1 } } },
 			],
 			duplicates: [
-				{
-					$match: {
-						$expr: {
-							$and: [
-								{ $eq: [{ $type: "$googleId" }, "string"] },
-								{ $ne: [{ $trim: { input: "$googleId" } }, ""] },
-							],
-						},
-					},
-				},
+				// Mirrors the User.googleId partial unique index filter exactly.
+				{ $match: { googleId: { $type: "string", $gt: "" } } },
 				{ $group: { _id: "$googleId", userCount: { $sum: 1 } } },
 				{ $match: { userCount: { $gt: 1 } } },
 				{
