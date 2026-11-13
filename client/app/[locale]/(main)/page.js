@@ -32,7 +32,7 @@ export default async function Home() {
 						<h1 id="home-title">{t.rich("heroTitle", { accent: (text) => <span>{text}</span> })}</h1>
 						<p className={styles.heroDescription}>{t("heroDescription")}</p>
 						<div className={styles.ctas}>
-							<Link href="/dialogue" className={styles.primary}>{t("startLearning")}<ArrowRight size={18} aria-hidden="true" /></Link>
+							<Link href="/dialogue?onboarding=start" className={styles.primary}>{t("startLearning")}<ArrowRight size={18} aria-hidden="true" /></Link>
 							<Link href="/dialogue" className={styles.secondary}>{t("exploreDialogues")}</Link>
 						</div>
 					</div>
@@ -72,7 +72,7 @@ export default async function Home() {
 						return <Link href={`/dialogue/${course.id}`} key={course.id} className={styles.topic}><div className={styles.topicImage}><Image src={course.dialogues[0]?.thumbnail || course.image} alt="" fill sizes="(max-width: 640px) 45vw, (max-width: 900px) 30vw, 230px" /></div><h3>{title}</h3></Link>;
 					})}</div>
 				</section>
-				<section className={styles.closing}><BookOpen size={26} aria-hidden="true" /><div><h2>{t("closingTitle")}</h2><p>{t("closingDescription")}</p></div><Link href="/dialogue" className={styles.primary}>{t("startLearning")}<ArrowRight size={18} aria-hidden="true" /></Link></section>
+				<section className={styles.closing}><BookOpen size={26} aria-hidden="true" /><div><h2>{t("closingTitle")}</h2><p>{t("closingDescription")}</p></div><Link href="/dialogue?onboarding=start" className={styles.primary}>{t("startLearning")}<ArrowRight size={18} aria-hidden="true" /></Link></section>
 			</div>
 		</main>
 	);

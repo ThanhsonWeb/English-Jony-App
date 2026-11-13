@@ -26,6 +26,7 @@ import { matchesCourseCategory } from "@/app/_lib/dialogue/catalogueCategories.m
 import { useLocale, useTranslations } from "next-intl";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { useCatalogueProgressResource } from "@/app/_lib/useStudyResources";
+import { useRouter } from "@/i18n/navigation";
 const courseImages = {
 	"coffee-shop": "/dialogue/coffee-shop/thumbnails/coffee-shop.webp",
 	"office-introduction":
@@ -90,6 +91,7 @@ function getCefrLevelLabel(level) {
 }
 
 export default function DialoguePage() {
+	const router = useRouter();
 	const t = useTranslations("DialogueLanding");
 	const locale = useLocale();
 	const levelOptions = ["all", "beginner", "intermediate", "advanced"].map(
@@ -116,6 +118,7 @@ export default function DialoguePage() {
 	const [search, setSearch] = useState("");
 	const [selectedLevel, setSelectedLevel] = useState("all");
 	const [selectedCategory, setSelectedCategory] = useState("all");
+	const startIntentHandled = useRef(false);
 	const categoryNavRef = useRef(null);
 	const [categoryScroll, setCategoryScroll] = useState({
 		left: false,
@@ -281,6 +284,27 @@ export default function DialoguePage() {
 		(course) => courseMatchesFilters(course) && courseMatchesCategory(course),
 	);
 	const currentStats = currentCourse ? courseStats[currentCourse.id] : null;
+
+	useEffect(() => {
+		if (startIntentHandled.current || typeof window === "undefined") return;
+		if (new URLSearchParams(window.location.search).get("onboarding") !== "start") return;
+		if (isProgressLoading) return;
+
+		startIntentHandled.current = true;
+		if (userId && progressSnapshot === undefined && progressError) {
+			router.replace("/dialogue");
+			return;
+		}
+
+		const hasLearningProgress = Object.values(courseStats).some(
+			(stats) => stats.completedTaskCount > 0,
+		);
+		router.replace(
+			hasLearningProgress
+				? "/dialogue"
+				: "/dialogue/asking-for-directions/finding-a-cafe",
+		);
+	}, [courseStats, isProgressLoading, progressError, progressSnapshot, router, userId]);
 
 	return (
 		<main className="min-h-screen bg-page px-4 pb-10 text-main sm:px-6 lg:px-8">
