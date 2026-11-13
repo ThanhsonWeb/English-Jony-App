@@ -43,7 +43,7 @@
 	"Feedback": {
 		"button": "Feedback",
 		"title": "Share feedback",
-		"subtitle": "Your feedback helps us improve StudyJony.",
+		"subtitle": "Your feedback helps us improve StudyJony. Feedback is stored separately and may be retained after account deletion; it may contain personal information.",
 		"close": "Close feedback",
 		"typeLabel": "Feedback type",
 		"suggestion": "Suggestion",
@@ -534,7 +534,7 @@
 		"deleteAccountDescription": "Permanently delete your account and associated learning data.",
 		"deleteAccountButton": "Delete account",
 		"deleteAccountConfirmTitle": "Confirm account deletion",
-		"deleteAccountConfirmDescription": "This request starts the account deletion process. Your account and learning data will be permanently removed after required cleanup is verified.",
+		"deleteAccountConfirmDescription": "This request starts account deletion. After required cleanup is verified, your account and associated learning data will be permanently deleted. A deletion confirmation receipt may be retained for up to 30 days. Previously submitted feedback is stored separately and may be retained; it may contain personal information.",
 		"currentPassword": "Current password",
 		"typeConfirmation": "Type \"{phrase}\" to confirm.",
 		"deletionRequestError": "We couldn't request account deletion. Please try again.",
