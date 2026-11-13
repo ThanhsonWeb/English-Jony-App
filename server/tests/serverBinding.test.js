@@ -20,7 +20,9 @@ function start(env = {}, app) {
 		dotenv: { config() {} },
 		mongoose: { connect() { return Promise.resolve(); } },
 		"./services/avatarUpload": { assertAvatarStorageConfigured() {} },
-		"./services/accountDeletionScheduler": { startConfiguredAccountDeletionScheduler() { schedulerStarts += 1; } },
+		"./services/accountDeletionScheduler": { startConfiguredAccountDeletionScheduler() {
+			if (env.ACCOUNT_DELETION_SCHEDULER_ENABLED === "true") schedulerStarts += 1;
+		} },
 		"./app": app || { listen(...args) { calls.push(args); args.at(-1)(); return fakeServer; } },
 	};
 	const server = vm.runInNewContext(source + "\nserver;", {
@@ -31,11 +33,12 @@ function start(env = {}, app) {
 	return { server, handlers, exits, calls, closed: () => closed, schedulerStarts: () => schedulerStarts };
 }
 
-test("account deletion scheduling remains disabled by default", async () => {
-	const running = start();
+test("account deletion scheduling is opt-in at startup", async () => {
+	const disabled = start();
+	const enabled = start({ ACCOUNT_DELETION_SCHEDULER_ENABLED: "true" });
 	await Promise.resolve();
-	assert.equal(running.schedulerStarts(), 1, "startup calls the opt-in guard after MongoDB connects");
-	// The entry point leaves the default-off decision to the guarded scheduler.
+	assert.equal(disabled.schedulerStarts(), 0);
+	assert.equal(enabled.schedulerStarts(), 1);
 });
 
 for (const [name, env, port] of [
