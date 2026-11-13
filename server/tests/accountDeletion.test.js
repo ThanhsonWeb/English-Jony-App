@@ -19,8 +19,8 @@ after(async () => { await mongoose.disconnect(); await db?.stop(); });
 beforeEach(async () => {
 	await Promise.all([User.deleteMany({}), Intent.deleteMany({})]);
 	[user, other] = await User.create([
-		{ name: "Learner", email: "deletion@example.test", googleId: "deletion", avatar: legacy },
-		{ name: "Other", email: "other@example.test", googleId: "other", avatar: legacy },
+		{ name: "Learner", email: "deletion@example.test", googleId: "deletion" },
+		{ name: "Other", email: "other@example.test", googleId: "other" },
 	]);
 });
 
@@ -48,6 +48,7 @@ function waitForUserWrite() {
 
 test("tracked avatar is detached and queued exactly once under concurrent initiation", async t => {
 	const avatar = await attach();
+	await User.updateOne({ _id: other._id }, { $set: { avatar: legacy } });
 	const fetch = t.mock.method(global, "fetch", () => { throw new Error("unexpected storage request"); });
 	try {
 		const results = await Promise.all(Array.from({ length: 6 }, () => initiateAccountDeletion(user.id)));
@@ -68,6 +69,7 @@ test("tracked avatar is detached and queued exactly once under concurrent initia
 });
 
 test("legacy avatars and old active accounts remain untouched and no storage intent is invented", async () => {
+	await User.updateOne({ _id: user._id }, { $set: { avatar: legacy } });
 	await User.collection.updateOne({ _id: user._id }, { $unset: { lifecycleState: "" } });
 	assert.deepEqual(await initiateAccountDeletion(user.id), { initiated: true });
 	const saved = await savedUser();
@@ -86,7 +88,7 @@ test("missing, foreign or inconsistent tracked intents fail closed and roll back
 		const saved = await savedUser();
 		assert.equal(saved.lifecycleState, "active");
 		assert.equal(String(saved.avatarIntent), String(id));
-		assert.equal(saved.avatar, legacy);
+		assert.equal(saved.avatar, "");
 	}
 	assert.equal((await Intent.findById(foreign.id)).attachmentStatus, "attached");
 	await assert.rejects(initiateAccountDeletion(new mongoose.Types.ObjectId()), error => error.statusCode === 404);
@@ -137,7 +139,7 @@ test("in-flight and uncertain uploads stay tracked and cannot attach after initi
 	await recordUploadOutcome(user.id, uploading.id, "success");
 	assert.equal((await claimAvatarCleanup(user.id, uploading.id)).claimed, true);
 	assert.equal((await Intent.findById(uncertain.id)).uploadStatus, "uncertain");
-	assert.equal((await savedUser()).avatar, legacy);
+	assert.equal((await savedUser()).avatar, "");
 });
 
 test("a reservation made before deletion cannot start storage afterwards", async () => {
@@ -159,7 +161,7 @@ test("attachment already holding the fence commits before deletion and its new a
 	const stub = t.mock.method(User, "findByIdAndUpdate", function (...args) {
 		const query = original.apply(this, args);
 		const exec = query.exec;
-		query.exec = async function (...execArgs) { const result = await exec.apply(this, execArgs); entered(); await releaseWrite; return result; };
+		query.exec = async function (...execArgs) { const result = await exec.apply(this, ...execArgs); entered(); await releaseWrite; return result; };
 		return query;
 	});
 	try {
@@ -187,7 +189,7 @@ test("deletion holding the fence prevents an in-flight upload from attaching", a
 	const stub = t.mock.method(Intent, "findOneAndUpdate", function (...args) {
 		const query = original.apply(this, args);
 		const exec = query.exec;
-		query.exec = async function (...execArgs) { const result = await exec.apply(this, execArgs); entered(); await releaseWrite; return result; };
+		query.exec = async function (...execArgs) { const result = await exec.apply(this, ...execArgs); entered(); await releaseWrite; return result; };
 		return query;
 	});
 	try {
