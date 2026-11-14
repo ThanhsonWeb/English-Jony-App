@@ -196,6 +196,16 @@ test("read-only snapshot audit counts avatar risks without network or database w
 	assert.equal(counts.localUnrecognizedFiles, 1);
 	assert.equal(counts.localFilesWithTrackingInconsistencies, 1);
 	assert.equal(counts.localIntentsWithTrackingInconsistencies, 1);
+	let cliOutput = "";
+	const cliCode = await main({
+		env: { AVATAR_AUDIT_DATABASE: uri, CLOUDINARY_CLOUD_NAME: "expected_cloud", AVATAR_AUDIT_LOCAL_DIR: tempDirectory },
+		write: value => { cliOutput += value; },
+		audit: async () => counts,
+	});
+	assert.equal(cliCode, 0);
+	assert.equal(cliOutput, `${JSON.stringify(counts)}\\n`);
+	assert.ok(Object.values(JSON.parse(cliOutput)).every(Number.isSafeInteger));
+	assert.equal(cliOutput.includes(uri), false);
 	const verifyClient = new mongoose.mongo.MongoClient(uri);
 	await verifyClient.connect();
 	assert.equal(await verifyClient.db("english-learning").collection("users").countDocuments({}), 17);
