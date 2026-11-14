@@ -61,7 +61,7 @@ function isIntentInconsistent(intent, owner, pointerId) {
 	const id = idString(intent._id);
 	const notStartedReconciled = intent.uploadStatus === "finished" && intent.uploadResult === "not_started" &&
 		intent.attachmentStatus === "unattached" && intent.cleanupStatus === "complete";
-	return !id || !ownerId || !["cloudinary", "local"].includes(intent.provider) ||
+	return !id || !ownerId || !owner || !["cloudinary", "local"].includes(intent.provider) ||
 		!isValidStorageKey(intent) || !uploadStatuses.has(intent.uploadStatus) ||
 		!uploadResults.has(intent.uploadResult ?? null) || !attachmentStatuses.has(intent.attachmentStatus) ||
 		!cleanupStatuses.has(intent.cleanupStatus) ||
@@ -100,6 +100,7 @@ function emptyCounts() {
 		uncertainUploadIntents: 0,
 		localFilesPendingCleanup: 0,
 		localFilesClaimedCleanup: 0,
+		localFilesUncertainOrUploading: 0,
 		localCleanupIntentsMissingFile: 0,
 		localOrphanFiles: 0,
 		localUnrecognizedFiles: 0,
@@ -191,9 +192,11 @@ async function countLocalFiles(directory, intents, counts) {
 			continue;
 		}
 		if (!isValidStorageKey(intent)) counts.localFilesWithTrackingInconsistencies++;
-		if (intent.attachmentStatus === "unattached" && safeUploadOutcome(intent)) {
-			if (["pending", "retry"].includes(intent.cleanupStatus)) counts.localFilesPendingCleanup++;
-			if (intent.cleanupStatus === "claimed") counts.localFilesClaimedCleanup++;
+		if (intent.attachmentStatus === "unattached" && safeUploadOutcome(intent) &&
+			["pending", "retry"].includes(intent.cleanupStatus)) counts.localFilesPendingCleanup++;
+		if (intent.cleanupStatus === "claimed") counts.localFilesClaimedCleanup++;
+		if (["uploading", "uncertain"].includes(intent.uploadStatus) || intent.uploadResult === "unknown") {
+			counts.localFilesUncertainOrUploading++;
 		}
 	}
 	for (const intent of localIntents) {
