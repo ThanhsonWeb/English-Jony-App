@@ -176,8 +176,11 @@ test("read-only snapshot audit counts avatar risks without network or database w
 	assert.equal(counts.localOrphanFiles, 1);
 	assert.equal(counts.localUnrecognizedFiles, 1);
 	assert.ok(counts.localFilesWithTrackingInconsistencies >= 1);
-	assert.deepEqual(await users.countDocuments({}), 6);
-	assert.deepEqual(await intents.countDocuments({}), 12);
+	const verifyClient = new mongoose.mongo.MongoClient(uri);
+	await verifyClient.connect();
+	assert.equal(await verifyClient.db("english-learning").collection("users").countDocuments({}), 6);
+	assert.equal(await verifyClient.db("english-learning").collection("avataruploadintents").countDocuments({}), 12);
+	await verifyClient.close();
 	const serialized = JSON.stringify(counts);
 	for (const privateValue of [String(legacyUserId), String(attachedUserId), asUrl("other_cloud", mismatchKey), localPending.storageKey]) {
 		assert.equal(serialized.includes(privateValue), false, "output must contain aggregate counts only");
