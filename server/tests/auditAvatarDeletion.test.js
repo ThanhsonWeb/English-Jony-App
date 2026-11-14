@@ -203,7 +203,7 @@ test("read-only snapshot audit counts avatar risks without network or database w
 		audit: async () => counts,
 	});
 	assert.equal(cliCode, 0);
-	assert.equal(cliOutput, `${JSON.stringify(counts)}\\n`);
+	assert.equal(cliOutput, `${JSON.stringify(counts)}\n`);
 	assert.ok(Object.values(JSON.parse(cliOutput)).every(Number.isSafeInteger));
 	assert.equal(cliOutput.includes(uri), false);
 	const verifyClient = new mongoose.mongo.MongoClient(uri);
