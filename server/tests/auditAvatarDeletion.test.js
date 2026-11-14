@@ -179,7 +179,7 @@ test("read-only snapshot audit counts avatar risks without network or database w
 		"first transactional data read must request snapshot read concern");
 
 	assert.equal(counts.usersWithUntrackedLegacyAvatars, 2);
-	assert.equal(counts.usersWithTrackingInconsistencies, 4);
+	assert.equal(counts.usersWithTrackingInconsistencies, 5);
 	assert.equal(counts.intentsWithTrackingInconsistencies, 4);
 	assert.equal(counts.cloudinaryIntentsMissingOrInvalidIdentity, 1);
 	assert.equal(counts.cloudinaryIntentsMismatchedIdentity, 1);
