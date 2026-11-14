@@ -192,7 +192,8 @@ async function countLocalFiles(directory, intents, counts) {
 			counts.localOrphanFiles++;
 			continue;
 		}
-		if (!isValidStorageKey(intent) || (intent.attachmentStatus === "unattached" && intent.cleanupStatus === "complete")) {\n\t\t\tcounts.localFilesWithTrackingInconsistencies++;
+		if (!isValidStorageKey(intent) || (intent.attachmentStatus === "unattached" && intent.cleanupStatus === "complete")) {
+			counts.localFilesWithTrackingInconsistencies++;
 		}
 		if (intent.attachmentStatus === "unattached" && safeUploadOutcome(intent) &&
 			["pending", "retry"].includes(intent.cleanupStatus)) counts.localFilesPendingCleanup++;
