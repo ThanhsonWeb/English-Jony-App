@@ -104,7 +104,8 @@ function emptyCounts() {
 		localCleanupIntentsMissingFile: 0,
 		localOrphanFiles: 0,
 		localUnrecognizedFiles: 0,
-		localFilesWithTrackingInconsistencies: 0,\n\t\tlocalIntentsWithTrackingInconsistencies: 0,
+		localFilesWithTrackingInconsistencies: 0,
+		localIntentsWithTrackingInconsistencies: 0,
 	};
 }
 
