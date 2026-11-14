@@ -41,8 +41,9 @@ beforeEach(async () => {
 });
 
 async function deletingAccount({ keepLegacy = false } = {}) {
+	await User.updateOne({ _id: user.id }, { $set: { avatar: "" } });
 	await initiateAccountDeletion(user.id);
-	if (!keepLegacy) await User.updateOne({ _id: user.id }, { $set: { avatar: "" } });
+	if (keepLegacy) await User.updateOne({ _id: user.id }, { $set: { avatar: legacy } });
 }
 async function createIntent({ uploadStatus = "reserved", uploadResult = null, cleanupStatus = "none", attachmentStatus = "unattached", provider = "local", cloudName = "studyjony-test" } = {}) {
 	const intent = await reserveAvatarUpload(user.id, { operationId: randomUUID(), provider, cloudName, contentType: "image/jpeg" });
