@@ -65,6 +65,10 @@ test("read-only snapshot audit counts avatar risks without network or database w
 	const mismatchIntent = intent(mismatchUserId, "cloudinary", mismatchKey, {
 		cloudName: "other_cloud", uploadStatus: "finished", uploadResult: "success", attachmentStatus: "attached",
 	});
+	const orphanAttachedKey = `studyjony/avatars/user_${attachedUserId}_${uuid()}`;
+	const orphanAttachedIntent = intent(attachedUserId, "cloudinary", orphanAttachedKey, {
+		uploadStatus: "finished", uploadResult: "success", attachmentStatus: "attached",
+	});
 	const urlMismatchUserId = new mongoose.Types.ObjectId();
 	const urlMismatchKey = `studyjony/avatars/user_${urlMismatchUserId}_${uuid()}`;
 	const urlMismatchIntent = intent(urlMismatchUserId, "cloudinary", urlMismatchKey, {
@@ -125,7 +129,7 @@ test("read-only snapshot audit counts avatar risks without network or database w
 		{ _id: localAttachedUserId, avatar: `/api/v1/users/avatar-files/${localAttachedKey}`, avatarIntent: localAttached._id },
 	]);
 	await intents.insertMany([
-		attachedIntent, mismatchIntent, urlMismatchIntent, missingIdentity, claimedIntent, retryIntent, pendingIntent,
+		attachedIntent, orphanAttachedIntent, mismatchIntent, urlMismatchIntent, missingIdentity, claimedIntent, retryIntent, pendingIntent,
 		localPending, localClaimed, localUncertain, localMissingFile, localAttached, brokenTracking, localCompleted,
 	]);
 	await users.insertMany([
@@ -176,10 +180,10 @@ test("read-only snapshot audit counts avatar risks without network or database w
 
 	assert.equal(counts.usersWithUntrackedLegacyAvatars, 2);
 	assert.equal(counts.usersWithTrackingInconsistencies, 4);
-	assert.equal(counts.intentsWithTrackingInconsistencies, 3);
+	assert.equal(counts.intentsWithTrackingInconsistencies, 4);
 	assert.equal(counts.cloudinaryIntentsMissingOrInvalidIdentity, 1);
 	assert.equal(counts.cloudinaryIntentsMismatchedIdentity, 1);
-	assert.equal(counts.attachedCloudinaryUrlMismatches, 1);
+	assert.equal(counts.attachedCloudinaryUrlMismatches, 2);
 	assert.equal(counts.cleanupPendingIntents, 3);
 	assert.equal(counts.cleanupRetryIntents, 3);
 	assert.equal(counts.cleanupClaimedIntents, 2);
@@ -195,7 +199,7 @@ test("read-only snapshot audit counts avatar risks without network or database w
 	const verifyClient = new mongoose.mongo.MongoClient(uri);
 	await verifyClient.connect();
 	assert.equal(await verifyClient.db("english-learning").collection("users").countDocuments({}), 17);
-	assert.equal(await verifyClient.db("english-learning").collection("avataruploadintents").countDocuments({}), 14);
+	assert.equal(await verifyClient.db("english-learning").collection("avataruploadintents").countDocuments({}), 15);
 	await verifyClient.close();
 	const serialized = JSON.stringify(counts);
 	for (const privateValue of [String(legacyUserId), String(attachedUserId), asUrl("other_cloud", mismatchKey), localPending.storageKey]) {
