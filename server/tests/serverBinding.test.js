@@ -13,12 +13,16 @@ const source = fs.readFileSync(path.join(__dirname, "../server.js"), "utf8");
 // or attaching fatal-error handlers to the test runner's process.
 function start(env = {}, app) {
 	const handlers = new Map(), exits = [], calls = [];
+	let schedulerStarts = 0;
 	let closed = false;
 	const fakeServer = { close(callback) { closed = true; callback(); } };
 	const modules = {
 		dotenv: { config() {} },
 		mongoose: { connect() { return Promise.resolve(); } },
 		"./services/avatarUpload": { assertAvatarStorageConfigured() {} },
+		"./services/accountDeletionScheduler": { startConfiguredAccountDeletionScheduler() {
+			if (env.ACCOUNT_DELETION_SCHEDULER_ENABLED === "true") schedulerStarts += 1;
+		} },
 		"./app": app || { listen(...args) { calls.push(args); args.at(-1)(); return fakeServer; } },
 	};
 	const server = vm.runInNewContext(source + "\nserver;", {
@@ -26,8 +30,17 @@ function start(env = {}, app) {
 		process: { env, on(event, handler) { handlers.set(event, handler); }, exit(code) { exits.push(code); } },
 		console: { log() {}, error() {} },
 	}, { filename: "server.js", timeout: 1000 });
-	return { server, handlers, exits, calls, closed: () => closed };
+	return { server, handlers, exits, calls, closed: () => closed, schedulerStarts: () => schedulerStarts };
 }
+
+test("the API never starts the account deletion scheduler", async () => {
+	const disabled = start();
+	const enabled = start({ NODE_ENV: "production", ACCOUNT_DELETION_SCHEDULER_ENABLED: "true",
+		ACCOUNT_DELETION_AVATAR_CLEANUP_SCHEDULER_ENABLED: "true" });
+	await Promise.resolve();
+	assert.equal(disabled.schedulerStarts(), 0);
+	assert.equal(enabled.schedulerStarts(), 0);
+});
 
 for (const [name, env, port] of [
 	["default port", {}, 5000],

@@ -38,7 +38,13 @@ export function AuthProvider({ children }) {
             if (!res.ok) return null;
             const data = await res.json();
             if (data?.status !== undefined && data.status !== "success") return null;
-            return data?.data?.user || null;
+            const restoredUser = data?.data?.user;
+            if (!restoredUser) return null;
+            return {
+                ...restoredUser,
+                canRequestPasswordAccountDeletion:
+                    data?.data?.accountCapabilities?.canRequestPasswordAccountDeletion === true,
+            };
         },
         onUser: acceptUser,
         onLoading: setLoading,
@@ -58,10 +64,16 @@ export function AuthProvider({ children }) {
     const updateUserForSession = useCallback((nextUser, session) => {
         if (!sessionGuard.updateForSession(nextUser, session)) return false;
         sessionRestore.invalidate();
-        acceptUser(nextUser);
+        const nextUserId = nextUser?._id || nextUser?.id;
+        const updatedUser = { ...nextUser };
+        if (updatedUser.canRequestPasswordAccountDeletion === undefined &&
+            String(nextUserId) === String(session.userId)) {
+            updatedUser.canRequestPasswordAccountDeletion = user?.canRequestPasswordAccountDeletion;
+        }
+        acceptUser(updatedUser);
         resourceCache.invalidatePrefix(session.userId, "leaderboard:");
         return true;
-    }, [sessionGuard, sessionRestore, acceptUser]);
+    }, [sessionGuard, sessionRestore, acceptUser, user]);
 
     const restoreSession = useCallback((kind) => {
         if (kind === "oauth") credentialAttempts.invalidate();

@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
-const { MongoMemoryServer } = require("mongodb-memory-server");
+const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const { OAuth2Client } = require("google-auth-library");
 const User = require("../models/userModel");
 let db, server, url;
@@ -15,7 +15,7 @@ before(async () => {
 	process.env.JWT_EXPIRES_IN = "1h";
 	process.env.NODE_ENV = "development";
 	process.env.FRONTEND_URL = "http://studyjony.test";
-	db = await MongoMemoryServer.create({ binary: { version: "7.0.14" } });
+	db = await MongoMemoryReplSet.create({ binary: { version: "7.0.14" }, replSet: { count: 1, storageEngine: "wiredTiger" } });
 	await mongoose.connect(db.getUri(), { dbName: "password_sessions_test" });
 	await User.init();
 	const app = express();

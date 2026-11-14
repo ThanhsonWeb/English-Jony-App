@@ -1,7 +1,7 @@
 const assert = require("node:assert/strict");
 const { before, after, test } = require("node:test");
 const mongoose = require("mongoose");
-const { MongoMemoryServer } = require("mongodb-memory-server");
+const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const User = require("../models/userModel");
 const app = require("../app");
 const origin = "https://studyjony.test";
@@ -11,7 +11,7 @@ let mongo, server, base, a, b;
 
 before(async () => {
 	Object.assign(process.env, env);
-	mongo = await MongoMemoryServer.create({ binary: { version: "7.0.14" } });
+	mongo = await MongoMemoryReplSet.create({ binary: { version: "7.0.14" }, replSet: { count: 1, storageEngine: "wiredTiger" } });
 	await mongoose.connect(mongo.getUri(), { dbName: "user_language_fixture" });
 	await User.init();
 	[a, b] = await User.create([

@@ -16,8 +16,14 @@ const { claimRecovery, recoveryResponse } = require("../middleware/recoveryRateL
 const deliverPasswordRecovery = require("../utils/passwordRecovery");
 const { assertPasswordByteLimit } = require("../utils/passwordPolicy");
 const { CLIENT_USER_FIELDS, AUTH_USER_FIELDS, clientUser } = require("../utils/clientUser");
-const { isActiveAccount, activeAccountFilter } = require("../utils/accountLifecycle");
+const { isActiveAccount, activeAccountFilter, fenceActiveAccountWrite } = require("../utils/accountLifecycle");
 const privateResponse = require("../middleware/privateResponse");
+
+const ACCOUNT_WRITE_TRANSACTION_OPTIONS = {
+	readPreference: "primary",
+	readConcern: { level: "snapshot" },
+	writeConcern: { w: "majority" },
+};
 
 // Public dummy bcrypt hash (cost 12); not a credential. Unknown/Google-only
 // accounts still perform a password comparison to reduce timing differences.
@@ -317,6 +323,8 @@ exports.protect = catchAsync(async (req, res, next) => {
 	}
 	// Attach req.user
 	req.user = currentUser;
+	// Internal security services can bind one-time proofs to this exact verified JWT.
+	req.authSessionFingerprint = sessionRevocation.fingerprint(token);
 	next();
 });
 
@@ -439,10 +447,14 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 		filteredBody.name = filteredBody.name.trim();
 	}
 
-	const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
-		new: true,
-		runValidators: true,
-	}).select(CLIENT_USER_FIELDS);
+	const updatedUser = await mongoose.connection.transaction(async session => {
+		await fenceActiveAccountWrite(req.user.id, session);
+		return User.findByIdAndUpdate(req.user.id, filteredBody, {
+			new: true,
+			runValidators: true,
+			session,
+		}).select(CLIENT_USER_FIELDS);
+	}, ACCOUNT_WRITE_TRANSACTION_OPTIONS);
 	res.status(200).json({
 		status: "success",
 		data: {

@@ -6,7 +6,7 @@ const { format } = require("node:util");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
-const { MongoMemoryServer } = require("mongodb-memory-server");
+const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const User = require("../models/userModel");
 const Vocab = require("../models/vocabModel");
 const RecoveryCooldown = require("../models/recoveryCooldownModel");
@@ -24,7 +24,7 @@ before(async () => {
 		NODE_ENV: "production", FRONTEND_URL: trustedOrigin,
 		JWT_SECRET: "isolated-password-recovery-security", JWT_EXPIRES_IN: "1h",
 	});
-	db = await MongoMemoryServer.create({ binary: { version: "7.0.14" } });
+	db = await MongoMemoryReplSet.create({ binary: { version: "7.0.14" }, replSet: { count: 1, storageEngine: "wiredTiger" } });
 	await mongoose.connect(db.getUri(), { dbName: "password_recovery_security_test" });
 	await User.init();
 	const app = require("../app");
@@ -92,7 +92,13 @@ async function forgot(headers) {
 	// Recovery deliberately responds before delivery; wait for the isolated mock.
 	if (response.status === 200) {
 		for (let i = 0; i < 100; i++) {
-			if (captured.mails.length && (!captured.failMail || !(await User.findById(user.id)).passwordResetToken)) return response;
+			if (captured.mails.length) {
+				if (!captured.failMail) return response;
+				const saved = await User.findById(user.id);
+				const cleanupComplete = !saved.passwordResetToken;
+				const warningCaptured = captured.logs.includes("{ event: 'password_recovery_delivery_failed' }");
+				if (cleanupComplete && warningCaptured) return response;
+			}
 			await new Promise(resolve => setTimeout(resolve, 10));
 		}
 		assert.fail("Mock recovery delivery did not finish");
@@ -225,6 +231,33 @@ test("deleting accounts cannot use an existing password reset link or receive a 
 	assert.ok(saved.passwordResetToken);
 });
 
+test("mail failure cleanup cannot change reset credentials after concurrent account deletion", async t => {
+	const mails = [], logs = [];
+	let notifyMailStarted;
+	let rejectMail;
+	const mailStarted = new Promise(resolve => { notifyMailStarted = resolve; });
+	const mailFailure = new Promise((resolve, reject) => { rejectMail = reject; });
+	t.mock.method(nodemailer, "createTransport", () => ({ sendMail: async message => {
+		mails.push(message);
+		notifyMailStarted();
+		return mailFailure;
+	} }));
+	t.mock.method(console, "warn", (...args) => { logs.push(format(...args)); });
+
+	const deliver = require("../utils/passwordRecovery")(user.email, trustedOrigin);
+	await mailStarted;
+	await require("../services/accountDeletion").initiateAccountDeletion(user._id);
+	rejectMail(new Error("isolated mail failure"));
+	await deliver;
+
+	assert.equal(mails.length, 1);
+	const saved = await User.findById(user.id).select("+lifecycleState");
+	assert.equal(saved.lifecycleState, "deleting");
+	assert.ok(saved.passwordResetToken, "The late mail failure must not update a deleting account");
+	assert.ok(saved.passwordResetExpires);
+	assert.deepEqual(logs, ["{ event: 'password_recovery_delivery_failed' }"]);
+});
+
 test("legacy accounts without lifecycle state can still recover their password", async t => {
 	const { mails } = capture(t);
 	await User.collection.updateOne({ _id: user._id }, { $unset: { lifecycleState: "" } });
@@ -275,7 +308,8 @@ test("mail failure cleans up the new credential and logs no tokens, addresses or
 	assert.equal(response.status, 200);
 	assert.match(response.body.message, /^If recovery is available/);
 	const attemptedLink = emailedUrl(mails);
-	const saved = await User.findById(user.id);
+	const saved = await User.findById(user.id).select("+lifecycleState");
+	assert.equal(saved.lifecycleState, "active");
 	assert.equal(saved.passwordResetToken, undefined);
 	assert.equal(saved.passwordResetExpires, undefined);
 	assertNoPrivateLogs(logs, [user.email, user.id, "Mock mail transport failure", attemptedLink.href, attemptedLink.pathname.split("/").at(-1)]);

@@ -10,6 +10,7 @@ const { markQualifiedStudy } = require("../services/studyStreak");
 const { isKnownDialogueTask } = require("../utils/dialogueCatalogue");
 const DialogueAttempt = require("../models/dialogueAttemptModel");
 const { startDialogueAttempt, claimDialogueAttempt } = require("../services/dialogueAttempt");
+const { fenceActiveAccountWrite } = require("../utils/accountLifecycle");
 
 // A queued completion must never follow a cookie switch into another account.
 function checkProgressAccount(req) {
@@ -68,6 +69,7 @@ exports.completeTask = catchAsync(async (req, res, next) => {
 	for (let attempt = 0; attempt < 3; attempt += 1) {
 		try {
 			result = await mongoose.connection.transaction(async (session) => {
+				await fenceActiveAccountWrite(req.user._id, session);
 				const claim = await claimDialogueAttempt(req.user._id, [lessonId, dialogueId, taskId], req.body || {}, session, studiedAt);
 				const previous = await DialogueProgress.findOne(filter).session(session).lean();
 				const alreadyCompleted = previous?.completedTaskIds.includes(taskId) ?? false;

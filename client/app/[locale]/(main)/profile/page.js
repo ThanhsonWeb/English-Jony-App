@@ -6,9 +6,16 @@ import ThemeSelector from "@/app/_components/ThemeSelector";
 import MobileDialogOverlay from "@/app/_components/MobileDialogOverlay";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { resolveAvatarUrl } from "@/app/_lib/resolveAvatarUrl";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { validateProfileName } from "@/app/_lib/profileName.mjs";
+import {
+	ACCOUNT_DELETION_CONFIRMATION,
+	canRequestPasswordAccountDeletion,
+	isAccountDeletionConfirmationValid,
+	isAccountDeletionUiEnabled,
+	submitAccountDeletionRequest,
+} from "@/app/_lib/accountDeletionUi.mjs";
 import {
 	Mail,
 	CalendarDays,
@@ -65,7 +72,46 @@ function Page() {
 	const [isUploadingAvatar, setIsUploadingAvatar] = useState(false);
 	const [avatarError, setAvatarError] = useState("");
 	const [failedAvatarUrls, setFailedAvatarUrls] = useState([]);
+	const [isDeletionDialogOpen, setIsDeletionDialogOpen] = useState(false);
+	const [deletionPassword, setDeletionPassword] = useState("");
+	const [deletionConfirmation, setDeletionConfirmation] = useState("");
+	const [deletionError, setDeletionError] = useState("");
+	const [deletionNotice, setDeletionNotice] = useState("");
+	const [isSubmittingDeletion, setIsSubmittingDeletion] = useState(false);
+	const [deletionEligibility, setDeletionEligibility] = useState(null);
+	const deletionSubmittingRef = useRef(false);
 	const avatarUrl = resolveAvatarUrl(user, failedAvatarUrls);
+	const deletionUiEnabled = isAccountDeletionUiEnabled(process.env.NEXT_PUBLIC_ACCOUNT_DELETION_UI_ENABLED);
+	const authenticatedUserId = user?._id || user?.id;
+
+	useEffect(() => {
+		if (!deletionUiEnabled || !authenticatedUserId ||
+			typeof user?.canRequestPasswordAccountDeletion === "boolean") return;
+
+		let cancelled = false;
+		const session = captureSession();
+		fetch("/api/v1/users/me", { credentials: "include", cache: "no-store" })
+			.then((response) => response.ok ? response.json() : null)
+			.then((data) => {
+				if (cancelled || !isCurrentSession(session)) return;
+				setDeletionEligibility({
+					userId: String(authenticatedUserId),
+					canRequest: data?.data?.accountCapabilities?.canRequestPasswordAccountDeletion === true,
+				});
+			})
+			.catch(() => {
+				if (!cancelled && isCurrentSession(session)) {
+					setDeletionEligibility({ userId: String(authenticatedUserId), canRequest: false });
+				}
+			});
+		return () => { cancelled = true; };
+	}, [deletionUiEnabled, authenticatedUserId, user?.canRequestPasswordAccountDeletion, captureSession, isCurrentSession]);
+
+	const canRequestDeletion = canRequestPasswordAccountDeletion(user) ||
+		(user?.canRequestPasswordAccountDeletion === undefined &&
+			deletionEligibility?.userId === String(authenticatedUserId) &&
+			deletionEligibility.canRequest === true);
+	const showAccountDeletion = deletionUiEnabled && canRequestDeletion;
 
 	async function handleAvatarChange(event) {
 		const file = event.target.files?.[0];
@@ -149,6 +195,41 @@ function Page() {
 		} finally {
 			nameSavingRef.current = false;
 			setIsSavingName(false);
+		}
+	}
+
+	async function handleAccountDeletionRequest(event) {
+		event.preventDefault();
+		if (deletionSubmittingRef.current ||
+			!isAccountDeletionConfirmationValid(deletionConfirmation) ||
+			!deletionPassword) return;
+		const session = captureSession();
+		if (!session.userId || !isCurrentSession(session)) return;
+
+		deletionSubmittingRef.current = true;
+		setIsSubmittingDeletion(true);
+		setDeletionError("");
+		try {
+			const result = await submitAccountDeletionRequest(deletionPassword);
+			if (!isCurrentSession(session)) return;
+			if (!result.ok) {
+				const key = result.status === 401
+					? "deletionReauthenticationError"
+					: result.status === 429
+						? "deletionRateLimited"
+						: "deletionRequestError";
+				setDeletionError(t(key));
+				return;
+			}
+			setDeletionPassword("");
+			setDeletionConfirmation("");
+			setIsDeletionDialogOpen(false);
+			setDeletionNotice(t("deletionRequested"));
+		} catch {
+			if (isCurrentSession(session)) setDeletionError(t("deletionRequestError"));
+		} finally {
+			deletionSubmittingRef.current = false;
+			setIsSubmittingDeletion(false);
 		}
 	}
 
@@ -287,7 +368,78 @@ function Page() {
 
 					<ThemeSelector />
 				</div>
+
+				{deletionNotice && <p role="status" className="rounded-2xl border border-emerald-900 bg-emerald-950/40 p-4 text-sm text-emerald-200">{deletionNotice}</p>}
+				{showAccountDeletion && (
+					<div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-red-900/70 bg-slate-900/60 p-5">
+						<div className="min-w-0">
+							<h2 className="font-semibold text-red-300">{t("deleteAccountTitle")}</h2>
+							<p className="mt-1 text-sm text-slate-300">{t("deleteAccountDescription")}</p>
+						</div>
+						<button
+							type="button"
+							onClick={() => {
+								setDeletionPassword("");
+								setDeletionConfirmation("");
+								setDeletionError("");
+								setIsDeletionDialogOpen(true);
+							}}
+							className="rounded-xl border border-red-700 px-4 py-2 font-semibold text-red-200 transition hover:bg-red-950/60"
+						>
+							{t("deleteAccountButton")}
+						</button>
+					</div>
+				)}
 			</div>
+
+			{showAccountDeletion && isDeletionDialogOpen && (
+				<MobileDialogOverlay labelledBy="profile-delete-account-title" className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
+					<div className="relative w-full max-w-lg rounded-3xl border border-slate-800 bg-slate-900 p-6 shadow-2xl sm:p-8">
+						<button
+							type="button"
+							onClick={() => setIsDeletionDialogOpen(false)}
+							disabled={isSubmittingDeletion}
+							aria-label={t("close")}
+							className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-slate-800 text-xl text-slate-400 transition hover:bg-slate-700 hover:text-white disabled:opacity-60"
+						>
+							✕
+						</button>
+						<h2 id="profile-delete-account-title" className="mb-3 pr-10 text-xl font-bold text-red-300">{t("deleteAccountConfirmTitle")}</h2>
+						<p className="mb-6 text-sm leading-6 text-slate-300">{t("deleteAccountConfirmDescription")}</p>
+						<form onSubmit={handleAccountDeletionRequest} className="space-y-4">
+							<label className="block text-sm font-medium text-slate-200">
+								{t("currentPassword")}
+								<input
+									type="password"
+									autoComplete="current-password"
+									required
+									disabled={isSubmittingDeletion}
+									value={deletionPassword}
+									onChange={(event) => setDeletionPassword(event.target.value)}
+									className="mt-2 w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-500/10 disabled:opacity-60"
+								/>
+							</label>
+							<label className="block text-sm font-medium text-slate-200">
+								{t("typeConfirmation", { phrase: ACCOUNT_DELETION_CONFIRMATION })}
+								<input
+									type="text"
+									autoComplete="off"
+									required
+									disabled={isSubmittingDeletion}
+									value={deletionConfirmation}
+									onChange={(event) => setDeletionConfirmation(event.target.value)}
+									className="mt-2 w-full rounded-2xl border border-slate-700 bg-slate-950 px-4 py-3 text-slate-100 outline-none transition focus:border-red-500 focus:ring-2 focus:ring-red-500/10 disabled:opacity-60"
+								/>
+							</label>
+							{deletionError && <p role="alert" className="text-sm text-red-300">{deletionError}</p>}
+							<div className="flex flex-col-reverse gap-3 pt-2 sm:flex-row sm:justify-end">
+								<button type="button" onClick={() => setIsDeletionDialogOpen(false)} disabled={isSubmittingDeletion} className="rounded-xl border border-slate-700 px-4 py-3 font-semibold text-slate-200 transition hover:bg-slate-800 disabled:opacity-60">{t("cancel")}</button>
+								<button type="submit" disabled={isSubmittingDeletion || !deletionPassword || !isAccountDeletionConfirmationValid(deletionConfirmation)} className="rounded-xl bg-red-700 px-4 py-3 font-semibold text-white transition hover:bg-red-600 disabled:cursor-not-allowed disabled:opacity-50">{t(isSubmittingDeletion ? "deletionSubmitting" : "confirmDeleteAccount")}</button>
+							</div>
+						</form>
+					</div>
+				</MobileDialogOverlay>
+			)}
 		</div>
 	);
 }

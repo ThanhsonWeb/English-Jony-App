@@ -8,6 +8,7 @@ const VocabularyReviewEvent = require("../models/vocabularyReviewEventModel");
 const AppError = require("../utils/appError");
 const awardXp = require("./awardXp");
 const { markQualifiedStudy, vietnamDay } = require("./studyStreak");
+const { fenceActiveAccountWrite } = require("../utils/accountLifecycle");
 
 const normalizeAnswer = text => text.trim().toLowerCase();
 const stableWordKey = text => createHash("sha256").update(text.normalize("NFKC").trim().toLowerCase().replace(/\s+/g, " ")).digest("hex");
@@ -61,6 +62,7 @@ async function reviewVocabulary(userId, wordId, input, { now = new Date() } = {}
 	for (let attempt = 0; attempt < 3; attempt += 1) {
 		try {
 			return await mongoose.connection.transaction(async session => {
+				await fenceActiveAccountWrite(userId, session);
 				const word = await Vocab.findOne({ _id: wordId, user: userId }).session(session);
 				if (!word) throw new AppError("Vocabulary not found", 404);
 				const receipt = await VocabularyReviewEvent.findById(eventId).session(session).lean();

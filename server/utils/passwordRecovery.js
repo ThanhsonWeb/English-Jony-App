@@ -28,7 +28,7 @@ module.exports = async function deliverPasswordRecovery(email, frontendOrigin) {
 		});
 	} catch {
 		// A late mail failure must not erase a different/new reset credential.
-		await User.updateOne({ _id: user._id, passwordResetToken: hash }, {
+		await User.updateOne({ _id: user._id, passwordResetToken: hash, ...activeAccountFilter() }, {
 			$unset: { passwordResetToken: 1, passwordResetExpires: 1 },
 		});
 		console.warn({ event: "password_recovery_delivery_failed" });

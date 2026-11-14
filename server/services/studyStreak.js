@@ -1,4 +1,5 @@
 const StudyActivity = require("../models/studyActivityModel");
+const { fenceActiveAccountWrite } = require("../utils/accountLifecycle");
 
 function vietnamDay(now = new Date()) {
 	return new Intl.DateTimeFormat("en-CA", {
@@ -33,6 +34,7 @@ function calculateStreak(days, now = new Date()) {
 }
 
 async function markQualifiedStudy(userId, { session, now = new Date() } = {}) {
+	await fenceActiveAccountWrite(userId, session);
 	// Qualification never increments the legacy count. A new streak-only day
 	// starts at zero; committed non-practice reviews increment it separately.
 	await StudyActivity.updateOne({ user: userId, date: vietnamDay(now) }, {
