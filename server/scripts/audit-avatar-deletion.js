@@ -17,6 +17,15 @@ const uploadStatuses = new Set(["reserved", "uploading", "uncertain", "finished"
 const uploadResults = new Set([null, "success", "failure", "unknown", "not_started"]);
 const attachmentStatuses = new Set(["attached", "unattached"]);
 const cleanupStatuses = new Set(["none", "pending", "claimed", "retry", "complete"]);
+const localFilesystemCountKeys = [
+	"localFilesPendingCleanup",
+	"localFilesClaimedCleanup",
+	"localFilesUncertainOrUploading",
+	"localCleanupIntentsMissingFile",
+	"localOrphanFiles",
+	"localUnrecognizedFiles",
+	"localFilesWithTrackingInconsistencies",
+];
 
 function idString(value) {
 	if (value && typeof value.toHexString === "function") return value.toHexString().toLowerCase();
@@ -89,6 +98,8 @@ async function listLocalEntries(directory) {
 
 function emptyCounts() {
 	return {
+		auditStatus: "UNVERIFIED",
+		localFilesystemInventoryUnavailable: 0,
 		usersWithUntrackedLegacyAvatars: 0,
 		usersWithTrackingInconsistencies: 0,
 		intentsWithTrackingInconsistencies: 0,
@@ -177,7 +188,15 @@ function inspectSnapshot(users, intents, expectedCloudName) {
 
 // Database rows are one snapshot; the host filesystem is necessarily inventoried separately.
 async function countLocalFiles(directory, intents, counts) {
-	const entries = await listLocalEntries(directory);
+	let entries;
+	try {
+		entries = await listLocalEntries(directory);
+	} catch (error) {
+		if (error.code !== "ENOENT") throw error;
+		for (const key of localFilesystemCountKeys) delete counts[key];
+		counts.localFilesystemInventoryUnavailable = 1;
+		return;
+	}
 	const localIntents = intents.filter(intent => intent.provider === "local");
 	const byKey = new Map();
 	for (const intent of localIntents) {
