@@ -174,7 +174,7 @@ function inspectSnapshot(users, intents, expectedCloudName) {
 	return { counts, intents };
 }
 
-async function countLocalFiles(directory, intents, counts) {
+// Database rows are one snapshot; the host filesystem is necessarily inventoried separately.\nasync function countLocalFiles(directory, intents, counts) {
 	const entries = await listLocalEntries(directory);
 	const localIntents = intents.filter(intent => intent.provider === "local");
 	const byKey = new Map(localIntents.map(intent => [intent.storageKey, intent]));
@@ -191,7 +191,7 @@ async function countLocalFiles(directory, intents, counts) {
 			counts.localOrphanFiles++;
 			continue;
 		}
-		if (!isValidStorageKey(intent)) counts.localFilesWithTrackingInconsistencies++;
+		if (!isValidStorageKey(intent) || (intent.attachmentStatus === "unattached" && intent.cleanupStatus === "complete")) {\n\t\t\tcounts.localFilesWithTrackingInconsistencies++;\n\t\t}
 		if (intent.attachmentStatus === "unattached" && safeUploadOutcome(intent) &&
 			["pending", "retry"].includes(intent.cleanupStatus)) counts.localFilesPendingCleanup++;
 		if (intent.cleanupStatus === "claimed") counts.localFilesClaimedCleanup++;
