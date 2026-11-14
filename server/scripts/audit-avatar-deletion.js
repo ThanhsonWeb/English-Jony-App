@@ -153,7 +153,7 @@ function inspectSnapshot(users, intents, expectedCloudName) {
 		if (pointerId) {
 			const intent = intentsById.get(pointerId);
 			if (!intent || idString(intent.user) !== userId || intent.attachmentStatus !== "attached" ||
-				!avatarMatchesIntent(user.avatar, intent)) {
+				intent.cloudName !== expectedCloudName || !avatarMatchesIntent(user.avatar, intent)) {
 				inconsistent = true;
 				if (intent?.provider === "cloudinary" && (intent.cloudName !== expectedCloudName || !avatarMatchesIntent(user.avatar, intent))) {
 					counts.attachedCloudinaryUrlMismatches++;
