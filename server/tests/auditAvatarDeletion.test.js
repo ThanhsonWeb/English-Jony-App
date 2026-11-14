@@ -105,6 +105,10 @@ test("read-only snapshot audit counts avatar risks without network or database w
 	const brokenTracking = intent(brokenTrackingUserId, "local",
 		`user_${brokenTrackingUserId}_${uuid()}.jpg`,
 		{ cleanupStatus: "none", uploadStatus: "finished", uploadResult: "success" });
+	const localCompletedUserId = new mongoose.Types.ObjectId();
+	const localCompleted = intent(localCompletedUserId, "local",
+		`user_${localCompletedUserId}_${uuid()}.jpg`,
+		{ cleanupStatus: "complete", uploadStatus: "finished", uploadResult: "not_started" });
 
 	await users.insertMany([
 		{ _id: legacyUserId, avatar: "  " },
@@ -116,15 +120,15 @@ test("read-only snapshot audit counts avatar risks without network or database w
 	]);
 	await intents.insertMany([
 		attachedIntent, mismatchIntent, missingIdentity, claimedIntent, retryIntent, pendingIntent,
-		localPending, localClaimed, localUncertain, localMissingFile, localAttached, brokenTracking,
+		localPending, localClaimed, localUncertain, localMissingFile, localAttached, brokenTracking, localCompleted,
 	]);
 	await users.insertMany([
 		missingIdentityUserId, claimedUserId, retryUserId, pendingUserId, localPendingUserId,
-		localClaimedUserId, localUncertainUserId, localMissingFileUserId, brokenTrackingUserId,
+		localClaimedUserId, localUncertainUserId, localMissingFileUserId, brokenTrackingUserId, localCompletedUserId,
 	].map(_id => ({ _id, avatar: "" })));
 
 	for (const fileName of [localPending.storageKey, localClaimed.storageKey, localUncertain.storageKey,
-		localAttached.storageKey, `user_${new mongoose.Types.ObjectId()}_${uuid()}.jpg`, "notes.txt"]) {
+		localAttached.storageKey, localCompleted.storageKey, `user_${new mongoose.Types.ObjectId()}_${uuid()}.jpg`, "notes.txt"]) {
 		await fs.writeFile(path.join(tempDirectory, fileName), "mock", { flag: "wx" });
 	}
 	await seedClient.close();
@@ -180,11 +184,11 @@ test("read-only snapshot audit counts avatar risks without network or database w
 	assert.equal(counts.localCleanupIntentsMissingFile, 1);
 	assert.equal(counts.localOrphanFiles, 1);
 	assert.equal(counts.localUnrecognizedFiles, 1);
-	assert.ok(counts.localFilesWithTrackingInconsistencies >= 1);
+	assert.ok(counts.localFilesWithTrackingInconsistencies >= 2);
 	const verifyClient = new mongoose.mongo.MongoClient(uri);
 	await verifyClient.connect();
-	assert.equal(await verifyClient.db("english-learning").collection("users").countDocuments({}), 15);
-	assert.equal(await verifyClient.db("english-learning").collection("avataruploadintents").countDocuments({}), 12);
+	assert.equal(await verifyClient.db("english-learning").collection("users").countDocuments({}), 16);
+	assert.equal(await verifyClient.db("english-learning").collection("avataruploadintents").countDocuments({}), 13);
 	await verifyClient.close();
 	const serialized = JSON.stringify(counts);
 	for (const privateValue of [String(legacyUserId), String(attachedUserId), asUrl("other_cloud", mismatchKey), localPending.storageKey]) {
