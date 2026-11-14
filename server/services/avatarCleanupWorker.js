@@ -2,8 +2,9 @@ const crypto = require("node:crypto");
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const Intent = require("../models/avatarUploadIntentModel");
+const User = require("../models/userModel");
 const { localAvatarDirectory } = require("./avatarUpload");
-const { claimAvatarCleanup, queueAvatarCleanup, recordCleanupResult } = require("./avatarUploadIntent");
+const { claimAvatarCleanup, queueAvatarCleanup, recordCleanupResult, deletingAvatarCleanupAccountExpr } = require("./avatarUploadIntent");
 const cloudNamePattern = /^[a-zA-Z0-9_-]+$/;
 
 // Never derive deletion targets from URLs or accept arbitrary paths, even from the database.
@@ -64,16 +65,34 @@ async function performClaim(claim, options) {
 	return succeeded ? "complete" : "retry";
 }
 
-async function runAvatarCleanupBatch({ limit = 100, allowLocal = false, ...options } = {}) {
+async function runAvatarCleanupBatch({ limit = 100, allowLocal = false, deletingOnly = false, ...options } = {}) {
 	if (!Number.isSafeInteger(limit) || limit < 1 || limit > 1000) throw new Error("Invalid cleanup batch limit");
-	const candidates = await Intent.find({ cleanupStatus: { $in: ["pending", "retry"] }, attachmentStatus: "unattached",
+	if (typeof deletingOnly !== "boolean") throw new TypeError("Invalid cleanup scope");
+	const candidateFilter = { cleanupStatus: { $in: ["pending", "retry"] }, attachmentStatus: "unattached",
 		provider: allowLocal ? { $in: ["cloudinary", "local"] } : "cloudinary",
 		$or: [{ uploadStatus: "reserved", uploadResult: null }, { uploadStatus: "finished", uploadResult: { $in: ["success", "failure"] } }],
-	}).sort({ updatedAt: 1, _id: 1 }).limit(limit).lean();
+	};
+	let candidates;
+	if (deletingOnly) {
+		// Filter before the limit so active and legacy accounts cannot starve deleting accounts.
+		candidates = await Intent.aggregate([
+			{ $match: { ...candidateFilter, cleanupGeneration: { $gte: 1 } } },
+			{ $sort: { updatedAt: 1, _id: 1 } },
+			{ $lookup: { from: User.collection.name, let: { ownerId: "$user" }, pipeline: [
+				{ $match: { $expr: { $and: [{ $eq: ["$_id", "$$ownerId"] }, deletingAvatarCleanupAccountExpr()] } } },
+				{ $project: { _id: 1 } },
+			], as: "eligibleOwner" } },
+			{ $match: { "eligibleOwner.0": { $exists: true } } },
+			{ $limit: limit },
+			{ $project: { _id: 1, user: 1, cleanupStatus: 1 } },
+		]);
+	} else {
+		candidates = await Intent.find(candidateFilter).sort({ updatedAt: 1, _id: 1 }).limit(limit).lean();
+	}
 	const counts = { complete: 0, retry: 0, held: 0, skipped: 0 };
 	for (const candidate of candidates) {
-		if (candidate.cleanupStatus === "retry") await queueAvatarCleanup(candidate.user, candidate._id);
-		const claim = await claimAvatarCleanup(candidate.user, candidate._id);
+		if (!deletingOnly && candidate.cleanupStatus === "retry") await queueAvatarCleanup(candidate.user, candidate._id);
+		const claim = await claimAvatarCleanup(candidate.user, candidate._id, { deletingOnly });
 		if (!claim.claimed) { counts.skipped++; continue; }
 		counts[await performClaim(claim, options)]++;
 	}

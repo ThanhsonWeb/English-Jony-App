@@ -12,6 +12,8 @@ The worker claims an eligible unattached intent before contacting storage. It re
 
 `initiateAccountDeletion(userId)` is an internal service. In one transaction it changes an active account to `deleting`, detaches its currently tracked avatar, and queues eligible cleanup. Duplicate initiation is idempotent. Missing or inconsistent intent tracking fails closed. A legacy avatar without a managed intent is retained and blocks readiness until resolved; it is never silently discarded.
 
+The optional `--deleting-only` worker flag restricts claims to deleting accounts with no unresolved avatar reference; the account check and claim share a transaction. It does not start a scheduler. Without the flag the existing worker still scans all accounts.
+
 The separately invoked cleanup worker processes eligible Cloudinary intents and, only with explicit local-host permission, local intents. An upload that is unfinished or has an uncertain outcome remains tracked and cannot be cleaned. Pending/retrying cleanup, held claims, mismatched storage tracking, and legacy avatars remain blockers. Do not treat elapsed time, a missing response, or a timeout as proof of successful deletion.
 
 Internal cleanup services remove only the deleting account's dependent database records, in bounded transactions and prerequisite order: vocabulary review receipts, vocabularies, topics, dialogue progress, study activity, XP events, dialogue attempts, and definitively completed avatar intents. Each step is account-scoped and retryable. External avatar files are handled only by the cleanup worker.
@@ -24,7 +26,7 @@ Internal cleanup services remove only the deleting account's dependent database 
 
 The User record remains as a lifecycle tombstone until finalization succeeds. Password accounts may request deletion through `POST /api/v1/users/request-account-deletion` when `ACCOUNT_DELETION_REQUEST_ENABLED=true`; the endpoint requires authentication, same-origin CSRF protection, exact confirmation, and the current password, and rejects Google-only accounts. The profile UI is separately gated by `NEXT_PUBLIC_ACCOUNT_DELETION_UI_ENABLED=true`.
 
-For manual processing, run `node scripts/run-avatar-cleanup.js` first (Cloudinary by default; add `--local-upload-host` only on the upload host for local files). Review the `complete`, `retry`, `held`, and `skipped` counts; held or uncertain claims remain blocked and must not be reset based on elapsed time. Then run `node scripts/run-account-deletion.js --confirm-account-deletion`; it processes at most one deleting account per invocation and can be rerun after resolving blockers. The optional `ACCOUNT_DELETION_SCHEDULER_ENABLED=true` flag starts the account runner every minute after server startup; it does not run the avatar cleanup worker and is disabled unless explicitly enabled.
+For manual processing, run `node scripts/run-avatar-cleanup.js --deleting-only` first (Cloudinary by default; add `--local-upload-host` only on the upload host for local files). Review the `complete`, `retry`, `held`, and `skipped` counts; held or uncertain claims remain blocked and must not be reset based on elapsed time. Then run `node scripts/run-account-deletion.js --confirm-account-deletion`; it processes at most one deleting account per invocation and can be rerun after resolving blockers. The optional `ACCOUNT_DELETION_SCHEDULER_ENABLED=true` flag starts the account runner every minute after server startup; it does not run the avatar cleanup worker and is disabled unless explicitly enabled.
 
 ## Index and rollout notes
 

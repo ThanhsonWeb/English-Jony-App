@@ -136,11 +136,55 @@ async function queueAvatarCleanup(userId, intentId) {
 	return intent;
 }
 
+// Require a deleting account with no avatar reference or malformed tracking fields.
+// $type inside $expr prevents arrays and null avatars from matching as empty strings.
+function deletingAvatarCleanupAccountExpr() {
+	return { $and: [
+		{ $eq: ["$lifecycleState", "deleting"] },
+		{ $or: [
+			{ $eq: [{ $type: "$avatar" }, "missing"] },
+			{ $and: [{ $eq: [{ $type: "$avatar" }, "string"] }, { $eq: ["$avatar", ""] }] },
+		] },
+		{ $in: [{ $type: "$avatarIntent" }, ["missing", "null"]] },
+	] };
+}
+
 // Claims do not expire automatically: an old worker might still be deleting.
-async function claimAvatarCleanup(userId, intentId) {
+async function claimAvatarCleanup(userId, intentId, { deletingOnly = false } = {}) {
 	validateOwnerAndIntent(userId, intentId);
+	if (typeof deletingOnly !== "boolean") throw new TypeError("Invalid cleanup scope");
 	const claimToken = randomUUID();
 	return mongoose.connection.transaction(async session => {
+		if (deletingOnly) {
+			const eligible = await AvatarUploadIntent.findOne({
+				_id: intentId, user: userId, attachmentStatus: "unattached", ...cleanupSafeUpload,
+				cleanupStatus: { $in: ["pending", "retry"] }, cleanupGeneration: { $gte: 1 },
+			}).session(session).lean();
+			if (!eligible || eligible.attachmentStatus !== "unattached" ||
+				!["pending", "retry"].includes(eligible.cleanupStatus) ||
+				!Number.isSafeInteger(eligible.cleanupGeneration) || eligible.cleanupGeneration < 1 ||
+				(eligible.cleanupStatus === "retry" && eligible.cleanupGeneration === Number.MAX_SAFE_INTEGER) ||
+				!((eligible.uploadStatus === "reserved" && eligible.uploadResult == null) ||
+					(eligible.uploadStatus === "finished" && ["success", "failure"].includes(eligible.uploadResult)))) {
+				return { claimed: false };
+			}
+			// Serialize lifecycle and avatar changes with the claim.
+			const account = await User.findOneAndUpdate(
+				{ _id: userId, $expr: deletingAvatarCleanupAccountExpr() },
+				{ $inc: { accountWriteFence: 1 } },
+				{ session, returnDocument: "after", timestamps: false },
+			);
+			if (!account) return { claimed: false };
+			const update = { $set: { cleanupStatus: "claimed", cleanupClaimToken: claimToken } };
+			if (eligible.cleanupStatus === "retry") update.$inc = { cleanupGeneration: 1 };
+			const scopedClaim = await AvatarUploadIntent.findOneAndUpdate(
+				{ _id: intentId, user: userId, attachmentStatus: "unattached", ...cleanupSafeUpload,
+					cleanupStatus: eligible.cleanupStatus, cleanupGeneration: eligible.cleanupGeneration },
+				update, { session, returnDocument: "after" },
+			);
+			if (scopedClaim) return { claimed: true, intent: scopedClaim, claimToken };
+			return { claimed: false };
+		}
 		const claimed = await AvatarUploadIntent.findOneAndUpdate(
 			{ _id: intentId, user: userId, attachmentStatus: "unattached", ...cleanupSafeUpload, cleanupStatus: "pending" },
 			{ $set: { cleanupStatus: "claimed", cleanupClaimToken: claimToken } },
@@ -170,4 +214,4 @@ async function recordCleanupResult(userId, intentId, generation, claimToken, suc
 	throw new AppError("Invalid or stale avatar cleanup result", 409);
 }
 
-module.exports = { reserveAvatarUpload, beginAvatarUpload, recordUploadOutcome, attachAvatarUpload, queueAvatarCleanup, claimAvatarCleanup, recordCleanupResult };
+module.exports = { reserveAvatarUpload, beginAvatarUpload, recordUploadOutcome, attachAvatarUpload, queueAvatarCleanup, claimAvatarCleanup, recordCleanupResult, deletingAvatarCleanupAccountExpr };
