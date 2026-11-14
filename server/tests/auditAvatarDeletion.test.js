@@ -204,7 +204,9 @@ test("read-only snapshot audit counts avatar risks without network or database w
 	});
 	assert.equal(cliCode, 0);
 	assert.equal(cliOutput, `${JSON.stringify(counts)}\n`);
-	assert.ok(Object.values(JSON.parse(cliOutput)).every(Number.isSafeInteger));
+	const parsedCliOutput = JSON.parse(cliOutput);
+	assert.equal(parsedCliOutput.auditStatus, "UNVERIFIED");
+	assert.ok(Object.entries(parsedCliOutput).filter(([key]) => key !== "auditStatus").every(([, value]) => Number.isSafeInteger(value)));
 	assert.equal(cliOutput.includes(uri), false);
 	const verifyClient = new mongoose.mongo.MongoClient(uri);
 	await verifyClient.connect();
@@ -215,6 +217,57 @@ test("read-only snapshot audit counts avatar risks without network or database w
 	for (const privateValue of [String(legacyUserId), String(attachedUserId), asUrl("other_cloud", mismatchKey), localPending.storageKey]) {
 		assert.equal(serialized.includes(privateValue), false, "output must contain aggregate counts only");
 	}
+});
+
+test("missing local avatar directory preserves snapshot counts and marks filesystem inventory unavailable", async t => {
+	const replSet = await MongoMemoryReplSet.create({ replSet: { count: 1 } });
+	const missingDirectory = path.join(os.tmpdir(), `studyjony-avatar-audit-missing-${uuid()}`);
+	t.after(async () => { await replSet.stop(); });
+
+	const uri = replSet.getUri("english-learning");
+	const client = new mongoose.mongo.MongoClient(uri);
+	await client.connect();
+	const db = client.db("english-learning");
+	await db.createCollection("users");
+	await db.createCollection("avataruploadintents");
+	await db.collection("users").insertOne({ _id: new mongoose.Types.ObjectId(), avatar: "legacy-avatar" });
+	await client.close();
+
+	const counts = await runAvatarDeletionAudit({
+		uri,
+		expectedCloudName: "expected_cloud",
+		localAvatarDirectory: missingDirectory,
+	});
+	assert.equal(counts.auditStatus, "UNVERIFIED");
+	assert.equal(counts.usersWithUntrackedLegacyAvatars, 1);
+	assert.equal(counts.cleanupPendingIntents, 0);
+	assert.equal(counts.localIntentsWithTrackingInconsistencies, 0);
+	assert.equal(counts.localFilesystemInventoryUnavailable, 1);
+	for (const key of [
+		"localFilesPendingCleanup",
+		"localFilesClaimedCleanup",
+		"localFilesUncertainOrUploading",
+		"localCleanupIntentsMissingFile",
+		"localOrphanFiles",
+		"localUnrecognizedFiles",
+		"localFilesWithTrackingInconsistencies",
+	]) assert.equal(Object.hasOwn(counts, key), false, `${key} must be omitted when filesystem inventory is unavailable`);
+
+	let output = "";
+	const cliCode = await main({
+		env: { AVATAR_AUDIT_DATABASE: uri, CLOUDINARY_CLOUD_NAME: "expected_cloud" },
+		write: value => { output += value; },
+		audit: options => runAvatarDeletionAudit({
+			...options,
+			localAvatarDirectory: missingDirectory,
+		}),
+	});
+	assert.equal(cliCode, 0);
+	const cliCounts = JSON.parse(output);
+	assert.equal(cliCounts.auditStatus, "UNVERIFIED");
+	assert.equal(cliCounts.localFilesystemInventoryUnavailable, 1);
+	assert.equal(cliCounts.usersWithUntrackedLegacyAvatars, 1);
+	assert.equal(Object.hasOwn(cliCounts, "localOrphanFiles"), false);
 });
 
 test("CLI returns only UNVERIFIED when configuration is missing or snapshot reads fail", async () => {
