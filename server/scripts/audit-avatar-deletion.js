@@ -104,7 +104,7 @@ function emptyCounts() {
 		localCleanupIntentsMissingFile: 0,
 		localOrphanFiles: 0,
 		localUnrecognizedFiles: 0,
-		localFilesWithTrackingInconsistencies: 0,
+		localFilesWithTrackingInconsistencies: 0,\n\t\tlocalIntentsWithTrackingInconsistencies: 0,
 	};
 }
 
@@ -168,7 +168,7 @@ function inspectSnapshot(users, intents, expectedCloudName) {
 		const pointerId = owner && idString(owner.avatarIntent);
 		if (isIntentInconsistent(intent, owner, pointerId)) {
 			counts.intentsWithTrackingInconsistencies++;
-			if (intent.provider === "local") counts.localFilesWithTrackingInconsistencies++;
+			if (intent.provider === "local") counts.localIntentsWithTrackingInconsistencies++;
 		}
 	}
 	return { counts, intents };
