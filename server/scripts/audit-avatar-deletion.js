@@ -8,32 +8,32 @@ const DATABASE_NAME = "english-learning";
 const USER_COLLECTION = "users";
 const INTENT_COLLECTION = "avataruploadintents";
 const cloudNamePattern = /^[a-zA-Z0-9_-]+$/;
-const validObjectId = /^[0-9a-f]{24}$/;
+const objectIdPattern = /^[0-9a-f]{24}$/;
 const extensions = { "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp" };
 const uuid = "[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}";
 const localFilePattern = new RegExp(`^user_([0-9a-f]{24})_(${uuid})\\.(jpg|png|webp)$`);
-const allowedUploadStatuses = new Set(["reserved", "uploading", "uncertain", "finished"]);
-const allowedUploadResults = new Set([null, "success", "failure", "unknown", "not_started"]);
-const allowedAttachmentStatuses = new Set(["attached", "unattached"]);
-const allowedCleanupStatuses = new Set(["none", "pending", "claimed", "retry", "complete"]);
+const uploadStatuses = new Set(["reserved", "uploading", "uncertain", "finished"]);
+const uploadResults = new Set([null, "success", "failure", "unknown", "not_started"]);
+const attachmentStatuses = new Set(["attached", "unattached"]);
+const cleanupStatuses = new Set(["none", "pending", "claimed", "retry", "complete"]);
 
-function objectIdString(value) {
+function idString(value) {
 	if (value && typeof value.toHexString === "function") return value.toHexString().toLowerCase();
-	return typeof value === "string" && validObjectId.test(value) ? value.toLowerCase() : null;
+	return typeof value === "string" && objectIdPattern.test(value) ? value.toLowerCase() : null;
 }
 
-function hasAvatar(value) {
-	return value !== undefined && value !== "";
+function isPresentAvatar(avatar) {
+	return avatar !== undefined && avatar !== "";
 }
 
 function isValidStorageKey(intent) {
-	const userId = objectIdString(intent.user);
+	const owner = idString(intent.user);
 	const extension = extensions[intent.contentType];
-	if (!userId || !extension || typeof intent.storageKey !== "string") return false;
-	const fileStem = `user_${userId}_${uuid}`;
-	if (intent.provider === "local") return new RegExp(`^${fileStem}\\.${extension}$`).test(intent.storageKey);
+	if (!owner || !extension || typeof intent.storageKey !== "string") return false;
+	const stem = `user_${owner}_${uuid}`;
+	if (intent.provider === "local") return new RegExp(`^${stem}\\.${extension}$`).test(intent.storageKey);
 	return intent.provider === "cloudinary" && typeof intent.cloudName === "string" &&
-		cloudNamePattern.test(intent.cloudName) && new RegExp(`^studyjony/avatars/${fileStem}$`).test(intent.storageKey);
+		cloudNamePattern.test(intent.cloudName) && new RegExp(`^studyjony/avatars/${stem}$`).test(intent.storageKey);
 }
 
 function avatarMatchesIntent(avatar, intent) {
@@ -52,24 +52,45 @@ function avatarMatchesIntent(avatar, intent) {
 }
 
 function safeUploadOutcome(intent) {
-	return (intent.uploadStatus === "reserved" && (intent.uploadResult === null || intent.uploadResult === "not_started")) ||
+	return (intent.uploadStatus === "reserved" && [null, "not_started"].includes(intent.uploadResult ?? null)) ||
 		(intent.uploadStatus === "finished" && ["success", "failure"].includes(intent.uploadResult));
 }
 
-async function readCollectionNames(db, session) {
-	const cursor = db.listCollections({}, { nameOnly: true, session });
-	return (await cursor.toArray()).map(collection => collection.name);
+function isIntentInconsistent(intent, owner, pointerId) {
+	const ownerId = idString(intent.user);
+	const id = idString(intent._id);
+	const notStartedReconciled = intent.uploadStatus === "finished" && intent.uploadResult === "not_started" &&
+		intent.attachmentStatus === "unattached" && intent.cleanupStatus === "complete";
+	return !id || !ownerId || !["cloudinary", "local"].includes(intent.provider) ||
+		!isValidStorageKey(intent) || !uploadStatuses.has(intent.uploadStatus) ||
+		!uploadResults.has(intent.uploadResult ?? null) || !attachmentStatuses.has(intent.attachmentStatus) ||
+		!cleanupStatuses.has(intent.cleanupStatus) ||
+		(intent.attachmentStatus === "attached" && (!owner || pointerId !== id ||
+			intent.uploadStatus !== "finished" || intent.uploadResult !== "success" || intent.cleanupStatus !== "none" ||
+			!avatarMatchesIntent(owner.avatar, intent))) ||
+		(intent.uploadStatus === "uploading" && intent.cleanupStatus !== "pending") ||
+		(intent.uploadStatus === "uncertain" && !["pending", "retry", "claimed"].includes(intent.cleanupStatus)) ||
+		(intent.cleanupStatus === "complete" && intent.attachmentStatus !== "unattached") ||
+		(intent.uploadResult === "not_started" && !notStartedReconciled) ||
+		(intent.uploadStatus === "finished" && !["success", "failure", "not_started"].includes(intent.uploadResult)) ||
+		(intent.attachmentStatus === "unattached" && intent.uploadStatus === "finished" &&
+			["success", "failure"].includes(intent.uploadResult) && intent.cleanupStatus === "none");
 }
 
-async function collectLocalFiles(directory) {
-	const entries = await fs.readdir(directory, { withFileTypes: true });
-	return entries.map(entry => ({ name: entry.name, isFile: entry.isFile() }));
+async function listCollectionNames(db) {
+	return (await db.listCollections({}, { nameOnly: true }).toArray()).map(item => item.name);
 }
 
-function newCounts() {
+async function listLocalEntries(directory) {
+	return (await fs.readdir(directory, { withFileTypes: true }))
+		.map(entry => ({ name: entry.name, isFile: entry.isFile() }));
+}
+
+function emptyCounts() {
 	return {
 		usersWithUntrackedLegacyAvatars: 0,
 		usersWithTrackingInconsistencies: 0,
+		intentsWithTrackingInconsistencies: 0,
 		cloudinaryIntentsMissingOrInvalidIdentity: 0,
 		cloudinaryIntentsMismatchedIdentity: 0,
 		attachedCloudinaryUrlMismatches: 0,
@@ -86,13 +107,15 @@ function newCounts() {
 	};
 }
 
-function inspectDatabase(users, intents, expectedCloudName, counts) {
+function inspectSnapshot(users, intents, expectedCloudName) {
+	const counts = emptyCounts();
+	const usersById = new Map(users.map(user => [idString(user._id), user]));
 	const intentsById = new Map();
 	const intentsByUser = new Map();
 	for (const intent of intents) {
-		const id = objectIdString(intent._id);
+		const id = idString(intent._id);
+		const ownerId = idString(intent.user);
 		if (id) intentsById.set(id, intent);
-		const ownerId = objectIdString(intent.user);
 		if (ownerId) {
 			if (!intentsByUser.has(ownerId)) intentsByUser.set(ownerId, []);
 			intentsByUser.get(ownerId).push(intent);
@@ -108,36 +131,28 @@ function inspectDatabase(users, intents, expectedCloudName, counts) {
 		if (intent.cleanupStatus === "retry") counts.cleanupRetryIntents++;
 		if (intent.cleanupStatus === "claimed") counts.cleanupClaimedIntents++;
 		if (intent.uploadStatus === "uncertain" || intent.uploadResult === "unknown") counts.uncertainUploadIntents++;
-		if (!isValidStorageKey(intent) || !allowedUploadStatuses.has(intent.uploadStatus) ||
-			!allowedUploadResults.has(intent.uploadResult ?? null) ||
-			!allowedAttachmentStatuses.has(intent.attachmentStatus) ||
-			!allowedCleanupStatuses.has(intent.cleanupStatus)) {
-			if (intent.provider === "local") counts.localFilesWithTrackingInconsistencies++;
-		}
 	}
-
 	const attachedByUser = new Map();
 	for (const intent of intents) {
-		if (intent.attachmentStatus !== "attached") continue;
-		const ownerId = objectIdString(intent.user);
-		if (ownerId) attachedByUser.set(ownerId, (attachedByUser.get(ownerId) || 0) + 1);
+		if (intent.attachmentStatus === "attached") {
+			const ownerId = idString(intent.user);
+			if (ownerId) attachedByUser.set(ownerId, (attachedByUser.get(ownerId) || 0) + 1);
+		}
 	}
-
 	for (const user of users) {
-		const userId = objectIdString(user._id);
-		const pointerId = objectIdString(user.avatarIntent);
-		const present = hasAvatar(user.avatar);
-		let inconsistent = false;
-		if (user.avatar !== undefined && typeof user.avatar !== "string") inconsistent = true;
-		if (user.avatarIntent !== undefined && user.avatarIntent !== null && !pointerId) inconsistent = true;
-		if (!pointerId && present) counts.usersWithUntrackedLegacyAvatars++;
-		if ((attachedByUser.get(userId) || 0) > 1) inconsistent = true;
-		for (const intent of (intentsByUser.get(userId) || [])) {
-			if (intent.attachmentStatus === "attached" && objectIdString(intent._id) !== pointerId) inconsistent = true;
+		const userId = idString(user._id);
+		const pointerId = idString(user.avatarIntent);
+		const avatarPresent = isPresentAvatar(user.avatar);
+		let inconsistent = (user.avatar !== undefined && typeof user.avatar !== "string") ||
+			(user.avatarIntent !== undefined && user.avatarIntent !== null && !pointerId) ||
+			(attachedByUser.get(userId) || 0) > 1;
+		if (!pointerId && avatarPresent) counts.usersWithUntrackedLegacyAvatars++;
+		for (const intent of intentsByUser.get(userId) || []) {
+			if (intent.attachmentStatus === "attached" && idString(intent._id) !== pointerId) inconsistent = true;
 		}
 		if (pointerId) {
 			const intent = intentsById.get(pointerId);
-			if (!intent || objectIdString(intent.user) !== userId || intent.attachmentStatus !== "attached" ||
+			if (!intent || idString(intent.user) !== userId || intent.attachmentStatus !== "attached" ||
 				!avatarMatchesIntent(user.avatar, intent)) {
 				inconsistent = true;
 				if (intent?.provider === "cloudinary" && !avatarMatchesIntent(user.avatar, intent)) {
@@ -147,16 +162,45 @@ function inspectDatabase(users, intents, expectedCloudName, counts) {
 		}
 		if (inconsistent) counts.usersWithTrackingInconsistencies++;
 	}
-
 	for (const intent of intents) {
-		const ownerId = objectIdString(intent.user);
-		const owner = users.find(user => objectIdString(user._id) === ownerId);
-		const pointerId = owner && objectIdString(owner.avatarIntent);
-		if (intent.attachmentStatus === "attached" && (!owner || pointerId !== objectIdString(intent._id))) {
+		const owner = usersById.get(idString(intent.user));
+		const pointerId = owner && idString(owner.avatarIntent);
+		if (isIntentInconsistent(intent, owner, pointerId)) {
+			counts.intentsWithTrackingInconsistencies++;
 			if (intent.provider === "local") counts.localFilesWithTrackingInconsistencies++;
 		}
 	}
-	return { intentsById };
+	return { counts, intents };
+}
+
+async function countLocalFiles(directory, intents, counts) {
+	const entries = await listLocalEntries(directory);
+	const localIntents = intents.filter(intent => intent.provider === "local");
+	const byKey = new Map(localIntents.map(intent => [intent.storageKey, intent]));
+	const seen = new Set();
+	for (const entry of entries) {
+		const match = localFilePattern.exec(entry.name);
+		if (!entry.isFile || !match) {
+			counts.localUnrecognizedFiles++;
+			continue;
+		}
+		seen.add(entry.name);
+		const intent = byKey.get(entry.name);
+		if (!intent) {
+			counts.localOrphanFiles++;
+			continue;
+		}
+		if (!isValidStorageKey(intent)) counts.localFilesWithTrackingInconsistencies++;
+		if (intent.attachmentStatus === "unattached" && safeUploadOutcome(intent)) {
+			if (["pending", "retry"].includes(intent.cleanupStatus)) counts.localFilesPendingCleanup++;
+			if (intent.cleanupStatus === "claimed") counts.localFilesClaimedCleanup++;
+		}
+	}
+	for (const intent of localIntents) {
+		if (["pending", "retry"].includes(intent.cleanupStatus) && safeUploadOutcome(intent) && !seen.has(intent.storageKey)) {
+			counts.localCleanupIntentsMissingFile++;
+		}
+	}
 }
 
 async function runAvatarDeletionAudit({
@@ -167,23 +211,22 @@ async function runAvatarDeletionAudit({
 } = {}) {
 	if (typeof uri !== "string" || !/^mongodb(?:\+srv)?:\/\//i.test(uri) ||
 		typeof expectedCloudName !== "string" || !cloudNamePattern.test(expectedCloudName) ||
-		typeof localAvatarDirectory !== "string" || !path.isAbsolute(localAvatarDirectory)) {
+		typeof localAvatarDirectory !== "string" || !path.isAbsolute(localAvatarDirectory) ||
+		typeof MongoClientClass !== "function") {
 		throw new Error("Invalid audit configuration");
 	}
-	if (typeof MongoClientClass !== "function") throw new Error("MongoDB driver unavailable");
-
 	const client = new MongoClientClass(uri, { readPreference: "primary", retryWrites: false });
-	const counts = newCounts();
 	try {
 		await client.connect();
 		const db = client.db(DATABASE_NAME);
+		const collectionNames = await listCollectionNames(db);
+		if (!collectionNames.includes(USER_COLLECTION) || !collectionNames.includes(INTENT_COLLECTION)) {
+			throw new Error("Required collection missing");
+		}
 		const session = client.startSession();
+		let snapshot;
 		try {
-			await session.withTransaction(async () => {
-				const collectionNames = await readCollectionNames(db, session);
-				if (!collectionNames.includes(USER_COLLECTION) || !collectionNames.includes(INTENT_COLLECTION)) {
-					throw new Error("Required collection missing");
-				}
+			snapshot = await session.withTransaction(async () => {
 				const users = await db.collection(USER_COLLECTION).find({}, {
 					projection: { _id: 1, avatar: 1, avatarIntent: 1 },
 					session,
@@ -195,44 +238,13 @@ async function runAvatarDeletionAudit({
 					},
 					session,
 				}).toArray();
-				inspectDatabase(users, intents, expectedCloudName, counts);
+				return inspectSnapshot(users, intents, expectedCloudName);
 			}, { readPreference: "primary", readConcern: { level: "snapshot" } });
 		} finally {
 			await session.endSession();
 		}
-		const localFiles = await collectLocalFiles(localAvatarDirectory);
-		const localIntents = [...(await db.collection(INTENT_COLLECTION).find({
-			provider: "local",
-		}).project({
-			_id: 1, user: 1, contentType: 1, storageKey: 1, uploadStatus: 1, uploadResult: 1,
-			attachmentStatus: 1, cleanupStatus: 1,
-		}).toArray())];
-		const byStorageKey = new Map(localIntents.map(intent => [intent.storageKey, intent]));
-		const seen = new Set();
-		for (const entry of localFiles) {
-			const match = localFilePattern.exec(entry.name);
-			if (!entry.isFile || !match) {
-				counts.localUnrecognizedFiles++;
-				continue;
-			}
-			seen.add(entry.name);
-			const intent = byStorageKey.get(entry.name);
-			if (!intent) {
-				counts.localOrphanFiles++;
-				continue;
-			}
-			if (!isValidStorageKey(intent)) counts.localFilesWithTrackingInconsistencies++;
-			if (intent.attachmentStatus === "unattached" && safeUploadOutcome(intent)) {
-				if (["pending", "retry"].includes(intent.cleanupStatus)) counts.localFilesPendingCleanup++;
-				if (intent.cleanupStatus === "claimed") counts.localFilesClaimedCleanup++;
-			}
-		}
-		for (const intent of localIntents) {
-			if (["pending", "retry"].includes(intent.cleanupStatus) && safeUploadOutcome(intent) && !seen.has(intent.storageKey)) {
-				counts.localCleanupIntentsMissingFile++;
-			}
-		}
-		return counts;
+		await countLocalFiles(localAvatarDirectory, snapshot.intents, snapshot.counts);
+		return snapshot.counts;
 	} finally {
 		await client.close();
 	}
@@ -253,8 +265,6 @@ async function main({ env = process.env, write = value => process.stdout.write(v
 	}
 }
 
-if (require.main === module) {
-	main().then(code => { process.exitCode = code; });
-}
+if (require.main === module) main().then(code => { process.exitCode = code; });
 
 module.exports = { runAvatarDeletionAudit, main, isValidStorageKey, avatarMatchesIntent };
