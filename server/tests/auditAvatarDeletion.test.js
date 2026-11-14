@@ -172,6 +172,7 @@ test("read-only snapshot audit counts avatar risks without network or database w
 	assert.equal(counts.uncertainUploadIntents, 1);
 	assert.equal(counts.localFilesPendingCleanup, 1);
 	assert.equal(counts.localFilesClaimedCleanup, 1);
+	assert.equal(counts.localFilesUncertainOrUploading, 1);
 	assert.equal(counts.localCleanupIntentsMissingFile, 1);
 	assert.equal(counts.localOrphanFiles, 1);
 	assert.equal(counts.localUnrecognizedFiles, 1);
