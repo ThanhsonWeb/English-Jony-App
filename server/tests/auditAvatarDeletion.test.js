@@ -118,6 +118,10 @@ test("read-only snapshot audit counts avatar risks without network or database w
 		attachedIntent, mismatchIntent, missingIdentity, claimedIntent, retryIntent, pendingIntent,
 		localPending, localClaimed, localUncertain, localMissingFile, localAttached, brokenTracking,
 	]);
+	await users.insertMany([
+		missingIdentityUserId, claimedUserId, retryUserId, pendingUserId, localPendingUserId,
+		localClaimedUserId, localUncertainUserId, localMissingFileUserId, brokenTrackingUserId,
+	].map(_id => ({ _id, avatar: "" })));
 
 	for (const fileName of [localPending.storageKey, localClaimed.storageKey, localUncertain.storageKey,
 		localAttached.storageKey, `user_${new mongoose.Types.ObjectId()}_${uuid()}.jpg`, "notes.txt"]) {
@@ -179,7 +183,7 @@ test("read-only snapshot audit counts avatar risks without network or database w
 	assert.ok(counts.localFilesWithTrackingInconsistencies >= 1);
 	const verifyClient = new mongoose.mongo.MongoClient(uri);
 	await verifyClient.connect();
-	assert.equal(await verifyClient.db("english-learning").collection("users").countDocuments({}), 6);
+	assert.equal(await verifyClient.db("english-learning").collection("users").countDocuments({}), 15);
 	assert.equal(await verifyClient.db("english-learning").collection("avataruploadintents").countDocuments({}), 12);
 	await verifyClient.close();
 	const serialized = JSON.stringify(counts);
