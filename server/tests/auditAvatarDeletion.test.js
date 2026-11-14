@@ -190,7 +190,7 @@ test("read-only snapshot audit counts avatar risks without network or database w
 	assert.equal(counts.localCleanupIntentsMissingFile, 1);
 	assert.equal(counts.localOrphanFiles, 1);
 	assert.equal(counts.localUnrecognizedFiles, 1);
-	assert.ok(counts.localFilesWithTrackingInconsistencies >= 2);
+	assert.equal(counts.localFilesWithTrackingInconsistencies, 1);\n\tassert.equal(counts.localIntentsWithTrackingInconsistencies, 1);
 	const verifyClient = new mongoose.mongo.MongoClient(uri);
 	await verifyClient.connect();
 	assert.equal(await verifyClient.db("english-learning").collection("users").countDocuments({}), 17);
