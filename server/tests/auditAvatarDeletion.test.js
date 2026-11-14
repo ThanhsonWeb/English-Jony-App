@@ -118,7 +118,8 @@ test("read-only snapshot audit counts avatar risks without network or database w
 	await users.insertMany([
 		{ _id: legacyUserId, avatar: "  " },
 		{ _id: attachedUserId, avatar: asUrl("expected_cloud", attachedKey), avatarIntent: attachedIntent._id },
-		{ _id: mismatchUserId, avatar: asUrl("other_cloud", mismatchKey), avatarIntent: mismatchIntent._id },\n\t\t{ _id: urlMismatchUserId, avatar: asUrl("other_cloud", urlMismatchKey), avatarIntent: urlMismatchIntent._id },
+		{ _id: mismatchUserId, avatar: asUrl("other_cloud", mismatchKey), avatarIntent: mismatchIntent._id },
+		{ _id: urlMismatchUserId, avatar: asUrl("other_cloud", urlMismatchKey), avatarIntent: urlMismatchIntent._id },
 		{ _id: malformedUserId, avatar: 42 },
 		{ _id: pointerUserId, avatar: "", avatarIntent: "not-an-object-id" },
 		{ _id: localAttachedUserId, avatar: `/api/v1/users/avatar-files/${localAttachedKey}`, avatarIntent: localAttached._id },
