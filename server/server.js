@@ -1,7 +1,6 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
 const { assertAvatarStorageConfigured } = require("./services/avatarUpload");
-const { startConfiguredAccountDeletionScheduler } = require("./services/accountDeletionScheduler");
 process.on("uncaughtException", (err) => {
 	console.error("UNCAUGHT EXCEPTION! 💥 Đang tắt server...");
 	console.error(err.name, err.message, err.stack);
@@ -18,7 +17,6 @@ mongoose
 	.connect(process.env.DATABASE)
 	.then(() => {
 		console.log("MongoDB Connected!");
-		startConfiguredAccountDeletionScheduler();
 	});
 //------------------------start server----------------------
 const port = process.env.PORT || 5000;

@@ -33,12 +33,13 @@ function start(env = {}, app) {
 	return { server, handlers, exits, calls, closed: () => closed, schedulerStarts: () => schedulerStarts };
 }
 
-test("account deletion scheduling is opt-in at startup", async () => {
+test("the API never starts the account deletion scheduler", async () => {
 	const disabled = start();
-	const enabled = start({ ACCOUNT_DELETION_SCHEDULER_ENABLED: "true" });
+	const enabled = start({ NODE_ENV: "production", ACCOUNT_DELETION_SCHEDULER_ENABLED: "true",
+		ACCOUNT_DELETION_AVATAR_CLEANUP_SCHEDULER_ENABLED: "true" });
 	await Promise.resolve();
 	assert.equal(disabled.schedulerStarts(), 0);
-	assert.equal(enabled.schedulerStarts(), 1);
+	assert.equal(enabled.schedulerStarts(), 0);
 });
 
 for (const [name, env, port] of [
