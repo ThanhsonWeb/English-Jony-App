@@ -162,7 +162,7 @@ test("read-only snapshot audit counts avatar risks without network or database w
 
 	assert.equal(counts.usersWithUntrackedLegacyAvatars, 2);
 	assert.equal(counts.usersWithTrackingInconsistencies, 3);
-	assert.equal(counts.intentsWithTrackingInconsistencies, 1);
+	assert.equal(counts.intentsWithTrackingInconsistencies, 2);
 	assert.equal(counts.cloudinaryIntentsMissingOrInvalidIdentity, 1);
 	assert.equal(counts.cloudinaryIntentsMismatchedIdentity, 1);
 	assert.equal(counts.attachedCloudinaryUrlMismatches, 1);
