@@ -3,6 +3,7 @@ const assert = require("node:assert/strict");
 const User = require("../models/userModel");
 const accountDeletion = require("../services/accountDeletionCoordinator");
 const { runAccountDeletionOnce } = require("../services/accountDeletionRunner");
+const { deletingAvatarCleanupAccountExpr } = require("../services/avatarUploadIntent");
 
 const firstUserId = "64b000000000000000000001";
 const secondUserId = "64b000000000000000000002";
@@ -16,6 +17,7 @@ function mockScheduler(t, userIds) {
 		assert.deepEqual(filter, {
 			lifecycleState: "deleting",
 			deletionRunnerCycleAttempted: { $ne: true },
+			$expr: deletingAvatarCleanupAccountExpr(),
 		});
 		assert.deepEqual(update, { $set: { deletionRunnerCycleAttempted: true } });
 		assert.deepEqual(options, { sort: { _id: 1 }, returnDocument: "after", timestamps: false });
@@ -35,7 +37,7 @@ function mockScheduler(t, userIds) {
 	});
 
 	t.mock.method(User, "updateMany", async (filter, update, options) => {
-		assert.deepEqual(filter, { lifecycleState: "deleting", deletionRunnerCycleAttempted: true });
+		assert.deepEqual(filter, { lifecycleState: "deleting", deletionRunnerCycleAttempted: true, $expr: deletingAvatarCleanupAccountExpr() });
 		assert.deepEqual(update, { $unset: { deletionRunnerCycleAttempted: 1 } });
 		assert.deepEqual(options, { timestamps: false });
 		resetCount += 1;

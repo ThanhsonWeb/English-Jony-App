@@ -1,10 +1,11 @@
 const User = require("../models/userModel");
 const accountDeletion = require("./accountDeletionCoordinator");
+const { deletingAvatarCleanupAccountExpr } = require("./avatarUploadIntent");
 
 let inFlightRun = null;
 
 const nextUnattemptedDeletingAccount = () => User.findOneAndUpdate(
-	{ lifecycleState: "deleting", deletionRunnerCycleAttempted: { $ne: true } },
+	{ lifecycleState: "deleting", deletionRunnerCycleAttempted: { $ne: true }, $expr: deletingAvatarCleanupAccountExpr() },
 	{ $set: { deletionRunnerCycleAttempted: true } },
 	{ sort: { _id: 1 }, returnDocument: "after", timestamps: false },
 ).select("_id").lean();
@@ -16,7 +17,7 @@ async function processNextDeletingAccount() {
 		// The marker is written before coordination, so crashes and errors cannot pin
 		// the runner to one blocked account; each account gets another turn next round.
 		await User.updateMany(
-			{ lifecycleState: "deleting", deletionRunnerCycleAttempted: true },
+			{ lifecycleState: "deleting", deletionRunnerCycleAttempted: true, $expr: deletingAvatarCleanupAccountExpr() },
 			{ $unset: { deletionRunnerCycleAttempted: 1 } },
 			{ timestamps: false },
 		);
@@ -27,7 +28,7 @@ async function processNextDeletingAccount() {
 	return accountDeletion.coordinateAccountDeletion(candidate._id);
 }
 
-// This runner is invoked explicitly by internal tooling; it is not started by the server.
+// This runner is invoked by internal tooling and the optional scheduler.
 // A rejected run clears the in-process guard, leaving this account eligible next cycle.
 function runAccountDeletionOnce() {
 	if (inFlightRun) return inFlightRun;
