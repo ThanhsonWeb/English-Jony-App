@@ -157,15 +157,14 @@ function inspectSnapshot(users, intents, expectedCloudName) {
 			if (!intent || idString(intent.user) !== userId || intent.attachmentStatus !== "attached" ||
 				(intent.provider === "cloudinary" && intent.cloudName !== expectedCloudName) || !avatarMatchesIntent(user.avatar, intent)) {
 				inconsistent = true;
-				if (intent?.provider === "cloudinary" && !avatarMatchesIntent(user.avatar, intent)) {
-					counts.attachedCloudinaryUrlMismatches++;
-				}
 			}
 		}
 		if (inconsistent) counts.usersWithTrackingInconsistencies++;
 	}
 	for (const intent of intents) {
 		const owner = usersById.get(idString(intent.user));
+		if (intent.provider === "cloudinary" && intent.attachmentStatus === "attached" && owner &&
+			!avatarMatchesIntent(owner.avatar, intent)) counts.attachedCloudinaryUrlMismatches++;
 		const pointerId = owner && idString(owner.avatarIntent);
 		if (isIntentInconsistent(intent, owner, pointerId)) {
 			counts.intentsWithTrackingInconsistencies++;
