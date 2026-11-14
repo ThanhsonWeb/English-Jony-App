@@ -250,9 +250,9 @@ async function runAvatarDeletionAudit({
 	}
 }
 
-async function main({ env = process.env, write = value => process.stdout.write(value) } = {}) {
+async function main({ env = process.env, write = value => process.stdout.write(value), audit = runAvatarDeletionAudit } = {}) {
 	try {
-		const counts = await runAvatarDeletionAudit({
+		const counts = await audit({
 			uri: env.AVATAR_AUDIT_DATABASE,
 			expectedCloudName: env.CLOUDINARY_CLOUD_NAME,
 			localAvatarDirectory: env.AVATAR_AUDIT_LOCAL_DIR || path.resolve(__dirname, "../local-avatars"),
