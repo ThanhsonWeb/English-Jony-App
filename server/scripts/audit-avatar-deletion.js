@@ -3,6 +3,7 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
 const mongoose = require("mongoose");
+const { localAvatarDirectory: defaultLocalAvatarDirectory } = require("../services/avatarUpload");
 
 const DATABASE_NAME = "english-learning";
 const USER_COLLECTION = "users";
@@ -78,7 +79,7 @@ function isIntentInconsistent(intent, owner, pointerId) {
 }
 
 async function listCollectionNames(db) {
-	return (await db.listCollections({}, { nameOnly: true }).toArray()).map(item => item.name);
+	return (await db.listCollections({}, { nameOnly: true, authorizedCollections: true }).toArray()).map(item => item.name);
 }
 
 async function listLocalEntries(directory) {
@@ -178,7 +179,12 @@ function inspectSnapshot(users, intents, expectedCloudName) {
 async function countLocalFiles(directory, intents, counts) {
 	const entries = await listLocalEntries(directory);
 	const localIntents = intents.filter(intent => intent.provider === "local");
-	const byKey = new Map(localIntents.map(intent => [intent.storageKey, intent]));
+	const byKey = new Map();
+	for (const intent of localIntents) {
+		const matches = byKey.get(intent.storageKey) || [];
+		matches.push(intent);
+		byKey.set(intent.storageKey, matches);
+	}
 	const seen = new Set();
 	for (const entry of entries) {
 		const match = localFilePattern.exec(entry.name);
@@ -187,15 +193,21 @@ async function countLocalFiles(directory, intents, counts) {
 			continue;
 		}
 		seen.add(entry.name);
-		const intent = byKey.get(entry.name);
-		if (!intent) {
+		const matches = byKey.get(entry.name) || [];
+		if (!matches.length) {
 			counts.localOrphanFiles++;
 			continue;
 		}
-		if (!isValidStorageKey(intent) || (intent.attachmentStatus === "unattached" && intent.cleanupStatus === "complete")) {
+		if (matches.length !== 1) {
+			counts.localFilesWithTrackingInconsistencies++;
+			continue;
+		}
+		const intent = matches[0];
+		const validMatch = isValidStorageKey(intent);
+		if (!validMatch || (intent.attachmentStatus === "unattached" && intent.cleanupStatus === "complete")) {
 			counts.localFilesWithTrackingInconsistencies++;
 		}
-		if (intent.attachmentStatus === "unattached" && safeUploadOutcome(intent) &&
+		if (validMatch && intent.attachmentStatus === "unattached" && safeUploadOutcome(intent) &&
 			["pending", "retry"].includes(intent.cleanupStatus)) counts.localFilesPendingCleanup++;
 		if (intent.cleanupStatus === "claimed") counts.localFilesClaimedCleanup++;
 		if (["uploading", "uncertain"].includes(intent.uploadStatus) || intent.uploadResult === "unknown") {
@@ -203,7 +215,8 @@ async function countLocalFiles(directory, intents, counts) {
 		}
 	}
 	for (const intent of localIntents) {
-		if (["pending", "retry"].includes(intent.cleanupStatus) && safeUploadOutcome(intent) && !seen.has(intent.storageKey)) {
+		if (isValidStorageKey(intent) && byKey.get(intent.storageKey)?.length === 1 &&
+			["pending", "retry"].includes(intent.cleanupStatus) && safeUploadOutcome(intent) && !seen.has(intent.storageKey)) {
 			counts.localCleanupIntentsMissingFile++;
 		}
 	}
@@ -261,7 +274,7 @@ async function main({ env = process.env, write = value => process.stdout.write(v
 		const counts = await audit({
 			uri: env.AVATAR_AUDIT_DATABASE,
 			expectedCloudName: env.CLOUDINARY_CLOUD_NAME,
-			localAvatarDirectory: env.AVATAR_AUDIT_LOCAL_DIR || path.resolve(__dirname, "../local-avatars"),
+			localAvatarDirectory: defaultLocalAvatarDirectory,
 		});
 		write(`${JSON.stringify(counts)}\n`);
 		return 0;
