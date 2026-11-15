@@ -15,7 +15,9 @@ assertAvatarStorageConfigured(process.env);
 //-----------------------Connect to mongoDB------------
 mongoose
 	.connect(process.env.DATABASE)
-	.then(() => console.log("MongoDB Connected!"));
+	.then(() => {
+		console.log("MongoDB Connected!");
+	});
 //------------------------start server----------------------
 const port = process.env.PORT || 5000;
 const server = app.listen(port, "127.0.0.1", () => {

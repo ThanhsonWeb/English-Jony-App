@@ -4,7 +4,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
-const { MongoMemoryServer } = require("mongodb-memory-server");
+const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const { OAuth2Client } = require("google-auth-library");
 const User = require("../models/userModel");
 const Vocab = require("../models/vocabModel");
@@ -22,7 +22,7 @@ before(async () => {
 	Object.assign(process.env, environment);
 	({ createAuthSessionGuard } = await import("../../client/app/_lib/authSessionGuard.mjs"));
 	({ createCredentialAttempt } = await import("../../client/app/_lib/credentialAttempt.mjs"));
-	db = await MongoMemoryServer.create({ binary: { version: "7.0.14" } });
+	db = await MongoMemoryReplSet.create({ binary: { version: "7.0.14" }, replSet: { count: 1, storageEngine: "wiredTiger" } });
 	await mongoose.connect(db.getUri(), { dbName: "credential_sessions_test" });
 	await User.init();
 	const app = express(); app.use(express.json(), cookieParser());

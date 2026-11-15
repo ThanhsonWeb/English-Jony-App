@@ -18,3 +18,23 @@ test("index inspection checks ordered keys and uniqueness", () => {
 	assert.equal(inspectIndexes([{ name: "wrong-option", key: { user: 1, awardKey: 1 } }], expected)[0].status, "incorrect");
 	assert.equal(inspectIndexes([{ name: "wrong-order", key: { awardKey: 1, user: 1 }, unique: true }], expected)[0].status, "missing");
 });
+
+test("index inspection requires the exact partial filter for Google identity uniqueness", () => {
+	const expected = [{
+		key: { googleId: 1 },
+		unique: true,
+		partialFilterExpression: { googleId: { $type: "string", $gt: "" } },
+		purpose: "Google identity",
+	}];
+	assert.equal(inspectIndexes([{
+		name: "google_id_unique_nonempty",
+		key: { googleId: 1 },
+		unique: true,
+		partialFilterExpression: { googleId: { $type: "string", $gt: "" } },
+	}], expected)[0].status, "ok");
+	assert.equal(inspectIndexes([{
+		name: "google_id_unique_nonempty",
+		key: { googleId: 1 },
+		unique: true,
+	}], expected)[0].status, "incorrect");
+});

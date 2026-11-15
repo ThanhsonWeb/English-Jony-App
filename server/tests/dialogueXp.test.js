@@ -8,6 +8,7 @@ const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const User = require("../models/userModel");
 const DialogueProgress = require("../models/dialogueProgressModel");
 const XPEvent = require("../models/xpEventModel");
+const DialogueAttempt = require("../models/dialogueAttemptModel");
 const awardXp = require("../services/awardXp");
 const dialogueRoutes = require("../routes/dialogueProgressRoutes");
 const StudyActivity = require("../models/studyActivityModel");
@@ -27,7 +28,7 @@ before(async () => {
 	replicaSet = await MongoMemoryReplSet.create({
 		binary: { version: "7.0.14" }, replSet: { count: 1, storageEngine: "wiredTiger" },
 	});
-	await mongoose.connect(replicaSet.getUri(), { dbName: "dialogue_xp_test" });
+	await mongoose.connect(replicaSet.getUri(), { dbName: "dialogue_xp_test", monitorCommands: true });
 	await Promise.all([User.init(), DialogueProgress.init(), XPEvent.init()]);
 	const app = express();
 	app.use(express.json());
@@ -60,12 +61,28 @@ async function complete(taskId = "1", { lessonId = "asking-for-directions", dial
 	if (authToken && require("../utils/dialogueCatalogue").isKnownDialogueTask(lessonId, dialogueId, taskId)) {
 		body = { ...await completionFor(jwt.decode(authToken).id, [lessonId, dialogueId, taskId]), ...body };
 	}
+	return sendProof([lessonId, dialogueId, taskId], body, authToken);
+}
+
+async function sendProof([lessonId, dialogueId, taskId], body, authToken = token) {
 	const response = await fetch(`${baseUrl}/${encodeURIComponent(lessonId)}/${encodeURIComponent(dialogueId)}/tasks/${encodeURIComponent(taskId)}`, {
 		method: "PATCH",
 		headers: { "Content-Type": "application/json", ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}) },
 		body: JSON.stringify(body),
 	});
 	return { status: response.status, body: await response.json() };
+}
+
+function waitForUserFenceWrite() {
+	return new Promise(resolve => {
+		const client = mongoose.connection.getClient();
+		const onCommand = event => {
+			if (event.commandName !== "findAndModify" || event.command.findAndModify !== User.collection.name) return;
+			client.off("commandStarted", onCommand);
+			resolve();
+		};
+		client.on("commandStarted", onCommand);
+	});
 }
 
 function success(response) {
@@ -162,6 +179,72 @@ test("concurrent different tasks retain every completed ID and reward", async ()
 	await assertState(tasks, 40, 4);
 });
 
+test("a completion already holding the account fence commits before deletion", async () => {
+	const ids = ["asking-for-directions", "finding-a-cafe", "1"];
+	const proof = await completionFor(user.id, ids);
+	let entered, release;
+	const enteredActivityWrite = new Promise(resolve => { entered = resolve; });
+	const releaseActivityWrite = new Promise(resolve => { release = resolve; });
+	const original = StudyActivity.updateOne;
+	StudyActivity.updateOne = async function (...args) {
+		const result = await original.apply(this, args);
+		entered();
+		await releaseActivityWrite;
+		return result;
+	};
+	const order = [];
+	try {
+		const completion = sendProof(ids, proof).then(result => { order.push("completion"); return result; });
+		await enteredActivityWrite;
+		const deletionCommandSent = waitForUserFenceWrite();
+		const deletion = mongoose.connection.transaction(async session => {
+			const account = await User.findOneAndUpdate({ _id: user._id, lifecycleState: "active" }, { $set: { lifecycleState: "deleting" } }, { session, returnDocument: "after" });
+			assert.ok(account);
+		}).then(() => { order.push("deletion"); });
+		await deletionCommandSent;
+		release();
+		const response = await completion;
+		await deletion;
+		assert.equal(response.status, 200);
+		assert.deepEqual(response.body.data.xp, { awarded: 10, total: 10, reason: "awarded" });
+		assert.deepEqual(order, ["completion", "deletion"]);
+		assert.equal(await DialogueProgress.countDocuments({ user: user._id }), 1);
+		assert.equal(await XPEvent.countDocuments({ user: user._id }), 1);
+	} finally {
+		release();
+		StudyActivity.updateOne = original;
+	}
+});
+
+test("a completion racing behind a committed deletion cannot consume its attempt or award XP", async () => {
+	const ids = ["asking-for-directions", "finding-a-cafe", "1"];
+	const proof = await completionFor(user.id, ids);
+	let entered, release;
+	const enteredDeletion = new Promise(resolve => { entered = resolve; });
+	const releaseDeletion = new Promise(resolve => { release = resolve; });
+	const deletion = mongoose.connection.transaction(async session => {
+		const account = await User.findOneAndUpdate({ _id: user._id, lifecycleState: "active" }, { $set: { lifecycleState: "deleting" } }, { session, returnDocument: "after" });
+		assert.ok(account);
+		entered();
+		await releaseDeletion;
+	});
+	await enteredDeletion;
+	const completionCommandSent = waitForUserFenceWrite();
+	const completion = sendProof(ids, proof);
+	try {
+		await completionCommandSent;
+	} finally {
+		release();
+	}
+	await deletion;
+	const response = await completion;
+	assert.equal(response.status, 401);
+	assert.equal(await DialogueProgress.countDocuments({ user: user._id }), 0);
+	assert.equal(await XPEvent.countDocuments({ user: user._id }), 0);
+	assert.equal(await StudyActivity.countDocuments({ user: user._id }), 0);
+	assert.equal((await DialogueAttempt.findById(proof.attemptId)).consumedAt, undefined);
+});
+
 test("existing XP event prevents another award if progress needs restoring", async () => {
 	await awardXp({ userId: user._id, awardKey: "dialogue:asking-for-directions:finding-a-cafe:1", sourceType: "dialogue_task", sourceId: "asking-for-directions/finding-a-cafe/1", amount: 10 });
 	assert.deepEqual(success(await complete()).xp, { awarded: 0, total: 10, reason: "already_awarded" });
@@ -169,9 +252,16 @@ test("existing XP event prevents another award if progress needs restoring", asy
 });
 
 test("failed XP write rolls back progress and the event; retry can still earn XP", async (t) => {
-	const stub = t.mock.method(User, "findOneAndUpdate", () => { throw new Error("Simulated XP write failure"); });
+	const ids = ["asking-for-directions", "finding-a-cafe", "1"];
+	const proof = await completionFor(user.id, ids);
+	const fenceBefore = (await User.findById(user.id).select("+accountWriteFence")).accountWriteFence;
+	const original = User.findOneAndUpdate;
+	const stub = t.mock.method(User, "findOneAndUpdate", function (filter, update, options) {
+		if (update?.$inc?.totalXp) throw new Error("Simulated XP write failure");
+		return original.call(this, filter, update, options);
+	});
 	try {
-		assert.equal((await complete()).status, 500);
+		assert.equal((await sendProof(ids, proof)).status, 500);
 	} finally {
 		stub.mock.restore();
 	}
@@ -179,7 +269,9 @@ test("failed XP write rolls back progress and the event; retry can still earn XP
 	assert.equal(await XPEvent.countDocuments(), 0);
 	assert.equal((await User.findById(user._id)).totalXp, 0);
 	assert.equal(await StudyActivity.countDocuments(), 0);
-	assert.equal(success(await complete()).xp.awarded, 10);
+	assert.equal((await DialogueAttempt.findById(proof.attemptId)).consumedAt, undefined);
+	assert.equal((await User.findById(user.id).select("+accountWriteFence")).accountWriteFence, fenceBefore);
+	assert.equal(success(await sendProof(ids, proof)).xp.awarded, 10);
 	await assertState(["1"], 10, 1);
 });
 
@@ -245,7 +337,7 @@ test("legacy increments and visits never qualify; zero-XP replay does and preser
 test("qualified timestamps stay ordered and midnight creates separate Vietnam days", async () => {
 	await StudyActivity.init();
 	for (const instant of ["2026-09-18T16:59:59Z", "2026-09-18T17:00:00Z", "2026-09-18T16:00:00Z"]) {
-		await markQualifiedStudy(user._id, { now: new Date(instant) });
+		await mongoose.connection.transaction(session => markQualifiedStudy(user._id, { session, now: new Date(instant) }));
 	}
 	const days = await StudyActivity.find().sort("date").lean();
 	assert.deepEqual(days.map(day => day.date), ["2026-09-18", "2026-09-19"]);

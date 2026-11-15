@@ -57,16 +57,18 @@ test("avatar route requires a user and stores only the verified URL", async () =
 	assert.equal(invalid.status, 400);
 
 	const originalFetch = global.fetch;
-	const publicId = `studyjony/avatars/user_${user.id}`;
 	const version = 12345;
-	const signature = crypto.createHash("sha1").update(`public_id=${publicId}&version=${version}test-secret`).digest("hex");
-	const url = `https://res.cloudinary.com/studyjony-test/image/upload/v${version}/${publicId}.jpg`;
+	let url;
 	process.env.CLOUDINARY_CLOUD_NAME = "studyjony-test";
 	process.env.CLOUDINARY_API_KEY = "test-key";
 	process.env.CLOUDINARY_API_SECRET = "test-secret";
-	global.fetch = (input, options) => String(input).startsWith("https://api.cloudinary.com/")
-		? Promise.resolve({ ok: true, json: async () => ({ public_id: publicId, version, signature, secure_url: url }) })
-		: originalFetch(input, options);
+	global.fetch = (input, options) => {
+		if (!String(input).startsWith("https://api.cloudinary.com/")) return originalFetch(input, options);
+		const publicId = `studyjony/avatars/${options.body.get("public_id")}`;
+		const signature = crypto.createHash("sha1").update(`public_id=${publicId}&version=${version}test-secret`).digest("hex");
+		url = `https://res.cloudinary.com/studyjony-test/image/upload/v${version}/${publicId}.jpg`;
+		return Promise.resolve({ ok: true, json: async () => ({ public_id: publicId, version, signature, secure_url: url }) });
+	};
 	try {
 		const response = await fetch(baseUrl, { method: "PATCH", headers: { Authorization: `Bearer ${token}`, "Content-Type": "image/jpeg" }, body: bytes });
 		assert.equal(response.status, 200);

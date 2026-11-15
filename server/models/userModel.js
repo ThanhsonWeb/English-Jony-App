@@ -58,6 +58,10 @@ const userSchema = new mongoose.Schema(
 			required: true,
 			select: false,
 		},
+		// Updated by each guarded account write to serialize it with lifecycle changes.
+		accountWriteFence: { type: Number, default: 0, select: false },
+		// Prevent a blocked deleting account from monopolizing successive runner calls.
+		deletionRunnerCycleAttempted: { type: Boolean, select: false },
 
 		photo: {
 			type: String,
@@ -67,6 +71,7 @@ const userSchema = new mongoose.Schema(
 			type: String,
 			default: "",
 		},
+		avatarIntent: { type: mongoose.Schema.Types.ObjectId, ref: "AvatarUploadIntent", select: false },
 		theme: {
 			type: String,
 			enum: ["light", "cream", "dark", "black", "system"],
@@ -99,6 +104,14 @@ const userSchema = new mongoose.Schema(
 		timestamps: true,
 	},
 );
+
+// Non-empty string Google subjects are unique; accounts without an ID stay outside the index.
+userSchema.index({ googleId: 1 }, {
+	unique: true,
+	name: "google_id_unique_nonempty",
+	partialFilterExpression: { googleId: { $type: "string", $gt: "" } },
+});
+
 // methods
 userSchema.methods.correctPassword = async function (candidatePass, userPass) {
 	if (typeof userPass !== "string" || !userPass) return false;

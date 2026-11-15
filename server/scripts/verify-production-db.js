@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { assertMobileLoginReady } = require("../utils/mobileLoginReadiness");
+const { isDeepStrictEqual } = require("node:util");
 require("dotenv").config({ quiet: true });
 
 const EXPECTED_COLLECTIONS = [
@@ -24,6 +25,12 @@ const EXPECTED_COLLECTIONS = [
 		collection: "users",
 		indexes: [
 			{ key: { email: 1 }, unique: true, purpose: "user identity" },
+			{
+				key: { googleId: 1 },
+				unique: true,
+				partialFilterExpression: { googleId: { $type: "string", $gt: "" } },
+				purpose: "unique non-empty Google identity",
+			},
 		],
 	},
 ];
@@ -38,7 +45,10 @@ function sameKey(actual, expected) {
 function inspectIndexes(actualIndexes, expectedIndexes) {
 	return expectedIndexes.map(expected => {
 		const sameFields = actualIndexes.filter(index => sameKey(index.key, expected.key));
-		const exact = sameFields.find(index => Boolean(index.unique) === Boolean(expected.unique));
+		const exact = sameFields.find(index =>
+			Boolean(index.unique) === Boolean(expected.unique) &&
+			isDeepStrictEqual(index.partialFilterExpression ?? null, expected.partialFilterExpression ?? null),
+		);
 		if (exact) return { status: "ok", expected, actual: exact };
 		if (sameFields.length) return { status: "incorrect", expected, actual: sameFields[0] };
 		return { status: "missing", expected };

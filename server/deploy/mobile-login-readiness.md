@@ -1,5 +1,18 @@
 # Mobile login production prerequisites
 
+## Google identity uniqueness index
+
+The User model declares a unique partial index for non-empty string `googleId`
+values, and the production database verifier requires the exact partial filter.
+Before deploying a release that builds this index, run the read-only
+`scripts/audit-google-ids.js` audit with a verified read-only database account
+against the target production database. Require zero duplicate groups. The
+partial filter also includes non-empty malformed strings, so duplicates among
+legacy malformed values can block index creation. If the audit reports any
+duplicates, stop the rollout and reconcile them through a separately approved
+process; do not bypass or drop the unique index. Production duplicate status
+must be verified before enabling this index there.
+
 ## MongoDB (prepare before deploying a mobile-enabled release)
 
 The existing deployment `--database` gate now also checks mobile login readiness,

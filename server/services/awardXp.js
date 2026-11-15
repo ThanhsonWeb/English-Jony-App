@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const User = require("../models/userModel");
 const XPEvent = require("../models/xpEventModel");
+const { fenceActiveAccountWrite } = require("../utils/accountLifecycle");
 
 function xpError(code, message) {
 	return Object.assign(new Error(message), { code });
@@ -32,6 +33,18 @@ function duplicateResult(event, user, input) {
 	return { awarded: 0, totalXp: user.totalXp ?? 0, reason: "already_awarded", eventId: event._id };
 }
 
+async function fenceRecipient(userId, session) {
+	try {
+		await fenceActiveAccountWrite(userId, session);
+	} catch (error) {
+		// Preserve the existing missing-recipient result while rejecting inactive accounts.
+		if (error.statusCode === 401 && !(await User.exists({ _id: userId }).session(session))) {
+			throw xpError("XP_USER_NOT_FOUND", "XP recipient does not exist");
+		}
+		throw error;
+	}
+}
+
 /**
  * Internal only: callers must verify the learning action and choose its reward/key.
  * Requires a replica set (or sharded cluster) and the XPEvent unique index.
@@ -49,6 +62,7 @@ async function awardXp({ userId, awardKey, sourceType, sourceId, amount, ruleVer
 	}).format(earnedAt);
 
 	const performAward = async (session) => {
+		await fenceRecipient(userId, session);
 		const existing = await XPEvent.findOne(filter).session(session).lean();
 		if (existing) {
 			const user = await User.findById(userId).select("totalXp").session(session).lean();
@@ -90,10 +104,15 @@ async function awardXp({ userId, awardKey, sourceType, sourceId, amount, ruleVer
 		// A concurrent insert may win after our first read. The losing transaction
 		// has already rolled back; only this specific unique-key violation is a retry.
 		if (error.code !== 11000 || !error.keyPattern?.user || !error.keyPattern?.awardKey) throw error;
-		const event = await XPEvent.findOne(filter).read("primary").lean();
-		if (!event) throw error;
-		const user = await User.findById(userId).select("totalXp").read("primary").lean();
-		return duplicateResult(event, user, input);
+		// Recheck through the same fenced transaction path. It cannot award again:
+		// if the winning event is missing, fail instead of inserting another one.
+		return mongoose.connection.transaction(async retrySession => {
+			await fenceRecipient(userId, retrySession);
+			const event = await XPEvent.findOne(filter).session(retrySession).lean();
+			if (!event) throw error;
+			const user = await User.findById(userId).select("totalXp").session(retrySession).lean();
+			return duplicateResult(event, user, input);
+		}, { readPreference: "primary", readConcern: { level: "snapshot" }, writeConcern: { w: "majority" } });
 	}
 }
 

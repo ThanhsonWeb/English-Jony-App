@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { OAuth2Client } = require("google-auth-library");
-const { MongoMemoryServer } = require("mongodb-memory-server");
+const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const User = require("../models/userModel");
 const errorHandler = require("../controllers/errorController");
 let db, server, url, normal, google;
@@ -14,7 +14,7 @@ const secret = "isolated-authentication-failures-secret";
 const previousEnv = Object.fromEntries(["JWT_SECRET", "JWT_EXPIRES_IN", "NODE_ENV", "FRONTEND_URL"].map(key => [key, process.env[key]]));
 before(async () => {
 	Object.assign(process.env, { JWT_SECRET: secret, JWT_EXPIRES_IN: "1h", NODE_ENV: "development", FRONTEND_URL: "http://studyjony.test" });
-	db = await MongoMemoryServer.create({ binary: { version: "7.0.14" } });
+	db = await MongoMemoryReplSet.create({ binary: { version: "7.0.14" }, replSet: { count: 1, storageEngine: "wiredTiger" } });
 	await mongoose.connect(db.getUri(), { dbName: "authentication_failures_test" });
 	await User.init();
 	const app = express();

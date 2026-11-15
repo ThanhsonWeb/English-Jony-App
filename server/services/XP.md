@@ -20,6 +20,7 @@ const result = await awardXp({
 ```
 
 - An event and its lifetime total increment commit in one transaction.
+- Every award, including duplicate checks, acquires the active-account fence in the same transaction. Deleting accounts cannot receive an award.
 - A unique `(user, awardKey)` index protects against concurrent duplicates.
 - Reusing a key with a different amount, source, or rule version throws
   `XP_AWARD_CONFLICT`. A different attempt ID does not permit another award.

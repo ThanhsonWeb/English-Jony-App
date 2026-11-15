@@ -36,7 +36,9 @@ test("production requires a complete Cloudinary configuration", () => {
 
 test("avatar upload signs the request and accepts only the signed storage URL", async () => {
 	const originalFetch = global.fetch;
-	const publicId = "studyjony/avatars/user_123";
+	const userId = "1234567890abcdef12345678";
+	const name = `user_${userId}_12345678-1234-4234-8234-123456789abc`;
+	const publicId = `studyjony/avatars/${name}`;
 	const version = 12345;
 	const signature = crypto.createHash("sha1")
 		.update(`public_id=${publicId}&version=${version}${config.CLOUDINARY_API_SECRET}`)
@@ -45,10 +47,10 @@ test("avatar upload signs the request and accepts only the signed storage URL", 
 		assert.equal(url, "https://api.cloudinary.com/v1_1/studyjony-test/image/upload");
 		assert.equal(options.method, "POST");
 		const form = options.body;
-		assert.equal(form.get("public_id"), "user_123");
+		assert.equal(form.get("public_id"), name);
 		assert.equal(form.get("folder"), "studyjony/avatars");
 		assert.equal(form.get("api_key"), config.CLOUDINARY_API_KEY);
-		const signed = `folder=studyjony/avatars&overwrite=true&public_id=user_123&timestamp=${form.get("timestamp")}${config.CLOUDINARY_API_SECRET}`;
+		const signed = `folder=studyjony/avatars&overwrite=false&public_id=${name}&timestamp=${form.get("timestamp")}${config.CLOUDINARY_API_SECRET}`;
 		assert.equal(form.get("signature"), crypto.createHash("sha1").update(signed).digest("hex"));
 		return {
 			ok: true,
@@ -56,7 +58,7 @@ test("avatar upload signs the request and accepts only the signed storage URL", 
 		};
 	};
 	try {
-		const url = await uploadAvatar(Buffer.from([0xff, 0xd8, 0xff, 0x00]), "image/jpeg", "123", config);
+		const url = await uploadAvatar(Buffer.from([0xff, 0xd8, 0xff, 0x00]), "image/jpeg", userId, publicId, config);
 		assert.equal(url, `https://res.cloudinary.com/studyjony-test/image/upload/v${version}/${publicId}.jpg`);
 	} finally {
 		global.fetch = originalFetch;
@@ -65,10 +67,12 @@ test("avatar upload signs the request and accepts only the signed storage URL", 
 
 test("avatar upload rejects an untrusted storage response", async () => {
 	const originalFetch = global.fetch;
+	const userId = "1234567890abcdef12345678";
+	const publicId = `studyjony/avatars/user_${userId}_12345678-1234-4234-8234-123456789abc`;
 	global.fetch = async () => ({
 		ok: true,
 		json: async () => ({
-			public_id: "studyjony/avatars/user_123",
+			public_id: publicId,
 			version: 12345,
 			signature: "0".repeat(40),
 			secure_url: "https://other.example/avatar.jpg",
@@ -76,7 +80,7 @@ test("avatar upload rejects an untrusted storage response", async () => {
 	});
 	try {
 		await assert.rejects(
-			uploadAvatar(Buffer.from([0xff, 0xd8, 0xff, 0x00]), "image/jpeg", "123", config),
+			uploadAvatar(Buffer.from([0xff, 0xd8, 0xff, 0x00]), "image/jpeg", userId, publicId, config),
 			/invalid response/,
 		);
 	} finally {

@@ -15,7 +15,7 @@ before(async () => {
 		binary: { version: "7.0.14" },
 		replSet: { count: 1, storageEngine: "wiredTiger" },
 	});
-	await mongoose.connect(replicaSet.getUri(), { dbName: "xp_foundation_test" });
+	await mongoose.connect(replicaSet.getUri(), { dbName: "xp_foundation_test", monitorCommands: true });
 	await Promise.all([User.init(), XPEvent.init()]);
 }, { timeout: 180000 });
 
@@ -166,7 +166,11 @@ test("total overflow rolls back the event", async () => {
 
 test("failed user update rolls back the event and can be retried", async (t) => {
 	const failure = new Error("Simulated total write failure");
-	const stub = t.mock.method(User, "findOneAndUpdate", () => { throw failure; });
+	const original = User.findOneAndUpdate;
+	const stub = t.mock.method(User, "findOneAndUpdate", function (filter, update, ...rest) {
+		if (update?.$inc?.totalXp) throw failure;
+		return original.call(this, filter, update, ...rest);
+	});
 	try {
 		await assert.rejects(awardXp(input()), error => error === failure);
 	} finally {
@@ -194,4 +198,136 @@ test("database unique index rejects duplicate events even outside the service", 
 	delete event._id;
 	await assert.rejects(XPEvent.create(event), { code: 11000 });
 	await assertState(10, 1);
+});
+
+test("deleting accounts cannot receive new or duplicate awards in either transaction mode", async () => {
+	await awardXp(input());
+	await User.updateOne({ _id: user._id }, { $set: { lifecycleState: "deleting" } });
+	for (const data of [input(), input({ awardKey: "other", sourceId: "other" })]) {
+		await assert.rejects(awardXp(data), error => error.statusCode === 401);
+		await assert.rejects(mongoose.connection.transaction(session => awardXp(data, { session })), error => error.statusCode === 401);
+	}
+	await assertState(10, 1);
+});
+
+test("existing session commits the fence and award together, and caller rollback undoes both", async () => {
+	await assert.rejects(mongoose.connection.transaction(async session => {
+		assert.equal((await awardXp(input(), { session })).awarded, 10);
+		throw new Error("rollback caller");
+	}), /rollback caller/);
+	await assertState(0, 0);
+	assert.equal((await User.findById(user.id).select("+accountWriteFence")).accountWriteFence, 0);
+	await mongoose.connection.transaction(async session => {
+		assert.equal((await awardXp(input(), { session })).awarded, 10);
+		assert.equal((await awardXp(input(), { session })).awarded, 0);
+	});
+	await assertState(10, 1);
+});
+
+test("a standalone award waiting behind deletion cannot commit an event", async () => {
+	let entered, release;
+	const enteredTransition = new Promise(resolve => { entered = resolve; });
+	const releaseTransition = new Promise(resolve => { release = resolve; });
+	const transition = mongoose.connection.transaction(async session => {
+		await User.updateOne({ _id: user._id }, { $set: { lifecycleState: "deleting" } }, { session });
+		entered(); await releaseTransition;
+	});
+	await enteredTransition;
+	const client = mongoose.connection.getClient();
+	const sent = new Promise(resolve => {
+		const listener = event => {
+			if (event.commandName === "findAndModify" && event.command.findAndModify === User.collection.name) {
+				client.off("commandStarted", listener); resolve();
+			}
+		};
+		client.on("commandStarted", listener);
+	});
+	const rejected = assert.rejects(awardXp(input()), error => error.statusCode === 401);
+	try { await sent; } finally { release(); }
+	await Promise.all([transition, rejected]);
+	await assertState(0, 0);
+});
+
+test("an award holding the fence commits before a racing deletion", async t => {
+	let entered, release;
+	const enteredWrite = new Promise(resolve => { entered = resolve; });
+	const releaseWrite = new Promise(resolve => { release = resolve; });
+	const original = XPEvent.create;
+	const stub = t.mock.method(XPEvent, "create", async function (...args) {
+		const event = await original.apply(this, args); entered(); await releaseWrite; return event;
+	});
+	const order = [];
+	try {
+		const award = awardXp(input()).then(() => order.push("award"));
+		await enteredWrite;
+		const client = mongoose.connection.getClient();
+		const sent = new Promise(resolve => {
+			const listener = event => {
+				if (event.commandName === "findAndModify" && event.command.findAndModify === User.collection.name) {
+					client.off("commandStarted", listener); resolve();
+				}
+			};
+			client.on("commandStarted", listener);
+		});
+		const deletion = mongoose.connection.transaction(async session => {
+			await User.findOneAndUpdate({ _id: user._id }, { $set: { lifecycleState: "deleting" } }, { session });
+		}).then(() => order.push("deletion"));
+		await sent; release();
+		await Promise.all([award, deletion]);
+		assert.deepEqual(order, ["award", "deletion"]);
+		await assertState(10, 1);
+	} finally { release(); stub.mock.restore(); }
+});
+
+test("duplicate-key recovery rechecks the fence and preserves the winner", async t => {
+	const winner = await awardXp(input());
+	const find = XPEvent.findOne;
+	let calls = 0;
+	const lookup = t.mock.method(XPEvent, "findOne", function (filter, ...args) {
+		return find.call(this, ++calls === 1 ? { _id: new mongoose.Types.ObjectId() } : filter, ...args);
+	});
+	const failure = Object.assign(new Error("duplicate winner"), { code: 11000, keyPattern: { user: 1, awardKey: 1 } });
+	const insert = t.mock.method(XPEvent, "create", async () => { throw failure; });
+	try {
+		const retry = await awardXp(input());
+		assert.equal(retry.reason, "already_awarded");
+		assert.equal(String(retry.eventId), String(winner.eventId));
+		await assertState(10, 1);
+	} finally { lookup.mock.restore(); insert.mock.restore(); }
+});
+
+test("duplicate-key recovery rejects a deletion committed after the failed attempt", async t => {
+	await awardXp(input());
+	const find = XPEvent.findOne;
+	let calls = 0;
+	const lookup = t.mock.method(XPEvent, "findOne", function (filter, ...args) {
+		return find.call(this, ++calls === 1 ? { _id: new mongoose.Types.ObjectId() } : filter, ...args);
+	});
+	const failure = Object.assign(new Error("duplicate winner"), { code: 11000, keyPattern: { user: 1, awardKey: 1 } });
+	const insert = t.mock.method(XPEvent, "create", async () => { throw failure; });
+	const transaction = mongoose.connection.transaction;
+	let first = true;
+	const wrapper = t.mock.method(mongoose.connection, "transaction", async function (...args) {
+		try { return await transaction.apply(this, args); }
+		catch (error) {
+			if (first && error === failure) { first = false; await User.updateOne({ _id: user._id }, { $set: { lifecycleState: "deleting" } }); }
+			throw error;
+		}
+	});
+	try { await assert.rejects(awardXp(input()), error => error.statusCode === 401); await assertState(10, 1); }
+	finally { lookup.mock.restore(); insert.mock.restore(); wrapper.mock.restore(); }
+});
+
+test("duplicate-key recovery does not insert when the winning event is missing", async t => {
+	const failure = Object.assign(new Error("duplicate winner missing"), { code: 11000, keyPattern: { user: 1, awardKey: 1 } });
+	const insert = t.mock.method(XPEvent, "create", async () => { throw failure; });
+	try { await assert.rejects(awardXp(input()), error => error === failure); await assertState(0, 0); }
+	finally { insert.mock.restore(); }
+});
+
+test("a supplied session must be in an active transaction", async () => {
+	const session = await mongoose.startSession();
+	try { await assert.rejects(awardXp(input(), { session }), { code: "XP_INVALID_SESSION" }); }
+	finally { await session.endSession(); }
+	await assertState(0, 0);
 });

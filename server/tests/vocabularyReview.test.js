@@ -9,6 +9,7 @@ const User = require("../models/userModel");
 const Vocab = require("../models/vocabModel");
 const XPEvent = require("../models/xpEventModel");
 const StudyActivity = require("../models/studyActivityModel");
+const VocabularyReviewEvent = require("../models/vocabularyReviewEventModel");
 const { reviewVocabulary, stableWordKey, getReviewOutcome, scheduleVocabularyReview } = require("../services/vocabularyReview");
 const awardXp = require("../services/awardXp");
 const NOW = new Date("2026-09-19T10:00:00Z");
@@ -17,8 +18,8 @@ const oldSecret = process.env.JWT_SECRET;
 before(async () => {
 	process.env.JWT_SECRET = "isolated-vocabulary-review-test";
 	db = await MongoMemoryReplSet.create({ binary: { version: "7.0.14" }, replSet: { count: 1 } });
-	await mongoose.connect(db.getUri(), { dbName: "vocabulary_review_test" });
-	await Promise.all([User.init(), Vocab.init(), XPEvent.init(), StudyActivity.init()]);
+	await mongoose.connect(db.getUri(), { dbName: "vocabulary_review_test", monitorCommands: true });
+	await Promise.all([User.init(), Vocab.init(), XPEvent.init(), StudyActivity.init(), VocabularyReviewEvent.init()]);
 	const app = express();
 	app.use(express.json());
 	app.use("/api/v1/vocab", require("../routes/vocabRoutes"));
@@ -36,7 +37,7 @@ async function makeWord(english = "hello") {
 	return Vocab.create({ user: user._id, topic: new mongoose.Types.ObjectId(), english, vietnamese: "xin chao" });
 }
 beforeEach(async () => {
-	await Promise.all([User.deleteMany({}), Vocab.deleteMany({}), XPEvent.deleteMany({}), StudyActivity.deleteMany({})]);
+	await Promise.all([User.deleteMany({}), Vocab.deleteMany({}), XPEvent.deleteMany({}), StudyActivity.deleteMany({}), VocabularyReviewEvent.deleteMany({})]);
 	user = await User.create({ name: "Learner", email: "review@example.com", googleId: "review-test" });
 	word = await makeWord();
 	token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
@@ -237,6 +238,93 @@ test("concurrent cross-mode reviews award only once", async () => {
 	assert.equal(results.filter(result => result.xp.awarded > 0).length, 1);
 	assert.equal(await XPEvent.countDocuments(), 1);
 });
+
+test("replaying one review identity concurrently records one review and one KN award", async () => {
+	const submission = { ...writing, reviewId: randomUUID() };
+	const results = await Promise.all([review(submission), review(submission)]);
+	assert.equal(results.filter(result => result.xp.awarded === 5).length, 1);
+	assert.equal(results.filter(result => result.xp.reason === "review_replayed").length, 1);
+	assert.equal(await VocabularyReviewEvent.countDocuments(), 1);
+	assert.equal(await XPEvent.countDocuments(), 1);
+	assert.equal((await User.findById(user._id)).totalXp, 5);
+	assert.equal((await Vocab.findById(word._id)).reviewCount, 1);
+	assert.equal((await StudyActivity.findOne()).count, 1);
+});
+
+function waitForUserFenceCommand() {
+	return new Promise(resolve => {
+		const client = mongoose.connection.getClient();
+		const onCommand = event => {
+			if (event.commandName !== "findAndModify" || event.command.findAndModify !== User.collection.name) return;
+			client.off("commandStarted", onCommand);
+			resolve();
+		};
+		client.on("commandStarted", onCommand);
+	});
+}
+
+test("an in-flight vocabulary review commits before a racing deletion transition", async () => {
+	let entered, release;
+	const enteredSave = new Promise(resolve => { entered = resolve; });
+	const releaseSave = new Promise(resolve => { release = resolve; });
+	const originalSave = Vocab.prototype.save;
+	Vocab.prototype.save = async function (...args) {
+		const result = await originalSave.apply(this, args);
+		if (String(this._id) === String(word._id)) {
+			entered();
+			await releaseSave;
+		}
+		return result;
+	};
+	const order = [];
+	try {
+		const reviewPromise = review(writing).then(result => { order.push("review"); return result; });
+		await enteredSave;
+		const deletionCommandSent = waitForUserFenceCommand();
+		const deletion = mongoose.connection.transaction(async session => {
+			const account = await User.findOneAndUpdate({ _id: user._id, lifecycleState: "active" }, { $set: { lifecycleState: "deleting" } }, { session, returnDocument: "after" });
+			assert.ok(account);
+		}).then(() => { order.push("deletion"); });
+		await deletionCommandSent;
+		release();
+		const result = await reviewPromise;
+		await deletion;
+		assert.equal(result.xp.awarded, 5);
+		assert.deepEqual(order, ["review", "deletion"]);
+		assert.equal((await Vocab.findById(word._id)).reviewCount, 1);
+		assert.equal(await VocabularyReviewEvent.countDocuments(), 1);
+		assert.equal(await XPEvent.countDocuments(), 1);
+	} finally {
+		release();
+		Vocab.prototype.save = originalSave;
+	}
+});
+
+test("a vocabulary review racing behind a committed deletion is rejected without learning writes", async () => {
+	let entered, release;
+	const enteredDeletion = new Promise(resolve => { entered = resolve; });
+	const releaseDeletion = new Promise(resolve => { release = resolve; });
+	const deletion = mongoose.connection.transaction(async session => {
+		const account = await User.findOneAndUpdate({ _id: user._id, lifecycleState: "active" }, { $set: { lifecycleState: "deleting" } }, { session, returnDocument: "after" });
+		assert.ok(account);
+		entered();
+		await releaseDeletion;
+	});
+	await enteredDeletion;
+	const reviewCommandSent = waitForUserFenceCommand();
+	const rejected = assert.rejects(review({ ...writing, reviewId: randomUUID() }), error => error.statusCode === 401);
+	try {
+		await reviewCommandSent;
+	} finally {
+		release();
+	}
+	await deletion;
+	await rejected;
+	assert.equal((await Vocab.findById(word._id)).reviewCount, 0);
+	assert.equal(await VocabularyReviewEvent.countDocuments(), 0);
+	assert.equal(await StudyActivity.countDocuments(), 0);
+	assert.equal(await XPEvent.countDocuments(), 0);
+});
 test("Vietnam midnight resets word eligibility and earnedAt/dayKey agree", async () => {
 	const before = new Date("2026-09-19T16:59:59.999Z");
 	const after = new Date("2026-09-19T17:00:00Z");
@@ -248,13 +336,21 @@ test("Vietnam midnight resets word eligibility and earnedAt/dayKey agree", async
 	assert.deepEqual(events.map(event => event.earnedAt), [before, after]);
 	assert.equal(await StudyActivity.countDocuments({ hasQualifiedStudy: true }), 2);
 });
-test("failure rolls back progress, qualification and XP", async t => {
-	const stub = t.mock.method(User, "findOneAndUpdate", () => { throw new Error("write failure"); });
-	try { await assert.rejects(review(writing), /write failure/); } finally { stub.mock.restore(); }
+test("failure rolls back review, qualification, XP and account fence; the same review can retry", async t => {
+	const submission = { ...writing, reviewId: randomUUID() };
+	const original = User.findOneAndUpdate;
+	const stub = t.mock.method(User, "findOneAndUpdate", function (filter, update, options) {
+		if (update?.$inc?.totalXp) throw new Error("write failure");
+		return original.call(this, filter, update, options);
+	});
+	try { await assert.rejects(review(submission), /write failure/); } finally { stub.mock.restore(); }
 	assert.equal((await Vocab.findById(word._id)).reviewCount, 0);
 	assert.equal((await Vocab.findById(word._id)).lastReviewedAt, null);
 	assert.equal(await StudyActivity.countDocuments(), 0);
 	assert.equal(await XPEvent.countDocuments(), 0);
+	assert.equal(await VocabularyReviewEvent.countDocuments(), 0);
+	assert.equal((await User.findById(user.id).select("+accountWriteFence")).accountWriteFence, 0);
+	assert.equal((await review(submission)).xp.awarded, 5);
 });
 test("HTTP requires ownership and valid review input; generic GET/PATCH never earn XP", async () => {
 	async function request(path, method, body, auth = token) {
