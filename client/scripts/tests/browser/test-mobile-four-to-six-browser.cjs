@@ -22,7 +22,7 @@ async function setup(browser, width, locale, theme, authenticated = true) {
 	await page.route("**/api/v1/**", route => {
 		const url = new URL(route.request().url());
 		if (url.pathname === "/api/v1/users/me") return route.fulfill({ status: authenticated ? 200 : 401, json: {
-			data: { user: authenticated ? { _id: "learner", name: "Learner", email: "learner@example.com", theme } : null },
+				data: { user: authenticated ? { _id: "learner", name: "Learner", email: "learner@example.com", theme, language: locale } : null },
 		} });
 		if (url.pathname === "/api/v1/vocab") return route.fulfill({ json: { data: { vocabularies: [longWord, shortWord] } } });
 		if (url.pathname.endsWith("/review")) return route.fulfill({ json: { status: "success", data: { updatedVocab: longWord } } });
@@ -48,7 +48,7 @@ async function checkProfile(browser, width, locale, theme) {
 	await language.waitFor();
 	await ready();
 	const rows = language.locator('../..').locator('..').locator(':scope > div');
-	assert.equal(await rows.count(), 3);
+	assert.equal(await rows.count(), 2);
 	for (const row of await rows.all()) {
 		assert.ok(await row.evaluate(element => {
 			const bounds = element.getBoundingClientRect();

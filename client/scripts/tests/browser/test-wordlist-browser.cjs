@@ -46,7 +46,7 @@ async function setup(browser, width = 1440, theme = "cream", state = "normal") {
 		if (url.pathname.endsWith("/users/me"))
 			return route.fulfill({
 				json: {
-					data: { user: { _id: "learner", name: "Son Jony", role: "user" } },
+					data: { user: { _id: "learner", name: "Son Jony", role: "user", theme } },
 				},
 			});
 		if (url.pathname.startsWith("/api/v1/dictionary/")) {
@@ -106,22 +106,25 @@ async function setup(browser, width = 1440, theme = "cream", state = "normal") {
 	await page.goto("http://localhost:3000/wordlist");
 	return { page, requests, errors };
 }
+async function selectStatus(page, width, status) {
+	if (width >= 768) {
+		await page.locator('[aria-haspopup="listbox"]').click();
+		await page.getByRole("option", { name: messages[status], exact: true }).click();
+		return;
+	}
+	await page.locator(`[aria-label="${messages.status}"] button[aria-pressed]`).filter({ hasText: messages[status] }).click();
+}
 async function run() {
 	const browser = await chromium.launch({ channel: "chrome", headless: true });
 	try {
 		for (const width of [1440, 390]) {
 			for (const theme of ["light", "cream", "dark", "black", "system"]) {
 				const { page, requests, errors } = await setup(browser, width, theme);
+				if (width >= 768) assert.match(await page.locator('[aria-haspopup="listbox"]').getAttribute("aria-label"), new RegExp(messages.review));
+				else assert.equal(await page.locator(`[aria-label="${messages.status}"] button[aria-pressed="true"]`).innerText(), messages.review);
+				assert.deepEqual((await page.locator("tbody tr").allTextContents()).map(row => row.toLowerCase().includes("challenge")), [true], "Default Review filter shows the due fixture");
+				await selectStatus(page, width, "all");
 				await page.getByRole("rowheader", { name: /nature/ }).waitFor();
-				await page.getByRole("button", { name: messages.viewDueWords }).click();
-				assert.equal(
-					await page.locator("aside").evaluate((element) => element === document.activeElement),
-					true,
-				);
-				assert.equal(
-					await page.getByRole("link", { name: messages.reviewNow, exact: true }).count(),
-					1,
-				);
 				if (theme === "dark" || theme === "black") {
 					for (const [tone, color, background] of [
 						["total", "rgb(66, 245, 224)", "rgba(45, 212, 191, 0.14)"],
@@ -134,28 +137,22 @@ async function run() {
 						}));
 						assert.deepEqual(styles, { color, background });
 					}
-					const reviewIcon = await page.locator("aside > svg").evaluate((element) => ({
-						color: getComputedStyle(element).color,
-						background: getComputedStyle(element).backgroundColor,
-					}));
-					assert.deepEqual(reviewIcon, {
-						color: "rgb(66, 245, 224)",
-						background: "rgba(45, 212, 191, 0.14)",
-					});
+					assert.equal(await page.locator('[data-tone="dueToday"] svg').isVisible(), true, "Due-review stat icon remains visible in dark themes");
 				}
 				if (width >= 768) {
 					const activeNav = page.locator('header nav a[aria-current="page"]:visible');
 					assert.equal(await activeNav.count(), 1);
-					assert.match(await activeNav.innerText(), /Sổ tay/);
+					assert.equal(await activeNav.innerText(), require("../../../messages/vi.json").Navigation.wordlist);
 					const headerBackground = await page.getByRole("banner").evaluate((element) => getComputedStyle(element).backgroundColor);
 					const activeBackground = await activeNav.evaluate((element) => getComputedStyle(element).backgroundColor);
 					assert.notEqual(activeBackground, headerBackground);
 				} else {
-					await page.getByRole("button", { name: "Toggle menu" }).click();
-					const activeNav = page.locator('header nav a[aria-current="page"]:visible');
+					const navigation = require("../../../messages/vi.json").Navigation;
+					await page.getByRole("button", { name: navigation.openMenu, exact: true }).click();
+					const activeNav = page.getByRole("dialog").getByRole("navigation", { name: navigation.mobileLabel }).locator('a[aria-current="page"]');
 					assert.equal(await activeNav.count(), 1);
-					assert.match(await activeNav.innerText(), /Sổ tay/);
-					await page.getByRole("button", { name: "Toggle menu" }).click();
+					assert.equal(await activeNav.innerText(), navigation.vocabulary);
+					await page.getByRole("button", { name: navigation.closeMenu, exact: true }).click();
 				}
 				assert.equal(await page.locator("tbody tr").count(), 5);
 				assert.equal(
@@ -171,9 +168,9 @@ async function run() {
 					await page.locator("html").getAttribute("data-theme"),
 					theme === "system" ? "light" : theme,
 				);
-				await page.locator('[data-status="review"][aria-pressed]').click();
+				await selectStatus(page, width, "review");
 				assert.equal(await page.locator("tbody tr").count(), 1);
-				await page.locator('[data-status="all"][aria-pressed]').click();
+				await selectStatus(page, width, "all");
 				await page
 					.getByRole("textbox", { name: messages.search })
 					.fill("du lich");
@@ -203,6 +200,7 @@ async function run() {
 			}
 		}
 		const { page, requests } = await setup(browser);
+		await selectStatus(page, 1440, "all");
 		await page.getByRole("rowheader", { name: /nature/ }).waitFor();
 		await page
 			.getByRole("button", { name: messages.addWord, exact: true })
@@ -237,6 +235,7 @@ async function run() {
 		await page.close();
 		console.log("PASS topic-free create/edit/delete");
 		const lookup = await setup(browser, 1440, "cream", "lookup");
+		await selectStatus(lookup.page, 1440, "all");
 		await lookup.page.getByRole("rowheader", { name: /nature/ }).waitFor();
 		await lookup.page.getByRole("button", { name: messages.addWord, exact: true }).click();
 		await lookup.page.locator('input[name="english"]').fill("hello");
@@ -257,6 +256,7 @@ async function run() {
 		await lookup.page.close();
 		console.log("PASS dictionary autofill and manual edits");
 		const fallback = await setup(browser, 390, "cream", "lookup-error");
+		await selectStatus(fallback.page, 390, "all");
 		await fallback.page.getByRole("rowheader", { name: /nature/ }).waitFor();
 		await fallback.page.getByRole("button", { name: messages.addWord, exact: true }).click();
 		await fallback.page.locator('input[name="english"]').fill("hello");
@@ -269,16 +269,9 @@ async function run() {
 		for (const width of [1440, 390])
 			for (const mode of ["flashcard", "quiz", "write"]) {
 				const { page, requests, errors } = await setup(browser, width);
-				await page.getByRole("rowheader", { name: /nature/ }).waitFor();
+				assert.equal((await page.locator("tbody tr").allTextContents()).length, 1, "Default Review shows only due words");
+				await page.getByRole("button", { name: messages.practice, exact: true }).click();
 				await page.locator(`[data-mode="${mode}"]`).click();
-				assert.equal(
-					await page.locator(`input[name="review-mode"][value="${mode}"]`).isChecked(),
-					true,
-				);
-				await page
-					.getByRole("link", { name: messages.reviewNow, exact: true })
-					.first()
-					.click();
 				await page.waitForURL(`**/wordlist/review/${mode}`);
 				if (mode === "flashcard") {
 					await page
