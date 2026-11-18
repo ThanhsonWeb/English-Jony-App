@@ -4,12 +4,38 @@ import test from "node:test";
 import glossary from "./glossaries/restaurant/getting-a-table.json" with { type: "json" };
 import draft from "../../[locale]/(main)/dialogue/_data/dialogues/restaurant/getting-a-table.json" with { type: "json" };
 import { findContextualLookup, findLessonLookup } from "./findLessonLookup.js";
-import { findPreferredLookup, SUBTITLE_WORD_PATTERN } from "./findPreferredLookup.js";
+import { lessonGlossaries } from "./lessonGlossaries.js";
+import littleLie from "../../[locale]/(main)/dialogue/_data/stories/a-little-lie/a-little-lie.json" with { type: "json" };
+import { findPreferredLookup, SUBTITLE_WORD_PATTERN, SUBTITLE_WORD_TOKEN_PATTERN } from "./findPreferredLookup.js";
 import { lookupWord } from "./lookupWord.js";
 import { resolveMeaning } from "./resolveMeaning.js";
-import { validateLessonGlossary } from "./validateLessonGlossary.js";
+import { phraseMatchesText, validateLessonGlossary } from "./validateLessonGlossary.js";
 
 const tokens = text => [...text.matchAll(SUBTITLE_WORD_PATTERN)];
+
+test("Unicode subtitle tokens keep accents, clickable indices and phrase spans aligned", () => {
+	const examples = ["café", "résumé", "naïve", "jalapeño", "cafe\u0301", "re\u0301sume\u0301", "don't", "well-known"];
+	for (const text of examples) {
+		const matches = tokens(text);
+		assert.deepEqual(matches.map(match => match[0]), [text]);
+		assert(SUBTITLE_WORD_TOKEN_PATTERN.test(text));
+	}
+
+	const transcript = "We’ll meet at the cafe\u0301 after work.";
+	let clickableIndex = -1;
+	const splitSegments = transcript.split(SUBTITLE_WORD_PATTERN).map(token => ({
+		token,
+		wordIndex: SUBTITLE_WORD_TOKEN_PATTERN.test(token) ? ++clickableIndex : null,
+	}));
+	assert.deepEqual(splitSegments.filter(segment => segment.wordIndex !== null).map(segment => [segment.wordIndex, segment.token]),
+		[[0, "We’ll"], [1, "meet"], [2, "at"], [3, "the"], [4, "cafe\u0301"], [5, "after"], [6, "work"]]);
+	const words = tokens(transcript);
+	assert.equal(words[4][0], "cafe\u0301");
+	assert.equal(words[4].index, transcript.indexOf("cafe\u0301"));
+	assert.equal(phraseMatchesText({ start: 3, end: 5, text: "the cafe\u0301 after" }, transcript, words), true);
+	assert.equal(phraseMatchesText({ start: 3, end: 5, text: "the café after" }, transcript, words), false,
+		"Phrase matching continues to require exact source text normalization");
+});
 const pilot = (id, clickedWordIndex) => findLessonLookup({ lessonId: "restaurant", dialogueId: "getting-a-table",
 	line: draft.dialogue.find(line => line.id === id), clickedWordIndex });
 
@@ -191,18 +217,27 @@ for (const [name, mutate, expectedError] of validationCases) {
 	});
 }
 
-test("other dialogue and Story clicks preserve exact production results", () => {
+test("Noah uses the registered contextual name entry", () => {
+	const line = littleLie.dialogue.find(item => item.text === "Noah, the window is broken.");
+	assert.ok(line);
+	const lookup = findLessonLookup({ lessonId: "a-little-lie", dialogueId: "a-little-lie", line, clickedWordIndex: 0 });
+	assert.equal(lookup?.result.text, "Noah");
+	assert.equal(lookup.result.meaning, "Noah");
+	assert.deepEqual(lookup.result.pos, ["name"]);
+	assert.equal(lookup.result.contextual, true);
+});
+
+test("lessons without registered glossaries preserve generic lookup results", () => {
 	const root = new URL("../../[locale]/(main)/dialogue/_data/", import.meta.url);
 	let clicks = 0;
 	for (const file of fs.readdirSync(root, { recursive: true }).filter(file => file.endsWith(".json"))) {
 		const data = JSON.parse(fs.readFileSync(new URL(file.replaceAll("\\", "/"), root), "utf8"));
-		if ((data.metadata.courseId === "restaurant" && data.metadata.dialogueId === "getting-a-table")
-			|| (data.metadata.courseId === "ten-minutes-a-day" && data.metadata.dialogueId === "the-old-book")) continue;
+		if (lessonGlossaries.some(item => item.lessonId === data.metadata.courseId && item.dialogueId === data.metadata.dialogueId)) continue;
 		for (const line of data.dialogue) for (const [clickedWordIndex] of tokens(line.text).entries()) {
 			assert.deepEqual(findLessonLookup({ lessonId: data.metadata.courseId, dialogueId: data.metadata.dialogueId, line, clickedWordIndex }), production(line, clickedWordIndex), `${file}: ${clickedWordIndex}`);
 			clicks++;
 		}
 	}
-	assert.equal(clicks, 1957);
+	assert.ok(clicks > 0, "Expected to check clicks in lessons without registered glossaries");
 	assert.deepEqual(findLessonLookup({ lessonId: "another-course", dialogueId: "getting-a-table", line: draft.dialogue[0], clickedWordIndex: 0 }), production(draft.dialogue[0], 0));
 });

@@ -1,7 +1,7 @@
 import { lookupWord, maxPhraseWords } from "./lookupWord.js";
 
-export const SUBTITLE_WORD_PATTERN = /([A-Za-z]+(?:['’\-][A-Za-z]+)*)/g;
-export const SUBTITLE_WORD_TOKEN_PATTERN = /^[A-Za-z]+(?:['’\-][A-Za-z]+)*$/;
+export const SUBTITLE_WORD_PATTERN = /([\p{L}\p{M}]+(?:['’\-][\p{L}\p{M}]+)*)/gu;
+export const SUBTITLE_WORD_TOKEN_PATTERN = /^[\p{L}\p{M}]+(?:['’\-][\p{L}\p{M}]+)*$/u;
 
 export function findPreferredLookup(text, clickedWordIndex) {
 	const words = [...text.matchAll(SUBTITLE_WORD_PATTERN)];

@@ -27,5 +27,6 @@ import glossary24 from "./glossaries/stories/naruto-season-1/the-lonely-boy.json
 import glossary25 from "./glossaries/stories/naruto-season-1/the-ninja-test.json" with { type: "json" };
 import glossary26 from "./glossaries/stories/naruto-season-1/working-together.json" with { type: "json" };
 import glossary27 from "./glossaries/stories/ten-minutes-a-day/the-old-book.json" with { type: "json" };
+import everydayPlansGlossary from "./glossaries/everyday-plans/making-plans-after-work.json" with { type: "json" };
 
-export const lessonGlossaries = [glossary0, glossary1, glossary2, glossary3, glossary4, glossary5, glossary6, glossary7, glossary8, glossary9, glossary10, glossary11, glossary12, glossary13, glossary14, glossary15, glossary16, glossary17, glossary18, glossary19, glossary20, glossary21, glossary22, glossary23, glossary24, glossary25, glossary26, glossary27];
+export const lessonGlossaries = [glossary0, glossary1, glossary2, glossary3, glossary4, glossary5, glossary6, glossary7, glossary8, glossary9, glossary10, glossary11, glossary12, glossary13, glossary14, glossary15, glossary16, glossary17, glossary18, glossary19, glossary20, glossary21, glossary22, glossary23, glossary24, glossary25, glossary26, glossary27, everydayPlansGlossary];

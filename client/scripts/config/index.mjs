@@ -1,6 +1,7 @@
 import askingForDirections from "./dialogues/asking-for-directions.mjs";
 import atAHotel from "./dialogues/at-a-hotel.mjs";
 import coffeeShop from "./dialogues/coffee-shop.mjs";
+import everydayPlans from "./dialogues/everyday-plans.mjs";
 import groceryStore from "./dialogues/grocery-store.mjs";
 import restaurant from "./dialogues/restaurant.mjs";
 import walkInThePark from "./dialogues/walk-in-the-park.mjs";
@@ -17,6 +18,7 @@ export const dialogueCourseConfigs = [
 	weekendCamping,
 	askingForDirections,
 	coffeeShop,
+	everydayPlans,
 	atAHotel,
 	groceryStore,
 	restaurant,
