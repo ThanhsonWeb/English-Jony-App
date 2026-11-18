@@ -9,6 +9,8 @@ import pilot from "../../../app/_lib/dictionary/glossaries/restaurant/getting-a-
 import pilotSource from "../../../app/[locale]/(main)/dialogue/_data/dialogues/restaurant/getting-a-table.json" with { type: "json" };
 import story from "../../../app/[locale]/(main)/dialogue/_data/stories/ten-minutes-a-day/the-old-book.json" with { type: "json" };
 import storyGlossary from "../../../generated/stories/ten-minutes-a-day/the-old-book/glossary.json" with { type: "json" };
+import a2Draft from "../../../generated/dialogues/everyday-plans/making-plans-after-work/draft.json" with { type: "json" };
+import a2Glossary from "../../../generated/dialogues/everyday-plans/making-plans-after-work/glossary.json" with { type: "json" };
 import { createGlossaryTemplate, glossaryPaths, planGlossary, prepareGlossary, publishGlossary } from "../../lib/contextual-glossary.mjs";
 import { getDialogueDataJsonPath, getGeneratedDialogueDraftPath } from "../../lib/dialogue-content-paths.mjs";
 import { validateLessonGlossary } from "../../../app/_lib/dictionary/validateLessonGlossary.js";
@@ -75,37 +77,54 @@ test("an approved glossary blocks source changes rather than rewriting meanings"
 
 for (const defect of ["missing", "new lesson", "shifted phrase", "same-count edit"]) {
 	test(`real builder refuses ${defect} before any publication`, async t => {
-		const root = await workspace(t), source = structuredClone(story);
-		if (defect !== "new lesson") source.metadata.contextualGlossaryVersion = 1;
-		const draftPath = getGeneratedDialogueDraftPath(root, "story", "ten-minutes-a-day", "the-old-book");
+		const root = await workspace(t), source = structuredClone(a2Draft);
+		if (defect === "new lesson") delete source.metadata.contextualGlossaryVersion;
+		else source.metadata.contextualGlossaryVersion = 1;
+		const draftPath = getGeneratedDialogueDraftPath(root, "dialogue", "everyday-plans", "making-plans-after-work");
 		await writeJson(draftPath, source);
-		const productionPath = getDialogueDataJsonPath(root, "story", "ten-minutes-a-day", "the-old-book");
+		const productionPath = getDialogueDataJsonPath(root, "dialogue", "everyday-plans", "making-plans-after-work");
 		await fs.mkdir(path.dirname(productionPath), { recursive: true });
-		if (defect !== "new lesson") await fs.writeFile(productionPath, "unchanged production sentinel");
+		const originalProduction = JSON.stringify(a2Draft);
+		if (defect !== "new lesson") await fs.writeFile(productionPath, originalProduction);
 		await fs.mkdir(path.join(root, "scripts", "prompts"), { recursive: true });
 		for (const script of ["validate-dialogue.mjs", "prompts/dialogue-rules.mjs"]) {
 			await fs.copyFile(path.join(clientRoot, "scripts", script), path.join(root, "scripts", script));
 		}
-		const paths = glossaryPaths(root, "story", "ten-minutes-a-day", "the-old-book");
+		const paths = glossaryPaths(root, "dialogue", "everyday-plans", "making-plans-after-work");
 		if (!["missing", "new lesson"].includes(defect)) {
-			const glossary = structuredClone(storyGlossary);
-			if (defect === "shifted phrase") glossary.lines[1].phrases[0].start = 4;
-			else glossary.lines[2].text = "An English book? It looks new.";
+			const glossary = structuredClone(a2Glossary);
+			if (defect === "shifted phrase") glossary.lines[1].phrases[0].start = 5;
+			else glossary.lines[2].text = "Mia and I are going to meet for lunch.";
 			await writeJson(paths.draft, glossary);
 		}
-		const result = spawnSync(process.execPath, [path.join(clientRoot, "scripts", "build-dialogue.mjs"), "ten-minutes-a-day", "the-old-book", "--skip-audio"], { cwd: root, encoding: "utf8" });
+		const result = spawnSync(process.execPath, [path.join(clientRoot, "scripts", "build-dialogue.mjs"), "everyday-plans", "making-plans-after-work", "--skip-audio"], { cwd: root, encoding: "utf8" });
 		assert.equal(result.status, 1, result.stdout + result.stderr);
 		assert.match(result.stderr, /glossary required|Invalid contextual glossary/i);
 		if (defect === "new lesson") await assert.rejects(fs.access(productionPath));
-		else assert.equal(await fs.readFile(productionPath, "utf8"), "unchanged production sentinel");
+		else assert.equal(await fs.readFile(productionPath, "utf8"), originalProduction);
 		await assert.rejects(fs.access(paths.approved));
+		await assert.rejects(fs.access(paths.registry));
 		if (["missing", "new lesson"].includes(defect)) {
 			const template = JSON.parse(await fs.readFile(paths.template, "utf8"));
 			assert(Object.values(template.entries).every(entry => entry.meaning === ""));
-			assert.match(await fs.readFile(paths.prompt, "utf8"), /I have a book for each of you/);
+			assert.match(await fs.readFile(paths.prompt, "utf8"), /What are you going to do after work/);
 		}
 	});
 }
+
+test("real builder refuses to overwrite a protected A1 lesson", async t => {
+	const root = await workspace(t);
+	const productionPath = getDialogueDataJsonPath(root, "story", "ten-minutes-a-day", "the-old-book");
+	await writeJson(productionPath, story);
+	const before = await fs.readFile(productionPath, "utf8");
+	const result = spawnSync(process.execPath, [path.join(clientRoot, "scripts", "build-dialogue.mjs"), "ten-minutes-a-day", "the-old-book", "--skip-audio"], { cwd: root, encoding: "utf8" });
+	assert.equal(result.status, 1, result.stdout + result.stderr);
+	assert.match(result.stderr, /Refusing to overwrite registered A1 lesson/);
+	assert.equal(await fs.readFile(productionPath, "utf8"), before);
+	const paths = glossaryPaths(root, "story", "ten-minutes-a-day", "the-old-book");
+	await assert.rejects(fs.access(paths.approved));
+	await assert.rejects(fs.access(paths.registry));
+});
 
 test("new content prompt opts into mandatory glossary validation", () => {
 	const prompt = buildDialoguePrompt({ ...restaurant, ...restaurant.dialogues[0] });

@@ -28,6 +28,7 @@ import { useAuth } from "@/app/_contexts/AuthContext";
 import { useCatalogueProgressResource } from "@/app/_lib/useStudyResources";
 import { useRouter } from "@/i18n/navigation";
 const courseImages = {
+	"everyday-plans": "/dialogue/everyday-plans/thumbnails/making-plans-after-work.webp",
 	"coffee-shop": "/dialogue/coffee-shop/thumbnails/coffee-shop.webp",
 	"office-introduction":
 		"/dialogue/office-introduction/thumbnails/office-introduction.webp",

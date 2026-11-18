@@ -14,6 +14,7 @@ import aSmallSurpriseCourse from "./courses/a-small-surprise";
 import narutoSeason1Course from "./courses/naruto-season-1";
 import aLittleLieCourse from "./courses/a-little-lie";
 import conanSeason1Course from "./courses/conan-season-1";
+import everydayPlansCourse from "./courses/everyday-plans";
 
 export const lessonData = {
    // [atAHotelCourse.id]: withDialogueLocalization(atAHotelCourse),
@@ -30,4 +31,5 @@ export const lessonData = {
    [narutoSeason1Course.id]: withDialogueLocalization(narutoSeason1Course),
    [aLittleLieCourse.id]: withDialogueLocalization(aLittleLieCourse),
    [conanSeason1Course.id]: withDialogueLocalization(conanSeason1Course),
+   [everydayPlansCourse.id]: withDialogueLocalization(everydayPlansCourse),
 };
