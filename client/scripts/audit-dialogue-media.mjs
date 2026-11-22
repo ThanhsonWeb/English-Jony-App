@@ -5,7 +5,8 @@ import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const publicRoot = path.join(root, "public");
-const context = vm.createContext({});
+// Audit local fallback assets regardless of build flags, without exposing host secrets.
+const context = vm.createContext({ process: Object.freeze({ env: Object.freeze({}) }) });
 const modules = new Map();
 
 async function load(filename) {
