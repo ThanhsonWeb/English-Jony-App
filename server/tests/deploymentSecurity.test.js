@@ -151,6 +151,8 @@ function bundleFor(commit = sha) {
 }
 
 test("source bundles reject traversal, symlinks, dependencies, secrets and duplicate files", () => {
+ assert.equal(sourcePath("client/app/_lib/dialogue/a2R2Media.mjs"), true);
+ for (const filename of ["client/app/_lib/dialogue/a2R2Media.mjs/other", "client/app/_lib/dialogue/other.mjs"]) assert.equal(sourcePath(filename), false, filename);
  for (const filename of ["../server/app.js", "/server/app.js", "server/../app.js", "server\\app.js", "server/.env", "server/.env.production", "server/key.pem", "server/node_modules/a.js", "server/local-avatars/a.png", "server/x\n.js"]) assert.equal(sourcePath(filename), false, filename);
  const valid = bundleFor(); assert.equal(validateBundle(valid, sha), valid);
  for (const modify of [b => b.commit = oldSha, b => b.files.push(b.files[0]), b => b.files[0].mode = "120000", b => b.files[0].sha256 = "0".repeat(64), b => b.files[0].content += "!", b => b.files.splice(0, 1)]) {
@@ -176,6 +178,8 @@ test("builder packages committed source deterministically, including catalogue i
   const filename = path.join(repo, file.path); fs.mkdirSync(path.dirname(filename), { recursive: true }); fs.writeFileSync(filename, Buffer.from(file.content, "base64"));
  }
  const localization = path.join(repo, "client/app/_lib/dialogue/localization.js"); fs.mkdirSync(path.dirname(localization), { recursive: true }); fs.writeFileSync(localization, "// catalogue input\n");
+ const mediaHelper = path.join(repo, "client/app/_lib/dialogue/a2R2Media.mjs"); fs.writeFileSync(mediaHelper, "// A2 media input\n");
+ fs.writeFileSync(path.join(repo, "client/app/_lib/dialogue/unrelated.mjs"), "// excluded\n");
  git(["add", "server", "client"]); git(["-c", "user.name=Disposable test", "-c", "user.email=test@example.test", "commit", "-qm", "fixture"]);
  const commit = git(["rev-parse", "HEAD"]).toString().trim();
  fs.writeFileSync(path.join(repo, "server/app.js"), "// uncommitted drift\n");
@@ -183,7 +187,21 @@ test("builder packages committed source deterministically, including catalogue i
  assert.equal(build(commit, one, repo), build(commit, two, repo));
  const bundle = JSON.parse(fs.readFileSync(one));
  assert.ok(bundle.files.some(file => file.path === "client/app/_lib/dialogue/localization.js"));
+ assert.ok(bundle.files.some(file => file.path === "client/app/_lib/dialogue/a2R2Media.mjs"));
+ assert.ok(!bundle.files.some(file => file.path === "client/app/_lib/dialogue/unrelated.mjs"));
  assert.equal(Buffer.from(bundle.files.find(file => file.path === "server/app.js").content, "base64").toString(), "// disposable fixture\n");
+});
+
+test("the extracted committed release resolves every catalogue dependency", t => {
+ const folder = temporary(t), destination = path.join(folder, "release"), input = path.join(folder, "bundle.json");
+ fs.mkdirSync(destination);
+ const commit = execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8" }).trim();
+ const digest = build(commit, input, root);
+ extract(input, digest, commit, destination);
+ assert.ok(fs.existsSync(path.join(destination, "client/app/_lib/dialogue/a2R2Media.mjs")));
+ const result = spawnSync(process.execPath, ["--experimental-vm-modules", "scripts/generate-dialogue-catalogue.js", "--check"], { cwd: path.join(destination, "server"), encoding: "utf8" });
+ assert.equal(result.status, 0, result.stderr);
+ assert.match(result.stdout, /Dialogue catalogue: \d+ tasks verified/);
 });
 
 // These fixtures execute the real Bash script and real path/artifact checks.

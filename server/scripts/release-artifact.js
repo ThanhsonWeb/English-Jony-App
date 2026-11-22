@@ -7,13 +7,14 @@ const { execFileSync } = require("node:child_process");
 const SHA = /^[a-f0-9]{40}$/;
 const HASH = /^[a-f0-9]{64}$/;
 const MAX_BYTES = 128 * 1024 * 1024;
-const sources = ["server", "client/app/[locale]/(main)/dialogue/_data", "client/app/_lib/dialogue/localization.js", "client/scripts/config"];
+const a2MediaHelper = "client/app/_lib/dialogue/a2R2Media.mjs";
+const sources = ["server", "client/app/[locale]/(main)/dialogue/_data", "client/app/_lib/dialogue/localization.js", a2MediaHelper, "client/scripts/config"];
 const hash = value => crypto.createHash("sha256").update(value).digest("hex");
 
 function sourcePath(value) {
 	if (typeof value !== "string" || value.includes("\\") || /[\x00-\x1f\x7f]/.test(value) ||
 		value.split("/").some(part => !part || part === "." || part === "..")) return false;
-	if (!sources.some(source => value === source || value.startsWith(source + "/"))) return false;
+	if (!sources.some(source => value === source || (source !== a2MediaHelper && value.startsWith(source + "/")))) return false;
 	return !value.split("/").some(part => part === "node_modules" || part === ".git" ||
 		part === "local-avatars" || /^\.env(?:\.|$)/.test(part) || /\.(?:pem|key|p12|pfx)$/i.test(part));
 }
