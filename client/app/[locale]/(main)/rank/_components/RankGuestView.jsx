@@ -35,7 +35,7 @@ export default function RankGuestView({ t }) {
 						<caption className="sr-only">{t("guest.previewCaption")}</caption>
 						<thead><tr>
 							<th scope="col">#</th><th scope="col">{t("user")}</th><th scope="col">{t("level")}</th>
-							<th scope="col">{t("streak")}</th><th scope="col">{t("monthKn")}</th>
+							<th scope="col">{t("streak")}</th><th scope="col">{t("totalKn")}</th>
 						</tr></thead>
 						<tbody>
 							{["gold", "silver", "bronze"].map(metal => (

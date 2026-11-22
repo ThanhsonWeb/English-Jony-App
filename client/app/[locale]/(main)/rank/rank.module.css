@@ -322,3 +322,9 @@
 @media (prefers-reduced-motion: reduce) {
 	.page *, .page *::before, .page *::after { transition: none; }
 }
+
+.loadMore { display: flex; justify-content: center; padding: 12px; }
+.loadMore button { padding: 9px 20px; border: 1px solid var(--sj-primary); border-radius: 999px; color: var(--sj-brand-text); cursor: pointer; }
+.loadMore button:hover { background: var(--sj-primary-soft); }
+.loadMore button:focus-visible { outline: 2px solid var(--sj-brand-text); outline-offset: 2px; }
+.loadMore button:disabled { opacity: .5; cursor: wait; }

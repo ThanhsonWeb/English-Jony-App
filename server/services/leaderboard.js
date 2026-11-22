@@ -4,6 +4,7 @@ const User = require("../models/userModel");
 const AppError = require("../utils/appError");
 const { getLearnerLevel } = require("../utils/learnerLevel");
 const { getStudyStreaks } = require("./studyStreak");
+const { activeAccountFilter } = require("../utils/accountLifecycle");
 
 const TIME_ZONE = "Asia/Ho_Chi_Minh";
 // Vietnam uses UTC+07:00 without daylight saving for current ranking periods.
@@ -41,7 +42,8 @@ async function getLeaderboard({ userId, period = "month", timeframe = "current",
 	if (!Number.isInteger(limit) || limit < 1 || limit > 100) {
 		throw new AppError("limit must be an integer from 1 to 100", 400);
 	}
-	const { start, end } = getPeriodBounds(period, timeframe, now);
+	const allTime = period === "all" && timeframe === "current";
+	const bounds = allTime ? null : getPeriodBounds(period, timeframe, now);
 	const currentUserId = new mongoose.Types.ObjectId(userId);
 	// An explicit allowlist is used both in the lookup and final response.
 	const publicFields = {
@@ -58,8 +60,11 @@ async function getLeaderboard({ userId, period = "month", timeframe = "current",
 		lifetimeXp: { $ifNull: ["$profile.totalXp", 0] },
 		isCurrentUser: { $eq: ["$_id", currentUserId] },
 	};
-	const [result] = await XPEvent.aggregate([
-		{ $match: { earnedAt: { $gte: start, $lt: end } } },
+	const source = allTime ? [
+		{ $match: { totalXp: { $gt: 0 }, ...activeAccountFilter() } },
+		{ $project: { periodXp: "$totalXp", profile: { name: "$name", avatar: "$avatar", photo: "$photo", totalXp: "$totalXp" } } },
+	] : [
+		{ $match: { earnedAt: { $gte: bounds.start, $lt: bounds.end } } },
 		{ $group: { _id: "$user", periodXp: { $sum: "$amount" } } },
 		{ $match: { periodXp: { $gt: 0 } } },
 		{ $lookup: {
@@ -71,6 +76,9 @@ async function getLeaderboard({ userId, period = "month", timeframe = "current",
 		} },
 		// Deleted users must not occupy positions or leave gaps in the ranking.
 		{ $unwind: "$profile" },
+	];
+	const [result] = await (allTime ? User : XPEvent).aggregate([
+		...source,
 		// documentNumber requires one sort field. Object fields compare in order:
 		// negative XP puts larger totals first, then user ID breaks ties.
 		{ $set: { rankingKey: { xp: { $multiply: ["$periodXp", -1] }, user: "$_id" } } },
@@ -87,7 +95,7 @@ async function getLeaderboard({ userId, period = "month", timeframe = "current",
 
 	let currentUser = result.currentUser[0];
 	if (!currentUser) {
-		const profile = await User.findById(currentUserId).select("name photo avatar totalXp").lean();
+		const profile = await User.findOne({ _id: currentUserId, ...(allTime ? activeAccountFilter() : {}) }).select("name photo avatar totalXp").lean();
 		if (!profile) throw new AppError("User not found", 404);
 		currentUser = {
 			id: String(profile._id), rank: null, name: profile.name ?? "Learner",
@@ -98,7 +106,7 @@ async function getLeaderboard({ userId, period = "month", timeframe = "current",
 	const enrich = profile => ({ ...profile, ...getLearnerLevel(profile.lifetimeXp), ...streaks.get(profile.id) });
 	return {
 		period, timeframe, timeZone: TIME_ZONE,
-		start: start.toISOString(), end: end.toISOString(),
+		start: bounds?.start.toISOString() ?? null, end: bounds?.end.toISOString() ?? null,
 		limit, totalRanked: result.count[0]?.total ?? 0,
 		leaderboard: result.leaderboard.map(enrich),
 		currentUser: enrich(currentUser),

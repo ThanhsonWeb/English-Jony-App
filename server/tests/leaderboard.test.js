@@ -88,6 +88,34 @@ test("period XP determines order; lifetime totals come from User", async () => {
 	assert.equal(result.totalRanked, 3);
 });
 
+test("all-time rank uses saved totals even without events and excludes inactive and zero-point accounts", async () => {
+	const leader = await learner("Lifetime leader", 9000);
+	const recent = await learner("Recent leader", 1000);
+	const zero = await learner("New learner", 0);
+	const inactive = await learner("Inactive learner", 12000);
+	await User.updateOne({ _id: inactive.id }, { $set: { lifecycleState: "deleting" } });
+	await User.collection.updateOne({ _id: leader._id }, { $unset: { lifecycleState: "" } });
+	await event(recent, 100);
+
+	const response = await request("?period=all&limit=2");
+	assert.equal(response.status, 200);
+	const { leaderboard, totalRanked, currentUser, start, end } = response.body.data;
+	assert.deepEqual(leaderboard.map(row => [row.id, row.rank, row.lifetimeXp, row.periodXp]), [
+		[leader.id, 1, 9000, 9000], [user.id, 2, 5000, 5000],
+	]);
+	assert.equal(totalRanked, 3);
+	assert.equal(currentUser.rank, 2);
+	assert.deepEqual([start, end], [null, null]);
+	assert.equal((await ranking({ period: "all", userId: zero.id })).currentUser.rank, null);
+	assert.equal((await request("?period=all&timeframe=previous")).status, 400);
+	assert.equal((await ranking()).leaderboard[0].id, recent.id);
+
+	const profile = await request(`/users/${leader.id}?period=all`);
+	assert.deepEqual(Object.keys(profile.body.data.profile).sort(), ["avatar", "id", "level", "lifetimeXp", "name", "rank", "streakDays"]);
+	assert.equal(profile.body.data.profile.rank, 1);
+	assert.equal(profile.body.data.profile.lifetimeXp, 9000);
+});
+
 test("equal XP uses stable ascending user IDs and sequential positions", async () => {
 	const a = await learner("Zeta Learner");
 	const b = await learner("Alpha Learner");

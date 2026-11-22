@@ -30,9 +30,9 @@ export function useCatalogueProgressResource(userId, courses, enabled = true) {
 		]))) });
 }
 
-export function useLeaderboardResource(userId, period, timeframe, enabled = true) {
-	const query = new URLSearchParams({ period, timeframe, limit: "10" });
-	return useCachedResource({ userId: userId || "guest", key: `leaderboard:${period}:${timeframe}`,
+export function useLeaderboardResource(userId, period, timeframe, enabled = true, limit = 15) {
+	const query = new URLSearchParams({ period, timeframe, limit: String(limit) });
+	return useCachedResource({ userId: userId || "guest", key: `leaderboard:${period}:${timeframe}:${limit}`,
 		enabled, staleTime: 30_000, fetcher: async () => {
 			const response = await fetch(`/api/v1/leaderboard?${query}`, { credentials: "include", cache: "no-store" });
 			if (!response.ok) throw new Error(response.status === 401 ? (userId ? "unauthorized" : "signIn") : "loadError");

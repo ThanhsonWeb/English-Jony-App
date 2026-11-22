@@ -1,13 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { useLeaderboardResource } from "@/app/_lib/useStudyResources";
 import { resolveAvatarUrl } from "@/app/_lib/resolveAvatarUrl";
-import { CalendarDays, ChartNoAxesColumnIncreasing, Check, ChevronDown, Crown, Flame, Target, X } from "lucide-react";
+import { ChartNoAxesColumnIncreasing, Check, Crown, Flame, Target, X } from "lucide-react";
 import styles from "../rank.module.css";
 import RankGuestView from "./RankGuestView";
 
@@ -102,7 +102,7 @@ function RankTopCard({ user, t, format, onOpenProfile }) {
 				</button>}
 			<div className={styles.topStats}>
 				<strong>{format(user.periodXp)} KN</strong>
-				<span className={styles.streak}><Flame size={18} aria-hidden="true" />{t("days", { count: user.streakDays })}</span>
+				<span className={styles.rowLevel}>Lv. {user.level}</span>
 			</div>
 			<span className={styles.podiumBase} aria-hidden="true" />
 		</article>
@@ -138,7 +138,7 @@ function RankProfilePopup({ selectedUser, onClose, t, format }) {
 		const controller = new AbortController();
 		async function load() {
 			try {
-				const response = await fetch(`/api/v1/leaderboard/users/${selectedUser.id}`, {
+				const response = await fetch(`/api/v1/leaderboard/users/${selectedUser.id}?period=all`, {
 					credentials: "include", cache: "no-store", signal: controller.signal,
 				});
 				if (!response.ok) throw new Error("loadError");
@@ -187,8 +187,8 @@ function RankProfilePopup({ selectedUser, onClose, t, format }) {
 				</div>}
 				{profile && <dl className={styles.profileStats}>
 					<div><dt>{t("level")}</dt><dd>Lv. {profile.level}</dd></div>
-					<div><dt>{t("monthlyRank")}</dt><dd>{profile.monthlyRank === null ? t("unranked") : `#${profile.monthlyRank}`}</dd></div>
-					<div><dt>{t("monthKn")}</dt><dd>{format(profile.monthlyXp)} KN</dd></div>
+					<div><dt>{t("currentRank")} · {t("allTime")}</dt><dd>{profile.rank === null ? t("unranked") : `#${profile.rank}`}</dd></div>
+					<div><dt>{t("totalKn")}</dt><dd>{format(profile.lifetimeXp)} KN</dd></div>
 					<div><dt>{t("streakTitle")}</dt><dd>{t("days", { count: profile.streakDays })}</dd></div>
 				</dl>}
 			</section>
@@ -196,36 +196,16 @@ function RankProfilePopup({ selectedUser, onClose, t, format }) {
 	);
 }
 
-function RankPeriodSwitch({ period, timeframe, onPeriodChange, onTimeframeChange, t }) {
-	const selectId = useId();
-	return (
-		<div className={styles.periodControls}>
-			<div className={styles.periodSwitch} role="group" aria-label={t("periodLabel")}>
-				{["week", "month"].map(value => <button key={value} type="button" aria-pressed={period === value} onClick={() => onPeriodChange(value)}>{t(value)}</button>)}
-			</div>
-			<div className={styles.periodSelect}>
-				<CalendarDays size={18} aria-hidden="true" />
-				<label htmlFor={selectId} className="sr-only">{t("timeframeLabel")}</label>
-				<select id={selectId} value={timeframe} onChange={event => onTimeframeChange(event.target.value)}>
-					<option value="current">{t(period === "month" ? "thisMonth" : "thisWeek")}</option>
-					<option value="previous">{t(period === "month" ? "lastMonth" : "lastWeek")}</option>
-				</select>
-				<ChevronDown size={16} aria-hidden="true" />
-			</div>
-		</div>
-	);
-}
-
 export default function RankDashboard() {
 	const t = useTranslations("Rank");
 	const locale = useLocale();
 	const { user: signedInUser, loading: authLoading } = useAuth();
-	const [period, setPeriod] = useState("month");
-	const [timeframe, setTimeframe] = useState("current");
+	const [period, setPeriod] = useState("all");
+	const [limit, setLimit] = useState(15);
 	const [selectedUser, setSelectedUser] = useState(null);
 	const openerRef = useRef(null);
 	const { data, error: loadError, loading: queryLoading, refresh } = useLeaderboardResource(
-		signedInUser?._id || signedInUser?.id, period, timeframe, !authLoading && Boolean(signedInUser),
+		signedInUser?._id || signedInUser?.id, period, "current", !authLoading && Boolean(signedInUser), limit,
 	);
 	const loading = authLoading || queryLoading;
 	const error = data === undefined && loadError ? (loadError.message === "signIn" ? "signIn" : "loadError") : null;
@@ -234,17 +214,13 @@ export default function RankDashboard() {
 		: profile;
 	const leaderboard = (data?.leaderboard ?? []).map(withCurrentAvatar);
 	const currentUser = withCurrentAvatar(data?.currentUser);
-	const rows = [...leaderboard];
-	// Keep a personal row for users outside the top ten and unranked users.
-	if (currentUser && !rows.some(user => user.id === currentUser.id)) rows.push(currentUser);
+	const podiumIds = new Set(leaderboard.slice(0, 3).map(user => user.id));
+	const rows = leaderboard.slice(3);
+	// Keep a personal row for users outside the visible ranking and unranked users.
+	if (currentUser && !podiumIds.has(currentUser.id) && !rows.some(user => user.id === currentUser.id)) rows.push(currentUser);
 
 	const format = value => new Intl.NumberFormat(locale).format(value);
-	const activePeriod = t(period === "month" ? (timeframe === "current" ? "thisMonth" : "lastMonth") : (timeframe === "current" ? "thisWeek" : "lastWeek"));
-
-	function changePeriod(nextPeriod) {
-		setPeriod(nextPeriod);
-		setTimeframe("current");
-	}
+	const activePeriod = t(period === "all" ? "allTime" : "thisMonth");
 
 	function openProfile(user, event) {
 		openerRef.current = event.currentTarget;
@@ -255,18 +231,20 @@ export default function RankDashboard() {
 		setSelectedUser(null);
 		requestAnimationFrame(() => openerRef.current?.focus());
 	}, []);
+	const pageHeader = (
+		<header className={styles.pageHeader}>
+			<div className={styles.heading}>
+				<h1><Crown size={38} strokeWidth={1.7} aria-hidden="true" />{t("title")}</h1>
+				<p>{t("subtitle")}</p>
+			</div>
+			<MountainDecoration />
+		</header>
+	);
 
 	return (
 		<main className={styles.page}>
 			<div className={styles.container}>
-				<header className={styles.pageHeader}>
-					<div className={styles.heading}>
-						<h1><Crown size={38} strokeWidth={1.7} aria-hidden="true" />{t("title")}</h1>
-						<p>{t("subtitle")}</p>
-					</div>
-						<MountainDecoration />
-				
-				</header>
+				{pageHeader}
 
 				{authLoading ? (
 					<p className={styles.statusMessage} role="status">{t("loading")}</p>
@@ -278,9 +256,7 @@ export default function RankDashboard() {
 					<RankSummaryCard icon={Crown} label={t("currentRank")} value={currentUser ? (currentUser.rank === null ? t("unranked") : `#${currentUser.rank}`) : "—"} tone="rank">
 						<p>{activePeriod}</p>
 					</RankSummaryCard>
-					<RankSummaryCard icon={ChartNoAxesColumnIncreasing} label={t("totalKn")} value={currentUser ? `${format(currentUser.lifetimeXp)} KN` : "—"} tone="kn">
-						<p><span className={styles.brandText}>{currentUser ? `${format(currentUser.periodXp)} KN` : "—"}</span> · {activePeriod}</p>
-					</RankSummaryCard>
+					<RankSummaryCard icon={ChartNoAxesColumnIncreasing} label={t("totalKn")} value={currentUser ? `${format(currentUser.lifetimeXp)} KN` : "—"} tone="kn" />
 					<RankSummaryCard icon={Target} label={t("level")} value={currentUser ? `Lv. ${currentUser.level}` : "—"} tone="level">
 						{currentUser ? <>
 							<progress className={styles.levelProgress} value={currentUser.progressPercent} max={100} aria-label={t("levelProgress")} />
@@ -290,12 +266,18 @@ export default function RankDashboard() {
 						</> : <div className={styles.levelProgress} aria-hidden="true" />}
 					</RankSummaryCard>
 				</div>
+				<div className={styles.periodControls}>
+					<div className={styles.periodSwitch} role="group" aria-label={t("periodLabel")}>
+						{["month", "all"].map(value => (
+							<button key={value} type="button" aria-pressed={period === value} onClick={() => { setPeriod(value); setLimit(15); }}>{t(value === "all" ? "allTimeShort" : "month")}</button>
+						))}
+					</div>
+				</div>
 
-				<RankPeriodSwitch period={period} timeframe={timeframe} onPeriodChange={changePeriod} onTimeframeChange={setTimeframe} t={t} />
 				<div aria-live="polite" aria-busy={loading}>
 					{loading && <p className={styles.statusMessage} role="status">{t("loading")}</p>}
 					{error && <div className={styles.statusMessage} role="alert"><p>{t(error)}</p><button type="button" onClick={() => void refresh(true).catch(() => {})}>{t("retry")}</button></div>}
-					{data && leaderboard.length === 0 && <p className={styles.statusMessage}>{t("empty")}</p>}
+					{data && leaderboard.length === 0 && <p className={styles.statusMessage}>{t(period === "all" ? "emptyAllTime" : "empty")}</p>}
 					{currentUser && <p className="sr-only">{t("results", { period: activePeriod, rank: currentUser.rank ?? t("unranked") })}</p>}
 				</div>
 
@@ -306,9 +288,14 @@ export default function RankDashboard() {
 				<section aria-label={t("leaderboard")} className={styles.leaderboardPanel}>
 					<table className={styles.leaderboard}>
 						<caption className="sr-only">{t("leaderboard")} — {activePeriod}</caption>
-						<thead><tr><th scope="col">#</th><th scope="col">{t("user")}</th><th scope="col">{t("level")}</th><th scope="col">{t("streak")}</th><th scope="col">{t(period === "week" ? "weekKn" : "monthKn")}</th></tr></thead>
+						<thead><tr><th scope="col">#</th><th scope="col">{t("user")}</th><th scope="col">{t("level")}</th><th scope="col">{t("streak")}</th><th scope="col">{t(period === "all" ? "totalKn" : "monthKn")}</th></tr></thead>
 						<tbody>{rows.map(user => <LeaderboardRow key={user.id} user={user} t={t} format={format} onOpenProfile={openProfile} />)}</tbody>
 					</table>
+					{data && leaderboard.length < data.totalRanked && limit < 100 && (
+						<div className={styles.loadMore}>
+							<button type="button" disabled={loading} onClick={() => setLimit(current => Math.min(current + 10, 100))}>{t("showMore")}</button>
+						</div>
+					)}
 				</section>
 				</>}
 			</div>
