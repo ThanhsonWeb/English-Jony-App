@@ -16,7 +16,8 @@ export function createVocabularyMutationClient({ cache = resourceCache, request 
 			});
 			if (!response.ok) {
 				if (response.status === 401 && cache.isActiveSession(session)) cache.clearAllPrivate();
-				throw Object.assign(new Error("Vocabulary was not saved"), { status: response.status });
+				const payload = response.status === 409 ? await response.json().catch(() => null) : null;
+				throw Object.assign(new Error("Vocabulary was not saved"), { status: response.status, code: payload?.code });
 			}
 			const payload = method === "DELETE" ? null : await response.json();
 			const word = payload?.data?.updatedVocab || payload?.data?.newVocab;

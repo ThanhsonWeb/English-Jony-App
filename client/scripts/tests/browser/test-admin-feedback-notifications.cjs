@@ -71,24 +71,22 @@ async function adminScenario(browser, { locale, theme, width }) {
 	try {
 		await page.goto(new URL(`/${locale}/dialogue`, base).href);
 		const notification = page.getByTestId("admin-feedback-notifications");
-		await notification.waitFor();
-		await page.waitForFunction(() => document.querySelector('[data-testid="admin-feedback-unread-count"]')?.textContent === "1");
-		assert.equal(await notification.getAttribute("aria-label"), messages[locale].Header.newFeedbackNotifications.replace("{count}", "1"));
+		await page.getByRole("button", { name: messages[locale].Header.accountMenu.replace("{name}", "Test admin") }).waitFor();
+		assert.equal(await page.getByText(messages[locale].Header.free, { exact: true }).count(), 1);
+		assert.equal(await notification.count(), 0);
 		assert.equal(await page.locator("html").getAttribute("data-theme"), theme);
 
 		if (width < 768) {
 			assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), true, "mobile header must not overflow horizontally");
 		}
 
-		assert.equal(await notification.evaluate((element) => element.tabIndex), 0, "notification button must be keyboard focusable");
-		await notification.focus();
-		await page.keyboard.press("Enter");
+		await page.getByRole("button", { name: messages[locale].Header.accountMenu.replace("{name}", "Test admin") }).click();
+		await page.getByRole("button", { name: messages[locale].Header.adminFeedback, exact: true }).click();
 		const dashboardPath = locale === "vi" ? "/admin/feedback" : "/en/admin/feedback";
 		await page.waitForURL(new URL(dashboardPath, base).href);
 		await page.getByRole("button", { name: messages[locale].AdminFeedback.markResolved, exact: true }).click();
-		await page.waitForFunction(() => !document.querySelector('[data-testid="admin-feedback-unread-count"]'));
 		assert.equal(api.statusUpdates, 1);
-		assert.ok(api.countRequests >= 2, "header refreshes its count after feedback status changes");
+		assert.equal(api.countRequests, 0, "header no longer requests the unread badge count");
 		assert.deepEqual(errors, []);
 	} finally {
 		await context.close();
@@ -102,7 +100,10 @@ async function deniedScenario(browser, role) {
 	const api = await mockApi(page, role, locale);
 	try {
 		await page.goto(new URL(`/${locale}/dialogue`, base).href);
-		if (role) await page.getByText(`Test ${role}`, { exact: true }).waitFor();
+		if (role) {
+			await page.getByText(`Test ${role}`, { exact: true }).waitFor();
+			assert.equal(await page.getByText(messages.en.Header.free, { exact: true }).count(), 1);
+		}
 		else await page.getByRole("link", { name: messages.vi.Header.signIn, exact: true }).waitFor();
 		assert.equal(await page.getByTestId("admin-feedback-notifications").count(), 0);
 		assert.equal(api.countRequests, 0, "non-admin sessions must not request the protected count endpoint");

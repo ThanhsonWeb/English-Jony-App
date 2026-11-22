@@ -37,6 +37,7 @@ import { useVocabularyResource } from "@/app/_lib/useStudyResources";
 import { resolveWordlistFilter } from "@/app/_lib/wordlistFilter.mjs";
 
 const statuses = ["all", "new", "learning", "review", "mastered"];
+const WORDS_PER_PAGE = 15;
 const reviewModes = [
 	{ value: "flashcard", Icon: BookOpen },
 	{ value: "quiz", Icon: GraduationCap },
@@ -181,10 +182,12 @@ export default function WordlistPage() {
 				(value) => value?.toLocaleLowerCase().includes(query),
 			),
 	);
-	const pages = Math.max(1, Math.ceil(filtered.length / 20));
+	const pages = Math.max(1, Math.ceil(filtered.length / WORDS_PER_PAGE));
 	const currentPage = Math.min(page, pages);
+	const firstVisiblePage = Math.max(1, Math.min(currentPage - 2, pages - 4));
+	const pageNumbers = Array.from({ length: Math.min(pages, 5) }, (_, index) => firstVisiblePage + index);
 	if (!loading && !error && user && page > pages) setPage(pages);
-	const visible = filtered.slice((currentPage - 1) * 20, currentPage * 20);
+	const visible = filtered.slice((currentPage - 1) * WORDS_PER_PAGE, currentPage * WORDS_PER_PAGE);
 	async function saveWord(body) {
 		const word = editor.word;
 		await mutateVocabulary({ userId, id: word?._id, method: word ? "PATCH" : "POST", body,
@@ -458,28 +461,18 @@ export default function WordlistPage() {
 											})}
 										</tbody>
 									</table>
-								</div>
-								<div className={styles.pagination}>
-									<span>{t("shown", { count: filtered.length })}</span>
-									{pages > 1 && (
-										<div>
-											<button
-												disabled={currentPage === 1}
-												onClick={() => setPage(currentPage - 1)}
-											>
-												{t("previous")}
-											</button>
-											<span>
-												{t("page", { current: currentPage, total: pages })}
-											</span>
-											<button
-												disabled={currentPage === pages}
-												onClick={() => setPage(currentPage + 1)}
-											>
-												{t("next")}
-											</button>
-										</div>
-									)}
+								<nav className={styles.pagination} aria-label={t("paginationLabel")}>
+									<div className={styles.paginationControls}>
+										<button type="button" className={styles.paginationCircle} aria-label={t("firstPage")} disabled={currentPage === 1} onClick={() => setPage(1)}>«</button>
+										<button type="button" className={styles.paginationText} disabled={currentPage === 1} onClick={() => setPage(currentPage - 1)}>{t("previous")}</button>
+										{pageNumbers.map(number => (
+											<button key={number} type="button" className={styles.paginationCircle} aria-label={t("pageNumber", { number })} aria-current={number === currentPage ? "page" : undefined} onClick={() => setPage(number)}>{number}</button>
+										))}
+										<button type="button" className={styles.paginationText} disabled={currentPage === pages} onClick={() => setPage(currentPage + 1)}>{t("next")}</button>
+										<button type="button" className={styles.paginationCircle} aria-label={t("lastPage")} disabled={currentPage === pages} onClick={() => setPage(pages)}>»</button>
+									</div>
+									<span className={styles.paginationSummary} aria-live="polite">{t("pageSummary", { current: currentPage, total: pages, count: filtered.length })}</span>
+								</nav>
 								</div>
 							</>
 						)}

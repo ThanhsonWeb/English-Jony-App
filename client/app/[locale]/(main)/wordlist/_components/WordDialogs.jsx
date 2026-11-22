@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { BookOpen, X } from "lucide-react";
+import { BookOpen, Check, Layers2, X } from "lucide-react";
 import styles from "../wordlist.module.css";
 
 export function WordDialog({ word, onClose, onSave, t }) {
@@ -14,6 +14,7 @@ export function WordDialog({ word, onClose, onSave, t }) {
 		example: word?.example || "",
 	});
 	const [lookupState, setLookupState] = useState("idle");
+	const [entryType, setEntryType] = useState("word");
 	const [busy, setBusy] = useState(false);
 	const [error, setError] = useState("");
 	useEffect(() => {
@@ -81,15 +82,15 @@ export function WordDialog({ word, onClose, onSave, t }) {
 		try {
 			await onSave(body);
 			onClose();
-		} catch {
-			setError(t("saveError"));
+		} catch (error) {
+			setError(t(error.code === "duplicateVocabulary" ? "duplicateWord" : "saveError"));
 			setBusy(false);
 		}
 	}
 	return (
 		<dialog
 			ref={dialog}
-			className={`${styles.dialog} ${styles.wordDialog}`}
+			className={`${styles.dialog} ${styles.wordDialog} ${!word ? styles.addWordDialog : ""}`}
 			onCancel={(event) => {
 				if (busy) event.preventDefault();
 				else onClose();
@@ -102,7 +103,10 @@ export function WordDialog({ word, onClose, onSave, t }) {
 						<span className={styles.dialogIcon} aria-hidden="true">
 							<BookOpen size={21} />
 						</span>
-						<h2 id="word-dialog-title">{t(word ? "editTitle" : "addWord")}</h2>
+						<div>
+							<h2 id="word-dialog-title">{t(word ? "editTitle" : "addWord")}</h2>
+							{!word && <p className={styles.addWordSubtitle}>{t("addWordSubtitle")}</p>}
+						</div>
 					</div>
 					<button
 						type="button"
@@ -114,15 +118,26 @@ export function WordDialog({ word, onClose, onSave, t }) {
 						<X size={20} />
 					</button>
 				</div>
+				{!word && (
+					<div className={styles.entryTypeSwitch} role="group" aria-label={t("entryTypeLabel")}>
+						<button type="button" aria-pressed={entryType === "word"} disabled={busy} onClick={() => setEntryType("word")}>
+							<BookOpen size={21} aria-hidden="true" /> {t("entryTypeWord")}
+						</button>
+						<button type="button" aria-pressed={entryType === "phrase"} disabled={busy} onClick={() => setEntryType("phrase")}>
+							<Layers2 size={21} aria-hidden="true" /> {t("entryTypePhrase")}
+						</button>
+					</div>
+				)}
 				{[
-					["english", "word", "wordPlaceholder"],
-					["vietnamese", "meaning", "meaningPlaceholder"],
-					["example", "example", "examplePlaceholder"],
+					["english", word ? "word" : entryType === "phrase" ? "entryTypePhrase" : "addWordField", word ? "wordPlaceholder" : entryType === "phrase" ? "phraseInputPlaceholder" : "wordInputPlaceholder"],
+					["vietnamese", word ? "meaning" : "vietnameseMeaning", word ? "meaningPlaceholder" : entryType === "phrase" ? "phraseMeaningPlaceholder" : "wordMeaningPlaceholder"],
+					["example", "example", word ? "examplePlaceholder" : entryType === "phrase" ? "phraseExamplePlaceholder" : "wordExamplePlaceholder"],
 				].map(([name, label, placeholder]) => (
 					<label key={name} className={styles.field}>
 						{t(label)}
+						{!word && name !== "example" && <span className={styles.requiredMark} aria-hidden="true"> *</span>}
 						{name === "example" && (
-							<small> · {t("optional")}</small>
+							<small>{word ? " · " : " ("}{t(word ? "optional" : "addWordOptional")}{!word && ")"}</small>
 						)}
 						{name === "example" ? <textarea
 							name={name}
@@ -160,7 +175,7 @@ export function WordDialog({ word, onClose, onSave, t }) {
 						{t("cancel")}
 					</button>
 					<button disabled={busy} className={styles.primary}>
-						{t(busy ? "saving" : "save")}
+						{!word && <Check size={19} aria-hidden="true" />}{t(busy ? "saving" : "save")}
 					</button>
 				</div>
 			</form>

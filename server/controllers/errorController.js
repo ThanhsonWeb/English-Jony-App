@@ -27,6 +27,7 @@ module.exports = (err, req, res, next) => {
 	if (process.env.NODE_ENV === "development") {
 		return res.status(err.statusCode || 500).json({
 			status: err.status || "error", message: err.message, error: err, stack: err.stack,
+			...(err.code === "duplicateVocabulary" ? { code: err.code } : {}),
 		});
 	}
 	// Production, test and unsupported/unset environments all fail safely.
@@ -36,6 +37,6 @@ module.exports = (err, req, res, next) => {
 	}
 	return res.status(error.statusCode || 500).json({
 		status: error.status || "error", message: error.message,
-		...(error.code === "passwordTooLong" ? { code: error.code } : {}),
+		...(["passwordTooLong", "duplicateVocabulary"].includes(error.code) ? { code: error.code } : {}),
 	});
 };

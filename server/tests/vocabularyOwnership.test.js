@@ -17,7 +17,7 @@ before(async () => {
 	const app = express();
 	app.use(express.json());
 	app.use("/api/v1/vocab", require("../routes/vocabRoutes"));
-	app.use((error, req, res, next) => res.status(error.statusCode || (error.name === "ValidationError" ? 400 : 500)).json({ message: error.message }));
+	app.use((error, req, res, next) => res.status(error.statusCode || (error.name === "ValidationError" ? 400 : 500)).json({ message: error.message, code: error.code }));
 	server = await new Promise(resolve => { const listener = app.listen(0, "127.0.0.1", () => resolve(listener)); });
 	url = `http://127.0.0.1:${server.address().port}/api/v1/vocab`;
 }, { timeout: 180000 });
@@ -45,6 +45,31 @@ beforeEach(async () => {
 const request = (path, method = "GET", body) => fetch(url + path, {
 	method, headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
 	...(body ? { body: JSON.stringify(body) } : {}),
+});
+
+test("duplicates are user scoped and normalized, while different meanings remain allowed", async () => {
+	const original = await Vocab.findById(word.id).lean();
+	let response = await request("", "POST", { english: "  HELLO  ", vietnamese: " XIN   CHAO " });
+	assert.equal(response.status, 409);
+	assert.equal((await response.json()).code, "duplicateVocabulary");
+	assert.deepEqual(await Vocab.findById(word.id).lean(), original);
+	assert.equal((await request("", "POST", { english: "hello", vietnamese: "a different meaning" })).status, 201);
+	assert.equal((await request("", "POST", { english: "book", vietnamese: "sach" })).status, 201);
+	assert.equal((await request("", "POST", { english: "  make  a fire ", vietnamese: "nhóm lửa" })).status, 201);
+	response = await request("", "POST", { english: "MAKE\tA   FIRE", vietnamese: " NHÓM   LỬA " });
+	assert.equal(response.status, 409);
+	assert.equal(await Vocab.countDocuments({ user: user.id }), 4);
+});
+
+test("concurrent duplicate creates serialize and edits cannot introduce duplicates", async () => {
+	const payload = { english: "  TAKE   OFF ", vietnamese: "cất cánh" };
+	const responses = await Promise.all([request("", "POST", payload), request("", "POST", payload)]);
+	assert.deepEqual(responses.map(response => response.status).sort(), [201, 409]);
+	assert.equal(await Vocab.countDocuments({ user: user.id, english: "TAKE   OFF" }), 1);
+	const other = await Vocab.create({ user: user.id, english: "another", vietnamese: "different" });
+	assert.equal((await request(`/${other.id}`, "PATCH", { english: "HELLO", vietnamese: " XIN  CHAO " })).status, 409);
+	assert.equal((await Vocab.findById(other.id)).english, "another");
+	assert.equal((await request(`/${word.id}`, "PATCH", { english: " HELLO " })).status, 200);
 });
 
 test("ownership, scheduler fields, source metadata and update operators cannot be changed through PATCH", async () => {

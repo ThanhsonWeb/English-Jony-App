@@ -40,6 +40,15 @@ test("expected 400/401/403/404 messages remain useful; malformed JSON is safe", 
 	assert.equal(response(Object.assign(new SyntaxError("secret JSON"), { type: "entity.parse.failed" }), "production").status, 400);
 });
 
+test("duplicate vocabulary returns its safe code in production and development", () => {
+	const error = Object.assign(new AppError("Already saved.", 409), { code: "duplicateVocabulary" });
+	for (const environment of ["production", "development"]) {
+		const result = response(error, environment);
+		assert.equal(result.status, 409);
+		assert.equal(result.body.code, "duplicateVocabulary");
+	}
+});
+
 test("development retains diagnostics; headers already sent delegate without another response", () => {
 	const error = new Error("development diagnostic");
 	const result = response(error, "development");

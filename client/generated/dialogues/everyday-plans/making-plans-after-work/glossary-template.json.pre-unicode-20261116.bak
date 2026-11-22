@@ -1,0 +1,507 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "everyday-plans",
+  "dialogueId": "making-plans-after-work",
+  "characters": {
+    "Emma": {
+      "meaning": "Emma",
+      "role": ""
+    },
+    "Ben": {
+      "meaning": "Ben",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-what": {
+      "word": "what",
+      "meaning": "",
+      "pos": []
+    },
+    "word-are": {
+      "word": "are",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-going": {
+      "word": "going",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-do": {
+      "word": "do",
+      "meaning": "",
+      "pos": []
+    },
+    "word-after": {
+      "word": "after",
+      "meaning": "",
+      "pos": []
+    },
+    "word-work": {
+      "word": "work",
+      "meaning": "",
+      "pos": []
+    },
+    "word-mia": {
+      "word": "mia",
+      "meaning": "",
+      "pos": []
+    },
+    "word-and": {
+      "word": "and",
+      "meaning": "",
+      "pos": []
+    },
+    "word-i": {
+      "word": "i",
+      "meaning": "",
+      "pos": []
+    },
+    "word-meet": {
+      "word": "meet",
+      "meaning": "",
+      "pos": []
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "",
+      "pos": []
+    },
+    "word-coffee": {
+      "word": "coffee",
+      "meaning": "",
+      "pos": []
+    },
+    "word-where": {
+      "word": "where",
+      "meaning": "",
+      "pos": []
+    },
+    "word-at": {
+      "word": "at",
+      "meaning": "",
+      "pos": []
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "",
+      "pos": []
+    },
+    "word-caf": {
+      "word": "caf",
+      "meaning": "",
+      "pos": []
+    },
+    "word-near": {
+      "word": "near",
+      "meaning": "",
+      "pos": []
+    },
+    "word-office": {
+      "word": "office",
+      "meaning": "",
+      "pos": []
+    },
+    "word-oh": {
+      "word": "oh",
+      "meaning": "",
+      "pos": []
+    },
+    "word-just": {
+      "word": "just",
+      "meaning": "",
+      "pos": []
+    },
+    "word-sent": {
+      "word": "sent",
+      "meaning": "",
+      "pos": []
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "",
+      "pos": []
+    },
+    "word-a": {
+      "word": "a",
+      "meaning": "",
+      "pos": []
+    },
+    "word-message": {
+      "word": "message",
+      "meaning": "",
+      "pos": []
+    },
+    "word-she": {
+      "word": "she",
+      "meaning": "",
+      "pos": []
+    },
+    "word-can't": {
+      "word": "can't",
+      "meaning": "",
+      "pos": []
+    },
+    "word-because": {
+      "word": "because",
+      "meaning": "",
+      "pos": []
+    },
+    "word-has": {
+      "word": "has",
+      "meaning": "",
+      "pos": []
+    },
+    "word-late": {
+      "word": "late",
+      "meaning": "",
+      "pos": []
+    },
+    "word-another": {
+      "word": "another",
+      "meaning": "",
+      "pos": []
+    },
+    "word-day": {
+      "word": "day",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-we're": {
+      "word": "we're",
+      "meaning": "",
+      "pos": []
+    },
+    "word-on": {
+      "word": "on",
+      "meaning": "",
+      "pos": []
+    },
+    "word-friday": {
+      "word": "friday",
+      "meaning": "",
+      "pos": []
+    },
+    "word-instead": {
+      "word": "instead",
+      "meaning": "",
+      "pos": []
+    },
+    "word-this": {
+      "word": "this",
+      "meaning": "",
+      "pos": []
+    },
+    "word-evening": {
+      "word": "evening",
+      "meaning": "",
+      "pos": []
+    },
+    "word-am": {
+      "word": "am",
+      "meaning": "",
+      "pos": []
+    },
+    "word-visit": {
+      "word": "visit",
+      "meaning": "",
+      "pos": []
+    },
+    "word-my": {
+      "word": "my",
+      "meaning": "",
+      "pos": []
+    },
+    "word-sister": {
+      "word": "sister",
+      "meaning": "",
+      "pos": []
+    },
+    "word-needs": {
+      "word": "needs",
+      "meaning": "",
+      "pos": []
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Emma",
+      "text": "What are you going to do after work?",
+      "translation": "Sau giờ làm cậu định làm gì?",
+      "tokens": [
+        "What",
+        "are",
+        "you",
+        "going",
+        "to",
+        "do",
+        "after",
+        "work"
+      ],
+      "words": [
+        "word-what",
+        "word-are",
+        "word-you",
+        "word-going",
+        "word-to",
+        "word-do",
+        "word-after",
+        "word-work"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Ben",
+      "text": "Mia and I are going to meet for coffee.",
+      "translation": "Tớ định gặp Mia để uống cà phê.",
+      "tokens": [
+        "Mia",
+        "and",
+        "I",
+        "are",
+        "going",
+        "to",
+        "meet",
+        "for",
+        "coffee"
+      ],
+      "words": [
+        "word-mia",
+        "word-and",
+        "word-i",
+        "word-are",
+        "word-going",
+        "word-to",
+        "word-meet",
+        "word-for",
+        "word-coffee"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Emma",
+      "text": "Where are you going to meet?",
+      "translation": "Hai người định gặp nhau ở đâu?",
+      "tokens": [
+        "Where",
+        "are",
+        "you",
+        "going",
+        "to",
+        "meet"
+      ],
+      "words": [
+        "word-where",
+        "word-are",
+        "word-you",
+        "word-going",
+        "word-to",
+        "word-meet"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Ben",
+      "text": "At the café near the office.",
+      "translation": "Ở quán cà phê gần văn phòng.",
+      "tokens": [
+        "At",
+        "the",
+        "caf",
+        "near",
+        "the",
+        "office"
+      ],
+      "words": [
+        "word-at",
+        "word-the",
+        "word-caf",
+        "word-near",
+        "word-the",
+        "word-office"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Ben",
+      "text": "Oh, Mia just sent me a message.",
+      "translation": "Ồ, Mia vừa nhắn tin cho tớ.",
+      "tokens": [
+        "Oh",
+        "Mia",
+        "just",
+        "sent",
+        "me",
+        "a",
+        "message"
+      ],
+      "words": [
+        "word-oh",
+        "word-mia",
+        "word-just",
+        "word-sent",
+        "word-me",
+        "word-a",
+        "word-message"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Ben",
+      "text": "She can't meet because she has to work late.",
+      "translation": "Cô ấy không thể gặp vì phải làm việc muộn.",
+      "tokens": [
+        "She",
+        "can't",
+        "meet",
+        "because",
+        "she",
+        "has",
+        "to",
+        "work",
+        "late"
+      ],
+      "words": [
+        "word-she",
+        "word-can't",
+        "word-meet",
+        "word-because",
+        "word-she",
+        "word-has",
+        "word-to",
+        "word-work",
+        "word-late"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Emma",
+      "text": "Are you going to meet another day?",
+      "translation": "Hai người định gặp nhau vào hôm khác à?",
+      "tokens": [
+        "Are",
+        "you",
+        "going",
+        "to",
+        "meet",
+        "another",
+        "day"
+      ],
+      "words": [
+        "word-are",
+        "word-you",
+        "word-going",
+        "word-to",
+        "word-meet",
+        "word-another",
+        "word-day"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Ben",
+      "text": "Yes, we're going to meet on Friday instead.",
+      "translation": "Ừ, bọn tớ sẽ gặp nhau vào thứ Sáu thay vì hôm nay.",
+      "tokens": [
+        "Yes",
+        "we're",
+        "going",
+        "to",
+        "meet",
+        "on",
+        "Friday",
+        "instead"
+      ],
+      "words": [
+        "word-yes",
+        "word-we're",
+        "word-going",
+        "word-to",
+        "word-meet",
+        "word-on",
+        "word-friday",
+        "word-instead"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Emma",
+      "text": "What are you going to do this evening?",
+      "translation": "Tối nay cậu định làm gì?",
+      "tokens": [
+        "What",
+        "are",
+        "you",
+        "going",
+        "to",
+        "do",
+        "this",
+        "evening"
+      ],
+      "words": [
+        "word-what",
+        "word-are",
+        "word-you",
+        "word-going",
+        "word-to",
+        "word-do",
+        "word-this",
+        "word-evening"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Ben",
+      "text": "I am going to visit my sister because she needs help.",
+      "translation": "Tớ định đến thăm chị gái vì chị cần giúp đỡ.",
+      "tokens": [
+        "I",
+        "am",
+        "going",
+        "to",
+        "visit",
+        "my",
+        "sister",
+        "because",
+        "she",
+        "needs",
+        "help"
+      ],
+      "words": [
+        "word-i",
+        "word-am",
+        "word-going",
+        "word-to",
+        "word-visit",
+        "word-my",
+        "word-sister",
+        "word-because",
+        "word-she",
+        "word-needs",
+        "word-help"
+      ],
+      "phrases": []
+    }
+  }
+}

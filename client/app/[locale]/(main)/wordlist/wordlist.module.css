@@ -581,19 +581,45 @@
 }
 .pagination {
 	display: flex;
-	justify-content: space-between;
-	gap: 15px;
-	padding: 16px 3px;
-	font-size: 12px;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 10px 16px;
+	padding: 14px 12px;
+	border-top: 1px solid var(--sj-border);
+	font-size: 13px;
 	color: var(--sj-text-muted);
 }
-.pagination div {
+.paginationControls {
 	display: flex;
 	align-items: center;
-	gap: 12px;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 5px;
 }
 .pagination button {
-	color: var(--sj-brand-text);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 34px;
+	min-height: 34px;
+	border: 1px solid var(--sj-border);
+	color: var(--sj-text);
+	font-weight: 600;
+	transition: background-color .15s, border-color .15s;
+}
+.paginationCircle { border-radius: 50%; }
+.paginationText { padding: 0 12px; border-radius: 999px; }
+.pagination button:not(:disabled):not([aria-current="page"]):hover { background: var(--sj-elevated); }
+.pagination button:focus-visible { outline: 2px solid var(--sj-brand-text); outline-offset: 2px; }
+.pagination button[aria-current="page"] { background: var(--sj-primary); border-color: var(--sj-primary); color: #fff; }
+.pagination button:disabled { opacity: .38; cursor: not-allowed; }
+.paginationSummary { white-space: nowrap; }
+@media (max-width: 480px) {
+	.pagination { gap: 10px; }
+	.paginationControls { gap: 4px; }
+	.pagination button { min-width: 40px; min-height: 40px; }
+	.paginationText { padding: 0 10px; }
 }
 .dialog {
 	margin: auto;
@@ -722,6 +748,59 @@
 	padding-top: 20px;
 	border-top: 1px solid var(--sj-border);
 }
+.addWordDialog {
+	width: min(696px, calc(100vw - 32px));
+	padding: 28px 32px 22px;
+	border-color: var(--sj-border);
+}
+.addWordDialog .dialogHeading { align-items: flex-start; margin-bottom: 24px; }
+.addWordDialog .dialogTitle { align-items: flex-start; gap: 14px; }
+.addWordDialog .dialogTitle h2 { font-size: 26px; line-height: 1.2; }
+.addWordDialog .dialogIcon { width: 56px; height: 56px; flex: 0 0 56px; border-radius: 15px; }
+.addWordDialog .dialogIcon svg { width: 28px; height: 28px; }
+.addWordDialog .addWordSubtitle { margin: 3px 0 0; color: var(--sj-text-secondary); font-size: 15px; line-height: 1.4; }
+.entryTypeSwitch {
+	display: flex;
+	padding: 2px;
+	border: 1px solid var(--sj-border);
+	border-radius: 13px;
+	background: var(--sj-input);
+}
+.entryTypeSwitch button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	width: 50%;
+	min-height: 43px;
+	border: 1px solid transparent;
+	border-radius: 10px;
+	color: var(--sj-text-secondary);
+	font-size: 16px;
+	font-weight: 600;
+}
+.entryTypeSwitch button[aria-pressed="true"] {
+	border-color: #00c7a0;
+	background: #087c68;
+	color: #fff;
+	box-shadow: inset 0 0 0 1px #00a989;
+}
+.addWordDialog .field { margin-top: 22px; font-size: 16px; font-weight: 650; }
+.addWordDialog .field small { color: inherit; font-size: inherit; font-weight: 400; }
+.requiredMark { color: #f45b5b; }
+.addWordDialog .field input,
+.addWordDialog .field textarea { margin-top: 8px; border-radius: 11px; font-size: 16px; font-weight: 400; }
+.addWordDialog .field input { height: 45px; }
+.addWordDialog .field textarea { min-height: 84px; }
+.addWordDialog .dialogActions { margin-top: 26px; padding-top: 22px; }
+.addWordDialog .secondary { color: var(--sj-text); border-color: var(--sj-border); background: transparent; }
+.addWordDialog .primary { background: #00a994; border-color: #00a994; }
+.addWordDialog .primary:hover { background: #008f7e; }
+:global(html[data-theme="dark"]) .addWordDialog { background: #151a20; border-color: #303a42; }
+:global(html[data-theme="dark"]) .addWordDialog .entryTypeSwitch { background: #101419; border-color: #48545c; }
+:global(html[data-theme="dark"]) .addWordDialog .field input,
+:global(html[data-theme="dark"]) .addWordDialog .field textarea { background: #1a2026; border-color: #59666e; }
+:global(html[data-theme="dark"]) .addWordDialog .secondary { border-color: #52606a; }
 @media (max-width: 1199px) {
 	.toolbar { flex-wrap: wrap; }
 	.toolbar .search { flex-basis: 100%; }
@@ -729,6 +808,12 @@
 	.heroHeader .stats { max-width: 760px; }
 }
 @media (max-width: 767px) {
+	.addWordDialog { padding: 20px; }
+	.addWordDialog .dialogTitle h2 { font-size: 21px; }
+	.addWordDialog .dialogIcon { width: 46px; height: 46px; flex-basis: 46px; }
+	.addWordDialog .dialogHeading { margin-bottom: 20px; }
+	.addWordDialog .field { margin-top: 18px; }
+	.addWordDialog .dialogActions { margin-top: 20px; }
 	.wordDialog .field input,
 	.wordDialog .field textarea {
 		font-size: 16px;

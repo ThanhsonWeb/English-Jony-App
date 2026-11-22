@@ -5,10 +5,9 @@ import AuthButtons from "./AuthButtons";
 import { useAuth } from "../_contexts/AuthContext";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useEffect, useRef, useState } from "react";
-import { User, LogOut, MessageSquareText } from "lucide-react";
+import { User, LogOut, MessageSquareText, CircleUserRound, ChevronDown } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
 import LanguageSwitcher from "./LanguageSwitcher";
-import AdminFeedbackNotifications from "./AdminFeedbackNotifications";
 import { useTranslations } from "next-intl";
 import { resolveAvatarUrl } from "../_lib/resolveAvatarUrl";
 
@@ -88,24 +87,24 @@ function Header() {
 						<div className="h-6 w-24 animate-pulse rounded bg-surface-muted"></div>
 					) : user ? (
 						<div ref={dropdownRef} className="relative flex items-center gap-1">
-							{user.role === "admin" && <AdminFeedbackNotifications onNavigate={() => setIsDropdownOpen(false)} />}
 							<button
 								type="button"
 								onClick={() => setIsDropdownOpen((open) => !open)}
 								aria-label={t("accountMenu", { name: user.name })}
 								aria-expanded={isDropdownOpen}
 								aria-controls={isDropdownOpen ? "header-account-menu" : undefined}
-								className="group flex cursor-pointer items-center gap-2 rounded-xl px-1 py-2 transition-all duration-200 hover:bg-surface-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 sm:px-2 xl:gap-3 xl:px-3"
+								className="group flex cursor-pointer items-center gap-2 rounded-xl px-2 py-2 transition-all duration-200 hover:bg-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 xl:gap-3"
 							>
+								<UserAvatar user={user} avatarAlt={t("avatar")} />
 								<div className="hidden min-w-0 sm:block">
 									<p className="max-w-20 truncate whitespace-nowrap text-md font-semibold leading-tight text-main sm:max-w-24 xl:max-w-none">
 										{user.name}
 									</p>
-									<p className="whitespace-nowrap text-sm font-semibold leading-tight text-amber-200">
-										🌟 {t("vip")}
+									<p className="mt-1.5 flex items-center gap-1 whitespace-nowrap text-xs font-medium leading-tight text-main/85">
+										<CircleUserRound size={14} aria-hidden="true" />{t("free")}
 									</p>
 								</div>
-								<UserAvatar user={user} avatarAlt={t("avatar")} />
+								<ChevronDown size={16} aria-hidden="true" className="hidden text-secondary sm:block" />
 							</button>
 
 							{/* DropdownList */}

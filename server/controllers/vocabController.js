@@ -15,6 +15,22 @@ const isOwnedTopic = async (topic, userId, session) => topic === null || (
 	mongoose.isObjectIdOrHexString(topic) && await Topic.exists({ _id: topic, user: userId }).session(session)
 );
 
+const normalizeVocabularyText = value => typeof value === "string"
+	? value.normalize("NFC").trim().replace(/\s+/gu, " ").toLowerCase() : "";
+
+async function rejectDuplicate(userId, english, vietnamese, session, excludeId) {
+	const term = normalizeVocabularyText(english);
+	const meaning = normalizeVocabularyText(vietnamese);
+	if (!term || !meaning) return; // Let the existing model validation handle missing fields.
+	const existing = await Vocab.find({ user: userId, ...(excludeId ? { _id: { $ne: excludeId } } : {}) })
+		.select("english vietnamese").session(session).lean();
+	if (existing.some(word => normalizeVocabularyText(word.english) === term && normalizeVocabularyText(word.vietnamese) === meaning)) {
+		const error = new AppError("This word and meaning are already in your wordlist.", 409);
+		error.code = "duplicateVocabulary";
+		throw error;
+	}
+}
+
 exports.getAllVocab = catchAsync(async (req, res, next) => {
 	const filter = {
 		user: req.user.id,
@@ -55,6 +71,10 @@ exports.updateVocab = catchAsync(async (req, res, next) => {
 		if (Object.hasOwn(updates, "topic") && !(await isOwnedTopic(updates.topic, req.user.id, session))) {
 			throw new AppError("Topic must belong to the authenticated user", 400);
 		}
+		if (Object.hasOwn(updates, "english") || Object.hasOwn(updates, "vietnamese")) {
+			const current = await Vocab.findOne({ _id: req.params.id, user: req.user.id }).session(session).lean();
+			if (current) await rejectDuplicate(req.user.id, updates.english ?? current.english, updates.vietnamese ?? current.vietnamese, session, current._id);
+		}
 		return Vocab.findOneAndUpdate(
 			{ _id: req.params.id, user: req.user.id },
 			{ $set: updates },
@@ -86,6 +106,7 @@ exports.createNewVocab = catchAsync(async (req, res, next) => {
 		if (Object.hasOwn(fields, "topic") && !(await isOwnedTopic(fields.topic, req.user.id, session))) {
 			throw new AppError("Topic must belong to the authenticated user", 400);
 		}
+		await rejectDuplicate(req.user.id, fields.english, fields.vietnamese, session);
 		const [created] = await Vocab.create([{
 			...fields,
 			user: req.user.id,
