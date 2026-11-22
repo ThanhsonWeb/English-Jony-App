@@ -100,6 +100,7 @@ function DialogueClozeReviewTask({
 	const revealBlankRef = useRef(false);
 	const autoAdvance = useDialogueAutoAdvance({
 		onComplete,
+		manual: true,
 		href: nextTask ? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}` : completionHref || `/dialogue/${lessonId}`,
 	});
 	const actionRef = useRef(null);
@@ -531,8 +532,8 @@ function DialogueClozeReviewTask({
 					)}
 				</div>
 
-				<div className={blankResults.includes("wrong") ? "mt-4 text-sm" : "sr-only"} aria-live="polite">
-					{isComplete && <span>{t("clozeCorrect")}</span>}
+				<div className={isComplete || blankResults.includes("wrong") ? "mt-4 text-sm" : "sr-only"} role="status" aria-live="polite">
+					{isComplete && <p className="font-semibold text-emerald-400">{t("clozeCorrect")}</p>}
 					{blankResults.includes("wrong") && (
 						<p className="font-medium text-red-400">
 							✕ {t("clozeWrong")}
@@ -542,7 +543,17 @@ function DialogueClozeReviewTask({
 
 				<DialogueShortcutHint showReplay={false} />
 				<div className="mt-4 flex justify-end">
-					{!isComplete && (
+					{isComplete ? (
+						<button
+							ref={actionRef}
+							type="button"
+							onClick={() => autoAdvance.continue()}
+							disabled={!autoAdvance.canContinue}
+							className="rounded-xl bg-primary px-6 py-3 font-semibold text-white transition hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-40"
+						>
+							{t("continue")}
+						</button>
+					) : (
 						<button
 							ref={actionRef}
 							type="button"

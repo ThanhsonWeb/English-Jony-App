@@ -277,7 +277,16 @@ Dialogue = what the learner hears and understands.
 EXERCISE RULES
 ==================================================
 
-- Practice the dialogue from beginning to end.
+${normalizedLevel === "a2" ? `- Build a purposeful learning sequence: listen to selected details, check comprehension, practice useful grammar in context, and choose realistic responses when appropriate.
+- Give every exercise a distinct learning purpose; avoid unnecessary repetition and fixed exercise-type quotas.
+- Use only fillBlank, multipleChoice, and the final dialogueCloze.
+- Give each dialogue line a practicePriority of "simple", "important", or "veryImportant"; this does not impose a task count.
+- Choose useful listening targets without requiring a Fill Blank for every dialogue line.
+- Order exercises by learning purpose; tasks may return to earlier dialogue lines.
+- Give every task a unique sequential numeric id, starting from 1.
+- Every linked task must include dialogueLineId referencing an existing dialogue line.
+- Every linked task must preserve its dialogue line's speaker, transcript, scene, and audioUrl exactly.
+- Do not create filler tasks just to increase task count.` : `- Practice the dialogue from beginning to end.
 - Classify every dialogue line with practicePriority: "simple", "important", or "veryImportant".
 - Use "simple" for a supporting, reaction, or low-value transition line.
 - Use "important" for a useful reusable sentence or phrase worth practicing twice.
@@ -302,7 +311,7 @@ EXERCISE RULES
 - Once practice moves to a later dialogueLineId, do not return to an earlier one.
 - The only exception is the final full-dialogue review.
 - For a typical dialogue, usually include around 4–6 meaningful Multiple Choice tasks when the conversation supports them.
-- Do not force a quiz when it would be weak or repetitive.
+- Do not force a quiz when it would be weak or repetitive.`}
 
 Fill Blank:
 
@@ -338,7 +347,10 @@ Multiple Choice:
 - Prefer questions about sequence, decisions, and reactions: what should happen next, what the speaker decided, or how the speaker feels from context.
 - Grammar-in-context is allowed only when the dialogue naturally contains a useful grammar or politeness pattern.
 - Grammar-in-context questions must explain the function of language in the real situation, not test grammar terminology for its own sake.
-${normalizedLevel === "a1" ? a1MultipleChoiceRules : "- Usually use 0-2 grammar-in-context questions per dialogue. Never force one when there is no useful natural pattern."}
+${normalizedLevel === "a1" ? a1MultipleChoiceRules : normalizedLevel === "a2" ? `- Use grammar-in-context when it supports a useful real-life purpose; do not impose a fixed quota.
+- For realistic communication questions, provide meaningful context and a clear goal so learners can choose an appropriate response.
+- Provide exactly one clearly correct answer and three plausible, natural distractors relevant to the situation. Make each distractor clearly unsuitable for the stated context and goal.
+- For every Multiple Choice task, write a helpful explanation of why the answer fits in both Vietnamese and English. Put the Vietnamese explanation in "explanation" and matching "localized.explanation.vi", and the English explanation in "localized.explanation.en".` : "- Usually use 0-2 grammar-in-context questions per dialogue. Never force one when there is no useful natural pattern."}
 - Use Multiple Choice only when it adds real learning value.
 - Do NOT create a Multiple Choice task for every dialogue line.
 - Each Multiple Choice task must test something different from every Fill Blank task linked to the same dialogue line.
@@ -424,7 +436,7 @@ CORE LEARNING LOOP
 
 Natural dialogue
 → listen
-→ practice each line
+${normalizedLevel === "a2" ? "→ practice selected useful language" : "→ practice each line"}
 → repeat useful language
 → check comprehension, grammar, and usage
 → full dialogue cloze
@@ -438,7 +450,7 @@ LANGUAGE DIFFICULTY — ${normalizedLevel.toUpperCase()}
 ${formatRules(selectedLevelRules)}
 ${a1ContractionRules}
 
-The CEFR level controls language difficulty only.
+${normalizedLevel === "a2" ? "The CEFR level guides language difficulty and the learning sequence." : "The CEFR level controls language difficulty only."}
 
 Task count may vary depending on the dialogue.
 

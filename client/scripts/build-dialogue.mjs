@@ -2,6 +2,10 @@ import { execFileSync } from "node:child_process";
 import { access, copyFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { courseConfigs } from "./config/index.mjs";
+import {
+	assertNoRegisteredA1Overwrite,
+	validateDialogueLevel,
+} from "./lib/dialogue-level.mjs";
 import { optimizeImages } from "./optimize-dialogue-images.mjs";
 import { planGlossary, publishGlossary } from "./lib/contextual-glossary.mjs";
 import {
@@ -243,6 +247,9 @@ async function updateMediaFile({ contentType, courseId, dialogueId, draft, speak
 }
 
 function updateExistingCourseSource(source, contentType, courseId, dialogueId, config) {
+	// This pilot has a hand-maintained media adapter. Preserve it when rebuilding
+	// the same lesson; refuse to extend it through the generic course generator.
+	if (contentType === "dialogue" && courseId === "everyday-plans" && dialogueId === "making-plans-after-work" && source.includes('../dialogues/everyday-plans/making-plans-after-work.json') && source.includes('a2R2Url')) return source;
 	const identifier = toIdentifier(dialogueId);
 	const storageDirectory = getContentStorageDirectory(contentType);
 	if (contentType === "story" && !/contentType:\s*["']story["']/.test(source)) {
@@ -422,14 +429,33 @@ async function main() {
 		courseId,
 		dialogueId,
 	);
+	const registeredDialogue = findConfigDialogue(config, dialogueId);
+	let existingContent;
+	try {
+		existingContent = JSON.parse(await readFile(productionPath, "utf8"));
+	} catch (error) {
+		if (error.code !== "ENOENT") throw new Error(`Cannot inspect existing lesson "${courseId}/${dialogueId}": ${error.message}`);
+	}
+	assertNoRegisteredA1Overwrite({
+		courseLevel: config.level,
+		isRegisteredTarget: Boolean(registeredDialogue),
+		existingLevel: existingContent ? existingContent.metadata?.level ?? null : undefined,
+		courseId,
+		dialogueId,
+	});
 
 	if (!(await exists(draftPath))) fail(`Draft not found: ${draftPath}`);
 
 	logStep(verbose, "[1/7] Validating draft");
 	const draftValidation = runNode(VALIDATOR_PATH, [draftPath, "--require-localization"], verbose);
 	let draft = await loadJson(draftPath);
+	validateDialogueLevel({
+		draftLevel: draft?.metadata?.level,
+		courseLevel: config.level,
+		courseId,
+		dialogueId,
+	});
 	validateDraftIdentity(draft, courseId, dialogueId);
-	findConfigDialogue(config, dialogueId);
 	const speakers = getSpeakerNames(draft, config);
 	if (!verbose) console.log(`✅ Draft valid — ${formatMcSummary(draftValidation)}`);
 	if (draft.metadata.contextualGlossaryVersion !== undefined && draft.metadata.contextualGlossaryVersion !== 1) {

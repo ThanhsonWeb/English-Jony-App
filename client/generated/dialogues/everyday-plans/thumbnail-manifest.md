@@ -1,0 +1,30 @@
+# StudyJony thumbnail manifest: everyday-plans
+
+Give this file to ChatGPT to generate the images. Generate each dialogue as its own PNG; do not combine them into one image. Save each file at the listed output path. Attach the referenced artwork if available.
+
+Series style reference: `public/dialogue/restaurant/thumbnails/getting-a-table.webp`
+
+Create one separate 16:9 landscape PNG for each dialogue. Match StudyJony's polished, warm, storybook/anime-inspired illustration style: expressive consistent character faces, detailed setting, natural poses, clear story moment, and cinematic but friendly lighting. Keep the characters, rendering, color treatment, and framing consistent across this topic as one series. No title text, captions, badge, UI, watermark, or multi-panel collage.
+
+## Making Plans After Work
+- Dialogue slug: `making-plans-after-work`
+- Output PNG: `/dialogue/everyday-plans/thumbnails/making-plans-after-work.png`
+- Characters: Emma, Ben
+- Scene/context: Emma asks Ben about his plans after work. Ben plans to meet Mia for coffee at a café near the office, but Mia messages that she has to work late. They plan to meet on Friday instead. Ben tells Emma he is going to visit his sister this evening because she needs help.
+- Important visual details from the real dialogue:
+  - Ben: “Mia and I are going to meet for coffee.”
+- Recommended background: Show the setting in “Emma asks Ben about his plans after work. Ben plans to meet Mia for coffee at a café near the office, but Mia messages that she has to work late. They plan to meet on Friday instead. Ben tells Emma he is going to visit his sister this evening because she needs help.”, matching the existing scene reference `/dialogue/everyday-plans/making-plans-after-work/bg.png`.
+- Recommended time of day: Evening
+- Character references: Emma — public/dialogue/walk-in-the-park/meeting-at-the-park/shared/emma.webp; Ben — public/dialogue/walk-in-the-park/meeting-at-the-park/shared/ben.webp
+- Style: Create one separate 16:9 landscape PNG for each dialogue. Match StudyJony's polished, warm, storybook/anime-inspired illustration style: expressive consistent character faces, detailed setting, natural poses, clear story moment, and cinematic but friendly lighting. Keep the characters, rendering, color treatment, and framing consistent across this topic as one series. No title text, captions, badge, UI, watermark, or multi-panel collage.
+- Full dialogue context:
+  - Emma: What are you going to do after work?
+  - Ben: Mia and I are going to meet for coffee.
+  - Emma: Where are you going to meet?
+  - Ben: At the café near the office.
+  - Ben: Oh, Mia just sent me a message.
+  - Ben: She can't meet because she has to work late.
+  - Emma: Are you going to meet another day?
+  - Ben: Yes, we're going to meet on Friday instead.
+  - Emma: What are you going to do this evening?
+  - Ben: I am going to visit my sister because she needs help.

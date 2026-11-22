@@ -5,7 +5,7 @@ import { useRouter } from "@/i18n/navigation";
 import { useDialogueProgress } from "../_components/DialogueProgressSave";
 
 // Both story and dialogue exercises use the same durable progress queue.
-export default function useDialogueAutoAdvance({ onComplete, href }) {
+export default function useDialogueAutoAdvance({ onComplete, href, manual = false }) {
 	const router = useRouter();
 	const progress = useDialogueProgress();
 	const hasProgress = Boolean(progress);
@@ -21,7 +21,7 @@ export default function useDialogueAutoAdvance({ onComplete, href }) {
 
 	useEffect(() => { onCompleteRef.current = onComplete; }, [onComplete]);
 	useEffect(() => {
-		if (!completion) return;
+		if (!completion || manual) return;
 		if (paused) {
 			wasPaused.current = true;
 			return;
@@ -29,7 +29,7 @@ export default function useDialogueAutoAdvance({ onComplete, href }) {
 		if (wasPaused.current) return;
 		const timer = setTimeout(() => setElapsed(true), 400);
 		return () => clearTimeout(timer);
-	}, [completion, paused]);
+	}, [completion, paused, manual]);
 
 	useEffect(() => {
 		if (!completion || loading) return;
@@ -45,7 +45,7 @@ export default function useDialogueAutoAdvance({ onComplete, href }) {
 		(accepted || progress?.status === "saved");
 	useEffect(() => {
 		// Dismissing the reminder resumes immediately; login leaves it paused.
-		if (paused || (!elapsed && !wasPaused.current) || !safeToAdvance) return;
+		if (manual || paused || (!elapsed && !wasPaused.current) || !safeToAdvance) return;
 		const advance = () => {
 			if (navigating.current || document.querySelector('[aria-modal="true"]')) return;
 			navigating.current = true;
@@ -56,10 +56,18 @@ export default function useDialogueAutoAdvance({ onComplete, href }) {
 		observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ["aria-modal"] });
 		advance();
 		return () => observer.disconnect();
-	}, [elapsed, paused, safeToAdvance, href, router]);
+	}, [elapsed, paused, safeToAdvance, href, router, manual]);
 
 	return {
 		isSubmitted: () => submitted.current,
+		canContinue: Boolean(manual && completion && !paused && safeToAdvance),
+		continue() {
+			if (!manual || !completion || paused || !safeToAdvance || navigating.current ||
+				document.querySelector('[aria-modal="true"]')) return false;
+			navigating.current = true;
+			router.push(href);
+			return true;
+		},
 		complete(input) {
 			if (submitted.current) return;
 			submitted.current = true;

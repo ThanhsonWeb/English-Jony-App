@@ -220,6 +220,8 @@
 		"dialogueCompletionGuest": "Bạn đã hoàn thành hội thoại, nhưng tiến độ của khách chưa được lưu. Hãy đăng nhập để lưu tiến độ học tập.",
 		"completeDialogue": "Hoàn thành hội thoại ✓",
 		"correct": "Chính xác!",
+		"completedCorrectAnswers": "Bài tập đã hoàn thành — đáp án đúng được hiển thị bên dưới.",
+		"completedCorrectOption": "Bài tập đã hoàn thành — đáp án đúng được hiển thị bên trên.",
 		"wrongTryAgain": "Chưa đúng. Thử lại nhé.",
 		"wrong": "Chưa đúng.",
 		"listenAndTryAgain": "Hãy nghe lại đoạn hội thoại và thử lại nhé.",

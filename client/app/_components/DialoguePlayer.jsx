@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
+import A2MediaImage from "./A2MediaImage";
+import { a2LocalFallback } from "../_lib/dialogue/a2R2Media.mjs";
 import { Languages, ArrowLeft } from "lucide-react";
 import { findLessonLookup } from "@/app/_lib/dictionary/findLessonLookup";
 import useDialogueShortcuts from "@/app/_hooks/useDialogueShortcuts";
@@ -511,7 +513,7 @@ export default function DialoguePlayer({
 					{/* Scene */}
 					<div className="relative h-[360px] bg-cover bg-center md:h-[460px]">
 						{activeScene && (
-							<Image
+							<A2MediaImage
 								key={activeScene}
 								src={activeScene}
 								alt=""
@@ -755,6 +757,15 @@ export default function DialoguePlayer({
 					}}
 					onError={(event) => {
 						if (!activeAudioUrlRef.current || event.currentTarget.src !== activeAudioUrlRef.current) return;
+						const fallback = a2LocalFallback(event.currentTarget.src);
+						if (fallback) {
+							const audio = event.currentTarget;
+							playbackAttemptRef.current += 1;
+							audio.src = fallback;
+							activeAudioUrlRef.current = audio.src;
+							void audio.play().catch(() => { setIsPlaying(false); setAudioError("failed"); });
+							return;
+						}
 						setIsPlaying(false);
 						setAudioError("failed");
 					}}

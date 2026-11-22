@@ -69,3 +69,42 @@ test("late rejection from an old play cannot change the new player's state", asy
 	f.player.dispose();
 	assert.equal(f.audio.pause.mock.callCount(), 1);
 });
+
+test("a pre-hydration media error switches to the local source before play", async t => {
+	const audio = { src: "https://r2.example/clip.mp3", error: { code: 4 }, play: t.mock.fn(async () => {}), pause() {} };
+	const player = createTaskAudioPlayback(audio, () => 1, () => {}, src => src.startsWith("https:") ? "/local.mp3" : null);
+	player.handleError();
+	assert.equal(audio.src, "/local.mp3");
+	assert.equal(await player.play(), true);
+	assert.equal(audio.play.mock.callCount(), 1);
+});
+
+test("an R2 failure during play retries local audio once", async t => {
+	let reject;
+	const audio = { src: "https://r2.example/clip.mp3", play: t.mock.fn(() => new Promise((_, no) => { reject = no; })), pause() {} };
+	const player = createTaskAudioPlayback(audio, () => 1, () => {}, src => src.startsWith("https:") ? "/local.mp3" : null);
+	const pending = player.play();
+	player.handleError();
+	audio.play.mock.mockImplementation(async () => {});
+	reject(new DOMException("Source changed", "AbortError"));
+	assert.equal(await pending, true);
+	assert.equal(audio.src, "/local.mp3");
+	assert.equal(audio.play.mock.callCount(), 2);
+});
+
+test("autoplay denial does not switch an R2 source", async t => {
+	const audio = { src: "https://r2.example/clip.mp3", play: t.mock.fn(async () => { throw new DOMException("Blocked", "NotAllowedError"); }), pause() {} };
+	const player = createTaskAudioPlayback(audio, () => 1, () => {}, () => "/local.mp3");
+	assert.equal(await player.play(), false);
+	assert.equal(audio.src, "https://r2.example/clip.mp3");
+});
+
+test("a later media failure resumes on local audio", async t => {
+	const audio = { src: "https://r2.example/clip.mp3", play: t.mock.fn(async () => {}), pause() {} };
+	const player = createTaskAudioPlayback(audio, () => 1, () => {}, src => src.startsWith("https:") ? "/local.mp3" : null);
+	assert.equal(await player.play(), true);
+	player.handleError();
+	await Promise.resolve();
+	assert.equal(audio.src, "/local.mp3");
+	assert.equal(audio.play.mock.callCount(), 2);
+});

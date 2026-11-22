@@ -6,7 +6,9 @@ const vm = require("node:vm");
 
 async function main() {
 	const client = path.resolve(__dirname, "../../client");
-	const context = vm.createContext({});
+	// Lesson modules may read public build flags. Catalogue IDs and answers do
+	// not depend on media settings, so expose no host environment or process API.
+	const context = vm.createContext({ process: Object.freeze({ env: Object.freeze({}) }) });
 	const cache = new Map();
 	async function load(filename) {
 		if (cache.has(filename)) return cache.get(filename);

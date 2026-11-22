@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { getLocalizedDialogueValue } from "@/app/_lib/dialogue/localization";
@@ -17,6 +17,35 @@ import DialogueReviewTask from "@/app/_components/DialogueReviewTask";
 import DialogueExerciseHeader from "@/app/_components/DialogueExerciseHeader";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { DialogueProgressProvider, useDialogueProgressSave } from "@/app/_components/DialogueProgressSave";
+import { fetchLessonProgress } from "@/app/_lib/useStudyResources";
+
+function TaskWithReview({ userId, lessonId, dialogueId, task, ...props }) {
+	const { captureSession, isCurrentSession } = useAuth();
+	const [resolution, setResolution] = useState(null);
+
+	useEffect(() => {
+		if (!userId) return;
+		let active = true;
+		const session = captureSession();
+		if (session.userId !== userId) return;
+		fetchLessonProgress(lessonId).then((entries) => {
+			if (!active || !isCurrentSession(session)) return;
+			const completed = entries.some((entry) =>
+				String(entry.user) === String(userId) && entry.lessonId === lessonId &&
+				entry.dialogueId === dialogueId && Array.isArray(entry.completedTaskIds) &&
+				entry.completedTaskIds.map(String).includes(String(task.id)),
+			);
+			setResolution({ session, completed });
+		}).catch(() => {
+			if (active && isCurrentSession(session)) setResolution({ session, completed: false });
+		});
+		return () => { active = false; };
+	}, [userId, lessonId, dialogueId, task.id, captureSession, isCurrentSession]);
+
+	const resolved = Boolean(userId && resolution && resolution.session.userId === userId && isCurrentSession(resolution.session));
+	const Component = task.type === "fillBlank" ? FillBlankTask : MultipleChoiceTask;
+	return <Component {...props} lessonId={lessonId} dialogueId={dialogueId} task={task} confirmedCompleted={resolved && resolution.completed} reviewLoading={Boolean(userId && !resolved)} />;
+}
 
 const GUEST_REMINDER_DISMISSED_KEY =
 	"studyjony-guest-progress-reminder-dismissed";
@@ -113,11 +142,11 @@ export default function DialogueTaskPage() {
 
 	switch (task.type) {
 		case "fillBlank":
-			taskContent = <FillBlankTask key={task.id} {...props} />;
+			taskContent = <TaskWithReview key={`${lessonId}/${dialogueId}/${task.id}`} userId={user?._id || user?.id} {...props} />;
 			break;
 
 		case "multipleChoice":
-			taskContent = <MultipleChoiceTask {...props} />;
+			taskContent = <TaskWithReview key={`${lessonId}/${dialogueId}/${task.id}`} userId={user?._id || user?.id} {...props} />;
 			break;
 
 		case "arrangeWords":

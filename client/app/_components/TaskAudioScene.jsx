@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import A2MediaImage from "./A2MediaImage";
+import { a2LocalFallback } from "../_lib/dialogue/a2R2Media.mjs";
 import {
 	CHARACTER_IMAGE_SIZES,
 	DIALOGUE_IMAGE_QUALITY,
@@ -144,8 +146,10 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 	useEffect(() => {
 		const audio = audioRef.current;
 		if (!audio) return;
-		const playback = createTaskAudioPlayback(audio, () => playbackRateRef.current, () => setIsPlaying(false));
+		const playback = createTaskAudioPlayback(audio, () => playbackRateRef.current, () => setIsPlaying(false), a2LocalFallback);
 		playbackRef.current = playback;
+		// A preload error can occur before React attaches its event handler.
+		if (audio.error) playback.handleError();
 		// Defer one tick so Strict Mode cleanup can cancel its first setup.
 		const timer = autoPlay ? window.setTimeout(() => startSpeakingRef.current?.(), 0) : null;
 		return () => {
@@ -250,7 +254,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 				{/* Scene */}
 				<div className={`relative ${compactMobile ? "aspect-video sm:aspect-[4/3]" : "aspect-[4/3]"} overflow-hidden`}>
 					{hasScene && (
-						<Image
+						<A2MediaImage
 							src={task.scene}
 							alt={t("sceneAlt", { character: task.character?.name || t("sceneCharacter") })}
 							fill
@@ -325,6 +329,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 						ref={audioRef}
 						src={task.audioUrl}
 						preload="metadata"
+					onError={() => playbackRef.current?.handleError()}
 						onLoadedMetadata={(event) => {
 							event.currentTarget.playbackRate = playbackRateRef.current;
 						}}
@@ -335,6 +340,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 						}}
 						onPause={() => setIsPlaying(false)}
 						onEnded={() => {
+							playbackRef.current?.finish();
 							setIsPlaying(false);
 							setIsAudioFinished(true);
 							setSelectedLookup(null);

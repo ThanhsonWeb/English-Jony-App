@@ -11,6 +11,7 @@ import { useAuth } from "../_contexts/AuthContext";
 import { SUBTITLE_WORD_PATTERN, SUBTITLE_WORD_TOKEN_PATTERN } from "../_lib/dictionary/findPreferredLookup";
 import { findVisibleDictationLookup } from "../_lib/dictionary/findVisibleDictationLookup";
 import DialogueWordPopup from "./DialogueWordPopup";
+import { DialogueProgressLink } from "./DialogueProgressSave";
 
 function getExpectedAnswers(task) {
 	return Array.isArray(task.answers) ? task.answers : [task.answer];
@@ -33,6 +34,8 @@ function FillBlankTask({
 	completionHref,
 	onComplete,
 	totalTasks,
+	confirmedCompleted = false,
+	reviewLoading = false,
 }) {
 	const t = useTranslations("DialogueFeature");
 	const { loading: authLoading } = useAuth();
@@ -42,10 +45,13 @@ function FillBlankTask({
 		expectedAnswers.map(() => ""),
 	);
 	const [result, setResult] = useState(null);
+	const [started, setStarted] = useState(false);
+	const review = confirmedCompleted && !started && result === null;
 	const [selectedLookup, setSelectedLookup] = useState(null);
 	const dictionaryPopupRef = useRef(null);
 	const autoAdvance = useDialogueAutoAdvance({
 		onComplete,
+		manual: true,
 		href: nextTask ? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}` : completionHref || `/dialogue/${lessonId}`,
 	});
 	const actionRef = useRef(null);
@@ -115,13 +121,17 @@ function FillBlankTask({
 
 	useEffect(() => {
 		// The theme provider keeps inputs invisible during session restoration.
-		if (authLoading || task.completed || task.locked) return;
+		if (authLoading || task.completed || task.locked || review || reviewLoading || started) return;
 
 		const focusFrame = requestAnimationFrame(() =>
 			inputRefs.current[0]?.focus({ preventScroll: true }),
 		);
 		return () => cancelAnimationFrame(focusFrame);
-	}, [authLoading, task.completed, task.id, task.locked]);
+	}, [authLoading, task.completed, task.id, task.locked, review, reviewLoading, started]);
+
+	useEffect(() => {
+		if (review && inputRefs.current.includes(document.activeElement)) document.activeElement.blur();
+	}, [review]);
 
 	useDialogueShortcuts({
 		onEnter: () => actionRef.current?.click(),
@@ -129,7 +139,8 @@ function FillBlankTask({
 	});
 
 	function updateAnswer(index, value) {
-		if (autoAdvance.isSubmitted()) return;
+		if (autoAdvance.isSubmitted() || review) return;
+		setStarted(true);
 		setAnswerValues((current) =>
 			current.map((answer, answerIndex) =>
 				answerIndex === index ? value : answer,
@@ -146,7 +157,7 @@ function FillBlankTask({
 	}
 
 	function checkAnswer() {
-		if (autoAdvance.isSubmitted()) return;
+		if (autoAdvance.isSubmitted() || review) return;
 		const isCorrect = expectedAnswers.every(
 			(expectedAnswer, index) =>
 				fillBlankAnswersMatch(answerValues[index] || "", expectedAnswer),
@@ -157,6 +168,7 @@ function FillBlankTask({
 	}
 
 	function getInputBorderColor(index) {
+		if (review) return "rgba(148, 163, 184, 0.55)";
 		if (!result) return "var(--sj-primary)";
 
 		return fillBlankAnswersMatch(
@@ -208,6 +220,7 @@ function FillBlankTask({
 						<p className="mt-2 text-slate-400">
 							{task.instruction || t("fillBlankFallback")}
 						</p>
+						{review && <p role="status" className="mt-3 font-semibold text-emerald-400">{t("completedCorrectAnswers")}</p>}
 
 						<div className="mt-4 min-w-0 rounded-2xl border border-slate-800 bg-slate-900/60 p-4 sm:mt-6 sm:p-6">
 							<p className="min-w-0 max-w-full whitespace-normal break-words text-lg leading-10">
@@ -220,7 +233,7 @@ function FillBlankTask({
 													ref={(input) => {
 														inputRefs.current[index] = input;
 													}}
-													value={answerValues[index] || ""}
+															value={review ? expectedAnswers[index] : answerValues[index] || ""}
 													onChange={(event) =>
 														updateAnswer(index, event.target.value)
 													}
@@ -228,14 +241,17 @@ function FillBlankTask({
 														handleInputKeyDown(event, index)
 													}
 													aria-label={t("blankNumber", { number: index + 1 })}
-													readOnly={result === "correct"}
+																	tabIndex={review ? -1 : undefined}
+																	onMouseDown={review ? (event) => event.preventDefault() : undefined}
+															readOnly={review || result === "correct"}
 													placeholder="..."
 													style={{
 														width: getInputWidth(expectedAnswers[index]),
 														maxWidth: "100%",
 														borderBottomColor: getInputBorderColor(index),
+																		transition: review ? "none" : undefined,
 													}}
-													className={`mx-1 inline-block max-w-full border-b-2 bg-transparent px-2 py-1 text-center outline-none transition-[border-color] ${result === "correct" ? "text-green-400" : ""}`}
+																	className={`mx-1 inline-block max-w-full border-b-2 bg-transparent px-2 py-1 text-center outline-none transition-[border-color] ${review ? "cursor-default caret-transparent" : ""} ${result === "correct" ? "text-green-400" : ""}`}
 												/>
 											)}
 										</Fragment>
@@ -247,18 +263,21 @@ function FillBlankTask({
 											ref={(input) => {
 												inputRefs.current[0] = input;
 											}}
-											value={answerValues[0] || ""}
+											value={review ? expectedAnswers[0] : answerValues[0] || ""}
 											onChange={(event) => updateAnswer(0, event.target.value)}
 											onKeyDown={(event) => handleInputKeyDown(event, 0)}
 											aria-label={t("blankNumber", { number: 1 })}
-											readOnly={result === "correct"}
+											tabIndex={review ? -1 : undefined}
+											onMouseDown={review ? (event) => event.preventDefault() : undefined}
+											readOnly={review || result === "correct"}
 											placeholder="..."
 											style={{
 												width: getInputWidth(expectedAnswers[0]),
 												maxWidth: "100%",
 												borderBottomColor: getInputBorderColor(0),
+															transition: review ? "none" : undefined,
 											}}
-										className={`mx-2 max-w-full border-b-2 bg-transparent px-2 py-1 text-center outline-none transition-[border-color] ${result === "correct" ? "text-green-400" : ""}`}
+										className={`mx-2 max-w-full border-b-2 bg-transparent px-2 py-1 text-center outline-none transition-[border-color] ${review ? "cursor-default caret-transparent" : ""} ${result === "correct" ? "text-green-400" : ""}`}
 										/>{" "}
 										{renderVisibleWords(task.sentenceAfter || "", 1)}
 									</>
@@ -275,7 +294,7 @@ function FillBlankTask({
 												key={choice}
 												type="button"
 												onClick={() => selectChoice(choice)}
-												disabled={isUsed || result === "correct"}
+												disabled={review || isUsed || result === "correct"}
 												className="rounded-lg border border-slate-700 bg-slate-950/60 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-violet-500 hover:bg-violet-500/10 disabled:cursor-not-allowed disabled:opacity-35"
 											>
 												{choice}
@@ -292,12 +311,30 @@ function FillBlankTask({
 							</div>
 						)}
 
-						<span className="sr-only" role="status">{result === "correct" ? t("correct") : ""}</span>
+						<div role="status" aria-live="polite">
+							{result === "correct" && <p className="mt-5 rounded-xl border border-green-500/30 bg-green-500/10 p-4 font-semibold text-green-400">{t("correct")}</p>}
+						</div>
 						<DialogueShortcutHint />
 						<div className="mt-4 flex items-start justify-between gap-4">
-							{result && <GrammarNote grammar={task.grammar} />}
+							{(result || review) && <GrammarNote grammar={task.grammar} />}
 							<div className="ml-auto shrink-0">
-								{result !== "correct" && (
+								{review ? (
+									<DialogueProgressLink ref={actionRef} requireSave={false}
+										href={nextTask ? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}` : completionHref || `/dialogue/${lessonId}`}
+										className="inline-flex rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-40">
+										{t("continue")}
+									</DialogueProgressLink>
+								) : result === "correct" ? (
+									<button
+										ref={actionRef}
+									type="button"
+									onClick={() => autoAdvance.continue()}
+									disabled={!autoAdvance.canContinue}
+									className="rounded-xl bg-blue-600 px-6 py-3 font-semibold hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-40"
+								>
+									{t("continue")}
+								</button>
+								) : (
 									<button
 									ref={actionRef}
 									type="button"

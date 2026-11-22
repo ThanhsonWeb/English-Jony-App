@@ -17,7 +17,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { useLessonProgressResource } from "@/app/_lib/useStudyResources";
 
-import Image from "next/image";
+import A2MediaImage from "@/app/_components/A2MediaImage";
 
 export default function DialogueLessonPage() {
 	const locale = useLocale();
@@ -92,7 +92,7 @@ export default function DialogueLessonPage() {
 				<div className="relative mx-auto mt-4 min-h-[290px] max-w-6xl overflow-hidden rounded-sm border border-app bg-hero">
 					{/* Hero image */}
 					<div className="absolute inset-y-0 right-0 hidden w-[58%] md:block">
-						<Image
+						<A2MediaImage
 							src={lesson.heroImage}
 							alt={getLocalizedDialogueValue(lesson, "title", locale)}
 							fill
@@ -206,7 +206,7 @@ export default function DialogueLessonPage() {
 										{/* Thumbnail */}
 										{thumbnail && (
 											<span className="relative h-16 w-24 shrink-0 overflow-hidden rounded-xl border border-slate-700 sm:h-20 sm:w-32">
-												<Image
+												<A2MediaImage
 													src={thumbnail}
 													alt={getLocalizedDialogueValue(dialogue, "title", locale)}
 													fill

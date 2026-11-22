@@ -9,7 +9,7 @@ const nextConfig = {
 	// Keep the RSC rendering hint visible to proxy.js. Without this, Next
 	// strips it before the proxy and every client navigation repeats /users/me.
 	skipProxyUrlNormalize: true,
-	images: { qualities: [75, 90] },
+	images: { qualities: [75, 90], remotePatterns: [{ protocol: "https", hostname: "pub-a0c593a050834420b5faa3e260029a02.r2.dev", pathname: "/a2/dialogue/everyday-plans/making-plans-after-work/**" }] },
 	async headers() {
 		return [{ source: "/:path*", locale: false, headers: securityHeaders() }];
 	},

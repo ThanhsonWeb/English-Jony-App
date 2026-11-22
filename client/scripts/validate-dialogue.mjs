@@ -213,13 +213,13 @@ function reconstructDialogueClozeLine(line) {
 		.join("");
 }
 
-function validateDialogueClozeTask(task, dialogueLines, taskLabel, errors) {
+function validateDialogueClozeTask(task, dialogueLines, taskLabel, errors, isA2 = false) {
 	if (!Array.isArray(task.lines) || task.lines.length === 0) {
 		errors.push(`${taskLabel}: dialogueCloze lines must be a non-empty array.`);
 		return;
 	}
 
-	if (task.lines.length !== dialogueLines.length) {
+	if (!isA2 && task.lines.length !== dialogueLines.length) {
 		errors.push(
 			`${taskLabel}: dialogueCloze must include all ${dialogueLines.length} dialogue lines.`,
 		);
@@ -227,11 +227,15 @@ function validateDialogueClozeTask(task, dialogueLines, taskLabel, errors) {
 
 	const blankIds = new Set();
 	let expectedBlankId = 1;
+	let previousSourceIndex = -1;
 
 	task.lines.forEach((line, lineIndex) => {
 		const lineLabel = `${taskLabel}, dialogueCloze line ${lineIndex + 1}`;
 
-		const sourceLine = dialogueLines[lineIndex];
+		const sourceIndex = isA2
+			? dialogueLines.findIndex((item) => String(item.id) === String(line?.dialogueLineId))
+			: lineIndex;
+		const sourceLine = dialogueLines[sourceIndex];
 
 		if (!line || typeof line !== "object" || Array.isArray(line)) {
 			errors.push(`${lineLabel}: line must be an object.`);
@@ -242,6 +246,10 @@ function validateDialogueClozeTask(task, dialogueLines, taskLabel, errors) {
 			errors.push(`${lineLabel}: no matching source dialogue line.`);
 			return;
 		}
+		if (isA2 && sourceIndex <= previousSourceIndex) {
+			errors.push(`${lineLabel}: dialogue lines must be unique and in forward order.`);
+		}
+		previousSourceIndex = sourceIndex;
 
 		if (String(line.dialogueLineId) !== String(sourceLine.id)) {
 			errors.push(
@@ -323,6 +331,7 @@ export function validateDialogue(data, options = {}) {
 
 	const normalizedLevel = String(data?.metadata?.level || "").toLowerCase();
 	const isA1 = normalizedLevel === "a1" || normalizedLevel === "beginner";
+	const isA2 = normalizedLevel === "a2";
 	const strictA1Rules =
 		isA1 && Number(data?.metadata?.a1ContentRulesVersion) >= 2;
 	const fillBlankRange =
@@ -545,7 +554,7 @@ export function validateDialogue(data, options = {}) {
 		);
 		const multipleChoiceCount = multipleChoiceTasks.length;
 
-		if (practiceTasks.length > 0 && fillBlankCount <= multipleChoiceCount) {
+		if (!isA2 && practiceTasks.length > 0 && fillBlankCount <= multipleChoiceCount) {
 			errors.push(
 				`Fill Blank should be the main practice type; found ${fillBlankCount} Fill Blank and ${multipleChoiceCount} Multiple Choice tasks.`,
 			);
@@ -605,7 +614,7 @@ export function validateDialogue(data, options = {}) {
 					errors.push(`${taskLabel}: dialogueCloze must be the final task.`);
 				}
 
-				validateDialogueClozeTask(task, dialogueLines || [], taskLabel, errors);
+				validateDialogueClozeTask(task, dialogueLines || [], taskLabel, errors, isA2);
 
 				return;
 			}
@@ -632,7 +641,7 @@ export function validateDialogue(data, options = {}) {
 			// Forward dialogue flow
 			// ----------------------------------------------------------
 
-			if (sourceLine.index < previousLineIndex) {
+			if (!isA2 && sourceLine.index < previousLineIndex) {
 				errors.push(
 					`${taskLabel}: tasks must practice dialogue lines in forward order without returning to an earlier line.`,
 				);
@@ -992,7 +1001,7 @@ export function validateDialogue(data, options = {}) {
 		// Every dialogue line: 1–3 practice tasks
 		// ------------------------------------------------------------
 
-		dialogueLines?.forEach((line, index) => {
+		if (!isA2) dialogueLines?.forEach((line, index) => {
 			const count = fillBlankTasksPerLine.get(String(line.id)) || 0;
 			const priority = line.practicePriority || "simple";
 			const range =

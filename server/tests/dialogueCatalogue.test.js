@@ -11,3 +11,11 @@ test("every published dialogue task is allowed and generated catalogue matches s
 	for (const ids of catalogue) assert.equal(isKnownDialogueTask(...ids), true);
 	assert.equal(isKnownDialogueTask("office-introduction", "meeting-tom", "unknown"), false);
 });
+
+test("catalogue generation is independent of the A2 R2 flag", () => {
+	for (const value of ["0", "1"]) {
+		execFileSync(process.execPath, ["--experimental-vm-modules", path.resolve(__dirname, "../scripts/generate-dialogue-catalogue.js"), "--check"], {
+			stdio: "pipe", env: { ...process.env, NEXT_PUBLIC_A2_R2_MEDIA: value },
+		});
+	}
+});

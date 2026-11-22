@@ -6437,6 +6437,192 @@
 	},
 	{
 		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"1"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"after work"
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"10"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"another day"
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"11"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"on Friday"
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"13"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"this evening"
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"14"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"am",
+			"visit"
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"15"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"16"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"after work",
+			"meet for coffee",
+			"Where",
+			"near the office",
+			"message",
+			"work late",
+			"another day",
+			"on Friday",
+			"this evening",
+			"visit my sister"
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"2"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"meet for coffee"
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"3"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"4"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"Where"
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"5"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"near the office"
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"6"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"message"
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"8"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"work late"
+		]
+	},
+	{
+		"ids": [
+			"everyday-plans",
+			"making-plans-after-work",
+			"9"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
 			"grateful",
 			"a-busy-morning",
 			"1"

@@ -51,7 +51,7 @@ export function buildGeneratedDialogueTasks(draft, characterImages) {
 		draft.dialogue.map((line, index) => [line.audioUrl, index]),
 	);
 
-	return draft.tasks
+	const tasks = draft.tasks
 		.map((task) => {
 			if (task.type === "dialogueCloze") {
 				return {
@@ -93,8 +93,13 @@ export function buildGeneratedDialogueTasks(draft, characterImages) {
 				sentenceBefore,
 				sentenceAfter,
 			};
-		})
-		.sort((a, b) => {
+		});
+
+	if (String(draft.metadata?.level || "").toLowerCase() === "a2") {
+		return tasks;
+	}
+
+	return tasks.sort((a, b) => {
 			if (a.type === "dialogueCloze") {
 				return b.type === "dialogueCloze" ? 0 : 1;
 			}

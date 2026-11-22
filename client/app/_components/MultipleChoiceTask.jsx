@@ -7,6 +7,7 @@ import TaskAudioScene from "./TaskAudioScene";
 import useDialogueAutoAdvance from "../_hooks/useDialogueAutoAdvance";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 import { useLocale, useTranslations } from "next-intl";
+import { DialogueProgressLink } from "./DialogueProgressSave";
 
 function MultipleChoiceTask({
 	task,
@@ -17,13 +18,17 @@ function MultipleChoiceTask({
 	completionHref,
 	onComplete,
 	totalTasks,
+	confirmedCompleted = false,
 }) {
 	const t = useTranslations("DialogueFeature");
 	const locale = useLocale();
 	const [selected, setSelected] = useState("");
 	const [result, setResult] = useState(null);
+	const [started, setStarted] = useState(false);
+	const review = confirmedCompleted && !started && !result;
 	const autoAdvance = useDialogueAutoAdvance({
 		onComplete,
+		manual: true,
 		href: nextTask ? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}` : completionHref || `/dialogue/${lessonId}`,
 	});
 	const actionRef = useRef(null);
@@ -34,13 +39,13 @@ function MultipleChoiceTask({
 		onReplay: () => audioSceneRef.current?.replay(),
 		onNumber: (optionIndex) => {
 			const option = task.options[optionIndex];
-			if (option && !result) setSelected(option);
+			if (option && !result && !review) { setStarted(true); setSelected(option); }
 		},
-		numberShortcutsDisabled: Boolean(result),
+		numberShortcutsDisabled: Boolean(result || review),
 	});
 
 	function checkAnswer() {
-		if (autoAdvance.isSubmitted()) return;
+		if (autoAdvance.isSubmitted() || review) return;
 		const isCorrect = selected === task.answer;
 
 		setResult(isCorrect ? "correct" : "wrong");
@@ -81,19 +86,21 @@ function MultipleChoiceTask({
 
 						<div className="mt-6 overflow-hidden rounded-xl border border-slate-800">
 							{task.options.map((option, optionIndex) => {
-								const isSelected = selected === option;
+								const isSelected = review ? option === task.answer : selected === option;
 								const isCorrectAnswer =
-									result === "correct" && option === task.answer;
+									(result === "correct" || review) && option === task.answer;
 
 								return (
 									<button
 										key={option}
 										type="button"
-										disabled={result === "correct"}
-										onClick={() => {
-											if (autoAdvance.isSubmitted()) return;
+										disabled={result === "correct" || review}
+										onClick={(event) => {
+											if (autoAdvance.isSubmitted() || review) return;
+											setStarted(true);
 											setSelected(option);
 											setResult(null);
+											if (event.detail > 0) event.currentTarget.blur();
 										}}
 										className={`flex w-full items-start gap-3 border-b border-slate-800 px-5 py-4 text-left transition last:border-b-0 ${
 											isCorrectAnswer
@@ -136,12 +143,33 @@ function MultipleChoiceTask({
 							</div>
 						)}
 
-						<span className="sr-only" role="status">{result === "correct" ? t("correct") : ""}</span>
+						<div role="status" aria-live="polite">
+							{(result === "correct" || review) && (
+								<div className="mt-5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5">
+									<p className="font-semibold text-emerald-400">{t(review ? "completedCorrectOption" : "correct")}</p>
+									{task.explanation && (locale === "vi" || task.localized?.explanation?.en) && (
+										<p className="mt-2 leading-relaxed text-slate-300">{task.explanation}</p>
+									)}
+								</div>
+							)}
+						</div>
 						<DialogueShortcutHint />
 						<div className="mt-4 flex items-start justify-between gap-4">
-							{result && <GrammarNote grammar={task.grammar} />}
+							{(result || review) && <GrammarNote grammar={task.grammar} />}
 							<div className="ml-auto shrink-0">
-								{result !== "correct" && (
+								{review ? (
+									<DialogueProgressLink ref={actionRef} requireSave={false} href={nextTask ? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}` : completionHref || `/dialogue/${lessonId}`} className="inline-flex rounded-xl bg-violet-600 px-6 py-3 font-semibold hover:bg-violet-500">{t("continue")}</DialogueProgressLink>
+								) : result === "correct" ? (
+									<button
+										ref={actionRef}
+										type="button"
+										onClick={() => autoAdvance.continue()}
+										disabled={!autoAdvance.canContinue}
+										className="rounded-xl bg-violet-600 px-6 py-3 font-semibold transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-40"
+									>
+										{t("continue")}
+									</button>
+								) : (
 									<button
 									ref={actionRef}
 									type="button"

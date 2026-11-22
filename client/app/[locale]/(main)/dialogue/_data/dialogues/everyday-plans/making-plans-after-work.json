@@ -1,0 +1,860 @@
+{
+  "metadata": {
+    "courseId": "everyday-plans",
+    "dialogueId": "making-plans-after-work",
+    "contextualGlossaryVersion": 1,
+    "title": "Lên kế hoạch sau giờ làm",
+    "localizationVersion": 1,
+    "localized": {
+      "courseTitle": {
+        "vi": "Kế hoạch hằng ngày",
+        "en": "Everyday Plans"
+      },
+      "courseDescription": {
+        "vi": "Luyện tập lập và thay đổi kế hoạch hằng ngày.",
+        "en": "Practice making and changing everyday plans."
+      },
+      "title": {
+        "vi": "Lên kế hoạch sau giờ làm",
+        "en": "Making Plans After Work"
+      },
+      "description": {
+        "vi": "Emma hỏi Ben về kế hoạch sau giờ làm. Ben định gặp Mia uống cà phê tại một quán gần văn phòng, nhưng Mia nhắn rằng cô ấy phải làm việc muộn. Họ đổi sang gặp nhau vào thứ Sáu. Ben nói với Emma rằng tối nay anh định đến thăm chị gái vì chị cần giúp đỡ.",
+        "en": "Emma asks Ben about his plans after work. Ben plans to meet Mia for coffee at a café near the office, but Mia messages that she has to work late. They plan to meet on Friday instead. Ben tells Emma he is going to visit his sister this evening because she needs help."
+      }
+    },
+    "level": "a2",
+    "situation": "Emma hỏi Ben về kế hoạch sau giờ làm. Ben định gặp Mia uống cà phê tại một quán gần văn phòng, nhưng Mia nhắn rằng cô ấy phải làm việc muộn. Họ đổi sang gặp nhau vào thứ Sáu. Ben nói với Emma rằng tối nay anh định đến thăm chị gái vì chị cần giúp đỡ.",
+    "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+    "thumbnail": "/dialogue/everyday-plans/thumbnails/making-plans-after-work.png"
+  },
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Emma",
+      "text": "What are you going to do after work?",
+      "translation": "Sau giờ làm cậu định làm gì?",
+      "practicePriority": "simple",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/emma-01.mp3"
+    },
+    {
+      "id": 2,
+      "speaker": "Ben",
+      "text": "Mia and I are going to meet for coffee.",
+      "translation": "Tớ định gặp Mia để uống cà phê.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-01.mp3"
+    },
+    {
+      "id": 3,
+      "speaker": "Emma",
+      "text": "Where are you going to meet?",
+      "translation": "Hai người định gặp nhau ở đâu?",
+      "practicePriority": "simple",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/emma-02.mp3"
+    },
+    {
+      "id": 4,
+      "speaker": "Ben",
+      "text": "At the café near the office.",
+      "translation": "Ở quán cà phê gần văn phòng.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-02.mp3"
+    },
+    {
+      "id": 5,
+      "speaker": "Ben",
+      "text": "Oh, Mia just sent me a message.",
+      "translation": "Ồ, Mia vừa nhắn tin cho tớ.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-03.mp3"
+    },
+    {
+      "id": 6,
+      "speaker": "Ben",
+      "text": "She can't meet because she has to work late.",
+      "translation": "Cô ấy không thể gặp vì phải làm việc muộn.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-04.mp3"
+    },
+    {
+      "id": 7,
+      "speaker": "Emma",
+      "text": "Are you going to meet another day?",
+      "translation": "Hai người định gặp nhau vào hôm khác à?",
+      "practicePriority": "simple",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/emma-03.mp3"
+    },
+    {
+      "id": 8,
+      "speaker": "Ben",
+      "text": "Yes, we're going to meet on Friday instead.",
+      "translation": "Ừ, bọn tớ sẽ gặp nhau vào thứ Sáu thay vì hôm nay.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-05.mp3"
+    },
+    {
+      "id": 9,
+      "speaker": "Emma",
+      "text": "What are you going to do this evening?",
+      "translation": "Tối nay cậu định làm gì?",
+      "practicePriority": "simple",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/emma-04.mp3"
+    },
+    {
+      "id": 10,
+      "speaker": "Ben",
+      "text": "I am going to visit my sister because she needs help.",
+      "translation": "Tớ định đến thăm chị gái vì chị cần giúp đỡ.",
+      "practicePriority": "simple",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-06.mp3"
+    }
+  ],
+  "usefulWords": [
+    {
+      "word": "after work",
+      "pronunciation": "/ˈæftər wɜːrk/",
+      "meaning": "sau giờ làm",
+      "example": "I walk home after work."
+    },
+    {
+      "word": "for coffee",
+      "pronunciation": "/fɔːr ˈkɔːfi/",
+      "meaning": "để uống cà phê",
+      "example": "Let's meet for coffee."
+    },
+    {
+      "word": "near the office",
+      "pronunciation": "/nɪr ði ˈɔːfɪs/",
+      "meaning": "gần văn phòng",
+      "example": "The café is near the office."
+    },
+    {
+      "word": "work late",
+      "pronunciation": "/wɜːrk leɪt/",
+      "meaning": "làm việc muộn",
+      "example": "I have to work late today."
+    },
+    {
+      "word": "another day",
+      "pronunciation": "/əˈnʌðər deɪ/",
+      "meaning": "một ngày khác",
+      "example": "We can meet another day."
+    },
+    {
+      "word": "on Friday",
+      "pronunciation": "/ɑːn ˈfraɪdeɪ/",
+      "meaning": "vào thứ Sáu",
+      "example": "Let's meet on Friday."
+    },
+    {
+      "word": "this evening",
+      "pronunciation": "/ðɪs ˈiːvnɪŋ/",
+      "meaning": "tối nay",
+      "example": "I am free this evening."
+    },
+    {
+      "word": "visit my sister",
+      "pronunciation": "/ˈvɪzɪt maɪ ˈsɪstər/",
+      "meaning": "đến thăm chị gái tôi",
+      "example": "I am going to visit my sister."
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "dialogueLineId": 1,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "What are you going to do ",
+        "?"
+      ],
+      "answers": [
+        "after work"
+      ],
+      "speaker": "Emma",
+      "transcript": "What are you going to do after work?",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/emma-01.mp3"
+    },
+    {
+      "id": 2,
+      "dialogueLineId": 2,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Mia and I are going to ",
+        "."
+      ],
+      "answers": [
+        "meet for coffee"
+      ],
+      "speaker": "Ben",
+      "transcript": "Mia and I are going to meet for coffee.",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-01.mp3"
+    },
+    {
+      "id": 3,
+      "dialogueLineId": 2,
+      "type": "multipleChoice",
+      "question": "Ben định gặp ai?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the correct answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp với hội thoại.",
+          "en": "Choose the answer that fits the dialogue."
+        },
+        "question": {
+          "vi": "Ben định gặp ai?",
+          "en": "Who is Ben planning to meet?"
+        },
+        "options": [
+          {
+            "vi": "Emma.",
+            "en": "Emma."
+          },
+          {
+            "vi": "Mia.",
+            "en": "Mia."
+          },
+          {
+            "vi": "Chị gái anh ấy.",
+            "en": "His sister."
+          },
+          {
+            "vi": "Đồng nghiệp của Emma.",
+            "en": "Emma's coworker."
+          }
+        ],
+        "explanation": {
+          "vi": "Ben nói Mia và anh định gặp nhau.",
+          "en": "Ben says he and Mia plan to meet."
+        }
+      },
+      "options": [
+        "Emma.",
+        "Mia.",
+        "Chị gái anh ấy.",
+        "Đồng nghiệp của Emma."
+      ],
+      "answer": "Mia.",
+      "explanation": "Ben nói Mia và anh định gặp nhau.",
+      "speaker": "Ben",
+      "transcript": "Mia and I are going to meet for coffee.",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-01.mp3"
+    },
+    {
+      "id": 4,
+      "dialogueLineId": 3,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "",
+        " are you going to meet?"
+      ],
+      "answers": [
+        "Where"
+      ],
+      "speaker": "Emma",
+      "transcript": "Where are you going to meet?",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/emma-02.mp3"
+    },
+    {
+      "id": 5,
+      "dialogueLineId": 4,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "At the café ",
+        "."
+      ],
+      "answers": [
+        "near the office"
+      ],
+      "speaker": "Ben",
+      "transcript": "At the café near the office.",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-02.mp3"
+    },
+    {
+      "id": 6,
+      "dialogueLineId": 4,
+      "type": "multipleChoice",
+      "question": "Ben và Mia định gặp nhau ở loại địa điểm nào?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the correct answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp với hội thoại.",
+          "en": "Choose the answer that fits the dialogue."
+        },
+        "question": {
+          "vi": "Ben và Mia định gặp nhau ở loại địa điểm nào?",
+          "en": "What kind of place do Ben and Mia plan to meet at?"
+        },
+        "options": [
+          {
+            "vi": "Quán cà phê.",
+            "en": "A café."
+          },
+          {
+            "vi": "Văn phòng.",
+            "en": "An office."
+          },
+          {
+            "vi": "Nhà của Mia.",
+            "en": "Mia's home."
+          },
+          {
+            "vi": "Nhà hàng.",
+            "en": "A restaurant."
+          }
+        ],
+        "explanation": {
+          "vi": "Ben nói họ định gặp nhau ở quán cà phê.",
+          "en": "Ben says they plan to meet at a café."
+        }
+      },
+      "options": [
+        "Quán cà phê.",
+        "Văn phòng.",
+        "Nhà của Mia.",
+        "Nhà hàng."
+      ],
+      "answer": "Quán cà phê.",
+      "explanation": "Ben nói họ định gặp nhau ở quán cà phê.",
+      "speaker": "Ben",
+      "transcript": "At the café near the office.",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-02.mp3"
+    },
+    {
+      "id": 7,
+      "dialogueLineId": 5,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Oh, Mia just sent me a ",
+        "."
+      ],
+      "answers": [
+        "message"
+      ],
+      "speaker": "Ben",
+      "transcript": "Oh, Mia just sent me a message.",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-03.mp3"
+    },
+    {
+      "id": 8,
+      "dialogueLineId": 6,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "She can't meet because she has to ",
+        "."
+      ],
+      "answers": [
+        "work late"
+      ],
+      "speaker": "Ben",
+      "transcript": "She can't meet because she has to work late.",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-04.mp3"
+    },
+    {
+      "id": 9,
+      "dialogueLineId": 6,
+      "type": "multipleChoice",
+      "question": "Việc Mia làm muộn ảnh hưởng thế nào đến kế hoạch hôm nay?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the correct answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp với hội thoại.",
+          "en": "Choose the answer that fits the dialogue."
+        },
+        "question": {
+          "vi": "Việc Mia làm muộn ảnh hưởng thế nào đến kế hoạch hôm nay?",
+          "en": "How does Mia working late affect today's plan?"
+        },
+        "options": [
+          {
+            "vi": "Họ sẽ gặp nhau sớm hơn.",
+            "en": "They will meet earlier."
+          },
+          {
+            "vi": "Họ sẽ gặp nhau ở văn phòng.",
+            "en": "They will meet at the office."
+          },
+          {
+            "vi": "Họ không thể gặp nhau như đã định.",
+            "en": "They cannot meet as planned."
+          },
+          {
+            "vi": "Họ sẽ cùng làm việc muộn.",
+            "en": "They will work late together."
+          }
+        ],
+        "explanation": {
+          "vi": "Mia phải làm muộn và không thể gặp Ben như đã định.",
+          "en": "Mia has to work late and cannot meet Ben as planned."
+        }
+      },
+      "options": [
+        "Họ sẽ gặp nhau sớm hơn.",
+        "Họ sẽ gặp nhau ở văn phòng.",
+        "Họ không thể gặp nhau như đã định.",
+        "Họ sẽ cùng làm việc muộn."
+      ],
+      "answer": "Họ không thể gặp nhau như đã định.",
+      "explanation": "Mia phải làm muộn và không thể gặp Ben như đã định.",
+      "speaker": "Ben",
+      "transcript": "She can't meet because she has to work late.",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-04.mp3"
+    },
+    {
+      "id": 10,
+      "dialogueLineId": 7,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Are you going to meet ",
+        "?"
+      ],
+      "answers": [
+        "another day"
+      ],
+      "speaker": "Emma",
+      "transcript": "Are you going to meet another day?",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/emma-03.mp3"
+    },
+    {
+      "id": 11,
+      "dialogueLineId": 7,
+      "type": "multipleChoice",
+      "question": "Emma muốn biết điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the correct answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp với hội thoại.",
+          "en": "Choose the answer that fits the dialogue."
+        },
+        "question": {
+          "vi": "Emma muốn biết điều gì?",
+          "en": "What does Emma want to find out?"
+        },
+        "options": [
+          {
+            "vi": "Mia làm việc ở đâu.",
+            "en": "Where Mia works."
+          },
+          {
+            "vi": "Ben đã gặp Mia chưa.",
+            "en": "Whether Ben has met Mia."
+          },
+          {
+            "vi": "Ben có thích cà phê không.",
+            "en": "Whether Ben likes coffee."
+          },
+          {
+            "vi": "Ben và Mia có định gặp vào hôm khác không.",
+            "en": "Whether Ben and Mia plan to meet another day."
+          }
+        ],
+        "explanation": {
+          "vi": "Emma hỏi về một kế hoạch gặp vào ngày khác.",
+          "en": "Emma asks about a plan to meet on another day."
+        }
+      },
+      "options": [
+        "Mia làm việc ở đâu.",
+        "Ben đã gặp Mia chưa.",
+        "Ben có thích cà phê không.",
+        "Ben và Mia có định gặp vào hôm khác không."
+      ],
+      "answer": "Ben và Mia có định gặp vào hôm khác không.",
+      "explanation": "Emma hỏi về một kế hoạch gặp vào ngày khác.",
+      "speaker": "Emma",
+      "transcript": "Are you going to meet another day?",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/emma-03.mp3"
+    },
+    {
+      "id": 12,
+      "dialogueLineId": 8,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "Yes, we're going to meet ",
+        " instead."
+      ],
+      "answers": [
+        "on Friday"
+      ],
+      "speaker": "Ben",
+      "transcript": "Yes, we're going to meet on Friday instead.",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-05.mp3"
+    },
+    {
+      "id": 13,
+      "dialogueLineId": 9,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "What are you going to do ",
+        "?"
+      ],
+      "answers": [
+        "this evening"
+      ],
+      "speaker": "Emma",
+      "transcript": "What are you going to do this evening?",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/emma-04.mp3"
+    },
+    {
+      "id": 14,
+      "dialogueLineId": 10,
+      "type": "fillBlank",
+      "localized": {
+        "title": {
+          "vi": "Điền từ còn thiếu",
+          "en": "Fill in the blank"
+        },
+        "instruction": {
+          "vi": "Nghe và điền từ còn thiếu.",
+          "en": "Listen and fill in the missing words."
+        }
+      },
+      "parts": [
+        "I ",
+        " going to ",
+        " my sister because she needs help."
+      ],
+      "answers": [
+        "am",
+        "visit"
+      ],
+      "speaker": "Ben",
+      "transcript": "I am going to visit my sister because she needs help.",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-06.mp3"
+    },
+    {
+      "id": 15,
+      "dialogueLineId": 10,
+      "type": "multipleChoice",
+      "question": "Câu của Ben cho Emma biết điều gì?",
+      "localized": {
+        "title": {
+          "vi": "Chọn đáp án đúng",
+          "en": "Choose the correct answer"
+        },
+        "instruction": {
+          "vi": "Chọn đáp án phù hợp với hội thoại.",
+          "en": "Choose the answer that fits the dialogue."
+        },
+        "question": {
+          "vi": "Câu của Ben cho Emma biết điều gì?",
+          "en": "What does Ben's sentence tell Emma?"
+        },
+        "options": [
+          {
+            "vi": "Một việc anh đã làm hôm qua.",
+            "en": "Something he did yesterday."
+          },
+          {
+            "vi": "Dự định của anh tối nay.",
+            "en": "His plan for this evening."
+          },
+          {
+            "vi": "Một việc Mia đang làm.",
+            "en": "Something Mia is doing."
+          },
+          {
+            "vi": "Nơi anh làm việc.",
+            "en": "Where he works."
+          }
+        ],
+        "explanation": {
+          "vi": "“Going to” nói về dự định đến thăm chị gái.",
+          "en": "“Going to” describes his plan to visit his sister."
+        }
+      },
+      "options": [
+        "Một việc anh đã làm hôm qua.",
+        "Dự định của anh tối nay.",
+        "Một việc Mia đang làm.",
+        "Nơi anh làm việc."
+      ],
+      "answer": "Dự định của anh tối nay.",
+      "explanation": "“Going to” nói về dự định đến thăm chị gái.",
+      "speaker": "Ben",
+      "transcript": "I am going to visit my sister because she needs help.",
+      "scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+      "audioUrl": "/dialogue/everyday-plans/making-plans-after-work/audio/ben-06.mp3"
+    },
+    {
+      "id": 16,
+      "type": "dialogueCloze",
+      "localized": {
+        "title": {
+          "vi": "Hoàn thành hội thoại",
+          "en": "Complete the dialogue"
+        },
+        "instruction": {
+          "vi": "Điền từ còn thiếu để hoàn thành hội thoại.",
+          "en": "Fill in the missing words to complete the dialogue."
+        }
+      },
+      "lines": [
+        {
+          "dialogueLineId": 1,
+          "speaker": "Emma",
+          "parts": [
+            "What are you going to do ",
+            {
+              "id": "1",
+              "blank": "after work"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 2,
+          "speaker": "Ben",
+          "parts": [
+            "Mia and I are going to ",
+            {
+              "id": "2",
+              "blank": "meet for coffee"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 3,
+          "speaker": "Emma",
+          "parts": [
+            "",
+            {
+              "id": "3",
+              "blank": "Where"
+            },
+            " are you going to meet?"
+          ]
+        },
+        {
+          "dialogueLineId": 4,
+          "speaker": "Ben",
+          "parts": [
+            "At the café ",
+            {
+              "id": "4",
+              "blank": "near the office"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 5,
+          "speaker": "Ben",
+          "parts": [
+            "Oh, Mia just sent me a ",
+            {
+              "id": "5",
+              "blank": "message"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 6,
+          "speaker": "Ben",
+          "parts": [
+            "She can't meet because she has to ",
+            {
+              "id": "6",
+              "blank": "work late"
+            },
+            "."
+          ]
+        },
+        {
+          "dialogueLineId": 7,
+          "speaker": "Emma",
+          "parts": [
+            "Are you going to meet ",
+            {
+              "id": "7",
+              "blank": "another day"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 8,
+          "speaker": "Ben",
+          "parts": [
+            "Yes, we're going to meet ",
+            {
+              "id": "8",
+              "blank": "on Friday"
+            },
+            " instead."
+          ]
+        },
+        {
+          "dialogueLineId": 9,
+          "speaker": "Emma",
+          "parts": [
+            "What are you going to do ",
+            {
+              "id": "9",
+              "blank": "this evening"
+            },
+            "?"
+          ]
+        },
+        {
+          "dialogueLineId": 10,
+          "speaker": "Ben",
+          "parts": [
+            "I am going to ",
+            {
+              "id": "10",
+              "blank": "visit my sister"
+            },
+            " because she needs help."
+          ]
+        }
+      ]
+    }
+  ],
+  "grammarNotes": [
+    {
+      "title": "Nói về dự định với be going to",
+      "explanation": "Dùng be going to + động từ nguyên mẫu để nói về một dự định. Chia be theo chủ ngữ.",
+      "localized": {
+        "title": {
+          "vi": "Nói về dự định với be going to",
+          "en": "Talking about plans with be going to"
+        },
+        "explanation": {
+          "vi": "Dùng be going to + động từ nguyên mẫu để nói về một dự định. Chia be theo chủ ngữ.",
+          "en": "Use be going to + the base verb to talk about a plan. Choose the form of be that matches the subject."
+        }
+      },
+      "example": "I am going to visit my sister because she needs help."
+    }
+  ]
+}

@@ -220,6 +220,8 @@
 		"dialogueCompletionGuest": "You finished this dialogue, but guest progress is not saved. Sign in to keep your learning progress.",
 		"completeDialogue": "Complete dialogue ✓",
 		"correct": "Correct!",
+		"completedCorrectAnswers": "Completed exercise — correct answers are shown below.",
+		"completedCorrectOption": "Completed exercise — the correct answer is shown above.",
 		"wrongTryAgain": "Not quite. Try again.",
 		"wrong": "Not quite.",
 		"listenAndTryAgain": "Listen to the dialogue and try again.",

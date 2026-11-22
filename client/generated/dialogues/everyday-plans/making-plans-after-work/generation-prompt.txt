@@ -1,0 +1,461 @@
+A2 PILOT REQUIREMENTS — MAKING PLANS AFTER WORK
+These lesson-specific requirements take precedence where the general guidance below gives a broader range or says a grammar note is optional. Retain the JSON schema, localization and validation requirements below.
+
+Learning goal: Ask about someone's plans after work and explain a simple change of plans.
+
+Write exactly 10 dialogue turns following this outline:
+1. Emma asks Ben what he is going to do after work.
+2. Ben says he is going to meet Mia for coffee.
+3. Emma asks where they are going to meet.
+4. Ben says they plan to meet at a café near the office.
+5. Ben receives a message from Mia; communicate it through the dialogue, with Ben and Emma as the only speakers.
+6. Ben says Mia cannot meet because she has to work late.
+7. Emma asks whether they are going to meet another day.
+8. Ben says they are going to meet on Friday.
+9. Emma asks what Ben is going to do this evening.
+10. Ben says he is going to visit his sister because she needs help.
+
+Use all eight target phrases naturally in the dialogue and revisit each in practice: after work; meet for coffee; near the office; work late; another day; on Friday; this evening; visit my sister. Ensure each target appears in the dialogue and is revisited in at least one practice activity. Use Fill Blank and meaningful Multiple Choice tasks without requiring every phrase in Multiple Choice.
+
+Teach one main grammar pattern: be going to + base verb for plans. Include a Fill Blank that directly tests both the correct form of be and the base verb, for example “I ___ going to ___ my sister because she needs help.” with answers “am” and “visit”, if that is the exact linked dialogue line. Use one or two blanks per Fill Blank task.
+
+Include Fill Blank and around 4–6 meaningful Multiple Choice tasks. At least two Multiple Choice questions must test meaning or communicative purpose, including what a going-to statement communicates, rather than translation alone. Make each correct answer unambiguous.
+
+Include a grammar note explaining the pattern in both Vietnamese and English. Its example must exactly match the completed English transcript of a Fill Blank task, including punctuation, with no translation, extra sentence, or equals sign. Interleave its parts and answers to verify the match to the linked dialogue line. Give Multiple Choice explanations in both languages using the existing task.explanation and task.localized.explanation fields; the Vietnamese localized value must match task.explanation. Provide supportive Vietnamese and English feedback where the existing schema supports it. The current Fill Blank UI provides generic retry feedback: do not assume custom hints, delayed answer reveal, or per-option feedback exist. Provide localized grammar note title and explanation in the existing fields.
+
+
+You are creating a dialogue lesson for StudyJony,
+an English-learning application for Vietnamese learners.
+
+COURSE
+
+Course ID: everyday-plans
+Dialogue ID: making-plans-after-work
+Vietnamese title: Lên kế hoạch sau giờ làm
+Course title hint: Everyday Plans
+Course description hint: Practice making and changing everyday plans.
+Characters: Ben, Emma
+Configured level: a2
+Normalized CEFR level: A2
+Situation (English reference): Emma asks Ben about his plans after work. Ben plans to meet Mia for coffee at a café near the office, but Mia messages that she has to work late. They plan to meet on Friday instead. Ben tells Emma he is going to visit his sister this evening because she needs help.
+Situation (Vietnamese): Emma hỏi Ben về kế hoạch sau giờ làm. Ben định gặp Mia uống cà phê tại một quán gần văn phòng, nhưng Mia nhắn rằng cô ấy phải làm việc muộn. Họ đổi sang gặp nhau vào thứ Sáu. Ben nói với Emma rằng tối nay anh định đến thăm chị gái vì chị cần giúp đỡ.
+
+
+LOCALIZATION (REQUIRED FOR EVERY NEW DRAFT)
+
+- Set metadata.localizationVersion to 1.
+- Include metadata.localized.courseTitle, courseDescription, title, and description, each with non-empty vi and en strings.
+- metadata.localized.title.vi must equal metadata.title exactly; metadata.localized.description.vi must equal metadata.situation exactly.
+- Write genuine Vietnamese for every vi title and description and natural English for every en field. Plain metadata.title and metadata.situation must be Vietnamese and exactly match their localized vi fields. Do not leave a locale empty.
+- Every task needs localized.title and localized.instruction with vi and en strings. If a task also has a plain title or instruction, its localized vi text must match exactly.
+- Every Multiple Choice task also needs localized.question and localized.options. Keep question and options as Vietnamese strings for answer checking; localized.question.vi and each localized.options[i].vi must match them exactly. English options must keep the same order and meaning. Do not translate the English dialogue sentence or answer key.
+- If a task has an explanation, completionMessage, or resultMessage, localize it too. Localize grammar note titles and explanations; their vi text must match the plain fields exactly.
+- Keep dialogue.text and task transcripts in English. Keep dialogue.translation and vocabulary meanings in Vietnamese for learning.
+- Generic buttons and statuses such as Continue, Check, Correct, and Try again belong to shared UI translation files; do not add them to this JSON.
+
+==================================================
+DIALOGUE RULES
+==================================================
+
+Dialogue length should depend on the situation.
+
+- Use as many lines as needed to complete the communication goal naturally.
+- Simple situations may be short.
+- More complex situations may need more lines.
+- Do not add filler just to reach a target.
+- Do not cut useful dialogue just to stay under a limit.
+- Keep the language appropriate for the configured CEFR level.
+- Most dialogues may naturally fall around 8–16 lines, but this is guidance, not a strict requirement.
+- Use short sentences, common vocabulary, and simple structures.
+- Give the dialogue ONE clear communication goal.
+- Every line should naturally connect to the next.
+- Do NOT force speakers to alternate.
+- Avoid awkward sentences written only to teach grammar or vocabulary.
+- Prefer useful everyday phrases and conversational chunks.
+- Repeat useful vocabulary and conversational chunks naturally when helpful.
+- Avoid repeating the same whole sentence or sentence pattern just to create practice.
+- Prefer vocabulary and chunk repetition over full-sentence repetition.
+- Every dialogue line must have a Vietnamese translation.
+- Give every dialogue line a unique sequential numeric id, starting from 1.
+
+NATURAL TURN-TAKING
+
+- Do NOT mechanically alternate speakers line by line.
+- A speaker may say 1–3 short sentences in one turn when that sounds natural.
+- The same speaker may have two consecutive dialogue lines to explain, react, clarify, or add information before another character responds.
+- Vary turn length naturally: some turns are very short; others may contain 2–3 simple sentences appropriate for the configured level.
+- Do NOT force longer turns or consecutive lines just to satisfy this rule.
+- Keep A1 sentences short, common, and easy. Do not increase language complexity to make a turn longer.
+- Keep the exchange believable with static characters and focused on one clear communication goal.
+
+BAD (mechanical alternation):
+Ben: I like pasta.
+Emma: Me too.
+Ben: The chicken pasta looks good.
+Emma: I want something lighter.
+
+BETTER (natural turn lengths):
+Ben: I like pasta. The chicken pasta looks good.
+Emma: Me too, but I want something lighter. Maybe the soup.
+Ben: What about the tomato soup?
+
+STATIC-SCENE RULE
+
+StudyJony characters are mostly static images.
+
+Avoid dialogue that depends on visible physical actions the UI cannot show.
+
+Avoid lines such as:
+
+- "Pass me the pot."
+- "Here you go."
+- "Hold this."
+- "Pull the rope."
+- "Put this there."
+
+Prefer dialogue about:
+
+- what the characters see
+- questions
+- preferences
+- plans
+- opinions
+- reactions
+- decisions
+- the current situation
+
+A line should still feel believable if the learner only sees static characters.
+
+Dialogue = what the learner hears and understands.
+
+==================================================
+EXERCISE RULES
+==================================================
+
+- Practice the dialogue from beginning to end.
+- Classify every dialogue line with practicePriority: "simple", "important", or "veryImportant".
+- Use "simple" for a supporting, reaction, or low-value transition line.
+- Use "important" for a useful reusable sentence or phrase worth practicing twice.
+- Use "veryImportant" only for a core sentence directly tied to the dialogue's main communication goal and worth deeper repetition.
+- Count only standalone Fill Blank tasks for per-line practice repetition.
+- Multiple Choice is a separate learning check and does NOT count toward per-line practice.
+- The final Dialogue Cloze is review and does NOT count toward per-line practice.
+- A simple line must receive exactly 1 Fill Blank task.
+- An important line must receive exactly 2 distinct Fill Blank tasks.
+- A very important line must receive 2 distinct Fill Blank tasks and may receive a third only when the line contains a third meaningful target.
+- Keep repeated practice directly in the natural dialogue flow.
+- Do NOT create a separate review section just for repetition.
+- Avoid two tasks that test exactly the same thing.
+- Fill Blank is the main task type.
+- Multiple Choice should only be used when it genuinely checks learning.
+- Do NOT create filler tasks just to increase task count.
+- Quality is more important than task count.
+- Give every task a unique sequential numeric id, starting from 1.
+- Every linked task must include dialogueLineId.
+- dialogueLineId must reference an existing dialogue line.
+- Repeated tasks for the same line must preserve speaker, transcript, scene, and audioUrl exactly.
+- Once practice moves to a later dialogueLineId, do not return to an earlier one.
+- The only exception is the final full-dialogue review.
+- For a typical dialogue, usually include around 4–6 meaningful Multiple Choice tasks when the conversation supports them.
+- Do not force a quiz when it would be weak or repetitive.
+
+Fill Blank:
+
+- Use 1–2 meaningful blanks per task.
+- Blank useful words or phrases, not random filler words.
+- Store the unchanged text around the blanks in a "parts" array.
+- Use one entry in "answers" for every blank.
+- Store parts and answers in left-to-right order.
+- "parts" must contain exactly one more item than "answers".
+- Interleaving parts and answers must reconstruct the original transcript exactly.
+- Preserve punctuation and contractions from the original transcript.
+- Do NOT use an underscore-based "question" field for Fill Blank tasks.
+- Do NOT create the exact same Fill Blank task twice.
+- If the same line receives multiple Fill Blank tasks, blank different useful words or phrases that do not overlap in the source sentence.
+
+
+Example:
+
+Transcript:
+"I would like a small coffee, please."
+
+Parts:
+["I would like a ", " ", ", please."]
+
+Answers:
+["small", "coffee"]
+
+Multiple Choice:
+
+- Purpose: Multiple Choice is a separate learning check for comprehension, grammar-in-context, and usage. It must not act like another Fill Blank or translation exercise.
+- Prefer questions about situation comprehension: what is happening, what the speaker needs or wants, or which information matters.
+- Prefer questions about speaker intent: why the speaker says something, what the speaker is trying to do, or what a response shows.
+- Prefer questions about sequence, decisions, and reactions: what should happen next, what the speaker decided, or how the speaker feels from context.
+- Grammar-in-context is allowed only when the dialogue naturally contains a useful grammar or politeness pattern.
+- Grammar-in-context questions must explain the function of language in the real situation, not test grammar terminology for its own sake.
+- Usually use 0-2 grammar-in-context questions per dialogue. Never force one when there is no useful natural pattern.
+- Use Multiple Choice only when it adds real learning value.
+- Do NOT create a Multiple Choice task for every dialogue line.
+- Each Multiple Choice task must test something different from every Fill Blank task linked to the same dialogue line.
+- Keep questions short and easy for the configured CEFR level. For A1, use simple Vietnamese wording.
+- Do NOT use Multiple Choice for vocabulary definitions or dictionary-style meaning questions.
+- Do NOT ask for a Vietnamese translation of the entire English sentence.
+- Do NOT simply ask for the Vietnamese meaning of the current dialogue line.
+- Ask only about information clearly supported by the dialogue.
+- Wrong answers must be plausible, clearly incorrect, and related to the same situation. Do not use silly or random distractors.
+- Include exactly one correct answer.
+- Include exactly four options.
+- The correct answer must appear in options.
+- Across the dialogue, distribute correct-answer positions roughly across A, B, C, and D.
+- Do not heavily overuse one answer position.
+- Avoid an obvious fixed pattern such as A-B-C-D-A-B-C-D.
+- Keep the correct answer unchanged when balancing positions; reorder the options instead.
+- For 5 Multiple Choice tasks, a natural distribution could be D, A, B, C, A.
+- For 21 Multiple Choice tasks, a healthy distribution is roughly A:6, B:5, C:5, D:5.
+
+BAD:
+English: "Is it very sweet?"
+Question: "Ben muốn nói gì?"
+Answer: "Nó có ngọt lắm không?"
+
+GOOD:
+Question: "Ben đang hỏi về điều gì của chiếc muffin?"
+Answer: "Độ ngọt."
+
+Final review:
+
+- The final task must have type "dialogueCloze".
+- It must review the entire dialogue.
+- Include every dialogue line in the original order.
+- Preserve every speaker exactly.
+- The completed cloze must reconstruct every original transcript exactly.
+- Replace useful words or phrases with blanks.
+- Use unique sequential blank IDs beginning with "1".
+- The final dialogueCloze does NOT require dialogueLineId at task level.
+- Do NOT add task-level speaker, transcript, scene, or audioUrl.
+- The final dialogueCloze task ID must be the next sequential number after the final practice task.
+
+Exercise = how the learner practices and remembers the dialogue.
+
+==================================================
+AUDIO
+==================================================
+
+- Do not leave scene or audioUrl empty.
+- Every dialogue line must use the configured scene and its correctly numbered audioUrl.
+- Every linked task must reuse those exact values.
+- Use exactly one MP3 per dialogue line.
+- Number each speaker's audio independently starting at 01.
+- Every task linked to a dialogue line must reuse that line's original audioUrl.
+- Never create task-specific audio.
+- The same dialogue line must always preserve the same speaker, transcript, scene, and audioUrl.
+
+==================================================
+USEFUL WORDS
+==================================================
+
+- Include around 4–10 useful words or phrases, depending on the dialogue.
+- Do not add low-value vocabulary just to reach a number.
+- Every useful word or phrase must actually appear in the dialogue.
+- Prefer useful conversational chunks over low-value isolated vocabulary.
+- Include pronunciation.
+- Include Vietnamese meaning.
+- Include one simple beginner-friendly example.
+
+==================================================
+GRAMMAR
+==================================================
+
+- Include one grammar note for be going to + base verb, with localized Vietnamese and English title and explanation.
+- Include only useful patterns that already appear naturally in the dialogue.
+- Do NOT force grammar into the conversation.
+- Explain grammar simply for Vietnamese learners.
+- Keep examples beginner-friendly.
+- Set the note example to exactly one completed Fill Blank transcript, including punctuation, as specified in the pilot requirements.
+
+==================================================
+CORE LEARNING LOOP
+==================================================
+
+Natural dialogue
+→ listen
+→ practice each line
+→ repeat useful language
+→ check comprehension, grammar, and usage
+→ full dialogue cloze
+→ useful words
+→ Sổ tay
+
+==================================================
+LANGUAGE DIFFICULTY — A2
+==================================================
+
+- Use common everyday vocabulary and slightly more varied sentences.
+- Use simple connectors such as because, but, and so when natural.
+- Use basic past and future forms when natural.
+- Keep the language easy and practical.
+
+
+The CEFR level controls language difficulty only.
+
+Task count may vary depending on the dialogue.
+
+Prioritize learning quality over a fixed number of tasks.
+
+
+SCENE RULES
+
+All dialogue lines use this shared scene:
+
+"/dialogue/everyday-plans/making-plans-after-work/bg.png"
+
+Every linked task must reuse the same scene as its dialogue line.
+
+
+==================================================
+ASSET PATHS
+==================================================
+
+Default/fallback scene:
+"/dialogue/everyday-plans/making-plans-after-work/bg.png"
+
+Thumbnail:
+"/dialogue/everyday-plans/thumbnails/making-plans-after-work.webp"
+
+Audio format:
+"/dialogue/everyday-plans/making-plans-after-work/audio/{speaker}-{number}.mp3"
+
+==================================================
+OUTPUT
+==================================================
+
+Return the complete JSON inside one fenced `json` code block.
+Do not write explanations, summaries, or comments before or after the code block.
+Keep the entire JSON in this single code block so it can be copied at once.
+
+The Fill Blank, Multiple Choice, and Dialogue Cloze objects below are examples of possible task types only.
+Do not create every task type for every dialogue line.
+Task selection must follow the Exercise Rules above.
+
+Use this structure:
+
+{
+	"metadata": {
+		"courseId": "everyday-plans",
+		"dialogueId": "making-plans-after-work",
+		"contextualGlossaryVersion": 1,
+		"title": "Lên kế hoạch sau giờ làm",
+		"localizationVersion": 1,
+		"localized": {
+			"courseTitle": { "vi": "Kế hoạch hằng ngày", "en": "Everyday Plans" },
+			"courseDescription": { "vi": "Luyện tập lập và thay đổi kế hoạch hằng ngày.", "en": "Practice making and changing everyday plans." },
+			"title": { "vi": "Lên kế hoạch sau giờ làm", "en": "Making Plans After Work" },
+			"description": { "vi": "Emma hỏi Ben về kế hoạch sau giờ làm. Ben định gặp Mia uống cà phê tại một quán gần văn phòng, nhưng Mia nhắn rằng cô ấy phải làm việc muộn. Họ đổi sang gặp nhau vào thứ Sáu. Ben nói với Emma rằng tối nay anh định đến thăm chị gái vì chị cần giúp đỡ.", "en": "Emma asks Ben about his plans after work. Ben plans to meet Mia for coffee at a café near the office, but Mia messages that she has to work late. They plan to meet on Friday instead. Ben tells Emma he is going to visit his sister this evening because she needs help." }
+		},
+		"level": "a2",
+
+		"situation": "Emma hỏi Ben về kế hoạch sau giờ làm. Ben định gặp Mia uống cà phê tại một quán gần văn phòng, nhưng Mia nhắn rằng cô ấy phải làm việc muộn. Họ đổi sang gặp nhau vào thứ Sáu. Ben nói với Emma rằng tối nay anh định đến thăm chị gái vì chị cần giúp đỡ.",
+		"scene": "/dialogue/everyday-plans/making-plans-after-work/bg.png",
+		"thumbnail": "/dialogue/everyday-plans/thumbnails/making-plans-after-work.webp"
+	},
+
+	"dialogue": [
+		{
+			"id": 1,
+			"speaker": "",
+			"text": "",
+			"translation": "",
+			"practicePriority": "simple",
+			"scene": "",
+			"audioUrl": ""
+		}
+	],
+
+	"usefulWords": [
+		{
+			"word": "",
+			"pronunciation": "",
+			"meaning": "",
+			"example": ""
+		}
+	],
+
+	"tasks": [
+		{
+			"id": 1,
+			"dialogueLineId": 1,
+			"type": "fillBlank",
+			"localized": {
+				"title": { "vi": "", "en": "" },
+				"instruction": { "vi": "", "en": "" }
+			},
+			"parts": ["", ""],
+			"answers": [""],
+			"speaker": "",
+			"transcript": "",
+			"scene": "",
+			"audioUrl": ""
+		},
+
+		{
+			"id": 2,
+			"dialogueLineId": 1,
+			"type": "multipleChoice",
+			"question": "",
+			"localized": {
+				"title": { "vi": "", "en": "" },
+				"instruction": { "vi": "", "en": "" },
+				"question": { "vi": "", "en": "" },
+				"options": [
+					{ "vi": "", "en": "" },
+					{ "vi": "", "en": "" },
+					{ "vi": "", "en": "" },
+					{ "vi": "", "en": "" }
+				]
+			},
+
+
+			"options": ["", "", "", ""],
+			"answer": "",
+			"speaker": "",
+			"transcript": "",
+			"scene": "",
+			"audioUrl": ""
+		},
+
+		{
+			"id": 3,
+			"type": "dialogueCloze",
+			"localized": {
+				"title": { "vi": "", "en": "" },
+				"instruction": { "vi": "", "en": "" }
+			},
+			"lines": [
+				{
+					"dialogueLineId": 1,
+					"speaker": "",
+					"parts": [
+						"",
+						{
+							"id": "1",
+							"blank": ""
+						},
+						""
+					]
+				}
+			]
+		}
+	],
+
+	"grammarNotes": [
+		{
+			"title": "",
+			"explanation": "",
+			"localized": {
+				"title": { "vi": "", "en": "" },
+				"explanation": { "vi": "", "en": "" }
+			},
+			"example": ""
+		}
+	]
+}
