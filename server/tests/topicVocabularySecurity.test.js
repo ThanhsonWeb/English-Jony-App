@@ -300,7 +300,7 @@ test("normal vocabulary creation trims required text and preserves pronunciation
 });
 test("global notebook creation supports omitted/null topic and users with no topics", async () => {
 	await Topic.deleteMany({ user: owner.id });
-	for (const body of [{}, { topic: null }]) {
+	for (const body of [{ english: "water" }, { english: "river", topic: null }]) {
 		const response = await createWord(body);
 		assert.equal(response.status, 201);
 		assert.equal(response.body.data.newVocab.topic ?? null, null);
@@ -351,12 +351,13 @@ test("browser-supplied dialogue source is ignored, including real and forged IDs
 		{ type: "dialogue", lessonId: "nonexistent", dialogueId: "forged", dialogueTitle: "Forged title" },
 		{ type: "dialogue", lessonId: "asking-for-directions", dialogueId: "finding-a-cafe", dialogueTitle: "Client-supplied title" },
 	]) {
-		const response = await createWord({ source, "source.lessonId": "dotted", unexpected: "ignored" });
+		const english = source.dialogueId === "forged" ? "water" : "river";
+		const response = await createWord({ english, source, "source.lessonId": "dotted", unexpected: "ignored" });
 		assert.equal(response.status, 201);
 		const saved = await Vocab.findById(response.body.data.newVocab._id).lean();
 		assert.equal(saved.source, undefined);
 		assert.equal(saved.unexpected, undefined);
-		assert.equal(saved.english, "water");
+		assert.equal(saved.english, english);
 		assert.equal(saved.example, wordInput.example);
 	}
 });
