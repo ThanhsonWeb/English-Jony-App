@@ -63,7 +63,7 @@ async function catalogueCase(browser, width, locale, theme) {
 	for (const id of ["coffee-shop", "grocery-store", "restaurant"]) assert.equal(await p.locator(`main a[href="${c.prefix}/dialogue/${id}"]`).count(), 1);
 	const foodTitle = await cards.first().textContent(); await search.fill(foodTitle); assert.equal(await cards.count(), 1); await search.fill("");
 	await select("travel", 1); assert.equal(await p.locator(`main a[href="${c.prefix}/dialogue/asking-for-directions"]`).count(), 1);
-	await select("office", 0);
+	assert.equal(await category("office").count(), 0, "Office topic is hidden from the category list");
 	await select("all", 6);
 	for (const id of ["weekend-camping", "office-introduction", "at-a-hotel"]) assert.equal(await p.locator(`main a[href="${c.prefix}/dialogue/${id}"]`).count(), 0);
 	await select("story", 1);

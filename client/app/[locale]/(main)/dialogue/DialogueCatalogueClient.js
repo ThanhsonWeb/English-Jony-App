@@ -6,13 +6,11 @@ import { Link } from "@/i18n/navigation";
 import {
 	ArrowRight,
 	BookOpen,
-	BriefcaseBusiness,
 	Clapperboard,
 	ChevronDown,
 	ChevronLeft,
 	ChevronRight,
 	CircleCheck,
-	Clock3,
 	GraduationCap,
 	Grid2X2,
 	LoaderCircle,
@@ -70,7 +68,6 @@ const courseLevelsByFilter = {
 
 const dialogueCategories = [
 	"all",
-	"office",
 	"travel",
 	"food",
 	"anime",
@@ -79,7 +76,6 @@ const dialogueCategories = [
 
 const categoryIcons = {
 	all: Grid2X2,
-	office: BriefcaseBusiness,
 	travel: Plane,
 	food: Utensils,
 	anime: Clapperboard,
@@ -118,13 +114,25 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 	const progressRefreshFailed = Boolean(userId && progressError && progressSnapshot !== undefined);
 	const [search, setSearch] = useState("");
 	const [selectedLevel, setSelectedLevel] = useState("all");
+	const [levelMenuOpen, setLevelMenuOpen] = useState(false);
 	const [selectedCategory, setSelectedCategory] = useState(initialCategory);
 	const startIntentHandled = useRef(false);
 	const categoryNavRef = useRef(null);
+	const levelFilterRef = useRef(null);
 	const [categoryScroll, setCategoryScroll] = useState({
 		left: false,
 		right: false,
 	});
+	const selectedLevelLabel = levelOptions.find(option => option.value === selectedLevel)?.label;
+
+	useEffect(() => {
+		if (!levelMenuOpen) return;
+		const closeOnOutsideClick = event => {
+			if (!levelFilterRef.current?.contains(event.target)) setLevelMenuOpen(false);
+		};
+		document.addEventListener("pointerdown", closeOnOutsideClick);
+		return () => document.removeEventListener("pointerdown", closeOnOutsideClick);
+	}, [levelMenuOpen]);
 
 	useEffect(() => {
 		const nav = categoryNavRef.current;
@@ -321,8 +329,30 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 		<main data-testid="dialogue-catalogue" className="min-h-screen bg-page px-4 pb-10 text-main sm:px-6 lg:px-8">
 			<div className="mx-auto max-w-[1548px]">
 				{/* ==================== HERO SECTION ==================== */}
-				<section className="bg-hero">
-					<div className="grid items-center gap-5 px-5 py-6 sm:px-8 sm:py-7 md:grid-cols-[minmax(0,1fr)_minmax(220px,320px)] md:gap-5 md:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(280px,400px)] lg:gap-8 lg:px-8">
+				<section className="relative overflow-hidden bg-hero">
+					<svg aria-hidden="true" viewBox="0 0 420 130" fill="none" className="pointer-events-none absolute bottom-0 left-1/2 h-24 w-72 -translate-x-1/2 text-primary opacity-15 sm:h-32 sm:w-96">
+						<circle cx="325" cy="28" r="12" fill="currentColor" opacity=".5" />
+						<path d="M0 130 48 104l20-24 14 5 27-29 15 8 22-19 23 19 20 6 20 25 28-12 25 24 21-8 27 17 35-9 35 23Z" fill="currentColor" opacity=".28" />
+						<path d="m70 130 39-32 17-23 17-6 21-22 13 9 14-14 18 17 14 4 22-32 7-5 7-12 9 9 10 6 19 27 13 6 18 22 17 5 35 41Z" fill="currentColor" opacity=".48" />
+						<path d="m252 26 7-12 9 9 10 6 19 27 13 6 18 22 17 5 35 41H246l22-28-10-16 10-9-11-17 7-10Z" fill="currentColor" opacity=".35" />
+						<path d="m225 63 20-32 7-5 7-12 9 9 10 6 17 24-14-7-5 4-8-9-5 9-7-10-6 15-7-5-8 12Zm-82 6 21-22 13 9 14-14 18 17-10-3-6 5-5-7-8 9-5-4-9 8-6-3Z" fill="currentColor" opacity=".9" />
+						<path d="m259 14-5 35-7 15 5 9-15 27m31-59 10 17-4 10 16 16m-124-37-5 24-14 13m40-30 8 18 12 10" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" opacity=".75" />
+						<path d="M222 93c-12 9 12 11 2 19-6 5-18 9-24 18h24c3-7 16-10 19-17 3-8-17-11-12-20Z" fill="currentColor" opacity=".4" />
+						<g fill="currentColor" opacity=".8">
+							<path d="m45 123 8-18-3 1 6-14 6 14-3-1 8 18h-9v7h-4v-7Zm32 2 7-15-3 1 5-12 5 12-3-1 7 15h-7v5h-4v-5Zm281-3 7-16-3 1 5-12 5 12-3-1 7 16h-7v8h-4v-8Zm27 3 6-13-2 1 4-10 4 10-2-1 6 13h-6v5h-4v-5Z" />
+						</g>
+						<g fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+							<circle cx="335" cy="71" r="2.4" stroke="none" />
+							<path d="m334 75-1 8 3 3 2-3-1-8Z" strokeWidth="1" />
+							<path d="m334 79-3 3m6-3 2 3m-5 3-2 5m4-5 2 5" fill="none" strokeWidth="1.8" />
+							<path d="M337 76h2v5h-2z" stroke="none" />
+						</g>
+						<g stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity=".8">
+							<path d="M65 22v12m-6-6h12m-10-4 8 8m0-8-8 8M360 52v10m-5-5h10m-8-3 6 6m0-6-6 6M155 12v8m-4-4h8" />
+						</g>
+						<g fill="currentColor" opacity=".65"><circle cx="105" cy="50" r="2" /><circle cx="190" cy="30" r="1.5" /><circle cx="305" cy="65" r="2" /><circle cx="395" cy="25" r="1.5" /></g>
+					</svg>
+					<div className="relative grid items-center gap-5 px-5 py-6 sm:px-8 sm:py-7 md:grid-cols-[minmax(0,1fr)_minmax(220px,320px)] md:gap-5 md:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(280px,400px)] lg:gap-8 lg:px-8">
 						<div className="min-w-0">
 							<h1 className="text-3xl font-bold tracking-tight text-main sm:text-4xl">
 								{t.rich("title", {
@@ -399,10 +429,6 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 										<span className="inline-flex items-center gap-1.5">
 											<BookOpen className="h-4 w-4 text-brand-text" />
 											{t("exercises", { count: currentStats.totalTaskCount })}
-										</span>
-										<span className="inline-flex items-center gap-1.5">
-											<Clock3 className="h-4 w-4 text-secondary" />~
-											{currentCourse.duration}
 										</span>
 										<span className="inline-flex items-center gap-1.5">
 											<CircleCheck className="h-4 w-4 text-brand-text" />
@@ -525,25 +551,44 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 									{t("explore")}
 								</h2>
 								<div className="flex items-center gap-4">
-									<span className="text-sm text-secondary">
-										{t("topics", { count: visibleCourses.length })}
-									</span>
-									<label className="relative block">
-										<span className="sr-only">{t("levelFilter")}</span>
-										<GraduationCap className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-text" />
-										<select
-											value={selectedLevel}
-											onChange={(event) => setSelectedLevel(event.target.value)}
-											className="h-11 min-w-36 appearance-none rounded-xl border border-app bg-surface pl-10 pr-9 text-sm font-medium text-main outline-none transition hover:border-primary/40 focus:border-primary focus:ring-2 focus:ring-primary/20"
+									<div ref={levelFilterRef} className="relative">
+										<span id="dialogue-level-filter-label" className="sr-only">{t("levelFilter")}</span>
+										<button
+											type="button"
+											aria-labelledby="dialogue-level-filter-label"
+											aria-haspopup="listbox"
+											aria-expanded={levelMenuOpen}
+											onClick={() => setLevelMenuOpen(open => !open)}
+											className="flex h-11 min-w-56 cursor-pointer items-center gap-3 rounded-xl border border-app bg-surface pl-3 pr-3 text-sm font-medium text-main outline-none transition hover:border-primary/40 focus:border-primary focus:ring-2 focus:ring-primary/20"
 										>
-											{levelOptions.map((option) => (
-												<option key={option.value} value={option.value}>
-													{option.label}
-												</option>
-											))}
-										</select>
-										<ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-secondary" />
-									</label>
+											<GraduationCap className="h-4 w-4 shrink-0 text-brand-text" />
+											<span className="flex-1 text-left">{selectedLevelLabel}</span>
+											<ChevronDown className={`h-4 w-4 shrink-0 text-secondary transition-transform ${levelMenuOpen ? "rotate-180" : ""}`} />
+										</button>
+										{levelMenuOpen && (
+											<div
+												role="listbox"
+												aria-labelledby="dialogue-level-filter-label"
+												className="absolute right-0 top-full z-50 mt-2 w-full overflow-hidden rounded-xl border border-app bg-surface p-1 shadow-xl"
+											>
+												{levelOptions.map(option => (
+													<button
+														key={option.value}
+														type="button"
+														role="option"
+														aria-selected={selectedLevel === option.value}
+														onClick={() => {
+															setSelectedLevel(option.value);
+															setLevelMenuOpen(false);
+														}}
+														className={`block w-full cursor-pointer rounded-lg px-3 py-2 text-left text-sm transition ${selectedLevel === option.value ? "bg-primary/15 text-primary" : "text-main hover:bg-hover"}`}
+													>
+														{option.label}
+													</button>
+												))}
+											</div>
+										)}
+									</div>
 								</div>
 							</div>
 							{visibleCourses.length > 0 ? (
@@ -567,7 +612,7 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 											<Link
 												key={course.id}
 												href={`/dialogue/${course.id}`}
-													className="group flex h-full flex-col rounded-[18px] border border-transparent bg-surface p-3 transition duration-200 hover:-translate-y-0.5 hover:border-primary/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+													className="group flex h-full flex-col rounded-[18px] border border-transparent bg-surface p-2 transition duration-200 hover:-translate-y-0.5 hover:border-primary/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
 											>
 												{/* Thumbnail */}
 													<div className="relative aspect-[2.1/1] overflow-hidden rounded-[14px] bg-slate-900">
@@ -581,12 +626,6 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 
 													<div className="absolute inset-0 bg-gradient-to-t from-[#0b1424]/30 via-transparent to-transparent" />
 
-													{/* Dialogue count */}
-													<span className="absolute bottom-2 right-2 inline-flex items-center gap-1.5 rounded-md bg-black/70 px-2.5 py-1.5 text-[11px] font-semibold text-white backdrop-blur-sm">
-														<BookOpen className="h-3.5 w-3.5" />
-														{t("dialogues", { count: course.dialogues.length })}
-													</span>
-
 												{statusLabel && <span
 														className={`absolute left-2 top-2 rounded-md border px-2.5 py-1 text-[10px] font-semibold shadow-sm ${statusClassName}`}
 													>
@@ -595,7 +634,7 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 												</div>
 
 												{/* Content */}
-													<div className="flex flex-1 flex-col px-1 pb-1 pt-3 sm:pt-4">
+															<div className="flex flex-1 flex-col px-1 pb-1 pt-2 sm:pt-3">
 													<div className="flex min-w-0 items-center gap-2">
 														<h3 className="min-w-0 flex-1 line-clamp-1 text-base font-bold text-main">
 															{getLocalizedCourseValue(course, "title")}
