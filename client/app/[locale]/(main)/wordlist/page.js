@@ -37,7 +37,7 @@ import { useVocabularyResource } from "@/app/_lib/useStudyResources";
 import { resolveWordlistFilter } from "@/app/_lib/wordlistFilter.mjs";
 
 const statuses = ["all", "new", "learning", "review", "mastered"];
-const WORDS_PER_PAGE = 15;
+const WORDS_PER_PAGE = 10;
 const reviewModes = [
 	{ value: "flashcard", Icon: BookOpen },
 	{ value: "quiz", Icon: GraduationCap },
@@ -137,24 +137,13 @@ export default function WordlistPage() {
 	const [audioError, setAudioError] = useState(false);
 	const [practiceOpen, setPracticeOpen] = useState(false);
 	const practiceRef = useRef(null);
+	const practiceDialogRef = useRef(null);
 	const [page, setPage] = useState(1);
 	useEffect(() => {
-		if (!practiceOpen) return undefined;
-		function closeOnPointerDown(event) {
-			if (!practiceRef.current?.contains(event.target)) setPracticeOpen(false);
-		}
-		function closeOnEscape(event) {
-			if (event.key === "Escape") {
-				setPracticeOpen(false);
-				practiceRef.current?.querySelector("button")?.focus();
-			}
-		}
-		document.addEventListener("pointerdown", closeOnPointerDown);
-		window.addEventListener("keydown", closeOnEscape);
-		return () => {
-			document.removeEventListener("pointerdown", closeOnPointerDown);
-			window.removeEventListener("keydown", closeOnEscape);
-		};
+		const dialog = practiceDialogRef.current;
+		if (!dialog) return;
+		if (practiceOpen && !dialog.open) dialog.showModal();
+		if (!practiceOpen && dialog.open) dialog.close();
 	}, [practiceOpen]);
 	const loading = authLoading || (Boolean(user) && queryLoading);
 	const error = !loading && Boolean(user && loadError && cachedWords === undefined);
@@ -278,21 +267,23 @@ export default function WordlistPage() {
 								>
 									<Sparkles size={18} aria-hidden="true" />
 									{t("practice")}
-									<ChevronDown size={17} aria-hidden="true" className={practiceOpen ? styles.chevronOpen : ""} />
 								</button>
-								{practiceOpen && (
-									<div id="wordlist-practice-menu" className={styles.practiceMenu} role="group" aria-label={t("practice")}>
-										{reviewModes.map(({ value, Icon }) => {
+								<dialog ref={practiceDialogRef} id="wordlist-practice-menu" className={styles.practiceMenu} aria-labelledby="practice-title" onClose={() => { setPracticeOpen(false); practiceRef.current?.querySelector("button")?.focus(); }} onClick={(event) => { if (event.target === event.currentTarget) event.currentTarget.close(); }}>
+										<div className={styles.practiceHeader}>
+											<div><span className={styles.practiceChip}>{t("practiceModes")}</span><h2 id="practice-title">{t("practice")}</h2><p>{t("choosePracticeMode")}</p></div>
+											<button type="button" aria-label={t("close")} onClick={() => setPracticeOpen(false)}><X size={20} /></button>
+										</div>
+										<div className={styles.practiceGrid}>{reviewModes.map(({ value, Icon }) => {
 											const available = queue.length > 0 && (value !== "quiz" || canQuiz);
 											const href = `/wordlist/review/${value}${counts.review > 0 ? "?reviewMode=due" : ""}`;
 											const contents = (
 												<>
-													<span className={styles.reviewModeIcon} aria-hidden="true"><Icon size={21} strokeWidth={1.9} /></span>
-													<span className={styles.reviewModeCopy}>
-														<strong>{t(value)}</strong>
-														<span>{t(`${value}Description`)}</span>
-													</span>
-													<ChevronRight className={styles.reviewModeArrow} size={18} aria-hidden="true" />
+															<span className={styles.practicePreview} aria-hidden="true">
+																{value === "flashcard" ? <span className={styles.previewFlash}><small>ENGLISH</small><b>same team</b><small>{t("previewFlip")}</small></span> : value === "quiz" ? <span className={styles.previewQuiz}><b>same team</b><span>✓ {t("previewAnswer")}</span><span>○ {t("previewOther")}</span><span>○ {t("previewHome")}</span></span> : <span className={styles.previewWrite}><small>{t("previewMeaning")}</small><b>{t("previewAnswer")}</b><span>đ　 ộ　 i</span></span>}
+															</span>
+															<span className={styles.reviewModeHeading}><span className={styles.reviewModeIcon} aria-hidden="true"><Icon size={23} strokeWidth={1.9} /></span><span className={styles.reviewModeCopy}><strong>{t(value)}</strong><span className={styles.reviewTag}>{t(`${value}Tag`)}</span></span></span>
+															<span className={styles.reviewDescription}>{t(`${value}Description`)}</span>
+															<span className={styles.reviewFooter}>{t("practiceStart")}<span className={styles.reviewModeArrow}><ChevronRight size={19} aria-hidden="true" /></span></span>
 												</>
 											);
 											return available ? (
@@ -304,10 +295,9 @@ export default function WordlistPage() {
 													{contents}
 												</div>
 											);
-										})}
+										})}</div>
 										{queue.length > 0 && !canQuiz && <small className={styles.reviewHint}>{t("quizHelp")}</small>}
-									</div>
-								)}
+								</dialog>
 							</div>
 						</div>
 						)}
