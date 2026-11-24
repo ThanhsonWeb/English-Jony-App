@@ -19,7 +19,6 @@ import {
 	Clock3,
 	Filter,
 	Sparkles,
-	LogIn,
 	MessageCircle,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -215,7 +214,7 @@ export default function WordlistPage() {
 				</header>
 				<div className={styles.content}>
 					<div className={styles.mainColumn}>
-						{(totalWords > 0 || (!loading && user && !error && activeFilter === "review")) && (
+						{totalWords > 0 && (
 						<div className={styles.toolbar}>
 							<div className={styles.search}>
 								<Search size={21} />
@@ -308,19 +307,19 @@ export default function WordlistPage() {
 							</div>
 						) : !user || error === "unauthorized" ? (
 							<>
-			<div className={`${styles.empty} ${styles.firstWordEmpty} ${styles.authDesktopEmpty}`}>
+			<div className={`${styles.empty} ${styles.firstWordEmpty} ${styles.guestEmpty} ${styles.authDesktopEmpty}`}>
 				<Image src="/wordlist-hero-2.png" alt="" width={300} height={200} className={styles.emptyImage} />
 				<h2>{t("emptyTitle")}</h2>
 				<p>{t("guestEmptyBody")}</p>
-				<Link className={styles.primary} href="/login"><LogIn size={18} />{t("signInOrCreateAccount")}</Link>
-				<Link className={styles.secondary} href="/dialogue"><MessageCircle size={18} />{t("exploreDialogues")}</Link>
+				<Link className={styles.primary} href="/dialogue"><MessageCircle size={18} />{t("learnFirstDialogue")}</Link>
+				<Link className={styles.manualAdd} href="/login">{t("signInOrCreateAccount")}</Link>
 			</div>
-							<div className={`${styles.empty} ${styles.firstWordEmpty} ${styles.mobileAuthEmpty}`}>
+							<div className={`${styles.empty} ${styles.firstWordEmpty} ${styles.guestEmpty} ${styles.mobileAuthEmpty}`}>
 								<Image src="/wordlist-hero-2.png" alt="" width={300} height={200} className={styles.emptyImage} />
 								<h2>{t("emptyTitle")}</h2>
 								<p>{t("guestEmptyBody")}</p>
-								<Link className={styles.primary} href="/login"><LogIn size={20} />{t("signInOrCreateAccount")}</Link>
-								<Link className={styles.secondary} href="/dialogue"><MessageCircle size={18} />{t("exploreDialogues")}</Link>
+								<Link className={styles.primary} href="/dialogue"><MessageCircle size={18} />{t("learnFirstDialogue")}</Link>
+								<Link className={styles.manualAdd} href="/login">{t("signInOrCreateAccount")}</Link>
 							</div>
 							</>
 						) : error ? (
@@ -333,19 +332,18 @@ export default function WordlistPage() {
 									{t("retry")}
 								</button>
 							</div>
-						) : !words.length && activeFilter !== "review" ? (
-							<div className={`${styles.empty} ${styles.firstWordEmpty}`}>
+						) : !words.length ? (
+							<div className={`${styles.empty} ${styles.firstWordEmpty} ${styles.emptyNotebook}`}>
 								<Image src="/wordlist-hero-2.png" alt="" width={300} height={200} className={styles.emptyImage} />
 								<h2><span className={styles.desktopEmptyCopy}>{t("emptyTitle")}</span><span className={styles.mobileEmptyCopy}>{locale === "en" ? "Your notebook is ready for its first word!" : t("emptyTitle")}</span></h2>
-								<p><span className={styles.desktopEmptyCopy}>{t("emptyBody")}</span><span className={styles.mobileEmptyCopy}>{locale === "en" ? "Add a new word or explore words while watching dialogues." : t("emptyBody")}</span></p>
+								<p>{t("emptyBody")}</p>
+								<Link className={styles.primary} href="/dialogue"><MessageCircle size={18} />{t("learnFirstDialogue")}</Link>
 								<button
-									className={styles.primary}
+									className={styles.manualAdd}
 									onClick={() => setEditor({ word: null })}
 								>
-									<Plus size={18} />
-									<span className={styles.desktopEmptyCopy}>{t("addWord")}</span><span className={styles.mobileEmptyCopy}>{locale === "en" ? "Add your first word" : t("addWord")}</span>
+									<span aria-hidden="true">+ </span>{t("addManually")}
 								</button>
-				<Link className={styles.secondary} href="/dialogue"><Sparkles size={20} />{t("practice")}<ChevronRight size={19} /></Link>
 							</div>
 						) : !filtered.length ? (
 							<div className={styles.empty}>

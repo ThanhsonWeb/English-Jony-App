@@ -624,6 +624,13 @@
 	width: min(420px, 75%);
 	max-height: 260px;
 }
+:is(.emptyNotebook, .guestEmpty) { position: relative; isolation: isolate; overflow: hidden; }
+:is(.emptyNotebook, .guestEmpty)::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse 55% 45% at 50% 25%, color-mix(in srgb, var(--sj-primary) 14%, transparent), transparent 100%); }
+:global(html:is([data-theme="light"], [data-theme="cream"])) :is(.emptyNotebook, .guestEmpty)::before { background: radial-gradient(ellipse 55% 45% at 50% 25%, color-mix(in srgb, var(--sj-primary) 10%, transparent), transparent 100%); }
+:is(.emptyNotebook, .guestEmpty) .emptyImage { width: min(240px, 100%); height: auto; }
+:is(.emptyNotebook, .guestEmpty) .manualAdd { padding: 4px; border: 0; background: transparent; color: var(--sj-text-secondary); font-size: 13px; cursor: pointer; }
+:is(.emptyNotebook, .guestEmpty) .manualAdd:hover { color: var(--sj-text); text-decoration: underline; }
+:is(.emptyNotebook, .guestEmpty) .manualAdd:focus-visible { outline: 2px solid var(--sj-brand-text); outline-offset: 3px; }
 .firstWordEmpty .primary,
 .firstWordEmpty .secondary {
 	width: min(100%, 300px);
@@ -867,6 +874,8 @@
 	.heroHeader .stats { max-width: 760px; }
 }
 @media (max-width: 767px) {
+	:is(.emptyNotebook, .guestEmpty) .emptyImage { width: min(200px, 100%); }
+	.firstWordEmpty:is(.emptyNotebook, .guestEmpty) .primary { width: 100%; }
 	.addWordDialog { padding: 20px; }
 	.addWordDialog .dialogTitle h2 { font-size: 21px; }
 	.addWordDialog .dialogIcon { width: 46px; height: 46px; flex-basis: 46px; }
