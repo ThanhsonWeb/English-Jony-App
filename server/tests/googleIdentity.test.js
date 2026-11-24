@@ -46,7 +46,7 @@ const tokenFrom = response => {
 	assert.ok(token, "A successful login issues a JWT"); return token;
 };
 const login = (value = password) => request("/auth/login", { method: "POST", body: { email, password: value } });
-const signup = (extra = {}) => request("/auth/signup", { method: "POST", body: { name: "Password Learner", email, password, passwordConfirm: password, ...extra } });
+const signup = (extra = {}) => request("/auth/signup", { method: "POST", body: { email, password, passwordConfirm: password, ...extra } });
 function mockGoogle(t, payload = claims) {
 	t.mock.method(console, "error", () => {});
 	t.mock.method(OAuth2Client.prototype, "getToken", async () => ({ tokens: { id_token: "mock-id-token" } }));
@@ -83,6 +83,18 @@ for (const locale of ["vi", "en"]) test(`${locale}: pre-registered email never b
 	// The rejected collision remains a separate password account, never a victim Google account.
 	await assertMe(attackerToken, user.id);
 	assert.equal((await login()).status, 200);
+});
+
+test("email signup derives a name and adds digits for an existing name", async () => {
+	const first = await signup();
+	assert.equal(first.status, 201);
+	assert.equal((await first.json()).data.user.name, "learner");
+	const second = await signup({ email: "Learner@example.net", name: "Ignored" });
+	assert.equal(second.status, 201);
+	assert.match((await second.json()).data.user.name, /^Learner\d{4}$/);
+	const short = await signup({ email: "a@example.net" });
+	assert.equal(short.status, 201);
+	assert.match((await short.json()).data.user.name, /^a\d{4}$/);
 });
 
 test("normal signup ignores injected Google identity, role, lifecycle and session-version fields", async () => {

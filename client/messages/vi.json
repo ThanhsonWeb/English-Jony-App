@@ -15,6 +15,8 @@
 		"emailPlaceholder": "name@example.com",
 		"showPassword": "Hiện mật khẩu",
 		"hidePassword": "Ẩn mật khẩu",
+		"showPasswordConfirm": "Hiện xác nhận mật khẩu",
+		"hidePasswordConfirm": "Ẩn xác nhận mật khẩu",
 		"loggingIn": "Đang đăng nhập...",
 		"noAccount": "Chưa có tài khoản?",
 		"hasAccount": "Đã có tài khoản?",

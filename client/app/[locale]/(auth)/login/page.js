@@ -153,13 +153,13 @@ function LoginPage() {
 					{/* Logo + Title */}
 					<div className="mb-6 flex flex-col items-center">
 						<Image
-							src="/lugo.png"
+							src="/jony.png"
 							height={56}
 							width={56}
 							quality={75}
 							priority
 							alt={t("logoAlt")}
-							className="h-14 w-14 rounded-2xl border border-slate-800"
+							className="h-14 w-14 rounded-2xl"
 						/>
 
 						<h1 className="mt-4 text-2xl font-bold text-white">{t("login")}</h1>

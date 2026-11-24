@@ -81,10 +81,9 @@ async function signupCase(browser, width, locale, theme) {
 	});
 	await c.goto("/signup");
 	const form = p.locator("form");
-	await p.locator("#signup-name").waitFor();
+	await p.locator("#signup-email").waitFor();
 	await form.evaluate(form => form.requestSubmit()); await frame(p);
 	assert.equal(posts, 0, "Required-field validation is preserved");
-	await p.locator("#signup-name").fill("Fresh learner");
 	await p.locator("#signup-email").fill("fresh@example.com");
 	await p.locator("#signup-password").fill("password-123");
 	await p.locator("#signup-password-confirm").fill("password-123");

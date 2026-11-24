@@ -64,10 +64,21 @@ async function open(f, path) {
 }
 
 async function submitSignup(f) {
-	await f.page.locator("#signup-name").fill("Return tester");
+	assert.equal(await f.page.locator("#signup-name").count(), 0);
 	await f.page.locator("#signup-email").fill("learner@example.test");
 	await f.page.locator("#signup-password").fill("safe-test-password");
 	await f.page.locator("#signup-password-confirm").fill("safe-test-password");
+	for (const [id, showKey, hideKey] of [
+		["signup-password", "showPassword", "hidePassword"],
+		["signup-password-confirm", "showPasswordConfirm", "hidePasswordConfirm"],
+	]) {
+		const field = f.page.locator(`#${id}`);
+		assert.equal(await field.getAttribute("type"), "password");
+		await f.page.getByRole("button", { name: f.messages.Auth[showKey], exact: true }).click();
+		assert.equal(await field.getAttribute("type"), "text");
+		await f.page.getByRole("button", { name: f.messages.Auth[hideKey], exact: true }).click();
+		assert.equal(await field.getAttribute("type"), "password");
+	}
 	await f.page.locator("form").getByRole("button", { name: f.messages.Auth.signup, exact: true }).click();
 }
 

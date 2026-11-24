@@ -168,7 +168,6 @@ async function run(width, locale, theme, scenario) {
 		}
 		if (scenario === "duplicate-signup") {
 			await c.navigate("/signup");
-			await page.locator("#signup-name").fill("Test learner");
 			await page.locator("#signup-email").fill(A.email);
 			await page.locator("#signup-password").fill(password);
 			await page.locator("#signup-password-confirm").fill(password);
@@ -195,7 +194,6 @@ async function run(width, locale, theme, scenario) {
 			await c.navigate("/signup");
 			const learner = { name: "New Learner", email: `new-${++sequence}@example.test` };
 			const held = c.hold(learner.email);
-			await page.locator("#signup-name").fill(learner.name);
 			await page.locator("#signup-email").fill(learner.email);
 			await page.locator("#signup-password").fill(password);
 			await page.locator("#signup-password-confirm").fill(password);

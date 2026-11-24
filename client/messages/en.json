@@ -15,6 +15,8 @@
 		"emailPlaceholder": "name@example.com",
 		"showPassword": "Show password",
 		"hidePassword": "Hide password",
+		"showPasswordConfirm": "Show password confirmation",
+		"hidePasswordConfirm": "Hide password confirmation",
 		"loggingIn": "Signing in...",
 		"noAccount": "Don't have an account?",
 		"hasAccount": "Already have an account?",

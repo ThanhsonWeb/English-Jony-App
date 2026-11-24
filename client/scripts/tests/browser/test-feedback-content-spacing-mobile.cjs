@@ -92,7 +92,6 @@ async function signup(browser, locale, theme, width) {
 		const feedbackRect = await documentRect(feedback);
 		if (width < 768) assert.equal(overlaps(submitRect, feedbackRect), false, `${locale} ${theme} ${width}px: feedback does not cover Sign-up submit`);
 
-		await f.page.locator("#signup-name").fill("Mobile UX tester");
 		await f.page.locator("#signup-email").fill("mobile-ux@example.test");
 		await f.page.locator("#signup-password").fill("safe-test-password");
 		await f.page.locator("#signup-password-confirm").fill("safe-test-password");

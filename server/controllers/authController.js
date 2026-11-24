@@ -118,8 +118,30 @@ const revokeCookieSession = async token => {
 };
 
 // request Handlers
-async function createAccount({ name, email, password, passwordConfirm }, res) {
+async function createAccount({ name, email, password, passwordConfirm }, res, { generateName = false } = {}) {
 	assertPasswordByteLimit(password);
+	if (generateName) {
+		if (typeof email !== "string" || !validator.isEmail(email)) {
+			throw new AppError("Please provide a valid email.", 400);
+		}
+		const { minLength, maxLength } = User.schema.path("name").options;
+		const localPart = email.slice(0, email.lastIndexOf("@"));
+		const base = localPart.slice(0, maxLength[0]).trim();
+		const available = async candidate => !(await User.exists({ name: candidate })
+			.collation({ locale: "en", strength: 2 }));
+		if (base.length >= minLength[0] && await available(base)) {
+			name = base;
+		} else {
+			for (let attempt = 0; attempt < 10; attempt += 1) {
+				const candidate = `${base.slice(0, maxLength[0] - 4).trimEnd()}${crypto.randomInt(1000, 10000)}`;
+				if (await available(candidate)) {
+					name = candidate;
+					break;
+				}
+			}
+			if (!name) throw new AppError("Unable to generate a name. Please try again.", 503);
+		}
+	}
 	try {
 		// Keep this allowlist shared by web and mobile registration. Never pass
 		// req.body to the model (role and account metadata are server controlled).
@@ -135,7 +157,8 @@ async function createAccount({ name, email, password, passwordConfirm }, res) {
 }
 
 exports.signup = catchAsync(async (req, res) => {
-	const newUser = await createAccount(req.body, res);
+	const { email, password, passwordConfirm } = req.body;
+	const newUser = await createAccount({ email, password, passwordConfirm }, res, { generateName: true });
 	if (!newUser) return;
 
 	createSendToken(newUser, 201, res, req.credentialAttempt);

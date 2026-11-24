@@ -2,6 +2,7 @@
 
 import { useAuth } from "@/app/_contexts/AuthContext";
 import Image from "next/image";
+import { Eye, EyeOff } from "lucide-react";
 import { Link, useRouter } from "@/i18n/navigation";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
@@ -27,10 +28,11 @@ function SignUpForm() {
 	const searchParams = useSearchParams();
 	const returnTo = getSafeAuthReturnPath(searchParams.get("returnTo"));
 
-	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [passwordConfirm, setPasswordConfirm] = useState("");
+	const [showPassword, setShowPassword] = useState(false);
+	const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
 	const [error, setError] = useState("");
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const submittingRef = useRef(false);
@@ -46,7 +48,7 @@ function SignUpForm() {
 		setError("");
 		let succeeded = false;
 		try {
-			const result = await submitCredential("signup", { name, email, password, passwordConfirm }, t, attempt);
+			const result = await submitCredential("signup", { email, password, passwordConfirm }, t, attempt);
 			if (!isCurrentCredentialAttempt(attempt)) return;
 			if (result.error) {
 				setError(result.error);
@@ -142,12 +144,12 @@ function SignUpForm() {
 
 					<div className="flex flex-col items-center gap-2 mb-6">
 						<Image
-							src="/lugo.png"
+							src="/jony.png"
 							height={48}
 							width={48}
 							quality={75}
 							alt={t("logoAlt")}
-							className="rounded-xl border border-slate-800 w-12 h-12 mb-2"
+							className="rounded-xl w-12 h-12 mb-2"
 						/>
 						<h1 className="text-3xl font-bold">{t("signup")}</h1>
 						<p className="text-slate-400 text-sm">
@@ -184,24 +186,6 @@ function SignUpForm() {
 						)}
 
 						<div className="flex flex-col gap-1.5">
-							<label htmlFor="signup-name" className="text-sm font-medium text-slate-300">
-								{t("name")}
-							</label>
-
-							<input
-								id="signup-name"
-								name="name"
-								autoComplete="name"
-								type="text"
-								value={name}
-								onChange={(e) => setName(e.target.value)}
-								placeholder={t("namePlaceholder")}
-								className="w-full rounded-xl border border-slate-700/80 bg-slate-950/60 px-3 py-2.5 text-slate-100 placeholder:text-slate-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/10"
-								required
-							/>
-						</div>
-
-						<div className="flex flex-col gap-1.5">
 							<label htmlFor="signup-email" className="text-sm font-medium text-slate-300">
 								{t("email")}
 							</label>
@@ -224,17 +208,27 @@ function SignUpForm() {
 								{t("password")}
 							</label>
 
-							<input
-								id="signup-password"
-								name="password"
-								autoComplete="new-password"
-								type="password"
-								value={password}
-								onChange={(e) => setPassword(e.target.value)}
-								placeholder="••••••••"
-								className="w-full rounded-xl border border-slate-700/80 bg-slate-950/60 px-4 py-3.5 text-slate-100 placeholder:text-slate-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/10"
-								required
-							/>
+							<div className="relative">
+								<input
+									id="signup-password"
+									name="password"
+									autoComplete="new-password"
+									type={showPassword ? "text" : "password"}
+									value={password}
+									onChange={(e) => setPassword(e.target.value)}
+									placeholder="••••••••"
+									className="w-full rounded-xl border border-slate-700/80 bg-slate-950/60 px-4 py-3.5 pr-12 text-slate-100 placeholder:text-slate-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/10"
+									required
+								/>
+								<button
+									type="button"
+									aria-label={t(showPassword ? "hidePassword" : "showPassword")}
+									onClick={() => setShowPassword((visible) => !visible)}
+									className="absolute inset-y-0 right-0 flex w-11 cursor-pointer items-center justify-center text-secondary hover:text-main focus-visible:outline-2 focus-visible:outline-brand-text"
+								>
+									{showPassword ? <EyeOff size={20} aria-hidden="true" /> : <Eye size={20} aria-hidden="true" />}
+								</button>
+							</div>
 						</div>
 
 						<div className="flex flex-col gap-1.5">
@@ -242,17 +236,27 @@ function SignUpForm() {
 								{t("passwordConfirm")}
 							</label>
 
-							<input
-								id="signup-password-confirm"
-								name="passwordConfirm"
-								autoComplete="new-password"
-								type="password"
-								value={passwordConfirm}
-								onChange={(e) => setPasswordConfirm(e.target.value)}
-								placeholder="••••••••"
-								className="w-full rounded-xl border border-slate-700/80 bg-slate-950/60 px-4 py-3.5 text-slate-100 placeholder:text-slate-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/10"
-								required
-							/>
+							<div className="relative">
+								<input
+									id="signup-password-confirm"
+									name="passwordConfirm"
+									autoComplete="new-password"
+									type={showPasswordConfirm ? "text" : "password"}
+									value={passwordConfirm}
+									onChange={(e) => setPasswordConfirm(e.target.value)}
+									placeholder="••••••••"
+									className="w-full rounded-xl border border-slate-700/80 bg-slate-950/60 px-4 py-3.5 pr-12 text-slate-100 placeholder:text-slate-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/10"
+									required
+								/>
+								<button
+									type="button"
+									aria-label={t(showPasswordConfirm ? "hidePasswordConfirm" : "showPasswordConfirm")}
+									onClick={() => setShowPasswordConfirm((visible) => !visible)}
+									className="absolute inset-y-0 right-0 flex w-11 cursor-pointer items-center justify-center text-secondary hover:text-main focus-visible:outline-2 focus-visible:outline-brand-text"
+								>
+									{showPasswordConfirm ? <EyeOff size={20} aria-hidden="true" /> : <Eye size={20} aria-hidden="true" />}
+								</button>
+							</div>
 						</div>
 
 						<button
