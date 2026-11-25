@@ -98,9 +98,8 @@ function Navigation() {
 
 	return (
 		<div className="relative">
-			{/* Desktop navigation remains unchanged. */}
 			<nav aria-label={t("desktopLabel")} className="hidden lg:block">
-				<ul className="flex items-center gap-2">
+				<ul className={styles.desktopTray}>
 					{desktopLinks.map(({ key, href, icon: Icon }) => {
 						const isActive = activePathname === href || activePathname.startsWith(`${href}/`);
 						return (
@@ -108,9 +107,9 @@ function Navigation() {
 								<Link
 									href={href}
 									aria-current={isActive ? "page" : undefined}
-									className={`${navItemBase} gap-2 rounded-full px-3 py-2 text-base lg:px-3 xl:px-4 ${isActive ? navItemActive : navItemInactive}`}
+									className={`${navItemBase} ${styles.desktopLink} group gap-2 rounded-full px-3 py-2 text-base xl:px-4 ${isActive ? styles.desktopActive : styles.desktopInactive}`}
 								>
-									<Icon className="h-[18px] w-[18px] shrink-0" aria-hidden="true" />
+									<Icon className="h-[18px] w-[18px] shrink-0 transition-transform duration-200 group-hover:scale-110 motion-reduce:transition-none" aria-hidden="true" />
 									<span>{t(key)}</span>
 								</Link>
 							</li>

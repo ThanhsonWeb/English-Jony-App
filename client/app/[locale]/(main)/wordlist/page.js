@@ -159,6 +159,9 @@ export default function WordlistPage() {
 	const totalWords = counts.all;
 	const activeFilter = resolveWordlistFilter(searchParams.get("status"), counts, loading);
 	const queue = selectReviewWords(words, { global: true, now });
+	const practiceCount = counts.review > 0
+		? selectReviewWords(words, { global: true, dueOnly: true, now }).length
+		: queue.length;
 	const canQuiz =
 		new Set(words.map((word) => word.vietnamese.trim().toLowerCase())).size >=
 		4;
@@ -195,20 +198,20 @@ export default function WordlistPage() {
 					</div>
 					<div className={styles.stats}>
 						{[
-							["total", counts.all, BookOpen],
-							["learning", counts.learning, GraduationCap],
-							["dueToday", counts.review, CalendarDays],
-						].map(([label, count, Icon]) => (
-							<section key={label} className={styles.stat}>
+							["total", counts.all, BookOpen, "all"],
+							["learning", counts.learning, GraduationCap, "learning"],
+							["dueToday", counts.review, CalendarDays, "review"],
+						].map(([label, count, Icon, filter]) => (
+							<button type="button" key={label} className={styles.stat} aria-pressed={activeFilter === filter} onClick={() => setFilter(filter)}>
 								<svg className={styles.statWave} data-wave={label} viewBox="0 0 220 90" preserveAspectRatio="none" aria-hidden="true">
 									<path d="M0 90C45 90 40 60 95 55S150 5 220 25V90Z" fill="currentColor" fillOpacity=".10" stroke="currentColor" strokeOpacity=".25" />
 								</svg>
 								<span className={styles.statIcon} data-tone={label}><Icon size={24} /></span>
-								<div>
-									<h2>{t(label)}</h2>
+								<span>
+									<span className={styles.statLabel}>{t(label)}</span>
 									<strong>{loading || error || !user ? "—" : count}</strong>
-								</div>
-							</section>
+								</span>
+							</button>
 						))}
 					</div>
 				</header>
@@ -250,7 +253,7 @@ export default function WordlistPage() {
 								))}
 							</div>
 							<button
-								className={`${styles.primary} ${styles.addButton}`}
+								className={`${styles.secondary} ${styles.addButton}`}
 								disabled={!user || loading || Boolean(error)}
 								onClick={() => setEditor({ word: null })}
 							>
@@ -267,16 +270,23 @@ export default function WordlistPage() {
 									<Sparkles size={18} aria-hidden="true" />
 									{t("practice")}
 								</button>
-								<dialog ref={practiceDialogRef} id="wordlist-practice-menu" className={styles.practiceMenu} aria-labelledby="practice-title" onClose={() => { setPracticeOpen(false); practiceRef.current?.querySelector("button")?.focus(); }} onClick={(event) => { if (event.target === event.currentTarget) event.currentTarget.close(); }}>
+								<dialog ref={practiceDialogRef} id="wordlist-practice-menu" className={styles.practiceMenu} aria-labelledby="practice-title" onClose={() => { setPracticeOpen(false); practiceRef.current?.querySelector("button")?.focus(); }} onClick={(event) => { if (event.target === event.currentTarget) event.currentTarget.close(); }} onKeyDown={(event) => {
+									if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || event.repeat || event.target.closest("input, textarea, select, [contenteditable='true']")) return;
+									const mode = reviewModes[Number(event.key) - 1];
+									if (!mode || !/^[1-3]$/.test(event.key)) return;
+									const link = event.currentTarget.querySelector(`a[data-mode="${mode.value}"]`);
+									if (link) { event.preventDefault(); link.click(); }
+								}}>
 										<div className={styles.practiceHeader}>
-											<div><span className={styles.practiceChip}>{t("practiceModes")}</span><h2 id="practice-title">{t("practice")}</h2><p>{t("choosePracticeMode")}</p></div>
+											<div><span className={styles.practiceChip}>{t("practiceModes")}</span><h2 id="practice-title">{t("practice")}</h2><p>{t("choosePracticeMode")}</p><span className={styles.practiceCount}>{t("wordsReady", { count: practiceCount })}</span></div>
 											<button type="button" aria-label={t("close")} onClick={() => setPracticeOpen(false)}><X size={20} /></button>
 										</div>
-										<div className={styles.practiceGrid}>{reviewModes.map(({ value, Icon }) => {
+										<div className={styles.practiceGrid}>{reviewModes.map(({ value, Icon }, index) => {
 											const available = queue.length > 0 && (value !== "quiz" || canQuiz);
 											const href = `/wordlist/review/${value}${counts.review > 0 ? "?reviewMode=due" : ""}`;
 											const contents = (
 												<>
+																			<span className={styles.practiceKey} aria-hidden="true">{index + 1}</span>
 															<span className={styles.practicePreview} aria-hidden="true">
 																{value === "flashcard" ? <span className={styles.previewFlash}><small>ENGLISH</small><b>same team</b><small>{t("previewFlip")}</small></span> : value === "quiz" ? <span className={styles.previewQuiz}><b>same team</b><span>✓ {t("previewAnswer")}</span><span>○ {t("previewOther")}</span><span>○ {t("previewHome")}</span></span> : <span className={styles.previewWrite}><small>{t("previewMeaning")}</small><b>{t("previewAnswer")}</b><span>đ　 ộ　 i</span></span>}
 															</span>
@@ -346,17 +356,14 @@ export default function WordlistPage() {
 								</button>
 							</div>
 						) : !filtered.length ? (
-							<div className={styles.empty}>
-								<p>{t(activeFilter === "review" && !query ? "noDueWords" : "noResults")}</p>
-								<button
-									className={styles.secondary}
-									onClick={() => {
-										setSearch("");
-										setFilter("all");
-									}}
-								>
-									{t("clear")}
-								</button>
+							<div className={`${styles.empty} ${styles.filteredEmpty}`} role="status">
+								<span className={styles.filteredEmptyIcon}><Sparkles size={24} aria-hidden="true" /></span>
+								<h2>{t(activeFilter === "review" && !query ? "noDueWords" : "noResults")}</h2>
+								<p>{t(activeFilter === "review" && !query ? "noDueWordsDescription" : "noResultsDescription")}</p>
+								<div className={styles.filteredEmptyActions}>
+									<button className={styles.secondary} onClick={() => { setSearch(""); setFilter("all"); }}>{t("clear")}</button>
+									<button className={styles.primary} onClick={() => { setSearch(""); setFilter("all"); }}>{t("viewAllWords", { count: totalWords })}</button>
+								</div>
 							</div>
 						) : (
 							<>
@@ -407,6 +414,9 @@ export default function WordlistPage() {
 															{word.vietnamese}
 														</td>
 														<td className={styles.example}>
+															{word.example && <button type="button" className={styles.exampleButton} onClick={() => setAudioError(!speakWord(word.example))} aria-label={t("audio", { word: word.example })}>
+																<span className={styles.exampleIcon}><Volume2 size={17} aria-hidden="true" /></span>
+																<span>
 															{splitExample(word.example, word.english).map(
 																(part, index) =>
 																	part.matched ? (
@@ -420,6 +430,8 @@ export default function WordlistPage() {
 																		part.text
 																	),
 															)}
+																</span>
+															</button>}
 														</td>
 														<td className={styles.statusCell}>
 															<span
