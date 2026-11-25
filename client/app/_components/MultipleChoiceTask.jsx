@@ -1,4 +1,4 @@
-import { CheckCircle2, Circle } from "lucide-react";
+import { CheckCircle2, Circle, XCircle } from "lucide-react";
 import { useRef, useState } from "react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
 import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
@@ -25,6 +25,9 @@ function MultipleChoiceTask({
 	const [selected, setSelected] = useState("");
 	const [result, setResult] = useState(null);
 	const [started, setStarted] = useState(false);
+	const selectedIndex = task.options.indexOf(selected);
+	const optionFeedback = task.localized?.optionFeedback?.[selectedIndex]?.[locale] ??
+		(locale === "vi" ? task.optionFeedback?.[selectedIndex] : undefined);
 	const review = confirmedCompleted && !started && !result;
 	const autoAdvance = useDialogueAutoAdvance({
 		onComplete,
@@ -89,6 +92,7 @@ function MultipleChoiceTask({
 								const isSelected = review ? option === task.answer : selected === option;
 								const isCorrectAnswer =
 									(result === "correct" || review) && option === task.answer;
+								const isWrongSelection = result === "wrong" && isSelected;
 
 								return (
 									<button
@@ -103,14 +107,18 @@ function MultipleChoiceTask({
 											if (event.detail > 0) event.currentTarget.blur();
 										}}
 										className={`flex w-full items-start gap-3 border-b border-slate-800 px-5 py-4 text-left transition last:border-b-0 ${
-											isCorrectAnswer
+											isWrongSelection
+												? "bg-red-500/10 ring-1 ring-inset ring-red-500/50"
+												: isCorrectAnswer
 												? "bg-emerald-500/10"
 												: isSelected
 													? "bg-violet-500/10"
 													: "bg-slate-950/40 hover:bg-slate-900"
 										}`}
 									>
-										{isSelected ? (
+										{isWrongSelection ? (
+											<XCircle size={20} className="mt-0.5 shrink-0 text-red-400" />
+										) : isSelected ? (
 											<CheckCircle2
 												size={20}
 												className={`mt-0.5 shrink-0 ${isCorrectAnswer ? "text-emerald-400" : "text-violet-400"}`}
@@ -133,13 +141,8 @@ function MultipleChoiceTask({
 						</div>
 						{result === "wrong" && (
 							<div className="mt-5 rounded-xl border border-red-500/30 bg-red-500/10 p-5">
-								<p className="font-semibold text-red-400">{t("wrong")}</p>
-								<p className="mt-1 text-sm text-slate-300">
-									{t("listenAndTryAgain")}
-								</p>
-								{task.explanation && (locale === "vi" || task.localized?.explanation?.en) && (
-									<p className="mt-2 leading-relaxed text-slate-300">{task.explanation}</p>
-								)}
+								<p className="font-semibold text-red-400">{t("wrongTryAgain")}</p>
+								{optionFeedback && <p className="mt-2 leading-relaxed text-slate-300">{optionFeedback}</p>}
 							</div>
 						)}
 
@@ -147,9 +150,6 @@ function MultipleChoiceTask({
 							{(result === "correct" || review) && (
 								<div className="mt-5 rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-5">
 									<p className="font-semibold text-emerald-400">{t(review ? "completedCorrectOption" : "correct")}</p>
-									{task.explanation && (locale === "vi" || task.localized?.explanation?.en) && (
-										<p className="mt-2 leading-relaxed text-slate-300">{task.explanation}</p>
-									)}
 								</div>
 							)}
 						</div>

@@ -1,10 +1,11 @@
-import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { Volume2 } from "lucide-react";
 import DialogueShortcutHint from "./DialogueShortcutHint";
 import { DialogueTaskNavigation } from "./DialogueExerciseHeader";
 import useDialogueAutoAdvance from "../_hooks/useDialogueAutoAdvance";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 import { useTranslations } from "next-intl";
+import { a2LocalFallback } from "@/app/_lib/dialogue/a2R2Media.mjs";
 import styles from "./DialogueClozeReviewTask.module.css";
 
 function shuffleItems(items, seed) {
@@ -56,6 +57,7 @@ function DialogueClozeReviewTask({
 	task,
 	lessonId,
 	dialogueId,
+	dialogueLines = [],
 	previousTask,
 	nextTask,
 	completionHref,
@@ -92,12 +94,10 @@ function DialogueClozeReviewTask({
 		Array(expectedAnswers.length).fill(null),
 	);
 	const [selectedBlankIndex, setSelectedBlankIndex] = useState(0);
-	const [dockCollapsed, setDockCollapsed] = useState(false);
-	const wordBankId = useId();
-	const pageRef = useRef(null);
-	const dockRef = useRef(null);
+	const audioRef = useRef(null);
+	const dialogueRef = useRef(null);
+	const [audioError, setAudioError] = useState(false);
 	const blankRefs = useRef([]);
-	const revealBlankRef = useRef(false);
 	const autoAdvance = useDialogueAutoAdvance({
 		onComplete,
 		manual: true,
@@ -116,37 +116,7 @@ function DialogueClozeReviewTask({
 		onEnter: () => actionRef.current?.click(),
 	});
 
-	useEffect(() => {
-		if (mode !== "select") return;
-		const page = pageRef.current;
-		const dock = dockRef.current;
-		const observer = new ResizeObserver(() => {
-			page.style.setProperty("--cloze-dock-height", `${dock.getBoundingClientRect().height}px`);
-		});
-		observer.observe(dock);
-		return () => {
-			observer.disconnect();
-			page.style.removeProperty("--cloze-dock-height");
-		};
-	}, [mode]);
-
-	useEffect(() => {
-		if (!revealBlankRef.current) return;
-		const frame = requestAnimationFrame(() => {
-			revealBlankRef.current = false;
-			if (mode !== "select" || !window.matchMedia("(max-width: 767px)").matches) return;
-			const blank = blankRefs.current[selectedBlankIndex];
-			if (!blank || !dockRef.current) return;
-			const top = (document.querySelector("header.sticky")?.getBoundingClientRect().bottom || 0) + 8;
-			const bottom = dockRef.current.getBoundingClientRect().top - 8;
-			const sentence = blank.closest("[data-cloze-line]");
-			const sentenceRect = sentence.getBoundingClientRect();
-			const rect = sentenceRect.height <= bottom - top ? sentenceRect : blank.getBoundingClientRect();
-			if (rect.top < top) window.scrollBy(0, rect.top - top);
-			else if (rect.bottom > bottom) window.scrollBy(0, rect.bottom - bottom);
-		});
-		return () => cancelAnimationFrame(frame);
-	}, [selectedBlankIndex, mode, answers, blankResults, dockCollapsed]);
+	useEffect(() => () => { audioRef.current?.pause(); }, []);
 
 	function resetBlankResult(index) {
 		setBlankResults((previous) => {
@@ -176,7 +146,6 @@ function DialogueClozeReviewTask({
 
 	function selectBlank(index) {
 		if (blankResults[index] !== "correct") {
-			revealBlankRef.current = true;
 			setSelectedBlankIndex(index);
 		}
 	}
@@ -193,7 +162,6 @@ function DialogueClozeReviewTask({
 				: firstEmptyIndex;
 
 		if (targetIndex === -1 || targetIndex === null) return;
-		revealBlankRef.current = true;
 
 		setAssignments((previous) => {
 			const updated = [...previous];
@@ -224,12 +192,21 @@ function DialogueClozeReviewTask({
 			);
 		}
 		setSelectedBlankIndex(nextEmptyIndex === -1 ? targetIndex : nextEmptyIndex);
+		if (nextEmptyIndex !== -1) requestAnimationFrame(() => {
+			const blank = blankRefs.current[nextEmptyIndex];
+			const container = dialogueRef.current;
+			if (!blank || !container) return;
+			blank.focus({ preventScroll: true });
+			const bounds = blank.getBoundingClientRect();
+			const containerBounds = container.getBoundingClientRect();
+			if (bounds.bottom > containerBounds.bottom) container.scrollTop += bounds.bottom - containerBounds.bottom + 12;
+			else if (bounds.top < containerBounds.top) container.scrollTop -= containerBounds.top - bounds.top + 12;
+		});
 	}
 
 	function clearSelectedAnswer(index, event) {
 		event.stopPropagation();
 		if (blankResults[index] === "correct") return;
-		revealBlankRef.current = true;
 
 		setAnswers((previous) => {
 			const updated = [...previous];
@@ -262,7 +239,6 @@ function DialogueClozeReviewTask({
 			return;
 		}
 
-		revealBlankRef.current = true;
 		setSelectedBlankIndex(
 			nextResults.findIndex((result) => result === "wrong"),
 		);
@@ -284,7 +260,6 @@ function DialogueClozeReviewTask({
 				}),
 			);
 		}
-		if (nextMode === "select") revealBlankRef.current = true;
 		setMode(nextMode);
 		if (nextMode === "select" && selectedBlankIndex === null && !isComplete) {
 			const firstEditableIndex = blankResults.findIndex(
@@ -294,45 +269,42 @@ function DialogueClozeReviewTask({
 		}
 	}
 
+	function resetAnswers() {
+		if (isComplete || autoAdvance.isSubmitted()) return;
+		setAnswers(Array(expectedAnswers.length).fill(""));
+		setAssignments(Array(expectedAnswers.length).fill(null));
+		setBlankResults(Array(expectedAnswers.length).fill(null));
+		setSelectedBlankIndex(0);
+	}
+
 	function getBlankClass(index) {
 		if (blankResults[index] === "correct") {
 			return "border-emerald-500 bg-emerald-500/10 text-emerald-300";
 		}
 		if (blankResults[index] === "wrong") {
-			return "border-red-500 bg-red-500/10 text-red-300";
+			return "border-rose-500 bg-rose-500/10 text-rose-300";
 		}
 		if (mode === "select" && selectedBlankIndex === index) {
-			return "border-primary bg-primary/10 text-main ring-2 ring-primary/20 shadow-sm";
+			return "border-teal-400 bg-primary/10 text-main ring-2 ring-teal-400/40 shadow-sm";
 		}
 		return "border-slate-600 bg-slate-950/40 text-main hover:border-slate-500";
 	}
 
 	return (
-		<div ref={pageRef} className={`min-h-screen px-4 py-8 text-main sm:px-8 ${mode === "select" ? styles.chooseWords : ""}`}>
-			<div className="mx-auto max-w-6xl">
-				<div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-					<div>
-						<h1 className="text-2xl font-bold">
+		<div className="px-4 pb-3 pt-1 text-main sm:px-8">
+			<div className="mx-auto max-w-3xl">
+				<div className="flex items-center justify-between gap-2">
+					<div className="min-w-0 shrink">
+						<h1 className="truncate text-base font-bold sm:text-xl">
 							{task.title || t("dialogueClozeTitle")} 📖
 						</h1>
-						<p className="mt-2 text-sm text-secondary sm:text-base">
+						<p className="sr-only">
 							{task.instruction || t("dialogueClozeInstruction")}
 						</p>
 					</div>
-					<div className="w-full shrink-0 sm:w-64">
-						<DialogueTaskNavigation
-							lessonId={lessonId}
-							dialogueId={dialogueId}
-							taskId={task.id}
-							previousTask={previousTask}
-							nextTask={nextTask}
-							totalTasks={totalTasks}
-						/>
-					</div>
-				</div>
-
+					<div className="flex shrink-0 items-center gap-1 sm:gap-3">
 				<div
-					className="mt-5 inline-flex rounded-xl border border-app bg-surface p-1"
+					className="inline-flex rounded-xl border border-app bg-surface p-1"
 					role="group"
 					aria-label={t("answerMode")}
 				>
@@ -340,7 +312,7 @@ function DialogueClozeReviewTask({
 						type="button"
 						onClick={() => switchMode("select")}
 						aria-pressed={mode === "select"}
-						className={`min-h-10 rounded-lg px-4 text-sm font-semibold transition ${
+						className={`min-h-8 rounded-lg px-2 text-xs font-semibold transition sm:px-3 sm:text-sm ${
 							mode === "select"
 								? "bg-primary text-white shadow-sm"
 								: "text-secondary hover:bg-surface-muted hover:text-main"
@@ -352,7 +324,7 @@ function DialogueClozeReviewTask({
 						type="button"
 						onClick={() => switchMode("type")}
 						aria-pressed={mode === "type"}
-						className={`min-h-10 rounded-lg px-4 text-sm font-semibold transition ${
+						className={`min-h-8 rounded-lg px-2 text-xs font-semibold transition sm:px-3 sm:text-sm ${
 							mode === "type"
 								? "bg-primary text-white shadow-sm"
 								: "text-secondary hover:bg-surface-muted hover:text-main"
@@ -361,66 +333,52 @@ function DialogueClozeReviewTask({
 						{t("typeAnswer")}
 					</button>
 				</div>
+						<div className="w-28 sm:w-40"><DialogueTaskNavigation compact lessonId={lessonId} dialogueId={dialogueId} taskId={task.id} previousTask={previousTask} nextTask={nextTask} totalTasks={totalTasks} /></div>
+					</div>
+				</div>
 
-				<div
-					className={`mt-5 grid items-start gap-5 ${
-						mode === "select"
-							? "lg:grid-cols-[280px_minmax(0,1fr)]"
-							: "lg:grid-cols-[minmax(0,1fr)_280px]"
-					}`}
-				>
+				<div className="mt-2 flex flex-col gap-2">
 					{mode === "select" && (
-						<aside ref={dockRef} className={`rounded-2xl border border-app bg-surface p-4 lg:sticky lg:top-4 ${styles.dock}`}>
+						<aside className="order-2 rounded-2xl border border-app bg-surface p-4">
 							<div className="flex items-center justify-between gap-3">
 								<h2 className="text-sm font-semibold text-main">{t("wordBank")}</h2>
 								<span className="text-xs text-secondary">
 									{t("wordsRemaining", { count: remainingWords.length })}
 								</span>
-								<button
-									type="button"
-									aria-controls={wordBankId}
-									aria-expanded={!dockCollapsed}
-									aria-label={t(dockCollapsed ? "expandWordBank" : "collapseWordBank")}
-									onClick={() => {
-										revealBlankRef.current = true;
-										setDockCollapsed((collapsed) => !collapsed);
-									}}
-									className={`${styles.toggle} rounded-lg text-secondary hover:bg-surface-muted hover:text-main`}
-								>
-									{dockCollapsed ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-								</button>
+								<button type="button" disabled={isComplete} onClick={resetAnswers} className="cursor-pointer rounded-lg px-2 py-1 text-sm font-semibold text-primary hover:bg-surface-muted disabled:opacity-40">{t("resetCloze")}</button>
 							</div>
-							<div id={wordBankId} className={`mt-3 grid max-h-52 grid-cols-2 gap-2 overflow-y-auto pr-1 lg:max-h-[calc(65vh-4.75rem)] lg:grid-cols-1 ${styles.words} ${dockCollapsed ? styles.collapsed : ""}`}>
-								{remainingWords.map((item) => (
+							<div className="mt-3 flex max-h-32 flex-wrap gap-2 overflow-y-auto">
+								{wordBank.map((item) => (
 									<button
 										key={item.id}
 										type="button"
 										onClick={() => assignWord(item)}
-										disabled={isComplete}
+										disabled={isComplete || usedWordIds.has(item.id)}
 										className="min-h-10 rounded-lg border border-slate-700 bg-slate-950/40 px-3 py-2 text-left text-sm font-medium text-slate-200 transition hover:border-primary hover:bg-primary/10 hover:text-main disabled:cursor-not-allowed disabled:opacity-40"
 									>
 										{item.word}
 									</button>
 								))}
-								{remainingWords.length === 0 && (
-									<p className="col-span-full py-4 text-center text-sm text-secondary">
-										{t("noWordsRemaining")}
-									</p>
-								)}
 							</div>
 						</aside>
 					)}
 
 					<section
-						className={`max-h-[65vh] overflow-y-auto rounded-2xl border border-app bg-surface/70 p-4 sm:p-6 ${mode === "select" ? styles.dialogue : ""}`}
+						ref={dialogueRef}
+						className={`${styles.dialogueScroll} order-1 max-h-[min(45vh,max(8rem,calc(100dvh-25rem)))] overflow-y-auto overscroll-contain rounded-2xl border border-app bg-surface/70 p-4 sm:p-6`}
 					aria-label={t("reviewDialogue")}
 					>
 						<div className="space-y-5">
 							{task.lines.map((line, lineIndex) => (
 								<div key={`${line.speaker}-${lineIndex}`} data-cloze-line>
-									<p className="text-sm font-semibold text-primary">
-										{line.speaker}
-									</p>
+									<div className="flex items-center gap-2 text-sm font-semibold text-primary">
+										<span>{line.speaker}</span>
+										{(() => {
+											const text = line.parts.map(part => typeof part === "string" ? part : part.blank).join("");
+											const source = line.dialogueLineId != null ? dialogueLines.find(item => String(item.id) === String(line.dialogueLineId)) : dialogueLines.find(item => item.speaker === line.speaker && item.text === text);
+											return source?.audioUrl ? <button type="button" aria-label={t("playDialogueLine", { number: lineIndex + 1 })} title={t("playDialogueLine", { number: lineIndex + 1 })} onClick={() => { setAudioError(false); const audio = audioRef.current; audio.pause(); audio.src = source.audioUrl; void audio.play().catch(() => setAudioError(true)); }} className="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full text-secondary hover:bg-surface-muted hover:text-main"><Volume2 size={16} /></button> : null;
+										})()}
+									</div>
 									<div className="mt-1.5 flex flex-wrap items-center gap-y-2 text-[15px] leading-8 text-slate-200 sm:text-base">
 										{line.parts.map((part, partIndex) => {
 											if (typeof part === "string") {
@@ -439,7 +397,7 @@ function DialogueClozeReviewTask({
 												lineIndex,
 												partIndex,
 											);
-											const width = `${Math.max(part.blank.length + 3, 7)}ch`;
+											const width = `${Math.max((answers[blankIndex] || "").length + 3, 8)}ch`;
 
 											if (mode === "type") {
 												return (
@@ -458,12 +416,12 @@ function DialogueClozeReviewTask({
 														spellCheck="false"
 																aria-label={t("blankNumber", { number: blankIndex + 1 })}
 														style={{ width }}
-														className={`mx-1 inline-block min-h-9 border-0 border-b-2 bg-transparent px-1 text-center font-semibold outline-none transition ${
+																className={`mx-1 inline-block h-8 min-w-[80px] max-w-full rounded-md border px-2 text-center font-semibold outline-none transition ${
 															blankResults[blankIndex] === "correct"
 																? "border-emerald-500 text-emerald-300"
 																: blankResults[blankIndex] === "wrong"
-																	? "border-red-500 text-red-300"
-																	: "border-slate-500 text-main focus:border-primary"
+																			? "border-rose-500 bg-rose-500/10 text-rose-300 focus-visible:outline-2 focus-visible:outline-rose-500"
+																			: "border-slate-500 bg-slate-950/40 text-main focus:border-teal-400 focus-visible:outline-2 focus-visible:outline-teal-400"
 														}`}
 													/>
 												);
@@ -472,15 +430,15 @@ function DialogueClozeReviewTask({
 											return (
 												<span
 													key={`blank-${lineIndex}-${partIndex}`}
-													style={{ "--cloze-blank-width": width }}
-													className={`${styles.blank} group mx-1 inline-flex min-h-9 cursor-pointer items-center justify-center rounded-lg border font-semibold outline-none transition ${getBlankClass(
+															style={{ width }}
+															className={`group mx-1 inline-flex min-h-8 min-w-[80px] max-w-full cursor-pointer items-center justify-center rounded-lg border font-semibold outline-none transition ${getBlankClass(
 														blankIndex,
 													)}`}
 												>
 													<button
 														ref={(element) => { blankRefs.current[blankIndex] = element; }}
 														type="button"
-														onClick={() => selectBlank(blankIndex)}
+																		onClick={(event) => answers[blankIndex] ? clearSelectedAnswer(blankIndex, event) : selectBlank(blankIndex)}
 														disabled={blankResults[blankIndex] === "correct"}
 																aria-label={t("blankNumber", { number: blankIndex + 1 })}
 														aria-pressed={selectedBlankIndex === blankIndex}
@@ -488,19 +446,6 @@ function DialogueClozeReviewTask({
 													>
 														{answers[blankIndex] || "\u00a0"}
 													</button>
-													{answers[blankIndex] &&
-														blankResults[blankIndex] !== "correct" && (
-															<button
-																type="button"
-																onClick={(event) =>
-																	clearSelectedAnswer(blankIndex, event)
-																}
-																className="min-h-8 px-1.5 text-secondary opacity-70 transition hover:text-main group-hover:opacity-100"
-																aria-label={t("clearBlank", { number: blankIndex + 1 })}
-															>
-																×
-															</button>
-														)}
 												</span>
 											);
 										})}
@@ -511,14 +456,15 @@ function DialogueClozeReviewTask({
 					</section>
 
 					{mode === "type" && (
-						<aside className="rounded-2xl border border-app bg-surface p-4 lg:sticky lg:top-4">
+						<aside className="order-2 rounded-2xl border border-app bg-surface p-4">
 							<div className="flex items-center justify-between gap-3">
 								<h2 className="text-sm font-semibold text-main">{t("suggestedWords")}</h2>
 								<span className="text-xs text-secondary">
 									{t("wordCount", { count: wordBank.length })}
 								</span>
+								<button type="button" disabled={isComplete} onClick={resetAnswers} className="cursor-pointer rounded-lg px-2 py-1 text-sm font-semibold text-primary hover:bg-surface-muted disabled:opacity-40">{t("resetCloze")}</button>
 							</div>
-							<div className="mt-3 grid max-h-52 grid-cols-2 gap-2 overflow-y-auto pr-1 lg:max-h-[calc(65vh-4.75rem)] lg:grid-cols-1">
+							<div className="mt-3 flex max-h-32 flex-wrap gap-2 overflow-y-auto">
 								{wordBank.map((item) => (
 									<div
 										key={item.id}
@@ -532,7 +478,10 @@ function DialogueClozeReviewTask({
 					)}
 				</div>
 
-				<div className={isComplete || blankResults.includes("wrong") ? "mt-4 text-sm" : "sr-only"} role="status" aria-live="polite">
+				<audio ref={audioRef} onError={(event) => { const audio = event.currentTarget; const fallback = a2LocalFallback(audio.src); if (fallback) { audio.src = fallback; void audio.play().catch(() => setAudioError(true)); } else setAudioError(true); }} />
+				{audioError && <p role="alert" className="mt-2 text-sm text-rose-400">{t("dialogueAudioPlaybackFailed")}</p>}
+				<div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+				<div className="text-sm" role="status" aria-live="polite">
 					{isComplete && <p className="font-semibold text-emerald-400">{t("clozeCorrect")}</p>}
 					{blankResults.includes("wrong") && (
 						<p className="font-medium text-red-400">
@@ -541,8 +490,7 @@ function DialogueClozeReviewTask({
 					)}
 				</div>
 
-				<DialogueShortcutHint showReplay={false} />
-				<div className="mt-4 flex justify-end">
+				<div className="ml-auto flex justify-end">
 					{isComplete ? (
 						<button
 							ref={actionRef}
@@ -551,7 +499,7 @@ function DialogueClozeReviewTask({
 							disabled={!autoAdvance.canContinue}
 							className="rounded-xl bg-primary px-6 py-3 font-semibold text-white transition hover:bg-primary-hover disabled:cursor-not-allowed disabled:opacity-40"
 						>
-							{t("continue")}
+							{nextTask ? t("continue") : t("completeDialogue")}
 						</button>
 					) : (
 						<button
@@ -565,6 +513,8 @@ function DialogueClozeReviewTask({
 						</button>
 					)}
 				</div>
+				</div>
+				<DialogueShortcutHint showReplay={false} />
 			</div>
 		</div>
 	);

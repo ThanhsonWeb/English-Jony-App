@@ -97,6 +97,7 @@ export default function DialogueUsefulWords({
 	const selectedUnsavedWords = selectableWords.filter((item) =>
 		selectedWords.has(normalizeWord(item.word)),
 	);
+	const allSelectableSelected = selectableWords.length > 0 && selectedUnsavedWords.length === selectableWords.length;
 	const allWordsSaved =
 		Boolean(user) && !libraryLoading && words.length > 0 && selectableWords.length === 0;
 
@@ -108,6 +109,18 @@ export default function DialogueUsefulWords({
 			const next = new Set(current);
 			if (next.has(key)) next.delete(key);
 			else next.add(key);
+			return next;
+		});
+	}
+
+	function toggleAllWords() {
+		setSelectedWords((current) => {
+			const next = new Set(current);
+			for (const item of selectableWords) {
+				const key = normalizeWord(item.word);
+				if (allSelectableSelected) next.delete(key);
+				else next.add(key);
+			}
 			return next;
 		});
 	}
@@ -217,6 +230,9 @@ export default function DialogueUsefulWords({
 						>
 							{t("continue")} <ArrowRight size={18} aria-hidden="true" />
 						</button>
+						<Link href="/wordlist/review/flashcard" className="inline-flex min-h-10 items-center justify-center rounded-lg px-3 text-sm font-medium text-secondary underline underline-offset-4 transition hover:text-main focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-text">
+							{t("reviewWordsInNotebook")}
+						</Link>
 						{nextDialogueAction && <div className="flex justify-center">{nextDialogueAction}</div>}
 					</DialogueCompletionCard>
 				</div>
@@ -234,9 +250,12 @@ export default function DialogueUsefulWords({
 							<BookmarkPlus size={27} aria-hidden="true" className="shrink-0 text-success" />
 							{t("usefulWordsTitle")}
 						</h1>
-						<p className="mt-3 max-w-2xl text-sm leading-6 text-secondary sm:text-base">
-							{t("usefulWordsDescription")}
-						</p>
+						<div className="mt-3 flex max-w-2xl flex-wrap items-center gap-x-3 gap-y-1">
+							<p className="text-sm leading-6 text-secondary sm:text-base">{t("usefulWordsDescription")}</p>
+							<button type="button" onClick={toggleAllWords} disabled={isSaving || authLoading || libraryLoading || selectableWords.length === 0} className="min-h-9 cursor-pointer rounded-md text-sm font-semibold text-brand-text underline underline-offset-4 hover:text-main focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-40">
+								{t(allSelectableSelected ? "deselectAllWords" : "selectAllWords")}
+							</button>
+						</div>
 					</div>
 					<div data-testid="useful-words-illustration" className="relative mx-auto h-36 w-full max-w-sm md:mx-0 md:ml-0 md:h-36 md:max-w-xs lg:h-40">
 						<Image
