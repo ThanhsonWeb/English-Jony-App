@@ -1,4 +1,5 @@
 import askingForDirections from "./dialogues/asking-for-directions.mjs";
+import askingForDirectionsV2 from "./dialogues/asking-for-directions-v2.mjs";
 import atAHotel from "./dialogues/at-a-hotel.mjs";
 import coffeeShop from "./dialogues/coffee-shop.mjs";
 import everydayPlans from "./dialogues/everyday-plans.mjs";
@@ -17,6 +18,7 @@ import conanSeason1 from "./anime/conan-season-1.mjs";
 export const dialogueCourseConfigs = [
 	weekendCamping,
 	askingForDirections,
+	askingForDirectionsV2,
 	coffeeShop,
 	everydayPlans,
 	atAHotel,

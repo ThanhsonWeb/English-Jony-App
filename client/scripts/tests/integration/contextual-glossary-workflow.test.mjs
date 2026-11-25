@@ -90,6 +90,7 @@ for (const defect of ["missing", "new lesson", "shifted phrase", "same-count edi
 		for (const script of ["validate-dialogue.mjs", "prompts/dialogue-rules.mjs"]) {
 			await fs.copyFile(path.join(clientRoot, "scripts", script), path.join(root, "scripts", script));
 		}
+		await fs.cp(path.join(clientRoot, "scripts", "config"), path.join(root, "scripts", "config"), { recursive: true });
 		const paths = glossaryPaths(root, "dialogue", "everyday-plans", "making-plans-after-work");
 		if (!["missing", "new lesson"].includes(defect)) {
 			const glossary = structuredClone(a2Glossary);

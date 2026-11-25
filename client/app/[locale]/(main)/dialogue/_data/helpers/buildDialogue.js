@@ -53,7 +53,7 @@ export function buildGeneratedDialogueTasks(draft, characterImages) {
 
 	const tasks = draft.tasks
 		.map((task) => {
-			if (task.type === "dialogueCloze") {
+			if (task.type === "dialogueCloze" || task.type === "review") {
 				return {
 					...task,
 					id: String(task.id),
@@ -95,7 +95,7 @@ export function buildGeneratedDialogueTasks(draft, characterImages) {
 			};
 		});
 
-	if (String(draft.metadata?.level || "").toLowerCase() === "a2") {
+	if (String(draft.metadata?.level || "").toLowerCase() === "a2" || tasks.some(task => task.type === "review")) {
 		return tasks;
 	}
 

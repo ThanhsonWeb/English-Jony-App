@@ -36,11 +36,17 @@ function DialogueReviewTask({
 					totalTasks={totalTasks}
 				/>
 				<p className="mt-2 text-slate-400">
-					{t("reviewBeforeContinue")}
+					{task.instruction || t("reviewBeforeContinue")}
 				</p>
 
 				<div className="mt-8 space-y-4">
-					{task.dialogue.map((line, index) => (
+					{task.items ? task.items.map((item, index) => (
+						<div key={index} className="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+							<p className="font-semibold text-green-400">{item.phrase}</p>
+							<p className="mt-1 text-slate-200">{item.meaning}</p>
+							<p className="mt-2 text-slate-400">{item.example}</p>
+						</div>
+					)) : (task.dialogue || []).map((line, index) => (
 						<div
 							key={index}
 							className="rounded-xl border border-slate-800 bg-slate-900/50 p-4"

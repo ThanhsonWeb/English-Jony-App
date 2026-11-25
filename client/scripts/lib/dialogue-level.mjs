@@ -35,6 +35,7 @@ function normalizeCefrLevel(level, label) {
 export function assertNoRegisteredA1Overwrite({
 	courseLevel,
 	isRegisteredTarget,
+	targetExists,
 	existingLevel,
 	courseId,
 	dialogueId,
@@ -46,7 +47,7 @@ export function assertNoRegisteredA1Overwrite({
 
 	const protectedIdentity = Object.hasOwn(PROTECTED_A1, courseId) && PROTECTED_A1[courseId].includes(dialogueId);
 	const existingIsA1 = existingLevel !== undefined && normalizeCefrLevel(existingLevel, `Existing lesson "${courseId}/${dialogueId}" level`) === "a1";
-	if (protectedIdentity || existingIsA1 || (canonicalCourseLevel === "a1" && isRegisteredTarget)) {
+	if (protectedIdentity || existingIsA1 || (canonicalCourseLevel === "a1" && isRegisteredTarget && targetExists)) {
 		throw new Error(
 			`Refusing to overwrite registered A1 lesson "${courseId}/${dialogueId}". A1 lessons are protected from republishing.`,
 		);

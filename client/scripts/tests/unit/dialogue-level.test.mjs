@@ -87,9 +87,16 @@ test("blocks a protected registered A1 target when its JSON is missing and confi
 	}), /Refusing to overwrite registered A1 lesson/);
 });
 
-test("blocks a registered A1 target when its JSON is missing", () => {
+test("allows a new registered A1 target when its JSON is missing", () => {
+	assert.doesNotThrow(() => assertNoRegisteredA1Overwrite({
+		courseLevel: "beginner", isRegisteredTarget: true, targetExists: false,
+		courseId: "asking-for-directions-v2", dialogueId: "finding-the-bus-stop",
+	}));
+});
+
+test("blocks a registered A1 target when its JSON exists", () => {
 	assert.throws(() => assertNoRegisteredA1Overwrite({
-		courseLevel: "beginner", isRegisteredTarget: true,
-		courseId: "new-course", dialogueId: "missing-lesson",
+		courseLevel: "beginner", isRegisteredTarget: true, targetExists: true,
+		courseId: "new-course", dialogueId: "existing-lesson",
 	}), /Refusing to overwrite registered A1 lesson/);
 });

@@ -3,11 +3,13 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 
 import { structureRules } from "./prompts/dialogue-rules.mjs";
+import { courseConfigs } from "./config/index.mjs";
 
 const supportedTaskTypes = new Set([
 	"fillBlank",
 	"multipleChoice",
 	"dialogueCloze",
+	"review",
 ]);
 
 const practicePriorityRanges = Object.freeze({
@@ -70,6 +72,25 @@ function validateLocalization(data, errors) {
 			validateLocalizedPair(task.localized?.explanation, `${label} explanation`, errors);
 			if (task.localized?.explanation?.vi !== task.explanation) {
 				errors.push(`${label}: localized explanation.vi must match explanation.`);
+			}
+		}
+		if (task.type === "fillBlank" && task.hint !== undefined) {
+			validateLocalizedPair(task.localized?.hint, `${label} hint`, errors);
+			if (task.localized?.hint?.vi !== task.hint) errors.push(`${label}: localized hint.vi must match hint.`);
+		}
+		if (task.type === "multipleChoice" && Array.isArray(task.optionFeedback)) {
+			if (!Array.isArray(task.localized?.optionFeedback) || task.localized.optionFeedback.length !== task.optionFeedback.length) {
+				errors.push(`${label}: localized optionFeedback must match optionFeedback length.`);
+			} else {
+				task.optionFeedback.forEach((feedback, index) => {
+					const localized = task.localized.optionFeedback[index];
+					if (feedback === "") {
+						if (localized?.vi !== "" || localized?.en !== "") errors.push(`${label}: empty optionFeedback[${index}] must have empty translations.`);
+					} else {
+						validateLocalizedPair(localized, `${label} optionFeedback[${index}]`, errors);
+						if (localized?.vi !== feedback) errors.push(`${label}: localized optionFeedback[${index}].vi must match optionFeedback.`);
+					}
+				});
 			}
 		}
 		for (const field of ["completionMessage", "resultMessage"]) {
@@ -604,6 +625,25 @@ export function validateDialogue(data, options = {}) {
 				errors.push(`${taskLabel}: unsupported type "${task.type}".`);
 				return;
 			}
+			if (task.hint !== undefined && (task.type !== "fillBlank" || typeof task.hint !== "string" || !task.hint.trim())) {
+				errors.push(`${taskLabel}: hint must be a non-empty string on a fillBlank task.`);
+			}
+			if (task.optionFeedback !== undefined && (task.type !== "multipleChoice" || !Array.isArray(task.optionFeedback) || task.optionFeedback.length !== 4 || task.optionFeedback.some(feedback => typeof feedback !== "string"))) {
+				errors.push(`${taskLabel}: optionFeedback must contain four strings on a multipleChoice task.`);
+			}
+			if (task.localized?.hint !== undefined && task.hint === undefined) {
+				errors.push(`${taskLabel}: localized hint requires hint.`);
+			}
+			if (task.localized?.optionFeedback !== undefined && task.optionFeedback === undefined) {
+				errors.push(`${taskLabel}: localized optionFeedback requires optionFeedback.`);
+			}
+
+			if (task.type === "review") {
+				if (!Array.isArray(task.items) || task.items.length === 0 || task.items.some(item => !item || ["phrase", "meaning", "example"].some(field => typeof item[field] !== "string" || !item[field].trim()))) {
+					errors.push(`${taskLabel}: review requires non-empty items with phrase, meaning, and example.`);
+				}
+				return;
+			}
 
 			// ----------------------------------------------------------
 			// Dialogue Cloze
@@ -1001,13 +1041,21 @@ export function validateDialogue(data, options = {}) {
 		// Every dialogue line: 1–3 practice tasks
 		// ------------------------------------------------------------
 
+		const clozeErrors = [];
+		if (finalTask?.type === "dialogueCloze" && dialogueLines) {
+			validateDialogueClozeTask(finalTask, dialogueLines, "Final task", clozeErrors, isA2);
+		}
+		const clozeCoverage = options.clozeCoversMissingFillBlank === true &&
+			finalTask?.type === "dialogueCloze" && clozeErrors.length === 0
+			? new Set(finalTask.lines.map(line => String(line.dialogueLineId))) : new Set();
+
 		if (!isA2) dialogueLines?.forEach((line, index) => {
 			const count = fillBlankTasksPerLine.get(String(line.id)) || 0;
 			const priority = line.practicePriority || "simple";
 			const range =
 				practicePriorityRanges[priority] || practicePriorityRanges.simple;
 
-			if (count < range.min || count > range.max) {
+			if ((count < range.min && !(count === 0 && clozeCoverage.has(String(line.id)))) || count > range.max) {
 				errors.push(
 					`Dialogue line ${index + 1} (${priority}): expected ${range.min}-${range.max} standalone Fill Blank tasks, found ${count}. Multiple Choice and Dialogue Cloze do not count.`,
 				);
@@ -1092,6 +1140,7 @@ async function runCli() {
 
 	const result = validateDialogue(data, {
 		requireLocalization: process.argv.includes("--require-localization"),
+		clozeCoversMissingFillBlank: courseConfigs.find(config => config.courseId === data?.metadata?.courseId)?.clozeCoversMissingFillBlank === true,
 	});
 
 	if (result.valid) {

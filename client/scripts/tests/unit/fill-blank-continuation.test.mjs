@@ -14,11 +14,16 @@ test("FillBlank opts into manual continuation while preserving grading and submi
 
 test("correct feedback and Continue are visible, localized, and guarded", () => {
 	assert.match(source, /<div role="status" aria-live="polite">[\s\S]*?result === "correct"[\s\S]*?t\("correct"\)/);
+	assert.doesNotMatch(source, /task\.explanation|localized\?\.explanation/);
 	assert.match(source, /result === "correct" \? \([\s\S]*?onClick=\{\(\) => autoAdvance\.continue\(\)\}[\s\S]*?disabled=\{!autoAdvance\.canContinue\}[\s\S]*?t\("continue"\)/);
-	assert.match(source, /\{\(result \|\| review\) && <GrammarNote grammar=\{task\.grammar\} \/>\}/);
 	assert.match(source, /result === "wrong"[\s\S]*?t\("wrongTryAgain"\)/);
 	for (const locale of messages) {
 		assert.ok(locale.correct);
 		assert.ok(locale.continue);
 	}
+});
+
+test("grammar note is shown only for a correct answer or completed review", () => {
+	assert.match(source, /\{\(result === "correct" \|\| review\) && <GrammarNote grammar=\{task\.grammar\} \/>\}/);
+	assert.doesNotMatch(source, /\{\(result \|\| review\) && <GrammarNote/);
 });

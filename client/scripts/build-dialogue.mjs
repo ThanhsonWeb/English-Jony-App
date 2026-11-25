@@ -439,6 +439,7 @@ async function main() {
 	assertNoRegisteredA1Overwrite({
 		courseLevel: config.level,
 		isRegisteredTarget: Boolean(registeredDialogue),
+		targetExists: existingContent !== undefined,
 		existingLevel: existingContent ? existingContent.metadata?.level ?? null : undefined,
 		courseId,
 		dialogueId,

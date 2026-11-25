@@ -1,0 +1,675 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "asking-for-directions-v2",
+  "dialogueId": "finding-the-bus-stop",
+  "characters": {
+    "Ben": {
+      "meaning": "Ben",
+      "role": "Người hỏi đường"
+    },
+    "Emma": {
+      "meaning": "Emma",
+      "role": "Người chỉ đường"
+    }
+  },
+  "entries": {
+    "word-excuse": {
+      "word": "excuse",
+      "meaning": "xin lỗi",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "tôi",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-where": {
+      "word": "where",
+      "meaning": "ở đâu",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "ở",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "mạo từ xác định",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-nearest": {
+      "word": "nearest",
+      "meaning": "gần nhất",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-bus": {
+      "word": "bus",
+      "meaning": "xe buýt",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-stop": {
+      "word": "stop",
+      "meaning": "trạm",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-go": {
+      "word": "go",
+      "meaning": "đi",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-straight": {
+      "word": "straight",
+      "meaning": "thẳng",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-along": {
+      "word": "along",
+      "meaning": "dọc theo",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-this": {
+      "word": "this",
+      "meaning": "này",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-street": {
+      "word": "street",
+      "meaning": "con đường",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-then": {
+      "word": "then",
+      "meaning": "sau đó",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-turn": {
+      "word": "turn",
+      "meaning": "rẽ",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-left": {
+      "word": "left",
+      "meaning": "trái",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-at": {
+      "word": "at",
+      "meaning": "ở",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-bank": {
+      "word": "bank",
+      "meaning": "ngân hàng",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-near": {
+      "word": "near",
+      "meaning": "gần",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-supermarket": {
+      "word": "supermarket",
+      "meaning": "siêu thị",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "có",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-it's": {
+      "word": "it's",
+      "meaning": "nó ở",
+      "pos": [
+        "pronoun",
+        "verb"
+      ]
+    },
+    "word-next": {
+      "word": "next",
+      "meaning": "ngay cạnh",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "không",
+      "pos": [
+        "interjection"
+      ]
+    },
+    "word-across": {
+      "word": "across",
+      "meaning": "đối diện (trong across from)",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-from": {
+      "word": "from",
+      "meaning": "từ",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-how": {
+      "word": "how",
+      "meaning": "bao (how far = bao xa)",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-far": {
+      "word": "far",
+      "meaning": "xa",
+      "pos": [
+        "adjective"
+      ]
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "đây",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "khoảng",
+      "pos": [
+        "adverb"
+      ]
+    },
+    "word-two": {
+      "word": "two",
+      "meaning": "hai",
+      "pos": [
+        "number"
+      ]
+    },
+    "word-minutes": {
+      "word": "minutes",
+      "meaning": "phút",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-on": {
+      "word": "on",
+      "meaning": "bằng",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-foot": {
+      "word": "foot",
+      "meaning": "chân",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "cảm ơn",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "bạn",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "vì",
+      "pos": [
+        "preposition"
+      ]
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "của bạn",
+      "pos": [
+        "determiner"
+      ]
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "sự giúp đỡ",
+      "pos": [
+        "noun"
+      ]
+    },
+    "word-is-question": {
+      "word": "is",
+      "meaning": "có ... không",
+      "pos": [
+        "verb"
+      ],
+      "note": "Động từ đứng đầu câu hỏi có/không."
+    },
+    "word-is-distance": {
+      "word": "is",
+      "meaning": "là",
+      "pos": [
+        "verb"
+      ]
+    },
+    "word-from-across": {
+      "word": "from",
+      "meaning": "(thuộc cụm across from = đối diện)",
+      "pos": [
+        "preposition"
+      ],
+      "note": "Trong cụm across from: đối diện."
+    },
+    "word-to-next": {
+      "word": "to",
+      "meaning": "(thuộc cụm next to = ngay cạnh)",
+      "pos": [
+        "preposition"
+      ],
+      "note": "Trong cụm next to: ngay cạnh."
+    },
+    "word-it-distance": {
+      "word": "it",
+      "meaning": "quãng đường đó",
+      "pos": [
+        "pronoun"
+      ]
+    },
+    "word-its-duration": {
+      "word": "it's",
+      "meaning": "mất",
+      "pos": [
+        "pronoun",
+        "verb"
+      ],
+      "note": "Chỉ thời gian đi bộ đến trạm."
+    },
+    "phrase-bus-stop": {
+      "word": "bus stop",
+      "meaning": "trạm xe buýt",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-go-straight": {
+      "word": "go straight",
+      "meaning": "đi thẳng",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-turn-left": {
+      "word": "turn left",
+      "meaning": "rẽ trái",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-next-to": {
+      "word": "next to",
+      "meaning": "ngay cạnh",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-across-from": {
+      "word": "across from",
+      "meaning": "đối diện",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-on-foot": {
+      "word": "on foot",
+      "meaning": "đi bộ",
+      "pos": [
+        "phrase"
+      ]
+    },
+    "phrase-how-far": {
+      "word": "how far",
+      "meaning": "bao xa",
+      "pos": [
+        "phrase"
+      ]
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Ben",
+      "text": "Excuse me. Where is the nearest bus stop?",
+      "translation": "Xin lỗi, cho tôi hỏi. Trạm xe buýt gần nhất ở đâu?",
+      "tokens": [
+        "Excuse",
+        "me",
+        "Where",
+        "is",
+        "the",
+        "nearest",
+        "bus",
+        "stop"
+      ],
+      "words": [
+        "word-excuse",
+        "word-me",
+        "word-where",
+        "word-is",
+        "word-the",
+        "word-nearest",
+        "word-bus",
+        "word-stop"
+      ],
+      "phrases": [
+        {
+          "start": 6,
+          "end": 7,
+          "text": "bus stop",
+          "entry": "phrase-bus-stop"
+        }
+      ]
+    },
+    "2": {
+      "speaker": "Emma",
+      "text": "Go straight along this street.",
+      "translation": "Đi thẳng dọc theo con đường này.",
+      "tokens": [
+        "Go",
+        "straight",
+        "along",
+        "this",
+        "street"
+      ],
+      "words": [
+        "word-go",
+        "word-straight",
+        "word-along",
+        "word-this",
+        "word-street"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "Go straight",
+          "entry": "phrase-go-straight"
+        }
+      ]
+    },
+    "3": {
+      "speaker": "Emma",
+      "text": "Then turn left at the bank.",
+      "translation": "Sau đó rẽ trái ở chỗ ngân hàng.",
+      "tokens": [
+        "Then",
+        "turn",
+        "left",
+        "at",
+        "the",
+        "bank"
+      ],
+      "words": [
+        "word-then",
+        "word-turn",
+        "word-left",
+        "word-at",
+        "word-the",
+        "word-bank"
+      ],
+      "phrases": [
+        {
+          "start": 1,
+          "end": 2,
+          "text": "turn left",
+          "entry": "phrase-turn-left"
+        }
+      ]
+    },
+    "4": {
+      "speaker": "Ben",
+      "text": "Is the bank near the supermarket?",
+      "translation": "Ngân hàng có gần siêu thị không?",
+      "tokens": [
+        "Is",
+        "the",
+        "bank",
+        "near",
+        "the",
+        "supermarket"
+      ],
+      "words": [
+        "word-is-question",
+        "word-the",
+        "word-bank",
+        "word-near",
+        "word-the",
+        "word-supermarket"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Emma",
+      "text": "Yes, it's next to the supermarket.",
+      "translation": "Có, nó ở ngay cạnh siêu thị.",
+      "tokens": [
+        "Yes",
+        "it's",
+        "next",
+        "to",
+        "the",
+        "supermarket"
+      ],
+      "words": [
+        "word-yes",
+        "word-it's",
+        "word-next",
+        "word-to-next",
+        "word-the",
+        "word-supermarket"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "next to",
+          "entry": "phrase-next-to"
+        }
+      ]
+    },
+    "6": {
+      "speaker": "Ben",
+      "text": "Is the bus stop next to the bank?",
+      "translation": "Trạm xe buýt có ở ngay cạnh ngân hàng không?",
+      "tokens": [
+        "Is",
+        "the",
+        "bus",
+        "stop",
+        "next",
+        "to",
+        "the",
+        "bank"
+      ],
+      "words": [
+        "word-is-question",
+        "word-the",
+        "word-bus",
+        "word-stop",
+        "word-next",
+        "word-to-next",
+        "word-the",
+        "word-bank"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "bus stop",
+          "entry": "phrase-bus-stop"
+        },
+        {
+          "start": 4,
+          "end": 5,
+          "text": "next to",
+          "entry": "phrase-next-to"
+        }
+      ]
+    },
+    "7": {
+      "speaker": "Emma",
+      "text": "No, it's across from the bank.",
+      "translation": "Không, nó ở đối diện ngân hàng.",
+      "tokens": [
+        "No",
+        "it's",
+        "across",
+        "from",
+        "the",
+        "bank"
+      ],
+      "words": [
+        "word-no",
+        "word-it's",
+        "word-across",
+        "word-from-across",
+        "word-the",
+        "word-bank"
+      ],
+      "phrases": [
+        {
+          "start": 2,
+          "end": 3,
+          "text": "across from",
+          "entry": "phrase-across-from"
+        }
+      ]
+    },
+    "8": {
+      "speaker": "Ben",
+      "text": "How far is it from here?",
+      "translation": "Từ đây đến đó bao xa?",
+      "tokens": [
+        "How",
+        "far",
+        "is",
+        "it",
+        "from",
+        "here"
+      ],
+      "words": [
+        "word-how",
+        "word-far",
+        "word-is-distance",
+        "word-it-distance",
+        "word-from",
+        "word-here"
+      ],
+      "phrases": [
+        {
+          "start": 0,
+          "end": 1,
+          "text": "How far",
+          "entry": "phrase-how-far"
+        }
+      ]
+    },
+    "9": {
+      "speaker": "Emma",
+      "text": "It's about two minutes on foot.",
+      "translation": "Đi bộ mất khoảng hai phút.",
+      "tokens": [
+        "It's",
+        "about",
+        "two",
+        "minutes",
+        "on",
+        "foot"
+      ],
+      "words": [
+        "word-its-duration",
+        "word-about",
+        "word-two",
+        "word-minutes",
+        "word-on",
+        "word-foot"
+      ],
+      "phrases": [
+        {
+          "start": 4,
+          "end": 5,
+          "text": "on foot",
+          "entry": "phrase-on-foot"
+        }
+      ]
+    },
+    "10": {
+      "speaker": "Ben",
+      "text": "Thank you for your help!",
+      "translation": "Cảm ơn bạn đã giúp đỡ!",
+      "tokens": [
+        "Thank",
+        "you",
+        "for",
+        "your",
+        "help"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-for",
+        "word-your",
+        "word-help"
+      ],
+      "phrases": []
+    }
+  }
+}

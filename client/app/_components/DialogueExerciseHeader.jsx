@@ -11,6 +11,7 @@ export default function DialogueExerciseHeader({
 	lessonId,
 	lessonTitle,
 	dialogueTitle,
+	compact = false,
 }) {
 	const router = useRouter();
 	const t = useTranslations("DialogueFeature");
@@ -32,7 +33,7 @@ export default function DialogueExerciseHeader({
 
 	return (
 		<>
-			<header className="w-full px-4 pt-6 sm:px-8">
+			<header className={`w-full px-4 sm:px-8 ${compact ? "pt-1" : "pt-6"}`}>
 				<div className="mx-auto max-w-6xl">
 				<div className="flex min-w-0 items-center gap-3">
 				<button
@@ -110,6 +111,7 @@ export function DialogueTaskNavigation({
 	previousTask,
 	nextTask,
 	totalTasks,
+	compact = false,
 }) {
 	const t = useTranslations("DialogueFeature");
 	const taskHref = (id) => `/dialogue/${lessonId}/${dialogueId}/${id}`;
@@ -124,22 +126,22 @@ export function DialogueTaskNavigation({
 
 	return (
 		<nav
-			className="mb-4 grid w-full grid-cols-[2.5rem_1fr_2.5rem] items-center gap-3"
+			className={compact ? "grid w-full grid-cols-[2rem_1fr_2rem] items-center gap-1" : "mb-4 grid w-full grid-cols-[2.5rem_1fr_2.5rem] items-center gap-3"}
 			aria-label={t("exerciseNavigation")}
 		>
 			{previousTask ? (
 				<DialogueProgressLink requireSave={false}
 					href={taskHref(previousTask.id)}
 					aria-label={t("previousExercise")}
-					className="flex h-10 w-10 items-center justify-center rounded-full border border-app bg-surface text-secondary transition hover:border-primary hover:text-primary"
+					className={`${compact ? "h-8 w-8" : "h-10 w-10"} flex items-center justify-center rounded-full border border-app bg-surface text-secondary transition hover:border-primary hover:text-primary`}
 				>
 					<ChevronLeft size={20} />
 				</DialogueProgressLink>
 			) : (
-				<span className="h-10 w-10" aria-hidden="true" />
+				<span className={compact ? "h-8 w-8" : "h-10 w-10"} aria-hidden="true" />
 			)}
 
-			<span className="text-center text-sm font-semibold text-main">
+			<span className={`${compact ? "text-xs sm:text-sm" : "text-base"} whitespace-nowrap text-center font-semibold text-main`}>
 				{t("exercisePosition", { current: taskId, total: totalTasks })}
 			</span>
 
@@ -149,12 +151,12 @@ export function DialogueTaskNavigation({
 					onPointerEnter={() => void preloadTaskImages(nextTask)}
 					onFocus={() => void preloadTaskImages(nextTask)}
 					aria-label={t("nextExercise")}
-					className="flex h-10 w-10 items-center justify-center rounded-full border border-app bg-surface text-secondary transition hover:border-primary hover:text-primary"
+					className={`${compact ? "h-8 w-8" : "h-10 w-10"} flex items-center justify-center rounded-full border border-app bg-surface text-secondary transition hover:border-primary hover:text-primary`}
 				>
 					<ChevronRight size={20} />
 				</DialogueProgressLink>
 			) : (
-				<span className="h-10 w-10" aria-hidden="true" />
+				<span className={compact ? "h-8 w-8" : "h-10 w-10"} aria-hidden="true" />
 			)}
 		</nav>
 	);

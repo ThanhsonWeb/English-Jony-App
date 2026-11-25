@@ -6,7 +6,7 @@ import TaskAudioScene from "./TaskAudioScene";
 import useDialogueAutoAdvance from "../_hooks/useDialogueAutoAdvance";
 import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 import { fillBlankAnswersMatch } from "../_utils/fillBlankAnswer";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useAuth } from "../_contexts/AuthContext";
 import { SUBTITLE_WORD_PATTERN, SUBTITLE_WORD_TOKEN_PATTERN } from "../_lib/dictionary/findPreferredLookup";
 import { findVisibleDictationLookup } from "../_lib/dictionary/findVisibleDictationLookup";
@@ -38,6 +38,8 @@ function FillBlankTask({
 	reviewLoading = false,
 }) {
 	const t = useTranslations("DialogueFeature");
+	const locale = useLocale();
+	const hint = task.localized?.hint?.[locale] ?? (locale === "vi" ? task.hint : undefined);
 	const { loading: authLoading } = useAuth();
 	const isMultiBlank = Array.isArray(task.parts) && Array.isArray(task.answers);
 	const expectedAnswers = getExpectedAnswers(task);
@@ -179,6 +181,10 @@ function FillBlankTask({
 			: "#ef4444";
 	}
 
+	function isWrongAnswer(index) {
+		return result === "wrong" && !fillBlankAnswersMatch(answerValues[index] || "", expectedAnswers[index]);
+	}
+
 	function handleInputKeyDown(event, index) {
 		const isPlainEnter =
 			event.key === "Enter" &&
@@ -241,6 +247,7 @@ function FillBlankTask({
 														handleInputKeyDown(event, index)
 													}
 													aria-label={t("blankNumber", { number: index + 1 })}
+													aria-invalid={isWrongAnswer(index)}
 																	tabIndex={review ? -1 : undefined}
 																	onMouseDown={review ? (event) => event.preventDefault() : undefined}
 															readOnly={review || result === "correct"}
@@ -251,7 +258,7 @@ function FillBlankTask({
 														borderBottomColor: getInputBorderColor(index),
 																		transition: review ? "none" : undefined,
 													}}
-																	className={`mx-1 inline-block max-w-full border-b-2 bg-transparent px-2 py-1 text-center outline-none transition-[border-color] ${review ? "cursor-default caret-transparent" : ""} ${result === "correct" ? "text-green-400" : ""}`}
+																	className={`mx-1 inline-block max-w-full rounded-sm border-b-2 bg-transparent px-2 py-0.5 text-center outline-none transition-[border-color] ${review ? "cursor-default caret-transparent" : ""} ${result === "correct" ? "text-green-400" : ""} ${isWrongAnswer(index) ? "text-red-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500" : ""}`}
 												/>
 											)}
 										</Fragment>
@@ -267,6 +274,7 @@ function FillBlankTask({
 											onChange={(event) => updateAnswer(0, event.target.value)}
 											onKeyDown={(event) => handleInputKeyDown(event, 0)}
 											aria-label={t("blankNumber", { number: 1 })}
+											aria-invalid={isWrongAnswer(0)}
 											tabIndex={review ? -1 : undefined}
 											onMouseDown={review ? (event) => event.preventDefault() : undefined}
 											readOnly={review || result === "correct"}
@@ -277,7 +285,7 @@ function FillBlankTask({
 												borderBottomColor: getInputBorderColor(0),
 															transition: review ? "none" : undefined,
 											}}
-										className={`mx-2 max-w-full border-b-2 bg-transparent px-2 py-1 text-center outline-none transition-[border-color] ${review ? "cursor-default caret-transparent" : ""} ${result === "correct" ? "text-green-400" : ""}`}
+										className={`mx-2 max-w-full rounded-sm border-b-2 bg-transparent px-2 py-0.5 text-center outline-none transition-[border-color] ${review ? "cursor-default caret-transparent" : ""} ${result === "correct" ? "text-green-400" : ""} ${isWrongAnswer(0) ? "text-red-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500" : ""}`}
 										/>{" "}
 										{renderVisibleWords(task.sentenceAfter || "", 1)}
 									</>
@@ -308,6 +316,7 @@ function FillBlankTask({
 						{result === "wrong" && (
 							<div className="mt-5 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-red-400">
 								❌ {t("wrongTryAgain")}
+								{hint && <p className="mt-2 text-sm text-slate-300">{hint}</p>}
 							</div>
 						)}
 
@@ -316,7 +325,7 @@ function FillBlankTask({
 						</div>
 						<DialogueShortcutHint />
 						<div className="mt-4 flex items-start justify-between gap-4">
-							{(result || review) && <GrammarNote grammar={task.grammar} />}
+							{(result === "correct" || review) && <GrammarNote grammar={task.grammar} />}
 							<div className="ml-auto shrink-0">
 								{review ? (
 									<DialogueProgressLink ref={actionRef} requireSave={false}

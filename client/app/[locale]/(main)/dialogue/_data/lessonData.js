@@ -1,4 +1,5 @@
 import askingForDirectionsCourse from "./courses/asking-for-directions";
+import askingForDirectionsV2Course from "./courses/asking-for-directions-v2";
 import atAHotelCourse from "./courses/at-a-hotel";
 import coffeeShopCourse from "./courses/coffee-shop";
 import groceryStoreCourse from "./courses/grocery-store";
@@ -17,6 +18,7 @@ import conanSeason1Course from "./courses/conan-season-1";
 import everydayPlansCourse from "./courses/everyday-plans";
 
 export const lessonData = {
+   [askingForDirectionsV2Course.id]: withDialogueLocalization(askingForDirectionsV2Course),
    // [atAHotelCourse.id]: withDialogueLocalization(atAHotelCourse),
    // [officeIntroductionCourse.id]: withDialogueLocalization(officeIntroductionCourse),
    // [weekendCampingCourse.id]: withDialogueLocalization(weekendCampingCourse),

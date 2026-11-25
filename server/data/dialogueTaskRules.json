@@ -2777,6 +2777,185 @@
 	},
 	{
 		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"1"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"10"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			3
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"11"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			1
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"12"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"across from"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"13"
+		],
+		"type": "review",
+		"answers": []
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"14"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			2
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"15"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"two",
+			"on foot"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"16"
+		],
+		"type": "dialogueCloze",
+		"answers": [
+			"Excuse me",
+			"straight",
+			"left",
+			"near",
+			"next to",
+			"bus stop",
+			"across from",
+			"far",
+			"on foot",
+			"help"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"2"
+		],
+		"type": "review",
+		"answers": []
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"3"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"bus stop"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"4"
+		],
+		"type": "review",
+		"answers": []
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"5"
+		],
+		"type": "multipleChoice",
+		"answers": [
+			0
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"6"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"straight"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"7"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"left",
+			"bank"
+		]
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"8"
+		],
+		"type": "review",
+		"answers": []
+	},
+	{
+		"ids": [
+			"asking-for-directions-v2",
+			"finding-the-bus-stop",
+			"9"
+		],
+		"type": "fillBlank",
+		"answers": [
+			"near"
+		]
+	},
+	{
+		"ids": [
 			"asking-for-directions",
 			"finding-a-cafe",
 			"1"

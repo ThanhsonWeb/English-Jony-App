@@ -1,0 +1,448 @@
+{
+  "schemaVersion": 1,
+  "lessonId": "asking-for-directions-v2",
+  "dialogueId": "finding-the-bus-stop",
+  "characters": {
+    "Ben": {
+      "meaning": "Ben",
+      "role": ""
+    },
+    "Emma": {
+      "meaning": "Emma",
+      "role": ""
+    }
+  },
+  "entries": {
+    "word-excuse": {
+      "word": "excuse",
+      "meaning": "",
+      "pos": []
+    },
+    "word-me": {
+      "word": "me",
+      "meaning": "",
+      "pos": []
+    },
+    "word-where": {
+      "word": "where",
+      "meaning": "",
+      "pos": []
+    },
+    "word-is": {
+      "word": "is",
+      "meaning": "",
+      "pos": []
+    },
+    "word-the": {
+      "word": "the",
+      "meaning": "",
+      "pos": []
+    },
+    "word-nearest": {
+      "word": "nearest",
+      "meaning": "",
+      "pos": []
+    },
+    "word-bus": {
+      "word": "bus",
+      "meaning": "",
+      "pos": []
+    },
+    "word-stop": {
+      "word": "stop",
+      "meaning": "",
+      "pos": []
+    },
+    "word-go": {
+      "word": "go",
+      "meaning": "",
+      "pos": []
+    },
+    "word-straight": {
+      "word": "straight",
+      "meaning": "",
+      "pos": []
+    },
+    "word-along": {
+      "word": "along",
+      "meaning": "",
+      "pos": []
+    },
+    "word-this": {
+      "word": "this",
+      "meaning": "",
+      "pos": []
+    },
+    "word-street": {
+      "word": "street",
+      "meaning": "",
+      "pos": []
+    },
+    "word-then": {
+      "word": "then",
+      "meaning": "",
+      "pos": []
+    },
+    "word-turn": {
+      "word": "turn",
+      "meaning": "",
+      "pos": []
+    },
+    "word-left": {
+      "word": "left",
+      "meaning": "",
+      "pos": []
+    },
+    "word-at": {
+      "word": "at",
+      "meaning": "",
+      "pos": []
+    },
+    "word-bank": {
+      "word": "bank",
+      "meaning": "",
+      "pos": []
+    },
+    "word-near": {
+      "word": "near",
+      "meaning": "",
+      "pos": []
+    },
+    "word-supermarket": {
+      "word": "supermarket",
+      "meaning": "",
+      "pos": []
+    },
+    "word-yes": {
+      "word": "yes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-it's": {
+      "word": "it's",
+      "meaning": "",
+      "pos": []
+    },
+    "word-next": {
+      "word": "next",
+      "meaning": "",
+      "pos": []
+    },
+    "word-to": {
+      "word": "to",
+      "meaning": "",
+      "pos": []
+    },
+    "word-no": {
+      "word": "no",
+      "meaning": "",
+      "pos": []
+    },
+    "word-across": {
+      "word": "across",
+      "meaning": "",
+      "pos": []
+    },
+    "word-from": {
+      "word": "from",
+      "meaning": "",
+      "pos": []
+    },
+    "word-how": {
+      "word": "how",
+      "meaning": "",
+      "pos": []
+    },
+    "word-far": {
+      "word": "far",
+      "meaning": "",
+      "pos": []
+    },
+    "word-it": {
+      "word": "it",
+      "meaning": "",
+      "pos": []
+    },
+    "word-here": {
+      "word": "here",
+      "meaning": "",
+      "pos": []
+    },
+    "word-about": {
+      "word": "about",
+      "meaning": "",
+      "pos": []
+    },
+    "word-two": {
+      "word": "two",
+      "meaning": "",
+      "pos": []
+    },
+    "word-minutes": {
+      "word": "minutes",
+      "meaning": "",
+      "pos": []
+    },
+    "word-on": {
+      "word": "on",
+      "meaning": "",
+      "pos": []
+    },
+    "word-foot": {
+      "word": "foot",
+      "meaning": "",
+      "pos": []
+    },
+    "word-thank": {
+      "word": "thank",
+      "meaning": "",
+      "pos": []
+    },
+    "word-you": {
+      "word": "you",
+      "meaning": "",
+      "pos": []
+    },
+    "word-for": {
+      "word": "for",
+      "meaning": "",
+      "pos": []
+    },
+    "word-your": {
+      "word": "your",
+      "meaning": "",
+      "pos": []
+    },
+    "word-help": {
+      "word": "help",
+      "meaning": "",
+      "pos": []
+    }
+  },
+  "lines": {
+    "1": {
+      "speaker": "Ben",
+      "text": "Excuse me. Where is the nearest bus stop?",
+      "translation": "Xin lỗi, cho tôi hỏi. Trạm xe buýt gần nhất ở đâu?",
+      "tokens": [
+        "Excuse",
+        "me",
+        "Where",
+        "is",
+        "the",
+        "nearest",
+        "bus",
+        "stop"
+      ],
+      "words": [
+        "word-excuse",
+        "word-me",
+        "word-where",
+        "word-is",
+        "word-the",
+        "word-nearest",
+        "word-bus",
+        "word-stop"
+      ],
+      "phrases": []
+    },
+    "2": {
+      "speaker": "Emma",
+      "text": "Go straight along this street.",
+      "translation": "Đi thẳng dọc theo con đường này.",
+      "tokens": [
+        "Go",
+        "straight",
+        "along",
+        "this",
+        "street"
+      ],
+      "words": [
+        "word-go",
+        "word-straight",
+        "word-along",
+        "word-this",
+        "word-street"
+      ],
+      "phrases": []
+    },
+    "3": {
+      "speaker": "Emma",
+      "text": "Then turn left at the bank.",
+      "translation": "Sau đó rẽ trái ở chỗ ngân hàng.",
+      "tokens": [
+        "Then",
+        "turn",
+        "left",
+        "at",
+        "the",
+        "bank"
+      ],
+      "words": [
+        "word-then",
+        "word-turn",
+        "word-left",
+        "word-at",
+        "word-the",
+        "word-bank"
+      ],
+      "phrases": []
+    },
+    "4": {
+      "speaker": "Ben",
+      "text": "Is the bank near the supermarket?",
+      "translation": "Ngân hàng có gần siêu thị không?",
+      "tokens": [
+        "Is",
+        "the",
+        "bank",
+        "near",
+        "the",
+        "supermarket"
+      ],
+      "words": [
+        "word-is",
+        "word-the",
+        "word-bank",
+        "word-near",
+        "word-the",
+        "word-supermarket"
+      ],
+      "phrases": []
+    },
+    "5": {
+      "speaker": "Emma",
+      "text": "Yes, it's next to the supermarket.",
+      "translation": "Có, nó ở ngay cạnh siêu thị.",
+      "tokens": [
+        "Yes",
+        "it's",
+        "next",
+        "to",
+        "the",
+        "supermarket"
+      ],
+      "words": [
+        "word-yes",
+        "word-it's",
+        "word-next",
+        "word-to",
+        "word-the",
+        "word-supermarket"
+      ],
+      "phrases": []
+    },
+    "6": {
+      "speaker": "Ben",
+      "text": "Is the bus stop next to the bank?",
+      "translation": "Trạm xe buýt có ở ngay cạnh ngân hàng không?",
+      "tokens": [
+        "Is",
+        "the",
+        "bus",
+        "stop",
+        "next",
+        "to",
+        "the",
+        "bank"
+      ],
+      "words": [
+        "word-is",
+        "word-the",
+        "word-bus",
+        "word-stop",
+        "word-next",
+        "word-to",
+        "word-the",
+        "word-bank"
+      ],
+      "phrases": []
+    },
+    "7": {
+      "speaker": "Emma",
+      "text": "No, it's across from the bank.",
+      "translation": "Không, nó ở đối diện ngân hàng.",
+      "tokens": [
+        "No",
+        "it's",
+        "across",
+        "from",
+        "the",
+        "bank"
+      ],
+      "words": [
+        "word-no",
+        "word-it's",
+        "word-across",
+        "word-from",
+        "word-the",
+        "word-bank"
+      ],
+      "phrases": []
+    },
+    "8": {
+      "speaker": "Ben",
+      "text": "How far is it from here?",
+      "translation": "Từ đây đến đó bao xa?",
+      "tokens": [
+        "How",
+        "far",
+        "is",
+        "it",
+        "from",
+        "here"
+      ],
+      "words": [
+        "word-how",
+        "word-far",
+        "word-is",
+        "word-it",
+        "word-from",
+        "word-here"
+      ],
+      "phrases": []
+    },
+    "9": {
+      "speaker": "Emma",
+      "text": "It's about two minutes on foot.",
+      "translation": "Đi bộ mất khoảng hai phút.",
+      "tokens": [
+        "It's",
+        "about",
+        "two",
+        "minutes",
+        "on",
+        "foot"
+      ],
+      "words": [
+        "word-it's",
+        "word-about",
+        "word-two",
+        "word-minutes",
+        "word-on",
+        "word-foot"
+      ],
+      "phrases": []
+    },
+    "10": {
+      "speaker": "Ben",
+      "text": "Thank you for your help!",
+      "translation": "Cảm ơn bạn đã giúp đỡ!",
+      "tokens": [
+        "Thank",
+        "you",
+        "for",
+        "your",
+        "help"
+      ],
+      "words": [
+        "word-thank",
+        "word-you",
+        "word-for",
+        "word-your",
+        "word-help"
+      ],
+      "phrases": []
+    }
+  }
+}

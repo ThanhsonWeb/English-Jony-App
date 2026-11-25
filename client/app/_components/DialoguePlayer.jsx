@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import Image from "next/image";
 import A2MediaImage from "./A2MediaImage";
 import { a2LocalFallback } from "../_lib/dialogue/a2R2Media.mjs";
@@ -36,6 +36,8 @@ import {
 	MessageSquareText,
 	Captions,
 	Volume2,
+	SkipBack,
+	SkipForward,
 } from "lucide-react";
 
 const CHARACTER_ENTRY_DELAY = 700;
@@ -47,6 +49,7 @@ export default function DialoguePlayer({
 	nextTask,
 }) {
 	const t = useTranslations("DialogueFeature");
+	const pathname = usePathname();
 	const { user, loading: authLoading } = useAuth();
 	const userId = user?._id || user?.id || null;
 	const {
@@ -630,6 +633,9 @@ export default function DialoguePlayer({
 							{/* Controls */}
 							<div className="flex items-center justify-between border-t border-white/10 bg-player-toolbar px-3 py-1.5 md:px-5 md:py-2">
 								<div className="flex items-center gap-2">
+									<button type="button" onClick={() => handleTranscriptClick(currentLine - 1)} disabled={isPreparing || currentLine === 0} aria-label={t("previousDialogueLine")} title={t("previousDialogueLine")} className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full text-slate-400 transition hover:bg-white/10 hover:text-white disabled:cursor-not-allowed disabled:opacity-40">
+										<SkipBack size={18} />
+									</button>
 									{/* Play */}
 									<button
 										type="button"
@@ -648,18 +654,8 @@ export default function DialoguePlayer({
 										)}
 									</button>
 
-									<button
-										type="button"
-										onClick={handleTranslate}
-										aria-label={t("translateSentence")}
-										title={t("translateSentence")}
-										className={`${styles.touchTarget} flex h-9 w-9 cursor-pointer items-center justify-center rounded-full transition ${
-											showTranslation
-												? "bg-violet-500/15 text-violet-400"
-												: "text-slate-400 hover:bg-white/10 hover:text-white"
-										}`}
-									>
-										<Languages size={16} />
+									<button type="button" onClick={() => handleTranscriptClick(currentLine + 1)} disabled={isPreparing || currentLine >= task.dialogue.length - 1} aria-label={t("nextDialogueLine")} title={t("nextDialogueLine")} className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full text-slate-400 transition hover:bg-white/10 hover:text-white disabled:cursor-not-allowed disabled:opacity-40">
+										<SkipForward size={18} />
 									</button>
 
 									<div className="relative sm:hidden">
@@ -722,7 +718,10 @@ export default function DialoguePlayer({
 									</div>
 								</div>
 
-								<div className="flex items-center gap-3">
+								<div className="flex items-center gap-1 sm:gap-3">
+									<button type="button" onClick={handleTranslate} aria-label={t("translateSentence")} title={t("translateSentence")} className={`${styles.touchTarget} flex h-9 w-9 cursor-pointer items-center justify-center rounded-full transition ${showTranslation ? "bg-violet-500/15 text-violet-400" : "text-slate-400 hover:bg-white/10 hover:text-white"}`}>
+										<Languages size={16} />
+									</button>
 									<button
 										type="button"
 										onClick={() => setShowSubtitles((current) => !current)}
@@ -845,7 +844,7 @@ export default function DialoguePlayer({
 				{canContinueToPractice && (
 					<div className="mt-8 space-y-3">
 						<p role="note" className="rounded-xl border border-app bg-surface/60 px-4 py-3 text-sm leading-5 text-secondary">
-							{t(userId ? "practicePreviewSignedIn" : "practicePreview", { count: task.tasks?.length ?? 0 })}
+							{userId ? t("practicePreviewSignedIn", { count: task.tasks?.length ?? 0 }) : t.rich("practicePreview", { count: task.tasks?.length ?? 0, signIn: (chunks) => <Link href={`/login?returnTo=${encodeURIComponent(pathname)}`} className="font-semibold text-brand-text underline underline-offset-2 hover:text-main focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">{chunks}</Link> })}
 						</p>
 						<div className="flex justify-end">
 							<Link

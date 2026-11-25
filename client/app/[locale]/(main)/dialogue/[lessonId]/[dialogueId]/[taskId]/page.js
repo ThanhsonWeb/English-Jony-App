@@ -130,6 +130,7 @@ export default function DialogueTaskPage() {
 	const props = {
 		task: taskWithTranslation,
 		dialogueLine: matchingDialogueLine,
+		dialogueLines: dialogue.dialogue,
 		lessonId,
 		dialogueId,
 		previousTask,
@@ -173,6 +174,7 @@ export default function DialogueTaskPage() {
 			autoAdvancePaused: guestReminderRequested && !user,
 		}}>
 			<DialogueExerciseHeader
+				compact={task.type === "dialogueCloze"}
 				lessonId={lessonId}
 				lessonTitle={getLocalizedDialogueValue(lesson, "title", locale)}
 				dialogueTitle={getLocalizedDialogueValue(dialogue, "title", locale)}

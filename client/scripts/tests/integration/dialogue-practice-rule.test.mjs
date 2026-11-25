@@ -80,3 +80,18 @@ test("allows a third distinct Fill Blank only for very important lines", () => {
 		),
 	);
 });
+
+test("cloze covers missing standalone fill blanks only when explicitly enabled and valid", () => {
+	const file = new URL("../../../generated/dialogues/asking-for-directions-v2/finding-the-bus-stop/draft.json", import.meta.url);
+	const dialogue = JSON.parse(fs.readFileSync(file, "utf8"));
+	const coverageErrors = result => result.errors.filter(error => error.includes("standalone Fill Blank"));
+	assert.equal(coverageErrors(validateDialogue(dialogue)).length, 4);
+	assert.equal(coverageErrors(validateDialogue(dialogue, { clozeCoversMissingFillBlank: true })).length, 0);
+	const otherCourse = structuredClone(dialogue);
+	otherCourse.metadata.courseId = "another-course";
+	assert.equal(coverageErrors(validateDialogue(otherCourse)).length, 4);
+	assert.equal(coverageErrors(validateDialogue(otherCourse, { clozeCoversMissingFillBlank: true })).length, 0);
+	const invalidCloze = structuredClone(dialogue);
+	invalidCloze.tasks.at(-1).lines[0].speaker = "Invalid";
+	assert.equal(coverageErrors(validateDialogue(invalidCloze, { clozeCoversMissingFillBlank: true })).length, 4);
+});
