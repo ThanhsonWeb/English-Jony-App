@@ -31,6 +31,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 	const playbackRef = useRef(null);
 	const startSpeakingRef = useRef(null);
 	const dictionaryPopupRef = useRef(null);
+	const speedMenuRef = useRef(null);
 
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [showCaptions, setShowCaptions] = useState(false);
@@ -45,6 +46,15 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 	const [showFinishedCaptionBackground, setShowFinishedCaptionBackground] =
 		useState(false);
 	const playbackRateRef = useRef(playbackRate);
+
+	useEffect(() => {
+		if (!showSpeedMenu) return;
+		function handleOutsideClick(event) {
+			if (!speedMenuRef.current?.contains(event.target)) setShowSpeedMenu(false);
+		}
+		document.addEventListener("pointerdown", handleOutsideClick);
+		return () => document.removeEventListener("pointerdown", handleOutsideClick);
+	}, [showSpeedMenu]);
 
 	useEffect(() => {
 		playbackRateRef.current = playbackRate;
@@ -114,6 +124,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 		audio.playbackRate = playbackRateRef.current;
 		setIsAudioFinished(false);
 		setShowFinishedCaptionBackground(false);
+		setIsPlaying(true);
 
 		await playbackRef.current?.play(delay);
 	}
@@ -122,10 +133,11 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 		const audio = audioRef.current;
 		if (!audio) return;
 
-		if (audio.paused) {
+		if (!isPlaying) {
 			await startSpeaking();
 		} else {
 			playbackRef.current?.pause();
+			setIsPlaying(false);
 		}
 	}
 
@@ -138,6 +150,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 		setShowCharacter(true);
 		setIsAudioFinished(false);
 		setShowFinishedCaptionBackground(false);
+		setIsPlaying(true);
 
 		await playbackRef.current?.play();
 	}
@@ -357,7 +370,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 							type="button"
 							onClick={toggleAudio}
 							aria-label={isPlaying ? t("pause") : t("play")}
-							className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-950 transition hover:bg-slate-200"
+							className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-slate-950 transition hover:bg-slate-200"
 						>
 							{isPlaying ? (
 								<Pause size={18} fill="currentColor" />
@@ -371,7 +384,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 							onClick={handleTranslate}
 							aria-label={t("translateSentence")}
 							title={t("translateSentence")}
-							className={`flex h-9 w-9 items-center justify-center rounded-full transition ${
+							className={`flex h-9 w-9 cursor-pointer items-center justify-center rounded-full transition ${
 								showTranslation
 									? "bg-violet-500/15 text-violet-400"
 									: "text-slate-400 hover:bg-white/10 hover:text-white"
@@ -380,14 +393,14 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 							<Languages size={16} />
 						</button>
 
-						<div className="relative">
+						<div ref={speedMenuRef} className="relative">
 							<button
 								type="button"
 								onClick={() => setShowSpeedMenu((current) => !current)}
 								aria-label={t("choosePlaybackSpeed", { rate: playbackRate })}
 								aria-expanded={showSpeedMenu}
 								title={t("playbackSpeed")}
-								className="flex h-9 min-w-14 items-center justify-center gap-1 rounded-full px-2 text-xs font-semibold text-slate-400 transition hover:bg-white/10 hover:text-white"
+								className="flex h-9 min-w-14 cursor-pointer items-center justify-center gap-1 rounded-full px-2 text-xs font-semibold text-slate-400 transition hover:bg-white/10 hover:text-white"
 							>
 								{playbackRate}x
 								<ChevronDown
@@ -400,12 +413,12 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 
 							{showSpeedMenu && (
 								<div className="absolute bottom-full left-1/2 z-30 mb-2 w-20 -translate-x-1/2 overflow-hidden rounded-lg border border-slate-700 bg-slate-900 py-1 shadow-xl">
-									{PLAYBACK_RATES.map((rate) => (
+									{[...PLAYBACK_RATES].reverse().map((rate) => (
 										<button
 											key={rate}
 											type="button"
 											onClick={() => handlePlaybackRateChange(rate)}
-											className={`block w-full px-3 py-2 text-center text-xs font-semibold transition hover:bg-white/10 ${
+											className={`block w-full cursor-pointer px-3 py-2 text-center text-xs font-semibold transition hover:bg-white/10 ${
 												playbackRate === rate
 													? "text-violet-400"
 													: "text-slate-300"
@@ -424,7 +437,7 @@ const TaskAudioScene = forwardRef(function TaskAudioScene({ task, autoPlay = fal
 						onClick={handleCaptionsClick}
 						aria-label={t("toggleSubtitles")}
 						aria-pressed={showCaptions}
-						className={`flex h-9 w-11 items-center justify-center rounded-md transition ${
+						className={`flex h-9 w-11 cursor-pointer items-center justify-center rounded-md transition ${
 							showCaptions
 								? "bg-white text-slate-950"
 								: "bg-slate-800 text-slate-400 hover:text-white"

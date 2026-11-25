@@ -653,7 +653,7 @@ export default function DialoguePlayer({
 										onClick={handleTranslate}
 										aria-label={t("translateSentence")}
 										title={t("translateSentence")}
-										className={`${styles.touchTarget} flex h-9 w-9 items-center justify-center rounded-full transition ${
+										className={`${styles.touchTarget} flex h-9 w-9 cursor-pointer items-center justify-center rounded-full transition ${
 											showTranslation
 												? "bg-violet-500/15 text-violet-400"
 												: "text-slate-400 hover:bg-white/10 hover:text-white"
@@ -728,7 +728,7 @@ export default function DialoguePlayer({
 										onClick={() => setShowSubtitles((current) => !current)}
 										aria-label={showSubtitles ? t("hideSubtitles") : t("showSubtitles")}
 										title={showSubtitles ? t("hideSubtitles") : t("showSubtitles")}
-										className={`flex h-10 w-10 items-center justify-center rounded-full transition md:h-11 md:w-11 ${
+										className={`flex h-10 w-10 cursor-pointer items-center justify-center rounded-full transition md:h-11 md:w-11 ${
 											showSubtitles
 												? "bg-violet-500/15 text-violet-400"
 												: "text-slate-400 hover:bg-white/10 hover:text-white"
