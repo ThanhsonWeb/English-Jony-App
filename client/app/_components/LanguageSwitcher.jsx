@@ -96,7 +96,7 @@ export default function LanguageSwitcher({ variant = "compact" }) {
 				aria-haspopup="menu"
 				className={`flex cursor-pointer items-center font-semibold outline-none transition focus-visible:ring-2 focus-visible:ring-primary/30 ${
 					isSettingsVariant
-						? "h-12 min-w-40 gap-2.5 rounded-2xl border border-primary bg-primary px-3.5 text-white shadow-lg shadow-primary/15 hover:brightness-95"
+						? "h-12 min-w-40 gap-2.5 rounded-xl border border-slate-700/80 bg-slate-900/90 px-3.5 text-sm text-slate-100 hover:border-teal-500/50"
 						: "h-10 gap-1.5 rounded-xl border border-app bg-surface px-2.5 text-sm text-main hover:border-primary/50 focus-visible:border-primary"
 				}`}
 			>
@@ -112,7 +112,7 @@ export default function LanguageSwitcher({ variant = "compact" }) {
 				<ChevronDown
 					aria-hidden="true"
 					className={`h-3.5 w-3.5 transition ${
-						isSettingsVariant ? "text-white/80" : "text-secondary"
+						isSettingsVariant ? "text-slate-400" : "text-secondary"
 					} ${isOpen ? "rotate-180" : ""}`}
 				/>
 			</button>

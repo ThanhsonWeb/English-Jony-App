@@ -596,6 +596,7 @@
 		"save": "Lưu",
 		"close": "Đóng",
 		"activity": "Tổng quan hoạt động (6 tháng gần đây)",
+		"quickSettings": "Cài đặt nhanh",
 		"activityCount": "{count} hoạt động trong 6 tháng",
 		"activityTooltip": "{count} hoạt động",
 		"qualifiedActivityTooltip": "Đã hoàn thành hoạt động học",

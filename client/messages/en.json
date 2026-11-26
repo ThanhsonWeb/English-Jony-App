@@ -596,6 +596,7 @@
 		"save": "Save",
 		"close": "Close",
 		"activity": "Activity overview (last 6 months)",
+		"quickSettings": "Quick settings",
 		"activityCount": "{count} activities in 6 months",
 		"activityTooltip": "{count} activities",
 		"qualifiedActivityTooltip": "Study activity completed",

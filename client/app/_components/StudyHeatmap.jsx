@@ -42,14 +42,14 @@ function StudyHeatmap() {
 	const activeDays = days.filter(day => day.level > 0).length;
 
 	return (
-		<div className="mt-10">
+		<div className="mt-6">
 			<div className="rounded-2xl border border-slate-800 bg-slate-900/30 p-4 sm:p-6">
 				<h2 className="text-lg font-semibold text-white sm:text-xl">
 					{t("activity")}
 				</h2>
 
-				<div className="mt-6 overflow-x-auto">
-					<div className="w-max min-w-full">
+				<div className="mt-2 overflow-x-auto pt-4">
+					<div className="mx-auto w-max">
 						{/* Months */}
 						<div className="mb-3 flex items-end gap-3">
 							<div className="w-7 shrink-0" aria-hidden="true" />
@@ -84,12 +84,19 @@ function StudyHeatmap() {
 							</div>
 
 							<div className="grid w-max grid-flow-col auto-cols-max grid-rows-7 gap-1">
-								{days.map((day) => (
-									<div
+								{days.map((day, index) => (
+									<button
+										type="button"
 										key={day.date}
-										title={`${formatDisplayDate(day.date, locale)}\n${day.count === 0 && day.hasQualifiedStudy ? t("qualifiedActivityTooltip") : t("activityTooltip", { count: day.count })}`}
-										className={`h-3 w-3 rounded-sm sm:h-4 sm:w-4 lg:h-5 lg:w-5 ${levelClass[day.level]}`}
-									/>
+										aria-label={`${formatDisplayDate(day.date, locale)}, ${t("activityTooltip", { count: day.count })}${day.count === 0 && day.hasQualifiedStudy ? `, ${t("qualifiedActivityTooltip")}` : ""}`}
+										className={`group relative h-3 w-3 cursor-pointer rounded-sm focus-visible:z-20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-400 sm:h-4 sm:w-4 lg:h-5 lg:w-5 ${levelClass[day.level]}`}
+									>
+										<span aria-hidden="true" className={`pointer-events-none absolute z-30 hidden w-max max-w-48 rounded-lg border border-slate-600 bg-slate-900 px-3 py-2 text-left text-xs leading-5 text-slate-100 shadow-xl group-hover:block group-focus-visible:block ${index % 7 >= 4 ? "bottom-full mb-2" : "top-full mt-2"} ${index < 21 ? "left-0" : index >= days.length - 21 ? "right-0" : "left-1/2 -translate-x-1/2"}`}>
+											<strong className="block">{formatDisplayDate(day.date, locale)}</strong>
+											<span className="block text-slate-300">{t("activityTooltip", { count: day.count })}</span>
+											{day.count === 0 && day.hasQualifiedStudy && <span className="block text-slate-300">{t("qualifiedActivityTooltip")}</span>}
+										</span>
+									</button>
 								))}
 							</div>
 						</div>
