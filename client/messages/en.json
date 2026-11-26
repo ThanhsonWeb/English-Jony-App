@@ -515,6 +515,7 @@
 		"signIn": "Sign in",
 		"vip": "Vip",
 		"free": "Free",
+		"streakDays": "{count, plural, one {# day} other {# days}}",
 		"administrator": "Administrator",
 		"learner": "Learner",
 		"profile": "Profile",
@@ -548,6 +549,9 @@
 		"retryProgressLoad": "Retry",
 		"explore": "Explore dialogues",
 		"categoryNavLabel": "Dialogue categories",
+		"categoryHeading": "Categories",
+		"exploreAction": "Explore",
+		"viewCategory": "View all ({count})",
 		"previousCategories": "Previous categories",
 		"nextCategories": "More categories",
 		"categories": {
@@ -556,7 +560,8 @@
 			"travel": "Travel",
 			"food": "Food & drink",
 			"anime": "Anime",
-			"story": "Story of Life"
+			"story": "Story of Life",
+			"other": "Other topics"
 		},
 		"topics": "{count} topics",
 		"dialogues": "{count} dialogues",

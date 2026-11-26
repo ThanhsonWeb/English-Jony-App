@@ -5,11 +5,12 @@ import AuthButtons from "./AuthButtons";
 import { useAuth } from "../_contexts/AuthContext";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useEffect, useRef, useState } from "react";
-import { User, LogOut, MessageSquareText, CircleUserRound, ChevronDown } from "lucide-react";
+import { User, LogOut, MessageSquareText, ChevronDown } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useTranslations } from "next-intl";
 import { resolveAvatarUrl } from "../_lib/resolveAvatarUrl";
+import { useLeaderboardResource } from "../_lib/useStudyResources";
 
 function UserAvatar({ user, avatarAlt }) {
 	const [failedPhotoUrls, setFailedPhotoUrls] = useState([]);
@@ -44,6 +45,8 @@ function Header() {
 	const isWordlist = pathname.replace(/^\/(en|vi)(?=\/|$)/, "") === "/wordlist";
 
 	const { user, logout, loading } = useAuth();
+	const { data: leaderboard } = useLeaderboardResource(user?._id || user?.id, "all", "current", isDropdownOpen && !loading && Boolean(user), 1);
+	const progress = leaderboard?.currentUser;
 	// handleClickOutside
 	useEffect(() => {
 		function handleClickOutside(event) {
@@ -93,18 +96,15 @@ function Header() {
 								aria-label={t("accountMenu", { name: user.name })}
 								aria-expanded={isDropdownOpen}
 								aria-controls={isDropdownOpen ? "header-account-menu" : undefined}
-								className="group flex cursor-pointer items-center gap-2 rounded-xl px-2 py-2 transition-all duration-200 hover:bg-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 xl:gap-3"
+								className="group flex cursor-pointer items-center gap-2 rounded-full px-2 py-1 transition-colors duration-200 hover:bg-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 xl:gap-3"
 							>
 								<UserAvatar user={user} avatarAlt={t("avatar")} />
 								<div className="hidden min-w-0 sm:block">
 									<p className="max-w-20 truncate whitespace-nowrap text-md font-semibold leading-tight text-main sm:max-w-24 xl:max-w-none">
 										{user.name}
 									</p>
-									<p className="mt-1.5 flex items-center gap-1 whitespace-nowrap text-xs font-medium leading-tight text-main/85">
-										<CircleUserRound size={14} aria-hidden="true" />{t("free")}
-									</p>
 								</div>
-								<ChevronDown size={16} aria-hidden="true" className="hidden text-secondary sm:block" />
+								<ChevronDown size={14} aria-hidden="true" className={`hidden text-slate-400 transition-transform duration-200 motion-reduce:transition-none sm:block ${isDropdownOpen ? "rotate-180" : ""}`} />
 							</button>
 
 							{/* DropdownList */}
@@ -119,6 +119,7 @@ function Header() {
 										<p className="mt-1 truncate text-xs text-secondary">
 											{user.email}
 										</p>
+											{(Number.isFinite(progress?.level) || Number.isFinite(progress?.streakDays)) && <div className="mt-2 flex items-center gap-2">{Number.isFinite(progress?.level) && <span className="rounded-full bg-teal-500/15 px-2 py-0.5 text-[11px] font-semibold text-teal-500">Lv. {progress.level}</span>}{Number.isFinite(progress?.streakDays) && <span className="rounded-full bg-amber-500/15 px-2 py-0.5 text-[11px] font-semibold text-amber-500">🔥 {t("streakDays", { count: progress.streakDays })}</span>}</div>}
 									</div>
 									{/* Profile & Settings */}
 									<div className="p-2">
@@ -127,7 +128,7 @@ function Header() {
 												setIsDropdownOpen(false);
 												router.push("/profile");
 											}}
-											className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-secondary hover:bg-surface-muted hover:text-main"
+											className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-secondary transition hover:bg-surface-muted hover:text-main"
 										>
 											<User size={18} />
 											{t("profile")}
@@ -138,7 +139,7 @@ function Header() {
 													setIsDropdownOpen(false);
 													router.push("/admin/feedback");
 												}}
-												className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-secondary hover:bg-surface-muted hover:text-main"
+													className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-secondary transition hover:bg-surface-muted hover:text-main"
 											>
 												<MessageSquareText size={18} aria-hidden="true" />
 												{t("adminFeedback")}
@@ -149,7 +150,7 @@ function Header() {
 									<div className="border-t border-app p-2">
 										<button
 											onClick={handleLogout}
-											className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-red-400 hover:bg-red-500/10 hover:text-red-300"
+											className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-sm text-secondary transition hover:bg-rose-500/10 hover:text-rose-400"
 										>
 											<LogOut size={18} />
 											{t("logout")}

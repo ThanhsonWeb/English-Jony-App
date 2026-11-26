@@ -515,6 +515,7 @@
 		"signIn": "Đăng nhập",
 		"vip": "Vip",
 		"free": "Miễn phí",
+		"streakDays": "{count} ngày",
 		"administrator": "Quản trị viên",
 		"learner": "Học viên",
 		"profile": "Hồ sơ",
@@ -524,7 +525,7 @@
 	},
 	"DialogueLanding": {
 		"title": "Hội thoại <accent>thực tế</accent>",
-		"subtitle": "Luyện nghe và phản xạ qua các tình huống đời thường.",
+		"subtitle": "Luyện nghe và phản xạ qua giao tiếp hằng ngày.",
 		"searchLabel": "Tìm kiếm hội thoại",
 		"searchPlaceholder": "Tìm kiếm bài học hoặc chủ đề...",
 		"levelFilter": "Lọc hội thoại theo trình độ",
@@ -548,6 +549,9 @@
 		"retryProgressLoad": "Thử lại",
 		"explore": "Khám phá hội thoại",
 		"categoryNavLabel": "Danh mục hội thoại",
+		"categoryHeading": "Danh mục",
+		"exploreAction": "Khám phá",
+		"viewCategory": "Xem tất cả ({count})",
 		"previousCategories": "Xem chủ đề trước",
 		"nextCategories": "Xem thêm chủ đề",
 		"categories": {
@@ -556,7 +560,8 @@
 			"travel": "Du lịch",
 			"food": "Ăn uống",
 			"anime": "Anime",
-			"story": "Câu truyện"
+			"story": "Câu truyện",
+			"other": "Chủ đề khác"
 		},
 		"topics": "{count} chủ đề",
 		"dialogues": "{count} hội thoại",
