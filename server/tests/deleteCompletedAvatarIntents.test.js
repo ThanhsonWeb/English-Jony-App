@@ -121,6 +121,17 @@ test("retains all candidates while account avatar tracking is unresolved", async
 	assert.ok(await Intent.exists({ _id: attached._id }));
 });
 
+test("preserves completed intents when legacy avatar references remain", async () => {
+	const own = await createIntent(user);
+	await markDeleting();
+	await User.updateOne({ _id: user._id }, { $set: { legacyAvatar: "https://legacy.example/avatar.jpg" } });
+	assert.equal((await deleteCompletedAvatarIntents(user.id)).blocked, "avatar_tracking_unresolved");
+	await User.updateOne({ _id: user._id }, { $unset: { legacyAvatar: 1 } });
+	await User.updateOne({ _id: other._id }, { $set: { legacyAvatar: `/api/v1/users/avatar-files/${own.storageKey}` } });
+	assert.deepEqual(await deleteCompletedAvatarIntents(user.id), { deletedCount: 0, hasMore: false });
+	assert.ok(await Intent.exists({ _id: own._id }));
+});
+
 test("concurrent cleanup calls are isolated and idempotent", async () => {
 	await Promise.all(Array.from({ length: 4 }, () => createIntent(user)));
 	const foreign = await createIntent(other);

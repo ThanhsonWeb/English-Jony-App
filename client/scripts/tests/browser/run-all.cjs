@@ -22,7 +22,14 @@ if (tests.length === 0) {
 
 	if (process.exitCode !== 1) {
 		let failures = 0;
+		let skipped = 0;
 		for (const name of tests) {
+			if (name === "test-avatar-crop-encoding.cjs" &&
+				!["STUDYJONY_TEST_EMAIL", "STUDYJONY_TEST_PASSWORD", "STUDYJONY_TEST_IMAGE"].every(key => process.env[key])) {
+				skipped += 1;
+				console.log(`\nSKIP ${name}: isolated local account and image fixture not configured. Run it directly with STUDYJONY_TEST_EMAIL, STUDYJONY_TEST_PASSWORD and STUDYJONY_TEST_IMAGE.`);
+				continue;
+			}
 			console.log(`\nRunning ${name}`);
 			const result = spawnSync(process.execPath, [path.join(browserDirectory, name)], {
 				cwd: clientRoot,
@@ -34,7 +41,7 @@ if (tests.length === 0) {
 				console.error(`${name} failed${result.status === null ? `: ${result.error?.message || "process could not start"}` : ` with exit code ${result.status}`}.`);
 			}
 		}
-		console.log(`\nBrowser tests: ${tests.length - failures} passed, ${failures} failed.`);
+		console.log(`\nBrowser tests: ${tests.length - failures - skipped} passed, ${failures} failed, ${skipped} skipped.`);
 		if (failures > 0) process.exitCode = 1;
 	}
 }

@@ -50,7 +50,7 @@ function avatarMatchesIntent(avatar, intent) {
 
 // Read a consistent snapshot. This service reports readiness only; it performs no writes.
 async function readAccountDeletionReadiness(userId, session) {
-	const userQuery = User.findById(userId).select("+lifecycleState +avatarIntent avatar").session(session);
+	const userQuery = User.findById(userId).select("+lifecycleState +avatarIntent +legacyAvatar avatar").session(session);
 	const user = await userQuery.lean();
 	if (!user) throw new AppError("Account not found", 404);
 	const intents = await AvatarUploadIntent.find({ user: userId }).session(session).lean();
@@ -62,6 +62,7 @@ async function readAccountDeletionReadiness(userId, session) {
 		remainingCounts[key] = await Model.countDocuments({ user: userId }).session(session);
 	}
 	const blockers = new Set();
+	if (user.legacyAvatar !== undefined && user.legacyAvatar !== "") blockers.add("legacy_avatar_unresolved");
 	if (user.lifecycleState !== "deleting") blockers.add("account_not_deleting");
 	if (Object.values(remainingCounts).some(count => count > 0)) blockers.add("account_owned_data_remaining");
 

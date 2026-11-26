@@ -100,9 +100,14 @@ async function attachAvatarUpload(userId, intentId, avatar) {
 	validateOwnerAndIntent(userId, intentId);
 	return mongoose.connection.transaction(async session => {
 		await fenceActiveAccountWrite(userId, session);
-		const current = await User.findById(userId).select("+avatarIntent").session(session);
+		const current = await User.findById(userId).select("+avatarIntent +legacyAvatar").session(session);
+		let legacyAvatar;
 		if (current?.avatarIntent == null && current?.avatar !== undefined && current.avatar !== "") {
-			throw new AppError("Existing avatar has no tracked cleanup intent", 409);
+			if (typeof current.avatar !== "string" || !current.avatar.trim() ||
+				(current.legacyAvatar !== undefined && current.legacyAvatar !== current.avatar)) {
+				throw new AppError("Existing avatar has unresolved cleanup references", 409);
+			}
+			legacyAvatar = current.avatar;
 		}
 		const intent = await AvatarUploadIntent.findOneAndUpdate(
 			{ _id: intentId, user: userId, uploadStatus: "uploading", attachmentStatus: "unattached", cleanupStatus: "pending" },
@@ -118,7 +123,7 @@ async function attachAvatarUpload(userId, intentId, avatar) {
 			);
 			if (!previous) throw new AppError("Previous avatar intent not found", 409);
 		}
-		return User.findByIdAndUpdate(userId, { avatar, avatarIntent: intentId }, {
+		return User.findByIdAndUpdate(userId, { avatar, avatarIntent: intentId, ...(legacyAvatar !== undefined ? { legacyAvatar } : {}) }, {
 			returnDocument: "after", runValidators: true, session,
 		}).select(CLIENT_USER_FIELDS);
 	}, transactionOptions);
@@ -146,6 +151,7 @@ function deletingAvatarCleanupAccountExpr() {
 			{ $and: [{ $eq: [{ $type: "$avatar" }, "string"] }, { $eq: ["$avatar", ""] }] },
 		] },
 		{ $in: [{ $type: "$avatarIntent" }, ["missing", "null"]] },
+		{ $or: [{ $eq: [{ $type: "$legacyAvatar" }, "missing"] }, { $and: [{ $eq: [{ $type: "$legacyAvatar" }, "string"] }, { $eq: ["$legacyAvatar", ""] }] }] },
 	] };
 }
 

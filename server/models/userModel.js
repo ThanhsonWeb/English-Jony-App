@@ -72,6 +72,7 @@ const userSchema = new mongoose.Schema(
 			default: "",
 		},
 		avatarIntent: { type: mongoose.Schema.Types.ObjectId, ref: "AvatarUploadIntent", select: false },
+		legacyAvatar: { type: String, select: false },
 		theme: {
 			type: String,
 			enum: ["light", "cream", "dark", "black", "system"],

@@ -4,6 +4,7 @@ import StudyHeatmap from "@/app/_components/StudyHeatmap";
 import LanguageSwitcher from "@/app/_components/LanguageSwitcher";
 import ThemeSelector from "@/app/_components/ThemeSelector";
 import MobileDialogOverlay from "@/app/_components/MobileDialogOverlay";
+import AvatarCropper from "@/app/_components/AvatarCropper";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { resolveAvatarUrl } from "@/app/_lib/resolveAvatarUrl";
 import { useEffect, useRef, useState } from "react";
@@ -31,33 +32,6 @@ const AVATAR_TYPES = ["image/jpeg", "image/png", "image/webp"];
 const MAX_SOURCE_BYTES = 10 * 1024 * 1024;
 const MAX_UPLOAD_BYTES = 2 * 1024 * 1024;
 
-async function compressAvatar(file) {
-	const objectUrl = URL.createObjectURL(file);
-	try {
-		const image = new Image();
-		await new Promise((resolve, reject) => {
-			image.onload = resolve;
-			image.onerror = reject;
-			image.src = objectUrl;
-		});
-		const scale = Math.min(1, 512 / Math.max(image.naturalWidth, image.naturalHeight));
-		const canvas = document.createElement("canvas");
-		canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
-		canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
-		const context = canvas.getContext("2d");
-		if (!context) throw new Error("Canvas is unavailable");
-		context.fillStyle = "#fff";
-		context.fillRect(0, 0, canvas.width, canvas.height);
-		context.drawImage(image, 0, 0, canvas.width, canvas.height);
-		const blob = await new Promise((resolve, reject) => {
-			canvas.toBlob((result) => result ? resolve(result) : reject(new Error("Image compression failed")), "image/jpeg", 0.82);
-		});
-		return blob;
-	} finally {
-		URL.revokeObjectURL(objectUrl);
-	}
-}
-
 function Page() {
 	const t = useTranslations("Profile");
 	const locale = useLocale();
@@ -71,6 +45,7 @@ function Page() {
 	const avatarRequestId = useRef(0);
 	const [isUploadingAvatar, setIsUploadingAvatar] = useState(false);
 	const [avatarError, setAvatarError] = useState("");
+	const [cropRequest, setCropRequest] = useState(null);
 	const [failedAvatarUrls, setFailedAvatarUrls] = useState([]);
 	const [isDeletionDialogOpen, setIsDeletionDialogOpen] = useState(false);
 	const [deletionPassword, setDeletionPassword] = useState("");
@@ -129,10 +104,14 @@ function Page() {
 			return;
 		}
 
+		setCropRequest({ file, session });
+	}
+	async function saveCroppedAvatar(image) {
+		const session = cropRequest?.session;
+		if (!session || !isCurrentSession(session) || isUploadingAvatar) { setCropRequest(null); return; }
 		setIsUploadingAvatar(true);
 		const requestId = ++avatarRequestId.current;
 		try {
-			const image = await compressAvatar(file);
 			if (!isCurrentSession(session)) return;
 			if (image.size > MAX_UPLOAD_BYTES) throw new Error("Avatar exceeds upload limit");
 			const response = await fetch("/api/v1/users/avatar", {
@@ -149,11 +128,13 @@ function Page() {
 			const data = await response.json();
 			if (!data?.data?.user?.avatar) throw new Error("Avatar URL is missing");
 			updateUserForSession(data.data.user, session);
+			setCropRequest(null);
 		} catch (error) {
 			if (!isCurrentSession(session)) return;
 			const key = ["avatarServerUnavailable", "avatarStorageUnavailable"].includes(error.message)
 				? error.message : "avatarUploadError";
 			setAvatarError(t(key));
+			setCropRequest(null);
 		} finally {
 			if (requestId === avatarRequestId.current) setIsUploadingAvatar(false);
 		}
@@ -346,6 +327,7 @@ function Page() {
 					{avatarError || t("uploadingAvatar")}
 				</p>
 			)}
+			{cropRequest && <AvatarCropper file={cropRequest.file} t={t} busy={isUploadingAvatar} onCancel={() => setCropRequest(null)} onSave={saveCroppedAvatar} />}
 
 			<StudyHeatmap />
 
