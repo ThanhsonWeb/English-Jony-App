@@ -12,10 +12,7 @@
 	align-items: center;
 	gap: 4px;
 	padding: 4px;
-	border: 1px solid var(--sj-border);
-	border-radius: 9999px;
-	background: var(--sj-surface-muted);
-	backdrop-filter: blur(12px);
+	border-radius: 12px;
 }
 .desktopLink { transition: color 200ms, background-color 200ms, border-color 200ms, box-shadow 200ms; }
 .desktopActive { border-color: rgb(20 184 166 / 35%); background: rgb(20 184 166 / 15%); color: var(--sj-brand-text); box-shadow: 0 1px 3px rgb(20 184 166 / 10%); }

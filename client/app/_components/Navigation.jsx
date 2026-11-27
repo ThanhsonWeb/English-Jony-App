@@ -107,7 +107,7 @@ function Navigation() {
 								<Link
 									href={href}
 									aria-current={isActive ? "page" : undefined}
-									className={`${navItemBase} ${styles.desktopLink} group gap-2 rounded-full px-3 py-2 text-base xl:px-4 ${isActive ? styles.desktopActive : styles.desktopInactive}`}
+									className={`${navItemBase} ${styles.desktopLink} group h-10 gap-2 rounded-full px-3 text-base xl:px-4 ${isActive ? styles.desktopActive : styles.desktopInactive}`}
 								>
 									<Icon className="h-[18px] w-[18px] shrink-0 transition-transform duration-200 group-hover:scale-110 motion-reduce:transition-none" aria-hidden="true" />
 									<span>{t(key)}</span>

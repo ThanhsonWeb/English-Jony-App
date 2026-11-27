@@ -33,7 +33,7 @@ const themeOptions = [
 	{ value: "system", labelKey: "system", Icon: MonitorCog },
 ];
 
-export default function ThemeSelector() {
+export default function ThemeSelector({ borderless = false }) {
 	const { theme, setTheme, saveFailed, saveErrorCode } = useTheme();
 	const t = useTranslations("Theme");
 	const containerRef = useRef(null);
@@ -72,7 +72,7 @@ export default function ThemeSelector() {
 				aria-expanded={isOpen}
 				aria-haspopup="menu"
 				title={currentLabel}
-				className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-app bg-surface text-secondary outline-none transition hover:bg-hover hover:text-main focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20"
+				className={`flex h-10 w-10 cursor-pointer items-center justify-center rounded-full text-secondary outline-none transition hover:bg-hover hover:text-main focus-visible:ring-2 focus-visible:ring-primary/20 ${borderless ? "bg-transparent" : "border border-app bg-surface focus-visible:border-primary"}`}
 			>
 				<ThemeIcon aria-hidden="true" className="h-[18px] w-[18px]" />
 			</button>

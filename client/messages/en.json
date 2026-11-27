@@ -510,6 +510,7 @@
 		"sessionExpired": "Your session expired. Sign in to save this theme to your account."
 	},
 	"Header": {
+		"online": "Online",
 		"avatar": "User avatar",
 		"accountMenu": "Account menu for {name}",
 		"signIn": "Sign in",

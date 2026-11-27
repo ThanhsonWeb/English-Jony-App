@@ -428,7 +428,7 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 												onClick={() => setSelectedCategory(category)}
 												className={`relative flex min-h-10 shrink-0 items-center gap-3 rounded-xl border px-3 py-2 text-left text-sm font-medium transition-all duration-200 xl:w-full ${
 													isActive
-																? "border-teal-500/25 bg-teal-500/15 text-brand-text"
+																				? "border-teal-500/35 bg-teal-500/15 text-brand-text"
 																: "border-transparent text-secondary hover:bg-hover hover:text-main"
 												}`}
 											>
@@ -532,7 +532,7 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 											? "border-emerald-500/30 bg-emerald-600 text-white"
 											: stats.isStarted
 												? "border-transparent bg-primary text-white"
-												: "border-white/15 bg-black/70 text-white";
+																			: "border-white/15 bg-black/75 text-white backdrop-blur-sm";
 
 										return (
 											<Link
