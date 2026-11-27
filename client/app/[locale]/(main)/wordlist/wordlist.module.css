@@ -144,7 +144,13 @@
 	border-radius: 14px;
 	box-shadow: 0 3px 12px
 		color-mix(in srgb, var(--sj-shadow-color) 25%, transparent);
+	text-align: left;
+	color: var(--sj-text);
+	transition: transform 200ms, border-color 200ms, background 200ms, box-shadow 200ms;
 }
+.stat:hover { transform: translateY(-2px); border-color: #475569; background: #1e293b; }
+.stat:active { transform: scale(.98); }
+.stat[aria-pressed="true"] { border-color: var(--stat-accent); box-shadow: 0 0 0 1px color-mix(in srgb, var(--stat-accent) 35%, transparent), 0 5px 18px color-mix(in srgb, var(--stat-accent) 10%, transparent); }
 .stat:has([data-tone="learning"]) { --stat-accent: #8b5cf6; }
 .stat:has([data-tone="dueToday"]) { --stat-accent: #ed8b37; }
 .stat > :not(.statWave) { position: relative; z-index: 1; }
@@ -226,7 +232,11 @@
 	padding: 9px 15px;
 	font-size: 13px;
 	white-space: nowrap;
+	background: #1e293b;
+	border-color: #334155;
+	color: #e2e8f0;
 }
+.addButton:hover { background: #334155; }
 .practiceControl {
 	position: relative;
 	flex: 0 0 auto;
@@ -241,17 +251,17 @@
 	padding: 9px 14px;
 	border: 1px solid var(--sj-primary);
 	border-radius: 12px;
-	background: color-mix(in srgb, var(--sj-primary) 10%, var(--sj-surface));
-	color: var(--sj-text);
+	background: #0d9488;
+	color: #fff;
 	font-size: 13px;
 	font-weight: 650;
 	white-space: nowrap;
 }
 .practiceTrigger:hover,
 .practiceTrigger[aria-expanded="true"] {
-	background: var(--sj-primary-soft);
+	background: #14b8a6;
 }
-.practiceTrigger > svg:first-child { color: var(--sj-brand-text); }
+.practiceTrigger > svg:first-child { color: inherit; }
 .practiceMenu {
 	position: fixed;
 	inset: 0;
@@ -272,6 +282,9 @@
 .practiceHeader button { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; color: var(--sj-text-secondary); cursor: pointer; }
 .practiceHeader button:hover { background: var(--sj-surface-muted); color: var(--sj-text); }
 .exampleMatch { color: var(--sj-brand-text); font-weight: 650; }
+.filteredEmptyIcon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 16px; background: rgb(20 184 166 / 10%); border: 1px solid rgb(20 184 166 / 20%); color: #2dd4bf; }
+.filteredEmpty p { max-width: 32rem; color: var(--sj-text-secondary); }
+.filteredEmptyActions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .statIcon {
 	flex-shrink: 0;
 	display: grid;
@@ -312,7 +325,8 @@
 :global(html[data-theme="black"]) .statIcon svg {
 	filter: brightness(1.15) saturate(1.15);
 }
-.stat h2 {
+.statLabel {
+	display: block;
 	font-size: 11px;
 	font-weight: 400;
 	color: var(--sj-text-secondary);
@@ -429,6 +443,27 @@
 	font-size: 14px;
 	line-height: 1.65;
 }
+.table .exampleButton {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 0;
+	color: inherit;
+	text-align: left;
+	transition: color 200ms;
+}
+.table .exampleButton:hover { background: transparent; color: var(--sj-text); }
+.exampleIcon {
+	display: grid;
+	place-items: center;
+	flex-shrink: 0;
+	padding: 6px;
+	border-radius: 8px;
+	background: rgb(30 41 59 / 70%);
+	color: #94a3b8;
+	transition: color 200ms, background 200ms;
+}
+.exampleButton:hover .exampleIcon { background: rgb(20 184 166 / 15%); color: #2dd4bf; }
 .badge {
 	display: inline-flex;
 	align-items: center;
@@ -554,8 +589,10 @@
 .practiceHeader p { margin-top: 8px; color: #b5bed0; font-size: 14px; }
 .practiceHeader button { flex: none; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.1); border-radius: 50%; color: #d5dbe7; background: rgba(255,255,255,.04); }
 .practiceChip { display: inline-block; padding: 5px 12px; border-radius: 999px; background: rgba(52,224,196,.14); color: #34e0c4; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.practiceCount { display: inline-block; margin-top: 10px; padding: 4px 10px; border-radius: 999px; background: rgba(52,224,196,.12); color: #8debdc; font-size: 12px; font-weight: 600; }
 .practiceGrid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
-.practiceGrid .reviewMode { --mode-accent: #34e0c4; display: flex; flex-direction: column; align-items: stretch; gap: 16px; min-width: 0; padding: 14px; border: 1px solid rgba(255,255,255,.09); border-radius: 22px; background: rgba(27,31,43,.9); color: #f8fafc; transition: transform .2s, border-color .2s, box-shadow .2s; }
+.practiceGrid .reviewMode { --mode-accent: #34e0c4; position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 16px; min-width: 0; padding: 14px; border: 1px solid rgba(255,255,255,.09); border-radius: 22px; background: rgba(27,31,43,.9); color: #f8fafc; transition: transform .2s, border-color .2s, box-shadow .2s; }
+.practiceKey { position: absolute; top: 20px; right: 20px; z-index: 1; padding: 2px 7px; border: 1px solid rgba(255,255,255,.16); border-radius: 6px; background: rgba(15,23,42,.8); color: #aab4c6; font-size: 11px; }
 .practiceGrid .reviewMode + .reviewMode { margin-top: 0; }
 .practiceGrid .reviewMode[data-mode="quiz"] { --mode-accent: #a78bfa; }
 .practiceGrid .reviewMode[data-mode="write"] { --mode-accent: #fbbf24; }
@@ -575,8 +612,8 @@
 .practiceGrid .reviewModeCopy .reviewTag { align-self: flex-start; margin-top: 4px; padding: 3px 9px; border-radius: 999px; color: var(--mode-accent); background: color-mix(in srgb, var(--mode-accent) 16%, transparent); font-size: 11px; font-weight: 700; }
 .reviewDescription { flex: 1; min-height: 42px; color: #b5bed0; font-size: 13px; line-height: 1.5; }
 .reviewFooter { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.08); color: var(--mode-accent); font-size: 13px; font-weight: 700; }
-.practiceGrid .reviewModeArrow { display: grid; place-items: center; width: 38px; height: 38px; flex: none; border-radius: 50%; color: #d7ddea; background: #292f3e; transition: background .2s, color .2s; }
-.practiceGrid .reviewMode:not(.reviewModeDisabled):hover .reviewModeArrow { transform: none; background: var(--mode-accent); color: #111827; }
+.practiceGrid .reviewModeArrow { display: grid; place-items: center; width: 38px; height: 38px; flex: none; border-radius: 50%; color: #d7ddea; background: #292f3e; transition: transform .2s, background .2s, color .2s; }
+.practiceGrid .reviewMode:not(.reviewModeDisabled):hover .reviewModeArrow { transform: translateX(4px); background: var(--mode-accent); color: #111827; }
 .practiceGrid .reviewModeDisabled:hover { transform: none; }
 @media (max-width: 700px) { .practiceGrid { grid-template-columns: 1fr; } .practicePreview { height: 130px; } .practiceMenu { padding: 20px; } }
 .empty {
@@ -835,15 +872,17 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 12px;
+	gap: 6px;
 	width: 50%;
-	min-height: 43px;
+	min-height: 32px;
+	padding: 6px 8px;
 	border: 1px solid transparent;
 	border-radius: 10px;
 	color: var(--sj-text-secondary);
-	font-size: 16px;
+	font-size: 12px;
 	font-weight: 600;
 }
+.entryTypeSwitch button svg { width: 16px; height: 16px; }
 .entryTypeSwitch button[aria-pressed="true"] {
 	border-color: #00c7a0;
 	background: #087c68;
@@ -852,11 +891,16 @@
 }
 .addWordDialog .field { margin-top: 22px; font-size: 16px; font-weight: 650; }
 .addWordDialog .field small { color: inherit; font-size: inherit; font-weight: 400; }
-.requiredMark { color: #f45b5b; }
+.requiredMark { color: #2dd4bf; }
+.wordFields { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 12px; align-items: start; }
+.wordFieldMain { position: relative; min-width: 0; }
+.wordFieldMain input { padding-right: 105px; }
+.quickLookup { position: absolute; right: 6px; top: 54px; padding: 5px 8px; border-radius: 8px; background: var(--sj-primary-soft); color: var(--sj-brand-text); font-size: 12px; font-weight: 650; }
+.quickLookup:hover { background: var(--sj-hover); }
 .addWordDialog .field input,
 .addWordDialog .field textarea { margin-top: 8px; border-radius: 11px; font-size: 16px; font-weight: 400; }
 .addWordDialog .field input { height: 45px; }
-.addWordDialog .field textarea { min-height: 84px; }
+.addWordDialog .field textarea { min-height: 64px; resize: none; }
 .addWordDialog .dialogActions { margin-top: 26px; padding-top: 22px; }
 .addWordDialog .secondary { color: var(--sj-text); border-color: var(--sj-border); background: transparent; }
 .addWordDialog .primary { background: #00a994; border-color: #00a994; }

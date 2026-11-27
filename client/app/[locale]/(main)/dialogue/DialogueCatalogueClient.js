@@ -10,12 +10,12 @@ import {
 	ChevronDown,
 	ChevronLeft,
 	ChevronRight,
-	CircleCheck,
 	GraduationCap,
 	Grid2X2,
 	LoaderCircle,
 	Plane,
 	Search,
+	FolderOpen,
 	Utensils,
 } from "lucide-react";
 import { lessonData } from "./_data/lessonData";
@@ -72,7 +72,14 @@ const dialogueCategories = [
 	"food",
 	"anime",
 	"story",
+	"other",
 ];
+
+function matchesCategory(course, category) {
+	return category === "other"
+		? !["travel", "food", "anime", "story"].some(value => matchesCourseCategory(course, value))
+		: matchesCourseCategory(course, category);
+}
 
 const categoryIcons = {
 	all: Grid2X2,
@@ -80,6 +87,7 @@ const categoryIcons = {
 	food: Utensils,
 	anime: Clapperboard,
 	story: BookOpen,
+	other: FolderOpen,
 };
 
 function getCefrLevelLabel(level) {
@@ -119,11 +127,25 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 	const startIntentHandled = useRef(false);
 	const categoryNavRef = useRef(null);
 	const levelFilterRef = useRef(null);
+	const searchRef = useRef(null);
 	const [categoryScroll, setCategoryScroll] = useState({
 		left: false,
 		right: false,
 	});
 	const selectedLevelLabel = levelOptions.find(option => option.value === selectedLevel)?.label;
+
+	useEffect(() => {
+		function focusSearch(event) {
+			if (event.key !== "/" || event.ctrlKey || event.metaKey || event.altKey || event.shiftKey || event.isComposing || event.repeat) return;
+			if (event.target instanceof HTMLElement && event.target.closest("input, textarea, select, [contenteditable]:not([contenteditable='false']), [role='dialog']")) return;
+			if (document.querySelector("dialog[open], [role='dialog'][aria-modal='true']")) return;
+			if (!searchRef.current) return;
+			event.preventDefault();
+			searchRef.current.focus();
+		}
+		window.addEventListener("keydown", focusSearch);
+		return () => window.removeEventListener("keydown", focusSearch);
+	}, []);
 
 	useEffect(() => {
 		if (!levelMenuOpen) return;
@@ -230,39 +252,6 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 		);
 	}, [courses, progressByLesson]);
 
-	const currentCourse = courses
-		.filter((course) => {
-			const stats = courseStats[course.id];
-			return stats?.isStarted && !stats.isCompleted;
-		})
-		.sort(
-			(first, second) =>
-				courseStats[second.id].latestUpdatedAt -
-				courseStats[first.id].latestUpdatedAt,
-		)[0];
-	const currentCourseContinueHref = useMemo(() => {
-		if (!userId || !hasConfirmedProgress || !currentCourse) return null;
-
-		const completedByDialogue = new Map(
-			(progressByLesson[currentCourse.id] || []).map((entry) => [
-				entry.dialogueId,
-				new Set((entry.completedTaskIds || []).map(String)),
-			]),
-		);
-
-		for (const dialogue of currentCourse.dialogues) {
-			const completedTaskIds = completedByDialogue.get(dialogue.id);
-			const nextTask = dialogue.tasks.find(
-				(task) => !completedTaskIds?.has(String(task.id)),
-			);
-			if (nextTask) {
-				return `/dialogue/${currentCourse.id}/${dialogue.id}/${nextTask.id}`;
-			}
-		}
-
-		return `/dialogue/${currentCourse.id}`;
-	}, [currentCourse, hasConfirmedProgress, progressByLesson, userId]);
-
 	const normalizedSearch = search.trim().toLocaleLowerCase(locale);
 	const courseMatchesSearch = (course) => {
 		if (!normalizedSearch) return true;
@@ -283,16 +272,16 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 		);
 	};
 	const courseMatchesCategory = (course) =>
-		matchesCourseCategory(course, selectedCategory);
+		matchesCategory(course, selectedCategory);
 	const courseMatchesFilters = (course) =>
 		courseMatchesSearch(course) && courseMatchesLevel(course);
-	const currentCourseMatchesSearch = Boolean(
-		hasConfirmedProgress && currentCourse && courseMatchesFilters(currentCourse),
-	);
 	const visibleCourses = courses.filter(
 		(course) => courseMatchesFilters(course) && courseMatchesCategory(course),
 	);
-	const currentStats = currentCourse ? courseStats[currentCourse.id] : null;
+	const groupedView = selectedCategory === "all" && !normalizedSearch;
+	const sections = groupedView
+		? dialogueCategories.filter(category => category !== "all").map(category => ({ category, items: visibleCourses.filter(course => matchesCategory(course, category)) })).filter(section => section.items.length).sort((a, b) => b.items.length - a.items.length)
+		: [{ category: null, items: visibleCourses }];
 
 	useEffect(() => {
 		if (startIntentHandled.current || !isStartIntent) return;
@@ -330,7 +319,7 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 			<div className="mx-auto max-w-[1548px]">
 				{/* ==================== HERO SECTION ==================== */}
 				<section className="relative overflow-hidden bg-hero">
-					<svg aria-hidden="true" viewBox="0 0 420 130" fill="none" className="pointer-events-none absolute bottom-0 left-1/2 h-24 w-72 -translate-x-1/2 text-primary opacity-15 sm:h-32 sm:w-96">
+					<svg aria-hidden="true" viewBox="0 0 420 130" fill="none" className="pointer-events-none absolute bottom-0 left-1/2 h-24 w-72 -translate-x-1/2 text-primary opacity-[0.17] sm:h-32 sm:w-96">
 						<circle cx="325" cy="28" r="12" fill="currentColor" opacity=".5" />
 						<path d="M0 130 48 104l20-24 14 5 27-29 15 8 22-19 23 19 20 6 20 25 28-12 25 24 21-8 27 17 35-9 35 23Z" fill="currentColor" opacity=".28" />
 						<path d="m70 130 39-32 17-23 17-6 21-22 13 9 14-14 18 17 14 4 22-32 7-5 7-12 9 9 10 6 19 27 13 6 18 22 17 5 35 41Z" fill="currentColor" opacity=".48" />
@@ -369,12 +358,14 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 							<span className="sr-only">{t("searchLabel")}</span>
 							<Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-secondary" />
 							<input
+								ref={searchRef}
 								type="search"
 								value={search}
 								onChange={(event) => setSearch(event.target.value)}
 								placeholder={t("searchPlaceholder")}
-								className="h-12 w-full rounded-xl border border-app bg-surface pl-11 pr-4 text-sm text-main shadow-sm outline-none transition placeholder:text-secondary focus:border-primary focus:ring-2 focus:ring-primary/15"
+								className="h-12 w-full rounded-xl border border-app bg-surface pl-11 pr-14 text-sm text-main shadow-sm outline-none transition placeholder:text-secondary focus:border-primary focus:ring-2 focus:ring-primary/15"
 							/>
+							<kbd aria-hidden="true" className="pointer-events-none absolute right-8 top-1/2 -translate-y-1/2 rounded border border-app bg-surface-muted px-1.5 py-0.5 text-xs text-secondary">/</kbd>
 						</label>
 					</div>
 				</section>
@@ -392,84 +383,13 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 						</button>
 					</div>
 				)}
-				{/* ==================== CURRENT / IN-PROGRESS COURSE ==================== */}
-
-				{currentCourseMatchesSearch && (
-					<section className="mt-5">
-						<div className="overflow-hidden rounded-xl border border-app bg-gradient-to-br from-surface via-surface to-primary/5 p-4 shadow-sm sm:p-5 md:p-3 lg:p-4 xl:p-5">
-							<div className="flex flex-col gap-5 md:flex-row md:items-center md:gap-3 lg:gap-4 xl:gap-6">
-								<div className="relative aspect-[16/9] w-full shrink-0 overflow-hidden rounded-lg border border-app md:w-48 lg:w-56 xl:w-64">
-									<Image
-										src={getCourseImage(currentCourse.id)}
-										alt={currentCourse.title}
-										fill
-										className="object-cover"
-										sizes="(max-width: 768px) 100vw, 256px"
-									/>
-									<div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent" />
-									<span className="absolute left-2 top-2 rounded-full border border-white/20 bg-primary px-2.5 py-1 text-[11px] font-semibold text-white shadow-sm">
-										● {t("learning")}
-									</span>
-								</div>
-
-								<div className="min-w-0 flex-1">
-									<div className="flex flex-wrap items-center gap-2">
-										<h2 className="text-lg font-bold text-main sm:text-xl">
-											{getLocalizedCourseValue(currentCourse, "title")}
-										</h2>
-										<span className="rounded-full border border-primary/25 bg-primary/10 px-2 py-0.5 text-[11px] font-semibold text-brand-text">
-											{getCefrLevelLabel(currentCourse.level)}
-										</span>
-									</div>
-									<p className="mt-1.5 max-w-2xl line-clamp-2 text-sm leading-5 text-secondary">
-										{getLocalizedCourseValue(currentCourse, "description")}
-									</p>
-
-									<div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-xs text-secondary">
-										<span className="inline-flex items-center gap-1.5">
-											<BookOpen className="h-4 w-4 text-brand-text" />
-											{t("exercises", { count: currentStats.totalTaskCount })}
-										</span>
-										<span className="inline-flex items-center gap-1.5">
-											<CircleCheck className="h-4 w-4 text-brand-text" />
-											{t("completedCount", {
-												completed: currentStats.completedTaskCount,
-												total: currentStats.totalTaskCount,
-											})}
-										</span>
-									</div>
-
-									{currentStats.totalTaskCount > 0 && (
-										<div className="mt-3 flex max-w-xl items-center gap-3">
-											<div className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-muted">
-												<div
-													className="h-full rounded-full bg-primary transition-all duration-500"
-													style={{ width: `${currentStats.progressPercent}%` }}
-												/>
-											</div>
-											<span className="w-9 text-right text-xs font-semibold text-secondary">
-												{currentStats.progressPercent}%
-											</span>
-										</div>
-									)}
-								</div>
-
-								<Link
-									href={currentCourseContinueHref || `/dialogue/${currentCourse.id}`}
-									className="inline-flex min-h-11 shrink-0 self-stretch items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-primary px-4 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:self-center lg:gap-3 lg:px-5 xl:px-6"
-								>
-									{t("continue")}
-									<ArrowRight className="h-5 w-5" />
-								</Link>
-							</div>
-						</div>
-					</section>
-				)}
 				{/* ==================== OTHER COURSES / DISCOVERY ==================== */}
 
 				<section className="mt-6 pb-10">
-					<div className="grid min-w-0 items-start gap-5 xl:grid-cols-[272px_minmax(0,1fr)] xl:gap-6">
-						<div className="min-w-0 xl:sticky xl:top-[140px] xl:self-start xl:h-fit">
+					<div className="grid min-w-0 items-stretch gap-5 xl:grid-cols-[272px_minmax(0,1fr)] xl:gap-6">
+						<div className="min-w-0 xl:border-r xl:border-app xl:pr-6">
+						<div className="min-w-0 self-start lg:sticky lg:top-20 lg:z-10 lg:h-fit lg:bg-page">
+							<h2 className="mb-3 hidden px-3 text-xs font-semibold uppercase tracking-wider text-secondary xl:block">{t("categoryHeading")}</h2>
 							<div className="flex min-w-0 items-center gap-1 xl:block">
 								{categoryScroll.left && (
 									<button
@@ -489,7 +409,7 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 								<nav
 									ref={categoryNavRef}
 									aria-label={t("categoryNavLabel")}
-									className="flex min-w-0 flex-1 flex-nowrap gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain pb-2 touch-pan-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden xl:flex-col xl:overflow-visible xl:border-r xl:border-app xl:pr-4 xl:pb-0"
+									className="flex min-w-0 flex-1 flex-nowrap gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain pb-2 touch-pan-x [scrollbar-width:none] [&::-webkit-scrollbar]:hidden xl:flex-col xl:overflow-visible xl:pb-0"
 								>
 									{dialogueCategories.map((category) => {
 										const isActive = selectedCategory === category;
@@ -498,7 +418,7 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 											category === "all"
 												? courses.length
 												: courses.filter((course) =>
-														matchesCourseCategory(course, category),
+																matchesCategory(course, category),
 													).length;
 										return (
 											<button
@@ -506,10 +426,10 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 												type="button"
 												aria-pressed={isActive}
 												onClick={() => setSelectedCategory(category)}
-												className={`relative flex h-11 shrink-0 items-center gap-3 rounded-xl px-4 text-left text-sm font-medium transition xl:w-full ${
+												className={`relative flex min-h-10 shrink-0 items-center gap-3 rounded-xl border px-3 py-2 text-left text-sm font-medium transition-all duration-200 xl:w-full ${
 													isActive
-														? "bg-primary/15 text-main dark:text-brand-text before:absolute before:inset-y-0 before:left-0 before:w-1 before:rounded-full before:bg-primary before:shadow-[0_0_12px_var(--sj-primary)]"
-														: "text-secondary hover:bg-hover hover:text-main"
+																? "border-teal-500/25 bg-teal-500/15 text-brand-text"
+																: "border-transparent text-secondary hover:bg-hover hover:text-main"
 												}`}
 											>
 												<Icon
@@ -520,7 +440,7 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 													{t(`categories.${category}`)}
 												</span>
 												<span
-													className={`ml-auto hidden min-w-8 rounded-full px-2 py-1 text-center text-xs xl:inline-block ${isActive ? "bg-primary/15 text-main dark:text-brand-text" : "bg-surface-muted text-secondary"}`}
+															className={`ml-auto hidden min-w-8 rounded-full px-2 py-1 text-center text-xs xl:inline-block ${isActive ? "bg-teal-500/20 text-brand-text" : "bg-surface-muted text-secondary"}`}
 												>
 													{count}
 												</span>
@@ -545,9 +465,10 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 								)}
 							</div>
 						</div>
+						</div>
 						<div className="min-w-0">
-							<div className="mb-3 flex flex-wrap items-center justify-between gap-3">
-								<h2 className="relative pb-3 text-2xl font-bold text-main after:absolute after:bottom-0 after:left-0 after:h-1 after:w-12 after:rounded-full after:bg-primary">
+							<div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+								<h2 className="pb-3 text-2xl font-bold text-main">
 									{t("explore")}
 								</h2>
 								<div className="flex items-center gap-4">
@@ -592,8 +513,13 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 								</div>
 							</div>
 							{visibleCourses.length > 0 ? (
-								<div className="grid gap-5 xl:gap-[22px] sm:grid-cols-2 xl:grid-cols-3">
-									{visibleCourses.map((course) => {
+								<div className="space-y-6">
+								{sections.map(({ category, items }) => {
+									const Icon = category ? categoryIcons[category] : null;
+									return <section key={category || "results"}>
+									{category && <div className="mb-3 flex items-center justify-between gap-3"><h3 className="flex items-center gap-2 text-lg font-bold text-main"><Icon size={20} className="shrink-0 text-brand-text" aria-hidden="true" />{t(`categories.${category}`)} <span className="text-sm font-normal text-secondary">({items.length})</span></h3>{items.length > 3 && <button type="button" onClick={() => setSelectedCategory(category)} className="inline-flex items-center gap-1 text-sm font-medium text-brand-text hover:underline">{t("viewCategory", { count: items.length })} <ArrowRight size={16} aria-hidden="true" /></button>}</div>}
+									<div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+									{(category ? items.slice(0, 3) : items).map((course) => {
 										const stats = courseStats[course.id];
 										const statusLabel = !hasConfirmedProgress
 											? null
@@ -612,7 +538,7 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 											<Link
 												key={course.id}
 												href={`/dialogue/${course.id}`}
-													className="group flex h-full flex-col rounded-[18px] border border-transparent bg-surface p-2 transition duration-200 hover:-translate-y-0.5 hover:border-primary/50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+															className="group flex h-full cursor-pointer flex-col rounded-[18px] border border-transparent bg-surface p-2 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-teal-500/60 hover:shadow-xl hover:shadow-teal-500/10 dark:hover:bg-[#151e32] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-reduce:transform-none motion-reduce:transition-none"
 											>
 												{/* Thumbnail */}
 													<div className="relative aspect-[2.1/1] overflow-hidden rounded-[14px] bg-slate-900">
@@ -620,7 +546,7 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 														src={getCourseImage(course.id)}
 													alt={getLocalizedCourseValue(course, "title")}
 														fill
-														className="object-cover transition duration-300 group-hover:scale-[1.03]"
+																			className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transform-none motion-reduce:transition-none"
 														sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
 													/>
 
@@ -635,8 +561,8 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 
 												{/* Content */}
 															<div className="flex flex-1 flex-col px-1 pb-1 pt-2 sm:pt-3">
-													<div className="flex min-w-0 items-center gap-2">
-														<h3 className="min-w-0 flex-1 line-clamp-1 text-base font-bold text-main">
+															<div className="mb-3 flex min-w-0 items-center gap-2">
+																		<h3 className="min-w-0 flex-1 line-clamp-1 text-lg font-bold text-main transition-colors duration-200 group-hover:text-teal-600 dark:group-hover:text-teal-400 motion-reduce:transition-none">
 															{getLocalizedCourseValue(course, "title")}
 														</h3>
 														<span className="shrink-0 rounded-md border border-primary/20 bg-primary/10 px-2 py-0.5 text-[11px] font-semibold text-brand-text">
@@ -644,14 +570,17 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 														</span>
 													</div>
 
-													<p className="mt-1.5 min-h-10 line-clamp-2 text-[13px] leading-5 text-secondary">
-														{getLocalizedCourseValue(course, "description")}
-													</p>
+															<div className="mt-auto flex items-center justify-between gap-2 border-t border-app pt-2.5 text-xs text-secondary">
+																<span>{t("dialogues", { count: course.dialogues.length })}</span>
+																				<span className="inline-flex items-center gap-1 font-medium text-brand-text">{t("exploreAction")} <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none" aria-hidden="true" /></span>
+															</div>
 
 												</div>
 											</Link>
 										);
 									})}
+									</div>
+								</section>})}
 								</div>
 							) : (
 								<div className="mt-2 rounded-2xl border border-dashed border-app bg-surface/40 px-6 py-14 text-center">

@@ -101,12 +101,13 @@ export default function FeedbackWidget() {
 						setError("");
 						setOpen(true);
 					}}
-					className={`${keepsMobileContentClear ? "relative md:fixed md:bottom-6 md:right-6" : "fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-4 sm:bottom-6 sm:right-6"} z-[90] inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-white shadow-lg transition hover:bg-primary-hover dark:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-page`}
+					className={`${keepsMobileContentClear ? "relative md:fixed md:bottom-6 md:right-6" : "fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-[max(1rem,env(safe-area-inset-right))] sm:bottom-6 sm:right-6"} group z-[90] inline-flex h-10 min-w-10 cursor-pointer items-center justify-center whitespace-nowrap rounded-full bg-primary px-3 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-primary-hover dark:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-page`}
+					aria-label={t("button")}
 					aria-haspopup="dialog"
 					aria-expanded={open}
 				>
 					<MessageSquare size={17} aria-hidden="true" />
-					{t("button")}
+					<span aria-hidden="true" className="max-w-0 overflow-hidden opacity-0 transition-all duration-200 group-hover:ml-2 group-hover:max-w-24 group-hover:opacity-100 group-focus-visible:ml-2 group-focus-visible:max-w-24 group-focus-visible:opacity-100 motion-reduce:transition-none">{t("button")}</span>
 				</button>
 			</div>
 

@@ -66,27 +66,74 @@ test("workers skip attached and local records by default and claim each key once
 	assert.equal((await AvatarUploadIntent.findById(local.id)).cleanupStatus, "complete");
 });
 
-test("untracked legacy avatars cannot be replaced without losing their cleanup reference", async () => {
+test("legacy avatar survives repeated tracked replacements", async () => {
 	const legacyAvatar = "https://res.cloudinary.com/studyjony/image/upload/v123/legacy/avatar.jpg";
 	await User.updateOne({ _id: owner._id }, { $set: { avatar: legacyAvatar } });
 	const replacement = await reserveAvatarUpload(owner.id, input());
 	await beginAvatarUpload(owner.id, replacement.id);
 
-	await assert.rejects(
-		attachAvatarUpload(owner.id, replacement.id, "https://res.cloudinary.com/studyjony/image/upload/v123/replacement.jpg"),
-		error => error.statusCode === 409,
-	);
-	// The upload controller records the successful external upload after attach is rejected.
-	await recordUploadOutcome(owner.id, replacement.id, "success");
+	await attachAvatarUpload(owner.id, replacement.id, "https://example.test/first.jpg");
+	const next = await reserveAvatarUpload(owner.id, input());
+	await beginAvatarUpload(owner.id, next.id);
+	await attachAvatarUpload(owner.id, next.id, "https://example.test/second.jpg");
+	const saved = await User.findById(owner.id).select("+avatarIntent +legacyAvatar");
+	assert.equal(saved.avatar, "https://example.test/second.jpg");
+	assert.equal(saved.legacyAvatar, legacyAvatar);
+	assert.equal(String(saved.avatarIntent), next.id);
+	const previous = await AvatarUploadIntent.findById(replacement.id).lean();
+	assert.equal(previous.attachmentStatus, "unattached");
+	assert.equal(previous.cleanupStatus, "pending");
+});
 
-	const saved = await User.findById(owner.id).select("+avatarIntent");
-	const intent = await AvatarUploadIntent.findById(replacement.id).lean();
-	assert.equal(saved.avatar, legacyAvatar);
+test("concurrent replacements retain the legacy reference and track both uploads", async () => {
+	await User.updateOne({ _id: owner._id }, { $set: { avatar: "https://example.test/legacy.jpg" } });
+	const first = await reserveAvatarUpload(owner.id, input()), second = await reserveAvatarUpload(owner.id, input());
+	await Promise.all([beginAvatarUpload(owner.id, first.id), beginAvatarUpload(owner.id, second.id)]);
+	await Promise.all([attachAvatarUpload(owner.id, first.id, "https://example.test/first.jpg"), attachAvatarUpload(owner.id, second.id, "https://example.test/second.jpg")]);
+	const user = await User.findById(owner.id).select("+avatarIntent +legacyAvatar").lean();
+	const intents = await AvatarUploadIntent.find({ _id: { $in: [first._id, second._id] } }).lean();
+	assert.equal(user.legacyAvatar, "https://example.test/legacy.jpg");
+	assert.equal(intents.filter(intent => intent.attachmentStatus === "attached").length, 1);
+	assert.equal(intents.filter(intent => intent.attachmentStatus === "unattached" && intent.cleanupStatus === "pending").length, 1);
+	assert.equal(String(intents.find(intent => intent.attachmentStatus === "attached")._id), String(user.avatarIntent));
+});
+
+test("failed attachment rolls back legacy preservation and leaves upload tracked", async () => {
+	await User.updateOne({ _id: owner._id }, { $set: { avatar: "https://example.test/legacy.jpg" } });
+	const intent = await reserveAvatarUpload(owner.id, input());
+	await assert.rejects(attachAvatarUpload(owner.id, intent.id, "https://example.test/new.jpg"), error => error.statusCode === 409);
+	const saved = await User.findById(owner.id).select("+legacyAvatar +avatarIntent").lean();
+	assert.equal(saved.avatar, "https://example.test/legacy.jpg");
+	assert.equal(saved.legacyAvatar, undefined);
 	assert.equal(saved.avatarIntent, undefined);
-	assert.equal(intent.uploadStatus, "finished");
-	assert.equal(intent.uploadResult, "success");
-	assert.equal(intent.attachmentStatus, "unattached");
-	assert.equal(intent.cleanupStatus, "pending");
+	assert.equal((await AvatarUploadIntent.findById(intent.id)).uploadStatus, "reserved");
+});
+
+test("transaction failure after intent update preserves legacy avatar and rolls back attachment", async t => {
+	await User.updateOne({ _id: owner._id }, { $set: { avatar: "https://example.test/legacy.jpg" } });
+	const intent = await reserveAvatarUpload(owner.id, input());
+	await beginAvatarUpload(owner.id, intent.id);
+	const update = t.mock.method(User, "findByIdAndUpdate", () => { throw new Error("simulated transaction failure"); });
+	try { await assert.rejects(attachAvatarUpload(owner.id, intent.id, "https://example.test/new.jpg"), /simulated transaction failure/); }
+	finally { update.mock.restore(); }
+	const user = await User.findById(owner.id).select("+avatarIntent +legacyAvatar").lean();
+	const saved = await AvatarUploadIntent.findById(intent.id).lean();
+	assert.equal(user.avatar, "https://example.test/legacy.jpg");
+	assert.equal(user.legacyAvatar, undefined);
+	assert.equal(user.avatarIntent, undefined);
+	assert.equal(saved.uploadStatus, "uploading");
+	assert.equal(saved.attachmentStatus, "unattached");
+	assert.equal(saved.cleanupStatus, "pending");
+	await recordUploadOutcome(owner.id, intent.id, "success");
+	assert.equal((await AvatarUploadIntent.findById(intent.id)).uploadResult, "success");
+});
+
+test("conflicting preserved legacy avatar cannot be overwritten", async () => {
+	await User.updateOne({ _id: owner._id }, { $set: { avatar: "https://example.test/one.jpg", legacyAvatar: "https://example.test/two.jpg" } });
+	const intent = await reserveAvatarUpload(owner.id, input());
+	await beginAvatarUpload(owner.id, intent.id);
+	await assert.rejects(attachAvatarUpload(owner.id, intent.id, "https://example.test/new.jpg"), error => error.statusCode === 409);
+	assert.equal((await User.findById(owner.id).select("+legacyAvatar")).legacyAvatar, "https://example.test/two.jpg");
 });
 
 test("reservation generates unique, provider-specific storage keys without caller-supplied paths", async () => {

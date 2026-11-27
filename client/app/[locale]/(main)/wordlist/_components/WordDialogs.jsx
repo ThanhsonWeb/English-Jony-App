@@ -14,6 +14,7 @@ export function WordDialog({ word, onClose, onSave, t }) {
 		example: word?.example || "",
 	});
 	const [lookupState, setLookupState] = useState("idle");
+	const [lookupRequest, setLookupRequest] = useState(0);
 	const [entryType, setEntryType] = useState("word");
 	const [busy, setBusy] = useState(false);
 	const [error, setError] = useState("");
@@ -51,7 +52,7 @@ export function WordDialog({ word, onClose, onSave, t }) {
 			clearTimeout(timer);
 			controller.abort();
 		};
-	}, [fields.english, word]);
+	}, [fields.english, word, lookupRequest]);
 	function changeField(event) {
 		const { name, value } = event.target;
 		if (name === "english") {
@@ -128,8 +129,18 @@ export function WordDialog({ word, onClose, onSave, t }) {
 						</button>
 					</div>
 				)}
+				<div className={styles.wordFields}>
+					<div className={styles.wordFieldMain}>
+						<label className={styles.field}>
+							{t(word ? "word" : entryType === "phrase" ? "entryTypePhrase" : "addWordField")}{!word && <span className={styles.requiredMark} aria-hidden="true"> *</span>}
+							<input name="english" value={fields.english} placeholder={t(word ? "wordPlaceholder" : entryType === "phrase" ? "phraseInputPlaceholder" : "wordInputPlaceholder")} onChange={changeField} required maxLength={500} disabled={busy} autoComplete="off" />
+						</label>
+						{!word && <button type="button" className={styles.quickLookup} disabled={busy || !fields.english.trim()} onClick={() => { setLookupState("loading"); setLookupRequest((current) => current + 1); }}>✨ {t("quickLookup")}</button>}
+						{lookupState !== "idle" && <span className={styles.lookupHint} role="status">{lookupState === "loading" ? t("lookingUpWord") : t("lookupUnavailable")}</span>}
+					</div>
+					<label className={styles.field}>{t("ipa")}<input name="pronunciation" value={fields.pronunciation} placeholder="/ˈlɪs.ən/" onChange={changeField} maxLength={500} disabled={busy} autoComplete="off" /></label>
+				</div>
 				{[
-					["english", word ? "word" : entryType === "phrase" ? "entryTypePhrase" : "addWordField", word ? "wordPlaceholder" : entryType === "phrase" ? "phraseInputPlaceholder" : "wordInputPlaceholder"],
 					["vietnamese", word ? "meaning" : "vietnameseMeaning", word ? "meaningPlaceholder" : entryType === "phrase" ? "phraseMeaningPlaceholder" : "wordMeaningPlaceholder"],
 					["example", "example", word ? "examplePlaceholder" : entryType === "phrase" ? "phraseExamplePlaceholder" : "wordExamplePlaceholder"],
 				].map(([name, label, placeholder]) => (
@@ -146,7 +157,7 @@ export function WordDialog({ word, onClose, onSave, t }) {
 							onChange={changeField}
 							maxLength={2000}
 							disabled={busy}
-							rows={3}
+							rows={2}
 						/> : <input
 							name={name}
 							value={fields[name]}
@@ -157,11 +168,6 @@ export function WordDialog({ word, onClose, onSave, t }) {
 							disabled={busy}
 							autoComplete="off"
 						/>}
-						{name === "english" && lookupState !== "idle" && (
-							<span className={styles.lookupHint} role="status">
-								{lookupState === "loading" ? t("lookingUpWord") : t("lookupUnavailable")}
-							</span>
-						)}
 					</label>
 				))}
 				{error && <p role="alert">{error}</p>}

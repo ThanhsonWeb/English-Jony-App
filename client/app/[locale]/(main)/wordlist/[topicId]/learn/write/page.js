@@ -4,7 +4,7 @@ import { useEffect, useLayoutEffect, useReducer, useRef, useState } from "react"
 import { useParams, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
-import { loadVocabulary, selectReviewWords, vocabularyKey } from "@/app/_lib/vocabulary.mjs";
+import { loadVocabulary, selectReviewWords, speakWord, vocabularyKey } from "@/app/_lib/vocabulary.mjs";
 import { resourceCache } from "@/app/_lib/resourceCache.mjs";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { isReviewCompletionReady } from "@/app/_lib/reviewSaveController.mjs";
@@ -15,6 +15,7 @@ import { useBackgroundReviewSave } from "@/app/_lib/useBackgroundReviewSave.mjs"
 import {
 	CheckCircle2,
 	PenLine,
+	Volume2,
 	XCircle,
 } from "lucide-react";
 
@@ -42,7 +43,9 @@ export default function WriteReviewPage() {
 	const router = useRouter();
 	const inputRef = useRef(null);
 	const sessionRef = useRef(null);
+	const originalWordsRef = useRef([]);
 	const [words, setWords] = useState([]);
+	const [missedWords, setMissedWords] = useState([]);
 	const [questionState, dispatchQuestionState] = useReducer(reviewQuestionReducer, null, createReviewQuestionState);
 	const sessionState = questionState.sessionState;
 	const answer = questionState.answer;
@@ -56,6 +59,7 @@ export default function WriteReviewPage() {
 	const { resetAnswers, pending, failed } = reviewSave;
 	const [sessionFinished, setSessionFinished] = useState(false);
 	const [practiceMode, setPracticeMode] = useState(false);
+	const [showHint, setShowHint] = useState(false);
 
 	const currentIndex = sessionState?.currentIndex ?? 0;
 	const waitingForContinue = sessionState?.waitingForContinue ?? false;
@@ -70,6 +74,7 @@ export default function WriteReviewPage() {
 			queueMicrotask(() => {
 				if (cancelled) return;
 				const reviewWords = selectReviewWords(cached, { global: !topicId, dueOnly });
+				originalWordsRef.current = reviewWords;
 				sessionRef.current = createMistakeReviewSession(reviewWords.length);
 				dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
 				setWords(reviewWords);
@@ -84,6 +89,7 @@ export default function WriteReviewPage() {
 				const reviewWords = selectReviewWords(vocabulary, { global: !topicId, dueOnly });
 
 				if (!cancelled && !Array.isArray(cached)) {
+					originalWordsRef.current = reviewWords;
 					sessionRef.current = createMistakeReviewSession(reviewWords.length);
 					dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
 					setWords(reviewWords);
@@ -121,6 +127,7 @@ export default function WriteReviewPage() {
 
 	function checkAnswer() {
 		if (!currentWord || !answer.trim() || sessionRef.current?.getSnapshot().waitingForContinue) return;
+		setShowHint(false);
 		const submittedAnswer = answer;
 		const isCorrect =
 			normalizeAnswer(submittedAnswer) === normalizeAnswer(currentWord.english);
@@ -132,6 +139,7 @@ export default function WriteReviewPage() {
 		});
 		if (!step.accepted) return;
 		if (step.firstAttempt) {
+			if (!isCorrect) setMissedWords(previous => [...previous, currentWord]);
 			setResults((previous) => ({
 				...previous,
 				[isCorrect ? "correct" : "wrong"]:
@@ -161,9 +169,12 @@ export default function WriteReviewPage() {
 		else checkAnswer();
 	}
 
-	function restartReview() {
+	function restartReview(retryWords = originalWordsRef.current) {
+		setShowHint(false);
 		resetAnswers();
-		sessionRef.current = createMistakeReviewSession(words.length);
+		setWords(retryWords);
+		setMissedWords([]);
+		sessionRef.current = createMistakeReviewSession(retryWords.length);
 		dispatchQuestionState({ type: "reset" });
 		dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
 		setPracticeMode(true);
@@ -197,12 +208,15 @@ export default function WriteReviewPage() {
 		return <>
 			<ReviewCompletion
 				message={t("writing.completion", { count: total })}
+				note={t("common.reviewMistakesNote")}
+				retryLabel={t("common.retryMistakes", { count: missedWords.length })}
+				onRetry={missedWords.length ? () => restartReview(missedWords) : undefined}
 				stats={[
 					{ label: t("common.correctStat"), value: results.correct, tone: "emerald" },
 					{ label: t("common.wrongStat"), value: results.wrong, tone: "red" },
 					{ label: t("common.accuracy"), value: `${accuracy}%`, tone: "blue" },
 				]}
-				onRestart={restartReview}
+				onRestart={() => restartReview()}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 			<ReviewSaveNotice pending={pending} failed={failed} />
@@ -235,13 +249,6 @@ export default function WriteReviewPage() {
 			<form onSubmit={handleSubmit}>
 				<div className="relative overflow-hidden rounded-[28px] border border-primary/30 bg-gradient-to-br from-surface via-surface-muted to-surface p-6 sm:p-10">
 						<div className="relative">
-							{lastFeedback && (
-								<p aria-live="polite" className={`mb-5 rounded-xl px-3 py-2 text-sm ${lastFeedback.type === "correct" ? "bg-emerald-500/10 text-emerald-300" : "bg-red-500/10 text-red-300"}`}>
-									{lastFeedback.type === "correct" ? t("common.correct") : t("common.incorrect", { answer: lastFeedback.answer })}
-									{lastFeedback.type === "wrong" && lastFeedback.pronunciation && <span className="mt-1 block font-mono text-slate-300">{lastFeedback.pronunciation}</span>}
-									{lastFeedback.example && <span className="mt-1 block text-slate-300">“{lastFeedback.example}”</span>}
-								</p>
-							)}
 							<p className="text-sm font-semibold text-brand-text">
 								{t("writing.vietnameseMeaning")}
 							</p>
@@ -249,9 +256,10 @@ export default function WriteReviewPage() {
 								{currentWord.vietnamese}
 							</h2>
 
-							<label htmlFor="write-answer" className="mt-9 block text-sm font-medium text-slate-400">
-								{t("writing.answerLabel")}
-							</label>
+							<div className="mt-9 flex items-center justify-between gap-3">
+								<label htmlFor="write-answer" className="text-sm font-medium text-slate-400">{t("writing.answerLabel")}</label>
+								{!waitingForContinue && <button type="button" onClick={() => setShowHint(true)} className="text-xs text-slate-400 hover:text-amber-400">💡 {t("writing.hint")}</button>}
+							</div>
 							<input
 								ref={inputRef}
 								id="write-answer"
@@ -264,6 +272,15 @@ export default function WriteReviewPage() {
 								placeholder={t("writing.placeholder")}
 								className={`mt-2 w-full rounded-2xl border bg-input px-5 py-4 text-xl font-semibold text-main outline-none transition placeholder:font-normal placeholder:text-muted focus:ring-4 sm:px-6 sm:py-5 sm:text-2xl ${waitingForContinue ? "border-red-500/60" : "border-app focus:border-primary focus:ring-primary/15"}`}
 							/>
+							{showHint && !waitingForContinue && <p className="mt-2 text-sm tracking-wider text-amber-300" aria-live="polite">{currentWord.english.replace(/[\p{L}\p{N}]+/gu, (part) => Array.from(part).map((character, index) => index === 0 ? character : "_").join(" "))}</p>}
+							{lastFeedback && (
+								<div aria-live="polite" className={`mt-4 flex items-start justify-between gap-3 rounded-xl px-3 py-2 text-sm ${lastFeedback.type === "correct" ? "bg-emerald-500/10 text-emerald-300" : "bg-red-500/10 text-red-300"}`}>
+									<div>{lastFeedback.type === "correct" ? t("common.correct") : t("common.incorrect", { answer: lastFeedback.answer })}
+									{lastFeedback.type === "wrong" && lastFeedback.pronunciation && <span className="mt-1 block font-mono text-slate-300">{lastFeedback.pronunciation}</span>}
+									{lastFeedback.example && <span className="mt-1 block text-slate-300">“{lastFeedback.example}”</span>}</div>
+									<button type="button" onClick={() => speakWord(currentWord.english)} aria-label={t("flashcard.playAudio", { word: currentWord.english })} className="shrink-0 rounded-full p-2 text-teal-400 hover:bg-teal-500/20"><Volume2 size={18} aria-hidden="true" /></button>
+								</div>
+							)}
 
 							<button
 								type="submit"
@@ -272,6 +289,7 @@ export default function WriteReviewPage() {
 							>
 								{waitingForContinue ? t("common.continue") : t("common.check")}
 							</button>
+							<p className="mt-2 text-center text-xs text-slate-400">{t("writing.keyboardHint")}</p>
 						</div>
 				</div>
 			</form>

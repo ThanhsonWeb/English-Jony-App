@@ -72,7 +72,7 @@ export default function ThemeSelector() {
 				aria-expanded={isOpen}
 				aria-haspopup="menu"
 				title={currentLabel}
-				className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl   text-secondary outline-none transition hover:bg-black/5 dark:hover:bg-white/10 hover:text-main focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20"
+				className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-app bg-surface text-secondary outline-none transition hover:bg-hover hover:text-main focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20"
 			>
 				<ThemeIcon aria-hidden="true" className="h-[18px] w-[18px]" />
 			</button>

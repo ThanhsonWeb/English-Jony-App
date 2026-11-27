@@ -45,10 +45,10 @@ async function deleteCompletedAvatarIntents(userId, { batchSize = DEFAULT_BATCH_
 	}
 	const ownerId = new mongoose.Types.ObjectId(userId);
 	return mongoose.connection.transaction(async session => {
-		const user = await User.findById(ownerId).select("+lifecycleState +avatarIntent avatar").session(session).lean();
+		const user = await User.findById(ownerId).select("+lifecycleState +avatarIntent +legacyAvatar avatar").session(session).lean();
 		if (!user) throw new AppError("Account not found", 404);
 		if (user.lifecycleState !== "deleting") throw new AppError("Account is not deleting", 409);
-		if (user.avatarIntent != null || (user.avatar != null && user.avatar !== "") ||
+		if (user.avatarIntent != null || (user.avatar != null && user.avatar !== "") || (user.legacyAvatar !== undefined && user.legacyAvatar !== "") ||
 			await Intent.exists({ user: ownerId, attachmentStatus: "attached" }).session(session)) {
 			return { deletedCount: 0, hasMore: false, blocked: "avatar_tracking_unresolved" };
 		}
@@ -60,10 +60,10 @@ async function deleteCompletedAvatarIntents(userId, { batchSize = DEFAULT_BATCH_
 			{ $match: { references: { $eq: [] } } },
 			// A legacy or inconsistent URL can reference a key without an avatarIntent link.
 			{ $lookup: { from: User.collection.name, let: { key: "$storageKey" }, pipeline: [
-				{ $match: { $expr: { $cond: [
-					{ $eq: [{ $type: "$avatar" }, "string"] },
-					{ $gte: [{ $indexOfBytes: ["$avatar", "$$key"] }, 0] }, false,
-				] } } }, { $limit: 1 },
+				{ $match: { $expr: { $or: ["avatar", "legacyAvatar"].map(field => ({ $cond: [
+					{ $eq: [{ $type: `$${field}` }, "string"] },
+					{ $gte: [{ $indexOfBytes: [`$${field}`, "$$key"] }, 0] }, false,
+				] })) } } }, { $limit: 1 },
 			], as: "urlReferences" } },
 			{ $match: { urlReferences: { $eq: [] } } },
 			{ $sort: { _id: 1 } }, { $limit: batchSize + 1 }, { $project: { _id: 1 } },

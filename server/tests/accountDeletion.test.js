@@ -6,6 +6,7 @@ const { MongoMemoryReplSet } = require("mongodb-memory-server");
 const User = require("../models/userModel");
 const Intent = require("../models/avatarUploadIntentModel");
 const { initiateAccountDeletion } = require("../services/accountDeletion");
+const { checkAccountDeletionReadiness } = require("../services/accountDeletionReadiness");
 const { reserveAvatarUpload, beginAvatarUpload, attachAvatarUpload, recordUploadOutcome, claimAvatarCleanup } = require("../services/avatarUploadIntent");
 
 let db, user, other;
@@ -79,6 +80,24 @@ test("untracked legacy avatars block initiation and leave the account active", a
 	assert.equal(saved.avatar, legacy);
 	assert.equal(saved.avatarIntent, undefined);
 	assert.equal(await Intent.countDocuments(), 0);
+});
+
+test("retained legacy avatar blocks deletion and deleting-only cleanup after replacement", async () => {
+	await User.updateOne({ _id: user._id }, { $set: { avatar: legacy } });
+	const intent = await attach();
+	await assert.rejects(initiateAccountDeletion(user.id), error => error.statusCode === 409);
+	const saved = await User.findById(user.id).select("+lifecycleState +avatarIntent +legacyAvatar").lean();
+	assert.equal(saved.lifecycleState, "active");
+	assert.equal(saved.legacyAvatar, legacy);
+	assert.equal(String(saved.avatarIntent), intent.id);
+	assert.equal((await Intent.findById(intent.id)).attachmentStatus, "attached");
+
+	// A corrupted deleting state must still fail closed in readiness and worker claims.
+	await User.updateOne({ _id: user._id }, { $set: { lifecycleState: "deleting", avatar: "" }, $unset: { avatarIntent: 1 } });
+	await Intent.updateOne({ _id: intent._id }, { $set: { attachmentStatus: "unattached", cleanupStatus: "pending" } });
+	const readiness = await checkAccountDeletionReadiness(user.id);
+	assert.ok(readiness.blockers.includes("legacy_avatar_unresolved"));
+	assert.equal((await claimAvatarCleanup(user.id, intent.id, { deletingOnly: true })).claimed, false);
 });
 
 test("legacy active accounts without an avatar can still initiate deletion", async () => {

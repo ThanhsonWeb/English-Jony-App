@@ -237,7 +237,9 @@ export default function RankDashboard() {
 				<h1><Crown size={38} strokeWidth={1.7} aria-hidden="true" />{t("title")}</h1>
 				<p>{t("subtitle")}</p>
 			</div>
-			<MountainDecoration />
+			{signedInUser ? <div className={styles.periodSwitch} role="group" aria-label={t("periodLabel")}>
+				{["month", "all"].map(value => <button key={value} type="button" aria-pressed={period === value} onClick={() => { setPeriod(value); setLimit(15); }}>{t(value === "all" ? "allTimeShort" : "month")}</button>)}
+			</div> : <MountainDecoration />}
 		</header>
 	);
 
@@ -265,13 +267,6 @@ export default function RankDashboard() {
 							</div>
 						</> : <div className={styles.levelProgress} aria-hidden="true" />}
 					</RankSummaryCard>
-				</div>
-				<div className={styles.periodControls}>
-					<div className={styles.periodSwitch} role="group" aria-label={t("periodLabel")}>
-						{["month", "all"].map(value => (
-							<button key={value} type="button" aria-pressed={period === value} onClick={() => { setPeriod(value); setLimit(15); }}>{t(value === "all" ? "allTimeShort" : "month")}</button>
-						))}
-					</div>
 				</div>
 
 				<div aria-live="polite" aria-busy={loading}>

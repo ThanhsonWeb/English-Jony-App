@@ -30,7 +30,7 @@ function hasValidCleanupProof(intent, userId) {
 }
 
 function hasUnresolvedAvatar(user) {
-	return (user.avatarIntent !== undefined && user.avatarIntent !== null) ||
+	return (user.legacyAvatar !== undefined && user.legacyAvatar !== "") || (user.avatarIntent !== undefined && user.avatarIntent !== null) ||
 		(user.avatar !== undefined && (typeof user.avatar !== "string" || user.avatar.trim() !== ""));
 }
 
@@ -45,7 +45,7 @@ async function reconcileReservedAvatarIntent(userId, intentId) {
 	return mongoose.connection.transaction(async session => {
 		const user = await User.findOneAndUpdate({ _id: ownerId, lifecycleState: "deleting" },
 			{ $inc: { accountWriteFence: 1 } },
-			{ session, timestamps: false, returnDocument: "after" }).select("+lifecycleState +avatarIntent avatar").lean();
+			{ session, timestamps: false, returnDocument: "after" }).select("+lifecycleState +avatarIntent +legacyAvatar avatar").lean();
 		if (!user) {
 			if (!(await User.exists({ _id: ownerId }).session(session))) throw new AppError("Account not found", 404);
 			throw new AppError("Account is not deleting", 409);
@@ -60,7 +60,8 @@ async function reconcileReservedAvatarIntent(userId, intentId) {
 		if (!hasValidCleanupProof(intent, ownerKey)) throw new AppError("Avatar cleanup proof is incomplete or inconsistent", 409);
 
 		const linkedUser = await User.exists({ avatarIntent: intentId }).session(session);
-		const keyReference = await User.exists({ avatar: { $regex: intent.storageKey.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") } }).session(session);
+		const keyPattern = intent.storageKey.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+		const keyReference = await User.exists({ $or: [{ avatar: { $regex: keyPattern } }, { legacyAvatar: { $regex: keyPattern } }] }).session(session);
 		if (linkedUser || keyReference) throw new AppError("Avatar intent is still referenced", 409);
 
 		if (intent.uploadStatus === "finished" && intent.uploadResult === "not_started") {

@@ -4,7 +4,7 @@ import { useEffect, useLayoutEffect, useReducer, useRef, useState } from "react"
 import { useParams, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
-import { loadVocabulary, selectReviewWords, vocabularyKey } from "@/app/_lib/vocabulary.mjs";
+import { loadVocabulary, selectReviewWords, speakWord, vocabularyKey } from "@/app/_lib/vocabulary.mjs";
 import { resourceCache } from "@/app/_lib/resourceCache.mjs";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { isReviewCompletionReady } from "@/app/_lib/reviewSaveController.mjs";
@@ -15,7 +15,10 @@ import { useBackgroundReviewSave } from "@/app/_lib/useBackgroundReviewSave.mjs"
 import { buildQuestions, eligibleQuizWords, getUniqueTranslations, normalizeText } from "@/app/_lib/quizQuestions.mjs";
 import {
 	Brain,
+	Check,
 	CheckCircle2,
+	Volume2,
+	X,
 	XCircle,
 } from "lucide-react";
 
@@ -47,6 +50,7 @@ export default function QuizReviewPage() {
 	const selectedChoice = questionState.selectedAnswer;
 	const lastFeedback = questionState.feedback;
 	const [results, setResults] = useState({ correct: 0, wrong: 0 });
+	const [missedWords, setMissedWords] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [loadedUserId, setLoadedUserId] = useState(null);
 	const [error, setError] = useState("");
@@ -79,6 +83,7 @@ export default function QuizReviewPage() {
 			setError("");
 			setSessionFinished(false);
 			setResults({ correct: 0, wrong: 0 });
+			setMissedWords([]);
 			setPracticeMode(false);
 			resetAnswers();
 			sessionRef.current = createMistakeReviewSession(nextQuestions.length);
@@ -151,6 +156,7 @@ export default function QuizReviewPage() {
 		});
 		if (!step.accepted) return;
 		if (step.firstAttempt) {
+			if (!isCorrect) setMissedWords(previous => [...previous, currentQuestion.word]);
 			setResults((previous) => ({
 				...previous,
 				[isCorrect ? "correct" : "wrong"]:
@@ -176,9 +182,9 @@ export default function QuizReviewPage() {
 		else checkAnswer();
 	}
 
-	function restartQuiz() {
+	function restartQuiz(retryWords = reviewWordsRef.current) {
 		const nextQuestions = buildQuestions(
-			reviewWordsRef.current,
+			retryWords,
 			vocabularyPoolRef.current,
 		);
 
@@ -188,6 +194,7 @@ export default function QuizReviewPage() {
 		dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
 		setQuestions(nextQuestions);
 		setResults({ correct: 0, wrong: 0 });
+		setMissedWords([]);
 		setSessionFinished(false);
 		setPracticeMode(true);
 	}
@@ -195,6 +202,13 @@ export default function QuizReviewPage() {
 	useEffect(() => {
 		function handleKeyDown(event) {
 			const target = event.target;
+			if (sessionFinished || !currentQuestion || event.repeat || event.altKey || event.metaKey || event.shiftKey) return;
+			if (target instanceof HTMLElement && target.closest("input, textarea, select, [contenteditable='true']")) return;
+			if (event.key === "Control" || (event.key.toLowerCase() === "r" && !event.ctrlKey)) {
+				speakWord(currentQuestion.word.english);
+				return;
+			}
+			if (event.ctrlKey) return;
 			if (
 				target instanceof HTMLElement &&
 				target.closest("input, textarea, select, button, [contenteditable='true']")
@@ -220,7 +234,7 @@ export default function QuizReviewPage() {
 
 		window.addEventListener("keydown", handleKeyDown);
 		return () => window.removeEventListener("keydown", handleKeyDown);
-	}, [currentQuestion, waitingForContinue]);
+	}, [currentQuestion, waitingForContinue, sessionFinished]);
 
 	if (authLoading || (userId && (loading || loadedUserId !== reviewKey))) return <Loading />;
 
@@ -262,12 +276,15 @@ export default function QuizReviewPage() {
 			<ReviewCompletion
 				title={t("quiz.completionTitle")}
 				message={t("quiz.completion", { count: total })}
+				note={t("common.reviewMistakesNote")}
+				retryLabel={t("common.retryMistakes", { count: missedWords.length })}
+				onRetry={missedWords.length ? () => restartQuiz(missedWords) : undefined}
 				stats={[
 					{ label: t("common.correctStat"), value: results.correct, tone: "emerald" },
 					{ label: t("common.wrongStat"), value: results.wrong, tone: "red" },
 					{ label: t("common.accuracy"), value: `${accuracy}%`, tone: "blue" },
 				]}
-				onRestart={restartQuiz}
+				onRestart={() => restartQuiz()}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 			<ReviewSaveNotice pending={pending} failed={failed} />
@@ -300,6 +317,7 @@ export default function QuizReviewPage() {
 			<form ref={formRef} onSubmit={handleSubmit}>
 				<div className="quiz-review-card relative overflow-hidden rounded-[28px] border border-primary/30 bg-gradient-to-br from-surface via-surface-muted to-surface p-5 sm:p-8">
 						<div className="relative">
+							<button type="button" onClick={() => speakWord(currentQuestion.word.english)} aria-label={t("flashcard.playAudio", { word: currentQuestion.word.english })} className="absolute right-0 top-0 rounded-full bg-slate-800/80 p-2 text-teal-400 transition hover:bg-teal-500/20"><Volume2 size={20} aria-hidden="true" /></button>
 							<p className="text-center text-sm font-semibold text-brand-text">
 								{t("quiz.englishWord")}
 							</p>
@@ -340,7 +358,7 @@ export default function QuizReviewPage() {
 							>
 								{waitingForContinue ? t("common.continue") : t("common.check")}
 							</button>
-							<p className="mt-3 text-center text-xs text-slate-600">
+							<p className="mt-3 text-center text-xs text-slate-400">
 								{waitingForContinue ? t("quiz.continueHint") : t("quiz.chooseHint")}
 							</p>
 						</div>
@@ -383,7 +401,9 @@ function ChoiceButton({
 			<span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border border-current/20 bg-black/10 text-xs font-bold opacity-80">
 				{index + 1}
 			</span>
-			<span className="break-words">{choice}</span>
+			<span className="min-w-0 flex-1 break-words">{choice}</span>
+			{reveal && isCorrect && <Check size={20} className="shrink-0 text-emerald-400" aria-hidden="true" />}
+			{reveal && isSelected && !isCorrect && <X size={20} className="shrink-0 text-red-400" aria-hidden="true" />}
 		</button>
 	);
 }

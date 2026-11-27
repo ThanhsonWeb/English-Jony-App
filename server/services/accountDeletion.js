@@ -9,8 +9,9 @@ const { isValidStorageKey, avatarMatchesIntent } = require("./accountDeletionRea
 async function initiateAccountDeletion(userId, { expectedPasswordHash } = {}) {
 	if (!mongoose.isObjectIdOrHexString(userId)) throw new AppError("Invalid account", 400);
 	return mongoose.connection.transaction(async session => {
-		const user = await User.findById(userId).select("+lifecycleState +avatarIntent +password").session(session);
+		const user = await User.findById(userId).select("+lifecycleState +avatarIntent +legacyAvatar +password").session(session);
 		if (!user) throw new AppError("Account not found", 404);
+		if (user.legacyAvatar !== undefined && user.legacyAvatar !== "") throw new AppError("Legacy avatar cannot be safely deleted", 409);
 		if (expectedPasswordHash !== undefined &&
 			(typeof expectedPasswordHash !== "string" || !expectedPasswordHash || user.password !== expectedPasswordHash)) {
 			throw new AppError("Current password verification is no longer valid", 401);
