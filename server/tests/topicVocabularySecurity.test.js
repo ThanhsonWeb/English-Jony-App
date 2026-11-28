@@ -346,20 +346,25 @@ test("forged owner, scheduler/history, IDs, timestamps and version are ignored a
 	assert.ok(saved.createdAt.getTime() >= before);
 	assert.ok(saved.nextReview.getTime() >= before && saved.nextReview.getTime() <= Date.now());
 });
-test("browser-supplied dialogue source is ignored, including real and forged IDs; learning text still saves", async () => {
+test("dialogue source accepts catalogue pairs and discards browser-supplied titles", async () => {
+	const response = await createWord({ source: { type: "dialogue", lessonId: "asking-for-directions", dialogueId: "finding-a-cafe", dialogueTitle: "Forged title" }, "source.lessonId": "dotted", unexpected: "ignored" });
+	assert.equal(response.status, 201);
+	const saved = await Vocab.findById(response.body.data.newVocab._id).lean();
+	assert.equal(saved.source.lessonId, "asking-for-directions");
+	assert.equal(saved.source.dialogueId, "finding-a-cafe");
+	assert.equal(saved.source.dialogueTitle, undefined);
+	assert.equal(saved.unexpected, undefined);
+	assert.equal(saved.example, wordInput.example);
+});
+test("dialogue source rejects unknown and mismatched catalogue pairs", async () => {
 	for (const source of [
-		{ type: "dialogue", lessonId: "nonexistent", dialogueId: "forged", dialogueTitle: "Forged title" },
-		{ type: "dialogue", lessonId: "asking-for-directions", dialogueId: "finding-a-cafe", dialogueTitle: "Client-supplied title" },
+		{ type: "dialogue", lessonId: "nonexistent", dialogueId: "forged" },
+		{ type: "dialogue", lessonId: "coffee-shop", dialogueId: "finding-a-cafe" },
+		{ type: "dialogue", lessonId: { $ne: null }, dialogueId: "finding-a-cafe" },
 	]) {
-		const english = source.dialogueId === "forged" ? "water" : "river";
-		const response = await createWord({ english, source, "source.lessonId": "dotted", unexpected: "ignored" });
-		assert.equal(response.status, 201);
-		const saved = await Vocab.findById(response.body.data.newVocab._id).lean();
-		assert.equal(saved.source, undefined);
-		assert.equal(saved.unexpected, undefined);
-		assert.equal(saved.english, english);
-		assert.equal(saved.example, wordInput.example);
+		assert.equal((await createWord({ source })).status, 400);
 	}
+	assert.equal(await Vocab.countDocuments(), 0);
 });
 test("creation does not execute update operators or accept alternate internal/prototype fields", async () => {
 	const response = await createWord(JSON.parse('{"$set":{"user":"forged","reviewCount":999},"$unset":{"user":1},"__proto__":{"polluted":true},"constructor":{"prototype":{"polluted":true}},"user.id":"forged"}'));

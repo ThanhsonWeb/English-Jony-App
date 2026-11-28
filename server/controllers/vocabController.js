@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const catchAsync = require("../utils/catchAsync");
 const AppError = require("../utils/appError");
 const { fenceActiveAccountWrite } = require("../utils/accountLifecycle");
+const { isKnownDialogue } = require("../utils/dialogueCatalogue");
 
 const ACCOUNT_WRITE_TRANSACTION_OPTIONS = {
 	readPreference: "primary",
@@ -103,10 +104,11 @@ exports.createNewVocab = catchAsync(async (req, res, next) => {
 	if (Object.hasOwn(req.body, "source")) {
 		const source = req.body.source;
 		if (!source || typeof source !== "object" || Array.isArray(source) || source.type !== "dialogue" ||
-			![source.lessonId, source.dialogueId, source.dialogueTitle].every(value => typeof value === "string" && value.trim().length > 0 && value.length <= 200)) {
+			![source.lessonId, source.dialogueId].every(value => typeof value === "string" && value.trim().length > 0 && value.length <= 200) ||
+			!isKnownDialogue(source.lessonId.trim(), source.dialogueId.trim())) {
 			return next(new AppError("Invalid dialogue source", 400));
 		}
-		fields.source = { type: "dialogue", lessonId: source.lessonId.trim(), dialogueId: source.dialogueId.trim(), dialogueTitle: source.dialogueTitle.trim() };
+		fields.source = { type: "dialogue", lessonId: source.lessonId.trim(), dialogueId: source.dialogueId.trim() };
 	}
 	// Review history, timestamps and provenance use server/model defaults only.
 	const newVocab = await mongoose.connection.transaction(async session => {
