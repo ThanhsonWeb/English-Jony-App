@@ -5,6 +5,15 @@ const legacyDialogueCategories = {
 	food: ["coffee-shop", "grocery-store", "restaurant"],
 };
 
+export function getCourseCategory(course) {
+	if (!course) return "other";
+	const categories = Array.isArray(course.categories) ? course.categories : course.category ? [course.category] : [];
+	if (categories.length) return categories[0] === "story-of-life" ? "story" : categories[0];
+	if (course.contentType === "story") return "story";
+	const legacyCategory = Object.keys(legacyDialogueCategories).find(category => legacyDialogueCategories[category].includes(course.id));
+	return legacyCategory === "office" ? "other" : legacyCategory || "other";
+}
+
 export function matchesCourseCategory(course, category) {
 	if (category === "all") return true;
 	const categories = Array.isArray(course.categories)

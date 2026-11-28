@@ -35,8 +35,6 @@ import { splitExample } from "@/app/_lib/exampleHighlight.mjs";
 import { useVocabularyResource } from "@/app/_lib/useStudyResources";
 import { resolveWordlistFilter } from "@/app/_lib/wordlistFilter.mjs";
 import { sourceKey, selectFilteredReviewWords } from "@/app/_lib/wordlistSourceFilter.mjs";
-import { lessonData } from "../dialogue/_data/lessonData";
-import { getLocalizedDialogueValue } from "@/app/_lib/dialogue/localization";
 
 const statuses = ["all", "new", "learning", "review", "mastered"];
 const WORDS_PER_PAGE = 10;
@@ -122,6 +120,7 @@ function StatusFilter({ value, onChange, t, options }) {
 
 export default function WordlistPage() {
 	const t = useTranslations("Notebook");
+	const tDialogue = useTranslations("DialogueLanding");
 	const locale = useLocale();
 	const { user, loading: authLoading } = useAuth();
 	const userId = user?._id || user?.id;
@@ -190,13 +189,10 @@ export default function WordlistPage() {
 		sourceGroups.set(key, group);
 	}
 	const sourceOptions = [{ value: "all", label: t("allTopics") }, ...Array.from(sourceGroups, ([key, group]) => {
-		const source = group.source;
-		const dialogue = key !== "custom" ? lessonData[source.lessonId]?.dialogues?.find(item => item.id === source.dialogueId) : null;
-		const title = key === "custom" ? t("customWords") : (dialogue ? getLocalizedDialogueValue(dialogue, "title", locale) : source.dialogueTitle || source.dialogueId);
+		const title = key === "custom" ? t("customWords") : tDialogue.has(`categories.${key}`) ? tDialogue(`categories.${key}`) : key;
 		return { value: key, label: `${title} (${group.count})` };
 	})];
-	const selectedPair = selectedSource !== "all" && selectedSource !== "custom" ? JSON.parse(selectedSource) : null;
-	const reviewFilters = { status: activeFilter, ...(selectedSource === "custom" ? { sourceType: "custom" } : selectedPair ? { lessonId: selectedPair[0], dialogueId: selectedPair[1] } : {}) };
+	const reviewFilters = { status: activeFilter, ...(selectedSource === "custom" ? { sourceType: "custom" } : selectedSource !== "all" ? { category: selectedSource } : {}) };
 	const explicitFilters = searchParams.has("status") || selectedSource !== "all";
 	const selectedReviewWords = explicitFilters ? selectFilteredReviewWords(words, {}, reviewFilters) : null;
 	const queue = selectReviewWords(words, { global: true, now });
@@ -285,6 +281,7 @@ export default function WordlistPage() {
 								options={sourceOptions}
 								onChange={(source) => {
 									setSelectedSource(source);
+									if (source !== "all") setFilter("all");
 									setPage(1);
 								}}
 							/>
@@ -331,7 +328,7 @@ export default function WordlistPage() {
 											if (explicitFilters) {
 												if (activeFilter !== "all") params.set("status", activeFilter);
 												if (reviewFilters.sourceType) params.set("sourceType", reviewFilters.sourceType);
-												if (selectedPair) { params.set("lessonId", selectedPair[0]); params.set("dialogueId", selectedPair[1]); }
+												if (reviewFilters.category) params.set("category", reviewFilters.category);
 											} else if (counts.review > 0) params.set("reviewMode", "due");
 											const href = `/wordlist/review/${value}${params.size ? `?${params}` : ""}`;
 											const contents = (
