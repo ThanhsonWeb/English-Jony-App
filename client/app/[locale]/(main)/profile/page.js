@@ -252,7 +252,7 @@ function Page() {
 					</button>
 				</div>
 
-				<div className="mt-5 sm:mt-0 max-md:min-w-0 max-md:max-w-full">
+				<div className="mt-5 flex flex-col items-center text-center sm:mt-0 sm:items-start sm:text-left max-md:min-w-0 max-md:max-w-full">
 					<div className="flex items-center gap-3">
 						<h1 className="text-3xl font-bold max-md:min-w-0 max-md:[overflow-wrap:anywhere]">{user?.name}</h1>
 						<button
@@ -334,13 +334,13 @@ function Page() {
 			{/* Settings */}
 			<div className="mt-4 space-y-4">
 				<div className="rounded-2xl border border-slate-800 bg-slate-900/60"><h2 className="px-5 pt-5 font-semibold">{t("quickSettings")}</h2><div className="divide-y divide-slate-800/80">
-				<div className="flex flex-wrap items-center justify-between gap-3 p-5 sm:flex-nowrap sm:gap-0">
-					<div className="flex items-center gap-4">
+				<div className="flex items-center justify-between gap-2 p-5 sm:gap-0">
+					<div className="flex min-w-0 items-center gap-2 sm:gap-4">
 						<Languages className="text-primary" />
 						<span className="font-medium">{t("language")}</span>
 					</div>
 
-					<div className="relative z-30 max-sm:ml-auto"><LanguageSwitcher variant="settings" /></div>
+					<div className="relative z-30 shrink-0"><LanguageSwitcher variant="settings" /></div>
 				</div>
 
 				<div className="flex flex-wrap items-center justify-between gap-3 p-5 sm:flex-nowrap sm:gap-0">

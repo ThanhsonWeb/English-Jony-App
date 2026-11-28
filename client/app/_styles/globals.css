@@ -144,7 +144,25 @@ body {
 }
 
 .dialogue-subtitle-speaker {
-	color: #4ade80 !important;
+	color: #34d399 !important;
+}
+
+html:is([data-theme="light"], [data-theme="cream"]) .dialogue-word-popup {
+	background-color: #0f172a !important;
+	border-color: #334155 !important;
+	color: #e2e8f0 !important;
+}
+
+html:is([data-theme="light"], [data-theme="cream"]) .dialogue-word-popup strong {
+	color: #fff !important;
+}
+
+html:is([data-theme="light"], [data-theme="cream"]) .dialogue-word-popup p {
+	color: #e2e8f0 !important;
+}
+
+html:is([data-theme="light"], [data-theme="cream"]) .dialogue-word-popup span {
+	color: #6ee7b7 !important;
 }
 
 .dialogue-subtitle-text,

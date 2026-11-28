@@ -510,7 +510,7 @@
 		"sessionExpired": "Phiên đăng nhập đã hết hạn. Đăng nhập lại để lưu giao diện vào tài khoản."
 	},
 	"Header": {
-		"online": "Trực tiếp",
+		"online": "Trực tuyến",
 		"accountMenu": "M\u1edf t\u00e0i kho\u1ea3n c\u1ee7a {name}",
 		"avatar": "Ảnh đại diện",
 		"signIn": "Đăng nhập",

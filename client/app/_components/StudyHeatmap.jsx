@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { buildStudyHeatmapDays } from "@/app/_lib/studyHeatmap.mjs";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { useStudyActivitiesResource } from "@/app/_lib/useStudyResources";
+import { useEffect, useRef } from "react";
 
 const levelClass = {
 	0: "bg-app dark:bg-slate-900",
@@ -18,6 +19,12 @@ function formatDisplayDate(dateString, locale) {
 }
 
 function StudyHeatmap() {
+	const scrollRef = useRef(null);
+	useEffect(() => {
+		if (window.matchMedia("(max-width: 639px)").matches && scrollRef.current) {
+			scrollRef.current.scrollLeft = scrollRef.current.scrollWidth;
+		}
+	}, []);
 	const t = useTranslations("Profile");
 	const locale = useLocale();
 	const { user, loading: authLoading } = useAuth();
@@ -48,7 +55,7 @@ function StudyHeatmap() {
 					{t("activity")}
 				</h2>
 
-				<div className="mt-2 overflow-x-auto pt-4">
+				<div ref={scrollRef} className="mt-2 overflow-x-auto overscroll-x-contain pt-4 [scrollbar-width:thin]">
 					<div className="mx-auto w-max">
 						{/* Months */}
 						<div className="mb-3 flex items-end gap-3">

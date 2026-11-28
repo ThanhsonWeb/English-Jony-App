@@ -33,7 +33,7 @@ export default function renderSubtitleTokens(text, onWordClick, activeWordRange)
 				type="button"
 				onClick={(event) => onWordClick(segment.wordIndex, event)}
 				data-dictionary-token="true"
-				className={`${grouped ? "" : "rounded-sm"} transition-colors hover:bg-player-selected hover:text-player-selected-text focus-visible:bg-player-selected focus-visible:text-player-selected-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+				className={`${grouped ? "" : "rounded-sm"} cursor-pointer transition-colors hover:bg-player-selected hover:text-player-selected-text focus-visible:bg-player-selected focus-visible:text-player-selected-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
 					isActive ? "bg-player-selected text-player-selected-text" : ""
 				}`}
 			>

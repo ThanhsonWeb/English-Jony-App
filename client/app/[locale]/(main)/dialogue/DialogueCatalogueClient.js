@@ -365,7 +365,7 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 								placeholder={t("searchPlaceholder")}
 								className="h-12 w-full rounded-xl border border-app bg-surface pl-11 pr-14 text-sm text-main shadow-sm outline-none transition placeholder:text-secondary focus:border-primary focus:ring-2 focus:ring-primary/15"
 							/>
-							<kbd aria-hidden="true" className="pointer-events-none absolute right-8 top-1/2 -translate-y-1/2 rounded border border-app bg-surface-muted px-1.5 py-0.5 text-xs text-secondary">/</kbd>
+							<kbd aria-hidden="true" className="pointer-events-none absolute right-8 top-1/2 hidden -translate-y-1/2 rounded border border-app bg-surface-muted px-1.5 py-0.5 text-xs text-secondary sm:flex">/</kbd>
 						</label>
 					</div>
 				</section>
@@ -401,7 +401,7 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 												behavior: "smooth",
 											})
 										}
-										className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-app bg-surface text-secondary hover:bg-hover hover:text-main focus-visible:outline-2 focus-visible:outline-primary xl:hidden"
+										className="hidden h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-app bg-surface text-secondary hover:bg-hover hover:text-main focus-visible:outline-2 focus-visible:outline-primary md:flex xl:hidden"
 									>
 										<ChevronLeft className="h-5 w-5" />
 									</button>
@@ -458,7 +458,7 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 												behavior: "smooth",
 											})
 										}
-										className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-app bg-surface text-secondary hover:bg-hover hover:text-main focus-visible:outline-2 focus-visible:outline-primary xl:hidden"
+										className="hidden h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-app bg-surface text-secondary hover:bg-hover hover:text-main focus-visible:outline-2 focus-visible:outline-primary md:flex xl:hidden"
 									>
 										<ChevronRight className="h-5 w-5" />
 									</button>

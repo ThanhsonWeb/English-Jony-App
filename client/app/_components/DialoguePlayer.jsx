@@ -5,7 +5,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import Image from "next/image";
 import A2MediaImage from "./A2MediaImage";
 import { a2LocalFallback } from "../_lib/dialogue/a2R2Media.mjs";
-import { Languages, ArrowLeft } from "lucide-react";
+import { Languages, ArrowLeft, ArrowRight } from "lucide-react";
 import { findLessonLookup } from "@/app/_lib/dictionary/findLessonLookup";
 import useDialogueShortcuts from "@/app/_hooks/useDialogueShortcuts";
 import { useTranslations } from "next-intl";
@@ -508,7 +508,7 @@ export default function DialoguePlayer({
 
 					<h1 className=" text-2xl font-bold sm:text-3xl">{task.title} 🎧</h1>
 
-					<p className="mt-2 text-slate-400 ">{task.description}</p>
+					<p className="mt-2 hidden text-slate-400 sm:block">{task.description}</p>
 				</div>
 
 				{/* Player */}
@@ -803,25 +803,19 @@ export default function DialoguePlayer({
 									key={index}
 									type="button"
 									onClick={() => handleTranscriptClick(index)}
-									className={`w-full rounded-lg p-3 transition ${
-										isRightSideSpeaker(line.speaker)
-											? "text-right"
-											: "text-left"
-									} ${
+									className={`group flex w-full cursor-pointer items-center justify-between gap-3 rounded-lg p-3 text-left transition ${
 										index === currentLine
 											? "bg-violet-500/10"
 											: "hover:bg-slate-800/50"
 									}`}
 								>
-									<p
-										className="dialogue-subtitle-speaker text-sm font-semibold"
-									>
-										{line.speaker}
-									</p>
-
-									<p className="mt-1 text-sm leading-6 text-slate-300">
-										{line.text}
-									</p>
+									<span className="min-w-0">
+										<span className={`block text-sm font-semibold ${["text-emerald-600 dark:text-emerald-400", "text-blue-600 dark:text-blue-300", "text-amber-700 dark:text-amber-300"][Array.from(new Set(task.dialogue.map((item) => item.speaker))).indexOf(line.speaker) % 3]}`}>
+											{line.speaker}
+										</span>
+										<span className="mt-1 block text-sm leading-6 text-slate-300">{line.text}</span>
+									</span>
+									<Volume2 size={16} aria-hidden="true" className="shrink-0 text-slate-500 transition-colors group-hover:text-emerald-400" />
 								</button>
 							))}
 					</div>
@@ -843,17 +837,18 @@ export default function DialoguePlayer({
 				)}
 				{canContinueToPractice && (
 					<div className="mt-8 space-y-3">
-						<p role="note" className="rounded-xl border border-app bg-surface/60 px-4 py-3 text-sm leading-5 text-secondary">
-							{userId ? t("practicePreviewSignedIn", { count: task.tasks?.length ?? 0 }) : t.rich("practicePreview", { count: task.tasks?.length ?? 0, signIn: (chunks) => <Link href={`/login?returnTo=${encodeURIComponent(pathname)}`} className="font-semibold text-brand-text underline underline-offset-2 hover:text-main focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">{chunks}</Link> })}
-						</p>
+						{!userId && <p role="note" className="rounded-xl border border-app bg-surface/60 px-4 py-3 text-sm leading-5 text-secondary">
+							{t.rich("practicePreview", { count: task.tasks?.length ?? 0, signIn: (chunks) => <Link href={`/login?returnTo=${encodeURIComponent(pathname)}`} className="font-semibold text-brand-text underline underline-offset-2 hover:text-main focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">{chunks}</Link> })}
+						</p>}
 						<div className="flex justify-end">
 							<Link
 								href={continueTask ? `/dialogue/${lessonId}/${dialogueId}/${continueTask.id}` : `/dialogue/${lessonId}`}
 								onPointerEnter={() => { if (continueTask) void preloadTaskImages(continueTask, task.scene); }}
 								onFocus={() => { if (continueTask) void preloadTaskImages(continueTask, task.scene); }}
-								className="rounded-xl border border-violet-500/30 bg-violet-500/10 px-6 py-3 font-semibold text-violet-300 transition hover:border-violet-400/50 hover:bg-violet-500/20 hover:text-white active:scale-[0.98]"
+								className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-slate-950 transition hover:bg-emerald-400 active:scale-[0.98] sm:w-auto"
 							>
 								{continueTask ? t("continueToPractice") : t("completeDialogue")}
+								<ArrowRight size={18} aria-hidden="true" />
 							</Link>
 						</div>
 					</div>

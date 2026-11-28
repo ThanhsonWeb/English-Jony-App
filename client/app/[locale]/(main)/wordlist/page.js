@@ -134,6 +134,26 @@ export default function WordlistPage() {
 	const [editor, setEditor] = useState(null);
 	const [deleting, setDeleting] = useState(null);
 	const [audioError, setAudioError] = useState(false);
+	const [playingExample, setPlayingExample] = useState(null);
+	const exampleUtteranceRef = useRef(null);
+	useEffect(() => () => {
+		if (exampleUtteranceRef.current) {
+			exampleUtteranceRef.current.onend = null;
+			exampleUtteranceRef.current.onerror = null;
+		}
+	}, []);
+	function playExample(word) {
+		if (!("speechSynthesis" in window)) { setAudioError(true); return; }
+		window.speechSynthesis.cancel();
+		const utterance = new SpeechSynthesisUtterance(word.example);
+		utterance.lang = "en-US";
+		exampleUtteranceRef.current = utterance;
+		utterance.onstart = () => { if (exampleUtteranceRef.current === utterance) setPlayingExample(word._id); };
+		utterance.onend = utterance.onerror = () => { if (exampleUtteranceRef.current === utterance) { exampleUtteranceRef.current = null; setPlayingExample(null); } };
+		setPlayingExample(null);
+		setAudioError(false);
+		window.speechSynthesis.speak(utterance);
+	}
 	const [practiceOpen, setPracticeOpen] = useState(false);
 	const practiceRef = useRef(null);
 	const practiceDialogRef = useRef(null);
@@ -177,6 +197,8 @@ export default function WordlistPage() {
 	const currentPage = Math.min(page, pages);
 	const firstVisiblePage = Math.max(1, Math.min(currentPage - 2, pages - 4));
 	const pageNumbers = Array.from({ length: Math.min(pages, 5) }, (_, index) => firstVisiblePage + index);
+	const firstMobilePage = Math.max(1, Math.min(currentPage - 1, pages - 2));
+	const mobilePageNumbers = Array.from({ length: Math.min(pages, 3) }, (_, index) => firstMobilePage + index);
 	if (!loading && !error && user && page > pages) setPage(pages);
 	const visible = filtered.slice((currentPage - 1) * WORDS_PER_PAGE, currentPage * WORDS_PER_PAGE);
 	async function saveWord(body) {
@@ -405,16 +427,17 @@ export default function WordlistPage() {
 																>
 																	<Volume2 size={19} />
 																</button>
+																					{word.pronunciation?.trim() && <span className={styles.mobileIpa}>{word.pronunciation}</span>}
 															</div>
 														</th>
 														<td className={styles.ipa}>
-															{word.pronunciation || "—"}
+																			{word.pronunciation?.trim() || <span className={styles.desktopIpaPlaceholder}>—</span>}
 														</td>
 														<td className={styles.meaning}>
 															{word.vietnamese}
 														</td>
 														<td className={styles.example}>
-															{word.example && <button type="button" className={styles.exampleButton} onClick={() => setAudioError(!speakWord(word.example))} aria-label={t("audio", { word: word.example })}>
+																			{word.example && <button type="button" className={styles.exampleButton} data-playing={playingExample === word._id} onClick={() => playExample(word)} aria-label={t("audio", { word: word.example })}>
 																<span className={styles.exampleIcon}><Volume2 size={17} aria-hidden="true" /></span>
 																<span>
 															{splitExample(word.example, word.english).map(
@@ -466,7 +489,10 @@ export default function WordlistPage() {
 										<button type="button" className={styles.paginationCircle} aria-label={t("firstPage")} disabled={currentPage === 1} onClick={() => setPage(1)}>«</button>
 										<button type="button" className={styles.paginationText} disabled={currentPage === 1} onClick={() => setPage(currentPage - 1)}>{t("previous")}</button>
 										{pageNumbers.map(number => (
-											<button key={number} type="button" className={styles.paginationCircle} aria-label={t("pageNumber", { number })} aria-current={number === currentPage ? "page" : undefined} onClick={() => setPage(number)}>{number}</button>
+											<button key={number} type="button" className={`${styles.paginationCircle} ${styles.desktopPageNumber}`} aria-label={t("pageNumber", { number })} aria-current={number === currentPage ? "page" : undefined} onClick={() => setPage(number)}>{number}</button>
+										))}
+										{mobilePageNumbers.map(number => (
+											<button key={`mobile-${number}`} type="button" className={`${styles.paginationCircle} ${styles.mobilePageNumber}`} aria-label={t("pageNumber", { number })} aria-current={number === currentPage ? "page" : undefined} onClick={() => setPage(number)}>{number}</button>
 										))}
 										<button type="button" className={styles.paginationText} disabled={currentPage === pages} onClick={() => setPage(currentPage + 1)}>{t("next")}</button>
 										<button type="button" className={styles.paginationCircle} aria-label={t("lastPage")} disabled={currentPage === pages} onClick={() => setPage(pages)}>»</button>

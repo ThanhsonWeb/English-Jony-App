@@ -243,7 +243,7 @@ export default function DialogueUsefulWords({
 	return (
 		<main data-testid="dialogue-vocabulary-selection" className="min-h-[calc(100vh-80px)] bg-page px-4 py-5 pb-[calc(24px+env(safe-area-inset-bottom))] text-main sm:px-6 sm:pt-5 sm:pb-8">
 			<div className="mx-auto w-full max-w-6xl">
-				<section className="grid items-center gap-2 md:mx-auto md:max-w-5xl md:grid-cols-[minmax(0,1.1fr)_minmax(260px,0.7fr)] md:gap-0">
+				<section className="flex items-center justify-between gap-3 sm:grid sm:gap-2 md:mx-auto md:max-w-5xl md:grid-cols-[minmax(0,1.1fr)_minmax(260px,0.7fr)] md:gap-0">
 					<div className="min-w-0 pb-2 md:pb-0">
 						<p className="text-sm font-semibold text-brand-text sm:text-base">{dialogueTitle}</p>
 						<h1 id="useful-words-heading" data-testid="useful-words-heading" className="mt-2 flex items-center gap-2 text-xl font-bold tracking-tight sm:text-2xl lg:text-3xl">
@@ -251,13 +251,13 @@ export default function DialogueUsefulWords({
 							{t("usefulWordsTitle")}
 						</h1>
 						<div className="mt-3 flex max-w-2xl flex-wrap items-center gap-x-3 gap-y-1">
-							<p className="text-sm leading-6 text-secondary sm:text-base">{t("usefulWordsDescription")}</p>
-							<button type="button" onClick={toggleAllWords} disabled={isSaving || authLoading || libraryLoading || selectableWords.length === 0} className="min-h-9 cursor-pointer rounded-md text-sm font-semibold text-brand-text underline underline-offset-4 hover:text-main focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-40">
+							<p className="text-sm leading-6 text-secondary sm:text-base">{t("usefulWordsDescription").replace(/\s+🍀/u, "\u00a0🍀")}</p>
+							<button type="button" onClick={toggleAllWords} disabled={isSaving || authLoading || libraryLoading || selectableWords.length === 0} className="hidden min-h-9 cursor-pointer rounded-md text-sm font-semibold text-brand-text underline underline-offset-4 hover:text-main focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-40 sm:inline-flex sm:items-center">
 								{t(allSelectableSelected ? "deselectAllWords" : "selectAllWords")}
 							</button>
 						</div>
 					</div>
-					<div data-testid="useful-words-illustration" className="relative mx-auto h-36 w-full max-w-sm md:mx-0 md:ml-0 md:h-36 md:max-w-xs lg:h-40">
+					<div data-testid="useful-words-illustration" className="relative h-20 w-20 shrink-0 sm:mx-auto sm:h-36 sm:w-full sm:max-w-sm md:mx-0 md:ml-0 md:h-36 md:max-w-xs lg:h-40">
 						<Image
 							src="/dialogue-completion-boy-cat.png"
 							alt=""
@@ -266,12 +266,16 @@ export default function DialogueUsefulWords({
 							sizes="(max-width: 768px) 90vw, (max-width: 1280px) 42vw, 520px"
 							className="object-contain object-bottom"
 						/>
-						<div data-testid="dialogue-selected-word-count" role="status" aria-live="polite" aria-atomic="true" className="absolute bottom-2 right-2 inline-flex min-h-9 items-center gap-1.5 rounded-lg border border-success/20 bg-success-soft px-3 py-1.5 text-sm font-semibold text-success shadow-sm md:right-[-4rem]">
+						<div data-testid="dialogue-selected-word-count" role="status" aria-live="polite" aria-atomic="true" className="absolute bottom-2 right-2 hidden min-h-9 items-center gap-1.5 rounded-lg border border-success/20 bg-success-soft px-3 py-1.5 text-sm font-semibold text-success shadow-sm sm:inline-flex md:right-[-4rem]">
 							<Check size={16} aria-hidden="true" />
 							{t("selectedWordCount", { count: selectedUnsavedWords.length })}
 						</div>
 					</div>
 				</section>
+				<div className="mt-2 flex items-center justify-between gap-2 sm:hidden">
+					<button type="button" onClick={toggleAllWords} disabled={isSaving || authLoading || libraryLoading || selectableWords.length === 0} className="min-h-9 cursor-pointer rounded-md text-sm font-semibold text-brand-text underline underline-offset-4 disabled:cursor-not-allowed disabled:opacity-40">{t(allSelectableSelected ? "deselectAllWords" : "selectAllWords")}</button>
+					<div role="status" aria-live="polite" aria-atomic="true" className="inline-flex items-center gap-1.5 rounded-lg border border-success/20 bg-success-soft px-3 py-1.5 text-sm font-semibold text-success"><Check size={16} aria-hidden="true" />{t("selectedWordCount", { count: selectedUnsavedWords.length })}</div>
+				</div>
 				{!authLoading && !user && (
 					<div className="mt-3 flex flex-col gap-2 rounded-xl border border-app bg-surface-muted px-3 py-2.5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
 						<p className="min-w-0 text-sm leading-5 text-secondary">
@@ -347,7 +351,7 @@ export default function DialogueUsefulWords({
 										{item.translation || item.meaning}
 									</span>
 								</button>
-								<button type="button" aria-label={`Read ${item.word}`} onClick={(event) => { event.stopPropagation(); speakWord(item.word); }} className="absolute right-3 top-1/2 inline-flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-lg text-brand-text transition hover:scale-110 hover:bg-success-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50">
+								<button type="button" aria-label={`Read ${item.word}`} onClick={(event) => { event.stopPropagation(); speakWord(item.word); }} className="absolute right-2 top-1/2 inline-flex -translate-y-1/2 cursor-pointer items-center justify-center rounded-lg p-2.5 text-brand-text transition hover:scale-110 hover:bg-success-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50">
 									<Volume2 size={17} aria-hidden="true" />
 								</button>
 								</div>
@@ -368,7 +372,7 @@ export default function DialogueUsefulWords({
 					</p>
 				)}
 
-				<div data-testid="dialogue-selection-actions" className="mt-5 rounded-2xl border border-app bg-surface p-2 shadow-sm sm:p-4 lg:flex lg:items-center lg:justify-center lg:gap-12">
+				<div data-testid="dialogue-selection-actions" className="sticky bottom-0 z-20 mt-5 rounded-2xl border border-app bg-surface/95 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-sm backdrop-blur-md sm:static sm:p-4 lg:flex lg:items-center lg:justify-center lg:gap-12">
 					<button
 						type="button"
 						onClick={saveSelectedWords}
