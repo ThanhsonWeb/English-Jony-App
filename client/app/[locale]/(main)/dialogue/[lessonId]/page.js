@@ -269,7 +269,7 @@ export default function DialogueLessonPage() {
 												<div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-10">
 													{dialogue.tasks.map((task) => {
 															const isCompleted = hasConfirmedProgress && completedTaskIds.has(task.id);
-															const isCurrent = hasConfirmedProgress && currentTask?.id === task.id;
+																			const isCurrent = isInProgress && currentTask?.id === task.id;
 
 														return (
 															<Link
@@ -279,7 +279,7 @@ export default function DialogueLessonPage() {
 																	isCompleted
 																		? "border-green-500/40 bg-green-500/10 text-green-400 hover:bg-green-500/20"
 																		: isCurrent
-																			? "border-blue-500 bg-blue-500/15 text-blue-300 hover:bg-blue-500/25"
+																					? "border-emerald-400 bg-emerald-500/10 text-emerald-300 ring-1 ring-emerald-400/30 hover:bg-emerald-500/20"
 																			: "border-slate-700 bg-slate-950/40 text-slate-400 hover:border-slate-600 hover:text-white"
 																}`}
 															>

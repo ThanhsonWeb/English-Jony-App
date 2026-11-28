@@ -529,16 +529,16 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 													? t("learning")
 													: t("notStarted");
 										const statusClassName = stats.isCompleted
-											? "border-emerald-500/30 bg-emerald-600 text-white"
+											? "border-sky-400/40 bg-sky-950/85 text-sky-300"
 											: stats.isStarted
-												? "border-transparent bg-primary text-white"
-																			: "border-white/15 bg-black/75 text-white backdrop-blur-sm";
+																			? "course-status-learning border-emerald-500/40 bg-emerald-950/85 text-emerald-300"
+																			: "course-status-not-started border-white/15 bg-slate-950/80 text-slate-300";
 
 										return (
 											<Link
 												key={course.id}
 												href={`/dialogue/${course.id}`}
-															className="group flex h-full cursor-pointer flex-col rounded-[18px] border border-transparent bg-surface p-2 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-teal-500/60 hover:shadow-xl hover:shadow-teal-500/10 dark:hover:bg-[#151e32] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-reduce:transform-none motion-reduce:transition-none"
+															className="group flex h-full cursor-pointer flex-col rounded-[18px] border border-slate-800 bg-slate-900 p-2 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-teal-500/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-reduce:transform-none motion-reduce:transition-none"
 											>
 												{/* Thumbnail */}
 													<div className="relative aspect-[2.1/1] overflow-hidden rounded-[14px] bg-slate-900">
@@ -553,26 +553,29 @@ export default function DialogueCatalogueClient({ isStartIntent = false, initial
 													<div className="absolute inset-0 bg-gradient-to-t from-[#0b1424]/30 via-transparent to-transparent" />
 
 												{statusLabel && <span
-														className={`absolute left-2 top-2 rounded-md border px-2.5 py-1 text-[10px] font-semibold shadow-sm ${statusClassName}`}
+																						className={`absolute bottom-2 right-2 rounded-md border px-2.5 py-1 text-[10px] font-semibold shadow-sm backdrop-blur-md ${statusClassName}`}
 													>
-														{statusLabel}
+																	{stats.isCompleted && <span aria-hidden="true" className="mr-1">✓</span>}{statusLabel}
 													</span>}
 												</div>
 
 												{/* Content */}
 															<div className="flex flex-1 flex-col px-1 pb-1 pt-2 sm:pt-3">
 															<div className="mb-3 flex min-w-0 items-center gap-2">
-																		<h3 className="min-w-0 flex-1 line-clamp-1 text-lg font-bold text-main transition-colors duration-200 group-hover:text-teal-600 dark:group-hover:text-teal-400 motion-reduce:transition-none">
+																		<h3 className="min-w-0 flex-1 line-clamp-1 text-lg font-bold text-slate-50 transition-colors duration-200 group-hover:text-teal-600 dark:group-hover:text-teal-400 motion-reduce:transition-none">
 															{getLocalizedCourseValue(course, "title")}
 														</h3>
-														<span className="shrink-0 rounded-md border border-primary/20 bg-primary/10 px-2 py-0.5 text-[11px] font-semibold text-brand-text">
+																								<span className="shrink-0 rounded-md border border-emerald-500/25 bg-emerald-500/10 px-2 py-0.5 text-[11px] font-semibold text-emerald-400">
 															{getCefrLevelLabel(course.level)}
 														</span>
 													</div>
+																				<p className="mb-3 line-clamp-1 text-sm leading-5 text-slate-400">
+																					{getLocalizedCourseValue(course, "description")}
+																				</p>
 
-															<div className="mt-auto flex items-center justify-between gap-2 border-t border-app pt-2.5 text-xs text-secondary">
+															<div className="mt-auto flex items-center justify-between gap-2 border-t border-app pt-2.5 text-xs text-slate-500">
 																<span>{t("dialogues", { count: course.dialogues.length })}</span>
-																				<span className="inline-flex items-center gap-1 font-medium text-brand-text">{t("exploreAction")} <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none" aria-hidden="true" /></span>
+																				<span className="inline-flex items-center gap-1 font-medium text-emerald-400">{t("exploreAction")} <ArrowRight size={14} className="transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none" aria-hidden="true" /></span>
 															</div>
 
 												</div>

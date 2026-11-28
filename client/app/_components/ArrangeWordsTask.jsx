@@ -121,17 +121,18 @@ function ArrangeWordsTask({
 	}
 
 	return (
-		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
+		<div className="px-4 py-3 text-white sm:px-8">
 			<div className="mx-auto max-w-6xl">
-				<h1 className="mt-2 text-2xl font-bold">{task.title} 🧩</h1>
+				<h1 className="sr-only">{task.title}</h1>
 
 				<div
-					className={`mt-8 grid gap-8 lg:items-start ${
+					className={`grid gap-4 sm:gap-8 lg:items-start ${
 						hasMedia ? "lg:grid-cols-[0.8fr_1.2fr]" : ""
 					}`}
 				>
 					{hasMedia && (
-						<TaskAudioScene ref={audioSceneRef} key={task.audioUrl} task={task} />
+						<div><TaskAudioScene ref={audioSceneRef} key={task.audioUrl} task={task} />
+							<DialogueShortcutHint belowPlayer /></div>
 					)}
 
 					<div>
@@ -188,7 +189,7 @@ function ArrangeWordsTask({
 						)}
 
 						<span className="sr-only" role="status">{result === "correct" ? t("correct") : ""}</span>
-						<DialogueShortcutHint />
+						{!hasMedia && <DialogueShortcutHint showReplay={false} />}
 						<div className="mt-4 flex items-start justify-between gap-4">
 							<div className="flex items-start gap-4">
 								<button

@@ -103,7 +103,7 @@ function Header() {
 									<p className="max-w-20 truncate whitespace-nowrap text-md font-semibold leading-tight text-main sm:max-w-24 xl:max-w-none">
 										{user.name}
 									</p>
-									<p className="mt-1 flex items-center gap-1.5 text-xs text-emerald-500"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-emerald-400" />{t("online")}</p>
+									<p className="mt-1 flex items-center gap-1.5 text-xs font-semibold text-emerald-500"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-emerald-400" />{t("online")}</p>
 								</div>
 								<ChevronDown size={14} aria-hidden="true" className={`hidden text-slate-400 transition-transform duration-200 motion-reduce:transition-none sm:block ${isDropdownOpen ? "rotate-180" : ""}`} />
 							</button>

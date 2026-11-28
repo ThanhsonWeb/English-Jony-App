@@ -295,8 +295,8 @@ function DialogueClozeReviewTask({
 			<div className="mx-auto max-w-3xl">
 				<div className="flex items-center justify-between gap-2">
 					<div className="min-w-0 shrink">
-						<h1 className="truncate text-base font-bold sm:text-xl">
-							{task.title || t("dialogueClozeTitle")} 📖
+						<h1 className="sr-only">
+							{task.title || t("dialogueClozeTitle")}
 						</h1>
 						<p className="sr-only">
 							{task.instruction || t("dialogueClozeInstruction")}

@@ -56,13 +56,14 @@ function MultipleChoiceTask({
 	}
 
 	return (
-		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
+		<div className="px-4 py-3 text-white sm:px-8">
 			<div className="mx-auto max-w-6xl">
 
-				<h1 className="mt-2 text-2xl font-bold">{task.title}</h1>
+				<h1 className="sr-only">{task.title}</h1>
 
-				<div className="mt-8 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-					<TaskAudioScene ref={audioSceneRef} key={task.audioUrl} task={task} />
+				<div className="grid gap-4 sm:gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+					<div><TaskAudioScene ref={audioSceneRef} key={task.audioUrl} task={task} />
+						<DialogueShortcutHint belowPlayer /></div>
 
 					<div>
 						<DialogueTaskNavigation
@@ -153,19 +154,18 @@ function MultipleChoiceTask({
 								</div>
 							)}
 						</div>
-						<DialogueShortcutHint />
 						<div className="mt-4 flex items-start justify-between gap-4">
 							{(result || review) && <GrammarNote grammar={task.grammar} />}
 							<div className="ml-auto shrink-0">
 								{review ? (
-									<DialogueProgressLink ref={actionRef} requireSave={false} href={nextTask ? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}` : completionHref || `/dialogue/${lessonId}`} className="inline-flex rounded-xl bg-violet-600 px-6 py-3 font-semibold hover:bg-violet-500">{t("continue")}</DialogueProgressLink>
+									<DialogueProgressLink ref={actionRef} requireSave={false} href={nextTask ? `/dialogue/${lessonId}/${dialogueId}/${nextTask.id}` : completionHref || `/dialogue/${lessonId}`} className="inline-flex rounded-xl bg-violet-600 px-6 py-3 font-semibold text-white hover:bg-violet-500">{t("continue")}</DialogueProgressLink>
 								) : result === "correct" ? (
 									<button
 										ref={actionRef}
 										type="button"
 										onClick={() => autoAdvance.continue()}
 										disabled={!autoAdvance.canContinue}
-										className="rounded-xl bg-violet-600 px-6 py-3 font-semibold transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-40"
+										className="rounded-xl bg-violet-600 px-6 py-3 font-semibold text-white transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-40"
 									>
 										{t("continue")}
 									</button>
@@ -175,7 +175,7 @@ function MultipleChoiceTask({
 									type="button"
 									onClick={checkAnswer}
 									disabled={!selected}
-									className="rounded-xl bg-violet-600 px-6 py-3 font-semibold transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-40"
+									className="rounded-xl bg-violet-600 px-6 py-3 font-semibold text-white transition hover:bg-violet-500 disabled:cursor-not-allowed disabled:opacity-40"
 								>
 									{t("check")}
 									</button>

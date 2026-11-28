@@ -440,6 +440,9 @@ html:is([data-theme="light"], [data-theme="cream"]) :where(
 	background-color: var(--sj-success) !important;
 }
 
+html:is([data-theme="light"], [data-theme="cream"]) .course-status-learning { color: #6ee7b7 !important; }
+html:is([data-theme="light"], [data-theme="cream"], [data-theme="black"]) .course-status-not-started { color: #cbd5e1 !important; }
+
 /* Solid primary actions use a high-contrast foreground in light mode. */
 html:is([data-theme="light"], [data-theme="cream"]) :where(
 	[class~="bg-primary"],

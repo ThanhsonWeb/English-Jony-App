@@ -33,7 +33,7 @@ export default function DialogueExerciseHeader({
 
 	return (
 		<>
-			<header className={`w-full px-4 sm:px-8 ${compact ? "pt-1" : "pt-6"}`}>
+			<header className={`w-full px-4 pb-3 sm:px-8 ${compact ? "pt-1" : "pt-6"}`}>
 				<div className="mx-auto max-w-6xl">
 				<div className="flex min-w-0 items-center gap-3">
 				<button

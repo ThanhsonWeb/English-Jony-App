@@ -25,7 +25,7 @@ function DialogueReviewTask({
 	return (
 		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
 			<div className="mx-auto max-w-3xl">
-				<h1 className="mt-2 text-2xl font-bold">{task.title} 📖</h1>
+				<h1 className="sr-only">{task.title}</h1>
 
 				<DialogueTaskNavigation
 					lessonId={lessonId}
@@ -36,11 +36,17 @@ function DialogueReviewTask({
 					totalTasks={totalTasks}
 				/>
 				<p className="mt-2 text-slate-400">
-					{t("reviewBeforeContinue")}
+					{task.instruction || t("reviewBeforeContinue")}
 				</p>
 
 				<div className="mt-8 space-y-4">
-					{task.dialogue.map((line, index) => (
+					{task.items ? task.items.map((item, index) => (
+						<div key={index} className="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+							<p className="font-semibold text-green-400">{item.phrase}</p>
+							<p className="mt-1 text-slate-200">{item.meaning}</p>
+							<p className="mt-2 text-slate-400">{item.example}</p>
+						</div>
+					)) : (task.dialogue || []).map((line, index) => (
 						<div
 							key={index}
 							className="rounded-xl border border-slate-800 bg-slate-900/50 p-4"

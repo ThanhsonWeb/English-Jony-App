@@ -5,7 +5,7 @@ import { BookOpen, ChevronDown } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { getLocalizedDialogueValue } from "@/app/_lib/dialogue/localization";
 
-function GrammarNote({ grammar }) {
+function GrammarNote({ grammar, compact = false }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const locale = useLocale();
 	const t = useTranslations("DialogueFeature");
@@ -13,7 +13,7 @@ function GrammarNote({ grammar }) {
 	if (!grammar) return null;
 
 	return (
-		<div>
+		<div className={compact ? "contents" : undefined}>
 			<button
 				type="button"
 				onClick={() => setIsOpen((current) => !current)}
@@ -28,7 +28,7 @@ function GrammarNote({ grammar }) {
 			</button>
 
 			{isOpen && (
-				<div className="mt-3 max-w-xl rounded-xl border border-slate-800 bg-slate-900/50 p-4 text-slate-300">
+				<div className={`${compact ? "order-3 mt-0 max-h-72 w-full overflow-y-auto" : "mt-3 max-w-xl"} rounded-xl border border-slate-800 bg-slate-900/50 p-4 text-slate-300`}>
 					<h2 className="flex items-center gap-2 font-semibold text-slate-100">
 						<BookOpen size={18} className="text-blue-400" />
 						<span>{grammar.localized?.title ? getLocalizedDialogueValue(grammar, "title", locale) : locale === "en" ? t("grammar") : grammar.title}</span>

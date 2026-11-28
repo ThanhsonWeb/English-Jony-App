@@ -8,10 +8,8 @@ import useDialogueShortcuts from "../_hooks/useDialogueShortcuts";
 import { fillBlankAnswersMatch } from "../_utils/fillBlankAnswer";
 import { useLocale, useTranslations } from "next-intl";
 import { useAuth } from "../_contexts/AuthContext";
-import { SUBTITLE_WORD_PATTERN, SUBTITLE_WORD_TOKEN_PATTERN } from "../_lib/dictionary/findPreferredLookup";
-import { findVisibleDictationLookup } from "../_lib/dictionary/findVisibleDictationLookup";
-import DialogueWordPopup from "./DialogueWordPopup";
 import { DialogueProgressLink } from "./DialogueProgressSave";
+import { CircleX } from "lucide-react";
 
 function getExpectedAnswers(task) {
 	return Array.isArray(task.answers) ? task.answers : [task.answer];
@@ -43,14 +41,13 @@ function FillBlankTask({
 	const { loading: authLoading } = useAuth();
 	const isMultiBlank = Array.isArray(task.parts) && Array.isArray(task.answers);
 	const expectedAnswers = getExpectedAnswers(task);
+	const safeHint = typeof hint === "string" && !expectedAnswers.some(answer => typeof answer === "string" && answer.trim() && hint.toLocaleLowerCase().includes(answer.trim().toLocaleLowerCase())) ? hint : null;
 	const [answerValues, setAnswerValues] = useState(() =>
 		expectedAnswers.map(() => ""),
 	);
 	const [result, setResult] = useState(null);
 	const [started, setStarted] = useState(false);
 	const review = confirmedCompleted && !started && result === null;
-	const [selectedLookup, setSelectedLookup] = useState(null);
-	const dictionaryPopupRef = useRef(null);
 	const autoAdvance = useDialogueAutoAdvance({
 		onComplete,
 		manual: true,
@@ -59,68 +56,6 @@ function FillBlankTask({
 	const actionRef = useRef(null);
 	const audioSceneRef = useRef(null);
 	const inputRefs = useRef([]);
-	const visibleParts = isMultiBlank
-		? task.parts
-		: [task.sentenceBefore || "", task.sentenceAfter || ""];
-
-	useEffect(() => {
-		if (!selectedLookup) return;
-		function dismiss(event) {
-			if (dictionaryPopupRef.current?.contains(event.target) || event.target.closest?.('[data-dictionary-token="true"]')) return;
-			setSelectedLookup(null);
-		}
-		function dismissOnEscape(event) {
-			if (event.key === "Escape") setSelectedLookup(null);
-		}
-		document.addEventListener("pointerdown", dismiss);
-		document.addEventListener("keydown", dismissOnEscape);
-		window.addEventListener("resize", dismissOnEscape);
-		window.addEventListener("scroll", dismissOnEscape, true);
-		return () => {
-			document.removeEventListener("pointerdown", dismiss);
-			document.removeEventListener("keydown", dismissOnEscape);
-			window.removeEventListener("resize", dismissOnEscape);
-			window.removeEventListener("scroll", dismissOnEscape, true);
-		};
-	}, [selectedLookup]);
-
-	function renderVisibleWords(part, partIndex) {
-		let wordIndex = -1;
-		return part.split(SUBTITLE_WORD_PATTERN).map((token, index) => {
-			if (!SUBTITLE_WORD_TOKEN_PATTERN.test(token)) return token;
-			const clickedWordIndex = ++wordIndex;
-			const active = selectedLookup?.partIndex === partIndex &&
-				selectedLookup.startWordIndex <= clickedWordIndex &&
-				clickedWordIndex <= selectedLookup.endWordIndex;
-			return <button key={`${partIndex}-${index}`} type="button" data-dictionary-token="true"
-				className={`rounded-sm transition-colors hover:bg-white/10 hover:text-cyan-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/70 ${active ? "bg-cyan-400/15 text-cyan-100" : ""}`}
-				onClick={(event) => {
-					const lookup = findVisibleDictationLookup({ lessonId, dialogueId, line: dialogueLine,
-						parts: visibleParts, answers: expectedAnswers, partIndex, clickedWordIndex });
-					if (!lookup) { setSelectedLookup(null); return; }
-					const bounds = event.currentTarget.getBoundingClientRect();
-					const popupWidth = 256;
-					setSelectedLookup({ ...lookup, phraseLookup: lookup.wordLookup ? lookup : null,
-						partIndex, isMobile: window.innerWidth < 640,
-						position: {
-							left: Math.min(Math.max(bounds.left + bounds.width / 2 - popupWidth / 2, 12), window.innerWidth - popupWidth - 12),
-							top: bounds.top >= 180 ? bounds.top - 10 : bounds.bottom + 10,
-							opensAbove: bounds.top >= 180,
-						},
-					});
-				}}>{token}</button>;
-		});
-	}
-
-	function pronounceLookup() {
-		if (!selectedLookup || !("speechSynthesis" in window)) return;
-		window.speechSynthesis.cancel();
-		const utterance = new SpeechSynthesisUtterance(selectedLookup.result.text);
-		utterance.lang = "en-US";
-		utterance.rate = 0.9;
-		window.speechSynthesis.speak(utterance);
-	}
-
 	useEffect(() => {
 		// The theme provider keeps inputs invisible during session restoration.
 		if (authLoading || task.completed || task.locked || review || reviewLoading || started) return;
@@ -206,13 +141,14 @@ function FillBlankTask({
 	}
 
 	return (
-		<div className="min-h-screen px-4 py-8 text-white sm:px-8">
+		<div className="px-4 py-3 text-white sm:px-8">
 			<div className="mx-auto max-w-6xl">
-				<h1 className="mt-2 text-2xl font-bold">{task.title} ✍️</h1>
+				<h1 className="sr-only">{task.title}</h1>
 
-				<div className="mt-4 grid gap-4 sm:mt-8 sm:gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-					<TaskAudioScene ref={audioSceneRef} key={task.audioUrl} task={task}
-						lessonId={lessonId} dialogueId={dialogueId} dialogueLine={dialogueLine} autoPlay compactMobile />
+				<div className="grid gap-4 sm:gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+					<div><TaskAudioScene ref={audioSceneRef} key={task.audioUrl} task={task}
+						lessonId={lessonId} dialogueId={dialogueId} dialogueLine={dialogueLine} autoPlay />
+						<DialogueShortcutHint belowPlayer /></div>
 
 					<div>
 						<DialogueTaskNavigation
@@ -228,12 +164,12 @@ function FillBlankTask({
 						</p>
 						{review && <p role="status" className="mt-3 font-semibold text-emerald-400">{t("completedCorrectAnswers")}</p>}
 
-						<div className="mt-4 min-w-0 rounded-2xl border border-slate-800 bg-slate-900/60 p-4 sm:mt-6 sm:p-6">
+						<div className="mt-4 min-w-0 rounded-2xl border-2 border-slate-600 bg-slate-900/60 p-4 sm:mt-6 sm:p-6">
 							<p className="min-w-0 max-w-full whitespace-normal break-words text-lg leading-10">
 								{isMultiBlank ? (
 									task.parts.map((part, index) => (
 										<Fragment key={index}>
-											{renderVisibleWords(part, index)}
+											{part}
 											{index < expectedAnswers.length && (
 												<input
 													ref={(input) => {
@@ -258,14 +194,14 @@ function FillBlankTask({
 														borderBottomColor: getInputBorderColor(index),
 																		transition: review ? "none" : undefined,
 													}}
-																	className={`mx-1 inline-block max-w-full rounded-sm border-b-2 bg-transparent px-2 py-0.5 text-center outline-none transition-[border-color] ${review ? "cursor-default caret-transparent" : ""} ${result === "correct" ? "text-green-400" : ""} ${isWrongAnswer(index) ? "text-red-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500" : ""}`}
+																	className={`mx-1 inline-block max-w-full border-0 border-b-2 bg-transparent px-2 py-0.5 text-center text-white outline-none focus:outline-none transition-[border-color] ${review ? "cursor-default caret-transparent" : ""} `}
 												/>
 											)}
 										</Fragment>
 									))
 								) : (
 									<>
-										{renderVisibleWords(task.sentenceBefore || "", 0)}{" "}
+										{task.sentenceBefore || ""}{" "}
 										<input
 											ref={(input) => {
 												inputRefs.current[0] = input;
@@ -285,9 +221,9 @@ function FillBlankTask({
 												borderBottomColor: getInputBorderColor(0),
 															transition: review ? "none" : undefined,
 											}}
-										className={`mx-2 max-w-full rounded-sm border-b-2 bg-transparent px-2 py-0.5 text-center outline-none transition-[border-color] ${review ? "cursor-default caret-transparent" : ""} ${result === "correct" ? "text-green-400" : ""} ${isWrongAnswer(0) ? "text-red-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500" : ""}`}
+										className={`mx-2 max-w-full border-0 border-b-2 bg-transparent px-2 py-0.5 text-center text-white outline-none focus:outline-none transition-[border-color] ${review ? "cursor-default caret-transparent" : ""} `}
 										/>{" "}
-										{renderVisibleWords(task.sentenceAfter || "", 1)}
+										{task.sentenceAfter || ""}
 									</>
 								)}
 							</p>
@@ -314,18 +250,16 @@ function FillBlankTask({
 						</div>
 
 						{result === "wrong" && (
-							<div className="mt-5 rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-red-400">
-								❌ {t("wrongTryAgain")}
-								{hint && <p className="mt-2 text-sm text-slate-300">{hint}</p>}
+							<div className="mt-3" role="status"><p className="flex items-center gap-2 text-sm text-red-400"><CircleX size={15} aria-hidden="true" />{t("wrongTryAgain")}</p>
+								{safeHint && <p className="mt-2 rounded-r border-l-2 border-emerald-500 bg-white/5 py-1.5 pl-3 text-sm text-slate-100"><strong className="text-emerald-400">{locale === "vi" ? "Gợi ý:" : "Hint:"}</strong> {safeHint}</p>}
 							</div>
 						)}
 
 						<div role="status" aria-live="polite">
 							{result === "correct" && <p className="mt-5 rounded-xl border border-green-500/30 bg-green-500/10 p-4 font-semibold text-green-400">{t("correct")}</p>}
 						</div>
-						<DialogueShortcutHint />
-						<div className="mt-4 flex items-start justify-between gap-4">
-							{(result === "correct" || review) && <GrammarNote grammar={task.grammar} />}
+						<div className="mt-4 flex flex-wrap items-start justify-between gap-4">
+							{(result === "correct" || review) && <GrammarNote grammar={task.grammar} compact />}
 							<div className="ml-auto shrink-0">
 								{review ? (
 									<DialogueProgressLink ref={actionRef} requireSave={false}
@@ -359,9 +293,6 @@ function FillBlankTask({
 					</div>
 				</div>
 			</div>
-			<DialogueWordPopup lookup={selectedLookup} popupRef={dictionaryPopupRef}
-				onPronounce={pronounceLookup}
-				onSwitch={(switchTo) => setSelectedLookup((current) => ({ ...current, ...switchTo }))} />
 		</div>
 	);
 }
