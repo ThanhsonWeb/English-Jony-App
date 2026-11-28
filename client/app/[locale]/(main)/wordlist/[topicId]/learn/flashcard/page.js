@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import styles from "./flashcard.module.css";
 import { loadVocabulary, selectReviewWords, speakWord, vocabularyKey } from "@/app/_lib/vocabulary.mjs";
+import { selectFilteredReviewWords } from "@/app/_lib/wordlistSourceFilter.mjs";
 import { resourceCache } from "@/app/_lib/resourceCache.mjs";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { isReviewCompletionReady } from "@/app/_lib/reviewSaveController.mjs";
@@ -28,7 +29,8 @@ function Page() {
 	const userId = user?._id || user?.id;
 	const searchParams = useSearchParams();
 	const dueOnly = searchParams.get("reviewMode") === "due";
-	const reviewKey = `${userId}:${topicId}:${dueOnly}`;
+	const filterQuery = searchParams.toString();
+	const reviewKey = `${userId}:${topicId}:${filterQuery}`;
 	const router = useRouter();
 	const [practiceMode, setPracticeMode] = useState(false);
 	const [loading, setLoading] = useState(true);
@@ -66,7 +68,7 @@ function Page() {
 		if (Array.isArray(cached)) {
 			queueMicrotask(() => {
 				if (controller.signal.aborted) return;
-				const reviewWords = selectReviewWords(cached, { global: !topicId, dueOnly });
+				const reviewWords = selectFilteredReviewWords(cached, {}, Object.fromEntries(new URLSearchParams(filterQuery))) ?? selectReviewWords(cached, { global: !topicId, dueOnly });
 				originalWords.current = reviewWords;
 				setWords(reviewWords);
 				setLoadedUserId(reviewKey);
@@ -77,7 +79,7 @@ function Page() {
 			try {
 				const vocabulary = await loadVocabulary(userId, topicId);
 				if (!controller.signal.aborted && !Array.isArray(cached)) {
-					const reviewWords = selectReviewWords(vocabulary, { global: !topicId, dueOnly });
+					const reviewWords = selectFilteredReviewWords(vocabulary, {}, Object.fromEntries(new URLSearchParams(filterQuery))) ?? selectReviewWords(vocabulary, { global: !topicId, dueOnly });
 					originalWords.current = reviewWords;
 					setWords(reviewWords);
 				}
@@ -90,7 +92,7 @@ function Page() {
 
 		fetchWords();
 		return () => controller.abort();
-	}, [topicId, dueOnly, userId, authLoading, reviewKey, loadRetryCount]);
+	}, [topicId, dueOnly, userId, authLoading, reviewKey, filterQuery, loadRetryCount]);
 
 	function retryVocabularyLoad() {
 		if (!userId) return;

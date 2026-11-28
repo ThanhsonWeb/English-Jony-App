@@ -364,6 +364,8 @@
 	outline: none;
 	font-size: 14px;
 }
+.page .search input:focus-visible { outline: none; }
+.search:has(input:focus-visible) { outline: 2px solid var(--sj-primary); outline-offset: 2px; }
 .search input::placeholder {
 	color: var(--sj-text-muted);
 }
@@ -1037,7 +1039,7 @@
 	.toolbar .search { flex-basis: 100%; }
 	.search { border-radius: 17px; background: var(--sj-input); box-shadow: 0 3px 10px color-mix(in srgb, var(--sj-shadow-color) 28%, transparent); }
 	.search input { height: 55px; }
-	.statusFilter { display: none; }
+	.statusFilter { display: block; flex: 1 1 100%; }
 	.mobileFilters { display: flex; width: 100%; gap: 5px; }
 	.mobileFilters button {
 		flex: 1 1 0;

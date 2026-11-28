@@ -34,6 +34,9 @@ import styles from "./wordlist.module.css";
 import { splitExample } from "@/app/_lib/exampleHighlight.mjs";
 import { useVocabularyResource } from "@/app/_lib/useStudyResources";
 import { resolveWordlistFilter } from "@/app/_lib/wordlistFilter.mjs";
+import { sourceKey, selectFilteredReviewWords } from "@/app/_lib/wordlistSourceFilter.mjs";
+import { lessonData } from "../dialogue/_data/lessonData";
+import { getLocalizedDialogueValue } from "@/app/_lib/dialogue/localization";
 
 const statuses = ["all", "new", "learning", "review", "mastered"];
 const WORDS_PER_PAGE = 10;
@@ -49,7 +52,7 @@ const statusIcons = {
 	mastered: Check,
 };
 
-function StatusFilter({ value, onChange, t }) {
+function StatusFilter({ value, onChange, t, options }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const filterRef = useRef(null);
 
@@ -80,10 +83,10 @@ function StatusFilter({ value, onChange, t }) {
 				onClick={() => setIsOpen((open) => !open)}
 				aria-expanded={isOpen}
 				aria-haspopup="listbox"
-				aria-label={`${t("status")}: ${t(value)}`}
+				aria-label={t("topicFilter")}
 			>
 				<Filter aria-hidden="true" size={18} />
-				<strong>{t(value)}</strong>
+				<strong>{options.find(option => option.value === value)?.label || t("allTopics")}</strong>
 				<ChevronDown
 					aria-hidden="true"
 					size={17}
@@ -94,9 +97,9 @@ function StatusFilter({ value, onChange, t }) {
 				<div
 					className={styles.statusMenu}
 					role="listbox"
-					aria-label={t("status")}
+					aria-label={t("topicFilter")}
 				>
-					{statuses.map((status) => (
+					{options.map(({ value: status, label }) => (
 						<button
 							type="button"
 							role="option"
@@ -107,7 +110,7 @@ function StatusFilter({ value, onChange, t }) {
 								setIsOpen(false);
 							}}
 						>
-							<span>{t(status)}</span>
+							<span>{label}</span>
 							{value === status && <Check aria-hidden="true" size={16} />}
 						</button>
 					))}
@@ -178,8 +181,26 @@ export default function WordlistPage() {
 	);
 	const totalWords = counts.all;
 	const activeFilter = resolveWordlistFilter(searchParams.get("status"), counts, loading);
+	const [selectedSource, setSelectedSource] = useState("all");
+	const sourceGroups = new Map();
+	for (const word of words) {
+		const key = sourceKey(word);
+		const group = sourceGroups.get(key) || { count: 0, source: word.source };
+		group.count++;
+		sourceGroups.set(key, group);
+	}
+	const sourceOptions = [{ value: "all", label: t("allTopics") }, ...Array.from(sourceGroups, ([key, group]) => {
+		const source = group.source;
+		const dialogue = key !== "custom" ? lessonData[source.lessonId]?.dialogues?.find(item => item.id === source.dialogueId) : null;
+		const title = key === "custom" ? t("customWords") : (dialogue ? getLocalizedDialogueValue(dialogue, "title", locale) : source.dialogueTitle || source.dialogueId);
+		return { value: key, label: `${title} (${group.count})` };
+	})];
+	const selectedPair = selectedSource !== "all" && selectedSource !== "custom" ? JSON.parse(selectedSource) : null;
+	const reviewFilters = { status: activeFilter, ...(selectedSource === "custom" ? { sourceType: "custom" } : selectedPair ? { lessonId: selectedPair[0], dialogueId: selectedPair[1] } : {}) };
+	const explicitFilters = searchParams.has("status") || selectedSource !== "all";
+	const selectedReviewWords = explicitFilters ? selectFilteredReviewWords(words, {}, reviewFilters) : null;
 	const queue = selectReviewWords(words, { global: true, now });
-	const practiceCount = counts.review > 0
+	const practiceCount = selectedReviewWords ? selectedReviewWords.length : counts.review > 0
 		? selectReviewWords(words, { global: true, dueOnly: true, now }).length
 		: queue.length;
 	const canQuiz =
@@ -188,7 +209,7 @@ export default function WordlistPage() {
 	const query = search.trim().toLocaleLowerCase();
 	const filtered = words.filter(
 		(word) =>
-		(activeFilter === "all" || getWordStatus(word, now) === activeFilter) &&
+		(activeFilter === "all" || getWordStatus(word, now) === activeFilter) && (selectedSource === "all" || sourceKey(word) === selectedSource) &&
 			[word.english, word.vietnamese, word.example, word.pronunciation].some(
 				(value) => value?.toLocaleLowerCase().includes(query),
 			),
@@ -259,10 +280,11 @@ export default function WordlistPage() {
 								)}
 							</div>
 							<StatusFilter
-								value={activeFilter}
+								value={selectedSource}
 								t={t}
-								onChange={(status) => {
-									setFilter(status);
+								options={sourceOptions}
+								onChange={(source) => {
+									setSelectedSource(source);
 									setPage(1);
 								}}
 							/>
@@ -304,8 +326,14 @@ export default function WordlistPage() {
 											<button type="button" aria-label={t("close")} onClick={() => setPracticeOpen(false)}><X size={20} /></button>
 										</div>
 										<div className={styles.practiceGrid}>{reviewModes.map(({ value, Icon }, index) => {
-											const available = queue.length > 0 && (value !== "quiz" || canQuiz);
-											const href = `/wordlist/review/${value}${counts.review > 0 ? "?reviewMode=due" : ""}`;
+											const available = practiceCount > 0 && (value !== "quiz" || canQuiz);
+											const params = new URLSearchParams();
+											if (explicitFilters) {
+												if (activeFilter !== "all") params.set("status", activeFilter);
+												if (reviewFilters.sourceType) params.set("sourceType", reviewFilters.sourceType);
+												if (selectedPair) { params.set("lessonId", selectedPair[0]); params.set("dialogueId", selectedPair[1]); }
+											} else if (counts.review > 0) params.set("reviewMode", "due");
+											const href = `/wordlist/review/${value}${params.size ? `?${params}` : ""}`;
 											const contents = (
 												<>
 																			<span className={styles.practiceKey} aria-hidden="true">{index + 1}</span>
@@ -383,8 +411,8 @@ export default function WordlistPage() {
 								<h2>{t(activeFilter === "review" && !query ? "noDueWords" : "noResults")}</h2>
 								<p>{t(activeFilter === "review" && !query ? "noDueWordsDescription" : "noResultsDescription")}</p>
 								<div className={styles.filteredEmptyActions}>
-									<button className={styles.secondary} onClick={() => { setSearch(""); setFilter("all"); }}>{t("clear")}</button>
-									<button className={styles.primary} onClick={() => { setSearch(""); setFilter("all"); }}>{t("viewAllWords", { count: totalWords })}</button>
+									<button className={styles.secondary} onClick={() => { setSearch(""); setFilter("all"); setSelectedSource("all"); }}>{t("clear")}</button>
+									<button className={styles.primary} onClick={() => { setSearch(""); setFilter("all"); setSelectedSource("all"); }}>{t("viewAllWords", { count: totalWords })}</button>
 								</div>
 							</div>
 						) : (

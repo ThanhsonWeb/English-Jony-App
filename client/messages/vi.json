@@ -298,6 +298,9 @@
 		"guestLater": "Để sau"
 	},
 	"Notebook": {
+		"topicFilter": "Chủ đề",
+		"allTopics": "Tất cả chủ đề",
+		"customWords": "Từ tự thêm",
 		"title": "Sổ tay từ vựng",
 		"subtitle": "Lưu từ, ôn tập và ghi nhớ mỗi ngày ✨",
 		"reviewNow": "Bắt đầu ôn tập",

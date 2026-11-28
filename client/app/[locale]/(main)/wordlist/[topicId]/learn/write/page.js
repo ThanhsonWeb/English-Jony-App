@@ -5,6 +5,7 @@ import { useParams, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { loadVocabulary, selectReviewWords, speakWord, vocabularyKey } from "@/app/_lib/vocabulary.mjs";
+import { selectFilteredReviewWords } from "@/app/_lib/wordlistSourceFilter.mjs";
 import { resourceCache } from "@/app/_lib/resourceCache.mjs";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { isReviewCompletionReady } from "@/app/_lib/reviewSaveController.mjs";
@@ -39,7 +40,8 @@ export default function WriteReviewPage() {
 	const userId = user?._id || user?.id;
 	const searchParams = useSearchParams();
 	const dueOnly = searchParams.get("reviewMode") === "due";
-	const reviewKey = `${userId}:${topicId}:${dueOnly}`;
+	const filterQuery = searchParams.toString();
+	const reviewKey = `${userId}:${topicId}:${filterQuery}`;
 	const router = useRouter();
 	const inputRef = useRef(null);
 	const sessionRef = useRef(null);
@@ -73,7 +75,7 @@ export default function WriteReviewPage() {
 		if (Array.isArray(cached)) {
 			queueMicrotask(() => {
 				if (cancelled) return;
-				const reviewWords = selectReviewWords(cached, { global: !topicId, dueOnly });
+				const reviewWords = selectFilteredReviewWords(cached, {}, Object.fromEntries(new URLSearchParams(filterQuery))) ?? selectReviewWords(cached, { global: !topicId, dueOnly });
 				originalWordsRef.current = reviewWords;
 				sessionRef.current = createMistakeReviewSession(reviewWords.length);
 				dispatchQuestionState({ type: "session-changed", sessionState: sessionRef.current.getSnapshot() });
@@ -86,7 +88,7 @@ export default function WriteReviewPage() {
 		async function fetchWords() {
 			try {
 				const vocabulary = await loadVocabulary(userId, topicId);
-				const reviewWords = selectReviewWords(vocabulary, { global: !topicId, dueOnly });
+				const reviewWords = selectFilteredReviewWords(vocabulary, {}, Object.fromEntries(new URLSearchParams(filterQuery))) ?? selectReviewWords(vocabulary, { global: !topicId, dueOnly });
 
 				if (!cancelled && !Array.isArray(cached)) {
 					originalWordsRef.current = reviewWords;
@@ -108,7 +110,7 @@ export default function WriteReviewPage() {
 		return () => {
 			cancelled = true;
 		};
-	}, [topicId, dueOnly, userId, authLoading, reviewKey, loadRetryCount]);
+	}, [topicId, dueOnly, userId, authLoading, reviewKey, filterQuery, loadRetryCount]);
 
 	function retryVocabularyLoad() {
 		if (!userId) return;

@@ -5,6 +5,7 @@ import { useParams, useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { loadVocabulary, selectReviewWords, speakWord, vocabularyKey } from "@/app/_lib/vocabulary.mjs";
+import { selectFilteredReviewWords } from "@/app/_lib/wordlistSourceFilter.mjs";
 import { resourceCache } from "@/app/_lib/resourceCache.mjs";
 import { useAuth } from "@/app/_contexts/AuthContext";
 import { isReviewCompletionReady } from "@/app/_lib/reviewSaveController.mjs";
@@ -38,7 +39,8 @@ export default function QuizReviewPage() {
 	const userId = user?._id || user?.id;
 	const searchParams = useSearchParams();
 	const dueOnly = searchParams.get("reviewMode") === "due";
-	const reviewKey = `${userId}:${topicId}:${dueOnly}`;
+	const filterQuery = searchParams.toString();
+	const reviewKey = `${userId}:${topicId}:${filterQuery}`;
 	const router = useRouter();
 	const reviewWordsRef = useRef([]);
 	const vocabularyPoolRef = useRef([]);
@@ -72,7 +74,7 @@ export default function QuizReviewPage() {
 		const cached = resourceCache.read(userId, vocabularyKey(topicId), true).data;
 		const cachedAll = topicId ? resourceCache.read(userId, vocabularyKey(), true).data : cached;
 		const cachedReviewWords = Array.isArray(cached)
-			? selectReviewWords(cached.filter(word => word.english?.trim() && word.vietnamese?.trim()), { global: !topicId, dueOnly }) : [];
+			? (selectFilteredReviewWords(cached, {}, Object.fromEntries(new URLSearchParams(filterQuery))) ?? selectReviewWords(cached.filter(word => word.english?.trim() && word.vietnamese?.trim()), { global: !topicId, dueOnly })) : [];
 		const needsAll = topicId && cachedReviewWords.length > 0 && getUniqueTranslations(cached).length < 4;
 		const usableCached = Array.isArray(cached) && (!needsAll || Array.isArray(cachedAll));
 		function installQuestions(reviewWords, vocabularyPool) {
@@ -103,7 +105,7 @@ export default function QuizReviewPage() {
 			try {
 				const vocabulary = await loadVocabulary(userId, topicId);
 				const topicWords = eligibleQuizWords(vocabulary);
-				const reviewWords = selectReviewWords(topicWords, { global: !topicId, dueOnly });
+				const reviewWords = selectFilteredReviewWords(topicWords, {}, Object.fromEntries(new URLSearchParams(filterQuery))) ?? selectReviewWords(topicWords, { global: !topicId, dueOnly });
 				let vocabularyPool = topicWords;
 
 				if (topicId && reviewWords.length > 0 && getUniqueTranslations(topicWords).length < 4) {
@@ -131,7 +133,7 @@ export default function QuizReviewPage() {
 		return () => {
 			cancelled = true;
 		};
-	}, [topicId, dueOnly, userId, authLoading, reviewKey, resetAnswers, loadRetryCount]);
+	}, [topicId, dueOnly, userId, authLoading, reviewKey, filterQuery, resetAnswers, loadRetryCount]);
 
 	function retryVocabularyLoad() {
 		if (!userId) return;
@@ -258,7 +260,7 @@ export default function QuizReviewPage() {
 				title={t("quiz.notEnoughTitle")}
 				message={t("quiz.notEnoughMessage")}
 				actionLabel={t("quiz.flashcardAction")}
-				onAction={() => router.push(`${topicId ? `/wordlist/${topicId}/learn` : "/wordlist/review"}/flashcard${dueOnly ? "?reviewMode=due" : ""}`)}
+				onAction={() => router.push(`${topicId ? `/wordlist/${topicId}/learn` : "/wordlist/review"}/flashcard${filterQuery ? `?${filterQuery}` : ""}`)}
 				onBack={() => router.push(topicId ? `/wordlist/${topicId}` : "/wordlist")}
 			/>
 		);

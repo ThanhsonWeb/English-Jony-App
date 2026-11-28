@@ -298,6 +298,9 @@
 		"guestLater": "Later"
 	},
 	"Notebook": {
+		"topicFilter": "Topic",
+		"allTopics": "All topics",
+		"customWords": "Custom words",
 		"title": "Vocabulary notebook",
 		"subtitle": "Save, review, and remember a little more every day ✨",
 		"reviewNow": "Start reviewing",

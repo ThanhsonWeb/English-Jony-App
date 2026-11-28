@@ -100,6 +100,14 @@ exports.createNewVocab = catchAsync(async (req, res, next) => {
 	for (const field of ["english", "vietnamese", "pronunciation", "example", "topic"]) {
 		if (Object.hasOwn(req.body, field)) fields[field] = req.body[field];
 	}
+	if (Object.hasOwn(req.body, "source")) {
+		const source = req.body.source;
+		if (!source || typeof source !== "object" || Array.isArray(source) || source.type !== "dialogue" ||
+			![source.lessonId, source.dialogueId, source.dialogueTitle].every(value => typeof value === "string" && value.trim().length > 0 && value.length <= 200)) {
+			return next(new AppError("Invalid dialogue source", 400));
+		}
+		fields.source = { type: "dialogue", lessonId: source.lessonId.trim(), dialogueId: source.dialogueId.trim(), dialogueTitle: source.dialogueTitle.trim() };
+	}
 	// Review history, timestamps and provenance use server/model defaults only.
 	const newVocab = await mongoose.connection.transaction(async session => {
 		await fenceActiveAccountWrite(req.user.id, session);
